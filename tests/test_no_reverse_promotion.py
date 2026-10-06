@@ -11,16 +11,24 @@ def test_open_never_compiles_to_must():
     graph = ProvenanceGraph.from_repo(root())
     for decision in graph.decisions.values():
         if decision["status"] == "OPEN":
-            assert graph.permission(decision["id"]) != "MUST"
-            assert graph.evidence_proven(decision["id"]) is False
+            assert graph.permission(decision["id"]) == "OPEN"
+            assert graph.decision_fully_source_backed(decision["id"]) is False
 
 
-def test_current_is_not_reported_as_evidence_proven():
+def test_current_is_not_reported_as_fully_source_backed_when_basis_is_mixed():
     graph = ProvenanceGraph.from_repo(root())
-    for decision in graph.decisions.values():
-        if decision["status"] == "CURRENT":
-            assert graph.permission(decision["id"]) == "MAY"
-            assert graph.evidence_proven(decision["id"]) is False
+    mixed_current = [
+        "decision:cliff-release:placement",
+        "decision:zhen-sends-jade:same-jade",
+        "decision:zhen-sends-jade:meeting",
+        "decision:zhen-sends-jade:placement",
+        "decision:fengjie-snow-jade:placement",
+        "decision:ten-solitary-chants:placement",
+        "decision:qingbang:current-format",
+    ]
+    for decision_id in mixed_current:
+        assert graph.permission(decision_id) == "MAY"
+        assert graph.decision_fully_source_backed(decision_id) is False
 
 
 def test_qingbang_source_phrase_does_not_lock_formal_title():

@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ReconstructionImplementation",
+  "type": "object",
+  "required": ["id", "kind", "status", "chapter", "summary", "decision_refs", "locator"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["PROSE", "EVENT", "SCENE", "OBJECT_STATE"]},
+    "status": {"enum": ["ACTIVE", "CANDIDATE", "ARCHIVED"]},
+    "chapter": {"type": "integer", "minimum": 1},
+    "summary": {"type": "string", "minLength": 1},
+    "decision_refs": {"type": "array", "items": {"type": "string"}},
+    "locator": {
+      "type": "object",
+      "required": ["file_ref", "file_sha256"],
+      "properties": {
+        "file_ref": {"type": "string"},
+        "file_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "lines": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

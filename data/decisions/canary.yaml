@@ -6,9 +6,8 @@ decisions:
       - claim:cliff-release:future-interface
       - claim:cliff-release:baoyu-abandons-and-becomes-monk
     status: LOCKED
+    constraint: MUST
     reversible: false
-    project_refs:
-      - 红楼梦八十回后全幅文学补完大工程计划_v6.0_R4最终放行版.md
 
   - id: decision:cliff-release:placement
     statement: 当前将“悬崖撒手”功能安置在第99回。
@@ -16,18 +15,20 @@ decisions:
       - claim:cliff-release:future-interface
       - claim:cliff-release:chapter-99
     status: CURRENT
+    constraint: MAY
     reversible: true
     reasoning:
       - 为末回情榜与石归留出结构空间
       - 当前100回工作模型的章法安排
     implementation_refs:
-      - prose:active:ch99
+      - impl:active:ch99:cliff-release
 
   - id: decision:cliff-release:formal-title
-    statement: 是否存在正式原回目“悬崖撒手”保持开放，不把T2式回称升级为T0/T1。
+    statement: 是否存在正式原回目“悬崖撒手”保持开放，不把回称自动升级为正式回目。
     based_on:
       - claim:cliff-release:formal-title
     status: OPEN
+    constraint: OPEN
     reversible: true
 
   # Canary 2: 甄宝玉送玉
@@ -36,6 +37,7 @@ decisions:
     based_on:
       - claim:zhen-sends-jade:event
     status: LOCKED
+    constraint: MUST
     reversible: false
 
   - id: decision:zhen-sends-jade:same-jade
@@ -44,9 +46,10 @@ decisions:
       - claim:zhen-sends-jade:event
       - claim:zhen-sends-jade:same-tongling-jade
     status: CURRENT
+    constraint: MAY
     reversible: true
     implementation_refs:
-      - prose:active:ch98
+      - impl:active:ch98:zhen-jade
 
   - id: decision:zhen-sends-jade:meeting
     statement: 当前实现让甄、贾二宝现实相见，但证据未要求必须以面对面形式完成。
@@ -54,9 +57,10 @@ decisions:
       - claim:zhen-sends-jade:event
       - claim:zhen-sends-jade:face-to-face
     status: CURRENT
+    constraint: MAY
     reversible: true
     implementation_refs:
-      - prose:active:ch98
+      - impl:active:ch98:zhen-jade
 
   - id: decision:zhen-sends-jade:placement
     statement: 当前安置在第98回；具体回次属于工作安置。
@@ -64,13 +68,17 @@ decisions:
       - claim:zhen-sends-jade:event
       - claim:zhen-sends-jade:chapter-98
     status: CURRENT
+    constraint: MAY
     reversible: true
+    implementation_refs:
+      - impl:active:ch98:zhen-jade
 
   - id: decision:zhen-sends-jade:formal-title
     statement: 不把“甄宝玉送玉”升格为正式原回目，正式标题问题保持开放。
     based_on:
       - claim:zhen-sends-jade:formal-title
     status: OPEN
+    constraint: OPEN
     reversible: true
 
   # Canary 3: 凤姐扫雪拾玉
@@ -79,6 +87,7 @@ decisions:
     based_on:
       - claim:fengjie-snow-jade:event
     status: LOCKED
+    constraint: MUST
     reversible: false
 
   - id: decision:fengjie-snow-jade:jade-identity
@@ -87,9 +96,10 @@ decisions:
       - claim:fengjie-snow-jade:event
       - claim:fengjie-snow-jade:tongling-jade
     status: OPEN
+    constraint: OPEN
     reversible: true
     implementation_refs:
-      - prose:active:ch91
+      - impl:active:ch91:snow-jade
 
   - id: decision:fengjie-snow-jade:placement
     statement: 当前把该事件安置在第91回，但不声称源证锁定回次。
@@ -97,13 +107,17 @@ decisions:
       - claim:fengjie-snow-jade:event
       - claim:fengjie-snow-jade:chapter-91
     status: CURRENT
+    constraint: MAY
     reversible: true
+    implementation_refs:
+      - impl:active:ch91:snow-jade
 
   - id: decision:fengjie-snow-jade:formal-title
     statement: 不把“凤姐扫雪拾玉”当作正式原回目；正式标题问题保持开放。
     based_on:
       - claim:fengjie-snow-jade:formal-title
     status: OPEN
+    constraint: OPEN
     reversible: true
 
   # Canary 4: 十独吟
@@ -113,6 +127,7 @@ decisions:
       - claim:ten-solitary-chants:exists
       - claim:ten-solitary-chants:after-ch64
     status: LOCKED
+    constraint: MUST
     reversible: false
 
   - id: decision:ten-solitary-chants:author
@@ -120,6 +135,7 @@ decisions:
     based_on:
       - claim:ten-solitary-chants:author
     status: OPEN
+    constraint: OPEN
     reversible: true
 
   - id: decision:ten-solitary-chants:form
@@ -127,6 +143,7 @@ decisions:
     based_on:
       - claim:ten-solitary-chants:form
     status: OPEN
+    constraint: OPEN
     reversible: true
 
   - id: decision:ten-solitary-chants:count
@@ -134,6 +151,7 @@ decisions:
     based_on:
       - claim:ten-solitary-chants:count
     status: OPEN
+    constraint: OPEN
     reversible: true
 
   - id: decision:ten-solitary-chants:subjects
@@ -141,6 +159,7 @@ decisions:
     based_on:
       - claim:ten-solitary-chants:subjects
     status: OPEN
+    constraint: OPEN
     reversible: true
 
   - id: decision:ten-solitary-chants:placement
@@ -149,9 +168,10 @@ decisions:
       - claim:ten-solitary-chants:exists
       - claim:ten-solitary-chants:chapter-85
     status: CURRENT
+    constraint: MAY
     reversible: true
     implementation_refs:
-      - prose:active:ch85
+      - impl:active:ch85:ten-solitary-chants
 
   # Canary 5: 情榜
   - id: decision:qingbang:final-structure
@@ -160,6 +180,7 @@ decisions:
       - claim:qingbang:final-chapter
       - claim:qingbang:five-layers
     status: LOCKED
+    constraint: MUST
     reversible: false
 
   - id: decision:qingbang:baoyu-rating
@@ -167,6 +188,7 @@ decisions:
     based_on:
       - claim:qingbang:baoyu-rating
     status: LOCKED
+    constraint: MUST
     reversible: false
 
   - id: decision:qingbang:daiyu-rating
@@ -174,6 +196,7 @@ decisions:
     based_on:
       - claim:qingbang:daiyu-rating
     status: LOCKED
+    constraint: MUST
     reversible: false
 
   - id: decision:qingbang:formal-title
@@ -182,7 +205,10 @@ decisions:
       - claim:qingbang:source-phrase-jinghuan-qingbang
       - claim:qingbang:formal-total-title
     status: OPEN
+    constraint: OPEN
     reversible: true
+    implementation_refs:
+      - impl:active:ch100:qingbang
 
   - id: decision:qingbang:counts
     statement: 每层十二、总数六十均保持开放。
@@ -190,14 +216,20 @@ decisions:
       - claim:qingbang:twelve-each-layer
       - claim:qingbang:sixty-total
     status: OPEN
+    constraint: OPEN
     reversible: true
+    implementation_refs:
+      - impl:active:ch100:qingbang
 
   - id: decision:qingbang:lower-rosters
     statement: 三副、四副完整名单保持开放，不从早期漫拟名单自动补全。
     based_on:
       - claim:qingbang:complete-lower-rosters
     status: OPEN
+    constraint: OPEN
     reversible: true
+    implementation_refs:
+      - impl:active:ch100:qingbang
 
   - id: decision:qingbang:current-format
     statement: 当前正文采用“一轴素榜 + 最小硬锚”的实现方式；该形式本身不是证据事实。
@@ -206,6 +238,7 @@ decisions:
       - claim:qingbang:five-layers
       - claim:qingbang:formal-total-title
     status: CURRENT
+    constraint: MAY
     reversible: true
     implementation_refs:
-      - prose:active:ch100
+      - impl:active:ch100:qingbang

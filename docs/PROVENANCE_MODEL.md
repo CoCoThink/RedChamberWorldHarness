@@ -1,6 +1,6 @@
 # Provenance model v0.2-alpha
 
-RCWH v0.2 deliberately narrows the harness core to one invariant:
+RCWH v0.2 narrows the harness core to one invariant:
 
 > Every constraint that claims evidential authority must be traceable to source text, and every inference between source and prose must remain explicit.
 
@@ -13,18 +13,26 @@ Claim
   ↓ resolved as
 Decision
   ↓ implemented as
-World / Scene / Prose
+Implementation
 ```
 
-### Source
+## Source: witness is not container
 
-A source is the original material being relied on: extant novel text, early commentary, early transcript, historical primary material, or secondary research.
+A critical review correction is that an uploaded modern collation PDF is not itself the early witness.
 
-Project Markdown is **not** automatically a Source. R4 matrices and plans are analysis products used to reconstruct Claims and Decisions.
+Each Source therefore separates:
 
-### Claim
+- `witness`: 庚辰本 / 己卯本 / 戚序本 / other source identity;
+- `container`: the fixed file currently used to inspect that witness text;
+- `locator`: page/chapter/parsed-line location inside that container;
+- `text`: the actual excerpt;
+- `text_sha256`: excerpt fingerprint.
 
-A Claim is an atomic proposition about what a Source supports.
+A future facsimile or better edition can replace the container while preserving the Claim identity.
+
+## Claim: atomic evidential proposition
+
+A Claim is a single auditable proposition about what a Source supports.
 
 Bad:
 
@@ -38,42 +46,97 @@ Good:
 - Chapter 99 placement is not established;
 - exact novel wording is not established.
 
-### Decision
+Statuses:
 
-A Decision records current project treatment.
+- `SUPPORTED`
+- `CONTESTED`
+- `NOT_ESTABLISHED`
+- `REFUTED`
 
-Statuses are intentionally small:
+## Decision: project treatment, not evidence
 
-- `LOCKED`: a non-negotiable reconstruction constraint.
-- `CURRENT`: the present model, reversible.
-- `OPEN`: audit result is underdetermination, not unfinished work.
-- `REJECTED`: explicitly not adopted.
+Decision status and runtime constraint are deliberately separate.
 
-The runtime permission compiler maps them to:
+Status:
 
-- `LOCKED → MUST`
+- `LOCKED`
+- `CURRENT`
+- `OPEN`
+- `REJECTED`
+
+Constraint:
+
+- `MUST`
+- `MUST_NOT`
+- `MAY`
+- `OPEN`
+- `NONE`
+
+Valid combinations in v0.2-alpha:
+
+- `LOCKED → MUST | MUST_NOT`
 - `CURRENT → MAY`
 - `OPEN → OPEN`
-- `REJECTED → MUST_NOT`
+- `REJECTED → NONE`
 
-### Implementation
+This fixes a design bug in which every LOCKED decision was implicitly positive and every REJECTED decision was incorrectly treated as a hard prohibition.
 
-Events, scene contracts, object states, and prose are downstream implementation.
+A LOCKED decision must have **all** of its basis Claims source-backed and SUPPORTED. One supported Claim cannot hide another unestablished premise.
 
-Implementation is allowed to be generative. It must never write back into Evidence Truth.
+## Implementation: actual reconstruction state
+
+Implementation is now a real graph node rather than an unresolved string.
+
+The first records point into the stable ACTIVE prose for Chapters 85, 91, 98, 99, and 100.
+
+This allows both directions:
+
+```bash
+rcwh trace decision:zhen-sends-jade:same-jade
+rcwh trace impl:active:ch98:zhen-jade
+```
+
+The second command walks backward:
+
+```text
+Implementation
+→ Decisions
+→ Claims
+→ Sources
+```
 
 ## Non-negotiable rules
 
-1. A `LOCKED` Decision must trace to at least one `SUPPORTED` Claim with a real Source edge.
-2. A `CURRENT` Decision is never displayed as “evidence proven.”
-3. An `OPEN` Decision can never compile to `MUST`.
-4. Repeated project documents quoting the same comment do not create additional evidence.
-5. Source wording is not automatically novel wording.
-6. Event evidence is not automatically title evidence.
-7. Placement chosen by the reconstruction is not automatically source placement.
+1. A LOCKED Decision must trace entirely to SUPPORTED Claims with real Source edges.
+2. CURRENT is a reconstruction choice, even when part of its basis is strongly evidenced.
+3. OPEN is a legitimate terminal result and never compiles to MUST.
+4. Hard negative constraints use `LOCKED + MUST_NOT`; `REJECTED` merely means “not adopted.”
+5. Repeated project documents quoting the same witness/locator/text do not create new evidence.
+6. Source wording is not automatically novel wording.
+7. Event evidence is not automatically title evidence.
+8. Reconstruction placement is not automatically source placement.
+9. Downstream Implementation can never mutate Source, Claim, or Decision authority.
 
-## Source container note
+## Source types
 
-The current canary Sources point into the project’s copy of *红楼梦脂评汇校本*. That PDF is a modern collation container. RCWH records the early witness represented by the quoted comment while explicitly refusing to treat modern editorial matter as the witness itself.
+The model keeps source types simple:
 
-A future source registry may add facsimile-level or edition-level identities without changing the Source → Claim → Decision model.
+- `NOVEL_TEXT`
+- `EARLY_COMMENT`
+- `EARLY_TRANSCRIPT`
+- `HISTORICAL_PRIMARY`
+- `SECONDARY_RESEARCH`
+
+Project analysis documents are not Sources. They are migration aids for reconstructing Claim and Decision records.
+
+## Why there is no global “source score”
+
+Authority is relational.
+
+A Qing legal text may strongly support a legal-feasibility Claim but say nothing about Cao Xueqin's plot. A secondary paper may help interpret a manuscript comment but does not become an early witness. A Zhiyanzhai comment may strongly support a future event but not its exact placement.
+
+RCWH therefore asks:
+
+> What does this Source support **for this Claim**?
+
+rather than assigning a universal star rating to the Source.

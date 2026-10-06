@@ -44,6 +44,7 @@ def validate_repository(root: Path) -> list[str]:
         ("sources", "sources", "source.schema.json"),
         ("claims", "claims", "claim.schema.json"),
         ("decisions", "decisions", "decision.schema.json"),
+        ("implementations", "implementations", "implementation.schema.json"),
     ]
     for dirname, wrapper, schema_name in wrappers:
         schema = load_data(schema_dir / schema_name)
