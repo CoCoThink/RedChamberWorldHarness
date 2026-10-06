@@ -7,6 +7,7 @@ from .io import load_data
 from .history import HistoricalMechanismRegistry
 from .literals import LiteralRegistry
 from .open_interfaces import OpenInterfaceRegistry
+from .plocks import LiteraryProtectionRegistry
 from .regression import run_r4_evidence_regression
 from .schema import validate_instance
 
@@ -51,6 +52,7 @@ def validate_repository(root: Path) -> list[str]:
         ("mechanisms", "historical_mechanisms", "historical_mechanism.schema.json"),
         ("open_interfaces", "open_interfaces", "open_interface.schema.json"),
         ("regression", "regression_manifests", "regression_manifest.schema.json"),
+        ("plocks", "literary_locks", "plock.schema.json"),
     ]
     for dirname, wrapper, schema_name in wrappers:
         schema = load_data(schema_dir / schema_name)
@@ -70,11 +72,21 @@ def validate_repository(root: Path) -> list[str]:
         open_interfaces = OpenInterfaceRegistry.from_repo(root)
         errors.extend(open_interfaces.validate_integrity(graph, literals, mechanisms))
         regression = run_r4_evidence_regression(root)
+        plocks = LiteraryProtectionRegistry.from_repo(root)
+        errors.extend(
+            plocks.validate_integrity(
+                graph,
+                literals,
+                mechanisms,
+                open_interfaces,
+                regression["stable_active"],
+            )
+        )
         for gate in regression["gates"]:
             if gate["status"] == "FAIL":
                 for finding in gate["findings"]:
                     errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"provenance/literal/history/open/regression graph: {exc}")
+        errors.append(f"provenance/literal/history/open/regression/plock graph: {exc}")
 
     return errors

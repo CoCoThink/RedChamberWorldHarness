@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0-alpha.1
+
+- Began the Literary Harness on top of the frozen v0.2 R4 Evidence Core.
+- Added a downstream P-Lock registry with zero evidence authority.
+- Imported five high-risk literary protection locks for Chapters 86, 89, 92, 97, and 100.
+- Added current P1 anchors for the Chapter 86 cold-medicine ending, Chapter 89 water-bucket ending, Chapter 97 dialogue boundaries, and Chapter 100 “石在，字在。” ending.
+- Added anti-reverse-promotion validation: Decisions may never use P-Locks as evidence.
+- Kept the complete v0.2 R4 Evidence Core regression green and unchanged.
+- Added `rcwh plock <id>`.
+
+
 ## 0.2.0-beta.6
 
 - Added executable final R4 Evidence Core regression and release manifest.

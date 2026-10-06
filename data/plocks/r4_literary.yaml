@@ -1,0 +1,210 @@
+literary_locks:
+  - id: plock:ch86:cold-medicine
+    chapter: 86
+    title: 黛亡冷药链与来迟日常性
+    legacy_ref: null
+    state: P_LOCKED
+    authority: LITERARY_PROTECTION_ONLY
+    generation_effect: PROTECT_AGAINST_REGRESSION
+    active_prose_locator:
+      file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
+      file_sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
+      lines: "731-811"
+    implementation_refs:
+      - impl:active:ch86:daiyu-death
+      - impl:active:ch86:open-scope
+    upstream_context:
+      decision_refs: [decision:daiyu:death-direction]
+      open_interface_refs: [OL-004, OL-005]
+    exact_anchors:
+      - text: 药不是还没吃么？再温一温。今儿早起她还说药苦。
+        mode: P1_DIALOGUE
+      - text: 那盏药早已冷透，再没有人去温。
+        mode: P1_TERMINAL
+    required_features:
+      - id: medicine-stove-chain
+        mode: PRESERVE_OBJECT_CHAIN
+        description: 药碗、药汁、小炉、温药与最后冷透必须形成同一条物质链，而不是只留一句象征性结尾。
+      - id: late-arrival-mundane-misread
+        mode: PRESERVE_FUNCTION
+        description: 宝玉来迟后仍先按日常病程理解眼前情形，以“再温一温”等普通动作承受死亡，而非预知或顿悟。
+      - id: unfinished-writing
+        mode: PRESERVE_CONTRAST
+        description: 黛玉最后文学动作保持改旧稿、删字、未成残稿的状态，不生成完整绝命诗。
+      - id: body-before-symbol
+        mode: PRESERVE_SEQUENCE
+        description: 病体、照料、药食、跑腿和死后料理先运行，诗性意味从日常物质中生出。
+    forbidden_drift:
+      - 不得改写成黛玉完成一首解释自身命运的绝命诗。
+      - 不得让宝玉在进门前神秘感知死亡或以传奇式同步完成诀别。
+      - 不得把冷药链压缩成一句作者解释，失去药、火、手和时间的实际经过。
+    replacement_rule: COMPETITION_PLUS_SIX_FIELD_PLUS_PLOCK_PLUS_BLIND_READ
+
+  - id: plock:ch89:small-life-after-confiscation
+    chapter: 89
+    title: 抄没大事沉入借住小生活
+    legacy_ref: null
+    state: P_LOCKED
+    authority: LITERARY_PROTECTION_ONLY
+    generation_effect: PROTECT_AGAINST_REGRESSION
+    active_prose_locator:
+      file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
+      file_sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
+      lines: "1102-1270"
+    implementation_refs:
+      - impl:active:ch89:historical-confiscation
+      - impl:active:ch89:historical-borrowed-residence
+    upstream_context:
+      open_interface_refs: [OL-009]
+      mechanism_refs: [H02, H04]
+    exact_anchors:
+      - text: 谁家的水桶还在井边？
+        mode: P1_TERMINAL
+    required_features:
+      - id: big-event-small-life
+        mode: PRESERVE_CONTRAST
+        description: 抄没的制度性大事最终必须沉入粥、衣包、钥匙、井、水桶、药和同院生活等小事。
+      - id: shared-infrastructure
+        mode: PRESERVE_FUNCTION
+        description: 败后生活通过共井、共院、灶火、误拿衣物和彼此跑腿显示社会降格，而不是旁白宣布“家败了”。
+      - id: no-procedure-takeover
+        mode: DENSITY_CAP
+        description: 抄没程序只写到足以改变人物生活，不能让文书制度说明压过迁居后的世情。
+    forbidden_drift:
+      - 不得把回末收束改成官府程序总结。
+      - 不得把抄没写成抽象的一夜归零，删掉借住后仍要继续过日子的摩擦。
+      - 不得让制度考据压过人物、物件与邻里关系。
+    replacement_rule: COMPETITION_PLUS_SIX_FIELD_PLUS_PLOCK_PLUS_BLIND_READ
+
+  - id: plock:ch92:procedure-density
+    chapter: 92
+    title: 程序密度上限与小红茜雪双功能
+    legacy_ref: G-P92-02
+    state: P_LOCKED
+    authority: LITERARY_PROTECTION_ONLY
+    generation_effect: PROTECT_AGAINST_REGRESSION
+    active_prose_locator:
+      file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
+      file_sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
+      lines: "1545-1678"
+    implementation_refs:
+      - impl:active:ch92:hard-interfaces
+      - impl:active:ch92:historical-detention-access
+    upstream_context:
+      decision_refs:
+        - decision:prison:baoyu-interface
+        - decision:xiaohong:great-help
+        - decision:qianxue:prison-return
+      open_interface_refs: [OL-012, OL-013]
+      mechanism_refs: [H01]
+    required_features:
+      - id: procedure-cap
+        mode: DENSITY_CAP
+        description: 程序知识只写到足以让人物受制；新增制度知识必须等量替换，不能净增加成司法说明书。
+      - id: xiaohong-capability
+        mode: PRESERVE_FUNCTION
+        description: 小红的“大得力”通过问准、找人、对交接链表现，不靠旁白赞她聪明能干。
+      - id: qianxue-socks
+        mode: PRESERVE_OBJECT_CHAIN
+        description: 茜雪旧情通过厚袜、粗针、冷暖与补缀落地，并主动截断旧怨账本。
+      - id: baoyu-material-learning
+        mode: PRESERVE_FUNCTION
+        description: 宝玉的关键变化是意识到日常物质不会凭空抵达，而不是突然理解司法制度或发表成熟哲理。
+      - id: prison-ordinary-time
+        mode: PRESERVE_SEQUENCE
+        description: 点名、等候、饭、门响、无关问讯等普通时间感必须保留，使羁押不是传奇救援场。
+    forbidden_drift:
+      - 不得新增大段制度解释来证明“考据正确”。
+      - 不得把小红写成全知侦探或靠作者评语宣布“大得力”。
+      - 不得让茜雪长篇清算旧怨或获得制度性自由探监权。
+      - 不得用神迹、权贵或英雄式营救解决宝玉羁押。
+    replacement_rule: COMPETITION_PLUS_SIX_FIELD_PLUS_PLOCK_PLUS_BLIND_READ
+
+  - id: plock:ch97:miaoyu-object-progression
+    chapter: 97
+    title: 妙玉物件递进与惜春不自证
+    legacy_ref: G-P97-03
+    state: P_LOCKED
+    authority: LITERARY_PROTECTION_ONLY
+    generation_effect: PROTECT_AGAINST_REGRESSION
+    active_prose_locator:
+      file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
+      file_sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
+      lines: "2189-2265"
+    implementation_refs:
+      - impl:active:ch97:miaoyu-xichun-open-scope
+    upstream_context:
+      open_interface_refs: [OL-018, OL-019]
+      decision_refs: [decision:w2:miaoyu-guazhou]
+    exact_anchors:
+      - text: 从前也有数。
+        mode: P1_DIALOGUE
+      - text: 只是不用你看着数罢了。
+        mode: P1_DIALOGUE
+      - text: 谁同你说我件件想得明白？
+        mode: P1_DIALOGUE
+    required_features:
+      - id: shared-water
+        mode: PRESERVE_FUNCTION
+        description: 妙玉仍能辨水与气味，却必须进入共享水量、热水不足等共同资源约束。
+      - id: counted-oil
+        mode: PRESERVE_OBJECT_CHAIN
+        description: 灯油“有数”要把从前的精洁生活与今日共同账目连接起来。
+      - id: basin-dedicated-to-shared
+        mode: PRESERVE_SEQUENCE
+        description: 白瓷盆从专洗茶具、拒借，到因粗钵破裂而暂借盛灰、洗净归还、次日仍继续使用，形成物件递进。
+      - id: xichun-not-total-clarity
+        mode: PRESERVE_CONTRAST
+        description: 惜春出家后仍保留忘记丢梳子、纸背再用、择菜搬物等不整齐处，不把她写成件件想明白的清冷圣人。
+    forbidden_drift:
+      - 不得用“终于明白”“入尘”“看破”等哲学独白总结妙玉变化。
+      - 不得把妙玉突然写成毫无洁癖、毫无边界的随和人物。
+      - 不得从W2瓜州线生成本回渡口、被掳或死亡传奇。
+      - 不得把惜春写成自我解释完整、精神无剩余的人物。
+    replacement_rule: COMPETITION_PLUS_SIX_FIELD_PLUS_PLOCK_PLUS_BLIND_READ
+
+  - id: plock:ch100:record-keeper-ending
+    chapter: 100
+    title: 空空道人记录者锁与石归终句
+    legacy_ref: G-P100-04
+    state: P_LOCKED
+    authority: LITERARY_PROTECTION_ONLY
+    generation_effect: PROTECT_AGAINST_REGRESSION
+    active_prose_locator:
+      file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
+      file_sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
+      lines: "2640-2684"
+    implementation_refs:
+      - impl:active:ch100:qingbang
+    upstream_context:
+      decision_refs:
+        - decision:qingbang:final-structure
+        - decision:qingbang:baoyu-rating
+        - decision:qingbang:daiyu-rating
+      open_interface_refs: [OL-024, OL-025, OL-026]
+      literal_refs:
+        - literal:qingbang:daiyu-rating
+        - literal:qingbang:baoyu-rating
+        - literal:qingbang:source-phrase
+    exact_anchors:
+      - text: 石在，字在。
+        mode: P1_TERMINAL
+    required_features:
+      - id: record-not-interpret
+        mode: PRESERVE_FUNCTION
+        description: 情榜之后空空道人只能作为记录者、核字者、留空者，不成为第二个主题解释者。
+      - id: material-transcription
+        mode: PRESERVE_OBJECT_CHAIN
+        description: 粗纸、墨将尽添水、回石核名、漫漶留空、风吹纸、苔遮字等记录摩擦至少保留足够密度。
+      - id: human-before-metaphysics
+        mode: PRESERVE_SEQUENCE
+        description: 人间层先收束，再入太虚与石归；外框不能反过来解释掉人物生活。
+      - id: terminal-restraint
+        mode: DENSITY_CAP
+        description: 终段不得再次总结情情、情不情、李纨贾兰或情榜意义；主题留在记录动作和石头存在上。
+    forbidden_drift:
+      - 不得让空空道人逐人解释情榜或替作者作第二遍主题总结。
+      - 不得在“石在，字在。”之后追加解释性结语、偈语或主题翻译。
+      - 不得把情榜扩回五册六十人的数据库式展示。
+      - 不得用家族复兴或大团圆抵消石归外框的余味。
+    replacement_rule: COMPETITION_PLUS_SIX_FIELD_PLUS_PLOCK_PLUS_BLIND_READ

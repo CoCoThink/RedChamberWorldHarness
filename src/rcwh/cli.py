@@ -10,6 +10,7 @@ from .history import HistoricalMechanismRegistry, format_mechanism
 from .io import load_data
 from .literals import LiteralRegistry, format_literal
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
+from .plocks import LiteraryProtectionRegistry, format_plock
 from .regression import format_regression, run_r4_evidence_regression
 from .runtime import WorldState
 from .trace import format_trace
@@ -28,7 +29,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("PASS: repository schemas and full R4 Evidence Core regression valid")
+    print("PASS: R4 Evidence Core frozen; literary P-Lock layer valid")
     return 0
 
 
@@ -130,6 +131,22 @@ def cmd_regression(args: argparse.Namespace) -> int:
     return 0 if payload["overall"] == "PASS" else 1
 
 
+def cmd_plock(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    registry = LiteraryProtectionRegistry.from_repo(root)
+    try:
+        lock = registry.describe(args.lock_id)
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+
+    if args.json:
+        print(json.dumps(lock, ensure_ascii=False, indent=2))
+    else:
+        print(format_plock(lock))
+    return 0
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="rcwh")
     parser.add_argument("--root", default=None)
@@ -166,6 +183,11 @@ def main() -> None:
     p_regression = sub.add_parser("regression")
     p_regression.add_argument("--json", action="store_true")
     p_regression.set_defaults(func=cmd_regression)
+
+    p_plock = sub.add_parser("plock")
+    p_plock.add_argument("lock_id")
+    p_plock.add_argument("--json", action="store_true")
+    p_plock.set_defaults(func=cmd_plock)
 
     args = parser.parse_args()
     raise SystemExit(args.func(args))
