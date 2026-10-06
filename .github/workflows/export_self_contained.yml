@@ -1,0 +1,76 @@
+name: export-self-contained-snapshot
+
+on:
+  push:
+    branches:
+      - export/self-contained-20261006
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - name: Build deterministic repository snapshot chunks
+        shell: bash
+        run: |
+          python - <<'PY'
+          import base64, hashlib, json, os, pathlib, subprocess, zipfile
+          root = pathlib.Path(".")
+          out = root / ".snapshot_export"
+          out.mkdir(exist_ok=True)
+          for p in out.glob("*"):
+              if p.is_file():
+                  p.unlink()
+
+          tracked = subprocess.check_output(["git", "ls-files", "-z"]).split(b"\0")
+          paths = [pathlib.Path(x.decode("utf-8")) for x in tracked if x]
+          paths = [p for p in paths if not str(p).startswith(".snapshot_export/")]
+
+          zip_path = out / "RedChamberWorldHarness_PR9_02eda38_snapshot.zip"
+          with zipfile.ZipFile(zip_path, "w", compression=zipfile.ZIP_DEFLATED, compresslevel=9) as z:
+              for p in sorted(paths, key=lambda x: str(x)):
+                  z.write(p, arcname=str(p))
+
+          data = zip_path.read_bytes()
+          digest = hashlib.sha256(data).hexdigest()
+          b64 = base64.b64encode(data).decode("ascii")
+          chunk_size = 7000
+          parts = []
+          for i in range(0, len(b64), chunk_size):
+              name = f"part_{i//chunk_size:04d}.txt"
+              (out / name).write_text(b64[i:i+chunk_size], encoding="ascii")
+              parts.append(name)
+
+          manifest = {
+              "snapshot_zip": zip_path.name,
+              "source_commit": os.environ.get("GITHUB_SHA"),
+              "sha256": digest,
+              "zip_bytes": len(data),
+              "base64_chars": len(b64),
+              "chunk_size": chunk_size,
+              "part_count": len(parts),
+              "parts": parts,
+              "tracked_file_count": len(paths),
+          }
+          (out / "manifest.json").write_text(
+              json.dumps(manifest, ensure_ascii=False, indent=2),
+              encoding="utf-8",
+          )
+          zip_path.unlink()
+          PY
+
+      - name: Commit export chunks
+        shell: bash
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add .snapshot_export
+          git commit -m "chore: export self-contained repository snapshot chunks"
+          git push
