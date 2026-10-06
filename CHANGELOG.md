@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0-alpha.2
+
+- Added the first Candidate Literary Evaluator.
+- Added non-numeric candidate states: READY_FOR_BLIND_READ, REPLACEMENT_CASE, REJECT_BEFORE_BLIND_READ, and INFRASTRUCTURE_BLOCKED.
+- Added protected P1 anchor checks, including terminal-position checks.
+- Added narrow explicit-drift blockers and diagnostic feature-signal groups for Chapters 86, 89, 92, 97, and 100.
+- Added observation-only term counts so procedural or interpretive vocabulary can be surfaced without fake scoring.
+- Every evaluation explicitly keeps automatic_literary_pass=false and promotion_eligible=false.
+- Added multi-candidate `rcwh literary-evaluate` CLI for A/B/C pressure-test workflows.
+
+
 ## 0.3.0-alpha.1
 
 - Began the Literary Harness on top of the frozen v0.2 R4 Evidence Core.

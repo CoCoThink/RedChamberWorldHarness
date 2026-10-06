@@ -6,6 +6,7 @@ from .graph import ProvenanceGraph
 from .io import load_data
 from .history import HistoricalMechanismRegistry
 from .literals import LiteralRegistry
+from .literary_eval import LiteraryEvaluationProfileRegistry
 from .open_interfaces import OpenInterfaceRegistry
 from .plocks import LiteraryProtectionRegistry
 from .regression import run_r4_evidence_regression
@@ -53,6 +54,7 @@ def validate_repository(root: Path) -> list[str]:
         ("open_interfaces", "open_interfaces", "open_interface.schema.json"),
         ("regression", "regression_manifests", "regression_manifest.schema.json"),
         ("plocks", "literary_locks", "plock.schema.json"),
+        ("literary_eval", "literary_evaluation_profiles", "literary_evaluation_profile.schema.json"),
     ]
     for dirname, wrapper, schema_name in wrappers:
         schema = load_data(schema_dir / schema_name)
@@ -82,6 +84,8 @@ def validate_repository(root: Path) -> list[str]:
                 regression["stable_active"],
             )
         )
+        literary_profiles = LiteraryEvaluationProfileRegistry.from_repo(root)
+        errors.extend(literary_profiles.validate_integrity(plocks))
         for gate in regression["gates"]:
             if gate["status"] == "FAIL":
                 for finding in gate["findings"]:

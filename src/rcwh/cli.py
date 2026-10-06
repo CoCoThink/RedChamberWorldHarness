@@ -9,6 +9,7 @@ from .graph import ProvenanceGraph
 from .history import HistoricalMechanismRegistry, format_mechanism
 from .io import load_data
 from .literals import LiteralRegistry, format_literal
+from .literary_eval import evaluate_literary_candidate, format_literary_evaluation
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .plocks import LiteraryProtectionRegistry, format_plock
 from .regression import format_regression, run_r4_evidence_regression
@@ -147,6 +148,41 @@ def cmd_plock(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_literary_evaluate(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    payloads = []
+    worst = 0
+    order = {
+        "READY_FOR_BLIND_READ": 0,
+        "REPLACEMENT_CASE": 1,
+        "REJECT_BEFORE_BLIND_READ": 2,
+        "INFRASTRUCTURE_BLOCKED": 3,
+    }
+    for text_path in args.text:
+        path = Path(text_path)
+        payload = evaluate_literary_candidate(
+            root,
+            args.plock_id,
+            path.read_text(encoding="utf-8"),
+            candidate_name=path.name,
+        )
+        payloads.append(payload)
+        worst = max(worst, order[payload["machine_status"]])
+
+    if args.json:
+        print(json.dumps(payloads, ensure_ascii=False, indent=2))
+    else:
+        print("\n\n".join(format_literary_evaluation(x) for x in payloads))
+
+    # A ready candidate still requires human review, but exits 0 so it may proceed.
+    # Replacement cases exit 2; explicit blockers / infrastructure failures exit 1.
+    if worst >= 2:
+        return 1
+    if worst == 1:
+        return 2
+    return 0
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="rcwh")
     parser.add_argument("--root", default=None)
@@ -188,6 +224,12 @@ def main() -> None:
     p_plock.add_argument("lock_id")
     p_plock.add_argument("--json", action="store_true")
     p_plock.set_defaults(func=cmd_plock)
+
+    p_lit_eval = sub.add_parser("literary-evaluate")
+    p_lit_eval.add_argument("plock_id")
+    p_lit_eval.add_argument("text", nargs="+")
+    p_lit_eval.add_argument("--json", action="store_true")
+    p_lit_eval.set_defaults(func=cmd_literary_evaluate)
 
     args = parser.parse_args()
     raise SystemExit(args.func(args))
