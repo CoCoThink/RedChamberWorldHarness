@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from .competition import CompetitionRegistry, format_competition
 from .evaluate import evaluate_scene_text, overall_status
 from .graph import ProvenanceGraph
 from .history import HistoricalMechanismRegistry, format_mechanism
@@ -30,7 +31,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("PASS: R4 Evidence Core frozen; literary P-Lock layer valid")
+    print("PASS: R4 Evidence Core frozen; Literary Harness and competition ledger valid")
     return 0
 
 
@@ -183,6 +184,20 @@ def cmd_literary_evaluate(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_competition(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    registry = CompetitionRegistry.from_repo(root)
+    if args.competition_id not in registry.records:
+        print(f"Unknown competition: {args.competition_id}")
+        return 1
+    payload = registry.evaluate_record(root, registry.records[args.competition_id])
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_competition(payload))
+    return 1 if payload["consistency_errors"] else 0
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="rcwh")
     parser.add_argument("--root", default=None)
@@ -230,6 +245,11 @@ def main() -> None:
     p_lit_eval.add_argument("text", nargs="+")
     p_lit_eval.add_argument("--json", action="store_true")
     p_lit_eval.set_defaults(func=cmd_literary_evaluate)
+
+    p_comp = sub.add_parser("competition")
+    p_comp.add_argument("competition_id")
+    p_comp.add_argument("--json", action="store_true")
+    p_comp.set_defaults(func=cmd_competition)
 
     args = parser.parse_args()
     raise SystemExit(args.func(args))

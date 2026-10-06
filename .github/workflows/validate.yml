@@ -30,4 +30,5 @@ jobs:
           code=$?
           set -e
           test "$code" -eq 1
+      - run: rcwh competition comp:43-0:ch86:pressure-test
       - run: pytest -q

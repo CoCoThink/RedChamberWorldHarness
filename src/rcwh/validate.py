@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from .competition import CompetitionRegistry
 from .graph import ProvenanceGraph
 from .io import load_data
 from .history import HistoricalMechanismRegistry
@@ -55,6 +56,7 @@ def validate_repository(root: Path) -> list[str]:
         ("regression", "regression_manifests", "regression_manifest.schema.json"),
         ("plocks", "literary_locks", "plock.schema.json"),
         ("literary_eval", "literary_evaluation_profiles", "literary_evaluation_profile.schema.json"),
+        ("competitions", "competition_records", "competition.schema.json"),
     ]
     for dirname, wrapper, schema_name in wrappers:
         schema = load_data(schema_dir / schema_name)
@@ -86,11 +88,19 @@ def validate_repository(root: Path) -> list[str]:
         )
         literary_profiles = LiteraryEvaluationProfileRegistry.from_repo(root)
         errors.extend(literary_profiles.validate_integrity(plocks))
+        competitions = CompetitionRegistry.from_repo(root)
+        errors.extend(
+            competitions.validate_integrity(
+                root,
+                plocks,
+                regression["stable_active"],
+            )
+        )
         for gate in regression["gates"]:
             if gate["status"] == "FAIL":
                 for finding in gate["findings"]:
                     errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"provenance/literal/history/open/regression/plock graph: {exc}")
+        errors.append(f"provenance/literal/history/open/regression/plock/competition graph: {exc}")
 
     return errors

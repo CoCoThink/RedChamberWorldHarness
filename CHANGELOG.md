@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.3.0-alpha.3
+
+- Added the Competition / Review Ledger for 43-0 pressure tests.
+- Frozen the production order at Chapters 86 → 89 → 92 → 97 with only Chapter 86 initially active.
+- Added auditable candidate identity using repository path + Git blob SHA + source commit or stable-ACTIVE file/SHA.
+- Added exact candidate six-field gates: Provenance, Role, Modality, Target, Placement, Implementation.
+- Added explicit human P-Lock and blinded-read gates.
+- A machine-ready candidate is never automatically adjudication-eligible.
+- A winner can only become PROMOTION_CANDIDATE; competition records can never overwrite stable ACTIVE.
+- Added a non-production Chapter 86 fixture demonstrating READY / REPLACEMENT / REJECT paths.
+- Added `rcwh competition <id>`.
+
+
 ## 0.3.0-alpha.2
 
 - Added the first Candidate Literary Evaluator.
