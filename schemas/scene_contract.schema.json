@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SceneContract",
+  "type": "object",
+  "required": ["id", "chapter", "preconditions", "participants", "required_beats", "forbidden_beats", "exit_state"],
+  "properties": {
+    "id": {"type": "string"},
+    "chapter": {"type": "integer"},
+    "preconditions": {"type": "array", "items": {"type": "object"}},
+    "participants": {"type": "array", "items": {"type": "string"}},
+    "required_objects": {"type": "array", "items": {"type": "string"}},
+    "required_beats": {"type": "array", "items": {"type": "object"}},
+    "forbidden_beats": {"type": "array", "items": {"type": "object"}},
+    "p_locks": {"type": "array", "items": {"type": "string"}},
+    "historical_adapters": {"type": "array", "items": {"type": "string"}},
+    "exit_state": {"type": "array", "items": {"type": "object"}}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,52 @@
+id: ch86_last_night
+chapter: 86
+preconditions:
+  - equals: character.daiyu.resources.physical_strength
+    value: critical
+  - equals: object.medicine_bowl_86.state.status
+    value: contains_unfinished_medicine
+participants:
+  - daiyu
+  - baoyu
+  - zijuan
+required_objects:
+  - medicine_bowl_86
+required_beats:
+  - id: medicine_not_finished
+    any_text:
+      - 药
+      - 药碗
+  - id: baoyu_mundane_reaction
+    any_text:
+      - 再温一温
+      - 温药
+  - id: ordinary_domestic_labor_continues
+    any_text:
+      - 灯
+      - 热水
+      - 炉
+forbidden_beats:
+  - id: complete_death_poem
+    any_text:
+      - 绝命诗
+      - 绝笔诗
+  - id: philosophical_last_words
+    any_text:
+      - 我终于明白
+      - 人生不过
+      - 看破红尘
+  - id: supernatural_resolution
+    any_text:
+      - 神迹
+      - 显灵救活
+p_locks:
+  - cold_medicine_chain
+  - unfinished_textual_action
+historical_adapters:
+  - medical
+  - household_labor
+exit_state:
+  - equals: character.daiyu.life_state
+    value: dead
+  - equals: object.medicine_bowl_86.state.temperature
+    value: cold

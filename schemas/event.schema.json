@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorldEvent",
+  "type": "object",
+  "required": ["id", "chapter", "sequence", "preconditions", "effects", "implementation_status"],
+  "properties": {
+    "id": {"type": "string"},
+    "chapter": {"type": "integer"},
+    "sequence": {"type": "integer"},
+    "preconditions": {"type": "array", "items": {"type": "object"}},
+    "effects": {"type": "array", "items": {"type": "object"}},
+    "evidence_links": {"type": "array", "items": {"type": "string"}},
+    "implementation_status": {"enum": ["RESEARCH", "STAGING", "CANDIDATE", "ACTIVE", "ARCHIVED"]}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,28 @@
+id: baoyu
+name: 贾宝玉
+capabilities:
+  can_request_medicine_reheated: true
+  can_override_medical_reality: false
+knowledge:
+  knows:
+    - daiyu_has_been_ill
+  believes: []
+  does_not_know:
+    - exact_moment_of_daiyu_death_before_arrival
+resources:
+  physical_strength: ordinary
+  social_access: household_family_member
+
+desires:
+  - keep_daiyu_within_everyday_life
+
+taboos:
+  - mature_philosophical_eulogy_at_deathbed
+voice:
+  ritual_formality: low
+  emotional_indirection: medium
+  object_attention: high
+trajectory:
+  current: arrives_too_late
+  allowed_change: shock_through_mundane_action
+  forbidden_change: omniscient_interpreter

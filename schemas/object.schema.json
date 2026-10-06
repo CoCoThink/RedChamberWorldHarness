@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WorldObject",
+  "type": "object",
+  "required": ["id", "name", "state"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "evidence_status": {"type": "string"},
+    "state": {
+      "type": "object",
+      "required": ["location", "status"],
+      "properties": {
+        "holder": {"type": ["string", "null"]},
+        "location": {"type": ["string", "null"]},
+        "status": {"type": "string"},
+        "temperature": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "symbolic_explanation_allowed": {"type": "boolean"}
+  },
+  "additionalProperties": true
+}

@@ -1,0 +1,33 @@
+id: daiyu
+name: 林黛玉
+capabilities:
+  can_write_poetry: true
+  can_revise_text: true
+  can_manage_household: limited
+knowledge:
+  knows:
+    - her_illness_is_severe
+    - zijuan_is_attending
+  believes: []
+  does_not_know:
+    - exact_future_after_death
+resources:
+  physical_strength: critical
+  social_access: inner_household
+  writing_materials: limited
+
+desires:
+  - preserve_verbal_precision
+  - avoid_being_reduced_to_a_moral_example
+
+taboos:
+  - explicit_philosophical_self_summary
+voice:
+  wit: high
+  self_explanation: low
+  poetic_density: high
+  direct_sentimentality: low
+trajectory:
+  current: critically_ill_but_still_textually_discriminating
+  allowed_change: weakening_body_not_sudden_personality_change
+  forbidden_change: serene_didactic_sage

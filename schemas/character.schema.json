@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "CharacterState",
+  "type": "object",
+  "required": ["id", "name", "capabilities", "knowledge", "resources", "voice", "trajectory"],
+  "properties": {
+    "id": {"type": "string"},
+    "name": {"type": "string"},
+    "capabilities": {"type": "object"},
+    "knowledge": {
+      "type": "object",
+      "properties": {
+        "knows": {"type": "array", "items": {"type": "string"}},
+        "believes": {"type": "array", "items": {"type": "string"}},
+        "does_not_know": {"type": "array", "items": {"type": "string"}}
+      },
+      "additionalProperties": true
+    },
+    "resources": {"type": "object"},
+    "desires": {"type": "array", "items": {"type": "string"}},
+    "taboos": {"type": "array", "items": {"type": "string"}},
+    "voice": {"type": "object"},
+    "trajectory": {"type": "object"}
+  },
+  "additionalProperties": true
+}
