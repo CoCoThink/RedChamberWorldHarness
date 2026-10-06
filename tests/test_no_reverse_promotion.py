@@ -12,7 +12,7 @@ def test_open_never_compiles_to_must():
     for decision in graph.decisions.values():
         if decision["status"] == "OPEN":
             assert graph.permission(decision["id"]) == "OPEN"
-            assert graph.decision_fully_source_backed(decision["id"]) is False
+            assert graph.decision_lock_eligible(decision["id"]) is False
 
 
 def test_current_is_not_reported_as_fully_source_backed_when_basis_is_mixed():
