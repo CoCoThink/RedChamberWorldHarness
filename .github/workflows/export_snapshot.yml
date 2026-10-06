@@ -1,0 +1,21 @@
+name: export-full-migration-snapshot
+
+on:
+  push:
+    branches:
+      - export/full-migration-snapshot-20261006
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Remove git metadata
+        run: rm -rf .git
+      - name: Upload repository snapshot
+        uses: actions/upload-artifact@v4
+        with:
+          name: rcwh-pr9-tree-02eda38
+          path: .
+          include-hidden-files: true
+          if-no-files-found: error
