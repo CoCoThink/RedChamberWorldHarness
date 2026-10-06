@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0-alpha.6
+
+- Froze the independent Chapter 86 blind review before candidate mapping was revealed.
+- Blind results: BR-41 PASS, BR-73 PASS, BR-26 PASS (edge).
+- Revealed mapping after freeze: BR-41=A, BR-73=B, BR-26=C.
+- Adjudicated Chapter 86 as WINNER-B / REVISE-B because BR-73 was explicitly judged the best balance of illness-day texture and pacing.
+- Marked ch86-B as PROMOTION_CANDIDATE only; stable ACTIVE remains unchanged.
+- Advanced Chapter 89 to READY_FOR_CANDIDATES while Chapters 92 and 97 remain blocked.
+- Closed Issue #10 and stopped the no-longer-needed blind-review monitor.
+
+
 ## 0.3.0-alpha.5
 
 - Promoted the Chapter 86 Phase 1 trials into three full-chapter production candidates.

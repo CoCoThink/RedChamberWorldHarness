@@ -19,19 +19,20 @@ def test_production_43_0_order_is_frozen():
         key=lambda x: x["sequence"],
     )
     assert [x["chapter"] for x in records] == [86, 89, 92, 97]
-    assert records[0]["state"] == "IN_REVIEW"
+    assert records[0]["state"] == "ADJUDICATED"
     assert records[0]["workflow_progress"]["BASELINE_EXCERPT"] == "PASS"
     assert records[0]["workflow_progress"]["STRUCTURAL_REORDER"] == "PASS"
     assert records[0]["workflow_progress"]["SMALL_TRIAL"] == "PASS"
     assert records[0]["workflow_progress"]["SIX_FIELD_REGRESSION"] == "PASS"
     assert records[0]["workflow_progress"]["PLOCK_REGRESSION"] == "PASS"
-    assert records[0]["workflow_progress"]["BLIND_READ"] == "PENDING"
+    assert records[0]["workflow_progress"]["BLIND_READ"] == "PASS"
     assert [x["label"] for x in records[0]["candidates"]] == ["A", "B", "C"]
-    assert all(x["state"] == "BLOCKED_BY_PREDECESSOR" for x in records[1:])
+    assert records[1]["state"] == "READY_FOR_CANDIDATES"
+    assert all(x["state"] == "BLOCKED_BY_PREDECESSOR" for x in records[2:])
     assert all(x["pipeline"] == PIPELINE for x in records)
 
 
-def test_real_ch86_candidates_are_machine_ready_but_not_blind_read_eligible():
+def test_real_ch86_candidates_complete_blind_gate_and_b_is_winner():
     registry = CompetitionRegistry.from_repo(root())
     payload = registry.evaluate_record(
         root(), registry.records["comp:43-0:ch86:pressure-test"]
@@ -44,8 +45,13 @@ def test_real_ch86_candidates_are_machine_ready_but_not_blind_read_eligible():
     assert all(x["machine_matches_ledger"] for x in payload["candidate_results"])
     assert all(x["six_field_pass"] for x in payload["candidate_results"])
     assert all(x["human_plock_status"] == "PASS" for x in payload["candidate_results"])
-    assert all(x["blind_read_status"] == "PENDING" for x in payload["candidate_results"])
-    assert all(x["adjudication_eligible"] is False for x in payload["candidate_results"])
+    assert all(x["blind_read_status"] == "PASS" for x in payload["candidate_results"])
+    assert all(x["reviewer_blinded"] is True for x in payload["candidate_results"])
+    assert all(x["adjudication_eligible"] is True for x in payload["candidate_results"])
+    assert payload["adjudication"]["outcome"] == "WINNER"
+    assert payload["adjudication"]["winner_candidate_id"] == "ch86-B"
+    assert payload["adjudication"]["promotion_state"] == "PROMOTION_CANDIDATE"
+    assert payload["consistency_errors"] == []
     assert payload["stable_active_mutated"] is False
 
 
@@ -107,7 +113,7 @@ def test_competition_never_mutates_stable_active():
     )
     assert payload["stable_active_effect"] == "SEPARATE_PROMOTION_ONLY"
     assert payload["stable_active_mutated"] is False
-    assert payload["adjudication"]["promotion_state"] == "NOT_ELIGIBLE"
+    assert payload["adjudication"]["promotion_state"] == "PROMOTION_CANDIDATE"
 
 
 def test_fixture_git_blob_identity_is_checked():

@@ -4,7 +4,7 @@ competition_records:
     chapter: 86
     sequence: 1
     plock_ref: plock:ch86:cold-medicine
-    state: IN_REVIEW
+    state: ADJUDICATED
     baseline:
       file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
       sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
@@ -15,7 +15,7 @@ competition_records:
       SMALL_TRIAL: PASS
       SIX_FIELD_REGRESSION: PASS
       PLOCK_REGRESSION: PASS
-      BLIND_READ: PENDING
+      BLIND_READ: PASS
     candidates:
       - id: ch86-A
         label: A
@@ -38,9 +38,12 @@ competition_records:
           status: PASS
           notes: 稳定基线本身完整保留冷药链、来迟日常性、未成诗稿与身体先于象征。
         blind_read:
-          status: PENDING
-          reviewer_blinded: false
-          notes: 匿名包已生成，尚无独立盲读者完成审读。
+          status: PASS
+          reviewer_blinded: true
+          notes: >-
+            BR-41盲读PASS：黛玉到最后一刻仍以玩笑、惦记活在病日里；
+            药钱、送错点心、大夫推脱等琐事把紫鹃“再等一刻”的误判垫实，
+            冷药终句从晨起药吊子一路传下。
       - id: ch86-B
         label: B
         blind_token: BR-73
@@ -64,9 +67,12 @@ competition_records:
             轻压只作用于A4-A6密度；保留一处外界跑腿摩擦、紫鹃误判根据、
             问宝玉/问书、最后一口水、死后家务、宝玉再温一温与最终冷药终句。
         blind_read:
-          status: PENDING
-          reviewer_blinded: false
-          notes: 匿名包已生成，尚无独立盲读者完成审读。
+          status: PASS
+          reviewer_blinded: true
+          notes: >-
+            BR-73盲读PASS：保留“眼角却干干的”“明儿的事，明儿再问”等关键物证，
+            删去药钱与点心旁枝后夜间更紧，仍由具体差事推进；盲读者明确判断
+            其为三者中病日质感与节奏最平衡者。
       - id: ch86-C
         label: C
         blind_token: BR-26
@@ -90,23 +96,34 @@ competition_records:
             仍达到P-Lock最低保护线：硬锚、药炉链、未成诗稿和宝玉日常误读均在；
             但外界摩擦与死后家务明显变薄，是否过于洁净只能由盲读判断。
         blind_read:
-          status: PENDING
-          reviewer_blinded: false
-          notes: 匿名包已生成，尚无独立盲读者完成审读。
-    adjudication: {outcome: PENDING, winner_candidate_id: null, promotion_state: NOT_ELIGIBLE}
+          status: PASS
+          reviewer_blinded: true
+          notes: >-
+            BR-26盲读PASS（边缘）：五项仍成立，但夜间转折部分被压成转述，
+            “眼角却干干的”丢失，病日质感在关键处变薄；药链与宝玉来迟误会仍足以立住。
+    adjudication:
+      outcome: WINNER
+      winner_candidate_id: ch86-B
+      promotion_state: PROMOTION_CANDIDATE
+      notes: >-
+        三稿盲读均PASS；BR-73明确被判为病日质感与节奏最平衡。
+        揭盲后BR-73对应B轻压版，故裁定WINNER-B / REVISE-B。
+        仅成为promotion candidate，不改写稳定ACTIVE。
     stable_active_effect: SEPARATE_PROMOTION_ONLY
     notes: >-
       43-0第86真实生产压力测试已启动。Phase 1产物位于
       artifacts/43-0/ch86/；已完成基线摘录、结构重排和小段试写。
       A/B/C已升级为正式全回候选并完成六字段与P-Lock回归。
-      三稿均未进行独立盲读，故均不可裁定为winner；稳定ACTIVE未改。
+      独立盲读结果已冻结并揭盲：BR-41=A，BR-73=B，BR-26=C。
+      三稿均PASS，B被盲读明确判为病日质感与节奏最平衡，故WINNER-B / REVISE-B。
+      B仅进入PROMOTION_CANDIDATE；稳定ACTIVE仍未改。
 
   - id: comp:43-0:ch89:pressure-test
     mode: PRODUCTION_43_0
     chapter: 89
     sequence: 2
     plock_ref: plock:ch89:small-life-after-confiscation
-    state: BLOCKED_BY_PREDECESSOR
+    state: READY_FOR_CANDIDATES
     baseline:
       file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
       sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
