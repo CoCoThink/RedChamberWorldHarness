@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0-alpha.8
+
+- Started the real 43-0 Chapter 89 pressure test while retaining stable ACTIVE v1.4 as the common baseline.
+- Added an exact early-confiscation pressure excerpt and a whole-chapter functional map.
+- Identified the primary risk as repeated rule demonstration before relocation, not historical infeasibility.
+- Added B light-compression and C strong-compression lower-bound trials.
+- Kept the Chapter 89 P1 ending and the shared-well / small-stove / cart-cost / labor-cost domestic mechanisms outside the Phase 1 edit zone.
+- Advanced Chapter 89 through BASELINE_EXCERPT, STRUCTURAL_REORDER, and SMALL_TRIAL only.
+- Chapter 86 B remains a deferred promotion-regression PASS candidate; stable ACTIVE remains unchanged.
+
+
 ## 0.3.0-alpha.7
 
 - Embedded the adjudicated Chapter 86 B winner into a complete 81–100 promotion candidate.

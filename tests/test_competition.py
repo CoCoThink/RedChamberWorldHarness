@@ -27,7 +27,11 @@ def test_production_43_0_order_is_frozen():
     assert records[0]["workflow_progress"]["PLOCK_REGRESSION"] == "PASS"
     assert records[0]["workflow_progress"]["BLIND_READ"] == "PASS"
     assert [x["label"] for x in records[0]["candidates"]] == ["A", "B", "C"]
-    assert records[1]["state"] == "READY_FOR_CANDIDATES"
+    assert records[1]["state"] == "IN_REVIEW"
+    assert records[1]["workflow_progress"]["BASELINE_EXCERPT"] == "PASS"
+    assert records[1]["workflow_progress"]["STRUCTURAL_REORDER"] == "PASS"
+    assert records[1]["workflow_progress"]["SMALL_TRIAL"] == "PASS"
+    assert records[1]["workflow_progress"]["SIX_FIELD_REGRESSION"] == "PENDING"
     assert all(x["state"] == "BLOCKED_BY_PREDECESSOR" for x in records[2:])
     assert all(x["pipeline"] == PIPELINE for x in records)
 

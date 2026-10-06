@@ -123,21 +123,25 @@ competition_records:
     chapter: 89
     sequence: 2
     plock_ref: plock:ch89:small-life-after-confiscation
-    state: READY_FOR_CANDIDATES
+    state: IN_REVIEW
     baseline:
       file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
       sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
     pipeline: [BASELINE_EXCERPT, STRUCTURAL_REORDER, SMALL_TRIAL, SIX_FIELD_REGRESSION, PLOCK_REGRESSION, BLIND_READ]
     workflow_progress:
-      BASELINE_EXCERPT: PENDING
-      STRUCTURAL_REORDER: PENDING
-      SMALL_TRIAL: PENDING
+      BASELINE_EXCERPT: PASS
+      STRUCTURAL_REORDER: PASS
+      SMALL_TRIAL: PASS
       SIX_FIELD_REGRESSION: PENDING
       PLOCK_REGRESSION: PENDING
       BLIND_READ: PENDING
     candidates: []
     adjudication: {outcome: PENDING, winner_candidate_id: null, promotion_state: NOT_ELIGIBLE}
     stable_active_effect: SEPARATE_PROMOTION_ONLY
+    notes: >-
+      第89回真实Phase 1已启动。压力区集中于官差到门至午后准话；
+      B压规则复述而保留小生活承重，C测试程序过度顺滑的下限。
+      稳定ACTIVE仍为v1.4。
 
   - id: comp:43-0:ch92:pressure-test
     mode: PRODUCTION_43_0
