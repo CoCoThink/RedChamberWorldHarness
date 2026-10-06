@@ -59,7 +59,10 @@ open_interfaces:
     current_model:
       status: CURRENT_C
       summary: 当前第86回实现黛玉病亡。
-    implementation_refs: [impl:active:ch86:open-scope]
+    hard_anchor_decision_refs: [decision:daiyu:death-direction]
+    implementation_refs:
+      - impl:active:ch86:open-scope
+      - impl:active:ch86:daiyu-death
     forbidden_hardening:
       - 不得把当前第86回安置反向当成源证回次。
     reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE, DOWNSTREAM_VIOLATION]
@@ -193,6 +196,10 @@ open_interfaces:
     current_model:
       status: CURRENT_C_H
       summary: 当前稳定版本采用Phase2 B的克制程序模型。
+    hard_anchor_decision_refs:
+      - decision:prison:baoyu-interface
+      - decision:xiaohong:great-help
+      - decision:qianxue:prison-return
     current_decision_refs: [decision:prison:comfort-baoyu:placement]
     mechanism_refs: [H01]
     implementation_refs:
@@ -210,6 +217,7 @@ open_interfaces:
     current_model:
       status: CURRENT_C_H
       summary: 当前写成送物者托请后隔栅短话、可被催停的偶发接触。
+    hard_anchor_decision_refs: [decision:qianxue:prison-return]
     mechanism_refs: [H01]
     implementation_refs: [impl:active:ch92:historical-detention-access]
     forbidden_hardening:
