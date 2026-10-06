@@ -49,7 +49,7 @@ def test_document_registry_covers_v41_package_and_current_runtime_one_to_one():
 
 def test_content_hash_registry_deduplicates_by_sha_not_filename():
     reg = registry()
-    assert len(reg.content_hashes) == len(reg.documents) == 24
+    assert len(reg.content_hashes) == len(reg.documents) == 32
     for doc in reg.documents.values():
         item = reg.content_hash(doc["sha256"])
         assert item["deduplication_key"] == "SHA256"
@@ -64,20 +64,21 @@ def test_current_authority_m1_is_registry_complete_but_not_completion_gate_compl
     assert current["registry_coverage"] == "FULL"
     assert current["semantic_coverage_counts"] == {
         "FULL": 6,
-        "PARTIAL": 8,
+        "PARTIAL": 9,
         "MINIMAL": 0,
-        "NONE": 1,
+        "NONE": 0,
     }
     assert current["completion_gate_ready"] is False
 
 
-def test_only_current_markdown_only_island_is_chapter_plan_at_m1():
+def test_m2_eliminates_current_markdown_only_islands_without_claiming_full_semantic_completion():
     reg = registry()
     current = [reg.documents[x] for x in reg.current_summary()["current_runtime_document_refs"]]
     islands = [doc for doc in current if doc["machine_representation"]["markdown_only"]]
-    assert len(islands) == 1
-    assert islands[0]["current_runtime_path"].endswith("81—100_二十回全幅补完卡_v2.5_稳定ACTIVE.md")
-    assert islands[0]["machine_representation"]["semantic_coverage"] == "NONE"
+    assert islands == []
+    plan = reg.documents["doc:23861cce04ac"]
+    assert plan["machine_representation"]["semantic_coverage"] == "PARTIAL"
+    assert reg.current_summary()["current_markdown_islands"] == 0
 
 
 def test_all_v41_package_files_have_explicit_machine_landings():

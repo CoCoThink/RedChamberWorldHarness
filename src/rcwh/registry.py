@@ -20,6 +20,21 @@ class MigrationRegistry:
     @classmethod
     def from_repo(cls, root: Path) -> "MigrationRegistry":
         doc = load_data(root / "data" / "registry" / "m1.json") or {}
+        extension_path = root / "data" / "registry" / "m2.json"
+        if extension_path.exists():
+            ext = load_data(extension_path) or {}
+            doc.setdefault("documents", []).extend(ext.get("document_additions", []))
+            doc.setdefault("content_hashes", []).extend(ext.get("content_hash_additions", []))
+            by_id = {item["id"]: item for item in doc.get("documents", [])}
+            for doc_id, override in ext.get("document_overrides", {}).items():
+                if doc_id not in by_id:
+                    raise ValueError(f"M2 registry override references unknown document: {doc_id}")
+                for key, value in override.items():
+                    if key == "machine_representation":
+                        by_id[doc_id].setdefault(key, {}).update(value)
+                    else:
+                        by_id[doc_id][key] = value
+            doc.setdefault("current_authority", {}).update(ext.get("current_authority_override", {}))
         packages = _index(doc.get("packages", []), "package")
         documents = _index(doc.get("documents", []), "document")
         content_hashes = _index(doc.get("content_hashes", []), "content hash")

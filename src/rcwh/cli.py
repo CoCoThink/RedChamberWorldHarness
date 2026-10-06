@@ -21,6 +21,7 @@ from .registry import (
     format_registry_document,
     format_registry_package,
 )
+from .reconstruction import ReconstructionRegistry, format_reconstruction
 from .runtime import WorldState
 from .trace import format_trace
 from .validate import validate_repository
@@ -234,6 +235,43 @@ def cmd_registry(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_reconstruction(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    registry = ReconstructionRegistry.from_repo(root)
+    try:
+        kind = args.reconstruction_command
+        if kind == "summary":
+            payload = registry.summary()
+        elif kind == "chapter":
+            payload = registry.chapter(args.key)
+        elif kind == "r":
+            payload = registry.r(args.key)
+        elif kind == "p":
+            payload = registry.p(args.key)
+        elif kind == "timeline":
+            payload = registry.timeline_at(args.key)
+        elif kind == "state":
+            payload = registry.state_at(args.key)
+        elif kind == "jade":
+            payload = registry.data["jade_logistics"]
+        elif kind == "prison":
+            payload = registry.data["prison_case"]
+        elif kind == "legacy":
+            payload = registry.legacy(args.key)
+        elif kind == "cross":
+            payload = registry.cross(args.key)
+        else:
+            raise KeyError(f"Unknown reconstruction command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_reconstruction(kind, payload))
+    return 0
+
+
 def cmd_promotion(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     registry = PromotionRegistry.from_repo(root)
@@ -305,6 +343,26 @@ def main() -> None:
     p_promotion.add_argument("promotion_id")
     p_promotion.add_argument("--json", action="store_true")
     p_promotion.set_defaults(func=cmd_promotion)
+
+    p_recon = sub.add_parser("reconstruction")
+    recon_sub = p_recon.add_subparsers(dest="reconstruction_command", required=True)
+    p = recon_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_reconstruction)
+    for name in ("chapter", "timeline", "state"):
+        p = recon_sub.add_parser(name)
+        p.add_argument("key", type=int)
+        p.add_argument("--json", action="store_true")
+        p.set_defaults(func=cmd_reconstruction)
+    for name in ("r", "p", "legacy", "cross"):
+        p = recon_sub.add_parser(name)
+        p.add_argument("key")
+        p.add_argument("--json", action="store_true")
+        p.set_defaults(func=cmd_reconstruction)
+    for name in ("jade", "prison"):
+        p = recon_sub.add_parser(name)
+        p.add_argument("--json", action="store_true")
+        p.set_defaults(func=cmd_reconstruction)
 
     p_registry = sub.add_parser("registry")
     registry_sub = p_registry.add_subparsers(dest="registry_command", required=True)

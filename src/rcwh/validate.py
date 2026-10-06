@@ -12,6 +12,7 @@ from .open_interfaces import OpenInterfaceRegistry
 from .plocks import LiteraryProtectionRegistry
 from .promotion import PromotionRegistry
 from .registry import MigrationRegistry
+from .reconstruction import ReconstructionRegistry
 from .regression import run_r4_evidence_regression
 from .schema import validate_instance
 
@@ -79,6 +80,26 @@ def validate_repository(root: Path) -> list[str]:
             f"{migration_registry_path.relative_to(root)}: {e}" for e in errs
         )
 
+    migration_extension_path = root / "data" / "registry" / "m2.json"
+    if migration_extension_path.exists():
+        errs = validate_instance(
+            load_data(migration_extension_path),
+            load_data(schema_dir / "migration_registry_extension.schema.json"),
+        )
+        errors.extend(
+            f"{migration_extension_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    reconstruction_path = root / "data" / "reconstruction" / "m2.json"
+    if reconstruction_path.exists():
+        errs = validate_instance(
+            load_data(reconstruction_path),
+            load_data(schema_dir / "reconstruction.schema.json"),
+        )
+        errors.extend(
+            f"{reconstruction_path.relative_to(root)}: {e}" for e in errs
+        )
+
     try:
         registry = MigrationRegistry.from_repo(root)
         errors.extend(registry.validate_integrity())
@@ -90,6 +111,8 @@ def validate_repository(root: Path) -> list[str]:
         errors.extend(mechanisms.validate_integrity(graph))
         open_interfaces = OpenInterfaceRegistry.from_repo(root)
         errors.extend(open_interfaces.validate_integrity(graph, literals, mechanisms))
+        reconstruction = ReconstructionRegistry.from_repo(root)
+        errors.extend(reconstruction.validate_integrity(registry, open_interfaces))
         regression = run_r4_evidence_regression(root)
         plocks = LiteraryProtectionRegistry.from_repo(root)
         errors.extend(
@@ -123,6 +146,6 @@ def validate_repository(root: Path) -> list[str]:
                 for finding in gate["findings"]:
                     errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"registry/provenance/literal/history/open/regression/plock/competition graph: {exc}")
+        errors.append(f"registry/reconstruction/provenance/literal/history/open/regression/plock/competition graph: {exc}")
 
     return errors

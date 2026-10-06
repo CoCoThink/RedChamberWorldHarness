@@ -1,0 +1,119 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH M2 Reconstruction",
+  "type": "object",
+  "required": [
+    "milestone",
+    "status",
+    "epistemic_rule",
+    "sources",
+    "chapter_field_schema",
+    "chapters",
+    "r_nodes",
+    "p_edges",
+    "timeline",
+    "time_gates",
+    "current_states_84_96",
+    "central_state_chain",
+    "economic_stages",
+    "jade_logistics",
+    "prison_case",
+    "legacy_open_mapping",
+    "cross_chapter_locks",
+    "completion"
+  ],
+  "properties": {
+    "milestone": {
+      "const": "M2"
+    },
+    "status": {
+      "type": "string"
+    },
+    "epistemic_rule": {
+      "type": "string",
+      "minLength": 20
+    },
+    "sources": {
+      "type": "object",
+      "minProperties": 9
+    },
+    "chapters": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "r_nodes": {
+      "type": "array",
+      "minItems": 43,
+      "maxItems": 43
+    },
+    "p_edges": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11
+    },
+    "timeline": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "time_gates": {
+      "type": "array",
+      "minItems": 3,
+      "maxItems": 3
+    },
+    "current_states_84_96": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13
+    },
+    "central_state_chain": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13
+    },
+    "economic_stages": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "legacy_open_mapping": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10
+    },
+    "cross_chapter_locks": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16
+    },
+    "jade_logistics": {
+      "type": "object"
+    },
+    "prison_case": {
+      "type": "object"
+    },
+    "chapter_field_schema": {
+      "type": "object"
+    },
+    "state_transition_reference": {
+      "type": "object"
+    },
+    "completion": {
+      "type": "object",
+      "required": [
+        "current_markdown_islands",
+        "completion_gate_ready"
+      ],
+      "properties": {
+        "current_markdown_islands": {
+          "const": 0
+        },
+        "completion_gate_ready": {
+          "const": false
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}
