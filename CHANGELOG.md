@@ -1,5 +1,14 @@
 # Changelog
 
+## 0.3.0-alpha.7
+
+- Embedded the adjudicated Chapter 86 B winner into a complete 81–100 promotion candidate.
+- Added explicit promotion regression with competition eligibility, stable-baseline identity, 20-chapter structure, per-chapter non-target integrity, R4-F sentinels, frozen Evidence Core, P-Lock, and stable-pointer checks.
+- Verified the allowed diff set is exactly Chapter 86; Chapters 81–85 and 87–100 retain their stable-v1.4 chapter SHA256 values.
+- Promotion regression PASS does not mutate stable ACTIVE; a separate explicit release action is still required.
+- Added `rcwh promotion promotion:ch86:b:v1-5-candidate`.
+
+
 ## 0.3.0-alpha.6
 
 - Froze the independent Chapter 86 blind review before candidate mapping was revealed.

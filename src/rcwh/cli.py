@@ -14,6 +14,7 @@ from .literary_eval import evaluate_literary_candidate, format_literary_evaluati
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .plocks import LiteraryProtectionRegistry, format_plock
 from .regression import format_regression, run_r4_evidence_regression
+from .promotion import PromotionRegistry, format_promotion
 from .runtime import WorldState
 from .trace import format_trace
 from .validate import validate_repository
@@ -198,6 +199,20 @@ def cmd_competition(args: argparse.Namespace) -> int:
     return 1 if payload["consistency_errors"] else 0
 
 
+def cmd_promotion(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    registry = PromotionRegistry.from_repo(root)
+    if args.promotion_id not in registry.records:
+        print(f"Unknown promotion: {args.promotion_id}")
+        return 1
+    payload = registry.evaluate(root, args.promotion_id)
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_promotion(payload))
+    return 0 if payload["overall"] == "PASS" else 1
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="rcwh")
     parser.add_argument("--root", default=None)
@@ -250,6 +265,11 @@ def main() -> None:
     p_comp.add_argument("competition_id")
     p_comp.add_argument("--json", action="store_true")
     p_comp.set_defaults(func=cmd_competition)
+
+    p_promotion = sub.add_parser("promotion")
+    p_promotion.add_argument("promotion_id")
+    p_promotion.add_argument("--json", action="store_true")
+    p_promotion.set_defaults(func=cmd_promotion)
 
     args = parser.parse_args()
     raise SystemExit(args.func(args))

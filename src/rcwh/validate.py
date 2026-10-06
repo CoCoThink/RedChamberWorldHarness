@@ -10,6 +10,7 @@ from .literals import LiteralRegistry
 from .literary_eval import LiteraryEvaluationProfileRegistry
 from .open_interfaces import OpenInterfaceRegistry
 from .plocks import LiteraryProtectionRegistry
+from .promotion import PromotionRegistry
 from .regression import run_r4_evidence_regression
 from .schema import validate_instance
 
@@ -57,6 +58,7 @@ def validate_repository(root: Path) -> list[str]:
         ("plocks", "literary_locks", "plock.schema.json"),
         ("literary_eval", "literary_evaluation_profiles", "literary_evaluation_profile.schema.json"),
         ("competitions", "competition_records", "competition.schema.json"),
+        ("promotions", "promotions", "promotion.schema.json"),
     ]
     for dirname, wrapper, schema_name in wrappers:
         schema = load_data(schema_dir / schema_name)
@@ -96,6 +98,13 @@ def validate_repository(root: Path) -> list[str]:
                 regression["stable_active"],
             )
         )
+        promotions = PromotionRegistry.from_repo(root)
+        for promotion_id in promotions.records:
+            payload = promotions.evaluate(root, promotion_id)
+            if payload["overall"] != "PASS":
+                errors.extend(
+                    f"promotion {promotion_id}: {x}" for x in payload["findings"]
+                )
         for gate in regression["gates"]:
             if gate["status"] == "FAIL":
                 for finding in gate["findings"]:

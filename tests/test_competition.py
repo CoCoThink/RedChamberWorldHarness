@@ -130,3 +130,21 @@ def test_fixture_git_blob_identity_is_checked():
         root(), broken, plocks, stable, production=False
     )
     assert any("git blob identity mismatch" in x for x in errors)
+
+
+def test_ch86_b_promotion_regression_passes():
+    from rcwh.promotion import PromotionRegistry
+    registry = PromotionRegistry.from_repo(root())
+    payload = registry.evaluate(root(), "promotion:ch86:b:v1-5-candidate")
+    assert payload["overall"] == "PASS"
+    assert all(x == "PASS" for x in payload["gates"].values())
+    assert payload["stable_active_mutated"] is False
+    assert payload["release_action"] == "SEPARATE_EXPLICIT_PROMOTION_REQUIRED"
+
+
+def test_ch86_promotion_changes_only_chapter_86():
+    from rcwh.promotion import PromotionRegistry
+    registry = PromotionRegistry.from_repo(root())
+    record = registry.records["promotion:ch86:b:v1-5-candidate"]
+    assert record["allowed_changed_chapters"] == [86]
+    assert record["baseline"]["sha256"] == "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
