@@ -1,0 +1,76 @@
+sources:
+  - id: src:gengchen:ch21:cliff-release
+    type: EARLY_COMMENT
+    title: 庚辰本第二十一回脂批——悬崖撒手
+    file_ref: 红楼梦脂评汇校本 v3.1416_20251012_可复制.pdf
+    file_sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
+    locator:
+      chapter: 21
+      pdf_page: 306
+      parsed_lines: "8784-8795"
+    text: '故后文方有“悬崖撒手”一回。若他人得宝钗之妻、麝月之婢，岂能弃而为僧哉？'
+    witness_note: 庚辰本夹批上下文
+    notes: 汇校本为现代整理容器；Source指向其中所录早期批语，不把整理者意见当批语。
+
+  - id: src:jimao:ch18:zhen-baoyu-sends-jade
+    type: EARLY_COMMENT
+    title: 己卯本第十八回夹批——甄宝玉送玉
+    file_ref: 红楼梦脂评汇校本 v3.1416_20251012_可复制.pdf
+    file_sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
+    locator:
+      chapter: 18
+      pdf_page: 265
+      parsed_lines: "7572-7586"
+    text: '第三出《仙缘》；己夹《邯郸梦》中。伏甄宝玉送玉。'
+    witness_note: 己卯本夹批
+    notes: 同段并列贾家之败、元妃之死、黛玉死，批者称为“通部书之大过节、大关键”。
+
+  - id: src:gengchen:ch23:fengjie-snow-jade
+    type: EARLY_COMMENT
+    title: 庚辰本相关夹批——凤姐扫雪拾玉
+    file_ref: 红楼梦脂评汇校本 v3.1416_20251012_可复制.pdf
+    file_sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
+    locator:
+      pdf_page: 334
+      parsed_lines: "9616-9629"
+    text: '庚夹妙！这便是凤姐扫雪拾玉之处，一丝不乱。'
+    witness_note: 庚辰本夹批
+    notes: 原批语指向未来“之处”；v0.2不把它直接提升为正式回目。
+
+  - id: src:qixu:ch64:ten-solitary-chants
+    type: EARLY_COMMENT
+    title: 戚序本第六十四回夹批——十独吟
+    file_ref: 红楼梦脂评汇校本 v3.1416_20251012_可复制.pdf
+    file_sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
+    locator:
+      chapter: 64
+      pdf_page: 867
+      parsed_lines: "25249-25262"
+    text: '戚夹《五美吟》与后《十独吟》对照。'
+    witness_note: 戚序本夹批
+    notes: 只直接支持后文有《十独吟》且与《五美吟》形成对照；不自动锁作者、体裁、篇数或具体回次。
+
+  - id: src:gengchen:ch18:qingbang-layers
+    type: EARLY_COMMENT
+    title: 庚辰本眉批——末回情榜层级
+    file_ref: 红楼梦脂评汇校本 v3.1416_20251012_可复制.pdf
+    file_sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
+    locator:
+      chapter: 18
+      pdf_page: 253
+      parsed_lines: "7197-7218"
+    text: '至末回警幻情榜，方知正副、再副及三四副芳讳。'
+    witness_note: 庚辰本眉批，壬午季春，畸笏
+    notes: “警幻情榜”在Source中原样保留；是否为小说内正式总榜名另作Claim审计。
+
+  - id: src:comment:qingbang-ratings
+    type: EARLY_COMMENT
+    title: 脂批——情榜宝黛情评
+    file_ref: 红楼梦脂评汇校本 v3.1416_20251012_可复制.pdf
+    file_sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
+    locator:
+      pdf_page: 277
+      parsed_lines: "7916-7929"
+    text: '后观《情榜》评曰“宝玉情不情”，“黛玉情情”。'
+    witness_note: 汇校本所录脂批；具体批签以后续源页级校核为准
+    notes: v0.2只使用文本本身支持的情评Claim。

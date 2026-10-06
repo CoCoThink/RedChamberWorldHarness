@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProvenanceSource",
+  "type": "object",
+  "required": ["id", "type", "title", "file_ref", "file_sha256", "locator", "text"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "type": {
+      "enum": [
+        "NOVEL_TEXT",
+        "EARLY_COMMENT",
+        "EARLY_TRANSCRIPT",
+        "HISTORICAL_PRIMARY",
+        "SECONDARY_RESEARCH"
+      ]
+    },
+    "title": {"type": "string"},
+    "file_ref": {"type": "string"},
+    "file_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "locator": {"type": "object"},
+    "text": {"type": "string"},
+    "witness_note": {"type": ["string", "null"]},
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

@@ -11,51 +11,44 @@
 - basic evaluators
 - CI
 
-Acceptance target: Chapter 86 last-night scene.
+## v0.2-alpha — Provenance kernel
 
-## v0.2 — Corpus/evidence ingestion
+- Source → Claim → Decision → Implementation model
+- five provenance canaries
+- `rcwh trace`
+- no reverse promotion
+- OPEN as a first-class terminal state
 
-- import existing R4 evidence matrix
-- import OPEN-LOCK table
-- import 81–100 event timeline
-- provenance-backed source references
-- text/literal target checker
+Acceptance: every LOCKED constraint traces to source text; no CURRENT/OPEN decision is reported as evidence-proven.
 
-## v0.3 — Character and voice runtime
+## v0.2-beta — R4 evidence core
 
-- character knowledge graph
-- resource and capability state
-- voice fingerprints derived from first 80 chapters
-- speaker masking regression
+- future title/call/event evidence
+- future exact lines and work titles
+- W2 weak witnesses
+- H01–H06 historical boundaries
+- 28 OPEN decisions
+- T-axis
 
-## v0.4 — Historical mechanism adapters
+## v0.3 — World runtime
 
-- medical
-- household economy
-- mourning/marriage
-- legal/detention
-- pawnshop
-- transport/letters
-- monastic economy
+- event store
+- minimal character truth
+- long-line object ledger
+- locations and timeline
 
-## v0.5 — Literary evaluators
+## v0.4 — Scene harness
 
-- culture-not-museum test
-- exposition test
-- ambiguity preservation
-- structural variation
-- poetry competition lane
+Compile Decisions into `MUST / MAY / MUST_NOT / OPEN`, then run Chapter 86, 89, 92, 97.
 
-## v0.6 — Steps 33–42 automation
+## v0.5 — Literary harness
 
-- corpus ecology profiler
-- twelve-dimension gap cards
-- chapter contracts for 81–100
+Import v5.0 Steps 33–42 as literary corpus and evaluators rather than evidence.
 
-## v1.0 — Full steps 43–52 release harness
+## v1.0 — Full reconstruction harness
 
-- staged rewriting
+- 81–100 scene contracts
 - multi-candidate competition
-- blind read
-- regression
-- three-view release: pure-reading / creation-notes / evidence-boundary
+- blind reading
+- evidence regression
+- shared prose-core release views

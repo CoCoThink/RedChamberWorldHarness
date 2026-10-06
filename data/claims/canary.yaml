@@ -1,0 +1,215 @@
+claims:
+  # Canary 1: 悬崖撒手
+  - id: claim:cliff-release:future-interface
+    statement: 后文存在被批者称作“悬崖撒手”的一回/接口。
+    kind: CHAPTER_CALL
+    support:
+      - source: src:gengchen:ch21:cliff-release
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:cliff-release:baoyu-abandons-and-becomes-monk
+    statement: 宝玉后部会在已有宝钗为妻、麝月为婢的条件下弃之而为僧。
+    kind: EVENT_DIRECTION
+    support:
+      - source: src:gengchen:ch21:cliff-release
+        relation: SEMANTIC
+    status: SUPPORTED
+
+  - id: claim:cliff-release:formal-title
+    statement: “悬崖撒手”就是小说正式原回目。
+    kind: FORMAL_TITLE
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:cliff-release:chapter-99
+    statement: “悬崖撒手”必定发生在第99回。
+    kind: PLACEMENT
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:cliff-release:novel-exact
+    statement: 小说正文必须逐字出现“悬崖撒手”。
+    kind: NOVEL_EXACT
+    support: []
+    status: NOT_ESTABLISHED
+
+  # Canary 2: 甄宝玉送玉
+  - id: claim:zhen-sends-jade:event
+    statement: 后文有“甄宝玉送玉”这一未来事件。
+    kind: EVENT
+    support:
+      - source: src:jimao:ch18:zhen-baoyu-sends-jade
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:zhen-sends-jade:same-tongling-jade
+    statement: 甄宝玉所送之玉就是同一块通灵宝玉。
+    kind: OBJECT_IDENTITY
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:zhen-sends-jade:face-to-face
+    statement: 甄宝玉与贾宝玉必须现实面对面相见才能完成送玉。
+    kind: SCENE_FORM
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:zhen-sends-jade:chapter-98
+    statement: “甄宝玉送玉”必定发生在第98回。
+    kind: PLACEMENT
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:zhen-sends-jade:formal-title
+    statement: “甄宝玉送玉”是正式原回目文字。
+    kind: FORMAL_TITLE
+    support: []
+    status: NOT_ESTABLISHED
+
+  # Canary 3: 凤姐扫雪拾玉
+  - id: claim:fengjie-snow-jade:event
+    statement: 后文存在“凤姐扫雪拾玉”这一场景/事件。
+    kind: EVENT
+    support:
+      - source: src:gengchen:ch23:fengjie-snow-jade
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:fengjie-snow-jade:formal-title
+    statement: “凤姐扫雪拾玉”是正式原回目。
+    kind: FORMAL_TITLE
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:fengjie-snow-jade:tongling-jade
+    statement: 凤姐拾到的玉必定就是通灵宝玉。
+    kind: OBJECT_IDENTITY
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:fengjie-snow-jade:chapter-91
+    statement: 该事件必定发生在第91回。
+    kind: PLACEMENT
+    support: []
+    status: NOT_ESTABLISHED
+
+  # Canary 4: 十独吟
+  - id: claim:ten-solitary-chants:exists
+    statement: 后文存在题名为《十独吟》的作品/作品组。
+    kind: WORK_TITLE
+    support:
+      - source: src:qixu:ch64:ten-solitary-chants
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:ten-solitary-chants:after-ch64
+    statement: 《十独吟》位于第64回之后。
+    kind: PLACEMENT_RANGE
+    support:
+      - source: src:qixu:ch64:ten-solitary-chants
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:ten-solitary-chants:paired-with-five-beauties
+    statement: 《十独吟》与《五美吟》构成批者明确指出的对照关系。
+    kind: STRUCTURE
+    support:
+      - source: src:qixu:ch64:ten-solitary-chants
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:ten-solitary-chants:author
+    statement: 《十独吟》的作者身份可由现有批语唯一确定。
+    kind: AUTHOR
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:ten-solitary-chants:form
+    statement: 《十独吟》的具体诗体可由现有批语唯一确定。
+    kind: FORM
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:ten-solitary-chants:count
+    statement: 现有批语足以唯一锁定《十独吟》的完整篇数和完整文本结构。
+    kind: COUNT_AND_STRUCTURE
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:ten-solitary-chants:subjects
+    statement: 《十独吟》所咏对象可由现有批语唯一确定。
+    kind: SUBJECTS
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:ten-solitary-chants:chapter-85
+    statement: 《十独吟》必定出现在第85回。
+    kind: PLACEMENT
+    support: []
+    status: NOT_ESTABLISHED
+
+  # Canary 5: 情榜
+  - id: claim:qingbang:final-chapter
+    statement: 情榜系统在末回揭示。
+    kind: STRUCTURE
+    support:
+      - source: src:gengchen:ch18:qingbang-layers
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:qingbang:five-layers
+    statement: 情榜包含正、副、再副、三副、四副五个层级。
+    kind: STRUCTURE
+    support:
+      - source: src:gengchen:ch18:qingbang-layers
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:qingbang:source-phrase-jinghuan-qingbang
+    statement: 批语原文中出现“警幻情榜”四字。
+    kind: SOURCE_EXACT
+    support:
+      - source: src:gengchen:ch18:qingbang-layers
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:qingbang:baoyu-rating
+    statement: 情榜评宝玉为“情不情”。
+    kind: NOVEL_OR_LIST_RATING
+    support:
+      - source: src:comment:qingbang-ratings
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:qingbang:daiyu-rating
+    statement: 情榜评黛玉为“情情”。
+    kind: NOVEL_OR_LIST_RATING
+    support:
+      - source: src:comment:qingbang-ratings
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:qingbang:formal-total-title
+    statement: 小说内正式总榜名必定就是“警幻情榜”。
+    kind: FORMAL_TITLE
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:qingbang:twelve-each-layer
+    statement: 情榜每一层都固定十二人。
+    kind: COUNT
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:qingbang:sixty-total
+    statement: 情榜总人数必定为六十人。
+    kind: COUNT
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:qingbang:complete-lower-rosters
+    statement: 现有证据足以恢复三副、四副完整芳讳名单。
+    kind: ROSTER
+    support: []
+    status: NOT_ESTABLISHED
