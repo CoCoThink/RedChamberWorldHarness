@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.0-beta.6
+
+- Added executable final R4 Evidence Core regression and release manifest.
+- Added exact release-shape checks for sources, claims, decisions, implementations, T-axis, literals, H01-H06, and all 28 OPEN-LOCK interfaces.
+- Added stable-ACTIVE SHA enforcement across every ACTIVE provenance implementation.
+- Final preflight repaired two gaps: Chapter 86 HARD evidence now has a real Source, and Chapter 92 detention/Xiaohong/Qianxue hard interfaces are first-class LOCKED Decisions.
+- Added `rcwh regression`.
+- Final R4 Evidence Core regression: PASS.
+
+
 ## 0.2.0-beta.5
 
 - Imported the full R4 28-item OPEN-LOCK registry as OL-001..OL-028.
