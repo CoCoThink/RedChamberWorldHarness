@@ -62,11 +62,50 @@ class ProvenanceGraph:
             for claim_id in based_on
         )
 
+    def claim_source_tiers(self, claim_id: str) -> list[str]:
+        claim = self.claims[claim_id]
+        tiers: list[str] = []
+        for edge in claim.get("support", []):
+            source = self.sources.get(edge["source"])
+            if source is None:
+                continue
+            tier = source.get("tier")
+            if tier and tier not in tiers:
+                tiers.append(tier)
+        return tiers
+
+    def claim_is_w2_only(self, claim_id: str) -> bool:
+        if claim_id not in self.claims:
+            return False
+        claim = self.claims[claim_id]
+        support = claim.get("support", [])
+        if not support:
+            return False
+        tiers = self.claim_source_tiers(claim_id)
+        return bool(tiers) and set(tiers) == {"W2_TRANSCRIPT"}
+
+    def decision_lock_eligible(self, decision_id: str) -> bool:
+        if not self.decision_fully_source_backed(decision_id):
+            return False
+        decision = self.decisions[decision_id]
+        return not any(self.claim_is_w2_only(c) for c in decision.get("based_on", []))
+
     def validate_integrity(self) -> list[str]:
         errors: list[str] = []
 
         seen_fingerprints: dict[str, str] = {}
         for source_id, source in self.sources.items():
+            tier = source.get("tier")
+            source_type = source.get("type")
+            if tier == "W2_TRANSCRIPT" and source_type != "EARLY_TRANSCRIPT":
+                errors.append(
+                    f"{source_id}: W2_TRANSCRIPT source must use EARLY_TRANSCRIPT type"
+                )
+            if source_type == "EARLY_TRANSCRIPT" and tier != "W2_TRANSCRIPT":
+                errors.append(
+                    f"{source_id}: EARLY_TRANSCRIPT source must use W2_TRANSCRIPT tier"
+                )
+
             fingerprint = self._source_fingerprint(source)
             if fingerprint in seen_fingerprints:
                 errors.append(
@@ -84,6 +123,22 @@ class ProvenanceGraph:
                 source_id = edge["source"]
                 if source_id not in self.sources:
                     errors.append(f"{claim_id}: unknown source {source_id}")
+
+            if self.claim_is_w2_only(claim_id):
+                if claim.get("modality") != "TRANSCRIPT_WEAK":
+                    errors.append(
+                        f"{claim_id}: W2-only claim must use TRANSCRIPT_WEAK modality"
+                    )
+            if claim.get("modality") == "TRANSCRIPT_WEAK" and support:
+                non_w2 = [
+                    edge["source"] for edge in support
+                    if edge["source"] in self.sources
+                    and self.sources[edge["source"]].get("tier") != "W2_TRANSCRIPT"
+                ]
+                if non_w2:
+                    errors.append(
+                        f"{claim_id}: TRANSCRIPT_WEAK claim has non-W2 sources {non_w2}"
+                    )
 
         compatibility = {
             "LOCKED": {"MUST", "MUST_NOT"},
@@ -117,6 +172,11 @@ class ProvenanceGraph:
                 if unsupported:
                     errors.append(
                         f"{decision_id}: LOCKED decision has non-supported basis {unsupported}"
+                    )
+                w2_only = [c for c in based_on if self.claim_is_w2_only(c)]
+                if w2_only:
+                    errors.append(
+                        f"{decision_id}: LOCKED decision cannot rely on W2-only claims {w2_only}"
                     )
 
             for impl_id in decision.get("implementation_refs", []):
@@ -170,6 +230,10 @@ class ProvenanceGraph:
                     if claim.get("role") not in expected_roles.get(axis_class, set()):
                         errors.append(
                             f"{axis_id}: claim {claim_id} role {claim.get('role')} incompatible with {axis_class}"
+                        )
+                    if axis_class == "T2_W2" and not self.claim_is_w2_only(claim_id):
+                        errors.append(
+                            f"{axis_id}: T2_W2 claim {claim_id} must be W2-only"
                         )
 
             for key in ("placement_decision_ref", "formal_title_decision_ref"):
@@ -258,6 +322,8 @@ class ProvenanceGraph:
             return {
                 "type": "claim",
                 "claim": claim,
+                "support_tiers": self.claim_source_tiers(node_id),
+                "w2_only": self.claim_is_w2_only(node_id),
                 "sources": sources,
                 "decisions": decisions,
                 "implementations": implementations,
@@ -286,6 +352,7 @@ class ProvenanceGraph:
                 "decision": decision,
                 "permission": self.permission(node_id),
                 "fully_source_backed": self.decision_fully_source_backed(node_id),
+                "lock_eligible": self.decision_lock_eligible(node_id),
                 "claims": claims,
                 "sources": sources,
                 "implementations": implementations,

@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.0-beta.3
+
+- Added W2 weak-witness handling for Mao Guoyao's Jingcang transcriptions.
+- Imported 对景悼颦儿、芸哥仗义探庵、狱庙相逢、妙玉瓜州渡口、证前缘、观警幻情榜.
+- Added W2-only lock-bearing prohibition: weak transcript Claims cannot independently support LOCKED Decisions.
+- Added T2_W2 machine validation using “证前缘回” as the first weak chapter-call case.
+- Added source/transmission checks for EARLY_TRANSCRIPT ↔ W2_TRANSCRIPT.
+- Kept Qingbang hard constraints independent from W2 corroboration.
+
+
 ## 0.2.0-beta.2
 
 - Added the R4 literal-target / V-axis contract.
