@@ -1,6 +1,6 @@
 # Full Migration M2 — Reconstruction Runtime
 
-Status: **PASS candidate; validated by CI before release claim.**
+Status: **PASS**
 
 M2 turns the reconstruction layer into queryable runtime data without changing stable ACTIVE prose.
 
