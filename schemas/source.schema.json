@@ -1,0 +1,57 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ProvenanceSource",
+  "type": "object",
+  "required": ["id", "type", "title", "witness", "locator", "text", "text_sha256"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "type": {
+      "enum": [
+        "NOVEL_TEXT",
+        "EARLY_COMMENT",
+        "EARLY_TRANSCRIPT",
+        "HISTORICAL_PRIMARY",
+        "SECONDARY_RESEARCH"
+      ]
+    },
+    "title": {"type": "string", "minLength": 1},
+    "witness": {
+      "type": "object",
+      "required": ["label"],
+      "properties": {
+        "siglum": {"type": ["string", "null"]},
+        "label": {"type": "string", "minLength": 1},
+        "annotation": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "container": {
+      "type": "object",
+      "required": ["ref", "sha256"],
+      "properties": {
+        "ref": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "bibliography": {
+      "type": "object",
+      "required": ["citation"],
+      "properties": {
+        "citation": {"type": "string", "minLength": 1},
+        "doi": {"type": ["string", "null"]},
+        "url": {"type": ["string", "null"]}
+      },
+      "additionalProperties": true
+    },
+    "locator": {"type": "object"},
+    "text": {"type": "string", "minLength": 1},
+    "text_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "notes": {"type": ["string", "null"]}
+  },
+  "anyOf": [
+    {"required": ["container"]},
+    {"required": ["bibliography"]}
+  ],
+  "additionalProperties": true
+}

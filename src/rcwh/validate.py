@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from .graph import ProvenanceGraph
 from .io import load_data
 from .schema import validate_instance
 
@@ -10,7 +11,7 @@ def validate_repository(root: Path) -> list[str]:
     errors: list[str] = []
     schema_dir = root / "schemas"
 
-    # singleton files
+    # v0.1 singleton files
     for path in sorted((root / "data" / "characters").glob("*.yaml")):
         errs = validate_instance(load_data(path), load_data(schema_dir / "character.schema.json"))
         errors.extend(f"{path.relative_to(root)}: {e}" for e in errs)
@@ -23,7 +24,7 @@ def validate_repository(root: Path) -> list[str]:
         errs = validate_instance(load_data(path), load_data(schema_dir / "scene_contract.schema.json"))
         errors.extend(f"{path.relative_to(root)}: {e}" for e in errs)
 
-    # list wrappers
+    # v0.1 list wrappers
     evidence_schema = load_data(schema_dir / "evidence.schema.json")
     for path in sorted((root / "data" / "evidence").glob("*.yaml")):
         doc = load_data(path)
@@ -37,5 +38,26 @@ def validate_repository(root: Path) -> list[str]:
         for i, event in enumerate(doc.get("events", [])):
             errs = validate_instance(event, event_schema)
             errors.extend(f"{path.relative_to(root)} events[{i}]: {e}" for e in errs)
+
+    # v0.2 provenance kernel
+    wrappers = [
+        ("sources", "sources", "source.schema.json"),
+        ("claims", "claims", "claim.schema.json"),
+        ("decisions", "decisions", "decision.schema.json"),
+        ("implementations", "implementations", "implementation.schema.json"),
+    ]
+    for dirname, wrapper, schema_name in wrappers:
+        schema = load_data(schema_dir / schema_name)
+        for path in sorted((root / "data" / dirname).glob("*.yaml")):
+            doc = load_data(path) or {}
+            for i, item in enumerate(doc.get(wrapper, [])):
+                errs = validate_instance(item, schema)
+                errors.extend(f"{path.relative_to(root)} {wrapper}[{i}]: {e}" for e in errs)
+
+    try:
+        graph = ProvenanceGraph.from_repo(root)
+        errors.extend(graph.validate_integrity())
+    except Exception as exc:  # noqa: BLE001
+        errors.append(f"provenance graph: {exc}")
 
     return errors

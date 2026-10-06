@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "EvidenceClaim",
+  "type": "object",
+  "required": ["id", "statement", "kind", "support", "status"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "statement": {"type": "string", "minLength": 1},
+    "kind": {"type": "string", "minLength": 1},
+    "support": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source", "relation"],
+        "properties": {
+          "source": {"type": "string"},
+          "relation": {
+            "enum": ["DIRECT", "SEMANTIC", "CONTEXTUAL", "ANALOGICAL", "SECONDARY"]
+          },
+          "note": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "status": {
+      "enum": ["SUPPORTED", "CONTESTED", "NOT_ESTABLISHED", "REFUTED"]
+    },
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}
