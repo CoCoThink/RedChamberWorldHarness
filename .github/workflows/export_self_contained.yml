@@ -41,7 +41,7 @@ jobs:
           data = zip_path.read_bytes()
           digest = hashlib.sha256(data).hexdigest()
           b64 = base64.b64encode(data).decode("ascii")
-          chunk_size = 7000
+          chunk_size = 28000
           parts = []
           for i in range(0, len(b64), chunk_size):
               name = f"part_{i//chunk_size:04d}.txt"
