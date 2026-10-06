@@ -7,6 +7,9 @@
     "id": {"type": "string", "minLength": 1},
     "statement": {"type": "string", "minLength": 1},
     "kind": {"type": "string", "minLength": 1},
+    "authority_scope": {
+      "enum": ["NARRATIVE_EVIDENCE", "HISTORICAL_FEASIBILITY", "RESEARCH_INTERPRETATION"]
+    },
     "role": {"enum": ["TITLE_FULL","TITLE_PART","DRAFT_LABEL","CHAPTER_CALL","WORK_TITLE","FUTURE_LINE","FUTURE_SPEECH","EVENT","SCENE_DESCRIPTION","STRUCTURE","CRITIC_DESCRIPTION","RATING","W2_HINT","FORMAL_TITLE","OTHER"]},
     "modality": {"enum": ["DIRECT_ASSERTION","SEEN_COPY","TRANSCRIPT_WEAK","INFERENCE","NEGATIVE"]},
     "literal_targets": {"type":"array","uniqueItems":true,"items":{"enum":["NOVEL_EXACT","NAME_EXACT","SOURCE_EXACT","SEM","BOUNDARY","NEG"]}},

@@ -6,6 +6,7 @@ from pathlib import Path
 
 from .evaluate import evaluate_scene_text, overall_status
 from .graph import ProvenanceGraph
+from .history import HistoricalMechanismRegistry, format_mechanism
 from .io import load_data
 from .literals import LiteralRegistry, format_literal
 from .runtime import WorldState
@@ -25,7 +26,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("PASS: repository schemas, provenance graph, T-axis, and literal constraints valid")
+    print("PASS: repository schemas, provenance graph, T-axis, literals, W2 policy, and historical mechanisms valid")
     return 0
 
 
@@ -81,6 +82,23 @@ def cmd_literal(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_mechanism(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    graph = ProvenanceGraph.from_repo(root)
+    registry = HistoricalMechanismRegistry.from_repo(root)
+    try:
+        payload = registry.describe(args.mechanism_id, graph)
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_mechanism(payload))
+    return 0
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="rcwh")
     parser.add_argument("--root", default=None)
@@ -103,6 +121,11 @@ def main() -> None:
     p_literal.add_argument("literal_id")
     p_literal.add_argument("--json", action="store_true")
     p_literal.set_defaults(func=cmd_literal)
+
+    p_mechanism = sub.add_parser("mechanism")
+    p_mechanism.add_argument("mechanism_id")
+    p_mechanism.add_argument("--json", action="store_true")
+    p_mechanism.set_defaults(func=cmd_mechanism)
 
     args = parser.parse_args()
     raise SystemExit(args.func(args))

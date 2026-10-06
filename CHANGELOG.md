@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.2.0-beta.4
+
+- Added H01–H06 historical-feasibility mechanisms from the R4-E review.
+- Added HISTORICAL_FEASIBILITY claim authority and FEASIBILITY_ONLY mechanism semantics.
+- Added primary-source records for Qing prison rules, mourning/marriage law, imperial-consort mourning, Cao-family confiscation/pawn/housing records, and a 1774 Beijing-region rental contract.
+- Added H06 as SECONDARY_SOFT using Mao Liping's Nanbu County archive study.
+- Added a hard anti-promotion rule: historical feasibility may not silently support narrative reconstruction Decisions.
+- Locked historical boundaries, if introduced later, may compile only to MUST_NOT, never positive plot MUST.
+- Added `rcwh mechanism H01..H06`.
+
+
 ## 0.2.0-beta.3
 
 - Added W2 weak-witness handling for Mao Guoyao's Jingcang transcriptions.

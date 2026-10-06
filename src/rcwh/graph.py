@@ -155,6 +155,34 @@ class ProvenanceGraph:
 
             status = decision.get("status")
             constraint = decision.get("constraint")
+            domain = decision.get("domain", "NARRATIVE_RECONSTRUCTION")
+            historical_basis = [
+                c for c in based_on
+                if c in self.claims
+                and self.claims[c].get("authority_scope") == "HISTORICAL_FEASIBILITY"
+            ]
+            if historical_basis and domain != "HISTORICAL_BOUNDARY":
+                errors.append(
+                    f"{decision_id}: historical-feasibility claims cannot silently "
+                    f"support narrative decisions {historical_basis}"
+                )
+            if domain == "HISTORICAL_BOUNDARY":
+                non_historical = [
+                    c for c in based_on
+                    if c in self.claims
+                    and self.claims[c].get("authority_scope") != "HISTORICAL_FEASIBILITY"
+                ]
+                if non_historical:
+                    errors.append(
+                        f"{decision_id}: HISTORICAL_BOUNDARY has non-historical basis "
+                        f"{non_historical}"
+                    )
+                if status == "LOCKED" and constraint != "MUST_NOT":
+                    errors.append(
+                        f"{decision_id}: locked historical boundary may only compile "
+                        f"to MUST_NOT, never positive plot MUST"
+                    )
+
             if constraint not in compatibility.get(status, set()):
                 errors.append(
                     f"{decision_id}: incompatible status/constraint {status}/{constraint}"

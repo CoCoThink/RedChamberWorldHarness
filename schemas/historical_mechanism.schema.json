@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HistoricalMechanism",
+  "type": "object",
+  "required": [
+    "id",
+    "title",
+    "effect",
+    "verdict",
+    "evidence_basis",
+    "claim_refs",
+    "allows",
+    "rejects",
+    "open",
+    "cannot_prove",
+    "implementation_refs"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^H0[1-6]$"},
+    "title": {"type": "string", "minLength": 1},
+    "effect": {"const": "FEASIBILITY_ONLY"},
+    "verdict": {
+      "enum": ["PASS", "PASS-WITH-CAUTION", "PASS-BOUNDARY", "PASS-SOFT"]
+    },
+    "evidence_basis": {"enum": ["PRIMARY", "MIXED", "SECONDARY_SOFT"]},
+    "claim_refs": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "allows": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "rejects": {"type": "array", "items": {"type": "string"}},
+    "open": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "cannot_prove": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "implementation_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "project_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

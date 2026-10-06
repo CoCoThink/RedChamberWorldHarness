@@ -7,6 +7,7 @@
     "id": {"type": "string", "minLength": 1},
     "statement": {"type": "string", "minLength": 1},
     "based_on": {"type": "array", "items": {"type": "string"}},
+    "domain": {"enum": ["NARRATIVE_RECONSTRUCTION", "HISTORICAL_BOUNDARY"]},
     "status": {"enum": ["LOCKED", "CURRENT", "OPEN", "REJECTED"]},
     "constraint": {"enum": ["MUST", "MUST_NOT", "MAY", "OPEN", "NONE"]},
     "reversible": {"type": "boolean"},
