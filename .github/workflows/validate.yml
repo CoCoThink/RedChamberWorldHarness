@@ -15,4 +15,19 @@ jobs:
       - run: python -m pip install -e '.[dev]'
       - run: rcwh validate
       - run: rcwh evaluate data/scenes/ch86_last_night.yaml examples/ch86_candidate_stub.txt
+      - run: rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_preserved.txt
+      - name: Verify replacement-case exit code
+        run: |
+          set +e
+          rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_replacement_case.txt
+          code=$?
+          set -e
+          test "$code" -eq 2
+      - name: Verify explicit-drift blocker exit code
+        run: |
+          set +e
+          rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_blocked.txt
+          code=$?
+          set -e
+          test "$code" -eq 1
       - run: pytest -q
