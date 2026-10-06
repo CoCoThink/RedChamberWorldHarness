@@ -1,0 +1,63 @@
+literal_constraints:
+  - id: literal:ten-solitary-chants:name
+    text: 十独吟
+    targets: [NAME_EXACT, BOUNDARY]
+    scope: WORK_NAME
+    claim_refs: [claim:ten-solitary-chants:exists, claim:ten-solitary-chants:after-ch64]
+    decision_refs: [decision:ten-solitary-chants:title-and-range]
+    required_in_active_prose: true
+    implementation_refs: [impl:active:ch85:ten-solitary-chants]
+    boundary:
+      description: 只能锁定在第64回之后；当前第85回为Implementation，不是源证回次。
+      claim_ref: claim:ten-solitary-chants:after-ch64
+    notes: 只锁作品名与“第64以后”；作者、诗体、篇数、对象仍OPEN。
+
+  - id: literal:falling-leaves:cold-smoke
+    text: 落叶萧萧，寒烟漠漠
+    targets: [NOVEL_EXACT]
+    scope: PROSE
+    claim_refs: [claim:falling-leaves:future-line]
+    decision_refs: [decision:falling-leaves:literal, decision:falling-leaves:placement]
+    required_in_active_prose: true
+    implementation_refs: [impl:active:ch87:falling-leaves]
+    notes: 原字必须保留；第87回位置仍为CURRENT。
+
+  - id: literal:sheyue:keep-sheyue
+    text: 好歹留着麝月
+    targets: [NOVEL_EXACT, BOUNDARY]
+    scope: PROSE
+    claim_refs: [claim:sheyue-speech:future-speech, claim:sheyue-speech:after-xiren-marriage]
+    decision_refs: [decision:sheyue-speech:literal, decision:sheyue-speech:boundary, decision:sheyue-speech:placement]
+    required_in_active_prose: true
+    implementation_refs: [impl:active:ch88:sheyue-speech]
+    boundary:
+      description: 必须发生在袭人出嫁之后。
+      claim_ref: claim:sheyue-speech:after-xiren-marriage
+
+  - id: literal:qingbang:daiyu-rating
+    text: 情情
+    targets: [NOVEL_EXACT]
+    scope: PROSE
+    claim_refs: [claim:qingbang:daiyu-rating]
+    decision_refs: [decision:qingbang:daiyu-rating]
+    required_in_active_prose: true
+    implementation_refs: [impl:active:ch100:qingbang]
+
+  - id: literal:qingbang:baoyu-rating
+    text: 情不情
+    targets: [NOVEL_EXACT]
+    scope: PROSE
+    claim_refs: [claim:qingbang:baoyu-rating]
+    decision_refs: [decision:qingbang:baoyu-rating]
+    required_in_active_prose: true
+    implementation_refs: [impl:active:ch100:qingbang]
+
+  - id: literal:qingbang:source-phrase
+    text: 警幻情榜
+    targets: [SOURCE_EXACT]
+    scope: SOURCE_ONLY
+    claim_refs: [claim:qingbang:source-phrase-jinghuan-qingbang]
+    decision_refs: [decision:qingbang:formal-title]
+    required_in_active_prose: false
+    implementation_refs: []
+    notes: 只保证批语Source原字，不要求小说内以“警幻情榜”为正式总名。

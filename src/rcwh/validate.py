@@ -4,6 +4,10 @@ from pathlib import Path
 
 from .graph import ProvenanceGraph
 from .io import load_data
+from .history import HistoricalMechanismRegistry
+from .literals import LiteralRegistry
+from .open_interfaces import OpenInterfaceRegistry
+from .regression import run_r4_evidence_regression
 from .schema import validate_instance
 
 
@@ -11,7 +15,6 @@ def validate_repository(root: Path) -> list[str]:
     errors: list[str] = []
     schema_dir = root / "schemas"
 
-    # v0.1 singleton files
     for path in sorted((root / "data" / "characters").glob("*.yaml")):
         errs = validate_instance(load_data(path), load_data(schema_dir / "character.schema.json"))
         errors.extend(f"{path.relative_to(root)}: {e}" for e in errs)
@@ -24,7 +27,6 @@ def validate_repository(root: Path) -> list[str]:
         errs = validate_instance(load_data(path), load_data(schema_dir / "scene_contract.schema.json"))
         errors.extend(f"{path.relative_to(root)}: {e}" for e in errs)
 
-    # v0.1 list wrappers
     evidence_schema = load_data(schema_dir / "evidence.schema.json")
     for path in sorted((root / "data" / "evidence").glob("*.yaml")):
         doc = load_data(path)
@@ -39,12 +41,16 @@ def validate_repository(root: Path) -> list[str]:
             errs = validate_instance(event, event_schema)
             errors.extend(f"{path.relative_to(root)} events[{i}]: {e}" for e in errs)
 
-    # v0.2 provenance kernel
     wrappers = [
         ("sources", "sources", "source.schema.json"),
         ("claims", "claims", "claim.schema.json"),
         ("decisions", "decisions", "decision.schema.json"),
         ("implementations", "implementations", "implementation.schema.json"),
+        ("axes", "title_axes", "title_axis.schema.json"),
+        ("literals", "literal_constraints", "literal_constraint.schema.json"),
+        ("mechanisms", "historical_mechanisms", "historical_mechanism.schema.json"),
+        ("open_interfaces", "open_interfaces", "open_interface.schema.json"),
+        ("regression", "regression_manifests", "regression_manifest.schema.json"),
     ]
     for dirname, wrapper, schema_name in wrappers:
         schema = load_data(schema_dir / schema_name)
@@ -57,7 +63,18 @@ def validate_repository(root: Path) -> list[str]:
     try:
         graph = ProvenanceGraph.from_repo(root)
         errors.extend(graph.validate_integrity())
+        literals = LiteralRegistry.from_repo(root)
+        errors.extend(literals.validate_integrity(graph))
+        mechanisms = HistoricalMechanismRegistry.from_repo(root)
+        errors.extend(mechanisms.validate_integrity(graph))
+        open_interfaces = OpenInterfaceRegistry.from_repo(root)
+        errors.extend(open_interfaces.validate_integrity(graph, literals, mechanisms))
+        regression = run_r4_evidence_regression(root)
+        for gate in regression["gates"]:
+            if gate["status"] == "FAIL":
+                for finding in gate["findings"]:
+                    errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"provenance graph: {exc}")
+        errors.append(f"provenance/literal/history/open/regression graph: {exc}")
 
     return errors

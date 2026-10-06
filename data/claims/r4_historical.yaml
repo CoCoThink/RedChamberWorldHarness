@@ -1,0 +1,133 @@
+claims:
+  - id: claim:history:h01:controlled-access
+    statement: 清代监狱规则限制无关外人自由入狱传话，同时允许特定亲属按限入视，送饮食须由提牢官验明后转送。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:daqinglu:v36:outsider-access
+        relation: DIRECT
+      - source: src:history:daqinglu:v36:relative-visits
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:history:h01:waiting-for-questioning
+    statement: 清代制度语境存在羁禁“牵连待质”等候问/待质机制。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:daqinglu:v36:waiting-for-questioning
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:history:h01:prison-god-space
+    statement: 清代顺天府地方志实例显示部分监狱空间内可设狱神庙。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:shuntianfu:prison-god
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:history:h02:inventory-sealing
+    statement: 雍正六年曹家实案存在管事被讯、房产什物查清、造册封固的抄没程序。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:cao:1728:inventory-seal
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:history:h03:mourning-constrains-marriage
+    statement: 《大清律例》的居丧嫁娶条说明丧制会实际限制婚嫁。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:daqinglu:v10:mourning-marriage
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:history:h03:consort-special-rites
+    statement: 清代皇贵妃丧仪对姻戚另有成服、除服等专门礼制安排。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:huidian:v89:huangguifei-mourning
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:history:h04:senior-kin-marriage
+    statement: 清代婚姻规范存在由祖父母、父母及余亲主婚的尊长亲属框架。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:daqinglu:v10:marriage-authority
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:history:h04:post-confiscation-housing
+    statement: 曹家实案显示抄没后仍可能为家属少留或酌拨有限房产以资养赡。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:cao:1728:family-housing
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:history:h04:rental-mechanism
+    statement: 乾隆时期北京地区存在书面房屋租赁契约，并可明确约定房屋、租价等事项。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:beijing:1774:rental-contract
+        relation: ANALOGICAL
+        note: 该契为昌平地区铺面租契，只支持租赁机制，不证明贾府住宅形态。
+    status: SUPPORTED
+
+  - id: claim:history:h05:pawn-as-cashflow
+    statement: 曹家抄没清查记录“当票百余张”，说明旧家衰败过程中持续典当作为现金流工具具有现实可能。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:cao:1728:pawn-tickets
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:history:h05:rental-cost
+    statement: 清代北京地区房屋租赁可形成持续租金义务。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: DIRECT_ASSERTION
+    support:
+      - source: src:history:beijing:1774:rental-contract
+        relation: ANALOGICAL
+    status: SUPPORTED
+
+  - id: claim:history:h06:natal-family-ties
+    statement: 基于南部县档案的研究表明，清代部分出嫁女婚后仍与娘家保持往来，危机时娘家可能提供资源或干预。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: INFERENCE
+    support:
+      - source: src:research:mao-liping:2013:natal-family
+        relation: SECONDARY
+    status: SUPPORTED
+
+  - id: claim:history:h06:aid-is-limited
+    statement: 同一研究同时显示姻亲互助受家庭资源限制，不能推出娘家固定、持续、足额供养的普遍规则。
+    kind: HISTORICAL_MECHANISM
+    authority_scope: HISTORICAL_FEASIBILITY
+    modality: INFERENCE
+    support:
+      - source: src:research:mao-liping:2013:natal-family
+        relation: SECONDARY
+    status: SUPPORTED

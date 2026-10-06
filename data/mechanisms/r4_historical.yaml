@@ -1,0 +1,179 @@
+historical_mechanisms:
+  - id: H01
+    title: 羁押、送物、探视、狱神空间
+    effect: FEASIBILITY_ONLY
+    verdict: PASS-WITH-CAUTION
+    evidence_basis: PRIMARY
+    claim_refs:
+      - claim:history:h01:controlled-access
+      - claim:history:h01:waiting-for-questioning
+      - claim:history:h01:prison-god-space
+    allows:
+      - 候问、待质、受控羁留作为清代司法过程的一部分
+      - 特定亲属按规则入视，饮食衣物经查验后转送
+      - 部分监狱空间存在狱神庙或相关祭祀空间
+      - 当前茜雪以送物者身份托请、隔门短话、可被催停的偶发实现
+    rejects:
+      - 把旧仆写成依法当然享有自由探监权
+      - 把监所写成无门禁自由进出，或把贿赂买通写成R4-E已验证的必要机制
+      - 把狱神显灵写成宝玉获释的因果机制
+      - 由地方志单一实例推出所有监狱必有同一狱神布局
+    open:
+      - 宝玉具体羁押时长
+      - 茜雪一次短话在具体衙门中的许可方式
+      - 宝玉所处监所的具体空间布局
+    cannot_prove:
+      - 原稿中宝玉被拘十日或任何固定日数
+      - 茜雪拥有制度性探视资格
+      - 曹雪芹一定把狱神庙写成当前正文的空间形式
+    implementation_refs:
+      - impl:active:ch92:historical-detention-access
+    project_refs:
+      - R4-E_H01-H06_来源台账_v1.0.md
+      - R4-E_历史机制边界同步表_v1.0.md
+
+  - id: H02
+    title: 抄没、封固、造册、家人处置
+    effect: FEASIBILITY_ONLY
+    verdict: PASS
+    evidence_basis: PRIMARY
+    claim_refs:
+      - claim:history:h02:inventory-sealing
+    allows:
+      - 官差到门后控制出入
+      - 房产什物、柜箱、账册文书经查清、造册、封固
+      - 管事或经手人被讯问核验
+      - 日用物与被控制财物之间存在程序性区分的小说化实现
+    rejects:
+      - 把曹家奏折中的具体程序、数字或罪名直接当成贾府硬史实
+      - 把抄没机械写成所有家人当日一件日用物都不得带出的唯一模式
+    open:
+      - 贾府具体罪名
+      - 没收范围与实际清单
+      - 每一道查验、封识、准取的具体程序
+    cannot_prove:
+      - 贾府与曹家遭遇同罪名、同一程序、同一没收范围
+    implementation_refs:
+      - impl:active:ch89:historical-confiscation
+    project_refs:
+      - R4-E_H01-H06_来源台账_v1.0.md
+      - R4-E_历史机制边界同步表_v1.0.md
+
+  - id: H03
+    title: 元妃丧制与婚期
+    effect: FEASIBILITY_ONLY
+    verdict: PASS-BOUNDARY
+    evidence_basis: PRIMARY
+    claim_refs:
+      - claim:history:h03:mourning-constrains-marriage
+      - claim:history:h03:consort-special-rites
+    allows:
+      - 元妃之死真实影响家内服制与婚期安排
+      - 小说在若干月后仍写“在服中、婚期后缓”而不立刻成婚
+    rejects:
+      - 把普通亲属服制机械套算成元妃之丧下宝玉宝钗唯一婚期
+      - 把二十七日、百日、九月等任一数字写成由现有史料唯一推出的小说硬时长
+    open:
+      - 元妃之丧对宝玉宝钗婚礼的精确等待时长
+      - 第87回具体婚日与礼仪细节
+    cannot_prove:
+      - 恰满27日即可婚
+      - 恰满100日即可婚
+      - 必须等待9个月或其他唯一时长
+    implementation_refs:
+      - impl:active:ch87:historical-mourning-marriage
+    project_refs:
+      - R4-E_H01-H06_来源台账_v1.0.md
+      - R4-E_历史机制边界同步表_v1.0.md
+
+  - id: H04
+    title: 败后居所、租赁、主婚权
+    effect: FEASIBILITY_ONLY
+    verdict: PASS
+    evidence_basis: PRIMARY
+    claim_refs:
+      - claim:history:h04:senior-kin-marriage
+      - claim:history:h04:post-confiscation-housing
+      - claim:history:h04:rental-mechanism
+    allows:
+      - 家产败落后仍可能保留、获拨或暂借有限住处
+      - 后续另行租赁房屋作为长期落脚机制
+      - 祖父母父母等尊长亲属继续参与主婚
+    rejects:
+      - 把曹家获留住房直接等同为贾家必住某一院落
+      - 把1774年铺面租契的房间数、租价直接移植为宝钗所赁偏院
+      - 把贾母王夫人薛姨妈三方具体谈判写成法律唯一要求
+    open:
+      - 借住院落的归属与具体房间数
+      - 第95回偏院的确切位置与租金
+      - 金玉婚最终拍板者和实际议婚步骤
+    cannot_prove:
+      - 贾家必住当前正文所写院落
+      - 宝钗偏院的具体赁钱
+      - 当前三位长辈的对话就是原稿历史必然
+    implementation_refs:
+      - impl:active:ch87:historical-senior-kin-marriage-talk
+      - impl:active:ch89:historical-borrowed-residence
+      - impl:active:ch95:historical-rented-yard
+    project_refs:
+      - R4-E_H01-H06_来源台账_v1.0.md
+      - R4-E_历史机制边界同步表_v1.0.md
+
+  - id: H05
+    title: 持续贫困、典当、租住、米粮
+    effect: FEASIBILITY_ONLY
+    verdict: PASS
+    evidence_basis: PRIMARY
+    claim_refs:
+      - claim:history:h05:pawn-as-cashflow
+      - claim:history:h05:rental-cost
+    allows:
+      - 旧家衰败以持续典当、租赁、量入为出形成渐降式贫困
+      - 米、炭、衣、房钱等日用资源进入长期现金流权衡
+    rejects:
+      - 把青夹袄、两碗半米、某次缺炭或某一笔租金说成史料已经证明的具体事实
+      - 把旧家败落简化成一次性“当天归零”而否认持续现金流过程
+    open:
+      - 具体典当物
+      - 米量、炭量与具体物价
+      - 月租金额、赎期和每次现金缺口
+    cannot_prove:
+      - 第95回“青夹袄”就是历史原型物
+      - “两碗半”或任何具体米量
+      - 当前正文的具体租金、炭价、药费
+    implementation_refs:
+      - impl:active:ch95:historical-rented-yard
+      - impl:active:ch95:historical-poverty-pawn
+    project_refs:
+      - R4-E_H01-H06_来源台账_v1.0.md
+      - R4-E_历史机制边界同步表_v1.0.md
+
+  - id: H06
+    title: 出嫁女与娘家援助边界
+    effect: FEASIBILITY_ONLY
+    verdict: PASS-SOFT
+    evidence_basis: SECONDARY_SOFT
+    claim_refs:
+      - claim:history:h06:natal-family-ties
+      - claim:history:h06:aid-is-limited
+    allows:
+      - 出嫁女与娘家关系在婚后仍可能持续
+      - 危机时娘家可能提供资源、保护、诉讼或其他有限帮助
+      - 薛家援助可以写成有限、间歇、不能彻底托底的C方案
+    rejects:
+      - 宣称清代娘家法律上必须持续供养出嫁女并承担固定额度
+      - 宣称女子一经出嫁娘家即不得再管、不得再给任何帮助
+      - 仅凭该区域下层档案研究推出薛家必救或必不救
+    open:
+      - 薛家是否实际援助
+      - 援助额度、频率、持续时间与具体形式
+      - 薛家自身资源能否承担援助
+    cannot_prove:
+      - 薛家必须持续供养宝钗
+      - 薛家固定每月或每次应给多少
+      - 薛家一定出手或一定完全缺席
+    implementation_refs: []
+    project_refs:
+      - R4-E_H01-H06_来源台账_v1.0.md
+      - R4-E_历史机制边界同步表_v1.0.md
+    notes: 证据为基于南部县档案的二手研究，区域、阶层、年代与宝钗情境均有距离，因此只作PASS-SOFT。

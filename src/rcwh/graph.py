@@ -14,6 +14,7 @@ class ProvenanceGraph:
     claims: dict[str, dict[str, Any]]
     decisions: dict[str, dict[str, Any]]
     implementations: dict[str, dict[str, Any]]
+    title_axes: dict[str, dict[str, Any]]
 
     @classmethod
     def from_repo(cls, root: Path) -> "ProvenanceGraph":
@@ -36,6 +37,7 @@ class ProvenanceGraph:
             claims=load_dir("claims", "claims"),
             decisions=load_dir("decisions", "decisions"),
             implementations=load_dir("implementations", "implementations"),
+            title_axes=load_dir("axes", "title_axes"),
         )
 
     @staticmethod
@@ -60,11 +62,50 @@ class ProvenanceGraph:
             for claim_id in based_on
         )
 
+    def claim_source_tiers(self, claim_id: str) -> list[str]:
+        claim = self.claims[claim_id]
+        tiers: list[str] = []
+        for edge in claim.get("support", []):
+            source = self.sources.get(edge["source"])
+            if source is None:
+                continue
+            tier = source.get("tier")
+            if tier and tier not in tiers:
+                tiers.append(tier)
+        return tiers
+
+    def claim_is_w2_only(self, claim_id: str) -> bool:
+        if claim_id not in self.claims:
+            return False
+        claim = self.claims[claim_id]
+        support = claim.get("support", [])
+        if not support:
+            return False
+        tiers = self.claim_source_tiers(claim_id)
+        return bool(tiers) and set(tiers) == {"W2_TRANSCRIPT"}
+
+    def decision_lock_eligible(self, decision_id: str) -> bool:
+        if not self.decision_fully_source_backed(decision_id):
+            return False
+        decision = self.decisions[decision_id]
+        return not any(self.claim_is_w2_only(c) for c in decision.get("based_on", []))
+
     def validate_integrity(self) -> list[str]:
         errors: list[str] = []
 
         seen_fingerprints: dict[str, str] = {}
         for source_id, source in self.sources.items():
+            tier = source.get("tier")
+            source_type = source.get("type")
+            if tier == "W2_TRANSCRIPT" and source_type != "EARLY_TRANSCRIPT":
+                errors.append(
+                    f"{source_id}: W2_TRANSCRIPT source must use EARLY_TRANSCRIPT type"
+                )
+            if source_type == "EARLY_TRANSCRIPT" and tier != "W2_TRANSCRIPT":
+                errors.append(
+                    f"{source_id}: EARLY_TRANSCRIPT source must use W2_TRANSCRIPT tier"
+                )
+
             fingerprint = self._source_fingerprint(source)
             if fingerprint in seen_fingerprints:
                 errors.append(
@@ -83,6 +124,22 @@ class ProvenanceGraph:
                 if source_id not in self.sources:
                     errors.append(f"{claim_id}: unknown source {source_id}")
 
+            if self.claim_is_w2_only(claim_id):
+                if claim.get("modality") != "TRANSCRIPT_WEAK":
+                    errors.append(
+                        f"{claim_id}: W2-only claim must use TRANSCRIPT_WEAK modality"
+                    )
+            if claim.get("modality") == "TRANSCRIPT_WEAK" and support:
+                non_w2 = [
+                    edge["source"] for edge in support
+                    if edge["source"] in self.sources
+                    and self.sources[edge["source"]].get("tier") != "W2_TRANSCRIPT"
+                ]
+                if non_w2:
+                    errors.append(
+                        f"{claim_id}: TRANSCRIPT_WEAK claim has non-W2 sources {non_w2}"
+                    )
+
         compatibility = {
             "LOCKED": {"MUST", "MUST_NOT"},
             "CURRENT": {"MAY"},
@@ -98,6 +155,34 @@ class ProvenanceGraph:
 
             status = decision.get("status")
             constraint = decision.get("constraint")
+            domain = decision.get("domain", "NARRATIVE_RECONSTRUCTION")
+            historical_basis = [
+                c for c in based_on
+                if c in self.claims
+                and self.claims[c].get("authority_scope") == "HISTORICAL_FEASIBILITY"
+            ]
+            if historical_basis and domain != "HISTORICAL_BOUNDARY":
+                errors.append(
+                    f"{decision_id}: historical-feasibility claims cannot silently "
+                    f"support narrative decisions {historical_basis}"
+                )
+            if domain == "HISTORICAL_BOUNDARY":
+                non_historical = [
+                    c for c in based_on
+                    if c in self.claims
+                    and self.claims[c].get("authority_scope") != "HISTORICAL_FEASIBILITY"
+                ]
+                if non_historical:
+                    errors.append(
+                        f"{decision_id}: HISTORICAL_BOUNDARY has non-historical basis "
+                        f"{non_historical}"
+                    )
+                if status == "LOCKED" and constraint != "MUST_NOT":
+                    errors.append(
+                        f"{decision_id}: locked historical boundary may only compile "
+                        f"to MUST_NOT, never positive plot MUST"
+                    )
+
             if constraint not in compatibility.get(status, set()):
                 errors.append(
                     f"{decision_id}: incompatible status/constraint {status}/{constraint}"
@@ -116,6 +201,11 @@ class ProvenanceGraph:
                     errors.append(
                         f"{decision_id}: LOCKED decision has non-supported basis {unsupported}"
                     )
+                w2_only = [c for c in based_on if self.claim_is_w2_only(c)]
+                if w2_only:
+                    errors.append(
+                        f"{decision_id}: LOCKED decision cannot rely on W2-only claims {w2_only}"
+                    )
 
             for impl_id in decision.get("implementation_refs", []):
                 if impl_id not in self.implementations:
@@ -127,17 +217,85 @@ class ProvenanceGraph:
                     errors.append(f"{impl_id}: unknown decision {decision_id}")
                     continue
                 if impl_id not in self.decisions[decision_id].get("implementation_refs", []):
-                    # LOCKED decisions may describe a required function implemented here
-                    # without needing a prose-specific ref in their own record.
                     if self.decisions[decision_id].get("status") != "LOCKED":
                         errors.append(
                             f"{impl_id}: decision {decision_id} does not point back to implementation"
                         )
 
+        expected_roles = {
+            "T0": {"TITLE_FULL"},
+            "T1": {"TITLE_PART"},
+            "T2": {"DRAFT_LABEL", "CHAPTER_CALL"},
+            "T2_W2": {"W2_HINT", "DRAFT_LABEL", "CHAPTER_CALL"},
+            "T3": {"EVENT", "SCENE_DESCRIPTION"},
+        }
+        for axis_id, axis in self.title_axes.items():
+            axis_class = axis["class"]
+            claim_refs = axis.get("claim_refs", [])
+            generated = axis["generated"]
+
+            if axis_class == "TG":
+                if not generated:
+                    errors.append(f"{axis_id}: TG must be generated")
+                if claim_refs:
+                    errors.append(f"{axis_id}: TG must not claim evidence authority")
+            else:
+                if generated:
+                    errors.append(f"{axis_id}: evidence-side T-axis record cannot be generated")
+                if not claim_refs:
+                    errors.append(f"{axis_id}: {axis_class} requires evidence claims")
+                for claim_id in claim_refs:
+                    if claim_id not in self.claims:
+                        errors.append(f"{axis_id}: unknown claim {claim_id}")
+                        continue
+                    claim = self.claims[claim_id]
+                    if claim.get("status") != "SUPPORTED":
+                        errors.append(f"{axis_id}: claim {claim_id} is not SUPPORTED")
+                    if claim.get("t_axis") != axis_class:
+                        errors.append(
+                            f"{axis_id}: claim {claim_id} t_axis {claim.get('t_axis')} != {axis_class}"
+                        )
+                    if claim.get("role") not in expected_roles.get(axis_class, set()):
+                        errors.append(
+                            f"{axis_id}: claim {claim_id} role {claim.get('role')} incompatible with {axis_class}"
+                        )
+                    if axis_class == "T2_W2" and not self.claim_is_w2_only(claim_id):
+                        errors.append(
+                            f"{axis_id}: T2_W2 claim {claim_id} must be W2-only"
+                        )
+
+            for key in ("placement_decision_ref", "formal_title_decision_ref"):
+                decision_id = axis.get(key)
+                if decision_id and decision_id not in self.decisions:
+                    errors.append(f"{axis_id}: unknown {key} {decision_id}")
+
+            formal_id = axis.get("formal_title_decision_ref")
+            if formal_id and formal_id in self.decisions and axis_class in {"T2", "T2_W2", "T3"}:
+                if self.decisions[formal_id].get("constraint") in {"MUST", "MUST_NOT"}:
+                    errors.append(
+                        f"{axis_id}: {axis_class} cannot hard-lock formal-title identity"
+                    )
+
+            for impl_id in axis.get("implementation_refs", []):
+                if impl_id not in self.implementations:
+                    errors.append(f"{axis_id}: unknown implementation {impl_id}")
+
+            for embedded in axis.get("embedded_axes", []):
+                if embedded not in self.title_axes:
+                    errors.append(f"{axis_id}: unknown embedded axis {embedded}")
+
         return errors
 
     def permission(self, decision_id: str) -> str:
         return self.decisions[decision_id]["constraint"]
+
+    def _sources_for_claims(self, claims: list[dict[str, Any]]) -> list[dict[str, Any]]:
+        source_ids: list[str] = []
+        for claim in claims:
+            for edge in claim.get("support", []):
+                if edge["source"] not in source_ids:
+                    source_ids.append(edge["source"])
+        return [self.sources[s] for s in source_ids if s in self.sources]
 
     def trace(self, node_id: str) -> dict[str, Any]:
         if node_id in self.sources:
@@ -156,12 +314,17 @@ class ProvenanceGraph:
                 i for i in self.implementations.values()
                 if decision_ids.intersection(i.get("decision_refs", []))
             ]
+            axes = [
+                a for a in self.title_axes.values()
+                if claim_ids.intersection(a.get("claim_refs", []))
+            ]
             return {
                 "type": "source",
                 "source": source,
                 "claims": claims,
                 "decisions": decisions,
                 "implementations": implementations,
+                "title_axes": axes,
             }
 
         if node_id in self.claims:
@@ -180,12 +343,19 @@ class ProvenanceGraph:
                 i for i in self.implementations.values()
                 if decision_ids.intersection(i.get("decision_refs", []))
             ]
+            axes = [
+                a for a in self.title_axes.values()
+                if node_id in a.get("claim_refs", [])
+            ]
             return {
                 "type": "claim",
                 "claim": claim,
+                "support_tiers": self.claim_source_tiers(node_id),
+                "w2_only": self.claim_is_w2_only(node_id),
                 "sources": sources,
                 "decisions": decisions,
                 "implementations": implementations,
+                "title_axes": axes,
             }
 
         if node_id in self.decisions:
@@ -195,25 +365,26 @@ class ProvenanceGraph:
                 for c in decision.get("based_on", [])
                 if c in self.claims
             ]
-            source_ids: list[str] = []
-            for claim in claims:
-                for edge in claim.get("support", []):
-                    if edge["source"] not in source_ids:
-                        source_ids.append(edge["source"])
-            sources = [self.sources[s] for s in source_ids if s in self.sources]
+            sources = self._sources_for_claims(claims)
             implementations = [
                 self.implementations[i]
                 for i in decision.get("implementation_refs", [])
                 if i in self.implementations
+            ]
+            axes = [
+                a for a in self.title_axes.values()
+                if node_id in {a.get("placement_decision_ref"), a.get("formal_title_decision_ref")}
             ]
             return {
                 "type": "decision",
                 "decision": decision,
                 "permission": self.permission(node_id),
                 "fully_source_backed": self.decision_fully_source_backed(node_id),
+                "lock_eligible": self.decision_lock_eligible(node_id),
                 "claims": claims,
                 "sources": sources,
                 "implementations": implementations,
+                "title_axes": axes,
             }
 
         if node_id in self.implementations:
@@ -229,18 +400,42 @@ class ProvenanceGraph:
                     if claim_id not in claim_ids:
                         claim_ids.append(claim_id)
             claims = [self.claims[c] for c in claim_ids if c in self.claims]
-            source_ids: list[str] = []
-            for claim in claims:
-                for edge in claim.get("support", []):
-                    if edge["source"] not in source_ids:
-                        source_ids.append(edge["source"])
-            sources = [self.sources[s] for s in source_ids if s in self.sources]
+            sources = self._sources_for_claims(claims)
+            axes = [
+                a for a in self.title_axes.values()
+                if node_id in a.get("implementation_refs", [])
+            ]
             return {
                 "type": "implementation",
                 "implementation": implementation,
                 "decisions": decisions,
                 "claims": claims,
                 "sources": sources,
+                "title_axes": axes,
+            }
+
+        if node_id in self.title_axes:
+            axis = self.title_axes[node_id]
+            claims = [
+                self.claims[c] for c in axis.get("claim_refs", []) if c in self.claims
+            ]
+            decisions = [
+                self.decisions[d]
+                for d in [axis.get("placement_decision_ref"), axis.get("formal_title_decision_ref")]
+                if d and d in self.decisions
+            ]
+            implementations = [
+                self.implementations[i]
+                for i in axis.get("implementation_refs", [])
+                if i in self.implementations
+            ]
+            return {
+                "type": "title_axis",
+                "title_axis": axis,
+                "claims": claims,
+                "sources": self._sources_for_claims(claims),
+                "decisions": decisions,
+                "implementations": implementations,
             }
 
         raise KeyError(f"Unknown provenance node: {node_id}")

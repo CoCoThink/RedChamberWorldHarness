@@ -1,0 +1,118 @@
+claims:
+  - id: claim:future-title:baochai-fengjie:full-heading
+    statement: 后文存在完整题目“薛宝钗借词含讽谏，王熙凤知命强英雄”。
+    kind: TITLE
+    role: TITLE_FULL
+    modality: DIRECT_ASSERTION
+    literal_targets: [NOVEL_EXACT]
+    t_axis: T0
+    support:
+      - source: src:gengchen:ch21:future-title-baochai-fengjie
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:future-title:baochai-fengjie:chapter-90
+    statement: 该完整题目必定是第90回。
+    kind: PLACEMENT
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:xiren:future-heading-part
+    statement: 袭人后文正文标目中有“花袭人有始有终”。
+    kind: TITLE
+    role: TITLE_PART
+    modality: SEEN_COPY
+    literal_targets: [NOVEL_EXACT]
+    t_axis: T1
+    support:
+      - source: src:gengchen:ch20:xiren-prison-drafts
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:xiren:full-heading
+    statement: 现有证据足以恢复“花袭人有始有终”所在回目的完整上下联。
+    kind: FORMAL_TITLE
+    role: FORMAL_TITLE
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:xiren:chapter-88
+    statement: “花袭人有始有终”必定位于第88回。
+    kind: PLACEMENT
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:prison:comfort-baoyu:draft-label
+    statement: 批者曾见誊清稿，其中有称作“狱神庙慰宝玉”的稿件/稿名。
+    kind: DRAFT_LABEL
+    role: DRAFT_LABEL
+    modality: SEEN_COPY
+    literal_targets: [SOURCE_EXACT, SEM]
+    t_axis: T2
+    support:
+      - source: src:gengchen:ch20:xiren-prison-drafts
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:prison:comfort-baoyu:formal-title
+    statement: “狱神庙慰宝玉”就是小说正式原回目。
+    kind: FORMAL_TITLE
+    role: FORMAL_TITLE
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:prison:comfort-baoyu:chapter-92
+    statement: “狱神庙慰宝玉”必定发生在第92回。
+    kind: PLACEMENT
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:mistaken-theft:chapter-call
+    statement: 后文存在批者称作“误窃”一回的未来接口。
+    kind: CHAPTER_CALL
+    role: CHAPTER_CALL
+    modality: DIRECT_ASSERTION
+    literal_targets: [SOURCE_EXACT, SEM]
+    t_axis: T2
+    support:
+      - source: src:jiazxu:ch8:mistaken-theft
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:mistaken-theft:formal-title
+    statement: “误窃”就是小说正式原回目文字。
+    kind: FORMAL_TITLE
+    role: FORMAL_TITLE
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:mistaken-theft:chapter-98
+    statement: “误窃”必定发生在第98回。
+    kind: PLACEMENT
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:cold-winter-torn-felt:event
+    statement: 下部后数十回存在“寒冬噎酸虀，雪夜围破毡”等贫寒场景。
+    kind: EVENT
+    role: SCENE_DESCRIPTION
+    modality: DIRECT_ASSERTION
+    literal_targets: [SOURCE_EXACT, SEM]
+    t_axis: T3
+    support:
+      - source: src:jimao:ch19:cold-winter-torn-felt
+        relation: DIRECT
+    status: SUPPORTED
+
+  - id: claim:cold-winter-torn-felt:formal-title
+    statement: “寒冬噎酸虀，雪夜围破毡”就是小说正式原回目。
+    kind: FORMAL_TITLE
+    role: FORMAL_TITLE
+    support: []
+    status: NOT_ESTABLISHED
+
+  - id: claim:cold-winter-torn-felt:chapter-95
+    statement: 该贫寒场景必定发生在第95回。
+    kind: PLACEMENT
+    support: []
+    status: NOT_ESTABLISHED

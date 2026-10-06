@@ -3,6 +3,10 @@ claims:
   - id: claim:cliff-release:future-interface
     statement: 后文存在被批者称作“悬崖撒手”的一回/接口。
     kind: CHAPTER_CALL
+    role: CHAPTER_CALL
+    modality: DIRECT_ASSERTION
+    literal_targets: [SOURCE_EXACT, SEM]
+    t_axis: T2
     support:
       - source: src:gengchen:ch21:cliff-release
         relation: DIRECT
@@ -38,6 +42,10 @@ claims:
   - id: claim:zhen-sends-jade:event
     statement: 后文有“甄宝玉送玉”这一未来事件。
     kind: EVENT
+    role: EVENT
+    modality: DIRECT_ASSERTION
+    literal_targets: [SEM]
+    t_axis: T3
     support:
       - source: src:jimao:ch18:zhen-baoyu-sends-jade
         relation: DIRECT
@@ -71,6 +79,10 @@ claims:
   - id: claim:fengjie-snow-jade:event
     statement: 后文存在“凤姐扫雪拾玉”这一场景/事件。
     kind: EVENT
+    role: SCENE_DESCRIPTION
+    modality: DIRECT_ASSERTION
+    literal_targets: [SEM]
+    t_axis: T3
     support:
       - source: src:gengchen:ch23:fengjie-snow-jade
         relation: DIRECT
@@ -98,6 +110,9 @@ claims:
   - id: claim:ten-solitary-chants:exists
     statement: 后文存在题名为《十独吟》的作品/作品组。
     kind: WORK_TITLE
+    role: WORK_TITLE
+    modality: DIRECT_ASSERTION
+    literal_targets: [NAME_EXACT]
     support:
       - source: src:qixu:ch64:ten-solitary-chants
         relation: DIRECT
@@ -106,6 +121,9 @@ claims:
   - id: claim:ten-solitary-chants:after-ch64
     statement: 《十独吟》位于第64回之后。
     kind: PLACEMENT_RANGE
+    role: WORK_TITLE
+    modality: DIRECT_ASSERTION
+    literal_targets: [BOUNDARY]
     support:
       - source: src:qixu:ch64:ten-solitary-chants
         relation: DIRECT
@@ -169,6 +187,9 @@ claims:
   - id: claim:qingbang:source-phrase-jinghuan-qingbang
     statement: 批语原文中出现“警幻情榜”四字。
     kind: SOURCE_EXACT
+    role: CRITIC_DESCRIPTION
+    modality: DIRECT_ASSERTION
+    literal_targets: [SOURCE_EXACT]
     support:
       - source: src:gengchen:ch18:qingbang-layers
         relation: DIRECT
@@ -177,6 +198,9 @@ claims:
   - id: claim:qingbang:baoyu-rating
     statement: 情榜评宝玉为“情不情”。
     kind: NOVEL_OR_LIST_RATING
+    role: RATING
+    modality: DIRECT_ASSERTION
+    literal_targets: [NOVEL_EXACT]
     support:
       - source: src:jimao:qingbang-ratings
         relation: DIRECT
@@ -185,6 +209,9 @@ claims:
   - id: claim:qingbang:daiyu-rating
     statement: 情榜评黛玉为“情情”。
     kind: NOVEL_OR_LIST_RATING
+    role: RATING
+    modality: DIRECT_ASSERTION
+    literal_targets: [NOVEL_EXACT]
     support:
       - source: src:jimao:qingbang-ratings
         relation: DIRECT
