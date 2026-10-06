@@ -4,6 +4,7 @@ from pathlib import Path
 
 from .graph import ProvenanceGraph
 from .io import load_data
+from .literals import LiteralRegistry
 from .schema import validate_instance
 
 
@@ -43,6 +44,7 @@ def validate_repository(root: Path) -> list[str]:
         ("decisions", "decisions", "decision.schema.json"),
         ("implementations", "implementations", "implementation.schema.json"),
         ("axes", "title_axes", "title_axis.schema.json"),
+        ("literals", "literal_constraints", "literal_constraint.schema.json"),
     ]
     for dirname, wrapper, schema_name in wrappers:
         schema = load_data(schema_dir / schema_name)
@@ -55,7 +57,9 @@ def validate_repository(root: Path) -> list[str]:
     try:
         graph = ProvenanceGraph.from_repo(root)
         errors.extend(graph.validate_integrity())
+        literals = LiteralRegistry.from_repo(root)
+        errors.extend(literals.validate_integrity(graph))
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"provenance graph: {exc}")
+        errors.append(f"provenance/literal graph: {exc}")
 
     return errors

@@ -1,0 +1,40 @@
+decisions:
+  - id: decision:falling-leaves:literal
+    statement: 当前复原必须逐字保留“落叶萧萧，寒烟漠漠”。
+    based_on: [claim:falling-leaves:future-line]
+    status: LOCKED
+    constraint: MUST
+    reversible: false
+    implementation_refs: [impl:active:ch87:falling-leaves]
+
+  - id: decision:falling-leaves:placement
+    statement: 当前将“落叶萧萧，寒烟漠漠”安置在第87回潇湘馆外；具体回次不是源证。
+    based_on: [claim:falling-leaves:future-line, claim:falling-leaves:chapter-87]
+    status: CURRENT
+    constraint: MAY
+    reversible: true
+    implementation_refs: [impl:active:ch87:falling-leaves]
+
+  - id: decision:sheyue-speech:literal
+    statement: 当前复原必须逐字保留袭人之语“好歹留着麝月”。
+    based_on: [claim:sheyue-speech:future-speech]
+    status: LOCKED
+    constraint: MUST
+    reversible: false
+    implementation_refs: [impl:active:ch88:sheyue-speech]
+
+  - id: decision:sheyue-speech:boundary
+    statement: “好歹留着麝月”必须发生在袭人出嫁之后。
+    based_on: [claim:sheyue-speech:after-xiren-marriage]
+    status: LOCKED
+    constraint: MUST
+    reversible: false
+    implementation_refs: [impl:active:ch88:sheyue-speech]
+
+  - id: decision:sheyue-speech:placement
+    statement: 当前将该未来对白安置在第88回袭人出嫁后的回访场景；具体回次不是源证。
+    based_on: [claim:sheyue-speech:future-speech, claim:sheyue-speech:chapter-88]
+    status: CURRENT
+    constraint: MAY
+    reversible: true
+    implementation_refs: [impl:active:ch88:sheyue-speech]

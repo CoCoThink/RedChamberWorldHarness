@@ -110,6 +110,9 @@ claims:
   - id: claim:ten-solitary-chants:exists
     statement: 后文存在题名为《十独吟》的作品/作品组。
     kind: WORK_TITLE
+    role: WORK_TITLE
+    modality: DIRECT_ASSERTION
+    literal_targets: [NAME_EXACT]
     support:
       - source: src:qixu:ch64:ten-solitary-chants
         relation: DIRECT
@@ -118,6 +121,9 @@ claims:
   - id: claim:ten-solitary-chants:after-ch64
     statement: 《十独吟》位于第64回之后。
     kind: PLACEMENT_RANGE
+    role: WORK_TITLE
+    modality: DIRECT_ASSERTION
+    literal_targets: [BOUNDARY]
     support:
       - source: src:qixu:ch64:ten-solitary-chants
         relation: DIRECT
@@ -181,6 +187,9 @@ claims:
   - id: claim:qingbang:source-phrase-jinghuan-qingbang
     statement: 批语原文中出现“警幻情榜”四字。
     kind: SOURCE_EXACT
+    role: CRITIC_DESCRIPTION
+    modality: DIRECT_ASSERTION
+    literal_targets: [SOURCE_EXACT]
     support:
       - source: src:gengchen:ch18:qingbang-layers
         relation: DIRECT
@@ -189,6 +198,9 @@ claims:
   - id: claim:qingbang:baoyu-rating
     statement: 情榜评宝玉为“情不情”。
     kind: NOVEL_OR_LIST_RATING
+    role: RATING
+    modality: DIRECT_ASSERTION
+    literal_targets: [NOVEL_EXACT]
     support:
       - source: src:jimao:qingbang-ratings
         relation: DIRECT
@@ -197,6 +209,9 @@ claims:
   - id: claim:qingbang:daiyu-rating
     statement: 情榜评黛玉为“情情”。
     kind: NOVEL_OR_LIST_RATING
+    role: RATING
+    modality: DIRECT_ASSERTION
+    literal_targets: [NOVEL_EXACT]
     support:
       - source: src:jimao:qingbang-ratings
         relation: DIRECT
