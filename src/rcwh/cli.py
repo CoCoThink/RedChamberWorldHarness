@@ -15,6 +15,12 @@ from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .plocks import LiteraryProtectionRegistry, format_plock
 from .regression import format_regression, run_r4_evidence_regression
 from .promotion import PromotionRegistry, format_promotion
+from .registry import (
+    MigrationRegistry,
+    format_current_authority,
+    format_registry_document,
+    format_registry_package,
+)
 from .runtime import WorldState
 from .trace import format_trace
 from .validate import validate_repository
@@ -199,6 +205,35 @@ def cmd_competition(args: argparse.Namespace) -> int:
     return 1 if payload["consistency_errors"] else 0
 
 
+def cmd_registry(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    registry = MigrationRegistry.from_repo(root)
+    try:
+        if args.registry_command == "package":
+            payload = registry.package(args.key)
+            rendered = format_registry_package(payload)
+        elif args.registry_command == "document":
+            payload = registry.document(args.key)
+            rendered = format_registry_document(payload)
+        elif args.registry_command == "hash":
+            payload = registry.content_hash(args.key)
+            rendered = json.dumps(payload, ensure_ascii=False, indent=2)
+        elif args.registry_command == "current":
+            payload = registry.current_summary()
+            rendered = format_current_authority(payload)
+        else:
+            raise KeyError(f"Unknown registry command: {args.registry_command}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(rendered)
+    return 0
+
+
 def cmd_promotion(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     registry = PromotionRegistry.from_repo(root)
@@ -270,6 +305,17 @@ def main() -> None:
     p_promotion.add_argument("promotion_id")
     p_promotion.add_argument("--json", action="store_true")
     p_promotion.set_defaults(func=cmd_promotion)
+
+    p_registry = sub.add_parser("registry")
+    registry_sub = p_registry.add_subparsers(dest="registry_command", required=True)
+    for name in ("package", "document", "hash"):
+        p = registry_sub.add_parser(name)
+        p.add_argument("key")
+        p.add_argument("--json", action="store_true")
+        p.set_defaults(func=cmd_registry)
+    p = registry_sub.add_parser("current")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_registry)
 
     args = parser.parse_args()
     raise SystemExit(args.func(args))

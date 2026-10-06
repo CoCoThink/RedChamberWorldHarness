@@ -11,6 +11,7 @@ from .literary_eval import LiteraryEvaluationProfileRegistry
 from .open_interfaces import OpenInterfaceRegistry
 from .plocks import LiteraryProtectionRegistry
 from .promotion import PromotionRegistry
+from .registry import MigrationRegistry
 from .regression import run_r4_evidence_regression
 from .schema import validate_instance
 
@@ -68,7 +69,19 @@ def validate_repository(root: Path) -> list[str]:
                 errs = validate_instance(item, schema)
                 errors.extend(f"{path.relative_to(root)} {wrapper}[{i}]: {e}" for e in errs)
 
+    migration_registry_path = root / "data" / "registry" / "m1.json"
+    if migration_registry_path.exists():
+        errs = validate_instance(
+            load_data(migration_registry_path),
+            load_data(schema_dir / "migration_registry.schema.json"),
+        )
+        errors.extend(
+            f"{migration_registry_path.relative_to(root)}: {e}" for e in errs
+        )
+
     try:
+        registry = MigrationRegistry.from_repo(root)
+        errors.extend(registry.validate_integrity())
         graph = ProvenanceGraph.from_repo(root)
         errors.extend(graph.validate_integrity())
         literals = LiteralRegistry.from_repo(root)
@@ -110,6 +123,6 @@ def validate_repository(root: Path) -> list[str]:
                 for finding in gate["findings"]:
                     errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"provenance/literal/history/open/regression/plock/competition graph: {exc}")
+        errors.append(f"registry/provenance/literal/history/open/regression/plock/competition graph: {exc}")
 
     return errors
