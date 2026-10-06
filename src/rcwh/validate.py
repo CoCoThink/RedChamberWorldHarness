@@ -6,6 +6,7 @@ from .graph import ProvenanceGraph
 from .io import load_data
 from .history import HistoricalMechanismRegistry
 from .literals import LiteralRegistry
+from .open_interfaces import OpenInterfaceRegistry
 from .schema import validate_instance
 
 
@@ -47,6 +48,7 @@ def validate_repository(root: Path) -> list[str]:
         ("axes", "title_axes", "title_axis.schema.json"),
         ("literals", "literal_constraints", "literal_constraint.schema.json"),
         ("mechanisms", "historical_mechanisms", "historical_mechanism.schema.json"),
+        ("open_interfaces", "open_interfaces", "open_interface.schema.json"),
     ]
     for dirname, wrapper, schema_name in wrappers:
         schema = load_data(schema_dir / schema_name)
@@ -63,6 +65,8 @@ def validate_repository(root: Path) -> list[str]:
         errors.extend(literals.validate_integrity(graph))
         mechanisms = HistoricalMechanismRegistry.from_repo(root)
         errors.extend(mechanisms.validate_integrity(graph))
+        open_interfaces = OpenInterfaceRegistry.from_repo(root)
+        errors.extend(open_interfaces.validate_integrity(graph, literals, mechanisms))
     except Exception as exc:  # noqa: BLE001
         errors.append(f"provenance/literal/history graph: {exc}")
 

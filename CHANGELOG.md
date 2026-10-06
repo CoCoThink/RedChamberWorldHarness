@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.2.0-beta.5
+
+- Imported the full R4 28-item OPEN-LOCK registry as OL-001..OL-028.
+- Added OPEN_LOCKED as a reviewed uncertainty state distinct from PENDING.
+- Added machine checks that OPEN decisions remain OPEN/OPEN and current reconstruction choices remain CURRENT/MAY.
+- Linked OPEN interfaces to hard anchors, literal constraints, H01-H06 mechanisms, and stable-ACTIVE implementations where available.
+- Added anti-hardening tests for Chapter 91 jade identity, Qingbang formal title, Miaoyu W2 Guazhou, and whole-book PC/TG placement.
+- Added `rcwh open OL-001..OL-028`.
+
+
 ## 0.2.0-beta.4
 
 - Added H01–H06 historical-feasibility mechanisms from the R4-E review.

@@ -1,0 +1,451 @@
+open_interfaces:
+  - id: OL-001
+    title: 全书总回数
+    state: OPEN_LOCKED
+    uncertainty:
+      - 现有证据不能唯一证明原作总回数必为100回。
+    current_model:
+      status: CURRENT_C_HIGH
+      summary: 当前以100回作为高置信工作模型，服务81—100结构安排。
+    forbidden_hardening:
+      - 不得把“当前采用100回”改写成“原作唯一总回数已证实为100回”。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PROVENANCE_REGRADE, DOWNSTREAM_VIOLATION]
+    project_refs: [81—100_OPEN接口冻结表_v1.0.md]
+
+  - id: OL-002
+    title: 《十独吟》作者、体裁、篇数、对象
+    state: OPEN_LOCKED
+    uncertainty:
+      - 作者身份未唯一确定。
+      - 具体诗体未唯一确定。
+      - 完整篇数与文本结构未唯一确定。
+      - 所咏对象未唯一确定。
+    current_model:
+      status: CURRENT_C_MAIN
+      summary: 当前正文只显总题“十独吟”，不补全作者、体裁、篇数和对象。
+    hard_anchor_decision_refs: [decision:ten-solitary-chants:title-and-range]
+    open_decision_refs:
+      - decision:ten-solitary-chants:author
+      - decision:ten-solitary-chants:form
+      - decision:ten-solitary-chants:count
+      - decision:ten-solitary-chants:subjects
+    literal_refs: [literal:ten-solitary-chants:name]
+    implementation_refs: [impl:active:ch85:ten-solitary-chants]
+    forbidden_hardening:
+      - 不得因题名“十独吟”自动补成十首、十人或指定作者。
+    reopen_triggers: [NEW_DIRECT_WITNESS, ROLE_REGRADE, TARGET_REGRADE]
+
+  - id: OL-003
+    title: 《十独吟》后80与第85回安置
+    state: OPEN_LOCKED
+    uncertainty:
+      - 源证只强锁第64回以后；后80为高概率，不等于固定第85回。
+    current_model:
+      status: CURRENT_C_MAIN
+      summary: 当前在第85回显题，作为C-main实施。
+    hard_anchor_decision_refs: [decision:ten-solitary-chants:title-and-range]
+    current_decision_refs: [decision:ten-solitary-chants:placement]
+    literal_refs: [literal:ten-solitary-chants:name]
+    implementation_refs: [impl:active:ch85:ten-solitary-chants]
+    forbidden_hardening:
+      - 不得把“第64回以后”偷换为“第85回”。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE]
+
+  - id: OL-004
+    title: 黛玉死亡的具体回次
+    state: OPEN_LOCKED
+    uncertainty:
+      - 黛玉夭亡方向强，但具体落在第86回是项目工作安置。
+    current_model:
+      status: CURRENT_C
+      summary: 当前第86回实现黛玉病亡。
+    implementation_refs: [impl:active:ch86:open-scope]
+    forbidden_hardening:
+      - 不得把当前第86回安置反向当成源证回次。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE, DOWNSTREAM_VIOLATION]
+
+  - id: OL-005
+    title: 黛亡至金玉婚的顺序与间隔
+    state: OPEN_LOCKED
+    uncertainty:
+      - 当前采用黛玉先亡、相隔若干月后金玉婚；精确间隔未被唯一锁定。
+    current_model:
+      status: CURRENT_C
+      summary: 当前正文采用“黛亡→若干月→金玉婚”的工作顺序。
+    mechanism_refs: [H03]
+    implementation_refs:
+      - impl:active:ch86:open-scope
+      - impl:active:ch87:historical-mourning-marriage
+    forbidden_hardening:
+      - 不得把当前月数或相邻回次当作证据唯一要求。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE, NEW_PRIMARY_HISTORY_CONTRADICTION]
+
+  - id: OL-006
+    title: 元妃丧制对婚期的精确时长
+    state: OPEN_LOCKED
+    uncertainty:
+      - 丧制影响婚期可以成立，但具体等待日数与礼制算法不唯一。
+    current_model:
+      status: CURRENT_C_H
+      summary: 当前写“仍在服中、婚期后缓”，不写死27日、100日、9个月等公式。
+    mechanism_refs: [H03]
+    implementation_refs: [impl:active:ch87:historical-mourning-marriage]
+    forbidden_hardening:
+      - 不得把27日、100日、9个月或任何单一数字升级成唯一小说时长。
+    reopen_triggers: [NEW_PRIMARY_HISTORY_CONTRADICTION, NEW_DIRECT_WITNESS]
+
+  - id: OL-007
+    title: 金玉婚第87回安置
+    state: OPEN_LOCKED
+    uncertainty:
+      - 金玉婚方向与关系强，但第87回为工作安置。
+    current_model:
+      status: CURRENT_C
+      summary: 当前第87回完成金玉婚相关核心实现。
+    mechanism_refs: [H03, H04]
+    implementation_refs:
+      - impl:active:ch87:historical-mourning-marriage
+      - impl:active:ch87:historical-senior-kin-marriage-talk
+    forbidden_hardening:
+      - 不得把第87回当作原稿固定回次。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE]
+
+  - id: OL-008
+    title: 袭人出嫁、回访与“好歹留着麝月”场景
+    state: OPEN_LOCKED
+    uncertainty:
+      - 袭人出嫁后说“好歹留着麝月”有硬偏序，但具体第88回、回访方式与场景细节开放。
+    current_model:
+      status: CURRENT_PC
+      summary: 当前第88回写袭人出嫁，并在婚后短回访中兑现该对白。
+    hard_anchor_decision_refs:
+      - decision:sheyue-speech:literal
+      - decision:sheyue-speech:boundary
+      - decision:xiren:heading-part
+    current_decision_refs:
+      - decision:sheyue-speech:placement
+      - decision:xiren:placement
+    literal_refs: [literal:sheyue:keep-sheyue]
+    implementation_refs:
+      - impl:active:ch88:sheyue-speech
+      - impl:active:ch88:title
+    forbidden_hardening:
+      - 不得把第88回与婚后短回访形式写成源证唯一场景。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE]
+
+  - id: OL-009
+    title: 第89回抄没与临时借住
+    state: OPEN_LOCKED
+    uncertainty:
+      - 抄没方向强；具体第89回程序、迁出方式、借住院落均属当前C/H实现。
+    current_model:
+      status: CURRENT_C_H
+      summary: 当前第89回写抄没后迁入临时借住小院。
+    mechanism_refs: [H02, H04]
+    implementation_refs:
+      - impl:active:ch89:historical-confiscation
+      - impl:active:ch89:historical-borrowed-residence
+    forbidden_hardening:
+      - 不得把当前程序、院落、房间分配或曹家类比升级成贾府原稿事实。
+    reopen_triggers: [NEW_DIRECT_WITNESS, NEW_PRIMARY_HISTORY_CONTRADICTION, PLACEMENT_REGRADE]
+
+  - id: OL-010
+    title: T0完整题目与第90回编号
+    state: OPEN_LOCKED
+    uncertainty:
+      - 完整题目文字有硬证，但“第90回”编号仍是PC。
+    current_model:
+      status: CURRENT_PC
+      summary: 当前第90回完整采用“薛宝钗借词含讽谏　王熙凤知命强英雄”。
+    hard_anchor_decision_refs: [decision:future-title:baochai-fengjie:wording]
+    current_decision_refs: [decision:future-title:baochai-fengjie:placement]
+    implementation_refs: [impl:active:ch90:title]
+    forbidden_hardening:
+      - 不得让T0题目文字自动证明第90回编号。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE]
+
+  - id: OL-011
+    title: 凤姐扫雪拾玉的回次与玉身份
+    state: OPEN_LOCKED
+    uncertainty:
+      - 未来事件功能强；具体第91回和所拾是否通灵宝玉均开放。
+    current_model:
+      status: CURRENT_PC
+      summary: 当前第91回只写“玉样物”，故意不认定为通灵宝玉。
+    hard_anchor_decision_refs: [decision:fengjie-snow-jade:event]
+    open_decision_refs:
+      - decision:fengjie-snow-jade:jade-identity
+      - decision:fengjie-snow-jade:formal-title
+    current_decision_refs: [decision:fengjie-snow-jade:placement]
+    implementation_refs:
+      - impl:active:ch91:snow-jade
+      - impl:active:ch91:title
+    forbidden_hardening:
+      - 不得把“拾玉”自动等同“拾得通灵宝玉”。
+      - 不得把事件短语升级为正式原回目。
+    reopen_triggers: [NEW_DIRECT_WITNESS, ROLE_REGRADE, PLACEMENT_REGRADE]
+
+  - id: OL-012
+    title: 第92回羁押过程与释放机制
+    state: OPEN_LOCKED
+    uncertainty:
+      - 当前采用受牵连候问、约十日上下、问讯后普通释放；罪名、日数、程序细节未被源证锁死。
+    current_model:
+      status: CURRENT_C_H
+      summary: 当前稳定版本采用Phase2 B的克制程序模型。
+    current_decision_refs: [decision:prison:comfort-baoyu:placement]
+    mechanism_refs: [H01]
+    implementation_refs:
+      - impl:active:ch92:title
+      - impl:active:ch92:historical-detention-access
+    forbidden_hardening:
+      - 不得把约十日、具体罪名、审讯程序或普通释放路径当作曹稿硬证。
+    reopen_triggers: [NEW_DIRECT_WITNESS, NEW_PRIMARY_HISTORY_CONTRADICTION, PLACEMENT_REGRADE]
+
+  - id: OL-013
+    title: 茜雪接近狱中宝玉的资格与方式
+    state: OPEN_LOCKED
+    uncertainty:
+      - 茜雪回流方向强，但她没有被史料证明拥有旧仆当然探视资格。
+    current_model:
+      status: CURRENT_C_H
+      summary: 当前写成送物者托请后隔栅短话、可被催停的偶发接触。
+    mechanism_refs: [H01]
+    implementation_refs: [impl:active:ch92:historical-detention-access]
+    forbidden_hardening:
+      - 不得把旧仆身份写成制度性自由探监权。
+    reopen_triggers: [NEW_PRIMARY_HISTORY_CONTRADICTION, NEW_DIRECT_WITNESS]
+
+  - id: OL-014
+    title: 凤姐之死与巧姐危机的93—94编排
+    state: OPEN_LOCKED
+    uncertainty:
+      - 当前采用93凤姐死、94巧姐危机与刘姥姥救援；具体相邻回次与因果切分属于PC。
+    current_model:
+      status: CURRENT_PC
+      summary: 当前稳定正文按93→94连续推进。
+    implementation_refs: [impl:active:ch93-94:open-scope]
+    forbidden_hardening:
+      - 不得把93/94回次当作源证固定位置。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE, DOWNSTREAM_VIOLATION]
+
+  - id: OL-015
+    title: 第95回租住偏院与贫困参数
+    state: OPEN_LOCKED
+    uncertainty:
+      - 广义贫困方向强；具体偏院、租金、房间数、米炭价格与典当物均是C/H实现。
+    current_model:
+      status: CURRENT_C_H
+      summary: 当前第95回写赁住偏院、量米节炭、典当青夹袄。
+    hard_anchor_decision_refs: [decision:cold-winter-torn-felt:event]
+    current_decision_refs: [decision:cold-winter-torn-felt:placement]
+    mechanism_refs: [H04, H05]
+    implementation_refs:
+      - impl:active:ch95:title
+      - impl:active:ch95:historical-rented-yard
+      - impl:active:ch95:historical-poverty-pawn
+    forbidden_hardening:
+      - 不得把具体房钱、米量、炭量、青夹袄或偏院格局写成史料已经证明。
+    reopen_triggers: [NEW_DIRECT_WITNESS, NEW_PRIMARY_HISTORY_CONTRADICTION, PLACEMENT_REGRADE]
+
+  - id: OL-016
+    title: 湘云卫若兰婚后时序与缺席原因
+    state: OPEN_LOCKED
+    uncertainty:
+      - 湘云婚配方向及若兰/麒麟联系较强；婚期、婚后日常、若兰外出或缺席原因未唯一确定。
+    current_model:
+      status: CURRENT_C
+      summary: 当前第96—97回给出婚后日常与若兰长期缺席的生活化实现。
+    implementation_refs: [impl:active:ch96-97:xiangyun-open-scope]
+    forbidden_hardening:
+      - 不得把当前婚期、外出理由、离散机制或第96—97回次写成原稿硬事实。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE]
+
+  - id: OL-017
+    title: 薛家/娘家援助边界
+    state: OPEN_LOCKED
+    uncertainty:
+      - 薛家是否援助、援助额度、频率、持续时间和方式均未锁死。
+    current_model:
+      status: NONE
+      summary: 当前只允许有限、间歇、不能彻底托底的可能性，不设固定供养模型。
+    mechanism_refs: [H06]
+    forbidden_hardening:
+      - 不得写成娘家依法必须持续足额供养。
+      - 不得写成出嫁后娘家绝不可能再援助。
+    reopen_triggers: [NEW_PRIMARY_HISTORY_CONTRADICTION, NEW_DIRECT_WITNESS]
+
+  - id: OL-018
+    title: 妙玉寺居与瓜州弱线索
+    state: OPEN_LOCKED
+    uncertainty:
+      - 当前妙玉寺中生活为C-main；“瓜州渡口”为W2，不能独立生成渡口、被掳、屈从、死亡地点链。
+    current_model:
+      status: CURRENT_C_MAIN
+      summary: 当前第97回只写寺中物件与共同生活机制，不实现瓜州传奇链。
+    open_decision_refs: [decision:w2:miaoyu-guazhou]
+    implementation_refs: [impl:active:ch97:miaoyu-xichun-open-scope]
+    forbidden_hardening:
+      - 不得由W2“瓜州渡口”自行生长成完整悲剧机制。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PROVENANCE_REGRADE, MODALITY_REGRADE]
+
+  - id: OL-019
+    title: 惜春落发回次与寺中日常
+    state: OPEN_LOCKED
+    uncertainty:
+      - 惜春出家方向强，但准确落发回次、寺庙地点与日常细节为C。
+    current_model:
+      status: CURRENT_C
+      summary: 当前集中于第97回实现落发与寺居。
+    implementation_refs: [impl:active:ch97:miaoyu-xichun-open-scope]
+    forbidden_hardening:
+      - 不得把第97回、寺名、日常劳动或“已悟透”状态写成源证事实。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE]
+
+  - id: OL-020
+    title: 甄贾二宝是否现实面对面
+    state: OPEN_LOCKED
+    uncertainty:
+      - “甄宝玉送玉”事件强，但不要求甄贾二宝现实面对面完成。
+    current_model:
+      status: CURRENT_C
+      summary: 当前第98回让甄贾二宝现实会面。
+    hard_anchor_decision_refs: [decision:zhen-sends-jade:event]
+    current_decision_refs:
+      - decision:zhen-sends-jade:meeting
+      - decision:zhen-sends-jade:placement
+    implementation_refs: [impl:active:ch98:zhen-jade]
+    forbidden_hardening:
+      - 不得把当前面对面会晤反向升级为事件证据的必要形式。
+    reopen_triggers: [NEW_DIRECT_WITNESS, ROLE_REGRADE, PLACEMENT_REGRADE]
+
+  - id: OL-021
+    title: 甄宝玉所送之玉的同一性
+    state: OPEN_LOCKED
+    uncertainty:
+      - 所送是否同一块通灵宝玉未被现有证据唯一确定。
+    current_model:
+      status: CURRENT_C
+      summary: 当前采用误拿包裹后同一通灵玉被送回的复合模型。
+    hard_anchor_decision_refs: [decision:zhen-sends-jade:event]
+    current_decision_refs: [decision:zhen-sends-jade:same-jade]
+    implementation_refs: [impl:active:ch98:zhen-jade]
+    forbidden_hardening:
+      - 不得把“送玉”自动等同“送回同一通灵宝玉”。
+    reopen_triggers: [NEW_DIRECT_WITNESS, TARGET_REGRADE]
+
+  - id: OL-022
+    title: 《续庄子》后部实现方式
+    state: OPEN_LOCKED
+    uncertainty:
+      - 后部如何兑现《续庄子》相关回响未唯一确定。
+    current_model:
+      status: CURRENT_C
+      summary: 当前第98回只作轻度文本回声，不建立额外硬情节。
+    forbidden_hardening:
+      - 不得把当前第98回回声方式当作唯一原稿实现。
+    reopen_triggers: [NEW_DIRECT_WITNESS, ROLE_REGRADE, PLACEMENT_REGRADE]
+
+  - id: OL-023
+    title: 悬崖撒手的回次、寺庙与路径
+    state: OPEN_LOCKED
+    uncertainty:
+      - “悬崖撒手”及弃宝钗麝月为僧方向强；第99回、具体寺庙、行走路径和出家仪式为C。
+    current_model:
+      status: CURRENT_C
+      summary: 当前第99回写宝玉离家后在寺中剃发并拒绝回家。
+    hard_anchor_decision_refs: [decision:cliff-release:function]
+    open_decision_refs: [decision:cliff-release:formal-title]
+    current_decision_refs: [decision:cliff-release:placement]
+    implementation_refs:
+      - impl:active:ch99:cliff-release
+      - impl:active:ch99:title
+    forbidden_hardening:
+      - 不得把T2“悬崖撒手”升级为正式原标题。
+      - 不得把第99回、寺庙、路径或仪式写成源证锁定。
+    reopen_triggers: [NEW_DIRECT_WITNESS, ROLE_REGRADE, PLACEMENT_REGRADE]
+
+  - id: OL-024
+    title: 第100回情榜正式总名
+    state: OPEN_LOCKED
+    uncertainty:
+      - 批语有“警幻情榜”Source原字，但小说内正式总榜名未唯一确定。
+    current_model:
+      status: CURRENT_FORMAT
+      summary: 当前正文不设总题，只让警幻开榜。
+    open_decision_refs: [decision:qingbang:formal-title]
+    literal_refs: [literal:qingbang:source-phrase]
+    implementation_refs: [impl:active:ch100:qingbang]
+    forbidden_hardening:
+      - 不得把SOURCE_EXACT“警幻情榜”升级为小说正式榜名。
+    reopen_triggers: [NEW_DIRECT_WITNESS, TARGET_REGRADE, ROLE_REGRADE]
+
+  - id: OL-025
+    title: 情榜人数、下层名单与绝大多数情评
+    state: OPEN_LOCKED
+    uncertainty:
+      - 五层与“情情/情不情”有硬锚；每层十二、总六十、三副四副完整名单及绝大多数情评仍开放。
+    current_model:
+      status: CURRENT_FORMAT
+      summary: 当前只保留五层与最小硬锚，不建立60人数据库。
+    hard_anchor_decision_refs:
+      - decision:qingbang:final-structure
+      - decision:qingbang:baoyu-rating
+      - decision:qingbang:daiyu-rating
+    open_decision_refs:
+      - decision:qingbang:counts
+      - decision:qingbang:lower-rosters
+    literal_refs:
+      - literal:qingbang:daiyu-rating
+      - literal:qingbang:baoyu-rating
+    implementation_refs: [impl:active:ch100:qingbang]
+    forbidden_hardening:
+      - 不得恢复“五册×十二=六十人”的完成态数据库。
+      - 不得凭漫拟名单补齐三副四副。
+    reopen_triggers: [NEW_DIRECT_WITNESS, ROLE_REGRADE, TARGET_REGRADE]
+
+  - id: OL-026
+    title: 情榜载体形式
+    state: OPEN_LOCKED
+    uncertainty:
+      - 一轴素榜只是当前文学实现，现有证据不锁定物理载体。
+    current_model:
+      status: CURRENT_FORMAT
+      summary: 当前采用一轴素榜。
+    current_decision_refs: [decision:qingbang:current-format]
+    implementation_refs: [impl:active:ch100:qingbang]
+    forbidden_hardening:
+      - 不得把“一轴素榜”写成原稿或脂批已经证明的唯一形制。
+    reopen_triggers: [NEW_DIRECT_WITNESS, ROLE_REGRADE]
+
+  - id: OL-027
+    title: 贾兰簪缨、李纨终局的第100回集中安置
+    state: OPEN_LOCKED
+    uncertainty:
+      - 贾兰成就与李纨终局方向可集中实现，但具体第100回、年份与相隔时长未被唯一确定。
+    current_model:
+      status: CURRENT_C
+      summary: 当前第100回前段集中收束贾兰、李纨。
+    implementation_refs: [impl:active:ch100:liwan-jialan-open-scope]
+    forbidden_hardening:
+      - 不得把第100回集中收束与具体年份当作源证固定。
+    reopen_triggers: [NEW_DIRECT_WITNESS, PLACEMENT_REGRADE]
+
+  - id: OL-028
+    title: 81—100全部具体回次与TG标题的工程属性
+    state: OPEN_LOCKED
+    uncertainty:
+      - 除特定源证定位外，81—100具体回次整体属于项目PC安排；TG标题不等于原回目。
+    current_model:
+      status: CURRENT_PROJECT
+      summary: 当前以20回工作槽管理结构，允许相邻回次在新证据或回归后重排。
+    forbidden_hardening:
+      - 不得因为稳定正文已经成熟就把全部81—100回次升级为原稿事实。
+      - 不得把TG工作标题升级为原回目。
+    reopen_triggers:
+      - NEW_DIRECT_WITNESS
+      - PLACEMENT_REGRADE
+      - DOWNSTREAM_VIOLATION
+    project_refs:
+      - 81—100_OPEN接口冻结表_v1.0.md
+      - 红楼梦八十回后全幅文学补完大工程计划_v6.0_R4最终放行版.md

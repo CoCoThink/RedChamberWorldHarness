@@ -9,6 +9,7 @@ from .graph import ProvenanceGraph
 from .history import HistoricalMechanismRegistry, format_mechanism
 from .io import load_data
 from .literals import LiteralRegistry, format_literal
+from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .runtime import WorldState
 from .trace import format_trace
 from .validate import validate_repository
@@ -26,7 +27,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("PASS: repository schemas, provenance graph, T-axis, literals, W2 policy, and historical mechanisms valid")
+    print("PASS: repository schemas, provenance graph, T-axis, literals, W2 policy, historical mechanisms, and 28 OPEN-LOCK interfaces valid")
     return 0
 
 
@@ -99,6 +100,25 @@ def cmd_mechanism(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_open(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    graph = ProvenanceGraph.from_repo(root)
+    literals = LiteralRegistry.from_repo(root)
+    mechanisms = HistoricalMechanismRegistry.from_repo(root)
+    registry = OpenInterfaceRegistry.from_repo(root)
+    try:
+        payload = registry.describe(args.interface_id, graph, literals, mechanisms)
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_open_interface(payload))
+    return 0
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(prog="rcwh")
     parser.add_argument("--root", default=None)
@@ -126,6 +146,11 @@ def main() -> None:
     p_mechanism.add_argument("mechanism_id")
     p_mechanism.add_argument("--json", action="store_true")
     p_mechanism.set_defaults(func=cmd_mechanism)
+
+    p_open = sub.add_parser("open")
+    p_open.add_argument("interface_id")
+    p_open.add_argument("--json", action="store_true")
+    p_open.set_defaults(func=cmd_open)
 
     args = parser.parse_args()
     raise SystemExit(args.func(args))
