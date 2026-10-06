@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0-alpha.4
+
+- Started the first real 43-0 production run on Chapter 86.
+- Added an exact stable-baseline pressure excerpt for the afternoon-to-late-arrival segment.
+- Added a functional structure map identifying A4-A6 illness/logistics density as the primary pressure point.
+- Added B light-compression and C strong-compression trial variants as separate artifacts.
+- Advanced the Chapter 86 production ledger through BASELINE_EXCERPT, STRUCTURAL_REORDER, and SMALL_TRIAL.
+- Kept six-field regression, P-Lock regression, blind read, adjudication, and promotion pending.
+- Stable ACTIVE prose remains unchanged.
+
+
 ## 0.3.0-alpha.3
 
 - Added the Competition / Review Ledger for 43-0 pressure tests.

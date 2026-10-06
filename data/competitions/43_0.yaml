@@ -4,22 +4,25 @@ competition_records:
     chapter: 86
     sequence: 1
     plock_ref: plock:ch86:cold-medicine
-    state: READY_FOR_CANDIDATES
+    state: IN_REVIEW
     baseline:
       file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
       sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
     pipeline: [BASELINE_EXCERPT, STRUCTURAL_REORDER, SMALL_TRIAL, SIX_FIELD_REGRESSION, PLOCK_REGRESSION, BLIND_READ]
     workflow_progress:
-      BASELINE_EXCERPT: PENDING
-      STRUCTURAL_REORDER: PENDING
-      SMALL_TRIAL: PENDING
+      BASELINE_EXCERPT: PASS
+      STRUCTURAL_REORDER: PASS
+      SMALL_TRIAL: PASS
       SIX_FIELD_REGRESSION: PENDING
       PLOCK_REGRESSION: PENDING
       BLIND_READ: PENDING
     candidates: []
     adjudication: {outcome: PENDING, winner_candidate_id: null, promotion_state: NOT_ELIGIBLE}
     stable_active_effect: SEPARATE_PROMOTION_ONLY
-    notes: 43-0当前唯一可启动项；候选正文必须另存，不得覆盖稳定ACTIVE。
+    notes: >-
+      43-0第86真实生产压力测试已启动。Phase 1产物位于
+      artifacts/43-0/ch86/；已完成基线摘录、结构重排和小段试写。
+      B/C仍是结构试验，不是正式promotion candidates；稳定ACTIVE未改。
 
   - id: comp:43-0:ch89:pressure-test
     mode: PRODUCTION_43_0
