@@ -216,6 +216,12 @@ class CompetitionRegistry:
         by_id = {x["id"]: x for x in results}
         adj = record["adjudication"]
         consistency = []
+        for item in results:
+            if item["machine_matches_ledger"] is False:
+                consistency.append(
+                    f"candidate {item['id']} machine status {item['machine_status']} "
+                    f"does not match ledger expectation {item['machine_expected_status']}"
+                )
         winner = adj["winner_candidate_id"]
         if winner:
             item = by_id.get(winner)

@@ -1,5 +1,16 @@
 # Changelog
 
+## 0.3.0-alpha.5
+
+- Promoted the Chapter 86 Phase 1 trials into three full-chapter production candidates.
+- Added immutable candidate identity for A/B/C using Git blob SHA and source commit.
+- Completed candidate-level six-field regression: A/B/C all PASS without changing upstream evidence identity.
+- Completed Chapter 86 human P-Lock regression: A/B/C all retain the protected floor; C is flagged for literary-cleanliness risk rather than falsely failed by the lock layer.
+- Added a full anonymous blind-read packet under BR-41 / BR-73 / BR-26.
+- Kept blind read honestly PENDING because no independent reviewer has yet reviewed the anonymized packet.
+- Stable ACTIVE remains unchanged and no candidate is adjudication-eligible.
+
+
 ## 0.3.0-alpha.4
 
 - Started the first real 43-0 production run on Chapter 86.

@@ -23,9 +23,30 @@ def test_production_43_0_order_is_frozen():
     assert records[0]["workflow_progress"]["BASELINE_EXCERPT"] == "PASS"
     assert records[0]["workflow_progress"]["STRUCTURAL_REORDER"] == "PASS"
     assert records[0]["workflow_progress"]["SMALL_TRIAL"] == "PASS"
-    assert records[0]["workflow_progress"]["SIX_FIELD_REGRESSION"] == "PENDING"
+    assert records[0]["workflow_progress"]["SIX_FIELD_REGRESSION"] == "PASS"
+    assert records[0]["workflow_progress"]["PLOCK_REGRESSION"] == "PASS"
+    assert records[0]["workflow_progress"]["BLIND_READ"] == "PENDING"
+    assert [x["label"] for x in records[0]["candidates"]] == ["A", "B", "C"]
     assert all(x["state"] == "BLOCKED_BY_PREDECESSOR" for x in records[1:])
     assert all(x["pipeline"] == PIPELINE for x in records)
+
+
+def test_real_ch86_candidates_are_machine_ready_but_not_blind_read_eligible():
+    registry = CompetitionRegistry.from_repo(root())
+    payload = registry.evaluate_record(
+        root(), registry.records["comp:43-0:ch86:pressure-test"]
+    )
+    assert {x["label"]: x["machine_status"] for x in payload["candidate_results"]} == {
+        "A": "READY_FOR_BLIND_READ",
+        "B": "READY_FOR_BLIND_READ",
+        "C": "READY_FOR_BLIND_READ",
+    }
+    assert all(x["machine_matches_ledger"] for x in payload["candidate_results"])
+    assert all(x["six_field_pass"] for x in payload["candidate_results"])
+    assert all(x["human_plock_status"] == "PASS" for x in payload["candidate_results"])
+    assert all(x["blind_read_status"] == "PENDING" for x in payload["candidate_results"])
+    assert all(x["adjudication_eligible"] is False for x in payload["candidate_results"])
+    assert payload["stable_active_mutated"] is False
 
 
 def test_production_ledger_validates_against_stable_active():

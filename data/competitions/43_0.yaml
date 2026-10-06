@@ -13,16 +13,93 @@ competition_records:
       BASELINE_EXCERPT: PASS
       STRUCTURAL_REORDER: PASS
       SMALL_TRIAL: PASS
-      SIX_FIELD_REGRESSION: PENDING
-      PLOCK_REGRESSION: PENDING
+      SIX_FIELD_REGRESSION: PASS
+      PLOCK_REGRESSION: PASS
       BLIND_READ: PENDING
-    candidates: []
+    candidates:
+      - id: ch86-A
+        label: A
+        blind_token: BR-41
+        artifact:
+          kind: REPO_FILE
+          path: artifacts/43-0/ch86/candidates/ch86_A_stable_full.md
+          git_blob_sha: 82fe46a8e159a1f2e1106f541d6ed94c6d1d8380
+          source_commit: 3ca7ef41de5e11414885a3adf92980bca753aa7f
+        origin: STABLE_BASELINE
+        machine_expected_status: READY_FOR_BLIND_READ
+        six_field:
+          PROVENANCE: PASS
+          ROLE: PASS
+          MODALITY: PASS
+          TARGET: PASS
+          PLACEMENT: PASS
+          IMPLEMENTATION: PASS
+        human_plock:
+          status: PASS
+          notes: 稳定基线本身完整保留冷药链、来迟日常性、未成诗稿与身体先于象征。
+        blind_read:
+          status: PENDING
+          reviewer_blinded: false
+          notes: 匿名包已生成，尚无独立盲读者完成审读。
+      - id: ch86-B
+        label: B
+        blind_token: BR-73
+        artifact:
+          kind: REPO_FILE
+          path: artifacts/43-0/ch86/candidates/ch86_B_light_full.md
+          git_blob_sha: 9e39696dd6fb92e5d6241e029588b1df247c265b
+          source_commit: 3ca7ef41de5e11414885a3adf92980bca753aa7f
+        origin: STRUCTURAL_REWRITE
+        machine_expected_status: READY_FOR_BLIND_READ
+        six_field:
+          PROVENANCE: PASS
+          ROLE: PASS
+          MODALITY: PASS
+          TARGET: PASS
+          PLACEMENT: PASS
+          IMPLEMENTATION: PASS
+        human_plock:
+          status: PASS
+          notes: >-
+            轻压只作用于A4-A6密度；保留一处外界跑腿摩擦、紫鹃误判根据、
+            问宝玉/问书、最后一口水、死后家务、宝玉再温一温与最终冷药终句。
+        blind_read:
+          status: PENDING
+          reviewer_blinded: false
+          notes: 匿名包已生成，尚无独立盲读者完成审读。
+      - id: ch86-C
+        label: C
+        blind_token: BR-26
+        artifact:
+          kind: REPO_FILE
+          path: artifacts/43-0/ch86/candidates/ch86_C_strong_full.md
+          git_blob_sha: 53119a684f26792f299ac1107eaec15df6e77ec9
+          source_commit: 3ca7ef41de5e11414885a3adf92980bca753aa7f
+        origin: STRUCTURAL_REWRITE
+        machine_expected_status: READY_FOR_BLIND_READ
+        six_field:
+          PROVENANCE: PASS
+          ROLE: PASS
+          MODALITY: PASS
+          TARGET: PASS
+          PLACEMENT: PASS
+          IMPLEMENTATION: PASS
+        human_plock:
+          status: PASS
+          notes: >-
+            仍达到P-Lock最低保护线：硬锚、药炉链、未成诗稿和宝玉日常误读均在；
+            但外界摩擦与死后家务明显变薄，是否过于洁净只能由盲读判断。
+        blind_read:
+          status: PENDING
+          reviewer_blinded: false
+          notes: 匿名包已生成，尚无独立盲读者完成审读。
     adjudication: {outcome: PENDING, winner_candidate_id: null, promotion_state: NOT_ELIGIBLE}
     stable_active_effect: SEPARATE_PROMOTION_ONLY
     notes: >-
       43-0第86真实生产压力测试已启动。Phase 1产物位于
       artifacts/43-0/ch86/；已完成基线摘录、结构重排和小段试写。
-      B/C仍是结构试验，不是正式promotion candidates；稳定ACTIVE未改。
+      A/B/C已升级为正式全回候选并完成六字段与P-Lock回归。
+      三稿均未进行独立盲读，故均不可裁定为winner；稳定ACTIVE未改。
 
   - id: comp:43-0:ch89:pressure-test
     mode: PRODUCTION_43_0
