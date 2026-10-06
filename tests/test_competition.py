@@ -19,7 +19,11 @@ def test_production_43_0_order_is_frozen():
         key=lambda x: x["sequence"],
     )
     assert [x["chapter"] for x in records] == [86, 89, 92, 97]
-    assert records[0]["state"] == "READY_FOR_CANDIDATES"
+    assert records[0]["state"] == "IN_REVIEW"
+    assert records[0]["workflow_progress"]["BASELINE_EXCERPT"] == "PASS"
+    assert records[0]["workflow_progress"]["STRUCTURAL_REORDER"] == "PASS"
+    assert records[0]["workflow_progress"]["SMALL_TRIAL"] == "PASS"
+    assert records[0]["workflow_progress"]["SIX_FIELD_REGRESSION"] == "PENDING"
     assert all(x["state"] == "BLOCKED_BY_PREDECESSOR" for x in records[1:])
     assert all(x["pipeline"] == PIPELINE for x in records)
 
