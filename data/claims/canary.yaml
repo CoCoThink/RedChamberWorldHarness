@@ -3,6 +3,10 @@ claims:
   - id: claim:cliff-release:future-interface
     statement: 后文存在被批者称作“悬崖撒手”的一回/接口。
     kind: CHAPTER_CALL
+    role: CHAPTER_CALL
+    modality: DIRECT_ASSERTION
+    literal_targets: [SOURCE_EXACT, SEM]
+    t_axis: T2
     support:
       - source: src:gengchen:ch21:cliff-release
         relation: DIRECT
@@ -38,6 +42,10 @@ claims:
   - id: claim:zhen-sends-jade:event
     statement: 后文有“甄宝玉送玉”这一未来事件。
     kind: EVENT
+    role: EVENT
+    modality: DIRECT_ASSERTION
+    literal_targets: [SEM]
+    t_axis: T3
     support:
       - source: src:jimao:ch18:zhen-baoyu-sends-jade
         relation: DIRECT
@@ -71,6 +79,10 @@ claims:
   - id: claim:fengjie-snow-jade:event
     statement: 后文存在“凤姐扫雪拾玉”这一场景/事件。
     kind: EVENT
+    role: SCENE_DESCRIPTION
+    modality: DIRECT_ASSERTION
+    literal_targets: [SEM]
+    t_axis: T3
     support:
       - source: src:gengchen:ch23:fengjie-snow-jade
         relation: DIRECT

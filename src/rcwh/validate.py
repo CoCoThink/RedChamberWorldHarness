@@ -11,7 +11,6 @@ def validate_repository(root: Path) -> list[str]:
     errors: list[str] = []
     schema_dir = root / "schemas"
 
-    # v0.1 singleton files
     for path in sorted((root / "data" / "characters").glob("*.yaml")):
         errs = validate_instance(load_data(path), load_data(schema_dir / "character.schema.json"))
         errors.extend(f"{path.relative_to(root)}: {e}" for e in errs)
@@ -24,7 +23,6 @@ def validate_repository(root: Path) -> list[str]:
         errs = validate_instance(load_data(path), load_data(schema_dir / "scene_contract.schema.json"))
         errors.extend(f"{path.relative_to(root)}: {e}" for e in errs)
 
-    # v0.1 list wrappers
     evidence_schema = load_data(schema_dir / "evidence.schema.json")
     for path in sorted((root / "data" / "evidence").glob("*.yaml")):
         doc = load_data(path)
@@ -39,12 +37,12 @@ def validate_repository(root: Path) -> list[str]:
             errs = validate_instance(event, event_schema)
             errors.extend(f"{path.relative_to(root)} events[{i}]: {e}" for e in errs)
 
-    # v0.2 provenance kernel
     wrappers = [
         ("sources", "sources", "source.schema.json"),
         ("claims", "claims", "claim.schema.json"),
         ("decisions", "decisions", "decision.schema.json"),
         ("implementations", "implementations", "implementation.schema.json"),
+        ("axes", "title_axes", "title_axis.schema.json"),
     ]
     for dirname, wrapper, schema_name in wrappers:
         schema = load_data(schema_dir / schema_name)

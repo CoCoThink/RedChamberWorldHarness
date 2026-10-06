@@ -19,6 +19,16 @@ def _append_implementations(out: list[str], implementations: list[dict[str, Any]
         )
 
 
+def _append_axes(out: list[str], axes: list[dict[str, Any]]) -> None:
+    out.append("")
+    out.append("TITLE AXIS")
+    if not axes:
+        out.append("- none")
+        return
+    for axis in axes:
+        out.append(f"- {axis['id']} [{axis['class']}] {axis['text']}")
+
+
 def format_trace(payload: dict[str, Any]) -> str:
     kind = payload["type"]
     out: list[str] = []
@@ -29,6 +39,7 @@ def format_trace(payload: dict[str, Any]) -> str:
             "SOURCE",
             _line("id", source["id"]),
             _line("type", source["type"]),
+            _line("tier", source.get("tier")),
             _line("witness", source["witness"]),
             _line("title", source["title"]),
             _line("locator", source.get("locator")),
@@ -42,6 +53,7 @@ def format_trace(payload: dict[str, Any]) -> str:
         out.append("DOWNSTREAM DECISIONS")
         for decision in payload["decisions"]:
             out.append(f"- {decision['id']} [{decision['status']}] {decision['statement']}")
+        _append_axes(out, payload.get("title_axes", []))
         _append_implementations(out, payload.get("implementations", []))
         return "\n".join(out)
 
@@ -52,6 +64,10 @@ def format_trace(payload: dict[str, Any]) -> str:
             _line("id", claim["id"]),
             _line("status", claim["status"]),
             _line("kind", claim["kind"]),
+            _line("role", claim.get("role")),
+            _line("modality", claim.get("modality")),
+            _line("literal_targets", claim.get("literal_targets")),
+            _line("t_axis", claim.get("t_axis")),
             _line("statement", claim["statement"]),
             "",
             "SUPPORTED BY",
@@ -69,6 +85,7 @@ def format_trace(payload: dict[str, Any]) -> str:
                 f"- {decision['id']} [{decision['status']}/{decision['constraint']}] "
                 f"{decision['statement']}"
             )
+        _append_axes(out, payload.get("title_axes", []))
         _append_implementations(out, payload.get("implementations", []))
         return "\n".join(out)
 
@@ -93,34 +110,67 @@ def format_trace(payload: dict[str, Any]) -> str:
                 out.append(f"- {source['id']} ({source['type']}) {source['title']}")
         else:
             out.append("- none")
+        _append_axes(out, payload.get("title_axes", []))
         _append_implementations(out, payload.get("implementations", []))
         return "\n".join(out)
 
-    implementation = payload["implementation"]
+    if kind == "implementation":
+        implementation = payload["implementation"]
+        out.extend([
+            "IMPLEMENTATION",
+            _line("id", implementation["id"]),
+            _line("status", implementation["status"]),
+            _line("chapter", implementation["chapter"]),
+            _line("summary", implementation["summary"]),
+            _line("locator", implementation["locator"]),
+            "",
+            "DECISIONS",
+        ])
+        for decision in payload["decisions"]:
+            out.append(
+                f"- {decision['id']} [{decision['status']}/{decision['constraint']}] "
+                f"{decision['statement']}"
+            )
+        out.append("")
+        out.append("CLAIMS")
+        for claim in payload["claims"]:
+            out.append(f"- {claim['id']} [{claim['status']}] {claim['statement']}")
+        out.append("")
+        out.append("SOURCES")
+        if payload["sources"]:
+            for source in payload["sources"]:
+                out.append(f"- {source['id']} ({source['type']}) {source['title']}")
+        else:
+            out.append("- none")
+        _append_axes(out, payload.get("title_axes", []))
+        return "\n".join(out)
+
+    axis = payload["title_axis"]
     out.extend([
-        "IMPLEMENTATION",
-        _line("id", implementation["id"]),
-        _line("status", implementation["status"]),
-        _line("chapter", implementation["chapter"]),
-        _line("summary", implementation["summary"]),
-        _line("locator", implementation["locator"]),
+        "TITLE AXIS",
+        _line("id", axis["id"]),
+        _line("class", axis["class"]),
+        _line("generated", axis["generated"]),
+        _line("text", axis["text"]),
+        _line("current_chapter", axis.get("current_chapter")),
         "",
-        "DECISIONS",
+        "CLAIMS",
     ])
+    for claim in payload["claims"]:
+        out.append(
+            f"- {claim['id']} [{claim['status']}] role={claim.get('role')} "
+            f"{claim['statement']}"
+        )
+    out.append("")
+    out.append("SOURCES")
+    for source in payload["sources"]:
+        out.append(f"- {source['id']} [{source.get('tier')}] {source['title']}")
+    out.append("")
+    out.append("DECISIONS")
     for decision in payload["decisions"]:
         out.append(
             f"- {decision['id']} [{decision['status']}/{decision['constraint']}] "
             f"{decision['statement']}"
         )
-    out.append("")
-    out.append("CLAIMS")
-    for claim in payload["claims"]:
-        out.append(f"- {claim['id']} [{claim['status']}] {claim['statement']}")
-    out.append("")
-    out.append("SOURCES")
-    if payload["sources"]:
-        for source in payload["sources"]:
-            out.append(f"- {source['id']} ({source['type']}) {source['title']}")
-    else:
-        out.append("- none")
+    _append_implementations(out, payload.get("implementations", []))
     return "\n".join(out)
