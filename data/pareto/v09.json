@@ -1,0 +1,562 @@
+{
+  "id": "pareto-evaluation:v0.9",
+  "milestone": "P3",
+  "status": "PASS",
+  "authority": "SHADOW_ONLY",
+  "rule": "Pareto comparison only. No weighted total, no scalar winner, no promotion of heuristic axes into Evidence.",
+  "axes": {
+    "evidence_fit": {
+      "metric": "evidence_distance",
+      "direction": "MINIMIZE",
+      "source": "CURATED_HYPOTHESIS_BOUNDARY",
+      "description": "相对硬接口额外承诺的证据距离；0最好。"
+    },
+    "contradiction_risk": {
+      "metric": "p2_pressure_count",
+      "direction": "MINIMIZE",
+      "source": "P2_RUNTIME",
+      "description": "P2非阻断PRESSURE数量；blocker已在P2淘汰。"
+    },
+    "open_consumption": {
+      "metric": "open_commitment_burden",
+      "direction": "MINIMIZE",
+      "source": "CURATED_HYPOTHESIS_BOUNDARY",
+      "description": "场景假说为运行而消费OPEN的程度；不改变canonical OPEN。"
+    },
+    "historical_cost": {
+      "metric": "historical_cost_burden",
+      "direction": "MINIMIZE",
+      "source": "HYPOTHESIS_METADATA",
+      "description": "按Hypothesis historical_cost聚合的机制成本。"
+    },
+    "world_coherence": {
+      "metric": "world_coherence_pressure_count",
+      "direction": "MINIMIZE",
+      "source": "P2_RUNTIME",
+      "description": "与资源、物件、司法、居所、W2路线直接相关的P2世界压力。"
+    },
+    "chapter_economy": {
+      "metric": "chapter_load_burden",
+      "direction": "MINIMIZE",
+      "source": "CURATED_STRUCTURAL",
+      "description": "额外丧期、搬迁、会面、物流链、末回压缩等对20回容量的负担。"
+    },
+    "front80_structural_echo": {
+      "metric": "expert_echo_grade",
+      "direction": "MAXIMIZE",
+      "source": "LITERARY_ECOLOGY_HEURISTIC",
+      "description": "依据LE-D02/D07/D08/D09/D12等前80结构语法的专家启发式，1—5；不是证据。"
+    },
+    "literary_fertility": {
+      "metric": "expert_fertility_grade",
+      "direction": "MAXIMIZE",
+      "source": "LITERARY_ECOLOGY_HEURISTIC",
+      "description": "方案能否自然生成生活场、群像、物件长线与非说明性冲突的专家启发式，1—5；不是证据。"
+    }
+  },
+  "mechanism_axes": [
+    "evidence_fit",
+    "contradiction_risk",
+    "open_consumption",
+    "historical_cost",
+    "world_coherence",
+    "chapter_economy"
+  ],
+  "full_axes": [
+    "evidence_fit",
+    "contradiction_risk",
+    "open_consumption",
+    "historical_cost",
+    "world_coherence",
+    "chapter_economy",
+    "front80_structural_echo",
+    "literary_fertility"
+  ],
+  "historical_cost_mapping": {
+    "LOW": 0,
+    "MEDIUM": 1,
+    "HIGH": 2,
+    "UNKNOWN": 1
+  },
+  "world_pressure_kinds": [
+    "RESOURCE_PRESSURE",
+    "PROPERTY_BASIS_REQUIRED",
+    "FINITE_AFFINAL_SUPPORT",
+    "LEGAL_MECHANISM_PRESSURE",
+    "OBJECT_CHAIN_PRESSURE",
+    "W2_DEPENDENCY"
+  ],
+  "hypothesis_burdens": [
+    {
+      "hypothesis_id": "HYP-O09-A",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "不额外声称贾母死亡；只选择其在婚时仍在且有实权的场景分支。",
+        "open_consumption": "选择一个OL-007分支。",
+        "chapter_economy": "不新增独立丧期。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-O09-B",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "不额外声称贾母死亡；只选择名义权威与实际操办分离。",
+        "open_consumption": "选择一个OL-007分支。",
+        "chapter_economy": "不新增独立丧期。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-O09-C",
+      "evidence_distance": 1,
+      "open_consumption": 1,
+      "chapter_economy": 2,
+      "rationale": {
+        "evidence_fit": "在主婚权OPEN之外新增婚前死亡事实，需承担额外叙事承诺。",
+        "open_consumption": "选择一个OL-007分支。",
+        "chapter_economy": "新增贾母死亡、丧期及其与元春/黛玉死亡链的容量竞争。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-G0",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 1,
+      "rationale": {
+        "evidence_fit": "OL-005明确开放，先婚不因current-C而降权。",
+        "open_consumption": "选择一个婚姻相位。",
+        "chapter_economy": "婚姻与黛玉末期并置，增加同段场景组织负荷。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-G1",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "OL-005明确开放，current-C位置不获得证据加成。",
+        "open_consumption": "选择一个婚姻相位。",
+        "chapter_economy": "当前章节空间可容纳，不另加场次税。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-G2",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 2,
+      "rationale": {
+        "evidence_fit": "OL-005明确开放；问题在资源与章节容量而非证据排除。",
+        "open_consumption": "选择一个婚姻相位。",
+        "chapter_economy": "败后/羁押后另立婚姻生活单位，显著占用E2阶段篇幅。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-HOUSE-TEMP-THEN-RENTAL",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "H04支持其低机制成本，但不把机制可行性升级为原稿证据。",
+        "open_consumption": "选择一个OL-009居所分支。",
+        "chapter_economy": "临时落脚→租居与既有经济下降过程可共用场景。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "evidence_distance": 1,
+      "open_consumption": 1,
+      "chapter_economy": 1,
+      "rationale": {
+        "evidence_fit": "需额外补足不入官、获准暂留或权属依据。",
+        "open_consumption": "选择一个OL-009居所分支。",
+        "chapter_economy": "需要解释查抄后仍可居住的资格接口。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 1,
+      "rationale": {
+        "evidence_fit": "族居为机制可行候选，不声称具体族人已被证据锁定。",
+        "open_consumption": "选择一个OL-009居所分支。",
+        "chapter_economy": "需建立族人接纳与退出的生活接口。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 1,
+      "rationale": {
+        "evidence_fit": "姻亲短援可行，但不证明具体姻亲持续托底。",
+        "open_consumption": "选择一个OL-009居所分支。",
+        "chapter_economy": "需写明援助边界与再次下沉。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "租居路线本身保持为H/C候选，不反升证据。",
+        "open_consumption": "选择一个OL-009居所分支。",
+        "chapter_economy": "可直接并入抄没后的现金/典当生活链。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 2,
+      "rationale": {
+        "evidence_fit": "逐级下降是机制/文学候选，不证明搬迁次数。",
+        "open_consumption": "选择一个OL-009居所分支。",
+        "chapter_economy": "多次搬迁需要额外场景和物件连续性管理。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-DETENTION-FAMILY-CASE",
+      "evidence_distance": 1,
+      "open_consumption": 1,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "真实羁押硬接口不等于具体‘同一家案因果链’已锁定。",
+        "open_consumption": "把OL-012从原因开放收窄到家案同链。",
+        "chapter_economy": "可复用89→92灾变链，不必新增独立大案。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-DETENTION-CAUSE-OPEN",
+      "evidence_distance": 0,
+      "open_consumption": 0,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "只保留真实羁押，不额外锁具体牵连事项。",
+        "open_consumption": "显式保留OL-012因果接口开放。",
+        "chapter_economy": "不要求新增因果解释场次。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-FJ-DEAD",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "R29死亡与R37/R38救巧姐相容，但精确先后仍是场景假说。",
+        "open_consumption": "选择一个OL-014保护失效状态。",
+        "chapter_economy": "死亡与保护网退出可在既有93/94链中完成。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 1,
+      "rationale": {
+        "evidence_fit": "与R29短命及保护失效相容，不锁病情细节。",
+        "open_consumption": "选择一个OL-014保护失效状态。",
+        "chapter_economy": "危机时仍在、随后死亡，需要多一个状态过渡。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "evidence_distance": 2,
+      "open_consumption": 1,
+      "chapter_economy": 2,
+      "rationale": {
+        "evidence_fit": "缺独立硬机制支持凤姐被拘，且不得由此制造新罪案。",
+        "open_consumption": "选择一个OL-014保护失效状态。",
+        "chapter_economy": "需额外司法/管束空间及退出机制。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 1,
+      "rationale": {
+        "evidence_fit": "R27/R28失势方向与R29/R37/R38兼容。",
+        "open_consumption": "选择一个OL-014保护失效状态。",
+        "chapter_economy": "仍在场但无权，需要通过生活动作反复证明无效保护。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-SNOW-JADE-SAME",
+      "evidence_distance": 1,
+      "open_consumption": 2,
+      "chapter_economy": 1,
+      "rationale": {
+        "evidence_fit": "R17拾玉不等于已证实通灵玉同一性。",
+        "open_consumption": "把OL-011同一性收窄为‘同一物’。",
+        "chapter_economy": "需补足失落—拾得—交回连续链。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-SNOW-JADE-DISTINCT",
+      "evidence_distance": 1,
+      "open_consumption": 2,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "R17也不证明必为另一块具体玉；只是多层对象测试。",
+        "open_consumption": "把OL-011收窄为‘不同物’。",
+        "chapter_economy": "分层对象可不强造单链，但仍需维持双对象辨识。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-SNOW-JADE-UNRESOLVED",
+      "evidence_distance": 0,
+      "open_consumption": 0,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "完全服从R17‘拾得’与身份OPEN边界。",
+        "open_consumption": "不消费OL-011同一性。",
+        "chapter_economy": "无需新增玉的身份解释场次。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-MIAOYU-GUAZHOU",
+      "evidence_distance": 2,
+      "open_consumption": 2,
+      "chapter_economy": 2,
+      "rationale": {
+        "evidence_fit": "瓜州仅W2弱增权，不能独自承重具体传奇链。",
+        "open_consumption": "把OL-018收窄到具体地名路线。",
+        "chapter_economy": "新增旅行/渡口接口，且容易挤压日常宗教生活。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-MIAOYU-NONGUAZHOU",
+      "evidence_distance": 0,
+      "open_consumption": 0,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "只兑现R41失护/陷泥方向，不追加W2地点事实。",
+        "open_consumption": "保留OL-018具体地点与方式开放。",
+        "chapter_economy": "可在现有生活场中完成，不需另开传奇路线。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-ZHEN-DIRECT",
+      "evidence_distance": 1,
+      "open_consumption": 1,
+      "chapter_economy": 1,
+      "rationale": {
+        "evidence_fit": "R18锁送玉，不锁甄贾必须现实照面。",
+        "open_consumption": "选择一个OL-020照面方式。",
+        "chapter_economy": "现实会面需要独立客座场。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-ZHEN-MISS",
+      "evidence_distance": 1,
+      "open_consumption": 1,
+      "chapter_economy": 1,
+      "rationale": {
+        "evidence_fit": "R18锁送玉，不锁‘本人出场但错身’。",
+        "open_consumption": "选择一个OL-020照面方式。",
+        "chapter_economy": "错身本身需要场面设计与信息控制。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-ZHEN-MEDIATED",
+      "evidence_distance": 1,
+      "open_consumption": 1,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "中间人同样不是R18硬事实，只是低场景成本实现。",
+        "open_consumption": "选择一个OL-020照面方式。",
+        "chapter_economy": "可由既有递送链承担，不必增设长会面。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-SENT-JADE-SAME",
+      "evidence_distance": 1,
+      "open_consumption": 2,
+      "chapter_economy": 1,
+      "rationale": {
+        "evidence_fit": "R18‘送玉’不自动证明所送即同一通灵玉。",
+        "open_consumption": "把OL-021同一性收窄为同一通灵玉。",
+        "chapter_economy": "需承担误取/发现/送还连续性。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-SENT-JADE-IDENTITY-OPEN",
+      "evidence_distance": 0,
+      "open_consumption": 0,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "只锁R18送玉事件，不追加玉的同一性。",
+        "open_consumption": "不消费OL-021同一性。",
+        "chapter_economy": "不需要解释额外身份闭合。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-END-SPLIT-99-100",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 0,
+      "rationale": {
+        "evidence_fit": "终局功能有硬接口，但99/100绝对回次仍是场景分配假说。",
+        "open_consumption": "选择一个OL-023回次分工。",
+        "chapter_economy": "撒手与情榜/外框分回，留出章法缓冲。"
+      }
+    },
+    {
+      "hypothesis_id": "HYP-END-COMPACT-100",
+      "evidence_distance": 0,
+      "open_consumption": 1,
+      "chapter_economy": 2,
+      "rationale": {
+        "evidence_fit": "终局功能同样可容，但同回压缩并非证据事实。",
+        "open_consumption": "选择一个OL-023回次分工。",
+        "chapter_economy": "撒手、情榜、外框同回显著增加末回容量压力。"
+      }
+    }
+  ],
+  "scenario_expert_axes": [
+    {
+      "scenario_id": "SCN-CURRENT-C",
+      "front80_structural_echo": 5,
+      "literary_fertility": 4,
+      "rationale": "重大事件被家务、资源、物件和普通生活包围，且99→100保留呼吸；甄贾照面和同一通灵玉送回提供强镜像，但也收窄部分歧义。",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D07",
+        "LE-D08",
+        "LE-D09",
+        "LE-D12"
+      ]
+    },
+    {
+      "scenario_id": "SCN-EARLY-MARRIAGE",
+      "front80_structural_echo": 4,
+      "literary_fertility": 4,
+      "rationale": "金玉与木石在黛玉尚在时并置，能恢复前80的关系张力；但婚姻与病亡同段会增加事件拥挤，需要高超的日常化消解。",
+      "basis_refs": [
+        "LE-D01",
+        "LE-D02",
+        "LE-D07",
+        "LE-D09"
+      ]
+    },
+    {
+      "scenario_id": "SCN-LATE-MARRIAGE",
+      "front80_structural_echo": 4,
+      "literary_fertility": 5,
+      "rationale": "把婚姻放进败后资源、居所和劳动系统，强化前80‘世情百业是因果基础设施’的语法；现实生活摩擦的生成空间很大。",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D07",
+        "LE-D08",
+        "LE-D12"
+      ]
+    },
+    {
+      "scenario_id": "SCN-JIAMU-DEAD-BEFORE-MARRIAGE",
+      "front80_structural_echo": 3,
+      "literary_fertility": 3,
+      "rationale": "主婚权转移可运行，但新增家族最高长辈死亡与丧期，会与元春、黛玉死亡链竞争篇幅，较容易形成节点堆叠。",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D05",
+        "LE-D07",
+        "LE-D09"
+      ]
+    },
+    {
+      "scenario_id": "SCN-JADE-SINGLE-CHAIN",
+      "front80_structural_echo": 5,
+      "literary_fertility": 3,
+      "rationale": "一玉贯穿强化石—玉—真假镜像的循环感；但物流链越闭合，越容易把物件写成机关而非生活中的半明半暗长线。",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D06",
+        "LE-D09"
+      ]
+    },
+    {
+      "scenario_id": "SCN-JADE-MULTILAYER",
+      "front80_structural_echo": 4,
+      "literary_fertility": 5,
+      "rationale": "多层玉事件保留真假与物我边界的半开状态，并允许对象分别嵌入生活场；象征统一度略低，但场景弹性高。",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D06",
+        "LE-D08",
+        "LE-D09"
+      ]
+    },
+    {
+      "scenario_id": "SCN-FENGJIE-ALIVE-POWERLESS",
+      "front80_structural_echo": 5,
+      "literary_fertility": 4,
+      "rationale": "凤姐仍在而权力失效，能把‘强英雄’与身微运蹇形成强反讽，并通过跑腿、药钱、安置失败落到生活；姻亲暂居增加一层负荷。",
+      "basis_refs": [
+        "LE-D01",
+        "LE-D05",
+        "LE-D07",
+        "LE-D08",
+        "LE-D12"
+      ]
+    },
+    {
+      "scenario_id": "SCN-MIAOYU-GUAZHOU-W2",
+      "front80_structural_echo": 4,
+      "literary_fertility": 3,
+      "rationale": "具体地名可形成判词回声，但W2路线容易把妙玉推向传奇性远行，削弱庵中劳作、失护、失洁等现实生活语法。",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D06",
+        "LE-D07",
+        "LE-D12"
+      ]
+    },
+    {
+      "scenario_id": "SCN-TERMINAL-COMPACT",
+      "front80_structural_echo": 4,
+      "literary_fertility": 3,
+      "rationale": "终局循环功能仍在，但把撒手、情榜、外框压进一回，削弱前80重大节点周围的普通事务和余波空间。",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D06",
+        "LE-D09"
+      ]
+    },
+    {
+      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
+      "front80_structural_echo": 5,
+      "literary_fertility": 5,
+      "rationale": "羁押原因、玉同一性等关键处保持半开，同时让老仆、监所、贫居、书札和物件承担叙事，最符合‘重大节点被普通事务包围’与多线长程回声。",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D06",
+        "LE-D07",
+        "LE-D08",
+        "LE-D09",
+        "LE-D12",
+        "LE-D13"
+      ]
+    }
+  ],
+  "pareto_policy": {
+    "no_total_score": true,
+    "no_automatic_winner": true,
+    "dominance_rule": "A dominates B iff A is no worse on every selected axis and strictly better on at least one selected axis.",
+    "mechanism_frontier": "Uses only six source/runtime/structural-cost axes.",
+    "full_frontier": "Adds the two explicitly heuristic literary axes; these axes cannot alter Evidence or OPEN."
+  },
+  "effects": {
+    "evidence": "NONE",
+    "open_interfaces": "NONE",
+    "stable_active": "NONE",
+    "chapter89": "NONE",
+    "chapter92": "NONE",
+    "chapter97": "NONE"
+  },
+  "next_gate": "P4_SCENARIO_LITERARY_STRESS_TEST"
+}
