@@ -18,6 +18,7 @@ from .literals import LiteralRegistry, format_literal
 from .literary_eval import evaluate_literary_candidate, format_literary_evaluation
 from .literary_ecology import LiteraryEcologyRuntime, format_literary_ecology
 from .literary_production import LiteraryProductionRuntime, format_literary_production
+from .literary_stress import ScenarioLiteraryStressRuntime
 from .literary_suite import LiteraryEvaluatorSuite, format_literary_suite
 from .mechanism_adapters import HistoricalAdapterRuntime, format_adapter
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
@@ -273,6 +274,32 @@ def cmd_pareto(args: argparse.Namespace) -> int:
     print(json.dumps(payload, ensure_ascii=False, indent=2))
     if kind == "scenario":
         return 0 if payload["status"] == "PARETO_ELIGIBLE" else 1
+    return 0
+
+
+
+def cmd_literary_stress(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = ScenarioLiteraryStressRuntime.from_repo(root)
+    ecology = LiteraryEcologyRuntime.from_repo(root)
+    try:
+        kind = args.literary_stress_command
+        if kind == "summary":
+            payload = runtime.evaluate_all(ecology)
+        elif kind == "scenario":
+            payload = runtime.evaluate(args.key, ecology)
+        elif kind == "compare":
+            payload = runtime.compare(args.left, args.right, ecology)
+        else:
+            raise KeyError(f"Unknown literary-stress command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    if kind == "scenario":
+        return 0 if payload["status"] == "STRESS_CONTRACT_READY" else 1
+    if kind == "summary":
+        return 0 if payload["status"] == "PASS" else 1
     return 0
 
 def cmd_regression(args: argparse.Namespace) -> int:
@@ -927,6 +954,19 @@ def main() -> None:
     p.add_argument("left")
     p.add_argument("right")
     p.set_defaults(func=cmd_pareto)
+
+
+    p_stress = sub.add_parser("literary-stress")
+    stress_sub = p_stress.add_subparsers(dest="literary_stress_command", required=True)
+    p = stress_sub.add_parser("summary")
+    p.set_defaults(func=cmd_literary_stress)
+    p = stress_sub.add_parser("scenario")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_literary_stress)
+    p = stress_sub.add_parser("compare")
+    p.add_argument("left")
+    p.add_argument("right")
+    p.set_defaults(func=cmd_literary_stress)
 
     p_regression = sub.add_parser("regression")
     p_regression.add_argument("--json", action="store_true")
