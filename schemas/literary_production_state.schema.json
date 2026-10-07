@@ -1,0 +1,121 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH Post-M8 Literary Production State",
+  "type": "object",
+  "required": [
+    "id",
+    "status",
+    "authorized_by",
+    "source_branch",
+    "stable_active",
+    "migration_gate_snapshot",
+    "live_pipeline",
+    "ch89_phase2",
+    "invariants",
+    "next_action"
+  ],
+  "properties": {
+    "id": {
+      "const": "literary-production:post-m8:v1"
+    },
+    "status": {
+      "const": "ACTIVE"
+    },
+    "authorized_by": {
+      "type": "object",
+      "required": [
+        "milestone",
+        "completion_gate",
+        "main_merge_verified",
+        "main_release_sha"
+      ],
+      "properties": {
+        "milestone": {
+          "const": "M8"
+        },
+        "completion_gate": {
+          "const": "PASS"
+        },
+        "main_merge_verified": {
+          "const": true
+        },
+        "main_release_sha": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{40}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "source_branch": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stable_active": {
+      "type": "object",
+      "required": [
+        "file_ref",
+        "sha256",
+        "mutated",
+        "promotion_required"
+      ],
+      "properties": {
+        "file_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "const": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+        },
+        "mutated": {
+          "const": false
+        },
+        "promotion_required": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "migration_gate_snapshot": {
+      "type": "object"
+    },
+    "live_pipeline": {
+      "type": "object",
+      "required": [
+        "sequence",
+        "active_chapter",
+        "chapters"
+      ],
+      "properties": {
+        "sequence": {
+          "const": [
+            86,
+            89,
+            92,
+            97
+          ]
+        },
+        "active_chapter": {
+          "const": 92
+        },
+        "chapters": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4
+        }
+      },
+      "additionalProperties": false
+    },
+    "ch89_phase2": {
+      "type": "object"
+    },
+    "invariants": {
+      "type": "array",
+      "minItems": 5
+    },
+    "next_action": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "additionalProperties": false
+}
