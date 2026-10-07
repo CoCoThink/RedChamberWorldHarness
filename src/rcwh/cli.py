@@ -12,6 +12,7 @@ from .graph import ProvenanceGraph
 from .history import HistoricalMechanismRegistry, format_mechanism
 from .implementation_alignment import ImplementationAlignmentRuntime, format_implementation_alignment
 from .io import load_data
+from .knowledge import CharacterKnowledgeRuntime, format_knowledge
 from .literals import LiteralRegistry, format_literal
 from .literary_eval import evaluate_literary_candidate, format_literary_evaluation
 from .literary_ecology import LiteraryEcologyRuntime, format_literary_ecology
@@ -57,7 +58,12 @@ def cmd_evaluate(args: argparse.Namespace) -> int:
 
     state = WorldState.from_repo(root)
     precondition_findings = state.assert_contract_preconditions(contract)
-    results = evaluate_scene_text(contract, text)
+    knowledge = (
+        CharacterKnowledgeRuntime.from_repo(root)
+        if (root / "data" / "knowledge" / "v03_slice1.json").exists()
+        else None
+    )
+    results = evaluate_scene_text(contract, text, knowledge_runtime=knowledge)
     if precondition_findings:
         results.insert(0, type(results[0])("preconditions", "FAIL", precondition_findings))
 
@@ -389,6 +395,42 @@ def cmd_literary_ecology(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_knowledge(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = CharacterKnowledgeRuntime.from_repo(root)
+    try:
+        kind = args.knowledge_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "scene":
+            payload = runtime.scene(args.scene_id, args.checkpoint)
+        elif kind == "character":
+            payload = runtime.character(args.scene_id, args.character_id, args.checkpoint)
+        elif kind == "voice":
+            payload = runtime.voice(args.character_id)
+        elif kind == "mask":
+            text_value = Path(args.text).read_text(encoding="utf-8")
+            payload = runtime.mask(args.character_id, text_value)
+        elif kind == "guard":
+            contract = load_data(Path(args.contract))
+            text_value = Path(args.text).read_text(encoding="utf-8")
+            payload = runtime.text_guard(contract["id"], contract, text_value)
+        else:
+            raise KeyError(f"Unknown knowledge command: {kind}")
+    except (KeyError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_knowledge(kind, payload))
+    if kind == "guard":
+        return 0 if payload["status"] == "PASS" else 1
+    if kind == "mask" and payload["status"] == "FAIL_FORBIDDEN_VOICE":
+        return 1
+    return 0
+
+
 def cmd_literary_production(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     runtime = LiteraryProductionRuntime.from_repo(root)
@@ -699,6 +741,37 @@ def main() -> None:
     p.add_argument("key")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_literary_ecology)
+
+    p_knowledge = sub.add_parser("knowledge")
+    knowledge_sub = p_knowledge.add_subparsers(dest="knowledge_command", required=True)
+    p = knowledge_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+    p = knowledge_sub.add_parser("scene")
+    p.add_argument("scene_id")
+    p.add_argument("--checkpoint")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+    p = knowledge_sub.add_parser("character")
+    p.add_argument("scene_id")
+    p.add_argument("character_id")
+    p.add_argument("--checkpoint")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+    p = knowledge_sub.add_parser("voice")
+    p.add_argument("character_id")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+    p = knowledge_sub.add_parser("mask")
+    p.add_argument("character_id")
+    p.add_argument("text")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+    p = knowledge_sub.add_parser("guard")
+    p.add_argument("contract")
+    p.add_argument("text")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
 
     p_lit_prod = sub.add_parser("literary-production")
     lit_prod_sub = p_lit_prod.add_subparsers(
