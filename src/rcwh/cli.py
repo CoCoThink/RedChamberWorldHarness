@@ -20,6 +20,7 @@ from .literary_ecology import LiteraryEcologyRuntime, format_literary_ecology
 from .literary_production import LiteraryProductionRuntime, format_literary_production
 from .literary_stress import ScenarioLiteraryStressRuntime
 from .literary_suite import LiteraryEvaluatorSuite, format_literary_suite
+from .microdraft import ControlledMicrodraftRuntime
 from .mechanism_adapters import HistoricalAdapterRuntime, format_adapter
 from .narrative_discourse import NarrativeDiscourseRuntime
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
@@ -329,6 +330,34 @@ def cmd_narrative_discourse(args: argparse.Namespace) -> int:
         return 0 if payload["status"] == "PASS" else 1
     if kind == "scenario":
         return 0 if payload["status"] == "DISCOURSE_RUNTIME_READY" else 1
+    return 0
+
+
+
+def cmd_microdraft(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = ControlledMicrodraftRuntime.from_repo(root)
+    discourse = NarrativeDiscourseRuntime.from_repo(root)
+    stress = ScenarioLiteraryStressRuntime.from_repo(root)
+    suite = LiteraryEvaluatorSuite.from_repo(root)
+    try:
+        kind = args.microdraft_command
+        if kind == "summary":
+            payload = runtime.evaluate_all(discourse, stress, suite)
+        elif kind == "screen":
+            payload = runtime.screen(args.token, discourse, stress, suite)
+        elif kind == "cell":
+            payload = runtime.cell_packet(args.cell)
+        else:
+            raise KeyError(f"Unknown microdraft command: {kind}")
+    except (KeyError, FileNotFoundError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    if kind == "summary":
+        return 0 if payload["status"] == "PASS" else 1
+    if kind == "screen":
+        return 0 if payload["status"] == "READY_FOR_BLIND_MICRODRAFT_REVIEW" else 1
     return 0
 
 def cmd_regression(args: argparse.Namespace) -> int:
@@ -1015,6 +1044,18 @@ def main() -> None:
     p.add_argument("left")
     p.add_argument("right")
     p.set_defaults(func=cmd_narrative_discourse)
+
+
+    p_micro = sub.add_parser("microdraft")
+    micro_sub = p_micro.add_subparsers(dest="microdraft_command", required=True)
+    p = micro_sub.add_parser("summary")
+    p.set_defaults(func=cmd_microdraft)
+    p = micro_sub.add_parser("screen")
+    p.add_argument("token")
+    p.set_defaults(func=cmd_microdraft)
+    p = micro_sub.add_parser("cell")
+    p.add_argument("cell")
+    p.set_defaults(func=cmd_microdraft)
 
     p_regression = sub.add_parser("regression")
     p_regression.add_argument("--json", action="store_true")
