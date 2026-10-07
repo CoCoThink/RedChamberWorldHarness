@@ -12,6 +12,7 @@ from .io import load_data
 from .literals import LiteralRegistry, format_literal
 from .literary_eval import evaluate_literary_candidate, format_literary_evaluation
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
+from .object_network import ObjectNetworkRuntime, format_object
 from .plocks import LiteraryProtectionRegistry, format_plock
 from .regression import format_regression, run_r4_evidence_regression
 from .promotion import PromotionRegistry, format_promotion
@@ -304,6 +305,37 @@ def cmd_world(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_object(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    objects = ObjectNetworkRuntime.from_repo(root)
+    try:
+        kind = args.object_command
+        if kind == "summary":
+            payload = objects.summary()
+        elif kind == "get":
+            payload = objects.snapshot(args.object_id, args.chapter)
+        elif kind == "history":
+            payload = objects.history(args.object_id)
+        elif kind == "jade":
+            payload = objects.jade(args.chapter)
+        elif kind == "location":
+            payload = objects.at_location(args.location, args.chapter)
+        elif kind == "continuity":
+            payload = objects.continuity_report()
+        else:
+            raise KeyError(f"Unknown object command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_object(kind, payload))
+    if kind == "continuity":
+        return 0 if payload["status"] == "PASS" else 1
+    return 0
+
+
 def cmd_promotion(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     registry = PromotionRegistry.from_repo(root)
@@ -428,6 +460,33 @@ def main() -> None:
     p.add_argument("chapter", type=int)
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_world)
+
+    p_object = sub.add_parser("object")
+    object_sub = p_object.add_subparsers(dest="object_command", required=True)
+    p = object_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_object)
+    p = object_sub.add_parser("get")
+    p.add_argument("object_id")
+    p.add_argument("--chapter", type=int, default=100)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_object)
+    p = object_sub.add_parser("history")
+    p.add_argument("object_id")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_object)
+    p = object_sub.add_parser("jade")
+    p.add_argument("--chapter", type=int, default=100)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_object)
+    p = object_sub.add_parser("location")
+    p.add_argument("location")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_object)
+    p = object_sub.add_parser("continuity")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_object)
 
     p_registry = sub.add_parser("registry")
     registry_sub = p_registry.add_subparsers(dest="registry_command", required=True)
