@@ -28,22 +28,29 @@ def test_m0_baseline_freezes_stable_active_until_completion_gate():
     assert regression["stable_active"]["sha256"] == STABLE_SHA
 
 
-def test_literary_pressure_queue_remains_frozen_during_full_migration():
+def test_post_m8_literary_resume_advances_only_ch89_six_field_gate():
     records = load_yaml("data/competitions/43_0.yaml")["competition_records"]
     by_chapter = {record["chapter"]: record for record in records}
+    m8 = load_json("data/project_state/m8.json")
+    resume = load_json("data/project_state/literary_43_0_resume.json")
+
+    assert m8["completion_gate"]["overall"] == "PASS"
+    assert resume["literary_resume_started"] is True
+    assert resume["stable_active"]["sha256"] == STABLE_SHA
+    assert resume["stable_active"]["changed"] is False
 
     assert by_chapter[89]["state"] == "IN_REVIEW"
     assert by_chapter[89]["workflow_progress"] == {
         "BASELINE_EXCERPT": "PASS",
         "STRUCTURAL_REORDER": "PASS",
         "SMALL_TRIAL": "PASS",
-        "SIX_FIELD_REGRESSION": "PENDING",
+        "SIX_FIELD_REGRESSION": "PASS",
         "PLOCK_REGRESSION": "PENDING",
         "BLIND_READ": "PENDING",
     }
+    assert by_chapter[89]["adjudication"]["outcome"] == "PENDING"
     assert by_chapter[92]["state"] == "BLOCKED_BY_PREDECESSOR"
     assert by_chapter[97]["state"] == "BLOCKED_BY_PREDECESSOR"
-
 
 def test_deferred_ch86_candidate_cannot_mutate_stable_active():
     promotion = load_yaml("data/promotions/ch86.yaml")["promotions"][0]

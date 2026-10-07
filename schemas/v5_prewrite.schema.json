@@ -1,0 +1,142 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH v5.0 Prewrite Harness v0.6",
+  "type": "object",
+  "required": [
+    "id",
+    "issue",
+    "status",
+    "authority",
+    "evidence_effect",
+    "stable_active_effect",
+    "epistemic_rule",
+    "execution_order",
+    "steps",
+    "corpus_ecology_profiles",
+    "gap_dimensions",
+    "gap_status_legend",
+    "gap_cards",
+    "omitted_scene_plans",
+    "downstream_bindings",
+    "staging_policy",
+    "completion"
+  ],
+  "properties": {
+    "id": {
+      "const": "v5-prewrite:v0.6"
+    },
+    "issue": {
+      "const": 6
+    },
+    "status": {
+      "type": "string"
+    },
+    "authority": {
+      "const": "STAGING_ONLY"
+    },
+    "evidence_effect": {
+      "const": "NONE"
+    },
+    "stable_active_effect": {
+      "const": "NONE"
+    },
+    "epistemic_rule": {
+      "type": "string",
+      "minLength": 80
+    },
+    "execution_order": {
+      "type": "array",
+      "const": [
+        33,
+        34,
+        35,
+        40,
+        39,
+        38,
+        37,
+        36,
+        41,
+        42
+      ]
+    },
+    "steps": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10
+    },
+    "corpus_ecology_profiles": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "gap_dimensions": {
+      "type": "array",
+      "minItems": 12,
+      "maxItems": 12
+    },
+    "gap_status_legend": {
+      "type": "object"
+    },
+    "gap_cards": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "omitted_scene_plans": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "downstream_bindings": {
+      "type": "object"
+    },
+    "staging_policy": {
+      "type": "object",
+      "required": [
+        "target_lane",
+        "output_authority",
+        "evidence_write_allowed",
+        "evidence_role_change_allowed",
+        "open_close_allowed",
+        "stable_mutation_allowed",
+        "automatic_prose_generation",
+        "automatic_promotion",
+        "next_human_gate"
+      ],
+      "properties": {
+        "target_lane": {
+          "const": "staging"
+        },
+        "output_authority": {
+          "const": "STAGING_ONLY"
+        },
+        "evidence_write_allowed": {
+          "const": false
+        },
+        "evidence_role_change_allowed": {
+          "const": false
+        },
+        "open_close_allowed": {
+          "const": false
+        },
+        "stable_mutation_allowed": {
+          "const": false
+        },
+        "automatic_prose_generation": {
+          "const": false
+        },
+        "automatic_promotion": {
+          "const": false
+        },
+        "next_human_gate": {
+          "const": "STEP43_CANDIDATE_WORKFLOW"
+        }
+      },
+      "additionalProperties": false
+    },
+    "completion": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

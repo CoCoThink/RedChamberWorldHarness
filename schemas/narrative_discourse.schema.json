@@ -1,0 +1,318 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH Narrative Discourse Runtime v0.11",
+  "type": "object",
+  "required": [
+    "id",
+    "milestone",
+    "status",
+    "authority",
+    "output_authority",
+    "purpose",
+    "source_basis",
+    "discourse_dimensions",
+    "visibility_templates",
+    "ending_templates",
+    "channel_rules",
+    "scenario_overrides",
+    "thresholds",
+    "policy",
+    "next_gate"
+  ],
+  "properties": {
+    "id": {
+      "const": "narrative-discourse:v0.11"
+    },
+    "milestone": {
+      "const": "P5"
+    },
+    "status": {
+      "enum": [
+        "PASS_CANDIDATE",
+        "PASS"
+      ]
+    },
+    "authority": {
+      "const": "SHADOW_ONLY"
+    },
+    "output_authority": {
+      "const": "DISCOURSE_PLANNING_ONLY"
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_basis": {
+      "type": "object",
+      "required": [
+        "literary_stress_ref",
+        "literary_ecology_ref",
+        "literary_evaluator_ref",
+        "required_scenarios"
+      ],
+      "properties": {
+        "literary_stress_ref": {
+          "const": "scenario-literary-stress:v0.10"
+        },
+        "literary_ecology_ref": {
+          "const": "M5"
+        },
+        "literary_evaluator_ref": {
+          "const": "v0.5"
+        },
+        "required_scenarios": {
+          "type": "array",
+          "minItems": 4,
+          "maxItems": 4,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "discourse_dimensions": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "key",
+          "basis_refs",
+          "principle"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^ND-D\\d{2}$"
+          },
+          "key": {
+            "type": "string"
+          },
+          "basis_refs": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "principle": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "visibility_templates": {
+      "type": "object",
+      "minProperties": 6,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "opening_mode",
+          "temporal_order",
+          "event_presence",
+          "primary_channel",
+          "distance_curve",
+          "reveal_policy",
+          "narrator_access",
+          "direct_event_replay"
+        ],
+        "properties": {
+          "opening_mode": {
+            "type": "string"
+          },
+          "temporal_order": {
+            "type": "string"
+          },
+          "event_presence": {
+            "type": "string"
+          },
+          "primary_channel": {
+            "type": "string"
+          },
+          "distance_curve": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "enum": [
+                "CLOSE",
+                "MEDIUM",
+                "FAR"
+              ]
+            }
+          },
+          "reveal_policy": {
+            "type": "string"
+          },
+          "narrator_access": {
+            "const": "LIMITED"
+          },
+          "direct_event_replay": {
+            "type": "boolean"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "ending_templates": {
+      "type": "object",
+      "minProperties": 7,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "exit_channel",
+          "closure_mode"
+        ],
+        "properties": {
+          "exit_channel": {
+            "type": "string"
+          },
+          "closure_mode": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "channel_rules": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      }
+    },
+    "scenario_overrides": {
+      "type": "object",
+      "minProperties": 4,
+      "additionalProperties": {
+        "type": "object",
+        "required": [
+          "watch",
+          "probe_overrides"
+        ],
+        "properties": {
+          "watch": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string"
+            }
+          },
+          "probe_overrides": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "object",
+              "properties": {
+                "primary_channel": {
+                  "type": "string"
+                },
+                "reveal_policy": {
+                  "type": "string"
+                },
+                "extra_restraints": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "primary_focalizer": {
+                  "type": "string"
+                },
+                "opening_mode": {
+                  "type": "string"
+                },
+                "distance_curve": {
+                  "type": "array",
+                  "minItems": 3,
+                  "maxItems": 3,
+                  "items": {
+                    "enum": [
+                      "CLOSE",
+                      "MEDIUM",
+                      "FAR"
+                    ]
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "required": [
+        "cards_per_scenario",
+        "temporal_modes_min",
+        "relay_channels_min",
+        "opening_modes_min",
+        "distance_curves_min",
+        "exit_channels_min",
+        "primary_focalizers_min",
+        "non_full_direct_cards_min",
+        "document_or_object_mediated_cards_min",
+        "exact_withheld_preservation",
+        "narrator_access_must_be"
+      ],
+      "additionalProperties": true
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "fabula_mutation_allowed",
+        "automatic_prose_generation",
+        "automatic_literary_pass",
+        "automatic_winner",
+        "scalar_score",
+        "evidence_effect",
+        "open_interface_effect",
+        "stable_active_effect",
+        "canonical_competition_effect"
+      ],
+      "properties": {
+        "fabula_mutation_allowed": {
+          "const": false
+        },
+        "automatic_prose_generation": {
+          "const": false
+        },
+        "automatic_literary_pass": {
+          "const": false
+        },
+        "automatic_winner": {
+          "const": false
+        },
+        "scalar_score": {
+          "const": false
+        },
+        "evidence_effect": {
+          "const": "NONE"
+        },
+        "open_interface_effect": {
+          "const": "NONE"
+        },
+        "stable_active_effect": {
+          "const": "NONE"
+        },
+        "canonical_competition_effect": {
+          "const": "NONE"
+        }
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {
+      "enum": [
+        "P5_CI_THEN_P6_CONTROLLED_MICRODRAFT_LAB",
+        "P6_CONTROLLED_MICRODRAFT_LAB"
+      ]
+    }
+  },
+  "additionalProperties": false
+}

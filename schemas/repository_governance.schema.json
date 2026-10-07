@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH Post-M8 Repository Governance",
+  "type": "object",
+  "required": [
+    "id",
+    "status",
+    "authoritative_branches",
+    "branch_cleanup",
+    "safe_delete_when_tool_available",
+    "quarantined_forks",
+    "issue_audit",
+    "current_literary_gate",
+    "stable_active_sha256"
+  ],
+  "properties": {
+    "id": {
+      "const": "repo-governance:post-m8:20261007"
+    },
+    "status": {
+      "const": "ACTIVE"
+    },
+    "authoritative_branches": {
+      "type": "object"
+    },
+    "branch_cleanup": {
+      "type": "object",
+      "required": [
+        "status",
+        "verified_on",
+        "verification",
+        "deleted_branches",
+        "retained_branches",
+        "verified_branch_count",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "const": "COMPLETE"
+        },
+        "verified_on": {
+          "const": "2026-10-07"
+        },
+        "verification": {
+          "const": "LIVE_GITHUB_BRANCH_ENUMERATION"
+        },
+        "deleted_branches": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "retained_branches": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "verified_branch_count": {
+          "const": 6
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 20
+        }
+      },
+      "additionalProperties": false
+    },
+    "safe_delete_when_tool_available": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "quarantined_forks": {
+      "type": "array",
+      "minItems": 1
+    },
+    "issue_audit": {
+      "type": "object"
+    },
+    "current_literary_gate": {
+      "type": "object"
+    },
+    "stable_active_sha256": {
+      "const": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+    }
+  },
+  "additionalProperties": false
+}

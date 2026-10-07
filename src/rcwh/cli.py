@@ -4,22 +4,33 @@ import argparse
 import json
 from pathlib import Path
 
+from .blind_microdraft_review import BlindMicrodraftReviewRuntime
 from .competition import CompetitionRegistry, format_competition
 from .completion import CompletionGateRuntime, format_completion
 from .coverage import CoverageAuditRuntime, format_coverage
 from .evaluate import evaluate_scene_text, overall_status
 from .graph import ProvenanceGraph
 from .history import HistoricalMechanismRegistry, format_mechanism
+from .hypotheses import HypothesisRuntime
 from .implementation_alignment import ImplementationAlignmentRuntime, format_implementation_alignment
 from .io import load_data
+from .knowledge import CharacterKnowledgeRuntime, format_knowledge
 from .literals import LiteralRegistry, format_literal
 from .literary_eval import evaluate_literary_candidate, format_literary_evaluation
 from .literary_ecology import LiteraryEcologyRuntime, format_literary_ecology
+from .literary_production import LiteraryProductionRuntime, format_literary_production
+from .literary_stress import ScenarioLiteraryStressRuntime
+from .literary_suite import LiteraryEvaluatorSuite, format_literary_suite
+from .microdraft import ControlledMicrodraftRuntime
+from .mechanism_adapters import HistoricalAdapterRuntime, format_adapter
+from .narrative_discourse import NarrativeDiscourseRuntime
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .object_network import ObjectNetworkRuntime, format_object
+from .pareto import ParetoEvaluationRuntime
 from .plocks import LiteraryProtectionRegistry, format_plock
 from .regression import format_regression, run_r4_evidence_regression
 from .promotion import PromotionRegistry, format_promotion
+from .prewrite import V5PrewriteRuntime, format_prewrite
 from .registry import (
     MigrationRegistry,
     format_current_authority,
@@ -28,6 +39,8 @@ from .registry import (
 )
 from .reconstruction import ReconstructionRegistry, format_reconstruction
 from .runtime import WorldState
+from .scenarios import ScenarioRuntime
+from .scenario_replay import CounterfactualReplayRuntime
 from .world import WorldRuntime, format_world
 from .trace import format_trace
 from .validate import validate_repository
@@ -56,7 +69,24 @@ def cmd_evaluate(args: argparse.Namespace) -> int:
 
     state = WorldState.from_repo(root)
     precondition_findings = state.assert_contract_preconditions(contract)
-    results = evaluate_scene_text(contract, text)
+    knowledge = (
+        CharacterKnowledgeRuntime.from_repo(root)
+        if (root / "data" / "knowledge" / "v03_slice1.json").exists()
+        else None
+    )
+    historical_adapters = (
+        HistoricalAdapterRuntime.from_repo(root)
+        if (root / "data" / "mechanism_adapters" / "v04.json").exists()
+        else None
+    )
+    historical_mechanisms = HistoricalMechanismRegistry.from_repo(root)
+    results = evaluate_scene_text(
+        contract,
+        text,
+        knowledge_runtime=knowledge,
+        mechanism_adapter_runtime=historical_adapters,
+        historical_mechanisms=historical_mechanisms,
+    )
     if precondition_findings:
         results.insert(0, type(results[0])("preconditions", "FAIL", precondition_findings))
 
@@ -137,6 +167,221 @@ def cmd_open(args: argparse.Namespace) -> int:
     return 0
 
 
+
+
+def cmd_hypothesis(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = HypothesisRuntime.from_repo(root)
+    try:
+        kind = args.hypothesis_command
+        if kind == "list":
+            payload = runtime.summary()
+            payload["ids"] = sorted(runtime.hypotheses)
+        elif kind == "get":
+            payload = runtime.get(args.key)
+        elif kind == "alternatives":
+            payload = {
+                "open_id": args.key,
+                "alternatives": runtime.alternatives(args.key),
+            }
+        else:
+            raise KeyError(f"Unknown hypothesis command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    return 0
+
+
+def cmd_scenario(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    hypotheses = HypothesisRuntime.from_repo(root)
+    runtime = ScenarioRuntime.from_repo(root)
+    opens = OpenInterfaceRegistry.from_repo(root)
+    replay = CounterfactualReplayRuntime.from_repo(root)
+    world = WorldRuntime.from_repo(root)
+    try:
+        kind = args.scenario_command
+        if kind == "generate":
+            payload = runtime.generate()
+        elif kind == "validate":
+            scenario = runtime.get(args.key)
+            findings = runtime.validate_bundle(scenario, hypotheses, opens)
+            payload = {
+                "scenario_id": args.key,
+                "status": "PASS" if not findings else "FAIL",
+                "findings": findings,
+            }
+        elif kind == "compare":
+            payload = runtime.compare(args.keys, hypotheses)
+        elif kind == "frontier":
+            payload = replay.frontier(runtime, world)
+        elif kind == "replay":
+            payload = replay.evaluate(args.key, runtime, world, args.chapter)
+        elif kind == "replay-all":
+            payload = replay.evaluate_all(runtime, world)
+        elif kind == "conflicts":
+            result = replay.evaluate(args.key, runtime, world)
+            payload = {
+                "scenario_id": args.key,
+                "status": result["status"],
+                "blockers": result["blockers"],
+                "pressures": result["pressures"],
+            }
+        elif kind == "summary":
+            payload = runtime.summary(hypotheses)
+        else:
+            raise KeyError(f"Unknown scenario command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    if kind == "validate":
+        return 0 if payload["status"] == "PASS" else 1
+    if kind == "replay-all":
+        return 0 if payload["status"] == "PASS" else 1
+    if kind == "replay":
+        return 0 if payload["status"] != "REPLAY_BLOCKED" else 1
+    if kind == "conflicts":
+        return 0 if not payload["blockers"] else 1
+    return 0
+
+
+
+def cmd_pareto(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    hypotheses = HypothesisRuntime.from_repo(root)
+    scenarios = ScenarioRuntime.from_repo(root)
+    replay = CounterfactualReplayRuntime.from_repo(root)
+    world = WorldRuntime.from_repo(root)
+    pareto = ParetoEvaluationRuntime.from_repo(root)
+    try:
+        kind = args.pareto_command
+        if kind == "summary":
+            payload = pareto.summary(hypotheses, scenarios, replay, world)
+        elif kind == "scenario":
+            payload = pareto.evaluate_scenario(
+                args.key, hypotheses, scenarios, replay, world
+            )
+        elif kind == "frontier":
+            payload = pareto.frontier(hypotheses, scenarios, replay, world)
+        elif kind == "compare":
+            payload = pareto.compare(
+                args.left, args.right, hypotheses, scenarios, replay, world
+            )
+        else:
+            raise KeyError(f"Unknown pareto command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    if kind == "scenario":
+        return 0 if payload["status"] == "PARETO_ELIGIBLE" else 1
+    return 0
+
+
+
+def cmd_literary_stress(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = ScenarioLiteraryStressRuntime.from_repo(root)
+    ecology = LiteraryEcologyRuntime.from_repo(root)
+    try:
+        kind = args.literary_stress_command
+        if kind == "summary":
+            payload = runtime.evaluate_all(ecology)
+        elif kind == "scenario":
+            payload = runtime.evaluate(args.key, ecology)
+        elif kind == "compare":
+            payload = runtime.compare(args.left, args.right, ecology)
+        else:
+            raise KeyError(f"Unknown literary-stress command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    if kind == "scenario":
+        return 0 if payload["status"] == "STRESS_CONTRACT_READY" else 1
+    if kind == "summary":
+        return 0 if payload["status"] == "PASS" else 1
+    return 0
+
+
+
+def cmd_narrative_discourse(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = NarrativeDiscourseRuntime.from_repo(root)
+    stress = ScenarioLiteraryStressRuntime.from_repo(root)
+    try:
+        kind = args.narrative_discourse_command
+        if kind == "summary":
+            payload = runtime.evaluate_all(stress)
+        elif kind == "scenario":
+            payload = runtime.evaluate(args.key, stress)
+        elif kind == "card":
+            payload = runtime.card(args.scenario, args.probe, stress)
+        elif kind == "compare":
+            payload = runtime.compare(args.left, args.right, stress)
+        else:
+            raise KeyError(f"Unknown narrative-discourse command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    if kind == "summary":
+        return 0 if payload["status"] == "PASS" else 1
+    if kind == "scenario":
+        return 0 if payload["status"] == "DISCOURSE_RUNTIME_READY" else 1
+    return 0
+
+
+
+def cmd_microdraft(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = ControlledMicrodraftRuntime.from_repo(root)
+    discourse = NarrativeDiscourseRuntime.from_repo(root)
+    stress = ScenarioLiteraryStressRuntime.from_repo(root)
+    suite = LiteraryEvaluatorSuite.from_repo(root)
+    try:
+        kind = args.microdraft_command
+        if kind == "summary":
+            payload = runtime.evaluate_all(discourse, stress, suite)
+        elif kind == "screen":
+            payload = runtime.screen(args.token, discourse, stress, suite)
+        elif kind == "cell":
+            payload = runtime.cell_packet(args.cell)
+        else:
+            raise KeyError(f"Unknown microdraft command: {kind}")
+    except (KeyError, FileNotFoundError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    if kind == "summary":
+        return 0 if payload["status"] == "PASS" else 1
+    if kind == "screen":
+        return 0 if payload["status"] == "READY_FOR_BLIND_MICRODRAFT_REVIEW" else 1
+    return 0
+
+
+
+def cmd_blind_microdraft_review(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = BlindMicrodraftReviewRuntime.from_repo(root)
+    try:
+        kind = args.blind_microdraft_review_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "scenario":
+            payload = runtime.scenario(args.key)
+        elif kind == "token":
+            payload = runtime.token(args.token)
+        else:
+            raise KeyError(f"Unknown blind-microdraft-review command: {kind}")
+    except (KeyError, FileNotFoundError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    return 0
+
 def cmd_regression(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     payload = run_r4_evidence_regression(root)
@@ -160,6 +405,96 @@ def cmd_plock(args: argparse.Namespace) -> int:
         print(json.dumps(lock, ensure_ascii=False, indent=2))
     else:
         print(format_plock(lock))
+    return 0
+
+
+def cmd_prewrite(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = V5PrewriteRuntime.from_repo(root)
+    reconstruction = ReconstructionRegistry.from_repo(root)
+    literary = LiteraryEcologyRuntime.from_repo(root)
+    plocks = LiteraryProtectionRegistry.from_repo(root)
+    adapters = HistoricalAdapterRuntime.from_repo(root)
+    registry = MigrationRegistry.from_repo(root)
+    try:
+        kind = args.prewrite_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "corpus":
+            payload = runtime.corpus(args.profile_id)
+        elif kind == "gap":
+            payload = runtime.gap(args.chapter)
+        elif kind == "scenes":
+            payload = runtime.scenes(args.chapter)
+        elif kind == "step":
+            payload = runtime.step(args.step, args.chapter, literary, adapters)
+        elif kind == "contract":
+            payload = runtime.contract(
+                args.chapter, reconstruction, literary, plocks, adapters, registry
+            )
+        elif kind == "stage":
+            payload = runtime.staging_packet(
+                args.chapter, reconstruction, literary, plocks, adapters, registry
+            )
+        else:
+            raise KeyError(f"Unknown prewrite command: {kind}")
+    except (KeyError, ValueError, FileNotFoundError) as exc:
+        print(str(exc))
+        return 1
+
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_prewrite(kind, payload))
+    return 0
+
+
+def cmd_literary_suite(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    suite = LiteraryEvaluatorSuite.from_repo(root)
+    try:
+        kind = args.literary_suite_command
+        if kind == "summary":
+            payload = suite.summary()
+        elif kind == "prose":
+            path = Path(args.text)
+            payload = suite.evaluate_prose(
+                path.read_text(encoding="utf-8"),
+                candidate_name=path.name,
+            )
+        elif kind in {"poetry-screen", "poetry-blind"}:
+            paths = [Path(x) for x in args.text]
+            candidates = {
+                label: path.read_text(encoding="utf-8")
+                for label, path in zip(("A", "B", "C"), paths, strict=True)
+            }
+            payload = (
+                suite.poetry_screen(candidates)
+                if kind == "poetry-screen"
+                else suite.poetry_blind_packet(candidates)
+            )
+        elif kind == "blind":
+            competitions = CompetitionRegistry.from_repo(root)
+            if args.competition_id not in competitions.records:
+                raise KeyError(f"Unknown competition: {args.competition_id}")
+            payload = suite.competition_blind_packet(
+                competitions.records[args.competition_id]
+            )
+        else:
+            raise KeyError(f"Unknown literary-suite command: {kind}")
+    except (KeyError, ValueError, FileNotFoundError) as exc:
+        print(str(exc))
+        return 1
+
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_literary_suite(kind, payload))
+
+    if kind == "prose" and payload["status"] == "REJECT_BEFORE_BLIND_READ":
+        return 1
+    if kind == "poetry-screen" and payload["lane_status"].startswith("BLOCKED"):
+        return 1
     return 0
 
 
@@ -388,6 +723,96 @@ def cmd_literary_ecology(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_historical_adapter(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = HistoricalAdapterRuntime.from_repo(root)
+    mechanisms = HistoricalMechanismRegistry.from_repo(root)
+    try:
+        kind = args.historical_adapter_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "describe":
+            payload = runtime.describe(args.adapter_id, mechanisms)
+        elif kind == "scene":
+            contract = load_data(Path(args.contract))
+            text_value = Path(args.text).read_text(encoding="utf-8")
+            payload = runtime.scene_status(contract, text_value, mechanisms)
+        else:
+            raise KeyError(f"Unknown historical-adapter command: {kind}")
+    except (KeyError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_adapter(kind, payload))
+    if kind == "scene":
+        return 0 if payload["status"] == "PASS" else 1
+    return 0
+
+
+def cmd_knowledge(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = CharacterKnowledgeRuntime.from_repo(root)
+    try:
+        kind = args.knowledge_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "scene":
+            payload = runtime.scene(args.scene_id, args.checkpoint)
+        elif kind == "character":
+            payload = runtime.character(args.scene_id, args.character_id, args.checkpoint)
+        elif kind == "voice":
+            payload = runtime.voice(args.character_id)
+        elif kind == "mask":
+            text_value = Path(args.text).read_text(encoding="utf-8")
+            payload = runtime.mask(args.character_id, text_value)
+        elif kind == "guard":
+            contract = load_data(Path(args.contract))
+            text_value = Path(args.text).read_text(encoding="utf-8")
+            payload = runtime.text_guard(contract["id"], contract, text_value)
+        else:
+            raise KeyError(f"Unknown knowledge command: {kind}")
+    except (KeyError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_knowledge(kind, payload))
+    if kind == "guard":
+        return 0 if payload["status"] == "PASS" else 1
+    if kind == "mask" and payload["status"] == "FAIL_FORBIDDEN_VOICE":
+        return 1
+    return 0
+
+
+def cmd_literary_production(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = LiteraryProductionRuntime.from_repo(root)
+    competitions = CompetitionRegistry.from_repo(root)
+    try:
+        kind = args.literary_production_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "chapter":
+            payload = runtime.chapter(args.chapter, competitions)
+        elif kind == "quarantine":
+            payload = runtime.quarantine()
+        else:
+            raise KeyError(f"Unknown literary production command: {kind}")
+    except (KeyError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_literary_production(kind, payload))
+    if kind == "quarantine":
+        return 0 if payload["status"] == "PASS" else 1
+    return 0
+
+
 def cmd_completion(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     gate = CompletionGateRuntime.from_repo(root)
@@ -559,6 +984,115 @@ def main() -> None:
     p_open.add_argument("--json", action="store_true")
     p_open.set_defaults(func=cmd_open)
 
+
+    p_hyp = sub.add_parser("hypothesis")
+    hyp_sub = p_hyp.add_subparsers(dest="hypothesis_command", required=True)
+    p = hyp_sub.add_parser("list")
+    p.set_defaults(func=cmd_hypothesis)
+    p = hyp_sub.add_parser("get")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_hypothesis)
+    p = hyp_sub.add_parser("alternatives")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_hypothesis)
+
+    p_scenario = sub.add_parser("scenario")
+    scenario_sub = p_scenario.add_subparsers(dest="scenario_command", required=True)
+    p = scenario_sub.add_parser("summary")
+    p.set_defaults(func=cmd_scenario)
+    p = scenario_sub.add_parser("generate")
+    p.set_defaults(func=cmd_scenario)
+    p = scenario_sub.add_parser("validate")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_scenario)
+    p = scenario_sub.add_parser("compare")
+    p.add_argument("keys", nargs="+")
+    p.set_defaults(func=cmd_scenario)
+    p = scenario_sub.add_parser("frontier")
+    p.set_defaults(func=cmd_scenario)
+    p = scenario_sub.add_parser("replay")
+    p.add_argument("key")
+    p.add_argument("--chapter", type=int)
+    p.set_defaults(func=cmd_scenario)
+    p = scenario_sub.add_parser("replay-all")
+    p.set_defaults(func=cmd_scenario)
+    p = scenario_sub.add_parser("conflicts")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_scenario)
+
+
+    p_pareto = sub.add_parser("pareto")
+    pareto_sub = p_pareto.add_subparsers(dest="pareto_command", required=True)
+    p = pareto_sub.add_parser("summary")
+    p.set_defaults(func=cmd_pareto)
+    p = pareto_sub.add_parser("scenario")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_pareto)
+    p = pareto_sub.add_parser("frontier")
+    p.set_defaults(func=cmd_pareto)
+    p = pareto_sub.add_parser("compare")
+    p.add_argument("left")
+    p.add_argument("right")
+    p.set_defaults(func=cmd_pareto)
+
+
+    p_stress = sub.add_parser("literary-stress")
+    stress_sub = p_stress.add_subparsers(dest="literary_stress_command", required=True)
+    p = stress_sub.add_parser("summary")
+    p.set_defaults(func=cmd_literary_stress)
+    p = stress_sub.add_parser("scenario")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_literary_stress)
+    p = stress_sub.add_parser("compare")
+    p.add_argument("left")
+    p.add_argument("right")
+    p.set_defaults(func=cmd_literary_stress)
+
+
+    p_discourse = sub.add_parser("narrative-discourse")
+    discourse_sub = p_discourse.add_subparsers(
+        dest="narrative_discourse_command", required=True
+    )
+    p = discourse_sub.add_parser("summary")
+    p.set_defaults(func=cmd_narrative_discourse)
+    p = discourse_sub.add_parser("scenario")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_narrative_discourse)
+    p = discourse_sub.add_parser("card")
+    p.add_argument("scenario")
+    p.add_argument("probe")
+    p.set_defaults(func=cmd_narrative_discourse)
+    p = discourse_sub.add_parser("compare")
+    p.add_argument("left")
+    p.add_argument("right")
+    p.set_defaults(func=cmd_narrative_discourse)
+
+
+    p_micro = sub.add_parser("microdraft")
+    micro_sub = p_micro.add_subparsers(dest="microdraft_command", required=True)
+    p = micro_sub.add_parser("summary")
+    p.set_defaults(func=cmd_microdraft)
+    p = micro_sub.add_parser("screen")
+    p.add_argument("token")
+    p.set_defaults(func=cmd_microdraft)
+    p = micro_sub.add_parser("cell")
+    p.add_argument("cell")
+    p.set_defaults(func=cmd_microdraft)
+
+
+    p_p7 = sub.add_parser("blind-microdraft-review")
+    p7_sub = p_p7.add_subparsers(
+        dest="blind_microdraft_review_command", required=True
+    )
+    p = p7_sub.add_parser("summary")
+    p.set_defaults(func=cmd_blind_microdraft_review)
+    p = p7_sub.add_parser("scenario")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_blind_microdraft_review)
+    p = p7_sub.add_parser("token")
+    p.add_argument("token")
+    p.set_defaults(func=cmd_blind_microdraft_review)
+
     p_regression = sub.add_parser("regression")
     p_regression.add_argument("--json", action="store_true")
     p_regression.set_defaults(func=cmd_regression)
@@ -573,6 +1107,60 @@ def main() -> None:
     p_lit_eval.add_argument("text", nargs="+")
     p_lit_eval.add_argument("--json", action="store_true")
     p_lit_eval.set_defaults(func=cmd_literary_evaluate)
+
+    p_prewrite = sub.add_parser("prewrite")
+    prewrite_sub = p_prewrite.add_subparsers(
+        dest="prewrite_command", required=True
+    )
+    p = prewrite_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("corpus")
+    p.add_argument("profile_id", nargs="?")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("gap")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("scenes")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("step")
+    p.add_argument("step", type=int)
+    p.add_argument("--chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("contract")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("stage")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+
+    p_lit_suite = sub.add_parser("literary-suite")
+    lit_suite_sub = p_lit_suite.add_subparsers(
+        dest="literary_suite_command", required=True
+    )
+    p = lit_suite_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_suite)
+    p = lit_suite_sub.add_parser("prose")
+    p.add_argument("text")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_suite)
+    for name in ("poetry-screen", "poetry-blind"):
+        p = lit_suite_sub.add_parser(name)
+        p.add_argument("text", nargs=3)
+        p.add_argument("--json", action="store_true")
+        p.set_defaults(func=cmd_literary_suite)
+    p = lit_suite_sub.add_parser("blind")
+    p.add_argument("competition_id")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_suite)
 
     p_comp = sub.add_parser("competition")
     p_comp.add_argument("competition_id")
@@ -672,6 +1260,69 @@ def main() -> None:
     p.add_argument("key")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_literary_ecology)
+
+    p_hist_adapter = sub.add_parser("historical-adapter")
+    hist_adapter_sub = p_hist_adapter.add_subparsers(
+        dest="historical_adapter_command", required=True
+    )
+    p = hist_adapter_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_historical_adapter)
+    p = hist_adapter_sub.add_parser("describe")
+    p.add_argument("adapter_id")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_historical_adapter)
+    p = hist_adapter_sub.add_parser("scene")
+    p.add_argument("contract")
+    p.add_argument("text")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_historical_adapter)
+
+    p_knowledge = sub.add_parser("knowledge")
+    knowledge_sub = p_knowledge.add_subparsers(dest="knowledge_command", required=True)
+    p = knowledge_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+    p = knowledge_sub.add_parser("scene")
+    p.add_argument("scene_id")
+    p.add_argument("--checkpoint")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+    p = knowledge_sub.add_parser("character")
+    p.add_argument("scene_id")
+    p.add_argument("character_id")
+    p.add_argument("--checkpoint")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+    p = knowledge_sub.add_parser("voice")
+    p.add_argument("character_id")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+    p = knowledge_sub.add_parser("mask")
+    p.add_argument("character_id")
+    p.add_argument("text")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+    p = knowledge_sub.add_parser("guard")
+    p.add_argument("contract")
+    p.add_argument("text")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_knowledge)
+
+    p_lit_prod = sub.add_parser("literary-production")
+    lit_prod_sub = p_lit_prod.add_subparsers(
+        dest="literary_production_command", required=True
+    )
+    p = lit_prod_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_production)
+    p = lit_prod_sub.add_parser("chapter")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_production)
+    p = lit_prod_sub.add_parser("quarantine")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_production)
 
     p_completion = sub.add_parser("completion")
     completion_sub = p_completion.add_subparsers(dest="completion_command", required=True)

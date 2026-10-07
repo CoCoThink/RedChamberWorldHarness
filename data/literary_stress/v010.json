@@ -1,0 +1,1439 @@
+{
+  "id": "scenario-literary-stress:v0.10",
+  "milestone": "P4",
+  "status": "PASS",
+  "authority": "SHADOW_ONLY",
+  "output_authority": "LITERARY_STRESS_ONLY",
+  "source_basis": {
+    "pareto_ref": "pareto-evaluation:v0.9",
+    "required_scenarios": [
+      "SCN-CURRENT-C",
+      "SCN-LATE-MARRIAGE",
+      "SCN-JADE-MULTILAYER",
+      "SCN-MINIMAL-CAUSE-OPEN"
+    ],
+    "literary_ecology_ref": "M5",
+    "literary_evaluator_ref": "v0.5"
+  },
+  "dimensions": [
+    {
+      "id": "LS-D01",
+      "key": "ordinary_life_landing",
+      "name": "大事落到小生活",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D08",
+        "LE-D12"
+      ],
+      "principle": "重大节点必须沉入饭、药、衣、钥匙、搬运、跑腿、做饭、缝补等可操作生活，不得只写节点本身。"
+    },
+    {
+      "id": "LS-D02",
+      "key": "ensemble_side_life",
+      "name": "群像与支线自活",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D09"
+      ],
+      "principle": "主线场景中必须让旁支人物有自己的工作、利益与误差，避免所有人只为主角服务。"
+    },
+    {
+      "id": "LS-D03",
+      "key": "voice_relation_specificity",
+      "name": "关系化声口",
+      "basis_refs": [
+        "LE-D01"
+      ],
+      "principle": "人物说话必须随对象与关系变化；悲剧阶段也不能把旧声口抹平。"
+    },
+    {
+      "id": "LS-D04",
+      "key": "object_nonmechanical",
+      "name": "物件不是机关",
+      "basis_refs": [
+        "LE-D08",
+        "LE-D09",
+        "TECH-15"
+      ],
+      "principle": "玉、药、衣、钥匙、清单、纸札首先是被使用、保管、误认、转交的生活物，不得只作为剧情按钮。"
+    },
+    {
+      "id": "LS-D05",
+      "key": "indirection_ambiguity",
+      "name": "间接叙事与歧义保留",
+      "basis_refs": [
+        "LE-D06",
+        "LE-D09",
+        "TECH-04",
+        "TECH-14"
+      ],
+      "principle": "能由后果、转述、错身、半知来承载的重大事件，不用旁白一次讲尽；OPEN不得被漂亮场面偷偷关死。"
+    },
+    {
+      "id": "LS-D06",
+      "key": "culture_as_action",
+      "name": "文化作为行动",
+      "basis_refs": [
+        "LE-D04",
+        "LE-D13"
+      ],
+      "principle": "书札、名簿、仪礼、庵务、诗文必须改变行动或关系，不作名物陈列。"
+    },
+    {
+      "id": "LS-D07",
+      "key": "chapter_breath",
+      "name": "章回呼吸与顿挫",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D09",
+        "TECH-05",
+        "TECH-10",
+        "TECH-11"
+      ],
+      "principle": "一回不能等于一个事件；忙中有闲、转折有余波，收尾不做概括性格言。"
+    },
+    {
+      "id": "LS-D08",
+      "key": "tragedy_without_exposition",
+      "name": "悲剧去说明化",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D05",
+        "LE-D07",
+        "LE-D08"
+      ],
+      "principle": "贫困、死亡、失权、羁押主要由身体、钱粮、手续、家务和关系失灵显出，不由作者替人物总结人生。"
+    }
+  ],
+  "required_windows": [
+    {
+      "id": "W1",
+      "start": 84,
+      "end": 87
+    },
+    {
+      "id": "W2",
+      "start": 89,
+      "end": 92
+    },
+    {
+      "id": "W3",
+      "start": 93,
+      "end": 95
+    },
+    {
+      "id": "W4",
+      "start": 97,
+      "end": 98
+    },
+    {
+      "id": "W5",
+      "start": 99,
+      "end": 100
+    }
+  ],
+  "thresholds": {
+    "dimensions_min_hits": 2,
+    "unique_focalizers_min": 5,
+    "unique_ordinary_actions_min": 12,
+    "unique_side_characters_min": 6,
+    "unique_object_carriers_min": 6,
+    "unique_ending_vectors_min": 4,
+    "unique_techniques_min": 8,
+    "indirect_or_partial_probe_min": 4,
+    "culture_action_probe_min": 3,
+    "withheld_info_probe_min": 5
+  },
+  "contracts": [
+    {
+      "scenario_id": "SCN-CURRENT-C",
+      "title": "当前C路线文学压力合同",
+      "watch_items": [
+        {
+          "id": "C-W01",
+          "risk": "current-C熟悉度形成隐性文学优待",
+          "must_show": "同一结构可被生活场重新检验，而不是因已有正文成熟直接通过",
+          "addressed_by": [
+            "C-P1",
+            "C-P2"
+          ]
+        },
+        {
+          "id": "C-W02",
+          "risk": "甄贾正面照面滑向哲理对谈",
+          "must_show": "照面被客务、递物、旁人和中断削碎",
+          "addressed_by": [
+            "C-P4"
+          ]
+        },
+        {
+          "id": "C-W03",
+          "risk": "送回同一通灵玉过于机关化",
+          "must_show": "先有保管、误认、包裹、递手的生活物流，身份不由旁白宣布",
+          "addressed_by": [
+            "C-P4",
+            "C-P5"
+          ]
+        }
+      ],
+      "probes": [
+        {
+          "id": "C-P1",
+          "window": [
+            84,
+            87
+          ],
+          "label": "黛亡—婚事：先写房间和衣物重新分配，再让婚事进入",
+          "focalizers": [
+            "baochai",
+            "sheyue",
+            "wangfuren"
+          ],
+          "ordinary_actions": [
+            "收药包",
+            "撤旧铺盖",
+            "核衣箱",
+            "借针线",
+            "分饭"
+          ],
+          "side_characters": [
+            "zijuan",
+            "ping_er",
+            "xiren"
+          ],
+          "object_carriers": [
+            "药包",
+            "铺盖",
+            "衣箱",
+            "针线簸箩"
+          ],
+          "event_visibility": "AFTERMATH_FIRST",
+          "withheld_information": [
+            "婚事的最终拍板过程",
+            "宝玉对婚事的完整心理解释"
+          ],
+          "culture_in_action": [
+            "丧后物件登记",
+            "婚事口信"
+          ],
+          "ending_vector": "OBJECT",
+          "technique_refs": [
+            "TECH-05",
+            "TECH-07",
+            "TECH-10",
+            "TECH-15"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D03",
+            "LS-D07",
+            "LS-D08"
+          ],
+          "scenario_risk": "婚姻被写成节点切换",
+          "countermeasure": "让丧后家务先占据场面，婚事只从谁去取衣、谁不肯开箱等摩擦显出",
+          "anti_exposition_rule": "不得出现‘从此他明白……’式作者总结"
+        },
+        {
+          "id": "C-P2",
+          "window": [
+            89,
+            92
+          ],
+          "label": "抄没—羁押：制度退到钥匙、井、水桶、药和送物单之后",
+          "focalizers": [
+            "fengjie",
+            "jia_yun",
+            "xiaohong"
+          ],
+          "ordinary_actions": [
+            "守钥匙",
+            "排井水次序",
+            "凑药钱",
+            "推车",
+            "送饭",
+            "问门禁"
+          ],
+          "side_characters": [
+            "ping_er",
+            "sheyue",
+            "茜雪"
+          ],
+          "object_carriers": [
+            "钥匙",
+            "水桶",
+            "药包",
+            "送物单",
+            "旧车"
+          ],
+          "event_visibility": "PARTIAL_DIRECT",
+          "withheld_information": [
+            "具体罪由",
+            "查抄完整法律流程"
+          ],
+          "culture_in_action": [
+            "清单",
+            "门禁纸",
+            "急用名目"
+          ],
+          "ending_vector": "QUESTION",
+          "technique_refs": [
+            "TECH-02",
+            "TECH-05",
+            "TECH-09",
+            "TECH-15",
+            "TECH-16"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D04",
+            "LS-D05",
+            "LS-D06",
+            "LS-D08"
+          ],
+          "scenario_risk": "程序展示压过生活",
+          "countermeasure": "只写到人物受制，手续信息通过排队、递单、退物体现",
+          "anti_exposition_rule": "不得整段解释清代查抄或监所制度"
+        },
+        {
+          "id": "C-P3",
+          "window": [
+            93,
+            95
+          ],
+          "label": "凤姐死后—巧姐获救：救援从衣食、路费和谁能照看孩子展开",
+          "focalizers": [
+            "ping_er",
+            "liulaolao",
+            "jia_yun"
+          ],
+          "ordinary_actions": [
+            "收旧衣",
+            "借车钱",
+            "包干粮",
+            "托人看门",
+            "洗孩子衣裳"
+          ],
+          "side_characters": [
+            "xiaohong",
+            "qiaojie",
+            "sheyue"
+          ],
+          "object_carriers": [
+            "旧衣包",
+            "铜钱串",
+            "干粮布包",
+            "车"
+          ],
+          "event_visibility": "REPORTED",
+          "withheld_information": [
+            "凤姐是否预知巧姐最终归宿"
+          ],
+          "culture_in_action": [
+            "借据/口信只作行动凭据"
+          ],
+          "ending_vector": "GESTURE",
+          "technique_refs": [
+            "TECH-07",
+            "TECH-08",
+            "TECH-09",
+            "TECH-16"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D03",
+            "LS-D06",
+            "LS-D07",
+            "LS-D08"
+          ],
+          "scenario_risk": "救援变成忠义宣言",
+          "countermeasure": "让每个人只解决眼前吃住与路费，不让旁白替刘姥姥定义‘报恩’",
+          "anti_exposition_rule": "不得用‘这正是善有善报’一类总结"
+        },
+        {
+          "id": "C-P4",
+          "window": [
+            97,
+            98
+          ],
+          "label": "妙玉—甄宝玉—送玉：镜像场面必须被俗务打断",
+          "focalizers": [
+            "baoyu",
+            "miaoyu",
+            "jia_yun"
+          ],
+          "ordinary_actions": [
+            "换水",
+            "收短札",
+            "拆包裹",
+            "找失物",
+            "记递手"
+          ],
+          "side_characters": [
+            "sheyue",
+            "xiaohong",
+            "zhen_baoyu"
+          ],
+          "object_carriers": [
+            "短札",
+            "包裹",
+            "玉",
+            "水罐"
+          ],
+          "event_visibility": "INTERRUPTED_DIRECT",
+          "withheld_information": [
+            "所送玉的完整流转真相",
+            "真假二宝关系的哲理解释"
+          ],
+          "culture_in_action": [
+            "短札",
+            "递物名目"
+          ],
+          "ending_vector": "INTERRUPTION",
+          "technique_refs": [
+            "TECH-04",
+            "TECH-06",
+            "TECH-14",
+            "TECH-15"
+          ],
+          "stress_dimensions": [
+            "LS-D03",
+            "LS-D04",
+            "LS-D05",
+            "LS-D06",
+            "LS-D07"
+          ],
+          "scenario_risk": "甄贾照面成为概念辩论且玉成为机关",
+          "countermeasure": "会面短、被递物和旁人打断；玉先被拿错、包错、保管，再谈是否相认",
+          "anti_exposition_rule": "不得写二宝互相解释‘真假’主题"
+        },
+        {
+          "id": "C-P5",
+          "window": [
+            99,
+            100
+          ],
+          "label": "撒手—情榜：出门之后家里仍要吃饭，外框最后才开",
+          "focalizers": [
+            "baochai",
+            "sheyue",
+            "jia_yun"
+          ],
+          "ordinary_actions": [
+            "找人",
+            "点饭",
+            "收空床",
+            "记失物",
+            "安顿夜宿"
+          ],
+          "side_characters": [
+            "jia_yun",
+            "ping_er",
+            "jialan"
+          ],
+          "object_carriers": [
+            "空床",
+            "饭碗",
+            "门闩",
+            "名册"
+          ],
+          "event_visibility": "AFTERMATH_FIRST",
+          "withheld_information": [
+            "宝玉出门后的全部行踪",
+            "情榜完整名次与总人数"
+          ],
+          "culture_in_action": [
+            "名册只显示局部条目"
+          ],
+          "ending_vector": "EMPTY_SPACE",
+          "technique_refs": [
+            "TECH-04",
+            "TECH-05",
+            "TECH-06",
+            "TECH-11"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D05",
+            "LS-D06",
+            "LS-D07",
+            "LS-D08"
+          ],
+          "scenario_risk": "终局被解释成主题总结",
+          "countermeasure": "先写寻找与家务余波，再转外框；榜只显已锁文字与必要结构",
+          "anti_exposition_rule": "不得用作者评语替代人物余波"
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCN-LATE-MARRIAGE",
+      "title": "G2败后婚姻路线文学压力合同",
+      "watch_items": [
+        {
+          "id": "L-W01",
+          "risk": "婚前把宝钗提前写成妻子",
+          "must_show": "87—93宝钗保持薛家女儿/有限帮手位置",
+          "addressed_by": [
+            "L-P1",
+            "L-P2"
+          ]
+        },
+        {
+          "id": "L-W02",
+          "risk": "败后婚礼变成贫困奇观或礼制说明",
+          "must_show": "婚事从炭、米、衣、借屋、针线与谁出钱中发生",
+          "addressed_by": [
+            "L-P3"
+          ]
+        },
+        {
+          "id": "L-W03",
+          "risk": "G2资源压力被一句‘从简’抹掉",
+          "must_show": "至少两种实际资源交换和一次居所摩擦",
+          "addressed_by": [
+            "L-P2",
+            "L-P3"
+          ]
+        }
+      ],
+      "probes": [
+        {
+          "id": "L-P1",
+          "window": [
+            84,
+            87
+          ],
+          "label": "黛亡后仍未成婚：宝钗只是来往与帮忙，不提前占妻位",
+          "focalizers": [
+            "baochai",
+            "zijuan",
+            "sheyue"
+          ],
+          "ordinary_actions": [
+            "送药",
+            "收遗物",
+            "借针线",
+            "替人传话",
+            "回薛家"
+          ],
+          "side_characters": [
+            "wangfuren",
+            "ping_er",
+            "xiren"
+          ],
+          "object_carriers": [
+            "药包",
+            "旧帕",
+            "针线",
+            "门牌"
+          ],
+          "event_visibility": "AFTERMATH_FIRST",
+          "withheld_information": [
+            "婚事是否最终一定落定",
+            "宝钗的完整自我辩白"
+          ],
+          "culture_in_action": [
+            "短口信"
+          ],
+          "ending_vector": "GESTURE",
+          "technique_refs": [
+            "TECH-04",
+            "TECH-07",
+            "TECH-10",
+            "TECH-16"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D03",
+            "LS-D05",
+            "LS-D08"
+          ],
+          "scenario_risk": "current-C妻位泄漏",
+          "countermeasure": "宝钗只解决具体事，称谓、住宿与出入都保持未婚边界",
+          "anti_exposition_rule": "不得让宝钗以内心独白解释自己‘将为妻’"
+        },
+        {
+          "id": "L-P2",
+          "window": [
+            89,
+            92
+          ],
+          "label": "查抄与租居：宝玉、宝钗分居，援助必须绕过钱和门",
+          "focalizers": [
+            "baochai",
+            "jia_yun",
+            "xiaohong"
+          ],
+          "ordinary_actions": [
+            "找小院",
+            "议短租",
+            "典衣",
+            "送饭",
+            "凑药钱",
+            "问门禁"
+          ],
+          "side_characters": [
+            "xueyima",
+            "sheyue",
+            "茜雪"
+          ],
+          "object_carriers": [
+            "租契纸",
+            "典当票",
+            "饭盒",
+            "药包",
+            "车"
+          ],
+          "event_visibility": "PARTIAL_DIRECT",
+          "withheld_information": [
+            "羁押具体罪由",
+            "薛家可援助的上限"
+          ],
+          "culture_in_action": [
+            "租契/典票作为行动凭据"
+          ],
+          "ending_vector": "SOUND",
+          "technique_refs": [
+            "TECH-02",
+            "TECH-05",
+            "TECH-09",
+            "TECH-15"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D04",
+            "LS-D05",
+            "LS-D06",
+            "LS-D08"
+          ],
+          "scenario_risk": "资源压力被概括成‘家贫’",
+          "countermeasure": "让每一笔援助都带来下一笔不足；宝钗不能自由进出监所或夫家",
+          "anti_exposition_rule": "不得一句‘薛家接济’跨过现金与门禁"
+        },
+        {
+          "id": "L-P3",
+          "window": [
+            93,
+            95
+          ],
+          "label": "E2成婚：婚礼不是场面，是谁借锅、缝衣、挪床、出米",
+          "focalizers": [
+            "baochai",
+            "sheyue",
+            "ping_er"
+          ],
+          "ordinary_actions": [
+            "缝嫁衣旧边",
+            "借锅",
+            "称米",
+            "挪床",
+            "凑灯油",
+            "分炭"
+          ],
+          "side_characters": [
+            "xueyima",
+            "jia_yun",
+            "qiaojie"
+          ],
+          "object_carriers": [
+            "旧衣",
+            "米升",
+            "锅",
+            "床板",
+            "灯油"
+          ],
+          "event_visibility": "DIRECT_SCENE",
+          "withheld_information": [
+            "礼仪完整流程",
+            "谁承担全部费用"
+          ],
+          "culture_in_action": [
+            "简短礼单只显示缺项与借项"
+          ],
+          "ending_vector": "OBJECT",
+          "technique_refs": [
+            "TECH-05",
+            "TECH-08",
+            "TECH-13",
+            "TECH-16"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D03",
+            "LS-D04",
+            "LS-D06",
+            "LS-D07",
+            "LS-D08"
+          ],
+          "scenario_risk": "败后婚礼成为贫困展览",
+          "countermeasure": "不列寒酸名物，所有物件都必须有人借、补、争或归还",
+          "anti_exposition_rule": "不得列举‘虽贫而有情’式对照清单"
+        },
+        {
+          "id": "L-P4",
+          "window": [
+            97,
+            98
+          ],
+          "label": "婚后短日常—甄宝玉中介送玉：夫妻关系先由琐事成立",
+          "focalizers": [
+            "baochai",
+            "baoyu",
+            "sheyue"
+          ],
+          "ordinary_actions": [
+            "分药钱",
+            "晒被",
+            "收包裹",
+            "核递手",
+            "催还借物"
+          ],
+          "side_characters": [
+            "jia_yun",
+            "xiaohong",
+            "zhen_baoyu"
+          ],
+          "object_carriers": [
+            "被褥",
+            "药钱",
+            "包裹",
+            "玉样物"
+          ],
+          "event_visibility": "REPORTED",
+          "withheld_information": [
+            "所送玉同一性",
+            "甄贾是否本可相见"
+          ],
+          "culture_in_action": [
+            "递物口信"
+          ],
+          "ending_vector": "QUESTION",
+          "technique_refs": [
+            "TECH-06",
+            "TECH-07",
+            "TECH-14",
+            "TECH-15"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D03",
+            "LS-D04",
+            "LS-D05",
+            "LS-D07"
+          ],
+          "scenario_risk": "婚后只剩概念性贤妻叙述",
+          "countermeasure": "宝钗的妻位由账、药、被褥和对宝玉的旧声口表现，不赞贤",
+          "anti_exposition_rule": "不得作者评价宝钗‘贤德’"
+        },
+        {
+          "id": "L-P5",
+          "window": [
+            99,
+            100
+          ],
+          "label": "撒手：刚建立的贫寒夫妻生活被突然割断",
+          "focalizers": [
+            "baochai",
+            "sheyue",
+            "jia_yun"
+          ],
+          "ordinary_actions": [
+            "等饭",
+            "找人",
+            "退借物",
+            "收床",
+            "记欠账"
+          ],
+          "side_characters": [
+            "ping_er",
+            "jialan",
+            "liulaolao"
+          ],
+          "object_carriers": [
+            "欠账纸",
+            "空床",
+            "饭碗",
+            "门闩"
+          ],
+          "event_visibility": "AFTERMATH_FIRST",
+          "withheld_information": [
+            "宝玉全部出家路线",
+            "情榜总名单"
+          ],
+          "culture_in_action": [
+            "欠账和名册分属人间/外框不同层"
+          ],
+          "ending_vector": "UNFINISHED_SPEECH",
+          "technique_refs": [
+            "TECH-04",
+            "TECH-05",
+            "TECH-10",
+            "TECH-11"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D05",
+            "LS-D06",
+            "LS-D07",
+            "LS-D08"
+          ],
+          "scenario_risk": "G2婚姻刚成即撒手显得纯结构工具",
+          "countermeasure": "让夫妻生活在99前已有足够琐碎惯性，撒手后只写被打断的饭与欠账",
+          "anti_exposition_rule": "不得用‘好景不长’概括结构"
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCN-JADE-MULTILAYER",
+      "title": "多层玉事件路线文学压力合同",
+      "watch_items": [
+        {
+          "id": "J-W01",
+          "risk": "多个玉样物使读者只能靠解释辨认",
+          "must_show": "用持有人、包裹、用途、所在空间区分对象，不用旁白编号",
+          "addressed_by": [
+            "J-P2",
+            "J-P4"
+          ]
+        },
+        {
+          "id": "J-W02",
+          "risk": "物件长线过度机关化",
+          "must_show": "玉线必须嵌在搬家、衣箱、药包、递物与遗失的生活物流中",
+          "addressed_by": [
+            "J-P2",
+            "J-P3",
+            "J-P4"
+          ]
+        },
+        {
+          "id": "J-W03",
+          "risk": "终局反向宣布所有玉其实是一物",
+          "must_show": "石归本质不负责替人间层补做身份判决",
+          "addressed_by": [
+            "J-P5"
+          ]
+        }
+      ],
+      "probes": [
+        {
+          "id": "J-P1",
+          "window": [
+            84,
+            87
+          ],
+          "label": "婚事与死亡照常推进，但早埋‘物件会被错认’的生活语法",
+          "focalizers": [
+            "sheyue",
+            "baochai",
+            "ping_er"
+          ],
+          "ordinary_actions": [
+            "收箱",
+            "贴小纸",
+            "借锁",
+            "找旧饰物",
+            "退针线"
+          ],
+          "side_characters": [
+            "zijuan",
+            "xiren",
+            "xiaohong"
+          ],
+          "object_carriers": [
+            "衣箱",
+            "锁",
+            "小纸签",
+            "旧饰物"
+          ],
+          "event_visibility": "AFTERMATH_FIRST",
+          "withheld_information": [
+            "后来玉样物身份"
+          ],
+          "culture_in_action": [
+            "箱签作为家务"
+          ],
+          "ending_vector": "OBJECT",
+          "technique_refs": [
+            "TECH-05",
+            "TECH-06",
+            "TECH-15"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D04",
+            "LS-D07",
+            "LS-D03"
+          ],
+          "scenario_risk": "为后文玉线提前作生硬伏笔",
+          "countermeasure": "只建立错放、代收、误认的普遍生活条件，不点名‘以后有用’",
+          "anti_exposition_rule": "不得出现预告式暗示"
+        },
+        {
+          "id": "J-P2",
+          "window": [
+            89,
+            92
+          ],
+          "label": "多次搬迁与扫雪拾物：不同玉靠物流区分，不靠解释",
+          "focalizers": [
+            "fengjie",
+            "ping_er",
+            "jia_yun"
+          ],
+          "ordinary_actions": [
+            "搬箱",
+            "点包裹",
+            "扫雪",
+            "归还失物",
+            "重贴签"
+          ],
+          "side_characters": [
+            "sheyue",
+            "xiaohong",
+            "茜雪"
+          ],
+          "object_carriers": [
+            "箱签",
+            "雪中玉样物",
+            "通灵玉的随身位置",
+            "包袱"
+          ],
+          "event_visibility": "PARTIAL_DIRECT",
+          "withheld_information": [
+            "雪中玉样物真实身份",
+            "具体羁押罪由"
+          ],
+          "culture_in_action": [
+            "失物小纸只记‘玉样’"
+          ],
+          "ending_vector": "QUESTION",
+          "technique_refs": [
+            "TECH-02",
+            "TECH-06",
+            "TECH-09",
+            "TECH-15",
+            "TECH-16"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D04",
+            "LS-D05",
+            "LS-D06",
+            "LS-D08"
+          ],
+          "scenario_risk": "读者需要作者解释哪个玉是哪一个",
+          "countermeasure": "让对象差异由谁拿、从哪只包袱出、谁不肯认领来形成",
+          "anti_exposition_rule": "不得由叙述者说‘此玉非彼玉’"
+        },
+        {
+          "id": "J-P3",
+          "window": [
+            93,
+            95
+          ],
+          "label": "凤姐重病与再搬迁：物件价值随贫困下降而改变",
+          "focalizers": [
+            "ping_er",
+            "sheyue",
+            "liulaolao"
+          ],
+          "ordinary_actions": [
+            "典衣",
+            "留药钱",
+            "挑可带物件",
+            "丢弃破箱",
+            "包孩子衣服"
+          ],
+          "side_characters": [
+            "fengjie",
+            "qiaojie",
+            "jia_yun"
+          ],
+          "object_carriers": [
+            "破箱",
+            "药包",
+            "旧饰物",
+            "包袱"
+          ],
+          "event_visibility": "AFTERMATH_FIRST",
+          "withheld_information": [
+            "各物件未来归宿"
+          ],
+          "culture_in_action": [
+            "典当票/药单"
+          ],
+          "ending_vector": "GESTURE",
+          "technique_refs": [
+            "TECH-07",
+            "TECH-08",
+            "TECH-15"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D04",
+            "LS-D06",
+            "LS-D08"
+          ],
+          "scenario_risk": "玉线抢走凤姐/巧姐生活重量",
+          "countermeasure": "本窗不让玉成为主物件，突出生活物流比象征物更重",
+          "anti_exposition_rule": "不得把每件东西都象征化"
+        },
+        {
+          "id": "J-P4",
+          "window": [
+            97,
+            98
+          ],
+          "label": "中介送玉且身份OPEN：递送链清楚，身份判断仍不关闭",
+          "focalizers": [
+            "baoyu",
+            "jia_yun",
+            "xiaohong"
+          ],
+          "ordinary_actions": [
+            "验包角",
+            "问递手",
+            "对旧签",
+            "收短札",
+            "把物暂收"
+          ],
+          "side_characters": [
+            "zhen_baoyu",
+            "sheyue",
+            "miaoyu"
+          ],
+          "object_carriers": [
+            "送来的玉",
+            "旧签",
+            "包角",
+            "短札"
+          ],
+          "event_visibility": "REPORTED",
+          "withheld_information": [
+            "送来之玉是否通灵玉",
+            "甄宝玉为何不亲见"
+          ],
+          "culture_in_action": [
+            "短札只记递送，不解释物性"
+          ],
+          "ending_vector": "INTERRUPTION",
+          "technique_refs": [
+            "TECH-04",
+            "TECH-06",
+            "TECH-14",
+            "TECH-15"
+          ],
+          "stress_dimensions": [
+            "LS-D03",
+            "LS-D04",
+            "LS-D05",
+            "LS-D06",
+            "LS-D07"
+          ],
+          "scenario_risk": "身份开放变成作者故弄玄虚",
+          "countermeasure": "物流细节必须足够具体，只有身份判断保持开放",
+          "anti_exposition_rule": "不得用含混代替因果"
+        },
+        {
+          "id": "J-P5",
+          "window": [
+            99,
+            100
+          ],
+          "label": "石归本质与人间多玉并存：外框不替人间办结鉴定",
+          "focalizers": [
+            "baochai",
+            "sheyue",
+            "jia_yun"
+          ],
+          "ordinary_actions": [
+            "找人",
+            "整理遗物",
+            "封小包",
+            "留下未认领物"
+          ],
+          "side_characters": [
+            "jia_yun",
+            "ping_er",
+            "jialan"
+          ],
+          "object_carriers": [
+            "未认领小包",
+            "空床",
+            "名册",
+            "石"
+          ],
+          "event_visibility": "AFTERMATH_FIRST",
+          "withheld_information": [
+            "人间所有玉样物最终同一性",
+            "情榜完整名次"
+          ],
+          "culture_in_action": [
+            "名册只开必要条目"
+          ],
+          "ending_vector": "EMPTY_SPACE",
+          "technique_refs": [
+            "TECH-04",
+            "TECH-06",
+            "TECH-11",
+            "TECH-14"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D04",
+            "LS-D05",
+            "LS-D06",
+            "LS-D07",
+            "LS-D08"
+          ],
+          "scenario_risk": "终局为求象征整齐反向把多玉合一",
+          "countermeasure": "外框只完成石归本质；人间层可以留下未认领物和未解物流",
+          "anti_exposition_rule": "不得用太虚旁白补完物件谱系"
+        }
+      ]
+    },
+    {
+      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
+      "title": "最小承诺路线文学压力合同",
+      "watch_items": [
+        {
+          "id": "M-W01",
+          "risk": "保留原因OPEN滑成因果空洞",
+          "must_show": "程序后果必须具体，人物只是不知道全部原因，不是世界没有原因",
+          "addressed_by": [
+            "M-P2"
+          ]
+        },
+        {
+          "id": "M-W02",
+          "risk": "错身甄宝玉和送玉身份OPEN变成故弄玄虚",
+          "must_show": "行动链清楚、信息链有缺口，缺口位置可指认",
+          "addressed_by": [
+            "M-P4"
+          ]
+        },
+        {
+          "id": "M-W03",
+          "risk": "过度谨慎导致全书不肯落笔",
+          "must_show": "生活、关系、身体和资源事实可写得很实，只在证据接口处保留开放",
+          "addressed_by": [
+            "M-P1",
+            "M-P3",
+            "M-P5"
+          ]
+        }
+      ],
+      "probes": [
+        {
+          "id": "M-P1",
+          "window": [
+            84,
+            87
+          ],
+          "label": "该落地的落地：死亡、房间、饭药、婚事都实写，原因OPEN不扩散",
+          "focalizers": [
+            "baochai",
+            "sheyue",
+            "zijuan"
+          ],
+          "ordinary_actions": [
+            "收药",
+            "撤铺盖",
+            "分遗物",
+            "送饭",
+            "借针线"
+          ],
+          "side_characters": [
+            "wangfuren",
+            "ping_er",
+            "xiren"
+          ],
+          "object_carriers": [
+            "药碗",
+            "铺盖",
+            "旧帕",
+            "针线"
+          ],
+          "event_visibility": "AFTERMATH_FIRST",
+          "withheld_information": [
+            "婚事幕后完整权力链"
+          ],
+          "culture_in_action": [
+            "遗物小纸"
+          ],
+          "ending_vector": "GESTURE",
+          "technique_refs": [
+            "TECH-05",
+            "TECH-07",
+            "TECH-10",
+            "TECH-16"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D03",
+            "LS-D07",
+            "LS-D08"
+          ],
+          "scenario_risk": "把‘开放’误写成所有事都朦胧",
+          "countermeasure": "生活事实必须清楚可触，只不越过特定OPEN接口",
+          "anti_exposition_rule": "不得把不确定性扩散成普遍迷雾"
+        },
+        {
+          "id": "M-P2",
+          "window": [
+            89,
+            92
+          ],
+          "label": "羁押原因最小承诺：门禁、送物、退物、问讯时间都明确，罪由不替官面总结",
+          "focalizers": [
+            "xiaohong",
+            "jia_yun",
+            "sheyue"
+          ],
+          "ordinary_actions": [
+            "等门",
+            "递饭",
+            "退药",
+            "记问讯时辰",
+            "找旧关系"
+          ],
+          "side_characters": [
+            "sheyue",
+            "ping_er",
+            "baoyu"
+          ],
+          "object_carriers": [
+            "到名纸",
+            "送物单",
+            "药包",
+            "饭盒"
+          ],
+          "event_visibility": "PARTIAL_DIRECT",
+          "withheld_information": [
+            "具体牵连事项",
+            "问讯完整案卷"
+          ],
+          "culture_in_action": [
+            "到名纸/旧单作为行动限制"
+          ],
+          "ending_vector": "SOUND",
+          "technique_refs": [
+            "TECH-02",
+            "TECH-04",
+            "TECH-09",
+            "TECH-12"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D05",
+            "LS-D06",
+            "LS-D08"
+          ],
+          "scenario_risk": "原因OPEN造成司法场含糊无物",
+          "countermeasure": "把可观察程序写具体：谁等多久、什么被退、何时放人；只不替读者补罪由",
+          "anti_exposition_rule": "不得用‘其中缘故不可细说’逃避场景"
+        },
+        {
+          "id": "M-P3",
+          "window": [
+            93,
+            95
+          ],
+          "label": "凤姐重病—巧姐转移：悲剧的确定性来自照护失败，不来自旁白结论",
+          "focalizers": [
+            "ping_er",
+            "liulaolao",
+            "xiaohong"
+          ],
+          "ordinary_actions": [
+            "熬药",
+            "找乳食",
+            "包衣",
+            "借车",
+            "夜里照看"
+          ],
+          "side_characters": [
+            "fengjie",
+            "qiaojie",
+            "jia_yun"
+          ],
+          "object_carriers": [
+            "药罐",
+            "孩子衣包",
+            "车钱",
+            "灯"
+          ],
+          "event_visibility": "AFTERMATH_FIRST",
+          "withheld_information": [
+            "凤姐是否知道最终救援结果"
+          ],
+          "culture_in_action": [
+            "简短口信"
+          ],
+          "ending_vector": "UNFINISHED_SPEECH",
+          "technique_refs": [
+            "TECH-07",
+            "TECH-08",
+            "TECH-10",
+            "TECH-16"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D03",
+            "LS-D07",
+            "LS-D08"
+          ],
+          "scenario_risk": "为了保留OPEN而削弱凤姐终局力度",
+          "countermeasure": "身体和保护能力可以写死，只有知情程度/细节保持开放",
+          "anti_exposition_rule": "不得把人物终局写成证据说明"
+        },
+        {
+          "id": "M-P4",
+          "window": [
+            97,
+            98
+          ],
+          "label": "甄贾错身与送玉OPEN：错身是行动结果，不是神秘谜语",
+          "focalizers": [
+            "baoyu",
+            "jia_yun",
+            "xiaohong"
+          ],
+          "ordinary_actions": [
+            "候客",
+            "临时出门",
+            "收包",
+            "追问递手",
+            "核旧纸"
+          ],
+          "side_characters": [
+            "zhen_baoyu",
+            "sheyue",
+            "miaoyu"
+          ],
+          "object_carriers": [
+            "包裹",
+            "玉样物",
+            "旧纸",
+            "门帖"
+          ],
+          "event_visibility": "REPORTED",
+          "withheld_information": [
+            "是否本可照面",
+            "所送玉同一性"
+          ],
+          "culture_in_action": [
+            "门帖与递物纸只留下可验证时间差"
+          ],
+          "ending_vector": "QUESTION",
+          "technique_refs": [
+            "TECH-04",
+            "TECH-06",
+            "TECH-14",
+            "TECH-15"
+          ],
+          "stress_dimensions": [
+            "LS-D03",
+            "LS-D04",
+            "LS-D05",
+            "LS-D06",
+            "LS-D07"
+          ],
+          "scenario_risk": "错身与OPEN成为玄虚装置",
+          "countermeasure": "明确谁何时来、谁何时走、包裹经谁手；只开放‘为何如此巧’和物件身份",
+          "anti_exposition_rule": "不得由神秘气氛替代事件链"
+        },
+        {
+          "id": "M-P5",
+          "window": [
+            99,
+            100
+          ],
+          "label": "终局最小承诺：人间余波充分，外框只完成锁定功能",
+          "focalizers": [
+            "baochai",
+            "sheyue",
+            "jia_yun"
+          ],
+          "ordinary_actions": [
+            "找人",
+            "做饭",
+            "封门",
+            "收遗物",
+            "记未还物"
+          ],
+          "side_characters": [
+            "ping_er",
+            "jialan",
+            "liulaolao"
+          ],
+          "object_carriers": [
+            "饭碗",
+            "门闩",
+            "遗物包",
+            "名册"
+          ],
+          "event_visibility": "AFTERMATH_FIRST",
+          "withheld_information": [
+            "宝玉每一步去向",
+            "情榜总人数和全名单",
+            "人间玉的最终鉴定"
+          ],
+          "culture_in_action": [
+            "名册仅显示已锁文字"
+          ],
+          "ending_vector": "EMPTY_SPACE",
+          "technique_refs": [
+            "TECH-04",
+            "TECH-05",
+            "TECH-06",
+            "TECH-11"
+          ],
+          "stress_dimensions": [
+            "LS-D01",
+            "LS-D02",
+            "LS-D04",
+            "LS-D05",
+            "LS-D06",
+            "LS-D07",
+            "LS-D08"
+          ],
+          "scenario_risk": "终局因不肯闭合而显得没有结束",
+          "countermeasure": "把关系断裂、生活余波和外框功能明确完成；只保留证据未能唯一确定的接口",
+          "anti_exposition_rule": "不得用开放替代收束"
+        }
+      ]
+    }
+  ],
+  "policy": {
+    "automatic_prose_generation": false,
+    "automatic_literary_pass": false,
+    "automatic_winner": false,
+    "scalar_score": false,
+    "blind_read_effect": "NONE",
+    "canonical_competition_effect": "NONE"
+  },
+  "effects": {
+    "evidence": "NONE",
+    "open_interfaces": "NONE",
+    "stable_active": "NONE",
+    "chapter89": "NONE",
+    "chapter92": "NONE",
+    "chapter97": "NONE"
+  },
+  "next_gate": "P5_NARRATIVE_DISCOURSE_RUNTIME"
+}

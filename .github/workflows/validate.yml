@@ -43,6 +43,31 @@ jobs:
           rcwh completion summary
           rcwh completion traceability
           rcwh completion gate
+          rcwh literary-production summary
+          rcwh literary-production chapter 89
+          rcwh literary-production quarantine
+          rcwh knowledge summary
+          rcwh knowledge scene ch92_delivery_gate --checkpoint K92-XIAOHONG-ASKS-GATE-RULES
+          rcwh knowledge character ch86_last_night zijuan --checkpoint K86-ZIJUAN-SEES-RAPID-DECLINE
+          rcwh knowledge voice xiaohong
+          rcwh knowledge voice qianxue
+          rcwh knowledge guard data/scenes/ch89_confiscation_message.yaml artifacts/43-0/ch89/candidates/ch89_B_full.md
+          rcwh historical-adapter summary
+          rcwh historical-adapter describe detention
+          rcwh historical-adapter describe transport_letters
+          rcwh historical-adapter scene data/scenes/ch86_last_night.yaml artifacts/43-0/ch86/candidates/ch86_B_light_full.md
+          rcwh literary-suite summary
+          rcwh literary-suite prose artifacts/43-0/ch89/candidates/ch89_B_full.md
+          rcwh literary-suite blind comp:43-0:ch89:pressure-test
+          rcwh literary-suite poetry-screen examples/literary/poetry_lane_A.txt examples/literary/poetry_lane_B.txt examples/literary/poetry_lane_C.txt
+          rcwh literary-suite poetry-blind examples/literary/poetry_lane_A.txt examples/literary/poetry_lane_B.txt examples/literary/poetry_lane_C.txt
+          rcwh prewrite summary
+          rcwh prewrite corpus
+          rcwh prewrite gap 86
+          rcwh prewrite scenes 92
+          rcwh prewrite step 40 --chapter 89
+          rcwh prewrite contract 100
+          rcwh prewrite stage 89
       - run: rcwh evaluate data/scenes/ch86_last_night.yaml examples/ch86_candidate_stub.txt
       - run: rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_preserved.txt
       - name: Verify replacement-case exit code
@@ -63,5 +88,9 @@ jobs:
       - run: rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_B_light_full.md
       - run: rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_C_strong_full.md
       - run: rcwh competition comp:43-0:ch86:pressure-test
+      - run: rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_A_full.md
+      - run: rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_B_full.md
+      - run: rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_C_full.md
+      - run: rcwh competition comp:43-0:ch89:pressure-test
       - run: rcwh promotion promotion:ch86:b:v1-5-candidate
       - run: pytest -q

@@ -1,0 +1,620 @@
+{
+  "id": "character-truth:v0.3:slice1",
+  "issue": 3,
+  "status": "PASS",
+  "epistemic_rule": "Character knowledge is downstream current-world state. A scene knowledge state constrains what a character may say or act upon in that scene; it never promotes current reconstruction into Evidence Truth. Absence of a fact from knows is not automatically ignorance unless does_not_know is explicit.",
+  "sources": {
+    "world_information_asymmetry": {
+      "document_ref": "doc:bc6bf7cb5e",
+      "role": "CURRENT_WORLD_REFERENCE"
+    },
+    "world_longlines": {
+      "document_ref": "doc:56727d17b5",
+      "role": "CURRENT_WORLD_REFERENCE"
+    },
+    "pre80_voice_corpus": {
+      "document_ref": "doc:3a6c54bfac7b",
+      "role": "LITERARY_VOICE_REFERENCE"
+    }
+  },
+  "facts": [
+    {
+      "id": "daiyu_illness_severe",
+      "label": "黛玉病势已重",
+      "epistemic": "CURRENT_SCENE_FACT"
+    },
+    {
+      "id": "daiyu_may_die_tonight",
+      "label": "黛玉今夜可能不起",
+      "epistemic": "CURRENT_SCENE_INFERENCE"
+    },
+    {
+      "id": "daiyu_death_exact_moment",
+      "label": "黛玉死亡的确切时刻",
+      "epistemic": "CURRENT_SCENE_FACT"
+    },
+    {
+      "id": "baoyu_may_still_arrive_in_time",
+      "label": "宝玉或仍能赶在最后一刻前到",
+      "epistemic": "CURRENT_CHARACTER_BELIEF"
+    },
+    {
+      "id": "official_confiscation_message",
+      "label": "官面查抄/封固消息已经到门",
+      "epistemic": "CURRENT_SCENE_FACT"
+    },
+    {
+      "id": "official_confiscation_exact_scope",
+      "label": "官面处置的完整法律范围与最终去向",
+      "epistemic": "CURRENT_SCENE_UNKNOWN"
+    },
+    {
+      "id": "household_relocation_required",
+      "label": "家中将不得不迁出/压缩居所",
+      "epistemic": "CURRENT_SCENE_INFERENCE"
+    },
+    {
+      "id": "baoyu_detained",
+      "label": "宝玉处于羁押/暂候状态",
+      "epistemic": "CURRENT_SCENE_FACT"
+    },
+    {
+      "id": "baoyu_detention_whole_case",
+      "label": "宝玉羁押案全部案情与官面判断",
+      "epistemic": "CURRENT_SCENE_UNKNOWN"
+    },
+    {
+      "id": "detention_delivery_rules",
+      "label": "监外送入物品的可行规则",
+      "epistemic": "CURRENT_RULE_KNOWLEDGE"
+    },
+    {
+      "id": "detention_delivery_contact",
+      "label": "可经手送物的具体门路/经手人",
+      "epistemic": "CURRENT_RULE_KNOWLEDGE"
+    },
+    {
+      "id": "qianxue_delivery_bundle",
+      "label": "茜雪实际准备/转交的御寒与日用物件",
+      "epistemic": "CURRENT_IMPLEMENTATION_FACT"
+    }
+  ],
+  "characters": [
+    {
+      "id": "baoyu",
+      "name": "贾宝玉",
+      "coverage": "FULL",
+      "voice_profile": {
+        "support": "SOURCE_BACKED",
+        "source_ref": "doc:3a6c54bfac7b",
+        "reference_chapters": [
+          "19",
+          "28",
+          "31",
+          "35",
+          "51"
+        ],
+        "voice": "说话常从情绪与眼前物起；爱问、爱央、爱绕开正经结论；对女孩常以亲昵称呼软化冲突。",
+        "relation_shift": "面对长辈会收束；对丫鬟常直接却不摆主子架；遇现实/功名话题容易岔开。",
+        "post80_forbidden": "不能把他写成条理清楚的法律、婚姻、人生哲理陈述者。"
+      },
+      "masking_hook": {
+        "positive_traits": [
+          "EMOTION_OR_OBJECT_FIRST",
+          "QUESTION_OR_REQUEST",
+          "INDIRECT_CONCLUSION"
+        ],
+        "forbidden_text": [
+          "依法应当",
+          "从法律上说",
+          "婚姻的本质",
+          "人生的意义在于"
+        ],
+        "automatic_identity_pass": false
+      }
+    },
+    {
+      "id": "daiyu",
+      "name": "林黛玉",
+      "coverage": "FULL",
+      "voice_profile": {
+        "support": "SOURCE_BACKED",
+        "source_ref": "doc:3a6c54bfac7b",
+        "reference_chapters": [
+          "19",
+          "28",
+          "45",
+          "48",
+          "57",
+          "76"
+        ],
+        "voice": "反问、借题、双关、故意误解多；尖处通常同时带亲近，病中也不失观察与笑。",
+        "relation_shift": "对宝玉可半真半假；对宝钗从防备到能直说；对丫鬟并非时时诗化。",
+        "post80_forbidden": "不能病后只剩气若游丝和悲语；尤其86前仍须有俏语。"
+      },
+      "masking_hook": {
+        "positive_traits": [
+          "QUESTION_OR_IRONY",
+          "DOUBLE_MEANING",
+          "WIT_SURVIVES_ILLNESS"
+        ],
+        "forbidden_text": [
+          "我终于明白人生",
+          "我已看破红尘",
+          "我这一生的意义就是"
+        ],
+        "automatic_identity_pass": false
+      }
+    },
+    {
+      "id": "zijuan",
+      "name": "紫鹃",
+      "coverage": "FULL",
+      "voice_profile": {
+        "support": "SOURCE_BACKED",
+        "source_ref": "doc:3a6c54bfac7b",
+        "reference_chapters": [
+          "26",
+          "30",
+          "35",
+          "57",
+          "70",
+          "76"
+        ],
+        "voice": "少说时很实；一旦为黛玉打算，会非常主动甚至冒险试探。",
+        "relation_shift": "对黛玉是贴身人，对宝玉能直戳；对长辈仍守身份。",
+        "post80_forbidden": "85—86不能只做护理动作，应有判断、试探、急话和自责。"
+      },
+      "masking_hook": {
+        "positive_traits": [
+          "PRACTICAL_SPEECH",
+          "ACTIVE_TEST_FOR_DAIYU",
+          "DIRECT_TO_BAOYU"
+        ],
+        "forbidden_text": [],
+        "automatic_identity_pass": false
+      }
+    },
+    {
+      "id": "baochai",
+      "name": "薛宝钗",
+      "coverage": "FULL",
+      "voice_profile": {
+        "support": "SOURCE_BACKED",
+        "source_ref": "doc:3a6c54bfac7b",
+        "reference_chapters": [
+          "32",
+          "35",
+          "37",
+          "42",
+          "48",
+          "57"
+        ],
+        "voice": "句子完整但少自我炫耀；常先承认现实，再把话往可办处收；会打趣，不是永远端肃。",
+        "relation_shift": "对长辈圆融；对黛玉能细密坦白；对宝玉规劝往往借事、借物。",
+        "post80_forbidden": "不能写成现代高情商管理者或功名说教机器。"
+      },
+      "masking_hook": {
+        "positive_traits": [
+          "ACKNOWLEDGE_REALITY_THEN_ACTION",
+          "COMPLETE_SENTENCE_LOW_SELF_DISPLAY",
+          "ADVICE_THROUGH_THING_OR_TASK"
+        ],
+        "forbidden_text": [
+          "高情商",
+          "作为管理者",
+          "绩效",
+          "管理方法论"
+        ],
+        "automatic_identity_pass": false
+      }
+    },
+    {
+      "id": "xiaohong",
+      "name": "小红/红玉",
+      "coverage": "FULL",
+      "voice_profile": {
+        "support": "SOURCE_BACKED",
+        "source_ref": "doc:3a6c54bfac7b",
+        "reference_chapters": [
+          "24",
+          "26"
+        ],
+        "voice": "语速快、信息密、记人名事由清楚；能把复杂传话说清。",
+        "relation_shift": "对上位人紧凑，对同辈更机灵；有自己的上升欲与情感线。",
+        "post80_forbidden": "92要让她问清规则、找清经手人，不是万能情报员。"
+      },
+      "masking_hook": {
+        "positive_traits": [
+          "FAST_DENSE_INFORMATION",
+          "NAMES_AND_REASONS_CLEAR",
+          "ASK_RULES_AND_CONTACTS"
+        ],
+        "forbidden_text": [
+          "我什么都知道",
+          "案情我都清楚",
+          "里面外面我全有消息"
+        ],
+        "automatic_identity_pass": false
+      }
+    },
+    {
+      "id": "qianxue",
+      "name": "茜雪",
+      "coverage": "FULL",
+      "voice_profile": {
+        "support": "SPARSE_ABSTAIN",
+        "source_ref": null,
+        "reference_chapters": [],
+        "voice": "当前 M5 机器语料中没有独立茜雪声口画像；不得从材料空缺反推一个确定声口。",
+        "relation_shift": "只允许使用当前世界角色功能约束，不据此制造稳定词癖。",
+        "post80_forbidden": "不得写成全知情报员，也不得用虚构的固定口头禅冒充前八十回声口证据。"
+      },
+      "masking_hook": {
+        "positive_traits": [],
+        "forbidden_text": [
+          "我早知道全部内情",
+          "官里所有人我都认得",
+          "案情从头到尾我都知道"
+        ],
+        "automatic_identity_pass": false,
+        "abstain_reason": "NO_DEDICATED_M5_VOICE_PROFILE"
+      }
+    }
+  ],
+  "scenes": [
+    {
+      "id": "ch86_last_night",
+      "chapter": 86,
+      "sequence": 1,
+      "source_basis": [
+        "doc:bc6bf7cb5e",
+        "doc:3a6c54bfac7b"
+      ],
+      "participants": [
+        "daiyu",
+        "baoyu",
+        "zijuan"
+      ],
+      "entry": {
+        "daiyu": {
+          "knows": [
+            "daiyu_illness_severe"
+          ],
+          "believes": [],
+          "suspects": [],
+          "does_not_know": [
+            "daiyu_death_exact_moment"
+          ]
+        },
+        "baoyu": {
+          "knows": [
+            "daiyu_illness_severe"
+          ],
+          "believes": [
+            "baoyu_may_still_arrive_in_time"
+          ],
+          "suspects": [],
+          "does_not_know": [
+            "daiyu_death_exact_moment"
+          ]
+        },
+        "zijuan": {
+          "knows": [
+            "daiyu_illness_severe"
+          ],
+          "believes": [
+            "baoyu_may_still_arrive_in_time"
+          ],
+          "suspects": [],
+          "does_not_know": [
+            "daiyu_death_exact_moment"
+          ]
+        }
+      },
+      "events": [
+        {
+          "id": "K86-ZIJUAN-SEES-RAPID-DECLINE",
+          "sequence": 10,
+          "updates": [
+            {
+              "character": "zijuan",
+              "add": {
+                "suspects": [
+                  "daiyu_may_die_tonight"
+                ]
+              },
+              "remove": {}
+            }
+          ]
+        },
+        {
+          "id": "K86-DEATH-OCCURS",
+          "sequence": 90,
+          "updates": [
+            {
+              "character": "zijuan",
+              "add": {
+                "knows": [
+                  "daiyu_death_exact_moment"
+                ]
+              },
+              "remove": {
+                "does_not_know": [
+                  "daiyu_death_exact_moment"
+                ]
+              }
+            },
+            {
+              "character": "daiyu",
+              "add": {},
+              "remove": {}
+            }
+          ]
+        },
+        {
+          "id": "K86-BAOYU-LEARNS-AFTER-ARRIVAL",
+          "sequence": 100,
+          "updates": [
+            {
+              "character": "baoyu",
+              "add": {
+                "knows": [
+                  "daiyu_death_exact_moment"
+                ]
+              },
+              "remove": {
+                "does_not_know": [
+                  "daiyu_death_exact_moment"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch89_confiscation_message",
+      "chapter": 89,
+      "sequence": 1,
+      "source_basis": [
+        "doc:bc6bf7cb5e",
+        "doc:56727d17b5"
+      ],
+      "participants": [
+        "baochai",
+        "xiaohong",
+        "qianxue"
+      ],
+      "entry": {
+        "baochai": {
+          "knows": [],
+          "believes": [],
+          "suspects": [
+            "household_relocation_required"
+          ],
+          "does_not_know": [
+            "official_confiscation_exact_scope"
+          ]
+        },
+        "xiaohong": {
+          "knows": [],
+          "believes": [],
+          "suspects": [],
+          "does_not_know": [
+            "official_confiscation_exact_scope"
+          ]
+        },
+        "qianxue": {
+          "knows": [],
+          "believes": [],
+          "suspects": [],
+          "does_not_know": [
+            "official_confiscation_exact_scope"
+          ]
+        }
+      },
+      "events": [
+        {
+          "id": "K89-OFFICIAL-MESSAGE-HEARD",
+          "sequence": 20,
+          "updates": [
+            {
+              "character": "baochai",
+              "add": {
+                "knows": [
+                  "official_confiscation_message"
+                ]
+              },
+              "remove": {}
+            },
+            {
+              "character": "xiaohong",
+              "add": {
+                "knows": [
+                  "official_confiscation_message"
+                ]
+              },
+              "remove": {}
+            },
+            {
+              "character": "qianxue",
+              "add": {
+                "knows": [
+                  "official_confiscation_message"
+                ]
+              },
+              "remove": {}
+            }
+          ]
+        },
+        {
+          "id": "K89-HOUSEHOLD-SEES-RELOCATION-NEED",
+          "sequence": 60,
+          "updates": [
+            {
+              "character": "baochai",
+              "add": {
+                "knows": [
+                  "household_relocation_required"
+                ]
+              },
+              "remove": {
+                "suspects": [
+                  "household_relocation_required"
+                ]
+              }
+            },
+            {
+              "character": "xiaohong",
+              "add": {
+                "suspects": [
+                  "household_relocation_required"
+                ]
+              },
+              "remove": {}
+            },
+            {
+              "character": "qianxue",
+              "add": {
+                "suspects": [
+                  "household_relocation_required"
+                ]
+              },
+              "remove": {}
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ch92_delivery_gate",
+      "chapter": 92,
+      "sequence": 1,
+      "source_basis": [
+        "doc:bc6bf7cb5e",
+        "doc:56727d17b5",
+        "doc:3a6c54bfac7b"
+      ],
+      "participants": [
+        "baochai",
+        "xiaohong",
+        "qianxue",
+        "baoyu"
+      ],
+      "entry": {
+        "baochai": {
+          "knows": [
+            "baoyu_detained"
+          ],
+          "believes": [],
+          "suspects": [],
+          "does_not_know": [
+            "baoyu_detention_whole_case",
+            "detention_delivery_rules",
+            "detention_delivery_contact"
+          ]
+        },
+        "xiaohong": {
+          "knows": [
+            "baoyu_detained"
+          ],
+          "believes": [],
+          "suspects": [],
+          "does_not_know": [
+            "baoyu_detention_whole_case",
+            "detention_delivery_rules",
+            "detention_delivery_contact"
+          ]
+        },
+        "qianxue": {
+          "knows": [
+            "baoyu_detained",
+            "qianxue_delivery_bundle"
+          ],
+          "believes": [],
+          "suspects": [],
+          "does_not_know": [
+            "baoyu_detention_whole_case",
+            "detention_delivery_rules",
+            "detention_delivery_contact"
+          ]
+        },
+        "baoyu": {
+          "knows": [
+            "baoyu_detained"
+          ],
+          "believes": [],
+          "suspects": [],
+          "does_not_know": [
+            "detention_delivery_rules",
+            "detention_delivery_contact"
+          ]
+        }
+      },
+      "events": [
+        {
+          "id": "K92-XIAOHONG-ASKS-GATE-RULES",
+          "sequence": 20,
+          "updates": [
+            {
+              "character": "xiaohong",
+              "add": {
+                "knows": [
+                  "detention_delivery_rules",
+                  "detention_delivery_contact"
+                ]
+              },
+              "remove": {
+                "does_not_know": [
+                  "detention_delivery_rules",
+                  "detention_delivery_contact"
+                ]
+              }
+            }
+          ]
+        },
+        {
+          "id": "K92-XIAOHONG-RELAYS-RULES",
+          "sequence": 40,
+          "updates": [
+            {
+              "character": "baochai",
+              "add": {
+                "knows": [
+                  "detention_delivery_rules"
+                ]
+              },
+              "remove": {
+                "does_not_know": [
+                  "detention_delivery_rules"
+                ]
+              }
+            },
+            {
+              "character": "qianxue",
+              "add": {
+                "knows": [
+                  "detention_delivery_rules"
+                ]
+              },
+              "remove": {
+                "does_not_know": [
+                  "detention_delivery_rules"
+                ]
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "completion": {
+    "characters": 6,
+    "scenes": 3,
+    "event_driven_updates": true,
+    "omniscience_validator": true,
+    "voice_masking_hooks": true,
+    "automatic_voice_identity": false
+  }
+}

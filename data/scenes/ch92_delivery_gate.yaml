@@ -1,0 +1,60 @@
+id: ch92_delivery_gate
+chapter: 92
+preconditions: []
+participants:
+  - baochai
+  - xiaohong
+  - qianxue
+  - baoyu
+required_beats:
+  - id: ask_rule_before_action
+    any_text: [问, 经手, 送, 门]
+  - id: limited_information
+    any_text: [暂候, 不知道, 只晓得, 只问]
+forbidden_beats:
+  - id: whole_case_exposition
+    any_text: [全案已经清楚, 案情从头到尾]
+p_locks:
+  - procedure_density
+historical_adapters:
+  - detention
+exit_state: []
+knowledge_checkpoint: ENTRY
+knowledge_guards:
+  - id: xiaohong_must_learn_delivery_rules_by_event
+    actor: xiaohong
+    fact: detention_delivery_rules
+    modes: [DIALOGUE, ACTION]
+    allowed_status: [knows]
+    any_text:
+      - "小红早知道送物的规矩"
+      - "这送东西的规矩我原都知道"
+  - id: xiaohong_cannot_know_whole_case
+    actor: xiaohong
+    fact: baoyu_detention_whole_case
+    modes: [DIALOGUE, ACTION]
+    allowed_status: [knows]
+    any_text:
+      - "小红已把宝玉的全案打听明白"
+      - "案情从头到尾我都知道"
+  - id: baochai_cannot_know_whole_case
+    actor: baochai
+    fact: baoyu_detention_whole_case
+    modes: [DIALOGUE, ACTION]
+    allowed_status: [knows]
+    any_text:
+      - "宝钗已知道官里对宝玉全案的判断"
+      - "里头为什么拿他、最后怎么判，我都知道"
+  - id: qianxue_cannot_know_whole_case
+    actor: qianxue
+    fact: baoyu_detention_whole_case
+    modes: [DIALOGUE, ACTION]
+    allowed_status: [knows]
+    any_text:
+      - "茜雪已知道宝玉全案的底细"
+      - "官里从头到尾我全知道"
+voice_profile_hooks:
+  - baochai
+  - xiaohong
+  - qianxue
+  - baoyu

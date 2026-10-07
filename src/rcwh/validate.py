@@ -2,24 +2,37 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from .blind_microdraft_review import BlindMicrodraftReviewRuntime
 from .competition import CompetitionRegistry
 from .completion import CompletionGateRuntime
 from .coverage import CoverageAuditRuntime
 from .graph import ProvenanceGraph
 from .io import load_data
 from .history import HistoricalMechanismRegistry
+from .hypotheses import HypothesisRuntime
 from .implementation_alignment import ImplementationAlignmentRuntime
+from .knowledge import CharacterKnowledgeRuntime
 from .literals import LiteralRegistry
 from .literary_eval import LiteraryEvaluationProfileRegistry
 from .literary_ecology import LiteraryEcologyRuntime
+from .literary_production import LiteraryProductionRuntime
+from .literary_stress import ScenarioLiteraryStressRuntime
+from .literary_suite import LiteraryEvaluatorSuite
+from .mechanism_adapters import HistoricalAdapterRuntime
+from .microdraft import ControlledMicrodraftRuntime
+from .narrative_discourse import NarrativeDiscourseRuntime
 from .open_interfaces import OpenInterfaceRegistry
 from .object_network import ObjectNetworkRuntime
+from .pareto import ParetoEvaluationRuntime
 from .plocks import LiteraryProtectionRegistry
 from .promotion import PromotionRegistry
+from .prewrite import V5PrewriteRuntime
 from .registry import MigrationRegistry
 from .reconstruction import ReconstructionRegistry
 from .regression import run_r4_evidence_regression
 from .schema import validate_instance
+from .scenarios import ScenarioRuntime
+from .scenario_replay import CounterfactualReplayRuntime
 from .world import WorldRuntime
 
 
@@ -199,6 +212,261 @@ def validate_repository(root: Path) -> list[str]:
             for e in errs
         )
 
+    mechanism_adapter_path = root / "data" / "mechanism_adapters" / "v04.json"
+    if mechanism_adapter_path.exists():
+        errs = validate_instance(
+            load_data(mechanism_adapter_path),
+            load_data(schema_dir / "historical_mechanism_adapter.schema.json"),
+        )
+        errors.extend(
+            f"{mechanism_adapter_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    knowledge_graph_path = root / "data" / "knowledge" / "v03_slice1.json"
+    if knowledge_graph_path.exists():
+        errs = validate_instance(
+            load_data(knowledge_graph_path),
+            load_data(schema_dir / "character_knowledge_graph.schema.json"),
+        )
+        errors.extend(
+            f"{knowledge_graph_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    literary_resume_state = root / "data" / "project_state" / "literary_43_0_resume.json"
+    if literary_resume_state.exists():
+        errs = validate_instance(
+            load_data(literary_resume_state),
+            load_data(schema_dir / "literary_resume_state.schema.json"),
+        )
+        errors.extend(
+            f"{literary_resume_state.relative_to(root)}: {e}" for e in errs
+        )
+
+    repository_governance = (
+        root / "data" / "project_state" / "repository_governance_20261007.json"
+    )
+    if repository_governance.exists():
+        errs = validate_instance(
+            load_data(repository_governance),
+            load_data(schema_dir / "repository_governance.schema.json"),
+        )
+        errors.extend(
+            f"{repository_governance.relative_to(root)}: {e}" for e in errs
+        )
+
+
+    hypothesis_state_path = root / "data" / "project_state" / "hypothesis_runtime_v07.json"
+    if hypothesis_state_path.exists():
+        errs = validate_instance(
+            load_data(hypothesis_state_path),
+            load_data(schema_dir / "hypothesis_runtime_state.schema.json"),
+        )
+        errors.extend(
+            f"{hypothesis_state_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    fidelity_audit_path = root / "data" / "fidelity" / "audit_registry.json"
+    if fidelity_audit_path.exists():
+        errs = validate_instance(
+            load_data(fidelity_audit_path),
+            load_data(schema_dir / "fidelity_audit.schema.json"),
+        )
+        errors.extend(
+            f"{fidelity_audit_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    fidelity_backfill_path = root / "data" / "fidelity" / "hypothesis_source_backfill.json"
+    if fidelity_backfill_path.exists():
+        errs = validate_instance(
+            load_data(fidelity_backfill_path),
+            load_data(schema_dir / "hypothesis_source_backfill.schema.json"),
+        )
+        errors.extend(
+            f"{fidelity_backfill_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    hypothesis_schema = load_data(schema_dir / "hypothesis.schema.json")
+    for path in sorted((root / "data" / "hypotheses").glob("*.json")):
+        doc = load_data(path) or {}
+        for i, item in enumerate(doc.get("hypotheses", [])):
+            errs = validate_instance(item, hypothesis_schema)
+            errors.extend(
+                f"{path.relative_to(root)} hypotheses[{i}]: {e}" for e in errs
+            )
+
+    compatibility_path = root / "data" / "hypotheses" / "compatibility.json"
+    if compatibility_path.exists():
+        errs = validate_instance(
+            load_data(compatibility_path),
+            load_data(schema_dir / "hypothesis_compatibility.schema.json"),
+        )
+        errors.extend(
+            f"{compatibility_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    scenario_schema = load_data(schema_dir / "scenario_bundle.schema.json")
+    for path in sorted((root / "data" / "scenarios").glob("*.json")):
+        doc = load_data(path) or {}
+        for i, item in enumerate(doc.get("scenarios", [])):
+            errs = validate_instance(item, scenario_schema)
+            errors.extend(
+                f"{path.relative_to(root)} scenarios[{i}]: {e}" for e in errs
+            )
+
+
+    scenario_replay_path = root / "data" / "scenario_replay" / "v08.json"
+    if scenario_replay_path.exists():
+        errs = validate_instance(
+            load_data(scenario_replay_path),
+            load_data(schema_dir / "scenario_replay.schema.json"),
+        )
+        errors.extend(
+            f"{scenario_replay_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    scenario_replay_state = root / "data" / "project_state" / "scenario_replay_v08.json"
+    if scenario_replay_state.exists():
+        errs = validate_instance(
+            load_data(scenario_replay_state),
+            load_data(schema_dir / "scenario_replay_state.schema.json"),
+        )
+        errors.extend(
+            f"{scenario_replay_state.relative_to(root)}: {e}" for e in errs
+        )
+
+
+    pareto_path = root / "data" / "pareto" / "v09.json"
+    if pareto_path.exists():
+        errs = validate_instance(
+            load_data(pareto_path),
+            load_data(schema_dir / "pareto_evaluation.schema.json"),
+        )
+        errors.extend(
+            f"{pareto_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    pareto_state_path = root / "data" / "project_state" / "pareto_evaluation_v09.json"
+    if pareto_state_path.exists():
+        errs = validate_instance(
+            load_data(pareto_state_path),
+            load_data(schema_dir / "pareto_evaluation_state.schema.json"),
+        )
+        errors.extend(
+            f"{pareto_state_path.relative_to(root)}: {e}" for e in errs
+        )
+
+
+    literary_stress_path = root / "data" / "literary_stress" / "v010.json"
+    if literary_stress_path.exists():
+        errs = validate_instance(
+            load_data(literary_stress_path),
+            load_data(schema_dir / "scenario_literary_stress.schema.json"),
+        )
+        errors.extend(
+            f"{literary_stress_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    literary_stress_state = (
+        root / "data" / "project_state" / "scenario_literary_stress_v010.json"
+    )
+    if literary_stress_state.exists():
+        errs = validate_instance(
+            load_data(literary_stress_state),
+            load_data(schema_dir / "scenario_literary_stress_state.schema.json"),
+        )
+        errors.extend(
+            f"{literary_stress_state.relative_to(root)}: {e}" for e in errs
+        )
+
+
+    narrative_discourse_path = root / "data" / "narrative_discourse" / "v011.json"
+    if narrative_discourse_path.exists():
+        errs = validate_instance(
+            load_data(narrative_discourse_path),
+            load_data(schema_dir / "narrative_discourse.schema.json"),
+        )
+        errors.extend(
+            f"{narrative_discourse_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    narrative_discourse_state = (
+        root / "data" / "project_state" / "narrative_discourse_v011.json"
+    )
+    if narrative_discourse_state.exists():
+        errs = validate_instance(
+            load_data(narrative_discourse_state),
+            load_data(schema_dir / "narrative_discourse_state.schema.json"),
+        )
+        errors.extend(
+            f"{narrative_discourse_state.relative_to(root)}: {e}" for e in errs
+        )
+
+
+    microdraft_path = root / "data" / "microdraft" / "v012.json"
+    if microdraft_path.exists():
+        errs = validate_instance(
+            load_data(microdraft_path),
+            load_data(schema_dir / "controlled_microdraft.schema.json"),
+        )
+        errors.extend(
+            f"{microdraft_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    microdraft_state = (
+        root / "data" / "project_state" / "controlled_microdraft_v012.json"
+    )
+    if microdraft_state.exists():
+        errs = validate_instance(
+            load_data(microdraft_state),
+            load_data(schema_dir / "controlled_microdraft_state.schema.json"),
+        )
+        errors.extend(
+            f"{microdraft_state.relative_to(root)}: {e}" for e in errs
+        )
+
+
+    blind_review_path = root / "data" / "blind_review" / "v013.json"
+    if blind_review_path.exists():
+        errs = validate_instance(
+            load_data(blind_review_path),
+            load_data(schema_dir / "blind_microdraft_review.schema.json"),
+        )
+        errors.extend(
+            f"{blind_review_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    blind_review_state = (
+        root / "data" / "project_state" / "blind_microdraft_review_v013.json"
+    )
+    if blind_review_state.exists():
+        errs = validate_instance(
+            load_data(blind_review_state),
+            load_data(schema_dir / "blind_microdraft_review_state.schema.json"),
+        )
+        errors.extend(
+            f"{blind_review_state.relative_to(root)}: {e}" for e in errs
+        )
+
+    prewrite_path = root / "data" / "prewrite" / "v06.json"
+    if prewrite_path.exists():
+        errs = validate_instance(
+            load_data(prewrite_path),
+            load_data(schema_dir / "v5_prewrite.schema.json"),
+        )
+        errors.extend(
+            f"{prewrite_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    literary_suite_path = root / "data" / "literary_eval" / "v05_suite.json"
+    if literary_suite_path.exists():
+        errs = validate_instance(
+            load_data(literary_suite_path),
+            load_data(schema_dir / "literary_evaluator_suite.schema.json"),
+        )
+        errors.extend(
+            f"{literary_suite_path.relative_to(root)}: {e}" for e in errs
+        )
+
     literary_ecology_path = root / "data" / "literary_ecology" / "m5.json"
     if literary_ecology_path.exists():
         errs = validate_instance(
@@ -238,11 +506,31 @@ def validate_repository(root: Path) -> list[str]:
         errors.extend(literals.validate_integrity(graph))
         mechanisms = HistoricalMechanismRegistry.from_repo(root)
         errors.extend(mechanisms.validate_integrity(graph))
+        historical_adapters = HistoricalAdapterRuntime.from_repo(root)
+        errors.extend(historical_adapters.validate_integrity(mechanisms, registry))
         open_interfaces = OpenInterfaceRegistry.from_repo(root)
         errors.extend(open_interfaces.validate_integrity(graph, literals, mechanisms))
         reconstruction = ReconstructionRegistry.from_repo(root)
         errors.extend(reconstruction.validate_integrity(registry, open_interfaces))
+        hypotheses = HypothesisRuntime.from_repo(root)
+        errors.extend(
+            hypotheses.validate_integrity(
+                graph, open_interfaces, mechanisms, reconstruction
+            )
+        )
+        scenarios = ScenarioRuntime.from_repo(root)
+        errors.extend(scenarios.validate_integrity(hypotheses, open_interfaces))
         world = WorldRuntime.from_repo(root)
+        scenario_replay = CounterfactualReplayRuntime.from_repo(root)
+        errors.extend(
+            scenario_replay.validate_integrity(hypotheses, scenarios, world)
+        )
+        pareto = ParetoEvaluationRuntime.from_repo(root)
+        errors.extend(
+            pareto.validate_integrity(
+                hypotheses, scenarios, scenario_replay, world
+            )
+        )
         errors.extend(
             validate_instance(
                 world.data,
@@ -254,6 +542,36 @@ def validate_repository(root: Path) -> list[str]:
         errors.extend(objects.validate_integrity(root, registry, reconstruction))
         literary_ecology = LiteraryEcologyRuntime.from_repo(root)
         errors.extend(literary_ecology.validate_integrity(registry))
+        literary_stress = ScenarioLiteraryStressRuntime.from_repo(root)
+        errors.extend(
+            literary_stress.validate_integrity(
+                pareto,
+                hypotheses,
+                scenarios,
+                scenario_replay,
+                world,
+                literary_ecology,
+            )
+        )
+        narrative_discourse = NarrativeDiscourseRuntime.from_repo(root)
+        errors.extend(
+            narrative_discourse.validate_integrity(
+                literary_stress,
+                literary_ecology,
+            )
+        )
+        microdraft = ControlledMicrodraftRuntime.from_repo(root)
+        errors.extend(
+            microdraft.validate_integrity(
+                narrative_discourse,
+                literary_stress,
+                LiteraryEvaluatorSuite.from_repo(root),
+            )
+        )
+        blind_review = BlindMicrodraftReviewRuntime.from_repo(root)
+        errors.extend(blind_review.validate_integrity(microdraft))
+        knowledge_runtime = CharacterKnowledgeRuntime.from_repo(root)
+        errors.extend(knowledge_runtime.validate_integrity(world, literary_ecology))
         regression = run_r4_evidence_regression(root)
         plocks = LiteraryProtectionRegistry.from_repo(root)
         errors.extend(
@@ -267,6 +585,16 @@ def validate_repository(root: Path) -> list[str]:
         )
         literary_profiles = LiteraryEvaluationProfileRegistry.from_repo(root)
         errors.extend(literary_profiles.validate_integrity(plocks))
+        prewrite = V5PrewriteRuntime.from_repo(root)
+        errors.extend(
+            prewrite.validate_integrity(
+                registry,
+                reconstruction,
+                literary_ecology,
+                plocks,
+                historical_adapters,
+            )
+        )
         competitions = CompetitionRegistry.from_repo(root)
         errors.extend(
             competitions.validate_integrity(
@@ -275,6 +603,8 @@ def validate_repository(root: Path) -> list[str]:
                 regression["stable_active"],
             )
         )
+        literary_suite = LiteraryEvaluatorSuite.from_repo(root)
+        errors.extend(literary_suite.validate_integrity(competitions))
         promotions = PromotionRegistry.from_repo(root)
         implementation_alignment = ImplementationAlignmentRuntime.from_repo(root)
         errors.extend(
@@ -321,6 +651,13 @@ def validate_repository(root: Path) -> list[str]:
             regression,
         )
         errors.extend(completion_gate.validate_integrity(completion_payload, registry))
+        literary_production = LiteraryProductionRuntime.from_repo(root)
+        errors.extend(
+            literary_production.validate_integrity(
+                completion_gate,
+                competitions,
+            )
+        )
         for promotion_id in promotions.records:
             payload = promotions.evaluate(root, promotion_id)
             if payload["overall"] != "PASS":
@@ -332,6 +669,6 @@ def validate_repository(root: Path) -> list[str]:
                 for finding in gate["findings"]:
                     errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"registry/reconstruction/world/object/literary_ecology/implementation_alignment/coverage/completion/provenance/literal/history/open/regression/plock/competition graph: {exc}")
+        errors.append(f"registry/reconstruction/world/object/literary_ecology/knowledge/prewrite/literary_suite/literary_production/implementation_alignment/coverage/completion/provenance/literal/history/historical_adapters/open/regression/plock/competition graph: {exc}")
 
     return errors

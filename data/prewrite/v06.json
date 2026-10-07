@@ -1,0 +1,1490 @@
+{
+  "id": "v5-prewrite:v0.6",
+  "issue": 6,
+  "status": "PASS",
+  "authority": "STAGING_ONLY",
+  "evidence_effect": "NONE",
+  "stable_active_effect": "NONE",
+  "epistemic_rule": "Steps 33–42 are a pre-rewrite planning harness. Imported ecology/gap/process results and generated chapter contracts may constrain staging, but they never create Witness, Evidence Role, R/P/H facts, close OPEN interfaces, or mutate stable ACTIVE.",
+  "execution_order": [
+    33,
+    34,
+    35,
+    40,
+    39,
+    38,
+    37,
+    36,
+    41,
+    42
+  ],
+  "steps": [
+    {
+      "step": 33,
+      "id": "corpus_ecology",
+      "name": "前80全量文学—文化生态普查",
+      "state": "FROZEN_INPUT",
+      "output": "corpus_ecology_profiles"
+    },
+    {
+      "step": 34,
+      "id": "gap_audit",
+      "name": "81—100十二维缺口总清算",
+      "state": "FROZEN_INPUT",
+      "output": "gap_cards"
+    },
+    {
+      "step": 35,
+      "id": "omitted_scene_planner",
+      "name": "被压缩的形成过程与社会过程",
+      "state": "FROZEN_INPUT",
+      "output": "omitted_scene_plans"
+    },
+    {
+      "step": 36,
+      "id": "author_verse",
+      "name": "回前诗/回末诗/作者韵文",
+      "state": "MACHINE_BOUND",
+      "source_refs": [
+        "doc:fc421b406bae"
+      ]
+    },
+    {
+      "step": 37,
+      "id": "text_evidence_and_generation",
+      "name": "诗文证据分层与人物新增文字竞选",
+      "state": "MACHINE_BOUND",
+      "source_refs": [
+        "doc:0f2651a5c0f1",
+        "doc:c974385eeaa0",
+        "doc:5fddcda466a4",
+        "doc:826d133717a7",
+        "doc:1dddde4f100b",
+        "doc:cc1895317c58"
+      ]
+    },
+    {
+      "step": 38,
+      "id": "cultural_life",
+      "name": "旧文化生活专项",
+      "state": "MACHINE_BOUND",
+      "source_refs": [
+        "doc:663d991bedc4",
+        "doc:121ea5f5687f"
+      ]
+    },
+    {
+      "step": 39,
+      "id": "body_ritual",
+      "name": "医学、身体、饮食与婚丧礼俗",
+      "state": "MACHINE_BOUND",
+      "source_refs": [
+        "doc:98d9c0a13e69"
+      ]
+    },
+    {
+      "step": 40,
+      "id": "social_infrastructure",
+      "name": "社会基础设施、现金流与职业世界",
+      "state": "MACHINE_BOUND",
+      "source_refs": [
+        "doc:e9b9b54f25c6",
+        "doc:4e1dd2a2d766"
+      ]
+    },
+    {
+      "step": 41,
+      "id": "metaphysics_qingbang",
+      "name": "哲学、宗教、梦境、情榜与太虚",
+      "state": "MACHINE_BOUND",
+      "source_refs": [
+        "doc:2e573c452396",
+        "doc:969df67818a9",
+        "doc:cc1895317c58",
+        "doc:cdd61375cc17"
+      ]
+    },
+    {
+      "step": 42,
+      "id": "chapter_contract",
+      "name": "20回逐回全幅补完卡",
+      "state": "GENERATED_FROM_CURRENT_MACHINE_LAYERS",
+      "source_refs": [
+        "doc:23861cce04ac"
+      ]
+    }
+  ],
+  "corpus_ecology_profiles": [
+    {
+      "id": "chapter_frames",
+      "name": "前80章回外框与回前回末韵文",
+      "source_ref": "doc:516935ff3a97",
+      "frozen_conclusions": [
+        "前80不存在稳定的一回一首回前诗制度",
+        "正是/有诗为证等套语不是必须格式",
+        "真正稳定的是回末制造余势",
+        "回前回末韵文必须按回决定，不得配额化"
+      ]
+    },
+    {
+      "id": "poetry_ecology",
+      "name": "前80诗词曲赋生态",
+      "source_ref": "doc:ddeb1147fda8",
+      "frozen_conclusions": [
+        "诗文首先是人物行动，不是文化装饰",
+        "失败稿、改稿、未成稿、残稿属于正常生态",
+        "人物诗必须有可辨声口",
+        "有祭未必有祭文，有死未必有绝命诗",
+        "删除后若人物、关系或章法不减少一层，则不应为补诗而补诗"
+      ]
+    },
+    {
+      "id": "cultural_life",
+      "name": "前80琴棋书画文人生活",
+      "source_ref": "doc:663d991bedc4",
+      "frozen_conclusions": [
+        "高频的是戏曲、游戏、书写、文房、器物与鉴赏",
+        "琴棋书画不是四艺平均配额",
+        "技艺应写工序、材料、规则、失败、返工与社会功能",
+        "后20恢复旧文化生活，不做古雅陈列"
+      ]
+    },
+    {
+      "id": "medical_body",
+      "name": "前80医学身体疾病书写",
+      "source_ref": "doc:98d9c0a13e69",
+      "frozen_conclusions": [
+        "病是一副身体拖动整个家庭，不是单一病名",
+        "医疗链包括家属、婢女、医者、药钱、饮食与执行",
+        "既有长程病史不得为后20剧情方便而重置",
+        "急病后有恢复期，死亡后进入社会料理"
+      ]
+    },
+    {
+      "id": "metaphysics",
+      "name": "前80佛道梦幻哲学系统",
+      "source_ref": "doc:2e573c452396",
+      "frozen_conclusions": [
+        "真神异、民间信仰、骗术、制度宗教可以同场",
+        "梦不只负责预言",
+        "空不能取消情",
+        "太虚改变观看角度，不应成为答案发布会",
+        "事件可以成立而意义保持不锁死"
+      ]
+    },
+    {
+      "id": "social_ecology",
+      "name": "前80世情百业礼俗经济",
+      "source_ref": "doc:e9b9b54f25c6",
+      "frozen_conclusions": [
+        "世情百科是情节的因果基础设施，不是资料陈列",
+        "豪门财富依赖庄地、现金、家内行政与人情网络",
+        "内宅是高度女性化的行政系统",
+        "奴仆是多级职业网络",
+        "婚丧、医疗、文化、宗教都需要钱、物、人、劳务与信息流"
+      ]
+    }
+  ],
+  "gap_dimensions": [
+    {
+      "id": "D01",
+      "key": "main_process",
+      "name": "主情节形成过程"
+    },
+    {
+      "id": "D02",
+      "key": "secondary_plot",
+      "name": "次情节"
+    },
+    {
+      "id": "D03",
+      "key": "minor_agents",
+      "name": "小人物独立线"
+    },
+    {
+      "id": "D04",
+      "key": "poetry",
+      "name": "诗词曲赋"
+    },
+    {
+      "id": "D05",
+      "key": "arts",
+      "name": "琴棋书画"
+    },
+    {
+      "id": "D06",
+      "key": "body",
+      "name": "医学身体"
+    },
+    {
+      "id": "D07",
+      "key": "metaphysics",
+      "name": "宗教哲学"
+    },
+    {
+      "id": "D08",
+      "key": "ritual",
+      "name": "礼俗节令"
+    },
+    {
+      "id": "D09",
+      "key": "economy",
+      "name": "经济百业"
+    },
+    {
+      "id": "D10",
+      "key": "comic_folk",
+      "name": "笑料与俗文化"
+    },
+    {
+      "id": "D11",
+      "key": "dream_symbol",
+      "name": "梦境/象征/外框"
+    },
+    {
+      "id": "D12",
+      "key": "chapter_frame",
+      "name": "回前回末艺术"
+    }
+  ],
+  "gap_status_legend": {
+    "SUFFICIENT": "✓ 已充分",
+    "THIN": "△ 偏薄",
+    "MISSING": "▲ 明显缺失",
+    "NOT_APPLICABLE": "— 本回不应出现"
+  },
+  "gap_cards": [
+    {
+      "chapter": 81,
+      "priority": "第二批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "MISSING",
+        "arts": "THIN",
+        "body": "THIN",
+        "metaphysics": "NOT_APPLICABLE",
+        "ritual": "THIN",
+        "economy": "THIN",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "THIN"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "▲",
+        "arts": "△",
+        "body": "△",
+        "metaphysics": "—",
+        "ritual": "△",
+        "economy": "△",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "△"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 82,
+      "priority": "第三批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "THIN",
+        "body": "SUFFICIENT",
+        "metaphysics": "NOT_APPLICABLE",
+        "ritual": "MISSING",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "△",
+        "body": "✓",
+        "metaphysics": "—",
+        "ritual": "▲",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 83,
+      "priority": "第三批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "MISSING",
+        "body": "NOT_APPLICABLE",
+        "metaphysics": "NOT_APPLICABLE",
+        "ritual": "THIN",
+        "economy": "THIN",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "▲",
+        "body": "—",
+        "metaphysics": "—",
+        "ritual": "△",
+        "economy": "△",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 84,
+      "priority": "第二批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "NOT_APPLICABLE",
+        "body": "THIN",
+        "metaphysics": "THIN",
+        "ritual": "MISSING",
+        "economy": "THIN",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "—",
+        "body": "△",
+        "metaphysics": "△",
+        "ritual": "▲",
+        "economy": "△",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 85,
+      "priority": "第二批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "THIN",
+        "body": "MISSING",
+        "metaphysics": "THIN",
+        "ritual": "THIN",
+        "economy": "THIN",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "△",
+        "body": "▲",
+        "metaphysics": "△",
+        "ritual": "△",
+        "economy": "△",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 86,
+      "priority": "第一批",
+      "states": {
+        "main_process": "MISSING",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "MISSING",
+        "arts": "THIN",
+        "body": "MISSING",
+        "metaphysics": "THIN",
+        "ritual": "MISSING",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "▲",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "▲",
+        "arts": "△",
+        "body": "▲",
+        "metaphysics": "△",
+        "ritual": "▲",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 87,
+      "priority": "第一批",
+      "states": {
+        "main_process": "MISSING",
+        "secondary_plot": "THIN",
+        "minor_agents": "THIN",
+        "poetry": "THIN",
+        "arts": "THIN",
+        "body": "THIN",
+        "metaphysics": "THIN",
+        "ritual": "MISSING",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "▲",
+        "secondary_plot": "△",
+        "minor_agents": "△",
+        "poetry": "△",
+        "arts": "△",
+        "body": "△",
+        "metaphysics": "△",
+        "ritual": "▲",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 88,
+      "priority": "第一批",
+      "states": {
+        "main_process": "MISSING",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "MISSING",
+        "body": "THIN",
+        "metaphysics": "THIN",
+        "ritual": "MISSING",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "▲",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "▲",
+        "body": "△",
+        "metaphysics": "△",
+        "ritual": "▲",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 89,
+      "priority": "第一批",
+      "states": {
+        "main_process": "MISSING",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "THIN",
+        "body": "NOT_APPLICABLE",
+        "metaphysics": "NOT_APPLICABLE",
+        "ritual": "THIN",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "▲",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "△",
+        "body": "—",
+        "metaphysics": "—",
+        "ritual": "△",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 90,
+      "priority": "第三批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "NOT_APPLICABLE",
+        "arts": "NOT_APPLICABLE",
+        "body": "THIN",
+        "metaphysics": "THIN",
+        "ritual": "THIN",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "—",
+        "arts": "—",
+        "body": "△",
+        "metaphysics": "△",
+        "ritual": "△",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 91,
+      "priority": "第三批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "MISSING",
+        "body": "NOT_APPLICABLE",
+        "metaphysics": "NOT_APPLICABLE",
+        "ritual": "NOT_APPLICABLE",
+        "economy": "THIN",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "▲",
+        "body": "—",
+        "metaphysics": "—",
+        "ritual": "—",
+        "economy": "△",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 92,
+      "priority": "第一批",
+      "states": {
+        "main_process": "MISSING",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "NOT_APPLICABLE",
+        "body": "THIN",
+        "metaphysics": "THIN",
+        "ritual": "NOT_APPLICABLE",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "THIN",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "▲",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "—",
+        "body": "△",
+        "metaphysics": "△",
+        "ritual": "—",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "△",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 93,
+      "priority": "第二批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "NOT_APPLICABLE",
+        "body": "MISSING",
+        "metaphysics": "THIN",
+        "ritual": "MISSING",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "—",
+        "body": "▲",
+        "metaphysics": "△",
+        "ritual": "▲",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 94,
+      "priority": "第一批",
+      "states": {
+        "main_process": "MISSING",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "MISSING",
+        "arts": "THIN",
+        "body": "THIN",
+        "metaphysics": "THIN",
+        "ritual": "MISSING",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "▲",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "▲",
+        "arts": "△",
+        "body": "△",
+        "metaphysics": "△",
+        "ritual": "▲",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 95,
+      "priority": "第二批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "THIN",
+        "body": "THIN",
+        "metaphysics": "NOT_APPLICABLE",
+        "ritual": "THIN",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "△",
+        "body": "△",
+        "metaphysics": "—",
+        "ritual": "△",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 96,
+      "priority": "第二批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "MISSING",
+        "arts": "MISSING",
+        "body": "NOT_APPLICABLE",
+        "metaphysics": "NOT_APPLICABLE",
+        "ritual": "THIN",
+        "economy": "THIN",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "SUFFICIENT",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "▲",
+        "arts": "▲",
+        "body": "—",
+        "metaphysics": "—",
+        "ritual": "△",
+        "economy": "△",
+        "comic_folk": "✓",
+        "dream_symbol": "✓",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 97,
+      "priority": "第一批",
+      "states": {
+        "main_process": "MISSING",
+        "secondary_plot": "THIN",
+        "minor_agents": "THIN",
+        "poetry": "MISSING",
+        "arts": "MISSING",
+        "body": "NOT_APPLICABLE",
+        "metaphysics": "MISSING",
+        "ritual": "THIN",
+        "economy": "THIN",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "MISSING",
+        "chapter_frame": "THIN"
+      },
+      "source_symbols": {
+        "main_process": "▲",
+        "secondary_plot": "△",
+        "minor_agents": "△",
+        "poetry": "▲",
+        "arts": "▲",
+        "body": "—",
+        "metaphysics": "▲",
+        "ritual": "△",
+        "economy": "△",
+        "comic_folk": "✓",
+        "dream_symbol": "▲",
+        "chapter_frame": "△"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 98,
+      "priority": "第一批",
+      "states": {
+        "main_process": "THIN",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "THIN",
+        "arts": "MISSING",
+        "body": "NOT_APPLICABLE",
+        "metaphysics": "MISSING",
+        "ritual": "THIN",
+        "economy": "THIN",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "THIN",
+        "chapter_frame": "SUFFICIENT"
+      },
+      "source_symbols": {
+        "main_process": "△",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "△",
+        "arts": "▲",
+        "body": "—",
+        "metaphysics": "▲",
+        "ritual": "△",
+        "economy": "△",
+        "comic_folk": "✓",
+        "dream_symbol": "△",
+        "chapter_frame": "✓"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 99,
+      "priority": "第一批",
+      "states": {
+        "main_process": "MISSING",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "MISSING",
+        "arts": "THIN",
+        "body": "THIN",
+        "metaphysics": "MISSING",
+        "ritual": "THIN",
+        "economy": "THIN",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "MISSING",
+        "chapter_frame": "THIN"
+      },
+      "source_symbols": {
+        "main_process": "▲",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "▲",
+        "arts": "△",
+        "body": "△",
+        "metaphysics": "▲",
+        "ritual": "△",
+        "economy": "△",
+        "comic_folk": "✓",
+        "dream_symbol": "▲",
+        "chapter_frame": "△"
+      },
+      "source_ref": "doc:faae6f996071"
+    },
+    {
+      "chapter": 100,
+      "priority": "第一批",
+      "states": {
+        "main_process": "MISSING",
+        "secondary_plot": "SUFFICIENT",
+        "minor_agents": "SUFFICIENT",
+        "poetry": "MISSING",
+        "arts": "THIN",
+        "body": "MISSING",
+        "metaphysics": "MISSING",
+        "ritual": "MISSING",
+        "economy": "MISSING",
+        "comic_folk": "SUFFICIENT",
+        "dream_symbol": "MISSING",
+        "chapter_frame": "MISSING"
+      },
+      "source_symbols": {
+        "main_process": "▲",
+        "secondary_plot": "✓",
+        "minor_agents": "✓",
+        "poetry": "▲",
+        "arts": "△",
+        "body": "▲",
+        "metaphysics": "▲",
+        "ritual": "▲",
+        "economy": "▲",
+        "comic_folk": "✓",
+        "dream_symbol": "▲",
+        "chapter_frame": "▲"
+      },
+      "source_ref": "doc:faae6f996071"
+    }
+  ],
+  "omitted_scene_plans": [
+    {
+      "chapter": 81,
+      "action": "加厚",
+      "intensity": "中",
+      "core_process": "慢病→危急→死亡→薛家后事分工",
+      "handoff": "39医学礼俗、37诗文",
+      "candidate_scenes": [
+        {
+          "id": "81-S1",
+          "title": "“这回是不是该换大夫”的小争执"
+        },
+        {
+          "id": "81-S2",
+          "title": "病危后的“先把什么备下”"
+        },
+        {
+          "id": "81-S3",
+          "title": "死亡后的第一轮权力分配"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 82,
+      "action": "微调",
+      "intensity": "低",
+      "core_process": "远适从“告别”变成真正迁徙",
+      "handoff": "40社会、39礼俗",
+      "candidate_scenes": [
+        {
+          "id": "82-S1",
+          "title": "船位与随行人口确认"
+        },
+        {
+          "id": "82-S2",
+          "title": "开船后第一件不是哭，而是重新点物"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 83,
+      "action": "微调",
+      "intensity": "低",
+      "core_process": "射圃如何成局、若兰如何入局、消息如何到湘云",
+      "handoff": "38旧文化生活",
+      "candidate_scenes": [
+        {
+          "id": "83-S1",
+          "title": "若兰为什么恰好在场"
+        },
+        {
+          "id": "83-S2",
+          "title": "金麒麟不是一上场就被认作“命物”"
+        },
+        {
+          "id": "83-S3",
+          "title": "消息如何到湘云"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 84,
+      "action": "加厚",
+      "intensity": "中",
+      "core_process": "宫门死讯→家门→内宅→服制日常化",
+      "handoff": "39礼俗、40社会",
+      "candidate_scenes": [
+        {
+          "id": "84-S1",
+          "title": "门上先不知道该把人往哪里领"
+        },
+        {
+          "id": "84-S2",
+          "title": "“知道死讯”和“知道细节”分开"
+        },
+        {
+          "id": "84-S3",
+          "title": "日常规则在一两个时辰内被改"
+        },
+        {
+          "id": "84-S4",
+          "title": "死讯最后压到潇湘馆"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 85,
+      "action": "加厚",
+      "intensity": "中",
+      "core_process": "病势“有起有落”怎样变成不可逆下降",
+      "handoff": "39医学",
+      "candidate_scenes": [
+        {
+          "id": "85-S1",
+          "title": "一张不起眼的起居纸开始比口头判断可靠"
+        },
+        {
+          "id": "85-S2",
+          "title": "宝玉的探视从“随时来”变成“要先问”"
+        },
+        {
+          "id": "85-S3",
+          "title": "宝钗开始承担更多现实照料，但不宣布自己角色"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 86,
+      "action": "重点重构",
+      "intensity": "高",
+      "core_process": "最后普通病日→临终→死后第一日→宝玉来迟",
+      "handoff": "39、37、36",
+      "candidate_scenes": [
+        {
+          "id": "86-S1",
+          "title": "最后一次“明日安排”"
+        },
+        {
+          "id": "86-S2",
+          "title": "医生“迟”必须有现实原因"
+        },
+        {
+          "id": "86-S3",
+          "title": "临终前最后一个文人动作只做到一半"
+        },
+        {
+          "id": "86-S4",
+          "title": "死亡之后先处理“身体”"
+        },
+        {
+          "id": "86-S5",
+          "title": "宝玉为什么“来迟”"
+        },
+        {
+          "id": "86-S6",
+          "title": "宝玉来时“冷药仍在”"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 87,
+      "action": "重点重构",
+      "intensity": "高",
+      "core_process": "丧期后议婚→筹备→成礼→新婚日常",
+      "handoff": "40、39、38",
+      "candidate_scenes": [
+        {
+          "id": "87-S1",
+          "title": "婚议不是一次会议决定"
+        },
+        {
+          "id": "87-S2",
+          "title": "各人动机不同"
+        },
+        {
+          "id": "87-S3",
+          "title": "婚礼为什么缩小"
+        },
+        {
+          "id": "87-S4",
+          "title": "房间不是“新房”，而是重新分配旧生活"
+        },
+        {
+          "id": "87-S5",
+          "title": "婚后第一顿饭"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 88,
+      "action": "重点重构",
+      "intensity": "高",
+      "core_process": "袭人离位/出阁；迎春死讯由孙家进入贾家",
+      "handoff": "40、39、38",
+      "candidate_scenes": [
+        {
+          "id": "88-S1",
+          "title": "婚事不能只从怡红院内部决定"
+        },
+        {
+          "id": "88-S2",
+          "title": "袭人不是只交钥匙，也要处理“哪些东西属于自己”"
+        },
+        {
+          "id": "88-S3",
+          "title": "出门前最后一个日常动作"
+        },
+        {
+          "id": "88-S4",
+          "title": "消息必须从孙家那边“有成本地”传来"
+        },
+        {
+          "id": "88-S5",
+          "title": "娘家想“做点什么”，却发现权力有限"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 89,
+      "action": "重点重构",
+      "intensity": "高",
+      "core_process": "官面查抄→点人点物→封识→欠薪→迁居",
+      "handoff": "40",
+      "candidate_scenes": [
+        {
+          "id": "89-S1",
+          "title": "先封“流动”"
+        },
+        {
+          "id": "89-S2",
+          "title": "再点“人”"
+        },
+        {
+          "id": "89-S3",
+          "title": "再点“物”"
+        },
+        {
+          "id": "89-S4",
+          "title": "账与物对不上"
+        },
+        {
+          "id": "89-S5",
+          "title": "仆役开始分流"
+        },
+        {
+          "id": "89-S6",
+          "title": "迁居是第二场灾难"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 90,
+      "action": "加桥不加事",
+      "intensity": "低",
+      "core_process": "凤姐病中权力缩小；宝钗接手小户管理",
+      "handoff": "40、39",
+      "candidate_scenes": [
+        {
+          "id": "90-S1",
+          "title": "凤姐第一次发现“吩咐了也未必有人做”"
+        },
+        {
+          "id": "90-S2",
+          "title": "宝钗第一次承担“小户经济”"
+        },
+        {
+          "id": "90-S3",
+          "title": "两种管理逻辑正面交错一次"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 91,
+      "action": "微调",
+      "intensity": "低",
+      "core_process": "准取手续→旧府取物→拾“玉样物”→认旧单",
+      "handoff": "40、38",
+      "candidate_scenes": [
+        {
+          "id": "91-S1",
+          "title": "“准取”不是想回就回"
+        },
+        {
+          "id": "91-S2",
+          "title": "旧府里的东西分成三类"
+        },
+        {
+          "id": "91-S3",
+          "title": "拾物之后先登记，不解释"
+        },
+        {
+          "id": "91-S4",
+          "title": "认旧单从“取物”自然长出"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 92,
+      "action": "重点重构",
+      "intensity": "高",
+      "core_process": "认单→留质→问讯→羁押生活→外部递物→待释",
+      "handoff": "40、41",
+      "candidate_scenes": [
+        {
+          "id": "92-S1",
+          "title": "认单不是审判"
+        },
+        {
+          "id": "92-S2",
+          "title": "第一次留质时家里甚至不知道要多久"
+        },
+        {
+          "id": "92-S3",
+          "title": "羁押第一夜必须写“规则学习”"
+        },
+        {
+          "id": "92-S4",
+          "title": "小红先办“能不能”"
+        },
+        {
+          "id": "92-S5",
+          "title": "茜雪只办“他冷不冷”"
+        },
+        {
+          "id": "92-S6",
+          "title": "第二轮问讯以后，案情不是“突然翻案”，而是范围变窄"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 93,
+      "action": "加厚",
+      "intensity": "中",
+      "core_process": "宝玉获释→归家；凤姐病势→临终→丧务启动",
+      "handoff": "39、40",
+      "candidate_scenes": [
+        {
+          "id": "93-S1",
+          "title": "释放有手续，不是开门就走"
+        },
+        {
+          "id": "93-S2",
+          "title": "回家第一件事不是谈案，是吃饭洗手换衣"
+        },
+        {
+          "id": "93-S3",
+          "title": "凤姐病势在宝玉回来前已进入末段"
+        },
+        {
+          "id": "93-S4",
+          "title": "凤姐最后一次“管事”"
+        },
+        {
+          "id": "93-S5",
+          "title": "死后首先出现的是“谁来主丧”"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 94,
+      "action": "重点重构",
+      "intensity": "高",
+      "core_process": "说亲利益逐层暴露→平儿查问→刘姥姥转移→乡居未稳",
+      "handoff": "40、39",
+      "candidate_scenes": [
+        {
+          "id": "94-S1",
+          "title": "先出现“条件还不错”的表面"
+        },
+        {
+          "id": "94-S2",
+          "title": "平儿通过具体问题查出漏洞"
+        },
+        {
+          "id": "94-S3",
+          "title": "危险不必证明成“人口买卖大阴谋”"
+        },
+        {
+          "id": "94-S4",
+          "title": "刘姥姥的“救”先是空间转移"
+        },
+        {
+          "id": "94-S5",
+          "title": "转移巧姐也要有生活难题"
+        },
+        {
+          "id": "94-S6",
+          "title": "乡下第一日不是田园解脱"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 95,
+      "action": "加桥不加事",
+      "intensity": "低",
+      "core_process": "借住结束→赁居→典当→稳定真贫",
+      "handoff": "40",
+      "candidate_scenes": [
+        {
+          "id": "95-S1",
+          "title": "原借住处不能久居"
+        },
+        {
+          "id": "95-S2",
+          "title": "贾芸帮忙找房，不帮他们“解决贫困”"
+        },
+        {
+          "id": "95-S3",
+          "title": "搬家时第一次真正做“舍弃”"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 96,
+      "action": "加桥",
+      "intensity": "中低",
+      "core_process": "故人怎样找到寒家；有限援助怎样进入而不逆转贫困",
+      "handoff": "40、38、37",
+      "candidate_scenes": [
+        {
+          "id": "96-S1",
+          "title": "袭人不是凭空知道地址"
+        },
+        {
+          "id": "96-S2",
+          "title": "蒋玉菡是否同行要有自己的理由"
+        },
+        {
+          "id": "96-S3",
+          "title": "援助被宝钗重新分配，而不是立刻消费"
+        },
+        {
+          "id": "96-S4",
+          "title": "湘云的信有真实传递路径"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 97,
+      "action": "结构重构",
+      "intensity": "高",
+      "core_process": "三条“离散/出离”线从并列结局改为同回互照",
+      "handoff": "40、38、41、37",
+      "candidate_scenes": [
+        {
+          "id": "97-S1",
+          "title": "湘云线的核心不是“丈夫不归”，而是“缺席如何变成家务事实”"
+        },
+        {
+          "id": "97-S2",
+          "title": "妙玉线核心是“洁”被生活一点点迫着重新定义"
+        },
+        {
+          "id": "97-S3",
+          "title": "惜春线必须先有“已经住了一段时间”"
+        },
+        {
+          "id": "97-S4",
+          "title": "三线收束不应各自“判词式结论”"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 98,
+      "action": "加桥",
+      "intensity": "中",
+      "core_process": "甄贾相见的社会来路→借书校书→一个误拿→送还",
+      "handoff": "40、38、41",
+      "candidate_scenes": [
+        {
+          "id": "98-S1",
+          "title": "甄家地址与贾家地址如何互相知道"
+        },
+        {
+          "id": "98-S2",
+          "title": "旧钞本的来路再有一层现实"
+        },
+        {
+          "id": "98-S3",
+          "title": "误拿事件严格维持一个核心巧合"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 99,
+      "action": "重点重构",
+      "intensity": "高",
+      "core_process": "几日退出生活接口→明说离去→出门→寻找→社会余波",
+      "handoff": "41、37",
+      "candidate_scenes": [
+        {
+          "id": "99-S1",
+          "title": "退出顺序保留，但再明确“不是所有人都看懂”"
+        },
+        {
+          "id": "99-S2",
+          "title": "宝玉说“走”以后，宝钗只问现实问题"
+        },
+        {
+          "id": "99-S3",
+          "title": "出门不是终点，寻找才是社会后果"
+        },
+        {
+          "id": "99-S4",
+          "title": "家里必须继续吃饭"
+        },
+        {
+          "id": "99-S5",
+          "title": "若后续第41步要写寺庙生活"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    },
+    {
+      "chapter": 100,
+      "action": "只搭人间前半部",
+      "intensity": "高",
+      "core_process": "多年后兰桂→李纨晚荣→病亡→人间余事封口→太虚",
+      "handoff": "40、39、41、36",
+      "candidate_scenes": [
+        {
+          "id": "100-S1",
+          "title": "数年后第一次回望：贾兰仍只是“在走功名路”"
+        },
+        {
+          "id": "100-S2",
+          "title": "真正得官后，先发生家务而非荣耀"
+        },
+        {
+          "id": "100-S3",
+          "title": "李纨受荣以后仍继续生活一段"
+        },
+        {
+          "id": "100-S4",
+          "title": "李纨死后的人间收束"
+        },
+        {
+          "id": "100-S5",
+          "title": "由何物/何叙事门槛转入外框"
+        }
+      ],
+      "source_ref": "doc:4e1dd2a2d766"
+    }
+  ],
+  "downstream_bindings": {
+    "step36": "literary_ecology.author_rhyme_chapters",
+    "step37": "literary_ecology.evidence_nodes + g_layer_decisions + text interfaces",
+    "step38": "literary_ecology arts gap + cultural-life source profile",
+    "step39": "body/ritual gaps + HistoricalAdapterRuntime",
+    "step40": "economy/social-process gaps + four-chain staging requirements",
+    "step41": "metaphysics/dream gaps + qingbang/metaphysical source profiles",
+    "step42": "Reconstruction M2 + Step34 + Step35 + Literary Ecology + P-Lock -> staging contract"
+  },
+  "staging_policy": {
+    "target_lane": "staging",
+    "output_authority": "STAGING_ONLY",
+    "evidence_write_allowed": false,
+    "evidence_role_change_allowed": false,
+    "open_close_allowed": false,
+    "stable_mutation_allowed": false,
+    "automatic_prose_generation": false,
+    "automatic_promotion": false,
+    "next_human_gate": "STEP43_CANDIDATE_WORKFLOW"
+  },
+  "completion": {
+    "first80_ecology_profiles": 6,
+    "gap_dimensions": 12,
+    "gap_chapters": 20,
+    "omitted_scene_chapters": 20,
+    "omitted_scene_candidates": 85,
+    "machine_readable_chapter_contracts": 20,
+    "feeds_staging": true,
+    "becomes_evidence": false
+  }
+}

@@ -1,0 +1,229 @@
+{
+  "id": "historical-adapters:v0.4",
+  "issue": 4,
+  "status": "PASS",
+  "effect": "FEASIBILITY_ONLY",
+  "authority_rule": "Adapters may test whether a current-C scene can run within supported historical/life-process boundaries. They may reject overclaim or missing process signals, but they may not create events, close OPEN questions, select plot outcomes, or promote historical feasibility into Red-Chamber evidence.",
+  "adapters": [
+    {
+      "id": "medical",
+      "title": "医疗/药饵/身体照护",
+      "domain": "medical",
+      "effect": "FEASIBILITY_ONLY",
+      "plot_authority": "NONE",
+      "may_create_events": false,
+      "support_class": "TEXTUAL_LIFE_FEASIBILITY",
+      "mechanism_refs": [],
+      "source_refs": [
+        "doc:98d9c0a13e69"
+      ],
+      "research_status": "BOUNDARY_PROFILE",
+      "open_questions": [
+        "具体诊断名",
+        "具体药方、剂量与医嘱",
+        "死亡当夜医者是否到场及确切时辰"
+      ],
+      "cannot_prove": [
+        "现有材料不能证明第86回存在某一唯一药方或唯一诊断",
+        "前80医疗生活描写不能反推曹稿第86回逐字医疗程序"
+      ],
+      "global_reject_terms": [
+        "史料已经证明黛玉必用此方",
+        "按清代医理黛玉必然如此死",
+        "一剂药便起死回生"
+      ]
+    },
+    {
+      "id": "household_economy",
+      "title": "家务劳动/饭药炭水/小额供给",
+      "domain": "household_economy",
+      "effect": "FEASIBILITY_ONLY",
+      "plot_authority": "NONE",
+      "may_create_events": false,
+      "support_class": "MIXED_H05_AND_LIFE_REFERENCE",
+      "mechanism_refs": [
+        "H05"
+      ],
+      "source_refs": [
+        "doc:3735d2b2d82d",
+        "doc:e9b9b54f25c6"
+      ],
+      "research_status": "BOUNDARY_PROFILE",
+      "open_questions": [
+        "第86回具体饭药炭水数量与价格",
+        "谁在何时承担每一项跑腿与照护",
+        "潇湘馆当夜具体库存"
+      ],
+      "cannot_prove": [
+        "不能由持续贫困机制推出第86回某一具体米量、炭量或药费",
+        "不能把当前家务分工反推为佚稿原字"
+      ],
+      "global_reject_terms": [
+        "史料已经证明这一夜只剩这些炭",
+        "清代规矩规定必须由紫鹃做这些事"
+      ]
+    },
+    {
+      "id": "mourning_marriage",
+      "title": "服丧/婚期/主婚权",
+      "domain": "mourning_marriage",
+      "effect": "FEASIBILITY_ONLY",
+      "plot_authority": "NONE",
+      "may_create_events": false,
+      "support_class": "HISTORICAL_CORE",
+      "mechanism_refs": [
+        "H03",
+        "H04"
+      ],
+      "source_refs": [],
+      "research_status": "H_BACKED",
+      "open_questions": [],
+      "cannot_prove": [],
+      "global_reject_terms": [
+        "恰满二十七日即可成婚",
+        "恰满百日即可成婚",
+        "必须等足九个月才可成婚"
+      ]
+    },
+    {
+      "id": "detention",
+      "title": "羁押/送物/探视/受控接近",
+      "domain": "detention",
+      "effect": "FEASIBILITY_ONLY",
+      "plot_authority": "NONE",
+      "may_create_events": false,
+      "support_class": "HISTORICAL_CORE",
+      "mechanism_refs": [
+        "H01"
+      ],
+      "source_refs": [],
+      "research_status": "H_BACKED",
+      "open_questions": [],
+      "cannot_prove": [],
+      "global_reject_terms": [
+        "旧仆依法当然可以自由探监",
+        "监所可以自由出入",
+        "狱神显灵所以宝玉获释"
+      ]
+    },
+    {
+      "id": "pawnshop",
+      "title": "典当/现金流/租住与日用权衡",
+      "domain": "pawnshop",
+      "effect": "FEASIBILITY_ONLY",
+      "plot_authority": "NONE",
+      "may_create_events": false,
+      "support_class": "HISTORICAL_CORE",
+      "mechanism_refs": [
+        "H05"
+      ],
+      "source_refs": [
+        "doc:e9b9b54f25c6"
+      ],
+      "research_status": "H_BACKED",
+      "open_questions": [],
+      "cannot_prove": [],
+      "global_reject_terms": [
+        "史料已经证明典当的就是青夹袄",
+        "史料已经证明每次只能当这些钱"
+      ]
+    },
+    {
+      "id": "transport_letters",
+      "title": "车脚/传话/书信/物件递送",
+      "domain": "transport_letters",
+      "effect": "FEASIBILITY_ONLY",
+      "plot_authority": "NONE",
+      "may_create_events": false,
+      "support_class": "OPEN_RESEARCH_PROFILE",
+      "mechanism_refs": [],
+      "source_refs": [
+        "doc:e9b9b54f25c6",
+        "doc:3735d2b2d82d"
+      ],
+      "research_status": "OPEN_RESEARCH",
+      "open_questions": [
+        "具体递送路径与时耗",
+        "具体车脚费用",
+        "私人书信是否经何人转递",
+        "不同身份人物可调用的交通与传话资源"
+      ],
+      "cannot_prove": [
+        "当前H01-H06没有建立一套统一交通/邮递硬机制",
+        "不能从前80书信与车轿场景推出后20某次递送的唯一路线、价格或时辰"
+      ],
+      "global_reject_terms": [
+        "按清代邮驿制度私人书信必然这样送",
+        "史料已经证明这封信当天必到"
+      ]
+    },
+    {
+      "id": "monastic_economy",
+      "title": "寺院/尼庵的日常供给与劳作",
+      "domain": "monastic_economy",
+      "effect": "FEASIBILITY_ONLY",
+      "plot_authority": "NONE",
+      "may_create_events": false,
+      "support_class": "OPEN_RESEARCH_PROFILE",
+      "mechanism_refs": [],
+      "source_refs": [
+        "doc:e9b9b54f25c6",
+        "doc:121ea5f5687f"
+      ],
+      "research_status": "OPEN_RESEARCH",
+      "open_questions": [
+        "小庵与寺院的具体收入来源",
+        "布施、香火、田产或劳作在当前场景中的占比",
+        "妙玉/惜春所在具体机构的经济结构"
+      ],
+      "cannot_prove": [
+        "当前H01-H06不能证明第97/99回寺庵经济的唯一模式",
+        "不得为解释人物生存强行补造固定田产、香火收入或供养人"
+      ],
+      "global_reject_terms": [
+        "寺里必有固定田产足以养活所有人",
+        "香火钱必然足够",
+        "史料已经证明妙玉所在小庵靠此项收入"
+      ]
+    },
+    {
+      "id": "confiscation",
+      "title": "抄没/封固/造册/日用物边界",
+      "domain": "confiscation",
+      "effect": "FEASIBILITY_ONLY",
+      "plot_authority": "NONE",
+      "may_create_events": false,
+      "support_class": "HISTORICAL_CORE",
+      "mechanism_refs": [
+        "H02"
+      ],
+      "source_refs": [],
+      "research_status": "H_BACKED",
+      "open_questions": [],
+      "cannot_prove": [],
+      "global_reject_terms": [
+        "贾府必与曹家同罪名同程序",
+        "抄没当天所有家人一件日用物也不得带出"
+      ]
+    }
+  ],
+  "completion": {
+    "required_issue4_adapters": [
+      "medical",
+      "household_economy",
+      "mourning_marriage",
+      "detention",
+      "pawnshop",
+      "transport_letters",
+      "monastic_economy"
+    ],
+    "compatibility_adapter": "confiscation",
+    "chapter86_first_implementation": [
+      "medical",
+      "household_economy"
+    ],
+    "structured_scene_findings": true,
+    "preserves_open": true,
+    "plot_invention": false
+  }
+}

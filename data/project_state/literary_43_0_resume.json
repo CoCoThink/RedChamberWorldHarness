@@ -1,0 +1,53 @@
+{
+  "phase": "43-0-resume",
+  "status": "ACTIVE",
+  "initiated_after": {
+    "full_migration_m8": "PASS",
+    "main_post_merge": "PASS",
+    "main_sha": "fd5248d79df92cc570527889b81e7f91177772a7",
+    "archive_ref": "archive/full-migration-v3-final-20261007"
+  },
+  "stable_active": {
+    "file_ref": "第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md",
+    "sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+    "changed": false
+  },
+  "migration_freeze_released": true,
+  "literary_resume_started": true,
+  "sequence": [
+    86,
+    89,
+    92,
+    97
+  ],
+  "chapter86": {
+    "pressure_test": "ADJUDICATED",
+    "winner": "ch86-B",
+    "promotion": "DEFERRED_PROMOTION_CANDIDATE"
+  },
+  "chapter89": {
+    "pressure_test": "IN_REVIEW",
+    "phase1": "PASS",
+    "full_candidates": "READY",
+    "candidate_ids": [
+      "ch89-A",
+      "ch89-B",
+      "ch89-C"
+    ],
+    "blind_tokens": [
+      "BR-58",
+      "BR-14",
+      "BR-91"
+    ],
+    "six_field": "PASS",
+    "machine_literary_evaluation": "PASS",
+    "plock_manual_review": "PENDING",
+    "blind_read": "PENDING",
+    "stable_active_effect": "NONE",
+    "machine_run": 37595378693
+  },
+  "chapter92": "BLOCKED_BY_PREDECESSOR",
+  "chapter97": "BLOCKED_BY_PREDECESSOR",
+  "authority_rule": "Literary production remains downstream of Evidence/Reconstruction/World. No candidate or P-Lock may promote itself into evidence.",
+  "next_gate": "CH89_MANUAL_PLOCK_THEN_BLIND_READ"
+}

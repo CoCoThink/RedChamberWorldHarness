@@ -1,0 +1,122 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH Historical Mechanism Adapters v0.4",
+  "type": "object",
+  "required": [
+    "id",
+    "issue",
+    "status",
+    "effect",
+    "authority_rule",
+    "adapters",
+    "completion"
+  ],
+  "properties": {
+    "id": {
+      "const": "historical-adapters:v0.4"
+    },
+    "issue": {
+      "const": 4
+    },
+    "status": {
+      "type": "string"
+    },
+    "effect": {
+      "const": "FEASIBILITY_ONLY"
+    },
+    "authority_rule": {
+      "type": "string",
+      "minLength": 80
+    },
+    "adapters": {
+      "type": "array",
+      "minItems": 8,
+      "uniqueItems": false,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "domain",
+          "effect",
+          "plot_authority",
+          "may_create_events",
+          "support_class",
+          "mechanism_refs",
+          "source_refs",
+          "research_status",
+          "open_questions",
+          "cannot_prove",
+          "global_reject_terms"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "domain": {
+            "type": "string"
+          },
+          "effect": {
+            "const": "FEASIBILITY_ONLY"
+          },
+          "plot_authority": {
+            "const": "NONE"
+          },
+          "may_create_events": {
+            "const": false
+          },
+          "support_class": {
+            "type": "string"
+          },
+          "mechanism_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true
+          },
+          "research_status": {
+            "enum": [
+              "H_BACKED",
+              "BOUNDARY_PROFILE",
+              "OPEN_RESEARCH"
+            ]
+          },
+          "open_questions": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "cannot_prove": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "global_reject_terms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "completion": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

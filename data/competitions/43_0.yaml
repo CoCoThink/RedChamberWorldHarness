@@ -132,16 +132,104 @@ competition_records:
       BASELINE_EXCERPT: PASS
       STRUCTURAL_REORDER: PASS
       SMALL_TRIAL: PASS
-      SIX_FIELD_REGRESSION: PENDING
+      SIX_FIELD_REGRESSION: PASS
       PLOCK_REGRESSION: PENDING
       BLIND_READ: PENDING
-    candidates: []
-    adjudication: {outcome: PENDING, winner_candidate_id: null, promotion_state: NOT_ELIGIBLE}
+    candidates:
+      - id: ch89-A
+        label: A
+        blind_token: BR-58
+        artifact:
+          kind: REPO_FILE
+          path: artifacts/43-0/ch89/candidates/ch89_A_full.md
+          git_blob_sha: 511f0aa90404d1ae7a71e5656e26350527edb83b
+          source_commit: bcc37630f6591685229f665e4ea03b776327345c
+        origin: HUMAN_EDITED
+        machine_expected_status: READY_FOR_BLIND_READ
+        six_field:
+          PROVENANCE: PASS
+          ROLE: PASS
+          MODALITY: PASS
+          TARGET: PASS
+          PLACEMENT: PASS
+          IMPLEMENTATION: PASS
+        human_plock:
+          status: PENDING
+          notes: >-
+            候选已机器化保留终端水桶锚点及小生活/共享基础设施信号；
+            人工P-Lock文学充分性复核尚未执行，不得伪造为PASS。
+        blind_read:
+          status: PENDING
+          reviewer_blinded: false
+          notes: >-
+            BR-58已进入独立盲读包；映射另存，尚无真实盲读裁定。
+      - id: ch89-B
+        label: B
+        blind_token: BR-14
+        artifact:
+          kind: REPO_FILE
+          path: artifacts/43-0/ch89/candidates/ch89_B_full.md
+          git_blob_sha: e798ed354999bc492e210d8706b2acc45291364e
+          source_commit: 653eba389f847af6794f4061b12117c492711ee4
+        origin: STRUCTURAL_REWRITE
+        machine_expected_status: READY_FOR_BLIND_READ
+        six_field:
+          PROVENANCE: PASS
+          ROLE: PASS
+          MODALITY: PASS
+          TARGET: PASS
+          PLACEMENT: PASS
+          IMPLEMENTATION: PASS
+        human_plock:
+          status: PENDING
+          notes: >-
+            B只压程序复述，后半回共享小院、小灶、井水、针线与终端水桶锚点完整保留；
+            人工P-Lock文学充分性复核尚未执行。
+        blind_read:
+          status: PENDING
+          reviewer_blinded: false
+          notes: >-
+            BR-14已进入独立盲读包；尚无真实盲读裁定。
+      - id: ch89-C
+        label: C
+        blind_token: BR-91
+        artifact:
+          kind: REPO_FILE
+          path: artifacts/43-0/ch89/candidates/ch89_C_full.md
+          git_blob_sha: 70f2ff9c02ead3fa9ef3160d70c1de32464de9de
+          source_commit: 869524408a1b73993a419a7a5cc7ead675b80d64
+        origin: STRUCTURAL_REWRITE
+        machine_expected_status: READY_FOR_BLIND_READ
+        six_field:
+          PROVENANCE: PASS
+          ROLE: PASS
+          MODALITY: PASS
+          TARGET: PASS
+          PLACEMENT: PASS
+          IMPLEMENTATION: PASS
+        human_plock:
+          status: PENDING
+          notes: >-
+            C为程序强压下限，后半回保护项仍保留，但前半回社会摩擦是否被削得过薄
+            必须由人工P-Lock与盲读判断。
+        blind_read:
+          status: PENDING
+          reviewer_blinded: false
+          notes: >-
+            BR-91已进入独立盲读包；尚无真实盲读裁定。
+    adjudication:
+      outcome: PENDING
+      winner_candidate_id: null
+      promotion_state: NOT_ELIGIBLE
+      notes: >-
+        三个完整候选已生成并完成六字段回归；机器文学评估预期均为
+        READY_FOR_BLIND_READ。人工P-Lock与真实盲读尚未执行，因此不得裁定赢家。
     stable_active_effect: SEPARATE_PROMOTION_ONLY
     notes: >-
-      第89回真实Phase 1已启动。压力区集中于官差到门至午后准话；
-      B压规则复述而保留小生活承重，C测试程序过度顺滑的下限。
-      稳定ACTIVE仍为v1.4。
+      第89回Phase 2已恢复。A/B/C均升级为完整全回候选；为落实现有P1终端锁，
+      三稿共同去除水桶问句之后的解释性动作，使“谁家的水桶还在井边？”
+      成为真正终端句。SIX_FIELD_REGRESSION已PASS；下一门为人工P-Lock复核，
+      然后才可进入真实盲读。稳定ACTIVE仍为v1.4，第86回B继续deferred。
 
   - id: comp:43-0:ch92:pressure-test
     mode: PRODUCTION_43_0
