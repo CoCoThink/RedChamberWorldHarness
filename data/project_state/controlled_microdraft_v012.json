@@ -1,7 +1,7 @@
 {
   "id": "controlled-microdraft:v0.12",
   "phase": "P6_CONTROLLED_MICRODRAFT_LAB",
-  "status": "PASS_CANDIDATE",
+  "status": "PASS",
   "authority": "SHADOW_ONLY",
   "source_branch": "feature/controlled-microdraft-v0.12",
   "base": {
@@ -28,5 +28,11 @@
     "NO_CANONICAL_PROSE_EFFECT",
     "NO_MACHINE_ROUTE_ELIMINATION"
   ],
-  "next_gate": "P6_CI_THEN_P7_BLIND_MICRODRAFT_REVIEW"
+  "next_gate": "P7_BLIND_MICRODRAFT_REVIEW",
+  "ci": {
+    "run_id": 37648871831,
+    "conclusion": "SUCCESS",
+    "pytest": "285 passed / 0 failed",
+    "validate": "PASS"
+  }
 }

@@ -13,7 +13,8 @@
     "canonical_literary_gate",
     "effects",
     "delivered",
-    "next_gate"
+    "next_gate",
+    "ci"
   ],
   "properties": {
     "id": {
@@ -98,10 +99,7 @@
       }
     },
     "next_gate": {
-      "enum": [
-        "P6_CI_THEN_P7_BLIND_MICRODRAFT_REVIEW",
-        "P7_BLIND_MICRODRAFT_REVIEW"
-      ]
+      "const": "P7_BLIND_MICRODRAFT_REVIEW"
     },
     "ci": {
       "type": "object",

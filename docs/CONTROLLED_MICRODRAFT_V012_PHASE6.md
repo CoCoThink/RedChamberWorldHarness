@@ -1,6 +1,6 @@
 # Controlled Microdraft Lab v0.12 — P6
 
-Status: **PASS_CANDIDATE / SHADOW_ONLY**
+Status: **PASS / SHADOW_ONLY**
 
 P6 is the first upgrade stage that contains newly written prose. It deliberately stops far short of full-chapter generation.
 
@@ -17,3 +17,26 @@ Reviewers should read only `artifacts/p6_microdraft/blind/REVIEWER_INSTRUCTIONS.
 P6 has no automatic literary PASS, no automatic winner, and no route-elimination authority.
 
 Next gate after PASS: **P7_BLIND_MICRODRAFT_REVIEW**.
+
+
+## Final P6 gate
+
+Result: **PASS**.
+
+Gate validation run: `37648871831`
+
+- `rcwh validate`: PASS;
+- full repository tests before state-close test: **285 passed / 0 failed**;
+- controlled microdrafts: **20/20 READY_FOR_BLIND_MICRODRAFT_REVIEW**;
+- machine blockers: **0**;
+- five blind cells: **5/5**, four anonymous variants each;
+- P5 primary-focalizer binding drift: **0**;
+- route/probe metadata leaks on blind surface: **0**;
+- machine route elimination: **disabled**;
+- automatic literary PASS / winner: **disabled**;
+- canonical prose / Evidence / OPEN / stable ACTIVE effects: **NONE**;
+- Chapter 89 remains `IN_REVIEW`; its official manual P-Lock and independent blind read are untouched.
+
+The twenty drafts are experimental prose only. P6 establishes a clean blind-review surface; it does not establish literary superiority or reconstruction truth.
+
+Next gate: **P7_BLIND_MICRODRAFT_REVIEW**.

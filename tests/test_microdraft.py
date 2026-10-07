@@ -60,3 +60,19 @@ def test_p6_machine_cannot_eliminate_routes_or_change_canonical_authority():
 
 def test_p6_integrity():
     assert lab().validate_integrity(discourse(),stress(),suite())==[]
+
+
+def test_p6_project_state_is_pass_and_records_gate_ci():
+    from rcwh.io import load_data
+
+    state = load_data(ROOT / "data" / "project_state" / "controlled_microdraft_v012.json")
+    assert state["status"] == "PASS"
+    assert state["authority"] == "SHADOW_ONLY"
+    assert state["next_gate"] == "P7_BLIND_MICRODRAFT_REVIEW"
+    assert set(state["effects"].values()) == {"NONE"}
+    assert state["ci"] == {
+        "run_id": 37648871831,
+        "conclusion": "SUCCESS",
+        "pytest": "285 passed / 0 failed",
+        "validate": "PASS",
+    }
