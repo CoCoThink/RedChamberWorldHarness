@@ -17,6 +17,7 @@ from .literals import LiteralRegistry, format_literal
 from .literary_eval import evaluate_literary_candidate, format_literary_evaluation
 from .literary_ecology import LiteraryEcologyRuntime, format_literary_ecology
 from .literary_production import LiteraryProductionRuntime, format_literary_production
+from .mechanism_adapters import HistoricalAdapterRuntime, format_adapter
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .object_network import ObjectNetworkRuntime, format_object
 from .plocks import LiteraryProtectionRegistry, format_plock
@@ -63,7 +64,19 @@ def cmd_evaluate(args: argparse.Namespace) -> int:
         if (root / "data" / "knowledge" / "v03_slice1.json").exists()
         else None
     )
-    results = evaluate_scene_text(contract, text, knowledge_runtime=knowledge)
+    historical_adapters = (
+        HistoricalAdapterRuntime.from_repo(root)
+        if (root / "data" / "mechanism_adapters" / "v04.json").exists()
+        else None
+    )
+    historical_mechanisms = HistoricalMechanismRegistry.from_repo(root)
+    results = evaluate_scene_text(
+        contract,
+        text,
+        knowledge_runtime=knowledge,
+        mechanism_adapter_runtime=historical_adapters,
+        historical_mechanisms=historical_mechanisms,
+    )
     if precondition_findings:
         results.insert(0, type(results[0])("preconditions", "FAIL", precondition_findings))
 
@@ -392,6 +405,34 @@ def cmd_literary_ecology(args: argparse.Namespace) -> int:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
     else:
         print(format_literary_ecology(kind, payload))
+    return 0
+
+
+def cmd_historical_adapter(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = HistoricalAdapterRuntime.from_repo(root)
+    mechanisms = HistoricalMechanismRegistry.from_repo(root)
+    try:
+        kind = args.historical_adapter_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "describe":
+            payload = runtime.describe(args.adapter_id, mechanisms)
+        elif kind == "scene":
+            contract = load_data(Path(args.contract))
+            text_value = Path(args.text).read_text(encoding="utf-8")
+            payload = runtime.scene_status(contract, text_value, mechanisms)
+        else:
+            raise KeyError(f"Unknown historical-adapter command: {kind}")
+    except (KeyError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_adapter(kind, payload))
+    if kind == "scene":
+        return 0 if payload["status"] == "PASS" else 1
     return 0
 
 
@@ -741,6 +782,23 @@ def main() -> None:
     p.add_argument("key")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_literary_ecology)
+
+    p_hist_adapter = sub.add_parser("historical-adapter")
+    hist_adapter_sub = p_hist_adapter.add_subparsers(
+        dest="historical_adapter_command", required=True
+    )
+    p = hist_adapter_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_historical_adapter)
+    p = hist_adapter_sub.add_parser("describe")
+    p.add_argument("adapter_id")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_historical_adapter)
+    p = hist_adapter_sub.add_parser("scene")
+    p.add_argument("contract")
+    p.add_argument("text")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_historical_adapter)
 
     p_knowledge = sub.add_parser("knowledge")
     knowledge_sub = p_knowledge.add_subparsers(dest="knowledge_command", required=True)
