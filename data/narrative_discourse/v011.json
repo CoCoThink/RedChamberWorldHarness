@@ -1,0 +1,366 @@
+{
+  "id": "narrative-discourse:v0.11",
+  "milestone": "P5",
+  "status": "PASS_CANDIDATE",
+  "authority": "SHADOW_ONLY",
+  "output_authority": "DISCOURSE_PLANNING_ONLY",
+  "purpose": "Separate fabula from sjuzet for the four P4 frontier scenarios without generating prose or altering reconstruction authority.",
+  "source_basis": {
+    "literary_stress_ref": "scenario-literary-stress:v0.10",
+    "literary_ecology_ref": "M5",
+    "literary_evaluator_ref": "v0.5",
+    "required_scenarios": [
+      "SCN-CURRENT-C",
+      "SCN-LATE-MARRIAGE",
+      "SCN-JADE-MULTILAYER",
+      "SCN-MINIMAL-CAUSE-OPEN"
+    ]
+  },
+  "discourse_dimensions": [
+    {
+      "id": "ND-D01",
+      "key": "focalization",
+      "basis_refs": [
+        "LE-D01",
+        "LE-D09"
+      ],
+      "principle": "每个场景只设一个主聚焦者；旁人可形成副视角，但叙述者不得替人物越权知情。"
+    },
+    {
+      "id": "ND-D02",
+      "key": "temporal_mediation",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D09",
+        "TECH-02",
+        "TECH-10"
+      ],
+      "principle": "事件不必按发生顺序全景重放；后果、错身、转述、中断均可先于解释。"
+    },
+    {
+      "id": "ND-D03",
+      "key": "knowledge_aperture",
+      "basis_refs": [
+        "LE-D06",
+        "LE-D13",
+        "TECH-04"
+      ],
+      "principle": "只让读者得到人物行动所能承载的信息；OPEN接口必须精确留白而非普遍含糊。"
+    },
+    {
+      "id": "ND-D04",
+      "key": "narrative_distance",
+      "basis_refs": [
+        "LE-D01",
+        "LE-D09"
+      ],
+      "principle": "近距动作、关系对白与中距转述交替，避免全程作者俯瞰。"
+    },
+    {
+      "id": "ND-D05",
+      "key": "relay_channel",
+      "basis_refs": [
+        "LE-D08",
+        "LE-D13",
+        "TECH-15"
+      ],
+      "principle": "消息通过动作、物件、文书、声音、转述和沉默传播，不让旁白包办因果。"
+    },
+    {
+      "id": "ND-D06",
+      "key": "scene_breath",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D09",
+        "TECH-05",
+        "TECH-11"
+      ],
+      "principle": "场景从普通事务进入，以余波、物件、声音、问题或中断退出，不以主题格言封口。"
+    },
+    {
+      "id": "ND-D07",
+      "key": "indirection",
+      "basis_refs": [
+        "LE-D06",
+        "LE-D09",
+        "TECH-07",
+        "TECH-14"
+      ],
+      "principle": "重大事件可写可不写正面；必须允许背面傅粉、不写之写和虚实互换。"
+    },
+    {
+      "id": "ND-D08",
+      "key": "narrator_restraint",
+      "basis_refs": [
+        "LE-D02",
+        "LE-D07",
+        "LE-D12"
+      ],
+      "principle": "叙述者不替制度、动机、象征和人生意义作总结；程序只写到人物受制。"
+    }
+  ],
+  "visibility_templates": {
+    "AFTERMATH_FIRST": {
+      "opening_mode": "AFTERMATH_OBJECT_OR_CHORE",
+      "temporal_order": "ANACHRONIC_BACKFILL",
+      "event_presence": "OFFSTAGE_CAUSE_VISIBLE_EFFECTS",
+      "primary_channel": "OBJECT_TRACE",
+      "distance_curve": [
+        "CLOSE",
+        "MEDIUM",
+        "CLOSE"
+      ],
+      "reveal_policy": "TRACES_BEFORE_CAUSE",
+      "narrator_access": "LIMITED",
+      "direct_event_replay": false
+    },
+    "PARTIAL_DIRECT": {
+      "opening_mode": "ORDINARY_ACTION",
+      "temporal_order": "LINEAR_WITH_CUT",
+      "event_presence": "DIRECT_FRAGMENT_CAUSE_WITHHELD",
+      "primary_channel": "ACTION",
+      "distance_curve": [
+        "CLOSE",
+        "CLOSE",
+        "MEDIUM"
+      ],
+      "reveal_policy": "SHOW_CONSTRAINT_NOT_SYSTEM",
+      "narrator_access": "LIMITED",
+      "direct_event_replay": true
+    },
+    "REPORTED": {
+      "opening_mode": "ORDINARY_ACTION",
+      "temporal_order": "DELAYED_REPORT",
+      "event_presence": "OFFSTAGE_RELAY",
+      "primary_channel": "REPORT",
+      "distance_curve": [
+        "CLOSE",
+        "MEDIUM",
+        "CLOSE"
+      ],
+      "reveal_policy": "REPORT_WITH_GAPS",
+      "narrator_access": "LIMITED",
+      "direct_event_replay": false
+    },
+    "INTERRUPTED_DIRECT": {
+      "opening_mode": "ORDINARY_ACTION",
+      "temporal_order": "LINEAR_INTERRUPTED",
+      "event_presence": "DIRECT_FRAGMENT_INTERRUPTED",
+      "primary_channel": "DIALOGUE",
+      "distance_curve": [
+        "MEDIUM",
+        "CLOSE",
+        "MEDIUM"
+      ],
+      "reveal_policy": "INTERRUPT_BEFORE_EXPLANATION",
+      "narrator_access": "LIMITED",
+      "direct_event_replay": true
+    },
+    "DIRECT_SCENE": {
+      "opening_mode": "ORDINARY_ACTION",
+      "temporal_order": "LINEAR_EMBODIED",
+      "event_presence": "DIRECT_EMBODIED",
+      "primary_channel": "ACTION",
+      "distance_curve": [
+        "CLOSE",
+        "CLOSE",
+        "CLOSE"
+      ],
+      "reveal_policy": "EMBODY_WITHOUT_SUMMARY",
+      "narrator_access": "LIMITED",
+      "direct_event_replay": true
+    },
+    "OFFSTAGE": {
+      "opening_mode": "TRACE_OR_REPORT",
+      "temporal_order": "DELAYED_TRACE",
+      "event_presence": "OFFSTAGE_ONLY",
+      "primary_channel": "REPORT",
+      "distance_curve": [
+        "MEDIUM",
+        "CLOSE",
+        "MEDIUM"
+      ],
+      "reveal_policy": "EFFECTS_ONLY",
+      "narrator_access": "LIMITED",
+      "direct_event_replay": false
+    }
+  },
+  "ending_templates": {
+    "OBJECT": {
+      "exit_channel": "OBJECT_TRACE",
+      "closure_mode": "OPEN_RESIDUE"
+    },
+    "QUESTION": {
+      "exit_channel": "DIALOGUE_QUESTION",
+      "closure_mode": "OPEN_RESIDUE"
+    },
+    "SOUND": {
+      "exit_channel": "SOUND",
+      "closure_mode": "SENSORY_RESIDUE"
+    },
+    "GESTURE": {
+      "exit_channel": "GESTURE",
+      "closure_mode": "RELATIONAL_RESIDUE"
+    },
+    "INTERRUPTION": {
+      "exit_channel": "INTERRUPTION",
+      "closure_mode": "CUT_BEFORE_EXPLANATION"
+    },
+    "EMPTY_SPACE": {
+      "exit_channel": "ABSENCE",
+      "closure_mode": "ABSENCE_RESIDUE"
+    },
+    "UNFINISHED_SPEECH": {
+      "exit_channel": "SPEECH_CUT",
+      "closure_mode": "CUT_BEFORE_EXPLANATION"
+    }
+  },
+  "channel_rules": {
+    "ordinary_actions_add": "ACTION",
+    "multiple_focalizers_add": "DIALOGUE",
+    "culture_in_action_add": "DOCUMENT",
+    "object_carriers_add": "OBJECT_TRACE",
+    "reported_visibility_add": "REPORT",
+    "sound_ending_add": "SOUND",
+    "empty_space_ending_add": "ABSENCE"
+  },
+  "scenario_overrides": {
+    "SCN-CURRENT-C": {
+      "watch": [
+        "不得因已有稳定C路径而采用全知解释捷径。",
+        "甄贾照面必须被递物、旁人或俗务中断，不许演成真假哲理辩论。",
+        "同一通灵玉路线必须由保管和递手成立，不能由叙述者宣布身份。"
+      ],
+      "probe_overrides": {
+        "C-P4": {
+          "primary_channel": "OBJECT_TRACE",
+          "reveal_policy": "CUSTODY_BEFORE_IDENTITY",
+          "extra_restraints": [
+            "NO_TRUE_FALSE_PHILOSOPHICAL_DIALOGUE",
+            "NO_NARRATOR_JADE_IDENTITY_DECLARATION"
+          ]
+        },
+        "C-P5": {
+          "reveal_policy": "HUMAN_AFTERMATH_BEFORE_METAFRAME",
+          "extra_restraints": [
+            "NO_THEME_SUMMARY_BEFORE_QINGBANG"
+          ]
+        }
+      }
+    },
+    "SCN-LATE-MARRIAGE": {
+      "watch": [
+        "婚前宝钗不得因叙述便利提前获得妻位视角。",
+        "败后婚姻必须通过资源和家务进入，不得由礼制说明或贫困陈列包办。",
+        "婚后关系要靠账、药、被褥、借物等生活惯性形成。"
+      ],
+      "probe_overrides": {
+        "L-P1": {
+          "reveal_policy": "RELATION_BOUNDARY_BEFORE_FUTURE_STATUS",
+          "extra_restraints": [
+            "BAOCHAI_NOT_WIFE_BEFORE_E2",
+            "NO_FUTURE_WIFE_FREE_INDIRECT_LEAK"
+          ]
+        },
+        "L-P3": {
+          "primary_channel": "ACTION",
+          "reveal_policy": "RITUAL_THROUGH_RESOURCE_ACTIONS",
+          "extra_restraints": [
+            "NO_CEREMONIAL_CATALOGUE",
+            "NO_POVERTY_SPECTACLE"
+          ]
+        },
+        "L-P4": {
+          "reveal_policy": "MARRIAGE_STATUS_THROUGH_ROUTINE",
+          "extra_restraints": [
+            "NO_VIRTUOUS_WIFE_AUTHORIAL_PRAISE"
+          ]
+        }
+      }
+    },
+    "SCN-JADE-MULTILAYER": {
+      "watch": [
+        "多个玉样物必须靠持有人、空间、包裹和递手区分。",
+        "不可用叙述者编号或解释‘此玉非彼玉’。",
+        "外框石归本质不得反向替人间物件完成鉴定。"
+      ],
+      "probe_overrides": {
+        "J-P2": {
+          "primary_channel": "OBJECT_TRACE",
+          "reveal_policy": "CUSTODY_SPACE_PACKAGE_DISAMBIGUATION",
+          "extra_restraints": [
+            "NO_OBJECT_IDENTITY_LABELS",
+            "NO_NARRATOR_THIS_JADE_NOT_THAT_JADE"
+          ]
+        },
+        "J-P4": {
+          "primary_channel": "OBJECT_TRACE",
+          "reveal_policy": "LOGISTICS_COMPLETE_IDENTITY_OPEN",
+          "extra_restraints": [
+            "NO_IDENTITY_CLOSURE_BY_TONE"
+          ]
+        },
+        "J-P5": {
+          "reveal_policy": "METAFRAME_WITHOUT_RETROACTIVE_OBJECT_FORENSICS",
+          "extra_restraints": [
+            "NO_TERMINAL_OBJECT_GENEALOGY"
+          ]
+        }
+      }
+    },
+    "SCN-MINIMAL-CAUSE-OPEN": {
+      "watch": [
+        "OPEN只能位于具体接口，不得扩散成全场含糊。",
+        "羁押程序与生活后果必须可观察，只有具体罪由保持开放。",
+        "甄贾错身和送玉身份开放必须建立在清楚的行动链上。"
+      ],
+      "probe_overrides": {
+        "M-P2": {
+          "reveal_policy": "PROCEDURE_FULL_CAUSE_OPEN",
+          "extra_restraints": [
+            "NO_VAGUE_UNSPEAKABLE_CAUSE_ESCAPE",
+            "CAUSE_GAP_ONLY"
+          ]
+        },
+        "M-P4": {
+          "reveal_policy": "TIMING_CHAIN_CLEAR_IDENTITY_OPEN",
+          "extra_restraints": [
+            "NO_MYSTERY_FOG",
+            "IDENTITY_GAP_LOCATION_EXPLICIT"
+          ]
+        },
+        "M-P5": {
+          "reveal_policy": "CLOSURE_WITH_LOCAL_OPEN_INTERFACES",
+          "extra_restraints": [
+            "OPEN_NOT_EQUAL_UNFINISHED_ENDING"
+          ]
+        }
+      }
+    }
+  },
+  "thresholds": {
+    "cards_per_scenario": 5,
+    "temporal_modes_min": 3,
+    "relay_channels_min": 5,
+    "opening_modes_min": 3,
+    "distance_curves_min": 3,
+    "exit_channels_min": 4,
+    "primary_focalizers_min": 5,
+    "indirect_cards_min": 4,
+    "document_or_object_mediated_cards_min": 3,
+    "exact_withheld_preservation": true,
+    "narrator_access_must_be": "LIMITED"
+  },
+  "policy": {
+    "fabula_mutation_allowed": false,
+    "automatic_prose_generation": false,
+    "automatic_literary_pass": false,
+    "automatic_winner": false,
+    "scalar_score": false,
+    "evidence_effect": "NONE",
+    "open_interface_effect": "NONE",
+    "stable_active_effect": "NONE",
+    "canonical_competition_effect": "NONE"
+  },
+  "next_gate": "P6_CONTROLLED_MICRODRAFT_LAB"
+}
