@@ -106,14 +106,16 @@ def test_object_sources_are_registered_or_reconstruction_nodes():
                 raise AssertionError(f"unsupported source ref {ref}")
 
 
-def test_m4_integrity_passes_and_registry_keeps_completion_gate_closed():
+def test_m4_integrity_passes_after_signed_m8_completion_gate():
     registry = MigrationRegistry.from_repo(ROOT)
     reconstruction = ReconstructionRegistry.from_repo(ROOT)
     assert objects().validate_integrity(ROOT, registry, reconstruction) == []
     current = registry.current_summary()
     assert current["object_queryable"] is True
     assert current["current_markdown_islands"] == 0
-    assert current["completion_gate_ready"] is False
+    assert current["completion_gate_ready"] is True
+    assert current["completion_gate_status"] == "PASS"
+    assert current["literature_resume_authorized"] is True
 
 
 def test_object_trace_resolves_document_and_reconstruction_sources():
