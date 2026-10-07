@@ -14,11 +14,11 @@ def runtime() -> HypothesisRuntime:
     return HypothesisRuntime.from_repo(ROOT)
 
 
-def test_h04_phase0_has_six_explicit_admissible_alternatives():
-    assert set(runtime().hypotheses) == {
+def test_h04_phase0_alternatives_survive_p1_expansion():
+    assert {
         "HYP-O09-A", "HYP-O09-B", "HYP-O09-C",
         "HYP-G0", "HYP-G1", "HYP-G2",
-    }
+    }.issubset(runtime().hypotheses)
     assert all(x["status"] == "ADMISSIBLE" for x in runtime().hypotheses.values())
 
 
@@ -80,18 +80,19 @@ def test_phase0_does_not_mutate_stable_or_ch89_gate():
     assert literary.data["chapter89"]["blind_read"] == "PENDING"
 
 
-def test_phase0_project_state_is_shadow_only_and_tracks_current_gate():
+def test_v07_project_state_is_shadow_only_and_tracks_current_gate():
     from rcwh.io import load_data
     state = load_data(ROOT / "data" / "project_state" / "hypothesis_runtime_v07.json")
-    assert state["status"] == "PASS"
+    assert state["status"] == "PASS_CANDIDATE"
     assert state["authority"] == "SHADOW_ONLY"
     assert state["base"]["sha"] == "9cbb05eb27dc8dade139e7ba9bf5f856a95715f7"
     assert state["canonical_literary_gate"] == "CH89_MANUAL_PLOCK_THEN_BLIND_READ"
     assert set(state["effects"].values()) == {"NONE"}
-    assert state["next_gate"] == "P1_EXPAND_CORE_OPEN"
+    assert state["phase"] == "P1_CORE_OPEN_SCENARIOS"
+    assert state["next_gate"] == "P1_CI_THEN_P2_COUNTERFACTUAL_REPLAY"
 
 
-def test_phase0_json_schemas_validate_new_data():
+def test_v07_json_schemas_validate_new_data():
     from rcwh.io import load_data
     from rcwh.schema import validate_instance
 

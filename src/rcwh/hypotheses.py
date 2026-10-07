@@ -42,6 +42,7 @@ class HypothesisRuntime:
         graph: ProvenanceGraph,
         open_interfaces: OpenInterfaceRegistry,
         mechanisms: HistoricalMechanismRegistry,
+        reconstruction: Any | None = None,
     ) -> bool:
         if ref.startswith("claim:"):
             return ref in graph.claims
@@ -51,6 +52,10 @@ class HypothesisRuntime:
             return ref in open_interfaces.interfaces
         if ref.startswith("H0") and len(ref) == 3:
             return ref in mechanisms.mechanisms
+        if reconstruction is not None and ref.startswith("R") and len(ref) == 3:
+            return ref in reconstruction.r_nodes
+        if reconstruction is not None and ref.startswith("P") and len(ref) == 3:
+            return ref in reconstruction.p_edges
         return True
 
     def validate_integrity(
@@ -58,6 +63,7 @@ class HypothesisRuntime:
         graph: ProvenanceGraph,
         open_interfaces: OpenInterfaceRegistry,
         mechanisms: HistoricalMechanismRegistry,
+        reconstruction: Any | None = None,
     ) -> list[str]:
         errors: list[str] = []
 
@@ -82,7 +88,9 @@ class HypothesisRuntime:
                     errors.append(f"{hypothesis_id}: OPEN ref {ref} is not OPEN_LOCKED")
 
             for ref in item.get("support_refs", []) + item.get("counter_refs", []):
-                if not self._validate_ref(ref, graph, open_interfaces, mechanisms):
+                if not self._validate_ref(
+                    ref, graph, open_interfaces, mechanisms, reconstruction
+                ):
                     errors.append(f"{hypothesis_id}: unresolved support/counter ref {ref}")
 
             if item.get("status") == "ADMISSIBLE" and not item.get("cannot_prove"):
@@ -107,5 +115,36 @@ class HypothesisRuntime:
     def alternatives(self, open_id: str) -> list[dict[str, Any]]:
         return [
             item for item in self.hypotheses.values()
-            if item.get("question_ref") == open_id or open_id in item.get("related_open_refs", [])
+            if item.get("question_ref") == open_id
+            or open_id in item.get("related_open_refs", [])
         ]
+
+    def get(self, hypothesis_id: str) -> dict[str, Any]:
+        if hypothesis_id not in self.hypotheses:
+            raise KeyError(f"Unknown hypothesis: {hypothesis_id}")
+        return self.hypotheses[hypothesis_id]
+
+    def alternative_coverage(self) -> dict[str, int]:
+        result: dict[str, int] = {}
+        for item in self.hypotheses.values():
+            if item.get("status") != "ADMISSIBLE":
+                continue
+            qref = item["question_ref"]
+            result[qref] = result.get(qref, 0) + 1
+        return result
+
+    def summary(self) -> dict[str, Any]:
+        coverage = self.alternative_coverage()
+        return {
+            "status": "SHADOW_ONLY",
+            "hypotheses": len(self.hypotheses),
+            "admissible": sum(
+                x.get("status") == "ADMISSIBLE" for x in self.hypotheses.values()
+            ),
+            "open_interfaces_with_alternatives": len(coverage),
+            "open_interfaces_with_two_or_more": len(
+                [x for x in coverage.values() if x >= 2]
+            ),
+            "evidence_effect": "NONE",
+            "stable_active_effect": "NONE",
+        }

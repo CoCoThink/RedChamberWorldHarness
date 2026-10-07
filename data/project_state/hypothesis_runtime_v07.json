@@ -1,7 +1,7 @@
 {
   "id": "hypothesis-runtime:v0.7",
-  "phase": "P0_TARGETED_FIDELITY_BACKFILL",
-  "status": "PASS",
+  "phase": "P1_CORE_OPEN_SCENARIOS",
+  "status": "PASS_CANDIDATE",
   "authority": "SHADOW_ONLY",
   "source_branch": "feature/hypothesis-runtime-v0.7",
   "base": {
@@ -24,7 +24,13 @@
     "H04_HYPOTHESES_O09_ABC",
     "H04_HYPOTHESES_G0_G1_G2",
     "HYPOTHESIS_SCHEMA",
-    "HYPOTHESIS_INTEGRITY_RUNTIME"
+    "HYPOTHESIS_INTEGRITY_RUNTIME",
+    "TEN_CORE_OPEN_ALTERNATIVE_SETS",
+    "HYPOTHESIS_COMPATIBILITY_GRAPH",
+    "TEN_SCENARIO_SEED_BUNDLES",
+    "CURRENT_C_NO_SEARCH_BONUS",
+    "SCENARIO_RUNTIME",
+    "HYPOTHESIS_SCENARIO_CLI"
   ],
-  "next_gate": "P1_EXPAND_CORE_OPEN"
+  "next_gate": "P1_CI_THEN_P2_COUNTERFACTUAL_REPLAY"
 }

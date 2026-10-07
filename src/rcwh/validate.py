@@ -8,6 +8,7 @@ from .coverage import CoverageAuditRuntime
 from .graph import ProvenanceGraph
 from .io import load_data
 from .history import HistoricalMechanismRegistry
+from .hypotheses import HypothesisRuntime
 from .implementation_alignment import ImplementationAlignmentRuntime
 from .knowledge import CharacterKnowledgeRuntime
 from .literals import LiteralRegistry
@@ -25,6 +26,7 @@ from .registry import MigrationRegistry
 from .reconstruction import ReconstructionRegistry
 from .regression import run_r4_evidence_regression
 from .schema import validate_instance
+from .scenarios import ScenarioRuntime
 from .world import WorldRuntime
 
 
@@ -246,6 +248,65 @@ def validate_repository(root: Path) -> list[str]:
             f"{repository_governance.relative_to(root)}: {e}" for e in errs
         )
 
+
+    hypothesis_state_path = root / "data" / "project_state" / "hypothesis_runtime_v07.json"
+    if hypothesis_state_path.exists():
+        errs = validate_instance(
+            load_data(hypothesis_state_path),
+            load_data(schema_dir / "hypothesis_runtime_state.schema.json"),
+        )
+        errors.extend(
+            f"{hypothesis_state_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    fidelity_audit_path = root / "data" / "fidelity" / "audit_registry.json"
+    if fidelity_audit_path.exists():
+        errs = validate_instance(
+            load_data(fidelity_audit_path),
+            load_data(schema_dir / "fidelity_audit.schema.json"),
+        )
+        errors.extend(
+            f"{fidelity_audit_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    fidelity_backfill_path = root / "data" / "fidelity" / "hypothesis_source_backfill.json"
+    if fidelity_backfill_path.exists():
+        errs = validate_instance(
+            load_data(fidelity_backfill_path),
+            load_data(schema_dir / "hypothesis_source_backfill.schema.json"),
+        )
+        errors.extend(
+            f"{fidelity_backfill_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    hypothesis_schema = load_data(schema_dir / "hypothesis.schema.json")
+    for path in sorted((root / "data" / "hypotheses").glob("*.json")):
+        doc = load_data(path) or {}
+        for i, item in enumerate(doc.get("hypotheses", [])):
+            errs = validate_instance(item, hypothesis_schema)
+            errors.extend(
+                f"{path.relative_to(root)} hypotheses[{i}]: {e}" for e in errs
+            )
+
+    compatibility_path = root / "data" / "hypotheses" / "compatibility.json"
+    if compatibility_path.exists():
+        errs = validate_instance(
+            load_data(compatibility_path),
+            load_data(schema_dir / "hypothesis_compatibility.schema.json"),
+        )
+        errors.extend(
+            f"{compatibility_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    scenario_schema = load_data(schema_dir / "scenario_bundle.schema.json")
+    for path in sorted((root / "data" / "scenarios").glob("*.json")):
+        doc = load_data(path) or {}
+        for i, item in enumerate(doc.get("scenarios", [])):
+            errs = validate_instance(item, scenario_schema)
+            errors.extend(
+                f"{path.relative_to(root)} scenarios[{i}]: {e}" for e in errs
+            )
+
     prewrite_path = root / "data" / "prewrite" / "v06.json"
     if prewrite_path.exists():
         errs = validate_instance(
@@ -311,6 +372,14 @@ def validate_repository(root: Path) -> list[str]:
         errors.extend(open_interfaces.validate_integrity(graph, literals, mechanisms))
         reconstruction = ReconstructionRegistry.from_repo(root)
         errors.extend(reconstruction.validate_integrity(registry, open_interfaces))
+        hypotheses = HypothesisRuntime.from_repo(root)
+        errors.extend(
+            hypotheses.validate_integrity(
+                graph, open_interfaces, mechanisms, reconstruction
+            )
+        )
+        scenarios = ScenarioRuntime.from_repo(root)
+        errors.extend(scenarios.validate_integrity(hypotheses, open_interfaces))
         world = WorldRuntime.from_repo(root)
         errors.extend(
             validate_instance(

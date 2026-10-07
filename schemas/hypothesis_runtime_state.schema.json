@@ -20,7 +20,7 @@
       "const": "hypothesis-runtime:v0.7"
     },
     "phase": {
-      "const": "P0_TARGETED_FIDELITY_BACKFILL"
+      "const": "P1_CORE_OPEN_SCENARIOS"
     },
     "status": {
       "enum": [
@@ -91,14 +91,14 @@
     },
     "delivered": {
       "type": "array",
-      "minItems": 6,
+      "minItems": 12,
       "uniqueItems": true,
       "items": {
         "type": "string"
       }
     },
     "next_gate": {
-      "const": "P1_EXPAND_CORE_OPEN"
+      "const": "P1_CI_THEN_P2_COUNTERFACTUAL_REPLAY"
     }
   },
   "additionalProperties": false
