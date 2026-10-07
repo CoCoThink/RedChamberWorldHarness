@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH Post-M8 Repository Governance",
+  "type": "object",
+  "required": [
+    "id",
+    "status",
+    "authoritative_branches",
+    "safe_delete_when_tool_available",
+    "quarantined_forks",
+    "issue_audit",
+    "current_literary_gate",
+    "stable_active_sha256"
+  ],
+  "properties": {
+    "id": {
+      "const": "repo-governance:post-m8:20261007"
+    },
+    "status": {
+      "const": "ACTIVE"
+    },
+    "authoritative_branches": {
+      "type": "object"
+    },
+    "safe_delete_when_tool_available": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "quarantined_forks": {
+      "type": "array",
+      "minItems": 1
+    },
+    "issue_audit": {
+      "type": "object"
+    },
+    "current_literary_gate": {
+      "type": "object"
+    },
+    "stable_active_sha256": {
+      "const": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+    }
+  },
+  "additionalProperties": false
+}
