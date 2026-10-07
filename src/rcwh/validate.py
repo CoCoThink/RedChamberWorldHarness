@@ -8,6 +8,7 @@ from .io import load_data
 from .history import HistoricalMechanismRegistry
 from .literals import LiteralRegistry
 from .literary_eval import LiteraryEvaluationProfileRegistry
+from .literary_ecology import LiteraryEcologyRuntime
 from .open_interfaces import OpenInterfaceRegistry
 from .object_network import ObjectNetworkRuntime
 from .plocks import LiteraryProtectionRegistry
@@ -112,6 +113,26 @@ def validate_repository(root: Path) -> list[str]:
             f"{migration_extension_m4.relative_to(root)}: {e}" for e in errs
         )
 
+    migration_extension_m5 = root / "data" / "registry" / "m5.json"
+    if migration_extension_m5.exists():
+        errs = validate_instance(
+            load_data(migration_extension_m5),
+            load_data(schema_dir / "migration_registry_extension_m5.schema.json"),
+        )
+        errors.extend(
+            f"{migration_extension_m5.relative_to(root)}: {e}" for e in errs
+        )
+
+    literary_ecology_path = root / "data" / "literary_ecology" / "m5.json"
+    if literary_ecology_path.exists():
+        errs = validate_instance(
+            load_data(literary_ecology_path),
+            load_data(schema_dir / "literary_ecology.schema.json"),
+        )
+        errors.extend(
+            f"{literary_ecology_path.relative_to(root)}: {e}" for e in errs
+        )
+
     object_network_path = root / "data" / "objects" / "m4.json"
     if object_network_path.exists():
         errs = validate_instance(
@@ -155,6 +176,8 @@ def validate_repository(root: Path) -> list[str]:
         errors.extend(world.validate_integrity(registry, reconstruction))
         objects = ObjectNetworkRuntime.from_repo(root)
         errors.extend(objects.validate_integrity(root, registry, reconstruction))
+        literary_ecology = LiteraryEcologyRuntime.from_repo(root)
+        errors.extend(literary_ecology.validate_integrity(registry))
         regression = run_r4_evidence_regression(root)
         plocks = LiteraryProtectionRegistry.from_repo(root)
         errors.extend(
@@ -188,6 +211,6 @@ def validate_repository(root: Path) -> list[str]:
                 for finding in gate["findings"]:
                     errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"registry/reconstruction/world/object/provenance/literal/history/open/regression/plock/competition graph: {exc}")
+        errors.append(f"registry/reconstruction/world/object/literary_ecology/provenance/literal/history/open/regression/plock/competition graph: {exc}")
 
     return errors
