@@ -30,12 +30,17 @@ It may not:
 
 ## Phase-0 gate
 
-Required before PASS:
+Result: **PASS**.
 
-1. schema validation PASS;
-2. H04 sample integrity PASS;
-3. provenance/history regression PASS;
-4. stable ACTIVE unchanged;
-5. full repository tests PASS.
+Gate candidate validation run: `37629157122`
 
-Next after gate PASS: expand v0.7 from the H04 sample to the first ten core OPEN interfaces and construct scenario bundles.
+Final PASS-state confirmation run: `37629836350`
+
+- schema validation: PASS;
+- H04 sample integrity: PASS;
+- provenance/history regression: PASS;
+- stable ACTIVE unchanged: PASS;
+- canonical Chapter 89 remains IN_REVIEW with manual P-Lock / blind read pending;
+- full repository tests: **229 passed** on the final PASS-state confirmation run.
+
+Next gate: `P1_EXPAND_CORE_OPEN` — expand v0.7 from the H04 sample to the first ten core OPEN interfaces and construct scenario bundles.
