@@ -118,14 +118,16 @@ def test_evidence_trace_resolves_ten_du_yin_sources_to_registered_sha_paths():
     assert all(len(x["sha256"]) == 64 for x in payload["resolved_sources"])
 
 
-def test_m5_registry_expansion_keeps_current_markdown_zero_and_gate_closed():
+def test_m5_registry_expansion_survives_signed_m8_gate():
     registry = MigrationRegistry.from_repo(ROOT)
     current = registry.current_summary()
     assert len(registry.documents) == len(registry.content_hashes) == 65
     assert current["literary_ecology_queryable"] is True
     assert current["literary_ecology_source_documents"] == 29
     assert current["current_markdown_islands"] == 0
-    assert current["completion_gate_ready"] is False
+    assert current["completion_gate_ready"] is True
+    assert current["completion_gate_status"] == "PASS"
+    assert current["literature_resume_authorized"] is True
 
 
 def test_m5_integrity_passes():
