@@ -15,6 +15,7 @@ from .registry import MigrationRegistry
 from .reconstruction import ReconstructionRegistry
 from .regression import run_r4_evidence_regression
 from .schema import validate_instance
+from .world import WorldRuntime
 
 
 def validate_repository(root: Path) -> list[str]:
@@ -90,6 +91,16 @@ def validate_repository(root: Path) -> list[str]:
             f"{migration_extension_path.relative_to(root)}: {e}" for e in errs
         )
 
+    migration_extension_m3 = root / "data" / "registry" / "m3.json"
+    if migration_extension_m3.exists():
+        errs = validate_instance(
+            load_data(migration_extension_m3),
+            load_data(schema_dir / "migration_registry_extension_m3.schema.json"),
+        )
+        errors.extend(
+            f"{migration_extension_m3.relative_to(root)}: {e}" for e in errs
+        )
+
     reconstruction_path = root / "data" / "reconstruction" / "m2.json"
     if reconstruction_path.exists():
         errs = validate_instance(
@@ -113,6 +124,14 @@ def validate_repository(root: Path) -> list[str]:
         errors.extend(open_interfaces.validate_integrity(graph, literals, mechanisms))
         reconstruction = ReconstructionRegistry.from_repo(root)
         errors.extend(reconstruction.validate_integrity(registry, open_interfaces))
+        world = WorldRuntime.from_repo(root)
+        errors.extend(
+            validate_instance(
+                world.data,
+                load_data(schema_dir / "world_runtime.schema.json"),
+            )
+        )
+        errors.extend(world.validate_integrity(registry, reconstruction))
         regression = run_r4_evidence_regression(root)
         plocks = LiteraryProtectionRegistry.from_repo(root)
         errors.extend(
@@ -146,6 +165,6 @@ def validate_repository(root: Path) -> list[str]:
                 for finding in gate["findings"]:
                     errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"registry/reconstruction/provenance/literal/history/open/regression/plock/competition graph: {exc}")
+        errors.append(f"registry/reconstruction/world/provenance/literal/history/open/regression/plock/competition graph: {exc}")
 
     return errors
