@@ -92,7 +92,7 @@ def test_m3_sources_are_registered_and_traceable():
     for source in w.data["sources"].values():
         assert source["document_ref"] in registry.documents
         assert registry.documents[source["document_ref"]]["sha256"] == source["sha256"]
-    assert len(registry.documents) == len(registry.content_hashes) == 38
+    assert len(registry.documents) == len(registry.content_hashes) == 65
 
 
 def test_world_integrity_passes_against_reconstruction():
