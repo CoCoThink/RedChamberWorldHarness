@@ -19,6 +19,7 @@ def audit() -> CoverageAuditRuntime:
 
 
 def test_p0_inventory_digest_and_exact_249_records():
+    assert audit().summary()["status"] == "PASS"
     rt = audit()
     assert rt.inventory_sha256 == P0_INVENTORY_SHA256
     assert len(rt.records) == 249
@@ -166,7 +167,7 @@ def test_m7_project_state_keeps_literature_frozen_and_m8_pending():
     state = audit().project_state
     assert state["milestones"]["M0"] == "PASS"
     assert state["milestones"]["M6"] == "PASS"
-    assert state["milestones"]["M7"] == "PASS_CANDIDATE"
+    assert state["milestones"]["M7"] == "PASS"
     assert state["milestones"]["M8"] == "PENDING"
     assert state["literature_freeze"]["active"] is True
     assert state["literature_freeze"]["ch89"] == "PHASE1_ONLY_DO_NOT_CONTINUE"
