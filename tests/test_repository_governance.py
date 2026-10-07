@@ -81,8 +81,8 @@ def test_five_obsolete_work_branches_are_explicitly_safe_to_delete():
 
 def test_issue_audit_closes_completed_items_and_preserves_real_residuals():
     audit = runtime().governance["issue_audit"]
-    assert audit["closed_completed"] == [1, 2, 3]
-    assert audit["open_partial"] == [4, 5, 6]
+    assert audit["closed_completed"] == [1, 2, 3, 4]
+    assert audit["open_partial"] == [5, 6]
 
 
 def test_literary_production_runtime_integrity_passes():
