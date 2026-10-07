@@ -1,0 +1,86 @@
+{
+  "id": "literary-production:post-m8:v1",
+  "status": "ACTIVE",
+  "authorized_by": {
+    "milestone": "M8",
+    "completion_gate": "PASS",
+    "main_merge_verified": true,
+    "main_release_sha": "fd5248d79df92cc570527889b81e7f91177772a7"
+  },
+  "source_branch": "literary/43-0-ch89-phase2",
+  "stable_active": {
+    "file_ref": "第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md",
+    "sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+    "mutated": false,
+    "promotion_required": true
+  },
+  "migration_gate_snapshot": {
+    "m6_fixture": "data/implementation_alignment/m6.json#competition_fixtures",
+    "m8_state": "data/project_state/m8.json",
+    "immutable": true
+  },
+  "live_pipeline": {
+    "sequence": [
+      86,
+      89,
+      92,
+      97
+    ],
+    "active_chapter": 92,
+    "chapters": [
+      {
+        "chapter": 86,
+        "state": "ADJUDICATED",
+        "winner": "ch86-B",
+        "promotion_state": "PROMOTION_CANDIDATE",
+        "stable_effect": "NONE"
+      },
+      {
+        "chapter": 89,
+        "state": "ADJUDICATED",
+        "winner": "ch89-B",
+        "promotion_state": "PROMOTION_CANDIDATE",
+        "stable_effect": "NONE"
+      },
+      {
+        "chapter": 92,
+        "state": "READY_FOR_CANDIDATES",
+        "winner": null,
+        "promotion_state": "NOT_ELIGIBLE",
+        "stable_effect": "NONE"
+      },
+      {
+        "chapter": 97,
+        "state": "BLOCKED_BY_PREDECESSOR",
+        "winner": null,
+        "promotion_state": "NOT_ELIGIBLE",
+        "stable_effect": "NONE"
+      }
+    ]
+  },
+  "ch89_phase2": {
+    "status": "COMPLETE",
+    "winner": "ch89-B",
+    "verdict": "WINNER-B / REVISE-B",
+    "six_field": "PASS",
+    "machine_plock": "REPLACEMENT_CASE",
+    "human_plock": "REPLACEMENT_ACCEPTED",
+    "blind_read": "PASS",
+    "stable_promotion": false,
+    "report_refs": [
+      "artifacts/43-0/ch89/SIX_FIELD_REGRESSION.md",
+      "artifacts/43-0/ch89/PLOCK_REGRESSION.md",
+      "artifacts/43-0/ch89/BLIND_READ_RESULT.md",
+      "artifacts/43-0/ch89/ADJUDICATION.md",
+      "artifacts/43-0/ch89/PHASE2_REPORT.md"
+    ]
+  },
+  "invariants": [
+    "Evidence/Claim/Decision authority is unchanged by literary competition.",
+    "Historical mechanisms remain FEASIBILITY_ONLY.",
+    "P-Lock remains LITERARY_PROTECTION_ONLY.",
+    "A competition winner is only a PROMOTION_CANDIDATE until a separate promotion gate succeeds.",
+    "Stable ACTIVE remains v1.4 until an explicit promotion release."
+  ],
+  "next_action": "43-0 Chapter 92 Phase 1 / candidate preparation"
+}
