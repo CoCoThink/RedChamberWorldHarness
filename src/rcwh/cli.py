@@ -11,6 +11,7 @@ from .history import HistoricalMechanismRegistry, format_mechanism
 from .io import load_data
 from .literals import LiteralRegistry, format_literal
 from .literary_eval import evaluate_literary_candidate, format_literary_evaluation
+from .literary_ecology import LiteraryEcologyRuntime, format_literary_ecology
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .object_network import ObjectNetworkRuntime, format_object
 from .plocks import LiteraryProtectionRegistry, format_plock
@@ -340,6 +341,50 @@ def cmd_object(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_literary_ecology(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    ecology = LiteraryEcologyRuntime.from_repo(root)
+    try:
+        kind = args.literary_ecology_command
+        if kind == "summary":
+            payload = ecology.summary()
+        elif kind == "dimension":
+            payload = ecology.dimension(args.key)
+        elif kind == "voice":
+            payload = ecology.voice(args.key)
+        elif kind == "technique":
+            payload = ecology.technique(args.key)
+        elif kind == "evidence":
+            payload = ecology.evidence_node(args.key)
+        elif kind == "chapter":
+            payload = ecology.chapter(args.chapter)
+        elif kind == "qingbang":
+            payload = ecology.qingbang()
+        elif kind == "ten-du-yin":
+            payload = ecology.ten_du_yin()
+        elif kind == "xu-zhuangzi":
+            payload = ecology.xu_zhuangzi()
+        elif kind == "daiyu":
+            payload = ecology.daiyu_interfaces()
+        elif kind == "g":
+            payload = ecology.g(args.key)
+        elif kind == "search":
+            payload = ecology.search(args.term)
+        elif kind == "trace":
+            registry = MigrationRegistry.from_repo(root)
+            payload = ecology.trace(args.kind, args.key, registry)
+        else:
+            raise KeyError(f"Unknown literary-ecology command: {kind}")
+    except (KeyError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_literary_ecology(kind, payload))
+    return 0
+
+
 def cmd_promotion(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     registry = PromotionRegistry.from_repo(root)
@@ -464,6 +509,42 @@ def main() -> None:
     p.add_argument("chapter", type=int)
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_world)
+
+    p_lit_ecology = sub.add_parser("literary-ecology")
+    lit_ecology_sub = p_lit_ecology.add_subparsers(
+        dest="literary_ecology_command", required=True
+    )
+    p = lit_ecology_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_ecology)
+    for name in ("dimension", "voice", "technique", "evidence", "g"):
+        p = lit_ecology_sub.add_parser(name)
+        p.add_argument("key")
+        p.add_argument("--json", action="store_true")
+        p.set_defaults(func=cmd_literary_ecology)
+    p = lit_ecology_sub.add_parser("chapter")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_ecology)
+    for name in ("qingbang", "ten-du-yin", "xu-zhuangzi", "daiyu"):
+        p = lit_ecology_sub.add_parser(name)
+        p.add_argument("--json", action="store_true")
+        p.set_defaults(func=cmd_literary_ecology)
+    p = lit_ecology_sub.add_parser("search")
+    p.add_argument("term")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_ecology)
+    p = lit_ecology_sub.add_parser("trace")
+    p.add_argument(
+        "kind",
+        choices=[
+            "dimension", "voice", "technique", "evidence", "g", "chapter",
+            "qingbang", "ten_du_yin", "xu_zhuangzi"
+        ],
+    )
+    p.add_argument("key")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_ecology)
 
     p_object = sub.add_parser("object")
     object_sub = p_object.add_subparsers(dest="object_command", required=True)
