@@ -35,6 +35,7 @@ from .registry import (
 from .reconstruction import ReconstructionRegistry, format_reconstruction
 from .runtime import WorldState
 from .scenarios import ScenarioRuntime
+from .scenario_replay import CounterfactualReplayRuntime
 from .world import WorldRuntime, format_world
 from .trace import format_trace
 from .validate import validate_repository
@@ -192,6 +193,8 @@ def cmd_scenario(args: argparse.Namespace) -> int:
     hypotheses = HypothesisRuntime.from_repo(root)
     runtime = ScenarioRuntime.from_repo(root)
     opens = OpenInterfaceRegistry.from_repo(root)
+    replay = CounterfactualReplayRuntime.from_repo(root)
+    world = WorldRuntime.from_repo(root)
     try:
         kind = args.scenario_command
         if kind == "generate":
@@ -207,7 +210,19 @@ def cmd_scenario(args: argparse.Namespace) -> int:
         elif kind == "compare":
             payload = runtime.compare(args.keys, hypotheses)
         elif kind == "frontier":
-            payload = runtime.frontier()
+            payload = replay.frontier(runtime, world)
+        elif kind == "replay":
+            payload = replay.evaluate(args.key, runtime, world, args.chapter)
+        elif kind == "replay-all":
+            payload = replay.evaluate_all(runtime, world)
+        elif kind == "conflicts":
+            result = replay.evaluate(args.key, runtime, world)
+            payload = {
+                "scenario_id": args.key,
+                "status": result["status"],
+                "blockers": result["blockers"],
+                "pressures": result["pressures"],
+            }
         elif kind == "summary":
             payload = runtime.summary(hypotheses)
         else:
@@ -218,6 +233,12 @@ def cmd_scenario(args: argparse.Namespace) -> int:
     print(json.dumps(payload, ensure_ascii=False, indent=2))
     if kind == "validate":
         return 0 if payload["status"] == "PASS" else 1
+    if kind == "replay-all":
+        return 0 if payload["status"] == "PASS" else 1
+    if kind == "replay":
+        return 0 if payload["status"] != "REPLAY_BLOCKED" else 1
+    if kind == "conflicts":
+        return 0 if not payload["blockers"] else 1
     return 0
 
 def cmd_regression(args: argparse.Namespace) -> int:
@@ -847,6 +868,15 @@ def main() -> None:
     p.add_argument("keys", nargs="+")
     p.set_defaults(func=cmd_scenario)
     p = scenario_sub.add_parser("frontier")
+    p.set_defaults(func=cmd_scenario)
+    p = scenario_sub.add_parser("replay")
+    p.add_argument("key")
+    p.add_argument("--chapter", type=int)
+    p.set_defaults(func=cmd_scenario)
+    p = scenario_sub.add_parser("replay-all")
+    p.set_defaults(func=cmd_scenario)
+    p = scenario_sub.add_parser("conflicts")
+    p.add_argument("key")
     p.set_defaults(func=cmd_scenario)
 
     p_regression = sub.add_parser("regression")

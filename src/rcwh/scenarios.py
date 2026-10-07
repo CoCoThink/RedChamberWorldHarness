@@ -13,6 +13,7 @@ from .open_interfaces import OpenInterfaceRegistry
 class ScenarioRuntime:
     scenarios: dict[str, dict[str, Any]]
     compatibility: dict[str, Any]
+    replay_available: bool = False
 
     @classmethod
     def from_repo(cls, root: Path) -> "ScenarioRuntime":
@@ -28,7 +29,11 @@ class ScenarioRuntime:
                     scenarios[item_id] = item
         cpath = root / "data" / "hypotheses" / "compatibility.json"
         compatibility = load_data(cpath) if cpath.exists() else {}
-        return cls(scenarios=scenarios, compatibility=compatibility)
+        return cls(
+            scenarios=scenarios,
+            compatibility=compatibility,
+            replay_available=(root / "data" / "scenario_replay" / "v08.json").exists(),
+        )
 
     def validate_bundle(
         self,
@@ -127,7 +132,7 @@ class ScenarioRuntime:
                 None,
             ),
             "automatic_winner": False,
-            "world_replay": "PENDING_P2",
+            "world_replay": "AVAILABLE_V08" if self.replay_available else "PENDING_P2",
         }
 
     def get(self, scenario_id: str) -> dict[str, Any]:
@@ -162,7 +167,11 @@ class ScenarioRuntime:
 
     def frontier(self) -> dict[str, Any]:
         return {
-            "status": "NOT_RANKED_BEFORE_P2_REPLAY",
+            "status": (
+                "REPLAY_AVAILABLE_NOT_RANKED"
+                if self.replay_available
+                else "NOT_RANKED_BEFORE_P2_REPLAY"
+            ),
             "scenario_ids": sorted(
                 x["id"] for x in self.scenarios.values()
                 if x.get("status") == "ADMISSIBLE"

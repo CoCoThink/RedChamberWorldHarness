@@ -68,9 +68,9 @@ def test_p1_hypothesis_runtime_resolves_reconstruction_refs_when_given_registry(
     assert errors == []
 
 
-def test_scenario_frontier_has_no_single_total_score_before_replay():
+def test_scenario_frontier_has_no_single_total_score_after_replay():
     payload = scenarios().frontier()
-    assert payload["status"] == "NOT_RANKED_BEFORE_P2_REPLAY"
+    assert payload["status"] == "REPLAY_AVAILABLE_NOT_RANKED"
     assert payload["single_total_score"] is False
 
 
@@ -82,9 +82,9 @@ def test_scenario_compare_is_structural_not_ranked():
     assert payload["differences"]
 
 
-def test_p1_summary_reports_shadow_only_and_replay_pending():
+def test_p1_summary_reports_shadow_only_and_p2_replay_available():
     payload = scenarios().summary(hypotheses())
     assert payload["status"] == "SHADOW_ONLY"
     assert payload["core_open_with_two_or_more_alternatives"] >= 10
-    assert payload["world_replay"] == "PENDING_P2"
+    assert payload["world_replay"] == "AVAILABLE_V08"
     assert payload["automatic_winner"] is False
