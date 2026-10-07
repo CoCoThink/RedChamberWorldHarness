@@ -1,6 +1,6 @@
 # Scenario Literary Stress v0.10 — P4
 
-Status: **PASS_CANDIDATE / SHADOW_ONLY**
+Status: **PASS / SHADOW_ONLY**
 
 P4 takes only the four scenarios that survived both the six-axis mechanism frontier and the full eight-axis P3 frontier.
 
@@ -58,3 +58,27 @@ It does **not** mean:
 - Chapter 89 blind review is complete.
 
 Next after P4 PASS: **P5_NARRATIVE_DISCOURSE_RUNTIME**.
+
+
+## Final P4 gate
+
+Result: **PASS**.
+
+Validation run: `37644227669`
+
+- `rcwh validate`: PASS;
+- full repository tests: **264 passed / 0 failed**;
+- P3 robust-frontier scenarios tested: **4/4**;
+- scene-level stress probes: **20**;
+- all eight literary-stress dimensions receive repeated coverage in every scenario;
+- all four contracts: `STRESS_CONTRACT_READY`;
+- prose generation: **disabled**;
+- automatic literary PASS: **disabled**;
+- automatic winner: **disabled**;
+- Evidence / OPEN / stable ACTIVE effects: **NONE**;
+- Chapter 89 remains `IN_REVIEW` with manual P-Lock / independent blind read pending;
+- Chapters 92 / 97 remain blocked by predecessor.
+
+P4 therefore establishes only that all four Pareto survivors can support a sufficiently rich scene-level literary design. It does not rank their eventual prose.
+
+Next gate: **P5_NARRATIVE_DISCOURSE_RUNTIME**.
