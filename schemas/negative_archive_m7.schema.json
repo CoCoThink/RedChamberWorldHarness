@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH M7 Negative Archive",
+  "type": "object",
+  "required": [
+    "milestone",
+    "status",
+    "rule",
+    "package_fixtures",
+    "semantic_rejections",
+    "competition_fixtures",
+    "stable_active_effect"
+  ],
+  "properties": {
+    "milestone": {
+      "const": "M7"
+    },
+    "status": {
+      "type": "string"
+    },
+    "package_fixtures": {
+      "type": "array",
+      "minItems": 5
+    },
+    "semantic_rejections": {
+      "type": "array",
+      "minItems": 5
+    },
+    "competition_fixtures": {
+      "type": "array",
+      "minItems": 5
+    },
+    "stable_active_effect": {
+      "const": "NONE"
+    }
+  },
+  "additionalProperties": true
+}
