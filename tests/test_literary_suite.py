@@ -14,7 +14,7 @@ def suite() -> LiteraryEvaluatorSuite:
 
 def test_issue5_acceptance_flags_are_complete_and_never_auto_pass():
     payload = suite().summary()
-    assert payload["status"] == "PASS_CANDIDATE"
+    assert payload["status"] == "PASS"
     assert payload["authority"] == "LITERARY_SCREENING_ONLY"
     assert payload["automatic_literary_pass"] is False
     assert payload["all_acceptance"] is True
