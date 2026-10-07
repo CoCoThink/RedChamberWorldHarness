@@ -1,0 +1,1537 @@
+{
+  "milestone": "M3",
+  "status": "PASS_CANDIDATE",
+  "epistemic_rule": "World state is an executable downstream model. Current-C placement, residence, resource, body and knowledge states constrain current implementation only and never harden Evidence or close OPEN interfaces.",
+  "sources": {
+    "presence": {
+      "document_ref": "doc:30a6ecd37a",
+      "sha256": "30a6ecd37a4f3e846a72ef3cd445ba78db902fa788d45ee7cd3d73d86eb4df32"
+    },
+    "spaces": {
+      "document_ref": "doc:92749de3e6",
+      "sha256": "92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb"
+    },
+    "social": {
+      "document_ref": "doc:bc6bf7cb5e",
+      "sha256": "bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823"
+    },
+    "flows": {
+      "document_ref": "doc:ffed02aee8",
+      "sha256": "ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50"
+    },
+    "longlines": {
+      "document_ref": "doc:56727d17b5",
+      "sha256": "56727d17b5588cdecac3d0cf66b0030a6673ace47d532937d7988141e9cc41cd"
+    },
+    "body": {
+      "document_ref": "doc:7e4ba5576d",
+      "sha256": "7e4ba5576d56cf953338ef9dfa98b9dea3da4be4a595fff241a5c26d4c7e23bf"
+    },
+    "run_state": {
+      "document_ref": "doc:417a201365f0",
+      "sha256": "417a201365f0e5c961b1497b098eaa8f40c02cabc07cf2a79391a6d2ae00ed69"
+    },
+    "central_chain": {
+      "document_ref": "doc:b32e45cbc074",
+      "sha256": "b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
+    }
+  },
+  "characters": [
+    {
+      "id": "baoyu",
+      "name": "贾宝玉",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "FREE",
+        "marital_status": "UNMARRIED",
+        "household_role": "jia_son",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "baochai",
+      "name": "薛宝钗",
+      "groups": [
+        "jia_household",
+        "xue_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNMARRIED",
+        "household_role": "xue_daughter_guest",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "daiyu",
+      "name": "林黛玉",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNMARRIED",
+        "household_role": "jia_guest",
+        "body_state": "chronic_declining"
+      }
+    },
+    {
+      "id": "xiangling",
+      "name": "香菱",
+      "groups": [
+        "xue_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S01",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "CONCUBINE_OF_XUEPAN",
+        "household_role": "xue_household_concubine",
+        "body_state": "terminal_chronic"
+      }
+    },
+    {
+      "id": "tanchun",
+      "name": "贾探春",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNMARRIED",
+        "household_role": "jia_daughter",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "xiren",
+      "name": "花袭人",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNMARRIED",
+        "household_role": "baoyu_attendant",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "sheyue",
+      "name": "麝月",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "baoyu_attendant",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "fengjie",
+      "name": "王熙凤",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "MARRIED_JIALIAN",
+        "household_role": "household_manager",
+        "body_state": "chronic_old_illness"
+      }
+    },
+    {
+      "id": "ping_er",
+      "name": "平儿",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "fengjie_attendant",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "qiaojie",
+      "name": "巧姐",
+      "groups": [
+        "jia_household",
+        "human",
+        "child"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "CHILD",
+        "household_role": "fengjie_daughter",
+        "body_state": "ordinary_child"
+      }
+    },
+    {
+      "id": "jia_yun",
+      "name": "贾芸",
+      "groups": [
+        "jia_network",
+        "human"
+      ],
+      "baseline": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "kin_runner",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "xiaohong",
+      "name": "小红",
+      "groups": [
+        "old_servant_network",
+        "human"
+      ],
+      "baseline": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "former_servant",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "qianxue",
+      "name": "茜雪",
+      "groups": [
+        "old_servant_network",
+        "human"
+      ],
+      "baseline": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "former_servant",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "liulaolao",
+      "name": "刘姥姥",
+      "groups": [
+        "liu_household",
+        "human"
+      ],
+      "baseline": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "rural_kin_network",
+        "body_state": "older_adult"
+      }
+    },
+    {
+      "id": "xiangyun",
+      "name": "史湘云",
+      "groups": [
+        "human"
+      ],
+      "baseline": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "OPEN",
+        "household_role": "kin_friend",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "wei_ruolan",
+      "name": "卫若兰",
+      "groups": [
+        "human"
+      ],
+      "baseline": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "OPEN",
+        "household_role": "young_gentry",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "miaoyu",
+      "name": "妙玉",
+      "groups": [
+        "religious_network",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "independent_religious_woman",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "xichun",
+      "name": "贾惜春",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNMARRIED",
+        "household_role": "jia_daughter",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "yingchun",
+      "name": "贾迎春",
+      "groups": [
+        "human"
+      ],
+      "baseline": {
+        "location": "OFFSTAGE_MARRIED_HOUSEHOLD",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "MARRIED_SUN",
+        "household_role": "married_daughter",
+        "body_state": "under_marital_pressure"
+      }
+    },
+    {
+      "id": "yuanchun",
+      "name": "贾元春",
+      "groups": [
+        "human"
+      ],
+      "baseline": {
+        "location": "PALACE_OFFSTAGE",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "MARRIED_IMPERIAL",
+        "household_role": "imperial_consort",
+        "body_state": "unknown"
+      }
+    },
+    {
+      "id": "liwan",
+      "name": "李纨",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "WIDOWED",
+        "household_role": "widow_mother",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "jialan",
+      "name": "贾兰",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "son_student",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "jiang_yuhan",
+      "name": "蒋玉菡",
+      "groups": [
+        "human",
+        "profession_performer"
+      ],
+      "baseline": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "performer",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "zhen_baoyu",
+      "name": "甄宝玉",
+      "groups": [
+        "human"
+      ],
+      "baseline": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "zhen_household_member",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "jiamu",
+      "name": "贾母",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "WIDOWED",
+        "household_role": "senior_matriarch",
+        "body_state": "elderly"
+      }
+    },
+    {
+      "id": "wangfuren",
+      "name": "王夫人",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "MARRIED",
+        "household_role": "senior_household_woman",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "xue_yima",
+      "name": "薛姨妈",
+      "groups": [
+        "xue_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "WIDOWED",
+        "household_role": "xue_matriarch",
+        "body_state": "ordinary"
+      }
+    },
+    {
+      "id": "jialian",
+      "name": "贾琏",
+      "groups": [
+        "jia_household",
+        "human"
+      ],
+      "baseline": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "MARRIED_FENGJIE",
+        "household_role": "household_male_manager",
+        "body_state": "ordinary"
+      }
+    }
+  ],
+  "relations": [
+    {
+      "id": "rel:baoyu_daiyu",
+      "a": "baoyu",
+      "b": "daiyu",
+      "type": "emotional_bond",
+      "baseline_status": "ACTIVE",
+      "source_refs": [
+        "R10",
+        "R12"
+      ]
+    },
+    {
+      "id": "rel:baoyu_baochai",
+      "a": "baoyu",
+      "b": "baochai",
+      "type": "marriage",
+      "baseline_status": "NOT_MARRIED",
+      "source_refs": [
+        "R13",
+        "R14"
+      ]
+    },
+    {
+      "id": "rel:xiren_baoyu",
+      "a": "xiren",
+      "b": "baoyu",
+      "type": "attendant",
+      "baseline_status": "ACTIVE",
+      "source_refs": [
+        "R20",
+        "R21",
+        "R22"
+      ]
+    },
+    {
+      "id": "rel:xiren_jiang",
+      "a": "xiren",
+      "b": "jiang_yuhan",
+      "type": "marriage",
+      "baseline_status": "NOT_MARRIED",
+      "source_refs": [
+        "R26"
+      ]
+    },
+    {
+      "id": "rel:sheyue_baoyu",
+      "a": "sheyue",
+      "b": "baoyu",
+      "type": "attendant",
+      "baseline_status": "ACTIVE",
+      "source_refs": [
+        "R21",
+        "R22",
+        "R43"
+      ]
+    },
+    {
+      "id": "rel:fengjie_ping",
+      "a": "fengjie",
+      "b": "ping_er",
+      "type": "manager_attendant",
+      "baseline_status": "ACTIVE",
+      "source_refs": []
+    },
+    {
+      "id": "rel:fengjie_qiaojie",
+      "a": "fengjie",
+      "b": "qiaojie",
+      "type": "mother_child",
+      "baseline_status": "ACTIVE",
+      "source_refs": [
+        "R29",
+        "R37"
+      ]
+    },
+    {
+      "id": "rel:liulaolao_qiaojie",
+      "a": "liulaolao",
+      "b": "qiaojie",
+      "type": "caregiver",
+      "baseline_status": "INACTIVE",
+      "source_refs": [
+        "R37",
+        "R38"
+      ]
+    },
+    {
+      "id": "rel:xiangyun_weiruolan",
+      "a": "xiangyun",
+      "b": "wei_ruolan",
+      "type": "marriage_or_pairing",
+      "baseline_status": "OPEN",
+      "source_refs": [
+        "R34"
+      ]
+    },
+    {
+      "id": "rel:liwan_jialan",
+      "a": "liwan",
+      "b": "jialan",
+      "type": "mother_child",
+      "baseline_status": "ACTIVE",
+      "source_refs": [
+        "R39",
+        "R40"
+      ]
+    }
+  ],
+  "institutions": [
+    {
+      "id": "INST-JIA-HOUSE",
+      "name": "贾府家庭权威与内宅供给",
+      "chapters": "81—88",
+      "state": "FUNCTIONAL_THEN_ERODING"
+    },
+    {
+      "id": "INST-CONFISCATION",
+      "name": "官面查抄/封固/点看",
+      "chapters": "89—91",
+      "state": "EXTERNAL_CONTROL"
+    },
+    {
+      "id": "INST-BORROWED-HOUSE",
+      "name": "第一处借住院落小家庭",
+      "chapters": "89—94",
+      "state": "TEMPORARY_COMPRESSED_HOUSEHOLD"
+    },
+    {
+      "id": "INST-DETENTION",
+      "name": "监所/狱神庙羁押体系",
+      "chapters": "92",
+      "state": "CONTROLLED_ACCESS"
+    },
+    {
+      "id": "INST-LIU-HOUSE",
+      "name": "刘姥姥乡居照看网络",
+      "chapters": "94+",
+      "state": "SPACE_AND_LABOR_AID"
+    },
+    {
+      "id": "INST-LOWCOST-HOUSE",
+      "name": "第二处低成本贫居",
+      "chapters": "95—99",
+      "state": "STABLE_LOW_CASH_HOUSEHOLD"
+    },
+    {
+      "id": "INST-MARKET",
+      "name": "典当/米炭/车脚/劳务市场",
+      "chapters": "89—99",
+      "state": "RECURRING_EXTERNAL_ECONOMY"
+    },
+    {
+      "id": "INST-NUNNERY",
+      "name": "小庵/尼庵生活制度",
+      "chapters": "97",
+      "state": "RELIGIOUS_DAILY_LABOR"
+    },
+    {
+      "id": "INST-TEMPLE",
+      "name": "城外寺院",
+      "chapters": "99",
+      "state": "VOLUNTARY_RELIGIOUS_RESIDENCE"
+    }
+  ],
+  "baseline": {
+    "chapter": 80,
+    "global": {
+      "economy_stage": "E0",
+      "estate_control": "HOUSEHOLD_CONTROL",
+      "resource_mode": "OLD_HOUSE_SYSTEM_FUNCTIONAL",
+      "ritual_state": "NORMAL",
+      "household_authority": "JIA_FAMILY_STRUCTURE",
+      "season_marker": null,
+      "outer_frame": "CLOSED",
+      "human_access_to_outer_frame_knowledge": false
+    },
+    "characters": {
+      "baoyu": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "FREE",
+        "marital_status": "UNMARRIED",
+        "household_role": "jia_son",
+        "body_state": "ordinary"
+      },
+      "baochai": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNMARRIED",
+        "household_role": "xue_daughter_guest",
+        "body_state": "ordinary"
+      },
+      "daiyu": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNMARRIED",
+        "household_role": "jia_guest",
+        "body_state": "chronic_declining"
+      },
+      "xiangling": {
+        "location": "S01",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "CONCUBINE_OF_XUEPAN",
+        "household_role": "xue_household_concubine",
+        "body_state": "terminal_chronic"
+      },
+      "tanchun": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNMARRIED",
+        "household_role": "jia_daughter",
+        "body_state": "ordinary"
+      },
+      "xiren": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNMARRIED",
+        "household_role": "baoyu_attendant",
+        "body_state": "ordinary"
+      },
+      "sheyue": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "baoyu_attendant",
+        "body_state": "ordinary"
+      },
+      "fengjie": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "MARRIED_JIALIAN",
+        "household_role": "household_manager",
+        "body_state": "chronic_old_illness"
+      },
+      "ping_er": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "fengjie_attendant",
+        "body_state": "ordinary"
+      },
+      "qiaojie": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "CHILD",
+        "household_role": "fengjie_daughter",
+        "body_state": "ordinary_child"
+      },
+      "jia_yun": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "kin_runner",
+        "body_state": "ordinary"
+      },
+      "xiaohong": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "former_servant",
+        "body_state": "ordinary"
+      },
+      "qianxue": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "former_servant",
+        "body_state": "ordinary"
+      },
+      "liulaolao": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "rural_kin_network",
+        "body_state": "older_adult"
+      },
+      "xiangyun": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "OPEN",
+        "household_role": "kin_friend",
+        "body_state": "ordinary"
+      },
+      "wei_ruolan": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "OPEN",
+        "household_role": "young_gentry",
+        "body_state": "ordinary"
+      },
+      "miaoyu": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "independent_religious_woman",
+        "body_state": "ordinary"
+      },
+      "xichun": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNMARRIED",
+        "household_role": "jia_daughter",
+        "body_state": "ordinary"
+      },
+      "yingchun": {
+        "location": "OFFSTAGE_MARRIED_HOUSEHOLD",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "MARRIED_SUN",
+        "household_role": "married_daughter",
+        "body_state": "under_marital_pressure"
+      },
+      "yuanchun": {
+        "location": "PALACE_OFFSTAGE",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "MARRIED_IMPERIAL",
+        "household_role": "imperial_consort",
+        "body_state": "unknown"
+      },
+      "liwan": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "WIDOWED",
+        "household_role": "widow_mother",
+        "body_state": "ordinary"
+      },
+      "jialan": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "son_student",
+        "body_state": "ordinary"
+      },
+      "jiang_yuhan": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "performer",
+        "body_state": "ordinary"
+      },
+      "zhen_baoyu": {
+        "location": null,
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "UNRESOLVED",
+        "household_role": "zhen_household_member",
+        "body_state": "ordinary"
+      },
+      "jiamu": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "WIDOWED",
+        "household_role": "senior_matriarch",
+        "body_state": "elderly"
+      },
+      "wangfuren": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "MARRIED",
+        "household_role": "senior_household_woman",
+        "body_state": "ordinary"
+      },
+      "xue_yima": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "WIDOWED",
+        "household_role": "xue_matriarch",
+        "body_state": "ordinary"
+      },
+      "jialian": {
+        "location": "S02",
+        "life_state": "ACTIVE",
+        "legal_status": "NOT_AT_ISSUE",
+        "marital_status": "MARRIED_FENGJIE",
+        "household_role": "household_male_manager",
+        "body_state": "ordinary"
+      }
+    },
+    "relations": {
+      "rel:baoyu_daiyu": {
+        "status": "ACTIVE"
+      },
+      "rel:baoyu_baochai": {
+        "status": "NOT_MARRIED"
+      },
+      "rel:xiren_baoyu": {
+        "status": "ACTIVE"
+      },
+      "rel:xiren_jiang": {
+        "status": "NOT_MARRIED"
+      },
+      "rel:sheyue_baoyu": {
+        "status": "ACTIVE"
+      },
+      "rel:fengjie_ping": {
+        "status": "ACTIVE"
+      },
+      "rel:fengjie_qiaojie": {
+        "status": "ACTIVE"
+      },
+      "rel:liulaolao_qiaojie": {
+        "status": "INACTIVE"
+      },
+      "rel:xiangyun_weiruolan": {
+        "status": "OPEN"
+      },
+      "rel:liwan_jialan": {
+        "status": "ACTIVE"
+      }
+    }
+  },
+  "events": [
+    {
+      "id": "W81-XIANGLING-DEATH",
+      "chapter": 81,
+      "sequence": 90,
+      "effects": [
+        {
+          "set": "characters.xiangling.life_state",
+          "value": "DEAD"
+        },
+        {
+          "set": "characters.xiangling.body_state",
+          "value": "DEAD_AFTER_TERMINAL_ILLNESS"
+        }
+      ],
+      "source_refs": [
+        "R36"
+      ],
+      "epistemic": "CURRENT_RECONSTRUCTION"
+    },
+    {
+      "id": "W82-TANCHUN-DEPARTS",
+      "chapter": 82,
+      "sequence": 80,
+      "effects": [
+        {
+          "set": "characters.tanchun.location",
+          "value": "REMOTE_MARRIED_HOUSEHOLD_UNPINNED"
+        },
+        {
+          "set": "characters.tanchun.household_role",
+          "value": "remote_married_daughter"
+        }
+      ],
+      "source_refs": [
+        "R07"
+      ],
+      "epistemic": "CURRENT_RECONSTRUCTION"
+    },
+    {
+      "id": "W84-YUANCHUN-DEATH",
+      "chapter": 84,
+      "sequence": 30,
+      "effects": [
+        {
+          "set": "characters.yuanchun.life_state",
+          "value": "DEAD"
+        },
+        {
+          "set": "global.ritual_state",
+          "value": "YUANCHUN_MOURNING"
+        },
+        {
+          "set": "characters.daiyu.body_state",
+          "value": "declining_under_mourning"
+        }
+      ],
+      "source_refs": [
+        "R03"
+      ],
+      "epistemic": "MIXED_HARD_EVENT_CURRENT_WORLD"
+    },
+    {
+      "id": "W86-DAIYU-DEATH",
+      "chapter": 86,
+      "sequence": 90,
+      "effects": [
+        {
+          "set": "characters.daiyu.life_state",
+          "value": "DEAD"
+        },
+        {
+          "set": "characters.daiyu.body_state",
+          "value": "DEAD_AFTER_CHRONIC_DECLINE"
+        },
+        {
+          "set": "relations.rel:baoyu_daiyu.status",
+          "value": "ENDED_BY_DEATH"
+        }
+      ],
+      "source_refs": [
+        "R10",
+        "R11"
+      ],
+      "epistemic": "MIXED_HARD_EVENT_CURRENT_WORLD"
+    },
+    {
+      "id": "W87-GOLD-JADE-MARRIAGE",
+      "chapter": 87,
+      "sequence": 70,
+      "effects": [
+        {
+          "set": "characters.baoyu.marital_status",
+          "value": "MARRIED_BAOCHAI"
+        },
+        {
+          "set": "characters.baochai.marital_status",
+          "value": "MARRIED_BAOYU"
+        },
+        {
+          "set": "characters.baochai.household_role",
+          "value": "wife"
+        },
+        {
+          "set": "relations.rel:baoyu_baochai.status",
+          "value": "ACTIVE_SPOUSES"
+        }
+      ],
+      "source_refs": [
+        "R13",
+        "R14"
+      ],
+      "epistemic": "CURRENT_C_PLACEMENT_HARD_RELATION"
+    },
+    {
+      "id": "W88-XIREN-EXITS",
+      "chapter": 88,
+      "sequence": 60,
+      "effects": [
+        {
+          "set": "characters.xiren.marital_status",
+          "value": "MARRIED_JIANG_YUHAN"
+        },
+        {
+          "set": "characters.xiren.household_role",
+          "value": "former_baoyu_attendant"
+        },
+        {
+          "set": "characters.xiren.location",
+          "value": "OFFSTAGE_MARRIED_HOUSEHOLD"
+        },
+        {
+          "set": "relations.rel:xiren_baoyu.status",
+          "value": "FORMER_ATTENDANT"
+        },
+        {
+          "set": "relations.rel:xiren_jiang.status",
+          "value": "ACTIVE_SPOUSES"
+        },
+        {
+          "set": "characters.sheyue.household_role",
+          "value": "remaining_baoyu_baochai_attendant"
+        },
+        {
+          "set": "characters.yingchun.life_state",
+          "value": "DEAD"
+        }
+      ],
+      "source_refs": [
+        "R20",
+        "R21",
+        "R22",
+        "R26",
+        "R35"
+      ],
+      "epistemic": "CURRENT_RECONSTRUCTION"
+    },
+    {
+      "id": "W89-COLLAPSE-AND-RELOCATION",
+      "chapter": 89,
+      "sequence": 70,
+      "effects": [
+        {
+          "set": "global.economy_stage",
+          "value": "E1"
+        },
+        {
+          "set": "global.estate_control",
+          "value": "OFFICIAL_CONTROL"
+        },
+        {
+          "set": "global.resource_mode",
+          "value": "CONTROLLED_ASSETS_REALLOCATION"
+        },
+        {
+          "set": "characters.baoyu.location",
+          "value": "S06"
+        },
+        {
+          "set": "characters.baochai.location",
+          "value": "S06"
+        },
+        {
+          "set": "characters.sheyue.location",
+          "value": "S06"
+        },
+        {
+          "set": "characters.fengjie.location",
+          "value": "S06"
+        },
+        {
+          "set": "characters.ping_er.location",
+          "value": "S06"
+        },
+        {
+          "set": "characters.qiaojie.location",
+          "value": "S06"
+        },
+        {
+          "set": "characters.jiamu.location",
+          "value": "S06"
+        },
+        {
+          "set": "characters.wangfuren.location",
+          "value": "S06"
+        },
+        {
+          "set": "characters.liwan.location",
+          "value": "S06"
+        },
+        {
+          "set": "characters.jialan.location",
+          "value": "S06"
+        }
+      ],
+      "source_refs": [
+        "R02",
+        "R04"
+      ],
+      "epistemic": "CURRENT_C_WORLD"
+    },
+    {
+      "id": "W90-MANAGEMENT-DECLINE",
+      "chapter": 90,
+      "sequence": 50,
+      "effects": [
+        {
+          "set": "characters.baochai.household_role",
+          "value": "wife_and_daily_manager"
+        },
+        {
+          "set": "characters.fengjie.body_state",
+          "value": "old_illness_worsening_under_labor"
+        },
+        {
+          "set": "global.household_authority",
+          "value": "NOMINAL_AND_ACTUAL_POWER_SEPARATING"
+        }
+      ],
+      "source_refs": [
+        "R23",
+        "R24",
+        "R27",
+        "R28"
+      ],
+      "epistemic": "CURRENT_C_WORLD"
+    },
+    {
+      "id": "W91-SUMMONED-FIRST-WINTER",
+      "chapter": 91,
+      "sequence": 80,
+      "effects": [
+        {
+          "set": "characters.baoyu.legal_status",
+          "value": "FORMALLY_SUMMONED_PENDING_INQUIRY"
+        },
+        {
+          "set": "global.season_marker",
+          "value": "FIRST_POST_COLLAPSE_WINTER"
+        }
+      ],
+      "source_refs": [],
+      "epistemic": "CURRENT_C_WORLD"
+    },
+    {
+      "id": "W92-DETENTION",
+      "chapter": 92,
+      "sequence": 40,
+      "effects": [
+        {
+          "set": "global.economy_stage",
+          "value": "E2"
+        },
+        {
+          "set": "global.resource_mode",
+          "value": "SMALL_DELIVERIES_AND_SPATIAL_AID"
+        },
+        {
+          "set": "characters.baoyu.legal_status",
+          "value": "DETAINED_PENDING_INQUIRY"
+        },
+        {
+          "set": "characters.baoyu.location",
+          "value": "S07"
+        },
+        {
+          "set": "characters.baoyu.body_state",
+          "value": "detention_cold_sleep_food_hygiene_strain"
+        },
+        {
+          "set": "characters.xiaohong.household_role",
+          "value": "external_rule_navigator"
+        },
+        {
+          "set": "characters.qianxue.household_role",
+          "value": "old_servant_material_helper"
+        }
+      ],
+      "source_refs": [
+        "R05",
+        "R30",
+        "R31",
+        "R32"
+      ],
+      "epistemic": "CURRENT_C_WORLD_WITH_HARD_DETENTION"
+    },
+    {
+      "id": "W93-RELEASE-FENGJIE-DEATH",
+      "chapter": 93,
+      "sequence": 70,
+      "effects": [
+        {
+          "set": "characters.baoyu.legal_status",
+          "value": "RELEASED_NO_RESTORATION"
+        },
+        {
+          "set": "characters.baoyu.location",
+          "value": "S06"
+        },
+        {
+          "set": "characters.baoyu.body_state",
+          "value": "post_detention_recovery"
+        },
+        {
+          "set": "characters.fengjie.life_state",
+          "value": "DEAD"
+        },
+        {
+          "set": "characters.fengjie.body_state",
+          "value": "DEAD_AFTER_CHRONIC_DECLINE"
+        },
+        {
+          "set": "relations.rel:fengjie_ping.status",
+          "value": "ENDED_BY_DEATH"
+        },
+        {
+          "set": "relations.rel:fengjie_qiaojie.status",
+          "value": "ENDED_BY_DEATH"
+        },
+        {
+          "set": "characters.ping_er.household_role",
+          "value": "qiaojie_protection_executor"
+        }
+      ],
+      "source_refs": [
+        "R29"
+      ],
+      "epistemic": "CURRENT_C_WORLD"
+    },
+    {
+      "id": "W94-QIAOJIE-RURAL-SHELTER",
+      "chapter": 94,
+      "sequence": 80,
+      "effects": [
+        {
+          "set": "characters.qiaojie.location",
+          "value": "S08"
+        },
+        {
+          "set": "characters.liulaolao.location",
+          "value": "S08"
+        },
+        {
+          "set": "characters.qiaojie.household_role",
+          "value": "guest_under_liu_care"
+        },
+        {
+          "set": "relations.rel:liulaolao_qiaojie.status",
+          "value": "ACTIVE_CAREGIVER"
+        }
+      ],
+      "source_refs": [
+        "R37",
+        "R38"
+      ],
+      "epistemic": "CURRENT_C_WORLD"
+    },
+    {
+      "id": "W95-STABLE-POVERTY",
+      "chapter": 95,
+      "sequence": 30,
+      "effects": [
+        {
+          "set": "global.economy_stage",
+          "value": "E3"
+        },
+        {
+          "set": "global.resource_mode",
+          "value": "STABLE_LOW_CASH_REPAIR_PAWN_BORROW_MEASURE"
+        },
+        {
+          "set": "global.season_marker",
+          "value": "SECOND_POST_COLLAPSE_WINTER"
+        },
+        {
+          "set": "characters.baoyu.location",
+          "value": "S09"
+        },
+        {
+          "set": "characters.baochai.location",
+          "value": "S09"
+        },
+        {
+          "set": "characters.sheyue.location",
+          "value": "S09"
+        },
+        {
+          "set": "characters.baoyu.body_state",
+          "value": "cold_and_labor_cost_without_new_disease"
+        }
+      ],
+      "source_refs": [
+        "R19"
+      ],
+      "epistemic": "CURRENT_C_WORLD"
+    },
+    {
+      "id": "W96-LIMITED-AID-WEIXIANG",
+      "chapter": 96,
+      "sequence": 50,
+      "effects": [
+        {
+          "set": "global.economy_stage",
+          "value": "E4"
+        },
+        {
+          "set": "global.resource_mode",
+          "value": "SMALL_EXTERNAL_AID_NO_STRUCTURAL_REVERSAL"
+        },
+        {
+          "set": "characters.xiren.household_role",
+          "value": "married_former_attendant_visiting_as_guest"
+        },
+        {
+          "set": "relations.rel:xiangyun_weiruolan.status",
+          "value": "MARRIED_CURRENT_C"
+        }
+      ],
+      "source_refs": [
+        "R25",
+        "R26",
+        "R34"
+      ],
+      "epistemic": "CURRENT_C_WORLD"
+    },
+    {
+      "id": "W97-THREE-DIVERGENT-LIVES",
+      "chapter": 97,
+      "sequence": 70,
+      "effects": [
+        {
+          "set": "relations.rel:xiangyun_weiruolan.status",
+          "value": "COHABITATION_INTERRUPTED_CAUSE_OPEN"
+        },
+        {
+          "set": "characters.xiangyun.location",
+          "value": "XIANGYUN_HOUSEHOLD_UNPINNED"
+        },
+        {
+          "set": "characters.miaoyu.location",
+          "value": "S10"
+        },
+        {
+          "set": "characters.miaoyu.household_role",
+          "value": "dependent_religious_resident"
+        },
+        {
+          "set": "characters.xichun.location",
+          "value": "S11"
+        },
+        {
+          "set": "characters.xichun.household_role",
+          "value": "nun_by_choice"
+        }
+      ],
+      "source_refs": [
+        "R33",
+        "R34",
+        "R41"
+      ],
+      "epistemic": "CURRENT_C_WORLD_OPEN_CAUSE"
+    },
+    {
+      "id": "W98-ZHEN-VISIT",
+      "chapter": 98,
+      "sequence": 40,
+      "effects": [
+        {
+          "set": "characters.zhen_baoyu.location",
+          "value": "S12"
+        }
+      ],
+      "source_refs": [
+        "R18"
+      ],
+      "epistemic": "CURRENT_C_WORLD"
+    },
+    {
+      "id": "W99-BAOYU-LEAVES",
+      "chapter": 99,
+      "sequence": 80,
+      "effects": [
+        {
+          "set": "characters.baoyu.location",
+          "value": "S13"
+        },
+        {
+          "set": "characters.baoyu.household_role",
+          "value": "monk_left_household"
+        },
+        {
+          "set": "characters.baoyu.legal_status",
+          "value": "FREE_VOLUNTARY_RELIGIOUS_RESIDENCE"
+        },
+        {
+          "set": "relations.rel:baoyu_baochai.status",
+          "value": "SPOUSES_SEPARATED_BY_BAOYU_DEPARTURE"
+        },
+        {
+          "set": "characters.zhen_baoyu.location",
+          "value": "OFFSTAGE"
+        }
+      ],
+      "source_refs": [
+        "R43"
+      ],
+      "epistemic": "CURRENT_C_PLACEMENT_HARD_END_RELATION_STATE"
+    },
+    {
+      "id": "W100-LATE-HUMAN",
+      "chapter": 100,
+      "sequence": 30,
+      "effects": [
+        {
+          "set": "global.economy_stage",
+          "value": "E5"
+        },
+        {
+          "set": "global.resource_mode",
+          "value": "RANK_UP_NO_PROPERTY_RESTORATION"
+        },
+        {
+          "set": "characters.jialan.location",
+          "value": "S14"
+        },
+        {
+          "set": "characters.jialan.household_role",
+          "value": "official_son"
+        },
+        {
+          "set": "characters.liwan.location",
+          "value": "S14"
+        },
+        {
+          "set": "characters.liwan.body_state",
+          "value": "late_life_decline"
+        }
+      ],
+      "source_refs": [
+        "R39",
+        "R40"
+      ],
+      "epistemic": "CURRENT_C_WORLD"
+    },
+    {
+      "id": "W100-LIWAN-DEATH",
+      "chapter": 100,
+      "sequence": 60,
+      "effects": [
+        {
+          "set": "characters.liwan.life_state",
+          "value": "DEAD"
+        },
+        {
+          "set": "characters.liwan.body_state",
+          "value": "DEAD_AFTER_ORDINARY_LATE_LIFE_DECLINE"
+        }
+      ],
+      "source_refs": [
+        "R39"
+      ],
+      "epistemic": "CURRENT_C_WORLD"
+    },
+    {
+      "id": "W100-OUTER-FRAME",
+      "chapter": 100,
+      "sequence": 90,
+      "effects": [
+        {
+          "set": "global.outer_frame",
+          "value": "S15_OPEN"
+        },
+        {
+          "set": "global.human_access_to_outer_frame_knowledge",
+          "value": false
+        }
+      ],
+      "source_refs": [
+        "R01",
+        "R08",
+        "R09"
+      ],
+      "epistemic": "HARD_FUNCTION_CURRENT_PLACEMENT"
+    }
+  ],
+  "completion": {
+    "world_queryable": true,
+    "event_replay": true,
+    "characters": 28,
+    "relations": 10,
+    "institutions": 9,
+    "current_markdown_islands": 0,
+    "stable_active_changed": false,
+    "completion_gate_ready": false
+  }
+}
