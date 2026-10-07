@@ -1,0 +1,271 @@
+{
+  "id": "literary-evaluator-suite:v0.5",
+  "issue": 5,
+  "status": "PASS_CANDIDATE",
+  "authority": "LITERARY_SCREENING_ONLY",
+  "automatic_literary_pass": false,
+  "principles": {
+    "culture_not_museum": "文化要素必须附着于人物行动、物质使用、关系摩擦或叙事后果；机器删除测试只能标记疑似陈列，不得替代人工文学判断。",
+    "exposition": "高置信解释性总结可在盲读前阻断；普通叙述连接词只作观察，避免把自然叙述误判为说教。",
+    "ambiguity": "OPEN与多义性不得由下游文学实现偷改为唯一解释；显式封口句可阻断。",
+    "structure": "章法检查只检测机械齐整、段落同构与节奏单一等风险，不把统计差异直接当成文学优劣。",
+    "poetry": "诗词A/B/C机器道只做越界、陈词、解释性和形式观察，不自动选胜。",
+    "blind": "盲读包只暴露匿名token、匿名文本/路径和文学问题，不暴露证据标签、候选A/B/C、P-Lock编号、六字段或机器排名。"
+  },
+  "culture_not_museum": {
+    "culture_terms": [
+      "琴",
+      "棋",
+      "书",
+      "画",
+      "戏",
+      "曲",
+      "经卷",
+      "佛事",
+      "香",
+      "茶",
+      "砚",
+      "帖",
+      "祭礼",
+      "庙",
+      "庵",
+      "题签",
+      "诗稿",
+      "香炉",
+      "茶具",
+      "画轴",
+      "法器"
+    ],
+    "action_terms": [
+      "拿",
+      "放",
+      "借",
+      "还",
+      "写",
+      "改",
+      "删",
+      "读",
+      "听",
+      "唱",
+      "洗",
+      "烧",
+      "收",
+      "拆",
+      "补",
+      "送",
+      "问",
+      "卖",
+      "当",
+      "用",
+      "喝",
+      "吃",
+      "穿",
+      "开",
+      "关",
+      "搬",
+      "挑",
+      "卷",
+      "擦",
+      "点",
+      "换",
+      "藏",
+      "找",
+      "丢",
+      "取",
+      "递",
+      "缝",
+      "磨",
+      "添"
+    ],
+    "relation_terms": [
+      "笑",
+      "骂",
+      "劝",
+      "催",
+      "让",
+      "争",
+      "问",
+      "回",
+      "瞒",
+      "求",
+      "嫌",
+      "怨",
+      "哭",
+      "谢",
+      "给",
+      "借"
+    ],
+    "minimum_sentence_chars": 8
+  },
+  "exposition": {
+    "hard_terms": [
+      "这正说明",
+      "由此可见",
+      "这便是作者要说",
+      "这正应了判词",
+      "原来这就是命运",
+      "人生的意义在于",
+      "她终于明白人生",
+      "他终于明白人生",
+      "这才懂得人生",
+      "这就证明了",
+      "唯一的真相是"
+    ],
+    "generic_patterns": [
+      "(?:原来|可见|所以说|这说明|这便是).{0,12}(?:人生|命运|道理|意义|判词|伏笔)",
+      "(?:她|他|众人).{0,8}终于明白.{0,10}(?:人生|命运|道理)"
+    ]
+  },
+  "ambiguity": {
+    "guards": [
+      {
+        "id": "ten-du-author-open",
+        "any_text": [
+          "《十独吟》的作者就是黛玉",
+          "十独吟的作者就是黛玉"
+        ],
+        "protects": "《十独吟》作者仍OPEN"
+      },
+      {
+        "id": "ten-du-count-open",
+        "any_text": [
+          "《十独吟》确定就是十首",
+          "十独吟确定就是十首"
+        ],
+        "protects": "题名硬锁不等于篇数硬锁"
+      },
+      {
+        "id": "qingbang-title-open",
+        "any_text": [
+          "正式榜名就是《警幻情榜》",
+          "正式榜名就是警幻情榜"
+        ],
+        "protects": "情榜正式榜名OPEN"
+      },
+      {
+        "id": "qingbang-roster-open",
+        "any_text": [
+          "每层正好十二人",
+          "情榜一共六十人"
+        ],
+        "protects": "情榜人数与完整芳讳OPEN"
+      },
+      {
+        "id": "xu-zhuangzi-route-open",
+        "any_text": [
+          "宝玉后来一定亲眼读到《续庄子》",
+          "宝玉后来一定亲眼读到续庄子"
+        ],
+        "protects": "后文余步不锁未来亲见"
+      },
+      {
+        "id": "fallen-leaves-form-open",
+        "any_text": [
+          "“落叶萧萧，寒烟漠漠”就是诗句",
+          "落叶萧萧，寒烟漠漠就是诗句"
+        ],
+        "protects": "确切残语不锁体裁"
+      },
+      {
+        "id": "baochai-writing-open",
+        "any_text": [
+          "黛玉逝后宝钗之文字就是宝钗自己写的文章"
+        ],
+        "protects": "后文宝钗文字不等于宝钗自作文字"
+      }
+    ],
+    "generic_closure_terms": [
+      "唯一解释就是",
+      "只有这一种解释",
+      "原稿一定如此",
+      "原稿必然如此",
+      "已经证明原稿"
+    ]
+  },
+  "structure": {
+    "min_chars_for_full_check": 800,
+    "min_paragraphs": 6,
+    "min_sentences": 18,
+    "min_sentence_cv": 0.22,
+    "min_paragraph_cv": 0.2,
+    "max_repeated_paragraph_prefix_ratio": 0.34,
+    "paragraph_prefix_chars": 6
+  },
+  "poetry": {
+    "lane_labels": [
+      "A",
+      "B",
+      "C"
+    ],
+    "blind_prefix": "PBR",
+    "forbidden_evidence_terms": [
+      "A-W1",
+      "B-W1",
+      "B-W2",
+      "W2",
+      "G_FREE_CREATION",
+      "P-Lock",
+      "OPEN-LOCK",
+      "六字段",
+      "证据等级",
+      "硬锁"
+    ],
+    "exposition_terms": [
+      "这正说明",
+      "由此可见",
+      "人生的意义在于",
+      "看破红尘",
+      "终于明白人生"
+    ],
+    "cliche_observations": [
+      "红尘一梦",
+      "万事皆空",
+      "人生如梦",
+      "命中注定",
+      "镜花水月"
+    ],
+    "automatic_winner": false,
+    "manual_blind_read_required": true
+  },
+  "blind_read": {
+    "forbidden_metadata_keys": [
+      "label",
+      "candidate_id",
+      "origin",
+      "plock",
+      "plock_ref",
+      "six_field",
+      "evidence_core_regression",
+      "machine_status",
+      "machine_expected_status",
+      "source_commit",
+      "adjudication_eligible"
+    ],
+    "forbidden_value_terms": [
+      "A-W1",
+      "B-W1",
+      "B-W2",
+      "W2",
+      "P-Lock",
+      "OPEN-LOCK",
+      "PROVENANCE",
+      "MODALITY",
+      "IMPLEMENTATION"
+    ],
+    "questions": [
+      "人物是否仍通过行动、关系和生活细节成立，而不是被作者解释？",
+      "文化与知识是否从场景需要中长出，而不是陈列式展示？",
+      "关键意义是否保留余味、多义和未说尽之处？",
+      "段落、对话、动作与叙述节奏是否有自然变化，而非机械齐整？",
+      "如果有诗文，它是否像人物/叙事中的活文本，而不是作者代言的说明书？"
+    ]
+  },
+  "completion": {
+    "culture_not_museum_deletion_test": true,
+    "explicit_exposition_detector": true,
+    "ambiguity_preservation": true,
+    "structural_variation_checks": true,
+    "poetry_abc_lane": true,
+    "blind_output_evidence_separated": true
+  }
+}
