@@ -1,0 +1,123 @@
+{
+  "id": "hypothesis-source-backfill:h04:v0.7",
+  "status": "PASS_CANDIDATE",
+  "authority": "SEARCH_INPUT_ONLY",
+  "source_document": {
+    "path": "03_VALID_HISTORY/MECHANISM_RESEARCH/REFERENCE/8786bbf96f__清代机制核查_H04居所与主婚权_v0.1.md",
+    "sha256": "8786bbf96f258a201be9deb5baa8d2cd58b12f9082b30bda52a8f76437c15ee9"
+  },
+  "typed_backfills": [
+    {
+      "id": "backfill:h04:marriage-role-model",
+      "kind": "MARRIAGE_ROLE_MODEL",
+      "source_lines": "100-118",
+      "authority": "SEARCH_INPUT_ONLY",
+      "payload": {
+        "roles": [
+          "批准",
+          "名义主婚",
+          "出钱/出物",
+          "实际操办"
+        ],
+        "rule": "四个角色必须分别建模；法律主婚资格不得自动推出资金、房屋、人手或实际操办者。",
+        "current_c_example": {
+          "批准": "贾母最高认可",
+          "名义主婚": "尊长主婚框架；不锁唯一人",
+          "出钱/出物": "SCENARIO_DEPENDENT",
+          "实际操办": "王夫人、薛姨妈（当前C实现）"
+        },
+        "evidence_effect": "NONE"
+      }
+    },
+    {
+      "id": "backfill:h04:housing-matrix",
+      "kind": "HOUSING_FEASIBILITY_MATRIX",
+      "source_lines": "83-96",
+      "authority": "SEARCH_INPUT_ONLY",
+      "payload": {
+        "options": [
+          {
+            "id": "HOUSE-PRE-CONFISCATION-RESIDUAL",
+            "label": "查抄前仍住荣府残余空间",
+            "feasibility": "H1/H2",
+            "condition": "抄没尚未全面执行或范围未及该处",
+            "risk": "不能拖到抄没后还默认无条件居住"
+          },
+          {
+            "id": "HOUSE-POST-CONFISCATION-RETAINED",
+            "label": "查抄后留住原府某处",
+            "feasibility": "H2/H3",
+            "condition": "明确该处不在入官范围、获准暂留或所有权另有依据",
+            "risk": "最容易偷渡“抄家但还能原样住”"
+          },
+          {
+            "id": "HOUSE-CLAN",
+            "label": "族房/族人暂居",
+            "feasibility": "H2",
+            "condition": "有族属关系与接纳能力",
+            "risk": "不能当成永久免费长期方案"
+          },
+          {
+            "id": "HOUSE-AFFINAL",
+            "label": "姻亲处短期暂居",
+            "feasibility": "H2",
+            "condition": "亲属愿意且空间/名分允许",
+            "risk": "易造成“薛家无限托底”"
+          },
+          {
+            "id": "HOUSE-RENTAL",
+            "label": "租屋/小宅",
+            "feasibility": "H1/H2",
+            "condition": "尚有少量现银、典当或短期援助",
+            "risk": "必须把租金、搬迁、仆役缩减写出来"
+          },
+          {
+            "id": "HOUSE-STEP-DOWN",
+            "label": "数次搬迁，居所逐级下降",
+            "feasibility": "H1",
+            "condition": "与经济下降同步",
+            "risk": "最符合持续贫困机制，但需占场次"
+          }
+        ],
+        "preferred_low_cost_pattern": "先有可暂住之处，后逐步下沉到小宅/寄居/租居；这只是机制成本判断，不是原稿认定。",
+        "evidence_effect": "NONE"
+      }
+    },
+    {
+      "id": "backfill:h04:confiscation-family-property-boundary",
+      "kind": "HISTORICAL_BOUNDARY",
+      "source_lines": "63-79",
+      "authority": "SEARCH_INPUT_ONLY",
+      "payload": {
+        "source_candidate": {
+          "id": "fidelity-src:history:daqinglu:v12:confiscation-family-property-scope",
+          "type": "HISTORICAL_PRIMARY_REFERENCE",
+          "title": "《大清律例》卷十二——隐瞒入官家产之妻子财产边界",
+          "bibliography": {
+            "citation": "《大清律例》（四库全书本）卷十二",
+            "url": "https://zh.wikisource.org/zh-hans/大清律例_(四庫全書本)/卷12"
+          },
+          "locator": {
+            "section": "隐瞒入官家产",
+            "clause": "妻子财产不在抄没入官之限"
+          },
+          "text": "凡抄没人口财产除谋反谋叛及奸党系在十恶依律抄没其馀有犯律不该载者妻子财产不在抄没入官之限违者依故入人流罪论",
+          "text_sha256": "75948803f8f10f10f24ae531311fee649f2607d1e7fdafa0e0ae1ba2cf90bee1",
+          "authority": "SEARCH_INPUT_ONLY"
+        },
+        "claim_candidate": {
+          "id": "fidelity-claim:history:h04:confiscation-family-property-scope",
+          "statement": "《大清律例》“隐瞒入官家产”区分法定抄没范围；除依法连带抄没的特定重罪情形外，妻子财产并非当然随正犯财产一并抄没入官。",
+          "authority_scope": "HISTORICAL_FEASIBILITY_SHADOW",
+          "status": "SUPPORTED_FOR_SEARCH_BOUNDARY",
+          "source_ref": "fidelity-src:history:daqinglu:v12:confiscation-family-property-scope",
+          "evidence_effect": "NONE"
+        },
+        "mechanism_ref": "H04",
+        "rule": "抄没不得机械等同所有家属一切财产同时归零；具体房产与个人财物权属仍 OPEN。",
+        "promotion_policy": "DO_NOT_INSERT_INTO_FROZEN_R4_GRAPH_WITHOUT_SEPARATE_EVIDENCE_GATE",
+        "evidence_effect": "NONE"
+      }
+    }
+  ]
+}
