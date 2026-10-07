@@ -335,7 +335,7 @@ class LiteraryEvaluatorSuite:
                 "是否陈套、熟语堆砌或为了古雅而古雅？",
                 "是否愿意把这一稿送入人工终审？",
             ],
-            "ranking_rule": "只按匿名token排序，不猜A/B/C。",
+            "ranking_rule": "只按匿名token排序，不猜原候选身份。",
         }
         violations = self.blind_output_violations(packet)
         if violations:
@@ -365,7 +365,7 @@ class LiteraryEvaluatorSuite:
             "chapter": chapter,
             "candidates": candidates,
             "questions": self.data["blind_read"]["questions"],
-            "ranking_rule": "只按匿名token排名；不得猜测或记录A/B/C映射。",
+            "ranking_rule": "只按匿名token排名；不得猜测或记录原候选身份映射。",
         }
         violations = self.blind_output_violations(packet)
         if violations:
