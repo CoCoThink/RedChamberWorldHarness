@@ -45,7 +45,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("PASS: R4 Evidence Core frozen; Literary Harness and competition ledger valid")
+    print("PASS: Full Migration Completion Gate valid; R4 Evidence Core frozen; stable ACTIVE unchanged")
     return 0
 
 
