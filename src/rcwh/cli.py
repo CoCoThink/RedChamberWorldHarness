@@ -29,6 +29,7 @@ from .object_network import ObjectNetworkRuntime, format_object
 from .pareto import ParetoEvaluationRuntime
 from .plocks import LiteraryProtectionRegistry, format_plock
 from .regression import format_regression, run_r4_evidence_regression
+from .revision_ablation import CrossRouteRevisionAblationRuntime
 from .promotion import PromotionRegistry, format_promotion
 from .prewrite import V5PrewriteRuntime, format_prewrite
 from .registry import (
@@ -380,6 +381,34 @@ def cmd_blind_microdraft_review(args: argparse.Namespace) -> int:
         print(str(exc))
         return 1
     print(json.dumps(payload, ensure_ascii=False, indent=2))
+    return 0
+
+
+
+def cmd_revision_ablation(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = CrossRouteRevisionAblationRuntime.from_repo(root)
+    p6 = ControlledMicrodraftRuntime.from_repo(root)
+    p7 = BlindMicrodraftReviewRuntime.from_repo(root)
+    discourse = NarrativeDiscourseRuntime.from_repo(root)
+    stress = ScenarioLiteraryStressRuntime.from_repo(root)
+    suite = LiteraryEvaluatorSuite.from_repo(root)
+    try:
+        kind = args.revision_ablation_command
+        if kind == "summary":
+            payload = runtime.evaluate_all(p6, p7, discourse, stress, suite)
+        elif kind == "pair":
+            payload = runtime.pair(args.token, p6, p7, discourse, stress, suite)
+        else:
+            raise KeyError(f"Unknown revision-ablation command: {kind}")
+    except (KeyError, FileNotFoundError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    if kind == "summary":
+        return 0 if payload["status"] == "PASS" else 1
+    if kind == "pair":
+        return 0 if payload["status"] == "ABLATION_READY" else 1
     return 0
 
 def cmd_regression(args: argparse.Namespace) -> int:
@@ -1092,6 +1121,17 @@ def main() -> None:
     p = p7_sub.add_parser("token")
     p.add_argument("token")
     p.set_defaults(func=cmd_blind_microdraft_review)
+
+
+    p_p8 = sub.add_parser("revision-ablation")
+    p8_sub = p_p8.add_subparsers(
+        dest="revision_ablation_command", required=True
+    )
+    p = p8_sub.add_parser("summary")
+    p.set_defaults(func=cmd_revision_ablation)
+    p = p8_sub.add_parser("pair")
+    p.add_argument("token")
+    p.set_defaults(func=cmd_revision_ablation)
 
     p_regression = sub.add_parser("regression")
     p_regression.add_argument("--json", action="store_true")
