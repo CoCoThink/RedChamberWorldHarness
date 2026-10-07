@@ -1,6 +1,6 @@
 # Pareto Evaluation v0.9 — P3 Multi-axis Scenario Comparison
 
-Status: **PASS_CANDIDATE / SHADOW_ONLY**
+Status: **PASS / SHADOW_ONLY**
 
 P3 compares the ten P1/P2 scenario bundles without collapsing reconstruction quality into a single score.
 
@@ -38,6 +38,25 @@ The overlap is the robust frontier; adding the two literary heuristics must rema
 
 P3 is downstream of Evidence → OPEN → Hypothesis → Scenario → Replay. It writes no canonical world state, no stable prose, and no Chapter 89 adjudication state.
 
-Before PASS, repository validation and full CI must succeed.
+## Final P3 gate
 
-Next gate after PASS: **P4_SCENARIO_LITERARY_STRESS_TEST**.
+Result: **PASS**.
+
+Validation run: `37641862028`
+
+- `rcwh validate`: PASS;
+- full repository tests: **254 passed / 0 failed**;
+- evaluated scenarios: **10**;
+- P2-hard-blocked scenarios entering P3: **0**;
+- mechanism frontier: `SCN-CURRENT-C`, `SCN-LATE-MARRIAGE`, `SCN-JADE-MULTILAYER`, `SCN-MINIMAL-CAUSE-OPEN`;
+- full eight-axis frontier: the same four scenarios;
+- robust frontier intersection: the same four scenarios;
+- winner: **NONE**;
+- single total score: **DISABLED**;
+- stable ACTIVE unchanged;
+- Chapter 89 remains `IN_REVIEW` with manual P-Lock / independent blind read pending;
+- Chapters 92 / 97 remain blocked by predecessor.
+
+The four frontier scenarios are search survivors, not reconstructed facts and not promotion candidates.
+
+Next gate: **P4_SCENARIO_LITERARY_STRESS_TEST**.

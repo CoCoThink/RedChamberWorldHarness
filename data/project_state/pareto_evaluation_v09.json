@@ -1,7 +1,7 @@
 {
   "id": "pareto-evaluation:v0.9",
   "phase": "P3_PARETO_EVALUATION",
-  "status": "PASS_CANDIDATE",
+  "status": "PASS",
   "authority": "SHADOW_ONLY",
   "source_branch": "feature/pareto-evaluation-v0.9",
   "base": {
@@ -28,5 +28,11 @@
     "NO_TOTAL_SCORE",
     "NO_AUTOMATIC_WINNER"
   ],
-  "next_gate": "P3_CI_THEN_P4_SCENARIO_LITERARY_STRESS_TEST"
+  "next_gate": "P4_SCENARIO_LITERARY_STRESS_TEST",
+  "ci": {
+    "run_id": 37641862028,
+    "conclusion": "SUCCESS",
+    "pytest": "254 passed / 0 failed",
+    "validate": "PASS"
+  }
 }
