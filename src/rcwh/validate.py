@@ -15,6 +15,7 @@ from .literals import LiteralRegistry
 from .literary_eval import LiteraryEvaluationProfileRegistry
 from .literary_ecology import LiteraryEcologyRuntime
 from .literary_production import LiteraryProductionRuntime
+from .literary_stress import ScenarioLiteraryStressRuntime
 from .literary_suite import LiteraryEvaluatorSuite
 from .mechanism_adapters import HistoricalAdapterRuntime
 from .open_interfaces import OpenInterfaceRegistry
