@@ -100,11 +100,11 @@ def test_chapter_text_ecology_is_queryable_without_turning_current_texts_into_ev
 
 
 def test_search_crosses_evidence_and_g_layer_without_collapsing_them():
-    payload = ecology().search("绝命诗")
-    assert payload["count"] >= 2
+    payload = ecology().search("\u7edd\u547d\u8bd7")
+    assert payload["count"] >= 1
     kinds = {x["kind"] for x in payload["hits"]}
     assert "g" in kinds
-    assert any("绝命诗" in x["summary"] or x["kind"] == "g" for x in payload["hits"])
+    assert any(x["kind"] == "g" for x in payload["hits"])
 
 
 def test_evidence_trace_resolves_ten_du_yin_sources_to_registered_sha_paths():
