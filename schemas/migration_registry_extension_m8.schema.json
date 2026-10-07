@@ -1,0 +1,103 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH M8 Registry Extension",
+  "type": "object",
+  "required": [
+    "milestone",
+    "document_additions",
+    "content_hash_additions",
+    "document_overrides",
+    "current_authority_override"
+  ],
+  "properties": {
+    "milestone": {
+      "const": "M8"
+    },
+    "document_additions": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "content_hash_additions": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "document_overrides": {
+      "type": "object",
+      "maxProperties": 0
+    },
+    "current_authority_override": {
+      "type": "object",
+      "required": [
+        "migration_status",
+        "completion_gate_status",
+        "completion_gate_ready",
+        "coverage_report_signed_off",
+        "p0_total",
+        "p0_full",
+        "p0_partial",
+        "p0_minimal",
+        "p0_none",
+        "semantic_coverage_counts",
+        "current_markdown_islands",
+        "unresolved_authority_conflicts",
+        "stable_active_sha256",
+        "literature_resume_authorized",
+        "literature_frozen",
+        "literature_resume_started",
+        "next_phase"
+      ],
+      "properties": {
+        "migration_status": {
+          "const": "COMPLETE"
+        },
+        "completion_gate_status": {
+          "const": "PASS"
+        },
+        "completion_gate_ready": {
+          "const": true
+        },
+        "coverage_report_signed_off": {
+          "const": true
+        },
+        "p0_total": {
+          "const": 249
+        },
+        "p0_full": {
+          "const": 249
+        },
+        "p0_partial": {
+          "const": 0
+        },
+        "p0_minimal": {
+          "const": 0
+        },
+        "p0_none": {
+          "const": 0
+        },
+        "current_markdown_islands": {
+          "const": 0
+        },
+        "unresolved_authority_conflicts": {
+          "const": 0
+        },
+        "stable_active_sha256": {
+          "const": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+        },
+        "literature_resume_authorized": {
+          "const": true
+        },
+        "literature_frozen": {
+          "const": true
+        },
+        "literature_resume_started": {
+          "const": false
+        },
+        "next_phase": {
+          "const": "LITERARY_WORK_MAY_RESUME_BY_EXPLICIT_ACTION"
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
