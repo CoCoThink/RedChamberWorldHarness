@@ -184,13 +184,19 @@ class CompletionGateRuntime:
               and implementation.stable().get("sha256") == STABLE_SHA
               and evidence_regression.get("stable_active", {}).get("sha256") == STABLE_SHA,
               "stable ACTIVE SHA changed")
-        competition_ok = (
-            competitions.records["comp:43-0:ch89:pressure-test"]["state"] == "IN_REVIEW"
-            and competitions.records["comp:43-0:ch92:pressure-test"]["state"] == "BLOCKED_BY_PREDECESSOR"
-            and competitions.records["comp:43-0:ch97:pressure-test"]["state"] == "BLOCKED_BY_PREDECESSOR"
+        gate_fixture_ok = (
+            implementation.competitions[89]["state"] == "IN_REVIEW"
+            and implementation.competitions[89]["progress"] == "PHASE1_ONLY"
+            and implementation.competitions[92]["state"] == "BLOCKED_BY_PREDECESSOR"
+            and implementation.competitions[97]["state"] == "BLOCKED_BY_PREDECESSOR"
         )
-        check("LITERARY_FREEZE_PRESERVED_THROUGH_GATE", competition_ok and self.state.get("literature", {}).get("migration_freeze_active") is True,
-              "literary production moved before Completion Gate signoff")
+        check(
+            "LITERARY_FREEZE_AT_GATE_SIGNOFF",
+            gate_fixture_ok
+            and self.state.get("literature", {}).get("migration_freeze_active") is True
+            and self.state.get("literature", {}).get("resume_started") is False,
+            "historical M8 gate-time literary freeze fixture drifted",
+        )
         promo_ok = True
         for promotion_id in promotions.records:
             if promotions.evaluate(self.root, promotion_id).get("overall") != "PASS":
