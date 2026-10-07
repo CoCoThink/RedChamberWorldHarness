@@ -22,6 +22,7 @@ from .literary_suite import LiteraryEvaluatorSuite, format_literary_suite
 from .mechanism_adapters import HistoricalAdapterRuntime, format_adapter
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .object_network import ObjectNetworkRuntime, format_object
+from .pareto import ParetoEvaluationRuntime
 from .plocks import LiteraryProtectionRegistry, format_plock
 from .regression import format_regression, run_r4_evidence_regression
 from .promotion import PromotionRegistry, format_promotion
@@ -239,6 +240,39 @@ def cmd_scenario(args: argparse.Namespace) -> int:
         return 0 if payload["status"] != "REPLAY_BLOCKED" else 1
     if kind == "conflicts":
         return 0 if not payload["blockers"] else 1
+    return 0
+
+
+
+def cmd_pareto(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    hypotheses = HypothesisRuntime.from_repo(root)
+    scenarios = ScenarioRuntime.from_repo(root)
+    replay = CounterfactualReplayRuntime.from_repo(root)
+    world = WorldRuntime.from_repo(root)
+    pareto = ParetoEvaluationRuntime.from_repo(root)
+    try:
+        kind = args.pareto_command
+        if kind == "summary":
+            payload = pareto.summary(hypotheses, scenarios, replay, world)
+        elif kind == "scenario":
+            payload = pareto.evaluate_scenario(
+                args.key, hypotheses, scenarios, replay, world
+            )
+        elif kind == "frontier":
+            payload = pareto.frontier(hypotheses, scenarios, replay, world)
+        elif kind == "compare":
+            payload = pareto.compare(
+                args.left, args.right, hypotheses, scenarios, replay, world
+            )
+        else:
+            raise KeyError(f"Unknown pareto command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    if kind == "scenario":
+        return 0 if payload["status"] == "PARETO_ELIGIBLE" else 1
     return 0
 
 def cmd_regression(args: argparse.Namespace) -> int:
@@ -878,6 +912,21 @@ def main() -> None:
     p = scenario_sub.add_parser("conflicts")
     p.add_argument("key")
     p.set_defaults(func=cmd_scenario)
+
+
+    p_pareto = sub.add_parser("pareto")
+    pareto_sub = p_pareto.add_subparsers(dest="pareto_command", required=True)
+    p = pareto_sub.add_parser("summary")
+    p.set_defaults(func=cmd_pareto)
+    p = pareto_sub.add_parser("scenario")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_pareto)
+    p = pareto_sub.add_parser("frontier")
+    p.set_defaults(func=cmd_pareto)
+    p = pareto_sub.add_parser("compare")
+    p.add_argument("left")
+    p.add_argument("right")
+    p.set_defaults(func=cmd_pareto)
 
     p_regression = sub.add_parser("regression")
     p_regression.add_argument("--json", action="store_true")

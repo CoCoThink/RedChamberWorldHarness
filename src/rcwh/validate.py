@@ -19,6 +19,7 @@ from .literary_suite import LiteraryEvaluatorSuite
 from .mechanism_adapters import HistoricalAdapterRuntime
 from .open_interfaces import OpenInterfaceRegistry
 from .object_network import ObjectNetworkRuntime
+from .pareto import ParetoEvaluationRuntime
 from .plocks import LiteraryProtectionRegistry
 from .promotion import PromotionRegistry
 from .prewrite import V5PrewriteRuntime
@@ -329,6 +330,27 @@ def validate_repository(root: Path) -> list[str]:
             f"{scenario_replay_state.relative_to(root)}: {e}" for e in errs
         )
 
+
+    pareto_path = root / "data" / "pareto" / "v09.json"
+    if pareto_path.exists():
+        errs = validate_instance(
+            load_data(pareto_path),
+            load_data(schema_dir / "pareto_evaluation.schema.json"),
+        )
+        errors.extend(
+            f"{pareto_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    pareto_state_path = root / "data" / "project_state" / "pareto_evaluation_v09.json"
+    if pareto_state_path.exists():
+        errs = validate_instance(
+            load_data(pareto_state_path),
+            load_data(schema_dir / "pareto_evaluation_state.schema.json"),
+        )
+        errors.extend(
+            f"{pareto_state_path.relative_to(root)}: {e}" for e in errs
+        )
+
     prewrite_path = root / "data" / "prewrite" / "v06.json"
     if prewrite_path.exists():
         errs = validate_instance(
@@ -406,6 +428,12 @@ def validate_repository(root: Path) -> list[str]:
         scenario_replay = CounterfactualReplayRuntime.from_repo(root)
         errors.extend(
             scenario_replay.validate_integrity(hypotheses, scenarios, world)
+        )
+        pareto = ParetoEvaluationRuntime.from_repo(root)
+        errors.extend(
+            pareto.validate_integrity(
+                hypotheses, scenarios, scenario_replay, world
+            )
         )
         errors.extend(
             validate_instance(
