@@ -1,0 +1,32 @@
+{
+  "id": "pareto-evaluation:v0.9",
+  "phase": "P3_PARETO_EVALUATION",
+  "status": "PASS_CANDIDATE",
+  "authority": "SHADOW_ONLY",
+  "source_branch": "feature/pareto-evaluation-v0.9",
+  "base": {
+    "branch": "literary/43-0-resume",
+    "sha": "a5ffa67b00a19a4408b05c6a0d7ed055784615d4"
+  },
+  "stable_active_sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+  "canonical_literary_gate": "CH89_MANUAL_PLOCK_THEN_BLIND_READ",
+  "effects": {
+    "chapter89": "NONE",
+    "chapter92": "NONE",
+    "chapter97": "NONE",
+    "evidence": "NONE",
+    "open_interfaces": "NONE",
+    "stable_active": "NONE"
+  },
+  "delivered": [
+    "EIGHT_AXIS_PARETO_MODEL",
+    "MECHANISM_FRONTIER",
+    "FULL_FRONTIER",
+    "DOMINANCE_GRAPH",
+    "NONDOMINATED_TIERS",
+    "EXPERT_AXIS_PROVENANCE",
+    "NO_TOTAL_SCORE",
+    "NO_AUTOMATIC_WINNER"
+  ],
+  "next_gate": "P3_CI_THEN_P4_SCENARIO_LITERARY_STRESS_TEST"
+}
