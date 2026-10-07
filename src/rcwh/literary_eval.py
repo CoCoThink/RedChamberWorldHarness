@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from .io import load_data
+from .literary_suite import LiteraryEvaluatorSuite
 from .plocks import LiteraryProtectionRegistry
 from .regression import run_r4_evidence_regression
 
@@ -71,6 +72,7 @@ def evaluate_literary_candidate(
     regression = run_r4_evidence_regression(root)
     plocks = LiteraryProtectionRegistry.from_repo(root)
     profiles = LiteraryEvaluationProfileRegistry.from_repo(root)
+    suite = LiteraryEvaluatorSuite.from_repo(root)
 
     if plock_id not in plocks.locks:
         raise KeyError(f"Unknown P-Lock: {plock_id}")
@@ -86,6 +88,17 @@ def evaluate_literary_candidate(
                     "id": check["id"],
                     "hits": hits,
                     "reason": check["reason"],
+                }
+            )
+
+    suite_result = suite.evaluate_prose(text, candidate_name)
+    if suite_result["status"] == "REJECT_BEFORE_BLIND_READ":
+        for blocker in suite_result["blockers"]:
+            blockers.append(
+                {
+                    "id": f"suite:{blocker.lower()}",
+                    "hits": [],
+                    "reason": "v0.5 literary evaluator suite hard blocker",
                 }
             )
 
@@ -192,6 +205,7 @@ def evaluate_literary_candidate(
         "feature_signal_results": signal_results,
         "feature_signal_gaps": signal_gaps,
         "observations": observations,
+        "literary_suite": suite_result,
         "manual_review": [
             {
                 "feature_ref": feature["id"],
@@ -203,9 +217,9 @@ def evaluate_literary_candidate(
         ],
         "next_gates": next_gates,
         "note": (
-            "Machine signals can detect explicit drift and likely loss, but they never prove "
-            "literary adequacy. A candidate cannot be promoted without human P-Lock review "
-            "and blind read."
+            "Machine signals can detect explicit drift, likely loss, explicit exposition, "
+            "ambiguity closure, and review risks, but they never prove literary adequacy. "
+            "A candidate cannot be promoted without human P-Lock review and blind read."
         ),
     }
 
@@ -239,6 +253,13 @@ def format_literary_evaluation(payload: dict[str, Any]) -> str:
         out.append(
             f"- {item['feature_ref']} [{item['mode']}]: {item['machine_signal']}"
         )
+
+    suite = payload.get("literary_suite")
+    if suite:
+        out.extend(["", "V0.5 LITERARY SUITE"])
+        out.append(f"- status: {suite['status']}")
+        out.append(f"- blockers: {suite['blockers']}")
+        out.append(f"- human_flags: {suite['human_flags']}")
 
     out.extend(["", "OBSERVATIONS"])
     if payload["observations"]:
