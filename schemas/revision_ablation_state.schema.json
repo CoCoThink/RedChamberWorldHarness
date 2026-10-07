@@ -12,7 +12,8 @@
     "stable_active_sha256",
     "effects",
     "delivered",
-    "next_gate"
+    "next_gate",
+    "ci"
   ],
   "properties": {
     "id": {
@@ -94,10 +95,7 @@
       }
     },
     "next_gate": {
-      "enum": [
-        "P8_CI_THEN_P9_PAIRED_BLIND_REVISION_REVIEW",
-        "P9_PAIRED_BLIND_REVISION_REVIEW"
-      ]
+      "const": "P9_PAIRED_BLIND_REVISION_REVIEW"
     },
     "ci": {
       "type": "object",
