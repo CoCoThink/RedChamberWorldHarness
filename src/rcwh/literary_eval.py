@@ -94,7 +94,11 @@ def evaluate_literary_candidate(
     stripped = text.rstrip()
     for anchor in lock.get("exact_anchors", []):
         if anchor["mode"] == "P1_TERMINAL":
-            preserved = stripped.endswith(anchor["text"])
+            # Terminal dialogue may end with a typographic closing quote after the
+            # protected literal. Strip closing quote marks only; do not permit
+            # trailing narrative prose after the protected terminal line.
+            terminal = stripped.rstrip("”’\"'")
+            preserved = terminal.endswith(anchor["text"])
         else:
             preserved = anchor["text"] in text
         anchor_results.append(
