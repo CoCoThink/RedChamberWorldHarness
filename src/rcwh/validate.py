@@ -15,6 +15,7 @@ from .literals import LiteralRegistry
 from .literary_eval import LiteraryEvaluationProfileRegistry
 from .literary_ecology import LiteraryEcologyRuntime
 from .literary_production import LiteraryProductionRuntime
+from .literary_stress import ScenarioLiteraryStressRuntime
 from .literary_suite import LiteraryEvaluatorSuite
 from .mechanism_adapters import HistoricalAdapterRuntime
 from .open_interfaces import OpenInterfaceRegistry
@@ -351,6 +352,29 @@ def validate_repository(root: Path) -> list[str]:
             f"{pareto_state_path.relative_to(root)}: {e}" for e in errs
         )
 
+
+    literary_stress_path = root / "data" / "literary_stress" / "v010.json"
+    if literary_stress_path.exists():
+        errs = validate_instance(
+            load_data(literary_stress_path),
+            load_data(schema_dir / "scenario_literary_stress.schema.json"),
+        )
+        errors.extend(
+            f"{literary_stress_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    literary_stress_state = (
+        root / "data" / "project_state" / "scenario_literary_stress_v010.json"
+    )
+    if literary_stress_state.exists():
+        errs = validate_instance(
+            load_data(literary_stress_state),
+            load_data(schema_dir / "scenario_literary_stress_state.schema.json"),
+        )
+        errors.extend(
+            f"{literary_stress_state.relative_to(root)}: {e}" for e in errs
+        )
+
     prewrite_path = root / "data" / "prewrite" / "v06.json"
     if prewrite_path.exists():
         errs = validate_instance(
@@ -446,6 +470,17 @@ def validate_repository(root: Path) -> list[str]:
         errors.extend(objects.validate_integrity(root, registry, reconstruction))
         literary_ecology = LiteraryEcologyRuntime.from_repo(root)
         errors.extend(literary_ecology.validate_integrity(registry))
+        literary_stress = ScenarioLiteraryStressRuntime.from_repo(root)
+        errors.extend(
+            literary_stress.validate_integrity(
+                pareto,
+                hypotheses,
+                scenarios,
+                scenario_replay,
+                world,
+                literary_ecology,
+            )
+        )
         knowledge_runtime = CharacterKnowledgeRuntime.from_repo(root)
         errors.extend(knowledge_runtime.validate_integrity(world, literary_ecology))
         regression = run_r4_evidence_regression(root)
