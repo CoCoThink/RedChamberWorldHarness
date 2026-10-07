@@ -24,6 +24,7 @@ from .object_network import ObjectNetworkRuntime, format_object
 from .plocks import LiteraryProtectionRegistry, format_plock
 from .regression import format_regression, run_r4_evidence_regression
 from .promotion import PromotionRegistry, format_promotion
+from .prewrite import V5PrewriteRuntime, format_prewrite
 from .registry import (
     MigrationRegistry,
     format_current_authority,
@@ -181,6 +182,47 @@ def cmd_plock(args: argparse.Namespace) -> int:
         print(json.dumps(lock, ensure_ascii=False, indent=2))
     else:
         print(format_plock(lock))
+    return 0
+
+
+def cmd_prewrite(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = V5PrewriteRuntime.from_repo(root)
+    reconstruction = ReconstructionRegistry.from_repo(root)
+    literary = LiteraryEcologyRuntime.from_repo(root)
+    plocks = LiteraryProtectionRegistry.from_repo(root)
+    adapters = HistoricalAdapterRuntime.from_repo(root)
+    registry = MigrationRegistry.from_repo(root)
+    try:
+        kind = args.prewrite_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "corpus":
+            payload = runtime.corpus(args.profile_id)
+        elif kind == "gap":
+            payload = runtime.gap(args.chapter)
+        elif kind == "scenes":
+            payload = runtime.scenes(args.chapter)
+        elif kind == "step":
+            payload = runtime.step(args.step, args.chapter, literary, adapters)
+        elif kind == "contract":
+            payload = runtime.contract(
+                args.chapter, reconstruction, literary, plocks, adapters, registry
+            )
+        elif kind == "stage":
+            payload = runtime.staging_packet(
+                args.chapter, reconstruction, literary, plocks, adapters, registry
+            )
+        else:
+            raise KeyError(f"Unknown prewrite command: {kind}")
+    except (KeyError, ValueError, FileNotFoundError) as exc:
+        print(str(exc))
+        return 1
+
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_prewrite(kind, payload))
     return 0
 
 
@@ -733,6 +775,39 @@ def main() -> None:
     p_lit_eval.add_argument("text", nargs="+")
     p_lit_eval.add_argument("--json", action="store_true")
     p_lit_eval.set_defaults(func=cmd_literary_evaluate)
+
+    p_prewrite = sub.add_parser("prewrite")
+    prewrite_sub = p_prewrite.add_subparsers(
+        dest="prewrite_command", required=True
+    )
+    p = prewrite_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("corpus")
+    p.add_argument("profile_id", nargs="?")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("gap")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("scenes")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("step")
+    p.add_argument("step", type=int)
+    p.add_argument("--chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("contract")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
+    p = prewrite_sub.add_parser("stage")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_prewrite)
 
     p_lit_suite = sub.add_parser("literary-suite")
     lit_suite_sub = p_lit_suite.add_subparsers(
