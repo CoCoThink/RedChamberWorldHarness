@@ -1,0 +1,43 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"RCWH Counterfactual Scenario Replay v0.8",
+  "type":"object",
+  "required":["id","milestone","status","authority","base_world","rule","local_locations","hypothesis_effects","pressure_rules","hard_checks","effects","automatic_winner","single_total_score"],
+  "properties":{
+    "id":{"const":"scenario-replay:v0.8"},
+    "milestone":{"const":"P2"},
+    "status":{"enum":["PASS_CANDIDATE","PASS"]},
+    "authority":{"const":"SHADOW_ONLY"},
+    "base_world":{"const":"M3_CURRENT_C_REFERENCE_ONLY"},
+    "rule":{"type":"string","minLength":1},
+    "local_locations":{
+      "type":"array","uniqueItems":true,
+      "items":{"type":"object","required":["id","label","kind","authority"],"properties":{
+        "id":{"type":"string","pattern":"^SCN-LOC-[A-Z0-9-]+$"},"label":{"type":"string"},"kind":{"type":"string"},"authority":{"const":"SCENARIO_ONLY"}
+      },"additionalProperties":false}
+    },
+    "hypothesis_effects":{
+      "type":"array",
+      "items":{"type":"object","required":["id","hypothesis_id","kind","chapter_start","chapter_end","priority"],"properties":{
+        "id":{"type":"string"},"hypothesis_id":{"type":"string","pattern":"^HYP-[A-Z0-9-]+$"},
+        "kind":{"enum":["WORLD_OVERRIDE","WORLD_COPY","ANNOTATION"]},
+        "chapter_start":{"type":"integer","minimum":81,"maximum":100},
+        "chapter_end":{"type":"integer","minimum":81,"maximum":100},
+        "priority":{"type":"integer","minimum":0,"maximum":999},
+        "set":{"type":"string"},"from_path":{"type":"string"},"annotation":{"type":"string"},"value":{}
+      },"additionalProperties":false}
+    },
+    "pressure_rules":{
+      "type":"array","items":{"type":"object","required":["hypothesis_id","kind","chapter","severity","message"],"properties":{
+        "hypothesis_id":{"type":"string"},"kind":{"type":"string"},"chapter":{"type":"integer","minimum":81,"maximum":100},"severity":{"const":"PRESSURE"},"message":{"type":"string"}
+      },"additionalProperties":false}
+    },
+    "hard_checks":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
+    "effects":{"type":"object","required":["evidence","open_interfaces","stable_active","chapter89","chapter92","chapter97"],"properties":{
+      "evidence":{"const":"NONE"},"open_interfaces":{"const":"NONE"},"stable_active":{"const":"NONE"},"chapter89":{"const":"NONE"},"chapter92":{"const":"NONE"},"chapter97":{"const":"NONE"}
+    },"additionalProperties":false},
+    "automatic_winner":{"const":false},
+    "single_total_score":{"const":false}
+  },
+  "additionalProperties":false
+}
