@@ -1,6 +1,6 @@
 # Hypothesis Runtime v0.7 — Phase 0 Targeted Fidelity Backfill
 
-Status: **PASS_CANDIDATE / SHADOW_ONLY**
+Status: **PASS / SHADOW_ONLY**
 
 This phase starts the literary-reconstruction capability upgrade without changing the canonical Chapter 89 pipeline or stable ACTIVE.
 
@@ -12,7 +12,7 @@ This phase starts the literary-reconstruction capability upgrade without changin
 - six H04 hypothesis nodes: O09-A/B/C and G0/G1/G2;
 - explicit four-role marriage model: approval / formal marriage authority / funding / operations;
 - typed six-option post-confiscation housing feasibility matrix;
-- primary-source-backed historical claim for the Qing-code boundary that wife/family property is not automatically coextensive with all confiscated property;
+- search-only primary-source/claim candidate for the Qing-code boundary that wife/family property is not automatically coextensive with all confiscated property; the frozen R4 provenance graph is intentionally unchanged;
 - runtime integrity checks that force hypothesis/search layers to remain downstream.
 
 ## Authority
