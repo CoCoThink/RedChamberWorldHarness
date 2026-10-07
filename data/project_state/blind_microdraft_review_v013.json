@@ -1,0 +1,38 @@
+{
+  "id": "blind-microdraft-review:v0.13",
+  "phase": "P7_BLIND_MICRODRAFT_REVIEW",
+  "status": "PASS",
+  "authority": "SHADOW_ONLY",
+  "source_branch": "feature/blind-microdraft-review-v0.13",
+  "base": {
+    "branch": "literary/43-0-resume",
+    "sha": "5b62495fb1756eb90f92624d946ede3d5cba174e"
+  },
+  "stable_active_sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+  "canonical_literary_gate": "CH89_MANUAL_PLOCK_THEN_BLIND_READ",
+  "effects": {
+    "chapter89": "NONE",
+    "chapter92": "NONE",
+    "chapter97": "NONE",
+    "evidence": "NONE",
+    "open_interfaces": "NONE",
+    "stable_active": "NONE"
+  },
+  "delivered": [
+    "RAW_INDEPENDENT_BLIND_REVIEW",
+    "TWENTY_TOKEN_VERDICTS",
+    "FIVE_CELL_RANKINGS",
+    "POST_REVIEW_MAPPING_UNSEAL",
+    "DESCRIPTIVE_ROUTE_SUMMARY",
+    "GLOBAL_REVISION_CONTROLS",
+    "NO_ROUTE_WINNER",
+    "NO_CANONICAL_EFFECT"
+  ],
+  "next_gate": "P8_CROSS_ROUTE_REVISION_ABLATION",
+  "ci": {
+    "run_id": 37651618206,
+    "conclusion": "SUCCESS",
+    "pytest": "293 passed / 0 failed",
+    "validate": "PASS"
+  }
+}

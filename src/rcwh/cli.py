@@ -4,6 +4,7 @@ import argparse
 import json
 from pathlib import Path
 
+from .blind_microdraft_review import BlindMicrodraftReviewRuntime
 from .competition import CompetitionRegistry, format_competition
 from .completion import CompletionGateRuntime, format_completion
 from .coverage import CoverageAuditRuntime, format_coverage
@@ -358,6 +359,27 @@ def cmd_microdraft(args: argparse.Namespace) -> int:
         return 0 if payload["status"] == "PASS" else 1
     if kind == "screen":
         return 0 if payload["status"] == "READY_FOR_BLIND_MICRODRAFT_REVIEW" else 1
+    return 0
+
+
+
+def cmd_blind_microdraft_review(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = BlindMicrodraftReviewRuntime.from_repo(root)
+    try:
+        kind = args.blind_microdraft_review_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "scenario":
+            payload = runtime.scenario(args.key)
+        elif kind == "token":
+            payload = runtime.token(args.token)
+        else:
+            raise KeyError(f"Unknown blind-microdraft-review command: {kind}")
+    except (KeyError, FileNotFoundError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
     return 0
 
 def cmd_regression(args: argparse.Namespace) -> int:
@@ -1056,6 +1078,20 @@ def main() -> None:
     p = micro_sub.add_parser("cell")
     p.add_argument("cell")
     p.set_defaults(func=cmd_microdraft)
+
+
+    p_p7 = sub.add_parser("blind-microdraft-review")
+    p7_sub = p_p7.add_subparsers(
+        dest="blind_microdraft_review_command", required=True
+    )
+    p = p7_sub.add_parser("summary")
+    p.set_defaults(func=cmd_blind_microdraft_review)
+    p = p7_sub.add_parser("scenario")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_blind_microdraft_review)
+    p = p7_sub.add_parser("token")
+    p.add_argument("token")
+    p.set_defaults(func=cmd_blind_microdraft_review)
 
     p_regression = sub.add_parser("regression")
     p_regression.add_argument("--json", action="store_true")
