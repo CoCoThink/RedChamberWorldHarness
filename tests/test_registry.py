@@ -63,21 +63,26 @@ def test_current_authority_m1_is_registry_complete_but_not_completion_gate_compl
     assert current["current_runtime_document_count"] == 15
     assert current["registry_coverage"] == "FULL"
     assert current["semantic_coverage_counts"] == {
-        "FULL": 6,
-        "PARTIAL": 9,
+        "FULL": 10,
+        "PARTIAL": 5,
         "MINIMAL": 0,
         "NONE": 0,
     }
     assert current["completion_gate_ready"] is False
 
 
-def test_m2_eliminates_current_markdown_only_islands_without_claiming_full_semantic_completion():
+def test_m6_keeps_current_markdown_zero_and_promotes_four_implementation_sources_to_full():
     reg = registry()
     current = [reg.documents[x] for x in reg.current_summary()["current_runtime_document_refs"]]
     islands = [doc for doc in current if doc["machine_representation"]["markdown_only"]]
     assert islands == []
     plan = reg.documents["doc:23861cce04ac"]
-    assert plan["machine_representation"]["semantic_coverage"] == "PARTIAL"
+    assert plan["machine_representation"]["semantic_coverage"] == "FULL"
+    assert reg.documents["doc:b90e41f44edb"]["machine_representation"]["semantic_coverage"] == "FULL"
+    assert reg.documents["doc:4645da79b1be"]["machine_representation"]["semantic_coverage"] == "FULL"
+    assert reg.documents["doc:626917a3603d"]["machine_representation"]["semantic_coverage"] == "FULL"
+    assert reg.current_summary()["implementation_alignment_queryable"] is True
+    assert reg.current_summary()["literature_frozen"] is True
     assert reg.current_summary()["current_markdown_islands"] == 0
 
 
