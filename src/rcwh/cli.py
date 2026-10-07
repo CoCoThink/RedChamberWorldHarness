@@ -23,6 +23,7 @@ from .registry import (
 )
 from .reconstruction import ReconstructionRegistry, format_reconstruction
 from .runtime import WorldState
+from .world import WorldRuntime, format_world
 from .trace import format_trace
 from .validate import validate_repository
 
@@ -272,6 +273,37 @@ def cmd_reconstruction(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_world(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    world = WorldRuntime.from_repo(root)
+    try:
+        kind = args.world_command
+        if kind == "summary":
+            payload = world.summary()
+        elif kind == "chapter":
+            payload = world.chapter(args.chapter)
+        elif kind == "character":
+            payload = world.character_state(args.character_id, args.chapter)
+        elif kind == "knowledge":
+            payload = world.knowledge(args.character_id, args.chapter)
+        elif kind == "location":
+            payload = world.location(args.location_id)
+        elif kind == "relation":
+            payload = world.relation(args.relation_id, args.chapter)
+        elif kind == "economy":
+            payload = world.economy(args.chapter)
+        else:
+            raise KeyError(f"Unknown world command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_world(kind, payload))
+    return 0
+
+
 def cmd_promotion(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     registry = PromotionRegistry.from_repo(root)
@@ -363,6 +395,39 @@ def main() -> None:
         p = recon_sub.add_parser(name)
         p.add_argument("--json", action="store_true")
         p.set_defaults(func=cmd_reconstruction)
+
+    p_world = sub.add_parser("world")
+    world_sub = p_world.add_subparsers(dest="world_command", required=True)
+    p = world_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_world)
+    p = world_sub.add_parser("chapter")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_world)
+    p = world_sub.add_parser("character")
+    p.add_argument("character_id")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_world)
+    p = world_sub.add_parser("knowledge")
+    p.add_argument("character_id")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_world)
+    p = world_sub.add_parser("location")
+    p.add_argument("location_id")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_world)
+    p = world_sub.add_parser("relation")
+    p.add_argument("relation_id")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_world)
+    p = world_sub.add_parser("economy")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_world)
 
     p_registry = sub.add_parser("registry")
     registry_sub = p_registry.add_subparsers(dest="registry_command", required=True)
