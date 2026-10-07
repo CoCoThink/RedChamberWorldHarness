@@ -1,0 +1,118 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH Targeted Source-Fidelity Audit",
+  "type": "object",
+  "required": [
+    "id",
+    "status",
+    "authority",
+    "source_document",
+    "entries"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "PASS_CANDIDATE",
+        "PASS"
+      ]
+    },
+    "authority": {
+      "const": "SHADOW_ONLY"
+    },
+    "source_document": {
+      "type": "object",
+      "required": [
+        "title",
+        "path",
+        "sha256",
+        "authority"
+      ],
+      "properties": {
+        "title": {
+          "type": "string"
+        },
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "authority": {
+          "const": "REFERENCE"
+        }
+      },
+      "additionalProperties": false
+    },
+    "entries": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "source_section",
+          "source_lines",
+          "semantic_item",
+          "current_runtime_refs",
+          "fidelity_status",
+          "loss_type",
+          "needed_for_hypothesis_search",
+          "backfill_action",
+          "authority_effect"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "source_section": {
+            "type": "string"
+          },
+          "source_lines": {
+            "type": "string",
+            "pattern": "^[0-9]+-[0-9]+$"
+          },
+          "semantic_item": {
+            "type": "string"
+          },
+          "current_runtime_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "fidelity_status": {
+            "enum": [
+              "MIGRATED_EXACT",
+              "MIGRATED_COMPRESSED",
+              "MISSING_MACHINE_NODE",
+              "SUPERSEDED",
+              "REFERENCE_ONLY"
+            ]
+          },
+          "loss_type": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "needed_for_hypothesis_search": {
+            "type": "boolean"
+          },
+          "backfill_action": {
+            "type": "string"
+          },
+          "authority_effect": {
+            "const": "NONE"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
