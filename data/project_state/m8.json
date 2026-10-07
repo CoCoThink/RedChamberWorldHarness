@@ -1,6 +1,6 @@
 {
   "milestone": "M8",
-  "status": "PASS_CANDIDATE",
+  "status": "PASS",
   "migration_release": {
     "id": "full-migration-v3",
     "branch": "migration/full-v3",
@@ -18,7 +18,7 @@
     "M5": "PASS",
     "M6": "PASS",
     "M7": "PASS",
-    "M8": "PASS_CANDIDATE"
+    "M8": "PASS"
   },
   "coverage_signoff": {
     "signed": true,
@@ -54,16 +54,18 @@
     "all_typed_doc_refs_must_resolve": true
   },
   "completion_gate": {
-    "overall": "PENDING_VALIDATION",
-    "evidence_core_regression": "REQUIRED_PASS",
-    "full_migration_regression": "REQUIRED_PASS",
-    "stable_active_unchanged": "REQUIRED_PASS",
-    "all_tests": "REQUIRED_PASS"
+    "overall": "PASS",
+    "evidence_core_regression": "PASS",
+    "full_migration_regression": "PASS",
+    "stable_active_unchanged": "PASS",
+    "traceability": "PASS",
+    "all_required_query_surfaces": "PASS",
+    "all_tests": "PASS"
   },
   "literature": {
     "migration_freeze_active": true,
     "resume_authorized_after_gate_pass": true,
     "resume_started": false,
-    "note": "M8 may authorize later literary work, but M8 itself performs no Chapter 81-100 prose production or stable promotion."
+    "note": "Completion Gate passed. Later literary work is authorized, but M8 itself performs no Chapter 81-100 prose production or stable promotion."
   }
 }
