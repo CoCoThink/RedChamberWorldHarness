@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from .io import load_data
+from .world import WorldRuntime
 
 
 @dataclass
@@ -13,6 +14,7 @@ class WorldState:
     characters: dict[str, dict[str, Any]] = field(default_factory=dict)
     objects: dict[str, dict[str, Any]] = field(default_factory=dict)
     metadata: dict[str, Any] = field(default_factory=dict)
+    world_runtime: WorldRuntime | None = None
 
     @classmethod
     def from_repo(cls, root: Path) -> "WorldState":
@@ -23,6 +25,8 @@ class WorldState:
         for path in sorted((root / "data" / "objects").glob("*.yaml")):
             data = load_data(path)
             state.objects[data["id"]] = data
+        if (root / "data" / "world" / "m3_core.json").exists():
+            state.world_runtime = WorldRuntime.from_repo(root)
         return state
 
     def resolve(self, dotted: str) -> Any:
@@ -67,6 +71,16 @@ class WorldState:
                 self.assign(effect["set"], deepcopy(effect.get("value")))
             else:
                 raise ValueError(f"Unsupported effect: {effect}")
+
+    def snapshot_at(self, chapter: int) -> dict[str, Any]:
+        if self.world_runtime is None:
+            raise ValueError("Full World runtime is not loaded")
+        return self.world_runtime.snapshot(chapter)
+
+    def character_at(self, character_id: str, chapter: int) -> dict[str, Any]:
+        if self.world_runtime is None:
+            raise ValueError("Full World runtime is not loaded")
+        return self.world_runtime.character_state(character_id, chapter)
 
     def assert_contract_preconditions(self, contract: dict[str, Any]) -> list[str]:
         findings = []
