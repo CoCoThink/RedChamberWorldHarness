@@ -115,7 +115,7 @@
       "direct_event_replay": false
     },
     "PARTIAL_DIRECT": {
-      "opening_mode": "ORDINARY_ACTION",
+      "opening_mode": "ROUTINE_INTERRUPTED",
       "temporal_order": "LINEAR_WITH_CUT",
       "event_presence": "DIRECT_FRAGMENT_CAUSE_WITHHELD",
       "primary_channel": "ACTION",
@@ -129,12 +129,12 @@
       "direct_event_replay": true
     },
     "REPORTED": {
-      "opening_mode": "ORDINARY_ACTION",
+      "opening_mode": "RELAY_ARRIVAL_INTO_ROUTINE",
       "temporal_order": "DELAYED_REPORT",
       "event_presence": "OFFSTAGE_RELAY",
       "primary_channel": "REPORT",
       "distance_curve": [
-        "CLOSE",
+        "MEDIUM",
         "MEDIUM",
         "CLOSE"
       ],
@@ -143,7 +143,7 @@
       "direct_event_replay": false
     },
     "INTERRUPTED_DIRECT": {
-      "opening_mode": "ORDINARY_ACTION",
+      "opening_mode": "ROUTINE_INTERRUPTED",
       "temporal_order": "LINEAR_INTERRUPTED",
       "event_presence": "DIRECT_FRAGMENT_INTERRUPTED",
       "primary_channel": "DIALOGUE",
@@ -244,7 +244,8 @@
           "reveal_policy": "HUMAN_AFTERMATH_BEFORE_METAFRAME",
           "extra_restraints": [
             "NO_THEME_SUMMARY_BEFORE_QINGBANG"
-          ]
+          ],
+          "primary_focalizer": "sheyue"
         }
       }
     },
@@ -260,7 +261,8 @@
           "extra_restraints": [
             "BAOCHAI_NOT_WIFE_BEFORE_E2",
             "NO_FUTURE_WIFE_FREE_INDIRECT_LEAK"
-          ]
+          ],
+          "primary_focalizer": "zijuan"
         },
         "L-P3": {
           "primary_channel": "ACTION",
@@ -268,13 +270,21 @@
           "extra_restraints": [
             "NO_CEREMONIAL_CATALOGUE",
             "NO_POVERTY_SPECTACLE"
-          ]
+          ],
+          "primary_focalizer": "sheyue"
         },
         "L-P4": {
           "reveal_policy": "MARRIAGE_STATUS_THROUGH_ROUTINE",
           "extra_restraints": [
             "NO_VIRTUOUS_WIFE_AUTHORIAL_PRAISE"
-          ]
+          ],
+          "primary_focalizer": "baoyu"
+        },
+        "L-P2": {
+          "primary_focalizer": "jia_yun"
+        },
+        "L-P5": {
+          "primary_focalizer": "baochai"
         }
       }
     },
@@ -333,7 +343,8 @@
           "reveal_policy": "CLOSURE_WITH_LOCAL_OPEN_INTERFACES",
           "extra_restraints": [
             "OPEN_NOT_EQUAL_UNFINISHED_ENDING"
-          ]
+          ],
+          "primary_focalizer": "sheyue"
         }
       }
     }
@@ -346,10 +357,10 @@
     "distance_curves_min": 3,
     "exit_channels_min": 4,
     "primary_focalizers_min": 5,
-    "indirect_cards_min": 4,
     "document_or_object_mediated_cards_min": 3,
     "exact_withheld_preservation": true,
-    "narrator_access_must_be": "LIMITED"
+    "narrator_access_must_be": "LIMITED",
+    "non_full_direct_cards_min": 4
   },
   "policy": {
     "fabula_mutation_allowed": false,
