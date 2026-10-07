@@ -1,22 +1,19 @@
 # Post-M8 Repository Governance Audit — 2026-10-07
 
-Status: **PASS**
+Status: **ACTIVE / CLEAN**
 
-This audit is a repository-governance gate after Full Migration M8 and before further Chapter 89/92 literary production.
+This document is the current repository-governance view after Full Migration M8 and completion of Issues #1–#6. Historical milestone documents remain audit records, but they are not current operational instructions.
 
-## Canonical branch topology
+## Canonical authority
 
-Authoritative branches:
-
-- `main` — release authority;
-- `literary/43-0-resume` — the only live literary-production line;
-- `archive/full-migration-v3-final-20261007` — frozen migration archive;
-- `export/full-migration-snapshot-20261006` — immutable export snapshot;
-- `export/self-contained-20261006` — immutable self-contained export snapshot.
+- `main` — release authority.
+- `literary/43-0-resume` — only live literary-production line.
+- `archive/full-migration-v3-final-20261007` — frozen M8 archive.
+- `export/full-migration-snapshot-20261006` and `export/self-contained-20261006` — immutable export history.
 
 ## Obsolete branches
 
-The following are fully absorbed by `main` and have no unique effective work that needs to remain on a live branch:
+The following are fully absorbed or otherwise non-current and are safe to delete when an administrative branch-delete tool is available:
 
 - `feature/provenance-kernel-v0.2`
 - `feature/r4-evidence-core-v0.2-beta`
@@ -24,11 +21,7 @@ The following are fully absorbed by `main` and have no unique effective work tha
 - `migration/full-v3`
 - `release/post-merge-signoff-v3`
 
-They are marked **safe_delete_when_tool_available**.
-
-The current connector does not expose delete-ref/delete-branch, so this audit does not falsely claim they were deleted.
-
-## Divergent literary fork
+## Quarantined divergent fork
 
 `literary/43-0-ch89-phase2`
 
@@ -40,30 +33,24 @@ Disposition:
 
 `QUARANTINED_NON_RUNTIME / DO_NOT_MERGE`
 
-Reasons:
+Its Chapter 89 adjudication, blind-read claim, and Chapter 92 advancement are not authority. Only reviewed infrastructure ideas were reimplemented on the canonical branch.
 
-1. it diverges from the canonical literary line;
-2. it contains 25 unique commits that overlap/conflict with the canonical Chapter 89 work;
-3. it records Chapter 89 human P-Lock/blind-read/adjudication as complete although those human gates are not independently established in the canonical workflow;
-4. it advances Chapter 92 to READY_FOR_CANDIDATES, which is not permitted by the canonical current state;
-5. its recent CI runs are failing.
+## Completed issue audit
 
-The fork is retained only as an audit source until branch deletion/archival is performed with an administrative tool.
+All repository issues #1–#6 are complete:
 
-### Salvaged infrastructure
+1. R4 evidence matrix / OPEN-LOCK state.
+2. Provenance-backed source registry.
+3. Character knowledge graph and voice profiles.
+4. Historical mechanism adapter interface.
+5. Literary evaluator suite.
+6. v5.0 Steps 33–42 prewrite automation.
 
-The useful architectural idea from the fork was retained without importing its adjudication:
+No issue remains open in the current governance registry.
 
-- a dedicated post-M8 `LiteraryProductionRuntime`;
-- a typed literary-resume state schema;
-- explicit separation between immutable M8 Completion Gate state and live post-M8 literary production;
-- CLI query surface for live literary production and quarantine state.
+## Current literary gate
 
-No forked winner/adjudication artifact was imported as authority.
-
-## Canonical literary state
-
-Current Chapter 89:
+Chapter 89 is still the active literary gate:
 
 - full A/B/C candidates: READY;
 - six-field regression: PASS;
@@ -77,42 +64,54 @@ Chapter 92 and Chapter 97 remain:
 
 `BLOCKED_BY_PREDECESSOR`
 
+Issue #6 prewrite automation is staging-only and does not change this gate.
+
+## Stable ACTIVE
+
 Stable ACTIVE remains unchanged:
 
 `4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320`
 
-## Issue audit
+No current governance or automation layer may overwrite stable ACTIVE without a separate explicit promotion path.
 
-Closed as completed after M8:
+## Current operational next step
 
-- #1 — Import R4 evidence matrix and OPEN-LOCK state;
-- #2 — Build provenance-backed source registry.
+Do not reopen migration work and do not treat prewrite staging as evidence.
 
-Retained as genuine partial work:
+The next literary action is:
 
-- #3 — Character knowledge graph and voice profiles;
-- #4 — Historical mechanism adapter interface;
-- #5 — Literary evaluator suite;
-- #6 — Automate v5.0 steps 33–42.
+`CH89_MANUAL_PLOCK_THEN_REAL_BLIND_READ`
 
-Each retained issue now contains a post-M8 comment separating completed scope from residual acceptance gaps.
+Only after Chapter 89 is genuinely adjudicated may Chapter 92 leave `BLOCKED_BY_PREDECESSOR`.
 
-## Query surface
+## Current machine capabilities
 
-`rcwh literary-production summary`
+The canonical branch now contains runnable layers for:
 
-`rcwh literary-production chapter 89`
+- provenance / R4 Evidence Core / OPEN-LOCK;
+- Reconstruction and World State;
+- object network;
+- Literary Ecology;
+- Character Truth and scene knowledge;
+- historical feasibility adapters;
+- literary evaluator suite;
+- competition / P-Lock / blind-read separation;
+- v5.0 Steps 33–42 prewrite staging.
 
-`rcwh literary-production quarantine`
+The v0.6 prewrite harness remains:
 
-## Validation
+`authority = STAGING_ONLY`
 
-Canonical branch validation at commit `3ba5c5a968e824f038f49edf0ac676cf8cf1e177`:
+`evidence_effect = NONE`
 
-- Full Migration Completion Gate: PASS;
-- post-M8 literary-production runtime: PASS;
-- repository literary quarantine: PASS;
-- stable pointer unchanged: PASS;
-- pytest: **181 passed / 0 failed**.
+`stable_active_effect = NONE`
 
-No literary adjudication or Chapter 92 production was performed during this repository-governance audit.
+`automatic_prose_generation = false`
+
+`automatic_promotion = false`
+
+## Documentation authority rule
+
+Current operational truth should be taken from machine data/runtime plus the newest issue-completion documents. Versioned older design documents and migration milestone notes are audit history only.
+
+Superseded standalone documents that duplicated current machine state have been removed from the live docs tree before the self-contained handover package was built.
