@@ -92,6 +92,62 @@ class ObjectNetworkRuntime:
                 matches.append(snap)
         return {"location": location, "chapter": chapter, "objects": matches}
 
+    def trace(self, object_id: str, migration_registry: Any, reconstruction: Any) -> dict[str, Any]:
+        if object_id not in self.objects:
+            raise KeyError(f"Unknown object: {object_id}")
+        refs: list[str] = []
+        for ref in self.objects[object_id].get("source_refs", []):
+            if ref not in refs:
+                refs.append(ref)
+        for transition in self.by_object.get(object_id, []):
+            for ref in transition.get("source_refs", []):
+                if ref not in refs:
+                    refs.append(ref)
+        for edge in self.identity_edges:
+            if object_id in {edge.get("from"), edge.get("to")}:
+                for ref in edge.get("source_refs", []):
+                    if ref not in refs:
+                        refs.append(ref)
+        for edge in self.containment_edges:
+            if object_id in {edge.get("container"), edge.get("contained")}:
+                for ref in edge.get("source_refs", []):
+                    if ref not in refs:
+                        refs.append(ref)
+
+        r_index = {x["id"]: x for x in reconstruction.data.get("r_nodes", [])}
+        resolved = []
+        for ref in refs:
+            if ref.startswith("doc:"):
+                doc = migration_registry.documents[ref]
+                resolved.append({
+                    "ref": ref,
+                    "kind": "document",
+                    "filename": doc["filename"],
+                    "sha256": doc["sha256"],
+                    "self_contained_path": doc["self_contained_path"],
+                    "canonical_path": doc["canonical_path"],
+                    "authority": doc["authority"],
+                    "runtime_authority": doc["runtime_authority"],
+                })
+            elif ref.startswith("R"):
+                node = r_index[ref]
+                resolved.append({
+                    "ref": ref,
+                    "kind": "reconstruction_evidence",
+                    "node": node["node"],
+                    "internal_evidence": node["internal_evidence"],
+                    "boundary": node["boundary"],
+                    "source_ref": node["source_ref"],
+                    "source_line": node.get("source_line"),
+                })
+        return {
+            "object_id": object_id,
+            "object": deepcopy(self.objects[object_id]),
+            "resolved_sources": resolved,
+            "transition_ids": [x["id"] for x in self.by_object.get(object_id, [])],
+            "trace_complete": len(resolved) == len(refs),
+        }
+
     def summary(self) -> dict[str, Any]:
         return {
             "milestone": self.data.get("milestone"),
