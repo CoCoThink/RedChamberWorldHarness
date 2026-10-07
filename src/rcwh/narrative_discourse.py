@@ -53,9 +53,20 @@ class NarrativeDiscourseRuntime:
             .get("probe_overrides", {})
             .get(probe_id, {})
         )
-        template.update({k: v for k, v in override.items() if k in {"primary_channel", "reveal_policy"}})
+        template.update({
+            k: v
+            for k, v in override.items()
+            if k in {"primary_channel", "reveal_policy", "opening_mode", "distance_curve"}
+        })
 
         focalizers = list(probe["focalizers"])
+        primary_focalizer = override.get("primary_focalizer", focalizers[0])
+        if primary_focalizer not in focalizers:
+            raise ValueError(
+                f"{scenario_id}/{probe_id}: primary focalizer {primary_focalizer} "
+                "must come from the P4 focalizer set"
+            )
+        secondary_focalizers = [x for x in focalizers if x != primary_focalizer]
         channels = self._channels(probe, template, ending)
         if override.get("primary_channel") and override["primary_channel"] not in channels:
             channels.insert(0, override["primary_channel"])
@@ -75,8 +86,8 @@ class NarrativeDiscourseRuntime:
                 "ending_vector": probe["ending_vector"],
             },
             "sjuzet_plan": {
-                "primary_focalizer": focalizers[0],
-                "secondary_focalizers": focalizers[1:],
+                "primary_focalizer": primary_focalizer,
+                "secondary_focalizers": secondary_focalizers,
                 "opening_mode": template["opening_mode"],
                 "temporal_order": template["temporal_order"],
                 "event_presence": template["event_presence"],
@@ -110,7 +121,10 @@ class NarrativeDiscourseRuntime:
         curves = {tuple(x["sjuzet_plan"]["distance_curve"]) for x in cards}
         exits = {x["sjuzet_plan"]["exit_channel"] for x in cards}
         primary = {x["sjuzet_plan"]["primary_focalizer"] for x in cards}
-        indirect = sum(not x["sjuzet_plan"]["direct_event_replay"] for x in cards)
+        non_full_direct = sum(
+            x["sjuzet_plan"]["event_presence"] != "DIRECT_EMBODIED"
+            for x in cards
+        )
         mediated = sum(
             bool({"DOCUMENT", "OBJECT_TRACE"}.intersection(x["sjuzet_plan"]["relay_channels"]))
             for x in cards
@@ -127,7 +141,7 @@ class NarrativeDiscourseRuntime:
                 "distance_curves": [list(x) for x in sorted(curves)],
                 "exit_channels": sorted(exits),
                 "primary_focalizers": sorted(primary),
-                "indirect_cards": indirect,
+                "non_full_direct_cards": non_full_direct,
                 "document_or_object_mediated_cards": mediated,
             },
             "watch": self.data["scenario_overrides"][scenario_id]["watch"],
@@ -149,7 +163,7 @@ class NarrativeDiscourseRuntime:
             ("distance_curves", t["distance_curves_min"]),
             ("exit_channels", t["exit_channels_min"]),
             ("primary_focalizers", t["primary_focalizers_min"]),
-            ("indirect_cards", t["indirect_cards_min"]),
+            ("non_full_direct_cards", t["non_full_direct_cards_min"]),
             ("document_or_object_mediated_cards", t["document_or_object_mediated_cards_min"]),
         ]
         for key, minimum in metric_checks:
@@ -215,7 +229,7 @@ class NarrativeDiscourseRuntime:
         right = self.evaluate(right_id, stress)
         keys = [
             "temporal_modes","relay_channels","opening_modes","distance_curves",
-            "exit_channels","primary_focalizers","indirect_cards","document_or_object_mediated_cards"
+            "exit_channels","primary_focalizers","non_full_direct_cards","document_or_object_mediated_cards"
         ]
         return {
             "left":left_id,
