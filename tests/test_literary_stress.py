@@ -117,8 +117,8 @@ def test_p4_project_state_is_pass_and_records_ci_gate():
     assert state["next_gate"] == "P5_NARRATIVE_DISCOURSE_RUNTIME"
     assert set(state["effects"].values()) == {"NONE"}
     assert state["ci"] == {
-        "run_id": 37644227669,
+        "run_id": 37644466841,
         "conclusion": "SUCCESS",
-        "pytest": "264 passed / 0 failed",
+        "pytest": "265 passed / 0 failed",
         "validate": "PASS",
     }
