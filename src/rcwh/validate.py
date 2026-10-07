@@ -12,6 +12,7 @@ from .implementation_alignment import ImplementationAlignmentRuntime
 from .literals import LiteralRegistry
 from .literary_eval import LiteraryEvaluationProfileRegistry
 from .literary_ecology import LiteraryEcologyRuntime
+from .literary_production import LiteraryProductionRuntime
 from .open_interfaces import OpenInterfaceRegistry
 from .object_network import ObjectNetworkRuntime
 from .plocks import LiteraryProtectionRegistry
@@ -199,6 +200,16 @@ def validate_repository(root: Path) -> list[str]:
             for e in errs
         )
 
+    literary_resume_state = root / "data" / "project_state" / "literary_resume_v1.json"
+    if literary_resume_state.exists():
+        errs = validate_instance(
+            load_data(literary_resume_state),
+            load_data(schema_dir / "literary_production_state.schema.json"),
+        )
+        errors.extend(
+            f"{literary_resume_state.relative_to(root)}: {e}" for e in errs
+        )
+
     literary_ecology_path = root / "data" / "literary_ecology" / "m5.json"
     if literary_ecology_path.exists():
         errs = validate_instance(
@@ -321,6 +332,15 @@ def validate_repository(root: Path) -> list[str]:
             regression,
         )
         errors.extend(completion_gate.validate_integrity(completion_payload, registry))
+        literary_resume_path = root / "data" / "project_state" / "literary_resume_v1.json"
+        if literary_resume_path.exists():
+            literary_production = LiteraryProductionRuntime.from_repo(root)
+            errors.extend(
+                literary_production.validate_integrity(
+                    completion_gate,
+                    competitions,
+                )
+            )
         for promotion_id in promotions.records:
             payload = promotions.evaluate(root, promotion_id)
             if payload["overall"] != "PASS":
@@ -332,6 +352,6 @@ def validate_repository(root: Path) -> list[str]:
                 for finding in gate["findings"]:
                     errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"registry/reconstruction/world/object/literary_ecology/implementation_alignment/coverage/completion/provenance/literal/history/open/regression/plock/competition graph: {exc}")
+        errors.append(f"registry/reconstruction/world/object/literary_ecology/implementation_alignment/coverage/completion/literary_production/provenance/literal/history/open/regression/plock/competition graph: {exc}")
 
     return errors
