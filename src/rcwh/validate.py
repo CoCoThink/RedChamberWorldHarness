@@ -18,6 +18,7 @@ from .literary_production import LiteraryProductionRuntime
 from .literary_stress import ScenarioLiteraryStressRuntime
 from .literary_suite import LiteraryEvaluatorSuite
 from .mechanism_adapters import HistoricalAdapterRuntime
+from .microdraft import ControlledMicrodraftRuntime
 from .narrative_discourse import NarrativeDiscourseRuntime
 from .open_interfaces import OpenInterfaceRegistry
 from .object_network import ObjectNetworkRuntime
@@ -399,6 +400,29 @@ def validate_repository(root: Path) -> list[str]:
             f"{narrative_discourse_state.relative_to(root)}: {e}" for e in errs
         )
 
+
+    microdraft_path = root / "data" / "microdraft" / "v012.json"
+    if microdraft_path.exists():
+        errs = validate_instance(
+            load_data(microdraft_path),
+            load_data(schema_dir / "controlled_microdraft.schema.json"),
+        )
+        errors.extend(
+            f"{microdraft_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    microdraft_state = (
+        root / "data" / "project_state" / "controlled_microdraft_v012.json"
+    )
+    if microdraft_state.exists():
+        errs = validate_instance(
+            load_data(microdraft_state),
+            load_data(schema_dir / "controlled_microdraft_state.schema.json"),
+        )
+        errors.extend(
+            f"{microdraft_state.relative_to(root)}: {e}" for e in errs
+        )
+
     prewrite_path = root / "data" / "prewrite" / "v06.json"
     if prewrite_path.exists():
         errs = validate_instance(
@@ -510,6 +534,14 @@ def validate_repository(root: Path) -> list[str]:
             narrative_discourse.validate_integrity(
                 literary_stress,
                 literary_ecology,
+            )
+        )
+        microdraft = ControlledMicrodraftRuntime.from_repo(root)
+        errors.extend(
+            microdraft.validate_integrity(
+                narrative_discourse,
+                literary_stress,
+                LiteraryEvaluatorSuite.from_repo(root),
             )
         )
         knowledge_runtime = CharacterKnowledgeRuntime.from_repo(root)
