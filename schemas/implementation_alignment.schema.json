@@ -1,0 +1,179 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH M6 Implementation Alignment",
+  "type": "object",
+  "required": [
+    "milestone",
+    "status",
+    "epistemic_rule",
+    "sources",
+    "source_normalization",
+    "stable_release",
+    "chapter_plans",
+    "implementation_facts",
+    "chapter_protections",
+    "cross_chapter_protections",
+    "specialized_plocks",
+    "competition_fixtures",
+    "promotion_fixture",
+    "chapter_alignment",
+    "invariants",
+    "completion"
+  ],
+  "properties": {
+    "milestone": {
+      "const": "M6"
+    },
+    "status": {
+      "type": "string"
+    },
+    "epistemic_rule": {
+      "type": "string",
+      "minLength": 50
+    },
+    "sources": {
+      "type": "object",
+      "minProperties": 4,
+      "maxProperties": 4
+    },
+    "source_normalization": {
+      "type": "object"
+    },
+    "stable_release": {
+      "type": "object",
+      "required": [
+        "release_id",
+        "file_ref",
+        "document_ref",
+        "sha256",
+        "line_count",
+        "chapter_count",
+        "mutable_during_full_migration",
+        "authority",
+        "chapters"
+      ],
+      "properties": {
+        "release_id": {
+          "const": "stable-active-v4.1"
+        },
+        "sha256": {
+          "const": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+        },
+        "line_count": {
+          "const": 2684
+        },
+        "chapter_count": {
+          "const": 20
+        },
+        "mutable_during_full_migration": {
+          "const": false
+        },
+        "chapters": {
+          "type": "array",
+          "minItems": 20,
+          "maxItems": 20
+        }
+      },
+      "additionalProperties": true
+    },
+    "chapter_plans": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "implementation_facts": {
+      "type": "array",
+      "minItems": 39,
+      "maxItems": 39
+    },
+    "chapter_protections": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "cross_chapter_protections": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "specialized_plocks": {
+      "type": "array",
+      "minItems": 5,
+      "maxItems": 5
+    },
+    "competition_fixtures": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "promotion_fixture": {
+      "type": "object"
+    },
+    "chapter_alignment": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "invariants": {
+      "type": "array",
+      "minItems": 8
+    },
+    "completion": {
+      "type": "object",
+      "required": [
+        "implementation_alignment_queryable",
+        "chapters_aligned",
+        "stable_body_registered",
+        "chapter_plan_machine_full",
+        "implementation_register_machine_full",
+        "protection_table_machine_full",
+        "stable_body_machine_full",
+        "literature_frozen",
+        "stable_active_changed",
+        "current_markdown_islands",
+        "p0_full_coverage",
+        "completion_gate_ready"
+      ],
+      "properties": {
+        "implementation_alignment_queryable": {
+          "const": true
+        },
+        "chapters_aligned": {
+          "const": 20
+        },
+        "stable_body_registered": {
+          "const": true
+        },
+        "chapter_plan_machine_full": {
+          "const": true
+        },
+        "implementation_register_machine_full": {
+          "const": true
+        },
+        "protection_table_machine_full": {
+          "const": true
+        },
+        "stable_body_machine_full": {
+          "const": true
+        },
+        "literature_frozen": {
+          "const": true
+        },
+        "stable_active_changed": {
+          "const": false
+        },
+        "current_markdown_islands": {
+          "const": 0
+        },
+        "p0_full_coverage": {
+          "const": false
+        },
+        "completion_gate_ready": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
