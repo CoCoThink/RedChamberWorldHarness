@@ -1,0 +1,21 @@
+{
+  "$schema":"https://json-schema.org/draft/2020-12/schema",
+  "title":"PromotionCandidate",
+  "type":"object",
+  "required":["id","state","source_competition","winner_candidate_id","baseline","candidate","allowed_changed_chapters","checks","stable_active_effect","release_action"],
+  "properties":{
+    "id":{"type":"string","pattern":"^promotion:ch86:b:v1-5-candidate$"},
+    "state":{"const":"REGRESSION_PASS"},
+    "source_competition":{"const":"comp:43-0:ch86:pressure-test"},
+    "winner_candidate_id":{"const":"ch86-B"},
+    "baseline":{"type":"object","required":["file_ref","sha256"],"properties":{"file_ref":{"type":"string"},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"}},"additionalProperties":false},
+    "candidate":{"type":"object","required":["path","sha256","source_chapter_path"],"properties":{"path":{"type":"string"},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"source_chapter_path":{"type":"string"}},"additionalProperties":false},
+    "allowed_changed_chapters":{"const":[86]},
+    "baseline_chapter_sha256":{"type":"object"},
+    "checks":{"type":"object","additionalProperties":{"enum":["PASS","FAIL"]}},
+    "stable_active_effect":{"const":"NONE"},
+    "release_action":{"const":"SEPARATE_EXPLICIT_PROMOTION_REQUIRED"},
+    "notes":{"type":["string","null"]}
+  },
+  "additionalProperties":false
+}

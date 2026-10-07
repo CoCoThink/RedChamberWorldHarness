@@ -1,0 +1,48 @@
+promotions:
+  - id: promotion:ch86:b:v1-5-candidate
+    state: REGRESSION_PASS
+    source_competition: comp:43-0:ch86:pressure-test
+    winner_candidate_id: ch86-B
+    baseline:
+      file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
+      sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
+    candidate:
+      path: artifacts/43-0/ch86/promotion/full_body_v1.5_candidate.md
+      sha256: 473eaf28f43a1418e4783e14af40c1a6ab3b7062c6eb0ace89d8a54f45082da9
+      source_chapter_path: artifacts/43-0/ch86/candidates/ch86_B_light_full.md
+    allowed_changed_chapters: [86]
+    baseline_chapter_sha256:
+      "81": 464bf9c095a17f89030c0d948f9dca00c9ca6f60b0a0feacbd6753b27ae9470b
+      "82": 6842ed68654ea5104979c20cde1d4550611f076cd4138c7eba5018b2dc51d4d3
+      "83": 9986138cde0545baceab1d0da1e54d6677209c7b3609d5f907213f2354332128
+      "84": b8e05a5a772afbdae54d01ef27da18646f8f561ccfb93ff5fc624677090aa936
+      "85": 9ad8d1ade8d367da367e71a0c1c735757101372bb39334db3ca608a90cffad02
+      "86": d550dca0a9c534750c803252d40ece5705bab7c6c6cdd3efd9a8d4a72c021b40
+      "87": 3a0b033eb1c5c9a4e33c0e995c840e711f92c4e854830e612be1eef59b54eaa6
+      "88": 180bf5571189f06bdbf317cc739f92565e031fa44ba815f9d20d1087b360f4d5
+      "89": ec593886c2f0a85fae49d99f423e9a04a2ee93b28495e21373984a88874decca
+      "90": b99959f958f18b7f0cd6108afd36a3a5986b35640188080dc5636743785fe257
+      "91": 4273f2440eba1997c81c2ab68b9ed310d760566f2494137b7a1c81ce8b45d776
+      "92": 9c7a52259cc7de0b6ea9f850e8903aabd4e04232db2f1ecdae4350cc38ae3c83
+      "93": 4698ecdcaca5394c010e69a555e888b7be1fac6b60e5c45ab4409055135c5b16
+      "94": 0bccf7234948c1117872bc2c7bbe553b0d745a417ef7d3d46953c57608b27bae
+      "95": d67781d93ee92821ebcdb4f878cd9f95bb200f8e15b1dfa4d454d14cc6035e6f
+      "96": d87db23965dfd801719f9c889e0152411d51d8751ee3c381e575d90b90ea8159
+      "97": 004398a2e3b8c7a183064197265af37edededdfb3b9659452e6c7da1e412ba39
+      "98": 0cb0c3fda578d8dad2c0afea1fe39ef60a0bb959faff6dd406f0cb830481a1a9
+      "99": 635ab7f39555145562c67de4e3480628ed955c931009e5606e8d953461c8cde9
+      "100": 99a86508d2b8d34421b35839e617eb643466c3ad31d6c81a3c21bbbe7e35fb46
+    checks:
+      COMPETITION_ELIGIBILITY: PASS
+      BASELINE_IDENTITY: PASS
+      BOOK_STRUCTURE: PASS
+      NON_TARGET_INTEGRITY: PASS
+      R4F_HARD_INTERFACES: PASS
+      EVIDENCE_CORE: PASS
+      PLOCK: PASS
+      STABLE_POINTER_UNCHANGED: PASS
+    stable_active_effect: NONE
+    release_action: SEPARATE_EXPLICIT_PROMOTION_REQUIRED
+    notes: >-
+      B已嵌入完整81—100候选并完成promotion regression。
+      仅第86回允许变化；稳定ACTIVE v1.4及其所有ACTIVE指针保持不变。

@@ -1,0 +1,117 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH M3 Assembled World Runtime",
+  "type": "object",
+  "required": [
+    "milestone",
+    "status",
+    "epistemic_rule",
+    "sources",
+    "characters",
+    "relations",
+    "institutions",
+    "baseline",
+    "events",
+    "completion",
+    "locations",
+    "presence_matrix",
+    "body_matrix",
+    "economy_stages",
+    "resource_flows",
+    "knowledge_rules",
+    "longlines"
+  ],
+  "properties": {
+    "milestone": {
+      "const": "M3"
+    },
+    "status": {
+      "type": "string"
+    },
+    "epistemic_rule": {
+      "type": "string",
+      "minLength": 20
+    },
+    "sources": {
+      "type": "object",
+      "minProperties": 8
+    },
+    "characters": {
+      "type": "array",
+      "minItems": 28,
+      "maxItems": 28
+    },
+    "locations": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15
+    },
+    "relations": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10
+    },
+    "institutions": {
+      "type": "array",
+      "minItems": 9,
+      "maxItems": 9
+    },
+    "baseline": {
+      "type": "object"
+    },
+    "events": {
+      "type": "array",
+      "minItems": 20
+    },
+    "presence_matrix": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "body_matrix": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "economy_stages": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "resource_flows": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "knowledge_rules": {
+      "type": "array",
+      "minItems": 11,
+      "maxItems": 11
+    },
+    "longlines": {
+      "type": "array",
+      "minItems": 10,
+      "maxItems": 10
+    },
+    "completion": {
+      "type": "object",
+      "required": [
+        "world_queryable",
+        "event_replay",
+        "completion_gate_ready"
+      ],
+      "properties": {
+        "world_queryable": {
+          "const": true
+        },
+        "event_replay": {
+          "const": true
+        },
+        "completion_gate_ready": {
+          "const": false
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

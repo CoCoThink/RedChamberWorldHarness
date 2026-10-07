@@ -1,0 +1,34 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH M3 Registry Extension",
+  "type": "object",
+  "required": [
+    "milestone",
+    "document_additions",
+    "content_hash_additions",
+    "document_overrides",
+    "current_authority_override"
+  ],
+  "properties": {
+    "milestone": {
+      "const": "M3"
+    },
+    "document_additions": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "content_hash_additions": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6
+    },
+    "document_overrides": {
+      "type": "object"
+    },
+    "current_authority_override": {
+      "type": "object"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,87 @@
+{
+  "milestone": "M7",
+  "status": "PASS",
+  "rule": "Negative/archive fixtures remain queryable history and must never regain runtime authority.",
+  "package_fixtures": [
+    {
+      "id": "pkg:stable-active-v4.0",
+      "state": "REVOKED",
+      "runtime_authority": "NO"
+    },
+    {
+      "id": "pkg:r4-phase3-rg97-v1.0",
+      "state": "SUPERSEDED",
+      "runtime_authority": "NO"
+    },
+    {
+      "id": "pkg:r4-phase6-current-v1.0",
+      "state": "SUPERSEDED",
+      "runtime_authority": "NO"
+    },
+    {
+      "id": "pkg:r4-phase7-r4f-v1.0",
+      "state": "SUPERSEDED",
+      "runtime_authority": "NO"
+    },
+    {
+      "id": "pkg:r4-phase7-r4f-v1.1",
+      "state": "SUPERSEDED",
+      "runtime_authority": "NO"
+    }
+  ],
+  "semantic_rejections": [
+    {
+      "id": "neg:qingbang:five-books-sixty",
+      "state": "REJECTED",
+      "replacement": "M5 qingbang level system with complete rosters/12-per-level/60-total OPEN"
+    },
+    {
+      "id": "neg:title:fengjie-snow-jade-formal",
+      "state": "REJECTED_AS_FORMAL_TITLE",
+      "replacement": "event/scene only; formal title not locked"
+    },
+    {
+      "id": "neg:title:acid-rice-broken-felt-formal",
+      "state": "REJECTED_AS_FORMAL_TITLE",
+      "replacement": "scene evidence only; formal title not locked"
+    },
+    {
+      "id": "neg:title:zhen-baoyu-returns-jade-formal",
+      "state": "REJECTED_AS_FORMAL_TITLE",
+      "replacement": "event evidence only; formal title not locked"
+    },
+    {
+      "id": "neg:title:prison-god-temple-comforts-baoyu-formal",
+      "state": "REJECTED_AS_FORMAL_TITLE",
+      "replacement": "T2 draft/chapter-call identity, not formal title"
+    }
+  ],
+  "competition_fixtures": [
+    {
+      "id": "ch86-A",
+      "state": "NON_WINNER_ARCHIVED",
+      "competition": "comp:43-0:ch86:pressure-test"
+    },
+    {
+      "id": "ch86-C",
+      "state": "NON_WINNER_ARCHIVED",
+      "competition": "comp:43-0:ch86:pressure-test"
+    },
+    {
+      "id": "ch86-B",
+      "state": "WINNER_DEFERRED_NOT_ACTIVE",
+      "competition": "comp:43-0:ch86:pressure-test"
+    },
+    {
+      "id": "ch89-B-phase1",
+      "state": "PRESSURE_FIXTURE_NOT_CANDIDATE",
+      "competition": "comp:43-0:ch89:pressure-test"
+    },
+    {
+      "id": "ch89-C-phase1",
+      "state": "PRESSURE_FIXTURE_NOT_CANDIDATE",
+      "competition": "comp:43-0:ch89:pressure-test"
+    }
+  ],
+  "stable_active_effect": "NONE"
+}

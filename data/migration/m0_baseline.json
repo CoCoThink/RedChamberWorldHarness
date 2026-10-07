@@ -1,0 +1,59 @@
+{
+  "id": "migration:m0:baseline:v3.0",
+  "milestone": "M0",
+  "status": "PASS",
+  "completed_date": "2026-10-07",
+  "source_package": {
+    "filename": "RCWH_SelfContained_FullMigration_v3.0_20261006(1).zip",
+    "sha256": "a20117a23a0a93aaeed33eb0fb7849c05921d85457feba191b1632fe375868c0",
+    "zip_file_entries": 718,
+    "content_manifest_rows": 717,
+    "nested_zip_count": 0
+  },
+  "content_manifest": {
+    "path": "06_MANIFESTS/CONTENT_MANIFEST_SHA256.csv",
+    "manifest_file_sha256": "5637053f701f14c9bfe9295ab058818659cf902b996bbdc05c54eec338c74c5a",
+    "verified_rows": 717,
+    "missing_rows": 0,
+    "sha256_mismatch_rows": 0,
+    "package_summary_declared_sha256": "8f46480a6b48bb8b6b3cb3126fbeaaa7dfadd5f72e65a99d0fe4237a92ad2dc8",
+    "nonrecursive_manifest_sha256": "8f46480a6b48bb8b6b3cb3126fbeaaa7dfadd5f72e65a99d0fe4237a92ad2dc8",
+    "nonrecursive_rule": "SHA256 of CONTENT_MANIFEST_SHA256.csv with the 06_MANIFESTS/PACKAGE_SUMMARY.json row excluded to avoid self-reference",
+    "package_summary_digest_matches_nonrecursive_manifest": true
+  },
+  "stable_active": {
+    "file_ref": "第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md",
+    "package_path": "02_CURRENT_RUNTIME/IMPLEMENTATION/第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md",
+    "expected_sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+    "actual_sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+    "frozen": true
+  },
+  "github_baseline": {
+    "repository": "CoCoThink/RedChamberWorldHarness",
+    "main_sha": "0ffd5a3aa8ec311c5af39be5fc511b22d6484788",
+    "pr9_number": 9,
+    "pr9_head_branch": "feature/literary-plock-v0.3-alpha",
+    "pr9_head_sha": "02eda38d8fc478e0dcefc1422356168a03c7a338",
+    "migration_branch": "migration/full-v3",
+    "migration_branch_start_sha": "02eda38d8fc478e0dcefc1422356168a03c7a338",
+    "migration_branch_identical_to_pr9_head_before_m0": true
+  },
+  "harness_validation": {
+    "snapshot_path": "04_HARNESS_REPO_PR9/",
+    "python_version": "3.13.5",
+    "rcwh_validate": "PASS",
+    "pytest_passed": 79,
+    "pytest_failed": 0,
+    "live_pr9_actions": "SUCCESS"
+  },
+  "migration_freeze": {
+    "literary_construction": "FROZEN",
+    "chapter_89_continuation": "FROZEN",
+    "chapter_92": "FROZEN",
+    "chapter_97": "FROZEN",
+    "existing_ch89_phase1": "PRESERVE_AS_HISTORY_ONLY",
+    "stable_active_promotion": "FROZEN",
+    "completion_gate_reached": false
+  },
+  "next_milestone": "M1"
+}

@@ -1,0 +1,131 @@
+literary_evaluation_profiles:
+  - id: leval:ch86:cold-medicine
+    plock_ref: plock:ch86:cold-medicine
+    blocker_checks:
+      - id: explicit-death-poem
+        any_text: [绝命诗, 绝笔诗]
+        reason: 候选正文显式生成“绝命诗/绝笔诗”，直接触发当前P-Lock禁止项。
+      - id: explicit-philosophical-closure
+        any_text: [我终于明白, 看破红尘, 人生不过]
+        reason: 临终被显式哲学总结接管，属于当前禁止的解释性收束。
+      - id: supernatural-reversal
+        any_text: [显灵救活, 神迹救活]
+        reason: 以神迹逆转身体死亡机制。
+    feature_signals:
+      - feature_ref: medicine-stove-chain
+        groups:
+          - [药, 药碗, 药汁]
+          - [温, 再温, 温药]
+          - [炉, 炉火, 小炉]
+          - [冷, 冷透]
+      - feature_ref: late-arrival-mundane-misread
+        groups:
+          - [宝玉]
+          - [再温一温, 温药, 药]
+      - feature_ref: unfinished-writing
+        groups:
+          - [旧稿, 残稿, 删, 划去, 改字, 未成]
+    observations:
+      - id: body-care-vocabulary
+        terms: [药, 水, 灯, 炉, 米汤, 大夫, 帕子]
+        label: 身体照料与日常劳务词项
+    manual_review_required: true
+
+  - id: leval:ch89:small-life
+    plock_ref: plock:ch89:small-life-after-confiscation
+    blocker_checks: []
+    feature_signals:
+      - feature_ref: big-event-small-life
+        groups:
+          - [衣, 衣包, 衣裳]
+          - [钥匙]
+          - [井, 水桶, 水]
+      - feature_ref: shared-infrastructure
+        groups:
+          - [院, 借住, 屋]
+          - [井, 灶, 炉, 水桶]
+    observations:
+      - id: procedure-vocabulary
+        terms: [点看, 报明, 造册, 封, 书办, 名目, 柜]
+        label: 抄没程序词项，仅观察不自动判定密度
+      - id: small-life-vocabulary
+        terms: [粥, 药, 衣, 钥匙, 井, 水桶, 灶]
+        label: 小生活物质词项
+    manual_review_required: true
+
+  - id: leval:ch92:procedure-density
+    plock_ref: plock:ch92:procedure-density
+    blocker_checks:
+      - id: supernatural-release
+        any_text: [神迹脱罪, 显灵放人, 神明显灵放人]
+        reason: 羁押被神迹直接解决，违反当前非传奇性保护。
+    feature_signals:
+      - feature_ref: xiaohong-capability
+        groups:
+          - [小红, 红玉]
+          - [经手, 交接, 问, 找, 对得上, 问准]
+      - feature_ref: qianxue-socks
+        groups:
+          - [茜雪]
+          - [袜, 针, 补, 脚跟]
+          - [冷, 暖, 厚]
+      - feature_ref: prison-ordinary-time
+        groups:
+          - [点名, 等, 饭, 门响, 问话]
+    observations:
+      - id: procedure-vocabulary
+        terms: [问讯, 口供, 经手, 交接, 点名, 放人, 狱, 监]
+        label: 羁押程序词项，仅报告出现次数，不生成文学分数
+    manual_review_required: true
+
+  - id: leval:ch97:miaoyu-object
+    plock_ref: plock:ch97:miaoyu-object-progression
+    blocker_checks:
+      - id: explicit-transformation-summary
+        any_text: [终于明白, 看破红尘, 已然入尘, 从此入尘]
+        reason: 妙玉变化被总结成单一哲学结论。
+      - id: guazhou-legend-growth
+        any_text: [瓜州渡口被掳, 瓜州被掳, 渡口劫走]
+        reason: W2瓜州线被候选正文自行长成传奇情节。
+    feature_signals:
+      - feature_ref: shared-water
+        groups:
+          - [水, 热水]
+          - [不够, 半桶, 共用, 省]
+      - feature_ref: counted-oil
+        groups:
+          - [油, 灯油]
+          - [数, 半罐, 省]
+      - feature_ref: basin-dedicated-to-shared
+        groups:
+          - [白瓷, 小盆, 白瓷盆]
+          - [洗盏, 茶具]
+          - [借, 盛灰, 香灰]
+          - [洗净, 清水]
+          - [仍照旧用了, 仍用, 照旧用]
+      - feature_ref: xichun-not-total-clarity
+        groups:
+          - [惜春]
+          - [梳子, 忘了扔, 件件想得明白]
+    observations: []
+    manual_review_required: true
+
+  - id: leval:ch100:record-keeper
+    plock_ref: plock:ch100:record-keeper-ending
+    blocker_checks: []
+    feature_signals:
+      - feature_ref: record-not-interpret
+        groups:
+          - [空空道人, 道人]
+          - [抄, 誊录, 录完, 核对]
+      - feature_ref: material-transcription
+        groups:
+          - [粗纸, 纸]
+          - [墨, 添水]
+          - [核对, 空着]
+          - [风, 苔]
+    observations:
+      - id: interpretation-vocabulary
+        terms: [原来, 所以, 可见, 这正是, 意味着]
+        label: 外框解释性连接词，仅观察，必须人工判断是否成为第二解释者
+    manual_review_required: true

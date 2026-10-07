@@ -1,0 +1,149 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH M5 Literary Ecology Runtime",
+  "type": "object",
+  "required": [
+    "milestone",
+    "status",
+    "epistemic_rule",
+    "sources",
+    "dimensions",
+    "voice_profiles",
+    "chapter_grammar_rules",
+    "techniques",
+    "material_rules",
+    "evidence_nodes",
+    "qingbang",
+    "ten_du_yin",
+    "xu_zhuangzi",
+    "daiyu_text_interfaces",
+    "g_layer_decisions",
+    "author_rhyme_chapters",
+    "post80_text_ecology",
+    "global_rules",
+    "completion"
+  ],
+  "properties": {
+    "milestone": {
+      "const": "M5"
+    },
+    "status": {
+      "type": "string"
+    },
+    "epistemic_rule": {
+      "type": "string",
+      "minLength": 50
+    },
+    "sources": {
+      "type": "object",
+      "minProperties": 27,
+      "maxProperties": 27
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 13,
+      "maxItems": 13
+    },
+    "voice_profiles": {
+      "type": "array",
+      "minItems": 18,
+      "maxItems": 18
+    },
+    "chapter_grammar_rules": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8
+    },
+    "techniques": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16
+    },
+    "material_rules": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4
+    },
+    "evidence_nodes": {
+      "type": "array",
+      "minItems": 15,
+      "maxItems": 15
+    },
+    "qingbang": {
+      "type": "object"
+    },
+    "ten_du_yin": {
+      "type": "object"
+    },
+    "xu_zhuangzi": {
+      "type": "object"
+    },
+    "daiyu_text_interfaces": {
+      "type": "array",
+      "minItems": 6
+    },
+    "g_layer_decisions": {
+      "type": "array",
+      "minItems": 16,
+      "maxItems": 16
+    },
+    "author_rhyme_chapters": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "post80_text_ecology": {
+      "type": "array",
+      "minItems": 20,
+      "maxItems": 20
+    },
+    "global_rules": {
+      "type": "array",
+      "minItems": 8
+    },
+    "completion": {
+      "type": "object",
+      "required": [
+        "literary_ecology_queryable",
+        "evidence_generation_separated",
+        "voice_queryable",
+        "chapter_text_ecology_queryable",
+        "source_traceable",
+        "p0_full_coverage",
+        "current_markdown_islands",
+        "stable_active_changed",
+        "completion_gate_ready"
+      ],
+      "properties": {
+        "literary_ecology_queryable": {
+          "const": true
+        },
+        "evidence_generation_separated": {
+          "const": true
+        },
+        "voice_queryable": {
+          "const": true
+        },
+        "chapter_text_ecology_queryable": {
+          "const": true
+        },
+        "source_traceable": {
+          "const": true
+        },
+        "p0_full_coverage": {
+          "const": false
+        },
+        "current_markdown_islands": {
+          "const": 0
+        },
+        "stable_active_changed": {
+          "const": false
+        },
+        "completion_gate_ready": {
+          "const": false
+        }
+      }
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "LiteraryProtectionLock",
+  "type": "object",
+  "required": [
+    "id",
+    "chapter",
+    "title",
+    "state",
+    "authority",
+    "generation_effect",
+    "active_prose_locator",
+    "required_features",
+    "forbidden_drift",
+    "replacement_rule"
+  ],
+  "properties": {
+    "id": {"type": "string", "pattern": "^plock:ch(86|89|92|97|100):[a-z0-9-]+$"},
+    "chapter": {"enum": [86, 89, 92, 97, 100]},
+    "title": {"type": "string", "minLength": 1},
+    "legacy_ref": {"type": ["string", "null"]},
+    "state": {"const": "P_LOCKED"},
+    "authority": {"const": "LITERARY_PROTECTION_ONLY"},
+    "generation_effect": {"const": "PROTECT_AGAINST_REGRESSION"},
+    "active_prose_locator": {
+      "type": "object",
+      "required": ["file_ref", "file_sha256", "lines"],
+      "properties": {
+        "file_ref": {"type": "string", "minLength": 1},
+        "file_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "lines": {"type": "string", "minLength": 1}
+      },
+      "additionalProperties": false
+    },
+    "implementation_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"type": "string"}
+    },
+    "upstream_context": {
+      "type": "object",
+      "properties": {
+        "decision_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "open_interface_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "mechanism_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+        "literal_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}}
+      },
+      "additionalProperties": false
+    },
+    "exact_anchors": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "required": ["text", "mode"],
+        "properties": {
+          "text": {"type": "string", "minLength": 1},
+          "mode": {"enum": ["P1_EXACT", "P1_TERMINAL", "P1_DIALOGUE"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "required_features": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "mode", "description"],
+        "properties": {
+          "id": {"type": "string", "minLength": 1},
+          "mode": {
+            "enum": [
+              "PRESERVE_FUNCTION",
+              "PRESERVE_SEQUENCE",
+              "PRESERVE_CONTRAST",
+              "PRESERVE_OBJECT_CHAIN",
+              "DENSITY_CAP"
+            ]
+          },
+          "description": {"type": "string", "minLength": 1}
+        },
+        "additionalProperties": false
+      }
+    },
+    "forbidden_drift": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "replacement_rule": {
+      "const": "COMPETITION_PLUS_SIX_FIELD_PLUS_PLOCK_PLUS_BLIND_READ"
+    },
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": false
+}

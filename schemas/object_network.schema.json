@@ -1,0 +1,204 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH M4 Object Network",
+  "type": "object",
+  "required": [
+    "milestone",
+    "status",
+    "epistemic_rule",
+    "objects",
+    "transitions",
+    "identity_edges",
+    "containment_edges",
+    "invariants",
+    "completion"
+  ],
+  "properties": {
+    "milestone": {
+      "const": "M4"
+    },
+    "status": {
+      "type": "string"
+    },
+    "epistemic_rule": {
+      "type": "string",
+      "minLength": 40
+    },
+    "objects": {
+      "type": "array",
+      "minItems": 15,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "name",
+          "kind",
+          "identity_status",
+          "evidence_status",
+          "source_refs",
+          "baseline",
+          "continuity_rules"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^OBJ-"
+          },
+          "name": {
+            "type": "string"
+          },
+          "kind": {
+            "type": "string"
+          },
+          "identity_status": {
+            "type": "string"
+          },
+          "evidence_status": {
+            "type": "string"
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "legacy_ref": {
+            "type": "string"
+          },
+          "baseline": {
+            "type": "object",
+            "required": [
+              "holder",
+              "location",
+              "status"
+            ]
+          },
+          "continuity_rules": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "transitions": {
+      "type": "array",
+      "minItems": 25,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "chapter",
+          "sequence",
+          "object_id",
+          "action",
+          "from",
+          "to",
+          "source_refs",
+          "epistemic",
+          "note",
+          "movement"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^OT"
+          },
+          "chapter": {
+            "type": "integer",
+            "minimum": 81,
+            "maximum": 100
+          },
+          "sequence": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "object_id": {
+            "type": "string",
+            "pattern": "^OBJ-"
+          },
+          "action": {
+            "type": "string"
+          },
+          "from": {
+            "type": "object"
+          },
+          "to": {
+            "type": "object"
+          },
+          "source_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "epistemic": {
+            "type": "string"
+          },
+          "note": {
+            "type": "string"
+          },
+          "movement": {
+            "enum": [
+              "NONE",
+              "EXPLICIT",
+              "OPEN_BOUNDARY",
+              "DISCOVERY_FROM_UNKNOWN"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "identity_edges": {
+      "type": "array",
+      "minItems": 1
+    },
+    "containment_edges": {
+      "type": "array",
+      "minItems": 1
+    },
+    "invariants": {
+      "type": "array",
+      "minItems": 5,
+      "items": {
+        "type": "string"
+      }
+    },
+    "completion": {
+      "type": "object",
+      "required": [
+        "object_queryable",
+        "transition_replay",
+        "no_implicit_teleport",
+        "jade_identity_open_preserved",
+        "stable_active_changed",
+        "completion_gate_ready"
+      ],
+      "properties": {
+        "object_queryable": {
+          "const": true
+        },
+        "transition_replay": {
+          "const": true
+        },
+        "no_implicit_teleport": {
+          "const": true
+        },
+        "jade_identity_open_preserved": {
+          "const": true
+        },
+        "stable_active_changed": {
+          "const": false
+        },
+        "completion_gate_ready": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}

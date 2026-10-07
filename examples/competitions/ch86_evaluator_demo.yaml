@@ -1,0 +1,49 @@
+competition_records:
+  - id: comp:fixture:ch86:evaluator-demo
+    mode: HARNESS_FIXTURE
+    chapter: 86
+    sequence: 1
+    plock_ref: plock:ch86:cold-medicine
+    state: IN_REVIEW
+    baseline:
+      file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
+      sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
+    pipeline: [BASELINE_EXCERPT, STRUCTURAL_REORDER, SMALL_TRIAL, SIX_FIELD_REGRESSION, PLOCK_REGRESSION, BLIND_READ]
+    workflow_progress:
+      BASELINE_EXCERPT: PASS
+      STRUCTURAL_REORDER: PASS
+      SMALL_TRIAL: PASS
+      SIX_FIELD_REGRESSION: PENDING
+      PLOCK_REGRESSION: PENDING
+      BLIND_READ: PENDING
+    candidates:
+      - id: fixture86-A
+        label: A
+        blind_token: BR-17
+        artifact: {kind: REPO_FILE, path: examples/literary/ch86_preserved.txt, git_blob_sha: a937896c4f5161ee150d63c878d54df454d133d7, source_commit: 320cf668d917bc2a3cf209dcd2d85d3fff7c7c54}
+        origin: HUMAN_EDITED
+        machine_expected_status: READY_FOR_BLIND_READ
+        six_field: {PROVENANCE: NOT_RUN, ROLE: NOT_RUN, MODALITY: NOT_RUN, TARGET: NOT_RUN, PLACEMENT: NOT_RUN, IMPLEMENTATION: NOT_RUN}
+        human_plock: {status: PENDING}
+        blind_read: {status: PENDING, reviewer_blinded: true}
+      - id: fixture86-B
+        label: B
+        blind_token: BR-42
+        artifact: {kind: REPO_FILE, path: examples/literary/ch86_replacement_case.txt, git_blob_sha: daa1d28f2ca8ab43afcc7e5997a6058002abc004, source_commit: 320cf668d917bc2a3cf209dcd2d85d3fff7c7c54}
+        origin: STRUCTURAL_REWRITE
+        machine_expected_status: REPLACEMENT_CASE
+        six_field: {PROVENANCE: NOT_RUN, ROLE: NOT_RUN, MODALITY: NOT_RUN, TARGET: NOT_RUN, PLACEMENT: NOT_RUN, IMPLEMENTATION: NOT_RUN}
+        human_plock: {status: PENDING}
+        blind_read: {status: PENDING, reviewer_blinded: true}
+      - id: fixture86-C
+        label: C
+        blind_token: BR-63
+        artifact: {kind: REPO_FILE, path: examples/literary/ch86_blocked.txt, git_blob_sha: a1e50f8895dd797040af342f40a1dbc538b5d71c, source_commit: 320cf668d917bc2a3cf209dcd2d85d3fff7c7c54}
+        origin: MODEL_GENERATED
+        machine_expected_status: REJECT_BEFORE_BLIND_READ
+        six_field: {PROVENANCE: NOT_RUN, ROLE: NOT_RUN, MODALITY: NOT_RUN, TARGET: NOT_RUN, PLACEMENT: NOT_RUN, IMPLEMENTATION: NOT_RUN}
+        human_plock: {status: PENDING}
+        blind_read: {status: PENDING, reviewer_blinded: true}
+    adjudication: {outcome: PENDING, winner_candidate_id: null, promotion_state: NOT_ELIGIBLE}
+    stable_active_effect: SEPARATE_PROMOTION_ONLY
+    notes: 仅为Harness门禁测试夹具，不是43-0第86正式文学竞争。
