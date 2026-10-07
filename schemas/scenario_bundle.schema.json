@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH Scenario Bundle v0.7",
+  "type": "object",
+  "required": ["id","title","status","authority","hypotheses","hard_constraints","open_interfaces","evaluation_axes","current_c_relation","search_policy","world_replay","evidence_effect","stable_active_effect"],
+  "properties": {
+    "id": {"type":"string","pattern":"^SCN-[A-Z0-9-]+$"},
+    "title": {"type":"string","minLength":1},
+    "status": {"enum":["ADMISSIBLE","BLOCKED","DEFERRED"]},
+    "authority": {"const":"SCENARIO_ONLY"},
+    "hypotheses": {"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","pattern":"^HYP-[A-Z0-9-]+$"}},
+    "hard_constraints": {
+      "type":"object","required":["status","blockers"],
+      "properties":{"status":{"enum":["PENDING_P2_REPLAY","PASS","FAIL"]},"blockers":{"type":"array","items":{"type":"string"}}},
+      "additionalProperties":false
+    },
+    "open_interfaces": {
+      "type":"object","required":["policy","closed_by_scenario"],
+      "properties":{"policy":{"const":"PRESERVE_OPEN"},"closed_by_scenario":{"type":"array","maxItems":0}},
+      "additionalProperties":false
+    },
+    "evaluation_axes": {
+      "type":"object",
+      "required":["evidence_fit","contradiction_risk","open_consumption","historical_cost","world_coherence","chapter_economy","front80_structural_echo","literary_fertility"],
+      "properties":{
+        "evidence_fit":{"const":"UNASSESSED"},"contradiction_risk":{"const":"UNASSESSED"},"open_consumption":{"const":"UNASSESSED"},"historical_cost":{"const":"UNASSESSED"},
+        "world_coherence":{"const":"UNASSESSED"},"chapter_economy":{"const":"UNASSESSED"},"front80_structural_echo":{"const":"UNASSESSED"},"literary_fertility":{"const":"UNASSESSED"}
+      },"additionalProperties":false
+    },
+    "current_c_relation":{"enum":["CURRENT_C_REFERENCE","ALTERNATIVE"]},
+    "search_policy":{
+      "type":"object","required":["search_priority","evidence_bonus","baseline_convenience_bonus"],
+      "properties":{"search_priority":{"enum":["NONE","EQUAL"]},"evidence_bonus":{"const":"NONE"},"baseline_convenience_bonus":{"const":"NONE"}},
+      "additionalProperties":false
+    },
+    "world_replay":{
+      "type":"object","required":["status","result_ref"],
+      "properties":{"status":{"const":"PENDING_P2"},"result_ref":{"type":["string","null"]}},
+      "additionalProperties":false
+    },
+    "evidence_effect":{"const":"NONE"},
+    "stable_active_effect":{"const":"NONE"},
+    "notes":{"type":["string","null"]}
+  },
+  "additionalProperties":false
+}

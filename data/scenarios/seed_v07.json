@@ -1,0 +1,497 @@
+{
+  "id": "scenario-seeds:v0.7",
+  "status": "PASS_CANDIDATE",
+  "authority": "SHADOW_ONLY",
+  "scenarios": [
+    {
+      "id": "SCN-CURRENT-C",
+      "title": "当前C参考路线（无搜索优待）",
+      "status": "ADMISSIBLE",
+      "authority": "SCENARIO_ONLY",
+      "hypotheses": [
+        "HYP-G1",
+        "HYP-O09-A",
+        "HYP-HOUSE-TEMP-THEN-RENTAL",
+        "HYP-DETENTION-FAMILY-CASE",
+        "HYP-FJ-DEAD",
+        "HYP-SNOW-JADE-UNRESOLVED",
+        "HYP-MIAOYU-NONGUAZHOU",
+        "HYP-ZHEN-DIRECT",
+        "HYP-SENT-JADE-SAME",
+        "HYP-END-SPLIT-99-100"
+      ],
+      "hard_constraints": {
+        "status": "PENDING_P2_REPLAY",
+        "blockers": []
+      },
+      "open_interfaces": {
+        "policy": "PRESERVE_OPEN",
+        "closed_by_scenario": []
+      },
+      "evaluation_axes": {
+        "evidence_fit": "UNASSESSED",
+        "contradiction_risk": "UNASSESSED",
+        "open_consumption": "UNASSESSED",
+        "historical_cost": "UNASSESSED",
+        "world_coherence": "UNASSESSED",
+        "chapter_economy": "UNASSESSED",
+        "front80_structural_echo": "UNASSESSED",
+        "literary_fertility": "UNASSESSED"
+      },
+      "current_c_relation": "CURRENT_C_REFERENCE",
+      "search_policy": {
+        "search_priority": "NONE",
+        "evidence_bonus": "NONE",
+        "baseline_convenience_bonus": "NONE"
+      },
+      "world_replay": {
+        "status": "PENDING_P2",
+        "result_ref": null
+      },
+      "evidence_effect": "NONE",
+      "stable_active_effect": "NONE",
+      "notes": "仅作为当前实现参照；不得因 stable 成熟获得 evidence/search bonus。"
+    },
+    {
+      "id": "SCN-EARLY-MARRIAGE",
+      "title": "G0早婚压力路线",
+      "status": "ADMISSIBLE",
+      "authority": "SCENARIO_ONLY",
+      "hypotheses": [
+        "HYP-G0",
+        "HYP-O09-A",
+        "HYP-HOUSE-TEMP-THEN-RENTAL",
+        "HYP-DETENTION-FAMILY-CASE",
+        "HYP-FJ-DEAD",
+        "HYP-SNOW-JADE-UNRESOLVED",
+        "HYP-MIAOYU-NONGUAZHOU",
+        "HYP-ZHEN-DIRECT",
+        "HYP-SENT-JADE-SAME",
+        "HYP-END-SPLIT-99-100"
+      ],
+      "hard_constraints": {
+        "status": "PENDING_P2_REPLAY",
+        "blockers": []
+      },
+      "open_interfaces": {
+        "policy": "PRESERVE_OPEN",
+        "closed_by_scenario": []
+      },
+      "evaluation_axes": {
+        "evidence_fit": "UNASSESSED",
+        "contradiction_risk": "UNASSESSED",
+        "open_consumption": "UNASSESSED",
+        "historical_cost": "UNASSESSED",
+        "world_coherence": "UNASSESSED",
+        "chapter_economy": "UNASSESSED",
+        "front80_structural_echo": "UNASSESSED",
+        "literary_fertility": "UNASSESSED"
+      },
+      "current_c_relation": "ALTERNATIVE",
+      "search_policy": {
+        "search_priority": "EQUAL",
+        "evidence_bonus": "NONE",
+        "baseline_convenience_bonus": "NONE"
+      },
+      "world_replay": {
+        "status": "PENDING_P2",
+        "result_ref": null
+      },
+      "evidence_effect": "NONE",
+      "stable_active_effect": "NONE",
+      "notes": "测试金玉先婚能否更好容纳夫妻生活与后续败局。"
+    },
+    {
+      "id": "SCN-LATE-MARRIAGE",
+      "title": "G2败后/羁押后婚姻路线",
+      "status": "ADMISSIBLE",
+      "authority": "SCENARIO_ONLY",
+      "hypotheses": [
+        "HYP-G2",
+        "HYP-O09-B",
+        "HYP-HOUSE-DIRECT-RENTAL",
+        "HYP-DETENTION-FAMILY-CASE",
+        "HYP-FJ-POWERLESS",
+        "HYP-SNOW-JADE-UNRESOLVED",
+        "HYP-MIAOYU-NONGUAZHOU",
+        "HYP-ZHEN-MEDIATED",
+        "HYP-SENT-JADE-IDENTITY-OPEN",
+        "HYP-END-SPLIT-99-100"
+      ],
+      "hard_constraints": {
+        "status": "PENDING_P2_REPLAY",
+        "blockers": []
+      },
+      "open_interfaces": {
+        "policy": "PRESERVE_OPEN",
+        "closed_by_scenario": []
+      },
+      "evaluation_axes": {
+        "evidence_fit": "UNASSESSED",
+        "contradiction_risk": "UNASSESSED",
+        "open_consumption": "UNASSESSED",
+        "historical_cost": "UNASSESSED",
+        "world_coherence": "UNASSESSED",
+        "chapter_economy": "UNASSESSED",
+        "front80_structural_echo": "UNASSESSED",
+        "literary_fertility": "UNASSESSED"
+      },
+      "current_c_relation": "ALTERNATIVE",
+      "search_policy": {
+        "search_priority": "EQUAL",
+        "evidence_bonus": "NONE",
+        "baseline_convenience_bonus": "NONE"
+      },
+      "world_replay": {
+        "status": "PENDING_P2",
+        "result_ref": null
+      },
+      "evidence_effect": "NONE",
+      "stable_active_effect": "NONE",
+      "notes": "高资源压力路线；用于测试 current-C 是否因方便而过早锁死婚姻相位。"
+    },
+    {
+      "id": "SCN-JIAMU-DEAD-BEFORE-MARRIAGE",
+      "title": "贾母先亡、主婚权转移路线",
+      "status": "ADMISSIBLE",
+      "authority": "SCENARIO_ONLY",
+      "hypotheses": [
+        "HYP-G1",
+        "HYP-O09-C",
+        "HYP-HOUSE-CLAN",
+        "HYP-DETENTION-FAMILY-CASE",
+        "HYP-FJ-DEAD",
+        "HYP-SNOW-JADE-UNRESOLVED",
+        "HYP-MIAOYU-NONGUAZHOU",
+        "HYP-ZHEN-DIRECT",
+        "HYP-SENT-JADE-SAME",
+        "HYP-END-SPLIT-99-100"
+      ],
+      "hard_constraints": {
+        "status": "PENDING_P2_REPLAY",
+        "blockers": []
+      },
+      "open_interfaces": {
+        "policy": "PRESERVE_OPEN",
+        "closed_by_scenario": []
+      },
+      "evaluation_axes": {
+        "evidence_fit": "UNASSESSED",
+        "contradiction_risk": "UNASSESSED",
+        "open_consumption": "UNASSESSED",
+        "historical_cost": "UNASSESSED",
+        "world_coherence": "UNASSESSED",
+        "chapter_economy": "UNASSESSED",
+        "front80_structural_echo": "UNASSESSED",
+        "literary_fertility": "UNASSESSED"
+      },
+      "current_c_relation": "ALTERNATIVE",
+      "search_policy": {
+        "search_priority": "EQUAL",
+        "evidence_bonus": "NONE",
+        "baseline_convenience_bonus": "NONE"
+      },
+      "world_replay": {
+        "status": "PENDING_P2",
+        "result_ref": null
+      },
+      "evidence_effect": "NONE",
+      "stable_active_effect": "NONE",
+      "notes": "显式承受新增丧期与回次容量成本。"
+    },
+    {
+      "id": "SCN-JADE-SINGLE-CHAIN",
+      "title": "玉线单链收束路线",
+      "status": "ADMISSIBLE",
+      "authority": "SCENARIO_ONLY",
+      "hypotheses": [
+        "HYP-G1",
+        "HYP-O09-B",
+        "HYP-HOUSE-TEMP-THEN-RENTAL",
+        "HYP-DETENTION-FAMILY-CASE",
+        "HYP-FJ-DEAD",
+        "HYP-SNOW-JADE-SAME",
+        "HYP-MIAOYU-NONGUAZHOU",
+        "HYP-ZHEN-DIRECT",
+        "HYP-SENT-JADE-SAME",
+        "HYP-END-SPLIT-99-100"
+      ],
+      "hard_constraints": {
+        "status": "PENDING_P2_REPLAY",
+        "blockers": []
+      },
+      "open_interfaces": {
+        "policy": "PRESERVE_OPEN",
+        "closed_by_scenario": []
+      },
+      "evaluation_axes": {
+        "evidence_fit": "UNASSESSED",
+        "contradiction_risk": "UNASSESSED",
+        "open_consumption": "UNASSESSED",
+        "historical_cost": "UNASSESSED",
+        "world_coherence": "UNASSESSED",
+        "chapter_economy": "UNASSESSED",
+        "front80_structural_echo": "UNASSESSED",
+        "literary_fertility": "UNASSESSED"
+      },
+      "current_c_relation": "ALTERNATIVE",
+      "search_policy": {
+        "search_priority": "EQUAL",
+        "evidence_bonus": "NONE",
+        "baseline_convenience_bonus": "NONE"
+      },
+      "world_replay": {
+        "status": "PENDING_P2",
+        "result_ref": null
+      },
+      "evidence_effect": "NONE",
+      "stable_active_effect": "NONE",
+      "notes": "测试R16→R17→R18一玉贯穿是否能在时空上无强造运行。"
+    },
+    {
+      "id": "SCN-JADE-MULTILAYER",
+      "title": "玉线多层事件路线",
+      "status": "ADMISSIBLE",
+      "authority": "SCENARIO_ONLY",
+      "hypotheses": [
+        "HYP-G1",
+        "HYP-O09-B",
+        "HYP-HOUSE-STEP-DOWN",
+        "HYP-DETENTION-CAUSE-OPEN",
+        "HYP-FJ-GRAVELY-ILL",
+        "HYP-SNOW-JADE-DISTINCT",
+        "HYP-MIAOYU-NONGUAZHOU",
+        "HYP-ZHEN-MEDIATED",
+        "HYP-SENT-JADE-IDENTITY-OPEN",
+        "HYP-END-SPLIT-99-100"
+      ],
+      "hard_constraints": {
+        "status": "PENDING_P2_REPLAY",
+        "blockers": []
+      },
+      "open_interfaces": {
+        "policy": "PRESERVE_OPEN",
+        "closed_by_scenario": []
+      },
+      "evaluation_axes": {
+        "evidence_fit": "UNASSESSED",
+        "contradiction_risk": "UNASSESSED",
+        "open_consumption": "UNASSESSED",
+        "historical_cost": "UNASSESSED",
+        "world_coherence": "UNASSESSED",
+        "chapter_economy": "UNASSESSED",
+        "front80_structural_echo": "UNASSESSED",
+        "literary_fertility": "UNASSESSED"
+      },
+      "current_c_relation": "ALTERNATIVE",
+      "search_policy": {
+        "search_priority": "EQUAL",
+        "evidence_bonus": "NONE",
+        "baseline_convenience_bonus": "NONE"
+      },
+      "world_replay": {
+        "status": "PENDING_P2",
+        "result_ref": null
+      },
+      "evidence_effect": "NONE",
+      "stable_active_effect": "NONE",
+      "notes": "避免为一玉贯穿强造传奇；P2重点检查物件连续性。"
+    },
+    {
+      "id": "SCN-FENGJIE-ALIVE-POWERLESS",
+      "title": "凤姐尚在但已无法护女路线",
+      "status": "ADMISSIBLE",
+      "authority": "SCENARIO_ONLY",
+      "hypotheses": [
+        "HYP-G1",
+        "HYP-O09-A",
+        "HYP-HOUSE-AFFINAL",
+        "HYP-DETENTION-FAMILY-CASE",
+        "HYP-FJ-POWERLESS",
+        "HYP-SNOW-JADE-UNRESOLVED",
+        "HYP-MIAOYU-NONGUAZHOU",
+        "HYP-ZHEN-DIRECT",
+        "HYP-SENT-JADE-SAME",
+        "HYP-END-SPLIT-99-100"
+      ],
+      "hard_constraints": {
+        "status": "PENDING_P2_REPLAY",
+        "blockers": []
+      },
+      "open_interfaces": {
+        "policy": "PRESERVE_OPEN",
+        "closed_by_scenario": []
+      },
+      "evaluation_axes": {
+        "evidence_fit": "UNASSESSED",
+        "contradiction_risk": "UNASSESSED",
+        "open_consumption": "UNASSESSED",
+        "historical_cost": "UNASSESSED",
+        "world_coherence": "UNASSESSED",
+        "chapter_economy": "UNASSESSED",
+        "front80_structural_echo": "UNASSESSED",
+        "literary_fertility": "UNASSESSED"
+      },
+      "current_c_relation": "ALTERNATIVE",
+      "search_policy": {
+        "search_priority": "EQUAL",
+        "evidence_bonus": "NONE",
+        "baseline_convenience_bonus": "NONE"
+      },
+      "world_replay": {
+        "status": "PENDING_P2",
+        "result_ref": null
+      },
+      "evidence_effect": "NONE",
+      "stable_active_effect": "NONE",
+      "notes": "测试巧姐危机是否必须以凤姐先死为条件。"
+    },
+    {
+      "id": "SCN-MIAOYU-GUAZHOU-W2",
+      "title": "妙玉瓜州W2压力路线",
+      "status": "ADMISSIBLE",
+      "authority": "SCENARIO_ONLY",
+      "hypotheses": [
+        "HYP-G1",
+        "HYP-O09-A",
+        "HYP-HOUSE-TEMP-THEN-RENTAL",
+        "HYP-DETENTION-FAMILY-CASE",
+        "HYP-FJ-DEAD",
+        "HYP-SNOW-JADE-UNRESOLVED",
+        "HYP-MIAOYU-GUAZHOU",
+        "HYP-ZHEN-DIRECT",
+        "HYP-SENT-JADE-SAME",
+        "HYP-END-SPLIT-99-100"
+      ],
+      "hard_constraints": {
+        "status": "PENDING_P2_REPLAY",
+        "blockers": []
+      },
+      "open_interfaces": {
+        "policy": "PRESERVE_OPEN",
+        "closed_by_scenario": []
+      },
+      "evaluation_axes": {
+        "evidence_fit": "UNASSESSED",
+        "contradiction_risk": "UNASSESSED",
+        "open_consumption": "UNASSESSED",
+        "historical_cost": "UNASSESSED",
+        "world_coherence": "UNASSESSED",
+        "chapter_economy": "UNASSESSED",
+        "front80_structural_echo": "UNASSESSED",
+        "literary_fertility": "UNASSESSED"
+      },
+      "current_c_relation": "ALTERNATIVE",
+      "search_policy": {
+        "search_priority": "EQUAL",
+        "evidence_bonus": "NONE",
+        "baseline_convenience_bonus": "NONE"
+      },
+      "world_replay": {
+        "status": "PENDING_P2",
+        "result_ref": null
+      },
+      "evidence_effect": "NONE",
+      "stable_active_effect": "NONE",
+      "notes": "只测试W2是否可自然兑现R41；不得生长成固定传奇链。"
+    },
+    {
+      "id": "SCN-TERMINAL-COMPACT",
+      "title": "第100回撒手+情榜压缩路线",
+      "status": "ADMISSIBLE",
+      "authority": "SCENARIO_ONLY",
+      "hypotheses": [
+        "HYP-G1",
+        "HYP-O09-A",
+        "HYP-HOUSE-TEMP-THEN-RENTAL",
+        "HYP-DETENTION-FAMILY-CASE",
+        "HYP-FJ-DEAD",
+        "HYP-SNOW-JADE-UNRESOLVED",
+        "HYP-MIAOYU-NONGUAZHOU",
+        "HYP-ZHEN-DIRECT",
+        "HYP-SENT-JADE-SAME",
+        "HYP-END-COMPACT-100"
+      ],
+      "hard_constraints": {
+        "status": "PENDING_P2_REPLAY",
+        "blockers": []
+      },
+      "open_interfaces": {
+        "policy": "PRESERVE_OPEN",
+        "closed_by_scenario": []
+      },
+      "evaluation_axes": {
+        "evidence_fit": "UNASSESSED",
+        "contradiction_risk": "UNASSESSED",
+        "open_consumption": "UNASSESSED",
+        "historical_cost": "UNASSESSED",
+        "world_coherence": "UNASSESSED",
+        "chapter_economy": "UNASSESSED",
+        "front80_structural_echo": "UNASSESSED",
+        "literary_fertility": "UNASSESSED"
+      },
+      "current_c_relation": "ALTERNATIVE",
+      "search_policy": {
+        "search_priority": "EQUAL",
+        "evidence_bonus": "NONE",
+        "baseline_convenience_bonus": "NONE"
+      },
+      "world_replay": {
+        "status": "PENDING_P2",
+        "result_ref": null
+      },
+      "evidence_effect": "NONE",
+      "stable_active_effect": "NONE",
+      "notes": "测试99→100分工是否只是当前章法便利，而非必要。"
+    },
+    {
+      "id": "SCN-MINIMAL-CAUSE-OPEN",
+      "title": "羁押原因最小承诺路线",
+      "status": "ADMISSIBLE",
+      "authority": "SCENARIO_ONLY",
+      "hypotheses": [
+        "HYP-G1",
+        "HYP-O09-B",
+        "HYP-HOUSE-STEP-DOWN",
+        "HYP-DETENTION-CAUSE-OPEN",
+        "HYP-FJ-GRAVELY-ILL",
+        "HYP-SNOW-JADE-UNRESOLVED",
+        "HYP-MIAOYU-NONGUAZHOU",
+        "HYP-ZHEN-MISS",
+        "HYP-SENT-JADE-IDENTITY-OPEN",
+        "HYP-END-SPLIT-99-100"
+      ],
+      "hard_constraints": {
+        "status": "PENDING_P2_REPLAY",
+        "blockers": []
+      },
+      "open_interfaces": {
+        "policy": "PRESERVE_OPEN",
+        "closed_by_scenario": []
+      },
+      "evaluation_axes": {
+        "evidence_fit": "UNASSESSED",
+        "contradiction_risk": "UNASSESSED",
+        "open_consumption": "UNASSESSED",
+        "historical_cost": "UNASSESSED",
+        "world_coherence": "UNASSESSED",
+        "chapter_economy": "UNASSESSED",
+        "front80_structural_echo": "UNASSESSED",
+        "literary_fertility": "UNASSESSED"
+      },
+      "current_c_relation": "ALTERNATIVE",
+      "search_policy": {
+        "search_priority": "EQUAL",
+        "evidence_bonus": "NONE",
+        "baseline_convenience_bonus": "NONE"
+      },
+      "world_replay": {
+        "status": "PENDING_P2",
+        "result_ref": null
+      },
+      "evidence_effect": "NONE",
+      "stable_active_effect": "NONE",
+      "notes": "最大限度保留家案具体牵连、玉身份与甄贾照面的OPEN。"
+    }
+  ]
+}
