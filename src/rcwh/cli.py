@@ -15,6 +15,7 @@ from .io import load_data
 from .literals import LiteralRegistry, format_literal
 from .literary_eval import evaluate_literary_candidate, format_literary_evaluation
 from .literary_ecology import LiteraryEcologyRuntime, format_literary_ecology
+from .literary_production import LiteraryProductionRuntime, format_literary_production
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .object_network import ObjectNetworkRuntime, format_object
 from .plocks import LiteraryProtectionRegistry, format_plock
@@ -388,6 +389,32 @@ def cmd_literary_ecology(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_literary_production(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = LiteraryProductionRuntime.from_repo(root)
+    competitions = CompetitionRegistry.from_repo(root)
+    try:
+        kind = args.literary_production_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "chapter":
+            payload = runtime.chapter(args.chapter, competitions)
+        elif kind == "quarantine":
+            payload = runtime.quarantine()
+        else:
+            raise KeyError(f"Unknown literary production command: {kind}")
+    except (KeyError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_literary_production(kind, payload))
+    if kind == "quarantine":
+        return 0 if payload["status"] == "PASS" else 1
+    return 0
+
+
 def cmd_completion(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     gate = CompletionGateRuntime.from_repo(root)
@@ -672,6 +699,21 @@ def main() -> None:
     p.add_argument("key")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_literary_ecology)
+
+    p_lit_prod = sub.add_parser("literary-production")
+    lit_prod_sub = p_lit_prod.add_subparsers(
+        dest="literary_production_command", required=True
+    )
+    p = lit_prod_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_production)
+    p = lit_prod_sub.add_parser("chapter")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_production)
+    p = lit_prod_sub.add_parser("quarantine")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_production)
 
     p_completion = sub.add_parser("completion")
     completion_sub = p_completion.add_subparsers(dest="completion_command", required=True)
