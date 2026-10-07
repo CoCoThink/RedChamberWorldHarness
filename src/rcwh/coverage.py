@@ -380,7 +380,12 @@ class CoverageAuditRuntime:
         if current.get("unresolved_authority_conflicts") != 0:
             errors.append("M7 unresolved authority conflicts must be zero")
         if current.get("completion_gate_ready"):
-            errors.append("M7 may not open the Completion Gate")
+            m8 = load_data(self.root / "data" / "project_state" / "m8.json") or {}
+            if (
+                m8.get("status") != "PASS"
+                or m8.get("completion_gate", {}).get("overall") != "PASS"
+            ):
+                errors.append("Completion Gate may be ready only after persisted M8 PASS")
 
         state = self.project_state
         if state.get("milestone") != "M7":
