@@ -122,7 +122,7 @@ def test_pressure_production_is_frozen_exactly_at_handover_state():
     assert rt.competition(97)["freeze_effect"] == "DO_NOT_START"
 
 
-def test_current_registry_marks_four_m6_sources_semantically_full_but_gate_closed():
+def test_current_registry_keeps_m6_sources_full_after_m8_gate():
     registry = MigrationRegistry.from_repo(ROOT)
     for ref in [
         "doc:b90e41f44edb",
@@ -135,7 +135,9 @@ def test_current_registry_marks_four_m6_sources_semantically_full_but_gate_close
     current = registry.current_summary()
     assert current["implementation_alignment_queryable"] is True
     assert current["literature_frozen"] is True
-    assert current["completion_gate_ready"] is False
+    assert current["completion_gate_ready"] is True
+    assert current["completion_gate_status"] == "PASS"
+    assert current["literature_resume_authorized"] is True
 
 
 def test_m6_source_trace_resolves_to_self_contained_document_paths():
