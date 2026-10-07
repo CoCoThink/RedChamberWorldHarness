@@ -1,6 +1,6 @@
 # Hypothesis / Scenario Runtime v0.7 — Phase 1 Core OPEN Expansion
 
-Status: **PASS_CANDIDATE / SHADOW_ONLY**
+Status: **PASS / SHADOW_ONLY**
 
 Phase 1 expands the H04 proof-of-concept into a book-level reconstruction search surface while leaving the canonical 43-0 literary pipeline untouched.
 
@@ -56,14 +56,18 @@ and every Pareto axis remains:
 
 ## P1 gate
 
-Before PASS:
+Result: **PASS**.
 
-1. ten core OPEN interfaces have >=2 alternatives;
-2. >=8 admissible scenario bundles exist;
-3. current-C has no search/evidence/baseline-convenience bonus;
-4. hypothesis/scenario schema validation passes;
-5. repository validation and full tests pass;
-6. canonical Chapter 89 remains manual-P-Lock/blind-read pending;
-7. stable ACTIVE remains unchanged.
+Gate validation run: `37631350784`
 
-Next after PASS: **P2 Counterfactual World Replay**.
+- ten core OPEN interfaces have >=2 alternatives: PASS;
+- admissible scenario bundles: **10**;
+- current-C has no search/evidence/baseline-convenience bonus: PASS;
+- hypothesis/scenario schema validation: PASS;
+- `rcwh validate`: PASS;
+- full repository tests: **237 passed / 0 failed**;
+- canonical Chapter 89 remains `IN_REVIEW`, with manual P-Lock and real blind read still pending;
+- Chapters 92 / 97 remain blocked by predecessor;
+- stable ACTIVE remains unchanged.
+
+Next gate: **P2_COUNTERFACTUAL_WORLD_REPLAY**.
