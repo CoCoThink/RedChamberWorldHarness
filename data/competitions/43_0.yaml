@@ -123,7 +123,7 @@ competition_records:
     chapter: 89
     sequence: 2
     plock_ref: plock:ch89:small-life-after-confiscation
-    state: IN_REVIEW
+    state: ADJUDICATED
     baseline:
       file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
       sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
@@ -132,23 +132,114 @@ competition_records:
       BASELINE_EXCERPT: PASS
       STRUCTURAL_REORDER: PASS
       SMALL_TRIAL: PASS
-      SIX_FIELD_REGRESSION: PENDING
-      PLOCK_REGRESSION: PENDING
-      BLIND_READ: PENDING
-    candidates: []
-    adjudication: {outcome: PENDING, winner_candidate_id: null, promotion_state: NOT_ELIGIBLE}
+      SIX_FIELD_REGRESSION: PASS
+      PLOCK_REGRESSION: PASS
+      BLIND_READ: PASS
+    candidates:
+      - id: ch89-A
+        label: A
+        blind_token: BR-17
+        artifact:
+          kind: REPO_FILE
+          path: artifacts/43-0/ch89/candidates/ch89_A_stable_full.md
+          git_blob_sha: 4ab36ffc3d630244b9501a889002ef215a1f0ea4
+          source_commit: b68541b9b2af91ddd9f5913617e0d4c21017a200
+        origin: STABLE_BASELINE
+        machine_expected_status: REPLACEMENT_CASE
+        six_field:
+          PROVENANCE: PASS
+          ROLE: PASS
+          MODALITY: PASS
+          TARGET: PASS
+          PLACEMENT: PASS
+          IMPLEMENTATION: PASS
+        human_plock:
+          status: REPLACEMENT_ACCEPTED
+          notes: >-
+            稳定基线完整保留抄没沉入小生活、共井小灶与水桶锚；
+            机器REPLACEMENT_CASE来自P1_TERMINAL绝对末字检测，而非锚句实际丢失。
+        blind_read:
+          status: PASS
+          reviewer_blinded: true
+          notes: >-
+            BR-17盲读PASS：小生活与公私摩擦最丰富，但前半回同一程序原则
+            经多组例子重复证明，借院这一真正文学中心到得稍迟。
+      - id: ch89-B
+        label: B
+        blind_token: BR-52
+        artifact:
+          kind: REPO_FILE
+          path: artifacts/43-0/ch89/candidates/ch89_B_light_full.md
+          git_blob_sha: e597c11ce23eccf5fb769968259f52dd2a0af909
+          source_commit: 20061312dbe5e50ec7c816cc05f3b43818d0bba2
+        origin: STRUCTURAL_REWRITE
+        machine_expected_status: REPLACEMENT_CASE
+        six_field:
+          PROVENANCE: PASS
+          ROLE: PASS
+          MODALITY: PASS
+          TARGET: PASS
+          PLACEMENT: PASS
+          IMPLEMENTATION: PASS
+        human_plock:
+          status: REPLACEMENT_ACCEPTED
+          notes: >-
+            轻压删除重复规则说明，不删菜、药、钥匙、老妈妈小匣、车钱、厨房米与私钱；
+            “准话”更快转成只能拿几样，后半回借院生活获得更大重量。
+        blind_read:
+          status: PASS
+          reviewer_blinded: true
+          notes: >-
+            BR-52盲读PASS：制度摩擦仍在但不再抢戏；从准话到只能拿几样的转换更紧，
+            共井、小灶、借物、错枕头与水桶终句成为全回真正落点，三稿最平衡。
+      - id: ch89-C
+        label: C
+        blind_token: BR-88
+        artifact:
+          kind: REPO_FILE
+          path: artifacts/43-0/ch89/candidates/ch89_C_strong_full.md
+          git_blob_sha: 291140aaa7396c84b5f22e80fdb833129870cdf7
+          source_commit: a9afdd39e6641a55b23e630be4562438f16774b7
+        origin: STRUCTURAL_REWRITE
+        machine_expected_status: REPLACEMENT_CASE
+        six_field:
+          PROVENANCE: PASS
+          ROLE: PASS
+          MODALITY: PASS
+          TARGET: PASS
+          PLACEMENT: PASS
+          IMPLEMENTATION: PASS
+        human_plock:
+          status: REPLACEMENT_ACCEPTED
+          notes: >-
+            核心物质链与共享基础设施仍在，程序没有接管小说；
+            但老妈妈小匣等公私摩擦变薄，凤姐、贾芸更接近剧情功能件。
+        blind_read:
+          status: PASS
+          reviewer_blinded: true
+          notes: >-
+            BR-88盲读PASS（边缘）：热粥、药盒、车钱、借院、共井与水桶仍能承重，
+            但抄没过于顺滑，人物功能化风险已经接近文学下限。
+    adjudication:
+      outcome: WINNER
+      winner_candidate_id: ch89-B
+      promotion_state: PROMOTION_CANDIDATE
+      notes: >-
+        三稿六字段均PASS；P-Lock机器层均因终端锚技术定义进入REPLACEMENT_CASE，
+        人工复核均REPLACEMENT_ACCEPTED；匿名盲读三稿均PASS，BR-52明确为制度摩擦、
+        世情节奏与后半回小生活承重最平衡者。揭盲后BR-52对应B，故WINNER-B / REVISE-B。
+        B仅进入PROMOTION_CANDIDATE；稳定ACTIVE仍未改。
     stable_active_effect: SEPARATE_PROMOTION_ONLY
     notes: >-
-      第89回真实Phase 1已启动。压力区集中于官差到门至午后准话；
-      B压规则复述而保留小生活承重，C测试程序过度顺滑的下限。
-      稳定ACTIVE仍为v1.4。
+      第89回Phase 2已完成：A/B/C全回候选、六字段、P-Lock、匿名盲读及最终裁定全部冻结。
+      B胜出但不自动升stable；43-0下一active competition转入第92回。
 
   - id: comp:43-0:ch92:pressure-test
     mode: PRODUCTION_43_0
     chapter: 92
     sequence: 3
     plock_ref: plock:ch92:procedure-density
-    state: BLOCKED_BY_PREDECESSOR
+    state: READY_FOR_CANDIDATES
     baseline:
       file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
       sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
