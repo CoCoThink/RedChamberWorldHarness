@@ -3,6 +3,7 @@ from __future__ import annotations
 from pathlib import Path
 
 from .competition import CompetitionRegistry
+from .completion import CompletionGateRuntime
 from .coverage import CoverageAuditRuntime
 from .graph import ProvenanceGraph
 from .io import load_data
@@ -123,6 +124,26 @@ def validate_repository(root: Path) -> list[str]:
         )
         errors.extend(
             f"{migration_extension_m5.relative_to(root)}: {e}" for e in errs
+        )
+
+    project_state_m8 = root / "data" / "project_state" / "m8.json"
+    if project_state_m8.exists():
+        errs = validate_instance(
+            load_data(project_state_m8),
+            load_data(schema_dir / "project_state_m8.schema.json"),
+        )
+        errors.extend(
+            f"{project_state_m8.relative_to(root)}: {e}" for e in errs
+        )
+
+    migration_extension_m8 = root / "data" / "registry" / "m8.json"
+    if migration_extension_m8.exists():
+        errs = validate_instance(
+            load_data(migration_extension_m8),
+            load_data(schema_dir / "migration_registry_extension_m8.schema.json"),
+        )
+        errors.extend(
+            f"{migration_extension_m8.relative_to(root)}: {e}" for e in errs
         )
 
     migration_extension_m7 = root / "data" / "registry" / "m7.json"
@@ -281,6 +302,25 @@ def validate_repository(root: Path) -> list[str]:
                 regression,
             )
         )
+        completion_gate = CompletionGateRuntime.from_repo(root)
+        completion_payload = completion_gate.evaluate(
+            registry,
+            coverage_audit,
+            reconstruction,
+            world,
+            objects,
+            literary_ecology,
+            implementation_alignment,
+            graph,
+            literals,
+            mechanisms,
+            open_interfaces,
+            plocks,
+            competitions,
+            promotions,
+            regression,
+        )
+        errors.extend(completion_gate.validate_integrity(completion_payload, registry))
         for promotion_id in promotions.records:
             payload = promotions.evaluate(root, promotion_id)
             if payload["overall"] != "PASS":
@@ -292,6 +332,6 @@ def validate_repository(root: Path) -> list[str]:
                 for finding in gate["findings"]:
                     errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"registry/reconstruction/world/object/literary_ecology/implementation_alignment/coverage/provenance/literal/history/open/regression/plock/competition graph: {exc}")
+        errors.append(f"registry/reconstruction/world/object/literary_ecology/implementation_alignment/coverage/completion/provenance/literal/history/open/regression/plock/competition graph: {exc}")
 
     return errors
