@@ -438,6 +438,32 @@
       "movement": "NONE"
     },
     {
+      "id": "OT89-00",
+      "chapter": 89,
+      "sequence": 65,
+      "object_id": "OBJ-TONGLING-JADE",
+      "action": "MOVE",
+      "from": {
+        "holder": "baoyu",
+        "location": "S02",
+        "status": "WITH_BAOYU",
+        "frame_status": "IN_HUMAN_WORLD"
+      },
+      "to": {
+        "holder": "baoyu",
+        "location": "S06",
+        "status": "WITH_BAOYU",
+        "frame_status": "IN_HUMAN_WORLD"
+      },
+      "source_refs": [
+        "doc:417a201365f0",
+        "doc:92749de3e6"
+      ],
+      "epistemic": "C_WORLD",
+      "note": "随宝玉进入第一处借住院落；只是当前世界连续性，不升级玉线证据",
+      "movement": "EXPLICIT"
+    },
+    {
       "id": "OT89-01",
       "chapter": 89,
       "sequence": 70,
@@ -634,6 +660,32 @@
       "movement": "EXPLICIT"
     },
     {
+      "id": "OT95-00",
+      "chapter": 95,
+      "sequence": 5,
+      "object_id": "OBJ-TONGLING-JADE",
+      "action": "MOVE",
+      "from": {
+        "holder": "baoyu",
+        "location": "S06",
+        "status": "WITH_BAOYU",
+        "frame_status": "IN_HUMAN_WORLD"
+      },
+      "to": {
+        "holder": "baoyu",
+        "location": "S09",
+        "status": "WITH_BAOYU",
+        "frame_status": "IN_HUMAN_WORLD"
+      },
+      "source_refs": [
+        "doc:417a201365f0",
+        "doc:92749de3e6"
+      ],
+      "epistemic": "C_WORLD",
+      "note": "随宝玉进入第二处低成本住处；保持物件连续性",
+      "movement": "EXPLICIT"
+    },
+    {
       "id": "OT95-01",
       "chapter": 95,
       "sequence": 10,
@@ -734,31 +786,6 @@
       "movement": "NONE"
     },
     {
-      "id": "OT96-02",
-      "chapter": 96,
-      "sequence": 45,
-      "object_id": "OBJ-RICE-JAR-95",
-      "action": "STATE_CHANGE",
-      "from": {
-        "holder": "baochai_sheyue_household",
-        "location": "S09",
-        "status": "IN_DAILY_USE",
-        "quantity_state": "PARTIALLY_REPLENISHED"
-      },
-      "to": {
-        "holder": "baochai_sheyue_household",
-        "location": "S09",
-        "status": "IN_DAILY_USE",
-        "quantity_state": "MEASURED_USE_HALF_AID"
-      },
-      "source_refs": [
-        "doc:ffed02aee8"
-      ],
-      "epistemic": "C_WORLD",
-      "note": "米只倒一半，援助不逆转结构贫困",
-      "movement": "NONE"
-    },
-    {
       "id": "OT96-03",
       "chapter": 96,
       "sequence": 35,
@@ -781,6 +808,31 @@
       ],
       "epistemic": "C_WORLD",
       "note": "一筐炭式有限外援",
+      "movement": "NONE"
+    },
+    {
+      "id": "OT96-02",
+      "chapter": 96,
+      "sequence": 45,
+      "object_id": "OBJ-RICE-JAR-95",
+      "action": "STATE_CHANGE",
+      "from": {
+        "holder": "baochai_sheyue_household",
+        "location": "S09",
+        "status": "IN_DAILY_USE",
+        "quantity_state": "PARTIALLY_REPLENISHED"
+      },
+      "to": {
+        "holder": "baochai_sheyue_household",
+        "location": "S09",
+        "status": "IN_DAILY_USE",
+        "quantity_state": "MEASURED_USE_HALF_AID"
+      },
+      "source_refs": [
+        "doc:ffed02aee8"
+      ],
+      "epistemic": "C_WORLD",
+      "note": "米只倒一半，援助不逆转结构贫困",
       "movement": "NONE"
     },
     {
@@ -842,7 +894,7 @@
       "action": "MOVE",
       "from": {
         "holder": "baoyu",
-        "location": "S02",
+        "location": "S09",
         "status": "WITH_BAOYU",
         "frame_status": "IN_HUMAN_WORLD"
       },
@@ -858,8 +910,8 @@
         "R18"
       ],
       "epistemic": "CURRENT_C",
-      "note": "当前C用一次包裹错认承接误窃/送玉；地点经世界层已迁居但本对象此前未逐回移动，故此步声明为模型重定位",
-      "movement": "OPEN_BOUNDARY"
+      "note": "当前C用一次包裹错认承接误窃/送玉；在S09贫居内进入S12客座包裹链",
+      "movement": "EXPLICIT"
     },
     {
       "id": "OT98-03",
@@ -967,6 +1019,30 @@
       "movement": "OPEN_BOUNDARY"
     },
     {
+      "id": "OT100-02",
+      "chapter": 100,
+      "sequence": 20,
+      "object_id": "OBJ-JIALAN-OFFICIAL-ROBE-100",
+      "action": "DISCOVER",
+      "from": {
+        "holder": null,
+        "location": null,
+        "status": "UNOBSERVED"
+      },
+      "to": {
+        "holder": "jialan",
+        "location": "S14",
+        "status": "WORN_OR_AVAILABLE_FOR_OFFICIAL_ROLE"
+      },
+      "source_refs": [
+        "doc:ffed02aee8",
+        "R40"
+      ],
+      "epistemic": "C_WORLD",
+      "note": "官服表名位，不等于复产",
+      "movement": "DISCOVERY_FROM_UNKNOWN"
+    },
+    {
       "id": "OT100-01",
       "chapter": 100,
       "sequence": 90,
@@ -991,30 +1067,6 @@
       "epistemic": "HARD_TERMINAL_FRAME",
       "note": "只改变外框身份终态，不伪造尘世物理交通",
       "movement": "NONE"
-    },
-    {
-      "id": "OT100-02",
-      "chapter": 100,
-      "sequence": 20,
-      "object_id": "OBJ-JIALAN-OFFICIAL-ROBE-100",
-      "action": "DISCOVER",
-      "from": {
-        "holder": null,
-        "location": null,
-        "status": "UNOBSERVED"
-      },
-      "to": {
-        "holder": "jialan",
-        "location": "S14",
-        "status": "WORN_OR_AVAILABLE_FOR_OFFICIAL_ROLE"
-      },
-      "source_refs": [
-        "doc:ffed02aee8",
-        "R40"
-      ],
-      "epistemic": "C_WORLD",
-      "note": "官服表名位，不等于复产",
-      "movement": "DISCOVERY_FROM_UNKNOWN"
     }
   ],
   "identity_edges": [
