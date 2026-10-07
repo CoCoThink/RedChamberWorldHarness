@@ -44,7 +44,23 @@ p_locks:
   - unfinished_textual_action
 historical_adapters:
   - medical
-  - household_labor
+  - household_economy
+historical_adapter_requirements:
+  medical:
+    required_any:
+      - [药, 药碗, 大夫, 医生, 诊脉]
+      - [温, 热水, 炉, 煎]
+    forbidden_any:
+      - "史料已经证明黛玉必用此方"
+      - "按清代医理黛玉必然如此死"
+      - "一剂药便起死回生"
+  household_economy:
+    required_any:
+      - [米汤, 饭, 热水, 炉, 炭, 灯, 跑腿, 丫头]
+      - [温药, 煎药, 添水, 送药, 取药, 药铺]
+    forbidden_any:
+      - "史料已经证明这一夜只剩这些炭"
+      - "清代规矩规定必须由紫鹃做这些事"
 exit_state:
   - equals: character.daiyu.life_state
     value: dead
