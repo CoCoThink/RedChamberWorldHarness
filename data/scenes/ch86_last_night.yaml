@@ -50,3 +50,26 @@ exit_state:
     value: dead
   - equals: object.medicine_bowl_86.state.temperature
     value: cold
+
+knowledge_checkpoint: ENTRY
+knowledge_guards:
+  - id: baoyu_no_exact_death_time_before_arrival
+    actor: baoyu
+    fact: daiyu_death_exact_moment
+    modes: [DIALOGUE, ACTION]
+    allowed_status: [knows]
+    any_text:
+      - "我早知道你就是这时候咽气"
+      - "宝玉早已知道黛玉死在这一刻"
+  - id: zijuan_no_exact_death_time_before_event
+    actor: zijuan
+    fact: daiyu_death_exact_moment
+    modes: [DIALOGUE, ACTION]
+    allowed_status: [knows]
+    any_text:
+      - "我早知道姑娘就是这一刻咽气"
+      - "紫鹃早已知道黛玉死在这一刻"
+voice_profile_hooks:
+  - daiyu
+  - baoyu
+  - zijuan
