@@ -17,6 +17,7 @@ jobs:
       - name: Smoke migration runtimes
         run: |
           rcwh reconstruction summary
+          rcwh reconstruction timeline 95
           rcwh world summary
           rcwh world character baoyu 92
           rcwh object continuity
@@ -38,6 +39,10 @@ jobs:
           rcwh coverage document 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
           rcwh coverage gaps
           rcwh coverage regression
+          rcwh registry current
+          rcwh completion summary
+          rcwh completion traceability
+          rcwh completion gate
       - run: rcwh evaluate data/scenes/ch86_last_night.yaml examples/ch86_candidate_stub.txt
       - run: rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_preserved.txt
       - name: Verify replacement-case exit code
