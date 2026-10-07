@@ -18,7 +18,7 @@ def _matches_any(text: str, terms: list[str]) -> bool:
     return any(term in text for term in terms)
 
 
-def evaluate_scene_text(contract: dict[str, Any], text: str) -> list[EvaluationResult]:
+def evaluate_scene_text(contract: dict[str, Any], text: str, knowledge_runtime: Any | None = None) -> list[EvaluationResult]:
     results: list[EvaluationResult] = []
 
     missing = []
@@ -45,6 +45,16 @@ def evaluate_scene_text(contract: dict[str, Any], text: str) -> list[EvaluationR
             [f"Explicit interpretation phrase: {x}" for x in exposition_hits],
         )
     )
+
+    if knowledge_runtime is not None and contract.get("knowledge_guards"):
+        payload = knowledge_runtime.text_guard(contract["id"], contract, text)
+        results.append(
+            EvaluationResult(
+                "knowledge_omniscience",
+                payload["status"],
+                payload["findings"],
+            )
+        )
 
     return results
 
