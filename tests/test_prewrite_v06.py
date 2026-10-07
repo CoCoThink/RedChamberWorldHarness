@@ -27,7 +27,7 @@ def deps():
 
 def test_issue6_summary_and_actual_v52_execution_order():
     payload = runtime().summary()
-    assert payload["status"] == "PASS_CANDIDATE"
+    assert payload["status"] == "PASS"
     assert payload["authority"] == "STAGING_ONLY"
     assert payload["evidence_effect"] == "NONE"
     assert payload["stable_active_effect"] == "NONE"
