@@ -207,7 +207,12 @@ class MigrationRegistry:
         if current.get("registry_coverage") != "FULL":
             errors.append("M1 registry coverage must be FULL")
         if current.get("completion_gate_ready"):
-            errors.append("M1 may not mark Completion Gate ready")
+            if current.get("completion_gate_status") != "PASS":
+                errors.append("Completion Gate ready requires completion_gate_status=PASS")
+            if current.get("coverage_report_signed_off") is not True:
+                errors.append("Completion Gate ready requires coverage_report_signed_off=true")
+            if current.get("literature_resume_authorized") is not True:
+                errors.append("Completion Gate ready requires literature_resume_authorized=true")
         return errors
 
     def package(self, package_id: str) -> dict[str, Any]:
