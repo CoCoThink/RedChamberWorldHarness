@@ -63,8 +63,8 @@ def test_current_authority_m1_is_registry_complete_but_not_completion_gate_compl
     assert current["current_runtime_document_count"] == 15
     assert current["registry_coverage"] == "FULL"
     assert current["semantic_coverage_counts"] == {
-        "FULL": 10,
-        "PARTIAL": 5,
+        "FULL": 15,
+        "PARTIAL": 0,
         "MINIMAL": 0,
         "NONE": 0,
     }
