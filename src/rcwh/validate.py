@@ -14,6 +14,7 @@ from .literals import LiteralRegistry
 from .literary_eval import LiteraryEvaluationProfileRegistry
 from .literary_ecology import LiteraryEcologyRuntime
 from .literary_production import LiteraryProductionRuntime
+from .mechanism_adapters import HistoricalAdapterRuntime
 from .open_interfaces import OpenInterfaceRegistry
 from .object_network import ObjectNetworkRuntime
 from .plocks import LiteraryProtectionRegistry
@@ -201,6 +202,16 @@ def validate_repository(root: Path) -> list[str]:
             for e in errs
         )
 
+    mechanism_adapter_path = root / "data" / "mechanism_adapters" / "v04.json"
+    if mechanism_adapter_path.exists():
+        errs = validate_instance(
+            load_data(mechanism_adapter_path),
+            load_data(schema_dir / "historical_mechanism_adapter.schema.json"),
+        )
+        errors.extend(
+            f"{mechanism_adapter_path.relative_to(root)}: {e}" for e in errs
+        )
+
     knowledge_graph_path = root / "data" / "knowledge" / "v03_slice1.json"
     if knowledge_graph_path.exists():
         errs = validate_instance(
@@ -272,6 +283,8 @@ def validate_repository(root: Path) -> list[str]:
         errors.extend(literals.validate_integrity(graph))
         mechanisms = HistoricalMechanismRegistry.from_repo(root)
         errors.extend(mechanisms.validate_integrity(graph))
+        historical_adapters = HistoricalAdapterRuntime.from_repo(root)
+        errors.extend(historical_adapters.validate_integrity(mechanisms, registry))
         open_interfaces = OpenInterfaceRegistry.from_repo(root)
         errors.extend(open_interfaces.validate_integrity(graph, literals, mechanisms))
         reconstruction = ReconstructionRegistry.from_repo(root)
@@ -375,6 +388,6 @@ def validate_repository(root: Path) -> list[str]:
                 for finding in gate["findings"]:
                     errors.append(f"R4 regression {gate['name']}: {finding}")
     except Exception as exc:  # noqa: BLE001
-        errors.append(f"registry/reconstruction/world/object/literary_ecology/knowledge/literary_production/implementation_alignment/coverage/completion/provenance/literal/history/open/regression/plock/competition graph: {exc}")
+        errors.append(f"registry/reconstruction/world/object/literary_ecology/knowledge/literary_production/implementation_alignment/coverage/completion/provenance/literal/history/historical_adapters/open/regression/plock/competition graph: {exc}")
 
     return errors
