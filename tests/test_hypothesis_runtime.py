@@ -87,7 +87,8 @@ def test_phase0_project_state_is_shadow_only_and_tracks_current_gate():
     assert state["authority"] == "SHADOW_ONLY"
     assert state["base"]["sha"] == "9cbb05eb27dc8dade139e7ba9bf5f856a95715f7"
     assert state["canonical_literary_gate"] == "CH89_MANUAL_PLOCK_THEN_BLIND_READ"
-    assert set(state["effects"].values()) == {"NONE"}\n    assert state["next_gate"] == "P1_EXPAND_CORE_OPEN"
+    assert set(state["effects"].values()) == {"NONE"}
+    assert state["next_gate"] == "P1_EXPAND_CORE_OPEN"
 
 
 def test_phase0_json_schemas_validate_new_data():
