@@ -297,7 +297,7 @@ class CoverageAuditRuntime:
             "CURRENT_MARKDOWN_ISLANDS_0": registry.current_summary().get("current_markdown_islands") == 0,
             "AUTHORITY_CONFLICTS_0": registry.current_summary().get("unresolved_authority_conflicts") == 0,
             "RECONSTRUCTION_QUERYABLE": reconstruction.summary().get("chapters") == 20,
-            "WORLD_QUERYABLE": world.summary().get("queryable") is True,
+            "WORLD_QUERYABLE": world.summary().get("completion", {}).get("world_queryable") is True,
             "OBJECT_CONTINUITY": objects.continuity_report().get("status") == "PASS",
             "LITERARY_ECOLOGY_QUERYABLE": literary.summary().get("completion", {}).get("literary_ecology_queryable") is True,
             "IMPLEMENTATION_ALIGNMENT": implementation.summary().get("status") == "PASS",
