@@ -1,7 +1,7 @@
 {
   "id": "blind-microdraft-review:v0.13",
   "phase": "P7_BLIND_MICRODRAFT_REVIEW",
-  "status": "PASS_CANDIDATE",
+  "status": "PASS",
   "authority": "SHADOW_ONLY",
   "source_branch": "feature/blind-microdraft-review-v0.13",
   "base": {
@@ -28,5 +28,11 @@
     "NO_ROUTE_WINNER",
     "NO_CANONICAL_EFFECT"
   ],
-  "next_gate": "P7_CI_THEN_P8_CROSS_ROUTE_REVISION_ABLATION"
+  "next_gate": "P8_CROSS_ROUTE_REVISION_ABLATION",
+  "ci": {
+    "run_id": 37651618206,
+    "conclusion": "SUCCESS",
+    "pytest": "293 passed / 0 failed",
+    "validate": "PASS"
+  }
 }

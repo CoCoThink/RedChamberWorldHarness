@@ -55,3 +55,19 @@ def test_p7_integrity_and_canonical_authority_unchanged():
     assert literary.data["stable_active"]["changed"] is False
     assert literary.data["chapter89"]["plock_manual_review"]=="PENDING"
     assert literary.data["chapter89"]["blind_read"]=="PENDING"
+
+
+def test_p7_project_state_is_pass_and_records_gate_ci():
+    from rcwh.io import load_data
+
+    state = load_data(ROOT / "data" / "project_state" / "blind_microdraft_review_v013.json")
+    assert state["status"] == "PASS"
+    assert state["authority"] == "SHADOW_ONLY"
+    assert state["next_gate"] == "P8_CROSS_ROUTE_REVISION_ABLATION"
+    assert set(state["effects"].values()) == {"NONE"}
+    assert state["ci"] == {
+        "run_id": 37651618206,
+        "conclusion": "SUCCESS",
+        "pytest": "293 passed / 0 failed",
+        "validate": "PASS",
+    }

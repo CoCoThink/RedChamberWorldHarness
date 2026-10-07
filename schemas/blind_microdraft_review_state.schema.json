@@ -13,7 +13,8 @@
     "canonical_literary_gate",
     "effects",
     "delivered",
-    "next_gate"
+    "next_gate",
+    "ci"
   ],
   "properties": {
     "id": {
@@ -98,10 +99,7 @@
       }
     },
     "next_gate": {
-      "enum": [
-        "P7_CI_THEN_P8_CROSS_ROUTE_REVISION_ABLATION",
-        "P8_CROSS_ROUTE_REVISION_ABLATION"
-      ]
+      "const": "P8_CROSS_ROUTE_REVISION_ABLATION"
     },
     "ci": {
       "type": "object",

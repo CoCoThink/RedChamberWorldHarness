@@ -1,6 +1,6 @@
 # Blind Microdraft Review v0.13 — P7
 
-Status: **PASS_CANDIDATE / SHADOW_ONLY**
+Status: **PASS / SHADOW_ONLY**
 
 P7 ingests the completed independent blind review of all twenty P6 microdrafts, freezes the anonymous token rankings, and only then unseals the P6 token mapping for descriptive route-level analysis.
 
@@ -47,3 +47,33 @@ P8 must test whether the blind-review lessons can improve all four routes withou
 P7 changes no Evidence, OPEN, stable ACTIVE, canonical prose or Chapter 89 competition state.
 
 Next gate after PASS: **P8_CROSS_ROUTE_REVISION_ABLATION**.
+
+
+## Final P7 gate
+
+Result: **PASS**.
+
+Gate validation run: `37651618206`
+
+- `rcwh validate`: PASS;
+- full repository tests before state-close test: **293 passed / 0 failed**;
+- reviewed tokens: **20/20**;
+- cell rankings: **5/5 complete**;
+- mapping unsealed only after review ingestion: **PASS**;
+- route winner: **NONE**;
+- automatic route elimination: **disabled**;
+- canonical prose / Evidence / OPEN / stable ACTIVE effects: **NONE**;
+- Chapter 89 remains `IN_REVIEW`; official P-Lock / blind adjudication state untouched.
+
+Descriptive post-unseal signal:
+
+| Scenario | Rank sum | Firsts | Top-2 | P7 interpretation |
+|---|---:|---:|---:|---|
+| SCN-CURRENT-C | 11 | 1 | 3 | ROBUST_KEEP |
+| SCN-MINIMAL-CAUSE-OPEN | 11 | 2 | 3 | ROBUST_KEEP_WITH_W4_REPAIR |
+| SCN-LATE-MARRIAGE | 12 | 1 | 3 | ROBUST_KEEP |
+| SCN-JADE-MULTILAYER | 16 | 1 | 1 | KEEP_FOR_TARGETED_REPAIR |
+
+These figures are descriptive only. The four routes had different scene tasks within each chapter window, and the review has one independent-reader sample; therefore P7 does not collapse the frontier.
+
+Next gate: **P8_CROSS_ROUTE_REVISION_ABLATION**.
