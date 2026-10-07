@@ -1,0 +1,1658 @@
+{
+  "id": "scenario-replay:v0.8",
+  "milestone": "P2",
+  "status": "PASS",
+  "authority": "SHADOW_ONLY",
+  "base_world": "M3_CURRENT_C_REFERENCE_ONLY",
+  "rule": "World Baseline + Scenario Delta -> Scenario World Replay. Current-C is a reference baseline, not a truth prior.",
+  "local_locations": [
+    {
+      "id": "SCN-LOC-CLAN-TEMP",
+      "label": "族房/族人暂居（场景级虚拟位置）",
+      "kind": "SCENARIO_TEMP_RESIDENCE",
+      "authority": "SCENARIO_ONLY"
+    },
+    {
+      "id": "SCN-LOC-AFFINAL-TEMP",
+      "label": "姻亲处短期暂居（场景级虚拟位置）",
+      "kind": "SCENARIO_TEMP_RESIDENCE",
+      "authority": "SCENARIO_ONLY"
+    },
+    {
+      "id": "SCN-LOC-RENTAL-A",
+      "label": "第一处低成本租屋/小宅（场景级虚拟位置）",
+      "kind": "SCENARIO_RENTAL",
+      "authority": "SCENARIO_ONLY"
+    },
+    {
+      "id": "SCN-LOC-TEMP-A",
+      "label": "败后第一处临时落脚点（场景级虚拟位置）",
+      "kind": "SCENARIO_TEMP_RESIDENCE",
+      "authority": "SCENARIO_ONLY"
+    },
+    {
+      "id": "SCN-LOC-XUE-TEMP",
+      "label": "薛家/薛氏网络暂居点（不承诺具体房产）",
+      "kind": "SCENARIO_AFFINAL_SUPPORT",
+      "authority": "SCENARIO_ONLY"
+    },
+    {
+      "id": "SCN-LOC-FJ-DETENTION",
+      "label": "凤姐受拘束的场景级司法/管束位置",
+      "kind": "SCENARIO_LEGAL_CONTROL",
+      "authority": "SCENARIO_ONLY"
+    },
+    {
+      "id": "SCN-LOC-GUAZHOU-FERRY",
+      "label": "瓜州渡口方向（W2压力测试位置）",
+      "kind": "W2_SCENARIO_LOCATION",
+      "authority": "SCENARIO_ONLY"
+    }
+  ],
+  "hypothesis_effects": [
+    {
+      "id": "HYP-G0:marriage_chapter",
+      "hypothesis_id": "HYP-G0",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "marriage_chapter",
+      "value": 83
+    },
+    {
+      "id": "HYP-G0:characters.baoyu.marital_status",
+      "hypothesis_id": "HYP-G0",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 83,
+      "chapter_end": 86,
+      "priority": 70,
+      "set": "characters.baoyu.marital_status",
+      "value": "MARRIED_BAOCHAI"
+    },
+    {
+      "id": "HYP-G0:characters.baochai.marital_status",
+      "hypothesis_id": "HYP-G0",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 83,
+      "chapter_end": 86,
+      "priority": 70,
+      "set": "characters.baochai.marital_status",
+      "value": "MARRIED_BAOYU"
+    },
+    {
+      "id": "HYP-G0:characters.baochai.household_role",
+      "hypothesis_id": "HYP-G0",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 83,
+      "chapter_end": 86,
+      "priority": 70,
+      "set": "characters.baochai.household_role",
+      "value": "wife"
+    },
+    {
+      "id": "HYP-G0:relations.rel:baoyu_baochai.status",
+      "hypothesis_id": "HYP-G0",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 83,
+      "chapter_end": 86,
+      "priority": 70,
+      "set": "relations.rel:baoyu_baochai.status",
+      "value": "ACTIVE_SPOUSES"
+    },
+    {
+      "id": "HYP-G1:marriage_chapter",
+      "hypothesis_id": "HYP-G1",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "marriage_chapter",
+      "value": 87
+    },
+    {
+      "id": "HYP-G2:marriage_chapter",
+      "hypothesis_id": "HYP-G2",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "marriage_chapter",
+      "value": 94
+    },
+    {
+      "id": "HYP-G2:pre:characters.baoyu.marital_status",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 87,
+      "chapter_end": 93,
+      "priority": 85,
+      "set": "characters.baoyu.marital_status",
+      "value": "UNMARRIED"
+    },
+    {
+      "id": "HYP-G2:pre:characters.baochai.marital_status",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 87,
+      "chapter_end": 93,
+      "priority": 85,
+      "set": "characters.baochai.marital_status",
+      "value": "UNMARRIED"
+    },
+    {
+      "id": "HYP-G2:pre:relations.rel:baoyu_baochai.status",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 87,
+      "chapter_end": 93,
+      "priority": 85,
+      "set": "relations.rel:baoyu_baochai.status",
+      "value": "NOT_MARRIED"
+    },
+    {
+      "id": "HYP-G2:role-pre90",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 87,
+      "chapter_end": 89,
+      "priority": 85,
+      "set": "characters.baochai.household_role",
+      "value": "xue_daughter_guest"
+    },
+    {
+      "id": "HYP-G2:role-90-93",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 90,
+      "chapter_end": 93,
+      "priority": 85,
+      "set": "characters.baochai.household_role",
+      "value": "xue_daughter_guest_household_helper"
+    },
+    {
+      "id": "HYP-G2:baochai-xue-temp",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 93,
+      "priority": 95,
+      "set": "characters.baochai.location",
+      "value": "SCN-LOC-XUE-TEMP"
+    },
+    {
+      "id": "HYP-G2:post:characters.baoyu.marital_status",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 94,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "characters.baoyu.marital_status",
+      "value": "MARRIED_BAOCHAI"
+    },
+    {
+      "id": "HYP-G2:post:characters.baochai.marital_status",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 94,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "characters.baochai.marital_status",
+      "value": "MARRIED_BAOYU"
+    },
+    {
+      "id": "HYP-G2:post:characters.baochai.household_role",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 94,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "characters.baochai.household_role",
+      "value": "wife_and_daily_manager"
+    },
+    {
+      "id": "HYP-G2:post:relations.rel:baoyu_baochai.status",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 94,
+      "chapter_end": 98,
+      "priority": 90,
+      "set": "relations.rel:baoyu_baochai.status",
+      "value": "ACTIVE_SPOUSES"
+    },
+    {
+      "id": "HYP-G2:baochai-joins-baoyu",
+      "hypothesis_id": "HYP-G2",
+      "kind": "WORLD_COPY",
+      "chapter_start": 94,
+      "chapter_end": 98,
+      "priority": 98,
+      "set": "characters.baochai.location",
+      "from_path": "characters.baoyu.location"
+    },
+    {
+      "id": "HYP-O09-A:jiamu_authority_model",
+      "hypothesis_id": "HYP-O09-A",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "jiamu_authority_model",
+      "value": "ALIVE_EFFECTIVE"
+    },
+    {
+      "id": "HYP-O09-B:jiamu_authority_model",
+      "hypothesis_id": "HYP-O09-B",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "jiamu_authority_model",
+      "value": "ALIVE_NOMINAL_PARENTAL_OPERATIONAL"
+    },
+    {
+      "id": "HYP-O09-C:jiamu_authority_model",
+      "hypothesis_id": "HYP-O09-C",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "jiamu_authority_model",
+      "value": "DEAD_BEFORE_MARRIAGE"
+    },
+    {
+      "id": "HYP-O09-C:characters.jiamu.life_state",
+      "hypothesis_id": "HYP-O09-C",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 85,
+      "chapter_end": 100,
+      "priority": 95,
+      "set": "characters.jiamu.life_state",
+      "value": "DEAD"
+    },
+    {
+      "id": "HYP-O09-C:characters.jiamu.body_state",
+      "hypothesis_id": "HYP-O09-C",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 85,
+      "chapter_end": 100,
+      "priority": 95,
+      "set": "characters.jiamu.body_state",
+      "value": "DEAD_SCENARIO_OPEN_CAUSE"
+    },
+    {
+      "id": "HYP-O09-C:characters.jiamu.household_role",
+      "hypothesis_id": "HYP-O09-C",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 85,
+      "chapter_end": 100,
+      "priority": 95,
+      "set": "characters.jiamu.household_role",
+      "value": "deceased_senior_matriarch"
+    },
+    {
+      "id": "HYP-O09-C:characters.jiamu.location",
+      "hypothesis_id": "HYP-O09-C",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 85,
+      "chapter_end": 100,
+      "priority": 95,
+      "set": "characters.jiamu.location",
+      "value": null
+    },
+    {
+      "id": "HYP-HOUSE-TEMP-THEN-RENTAL:housing_model",
+      "hypothesis_id": "HYP-HOUSE-TEMP-THEN-RENTAL",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "housing_model",
+      "value": "CANONICAL_TEMP_THEN_RENTAL"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:housing_model",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "housing_model",
+      "value": "RETAINED_OLD_ESTATE_SPACE"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:baochai:89-94",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.baochai.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:sheyue:89-94",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.sheyue.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:fengjie:89-94",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.fengjie.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:ping_er:89-94",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.ping_er.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:jiamu:89-94",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.jiamu.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:wangfuren:89-94",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.wangfuren.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:liwan:89-94",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.liwan.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:jialan:89-94",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.jialan.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:baoyu:89-91",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.baoyu.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:baoyu:93-94",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.baoyu.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-RETAINED:qiaojie:89-93",
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 93,
+      "priority": 40,
+      "set": "characters.qiaojie.location",
+      "value": "S05"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:housing_model",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "housing_model",
+      "value": "CLAN_TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:baochai:89-94",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.baochai.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:sheyue:89-94",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.sheyue.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:fengjie:89-94",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.fengjie.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:ping_er:89-94",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.ping_er.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:jiamu:89-94",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.jiamu.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:wangfuren:89-94",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.wangfuren.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:liwan:89-94",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.liwan.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:jialan:89-94",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.jialan.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:baoyu:89-91",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.baoyu.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:baoyu:93-94",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.baoyu.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-CLAN:qiaojie:89-93",
+      "hypothesis_id": "HYP-HOUSE-CLAN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 93,
+      "priority": 40,
+      "set": "characters.qiaojie.location",
+      "value": "SCN-LOC-CLAN-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:housing_model",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "housing_model",
+      "value": "AFFINAL_TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:baochai:89-94",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.baochai.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:sheyue:89-94",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.sheyue.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:fengjie:89-94",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.fengjie.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:ping_er:89-94",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.ping_er.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:jiamu:89-94",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.jiamu.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:wangfuren:89-94",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.wangfuren.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:liwan:89-94",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.liwan.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:jialan:89-94",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.jialan.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:baoyu:89-91",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.baoyu.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:baoyu:93-94",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.baoyu.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-AFFINAL:qiaojie:89-93",
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 93,
+      "priority": 40,
+      "set": "characters.qiaojie.location",
+      "value": "SCN-LOC-AFFINAL-TEMP"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:housing_model",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "housing_model",
+      "value": "DIRECT_RENTAL"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:baochai:89-94",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.baochai.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:sheyue:89-94",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.sheyue.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:fengjie:89-94",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.fengjie.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:ping_er:89-94",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.ping_er.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:jiamu:89-94",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.jiamu.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:wangfuren:89-94",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.wangfuren.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:liwan:89-94",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.liwan.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:jialan:89-94",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.jialan.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:baoyu:89-91",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.baoyu.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:baoyu:93-94",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.baoyu.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-DIRECT-RENTAL:qiaojie:89-93",
+      "hypothesis_id": "HYP-HOUSE-DIRECT-RENTAL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 93,
+      "priority": 40,
+      "set": "characters.qiaojie.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:housing_model",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "housing_model",
+      "value": "STEP_DOWN"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:baochai:89-91",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.baochai.location",
+      "value": "SCN-LOC-TEMP-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:sheyue:89-91",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.sheyue.location",
+      "value": "SCN-LOC-TEMP-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:fengjie:89-91",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.fengjie.location",
+      "value": "SCN-LOC-TEMP-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:ping_er:89-91",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.ping_er.location",
+      "value": "SCN-LOC-TEMP-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:jiamu:89-91",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.jiamu.location",
+      "value": "SCN-LOC-TEMP-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:wangfuren:89-91",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.wangfuren.location",
+      "value": "SCN-LOC-TEMP-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:liwan:89-91",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.liwan.location",
+      "value": "SCN-LOC-TEMP-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:jialan:89-91",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.jialan.location",
+      "value": "SCN-LOC-TEMP-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:baoyu:89-91",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.baoyu.location",
+      "value": "SCN-LOC-TEMP-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:qiaojie:89-91",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 89,
+      "chapter_end": 91,
+      "priority": 40,
+      "set": "characters.qiaojie.location",
+      "value": "SCN-LOC-TEMP-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:baochai:92-94",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 92,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.baochai.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:sheyue:92-94",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 92,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.sheyue.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:fengjie:92-94",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 92,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.fengjie.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:ping_er:92-94",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 92,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.ping_er.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:jiamu:92-94",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 92,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.jiamu.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:wangfuren:92-94",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 92,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.wangfuren.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:liwan:92-94",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 92,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.liwan.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:jialan:92-94",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 92,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.jialan.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:baoyu:93-94",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 40,
+      "set": "characters.baoyu.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-HOUSE-STEP-DOWN:qiaojie:92-93",
+      "hypothesis_id": "HYP-HOUSE-STEP-DOWN",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 92,
+      "chapter_end": 93,
+      "priority": 40,
+      "set": "characters.qiaojie.location",
+      "value": "SCN-LOC-RENTAL-A"
+    },
+    {
+      "id": "HYP-DETENTION-FAMILY-CASE:detention_cause_model",
+      "hypothesis_id": "HYP-DETENTION-FAMILY-CASE",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "detention_cause_model",
+      "value": "FAMILY_CASE_SAME_DISASTER_CHAIN"
+    },
+    {
+      "id": "HYP-DETENTION-CAUSE-OPEN:detention_cause_model",
+      "hypothesis_id": "HYP-DETENTION-CAUSE-OPEN",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "detention_cause_model",
+      "value": "CAUSE_INTERFACE_OPEN"
+    },
+    {
+      "id": "HYP-FJ-DEAD:fengjie_protection_capacity",
+      "hypothesis_id": "HYP-FJ-DEAD",
+      "kind": "ANNOTATION",
+      "chapter_start": 93,
+      "chapter_end": 100,
+      "priority": 20,
+      "annotation": "fengjie_protection_capacity",
+      "value": "NONE"
+    },
+    {
+      "id": "HYP-FJ-GRAVELY-ILL:fengjie_protection_capacity",
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "kind": "ANNOTATION",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 20,
+      "annotation": "fengjie_protection_capacity",
+      "value": "NONE"
+    },
+    {
+      "id": "HYP-FJ-GRAVELY-ILL:characters.fengjie.life_state",
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 90,
+      "set": "characters.fengjie.life_state",
+      "value": "ACTIVE"
+    },
+    {
+      "id": "HYP-FJ-GRAVELY-ILL:characters.fengjie.legal_status",
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 90,
+      "set": "characters.fengjie.legal_status",
+      "value": "NOT_AT_ISSUE"
+    },
+    {
+      "id": "HYP-FJ-GRAVELY-ILL:characters.fengjie.body_state",
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 90,
+      "set": "characters.fengjie.body_state",
+      "value": "gravely_ill_no_effective_protection"
+    },
+    {
+      "id": "HYP-FJ-GRAVELY-ILL:relations.rel:fengjie_ping.status",
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 90,
+      "set": "relations.rel:fengjie_ping.status",
+      "value": "ACTIVE"
+    },
+    {
+      "id": "HYP-FJ-GRAVELY-ILL:relations.rel:fengjie_qiaojie.status",
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 90,
+      "set": "relations.rel:fengjie_qiaojie.status",
+      "value": "ACTIVE"
+    },
+    {
+      "id": "HYP-FJ-GRAVELY-ILL:death:characters.fengjie.life_state",
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 95,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "characters.fengjie.life_state",
+      "value": "DEAD"
+    },
+    {
+      "id": "HYP-FJ-GRAVELY-ILL:death:characters.fengjie.body_state",
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 95,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "characters.fengjie.body_state",
+      "value": "DEAD_AFTER_GRAVE_ILLNESS"
+    },
+    {
+      "id": "HYP-FJ-GRAVELY-ILL:death:relations.rel:fengjie_ping.status",
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 95,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "relations.rel:fengjie_ping.status",
+      "value": "ENDED_BY_DEATH"
+    },
+    {
+      "id": "HYP-FJ-GRAVELY-ILL:death:relations.rel:fengjie_qiaojie.status",
+      "hypothesis_id": "HYP-FJ-GRAVELY-ILL",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 95,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "relations.rel:fengjie_qiaojie.status",
+      "value": "ENDED_BY_DEATH"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:fengjie_protection_capacity",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "ANNOTATION",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 20,
+      "annotation": "fengjie_protection_capacity",
+      "value": "NONE"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:characters.fengjie.life_state",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 96,
+      "set": "characters.fengjie.life_state",
+      "value": "ACTIVE"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:characters.fengjie.legal_status",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 96,
+      "set": "characters.fengjie.legal_status",
+      "value": "DETAINED_OTHER"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:characters.fengjie.location",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 96,
+      "set": "characters.fengjie.location",
+      "value": "SCN-LOC-FJ-DETENTION"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:characters.fengjie.body_state",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 96,
+      "set": "characters.fengjie.body_state",
+      "value": "chronic_illness_under_legal_control"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:relations.rel:fengjie_ping.status",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 96,
+      "set": "relations.rel:fengjie_ping.status",
+      "value": "ACTIVE"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:relations.rel:fengjie_qiaojie.status",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 94,
+      "priority": 96,
+      "set": "relations.rel:fengjie_qiaojie.status",
+      "value": "ACTIVE"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:death:characters.fengjie.life_state",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 95,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "characters.fengjie.life_state",
+      "value": "DEAD"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:death:characters.fengjie.legal_status",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 95,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "characters.fengjie.legal_status",
+      "value": "NOT_AT_ISSUE"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:death:characters.fengjie.body_state",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 95,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "characters.fengjie.body_state",
+      "value": "DEAD_AFTER_DECLINE"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:death:relations.rel:fengjie_ping.status",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 95,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "relations.rel:fengjie_ping.status",
+      "value": "ENDED_BY_DEATH"
+    },
+    {
+      "id": "HYP-FJ-DETAINED:death:relations.rel:fengjie_qiaojie.status",
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 95,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "relations.rel:fengjie_qiaojie.status",
+      "value": "ENDED_BY_DEATH"
+    },
+    {
+      "id": "HYP-FJ-POWERLESS:fengjie_protection_capacity",
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "kind": "ANNOTATION",
+      "chapter_start": 93,
+      "chapter_end": 95,
+      "priority": 20,
+      "annotation": "fengjie_protection_capacity",
+      "value": "NONE"
+    },
+    {
+      "id": "HYP-FJ-POWERLESS:characters.fengjie.life_state",
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 95,
+      "priority": 90,
+      "set": "characters.fengjie.life_state",
+      "value": "ACTIVE"
+    },
+    {
+      "id": "HYP-FJ-POWERLESS:characters.fengjie.legal_status",
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 95,
+      "priority": 90,
+      "set": "characters.fengjie.legal_status",
+      "value": "NOT_AT_ISSUE"
+    },
+    {
+      "id": "HYP-FJ-POWERLESS:characters.fengjie.household_role",
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 95,
+      "priority": 90,
+      "set": "characters.fengjie.household_role",
+      "value": "former_manager_without_effective_power"
+    },
+    {
+      "id": "HYP-FJ-POWERLESS:relations.rel:fengjie_ping.status",
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 95,
+      "priority": 90,
+      "set": "relations.rel:fengjie_ping.status",
+      "value": "ACTIVE"
+    },
+    {
+      "id": "HYP-FJ-POWERLESS:relations.rel:fengjie_qiaojie.status",
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 93,
+      "chapter_end": 95,
+      "priority": 90,
+      "set": "relations.rel:fengjie_qiaojie.status",
+      "value": "ACTIVE"
+    },
+    {
+      "id": "HYP-FJ-POWERLESS:death:characters.fengjie.life_state",
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 96,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "characters.fengjie.life_state",
+      "value": "DEAD"
+    },
+    {
+      "id": "HYP-FJ-POWERLESS:death:characters.fengjie.body_state",
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 96,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "characters.fengjie.body_state",
+      "value": "DEAD_AFTER_DECLINE"
+    },
+    {
+      "id": "HYP-FJ-POWERLESS:death:relations.rel:fengjie_ping.status",
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 96,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "relations.rel:fengjie_ping.status",
+      "value": "ENDED_BY_DEATH"
+    },
+    {
+      "id": "HYP-FJ-POWERLESS:death:relations.rel:fengjie_qiaojie.status",
+      "hypothesis_id": "HYP-FJ-POWERLESS",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 96,
+      "chapter_end": 100,
+      "priority": 90,
+      "set": "relations.rel:fengjie_qiaojie.status",
+      "value": "ENDED_BY_DEATH"
+    },
+    {
+      "id": "HYP-SNOW-JADE-SAME:snow_jade_identity",
+      "hypothesis_id": "HYP-SNOW-JADE-SAME",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "snow_jade_identity",
+      "value": "TONGLING_ASSUMED_FOR_REPLAY"
+    },
+    {
+      "id": "HYP-SNOW-JADE-SAME:snow_transfer_chain",
+      "hypothesis_id": "HYP-SNOW-JADE-SAME",
+      "kind": "ANNOTATION",
+      "chapter_start": 91,
+      "chapter_end": 91,
+      "priority": 30,
+      "annotation": "snow_transfer_chain",
+      "value": [
+        "baoyu_current_residence_to_snow_loss",
+        "snow_find_at_S05",
+        "fengjie_handoff",
+        "return_to_baoyu_current_residence"
+      ]
+    },
+    {
+      "id": "HYP-SNOW-JADE-DISTINCT:snow_jade_identity",
+      "hypothesis_id": "HYP-SNOW-JADE-DISTINCT",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "snow_jade_identity",
+      "value": "DISTINCT_ASSUMED_FOR_REPLAY"
+    },
+    {
+      "id": "HYP-SNOW-JADE-UNRESOLVED:snow_jade_identity",
+      "hypothesis_id": "HYP-SNOW-JADE-UNRESOLVED",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "snow_jade_identity",
+      "value": "OPEN"
+    },
+    {
+      "id": "HYP-SENT-JADE-SAME:sent_jade_identity",
+      "hypothesis_id": "HYP-SENT-JADE-SAME",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "sent_jade_identity",
+      "value": "TONGLING_ASSUMED_FOR_REPLAY"
+    },
+    {
+      "id": "HYP-SENT-JADE-SAME:sent_jade_transfer",
+      "hypothesis_id": "HYP-SENT-JADE-SAME",
+      "kind": "ANNOTATION",
+      "chapter_start": 98,
+      "chapter_end": 98,
+      "priority": 30,
+      "annotation": "sent_jade_transfer",
+      "value": [
+        "temporary_loss_or_mispackaging",
+        "zhen_side_receipt_or_discovery",
+        "return_delivery",
+        "baoyu_receives"
+      ]
+    },
+    {
+      "id": "HYP-SENT-JADE-IDENTITY-OPEN:sent_jade_identity",
+      "hypothesis_id": "HYP-SENT-JADE-IDENTITY-OPEN",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "sent_jade_identity",
+      "value": "OPEN"
+    },
+    {
+      "id": "HYP-MIAOYU-GUAZHOU:miaoyu_route",
+      "hypothesis_id": "HYP-MIAOYU-GUAZHOU",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "miaoyu_route",
+      "value": "GUAZHOU_W2_STRESS_ROUTE"
+    },
+    {
+      "id": "HYP-MIAOYU-GUAZHOU:location",
+      "hypothesis_id": "HYP-MIAOYU-GUAZHOU",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 97,
+      "chapter_end": 100,
+      "priority": 80,
+      "set": "characters.miaoyu.location",
+      "value": "SCN-LOC-GUAZHOU-FERRY"
+    },
+    {
+      "id": "HYP-MIAOYU-GUAZHOU:role",
+      "hypothesis_id": "HYP-MIAOYU-GUAZHOU",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 97,
+      "chapter_end": 100,
+      "priority": 80,
+      "set": "characters.miaoyu.household_role",
+      "value": "religious_woman_outside_protected_nunnery"
+    },
+    {
+      "id": "HYP-MIAOYU-NONGUAZHOU:miaoyu_route",
+      "hypothesis_id": "HYP-MIAOYU-NONGUAZHOU",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "miaoyu_route",
+      "value": "NON_GUAZHOU_LOSS_OF_PROTECTION"
+    },
+    {
+      "id": "HYP-ZHEN-DIRECT:zhen_baoyu_encounter",
+      "hypothesis_id": "HYP-ZHEN-DIRECT",
+      "kind": "ANNOTATION",
+      "chapter_start": 98,
+      "chapter_end": 98,
+      "priority": 10,
+      "annotation": "zhen_baoyu_encounter",
+      "value": "DIRECT_MEETING"
+    },
+    {
+      "id": "HYP-ZHEN-MISS:zhen_baoyu_encounter",
+      "hypothesis_id": "HYP-ZHEN-MISS",
+      "kind": "ANNOTATION",
+      "chapter_start": 98,
+      "chapter_end": 98,
+      "priority": 10,
+      "annotation": "zhen_baoyu_encounter",
+      "value": "PRESENT_BUT_MISSED"
+    },
+    {
+      "id": "HYP-ZHEN-MEDIATED:zhen_baoyu_encounter",
+      "hypothesis_id": "HYP-ZHEN-MEDIATED",
+      "kind": "ANNOTATION",
+      "chapter_start": 98,
+      "chapter_end": 98,
+      "priority": 10,
+      "annotation": "zhen_baoyu_encounter",
+      "value": "MEDIATED_NO_MEETING"
+    },
+    {
+      "id": "HYP-ZHEN-MEDIATED:offstage",
+      "hypothesis_id": "HYP-ZHEN-MEDIATED",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 98,
+      "chapter_end": 98,
+      "priority": 80,
+      "set": "characters.zhen_baoyu.location",
+      "value": "OFFSTAGE"
+    },
+    {
+      "id": "HYP-END-SPLIT-99-100:baoyu_departure_chapter",
+      "hypothesis_id": "HYP-END-SPLIT-99-100",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "baoyu_departure_chapter",
+      "value": 99
+    },
+    {
+      "id": "HYP-END-COMPACT-100:baoyu_departure_chapter",
+      "hypothesis_id": "HYP-END-COMPACT-100",
+      "kind": "ANNOTATION",
+      "chapter_start": 81,
+      "chapter_end": 100,
+      "priority": 10,
+      "annotation": "baoyu_departure_chapter",
+      "value": 100
+    },
+    {
+      "id": "HYP-END-COMPACT-100:characters.baoyu.location",
+      "hypothesis_id": "HYP-END-COMPACT-100",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 99,
+      "chapter_end": 99,
+      "priority": 99,
+      "set": "characters.baoyu.location",
+      "value": "S09"
+    },
+    {
+      "id": "HYP-END-COMPACT-100:characters.baoyu.household_role",
+      "hypothesis_id": "HYP-END-COMPACT-100",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 99,
+      "chapter_end": 99,
+      "priority": 99,
+      "set": "characters.baoyu.household_role",
+      "value": "jia_son"
+    },
+    {
+      "id": "HYP-END-COMPACT-100:characters.baoyu.legal_status",
+      "hypothesis_id": "HYP-END-COMPACT-100",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 99,
+      "chapter_end": 99,
+      "priority": 99,
+      "set": "characters.baoyu.legal_status",
+      "value": "RELEASED_NO_RESTORATION"
+    },
+    {
+      "id": "HYP-END-COMPACT-100:relations.rel:baoyu_baochai.status",
+      "hypothesis_id": "HYP-END-COMPACT-100",
+      "kind": "WORLD_OVERRIDE",
+      "chapter_start": 99,
+      "chapter_end": 99,
+      "priority": 99,
+      "set": "relations.rel:baoyu_baochai.status",
+      "value": "ACTIVE_SPOUSES"
+    }
+  ],
+  "pressure_rules": [
+    {
+      "hypothesis_id": "HYP-G2",
+      "kind": "RESOURCE_PRESSURE",
+      "chapter": 94,
+      "severity": "PRESSURE",
+      "message": "败后/羁押链后成婚落在E2资源段，主婚、居所、操办必须压缩并显式说明。"
+    },
+    {
+      "hypothesis_id": "HYP-O09-C",
+      "kind": "MOURNING_PRESSURE",
+      "chapter": 85,
+      "severity": "PRESSURE",
+      "message": "贾母先亡会新增祖母丧期与章法容量压力；不能把死亡当作婚姻便利开关。"
+    },
+    {
+      "hypothesis_id": "HYP-HOUSE-RETAINED",
+      "kind": "PROPERTY_BASIS_REQUIRED",
+      "chapter": 89,
+      "severity": "PRESSURE",
+      "message": "抄没后留在原府某处必须另有不入官、获准暂留或权属依据。"
+    },
+    {
+      "hypothesis_id": "HYP-HOUSE-AFFINAL",
+      "kind": "FINITE_AFFINAL_SUPPORT",
+      "chapter": 89,
+      "severity": "PRESSURE",
+      "message": "姻亲援助必须有限、阶段性，不得变成薛家无限托底。"
+    },
+    {
+      "hypothesis_id": "HYP-FJ-DETAINED",
+      "kind": "LEGAL_MECHANISM_PRESSURE",
+      "chapter": 93,
+      "severity": "PRESSURE",
+      "message": "凤姐被拘是O05允许状态但缺独立硬机制，不得反向制造重大罪案。"
+    },
+    {
+      "hypothesis_id": "HYP-SNOW-JADE-SAME",
+      "kind": "OBJECT_CHAIN_PRESSURE",
+      "chapter": 91,
+      "severity": "PRESSURE",
+      "message": "若雪中玉样物与通灵玉同一，必须承担额外失落—拾得—交回连续性成本。"
+    },
+    {
+      "hypothesis_id": "HYP-MIAOYU-GUAZHOU",
+      "kind": "W2_DEPENDENCY",
+      "chapter": 97,
+      "severity": "PRESSURE",
+      "message": "瓜州仅W2弱增权，不能单独承重被掳、受辱、死亡等传奇机制。"
+    },
+    {
+      "hypothesis_id": "HYP-SENT-JADE-SAME",
+      "kind": "OBJECT_CHAIN_PRESSURE",
+      "chapter": 98,
+      "severity": "PRESSURE",
+      "message": "甄宝玉所送之玉若锁为通灵玉，需承担误取/发现/送还的连续性说明成本。"
+    },
+    {
+      "hypothesis_id": "HYP-END-COMPACT-100",
+      "kind": "CHAPTER_CAPACITY_PRESSURE",
+      "chapter": 100,
+      "severity": "PRESSURE",
+      "message": "撒手、情榜与外框同回会显著增加末回章法容量压力。"
+    }
+  ],
+  "hard_checks": [
+    "R05_REAL_DETENTION_PRESERVED",
+    "R13_SPOUSE_RELATION_EXISTS_BEFORE_DEPARTURE",
+    "R22_SHEYUE_RELATION_PRESENT_AT_DEPARTURE",
+    "R29_FENGJIE_EVENTUAL_DEATH",
+    "R37_R38_QIAOJIE_RURAL_RESCUE",
+    "R43_DEPARTURE_WHILE_WIFE_AND_MAID_RELATIONS_EXIST",
+    "R01_R08_R09_OUTER_FRAME_AND_QINGBANG_TERMINAL_FUNCTION"
+  ],
+  "effects": {
+    "evidence": "NONE",
+    "open_interfaces": "NONE",
+    "stable_active": "NONE",
+    "chapter89": "NONE",
+    "chapter92": "NONE",
+    "chapter97": "NONE"
+  },
+  "automatic_winner": false,
+  "single_total_score": false
+}

@@ -27,6 +27,7 @@ from .reconstruction import ReconstructionRegistry
 from .regression import run_r4_evidence_regression
 from .schema import validate_instance
 from .scenarios import ScenarioRuntime
+from .scenario_replay import CounterfactualReplayRuntime
 from .world import WorldRuntime
 
 
@@ -307,6 +308,27 @@ def validate_repository(root: Path) -> list[str]:
                 f"{path.relative_to(root)} scenarios[{i}]: {e}" for e in errs
             )
 
+
+    scenario_replay_path = root / "data" / "scenario_replay" / "v08.json"
+    if scenario_replay_path.exists():
+        errs = validate_instance(
+            load_data(scenario_replay_path),
+            load_data(schema_dir / "scenario_replay.schema.json"),
+        )
+        errors.extend(
+            f"{scenario_replay_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    scenario_replay_state = root / "data" / "project_state" / "scenario_replay_v08.json"
+    if scenario_replay_state.exists():
+        errs = validate_instance(
+            load_data(scenario_replay_state),
+            load_data(schema_dir / "scenario_replay_state.schema.json"),
+        )
+        errors.extend(
+            f"{scenario_replay_state.relative_to(root)}: {e}" for e in errs
+        )
+
     prewrite_path = root / "data" / "prewrite" / "v06.json"
     if prewrite_path.exists():
         errs = validate_instance(
@@ -381,6 +403,10 @@ def validate_repository(root: Path) -> list[str]:
         scenarios = ScenarioRuntime.from_repo(root)
         errors.extend(scenarios.validate_integrity(hypotheses, open_interfaces))
         world = WorldRuntime.from_repo(root)
+        scenario_replay = CounterfactualReplayRuntime.from_repo(root)
+        errors.extend(
+            scenario_replay.validate_integrity(hypotheses, scenarios, world)
+        )
         errors.extend(
             validate_instance(
                 world.data,

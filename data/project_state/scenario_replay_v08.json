@@ -1,0 +1,39 @@
+{
+  "id": "scenario-replay:v0.8",
+  "phase": "P2_COUNTERFACTUAL_WORLD_REPLAY",
+  "status": "PASS",
+  "authority": "SHADOW_ONLY",
+  "source_branch": "feature/scenario-replay-v0.8",
+  "base": {
+    "branch": "literary/43-0-resume",
+    "sha": "d06249011a0ac139bcb1591fdc0bb769eae0272a"
+  },
+  "stable_active_sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+  "canonical_literary_gate": "CH89_MANUAL_PLOCK_THEN_BLIND_READ",
+  "effects": {
+    "chapter89": "NONE",
+    "chapter92": "NONE",
+    "chapter97": "NONE",
+    "evidence": "NONE",
+    "open_interfaces": "NONE",
+    "stable_active": "NONE"
+  },
+  "delivered": [
+    "COUNTERFACTUAL_REPLAY_RUNTIME",
+    "SCENARIO_LOCAL_LOCATIONS",
+    "HYPOTHESIS_TO_WORLD_DELTA",
+    "RELATION_STATE_CHECKS",
+    "OBJECT_CONTINUITY_CHECKS",
+    "TIMELINE_CHECKS",
+    "RESOURCE_PRESSURE_CHECKS",
+    "P2_CLI"
+  ],
+  "replayed_scenarios": 10,
+  "next_gate": "P3_PARETO_EVALUATION",
+  "ci": {
+    "run_id": 37638097185,
+    "conclusion": "SUCCESS",
+    "pytest": "246 passed / 0 failed",
+    "validate": "PASS"
+  }
+}
