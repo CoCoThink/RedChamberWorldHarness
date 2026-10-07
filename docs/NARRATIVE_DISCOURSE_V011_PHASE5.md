@@ -1,6 +1,6 @@
 # Narrative Discourse Runtime v0.11 — P5
 
-Status: **PASS_CANDIDATE / SHADOW_ONLY**
+Status: **PASS / SHADOW_ONLY**
 
 P5 introduces an explicit **Fabula / Sjuzet split** for the four scenarios that survived P3 and passed P4 literary-stress design.
 
@@ -75,3 +75,29 @@ P5 has no authority to:
 A P5 PASS means only that the four routes can be expressed through controlled, auditable discourse plans rather than plot-outline narration.
 
 Next gate after PASS: **P6_CONTROLLED_MICRODRAFT_LAB**.
+
+
+## Final P5 gate
+
+Result: **PASS**.
+
+Validation run: `37646432165`
+
+- `rcwh validate`: PASS;
+- full repository tests: **276 passed / 0 failed**;
+- P4 scene probes compiled into discourse cards: **20/20**;
+- P4 fabula mutation: **0**;
+- narrator access: **LIMITED on every card**;
+- withheld-information leaks: **0**;
+- authorial theme / motive / institutional-exposition permissions: **0**;
+- each scenario satisfies focalizer, temporal-order, relay-channel, opening, distance, exit and mediation-diversity guards;
+- winner: **NONE**;
+- prose generation: **disabled**;
+- automatic literary PASS: **disabled**;
+- Evidence / OPEN / stable ACTIVE effects: **NONE**;
+- Chapter 89 remains `IN_REVIEW` with manual P-Lock / independent blind read pending;
+- Chapters 92 / 97 remain blocked by predecessor.
+
+P5 therefore establishes an auditable separation between **what happens** and **how the reader is allowed to learn it**. It does not claim that any one discourse plan is already good prose.
+
+Next gate: **P6_CONTROLLED_MICRODRAFT_LAB**.

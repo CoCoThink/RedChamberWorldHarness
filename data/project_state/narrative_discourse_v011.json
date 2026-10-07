@@ -1,7 +1,7 @@
 {
   "id": "narrative-discourse:v0.11",
   "phase": "P5_NARRATIVE_DISCOURSE_RUNTIME",
-  "status": "PASS_CANDIDATE",
+  "status": "PASS",
   "authority": "SHADOW_ONLY",
   "source_branch": "feature/narrative-discourse-v0.11",
   "base": {
@@ -28,5 +28,11 @@
     "NARRATOR_RESTRAINT_GUARD",
     "NO_PROSE_GENERATION"
   ],
-  "next_gate": "P5_CI_THEN_P6_CONTROLLED_MICRODRAFT_LAB"
+  "next_gate": "P6_CONTROLLED_MICRODRAFT_LAB",
+  "ci": {
+    "run_id": 37646432165,
+    "conclusion": "SUCCESS",
+    "pytest": "276 passed / 0 failed",
+    "validate": "PASS"
+  }
 }

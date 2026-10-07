@@ -121,3 +121,19 @@ def test_p5_integrity_and_canonical_literary_state_unchanged():
     assert literary.data["stable_active"]["changed"] is False
     assert literary.data["chapter89"]["plock_manual_review"] == "PENDING"
     assert literary.data["chapter89"]["blind_read"] == "PENDING"
+
+
+def test_p5_project_state_is_pass_and_records_ci_gate():
+    from rcwh.io import load_data
+
+    state = load_data(ROOT / "data" / "project_state" / "narrative_discourse_v011.json")
+    assert state["status"] == "PASS"
+    assert state["authority"] == "SHADOW_ONLY"
+    assert state["next_gate"] == "P6_CONTROLLED_MICRODRAFT_LAB"
+    assert set(state["effects"].values()) == {"NONE"}
+    assert state["ci"] == {
+        "run_id": 37646432165,
+        "conclusion": "SUCCESS",
+        "pytest": "276 passed / 0 failed",
+        "validate": "PASS",
+    }
