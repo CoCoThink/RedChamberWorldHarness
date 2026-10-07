@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH M6 Registry Extension",
+  "type": "object",
+  "required": [
+    "milestone",
+    "document_additions",
+    "content_hash_additions",
+    "document_overrides",
+    "current_authority_override"
+  ],
+  "properties": {
+    "milestone": {
+      "const": "M6"
+    },
+    "document_additions": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "content_hash_additions": {
+      "type": "array",
+      "maxItems": 0
+    },
+    "document_overrides": {
+      "type": "object",
+      "minProperties": 4,
+      "maxProperties": 4
+    },
+    "current_authority_override": {
+      "type": "object",
+      "required": [
+        "implementation_alignment_runtime",
+        "implementation_alignment_queryable",
+        "stable_active_sha256",
+        "literature_frozen",
+        "current_markdown_islands",
+        "completion_gate_ready"
+      ],
+      "properties": {
+        "implementation_alignment_runtime": {
+          "type": "string"
+        },
+        "implementation_alignment_queryable": {
+          "const": true
+        },
+        "stable_active_sha256": {
+          "const": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+        },
+        "literature_frozen": {
+          "const": true
+        },
+        "current_markdown_islands": {
+          "const": 0
+        },
+        "completion_gate_ready": {
+          "const": false
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "additionalProperties": false
+}
