@@ -5,6 +5,7 @@ import json
 from pathlib import Path
 
 from .competition import CompetitionRegistry, format_competition
+from .coverage import CoverageAuditRuntime, format_coverage
 from .evaluate import evaluate_scene_text, overall_status
 from .graph import ProvenanceGraph
 from .history import HistoricalMechanismRegistry, format_mechanism
@@ -386,6 +387,52 @@ def cmd_literary_ecology(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_coverage(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    coverage = CoverageAuditRuntime.from_repo(root)
+    registry = MigrationRegistry.from_repo(root)
+    try:
+        kind = args.coverage_command
+        if kind == "summary":
+            payload = coverage.summary(registry)
+        elif kind == "document":
+            payload = coverage.document(args.key, registry)
+        elif kind == "target":
+            payload = coverage.target(args.key)
+        elif kind == "layer":
+            payload = coverage.layer(args.key)
+        elif kind == "gaps":
+            payload = coverage.gaps()
+        elif kind == "regression":
+            reconstruction = ReconstructionRegistry.from_repo(root)
+            world = WorldRuntime.from_repo(root)
+            objects = ObjectNetworkRuntime.from_repo(root)
+            literary = LiteraryEcologyRuntime.from_repo(root)
+            implementation = ImplementationAlignmentRuntime.from_repo(root)
+            evidence = run_r4_evidence_regression(root)
+            payload = coverage.regression(
+                registry,
+                reconstruction,
+                world,
+                objects,
+                literary,
+                implementation,
+                evidence,
+            )
+        else:
+            raise KeyError(f"Unknown coverage command: {kind}")
+    except (KeyError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_coverage(kind, payload))
+    if kind == "regression":
+        return 0 if payload["overall"] == "PASS" else 1
+    return 0
+
+
 def cmd_implementation(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     runtime = ImplementationAlignmentRuntime.from_repo(root)
@@ -578,6 +625,21 @@ def main() -> None:
     p.add_argument("key")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_literary_ecology)
+
+    p_coverage = sub.add_parser("coverage")
+    coverage_sub = p_coverage.add_subparsers(dest="coverage_command", required=True)
+    p = coverage_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_coverage)
+    for name in ("document", "target", "layer"):
+        p = coverage_sub.add_parser(name)
+        p.add_argument("key")
+        p.add_argument("--json", action="store_true")
+        p.set_defaults(func=cmd_coverage)
+    for name in ("gaps", "regression"):
+        p = coverage_sub.add_parser(name)
+        p.add_argument("--json", action="store_true")
+        p.set_defaults(func=cmd_coverage)
 
     p_impl = sub.add_parser("implementation")
     impl_sub = p_impl.add_subparsers(dest="implementation_command", required=True)
