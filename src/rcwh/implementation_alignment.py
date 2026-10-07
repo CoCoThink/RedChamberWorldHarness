@@ -232,22 +232,40 @@ class ImplementationAlignmentRuntime:
             elif lock["active_prose_locator"]["file_sha256"] != stable["sha256"]:
                 errors.append(f"{lock_id}: specialized P-Lock locator not on frozen stable body")
 
-        # Freeze the production state exactly; do not silently resume literature.
+        # M6 stores the handover-time literary queue as an immutable historical fixture.
+        # Before post-M8 literary resumption exists, the live queue must match it exactly.
+        # After M8, the fixture remains frozen while the live competition ledger may advance.
+        expected_fixture_states = {
+            86: "ADJUDICATED",
+            89: "IN_REVIEW",
+            92: "BLOCKED_BY_PREDECESSOR",
+            97: "BLOCKED_BY_PREDECESSOR",
+        }
+        resume_path = root / "data" / "project_state" / "literary_resume_v1.json"
+        resumed = resume_path.exists()
         for ch, fixture in self.competitions.items():
+            if fixture.get("state") != expected_fixture_states[ch]:
+                errors.append(
+                    f"chapter {ch}: M6 competition fixture drift "
+                    f"{fixture.get('state')} != {expected_fixture_states[ch]}"
+                )
             record = competitions.records.get(fixture["id"])
             if record is None:
-                errors.append(f"chapter {ch}: missing competition fixture {fixture['id']}")
+                errors.append(f"chapter {ch}: missing competition record {fixture['id']}")
                 continue
-            if record["state"] != fixture["state"]:
+            if record["baseline"]["sha256"] != stable["sha256"]:
+                errors.append(f"chapter {ch}: live competition baseline SHA drift")
+            if not resumed and record["state"] != fixture["state"]:
                 errors.append(
-                    f"chapter {ch}: competition state drift {record['state']} != {fixture['state']}"
+                    f"chapter {ch}: pre-resume competition state drift "
+                    f"{record['state']} != {fixture['state']}"
                 )
         if self.competitions[89]["freeze_effect"] != "DO_NOT_CONTINUE_PHASE2":
-            errors.append("Chapter 89 Phase 2 must remain frozen")
+            errors.append("M6 fixture must record Chapter 89 Phase 2 freeze")
         if self.competitions[92]["freeze_effect"] != "DO_NOT_START":
-            errors.append("Chapter 92 pressure work must remain frozen")
+            errors.append("M6 fixture must record Chapter 92 freeze")
         if self.competitions[97]["freeze_effect"] != "DO_NOT_START":
-            errors.append("Chapter 97 pressure work must remain frozen")
+            errors.append("M6 fixture must record Chapter 97 freeze")
 
         # The object runtime should remain usable while M6 does not try to duplicate it.
         continuity = object_network.continuity_report()
