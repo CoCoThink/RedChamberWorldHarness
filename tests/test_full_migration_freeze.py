@@ -28,21 +28,19 @@ def test_m0_baseline_freezes_stable_active_until_completion_gate():
     assert regression["stable_active"]["sha256"] == STABLE_SHA
 
 
-def test_literary_pressure_queue_remains_frozen_during_full_migration():
-    records = load_yaml("data/competitions/43_0.yaml")["competition_records"]
-    by_chapter = {record["chapter"]: record for record in records}
+def test_literary_pressure_queue_freeze_is_preserved_in_m6_historical_fixture():
+    m6 = load_json("data/implementation_alignment/m6.json")
+    by_chapter = {
+        item["chapter"]: item for item in m6["competition_fixtures"]
+    }
 
     assert by_chapter[89]["state"] == "IN_REVIEW"
-    assert by_chapter[89]["workflow_progress"] == {
-        "BASELINE_EXCERPT": "PASS",
-        "STRUCTURAL_REORDER": "PASS",
-        "SMALL_TRIAL": "PASS",
-        "SIX_FIELD_REGRESSION": "PENDING",
-        "PLOCK_REGRESSION": "PENDING",
-        "BLIND_READ": "PENDING",
-    }
+    assert by_chapter[89]["progress"] == "PHASE1_ONLY"
+    assert by_chapter[89]["freeze_effect"] == "DO_NOT_CONTINUE_PHASE2"
     assert by_chapter[92]["state"] == "BLOCKED_BY_PREDECESSOR"
+    assert by_chapter[92]["freeze_effect"] == "DO_NOT_START"
     assert by_chapter[97]["state"] == "BLOCKED_BY_PREDECESSOR"
+    assert by_chapter[97]["freeze_effect"] == "DO_NOT_START"
 
 
 def test_deferred_ch86_candidate_cannot_mutate_stable_active():
