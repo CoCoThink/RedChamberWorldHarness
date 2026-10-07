@@ -71,14 +71,15 @@ def test_legacy_o01_o10_map_to_current_open28_and_o03_is_revised():
     assert r.legacy("O03")["mapping_relation"] == "REVISED_OLD_U1_DOWNGRADED"
 
 
-def test_m2_sources_are_registered_and_current_markdown_islands_are_zero():
+def test_m2_sources_remain_registered_after_signed_m8_gate():
     migration = MigrationRegistry.from_repo(ROOT)
     r = recon()
     for source in r.data["sources"].values():
         assert source["document_ref"] in migration.documents
         assert migration.documents[source["document_ref"]]["sha256"] == source["sha256"]
     assert migration.current_summary()["current_markdown_islands"] == 0
-    assert migration.current_summary()["completion_gate_ready"] is False
+    assert migration.current_summary()["completion_gate_ready"] is True
+    assert migration.current_summary()["completion_gate_status"] == "PASS"
 
 
 def test_reconstruction_integrity_passes():
