@@ -1,6 +1,6 @@
 # Scenario Replay v0.8 — P2 Counterfactual World Replay
 
-Status: **PASS_CANDIDATE / SHADOW_ONLY**
+Status: **PASS / SHADOW_ONLY**
 
 P2 turns the P1 scenario bundles into executable counterfactual world states without modifying canonical M3, R4 Evidence, OPEN, stable ACTIVE, or Chapter 89 literary adjudication.
 
@@ -49,3 +49,21 @@ Historical burden, mourning burden, W2 dependence, object-chain complexity and t
 - no automatic winner.
 
 P2 PASS requires all ten curated P1 seed scenarios to replay without hard blockers. Pressure is allowed and is intentionally preserved for P3 Pareto evaluation.
+
+## Final P2 gate
+
+Result: **PASS**.
+
+Validation run: `37638097185`
+
+- `rcwh validate`: PASS;
+- full repository tests: **246 passed / 0 failed**;
+- all 10 P1 seed scenarios replayed across chapters 81–100;
+- hard replay blockers: **0**;
+- current-C replay equals canonical M3 snapshots exactly;
+- PRESSURE findings remain non-authoritative inputs for P3;
+- stable ACTIVE unchanged;
+- Chapter 89 remains `IN_REVIEW` with manual P-Lock / independent blind read still pending;
+- Chapters 92 / 97 remain blocked by predecessor.
+
+Next gate: **P3_PARETO_EVALUATION**.

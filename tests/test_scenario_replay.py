@@ -97,3 +97,14 @@ def test_p2_integrity_and_authority_boundaries():
     assert literary.data["stable_active"]["changed"] is False
     assert literary.data["chapter89"]["plock_manual_review"] == "PENDING"
     assert literary.data["chapter89"]["blind_read"] == "PENDING"
+
+
+def test_p2_project_state_is_pass_and_next_gate_is_p3():
+    from rcwh.io import load_data
+    state = load_data(ROOT / "data" / "project_state" / "scenario_replay_v08.json")
+    assert state["status"] == "PASS"
+    assert state["authority"] == "SHADOW_ONLY"
+    assert state["next_gate"] == "P3_PARETO_EVALUATION"
+    assert set(state["effects"].values()) == {"NONE"}
+    assert state["ci"]["run_id"] == 37638097185
+    assert state["ci"]["validate"] == "PASS"
