@@ -21,6 +21,7 @@ from .literary_production import LiteraryProductionRuntime, format_literary_prod
 from .literary_stress import ScenarioLiteraryStressRuntime
 from .literary_suite import LiteraryEvaluatorSuite, format_literary_suite
 from .mechanism_adapters import HistoricalAdapterRuntime, format_adapter
+from .narrative_discourse import NarrativeDiscourseRuntime
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .object_network import ObjectNetworkRuntime, format_object
 from .pareto import ParetoEvaluationRuntime
@@ -300,6 +301,34 @@ def cmd_literary_stress(args: argparse.Namespace) -> int:
         return 0 if payload["status"] == "STRESS_CONTRACT_READY" else 1
     if kind == "summary":
         return 0 if payload["status"] == "PASS" else 1
+    return 0
+
+
+
+def cmd_narrative_discourse(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = NarrativeDiscourseRuntime.from_repo(root)
+    stress = ScenarioLiteraryStressRuntime.from_repo(root)
+    try:
+        kind = args.narrative_discourse_command
+        if kind == "summary":
+            payload = runtime.evaluate_all(stress)
+        elif kind == "scenario":
+            payload = runtime.evaluate(args.key, stress)
+        elif kind == "card":
+            payload = runtime.card(args.scenario, args.probe, stress)
+        elif kind == "compare":
+            payload = runtime.compare(args.left, args.right, stress)
+        else:
+            raise KeyError(f"Unknown narrative-discourse command: {kind}")
+    except KeyError as exc:
+        print(str(exc))
+        return 1
+    print(json.dumps(payload, ensure_ascii=False, indent=2))
+    if kind == "summary":
+        return 0 if payload["status"] == "PASS" else 1
+    if kind == "scenario":
+        return 0 if payload["status"] == "DISCOURSE_RUNTIME_READY" else 1
     return 0
 
 def cmd_regression(args: argparse.Namespace) -> int:
@@ -967,6 +996,25 @@ def main() -> None:
     p.add_argument("left")
     p.add_argument("right")
     p.set_defaults(func=cmd_literary_stress)
+
+
+    p_discourse = sub.add_parser("narrative-discourse")
+    discourse_sub = p_discourse.add_subparsers(
+        dest="narrative_discourse_command", required=True
+    )
+    p = discourse_sub.add_parser("summary")
+    p.set_defaults(func=cmd_narrative_discourse)
+    p = discourse_sub.add_parser("scenario")
+    p.add_argument("key")
+    p.set_defaults(func=cmd_narrative_discourse)
+    p = discourse_sub.add_parser("card")
+    p.add_argument("scenario")
+    p.add_argument("probe")
+    p.set_defaults(func=cmd_narrative_discourse)
+    p = discourse_sub.add_parser("compare")
+    p.add_argument("left")
+    p.add_argument("right")
+    p.set_defaults(func=cmd_narrative_discourse)
 
     p_regression = sub.add_parser("regression")
     p_regression.add_argument("--json", action="store_true")

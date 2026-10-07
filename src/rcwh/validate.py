@@ -18,6 +18,7 @@ from .literary_production import LiteraryProductionRuntime
 from .literary_stress import ScenarioLiteraryStressRuntime
 from .literary_suite import LiteraryEvaluatorSuite
 from .mechanism_adapters import HistoricalAdapterRuntime
+from .narrative_discourse import NarrativeDiscourseRuntime
 from .open_interfaces import OpenInterfaceRegistry
 from .object_network import ObjectNetworkRuntime
 from .pareto import ParetoEvaluationRuntime
@@ -375,6 +376,29 @@ def validate_repository(root: Path) -> list[str]:
             f"{literary_stress_state.relative_to(root)}: {e}" for e in errs
         )
 
+
+    narrative_discourse_path = root / "data" / "narrative_discourse" / "v011.json"
+    if narrative_discourse_path.exists():
+        errs = validate_instance(
+            load_data(narrative_discourse_path),
+            load_data(schema_dir / "narrative_discourse.schema.json"),
+        )
+        errors.extend(
+            f"{narrative_discourse_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    narrative_discourse_state = (
+        root / "data" / "project_state" / "narrative_discourse_v011.json"
+    )
+    if narrative_discourse_state.exists():
+        errs = validate_instance(
+            load_data(narrative_discourse_state),
+            load_data(schema_dir / "narrative_discourse_state.schema.json"),
+        )
+        errors.extend(
+            f"{narrative_discourse_state.relative_to(root)}: {e}" for e in errs
+        )
+
     prewrite_path = root / "data" / "prewrite" / "v06.json"
     if prewrite_path.exists():
         errs = validate_instance(
@@ -478,6 +502,13 @@ def validate_repository(root: Path) -> list[str]:
                 scenarios,
                 scenario_replay,
                 world,
+                literary_ecology,
+            )
+        )
+        narrative_discourse = NarrativeDiscourseRuntime.from_repo(root)
+        errors.extend(
+            narrative_discourse.validate_integrity(
+                literary_stress,
                 literary_ecology,
             )
         )
