@@ -75,7 +75,7 @@ def test_each_scenario_has_real_discourse_diversity():
         assert len(c["distance_curves"]) >= t["distance_curves_min"]
         assert len(c["exit_channels"]) >= t["exit_channels_min"]
         assert len(c["primary_focalizers"]) >= t["primary_focalizers_min"]
-        assert c["indirect_cards"] >= t["indirect_cards_min"]
+        assert c["non_full_direct_cards"] >= t["non_full_direct_cards_min"]
 
 
 def test_current_c_direct_zhen_jia_encounter_is_not_allowed_to_become_philosophical_exposition():
