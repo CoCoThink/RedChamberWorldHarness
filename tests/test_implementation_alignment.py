@@ -21,7 +21,7 @@ def runtime() -> ImplementationAlignmentRuntime:
 
 def test_m6_summary_and_completion_boundary():
     summary = runtime().summary()
-    assert summary["status"] == "PASS_CANDIDATE"
+    assert summary["status"] == "PASS"
     assert summary["stable_release"] == "stable-active-v4.1"
     assert summary["stable_sha256"] == STABLE_SHA
     assert summary["chapters"] == 20
