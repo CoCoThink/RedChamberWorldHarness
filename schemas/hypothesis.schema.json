@@ -1,0 +1,170 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH Search Hypothesis v0.7",
+  "type": "object",
+  "required": [
+    "id",
+    "question_ref",
+    "title",
+    "status",
+    "authority",
+    "source_locator",
+    "support_refs",
+    "counter_refs",
+    "requires",
+    "excludes",
+    "related_open_refs",
+    "open_consumption",
+    "historical_cost",
+    "world_effect_refs",
+    "chapter_effects",
+    "cannot_prove",
+    "evidence_effect",
+    "stable_active_effect",
+    "current_c_effect"
+  ],
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^HYP-[A-Z0-9-]+$"
+    },
+    "question_ref": {
+      "type": "string",
+      "pattern": "^OL-[0-9]{3}$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "ADMISSIBLE",
+        "DEFERRED",
+        "REJECTED"
+      ]
+    },
+    "authority": {
+      "const": "HYPOTHESIS_ONLY"
+    },
+    "source_locator": {
+      "type": "object",
+      "required": [
+        "document",
+        "path",
+        "sha256",
+        "lines"
+      ],
+      "properties": {
+        "document": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "lines": {
+          "type": "string",
+          "pattern": "^[0-9]+-[0-9]+$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "support_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "counter_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "requires": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "excludes": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "related_open_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^OL-[0-9]{3}$"
+      }
+    },
+    "open_consumption": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "pattern": "^OL-[0-9]{3}$"
+      }
+    },
+    "historical_cost": {
+      "enum": [
+        "LOW",
+        "MEDIUM",
+        "HIGH",
+        "UNKNOWN"
+      ]
+    },
+    "world_effect_refs": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string"
+      }
+    },
+    "chapter_effects": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "integer",
+        "minimum": 81,
+        "maximum": 100
+      }
+    },
+    "cannot_prove": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "evidence_effect": {
+      "const": "NONE"
+    },
+    "stable_active_effect": {
+      "const": "NONE"
+    },
+    "current_c_effect": {
+      "const": "NONE"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
+  },
+  "additionalProperties": false
+}
