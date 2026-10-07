@@ -49,7 +49,7 @@ def test_document_registry_covers_v41_package_and_current_runtime_one_to_one():
 
 def test_content_hash_registry_deduplicates_by_sha_not_filename():
     reg = registry()
-    assert len(reg.content_hashes) == len(reg.documents) == 32
+    assert len(reg.content_hashes) == len(reg.documents) == 38
     for doc in reg.documents.values():
         item = reg.content_hash(doc["sha256"])
         assert item["deduplication_key"] == "SHA256"
