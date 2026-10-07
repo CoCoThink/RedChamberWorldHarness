@@ -30,6 +30,7 @@ from .prewrite import V5PrewriteRuntime
 from .registry import MigrationRegistry
 from .reconstruction import ReconstructionRegistry
 from .regression import run_r4_evidence_regression
+from .revision_ablation import CrossRouteRevisionAblationRuntime
 from .schema import validate_instance
 from .scenarios import ScenarioRuntime
 from .scenario_replay import CounterfactualReplayRuntime
@@ -447,6 +448,29 @@ def validate_repository(root: Path) -> list[str]:
             f"{blind_review_state.relative_to(root)}: {e}" for e in errs
         )
 
+
+    revision_ablation_path = root / "data" / "revision_ablation" / "v014.json"
+    if revision_ablation_path.exists():
+        errs = validate_instance(
+            load_data(revision_ablation_path),
+            load_data(schema_dir / "revision_ablation.schema.json"),
+        )
+        errors.extend(
+            f"{revision_ablation_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    revision_ablation_state = (
+        root / "data" / "project_state" / "revision_ablation_v014.json"
+    )
+    if revision_ablation_state.exists():
+        errs = validate_instance(
+            load_data(revision_ablation_state),
+            load_data(schema_dir / "revision_ablation_state.schema.json"),
+        )
+        errors.extend(
+            f"{revision_ablation_state.relative_to(root)}: {e}" for e in errs
+        )
+
     prewrite_path = root / "data" / "prewrite" / "v06.json"
     if prewrite_path.exists():
         errs = validate_instance(
@@ -570,6 +594,16 @@ def validate_repository(root: Path) -> list[str]:
         )
         blind_review = BlindMicrodraftReviewRuntime.from_repo(root)
         errors.extend(blind_review.validate_integrity(microdraft))
+        revision_ablation = CrossRouteRevisionAblationRuntime.from_repo(root)
+        errors.extend(
+            revision_ablation.validate_integrity(
+                microdraft,
+                blind_review,
+                narrative_discourse,
+                literary_stress,
+                LiteraryEvaluatorSuite.from_repo(root),
+            )
+        )
         knowledge_runtime = CharacterKnowledgeRuntime.from_repo(root)
         errors.extend(knowledge_runtime.validate_integrity(world, literary_ecology))
         regression = run_r4_evidence_regression(root)
