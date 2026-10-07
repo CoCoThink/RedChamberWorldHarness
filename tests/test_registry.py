@@ -56,7 +56,7 @@ def test_content_hash_registry_deduplicates_by_sha_not_filename():
         assert item["canonical_document_ref"] == doc["id"]
 
 
-def test_current_authority_m1_is_registry_complete_but_not_completion_gate_complete():
+def test_current_authority_is_registry_complete_and_m8_gate_signed():
     current = registry().current_summary()
     assert current["stable_active_sha256"] == STABLE_SHA
     assert current["v4_1_package_file_count"] == 23
@@ -68,7 +68,10 @@ def test_current_authority_m1_is_registry_complete_but_not_completion_gate_compl
         "MINIMAL": 0,
         "NONE": 0,
     }
-    assert current["completion_gate_ready"] is False
+    assert current["completion_gate_ready"] is True
+    assert current["completion_gate_status"] == "PASS"
+    assert current["coverage_report_signed_off"] is True
+    assert current["literature_resume_authorized"] is True
 
 
 def test_m6_keeps_current_markdown_zero_and_promotes_four_implementation_sources_to_full():
