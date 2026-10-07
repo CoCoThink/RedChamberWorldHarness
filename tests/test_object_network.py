@@ -114,3 +114,22 @@ def test_m4_integrity_passes_and_registry_keeps_completion_gate_closed():
     assert current["object_queryable"] is True
     assert current["current_markdown_islands"] == 0
     assert current["completion_gate_ready"] is False
+
+
+def test_object_trace_resolves_document_and_reconstruction_sources():
+    registry = MigrationRegistry.from_repo(ROOT)
+    reconstruction = ReconstructionRegistry.from_repo(ROOT)
+    payload = objects().trace("OBJ-TONGLING-JADE", registry, reconstruction)
+    assert payload["trace_complete"] is True
+    kinds = {item["kind"] for item in payload["resolved_sources"]}
+    assert kinds == {"document", "reconstruction_evidence"}
+    assert any(
+        item["ref"] == "doc:2b5f2bcae5ce" and item["sha256"].startswith("2b5f2bcae5ce")
+        for item in payload["resolved_sources"]
+        if item["kind"] == "document"
+    )
+    assert any(
+        item["ref"] == "R01" and "终点" in item["boundary"]
+        for item in payload["resolved_sources"]
+        if item["kind"] == "reconstruction_evidence"
+    )
