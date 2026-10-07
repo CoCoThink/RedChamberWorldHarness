@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from pathlib import Path
 
+from .blind_microdraft_review import BlindMicrodraftReviewRuntime
 from .competition import CompetitionRegistry
 from .completion import CompletionGateRuntime
 from .coverage import CoverageAuditRuntime
@@ -423,6 +424,29 @@ def validate_repository(root: Path) -> list[str]:
             f"{microdraft_state.relative_to(root)}: {e}" for e in errs
         )
 
+
+    blind_review_path = root / "data" / "blind_review" / "v013.json"
+    if blind_review_path.exists():
+        errs = validate_instance(
+            load_data(blind_review_path),
+            load_data(schema_dir / "blind_microdraft_review.schema.json"),
+        )
+        errors.extend(
+            f"{blind_review_path.relative_to(root)}: {e}" for e in errs
+        )
+
+    blind_review_state = (
+        root / "data" / "project_state" / "blind_microdraft_review_v013.json"
+    )
+    if blind_review_state.exists():
+        errs = validate_instance(
+            load_data(blind_review_state),
+            load_data(schema_dir / "blind_microdraft_review_state.schema.json"),
+        )
+        errors.extend(
+            f"{blind_review_state.relative_to(root)}: {e}" for e in errs
+        )
+
     prewrite_path = root / "data" / "prewrite" / "v06.json"
     if prewrite_path.exists():
         errs = validate_instance(
@@ -544,6 +568,8 @@ def validate_repository(root: Path) -> list[str]:
                 LiteraryEvaluatorSuite.from_repo(root),
             )
         )
+        blind_review = BlindMicrodraftReviewRuntime.from_repo(root)
+        errors.extend(blind_review.validate_integrity(microdraft))
         knowledge_runtime = CharacterKnowledgeRuntime.from_repo(root)
         errors.extend(knowledge_runtime.validate_integrity(world, literary_ecology))
         regression = run_r4_evidence_regression(root)
