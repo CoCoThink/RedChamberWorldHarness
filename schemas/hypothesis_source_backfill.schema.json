@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH Hypothesis Source Backfill",
+  "type": "object",
+  "required": [
+    "id",
+    "status",
+    "authority",
+    "source_document",
+    "typed_backfills"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "status": {
+      "enum": [
+        "PASS_CANDIDATE",
+        "PASS"
+      ]
+    },
+    "authority": {
+      "const": "SEARCH_INPUT_ONLY"
+    },
+    "source_document": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "typed_backfills": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "source_lines",
+          "authority",
+          "payload"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "MARRIAGE_ROLE_MODEL",
+              "HOUSING_FEASIBILITY_MATRIX",
+              "HISTORICAL_BOUNDARY"
+            ]
+          },
+          "source_lines": {
+            "type": "string",
+            "pattern": "^[0-9]+-[0-9]+$"
+          },
+          "authority": {
+            "const": "SEARCH_INPUT_ONLY"
+          },
+          "payload": {
+            "type": "object"
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}
