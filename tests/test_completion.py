@@ -146,12 +146,13 @@ def test_gate_authorizes_later_literary_work_but_m8_does_not_start_it():
     assert gate().state["literature"]["resume_started"] is False
 
 
-def test_pressure_queue_is_still_exactly_frozen_at_gate_pass():
-    competitions = CompetitionRegistry.from_repo(ROOT).records
-    assert competitions["comp:43-0:ch89:pressure-test"]["state"] == "IN_REVIEW"
-    assert competitions["comp:43-0:ch92:pressure-test"]["state"] == "BLOCKED_BY_PREDECESSOR"
-    assert competitions["comp:43-0:ch97:pressure-test"]["state"] == "BLOCKED_BY_PREDECESSOR"
-    assert evaluate()["checks"]["LITERARY_FREEZE_PRESERVED_THROUGH_GATE"] == "PASS"
+def test_gate_time_pressure_queue_remains_frozen_as_historical_fixture():
+    fixture = ImplementationAlignmentRuntime.from_repo(ROOT)
+    assert fixture.competition(89)["state"] == "IN_REVIEW"
+    assert fixture.competition(89)["progress"] == "PHASE1_ONLY"
+    assert fixture.competition(92)["state"] == "BLOCKED_BY_PREDECESSOR"
+    assert fixture.competition(97)["state"] == "BLOCKED_BY_PREDECESSOR"
+    assert evaluate()["checks"]["LITERARY_FREEZE_AT_GATE_SIGNOFF"] == "PASS"
 
 
 def test_m8_integrity_accepts_signed_gate():
