@@ -1,0 +1,78 @@
+{
+  "id": "hypothesis-compatibility:v0.7",
+  "status": "PASS",
+  "authority": "SHADOW_ONLY",
+  "rule": "同一 question_ref 的 ADMISSIBLE hypothesis 在单一 scenario 中至多取一个；下列关系补充跨接口条件，不产生 Evidence 权限。",
+  "mutually_exclusive_groups": [
+    [
+      "HYP-G0",
+      "HYP-G1",
+      "HYP-G2"
+    ],
+    [
+      "HYP-O09-A",
+      "HYP-O09-B",
+      "HYP-O09-C"
+    ],
+    [
+      "HYP-DETENTION-FAMILY-CASE",
+      "HYP-DETENTION-CAUSE-OPEN"
+    ],
+    [
+      "HYP-FJ-DEAD",
+      "HYP-FJ-GRAVELY-ILL",
+      "HYP-FJ-DETAINED",
+      "HYP-FJ-POWERLESS"
+    ],
+    [
+      "HYP-SNOW-JADE-SAME",
+      "HYP-SNOW-JADE-DISTINCT",
+      "HYP-SNOW-JADE-UNRESOLVED"
+    ],
+    [
+      "HYP-MIAOYU-GUAZHOU",
+      "HYP-MIAOYU-NONGUAZHOU"
+    ],
+    [
+      "HYP-ZHEN-DIRECT",
+      "HYP-ZHEN-MISS",
+      "HYP-ZHEN-MEDIATED"
+    ],
+    [
+      "HYP-SENT-JADE-SAME",
+      "HYP-SENT-JADE-IDENTITY-OPEN"
+    ],
+    [
+      "HYP-END-SPLIT-99-100",
+      "HYP-END-COMPACT-100"
+    ]
+  ],
+  "conditional_relations": [
+    {
+      "left": "HYP-G2",
+      "right": "HYP-HOUSE-RETAINED",
+      "relation": "CONDITIONAL",
+      "note": "G2主要困难在败后资源与居所；若采用原府暂留，必须额外说明合法/事实居住依据。"
+    },
+    {
+      "left": "HYP-SNOW-JADE-SAME",
+      "right": "HYP-SENT-JADE-SAME",
+      "relation": "COMPATIBLE",
+      "note": "可构成一玉贯穿链，但二者都不得因组合而升硬。"
+    },
+    {
+      "left": "HYP-SNOW-JADE-DISTINCT",
+      "right": "HYP-SENT-JADE-IDENTITY-OPEN",
+      "relation": "COMPATIBLE",
+      "note": "允许多层玉事件并保持甄宝玉所送之玉同一性开放。"
+    },
+    {
+      "left": "HYP-MIAOYU-GUAZHOU",
+      "right": "OL-018",
+      "relation": "W2_ONLY",
+      "note": "瓜州只能弱增权，不得单独承重具体受辱/死亡机制。"
+    }
+  ],
+  "evidence_effect": "NONE",
+  "stable_active_effect": "NONE"
+}

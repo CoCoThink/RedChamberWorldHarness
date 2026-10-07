@@ -1,0 +1,36 @@
+{
+  "id": "hypothesis-runtime:v0.7",
+  "phase": "P1_CORE_OPEN_SCENARIOS",
+  "status": "PASS",
+  "authority": "SHADOW_ONLY",
+  "source_branch": "feature/hypothesis-runtime-v0.7",
+  "base": {
+    "branch": "literary/43-0-resume",
+    "sha": "9cbb05eb27dc8dade139e7ba9bf5f856a95715f7"
+  },
+  "stable_active_sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+  "canonical_literary_gate": "CH89_MANUAL_PLOCK_THEN_BLIND_READ",
+  "effects": {
+    "chapter89": "NONE",
+    "chapter92": "NONE",
+    "chapter97": "NONE",
+    "evidence": "NONE",
+    "open_interfaces": "NONE",
+    "stable_active": "NONE"
+  },
+  "delivered": [
+    "H04_SOURCE_FIDELITY_AUDIT",
+    "H04_TYPED_BACKFILL",
+    "H04_HYPOTHESES_O09_ABC",
+    "H04_HYPOTHESES_G0_G1_G2",
+    "HYPOTHESIS_SCHEMA",
+    "HYPOTHESIS_INTEGRITY_RUNTIME",
+    "TEN_CORE_OPEN_ALTERNATIVE_SETS",
+    "HYPOTHESIS_COMPATIBILITY_GRAPH",
+    "TEN_SCENARIO_SEED_BUNDLES",
+    "CURRENT_C_NO_SEARCH_BONUS",
+    "SCENARIO_RUNTIME",
+    "HYPOTHESIS_SCENARIO_CLI"
+  ],
+  "next_gate": "P2_COUNTERFACTUAL_WORLD_REPLAY"
+}
