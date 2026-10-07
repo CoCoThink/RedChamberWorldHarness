@@ -1,0 +1,472 @@
+{
+  "id": "controlled-microdraft:v0.12",
+  "milestone": "P6",
+  "status": "PASS_CANDIDATE",
+  "authority": "SHADOW_ONLY",
+  "output_authority": "EXPERIMENTAL_PROSE_ONLY",
+  "source_basis": {
+    "narrative_discourse_ref": "narrative-discourse:v0.11",
+    "literary_evaluator_ref": "literary-evaluator-suite:v0.5",
+    "required_scenarios": [
+      "SCN-CURRENT-C",
+      "SCN-LATE-MARRIAGE",
+      "SCN-JADE-MULTILAYER",
+      "SCN-MINIMAL-CAUSE-OPEN"
+    ]
+  },
+  "design": {
+    "cells": [
+      {
+        "id": "W1",
+        "window": [
+          84,
+          87
+        ],
+        "purpose": "bereavement / relation-boundary / ordinary-life entry"
+      },
+      {
+        "id": "W2",
+        "window": [
+          89,
+          92
+        ],
+        "purpose": "institutional pressure through daily procedure"
+      },
+      {
+        "id": "W3",
+        "window": [
+          93,
+          95
+        ],
+        "purpose": "care / resource / marriage / protection stress"
+      },
+      {
+        "id": "W4",
+        "window": [
+          97,
+          98
+        ],
+        "purpose": "object and information mediation"
+      },
+      {
+        "id": "W5",
+        "window": [
+          99,
+          100
+        ],
+        "purpose": "terminal human aftermath before metaframe"
+      }
+    ],
+    "one_draft_per_discourse_card": true,
+    "drafts_per_scenario": 5,
+    "drafts_per_cell": 4,
+    "total_drafts": 20,
+    "comparison_mode": "BLIND_BY_CELL",
+    "generation_rule": "Each microdraft must instantiate its P5 card without extending fabula or resolving withheld information."
+  },
+  "thresholds": {
+    "min_chars": 140,
+    "max_chars": 700,
+    "required_anchor_hits_min": 3,
+    "machine_blockers_allowed": 0,
+    "blind_metadata_leaks_allowed": 0
+  },
+  "forbidden_metadata_terms": [
+    "SCN-",
+    "HYP-",
+    "P-Lock",
+    "OPEN-LOCK",
+    "PROVENANCE",
+    "MODALITY",
+    "IMPLEMENTATION",
+    "evidence_fit",
+    "pareto"
+  ],
+  "drafts": [
+    {
+      "token": "MD-W1-47",
+      "cell_id": "W1",
+      "scenario_id": "SCN-CURRENT-C",
+      "probe_id": "C-P1",
+      "artifact": "artifacts/p6_microdraft/blind/W1/MD-W1-47.md",
+      "primary_focalizer": "baochai",
+      "required_anchors": [
+        "药包",
+        "衣箱",
+        "针线"
+      ],
+      "forbidden_terms": [
+        "最终拍板",
+        "人生的意义",
+        "将来做妻"
+      ]
+    },
+    {
+      "token": "MD-W1-12",
+      "cell_id": "W1",
+      "scenario_id": "SCN-LATE-MARRIAGE",
+      "probe_id": "L-P1",
+      "artifact": "artifacts/p6_microdraft/blind/W1/MD-W1-12.md",
+      "primary_focalizer": "zijuan",
+      "required_anchors": [
+        "旧帕",
+        "针线",
+        "回去"
+      ],
+      "forbidden_terms": [
+        "新媳妇",
+        "将来做妻",
+        "妻子"
+      ]
+    },
+    {
+      "token": "MD-W1-83",
+      "cell_id": "W1",
+      "scenario_id": "SCN-JADE-MULTILAYER",
+      "probe_id": "J-P1",
+      "artifact": "artifacts/p6_microdraft/blind/W1/MD-W1-83.md",
+      "primary_focalizer": "sheyue",
+      "required_anchors": [
+        "衣箱",
+        "纸签",
+        "锁"
+      ],
+      "forbidden_terms": [
+        "此玉非彼玉",
+        "伏笔",
+        "以后有用"
+      ]
+    },
+    {
+      "token": "MD-W1-29",
+      "cell_id": "W1",
+      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
+      "probe_id": "M-P1",
+      "artifact": "artifacts/p6_microdraft/blind/W1/MD-W1-29.md",
+      "primary_focalizer": "baochai",
+      "required_anchors": [
+        "药碗",
+        "铺盖",
+        "旧帕"
+      ],
+      "forbidden_terms": [
+        "不可细说",
+        "命运",
+        "唯一解释"
+      ]
+    },
+    {
+      "token": "MD-W2-64",
+      "cell_id": "W2",
+      "scenario_id": "SCN-CURRENT-C",
+      "probe_id": "C-P2",
+      "artifact": "artifacts/p6_microdraft/blind/W2/MD-W2-64.md",
+      "primary_focalizer": "fengjie",
+      "required_anchors": [
+        "钥匙",
+        "药包",
+        "送物单"
+      ],
+      "forbidden_terms": [
+        "清代",
+        "制度规定",
+        "罪名是"
+      ]
+    },
+    {
+      "token": "MD-W2-21",
+      "cell_id": "W2",
+      "scenario_id": "SCN-LATE-MARRIAGE",
+      "probe_id": "L-P2",
+      "artifact": "artifacts/p6_microdraft/blind/W2/MD-W2-21.md",
+      "primary_focalizer": "jia_yun",
+      "required_anchors": [
+        "租契",
+        "典当票",
+        "饭盒"
+      ],
+      "forbidden_terms": [
+        "薛家接济",
+        "妻子",
+        "婚后"
+      ]
+    },
+    {
+      "token": "MD-W2-75",
+      "cell_id": "W2",
+      "scenario_id": "SCN-JADE-MULTILAYER",
+      "probe_id": "J-P2",
+      "artifact": "artifacts/p6_microdraft/blind/W2/MD-W2-75.md",
+      "primary_focalizer": "fengjie",
+      "required_anchors": [
+        "包袱",
+        "纸签",
+        "雪"
+      ],
+      "forbidden_terms": [
+        "此玉非彼玉",
+        "就是通灵玉",
+        "不是通灵玉"
+      ]
+    },
+    {
+      "token": "MD-W2-38",
+      "cell_id": "W2",
+      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
+      "probe_id": "M-P2",
+      "artifact": "artifacts/p6_microdraft/blind/W2/MD-W2-38.md",
+      "primary_focalizer": "xiaohong",
+      "required_anchors": [
+        "送物单",
+        "药包",
+        "时辰"
+      ],
+      "forbidden_terms": [
+        "罪名是",
+        "牵连的是",
+        "不可细说"
+      ]
+    },
+    {
+      "token": "MD-W3-56",
+      "cell_id": "W3",
+      "scenario_id": "SCN-CURRENT-C",
+      "probe_id": "C-P3",
+      "artifact": "artifacts/p6_microdraft/blind/W3/MD-W3-56.md",
+      "primary_focalizer": "ping_er",
+      "required_anchors": [
+        "旧衣",
+        "车钱",
+        "干粮"
+      ],
+      "forbidden_terms": [
+        "报恩",
+        "善有善报",
+        "最终归宿"
+      ]
+    },
+    {
+      "token": "MD-W3-14",
+      "cell_id": "W3",
+      "scenario_id": "SCN-LATE-MARRIAGE",
+      "probe_id": "L-P3",
+      "artifact": "artifacts/p6_microdraft/blind/W3/MD-W3-14.md",
+      "primary_focalizer": "sheyue",
+      "required_anchors": [
+        "锅",
+        "米",
+        "灯油"
+      ],
+      "forbidden_terms": [
+        "虽贫而有情",
+        "寒酸",
+        "礼制"
+      ]
+    },
+    {
+      "token": "MD-W3-92",
+      "cell_id": "W3",
+      "scenario_id": "SCN-JADE-MULTILAYER",
+      "probe_id": "J-P3",
+      "artifact": "artifacts/p6_microdraft/blind/W3/MD-W3-92.md",
+      "primary_focalizer": "ping_er",
+      "required_anchors": [
+        "药包",
+        "破箱",
+        "典当票"
+      ],
+      "forbidden_terms": [
+        "象征",
+        "每件东西",
+        "通灵玉"
+      ]
+    },
+    {
+      "token": "MD-W3-31",
+      "cell_id": "W3",
+      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
+      "probe_id": "M-P3",
+      "artifact": "artifacts/p6_microdraft/blind/W3/MD-W3-31.md",
+      "primary_focalizer": "ping_er",
+      "required_anchors": [
+        "药罐",
+        "灯",
+        "车钱"
+      ],
+      "forbidden_terms": [
+        "最终救援",
+        "她知道",
+        "命运"
+      ]
+    },
+    {
+      "token": "MD-W4-68",
+      "cell_id": "W4",
+      "scenario_id": "SCN-CURRENT-C",
+      "probe_id": "C-P4",
+      "artifact": "artifacts/p6_microdraft/blind/W4/MD-W4-68.md",
+      "primary_focalizer": "baoyu",
+      "required_anchors": [
+        "包裹",
+        "短札",
+        "水罐"
+      ],
+      "forbidden_terms": [
+        "你是真我是假",
+        "真假之理",
+        "这玉就是"
+      ]
+    },
+    {
+      "token": "MD-W4-25",
+      "cell_id": "W4",
+      "scenario_id": "SCN-LATE-MARRIAGE",
+      "probe_id": "L-P4",
+      "artifact": "artifacts/p6_microdraft/blind/W4/MD-W4-25.md",
+      "primary_focalizer": "baoyu",
+      "required_anchors": [
+        "药钱",
+        "被褥",
+        "包裹"
+      ],
+      "forbidden_terms": [
+        "贤德",
+        "贤妻",
+        "就是通灵玉"
+      ]
+    },
+    {
+      "token": "MD-W4-81",
+      "cell_id": "W4",
+      "scenario_id": "SCN-JADE-MULTILAYER",
+      "probe_id": "J-P4",
+      "artifact": "artifacts/p6_microdraft/blind/W4/MD-W4-81.md",
+      "primary_focalizer": "baoyu",
+      "required_anchors": [
+        "包角",
+        "旧签",
+        "短札"
+      ],
+      "forbidden_terms": [
+        "就是通灵玉",
+        "并非通灵玉",
+        "此玉非彼玉"
+      ]
+    },
+    {
+      "token": "MD-W4-43",
+      "cell_id": "W4",
+      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
+      "probe_id": "M-P4",
+      "artifact": "artifacts/p6_microdraft/blind/W4/MD-W4-43.md",
+      "primary_focalizer": "baoyu",
+      "required_anchors": [
+        "门帖",
+        "包裹",
+        "时辰"
+      ],
+      "forbidden_terms": [
+        "不可细说",
+        "神秘",
+        "就是通灵玉"
+      ]
+    },
+    {
+      "token": "MD-W5-73",
+      "cell_id": "W5",
+      "scenario_id": "SCN-CURRENT-C",
+      "probe_id": "C-P5",
+      "artifact": "artifacts/p6_microdraft/blind/W5/MD-W5-73.md",
+      "primary_focalizer": "sheyue",
+      "required_anchors": [
+        "空床",
+        "饭碗",
+        "门闩"
+      ],
+      "forbidden_terms": [
+        "看破红尘",
+        "万事皆空",
+        "人生如梦"
+      ]
+    },
+    {
+      "token": "MD-W5-19",
+      "cell_id": "W5",
+      "scenario_id": "SCN-LATE-MARRIAGE",
+      "probe_id": "L-P5",
+      "artifact": "artifacts/p6_microdraft/blind/W5/MD-W5-19.md",
+      "primary_focalizer": "baochai",
+      "required_anchors": [
+        "欠账",
+        "空床",
+        "饭碗"
+      ],
+      "forbidden_terms": [
+        "好景不长",
+        "看破红尘",
+        "夫妻缘尽"
+      ]
+    },
+    {
+      "token": "MD-W5-84",
+      "cell_id": "W5",
+      "scenario_id": "SCN-JADE-MULTILAYER",
+      "probe_id": "J-P5",
+      "artifact": "artifacts/p6_microdraft/blind/W5/MD-W5-84.md",
+      "primary_focalizer": "baochai",
+      "required_anchors": [
+        "小包",
+        "空床",
+        "名册"
+      ],
+      "forbidden_terms": [
+        "原来都是一块玉",
+        "这便是石头",
+        "物件谱系"
+      ]
+    },
+    {
+      "token": "MD-W5-36",
+      "cell_id": "W5",
+      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
+      "probe_id": "M-P5",
+      "artifact": "artifacts/p6_microdraft/blind/W5/MD-W5-36.md",
+      "primary_focalizer": "sheyue",
+      "required_anchors": [
+        "门闩",
+        "遗物包",
+        "名册"
+      ],
+      "forbidden_terms": [
+        "没有结束",
+        "不可知",
+        "万事皆空"
+      ]
+    }
+  ],
+  "blind_review": {
+    "instructions_path": "artifacts/p6_microdraft/blind/REVIEWER_INSTRUCTIONS.md",
+    "sealed_mapping_path": "artifacts/p6_microdraft/MAPPING.json",
+    "questions": [
+      "不看路线身份，这一小段是否像小说场景，而不是情节提纲的扩写？",
+      "人物是否通过动作、关系、声口和物件成立，而不是被叙述者解释？",
+      "大事是否真正落到饭、药、衣、钱、门、车、箱、纸札等生活摩擦里？",
+      "信息的显隐、错身、转述或中断是否自然，而不是故意藏谜？",
+      "结尾是否有余味而不做主题总结？",
+      "如果同一cell四稿必须留两稿进入下一轮，你会留哪两个token？"
+    ],
+    "automatic_winner": false,
+    "independent_human_review_required": true
+  },
+  "policy": {
+    "canonical_prose_effect": "NONE",
+    "evidence_effect": "NONE",
+    "open_interface_effect": "NONE",
+    "stable_active_effect": "NONE",
+    "chapter89_competition_effect": "NONE",
+    "automatic_literary_pass": false,
+    "automatic_winner": false,
+    "route_elimination_by_machine": false
+  },
+  "next_gate": "P7_BLIND_MICRODRAFT_REVIEW"
+}
