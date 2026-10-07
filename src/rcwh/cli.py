@@ -8,6 +8,7 @@ from .competition import CompetitionRegistry, format_competition
 from .evaluate import evaluate_scene_text, overall_status
 from .graph import ProvenanceGraph
 from .history import HistoricalMechanismRegistry, format_mechanism
+from .implementation_alignment import ImplementationAlignmentRuntime, format_implementation_alignment
 from .io import load_data
 from .literals import LiteralRegistry, format_literal
 from .literary_eval import evaluate_literary_candidate, format_literary_evaluation
@@ -385,6 +386,38 @@ def cmd_literary_ecology(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_implementation(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    runtime = ImplementationAlignmentRuntime.from_repo(root)
+    try:
+        kind = args.implementation_command
+        if kind == "summary":
+            payload = runtime.summary()
+        elif kind == "stable":
+            payload = runtime.stable()
+        elif kind == "chapter":
+            payload = runtime.chapter(args.chapter)
+        elif kind == "fact":
+            payload = runtime.fact(args.key)
+        elif kind == "protection":
+            payload = runtime.protection(args.chapter)
+        elif kind == "competition":
+            payload = runtime.competition(args.chapter)
+        elif kind == "trace":
+            registry = MigrationRegistry.from_repo(root)
+            payload = runtime.trace(args.kind, args.key, registry)
+        else:
+            raise KeyError(f"Unknown implementation command: {kind}")
+    except (KeyError, ValueError) as exc:
+        print(str(exc))
+        return 1
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_implementation_alignment(kind, payload))
+    return 0
+
+
 def cmd_promotion(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     registry = PromotionRegistry.from_repo(root)
@@ -545,6 +578,36 @@ def main() -> None:
     p.add_argument("key")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_literary_ecology)
+
+    p_impl = sub.add_parser("implementation")
+    impl_sub = p_impl.add_subparsers(dest="implementation_command", required=True)
+    p = impl_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_implementation)
+    p = impl_sub.add_parser("stable")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_implementation)
+    p = impl_sub.add_parser("chapter")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_implementation)
+    p = impl_sub.add_parser("fact")
+    p.add_argument("key")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_implementation)
+    p = impl_sub.add_parser("protection")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_implementation)
+    p = impl_sub.add_parser("competition")
+    p.add_argument("chapter", type=int)
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_implementation)
+    p = impl_sub.add_parser("trace")
+    p.add_argument("kind", choices=["source", "fact", "chapter", "protection"])
+    p.add_argument("key")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_implementation)
 
     p_object = sub.add_parser("object")
     object_sub = p_object.add_subparsers(dest="object_command", required=True)
