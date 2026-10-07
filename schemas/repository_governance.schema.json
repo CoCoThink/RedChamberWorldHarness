@@ -6,6 +6,7 @@
     "id",
     "status",
     "authoritative_branches",
+    "branch_cleanup",
     "safe_delete_when_tool_available",
     "quarantined_forks",
     "issue_audit",
@@ -22,10 +23,60 @@
     "authoritative_branches": {
       "type": "object"
     },
+    "branch_cleanup": {
+      "type": "object",
+      "required": [
+        "status",
+        "verified_on",
+        "verification",
+        "deleted_branches",
+        "retained_branches",
+        "verified_branch_count",
+        "notes"
+      ],
+      "properties": {
+        "status": {
+          "const": "COMPLETE"
+        },
+        "verified_on": {
+          "const": "2026-10-07"
+        },
+        "verification": {
+          "const": "LIVE_GITHUB_BRANCH_ENUMERATION"
+        },
+        "deleted_branches": {
+          "type": "array",
+          "minItems": 5,
+          "maxItems": 5,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "retained_branches": {
+          "type": "array",
+          "minItems": 6,
+          "maxItems": 6,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "minLength": 1
+          }
+        },
+        "verified_branch_count": {
+          "const": 6
+        },
+        "notes": {
+          "type": "string",
+          "minLength": 20
+        }
+      },
+      "additionalProperties": false
+    },
     "safe_delete_when_tool_available": {
       "type": "array",
-      "minItems": 5,
-      "maxItems": 5
+      "maxItems": 0
     },
     "quarantined_forks": {
       "type": "array",

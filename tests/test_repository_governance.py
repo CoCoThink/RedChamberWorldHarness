@@ -66,16 +66,28 @@ def test_divergent_ch89_phase2_branch_is_quarantined_non_runtime():
     assert "any automatic transition of Chapter 92 to READY_FOR_CANDIDATES" in fork["reject_as_authority"]
 
 
-def test_five_obsolete_work_branches_are_explicitly_safe_to_delete():
-    branches = {
-        x["branch"] for x in runtime().governance["safe_delete_when_tool_available"]
-    }
-    assert branches == {
+def test_obsolete_branch_cleanup_is_complete_and_current_branch_set_is_frozen():
+    governance = runtime().governance
+    assert governance["safe_delete_when_tool_available"] == []
+
+    cleanup = governance["branch_cleanup"]
+    assert cleanup["status"] == "COMPLETE"
+    assert cleanup["verification"] == "LIVE_GITHUB_BRANCH_ENUMERATION"
+    assert cleanup["verified_branch_count"] == 6
+    assert set(cleanup["deleted_branches"]) == {
         "feature/provenance-kernel-v0.2",
         "feature/r4-evidence-core-v0.2-beta",
         "feature/literary-plock-v0.3-alpha",
         "migration/full-v3",
         "release/post-merge-signoff-v3",
+    }
+    assert set(cleanup["retained_branches"]) == {
+        "main",
+        "literary/43-0-resume",
+        "literary/43-0-ch89-phase2",
+        "archive/full-migration-v3-final-20261007",
+        "export/full-migration-snapshot-20261006",
+        "export/self-contained-20261006",
     }
 
 

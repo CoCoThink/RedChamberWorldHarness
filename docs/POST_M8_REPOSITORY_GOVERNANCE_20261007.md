@@ -1,6 +1,6 @@
 # Post-M8 Repository Governance Audit — 2026-10-07
 
-Status: **ACTIVE / CLEAN**
+Status: **ACTIVE / CLEAN / BRANCH CLEANUP COMPLETE**
 
 This document is the current repository-governance view after Full Migration M8 and completion of Issues #1–#6. Historical milestone documents remain audit records, but they are not current operational instructions.
 
@@ -11,15 +11,26 @@ This document is the current repository-governance view after Full Migration M8 
 - `archive/full-migration-v3-final-20261007` — frozen M8 archive.
 - `export/full-migration-snapshot-20261006` and `export/self-contained-20261006` — immutable export history.
 
-## Obsolete branches
+## Branch cleanup — COMPLETE
 
-The following are fully absorbed or otherwise non-current and are safe to delete when an administrative branch-delete tool is available:
+Live GitHub branch enumeration on 2026-10-07 confirms that the five branches previously marked safe-delete have been deleted:
 
 - `feature/provenance-kernel-v0.2`
 - `feature/r4-evidence-core-v0.2-beta`
 - `feature/literary-plock-v0.3-alpha`
 - `migration/full-v3`
 - `release/post-merge-signoff-v3`
+
+No obsolete work branch remains pending deletion. The live repository now contains exactly six retained branches:
+
+- `main`
+- `literary/43-0-resume`
+- `literary/43-0-ch89-phase2`
+- `archive/full-migration-v3-final-20261007`
+- `export/full-migration-snapshot-20261006`
+- `export/self-contained-20261006`
+
+The retained Chapter 89 phase2 branch is not unfinished merge work; it remains an explicitly quarantined audit fork under the policy below.
 
 ## Quarantined divergent fork
 
@@ -76,7 +87,7 @@ No current governance or automation layer may overwrite stable ACTIVE without a 
 
 ## Current operational next step
 
-Do not reopen migration work and do not treat prewrite staging as evidence.
+Repository branch cleanup is complete. Do not reopen migration work and do not treat prewrite staging as evidence.
 
 The next literary action is:
 

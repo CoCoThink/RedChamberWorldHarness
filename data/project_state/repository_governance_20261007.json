@@ -10,28 +10,29 @@
       "export/self-contained-20261006"
     ]
   },
-  "safe_delete_when_tool_available": [
-    {
-      "branch": "feature/provenance-kernel-v0.2",
-      "reason": "fully absorbed into main; no unique effective commits"
-    },
-    {
-      "branch": "feature/r4-evidence-core-v0.2-beta",
-      "reason": "fully absorbed into main; no unique effective commits"
-    },
-    {
-      "branch": "feature/literary-plock-v0.3-alpha",
-      "reason": "fully absorbed into main; PR9 superseded"
-    },
-    {
-      "branch": "migration/full-v3",
-      "reason": "Full Migration merged and post-merge verified"
-    },
-    {
-      "branch": "release/post-merge-signoff-v3",
-      "reason": "post-merge signoff already absorbed into main"
-    }
-  ],
+  "branch_cleanup": {
+    "status": "COMPLETE",
+    "verified_on": "2026-10-07",
+    "verification": "LIVE_GITHUB_BRANCH_ENUMERATION",
+    "deleted_branches": [
+      "feature/provenance-kernel-v0.2",
+      "feature/r4-evidence-core-v0.2-beta",
+      "feature/literary-plock-v0.3-alpha",
+      "migration/full-v3",
+      "release/post-merge-signoff-v3"
+    ],
+    "retained_branches": [
+      "main",
+      "literary/43-0-resume",
+      "literary/43-0-ch89-phase2",
+      "archive/full-migration-v3-final-20261007",
+      "export/full-migration-snapshot-20261006",
+      "export/self-contained-20261006"
+    ],
+    "verified_branch_count": 6,
+    "notes": "Five branches previously marked safe-delete are absent from the live repository; no obsolete work branch remains pending deletion."
+  },
+  "safe_delete_when_tool_available": [],
   "quarantined_forks": [
     {
       "branch": "literary/43-0-ch89-phase2",
