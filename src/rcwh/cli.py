@@ -322,6 +322,10 @@ def cmd_object(args: argparse.Namespace) -> int:
             payload = objects.at_location(args.location, args.chapter)
         elif kind == "continuity":
             payload = objects.continuity_report()
+        elif kind == "trace":
+            migration_registry = MigrationRegistry.from_repo(root)
+            reconstruction = ReconstructionRegistry.from_repo(root)
+            payload = objects.trace(args.object_id, migration_registry, reconstruction)
         else:
             raise KeyError(f"Unknown object command: {kind}")
     except KeyError as exc:
@@ -485,6 +489,10 @@ def main() -> None:
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_object)
     p = object_sub.add_parser("continuity")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_object)
+    p = object_sub.add_parser("trace")
+    p.add_argument("object_id")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_object)
 
