@@ -1,0 +1,108 @@
+{
+  "id": "fidelity-audit:h04:v0.7",
+  "status": "PASS_CANDIDATE",
+  "authority": "SHADOW_ONLY",
+  "source_document": {
+    "title": "《清代机制核查_H04居所与主婚权》v0.1",
+    "path": "03_VALID_HISTORY/MECHANISM_RESEARCH/REFERENCE/8786bbf96f__清代机制核查_H04居所与主婚权_v0.1.md",
+    "sha256": "8786bbf96f258a201be9deb5baa8d2cd58b12f9082b30bda52a8f76437c15ee9",
+    "authority": "REFERENCE"
+  },
+  "entries": [
+    {
+      "id": "FID-H04-01",
+      "source_section": "1. 清律中的主婚权",
+      "source_lines": "22-39",
+      "semantic_item": "尊长主婚框架及贾母在/权降/死亡三种机制后果",
+      "current_runtime_refs": [
+        "claim:history:h04:senior-kin-marriage",
+        "H04"
+      ],
+      "fidelity_status": "MIGRATED_COMPRESSED",
+      "loss_type": "三案比较未独立成机器候选",
+      "needed_for_hypothesis_search": true,
+      "backfill_action": "ADD HYP-O09-A/B/C",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "FID-H04-02",
+      "source_section": "3. 抄没并不等于所有家属财产自动清零",
+      "source_lines": "63-79",
+      "semantic_item": "法定抄没范围与妻子财产责任存在区分",
+      "current_runtime_refs": [
+        "fidelity-src:history:daqinglu:v12:confiscation-family-property-scope",
+        "fidelity-claim:history:h04:confiscation-family-property-scope",
+        "H04"
+      ],
+      "fidelity_status": "MIGRATED_EXACT",
+      "loss_type": null,
+      "needed_for_hypothesis_search": true,
+      "backfill_action": "ADD search-only primary-source/claim candidate; preserve frozen R4 graph; keep property ownership OPEN",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "FID-H04-03",
+      "source_section": "4. 家败后的居所候选",
+      "source_lines": "83-96",
+      "semantic_item": "六类败后居所方案的机制成本与风险",
+      "current_runtime_refs": [
+        "H04",
+        "OL-009",
+        "OL-015",
+        "backfill:h04:housing-matrix"
+      ],
+      "fidelity_status": "MIGRATED_EXACT",
+      "loss_type": "原 runtime 只保留压缩的 allows/open；本次恢复候选矩阵供搜索层使用",
+      "needed_for_hypothesis_search": true,
+      "backfill_action": "ADD typed housing feasibility matrix",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "FID-H04-04",
+      "source_section": "5. 主婚权与实际操办权应拆开",
+      "source_lines": "100-118",
+      "semantic_item": "批准、名义主婚、出钱出物、实际操办四角色拆分",
+      "current_runtime_refs": [
+        "H04",
+        "backfill:h04:marriage-role-model"
+      ],
+      "fidelity_status": "MIGRATED_EXACT",
+      "loss_type": "原 runtime 有语义但无显式四字段",
+      "needed_for_hypothesis_search": true,
+      "backfill_action": "ADD typed four-role model",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "FID-H04-05",
+      "source_section": "6. 对 O09 的结论",
+      "source_lines": "122-140",
+      "semantic_item": "O09-A/B/C 三方案及不同历史成本",
+      "current_runtime_refs": [
+        "HYP-O09-A",
+        "HYP-O09-B",
+        "HYP-O09-C"
+      ],
+      "fidelity_status": "MIGRATED_EXACT",
+      "loss_type": "原 reconstruction 只保留 legacy mapping 与 current-C",
+      "needed_for_hypothesis_search": true,
+      "backfill_action": "ADD explicit admissible alternatives",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "FID-H04-06",
+      "source_section": "7. 对 G1/G0/G2 的历史压力修正",
+      "source_lines": "144-150",
+      "semantic_item": "G0/G1/G2 婚姻相位方案的主婚/资源压力比较",
+      "current_runtime_refs": [
+        "HYP-G0",
+        "HYP-G1",
+        "HYP-G2"
+      ],
+      "fidelity_status": "MIGRATED_EXACT",
+      "loss_type": "原 runtime 未保存候选压力矩阵",
+      "needed_for_hypothesis_search": true,
+      "backfill_action": "ADD explicit admissible alternatives without score",
+      "authority_effect": "NONE"
+    }
+  ]
+}
