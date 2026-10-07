@@ -17,6 +17,7 @@ from .literals import LiteralRegistry, format_literal
 from .literary_eval import evaluate_literary_candidate, format_literary_evaluation
 from .literary_ecology import LiteraryEcologyRuntime, format_literary_ecology
 from .literary_production import LiteraryProductionRuntime, format_literary_production
+from .literary_suite import LiteraryEvaluatorSuite, format_literary_suite
 from .mechanism_adapters import HistoricalAdapterRuntime, format_adapter
 from .open_interfaces import OpenInterfaceRegistry, format_open_interface
 from .object_network import ObjectNetworkRuntime, format_object
@@ -180,6 +181,55 @@ def cmd_plock(args: argparse.Namespace) -> int:
         print(json.dumps(lock, ensure_ascii=False, indent=2))
     else:
         print(format_plock(lock))
+    return 0
+
+
+def cmd_literary_suite(args: argparse.Namespace) -> int:
+    root = Path(args.root).resolve() if args.root else repo_root()
+    suite = LiteraryEvaluatorSuite.from_repo(root)
+    try:
+        kind = args.literary_suite_command
+        if kind == "summary":
+            payload = suite.summary()
+        elif kind == "prose":
+            path = Path(args.text)
+            payload = suite.evaluate_prose(
+                path.read_text(encoding="utf-8"),
+                candidate_name=path.name,
+            )
+        elif kind in {"poetry-screen", "poetry-blind"}:
+            paths = [Path(x) for x in args.text]
+            candidates = {
+                label: path.read_text(encoding="utf-8")
+                for label, path in zip(("A", "B", "C"), paths, strict=True)
+            }
+            payload = (
+                suite.poetry_screen(candidates)
+                if kind == "poetry-screen"
+                else suite.poetry_blind_packet(candidates)
+            )
+        elif kind == "blind":
+            competitions = CompetitionRegistry.from_repo(root)
+            if args.competition_id not in competitions.records:
+                raise KeyError(f"Unknown competition: {args.competition_id}")
+            payload = suite.competition_blind_packet(
+                competitions.records[args.competition_id]
+            )
+        else:
+            raise KeyError(f"Unknown literary-suite command: {kind}")
+    except (KeyError, ValueError, FileNotFoundError) as exc:
+        print(str(exc))
+        return 1
+
+    if args.json:
+        print(json.dumps(payload, ensure_ascii=False, indent=2))
+    else:
+        print(format_literary_suite(kind, payload))
+
+    if kind == "prose" and payload["status"] == "REJECT_BEFORE_BLIND_READ":
+        return 1
+    if kind == "poetry-screen" and payload["lane_status"].startswith("BLOCKED"):
+        return 1
     return 0
 
 
@@ -683,6 +733,27 @@ def main() -> None:
     p_lit_eval.add_argument("text", nargs="+")
     p_lit_eval.add_argument("--json", action="store_true")
     p_lit_eval.set_defaults(func=cmd_literary_evaluate)
+
+    p_lit_suite = sub.add_parser("literary-suite")
+    lit_suite_sub = p_lit_suite.add_subparsers(
+        dest="literary_suite_command", required=True
+    )
+    p = lit_suite_sub.add_parser("summary")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_suite)
+    p = lit_suite_sub.add_parser("prose")
+    p.add_argument("text")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_suite)
+    for name in ("poetry-screen", "poetry-blind"):
+        p = lit_suite_sub.add_parser(name)
+        p.add_argument("text", nargs=3)
+        p.add_argument("--json", action="store_true")
+        p.set_defaults(func=cmd_literary_suite)
+    p = lit_suite_sub.add_parser("blind")
+    p.add_argument("competition_id")
+    p.add_argument("--json", action="store_true")
+    p.set_defaults(func=cmd_literary_suite)
 
     p_comp = sub.add_parser("competition")
     p_comp.add_argument("competition_id")
