@@ -112,8 +112,10 @@ class HistoricalAdapterRuntime:
                 if not hits:
                     missing.append(index)
 
-            forbidden_terms = list(adapter.get("global_reject_terms", []))
-            forbidden_terms.extend(req.get("forbidden_any", []))
+            forbidden_terms = list(dict.fromkeys(
+                list(adapter.get("global_reject_terms", []))
+                + list(req.get("forbidden_any", []))
+            ))
             forbidden_hits = [term for term in forbidden_terms if term in text]
 
             if forbidden_hits:
