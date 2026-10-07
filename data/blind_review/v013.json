@@ -1,0 +1,453 @@
+{
+  "id": "blind-microdraft-review:v0.13",
+  "milestone": "P7",
+  "status": "PASS_CANDIDATE",
+  "authority": "SHADOW_ONLY",
+  "output_authority": "BLIND_REVIEW_SIGNAL_ONLY",
+  "source_basis": {
+    "microdraft_ref": "controlled-microdraft:v0.12",
+    "raw_review_path": "artifacts/p7_blind_microdraft/INDEPENDENT_REVIEW.md",
+    "sealed_mapping_path": "artifacts/p6_microdraft/MAPPING.json",
+    "reviewer_provenance": "USER_SUPPLIED_AS_INDEPENDENT_BLIND_REVIEW",
+    "independence_verification": "USER_ATTESTED_NOT_SYSTEM_VERIFIED",
+    "mapping_unsealed_after_review": true
+  },
+  "reviews": [
+    {
+      "token": "MD-W1-12",
+      "cell_id": "W1",
+      "verdict": "PASS",
+      "engineering_feel": "低",
+      "top2": true,
+      "rank": 1
+    },
+    {
+      "token": "MD-W1-29",
+      "cell_id": "W1",
+      "verdict": "PASS",
+      "engineering_feel": "中",
+      "top2": true,
+      "rank": 2
+    },
+    {
+      "token": "MD-W1-47",
+      "cell_id": "W1",
+      "verdict": "EDGE",
+      "engineering_feel": "中",
+      "top2": false,
+      "rank": 3
+    },
+    {
+      "token": "MD-W1-83",
+      "cell_id": "W1",
+      "verdict": "EDGE",
+      "engineering_feel": "高",
+      "top2": false,
+      "rank": 4
+    },
+    {
+      "token": "MD-W2-21",
+      "cell_id": "W2",
+      "verdict": "PASS",
+      "engineering_feel": "中",
+      "top2": true,
+      "rank": 2
+    },
+    {
+      "token": "MD-W2-38",
+      "cell_id": "W2",
+      "verdict": "PASS",
+      "engineering_feel": "低",
+      "top2": true,
+      "rank": 1
+    },
+    {
+      "token": "MD-W2-64",
+      "cell_id": "W2",
+      "verdict": "EDGE",
+      "engineering_feel": "中",
+      "top2": false,
+      "rank": 3
+    },
+    {
+      "token": "MD-W2-75",
+      "cell_id": "W2",
+      "verdict": "EDGE",
+      "engineering_feel": "高",
+      "top2": false,
+      "rank": 4
+    },
+    {
+      "token": "MD-W3-14",
+      "cell_id": "W3",
+      "verdict": "EDGE(偏弱)",
+      "engineering_feel": "高",
+      "top2": false,
+      "rank": 4
+    },
+    {
+      "token": "MD-W3-31",
+      "cell_id": "W3",
+      "verdict": "PASS",
+      "engineering_feel": "低",
+      "top2": true,
+      "rank": 1
+    },
+    {
+      "token": "MD-W3-56",
+      "cell_id": "W3",
+      "verdict": "PASS",
+      "engineering_feel": "中",
+      "top2": true,
+      "rank": 2
+    },
+    {
+      "token": "MD-W3-92",
+      "cell_id": "W3",
+      "verdict": "EDGE",
+      "engineering_feel": "中",
+      "top2": false,
+      "rank": 3
+    },
+    {
+      "token": "MD-W4-25",
+      "cell_id": "W4",
+      "verdict": "EDGE",
+      "engineering_feel": "中",
+      "top2": false,
+      "rank": 3
+    },
+    {
+      "token": "MD-W4-43",
+      "cell_id": "W4",
+      "verdict": "FAIL",
+      "engineering_feel": "高",
+      "top2": false,
+      "rank": 4
+    },
+    {
+      "token": "MD-W4-68",
+      "cell_id": "W4",
+      "verdict": "EDGE",
+      "engineering_feel": "中",
+      "top2": true,
+      "rank": 2
+    },
+    {
+      "token": "MD-W4-81",
+      "cell_id": "W4",
+      "verdict": "PASS",
+      "engineering_feel": "中",
+      "top2": true,
+      "rank": 1
+    },
+    {
+      "token": "MD-W5-19",
+      "cell_id": "W5",
+      "verdict": "PASS",
+      "engineering_feel": "中",
+      "top2": true,
+      "rank": 2
+    },
+    {
+      "token": "MD-W5-36",
+      "cell_id": "W5",
+      "verdict": "EDGE",
+      "engineering_feel": "中",
+      "top2": false,
+      "rank": 3
+    },
+    {
+      "token": "MD-W5-73",
+      "cell_id": "W5",
+      "verdict": "PASS",
+      "engineering_feel": "低",
+      "top2": true,
+      "rank": 1
+    },
+    {
+      "token": "MD-W5-84",
+      "cell_id": "W5",
+      "verdict": "FAIL",
+      "engineering_feel": "高",
+      "top2": false,
+      "rank": 4
+    }
+  ],
+  "cell_rankings": {
+    "W1": [
+      "MD-W1-12",
+      "MD-W1-29",
+      "MD-W1-47",
+      "MD-W1-83"
+    ],
+    "W2": [
+      "MD-W2-38",
+      "MD-W2-21",
+      "MD-W2-64",
+      "MD-W2-75"
+    ],
+    "W3": [
+      "MD-W3-31",
+      "MD-W3-56",
+      "MD-W3-92",
+      "MD-W3-14"
+    ],
+    "W4": [
+      "MD-W4-81",
+      "MD-W4-68",
+      "MD-W4-25",
+      "MD-W4-43"
+    ],
+    "W5": [
+      "MD-W5-73",
+      "MD-W5-19",
+      "MD-W5-36",
+      "MD-W5-84"
+    ]
+  },
+  "scenario_summary": {
+    "SCN-CURRENT-C": {
+      "rank_sum": 11,
+      "mean_rank": 2.2,
+      "first_place_count": 1,
+      "top2_count": 3,
+      "verdict_counts": {
+        "PASS": 2,
+        "EDGE": 3,
+        "FAIL": 0
+      },
+      "engineering_counts": {
+        "低": 1,
+        "中": 4,
+        "高": 0
+      },
+      "status": "ROBUST_KEEP",
+      "note": "五窗无FAIL；W5第一。弱点主要是叙述者总结与人为打断，不足以淘汰路线。"
+    },
+    "SCN-LATE-MARRIAGE": {
+      "rank_sum": 12,
+      "mean_rank": 2.4,
+      "first_place_count": 1,
+      "top2_count": 3,
+      "verdict_counts": {
+        "PASS": 3,
+        "EDGE": 2,
+        "FAIL": 0
+      },
+      "engineering_counts": {
+        "低": 1,
+        "中": 3,
+        "高": 1
+      },
+      "status": "ROBUST_KEEP",
+      "note": "五窗无FAIL；W1第一，W2/W5第二。W3贫困婚事容易退化为任务清单，需要场景化修复。"
+    },
+    "SCN-JADE-MULTILAYER": {
+      "rank_sum": 16,
+      "mean_rank": 3.2,
+      "first_place_count": 1,
+      "top2_count": 1,
+      "verdict_counts": {
+        "PASS": 1,
+        "EDGE": 3,
+        "FAIL": 1
+      },
+      "engineering_counts": {
+        "低": 0,
+        "中": 2,
+        "高": 3
+      },
+      "status": "KEEP_FOR_TARGETED_REPAIR",
+      "note": "W4第一证明多层玉并非不可写；其余窗口常滑向经手、认领、清点的账本型写法。单次盲评与不同probe任务不足以淘汰路线。"
+    },
+    "SCN-MINIMAL-CAUSE-OPEN": {
+      "rank_sum": 11,
+      "mean_rank": 2.2,
+      "first_place_count": 2,
+      "top2_count": 3,
+      "verdict_counts": {
+        "PASS": 3,
+        "EDGE": 1,
+        "FAIL": 1
+      },
+      "engineering_counts": {
+        "低": 2,
+        "中": 2,
+        "高": 1
+      },
+      "status": "ROBUST_KEEP_WITH_W4_REPAIR",
+      "note": "W2/W3连续第一，但W4在时间线核对与时辰算术上FAIL；说明OPEN路线必须具体而不能表格化。"
+    }
+  },
+  "cross_cell_findings": {
+    "stable_strengths": [
+      {
+        "id": "P7-S01",
+        "label": "具体小动作承重",
+        "description": "靠数筷子、钱缝腰带、空碗折回、一枚钱、拨灯芯等具体动作承载大事。"
+      },
+      {
+        "id": "P7-S02",
+        "label": "实务话题偏转情绪",
+        "description": "人物用厨房、床被、药、门等实务话回应情绪，不由叙述者总结。"
+      },
+      {
+        "id": "P7-S03",
+        "label": "略不整齐的真实数目",
+        "description": "少一双筷子、一枚而非两个钱、三顿干粮、半月而非两个月等非整齐数目增加生活感。"
+      },
+      {
+        "id": "P7-S04",
+        "label": "小人物组与连续时空",
+        "description": "靠2—4人、一个空间、一段连续时间，结尾落在动作或平实话语。"
+      }
+    ],
+    "recurring_failures": [
+      {
+        "id": "P7-F01",
+        "label": "叙述者点名没说",
+        "description": "用‘至于……’‘没有解释’等句子替读者标记留白，几乎总削弱段落。"
+      },
+      {
+        "id": "P7-F02",
+        "label": "便利式外部打断",
+        "description": "催饭、催搬、催还、脚夫车夫恰在揭晓处出现，容易显出保谜面手段。"
+      },
+      {
+        "id": "P7-F03",
+        "label": "未拆包裹悬置",
+        "description": "来路不明、先不拆、先封、顾不上拆被反复使用，容易成为机械悬念。"
+      },
+      {
+        "id": "P7-F04",
+        "label": "声口趋同",
+        "description": "除凤姐、刘姥姥、紫鹃等少数外，麝月、小红、贾芸、平儿多为功能性台词；宝钗常同一克制腔。"
+      },
+      {
+        "id": "P7-F05",
+        "label": "账本型小事",
+        "description": "来路、经手、认领、时间核对、任务清单若取代人物正在做的事，会从‘小事承大事’滑成‘证物登记’。"
+      }
+    ],
+    "strongest_tokens": [
+      "MD-W1-12",
+      "MD-W1-29",
+      "MD-W2-38",
+      "MD-W3-31",
+      "MD-W3-56",
+      "MD-W5-73",
+      "MD-W4-81",
+      "MD-W5-19",
+      "MD-W2-21"
+    ],
+    "most_engineered_tokens": [
+      "MD-W4-43",
+      "MD-W5-84",
+      "MD-W3-14",
+      "MD-W1-83",
+      "MD-W2-75"
+    ],
+    "dominant_strategy": "以家务、饭药钱的实务线承载情绪，让一句实务话或一个动作收尾，压低叙述者解释。",
+    "inverse_strategy": "当小事变成来路、经手、认领、时间核对或任务清单时，文本会显著暴露复原工程感。"
+  },
+  "interpretation_policy": {
+    "rank_sum_is_descriptive_only": true,
+    "one_reviewer_can_select_route": false,
+    "task_content_is_confounded_with_route": true,
+    "machine_may_not_eliminate_route": true,
+    "literary_signal_may_create_revision_targets": true,
+    "no_canonical_prose_promotion": true
+  },
+  "revision_targets": [
+    {
+      "id": "RT-01",
+      "scope": "GLOBAL",
+      "rule": "删除或重写‘至于……没说/没提/没写/没有解释’式留白标注，让留白由动作和场景自然产生。",
+      "derived_from": [
+        "P7-F01"
+      ]
+    },
+    {
+      "id": "RT-02",
+      "scope": "GLOBAL",
+      "rule": "每个关键场景最多允许一次外部中断；中断必须先有生活因果，不得恰为保护谜面而出现。",
+      "derived_from": [
+        "P7-F02"
+      ]
+    },
+    {
+      "id": "RT-03",
+      "scope": "GLOBAL",
+      "rule": "包裹/物件若暂不揭示，必须同时承担人物正在进行的生活功能；不得只作为悬置装置。",
+      "derived_from": [
+        "P7-F03",
+        "P7-F05"
+      ]
+    },
+    {
+      "id": "RT-04",
+      "scope": "GLOBAL",
+      "rule": "强化麝月、小红、贾芸、平儿等角色的关系化声口差异，禁止功能性台词互换。",
+      "derived_from": [
+        "P7-F04"
+      ]
+    },
+    {
+      "id": "RT-05",
+      "scope": "GLOBAL",
+      "rule": "优先使用一个小动作、一个实务句和一个不整齐数目承重；避免把五种生活细节排队陈列。",
+      "derived_from": [
+        "P7-S01",
+        "P7-S02",
+        "P7-S03",
+        "P7-F05"
+      ]
+    },
+    {
+      "id": "RT-06",
+      "scope": "SCN-JADE-MULTILAYER",
+      "rule": "多层玉只允许通过人物使用、保管、误认产生差异；减少纸签、经手、认领、物件谱系式辨识。",
+      "derived_from": [
+        "P7-F03",
+        "P7-F05"
+      ]
+    },
+    {
+      "id": "RT-07",
+      "scope": "SCN-MINIMAL-CAUSE-OPEN",
+      "rule": "OPEN必须落在单一、可指认的未知点；所有时辰与行动链须先做事实校验，禁止时间线核对表式场景。",
+      "derived_from": [
+        "P7-F05"
+      ]
+    },
+    {
+      "id": "RT-08",
+      "scope": "SCN-LATE-MARRIAGE",
+      "rule": "贫困婚事只围绕一项主要家务冲突展开，其余资源问题做背景，不按人物分派任务。",
+      "derived_from": [
+        "P7-F05"
+      ]
+    },
+    {
+      "id": "RT-09",
+      "scope": "SCN-CURRENT-C",
+      "rule": "保留凤姐等辨识度高的声口，但削减同场物件堆叠和叙述者结论。",
+      "derived_from": [
+        "P7-S02",
+        "P7-F01",
+        "P7-F05"
+      ]
+    }
+  ],
+  "policy": {
+    "evidence_effect": "NONE",
+    "open_interface_effect": "NONE",
+    "stable_active_effect": "NONE",
+    "canonical_prose_effect": "NONE",
+    "chapter89_competition_effect": "NONE",
+    "automatic_winner": false,
+    "automatic_route_elimination": false
+  },
+  "next_gate": "P8_CROSS_ROUTE_REVISION_ABLATION"
+}
