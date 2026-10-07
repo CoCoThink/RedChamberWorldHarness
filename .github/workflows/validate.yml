@@ -14,6 +14,18 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install -e '.[dev]'
       - run: rcwh validate
+      - name: Smoke migration runtimes
+        run: |
+          rcwh reconstruction summary
+          rcwh world summary
+          rcwh world character baoyu 92
+          rcwh object continuity
+          rcwh object jade --chapter 91
+          rcwh literary-ecology summary
+          rcwh literary-ecology voice daiyu
+          rcwh literary-ecology chapter 92
+          rcwh literary-ecology qingbang
+          rcwh literary-ecology trace evidence A01
       - run: rcwh evaluate data/scenes/ch86_last_night.yaml examples/ch86_candidate_stub.txt
       - run: rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_preserved.txt
       - name: Verify replacement-case exit code
