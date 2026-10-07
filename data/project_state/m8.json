@@ -1,0 +1,69 @@
+{
+  "milestone": "M8",
+  "status": "PASS_CANDIDATE",
+  "migration_release": {
+    "id": "full-migration-v3",
+    "branch": "migration/full-v3",
+    "base_release_branch": "main",
+    "main_merge_state": "PENDING_REVIEW",
+    "stable_active_release": "stable-active-v4.1",
+    "stable_active_sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+  },
+  "milestone_status": {
+    "M0": "PASS",
+    "M1": "PASS",
+    "M2": "PASS",
+    "M3": "PASS",
+    "M4": "PASS",
+    "M5": "PASS",
+    "M6": "PASS",
+    "M7": "PASS",
+    "M8": "PASS_CANDIDATE"
+  },
+  "coverage_signoff": {
+    "signed": true,
+    "p0_total": 249,
+    "p0_full": 249,
+    "p0_partial": 0,
+    "p0_minimal": 0,
+    "p0_none": 0,
+    "current_documents": 15,
+    "current_full": 15,
+    "current_markdown_islands": 0,
+    "unresolved_authority_conflicts": 0
+  },
+  "required_query_surfaces": [
+    "RECONSTRUCTION",
+    "TIMELINE",
+    "WORLD",
+    "CHARACTER",
+    "OBJECT",
+    "LITERARY_ECOLOGY",
+    "IMPLEMENTATION"
+  ],
+  "boundary_invariants": {
+    "open_interfaces": "OL-001..OL-028 OPEN_LOCKED",
+    "historical_mechanisms": "H01..H06 FEASIBILITY_ONLY",
+    "plock_authority": "LITERARY_PROTECTION_ONLY",
+    "evidence_roles_non_conflicting": true,
+    "negative_archive_non_runtime": true
+  },
+  "traceability": {
+    "p0_concrete_paths": 249,
+    "registry_documents": 65,
+    "all_typed_doc_refs_must_resolve": true
+  },
+  "completion_gate": {
+    "overall": "PENDING_VALIDATION",
+    "evidence_core_regression": "REQUIRED_PASS",
+    "full_migration_regression": "REQUIRED_PASS",
+    "stable_active_unchanged": "REQUIRED_PASS",
+    "all_tests": "REQUIRED_PASS"
+  },
+  "literature": {
+    "migration_freeze_active": true,
+    "resume_authorized_after_gate_pass": true,
+    "resume_started": false,
+    "note": "M8 may authorize later literary work, but M8 itself performs no Chapter 81-100 prose production or stable promotion."
+  }
+}
