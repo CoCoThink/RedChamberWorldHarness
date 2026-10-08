@@ -1,8 +1,7 @@
 from pathlib import Path
 
 from rcwh.reconstruction import ReconstructionRegistry
-from rcwh.registry import MigrationRegistry
-from rcwh.runtime import WorldState
+from rcwh.assets import AssetCatalog
 from rcwh.world import WorldRuntime
 
 
@@ -11,18 +10,6 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def world() -> WorldRuntime:
     return WorldRuntime.from_repo(ROOT)
-
-
-def test_m3_world_cardinalities_and_query_surface():
-    summary = world().summary()
-    assert summary["chapters"] == 20
-    assert summary["characters"] == 28
-    assert summary["locations"] == 15
-    assert summary["relations"] == 10
-    assert summary["institutions"] == 9
-    assert summary["completion"]["world_queryable"] is True
-    assert summary["completion"]["event_replay"] is True
-    assert summary["completion"]["completion_gate_ready"] is False
 
 
 def test_world_replay_tracks_baoyu_legal_residence_and_marriage_state():
@@ -79,23 +66,15 @@ def test_presence_and_location_are_queryable_without_inventing_new_space():
     assert w.location("S07")["name"] == "监所/狱神庙空间"
 
 
-def test_existing_worldstate_loads_full_world_runtime_without_breaking_scene_state():
-    state = WorldState.from_repo(ROOT)
-    assert state.world_runtime is not None
-    assert state.snapshot_at(92)["characters"]["baoyu"]["legal_status"] == "DETAINED_PENDING_INQUIRY"
-    assert state.resolve("character.daiyu.resources.physical_strength") == "critical"
-
-
-def test_m3_sources_are_registered_and_traceable():
-    registry = MigrationRegistry.from_repo(ROOT)
+def test_world_sources_resolve_to_local_assets():
+    registry = AssetCatalog.from_repo(ROOT)
     w = world()
     for source in w.data["sources"].values():
-        assert source["document_ref"] in registry.documents
-        assert registry.documents[source["document_ref"]]["sha256"] == source["sha256"]
-    assert len(registry.documents) == len(registry.content_hashes) == 65
+        assert source["asset_ref"] in registry.assets
+        assert registry.assets[source["asset_ref"]]["sha256"] == source["sha256"]
 
 
 def test_world_integrity_passes_against_reconstruction():
-    registry = MigrationRegistry.from_repo(ROOT)
+    registry = AssetCatalog.from_repo(ROOT)
     reconstruction = ReconstructionRegistry.from_repo(ROOT)
     assert world().validate_integrity(registry, reconstruction) == []

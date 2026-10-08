@@ -6,6 +6,7 @@ from typing import Any
 
 from .hypotheses import HypothesisRuntime
 from .io import load_data
+from .contracts import unique_index
 from .scenario_replay import CounterfactualReplayRuntime
 from .scenarios import ScenarioRuntime
 from .world import WorldRuntime
@@ -13,6 +14,7 @@ from .world import WorldRuntime
 
 @dataclass
 class ParetoEvaluationRuntime:
+    root: Path
     data: dict[str, Any]
     burdens: dict[str, dict[str, Any]]
     expert_axes: dict[str, dict[str, Any]]
@@ -21,9 +23,10 @@ class ParetoEvaluationRuntime:
     def from_repo(cls, root: Path) -> "ParetoEvaluationRuntime":
         data = load_data(root / "data" / "pareto" / "v09.json") or {}
         return cls(
+            root=root,
             data=data,
-            burdens={x["hypothesis_id"]: x for x in data.get("hypothesis_burdens", [])},
-            expert_axes={x["scenario_id"]: x for x in data.get("scenario_expert_axes", [])},
+            burdens=unique_index(data.get('hypothesis_burdens', []), 'hypothesis_id'),
+            expert_axes=unique_index(data.get('scenario_expert_axes', []), 'scenario_id'),
         )
 
     def _historical_cost(
@@ -235,7 +238,6 @@ class ParetoEvaluationRuntime:
             evaluated, self.data["full_axes"]
         )
         return {
-            "milestone": "P3",
             "status": "PARETO_COMPLETE_NO_WINNER",
             "mechanism_frontier": mechanism_frontier,
             "full_frontier": full_frontier,
@@ -305,8 +307,6 @@ class ParetoEvaluationRuntime:
     ) -> dict[str, Any]:
         frontier = self.frontier(hypotheses, scenarios, replay, world)
         return {
-            "milestone": "P3",
-            "status": self.data["status"],
             "authority": self.data["authority"],
             "axes": self.data["full_axes"],
             "scenario_count": len(scenarios.scenarios),
@@ -326,18 +326,19 @@ class ParetoEvaluationRuntime:
         world: WorldRuntime,
     ) -> list[str]:
         errors: list[str] = []
-        if self.data.get("milestone") != "P3":
-            errors.append("Pareto milestone must be P3")
         if self.data.get("authority") != "SHADOW_ONLY":
             errors.append("Pareto runtime must remain SHADOW_ONLY")
         if self.data.get("pareto_policy", {}).get("no_total_score") is not True:
             errors.append("Pareto runtime must forbid total score")
         if self.data.get("pareto_policy", {}).get("no_automatic_winner") is not True:
             errors.append("Pareto runtime must forbid automatic winner")
-        if len(self.data.get("full_axes", [])) != 8:
-            errors.append("P3 requires exactly eight full Pareto axes")
-        if len(self.data.get("mechanism_axes", [])) != 6:
-            errors.append("P3 requires exactly six mechanism axes")
+        axes = set(self.data.get("axes", {}))
+        full = self.data.get("full_axes", [])
+        mechanism = self.data.get("mechanism_axes", [])
+        if not full or len(full) != len(set(full)) or not set(full) <= axes:
+            errors.append("full Pareto axes must be nonempty, unique and declared")
+        if not mechanism or len(mechanism) != len(set(mechanism)) or not set(mechanism) <= set(full):
+            errors.append("mechanism axes must be nonempty, unique and included in full axes")
         for field, value in self.data.get("effects", {}).items():
             if value != "NONE":
                 errors.append(f"Pareto effect {field} must remain NONE")
@@ -352,7 +353,8 @@ class ParetoEvaluationRuntime:
         if missing_scenarios:
             errors.append(f"Missing Pareto expert axes: {missing_scenarios}")
 
-        known_dimensions = {f"LE-D{i:02d}" for i in range(1, 14)}
+        from .literary_ecology import LiteraryEcologyRuntime
+        known_dimensions = set(LiteraryEcologyRuntime.from_repo(self.root).dimensions)
         for sid, item in self.expert_axes.items():
             if not (1 <= item["front80_structural_echo"] <= 5):
                 errors.append(f"{sid}: front80 expert grade out of range")

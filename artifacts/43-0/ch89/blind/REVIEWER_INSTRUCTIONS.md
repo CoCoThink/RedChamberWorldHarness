@@ -1,6 +1,6 @@
 # 第89回匿名盲读包｜Reviewer Instructions
 
-本文件只给盲读者使用。**不要打开同目录 MAPPING.json，也不要查看 candidates/ 目录。**
+使用 `rcwh literary-suite blind comp:43-0:ch89:pressure-test --output-dir /tmp/rcwh-ch89-review --json` 生成新的匿名包。盲读者只接收导出目录和阅读问题；内部 MAPPING.json 与 candidates/ 留在仓库。
 
 候选 token：
 
@@ -12,9 +12,9 @@
 
 对应正文：
 
-- `artifacts/43-0/ch89/blind/BR-91.md`
-- `artifacts/43-0/ch89/blind/BR-58.md`
-- `artifacts/43-0/ch89/blind/BR-14.md`
+- `BR-91.md`
+- `BR-58.md`
+- `BR-14.md`
 
 ## 盲读问题
 

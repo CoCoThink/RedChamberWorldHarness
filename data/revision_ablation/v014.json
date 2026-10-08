@@ -1,13 +1,14 @@
 {
+  "schema_version": 1,
   "id": "cross-route-revision-ablation:v0.14",
-  "milestone": "P8",
-  "status": "PASS",
   "authority": "SHADOW_ONLY",
   "output_authority": "EXPERIMENTAL_REVISION_ONLY",
   "source_basis": {
     "p6_ref": "controlled-microdraft:v0.12",
     "p7_ref": "blind-microdraft-review:v0.13",
-    "p5_ref": "narrative-discourse:v0.11"
+    "p5_ref": "narrative-discourse:v0.11",
+    "p6_snapshot_sha256": "f6b2e100869e9613b81ccf0053cd43ef6792e54ba41d0cd83345eef9b5b51e76",
+    "p7_snapshot_sha256": "c88fab05aa95d6b98936b3711a82fee33fc700c4feb9e668ec56329716170dd7"
   },
   "design": {
     "pair_count": 20,
@@ -75,276 +76,196 @@
     {
       "baseline_token": "MD-W1-47",
       "revised_token": "RV-W1-47",
-      "scenario_id": "SCN-CURRENT-C",
-      "probe_id": "C-P1",
-      "cell_id": "W1",
       "applied_targets": [
         "RT-01",
         "RT-05",
         "RT-09"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W1/MD-W1-47.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W1/RV-W1-47.md"
     },
     {
       "baseline_token": "MD-W1-12",
       "revised_token": "RV-W1-12",
-      "scenario_id": "SCN-LATE-MARRIAGE",
-      "probe_id": "L-P1",
-      "cell_id": "W1",
       "applied_targets": [
         "RT-01",
         "RT-05"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W1/MD-W1-12.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W1/RV-W1-12.md"
     },
     {
       "baseline_token": "MD-W1-83",
       "revised_token": "RV-W1-83",
-      "scenario_id": "SCN-JADE-MULTILAYER",
-      "probe_id": "J-P1",
-      "cell_id": "W1",
       "applied_targets": [
         "RT-03",
         "RT-05",
         "RT-06"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W1/MD-W1-83.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W1/RV-W1-83.md"
     },
     {
       "baseline_token": "MD-W1-29",
       "revised_token": "RV-W1-29",
-      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
-      "probe_id": "M-P1",
-      "cell_id": "W1",
       "applied_targets": [
         "RT-01",
         "RT-05",
         "RT-07"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W1/MD-W1-29.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W1/RV-W1-29.md"
     },
     {
       "baseline_token": "MD-W2-64",
       "revised_token": "RV-W2-64",
-      "scenario_id": "SCN-CURRENT-C",
-      "probe_id": "C-P2",
-      "cell_id": "W2",
       "applied_targets": [
         "RT-04",
         "RT-05",
         "RT-09"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W2/MD-W2-64.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W2/RV-W2-64.md"
     },
     {
       "baseline_token": "MD-W2-21",
       "revised_token": "RV-W2-21",
-      "scenario_id": "SCN-LATE-MARRIAGE",
-      "probe_id": "L-P2",
-      "cell_id": "W2",
       "applied_targets": [
         "RT-01",
         "RT-04",
         "RT-05"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W2/MD-W2-21.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W2/RV-W2-21.md"
     },
     {
       "baseline_token": "MD-W2-75",
       "revised_token": "RV-W2-75",
-      "scenario_id": "SCN-JADE-MULTILAYER",
-      "probe_id": "J-P2",
-      "cell_id": "W2",
       "applied_targets": [
         "RT-03",
         "RT-04",
         "RT-06"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W2/MD-W2-75.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W2/RV-W2-75.md"
     },
     {
       "baseline_token": "MD-W2-38",
       "revised_token": "RV-W2-38",
-      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
-      "probe_id": "M-P2",
-      "cell_id": "W2",
       "applied_targets": [
         "RT-01",
         "RT-04",
         "RT-07"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W2/MD-W2-38.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W2/RV-W2-38.md"
     },
     {
       "baseline_token": "MD-W3-56",
       "revised_token": "RV-W3-56",
-      "scenario_id": "SCN-CURRENT-C",
-      "probe_id": "C-P3",
-      "cell_id": "W3",
       "applied_targets": [
         "RT-04",
         "RT-05",
         "RT-09"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W3/MD-W3-56.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W3/RV-W3-56.md"
     },
     {
       "baseline_token": "MD-W3-14",
       "revised_token": "RV-W3-14",
-      "scenario_id": "SCN-LATE-MARRIAGE",
-      "probe_id": "L-P3",
-      "cell_id": "W3",
       "applied_targets": [
         "RT-05",
         "RT-08"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W3/MD-W3-14.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W3/RV-W3-14.md"
     },
     {
       "baseline_token": "MD-W3-92",
       "revised_token": "RV-W3-92",
-      "scenario_id": "SCN-JADE-MULTILAYER",
-      "probe_id": "J-P3",
-      "cell_id": "W3",
       "applied_targets": [
         "RT-03",
         "RT-05",
         "RT-06"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W3/MD-W3-92.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W3/RV-W3-92.md"
     },
     {
       "baseline_token": "MD-W3-31",
       "revised_token": "RV-W3-31",
-      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
-      "probe_id": "M-P3",
-      "cell_id": "W3",
       "applied_targets": [
         "RT-01",
         "RT-04",
         "RT-07"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W3/MD-W3-31.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W3/RV-W3-31.md"
     },
     {
       "baseline_token": "MD-W4-68",
       "revised_token": "RV-W4-68",
-      "scenario_id": "SCN-CURRENT-C",
-      "probe_id": "C-P4",
-      "cell_id": "W4",
       "applied_targets": [
         "RT-02",
         "RT-03",
         "RT-09"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W4/MD-W4-68.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W4/RV-W4-68.md"
     },
     {
       "baseline_token": "MD-W4-25",
       "revised_token": "RV-W4-25",
-      "scenario_id": "SCN-LATE-MARRIAGE",
-      "probe_id": "L-P4",
-      "cell_id": "W4",
       "applied_targets": [
         "RT-01",
         "RT-03",
         "RT-04"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W4/MD-W4-25.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W4/RV-W4-25.md"
     },
     {
       "baseline_token": "MD-W4-81",
       "revised_token": "RV-W4-81",
-      "scenario_id": "SCN-JADE-MULTILAYER",
-      "probe_id": "J-P4",
-      "cell_id": "W4",
       "applied_targets": [
         "RT-03",
         "RT-06"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W4/MD-W4-81.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W4/RV-W4-81.md"
     },
     {
       "baseline_token": "MD-W4-43",
       "revised_token": "RV-W4-43",
-      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
-      "probe_id": "M-P4",
-      "cell_id": "W4",
       "applied_targets": [
         "RT-02",
         "RT-03",
         "RT-07"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W4/MD-W4-43.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W4/RV-W4-43.md"
     },
     {
       "baseline_token": "MD-W5-73",
       "revised_token": "RV-W5-73",
-      "scenario_id": "SCN-CURRENT-C",
-      "probe_id": "C-P5",
-      "cell_id": "W5",
       "applied_targets": [
         "RT-01",
         "RT-05",
         "RT-09"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W5/MD-W5-73.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W5/RV-W5-73.md"
     },
     {
       "baseline_token": "MD-W5-19",
       "revised_token": "RV-W5-19",
-      "scenario_id": "SCN-LATE-MARRIAGE",
-      "probe_id": "L-P5",
-      "cell_id": "W5",
       "applied_targets": [
         "RT-05",
         "RT-08"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W5/MD-W5-19.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W5/RV-W5-19.md"
     },
     {
       "baseline_token": "MD-W5-84",
       "revised_token": "RV-W5-84",
-      "scenario_id": "SCN-JADE-MULTILAYER",
-      "probe_id": "J-P5",
-      "cell_id": "W5",
       "applied_targets": [
         "RT-01",
         "RT-03",
         "RT-06"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W5/MD-W5-84.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W5/RV-W5-84.md"
     },
     {
       "baseline_token": "MD-W5-36",
       "revised_token": "RV-W5-36",
-      "scenario_id": "SCN-MINIMAL-CAUSE-OPEN",
-      "probe_id": "M-P5",
-      "cell_id": "W5",
       "applied_targets": [
         "RT-05",
         "RT-07"
       ],
-      "baseline_artifact": "artifacts/p6_microdraft/blind/W5/MD-W5-36.md",
       "revised_artifact": "artifacts/p8_revision_ablation/revised/W5/RV-W5-36.md"
     }
   ],
@@ -357,10 +278,10 @@
     "open_interface_effect": "NONE",
     "stable_active_effect": "NONE",
     "canonical_prose_effect": "NONE",
-    "chapter89_competition_effect": "NONE",
     "automatic_winner": false,
     "automatic_route_elimination": false,
-    "automatic_literary_superiority_claim": false
+    "automatic_literary_superiority_claim": false,
+    "competition_effect": "NONE"
   },
   "next_gate": "P9_PAIRED_BLIND_REVISION_REVIEW"
 }

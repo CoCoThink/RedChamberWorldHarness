@@ -20,11 +20,13 @@ class ProvenanceGraph:
     def from_repo(cls, root: Path) -> "ProvenanceGraph":
         def load_dir(dirname: str, wrapper: str) -> dict[str, dict[str, Any]]:
             result: dict[str, dict[str, Any]] = {}
-            path = root / "data" / dirname
+            path = root / "data" / "provenance" / dirname
             if not path.exists():
                 return result
             for file in sorted(path.glob("*.yaml")):
                 doc = load_data(file) or {}
+                if doc.get("schema_version") != 1:
+                    raise ValueError(f"Unsupported provenance schema version: {file}")
                 for item in doc.get(wrapper, []):
                     item_id = item["id"]
                     if item_id in result:

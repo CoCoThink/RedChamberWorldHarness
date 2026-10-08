@@ -4,8 +4,6 @@
   "type": "object",
   "required": [
     "id",
-    "milestone",
-    "status",
     "authority",
     "output_authority",
     "purpose",
@@ -17,20 +15,12 @@
     "scenario_overrides",
     "thresholds",
     "policy",
-    "next_gate"
+    "next_gate",
+    "schema_version"
   ],
   "properties": {
     "id": {
       "const": "narrative-discourse:v0.11"
-    },
-    "milestone": {
-      "const": "P5"
-    },
-    "status": {
-      "enum": [
-        "PASS_CANDIDATE",
-        "PASS"
-      ]
     },
     "authority": {
       "const": "SHADOW_ONLY"
@@ -62,8 +52,7 @@
         },
         "required_scenarios": {
           "type": "array",
-          "minItems": 4,
-          "maxItems": 4,
+          "minItems": 1,
           "uniqueItems": true,
           "items": {
             "type": "string"
@@ -74,8 +63,7 @@
     },
     "discourse_dimensions": {
       "type": "array",
-      "minItems": 8,
-      "maxItems": 8,
+      "minItems": 1,
       "items": {
         "type": "object",
         "required": [
@@ -109,7 +97,7 @@
     },
     "visibility_templates": {
       "type": "object",
-      "minProperties": 6,
+      "minProperties": 1,
       "additionalProperties": {
         "type": "object",
         "required": [
@@ -162,7 +150,7 @@
     },
     "ending_templates": {
       "type": "object",
-      "minProperties": 7,
+      "minProperties": 1,
       "additionalProperties": {
         "type": "object",
         "required": [
@@ -188,7 +176,7 @@
     },
     "scenario_overrides": {
       "type": "object",
-      "minProperties": 4,
+      "minProperties": 1,
       "additionalProperties": {
         "type": "object",
         "required": [
@@ -312,6 +300,9 @@
         "P5_CI_THEN_P6_CONTROLLED_MICRODRAFT_LAB",
         "P6_CONTROLLED_MICRODRAFT_LAB"
       ]
+    },
+    "schema_version": {
+      "const": 1
     }
   },
   "additionalProperties": false

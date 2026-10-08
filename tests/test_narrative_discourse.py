@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from rcwh.literary_ecology import LiteraryEcologyRuntime
-from rcwh.literary_production import LiteraryProductionRuntime, STABLE_SHA
 from rcwh.literary_stress import ScenarioLiteraryStressRuntime
 from rcwh.narrative_discourse import NarrativeDiscourseRuntime
 
@@ -29,7 +28,7 @@ def ecology():
 def test_p5_compiles_exactly_twenty_discourse_cards():
     payload = discourse().evaluate_all(stress())
     assert payload["status"] == "PASS"
-    assert payload["card_count"] == 20
+    assert payload["card_count"] == sum(len(x["probes"]) for x in stress().contracts.values())
     assert payload["winner"] is None
     assert payload["automatic_prose_generation"] is False
 
@@ -114,26 +113,5 @@ def test_p5_compare_never_ranks():
     assert payload["winner"] is None
 
 
-def test_p5_integrity_and_canonical_literary_state_unchanged():
+def test_p5_integrity_and_canonical_literary_state_unchanged(production_unchanged):
     assert discourse().validate_integrity(stress(), ecology()) == []
-    literary = LiteraryProductionRuntime.from_repo(ROOT)
-    assert literary.data["stable_active"]["sha256"] == STABLE_SHA
-    assert literary.data["stable_active"]["changed"] is False
-    assert literary.data["chapter89"]["plock_manual_review"] == "PENDING"
-    assert literary.data["chapter89"]["blind_read"] == "PENDING"
-
-
-def test_p5_project_state_is_pass_and_records_ci_gate():
-    from rcwh.io import load_data
-
-    state = load_data(ROOT / "data" / "project_state" / "narrative_discourse_v011.json")
-    assert state["status"] == "PASS"
-    assert state["authority"] == "SHADOW_ONLY"
-    assert state["next_gate"] == "P6_CONTROLLED_MICRODRAFT_LAB"
-    assert set(state["effects"].values()) == {"NONE"}
-    assert state["ci"] == {
-        "run_id": 37646432165,
-        "conclusion": "SUCCESS",
-        "pytest": "276 passed / 0 failed",
-        "validate": "PASS",
-    }

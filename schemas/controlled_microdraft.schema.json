@@ -4,8 +4,6 @@
   "type": "object",
   "required": [
     "id",
-    "milestone",
-    "status",
     "authority",
     "output_authority",
     "source_basis",
@@ -15,20 +13,12 @@
     "drafts",
     "blind_review",
     "policy",
-    "next_gate"
+    "next_gate",
+    "schema_version"
   ],
   "properties": {
     "id": {
       "const": "controlled-microdraft:v0.12"
-    },
-    "milestone": {
-      "const": "P6"
-    },
-    "status": {
-      "enum": [
-        "PASS_CANDIDATE",
-        "PASS"
-      ]
     },
     "authority": {
       "const": "SHADOW_ONLY"
@@ -52,8 +42,7 @@
         },
         "required_scenarios": {
           "type": "array",
-          "minItems": 4,
-          "maxItems": 4,
+          "minItems": 1,
           "uniqueItems": true,
           "items": {
             "type": "string"
@@ -67,17 +56,13 @@
       "required": [
         "cells",
         "one_draft_per_discourse_card",
-        "drafts_per_scenario",
-        "drafts_per_cell",
-        "total_drafts",
         "comparison_mode",
         "generation_rule"
       ],
       "properties": {
         "cells": {
           "type": "array",
-          "minItems": 5,
-          "maxItems": 5,
+          "minItems": 1,
           "items": {
             "type": "object",
             "required": [
@@ -88,7 +73,7 @@
             "properties": {
               "id": {
                 "type": "string",
-                "pattern": "^W[1-5]$"
+                "pattern": "^W[A-Z0-9-]+$"
               },
               "window": {
                 "type": "array",
@@ -107,15 +92,6 @@
         },
         "one_draft_per_discourse_card": {
           "const": true
-        },
-        "drafts_per_scenario": {
-          "const": 5
-        },
-        "drafts_per_cell": {
-          "const": 4
-        },
-        "total_drafts": {
-          "const": 20
         },
         "comparison_mode": {
           "const": "BLIND_BY_CELL"
@@ -167,8 +143,7 @@
     },
     "drafts": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 20,
+      "minItems": 1,
       "items": {
         "type": "object",
         "required": [
@@ -184,11 +159,11 @@
         "properties": {
           "token": {
             "type": "string",
-            "pattern": "^MD-W[1-5]-[0-9]{2}$"
+            "pattern": "^MD-W[A-Z0-9-]+-[0-9]+$"
           },
           "cell_id": {
             "type": "string",
-            "pattern": "^W[1-5]$"
+            "pattern": "^W[A-Z0-9-]+$"
           },
           "scenario_id": {
             "type": "string"
@@ -204,7 +179,7 @@
           },
           "required_anchors": {
             "type": "array",
-            "minItems": 3,
+            "minItems": 1,
             "uniqueItems": true,
             "items": {
               "type": "string"
@@ -226,7 +201,6 @@
       "type": "object",
       "required": [
         "instructions_path",
-        "sealed_mapping_path",
         "questions",
         "automatic_winner",
         "independent_human_review_required"
@@ -235,12 +209,9 @@
         "instructions_path": {
           "type": "string"
         },
-        "sealed_mapping_path": {
-          "type": "string"
-        },
         "questions": {
           "type": "array",
-          "minItems": 5,
+          "minItems": 1,
           "items": {
             "type": "string"
           }
@@ -261,10 +232,10 @@
         "evidence_effect",
         "open_interface_effect",
         "stable_active_effect",
-        "chapter89_competition_effect",
         "automatic_literary_pass",
         "automatic_winner",
-        "route_elimination_by_machine"
+        "route_elimination_by_machine",
+        "competition_effect"
       ],
       "properties": {
         "canonical_prose_effect": {
@@ -279,9 +250,6 @@
         "stable_active_effect": {
           "const": "NONE"
         },
-        "chapter89_competition_effect": {
-          "const": "NONE"
-        },
         "automatic_literary_pass": {
           "const": false
         },
@@ -290,6 +258,9 @@
         },
         "route_elimination_by_machine": {
           "const": false
+        },
+        "competition_effect": {
+          "const": "NONE"
         }
       },
       "additionalProperties": false
@@ -299,6 +270,9 @@
         "P6_CI_THEN_P7_BLIND_MICRODRAFT_REVIEW",
         "P7_BLIND_MICRODRAFT_REVIEW"
       ]
+    },
+    "schema_version": {
+      "const": 1
     }
   },
   "additionalProperties": false

@@ -4,8 +4,6 @@
   "type": "object",
   "required": [
     "id",
-    "issue",
-    "status",
     "authority",
     "automatic_literary_pass",
     "principles",
@@ -15,17 +13,11 @@
     "structure",
     "poetry",
     "blind_read",
-    "completion"
+    "schema_version"
   ],
   "properties": {
     "id": {
       "const": "literary-evaluator-suite:v0.5"
-    },
-    "issue": {
-      "const": 5
-    },
-    "status": {
-      "type": "string"
     },
     "authority": {
       "const": "LITERARY_SCREENING_ONLY"
@@ -54,37 +46,8 @@
     "blind_read": {
       "type": "object"
     },
-    "completion": {
-      "type": "object",
-      "required": [
-        "culture_not_museum_deletion_test",
-        "explicit_exposition_detector",
-        "ambiguity_preservation",
-        "structural_variation_checks",
-        "poetry_abc_lane",
-        "blind_output_evidence_separated"
-      ],
-      "properties": {
-        "culture_not_museum_deletion_test": {
-          "const": true
-        },
-        "explicit_exposition_detector": {
-          "const": true
-        },
-        "ambiguity_preservation": {
-          "const": true
-        },
-        "structural_variation_checks": {
-          "const": true
-        },
-        "poetry_abc_lane": {
-          "const": true
-        },
-        "blind_output_evidence_separated": {
-          "const": true
-        }
-      },
-      "additionalProperties": false
+    "schema_version": {
+      "const": 1
     }
   },
   "additionalProperties": false

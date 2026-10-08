@@ -16,9 +16,9 @@ And the engineering corollary is:
 
 > A generated scene may be literarily free, but it must never silently upgrade a reconstruction choice into historical evidence.
 
-## v0.1 goals
+## Narrative runtime
 
-RCWH v0.1 establishes six executable layers:
+RCWH provides six executable layers:
 
 1. **Evidence Graph** — witness/provenance, role, modality, literal target, placement, OPEN-LOCK.
 2. **World State** — timeline, locations, household economy, institutions, current reconstruction truth.
@@ -33,16 +33,21 @@ The first acceptance scenario is Chapter 86, because it simultaneously exercises
 
 ```text
 .
-├── config/                  # Harness/kernel configuration
+├── sources/                 # Original source files, identified by SHA and asset ID
+├── research/                # Versioned project research
 ├── data/
+│   ├── catalog/             # Physical assets and their origin occurrences
+│   ├── provenance/          # Sources, Claims, Decisions, Implementations, title axes
+│   ├── project/             # State owners, chapter scope and implementation progress
 │   ├── evidence/            # Evidence truth
 │   ├── characters/          # Character state
 │   ├── objects/             # Object ledger
 │   ├── events/              # Event-sourced reconstruction truth
 │   └── scenes/              # Scene contracts
 ├── docs/                    # Architecture and plan mapping
-├── evaluators/              # Human-readable evaluator specs
-├── policy/                  # Literary and release policy
+├── releases/                # Imported stable baseline and immutable release manifest
+├── artifacts/               # Candidates, experiments, reviews and migration audit
+├── archive/                 # Import receipts and historical deltas; no implicit policy authority
 ├── schemas/                 # JSON Schemas
 ├── src/rcwh/                # Executable runtime
 ├── tests/                   # Regression tests
@@ -69,11 +74,27 @@ python -m rcwh.cli evaluate data/scenes/ch86_last_night.yaml examples/ch86_candi
 pytest -q
 ```
 
+## Assets and current state
+
+```bash
+rcwh project status
+rcwh assets validate
+rcwh sources trace decision:cliff-release:function
+rcwh self-contained check --profile asset-storage
+rcwh self-contained check --profile release-storage
+```
+
+Original handover inputs have been received into the asset catalog. Provenance records now resolve asset IDs directly; extracted ZIPs and chat attachments are not inputs to these APIs. CI verifies repository bytes and compares immutable asset versions with the previous catalog.
+
+Redundant handover copies and unused historical baseline/superseded bodies have been removed. Their checksums and origin records remain in the import audit. The legacy `registry`, `coverage`, and `completion` commands and M1–M8 override chain have been retired; current domain traces resolve and verify asset bytes directly. See the [migration cleanup decision](docs/decisions/0002_RETIRE_MIGRATION_RUNTIME.md) and [historical rule retirement](docs/decisions/0003_RETIRE_HISTORICAL_RULES.md). Operational commands are consolidated in the [search and writing runbook](docs/runbooks/SEARCH_AND_WRITING.md); chapter scope is explicitly configured in `data/project/scope.json`.
+
+`source-content` and `source-locators` are separate checks. They currently fail explicitly: some historical Sources lack local carriers, and imported page/line assertions have not yet been aligned with reproducible extraction output. Storage integrity does not imply complete source closure.
+
 ## Status
 
-`v0.1-design`: architecture + schemas + a runnable Chapter 86 acceptance slice.
+The reconstruction-infrastructure design is being implemented in stages. Asset storage, physical source tracing, imported baseline verification, explicit state owners and provenance relocation are implemented. Corpus construction, unified world/planning workflows, continuous-chapter editing and final source closure remain in progress.
 
-This repository is intended to become the execution harness for steps 33–52 of the literary completion plan, not a replacement for the evidence archive itself.
+See the [complete design](docs/RCWH_红楼梦复原基础设施完整设计_v1.0_20261008.md), [architecture decision](docs/decisions/0001_DOMAIN_FOUNDATION.md), and [foundation runbook](docs/runbooks/FOUNDATION.md). `rcwh project status` reads the selected owners, including the existing literary review gates and implementation progress.
 
 ## License
 

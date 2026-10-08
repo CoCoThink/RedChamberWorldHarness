@@ -2,7 +2,8 @@ from pathlib import Path
 
 from rcwh.open_interfaces import OpenInterfaceRegistry
 from rcwh.reconstruction import ReconstructionRegistry
-from rcwh.registry import MigrationRegistry
+from rcwh.assets import AssetCatalog
+from rcwh.workflow import ProjectState
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -14,18 +15,17 @@ def recon() -> ReconstructionRegistry:
 
 def test_m2_has_complete_rp_and_timeline_cardinality():
     r = recon()
-    assert set(r.r_nodes) == {f"R{i:02d}" for i in range(1, 44)}
-    assert set(r.p_edges) == {f"P{i:02d}" for i in range(1, 12)}
-    assert set(r.timeline) == set(range(81, 101))
-    assert set(r.chapters) == set(range(81, 101))
+    assert r.r_nodes and r.p_edges
+    assert set(r.timeline) == set(recon().chapter_scope)
+    assert set(r.chapters) == set(recon().chapter_scope)
 
 
-def test_all_current_chapter_cards_are_machine_queryable_and_pressure_set_is_frozen():
+def test_all_current_chapter_cards_follow_configured_pressure_sequence():
     r = recon()
-    assert {x for x, item in r.chapters.items() if item["pressure_test"]} == {86, 89, 92, 97}
-    for chapter in range(81, 101):
+    assert {x for x, item in r.chapters.items() if item["pressure_test"]} == set(ProjectState.from_repo(ROOT).owner("literary")["sequence"])
+    for chapter in recon().chapter_scope:
         item = r.chapter(chapter)
-        assert item["source_ref"] == "doc:23861cce04ac"
+        assert item["source_ref"] == r.data["sources"]["chapter_plan"]["asset_ref"]
         assert item["source_lines"][0] < item["source_lines"][1]
         assert item["key_constraints"]
         assert item["semantic_coverage"] == "PARTIAL_STRUCTURED"
@@ -71,18 +71,15 @@ def test_legacy_o01_o10_map_to_current_open28_and_o03_is_revised():
     assert r.legacy("O03")["mapping_relation"] == "REVISED_OLD_U1_DOWNGRADED"
 
 
-def test_m2_sources_remain_registered_after_signed_m8_gate():
-    migration = MigrationRegistry.from_repo(ROOT)
+def test_reconstruction_sources_resolve_to_local_assets():
+    migration = AssetCatalog.from_repo(ROOT)
     r = recon()
     for source in r.data["sources"].values():
-        assert source["document_ref"] in migration.documents
-        assert migration.documents[source["document_ref"]]["sha256"] == source["sha256"]
-    assert migration.current_summary()["current_markdown_islands"] == 0
-    assert migration.current_summary()["completion_gate_ready"] is True
-    assert migration.current_summary()["completion_gate_status"] == "PASS"
+        assert source["asset_ref"] in migration.assets
+        assert migration.assets[source["asset_ref"]]["sha256"] == source["sha256"]
 
 
 def test_reconstruction_integrity_passes():
-    migration = MigrationRegistry.from_repo(ROOT)
+    migration = AssetCatalog.from_repo(ROOT)
     opens = OpenInterfaceRegistry.from_repo(ROOT)
     assert recon().validate_integrity(migration, opens) == []

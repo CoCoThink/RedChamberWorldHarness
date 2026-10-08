@@ -1,55 +1,388 @@
 {
-  "$schema":"https://json-schema.org/draft/2020-12/schema",
-  "title":"RCWH Scenario Literary Stress v0.10",
-  "type":"object",
-  "required":["id","milestone","status","authority","output_authority","source_basis","dimensions","required_windows","thresholds","contracts","policy","effects","next_gate"],
-  "properties":{
-    "id":{"const":"scenario-literary-stress:v0.10"},
-    "milestone":{"const":"P4"},
-    "status":{"enum":["PASS_CANDIDATE","PASS"]},
-    "authority":{"const":"SHADOW_ONLY"},
-    "output_authority":{"const":"LITERARY_STRESS_ONLY"},
-    "source_basis":{"type":"object","required":["pareto_ref","required_scenarios","literary_ecology_ref","literary_evaluator_ref"],"properties":{
-      "pareto_ref":{"const":"pareto-evaluation:v0.9"},
-      "required_scenarios":{"type":"array","minItems":4,"maxItems":4,"uniqueItems":true,"items":{"type":"string"}},
-      "literary_ecology_ref":{"const":"M5"},
-      "literary_evaluator_ref":{"const":"v0.5"}
-    },"additionalProperties":false},
-    "dimensions":{"type":"array","minItems":8,"maxItems":8,"items":{"type":"object","required":["id","key","name","basis_refs","principle"],"properties":{
-      "id":{"type":"string","pattern":"^LS-D\\d{2}$"},"key":{"type":"string"},"name":{"type":"string"},
-      "basis_refs":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
-      "principle":{"type":"string"}
-    },"additionalProperties":false}},
-    "required_windows":{"type":"array","minItems":5,"maxItems":5,"items":{"type":"object","required":["id","start","end"],"properties":{
-      "id":{"type":"string","pattern":"^W[1-5]$"},"start":{"type":"integer","minimum":81,"maximum":100},"end":{"type":"integer","minimum":81,"maximum":100}
-    },"additionalProperties":false}},
-    "thresholds":{"type":"object","additionalProperties":{"type":"integer","minimum":1}},
-    "contracts":{"type":"array","minItems":4,"maxItems":4,"items":{"type":"object","required":["scenario_id","title","watch_items","probes"],"properties":{
-      "scenario_id":{"type":"string","pattern":"^SCN-[A-Z0-9-]+$"},"title":{"type":"string"},
-      "watch_items":{"type":"array","minItems":1,"items":{"type":"object","required":["id","risk","must_show","addressed_by"],"properties":{
-        "id":{"type":"string"},"risk":{"type":"string"},"must_show":{"type":"string"},"addressed_by":{"type":"array","minItems":1,"items":{"type":"string"}}
-      },"additionalProperties":false}},
-      "probes":{"type":"array","minItems":5,"maxItems":5,"items":{"type":"object","required":["id","window","label","focalizers","ordinary_actions","side_characters","object_carriers","event_visibility","withheld_information","culture_in_action","ending_vector","technique_refs","stress_dimensions","scenario_risk","countermeasure","anti_exposition_rule"],"properties":{
-        "id":{"type":"string"},"window":{"type":"array","minItems":2,"maxItems":2,"items":{"type":"integer","minimum":81,"maximum":100}},
-        "label":{"type":"string"},"focalizers":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string"}},
-        "ordinary_actions":{"type":"array","minItems":1,"items":{"type":"string"}},"side_characters":{"type":"array","minItems":1,"items":{"type":"string"}},
-        "object_carriers":{"type":"array","minItems":1,"items":{"type":"string"}},
-        "event_visibility":{"enum":["DIRECT_SCENE","PARTIAL_DIRECT","AFTERMATH_FIRST","REPORTED","INTERRUPTED_DIRECT","OFFSTAGE"]},
-        "withheld_information":{"type":"array","minItems":1,"items":{"type":"string"}},"culture_in_action":{"type":"array","items":{"type":"string"}},
-        "ending_vector":{"enum":["OBJECT","QUESTION","SOUND","GESTURE","INTERRUPTION","EMPTY_SPACE","UNFINISHED_SPEECH"]},
-        "technique_refs":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","pattern":"^TECH-\\d{2}$"}},
-        "stress_dimensions":{"type":"array","minItems":1,"uniqueItems":true,"items":{"type":"string","pattern":"^LS-D\\d{2}$"}},
-        "scenario_risk":{"type":"string"},"countermeasure":{"type":"string"},"anti_exposition_rule":{"type":"string"}
-      },"additionalProperties":false}}
-    },"additionalProperties":false}},
-    "policy":{"type":"object","required":["automatic_prose_generation","automatic_literary_pass","automatic_winner","scalar_score","blind_read_effect","canonical_competition_effect"],"properties":{
-      "automatic_prose_generation":{"const":false},"automatic_literary_pass":{"const":false},"automatic_winner":{"const":false},"scalar_score":{"const":false},
-      "blind_read_effect":{"const":"NONE"},"canonical_competition_effect":{"const":"NONE"}
-    },"additionalProperties":false},
-    "effects":{"type":"object","required":["evidence","open_interfaces","stable_active","chapter89","chapter92","chapter97"],"properties":{
-      "evidence":{"const":"NONE"},"open_interfaces":{"const":"NONE"},"stable_active":{"const":"NONE"},"chapter89":{"const":"NONE"},"chapter92":{"const":"NONE"},"chapter97":{"const":"NONE"}
-    },"additionalProperties":false},
-    "next_gate":{"enum":["P4_CI_THEN_P5_NARRATIVE_DISCOURSE_RUNTIME","P5_NARRATIVE_DISCOURSE_RUNTIME"]}
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RCWH Scenario Literary Stress v0.10",
+  "type": "object",
+  "required": [
+    "id",
+    "authority",
+    "output_authority",
+    "source_basis",
+    "dimensions",
+    "required_windows",
+    "thresholds",
+    "contracts",
+    "policy",
+    "effects",
+    "next_gate",
+    "schema_version"
+  ],
+  "properties": {
+    "id": {
+      "const": "scenario-literary-stress:v0.10"
+    },
+    "authority": {
+      "const": "SHADOW_ONLY"
+    },
+    "output_authority": {
+      "const": "LITERARY_STRESS_ONLY"
+    },
+    "source_basis": {
+      "type": "object",
+      "required": [
+        "pareto_ref",
+        "required_scenarios",
+        "literary_ecology_ref",
+        "literary_evaluator_ref"
+      ],
+      "properties": {
+        "pareto_ref": {
+          "const": "pareto-evaluation:v0.9"
+        },
+        "required_scenarios": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string"
+          }
+        },
+        "literary_ecology_ref": {
+          "const": "M5"
+        },
+        "literary_evaluator_ref": {
+          "const": "v0.5"
+        }
+      },
+      "additionalProperties": false
+    },
+    "dimensions": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "key",
+          "name",
+          "basis_refs",
+          "principle"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^LS-D\\d{2}$"
+          },
+          "key": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "basis_refs": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "principle": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "required_windows": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "start",
+          "end"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^W[A-Z0-9-]+$"
+          },
+          "start": {
+            "type": "integer",
+            "minimum": 81,
+            "maximum": 100
+          },
+          "end": {
+            "type": "integer",
+            "minimum": 81,
+            "maximum": 100
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "thresholds": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "integer",
+        "minimum": 1
+      }
+    },
+    "contracts": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": [
+          "scenario_id",
+          "title",
+          "watch_items",
+          "probes"
+        ],
+        "properties": {
+          "scenario_id": {
+            "type": "string",
+            "pattern": "^SCN-[A-Z0-9-]+$"
+          },
+          "title": {
+            "type": "string"
+          },
+          "watch_items": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "risk",
+                "must_show",
+                "addressed_by"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "risk": {
+                  "type": "string"
+                },
+                "must_show": {
+                  "type": "string"
+                },
+                "addressed_by": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "probes": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "id",
+                "window",
+                "label",
+                "focalizers",
+                "ordinary_actions",
+                "side_characters",
+                "object_carriers",
+                "event_visibility",
+                "withheld_information",
+                "culture_in_action",
+                "ending_vector",
+                "technique_refs",
+                "stress_dimensions",
+                "scenario_risk",
+                "countermeasure",
+                "anti_exposition_rule"
+              ],
+              "properties": {
+                "id": {
+                  "type": "string"
+                },
+                "window": {
+                  "type": "array",
+                  "minItems": 2,
+                  "maxItems": 2,
+                  "items": {
+                    "type": "integer",
+                    "minimum": 81,
+                    "maximum": 100
+                  }
+                },
+                "label": {
+                  "type": "string"
+                },
+                "focalizers": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "ordinary_actions": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "side_characters": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "object_carriers": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "event_visibility": {
+                  "enum": [
+                    "DIRECT_SCENE",
+                    "PARTIAL_DIRECT",
+                    "AFTERMATH_FIRST",
+                    "REPORTED",
+                    "INTERRUPTED_DIRECT",
+                    "OFFSTAGE"
+                  ]
+                },
+                "withheld_information": {
+                  "type": "array",
+                  "minItems": 1,
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "culture_in_action": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                "ending_vector": {
+                  "enum": [
+                    "OBJECT",
+                    "QUESTION",
+                    "SOUND",
+                    "GESTURE",
+                    "INTERRUPTION",
+                    "EMPTY_SPACE",
+                    "UNFINISHED_SPEECH"
+                  ]
+                },
+                "technique_refs": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^TECH-\\d{2}$"
+                  }
+                },
+                "stress_dimensions": {
+                  "type": "array",
+                  "minItems": 1,
+                  "uniqueItems": true,
+                  "items": {
+                    "type": "string",
+                    "pattern": "^LS-D\\d{2}$"
+                  }
+                },
+                "scenario_risk": {
+                  "type": "string"
+                },
+                "countermeasure": {
+                  "type": "string"
+                },
+                "anti_exposition_rule": {
+                  "type": "string"
+                }
+              },
+              "additionalProperties": false
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "automatic_prose_generation",
+        "automatic_literary_pass",
+        "automatic_winner",
+        "scalar_score",
+        "blind_read_effect",
+        "canonical_competition_effect"
+      ],
+      "properties": {
+        "automatic_prose_generation": {
+          "const": false
+        },
+        "automatic_literary_pass": {
+          "const": false
+        },
+        "automatic_winner": {
+          "const": false
+        },
+        "scalar_score": {
+          "const": false
+        },
+        "blind_read_effect": {
+          "const": "NONE"
+        },
+        "canonical_competition_effect": {
+          "const": "NONE"
+        }
+      },
+      "additionalProperties": false
+    },
+    "effects": {
+      "type": "object",
+      "required": [
+        "evidence",
+        "open_interfaces",
+        "stable_active",
+        "competitions"
+      ],
+      "properties": {
+        "evidence": {
+          "const": "NONE"
+        },
+        "open_interfaces": {
+          "const": "NONE"
+        },
+        "stable_active": {
+          "const": "NONE"
+        },
+        "competitions": {
+          "const": "NONE"
+        }
+      },
+      "additionalProperties": false
+    },
+    "next_gate": {
+      "enum": [
+        "P4_CI_THEN_P5_NARRATIVE_DISCOURSE_RUNTIME",
+        "P5_NARRATIVE_DISCOURSE_RUNTIME"
+      ]
+    },
+    "schema_version": {
+      "const": 1
+    }
   },
-  "additionalProperties":false
+  "additionalProperties": false
 }

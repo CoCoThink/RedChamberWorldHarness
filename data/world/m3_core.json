@@ -1,38 +1,37 @@
 {
-  "milestone": "M3",
-  "status": "PASS",
+  "schema_version": 1,
   "epistemic_rule": "World state is an executable downstream model. Current-C placement, residence, resource, body and knowledge states constrain current implementation only and never harden Evidence or close OPEN interfaces.",
   "sources": {
     "presence": {
-      "document_ref": "doc:30a6ecd37a",
+      "asset_ref": "asset:sha256:30a6ecd37a4f3e846a72ef3cd445ba78db902fa788d45ee7cd3d73d86eb4df32",
       "sha256": "30a6ecd37a4f3e846a72ef3cd445ba78db902fa788d45ee7cd3d73d86eb4df32"
     },
     "spaces": {
-      "document_ref": "doc:92749de3e6",
+      "asset_ref": "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb",
       "sha256": "92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb"
     },
     "social": {
-      "document_ref": "doc:bc6bf7cb5e",
+      "asset_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
       "sha256": "bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823"
     },
     "flows": {
-      "document_ref": "doc:ffed02aee8",
+      "asset_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
       "sha256": "ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50"
     },
     "longlines": {
-      "document_ref": "doc:56727d17b5",
+      "asset_ref": "asset:sha256:56727d17b5588cdecac3d0cf66b0030a6673ace47d532937d7988141e9cc41cd",
       "sha256": "56727d17b5588cdecac3d0cf66b0030a6673ace47d532937d7988141e9cc41cd"
     },
     "body": {
-      "document_ref": "doc:7e4ba5576d",
+      "asset_ref": "asset:sha256:7e4ba5576d56cf953338ef9dfa98b9dea3da4be4a595fff241a5c26d4c7e23bf",
       "sha256": "7e4ba5576d56cf953338ef9dfa98b9dea3da4be4a595fff241a5c26d4c7e23bf"
     },
     "run_state": {
-      "document_ref": "doc:417a201365f0",
-      "sha256": "417a201365f0e5c961b1497b098eaa8f40c02cabc07cf2a79391a6d2ae00ed69"
+      "asset_ref": "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+      "sha256": "b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41"
     },
     "central_chain": {
-      "document_ref": "doc:b32e45cbc074",
+      "asset_ref": "asset:sha256:b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108",
       "sha256": "b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
     }
   },
@@ -1523,15 +1522,5 @@
       ],
       "epistemic": "HARD_FUNCTION_CURRENT_PLACEMENT"
     }
-  ],
-  "completion": {
-    "world_queryable": true,
-    "event_replay": true,
-    "characters": 28,
-    "relations": 10,
-    "institutions": 9,
-    "current_markdown_islands": 0,
-    "stable_active_changed": false,
-    "completion_gate_ready": false
-  }
+  ]
 }

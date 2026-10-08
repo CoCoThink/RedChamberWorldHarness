@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from rcwh.hypotheses import HypothesisRuntime
-from rcwh.literary_production import STABLE_SHA, LiteraryProductionRuntime
 from rcwh.scenario_replay import CounterfactualReplayRuntime
 from rcwh.scenarios import ScenarioRuntime
 from rcwh.world import WorldRuntime
@@ -24,12 +23,12 @@ def world() -> WorldRuntime:
 def test_p2_replays_all_ten_seed_scenarios_without_hard_blockers():
     payload = runtime().evaluate_all(scenarios(), world())
     assert payload["status"] == "PASS"
-    assert len(payload["scenarios"]) == 10
+    assert {x["scenario_id"] for x in payload["scenarios"]} == set(scenarios().scenarios)
     assert all(row["blockers"] == 0 for row in payload["scenarios"])
 
 
 def test_current_c_reference_is_exact_m3_world_state_not_a_bonus_prior():
-    for chapter in range(81, 101):
+    for chapter in sorted(world().presence):
         replay = runtime().snapshot("SCN-CURRENT-C", chapter, scenarios(), world())
         assert replay["state"] == world().snapshot(chapter)
     result = runtime().evaluate("SCN-CURRENT-C", scenarios(), world())
@@ -89,22 +88,6 @@ def test_compact_terminal_route_delays_departure_until_chapter_100():
     assert s100["state"]["global"]["outer_frame"] == "S15_OPEN"
 
 
-def test_p2_integrity_and_authority_boundaries():
+def test_p2_integrity_and_authority_boundaries(production_unchanged):
     errors = runtime().validate_integrity(HypothesisRuntime.from_repo(ROOT), scenarios(), world())
     assert errors == []
-    literary = LiteraryProductionRuntime.from_repo(ROOT)
-    assert literary.data["stable_active"]["sha256"] == STABLE_SHA
-    assert literary.data["stable_active"]["changed"] is False
-    assert literary.data["chapter89"]["plock_manual_review"] == "PENDING"
-    assert literary.data["chapter89"]["blind_read"] == "PENDING"
-
-
-def test_p2_project_state_is_pass_and_next_gate_is_p3():
-    from rcwh.io import load_data
-    state = load_data(ROOT / "data" / "project_state" / "scenario_replay_v08.json")
-    assert state["status"] == "PASS"
-    assert state["authority"] == "SHADOW_ONLY"
-    assert state["next_gate"] == "P3_PARETO_EVALUATION"
-    assert set(state["effects"].values()) == {"NONE"}
-    assert state["ci"]["run_id"] == 37638097185
-    assert state["ci"]["validate"] == "PASS"

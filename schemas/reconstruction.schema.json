@@ -3,8 +3,6 @@
   "title": "RCWH M2 Reconstruction",
   "type": "object",
   "required": [
-    "milestone",
-    "status",
     "epistemic_rule",
     "sources",
     "chapter_field_schema",
@@ -20,72 +18,57 @@
     "prison_case",
     "legacy_open_mapping",
     "cross_chapter_locks",
-    "completion"
+    "schema_version",
+    "coverage_limitations"
   ],
   "properties": {
-    "milestone": {
-      "const": "M2"
-    },
-    "status": {
-      "type": "string"
-    },
     "epistemic_rule": {
       "type": "string",
       "minLength": 20
     },
     "sources": {
       "type": "object",
-      "minProperties": 9
+      "minProperties": 1
     },
     "chapters": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 20
+      "minItems": 1
     },
     "r_nodes": {
       "type": "array",
-      "minItems": 43,
-      "maxItems": 43
+      "minItems": 1
     },
     "p_edges": {
       "type": "array",
-      "minItems": 11,
-      "maxItems": 11
+      "minItems": 1
     },
     "timeline": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 20
+      "minItems": 1
     },
     "time_gates": {
       "type": "array",
-      "minItems": 3,
-      "maxItems": 3
+      "minItems": 1
     },
     "current_states_84_96": {
       "type": "array",
-      "minItems": 13,
-      "maxItems": 13
+      "minItems": 1
     },
     "central_state_chain": {
       "type": "array",
-      "minItems": 13,
-      "maxItems": 13
+      "minItems": 1
     },
     "economic_stages": {
       "type": "array",
-      "minItems": 6,
-      "maxItems": 6
+      "minItems": 1
     },
     "legacy_open_mapping": {
       "type": "array",
-      "minItems": 10,
-      "maxItems": 10
+      "minItems": 1
     },
     "cross_chapter_locks": {
       "type": "array",
-      "minItems": 16,
-      "maxItems": 16
+      "minItems": 1
     },
     "jade_logistics": {
       "type": "object"
@@ -99,19 +82,14 @@
     "state_transition_reference": {
       "type": "object"
     },
-    "completion": {
-      "type": "object",
-      "required": [
-        "current_markdown_islands",
-        "completion_gate_ready"
-      ],
-      "properties": {
-        "current_markdown_islands": {
-          "const": 0
-        },
-        "completion_gate_ready": {
-          "const": false
-        }
+    "schema_version": {
+      "const": 1
+    },
+    "coverage_limitations": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
       }
     }
   },

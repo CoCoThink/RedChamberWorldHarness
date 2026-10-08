@@ -4,7 +4,6 @@
   "type": "object",
   "required": [
     "id",
-    "milestone",
     "status",
     "authority",
     "output_authority",
@@ -16,14 +15,13 @@
     "interpretation_policy",
     "revision_targets",
     "policy",
-    "next_gate"
+    "next_gate",
+    "schema_version",
+    "verdict_categories"
   ],
   "properties": {
     "id": {
       "const": "blind-microdraft-review:v0.13"
-    },
-    "milestone": {
-      "const": "P7"
     },
     "status": {
       "enum": [
@@ -41,21 +39,15 @@
       "type": "object",
       "required": [
         "microdraft_ref",
-        "raw_review_path",
-        "sealed_mapping_path",
+        "raw_review_asset_ref",
         "reviewer_provenance",
         "independence_verification",
-        "mapping_unsealed_after_review"
+        "mapping_unsealed_after_review",
+        "microdraft_snapshot_sha256"
       ],
       "properties": {
         "microdraft_ref": {
           "const": "controlled-microdraft:v0.12"
-        },
-        "raw_review_path": {
-          "type": "string"
-        },
-        "sealed_mapping_path": {
-          "type": "string"
         },
         "reviewer_provenance": {
           "const": "USER_SUPPLIED_AS_INDEPENDENT_BLIND_REVIEW"
@@ -65,31 +57,31 @@
         },
         "mapping_unsealed_after_review": {
           "const": true
+        },
+        "raw_review_asset_ref": {
+          "type": "string",
+          "pattern": "^asset:"
+        },
+        "microdraft_snapshot_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
         }
       },
       "additionalProperties": false
     },
     "reviews": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 20,
+      "minItems": 1,
       "items": {
         "type": "object",
         "required": [
           "token",
-          "cell_id",
           "verdict",
-          "engineering_feel",
-          "top2",
-          "rank"
+          "engineering_feel"
         ],
         "properties": {
           "token": {
             "type": "string"
-          },
-          "cell_id": {
-            "type": "string",
-            "pattern": "^W[1-5]$"
           },
           "verdict": {
             "type": "string"
@@ -100,14 +92,6 @@
               "中",
               "高"
             ]
-          },
-          "top2": {
-            "type": "boolean"
-          },
-          "rank": {
-            "type": "integer",
-            "minimum": 1,
-            "maximum": 4
           }
         },
         "additionalProperties": false
@@ -115,57 +99,26 @@
     },
     "cell_rankings": {
       "type": "object",
-      "required": [
-        "W1",
-        "W2",
-        "W3",
-        "W4",
-        "W5"
-      ],
       "additionalProperties": {
         "type": "array",
-        "minItems": 4,
-        "maxItems": 4,
+        "minItems": 1,
         "uniqueItems": true,
         "items": {
           "type": "string"
         }
-      }
+      },
+      "minProperties": 1
     },
     "scenario_summary": {
       "type": "object",
-      "minProperties": 4,
+      "minProperties": 1,
       "additionalProperties": {
         "type": "object",
         "required": [
-          "rank_sum",
-          "mean_rank",
-          "first_place_count",
-          "top2_count",
-          "verdict_counts",
-          "engineering_counts",
           "status",
           "note"
         ],
         "properties": {
-          "rank_sum": {
-            "type": "integer"
-          },
-          "mean_rank": {
-            "type": "number"
-          },
-          "first_place_count": {
-            "type": "integer"
-          },
-          "top2_count": {
-            "type": "integer"
-          },
-          "verdict_counts": {
-            "type": "object"
-          },
-          "engineering_counts": {
-            "type": "object"
-          },
           "status": {
             "enum": [
               "ROBUST_KEEP",
@@ -200,9 +153,9 @@
         "open_interface_effect",
         "stable_active_effect",
         "canonical_prose_effect",
-        "chapter89_competition_effect",
         "automatic_winner",
-        "automatic_route_elimination"
+        "automatic_route_elimination",
+        "competition_effect"
       ],
       "properties": {
         "evidence_effect": {
@@ -217,14 +170,14 @@
         "canonical_prose_effect": {
           "const": "NONE"
         },
-        "chapter89_competition_effect": {
-          "const": "NONE"
-        },
         "automatic_winner": {
           "const": false
         },
         "automatic_route_elimination": {
           "const": false
+        },
+        "competition_effect": {
+          "const": "NONE"
         }
       },
       "additionalProperties": false
@@ -234,6 +187,20 @@
         "P7_CI_THEN_P8_CROSS_ROUTE_REVISION_ABLATION",
         "P8_CROSS_ROUTE_REVISION_ABLATION"
       ]
+    },
+    "schema_version": {
+      "const": 1
+    },
+    "verdict_categories": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {
+        "enum": [
+          "PASS",
+          "EDGE",
+          "FAIL"
+        ]
+      }
     }
   },
   "additionalProperties": false

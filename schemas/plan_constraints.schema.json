@@ -1,0 +1,140 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "VersionedCurrentPlanConstraints",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "authority",
+    "baseline",
+    "provenance",
+    "rules"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "authority": {
+      "const": "CURRENT_IMPLEMENTATION_ONLY"
+    },
+    "baseline": {
+      "type": "object",
+      "required": [
+        "release_id",
+        "text_sha256"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "release_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "text_sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "provenance": {
+      "type": "object",
+      "required": [
+        "kind",
+        "note"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "kind": {
+          "enum": [
+            "EXISTING_BASELINE_MIGRATION",
+            "PROPOSED_REVISION"
+          ]
+        },
+        "note": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "rules": {
+      "type": "object",
+      "required": [
+        "reconstruction",
+        "world",
+        "literary_ecology"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "reconstruction": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/rule"
+          }
+        },
+        "world": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/rule"
+          }
+        },
+        "literary_ecology": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "$ref": "#/$defs/rule"
+          }
+        }
+      }
+    }
+  },
+  "$defs": {
+    "rule": {
+      "type": "object",
+      "required": [
+        "id",
+        "path",
+        "equals",
+        "basis_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "path": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "oneOf": [
+              {
+                "type": "string",
+                "minLength": 1
+              },
+              {
+                "type": "integer",
+                "minimum": 0
+              }
+            ]
+          }
+        },
+        "equals": {},
+        "basis_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^asset:"
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # 第86回压力测试｜匿名盲读包
 
-请只阅读下列三个匿名文本，不查看 competition ledger、A/B/C 文件名或 git 历史。
+使用 `rcwh literary-suite blind comp:43-0:ch86:pressure-test --output-dir /tmp/rcwh-ch86-review --json` 生成新的匿名包。请只阅读导出目录中的下列匿名文本；完整仓库包含候选映射，不应交给盲读者。
 
 盲读只判断文学效果，不判断哪一个“改得最多”。
 

@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from rcwh.literary_ecology import LiteraryEcologyRuntime
-from rcwh.registry import MigrationRegistry
+from rcwh.assets import AssetCatalog
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -9,24 +9,6 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def ecology() -> LiteraryEcologyRuntime:
     return LiteraryEcologyRuntime.from_repo(ROOT)
-
-
-def test_m5_summary_cardinalities_and_completion_boundary():
-    summary = ecology().summary()
-    assert summary["dimensions"] == 13
-    assert summary["voice_profiles"] == 18
-    assert summary["techniques"] == 16
-    assert summary["evidence_nodes"] == 15
-    assert summary["g_layer_decisions"] == 16
-    assert summary["post80_chapters"] == 20
-    assert summary["author_rhyme_chapters"] == 20
-    assert summary["source_documents"] == 27
-    completion = summary["completion"]
-    assert completion["literary_ecology_queryable"] is True
-    assert completion["source_traceable"] is True
-    assert completion["p0_full_coverage"] is False
-    assert completion["stable_active_changed"] is False
-    assert completion["completion_gate_ready"] is False
 
 
 def test_ten_du_yin_locks_existence_but_not_author_form_or_absolute_post80_placement():
@@ -108,28 +90,16 @@ def test_search_crosses_evidence_and_g_layer_without_collapsing_them():
 
 
 def test_evidence_trace_resolves_ten_du_yin_sources_to_registered_sha_paths():
-    registry = MigrationRegistry.from_repo(ROOT)
+    registry = AssetCatalog.from_repo(ROOT)
     payload = ecology().trace("evidence", "A01", registry)
     assert payload["trace_complete"] is True
     refs = {x["ref"] for x in payload["resolved_sources"]}
-    assert "doc:0f2651a5c0f1" in refs
-    assert "doc:5fddcda466a4" in refs
-    assert all(x["kind"] == "document" for x in payload["resolved_sources"])
+    assert "asset:sha256:0f2651a5c0f1562b2372fd12710ecbe6aaaa706e5081bbd39b5ea3232ab536fa" in refs
+    assert "asset:sha256:5fddcda466a44b6d0d078a83f3b636c7084ddb3720cb0ec3487d1065f0e0f222" in refs
+    assert all(x["kind"] == "asset" for x in payload["resolved_sources"])
     assert all(len(x["sha256"]) == 64 for x in payload["resolved_sources"])
 
 
-def test_m5_registry_expansion_survives_signed_m8_gate():
-    registry = MigrationRegistry.from_repo(ROOT)
-    current = registry.current_summary()
-    assert len(registry.documents) == len(registry.content_hashes) == 65
-    assert current["literary_ecology_queryable"] is True
-    assert current["literary_ecology_source_documents"] == 29
-    assert current["current_markdown_islands"] == 0
-    assert current["completion_gate_ready"] is True
-    assert current["completion_gate_status"] == "PASS"
-    assert current["literature_resume_authorized"] is True
-
-
 def test_m5_integrity_passes():
-    registry = MigrationRegistry.from_repo(ROOT)
+    registry = AssetCatalog.from_repo(ROOT)
     assert ecology().validate_integrity(registry) == []

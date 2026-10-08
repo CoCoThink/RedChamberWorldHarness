@@ -35,11 +35,16 @@ class CompetitionRegistry:
     @classmethod
     def from_repo(cls, root: Path) -> "CompetitionRegistry":
         result: dict[str, dict[str, Any]] = {}
+        from .workflow import ProjectState
+        from .assets.catalog import repository_path
+        selected = repository_path(root, ProjectState.from_repo(root).data["owners"]["competitions"])
         path = root / "data" / "competitions"
         if path.exists():
-            for file in sorted(path.glob("*.yaml")):
+            for file in sorted(set(path.glob("*.yaml")) | {selected}):
                 doc = load_data(file) or {}
                 for item in doc.get("competition_records", []):
+                    if item.get("mode") == "PRODUCTION_43_0" and file != selected:
+                        continue
                     item_id = item["id"]
                     if item_id in result:
                         raise ValueError(f"Duplicate competition id: {item_id}")
@@ -58,15 +63,15 @@ class CompetitionRegistry:
     ) -> list[str]:
         errors: list[str] = []
         production = [x for x in self.records.values() if x.get("mode") == "PRODUCTION_43_0"]
-        expected = {
-            "comp:43-0:ch86:pressure-test": (86, 1),
-            "comp:43-0:ch89:pressure-test": (89, 2),
-            "comp:43-0:ch92:pressure-test": (92, 3),
-            "comp:43-0:ch97:pressure-test": (97, 4),
-        }
-        actual = {x["id"]: (x["chapter"], x["sequence"]) for x in production}
-        if actual != expected:
-            errors.append(f"43-0 competition order mismatch expected={expected} actual={actual}")
+        from .contracts import project_chapters
+        if not production:
+            errors.append("production competitions must be nonempty")
+        chapters = [x["chapter"] for x in production]
+        sequences = [x["sequence"] for x in production]
+        if len(chapters) != len(set(chapters)) or len(sequences) != len(set(sequences)):
+            errors.append("production competition chapters and sequences must be unique")
+        if any(x < 1 for x in sequences) or not set(chapters) <= set(project_chapters(root)):
+            errors.append("production competition sequence or chapter outside configured scope")
 
         ordered = sorted(production, key=lambda x: x["sequence"])
         for index, record in enumerate(ordered):

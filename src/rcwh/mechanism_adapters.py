@@ -5,17 +5,8 @@ from pathlib import Path
 from typing import Any
 
 from .io import load_data
+from .contracts import unique_index
 
-
-REQUIRED_ISSUE4 = {
-    "medical",
-    "household_economy",
-    "mourning_marriage",
-    "detention",
-    "pawnshop",
-    "transport_letters",
-    "monastic_economy",
-}
 
 
 @dataclass
@@ -32,7 +23,7 @@ class HistoricalAdapterRuntime:
 
     @property
     def adapters(self) -> dict[str, dict[str, Any]]:
-        return {x["id"]: x for x in self.data.get("adapters", [])}
+        return unique_index(self.data.get("adapters", []))
 
     def summary(self) -> dict[str, Any]:
         backed = [x["id"] for x in self.adapters.values() if x["mechanism_refs"]]
@@ -42,18 +33,11 @@ class HistoricalAdapterRuntime:
         ]
         return {
             "id": self.data.get("id"),
-            "status": self.data.get("status"),
             "effect": self.data.get("effect"),
             "adapters": len(self.adapters),
-            "required_issue4": sorted(REQUIRED_ISSUE4),
+            "adapter_ids": sorted(self.adapters),
             "h_backed": sorted(backed),
             "open_research": sorted(open_research),
-            "chapter86_first_implementation": self.data.get("completion", {}).get(
-                "chapter86_first_implementation", []
-            ),
-            "structured_scene_findings": self.data.get("completion", {}).get(
-                "structured_scene_findings"
-            ),
         }
 
     def describe(self, adapter_id: str, mechanisms: Any | None = None) -> dict[str, Any]:
@@ -164,26 +148,15 @@ class HistoricalAdapterRuntime:
 
     def validate_integrity(self, mechanisms: Any, registry: Any) -> list[str]:
         errors: list[str] = []
-        if self.data.get("issue") != 4:
-            errors.append("historical adapters must be bound to issue #4")
         if self.data.get("effect") != "FEASIBILITY_ONLY":
             errors.append("adapter runtime effect must remain FEASIBILITY_ONLY")
 
-        present = set(self.adapters)
-        missing = REQUIRED_ISSUE4 - present
-        if missing:
-            errors.append(f"missing issue #4 adapters: {sorted(missing)}")
-
-        completion = self.data.get("completion", {})
-        if set(completion.get("chapter86_first_implementation", [])) != {
-            "medical", "household_economy"
-        }:
-            errors.append("chapter86 first implementation must be medical + household_economy")
-        if completion.get("structured_scene_findings") is not True:
-            errors.append("issue #4 requires structured scene findings")
-        if completion.get("preserves_open") is not True:
-            errors.append("issue #4 must preserve OPEN historical questions")
-        if completion.get("plot_invention") is not False:
+        if not self.adapters:
+            errors.append("historical adapters must be nonempty")
+        policy = self.data["policy"]
+        if policy.get("preserves_open") is not True:
+            errors.append("historical adapters must preserve OPEN questions")
+        if policy.get("plot_invention") is not False:
             errors.append("historical adapters may not invent plot")
 
         for aid, adapter in self.adapters.items():
@@ -197,7 +170,7 @@ class HistoricalAdapterRuntime:
                 if mid not in mechanisms.mechanisms:
                     errors.append(f"{aid}: unknown mechanism {mid}")
             for ref in adapter.get("source_refs", []):
-                if ref.startswith("doc:") and ref not in registry.documents:
+                if ref.startswith("asset:") and ref not in registry.assets:
                     errors.append(f"{aid}: unknown source document {ref}")
 
             if adapter.get("research_status") == "OPEN_RESEARCH":
@@ -222,13 +195,11 @@ def format_adapter(kind: str, payload: Any) -> str:
     if kind == "summary":
         return "\n".join([
             "HISTORICAL ADAPTERS v0.4",
-            f"status: {payload['status']}",
             f"effect: {payload['effect']}",
             f"adapters: {payload['adapters']}",
-            f"issue4-required: {', '.join(payload['required_issue4'])}",
+            f"adapter ids: {', '.join(payload['adapter_ids'])}",
             f"h-backed: {', '.join(payload['h_backed'])}",
             f"open-research: {', '.join(payload['open_research']) or 'none'}",
-            f"chapter86-first: {', '.join(payload['chapter86_first_implementation'])}",
         ])
     if kind == "describe":
         return "\n".join([

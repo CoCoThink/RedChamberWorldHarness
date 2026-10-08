@@ -2,83 +2,303 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "LiteraryCompetitionRecord",
   "type": "object",
-  "required": ["id","mode","chapter","sequence","plock_ref","state","baseline","pipeline","workflow_progress","candidates","adjudication","stable_active_effect"],
+  "required": [
+    "id",
+    "mode",
+    "chapter",
+    "sequence",
+    "plock_ref",
+    "state",
+    "baseline",
+    "pipeline",
+    "workflow_progress",
+    "candidates",
+    "adjudication",
+    "stable_active_effect"
+  ],
   "properties": {
-    "id": {"type":"string","pattern":"^comp:(43-0|fixture):ch(86|89|92|97):[a-z0-9-]+$"},
-    "mode": {"enum":["PRODUCTION_43_0","HARNESS_FIXTURE"]},
-    "chapter": {"enum":[86,89,92,97]},
-    "sequence": {"type":"integer","minimum":1,"maximum":4},
-    "plock_ref": {"type":"string","minLength":1},
-    "state": {"enum":["BLOCKED_BY_PREDECESSOR","READY_FOR_CANDIDATES","IN_REVIEW","ADJUDICATED"]},
+    "id": {
+      "type": "string",
+      "pattern": "^comp:(43-0|fixture):ch[0-9]+:[a-z0-9-]+$"
+    },
+    "mode": {
+      "enum": [
+        "PRODUCTION_43_0",
+        "HARNESS_FIXTURE"
+      ]
+    },
+    "chapter": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "sequence": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "plock_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "state": {
+      "enum": [
+        "BLOCKED_BY_PREDECESSOR",
+        "READY_FOR_CANDIDATES",
+        "IN_REVIEW",
+        "ADJUDICATED"
+      ]
+    },
     "baseline": {
-      "type":"object","required":["file_ref","sha256"],
-      "properties":{"file_ref":{"type":"string","minLength":1},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"}},
-      "additionalProperties":false
+      "type": "object",
+      "required": [
+        "file_ref",
+        "sha256"
+      ],
+      "properties": {
+        "file_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
     },
     "pipeline": {
-      "type":"array","minItems":6,"maxItems":6,"uniqueItems":true,
-      "items":{"enum":["BASELINE_EXCERPT","STRUCTURAL_REORDER","SMALL_TRIAL","SIX_FIELD_REGRESSION","PLOCK_REGRESSION","BLIND_READ"]}
-    },
-    "workflow_progress": {
-      "type":"object",
-      "required":["BASELINE_EXCERPT","STRUCTURAL_REORDER","SMALL_TRIAL","SIX_FIELD_REGRESSION","PLOCK_REGRESSION","BLIND_READ"],
-      "additionalProperties":{"enum":["PENDING","PASS","FAIL"]}
-    },
-    "candidates": {
-      "type":"array",
-      "items":{
-        "type":"object",
-        "required":["id","label","blind_token","artifact","origin","six_field","human_plock","blind_read"],
-        "properties":{
-          "id":{"type":"string","minLength":1},
-          "label":{"enum":["A","B","C","D","E"]},
-          "blind_token":{"type":"string","minLength":1},
-          "artifact":{
-            "type":"object","required":["kind"],
-            "properties":{
-              "kind":{"enum":["REPO_FILE","STABLE_ACTIVE"]},
-              "path":{"type":"string"},
-              "git_blob_sha":{"type":"string","pattern":"^[a-f0-9]{40}$"},
-              "source_commit":{"type":"string","pattern":"^[a-f0-9]{40}$"},
-              "file_ref":{"type":"string"},
-              "sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"}
-            },
-            "additionalProperties":false
-          },
-          "origin":{"enum":["STABLE_BASELINE","STRUCTURAL_REWRITE","MODEL_GENERATED","HUMAN_EDITED","HYBRID"]},
-          "machine_expected_status":{"enum":["READY_FOR_BLIND_READ","REPLACEMENT_CASE","REJECT_BEFORE_BLIND_READ","INFRASTRUCTURE_BLOCKED"]},
-          "six_field":{
-            "type":"object",
-            "required":["PROVENANCE","ROLE","MODALITY","TARGET","PLACEMENT","IMPLEMENTATION"],
-            "additionalProperties":{"enum":["NOT_RUN","PASS","FAIL"]}
-          },
-          "human_plock":{
-            "type":"object","required":["status"],
-            "properties":{"status":{"enum":["PENDING","PASS","FAIL","REPLACEMENT_ACCEPTED"]},"notes":{"type":["string","null"]}},
-            "additionalProperties":false
-          },
-          "blind_read":{
-            "type":"object","required":["status","reviewer_blinded"],
-            "properties":{"status":{"enum":["PENDING","PASS","FAIL"]},"reviewer_blinded":{"type":"boolean"},"notes":{"type":["string","null"]}},
-            "additionalProperties":false
-          },
-          "notes":{"type":["string","null"]}
-        },
-        "additionalProperties":false
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "BASELINE_EXCERPT",
+          "STRUCTURAL_REORDER",
+          "SMALL_TRIAL",
+          "SIX_FIELD_REGRESSION",
+          "PLOCK_REGRESSION",
+          "BLIND_READ"
+        ]
       }
     },
-    "adjudication":{
-      "type":"object","required":["outcome","winner_candidate_id","promotion_state"],
-      "properties":{
-        "outcome":{"enum":["PENDING","KEEP_BASELINE","WINNER","NO_WINNER"]},
-        "winner_candidate_id":{"type":["string","null"]},
-        "promotion_state":{"enum":["NOT_ELIGIBLE","PROMOTION_CANDIDATE"]},
-        "notes":{"type":["string","null"]}
-      },
-      "additionalProperties":false
+    "workflow_progress": {
+      "type": "object",
+      "required": [
+        "BASELINE_EXCERPT",
+        "STRUCTURAL_REORDER",
+        "SMALL_TRIAL",
+        "SIX_FIELD_REGRESSION",
+        "PLOCK_REGRESSION",
+        "BLIND_READ"
+      ],
+      "additionalProperties": {
+        "enum": [
+          "PENDING",
+          "PASS",
+          "FAIL"
+        ]
+      }
     },
-    "stable_active_effect":{"const":"SEPARATE_PROMOTION_ONLY"},
-    "notes":{"type":["string","null"]}
+    "candidates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "label",
+          "blind_token",
+          "artifact",
+          "origin",
+          "six_field",
+          "human_plock",
+          "blind_read"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "label": {
+            "type": "string",
+            "minLength": 1
+          },
+          "blind_token": {
+            "type": "string",
+            "minLength": 1
+          },
+          "artifact": {
+            "type": "object",
+            "required": [
+              "kind"
+            ],
+            "properties": {
+              "kind": {
+                "enum": [
+                  "REPO_FILE",
+                  "STABLE_ACTIVE"
+                ]
+              },
+              "path": {
+                "type": "string"
+              },
+              "git_blob_sha": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{40}$"
+              },
+              "source_commit": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{40}$"
+              },
+              "file_ref": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "additionalProperties": false
+          },
+          "origin": {
+            "enum": [
+              "STABLE_BASELINE",
+              "STRUCTURAL_REWRITE",
+              "MODEL_GENERATED",
+              "HUMAN_EDITED",
+              "HYBRID"
+            ]
+          },
+          "machine_expected_status": {
+            "enum": [
+              "READY_FOR_BLIND_READ",
+              "REPLACEMENT_CASE",
+              "REJECT_BEFORE_BLIND_READ",
+              "INFRASTRUCTURE_BLOCKED"
+            ]
+          },
+          "six_field": {
+            "type": "object",
+            "required": [
+              "PROVENANCE",
+              "ROLE",
+              "MODALITY",
+              "TARGET",
+              "PLACEMENT",
+              "IMPLEMENTATION"
+            ],
+            "additionalProperties": {
+              "enum": [
+                "NOT_RUN",
+                "PASS",
+                "FAIL"
+              ]
+            }
+          },
+          "human_plock": {
+            "type": "object",
+            "required": [
+              "status"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "PENDING",
+                  "PASS",
+                  "FAIL",
+                  "REPLACEMENT_ACCEPTED"
+                ]
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "blind_read": {
+            "type": "object",
+            "required": [
+              "status",
+              "reviewer_blinded"
+            ],
+            "properties": {
+              "status": {
+                "enum": [
+                  "PENDING",
+                  "PASS",
+                  "FAIL"
+                ]
+              },
+              "reviewer_blinded": {
+                "type": "boolean"
+              },
+              "notes": {
+                "type": [
+                  "string",
+                  "null"
+                ]
+              }
+            },
+            "additionalProperties": false
+          },
+          "notes": {
+            "type": [
+              "string",
+              "null"
+            ]
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "adjudication": {
+      "type": "object",
+      "required": [
+        "outcome",
+        "winner_candidate_id",
+        "promotion_state"
+      ],
+      "properties": {
+        "outcome": {
+          "enum": [
+            "PENDING",
+            "KEEP_BASELINE",
+            "WINNER",
+            "NO_WINNER"
+          ]
+        },
+        "winner_candidate_id": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "promotion_state": {
+          "enum": [
+            "NOT_ELIGIBLE",
+            "PROMOTION_CANDIDATE"
+          ]
+        },
+        "notes": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      },
+      "additionalProperties": false
+    },
+    "stable_active_effect": {
+      "const": "SEPARATE_PROMOTION_ONLY"
+    },
+    "notes": {
+      "type": [
+        "string",
+        "null"
+      ]
+    }
   },
-  "additionalProperties":false
+  "additionalProperties": false
 }

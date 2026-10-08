@@ -2,7 +2,7 @@
 
 只读本文件与各 `W1`—`W5` 目录下匿名 `MD-*.md`。
 
-**不要打开** `artifacts/p6_microdraft/MAPPING.json`、`data/microdraft/v012.json`，也不要先看带路线名的 P3/P4/P5 配置。
+**不要打开** `data/microdraft/v012.json`，也不要先看带路线名的 P3/P4/P5 配置。
 
 本轮不判断哪条路线证据更强，也不判断哪一稿更像既有 stable 正文。只判断匿名短段的小说完成度。
 

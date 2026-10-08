@@ -30,7 +30,7 @@
     },
     "question_ref": {
       "type": "string",
-      "pattern": "^OL-[0-9]{3}$"
+      "pattern": "^OL-[0-9]{3,}$"
     },
     "title": {
       "type": "string",
@@ -107,7 +107,7 @@
       "uniqueItems": true,
       "items": {
         "type": "string",
-        "pattern": "^OL-[0-9]{3}$"
+        "pattern": "^OL-[0-9]{3,}$"
       }
     },
     "open_consumption": {
@@ -115,7 +115,7 @@
       "uniqueItems": true,
       "items": {
         "type": "string",
-        "pattern": "^OL-[0-9]{3}$"
+        "pattern": "^OL-[0-9]{3,}$"
       }
     },
     "historical_cost": {

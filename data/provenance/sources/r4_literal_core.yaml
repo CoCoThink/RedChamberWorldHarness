@@ -1,0 +1,44 @@
+schema_version: 1
+sources:
+- id: src:jiaxu:ch26:falling-leaves-cold-smoke
+  type: EARLY_COMMENT
+  tier: W1_DIRECT
+  title: 甲戌本第二十六回夹批——落叶萧萧寒烟漠漠
+  witness:
+    siglum: JIAXU
+    label: 甲戌本
+    annotation: 甲夹
+  container:
+    ref: asset:primary:hlm:zhihui:v3.1416:pdf
+    sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
+  locator:
+    chapter: 26
+    pdf_page: 380
+    parsed_lines: 10950-10963
+  text: 与后文“落叶萧萧，寒烟漠漠”一对，可伤可叹！
+  text_sha256: 3beb67835a0c2b4fe21a2b3b8d90fd84cce0f0ca2b01a5759c8409890b781e94
+  notes: 直接保存后文原字；不由此锁定具体回次或体裁。
+  locator_verification:
+    status: UNVERIFIED
+    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+- id: src:jimao:ch20:keep-sheyue
+  type: EARLY_COMMENT
+  tier: W1_DIRECT
+  title: 己卯本第二十回夹批——好歹留着麝月
+  witness:
+    siglum: JIMAO
+    label: 己卯本
+    annotation: 己夹
+  container:
+    ref: asset:primary:hlm:zhihui:v3.1416:pdf
+    sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
+  locator:
+    chapter: 20
+    pdf_page: 293
+    parsed_lines: 8386-8403
+  text: 故袭人出嫁后云“好歹留着麝月”一语，宝玉便依从此话。
+  text_sha256: 3b0f26fdcddd1dad2bd54c498b32e7ce4285359ec50413d317db9a5e019711c4
+  notes: 同时支持原字与边界：该语必须在袭人出嫁之后。
+  locator_verification:
+    status: UNVERIFIED
+    reason: Imported locator assertion; extraction alignment not yet reconstructed.

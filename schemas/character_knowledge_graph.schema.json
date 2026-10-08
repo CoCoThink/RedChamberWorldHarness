@@ -4,24 +4,17 @@
   "type": "object",
   "required": [
     "id",
-    "issue",
-    "status",
     "epistemic_rule",
     "sources",
     "facts",
     "characters",
     "scenes",
-    "completion"
+    "schema_version",
+    "policy"
   ],
   "properties": {
     "id": {
       "const": "character-truth:v0.3:slice1"
-    },
-    "issue": {
-      "const": 3
-    },
-    "status": {
-      "type": "string"
     },
     "epistemic_rule": {
       "type": "string",
@@ -36,39 +29,21 @@
     },
     "characters": {
       "type": "array",
-      "minItems": 6,
-      "maxItems": 6
+      "minItems": 1
     },
     "scenes": {
       "type": "array",
-      "minItems": 3
+      "minItems": 1
     },
-    "completion": {
+    "schema_version": {
+      "const": 1
+    },
+    "policy": {
       "type": "object",
       "required": [
-        "characters",
-        "scenes",
-        "event_driven_updates",
-        "omniscience_validator",
-        "voice_masking_hooks",
         "automatic_voice_identity"
       ],
       "properties": {
-        "characters": {
-          "const": 6
-        },
-        "scenes": {
-          "const": 3
-        },
-        "event_driven_updates": {
-          "const": true
-        },
-        "omniscience_validator": {
-          "const": true
-        },
-        "voice_masking_hooks": {
-          "const": true
-        },
         "automatic_voice_identity": {
           "const": false
         }

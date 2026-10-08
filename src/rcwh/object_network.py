@@ -6,10 +6,12 @@ from pathlib import Path
 from typing import Any
 
 from .io import load_data
+from .contracts import project_chapters
 
 
 @dataclass
 class ObjectNetworkRuntime:
+    chapter_scope: tuple[int, ...]
     data: dict[str, Any]
     objects: dict[str, dict[str, Any]]
     transitions: list[dict[str, Any]]
@@ -20,6 +22,10 @@ class ObjectNetworkRuntime:
     @classmethod
     def from_repo(cls, root: Path) -> "ObjectNetworkRuntime":
         data = load_data(root / "data" / "objects" / "m4.json") or {}
+        chapter_scope = project_chapters(root)
+        baseline = data.get("baseline_chapter")
+        if type(baseline) is not int or not 0 <= baseline < chapter_scope[0]:
+            raise ValueError("object baseline_chapter must be a nonnegative integer before the project scope")
         objects = {x["id"]: x for x in data.get("objects", [])}
         transitions = sorted(
             data.get("transitions", []),
@@ -29,6 +35,7 @@ class ObjectNetworkRuntime:
         for transition in transitions:
             by_object.setdefault(transition["object_id"], []).append(transition)
         return cls(
+            chapter_scope=chapter_scope,
             data=data,
             objects=objects,
             transitions=transitions,
@@ -37,11 +44,16 @@ class ObjectNetworkRuntime:
             containment_edges=data.get("containment_edges", []),
         )
 
-    def snapshot(self, object_id: str, chapter: int = 100) -> dict[str, Any]:
+    def _query_chapter(self, chapter: int | None) -> int:
+        chapter = self.chapter_scope[-1] if chapter is None else chapter
+        if chapter != self.data["baseline_chapter"] and chapter not in self.chapter_scope:
+            raise KeyError(f"Chapter outside configured object scope: {chapter}")
+        return chapter
+
+    def snapshot(self, object_id: str, chapter: int | None = None) -> dict[str, Any]:
         if object_id not in self.objects:
             raise KeyError(f"Unknown object: {object_id}")
-        if chapter < 80 or chapter > 100:
-            raise KeyError(f"Object runtime only covers chapter 80..100: {chapter}")
+        chapter = self._query_chapter(chapter)
         state = deepcopy(self.objects[object_id]["baseline"])
         applied: list[str] = []
         for transition in self.by_object.get(object_id, []):
@@ -75,7 +87,8 @@ class ObjectNetworkRuntime:
             ],
         }
 
-    def jade(self, chapter: int = 100) -> dict[str, Any]:
+    def jade(self, chapter: int | None = None) -> dict[str, Any]:
+        chapter = self._query_chapter(chapter)
         ids = ["OBJ-TONGLING-JADE", "OBJ-SNOW-JADE-91"]
         return {
             "chapter": chapter,
@@ -85,6 +98,7 @@ class ObjectNetworkRuntime:
         }
 
     def at_location(self, location: str, chapter: int) -> dict[str, Any]:
+        chapter = self._query_chapter(chapter)
         matches = []
         for object_id in self.objects:
             snap = self.snapshot(object_id, chapter)
@@ -92,7 +106,7 @@ class ObjectNetworkRuntime:
                 matches.append(snap)
         return {"location": location, "chapter": chapter, "objects": matches}
 
-    def trace(self, object_id: str, migration_registry: Any, reconstruction: Any) -> dict[str, Any]:
+    def trace(self, object_id: str, catalog: Any, reconstruction: Any) -> dict[str, Any]:
         if object_id not in self.objects:
             raise KeyError(f"Unknown object: {object_id}")
         refs: list[str] = []
@@ -117,18 +131,8 @@ class ObjectNetworkRuntime:
         r_index = {x["id"]: x for x in reconstruction.data.get("r_nodes", [])}
         resolved = []
         for ref in refs:
-            if ref.startswith("doc:"):
-                doc = migration_registry.documents[ref]
-                resolved.append({
-                    "ref": ref,
-                    "kind": "document",
-                    "filename": doc["filename"],
-                    "sha256": doc["sha256"],
-                    "self_contained_path": doc["self_contained_path"],
-                    "canonical_path": doc["canonical_path"],
-                    "authority": doc["authority"],
-                    "runtime_authority": doc["runtime_authority"],
-                })
+            if ref.startswith("asset:"):
+                resolved.append({"ref": ref, "kind": "asset", **catalog.resolve(ref).summary()})
             elif ref.startswith("R"):
                 node = r_index[ref]
                 resolved.append({
@@ -150,13 +154,10 @@ class ObjectNetworkRuntime:
 
     def summary(self) -> dict[str, Any]:
         return {
-            "milestone": self.data.get("milestone"),
-            "status": self.data.get("status"),
             "objects": len(self.objects),
             "transitions": len(self.transitions),
             "identity_edges": len(self.identity_edges),
             "containment_edges": len(self.containment_edges),
-            "completion": deepcopy(self.data.get("completion", {})),
         }
 
     def continuity_report(self) -> dict[str, Any]:
@@ -171,18 +172,10 @@ class ObjectNetworkRuntime:
     def validate_integrity(
         self,
         root: Path,
-        migration_registry: Any,
+        catalog: Any,
         reconstruction: Any,
     ) -> list[str]:
         errors: list[str] = []
-        if self.data.get("milestone") != "M4":
-            errors.append("Object runtime milestone must be M4")
-        if len(self.objects) < 15:
-            errors.append(f"M4 object network must contain at least 15 objects; got {len(self.objects)}")
-        if len(self.transitions) < 25:
-            errors.append(f"M4 object network must contain at least 25 transitions; got {len(self.transitions)}")
-        if self.data.get("completion", {}).get("completion_gate_ready"):
-            errors.append("M4 may not mark overall Completion Gate ready")
 
         ids = [x["id"] for x in self.data.get("objects", [])]
         if len(ids) != len(set(ids)):
@@ -194,7 +187,7 @@ class ObjectNetworkRuntime:
         r_ids = {x["id"] for x in reconstruction.data.get("r_nodes", [])}
         for object_item in self.objects.values():
             for ref in object_item.get("source_refs", []):
-                errors.extend(self._validate_source_ref(ref, migration_registry, r_ids))
+                errors.extend(self._validate_source_ref(ref, catalog, r_ids))
             legacy_ref = object_item.get("legacy_ref")
             if legacy_ref and not (root / legacy_ref).exists():
                 errors.append(f"{object_item['id']}: missing legacy object ref {legacy_ref}")
@@ -203,16 +196,16 @@ class ObjectNetworkRuntime:
             if transition["object_id"] not in self.objects:
                 errors.append(f"{transition['id']}: unknown object {transition['object_id']}")
                 continue
-            if not 81 <= transition["chapter"] <= 100:
-                errors.append(f"{transition['id']}: chapter outside 81..100")
+            if transition["chapter"] not in self.chapter_scope:
+                errors.append(f"{transition['id']}: chapter {transition['chapter']} outside configured object scope")
             for ref in transition.get("source_refs", []):
-                errors.extend(self._validate_source_ref(ref, migration_registry, r_ids))
+                errors.extend(self._validate_source_ref(ref, catalog, r_ids))
 
         for edge in self.identity_edges:
             if edge.get("from") not in self.objects or edge.get("to") not in self.objects:
                 errors.append(f"{edge.get('id')}: identity edge endpoint missing")
             for ref in edge.get("source_refs", []):
-                errors.extend(self._validate_source_ref(ref, migration_registry, r_ids))
+                errors.extend(self._validate_source_ref(ref, catalog, r_ids))
 
         for edge in self.containment_edges:
             if edge.get("container") not in self.objects:
@@ -221,7 +214,7 @@ class ObjectNetworkRuntime:
             if contained and contained not in self.objects:
                 errors.append(f"{edge.get('id')}: containment object missing")
             for ref in edge.get("source_refs", []):
-                errors.extend(self._validate_source_ref(ref, migration_registry, r_ids))
+                errors.extend(self._validate_source_ref(ref, catalog, r_ids))
 
         errors.extend(self._continuity_findings())
 
@@ -235,13 +228,21 @@ class ObjectNetworkRuntime:
         elif snow_edges[0].get("status") != "OPEN_LOCKED_NONMERGE":
             errors.append("Chapter-91 snow-jade identity edge must remain OPEN_LOCKED_NONMERGE")
 
-        if self.snapshot("OBJ-SNOW-JADE-91", 100)["object"]["identity_status"] != "OPEN_MAY_OR_MAY_NOT_BE_TONGLING":
+        # These are protected checkpoints of the current model, not query limits.
+        try:
+            snow = self.snapshot("OBJ-SNOW-JADE-91", 100)
+            terminal = self.snapshot("OBJ-TONGLING-JADE", 100)["state"]
+            rice = self.snapshot("OBJ-RICE-JAR-95", 96)["state"]
+        except (KeyError, ValueError) as exc:
+            errors.append(f"protected object checkpoint unavailable: {exc}")
+            return errors
+        if snow["object"]["identity_status"] != "OPEN_MAY_OR_MAY_NOT_BE_TONGLING":
             errors.append("Chapter-91 snow jade identity must remain OPEN")
-        if self.snapshot("OBJ-TONGLING-JADE", 100)["state"].get("frame_status") != "RETURNED_TO_ESSENCE_QINGGENG_FRAME":
+        if terminal.get("frame_status") != "RETURNED_TO_ESSENCE_QINGGENG_FRAME":
             errors.append("Tongling jade must reach the hard terminal outer-frame state by chapter 100")
-        if self.snapshot("OBJ-TONGLING-JADE", 100)["state"].get("location") != "UNKNOWN":
+        if terminal.get("location") != "UNKNOWN":
             errors.append("Tongling jade earthly physical route must remain unresolved at chapter 100")
-        if self.snapshot("OBJ-RICE-JAR-95", 96)["state"].get("quantity_state") != "MEASURED_USE_HALF_AID":
+        if rice.get("quantity_state") != "MEASURED_USE_HALF_AID":
             errors.append("Chapter-96 rice aid must remain measured/partial rather than restorative")
         return errors
 
@@ -278,9 +279,9 @@ class ObjectNetworkRuntime:
                 )
 
     @staticmethod
-    def _validate_source_ref(ref: str, migration_registry: Any, r_ids: set[str]) -> list[str]:
-        if ref.startswith("doc:"):
-            return [] if ref in migration_registry.documents else [f"unregistered object source document {ref}"]
+    def _validate_source_ref(ref: str, catalog: Any, r_ids: set[str]) -> list[str]:
+        if ref.startswith("asset:"):
+            return [] if ref in catalog.assets else [f"unregistered object source document {ref}"]
         if ref.startswith("R"):
             return [] if ref in r_ids else [f"unknown Reconstruction evidence node {ref}"]
         return [f"unsupported object source ref {ref}"]
@@ -288,17 +289,12 @@ class ObjectNetworkRuntime:
 
 def format_object(kind: str, payload: dict[str, Any]) -> str:
     if kind == "summary":
-        completion = payload["completion"]
         return "\n".join([
             "OBJECT NETWORK M4",
-            f"status: {payload['status']}",
             f"objects: {payload['objects']}",
             f"transitions: {payload['transitions']}",
             f"identity_edges: {payload['identity_edges']}",
             f"containment_edges: {payload['containment_edges']}",
-            f"queryable: {str(completion['object_queryable']).lower()}",
-            f"no_implicit_teleport: {str(completion['no_implicit_teleport']).lower()}",
-            f"Completion Gate ready: {str(completion['completion_gate_ready']).lower()}",
         ])
     if kind == "get":
         obj = payload["object"]

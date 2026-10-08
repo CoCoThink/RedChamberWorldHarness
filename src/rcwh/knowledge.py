@@ -6,9 +6,9 @@ from pathlib import Path
 from typing import Any
 
 from .io import load_data
+from .contracts import unique_index
 
 BUCKETS = ("knows", "believes", "suspects", "does_not_know")
-SLICE = {"baoyu", "daiyu", "zijuan", "baochai", "xiaohong", "qianxue"}
 
 
 @dataclass
@@ -22,23 +22,23 @@ class CharacterKnowledgeRuntime:
 
     @property
     def facts(self):
-        return {x["id"]: x for x in self.data.get("facts", [])}
+        return unique_index(self.data.get('facts', []), 'id')
 
     @property
     def characters(self):
-        return {x["id"]: x for x in self.data.get("characters", [])}
+        return unique_index(self.data.get('characters', []), 'id')
 
     @property
     def scenes(self):
-        return {x["id"]: x for x in self.data.get("scenes", [])}
+        return unique_index(self.data.get('scenes', []), 'id')
 
     def summary(self) -> dict[str, Any]:
-        done = self.data.get("completion", {})
+        policy = self.data["policy"]
         return {
-            "id": self.data.get("id"), "status": self.data.get("status"),
+            "id": self.data.get("id"),
             "characters": len(self.characters), "character_ids": sorted(self.characters),
             "facts": len(self.facts), "scenes": len(self.scenes),
-            **done,
+            **policy,
         }
 
     def scene(self, scene_id: str, checkpoint: str | None = None) -> dict[str, Any]:
@@ -129,22 +129,17 @@ class CharacterKnowledgeRuntime:
 
     def validate_integrity(self, world: Any, literary: Any) -> list[str]:
         e = []
-        if self.data.get("issue") != 3 or set(self.characters) != SLICE:
-            e.append("issue #3 first slice must cover the required six characters exactly")
-        done = self.data.get("completion", {})
-        for k in ("event_driven_updates", "omniscience_validator", "voice_masking_hooks"):
-            if done.get(k) is not True:
-                e.append(f"missing issue #3 acceptance flag: {k}")
-        if done.get("automatic_voice_identity") is not False:
+        if not self.characters or not self.facts or not self.scenes:
+            e.append("knowledge characters, facts and scenes must be nonempty")
+        policy = self.data["policy"]
+        if policy.get("automatic_voice_identity") is not False:
             e.append("voice masking hook may not auto-identify speakers")
-        for cid in SLICE - {"zijuan"}:
-            if cid not in world.characters:
+        for cid, item in self.characters.items():
+            if cid not in world.characters and not item.get("world_binding_optional", False):
                 e.append(f"missing World character: {cid}")
-        m5 = {x["id"] for x in literary.data.get("voice_profiles", [])}
-        for cid in SLICE - {"qianxue"}:
-            if cid not in m5:
-                e.append(f"missing M5 voice profile: {cid}")
-        if self.characters["qianxue"]["voice_profile"]["support"] != "SPARSE_ABSTAIN":
+            if cid not in literary.voices and item["voice_profile"]["support"] != "SPARSE_ABSTAIN":
+                e.append(f"missing supported voice profile: {cid}")
+        if self.characters.get("qianxue", {}).get("voice_profile", {}).get("support") != "SPARSE_ABSTAIN":
             e.append("Qianxue must remain sparse/abstaining")
 
         facts = set(self.facts)
@@ -152,6 +147,9 @@ class CharacterKnowledgeRuntime:
         for sid, scene in self.scenes.items():
             if set(scene["entry"]) != set(scene["participants"]):
                 e.append(f"{sid}: entry/participant mismatch")
+            for cid in scene["participants"]:
+                if cid not in self.characters:
+                    e.append(f"{sid}: unknown participant {cid}")
             for cid, state in scene["entry"].items():
                 self._check_state(sid, cid, state, facts, e)
             last = -1
@@ -226,12 +224,10 @@ class CharacterKnowledgeRuntime:
 def format_knowledge(kind: str, p: dict[str, Any]) -> str:
     if kind == "summary":
         return "\n".join([
-            "CHARACTER KNOWLEDGE v0.3", f"status: {p['status']}",
-            f"characters: {p['characters']}/6", f"facts: {p['facts']}",
+            "CHARACTER KNOWLEDGE v0.3",
+            f"characters: {p['characters']}", f"facts: {p['facts']}",
             f"scenes: {p['scenes']}",
-            f"event-driven: {str(p['event_driven_updates']).lower()}",
-            f"omniscience-validator: {str(p['omniscience_validator']).lower()}",
-            f"voice-masking-hooks: {str(p['voice_masking_hooks']).lower()}",
+            f"automatic voice identity: {str(p['automatic_voice_identity']).lower()}",
         ])
     if kind == "character":
         s = p["state"]

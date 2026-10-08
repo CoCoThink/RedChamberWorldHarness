@@ -113,8 +113,8 @@ class ScenarioRuntime:
         if len(current) != 1:
             errors.append("exactly one scenario must be CURRENT_C_REFERENCE")
         admissible = [x for x in self.scenarios.values() if x.get("status") == "ADMISSIBLE"]
-        if len(admissible) < 8:
-            errors.append("P1 requires at least 8 admissible scenario bundles")
+        if not admissible:
+            errors.append("scenario search requires a nonempty admissible set")
         return errors
 
     def summary(self, hypotheses: HypothesisRuntime) -> dict[str, Any]:

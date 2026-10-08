@@ -5,10 +5,12 @@ from pathlib import Path
 from typing import Any
 
 from .io import load_data
+from .contracts import unique_index, project_chapters, coverage_errors, validate_plan_constraints
 
 
 @dataclass
 class LiteraryEcologyRuntime:
+    chapter_scope: tuple[int, ...]
     data: dict[str, Any]
     dimensions: dict[str, dict[str, Any]]
     dimensions_by_key: dict[str, dict[str, Any]]
@@ -22,23 +24,22 @@ class LiteraryEcologyRuntime:
     @classmethod
     def from_repo(cls, root: Path) -> "LiteraryEcologyRuntime":
         data = load_data(root / "data" / "literary_ecology" / "m5.json") or {}
-        dims = {x["id"]: x for x in data.get("dimensions", [])}
+        dims = unique_index(data.get('dimensions', []), 'id')
         return cls(
+            chapter_scope=project_chapters(root),
             data=data,
             dimensions=dims,
-            dimensions_by_key={x["key"]: x for x in data.get("dimensions", [])},
-            voices={x["id"]: x for x in data.get("voice_profiles", [])},
-            techniques={x["id"]: x for x in data.get("techniques", [])},
-            evidence={x["id"]: x for x in data.get("evidence_nodes", [])},
-            g_layer={x["id"]: x for x in data.get("g_layer_decisions", [])},
-            author_rhyme={x["chapter"]: x for x in data.get("author_rhyme_chapters", [])},
-            post80_text={x["chapter"]: x for x in data.get("post80_text_ecology", [])},
+            dimensions_by_key=unique_index(data.get('dimensions', []), 'key'),
+            voices=unique_index(data.get('voice_profiles', []), 'id'),
+            techniques=unique_index(data.get('techniques', []), 'id'),
+            evidence=unique_index(data.get('evidence_nodes', []), 'id'),
+            g_layer=unique_index(data.get('g_layer_decisions', []), 'id'),
+            author_rhyme=unique_index(data.get('author_rhyme_chapters', []), 'chapter'),
+            post80_text=unique_index(data.get('post80_text_ecology', []), 'chapter'),
         )
 
     def summary(self) -> dict[str, Any]:
         return {
-            "milestone": self.data.get("milestone"),
-            "status": self.data.get("status"),
             "dimensions": len(self.dimensions),
             "voice_profiles": len(self.voices),
             "techniques": len(self.techniques),
@@ -47,7 +48,6 @@ class LiteraryEcologyRuntime:
             "post80_chapters": len(self.post80_text),
             "author_rhyme_chapters": len(self.author_rhyme),
             "source_documents": len(self.data.get("sources", {})),
-            "completion": self.data.get("completion", {}),
         }
 
     def dimension(self, key: str) -> dict[str, Any]:
@@ -138,59 +138,38 @@ class LiteraryEcologyRuntime:
                 })
         return {"term": term, "count": len(hits), "hits": hits[:100]}
 
-    def trace(self, kind: str, key: str, registry: Any) -> dict[str, Any]:
+    def trace(self, kind: str, key: str, catalog: Any) -> dict[str, Any]:
         item = self._resolve(kind, key)
         refs = _source_refs(item)
         resolved = []
         for ref in refs:
-            if not ref.startswith("doc:"):
-                resolved.append({"ref": ref, "kind": "non_document_ref"})
+            if not ref.startswith("asset:"):
+                resolved.append({"ref": ref, "kind": "non_asset_ref"})
                 continue
-            doc = registry.documents.get(ref)
+            doc = catalog.assets.get(ref)
             if doc is None:
-                resolved.append({"ref": ref, "kind": "missing_document"})
+                resolved.append({"ref": ref, "kind": "missing_asset"})
                 continue
-            resolved.append({
-                "ref": ref,
-                "kind": "document",
-                "filename": doc["filename"],
-                "sha256": doc["sha256"],
-                "self_contained_path": doc["self_contained_path"],
-                "canonical_path": doc["canonical_path"],
-                "authority": doc["authority"],
-                "runtime_authority": doc["runtime_authority"],
-                "semantic_coverage": doc["machine_representation"]["semantic_coverage"],
-            })
+            resolved.append({"ref": ref, "kind": "asset", **catalog.resolve(ref).summary()})
         return {
             "kind": kind,
             "key": key,
             "node": item,
             "resolved_sources": resolved,
-            "trace_complete": all(x["kind"] == "document" for x in resolved if x["ref"].startswith("doc:")),
+            "trace_complete": bool(resolved) and all(x["kind"] == "asset" for x in resolved if x["ref"].startswith("asset:")),
         }
 
-    def validate_integrity(self, registry: Any) -> list[str]:
+    def validate_integrity(self, catalog: Any) -> list[str]:
         errors: list[str] = []
-        if self.data.get("milestone") != "M5":
-            errors.append("Literary Ecology milestone must be M5")
-        if len(self.dimensions) != 13:
-            errors.append(f"M5 must expose 13 literary-ecology dimensions; got {len(self.dimensions)}")
-        if len(self.voices) != 18:
-            errors.append(f"M5 must expose 18 front-80 voice profiles; got {len(self.voices)}")
-        if len(self.techniques) != 16:
-            errors.append(f"M5 must expose 16 narrative techniques; got {len(self.techniques)}")
-        if set(self.post80_text) != set(range(81, 101)):
-            errors.append("M5 post80 text ecology must contain chapters 81..100 exactly")
-        if set(self.author_rhyme) != set(range(81, 101)):
-            errors.append("M5 author-rhyme map must contain chapters 81..100 exactly")
-        if set(self.g_layer) != {f"G{i:02d}" for i in range(1, 17)}:
-            errors.append("M5 G-layer decisions must remain G01..G16 exactly")
-
+        if not self.dimensions or not self.voices or not self.techniques:
+            errors.append("literary dimensions, voices and techniques must be nonempty")
+        errors.extend(coverage_errors(self.post80_text, self.chapter_scope, "literary chapter ecology"))
+        errors.extend(coverage_errors(self.author_rhyme, self.chapter_scope, "author-rhyme chapters"))
         source_docs = self.data.get("sources", {})
-        if len(source_docs) != 27:
-            errors.append(f"M5 must register 27 direct literary source documents; got {len(source_docs)}")
+        if not source_docs:
+            errors.append("literary source bindings must be nonempty")
         for ref, source in source_docs.items():
-            doc = registry.documents.get(ref)
+            doc = catalog.assets.get(ref)
             if doc is None:
                 errors.append(f"M5 source is not registered: {ref}")
             elif doc["sha256"] != source["sha256"]:
@@ -198,7 +177,7 @@ class LiteraryEcologyRuntime:
 
         for node in self._all_source_nodes():
             for ref in _source_refs(node):
-                if ref.startswith("doc:") and ref not in registry.documents:
+                if ref.startswith("asset:") and ref not in catalog.assets:
                     errors.append(f"M5 node references unregistered document {ref}")
 
         q = self.data.get("qingbang", {})
@@ -226,22 +205,13 @@ class LiteraryEcologyRuntime:
         if xz.get("not_seen_is_future_step") != "LOCKED":
             errors.append("Xu Zhuangzi 'not seen is a future step' must remain locked")
 
-        if self.g_layer["G07"]["decision"] != "无字胜出":
-            errors.append("G07 must preserve no-farewell-text decision")
-        if self.author_rhyme[92]["winner"] != "B_PRESERVE_EXISTING":
-            errors.append("Chapter 92 must remain the sole preserved explicit author-rhyme exception")
-        if any(x["winner"].startswith("B") for ch, x in self.author_rhyme.items() if ch != 92):
-            errors.append("No chapter other than 92 may gain an author-rhyme B winner in M5")
-        if self.author_rhyme[100]["winner"] != "C_TERMINAL_LOCK":
-            errors.append("Chapter 100 must keep no-terminal-poem current lock")
+        errors.extend(validate_plan_constraints(catalog, "literary_ecology", {
+            "g_layer": self.g_layer,
+            "author_rhyme": self.author_rhyme,
+            "author_rhyme_b_chapters": sorted(ch for ch, item in self.author_rhyme.items()
+                                             if item["winner"].startswith("B")),
+        }))
 
-        completion = self.data.get("completion", {})
-        if completion.get("p0_full_coverage"):
-            errors.append("M5 may not claim final P0 full coverage before M7")
-        if completion.get("stable_active_changed"):
-            errors.append("M5 may not change stable ACTIVE")
-        if completion.get("completion_gate_ready"):
-            errors.append("M5 may not mark overall Completion Gate ready")
         return errors
 
     def _resolve(self, kind: str, key: str) -> Any:
@@ -321,19 +291,14 @@ def _short_summary(item: dict[str, Any]) -> str:
 
 def format_literary_ecology(kind: str, payload: Any) -> str:
     if kind == "summary":
-        completion = payload["completion"]
         return "\n".join([
             "LITERARY ECOLOGY M5",
-            f"status: {payload['status']}",
-            f"dimensions: {payload['dimensions']}/13",
+            f"dimensions: {payload['dimensions']}",
             f"voice_profiles: {payload['voice_profiles']}",
             f"techniques: {payload['techniques']}",
             f"evidence_nodes: {payload['evidence_nodes']}",
-            f"post80_chapters: {payload['post80_chapters']}/20",
+            f"post80_chapters: {payload['post80_chapters']}",
             f"source_documents: {payload['source_documents']}",
-            f"queryable: {str(completion['literary_ecology_queryable']).lower()}",
-            f"P0 full coverage: {str(completion['p0_full_coverage']).lower()}",
-            f"Completion Gate ready: {str(completion['completion_gate_ready']).lower()}",
         ])
     if kind == "voice":
         return "\n".join([

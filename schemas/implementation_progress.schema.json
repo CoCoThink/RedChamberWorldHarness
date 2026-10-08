@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "InfrastructureImplementationProgress",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "status", "design", "stages", "next_work"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "status": {"enum": ["IN_PROGRESS", "COMPLETE"]},
+    "design": {"type": "string", "minLength": 1},
+    "stages": {
+      "type": "object",
+      "minProperties": 1,
+      "additionalProperties": {"enum": ["PENDING", "IN_PROGRESS", "PARTIAL", "COMPLETE"]}
+    },
+    "next_work": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  }
+}

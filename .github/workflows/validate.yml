@@ -9,12 +9,30 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
       - run: python -m pip install -e '.[dev]'
       - run: rcwh validate
-      - name: Smoke migration runtimes
+      - name: Verify physical assets and immutable versions
+        env:
+          RCWH_ASSET_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          if git cat-file -e "${RCWH_ASSET_BASE}:data/catalog/assets.yaml" 2>/dev/null; then
+            rcwh assets validate --require-tracked --base-ref "$RCWH_ASSET_BASE"
+          else
+            rcwh assets validate --require-tracked
+          fi
+      - name: Smoke native foundation APIs
+        run: |
+          rcwh project status
+          rcwh assets history
+          rcwh sources trace decision:cliff-release:function
+          rcwh self-contained check --profile asset-storage --require-tracked
+          rcwh self-contained check --profile release-storage --require-tracked
+      - name: Smoke domain runtimes
         run: |
           rcwh reconstruction summary
           rcwh reconstruction timeline 95
@@ -32,20 +50,9 @@ jobs:
           rcwh implementation chapter 92
           rcwh implementation protection 89
           rcwh implementation competition 89
-          rcwh implementation trace source 4645da79b1be
-          rcwh coverage summary
-          rcwh coverage layer RECONSTRUCTION
-          rcwh coverage target literary.voice_corpus
-          rcwh coverage document 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
-          rcwh coverage gaps
-          rcwh coverage regression
-          rcwh registry current
-          rcwh completion summary
-          rcwh completion traceability
-          rcwh completion gate
+          rcwh implementation trace source asset:release:stable:v1.4:readable
           rcwh literary-production summary
           rcwh literary-production chapter 89
-          rcwh literary-production quarantine
           rcwh knowledge summary
           rcwh knowledge scene ch92_delivery_gate --checkpoint K92-XIAOHONG-ASKS-GATE-RULES
           rcwh knowledge character ch86_last_night zijuan --checkpoint K86-ZIJUAN-SEES-RAPID-DECLINE

@@ -1,110 +1,51 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "RCWH Post-M8 Literary Resume State",
+  "title": "RCWH Literary Workflow Selection",
   "type": "object",
   "required": [
     "phase",
     "status",
-    "initiated_after",
     "stable_active",
-    "migration_freeze_released",
     "literary_resume_started",
     "sequence",
-    "chapter86",
-    "chapter89",
-    "chapter92",
-    "chapter97",
-    "authority_rule",
-    "next_gate"
+    "authority_rule"
   ],
   "properties": {
     "phase": {
-      "const": "43-0-resume"
+      "type": "string",
+      "minLength": 1
     },
     "status": {
       "const": "ACTIVE"
     },
-    "initiated_after": {
-      "type": "object"
-    },
     "stable_active": {
       "type": "object",
       "required": [
-        "file_ref",
-        "sha256",
-        "changed"
+        "sha256"
       ],
       "properties": {
         "sha256": {
-          "const": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
-        },
-        "changed": {
-          "const": false
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
         }
       },
-      "additionalProperties": true
-    },
-    "migration_freeze_released": {
-      "const": true
+      "additionalProperties": false
     },
     "literary_resume_started": {
       "const": true
     },
     "sequence": {
-      "const": [
-        86,
-        89,
-        92,
-        97
-      ]
-    },
-    "chapter86": {
-      "type": "object"
-    },
-    "chapter89": {
-      "type": "object",
-      "required": [
-        "pressure_test",
-        "six_field",
-        "machine_literary_evaluation",
-        "plock_manual_review",
-        "blind_read",
-        "stable_active_effect"
-      ],
-      "properties": {
-        "pressure_test": {
-          "const": "IN_REVIEW"
-        },
-        "six_field": {
-          "const": "PASS"
-        },
-        "machine_literary_evaluation": {
-          "const": "PASS"
-        },
-        "plock_manual_review": {
-          "const": "PENDING"
-        },
-        "blind_read": {
-          "const": "PENDING"
-        },
-        "stable_active_effect": {
-          "const": "NONE"
-        }
-      },
-      "additionalProperties": true
-    },
-    "chapter92": {
-      "const": "BLOCKED_BY_PREDECESSOR"
-    },
-    "chapter97": {
-      "const": "BLOCKED_BY_PREDECESSOR"
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "integer",
+        "minimum": 1
+      }
     },
     "authority_rule": {
       "type": "string",
       "minLength": 20
-    },
-    "next_gate": {
-      "const": "CH89_MANUAL_PLOCK_THEN_BLIND_READ"
     }
   },
   "additionalProperties": false

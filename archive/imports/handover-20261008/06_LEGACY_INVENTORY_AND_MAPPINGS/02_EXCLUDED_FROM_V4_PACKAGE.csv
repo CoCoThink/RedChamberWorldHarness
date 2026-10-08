@@ -1,0 +1,19 @@
+﻿source,excluded_item,reason,replacement_or_rule
+old v3 package,00_START_HERE/*,superseded handover,00_START_HERE/00_HANDOVER_SELF_CONTAINED_v4.0.md
+old v3 package,04_HARNESS_REPO_PR9/*,superseded repository snapshot,04_CURRENT_REPOSITORY/
+old v3 inventory,03_关键缺口_v2.0.csv,M8 completion made migration gap sheet obsolete,current machine state + M8 docs
+old v3 inventory,06_GITHUB_SNAPSHOT_STATE_v3.0.json,stale GitHub state,00_CURRENT_REPOSITORY_STATE_v4.0.json
+old v3 inventory,07_前序机器层导入总计划_v1.0_参考.md,migration already completed,current runtime/machine state
+old v3 inventory,09_迁移执行检查清单_v2.0.md,M0-M8 already completed,docs/FULL_MIGRATION_M8_COMPLETION_GATE.md
+old v3 inventory,RCWH_旧成果_to_Harness完整迁移总表_v2.0.xlsx,duplicate of CSV representation,01_旧成果_to_Harness节点_完整迁移总表_v2.0.csv
+old v3 package,06_MANIFESTS/*,manifest belongs to previous package,06_MANIFESTS regenerated for v4.0
+container input,RCWH_SelfContained_FullMigration_v3.0_20261006(1).zip,no ZIP-inside-ZIP,extracted retained content only
+container input,rcwh-current-repo-snapshot.zip,no ZIP-inside-ZIP,extracted into 04_CURRENT_REPOSITORY
+container input,ch89_phase2/*,quarantined fork; non-runtime authority,literary/43-0-resume only
+container input,rcwh_m1_work/*,temporary work fragments,current repository snapshot
+container input,image.png,UI screenshot / not source authority,excluded
+current repo history,docs/CANDIDATE_LITERARY_EVALUATOR.md,superseded and already deleted upstream,v0.5 suite + issue5 doc
+current repo history,docs/COMPETITION_LEDGER.md,superseded and already deleted upstream,machine competition ledger
+current repo history,docs/ROADMAP.md,superseded and already deleted upstream,current project state + handover
+current repo history,docs/FULL_MIGRATION_BRANCH_GOVERNANCE.md,superseded and already deleted upstream,POST_M8_REPOSITORY_GOVERNANCE_20261007.md
+snapshot-only,04_CURRENT_REPOSITORY/.github/workflows/_handover_snapshot_temp.yml,temporary export workflow; final HEAD deletes it,not present in final tree

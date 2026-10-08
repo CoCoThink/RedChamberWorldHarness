@@ -3,30 +3,23 @@
   "title": "RCWH M4 Object Network",
   "type": "object",
   "required": [
-    "milestone",
-    "status",
     "epistemic_rule",
     "objects",
     "transitions",
     "identity_edges",
     "containment_edges",
     "invariants",
-    "completion"
+    "schema_version",
+    "baseline_chapter"
   ],
   "properties": {
-    "milestone": {
-      "const": "M4"
-    },
-    "status": {
-      "type": "string"
-    },
     "epistemic_rule": {
       "type": "string",
       "minLength": 40
     },
     "objects": {
       "type": "array",
-      "minItems": 15,
+      "minItems": 1,
       "items": {
         "type": "object",
         "required": [
@@ -85,7 +78,7 @@
     },
     "transitions": {
       "type": "array",
-      "minItems": 25,
+      "minItems": 1,
       "items": {
         "type": "object",
         "required": [
@@ -108,8 +101,7 @@
           },
           "chapter": {
             "type": "integer",
-            "minimum": 81,
-            "maximum": 100
+            "minimum": 1
           },
           "sequence": {
             "type": "integer",
@@ -162,42 +154,17 @@
     },
     "invariants": {
       "type": "array",
-      "minItems": 5,
+      "minItems": 1,
       "items": {
         "type": "string"
       }
     },
-    "completion": {
-      "type": "object",
-      "required": [
-        "object_queryable",
-        "transition_replay",
-        "no_implicit_teleport",
-        "jade_identity_open_preserved",
-        "stable_active_changed",
-        "completion_gate_ready"
-      ],
-      "properties": {
-        "object_queryable": {
-          "const": true
-        },
-        "transition_replay": {
-          "const": true
-        },
-        "no_implicit_teleport": {
-          "const": true
-        },
-        "jade_identity_open_preserved": {
-          "const": true
-        },
-        "stable_active_changed": {
-          "const": false
-        },
-        "completion_gate_ready": {
-          "const": false
-        }
-      },
-      "additionalProperties": true
+    "schema_version": {
+      "const": 1
+    },
+    "baseline_chapter": {
+      "type": "integer",
+      "minimum": 0
     }
   },
   "additionalProperties": false

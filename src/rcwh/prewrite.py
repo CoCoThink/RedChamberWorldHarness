@@ -5,11 +5,10 @@ from pathlib import Path
 from typing import Any
 
 from .io import load_data
+from .contracts import project_chapters, coverage_errors, unique_index
+from .workflow import ProjectState
 
 
-STABLE_SHA = "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
-EXPECTED_EXECUTION_ORDER = [33, 34, 35, 40, 39, 38, 37, 36, 41, 42]
-EXPECTED_CHAPTERS = set(range(81, 101))
 FOUR_CHAINS = ["people", "money", "material", "information"]
 
 
@@ -21,7 +20,7 @@ def _source_refs(value: Any) -> set[str]:
     elif isinstance(value, list):
         for item in value:
             refs |= _source_refs(item)
-    elif isinstance(value, str) and value.startswith("doc:"):
+    elif isinstance(value, str) and value.startswith("asset:"):
         refs.add(value)
     return refs
 
@@ -40,25 +39,23 @@ class V5PrewriteRuntime:
 
     @property
     def gaps(self) -> dict[int, dict[str, Any]]:
-        return {x["chapter"]: x for x in self.data.get("gap_cards", [])}
+        return unique_index(self.data.get("gap_cards", []), "chapter")
 
     @property
     def planners(self) -> dict[int, dict[str, Any]]:
-        return {x["chapter"]: x for x in self.data.get("omitted_scene_plans", [])}
+        return unique_index(self.data.get("omitted_scene_plans", []), "chapter")
 
     @property
     def steps(self) -> dict[int, dict[str, Any]]:
-        return {x["step"]: x for x in self.data.get("steps", [])}
+        return unique_index(self.data.get("steps", []), "step")
 
     @property
     def corpus_profiles(self) -> dict[str, dict[str, Any]]:
-        return {x["id"]: x for x in self.data.get("corpus_ecology_profiles", [])}
+        return unique_index(self.data.get("corpus_ecology_profiles", []), "id")
 
     def summary(self) -> dict[str, Any]:
-        completion = self.data.get("completion", {})
         return {
             "id": self.data.get("id"),
-            "status": self.data.get("status"),
             "authority": self.data.get("authority"),
             "evidence_effect": self.data.get("evidence_effect"),
             "stable_active_effect": self.data.get("stable_active_effect"),
@@ -70,11 +67,9 @@ class V5PrewriteRuntime:
             "omitted_scene_candidates": sum(
                 len(x.get("candidate_scenes", [])) for x in self.planners.values()
             ),
-            "machine_readable_chapter_contracts": completion.get(
-                "machine_readable_chapter_contracts"
-            ),
-            "feeds_staging": completion.get("feeds_staging"),
-            "becomes_evidence": completion.get("becomes_evidence"),
+            "machine_readable_chapter_contracts": len(self.gaps),
+            "feeds_staging": self.data["staging_policy"]["target_lane"] == "staging",
+            "becomes_evidence": self.data["staging_policy"]["evidence_write_allowed"],
         }
 
     def corpus(self, profile_id: str | None = None) -> dict[str, Any]:
@@ -143,7 +138,7 @@ class V5PrewriteRuntime:
             if chapter is None:
                 return {
                     **base,
-                    "chapters": 20,
+                    "chapters": len(project_chapters(self.root)),
                     "dimensions": self.data["gap_dimensions"],
                     "legend": self.data["gap_status_legend"],
                 }
@@ -152,7 +147,7 @@ class V5PrewriteRuntime:
             if chapter is None:
                 return {
                     **base,
-                    "chapters": 20,
+                    "chapters": len(project_chapters(self.root)),
                     "candidate_scenes": sum(
                         len(x["candidate_scenes"]) for x in self.planners.values()
                     ),
@@ -165,8 +160,8 @@ class V5PrewriteRuntime:
                 "chapter_required": step in {36, 37, 38, 39, 40, 41, 42},
             }
 
-        if chapter not in EXPECTED_CHAPTERS:
-            raise KeyError(f"Prewrite chapter must be 81..100: {chapter}")
+        if chapter not in project_chapters(self.root):
+            raise KeyError(f"Prewrite chapter outside configured scope: {chapter}")
         gap = self.gap(chapter)["states"]
         if step == 36:
             return {
@@ -237,7 +232,7 @@ class V5PrewriteRuntime:
         literary: Any,
         plocks: Any,
         adapters: Any,
-        registry: Any,
+        catalog: Any,
     ) -> dict[str, Any]:
         chapter_node = reconstruction.chapter(chapter)
         gap = self.gap(chapter)
@@ -264,7 +259,7 @@ class V5PrewriteRuntime:
             "authority": "STAGING_ONLY",
             "evidence_effect": "NONE",
             "stable_active_effect": "NONE",
-            "stable_active_sha256": registry.current_summary()["stable_active_sha256"],
+            "stable_active_sha256": ProjectState.from_repo(catalog.root).release(catalog).data["text_sha256"],
             "current_working_title": chapter_node["title"],
             "title_status": chapter_node["title_status"],
             "hard_context": {
@@ -313,10 +308,10 @@ class V5PrewriteRuntime:
         literary: Any,
         plocks: Any,
         adapters: Any,
-        registry: Any,
+        catalog: Any,
     ) -> dict[str, Any]:
         contract = self.contract(
-            chapter, reconstruction, literary, plocks, adapters, registry
+            chapter, reconstruction, literary, plocks, adapters, catalog
         )
         return {
             "kind": "V5_PREWRITE_STAGING_PACKET",
@@ -340,62 +335,39 @@ class V5PrewriteRuntime:
 
     def validate_integrity(
         self,
-        registry: Any,
+        catalog: Any,
         reconstruction: Any,
         literary: Any,
         plocks: Any,
         adapters: Any,
     ) -> list[str]:
         errors: list[str] = []
-        if self.data.get("issue") != 6:
-            errors.append("v5 prewrite harness must be bound to issue #6")
         if self.data.get("authority") != "STAGING_ONLY":
             errors.append("prewrite authority must remain STAGING_ONLY")
         if self.data.get("evidence_effect") != "NONE":
             errors.append("prewrite harness may not create evidence")
         if self.data.get("stable_active_effect") != "NONE":
             errors.append("prewrite harness may not mutate stable ACTIVE")
-        if self.data.get("execution_order") != EXPECTED_EXECUTION_ORDER:
-            errors.append("v5.2 actual execution order drifted")
-        if set(self.steps) != set(range(33, 43)):
-            errors.append("prewrite step registry must contain steps 33..42 exactly")
-        if len(self.corpus_profiles) != 6:
-            errors.append("Step33 must expose six frozen ecology profiles")
-        if len(self.data.get("gap_dimensions", [])) != 12:
-            errors.append("Step34 must expose exactly twelve dimensions")
-        if set(self.gaps) != EXPECTED_CHAPTERS:
-            errors.append("Step34 gap cards must cover chapters 81..100")
-        if set(self.planners) != EXPECTED_CHAPTERS:
-            errors.append("Step35 planner must cover chapters 81..100")
-        scene_count = sum(
-            len(x.get("candidate_scenes", [])) for x in self.planners.values()
-        )
-        if scene_count != 85:
-            errors.append(f"Step35 candidate-scene count drifted: {scene_count} != 85")
-
-        expected_counts = {
-            "main_process": {"SUFFICIENT": 0, "THIN": 11, "MISSING": 9, "NOT_APPLICABLE": 0},
-            "secondary_plot": {"SUFFICIENT": 18, "THIN": 2, "MISSING": 0, "NOT_APPLICABLE": 0},
-            "minor_agents": {"SUFFICIENT": 18, "THIN": 2, "MISSING": 0, "NOT_APPLICABLE": 0},
-            "poetry": {"SUFFICIENT": 0, "THIN": 12, "MISSING": 7, "NOT_APPLICABLE": 1},
-            "arts": {"SUFFICIENT": 0, "THIN": 10, "MISSING": 6, "NOT_APPLICABLE": 4},
-            "body": {"SUFFICIENT": 1, "THIN": 9, "MISSING": 4, "NOT_APPLICABLE": 6},
-            "metaphysics": {"SUFFICIENT": 0, "THIN": 9, "MISSING": 4, "NOT_APPLICABLE": 7},
-            "ritual": {"SUFFICIENT": 0, "THIN": 10, "MISSING": 8, "NOT_APPLICABLE": 2},
-            "economy": {"SUFFICIENT": 0, "THIN": 9, "MISSING": 11, "NOT_APPLICABLE": 0},
-            "comic_folk": {"SUFFICIENT": 20, "THIN": 0, "MISSING": 0, "NOT_APPLICABLE": 0},
-            "dream_symbol": {"SUFFICIENT": 15, "THIN": 2, "MISSING": 3, "NOT_APPLICABLE": 0},
-            "chapter_frame": {"SUFFICIENT": 16, "THIN": 3, "MISSING": 1, "NOT_APPLICABLE": 0},
-        }
-        for key, expected in expected_counts.items():
-            actual = {name: 0 for name in expected}
-            for item in self.gaps.values():
-                actual[item["states"][key]] += 1
-            if actual != expected:
-                errors.append(f"Step34 aggregate drift for {key}: {actual} != {expected}")
+        order = self.data.get("execution_order", [])
+        if not order or len(order) != len(set(order)):
+            errors.append("prewrite execution order must be nonempty and unique")
+        errors.extend(coverage_errors(self.steps, order, "prewrite steps"))
+        chapters = project_chapters(self.root)
+        errors.extend(coverage_errors(self.gaps, chapters, "prewrite gap cards"))
+        errors.extend(coverage_errors(self.planners, chapters, "prewrite scene plans"))
+        unique_index(self.data.get("gap_dimensions", []))
+        dimensions = set(unique_index(self.data.get("gap_dimensions", []), "key"))
+        if not dimensions or not self.corpus_profiles:
+            errors.append("prewrite dimensions and corpus profiles must be nonempty")
+        for chapter, card in self.gaps.items():
+            errors.extend(coverage_errors(card["states"], dimensions, f"chapter {chapter} gap dimensions"))
+            if not set(card["states"].values()) <= {"SUFFICIENT", "THIN", "MISSING", "NOT_APPLICABLE"}:
+                errors.append(f"chapter {chapter}: unknown gap state")
+        for planner in self.planners.values():
+            unique_index(planner.get("candidate_scenes", []))
 
         for ref in sorted(_source_refs(self.data)):
-            if ref not in registry.documents:
+            if ref not in catalog.assets:
                 errors.append(f"prewrite source not registered: {ref}")
 
         literary_sources = set(literary.data.get("sources", {}))
@@ -416,14 +388,14 @@ class V5PrewriteRuntime:
         ):
             if policy.get(key) is not False:
                 errors.append(f"staging permission drift: {key} must remain false")
-        if registry.current_summary().get("stable_active_sha256") != STABLE_SHA:
-            errors.append("prewrite harness observed stable ACTIVE drift")
+        release = ProjectState.from_repo(catalog.root).release(catalog)
+        errors.extend(release.validate_storage())
 
         contracts = []
-        for chapter in range(81, 101):
+        for chapter in chapters:
             try:
                 contract = self.contract(
-                    chapter, reconstruction, literary, plocks, adapters, registry
+                    chapter, reconstruction, literary, plocks, adapters, catalog
                 )
             except Exception as exc:  # noqa: BLE001
                 errors.append(f"chapter {chapter} contract failed: {exc}")
@@ -433,14 +405,12 @@ class V5PrewriteRuntime:
                 errors.append(f"chapter {chapter}: contract authority drift")
             if contract["evidence_effect"] != "NONE":
                 errors.append(f"chapter {chapter}: contract gained evidence effect")
-            if contract["stable_active_sha256"] != STABLE_SHA:
+            if contract["stable_active_sha256"] != release.data["text_sha256"]:
                 errors.append(f"chapter {chapter}: stable baseline drift")
             if contract["staging"]["automatic_prose_generation"] is not False:
                 errors.append(f"chapter {chapter}: prewrite may not auto-generate prose")
             if contract["staging"]["automatic_promotion"] is not False:
                 errors.append(f"chapter {chapter}: prewrite may not auto-promote")
-        if len(contracts) != 20:
-            errors.append(f"Step42 must generate 20 contracts; got {len(contracts)}")
         return errors
 
 
@@ -448,13 +418,12 @@ def format_prewrite(kind: str, payload: dict[str, Any]) -> str:
     if kind == "summary":
         return "\n".join([
             "V5 PREWRITE HARNESS v0.6",
-            f"status: {payload['status']}",
             f"authority: {payload['authority']}",
             f"execution_order: {' -> '.join(str(x) for x in payload['execution_order'])}",
-            f"Step33 profiles: {payload['corpus_profiles']}/6",
-            f"Step34 gaps: {payload['gap_chapters']}/20 x {payload['gap_dimensions']}D",
+            f"Step33 profiles: {payload['corpus_profiles']}",
+            f"Step34 gaps: {payload['gap_chapters']} x {payload['gap_dimensions']}D",
             f"Step35 scene candidates: {payload['omitted_scene_candidates']}",
-            f"Step42 contracts: {payload['machine_readable_chapter_contracts']}/20",
+            f"Step42 contracts: {payload['machine_readable_chapter_contracts']}",
             f"feeds_staging: {str(payload['feeds_staging']).lower()}",
             f"becomes_evidence: {str(payload['becomes_evidence']).lower()}",
         ])

@@ -1,0 +1,24 @@
+# SHA256｜稳定ACTIVE v4.1
+
+- `07794156204376fc316d45bbaf43995d5e43b4165d9c4b7d247bbcdac6702402`  `00_CURRENT/R4_活动链状态_v2.0_R4_COMPLETE.md`
+- `ef76fd7ff258ba6c765dbe4ba2bf9765ad6d03ffaea66d10d543e9bc7bd7729c`  `00_CURRENT/R4_稳定ACTIVE发布清单_v4.1.md`
+- `6ab10932c4f8ae3580ec1f1db3034e8ba2fee58ae038db9556204ee11aeb0d44`  `00_CURRENT/红楼梦八十回后全幅文学补完大工程计划_v6.0_R4最终放行版.md`
+- `c903d6004de45c9c10d7e4bafa599de1a63b9ccd4ee3fae680d4be4010bbc678`  `00_当前操作链索引_v4.1.md`
+- `23861cce04acb8308e2d9c19a38445cddbe985b41fc8f0458d965e2379309072`  `01_正文与施工/81—100_二十回全幅补完卡_v2.5_稳定ACTIVE.md`
+- `626917a3603d00697ccb86e6be8d1bb5b40911ffad700436ea836cd8e6336261`  `01_正文与施工/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md`
+- `b90e41f44edbf0f3f86bd34365d842ccb121baa6ff1d8c9d047a38d86d67a95d`  `01_正文与施工/81—100_正文实施事实登记表_v1.8_稳定ACTIVE.md`
+- `4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320`  `01_正文与施工/第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md`
+- `94328cfc12eac812304990578745dd74b1aad710c8a00759299ce78a585c3f4f`  `02_证据与边界/81—100_OPEN接口冻结表_v1.0.md`
+- `324c8bfbc5f590253cc66155c02784cee69f7af047f2994fc3f05e8746d60a1b`  `02_证据与边界/R4_OPEN-LOCK治理规范_v1.0.md`
+- `bdb3868be396dacc4986c15a1d8dd95484b7cd2518151e63dfcada896b73cb0b`  `02_证据与边界/R4_证据角色审计矩阵_v1.9_稳定ACTIVE.md`
+- `b1722da8a2a77a0e1ffc231bd166cd03fc8fd93c78eea28c55ab8bd0bd68f1da`  `03_历史机制/R4-E_H01-H06_来源台账_v1.0.md`
+- `b63d359a25df64c9eb2d6588cb99cc0faf085dfaa45e920e3b9583dd93c3acc4`  `03_历史机制/R4-E_历史机制一手史料复核总表_v1.0_R4E_PASS.md`
+- `b8b3f2d359b23648ae72c836af398da134fab1a471110676ae7a74ef215ed727`  `03_历史机制/R4-E_历史机制边界同步表_v1.0.md`
+- `f79ba80ca2e9caff0113e83100bc5b046736ce0faa03413bdbbf464dba3c6794`  `99_最小审计记录/R4-F_regression_R4G候选正文_v1.2_FINAL_PASS.md`
+- `089acdf621d2a021ac2ba6259663c3aacfad57ef4895d755041b6a99c45c367d`  `99_最小审计记录/R4-G_文学保护与越界终审_v2.0_FINAL_PASS.md`
+- `052a628acaf04f825399a6d5c8b40bf120b280650aee5dc1e79574afad426e2d`  `99_最小审计记录/R4-H_最终机械一致性检查_v1.0_PASS.json`
+- `deba27852bf635683d8a038fd1b545f4b7fdae8ca7f822169d2ae96ece2ab41e`  `99_最小审计记录/R4-H_稳定ACTIVE_v4.1放行报告_v2.0_FINAL_PASS.md`
+- `b0ae64b40715750cb469d555f65c4b74306a9d0e61f10283de11391eef6abe09`  `99_最小审计记录/R4_最终审计摘要_v1.0.md`
+- `60bbcaefecfc751bc8eb32d7fa3f7c6d8a48b1e5de8f14d431ec81bedfc780b6`  `99_最小审计记录/R4_遗留问题总台账_v1.8_R4_COMPLETE.csv`
+- `db483cf951e81ae78b994938414a452cc61b724c3cb74a15897d589c3e198850`  `99_最小审计记录/R4_遗留问题总台账_v1.8_R4_COMPLETE.md`
+- `59d49367fad8bd14e682c4d5e22dcdf3a7d7a67555c7efec412f9f3caa1f1912`  `README.md`

@@ -1,19 +1,18 @@
 {
+  "schema_version": 1,
   "id": "character-truth:v0.3:slice1",
-  "issue": 3,
-  "status": "PASS",
   "epistemic_rule": "Character knowledge is downstream current-world state. A scene knowledge state constrains what a character may say or act upon in that scene; it never promotes current reconstruction into Evidence Truth. Absence of a fact from knows is not automatically ignorance unless does_not_know is explicit.",
   "sources": {
     "world_information_asymmetry": {
-      "document_ref": "doc:bc6bf7cb5e",
+      "asset_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
       "role": "CURRENT_WORLD_REFERENCE"
     },
     "world_longlines": {
-      "document_ref": "doc:56727d17b5",
+      "asset_ref": "asset:sha256:56727d17b5588cdecac3d0cf66b0030a6673ace47d532937d7988141e9cc41cd",
       "role": "CURRENT_WORLD_REFERENCE"
     },
     "pre80_voice_corpus": {
-      "document_ref": "doc:3a6c54bfac7b",
+      "asset_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
       "role": "LITERARY_VOICE_REFERENCE"
     }
   },
@@ -86,7 +85,7 @@
       "coverage": "FULL",
       "voice_profile": {
         "support": "SOURCE_BACKED",
-        "source_ref": "doc:3a6c54bfac7b",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
         "reference_chapters": [
           "19",
           "28",
@@ -119,7 +118,7 @@
       "coverage": "FULL",
       "voice_profile": {
         "support": "SOURCE_BACKED",
-        "source_ref": "doc:3a6c54bfac7b",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
         "reference_chapters": [
           "19",
           "28",
@@ -152,7 +151,7 @@
       "coverage": "FULL",
       "voice_profile": {
         "support": "SOURCE_BACKED",
-        "source_ref": "doc:3a6c54bfac7b",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
         "reference_chapters": [
           "26",
           "30",
@@ -173,7 +172,8 @@
         ],
         "forbidden_text": [],
         "automatic_identity_pass": false
-      }
+      },
+      "world_binding_optional": true
     },
     {
       "id": "baochai",
@@ -181,7 +181,7 @@
       "coverage": "FULL",
       "voice_profile": {
         "support": "SOURCE_BACKED",
-        "source_ref": "doc:3a6c54bfac7b",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
         "reference_chapters": [
           "32",
           "35",
@@ -215,7 +215,7 @@
       "coverage": "FULL",
       "voice_profile": {
         "support": "SOURCE_BACKED",
-        "source_ref": "doc:3a6c54bfac7b",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
         "reference_chapters": [
           "24",
           "26"
@@ -268,8 +268,8 @@
       "chapter": 86,
       "sequence": 1,
       "source_basis": [
-        "doc:bc6bf7cb5e",
-        "doc:3a6c54bfac7b"
+        "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+        "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
       ],
       "participants": [
         "daiyu",
@@ -378,8 +378,8 @@
       "chapter": 89,
       "sequence": 1,
       "source_basis": [
-        "doc:bc6bf7cb5e",
-        "doc:56727d17b5"
+        "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+        "asset:sha256:56727d17b5588cdecac3d0cf66b0030a6673ace47d532937d7988141e9cc41cd"
       ],
       "participants": [
         "baochai",
@@ -492,9 +492,9 @@
       "chapter": 92,
       "sequence": 1,
       "source_basis": [
-        "doc:bc6bf7cb5e",
-        "doc:56727d17b5",
-        "doc:3a6c54bfac7b"
+        "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+        "asset:sha256:56727d17b5588cdecac3d0cf66b0030a6673ace47d532937d7988141e9cc41cd",
+        "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
       ],
       "participants": [
         "baochai",
@@ -609,12 +609,7 @@
       ]
     }
   ],
-  "completion": {
-    "characters": 6,
-    "scenes": 3,
-    "event_driven_updates": true,
-    "omniscience_validator": true,
-    "voice_masking_hooks": true,
+  "policy": {
     "automatic_voice_identity": false
   }
 }

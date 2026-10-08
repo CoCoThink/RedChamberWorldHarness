@@ -1,0 +1,282 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "date",
+    "authority_effect",
+    "records"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "date": {
+      "type": "string"
+    },
+    "authority_effect": {
+      "const": "NONE"
+    },
+    "records": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "asset",
+          "origins",
+          "aliases",
+          "anchor_ref",
+          "reason",
+          "changes"
+        ],
+        "properties": {
+          "asset": {
+            "$ref": "#/$defs/asset"
+          },
+          "origins": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "$ref": "#/$defs/origin"
+            }
+          },
+          "aliases": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "type": "string"
+            }
+          },
+          "anchor_ref": {
+            "type": "string",
+            "pattern": "^asset:"
+          },
+          "reason": {
+            "enum": [
+              "SUPERSEDED_SYNC",
+              "COMPACTED_VERSION_CHAIN",
+              "EXTRACTED_RESEARCH",
+              "RETIRED_IMPORT_INTERFACE",
+              "REDUNDANT_CHECKSUM_LIST"
+            ]
+          },
+          "changes": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "start",
+                "stop",
+                "text"
+              ],
+              "properties": {
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "stop": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "text": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "anchor_format": {
+            "enum": [
+              "RAW",
+              "SHA256_MANIFEST_CSV",
+              "CSV_PROJECTION"
+            ]
+          },
+          "csv_projection": {
+            "type": "object",
+            "required": [
+              "columns",
+              "where",
+              "encoding",
+              "lineterminator"
+            ],
+            "additionalProperties": false,
+            "properties": {
+              "columns": {
+                "type": "array",
+                "minItems": 1,
+                "uniqueItems": true,
+                "items": {
+                  "type": "string"
+                }
+              },
+              "where": {
+                "type": "object",
+                "additionalProperties": {
+                  "type": "string"
+                }
+              },
+              "encoding": {
+                "enum": [
+                  "utf-8",
+                  "utf-8-sig"
+                ]
+              },
+              "lineterminator": {
+                "enum": [
+                  "\n",
+                  "\r\n"
+                ]
+              }
+            }
+          }
+        },
+        "allOf": [
+          {
+            "if": {
+              "required": [
+                "anchor_format"
+              ],
+              "properties": {
+                "anchor_format": {
+                  "const": "CSV_PROJECTION"
+                }
+              }
+            },
+            "then": {
+              "required": [
+                "csv_projection"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  },
+  "$defs": {
+    "asset": {
+      "type": "object",
+      "required": [
+        "id",
+        "path",
+        "sha256",
+        "bytes",
+        "media_type",
+        "kind",
+        "immutable",
+        "origin_refs"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^asset:[a-zA-Z0-9._:-]+$"
+        },
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "media_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "PRIMARY_TEXT_CONTAINER",
+            "PROJECT_REFERENCE",
+            "PROJECT_RESEARCH",
+            "RELEASE_TEXT",
+            "HISTORICAL_RECORD",
+            "IMPORT_RECORD",
+            "REVIEW_RECORD"
+          ]
+        },
+        "immutable": {
+          "const": true
+        },
+        "origin_refs": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^origin:"
+          }
+        },
+        "derived_from": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {
+            "type": "string",
+            "pattern": "^asset:"
+          }
+        }
+      }
+    },
+    "origin": {
+      "$schema": "https://json-schema.org/draft/2020-12/schema",
+      "title": "AssetOriginOccurrence",
+      "type": "object",
+      "required": [
+        "id",
+        "asset_ref",
+        "sha256",
+        "batch_id",
+        "origin_type",
+        "origin_container",
+        "original_path",
+        "disposition"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^origin:"
+        },
+        "asset_ref": {
+          "type": "string",
+          "pattern": "^asset:"
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        },
+        "batch_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "origin_type": {
+          "type": "string",
+          "minLength": 1
+        },
+        "origin_container": {
+          "type": "string",
+          "minLength": 1
+        },
+        "original_path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "disposition": {
+          "enum": [
+            "RETAINED",
+            "DEDUPLICATED"
+          ]
+        }
+      }
+    }
+  }
+}

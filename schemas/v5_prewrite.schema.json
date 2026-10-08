@@ -4,8 +4,6 @@
   "type": "object",
   "required": [
     "id",
-    "issue",
-    "status",
     "authority",
     "evidence_effect",
     "stable_active_effect",
@@ -19,17 +17,11 @@
     "omitted_scene_plans",
     "downstream_bindings",
     "staging_policy",
-    "completion"
+    "schema_version"
   ],
   "properties": {
     "id": {
       "const": "v5-prewrite:v0.6"
-    },
-    "issue": {
-      "const": 6
-    },
-    "status": {
-      "type": "string"
     },
     "authority": {
       "const": "STAGING_ONLY"
@@ -46,46 +38,34 @@
     },
     "execution_order": {
       "type": "array",
-      "const": [
-        33,
-        34,
-        35,
-        40,
-        39,
-        38,
-        37,
-        36,
-        41,
-        42
-      ]
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "integer"
+      }
     },
     "steps": {
       "type": "array",
-      "minItems": 10,
-      "maxItems": 10
+      "minItems": 1
     },
     "corpus_ecology_profiles": {
       "type": "array",
-      "minItems": 6,
-      "maxItems": 6
+      "minItems": 1
     },
     "gap_dimensions": {
       "type": "array",
-      "minItems": 12,
-      "maxItems": 12
+      "minItems": 1
     },
     "gap_status_legend": {
       "type": "object"
     },
     "gap_cards": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 20
+      "minItems": 1
     },
     "omitted_scene_plans": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 20
+      "minItems": 1
     },
     "downstream_bindings": {
       "type": "object"
@@ -134,8 +114,8 @@
       },
       "additionalProperties": false
     },
-    "completion": {
-      "type": "object"
+    "schema_version": {
+      "const": 1
     }
   },
   "additionalProperties": false

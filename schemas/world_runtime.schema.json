@@ -3,8 +3,6 @@
   "title": "RCWH M3 Assembled World Runtime",
   "type": "object",
   "required": [
-    "milestone",
-    "status",
     "epistemic_rule",
     "sources",
     "characters",
@@ -12,105 +10,73 @@
     "institutions",
     "baseline",
     "events",
-    "completion",
     "locations",
     "presence_matrix",
     "body_matrix",
     "economy_stages",
     "resource_flows",
     "knowledge_rules",
-    "longlines"
+    "longlines",
+    "schema_version"
   ],
   "properties": {
-    "milestone": {
-      "const": "M3"
-    },
-    "status": {
-      "type": "string"
-    },
     "epistemic_rule": {
       "type": "string",
       "minLength": 20
     },
     "sources": {
       "type": "object",
-      "minProperties": 8
+      "minProperties": 1
     },
     "characters": {
       "type": "array",
-      "minItems": 28,
-      "maxItems": 28
+      "minItems": 1
     },
     "locations": {
       "type": "array",
-      "minItems": 15,
-      "maxItems": 15
+      "minItems": 1
     },
     "relations": {
       "type": "array",
-      "minItems": 10,
-      "maxItems": 10
+      "minItems": 1
     },
     "institutions": {
       "type": "array",
-      "minItems": 9,
-      "maxItems": 9
+      "minItems": 1
     },
     "baseline": {
       "type": "object"
     },
     "events": {
       "type": "array",
-      "minItems": 20
+      "minItems": 1
     },
     "presence_matrix": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 20
+      "minItems": 1
     },
     "body_matrix": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 20
+      "minItems": 1
     },
     "economy_stages": {
       "type": "array",
-      "minItems": 6,
-      "maxItems": 6
+      "minItems": 1
     },
     "resource_flows": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 20
+      "minItems": 1
     },
     "knowledge_rules": {
       "type": "array",
-      "minItems": 11,
-      "maxItems": 11
+      "minItems": 1
     },
     "longlines": {
       "type": "array",
-      "minItems": 10,
-      "maxItems": 10
+      "minItems": 1
     },
-    "completion": {
-      "type": "object",
-      "required": [
-        "world_queryable",
-        "event_replay",
-        "completion_gate_ready"
-      ],
-      "properties": {
-        "world_queryable": {
-          "const": true
-        },
-        "event_replay": {
-          "const": true
-        },
-        "completion_gate_ready": {
-          "const": false
-        }
-      }
+    "schema_version": {
+      "const": 1
     }
   },
   "additionalProperties": false

@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "verification_kind": "TEMPORARY_GIT_CHECKOUT_OF_INTENDED_WORKTREE",
+  "source_base_commit": "f9ff4c23a47b0bf5981b9b3b93b9d964b261f2f7",
+  "materialized_tree_sha": "0a1cec35f43a25482c4eb80cf343eb708409753f",
+  "materialized_files": 468,
+  "excluded_from_materialization": [
+    "artifacts/migration/handover-20261008/verification_report.json"
+  ],
+  "handover_package_present": false,
+  "checkout_autocrlf": true,
+  "network_policy": "Socket connection and DNS calls forbidden during CLI validation; dependencies preinstalled",
+  "python_version": "3.14.6",
+  "checks": {
+    "asset-storage": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0,
+      "status": "PASS",
+      "assets": 151,
+      "origins": 223
+    },
+    "release-storage": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0,
+      "status": "PASS",
+      "evidence_closure": "NOT_VERIFIED"
+    },
+    "source-content": {
+      "returncode": 1,
+      "check_status": "PASS",
+      "expected_returncode": 1,
+      "status": "FAIL",
+      "roots": 32,
+      "local_containers": 20,
+      "unresolved_sources": 12
+    },
+    "source-locators": {
+      "returncode": 1,
+      "check_status": "PASS",
+      "expected_returncode": 1,
+      "status": "FAIL",
+      "roots": 32,
+      "local_containers": 20,
+      "unresolved_sources": 32
+    },
+    "project-status": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0,
+      "status": "IN_PROGRESS"
+    },
+    "asset-history": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "repository-validation": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "literary-production": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0,
+      "status": "ACTIVE"
+    },
+    "prewrite-summary": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "implementation-summary": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "implementation-stable": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "evidence-regression": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "microdraft-summary": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0,
+      "status": "PASS"
+    },
+    "review-summary": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0,
+      "status": "PASS"
+    },
+    "revision-summary": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0,
+      "status": "PASS"
+    },
+    "world-summary-text": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "object-summary-text": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "ecology-summary-text": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "adapter-summary-text": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "suite-summary-text": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "knowledge-summary-text": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "object-trace": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "literary-trace": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "implementation-trace": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "blind-export": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    },
+    "promotion-export": {
+      "returncode": 0,
+      "check_status": "PASS",
+      "expected_returncode": 0
+    }
+  },
+  "workflow_checks": [
+    {
+      "name": "rcwh validate",
+      "returncode": 0
+    },
+    {
+      "name": "Verify physical assets and immutable versions",
+      "returncode": 0
+    },
+    {
+      "name": "Smoke native foundation APIs",
+      "returncode": 0
+    },
+    {
+      "name": "Smoke domain runtimes",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh evaluate data/scenes/ch86_last_night.yaml examples/ch86_candidate_stub.txt",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_preserved.txt",
+      "returncode": 0
+    },
+    {
+      "name": "Verify replacement-case exit code",
+      "returncode": 0
+    },
+    {
+      "name": "Verify explicit-drift blocker exit code",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_A_stable_full.md",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_B_light_full.md",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_C_strong_full.md",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh competition comp:43-0:ch86:pressure-test",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_A_full.md",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_B_full.md",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_C_full.md",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh competition comp:43-0:ch89:pressure-test",
+      "returncode": 0
+    },
+    {
+      "name": "rcwh promotion promotion:ch86:b:v1-5-candidate",
+      "returncode": 0
+    }
+  ],
+  "workflow_scope": "All validation shell steps; preinstalled dependencies; pytest executed separately below",
+  "tests": {
+    "returncode": 0,
+    "summary": "374 passed in 45.37s"
+  },
+  "full_self_contained_status": "INCOMPLETE"
+}

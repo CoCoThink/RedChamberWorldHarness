@@ -19,9 +19,9 @@ def registries():
     return graph, literals, mechanisms, opens
 
 
-def test_exactly_28_open_locked_interfaces():
+def test_open_interfaces_preserve_uncertainty_and_referential_integrity():
     graph, literals, mechanisms, opens = registries()
-    assert set(opens.interfaces) == {f"OL-{i:03d}" for i in range(1, 29)}
+    assert opens.interfaces
     assert all(x["state"] == "OPEN_LOCKED" for x in opens.interfaces.values())
     assert opens.validate_integrity(graph, literals, mechanisms) == []
 

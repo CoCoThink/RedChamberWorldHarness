@@ -1,127 +1,100 @@
 regression_manifests:
-  - id: R4_EVIDENCE_CORE_V0_2_BETA
-    stable_active:
-      file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
-      sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
-
-    expected_counts:
-      sources: 32
-      claims: 72
-      decisions: 53
-      implementations: 28
-      title_axes: 15
-      literals: 6
-      mechanisms: 6
-      open_interfaces: 28
-
-    claim_status_counts:
-      SUPPORTED: 42
-      CONTESTED: 0
-      NOT_ESTABLISHED: 30
-      REFUTED: 0
-
-    decision_status_counts:
-      LOCKED: 18
-      CURRENT: 14
-      OPEN: 21
-      REJECTED: 0
-
-    source_type_counts:
-      EARLY_COMMENT: 14
-      EARLY_TRANSCRIPT: 6
-      HISTORICAL_PRIMARY: 11
-      SECONDARY_RESEARCH: 1
-
-    axis_expectations:
-      axis:t0:baochai-fengjie: T0
-      axis:t1:xiren: T1
-      axis:t2:prison-comfort: T2
-      axis:t2:cliff-release: T2
-      axis:t2:mistaken-theft: T2
-      axis:t3:fengjie-snow-jade: T3
-      axis:t3:zhen-sends-jade: T3
-      axis:t3:cold-winter-torn-felt: T3
-      axis:t2w2:zheng-qianyuan: T2_W2
-      axis:tg:ch88: TG
-      axis:tg:ch91: TG
-      axis:tg:ch92: TG
-      axis:tg:ch95: TG
-      axis:tg:ch98: TG
-      axis:tg:ch99: TG
-
-    literal_expectations:
-      literal:ten-solitary-chants:name: [NAME_EXACT, BOUNDARY]
-      literal:falling-leaves:cold-smoke: [NOVEL_EXACT]
-      literal:sheyue:keep-sheyue: [NOVEL_EXACT, BOUNDARY]
-      literal:qingbang:daiyu-rating: [NOVEL_EXACT]
-      literal:qingbang:baoyu-rating: [NOVEL_EXACT]
-      literal:qingbang:source-phrase: [SOURCE_EXACT]
-
-    mechanism_verdicts:
-      H01: PASS-WITH-CAUTION
-      H02: PASS
-      H03: PASS-BOUNDARY
-      H04: PASS
-      H05: PASS
-      H06: PASS-SOFT
-
-    locked_decisions:
-      - decision:cliff-release:function
-      - decision:zhen-sends-jade:event
-      - decision:fengjie-snow-jade:event
-      - decision:ten-solitary-chants:title-and-range
-      - decision:qingbang:final-structure
-      - decision:qingbang:baoyu-rating
-      - decision:qingbang:daiyu-rating
-      - decision:falling-leaves:literal
-      - decision:sheyue-speech:literal
-      - decision:sheyue-speech:boundary
-      - decision:future-title:baochai-fengjie:wording
-      - decision:xiren:heading-part
-      - decision:mistaken-theft:interface
-      - decision:cold-winter-torn-felt:event
-      - decision:daiyu:death-direction
-      - decision:prison:baoyu-interface
-      - decision:xiaohong:great-help
-      - decision:qianxue:prison-return
-
-    current_decisions:
-      - decision:cliff-release:placement
-      - decision:zhen-sends-jade:same-jade
-      - decision:zhen-sends-jade:meeting
-      - decision:zhen-sends-jade:placement
-      - decision:fengjie-snow-jade:placement
-      - decision:ten-solitary-chants:placement
-      - decision:qingbang:current-format
-      - decision:falling-leaves:placement
-      - decision:sheyue-speech:placement
-      - decision:future-title:baochai-fengjie:placement
-      - decision:xiren:placement
-      - decision:prison:comfort-baoyu:placement
-      - decision:mistaken-theft:placement
-      - decision:cold-winter-torn-felt:placement
-
-    open_decisions:
-      - decision:cliff-release:formal-title
-      - decision:zhen-sends-jade:formal-title
-      - decision:fengjie-snow-jade:jade-identity
-      - decision:fengjie-snow-jade:formal-title
-      - decision:ten-solitary-chants:author
-      - decision:ten-solitary-chants:form
-      - decision:ten-solitary-chants:count
-      - decision:ten-solitary-chants:subjects
-      - decision:qingbang:formal-title
-      - decision:qingbang:counts
-      - decision:qingbang:lower-rosters
-      - decision:xiren:full-heading
-      - decision:prison:comfort-baoyu:formal-title
-      - decision:mistaken-theft:formal-title
-      - decision:cold-winter-torn-felt:formal-title
-      - decision:w2:duijing-dao-piner
-      - decision:w2:yunge-tan-an
-      - decision:w2:yumiao-xiangfeng
-      - decision:w2:miaoyu-guazhou
-      - decision:w2:zheng-qianyuan:formal-title
-      - decision:w2:qingbang-confirmation
-
-    legacy_hard_evidence_requires_source: true
+- id: R4_EVIDENCE_CORE_V0_2_BETA
+  stable_active:
+    file_ref: 第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md
+    sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
+  axis_expectations:
+    axis:t0:baochai-fengjie: T0
+    axis:t1:xiren: T1
+    axis:t2:prison-comfort: T2
+    axis:t2:cliff-release: T2
+    axis:t2:mistaken-theft: T2
+    axis:t3:fengjie-snow-jade: T3
+    axis:t3:zhen-sends-jade: T3
+    axis:t3:cold-winter-torn-felt: T3
+    axis:t2w2:zheng-qianyuan: T2_W2
+    axis:tg:ch88: TG
+    axis:tg:ch91: TG
+    axis:tg:ch92: TG
+    axis:tg:ch95: TG
+    axis:tg:ch98: TG
+    axis:tg:ch99: TG
+  literal_expectations:
+    literal:ten-solitary-chants:name:
+    - NAME_EXACT
+    - BOUNDARY
+    literal:falling-leaves:cold-smoke:
+    - NOVEL_EXACT
+    literal:sheyue:keep-sheyue:
+    - NOVEL_EXACT
+    - BOUNDARY
+    literal:qingbang:daiyu-rating:
+    - NOVEL_EXACT
+    literal:qingbang:baoyu-rating:
+    - NOVEL_EXACT
+    literal:qingbang:source-phrase:
+    - SOURCE_EXACT
+  mechanism_verdicts:
+    H01: PASS-WITH-CAUTION
+    H02: PASS
+    H03: PASS-BOUNDARY
+    H04: PASS
+    H05: PASS
+    H06: PASS-SOFT
+  locked_decisions:
+  - decision:cliff-release:function
+  - decision:zhen-sends-jade:event
+  - decision:fengjie-snow-jade:event
+  - decision:ten-solitary-chants:title-and-range
+  - decision:qingbang:final-structure
+  - decision:qingbang:baoyu-rating
+  - decision:qingbang:daiyu-rating
+  - decision:falling-leaves:literal
+  - decision:sheyue-speech:literal
+  - decision:sheyue-speech:boundary
+  - decision:future-title:baochai-fengjie:wording
+  - decision:xiren:heading-part
+  - decision:mistaken-theft:interface
+  - decision:cold-winter-torn-felt:event
+  - decision:daiyu:death-direction
+  - decision:prison:baoyu-interface
+  - decision:xiaohong:great-help
+  - decision:qianxue:prison-return
+  current_decisions:
+  - decision:cliff-release:placement
+  - decision:zhen-sends-jade:same-jade
+  - decision:zhen-sends-jade:meeting
+  - decision:zhen-sends-jade:placement
+  - decision:fengjie-snow-jade:placement
+  - decision:ten-solitary-chants:placement
+  - decision:qingbang:current-format
+  - decision:falling-leaves:placement
+  - decision:sheyue-speech:placement
+  - decision:future-title:baochai-fengjie:placement
+  - decision:xiren:placement
+  - decision:prison:comfort-baoyu:placement
+  - decision:mistaken-theft:placement
+  - decision:cold-winter-torn-felt:placement
+  open_decisions:
+  - decision:cliff-release:formal-title
+  - decision:zhen-sends-jade:formal-title
+  - decision:fengjie-snow-jade:jade-identity
+  - decision:fengjie-snow-jade:formal-title
+  - decision:ten-solitary-chants:author
+  - decision:ten-solitary-chants:form
+  - decision:ten-solitary-chants:count
+  - decision:ten-solitary-chants:subjects
+  - decision:qingbang:formal-title
+  - decision:qingbang:counts
+  - decision:qingbang:lower-rosters
+  - decision:xiren:full-heading
+  - decision:prison:comfort-baoyu:formal-title
+  - decision:mistaken-theft:formal-title
+  - decision:cold-winter-torn-felt:formal-title
+  - decision:w2:duijing-dao-piner
+  - decision:w2:yunge-tan-an
+  - decision:w2:yumiao-xiangfeng
+  - decision:w2:miaoyu-guazhou
+  - decision:w2:zheng-qianyuan:formal-title
+  - decision:w2:qingbang-confirmation
+  legacy_hard_evidence_requires_source: true

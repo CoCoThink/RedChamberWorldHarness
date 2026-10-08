@@ -6,6 +6,7 @@ from pathlib import Path
 from typing import Any
 
 from .io import load_data
+from .contracts import unique_index, coverage_errors, validate_plan_constraints
 
 
 @dataclass
@@ -42,21 +43,21 @@ class WorldRuntime:
         }
         return cls(
             data=data,
-            characters={x["id"]: x for x in data.get("characters", [])},
-            locations={x["id"]: x for x in data.get("locations", [])},
-            relations={x["id"]: x for x in data.get("relations", [])},
-            institutions={x["id"]: x for x in data.get("institutions", [])},
-            presence={x["chapter"]: x for x in data.get("presence_matrix", [])},
-            body={x["chapter"]: x for x in data.get("body_matrix", [])},
-            flows={x["chapter"]: x for x in data.get("resource_flows", [])},
+            characters=unique_index(data.get('characters', []), 'id'),
+            locations=unique_index(data.get('locations', []), 'id'),
+            relations=unique_index(data.get('relations', []), 'id'),
+            institutions=unique_index(data.get('institutions', []), 'id'),
+            presence=unique_index(data.get('presence_matrix', []), 'chapter'),
+            body=unique_index(data.get('body_matrix', []), 'chapter'),
+            flows=unique_index(data.get('resource_flows', []), 'chapter'),
             economy_stages=data.get("economy_stages", []),
             knowledge_rules=data.get("knowledge_rules", []),
             longlines=data.get("longlines", []),
         )
 
     def snapshot(self, chapter: int) -> dict[str, Any]:
-        if chapter < 80 or chapter > 100:
-            raise KeyError(f"World runtime only covers chapter 80..100: {chapter}")
+        if chapter not in self.presence and chapter != self.data["baseline"]["chapter"]:
+            raise KeyError(f"Chapter outside configured World runtime: {chapter}")
         state = deepcopy(self.data["baseline"])
         for event in sorted(self.data.get("events", []), key=lambda x: (x["chapter"], x["sequence"])):
             if event["chapter"] > chapter:
@@ -123,8 +124,8 @@ class WorldRuntime:
         }
 
     def economy(self, chapter: int) -> dict[str, Any]:
-        if chapter < 81 or chapter > 100:
-            raise KeyError(f"Economy runtime only covers chapter 81..100: {chapter}")
+        if chapter not in self.flows:
+            raise KeyError(f"Chapter outside configured economy runtime: {chapter}")
         stage = next(
             x for x in self.economy_stages
             if x["chapter_start"] <= chapter <= x["chapter_end"]
@@ -133,8 +134,6 @@ class WorldRuntime:
 
     def summary(self) -> dict[str, Any]:
         return {
-            "milestone": self.data["milestone"],
-            "status": self.data["status"],
             "chapters": len(self.presence),
             "characters": len(self.characters),
             "locations": len(self.locations),
@@ -143,35 +142,24 @@ class WorldRuntime:
             "events": len(self.data.get("events", [])),
             "knowledge_rules": len(self.knowledge_rules),
             "longlines": len(self.longlines),
-            "completion": self.data["completion"],
         }
 
-    def validate_integrity(self, migration_registry: Any, reconstruction: Any) -> list[str]:
+    def validate_integrity(self, catalog: Any, reconstruction: Any) -> list[str]:
         errors: list[str] = []
-        if self.data.get("milestone") != "M3":
-            errors.append("World runtime milestone must be M3")
-        expected_chapters = set(range(81, 101))
-        if set(self.presence) != expected_chapters:
-            errors.append("World presence matrix must contain 81..100 exactly")
-        if set(self.body) != expected_chapters:
-            errors.append("World body matrix must contain 81..100 exactly")
-        if set(self.flows) != expected_chapters:
-            errors.append("World resource-flow matrix must contain 81..100 exactly")
-        if set(self.locations) != {f"S{i:02d}" for i in range(1, 16)}:
-            errors.append("World location network must remain S01..S15 exactly")
-        if {x["id"] for x in self.economy_stages} != {f"E{i}" for i in range(6)}:
-            errors.append("World economy stages must remain E0..E5 exactly")
-        if len(self.characters) != 28:
-            errors.append(f"World character registry must contain 28 modeled characters; got {len(self.characters)}")
-        if len(self.relations) != 10:
-            errors.append(f"World relation registry must contain 10 core relations; got {len(self.relations)}")
-        if len(self.institutions) != 9:
-            errors.append(f"World institution registry must contain 9 systems; got {len(self.institutions)}")
+        expected_chapters = set(reconstruction.chapter_scope)
+        for label, view in [("presence", self.presence), ("body", self.body), ("resource flows", self.flows)]:
+            errors.extend(coverage_errors(view, expected_chapters, "world " + label))
+        if not self.characters or not self.locations or not self.institutions:
+            errors.append("world characters, locations and institutions must be nonempty")
+        unique_index(self.economy_stages)
+        unique_index(self.data.get("events", []))
+        errors.extend(coverage_errors(self.data["baseline"]["characters"], self.characters, "world baseline characters"))
+        errors.extend(coverage_errors(self.data["baseline"]["relations"], self.relations, "world baseline relations"))
 
         for name, source in self.data.get("sources", {}).items():
-            doc = migration_registry.documents.get(source["document_ref"])
+            doc = catalog.assets.get(source["asset_ref"])
             if doc is None:
-                errors.append(f"World source {name}: unregistered document {source['document_ref']}")
+                errors.append(f"World source {name}: unregistered document {source['asset_ref']}")
             elif doc["sha256"] != source["sha256"]:
                 errors.append(f"World source {name}: SHA256 mismatch")
 
@@ -184,33 +172,14 @@ class WorldRuntime:
                 errors.append(f"{rel['id']}: relation endpoint missing")
 
         try:
-            end = self.snapshot(100)
-        except Exception as exc:
+            snapshots = {chapter: self.snapshot(chapter) for chapter in sorted(expected_chapters)}
+        except (KeyError, ValueError, TypeError) as exc:
             errors.append(f"World replay failed: {exc}")
             return errors
-
-        if self.snapshot(86)["characters"]["daiyu"]["life_state"] != "DEAD":
-            errors.append("Daiyu must be dead by end of chapter 86 in current runtime")
-        if self.snapshot(87)["relations"]["rel:baoyu_baochai"]["status"] != "ACTIVE_SPOUSES":
-            errors.append("Baoyu/Baochai spouse relation must be active by chapter 87 current model")
-        if self.snapshot(92)["characters"]["baoyu"]["legal_status"] != "DETAINED_PENDING_INQUIRY":
-            errors.append("Baoyu chapter 92 legal state must be detained-pending-inquiry")
-        if self.snapshot(93)["characters"]["baoyu"]["legal_status"] != "RELEASED_NO_RESTORATION":
-            errors.append("Baoyu chapter 93 must be released without restoration")
-        if self.snapshot(93)["characters"]["fengjie"]["life_state"] != "DEAD":
-            errors.append("Fengjie must be dead by end of chapter 93 current model")
-        if self.snapshot(94)["characters"]["qiaojie"]["location"] != "S08":
-            errors.append("Qiaojie must be in Liu rural household by chapter 94 current model")
-        if self.snapshot(95)["global"]["economy_stage"] != "E3":
-            errors.append("Chapter 95 must be stable true-poverty stage E3")
-        if self.snapshot(99)["characters"]["baoyu"]["location"] != "S13":
-            errors.append("Baoyu must be at the outer-city temple by chapter 99 current model")
-        if self.relation("rel:xiangyun_weiruolan", 97)["state"]["status"] != "COHABITATION_INTERRUPTED_CAUSE_OPEN":
-            errors.append("Xiangyun/Wei cause must remain OPEN in chapter 97")
-        if end["global"].get("human_access_to_outer_frame_knowledge") is not False:
-            errors.append("Outer-frame knowledge may not leak into human world")
-        if self.data.get("completion", {}).get("completion_gate_ready"):
-            errors.append("M3 may not mark overall Completion Gate ready")
+        errors.extend(validate_plan_constraints(catalog, "world", {"snapshots": snapshots}))
+        for chapter, state in snapshots.items():
+            if state["global"].get("human_access_to_outer_frame_knowledge") is not False:
+                errors.append(f"chapter {chapter}: outer-frame knowledge may not leak into human world")
         return errors
 
     def _presence_for_name(self, name: str, chapter: int) -> str:
@@ -236,19 +205,15 @@ def _assign(state: dict[str, Any], dotted: str, value: Any) -> None:
 
 def format_world(kind: str, payload: dict[str, Any]) -> str:
     if kind == "summary":
-        c = payload["completion"]
         return "\n".join([
             "WORLD M3",
-            f"status: {payload['status']}",
-            f"chapters: {payload['chapters']}/20",
+            f"chapters: {payload['chapters']}",
             f"characters: {payload['characters']}",
-            f"locations: {payload['locations']}/15",
+            f"locations: {payload['locations']}",
             f"relations: {payload['relations']}",
             f"institutions: {payload['institutions']}",
             f"events: {payload['events']}",
             f"knowledge rules: {payload['knowledge_rules']}",
-            f"queryable: {str(c['world_queryable']).lower()}",
-            f"Completion Gate ready: {str(c['completion_gate_ready']).lower()}",
         ])
     if kind == "character":
         state = payload["state"]

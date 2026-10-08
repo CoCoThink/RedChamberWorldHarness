@@ -5,10 +5,15 @@ from pathlib import Path
 from typing import Any
 
 from .io import load_data
+import hashlib
+from .contracts import unique_index, project_chapters, coverage_errors
+from .competition import CompetitionRegistry
+from .workflow import ProjectState
 
 
 @dataclass
 class ImplementationAlignmentRuntime:
+    chapter_scope: tuple[int, ...]
     data: dict[str, Any]
     chapters: dict[int, dict[str, Any]]
     plans: dict[int, dict[str, Any]]
@@ -20,22 +25,17 @@ class ImplementationAlignmentRuntime:
     def from_repo(cls, root: Path) -> "ImplementationAlignmentRuntime":
         data = load_data(root / "data" / "implementation_alignment" / "m6.json") or {}
         return cls(
+            chapter_scope=project_chapters(root),
             data=data,
-            chapters={
-                x["chapter"]: x
-                for x in data.get("stable_release", {}).get("chapters", [])
-            },
-            plans={x["chapter"]: x for x in data.get("chapter_plans", [])},
-            facts={x["id"]: x for x in data.get("implementation_facts", [])},
-            protections={x["chapter"]: x for x in data.get("chapter_protections", [])},
-            competitions={x["chapter"]: x for x in data.get("competition_fixtures", [])},
+            chapters=unique_index(data.get('stable_release', {}).get('chapters', []), 'chapter'),
+            plans=unique_index(data.get('chapter_plans', []), 'chapter'),
+            facts=unique_index(data.get('implementation_facts', []), 'id'),
+            protections=unique_index(data.get('chapter_protections', []), 'chapter'),
+            competitions=unique_index([x for x in CompetitionRegistry.from_repo(root).records.values() if x["mode"] == "PRODUCTION_43_0"], "chapter"),
         )
 
     def summary(self) -> dict[str, Any]:
-        completion = self.data.get("completion", {})
         return {
-            "milestone": self.data.get("milestone"),
-            "status": self.data.get("status"),
             "stable_release": self.data.get("stable_release", {}).get("release_id"),
             "stable_sha256": self.data.get("stable_release", {}).get("sha256"),
             "chapters": len(self.chapters),
@@ -43,16 +43,30 @@ class ImplementationAlignmentRuntime:
             "implementation_facts": len(self.facts),
             "chapter_protections": len(self.protections),
             "cross_chapter_protections": len(self.data.get("cross_chapter_protections", [])),
-            "competition_fixtures": len(self.competitions),
-            "completion": completion,
+            "competitions": len(self.competitions),
         }
 
     def stable(self) -> dict[str, Any]:
-        return self.data["stable_release"]
+        return {**self.data["stable_release"], "chapter_count": len(self.chapters)}
+
+    def alignment(self, chapter: int) -> dict[str, Any]:
+        body = self.chapters[chapter]
+        location = self.data["object_query_locations"].get(str(chapter))
+        return {
+            "chapter": chapter,
+            "stable_body": {key: body[key] for key in ("line_start", "line_end", "sha256", "title")},
+            "plan_ref": f"plan:{chapter}", "protection_ref": f"protection:{chapter}",
+            "reconstruction_query": f"rcwh reconstruction chapter {chapter}",
+            "world_query": f"rcwh world chapter {chapter}",
+            "literary_ecology_query": f"rcwh literary-ecology chapter {chapter}",
+            "object_query": f"rcwh object location {location} {chapter}" if location else None,
+            "specialized_plock_refs": [x["id"] for x in self.data["specialized_plocks"] if x["chapter"] == chapter],
+            "implementation_fact_ids": self._fact_ids_for_chapter(chapter),
+        }
 
     def chapter(self, chapter: int) -> dict[str, Any]:
         if chapter not in self.chapters:
-            raise KeyError(f"M6 chapter query covers 81..100: {chapter}")
+            raise KeyError(f"Chapter outside configured implementation scope: {chapter}")
         fact_ids = self._fact_ids_for_chapter(chapter)
         return {
             "chapter": chapter,
@@ -66,10 +80,7 @@ class ImplementationAlignmentRuntime:
                 if x["chapter"] == chapter
             ],
             "competition": self.competitions.get(chapter),
-            "alignment": next(
-                x for x in self.data["chapter_alignment"]
-                if x["chapter"] == chapter
-            ),
+            "alignment": self.alignment(chapter),
         }
 
     def fact(self, fact_id: str) -> dict[str, Any]:
@@ -84,13 +95,13 @@ class ImplementationAlignmentRuntime:
 
     def competition(self, chapter: int) -> dict[str, Any]:
         if chapter not in self.competitions:
-            raise KeyError(f"No frozen competition fixture for chapter {chapter}")
+            raise KeyError(f"No production competition for chapter {chapter}")
         return self.competitions[chapter]
 
-    def trace(self, kind: str, key: str, registry: Any) -> dict[str, Any]:
+    def trace(self, kind: str, key: str, catalog: Any) -> dict[str, Any]:
         if kind == "source":
-            ref = key if key.startswith("doc:") else f"doc:{key}"
-            if ref not in registry.documents:
+            ref = key
+            if ref not in catalog.assets:
                 raise KeyError(f"Unknown source document: {ref}")
             node: Any = {"source_ref": ref}
         elif kind == "fact":
@@ -102,78 +113,69 @@ class ImplementationAlignmentRuntime:
         else:
             raise KeyError(f"Unknown M6 trace kind: {kind}")
 
-        refs = _collect_doc_refs(node)
+        refs = _collect_asset_refs(node)
         if kind == "source":
             refs = [node["source_ref"]]
         resolved = []
         for ref in refs:
-            doc = registry.documents.get(ref)
+            doc = catalog.assets.get(ref)
             if doc is None:
-                resolved.append({"ref": ref, "kind": "missing_document"})
+                resolved.append({"ref": ref, "kind": "missing_asset"})
                 continue
-            resolved.append({
-                "ref": ref,
-                "kind": "document",
-                "filename": doc["filename"],
-                "sha256": doc["sha256"],
-                "self_contained_path": doc["self_contained_path"],
-                "canonical_path": doc["canonical_path"],
-                "authority": doc["authority"],
-                "runtime_authority": doc["runtime_authority"],
-                "semantic_coverage": doc["machine_representation"]["semantic_coverage"],
-            })
+            resolved.append({"ref": ref, "kind": "asset", **catalog.resolve(ref).summary()})
         return {
             "kind": kind,
             "key": key,
             "node": node,
             "resolved_sources": resolved,
-            "trace_complete": bool(resolved) and all(x["kind"] == "document" for x in resolved),
+            "trace_complete": bool(resolved) and all(x["kind"] == "asset" for x in resolved),
         }
 
     def validate_integrity(
         self,
         root: Path,
-        registry: Any,
+        catalog: Any,
         reconstruction: Any,
         world: Any,
         object_network: Any,
         literary_ecology: Any,
         plocks: Any,
         competitions: Any,
-        promotions: Any,
     ) -> list[str]:
         errors: list[str] = []
-        if self.data.get("milestone") != "M6":
-            errors.append("Implementation alignment milestone must be M6")
 
-        expected = set(range(81, 101))
-        if set(self.chapters) != expected:
-            errors.append("M6 stable body must contain chapter locators 81..100 exactly")
-        if set(self.plans) != expected:
-            errors.append("M6 chapter plans must contain 81..100 exactly")
-        if set(self.protections) != expected:
-            errors.append("M6 chapter protections must contain 81..100 exactly")
-        if len(self.facts) != 39:
-            errors.append(f"M6 implementation register must contain 39 normalized facts; got {len(self.facts)}")
+        for label, view in [("stable locators", self.chapters), ("plans", self.plans), ("protections", self.protections)]:
+            errors.extend(coverage_errors(view, self.chapter_scope, "alignment " + label))
+        if not self.facts:
+            errors.append("implementation facts must be nonempty")
 
         stable = self.data.get("stable_release", {})
-        stable_ref = stable.get("document_ref")
-        stable_doc = registry.documents.get(stable_ref)
+        release = ProjectState.from_repo(root).release(catalog)
+        errors.extend(release.validate_storage())
+        if stable.get("release_id") != release.data["id"] or stable.get("sha256") != release.data["text_sha256"]:
+            errors.append("implementation alignment differs from selected release")
+        stable_ref = stable.get("asset_ref")
+        stable_doc = catalog.assets.get(stable_ref)
         if stable_doc is None:
-            errors.append(f"M6 stable body document missing from registry: {stable_ref}")
+            errors.append(f"M6 stable body document missing from catalog: {stable_ref}")
         elif stable_doc.get("sha256") != stable.get("sha256"):
             errors.append("M6 stable body SHA does not match DocumentRegistry")
+        if stable_doc and catalog.resolve(stable_ref).id != catalog.resolve(release.data["text_asset_ref"]).id:
+            errors.append("implementation alignment text asset differs from selected release")
 
         sources = self.data.get("sources", {})
         for name, source in sources.items():
-            doc = registry.documents.get(source["document_ref"])
+            doc = catalog.assets.get(source["asset_ref"])
             if doc is None:
                 errors.append(f"M6 source {name}: unregistered document")
             elif doc["sha256"] != source["sha256"]:
                 errors.append(f"M6 source {name}: SHA256 mismatch")
 
         # Stable chapter locators must be contiguous and cover the exact frozen body.
-        ordered = [self.chapters[ch] for ch in range(81, 101)]
+        ordered = [self.chapters[ch] for ch in self.chapter_scope if ch in self.chapters]
+        body_lines = catalog.resolve(stable_ref).path.read_bytes().decode("utf-8").splitlines(keepends=True) if stable_doc else []
+        if len(body_lines) != stable.get("line_count"):
+            errors.append("stable body line count disagrees with actual asset bytes")
         expected_line = 1
         for item in ordered:
             if item["line_start"] != expected_line:
@@ -183,24 +185,15 @@ class ImplementationAlignmentRuntime:
                 )
             if item["line_end"] < item["line_start"]:
                 errors.append(f"chapter {item['chapter']}: invalid stable line range")
+            fragment = "".join(body_lines[item["line_start"] - 1:item["line_end"]])
+            if hashlib.sha256(fragment.encode("utf-8")).hexdigest() != item["sha256"]:
+                errors.append(f"chapter {item['chapter']}: locator hash disagrees with actual stable bytes")
             expected_line = item["line_end"] + 1
         if expected_line - 1 != stable.get("line_count"):
             errors.append("M6 stable chapter locators do not cover the frozen body line count")
 
-        # Reuse the reviewed promotion baseline as an independent chapter-hash fixture.
-        promo = promotions.records.get("promotion:ch86:b:v1-5-candidate")
-        if promo is None:
-            errors.append("M6 cannot find the Chapter-86 promotion fixture")
-        else:
-            if promo["baseline"]["sha256"] != stable["sha256"]:
-                errors.append("M6 stable SHA disagrees with promotion baseline")
-            for ch, item in self.chapters.items():
-                expected_hash = promo["baseline_chapter_sha256"].get(str(ch))
-                if expected_hash != item["sha256"]:
-                    errors.append(f"chapter {ch}: stable chapter SHA disagrees with promotion fixture")
-
         # Every aligned chapter must exist in the downstream runtimes.
-        for ch in range(81, 101):
+        for ch in self.chapter_scope:
             if ch not in reconstruction.chapters:
                 errors.append(f"chapter {ch}: missing Reconstruction node")
             if ch not in world.presence:
@@ -209,45 +202,32 @@ class ImplementationAlignmentRuntime:
                 errors.append(f"chapter {ch}: missing Literary Ecology chapter")
             if ch not in self.plans or ch not in self.protections:
                 continue
-            if self.plans[ch]["source_ref"] != "doc:23861cce04ac":
+            if self.plans[ch]["source_ref"] != self.data["sources"]["chapter_plan"]["asset_ref"]:
                 errors.append(f"chapter {ch}: plan source drift")
-            if self.protections[ch]["source_ref"] != "doc:626917a3603d":
+            if self.protections[ch]["source_ref"] != self.data["sources"]["protection_table"]["asset_ref"]:
                 errors.append(f"chapter {ch}: protection source drift")
 
-        # Specialized PR9 P-Locks are a strict subset of the full 20-chapter protection table.
-        expected_specialized = {
-            "plock:ch86:cold-medicine",
-            "plock:ch89:small-life-after-confiscation",
-            "plock:ch92:procedure-density",
-            "plock:ch97:miaoyu-object-progression",
-            "plock:ch100:record-keeper-ending",
-        }
-        declared_specialized = {x["id"] for x in self.data.get("specialized_plocks", [])}
-        if declared_specialized != expected_specialized:
-            errors.append("M6 specialized P-Lock bridge must preserve the exact PR9 five-lock set")
-        for lock_id in expected_specialized:
+        # Cover registered active protections in scope; the set can grow with the project.
+        expected_specialized = {identity for identity, lock in plocks.locks.items()
+                                if lock["state"] == "P_LOCKED" and lock["chapter"] in self.chapter_scope}
+        declared_specialized = unique_index(self.data.get("specialized_plocks", []))
+        errors.extend(coverage_errors(declared_specialized, expected_specialized, "specialized P-Lock coverage"))
+        for lock_id, binding in declared_specialized.items():
             lock = plocks.locks.get(lock_id)
             if lock is None:
                 errors.append(f"M6 specialized P-Lock missing: {lock_id}")
-            elif lock["active_prose_locator"]["file_sha256"] != stable["sha256"]:
-                errors.append(f"{lock_id}: specialized P-Lock locator not on frozen stable body")
-
-        # Freeze the production state exactly; do not silently resume literature.
-        for ch, fixture in self.competitions.items():
-            record = competitions.records.get(fixture["id"])
-            if record is None:
-                errors.append(f"chapter {ch}: missing competition fixture {fixture['id']}")
                 continue
-            if record["state"] != fixture["state"]:
-                errors.append(
-                    f"chapter {ch}: competition state drift {record['state']} != {fixture['state']}"
-                )
-        if self.competitions[89]["freeze_effect"] != "DO_NOT_CONTINUE_PHASE2":
-            errors.append("Chapter 89 Phase 2 must remain frozen")
-        if self.competitions[92]["freeze_effect"] != "DO_NOT_START":
-            errors.append("Chapter 92 pressure work must remain frozen")
-        if self.competitions[97]["freeze_effect"] != "DO_NOT_START":
-            errors.append("Chapter 97 pressure work must remain frozen")
+            if binding["chapter"] != lock["chapter"] or binding["chapter"] not in self.chapter_scope:
+                errors.append(f"{lock_id}: specialized P-Lock chapter binding drift")
+            if lock["active_prose_locator"]["file_sha256"] != stable["sha256"]:
+                errors.append(f"{lock_id}: specialized P-Lock locator not on selected stable body")
+
+        for chapter, location in self.data["object_query_locations"].items():
+            if int(chapter) not in self.chapter_scope or location not in world.locations:
+                errors.append(f"chapter {chapter}: unknown object-query chapter or location {location}")
+
+        # Competition transitions are checked against actual review records by their owner.
+        errors.extend(coverage_errors(self.competitions, [r["chapter"] for r in competitions.records.values() if r["mode"] == "PRODUCTION_43_0"], "competition references"))
 
         # The object runtime should remain usable while M6 does not try to duplicate it.
         continuity = object_network.continuity_report()
@@ -256,28 +236,11 @@ class ImplementationAlignmentRuntime:
 
         forbidden_identity_prefixes = ("A-", "B-", "EVIDENCE_")
         for fact in self.facts.values():
-            if fact.get("source_ref") != "doc:b90e41f44edb":
+            if fact.get("source_ref") != "asset:sha256:b90e41f44edbf0f3f86bd34365d842ccb121baa6ff1d8c9d047a38d86d67a95d":
                 errors.append(f"{fact['id']}: implementation fact source drift")
             if any(str(fact.get("identity", "")).startswith(x) for x in forbidden_identity_prefixes):
                 errors.append(f"{fact['id']}: implementation identity illegally resembles Evidence authority")
 
-        norm = self.data.get("source_normalization", {})
-        if norm.get("effective_stable_body_sha256") != stable.get("sha256"):
-            errors.append("M6 source-normalization effective stable pointer mismatch")
-        if norm.get("stale_header_body_sha256") == stable.get("sha256"):
-            errors.append("M6 failed to distinguish stale v1.3 header from effective v1.4 release")
-
-        completion = self.data.get("completion", {})
-        if completion.get("chapters_aligned") != 20:
-            errors.append("M6 must align exactly 20 chapters")
-        if not completion.get("literature_frozen"):
-            errors.append("M6 must keep literature frozen")
-        if completion.get("stable_active_changed"):
-            errors.append("M6 may not change stable ACTIVE")
-        if completion.get("p0_full_coverage"):
-            errors.append("M6 may not claim P0 100% before M7")
-        if completion.get("completion_gate_ready"):
-            errors.append("M6 may not mark Completion Gate ready")
         return errors
 
     def _fact_ids_for_chapter(self, chapter: int) -> list[str]:
@@ -293,35 +256,30 @@ class ImplementationAlignmentRuntime:
         return result
 
 
-def _collect_doc_refs(item: Any) -> list[str]:
+def _collect_asset_refs(item: Any) -> list[str]:
     refs: list[str] = []
     if isinstance(item, dict):
         for key, value in item.items():
-            if key in {"source_ref", "document_ref"} and isinstance(value, str) and value.startswith("doc:"):
+            if key in {"source_ref", "asset_ref"} and isinstance(value, str) and value.startswith("asset:"):
                 refs.append(value)
             elif isinstance(value, (dict, list)):
-                refs.extend(_collect_doc_refs(value))
+                refs.extend(_collect_asset_refs(value))
     elif isinstance(item, list):
         for value in item:
-            refs.extend(_collect_doc_refs(value))
+            refs.extend(_collect_asset_refs(value))
     return list(dict.fromkeys(refs))
 
 
 def format_implementation_alignment(kind: str, payload: Any) -> str:
     if kind == "summary":
-        c = payload["completion"]
         return "\n".join([
             "IMPLEMENTATION ALIGNMENT M6",
-            f"status: {payload['status']}",
             f"stable_release: {payload['stable_release']}",
             f"stable_sha256: {payload['stable_sha256']}",
-            f"chapters: {payload['chapters']}/20",
-            f"chapter_plans: {payload['chapter_plans']}/20",
+            f"chapters: {payload['chapters']}",
+            f"chapter_plans: {payload['chapter_plans']}",
             f"implementation_facts: {payload['implementation_facts']}",
-            f"chapter_protections: {payload['chapter_protections']}/20",
-            f"literature_frozen: {str(c['literature_frozen']).lower()}",
-            f"P0 full coverage: {str(c['p0_full_coverage']).lower()}",
-            f"Completion Gate ready: {str(c['completion_gate_ready']).lower()}",
+            f"chapter_protections: {payload['chapter_protections']}",
         ])
     if kind == "chapter":
         body = payload["stable_body"]
@@ -344,6 +302,6 @@ def format_implementation_alignment(kind: str, payload: Any) -> str:
             f"sha256: {payload['sha256']}",
             f"lines: {payload['line_count']}",
             f"chapters: {payload['chapter_count']}",
-            f"mutable_during_full_migration: {str(payload['mutable_during_full_migration']).lower()}",
+            f"mutable: {str(payload['mutable']).lower()}",
         ])
     return str(payload)

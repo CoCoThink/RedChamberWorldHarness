@@ -3,7 +3,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 import hashlib
-from .io import load_data
+from .contracts import unique_index, record_sha256
 from .microdraft import ControlledMicrodraftRuntime
 from .blind_microdraft_review import BlindMicrodraftReviewRuntime
 from .narrative_discourse import NarrativeDiscourseRuntime
@@ -17,14 +17,22 @@ class CrossRouteRevisionAblationRuntime:
 
     @classmethod
     def from_repo(cls, root: Path) -> "CrossRouteRevisionAblationRuntime":
-        return cls(root, load_data(root / "data" / "revision_ablation" / "v014.json") or {})
+        from .workflow import ProjectState
+        return cls(root, ProjectState.from_repo(root).experiment())
 
     @property
     def pairs(self) -> dict[str, dict[str, Any]]:
-        return {x["baseline_token"]: x for x in self.data.get("pairs", [])}
+        return unique_index(self.data.get('pairs', []), 'baseline_token')
 
     def _text(self, path: str) -> str:
         return (self.root / path).read_text(encoding="utf-8").strip()
+
+    def require_inputs(self, p6: ControlledMicrodraftRuntime, p7: BlindMicrodraftReviewRuntime) -> None:
+        basis = self.data["source_basis"]
+        p6.require_snapshot(basis["p6_ref"], basis["p6_snapshot_sha256"])
+        if basis["p7_ref"] != p7.data["id"] or basis["p7_snapshot_sha256"] != record_sha256(p7.data):
+            raise ValueError("blind review snapshot binding drift; revision requires its original review")
+        p7.mapping(p6)
 
     def anti_patterns(self, text: str) -> dict[str, Any]:
         hits={}
@@ -44,14 +52,13 @@ class CrossRouteRevisionAblationRuntime:
     ) -> dict[str, Any]:
         if baseline_token not in self.pairs:
             raise KeyError(f"Unknown P8 baseline token: {baseline_token}")
+        self.require_inputs(p6, p7)
         spec=self.pairs[baseline_token]
-        baseline=self._text(spec["baseline_artifact"])
+        baseline=p6.text(baseline_token)
         revised=self._text(spec["revised_artifact"])
         base_spec=p6.drafts[baseline_token]
         blockers=[]
-        if (base_spec["scenario_id"],base_spec["probe_id"],base_spec["cell_id"]) != (spec["scenario_id"],spec["probe_id"],spec["cell_id"]):
-            blockers.append({"kind":"PAIR_BINDING_DRIFT"})
-        card=discourse.card(spec["scenario_id"],spec["probe_id"],stress)
+        card=discourse.card(base_spec["scenario_id"],base_spec["probe_id"],stress)
         if base_spec["primary_focalizer"] != card["sjuzet_plan"]["primary_focalizer"]:
             blockers.append({"kind":"BASELINE_FOCALIZER_DRIFT"})
         n=len(revised)
@@ -82,7 +89,7 @@ class CrossRouteRevisionAblationRuntime:
 
         return {
           "baseline_token":baseline_token,"revised_token":spec["revised_token"],
-          "scenario_id":spec["scenario_id"],"probe_id":spec["probe_id"],"cell_id":spec["cell_id"],
+          "scenario_id":base_spec["scenario_id"],"probe_id":base_spec["probe_id"],"cell_id":base_spec["cell_id"],
           "applied_targets":spec["applied_targets"],
           "baseline_sha256":hashlib.sha256(baseline.encode("utf-8")).hexdigest(),
           "revised_sha256":hashlib.sha256(revised.encode("utf-8")).hexdigest(),
@@ -101,7 +108,6 @@ class CrossRouteRevisionAblationRuntime:
         before=sum(x["anti_patterns_before"]["total"] for x in rows)
         after=sum(x["anti_patterns_after"]["total"] for x in rows)
         return {
-          "milestone":"P8",
           "status":"PASS" if all(x["status"]=="ABLATION_READY" for x in rows) else "BLOCKED",
           "pair_count":len(rows),
           "ready_count":sum(x["status"]=="ABLATION_READY" for x in rows),
@@ -111,23 +117,32 @@ class CrossRouteRevisionAblationRuntime:
           "anti_pattern_delta":after-before,
           "strict_reduction_tokens":self.data["strict_reduction_tokens"],
           "winner":None,"route_eliminated":False,"literary_superiority_claim":None,
-          "next_gate":"P9_PAIRED_BLIND_REVISION_REVIEW"
+          "next_gate":self.data["next_gate"]
         }
 
     def validate_integrity(self,p6,p7,discourse,stress,suite) -> list[str]:
         errors=[]
-        if self.data.get("milestone")!="P8": errors.append("P8 milestone mismatch")
+        try:
+            self.require_inputs(p6, p7)
+        except (ValueError, KeyError, OSError) as exc:
+            return [str(exc)]
         if self.data.get("authority")!="SHADOW_ONLY": errors.append("P8 must remain SHADOW_ONLY")
         if self.data.get("output_authority")!="EXPERIMENTAL_REVISION_ONLY": errors.append("P8 output authority drift")
         policy=self.data.get("policy",{})
         for key in ("baseline_artifacts_mutable","fabula_mutation_allowed","probe_rebinding_allowed","focalizer_rebinding_allowed","automatic_winner","automatic_route_elimination","automatic_literary_superiority_claim"):
             if policy.get(key) is not False: errors.append(f"P8 policy {key} must remain false")
-        for key in ("evidence_effect","open_interface_effect","stable_active_effect","canonical_prose_effect","chapter89_competition_effect"):
+        for key in ("evidence_effect","open_interface_effect","stable_active_effect","canonical_prose_effect","competition_effect"):
             if policy.get(key)!="NONE": errors.append(f"P8 authority effect {key} must remain NONE")
         if set(self.pairs)!=set(p6.drafts): errors.append("P8 pairs must cover exactly all P6 drafts")
-        if len(self.pairs)!=20: errors.append(f"P8 requires 20 pairs; got {len(self.pairs)}")
-        if {x["id"] for x in p7.data["revision_targets"]} != {f"RT-{i:02d}" for i in range(1,10)}:
-            errors.append("P8 expects the complete P7 RT-01..RT-09 revision target set")
+        targets = set(unique_index(p7.data["revision_targets"]))
+        unique_index(list(self.pairs.values()), "revised_token")
+        if not targets:
+            errors.append("revision requires declared review targets")
+        for pair in self.pairs.values():
+            if not set(pair["applied_targets"]) <= targets:
+                errors.append(f"{pair['baseline_token']}: unknown revision target")
+        if not set(self.data["strict_reduction_tokens"]) <= set(self.pairs):
+            errors.append("strict reduction token missing revision pair")
         result=self.evaluate_all(p6,p7,discourse,stress,suite)
         if result["status"]!="PASS": errors.append(f"P8 ablation screen failed: {result}")
         if result["winner"] is not None or result["route_eliminated"]:

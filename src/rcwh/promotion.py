@@ -10,6 +10,9 @@ from .competition import CompetitionRegistry
 from .io import load_data
 from .literary_eval import evaluate_literary_candidate
 from .regression import run_r4_evidence_regression
+from .contracts import project_chapters, coverage_errors
+from .assets import AssetCatalog
+from .assets.catalog import repository_path
 
 
 HEADING_RE = re.compile(r"(?m)^# 第[^\n]+回[^\n]*$")
@@ -19,15 +22,15 @@ def _sha256_text(text: str) -> str:
     return hashlib.sha256(text.encode("utf-8")).hexdigest()
 
 
-def _split_chapters(text: str) -> dict[int, str]:
+def _split_chapters(text: str, chapter_ids: tuple[int, ...]) -> dict[int, str]:
     matches = list(HEADING_RE.finditer(text))
-    if len(matches) != 20:
-        raise ValueError(f"expected 20 chapter headings, found {len(matches)}")
+    if len(matches) != len(chapter_ids):
+        raise ValueError(f"expected {len(chapter_ids)} chapter headings for configured scope, found {len(matches)}")
     result = {}
     for i, match in enumerate(matches):
         start = match.start()
         end = matches[i + 1].start() if i + 1 < len(matches) else len(text)
-        result[81 + i] = text[start:end]
+        result[chapter_ids[i]] = text[start:end]
     return result
 
 
@@ -47,6 +50,34 @@ class PromotionRegistry:
                         raise ValueError(f"Duplicate promotion id: {item['id']}")
                     result[item["id"]] = item
         return cls(result)
+
+    def build_candidate(self, root: Path, promotion_id: str) -> bytes:
+        record = self.records[promotion_id]
+        baseline = AssetCatalog.from_repo(root).resolve(record["baseline"]["asset_ref"])
+        if baseline.sha256 != record["baseline"]["sha256"]:
+            raise ValueError("promotion baseline identity mismatch")
+        text = baseline.path.read_bytes().decode("utf-8")
+        scope = project_chapters(root)
+        chapters = _split_chapters(text, scope)
+        replacements = record["candidate"]["replacements"]
+        selected = [r["chapter"] for r in replacements]
+        if len(selected) != len(set(selected)) or set(selected) != set(record["allowed_changed_chapters"]):
+            raise ValueError("promotion replacement scope mismatch")
+        for replacement in replacements:
+            chapter = replacement["chapter"]
+            if chapter not in chapters:
+                raise ValueError("promotion replacement outside project scope")
+            raw = repository_path(root, replacement["path"]).read_bytes()
+            if hashlib.sha256(raw).hexdigest() != replacement["sha256"]:
+                raise ValueError("promotion chapter identity mismatch")
+            body = raw.decode("utf-8")
+            _split_chapters(body, (chapter,))
+            chapters[chapter] = body.rstrip("\r\n") + "\n" * replacement["trailing_newlines"]
+        prefix = text[:HEADING_RE.search(text).start()]
+        raw = (prefix + "".join(chapters[ch] for ch in scope)).encode("utf-8")
+        if hashlib.sha256(raw).hexdigest() != record["candidate"]["sha256"]:
+            raise ValueError("assembled promotion candidate identity mismatch")
+        return raw
 
     def evaluate(self, root: Path, promotion_id: str) -> dict[str, Any]:
         record = self.records[promotion_id]
@@ -71,11 +102,11 @@ class PromotionRegistry:
         if regression["overall"] != "PASS":
             findings.append("frozen R4 Evidence Core regression is not PASS")
 
-        path = root / record["candidate"]["path"]
-        if not path.exists():
-            findings.append("full-body promotion candidate missing")
+        try:
+            text = self.build_candidate(root, promotion_id).decode("utf-8")
+        except (KeyError, OSError, ValueError) as exc:
+            findings.append(str(exc))
             return {"id":promotion_id,"overall":"FAIL","gates":gates,"findings":findings}
-        text = path.read_text(encoding="utf-8")
         actual_sha = _sha256_text(text)
         sha_ok = actual_sha == record["candidate"]["sha256"]
         gates["BASELINE_IDENTITY"] = "PASS" if record["baseline"]["sha256"] == regression["stable_active"]["sha256"] else "FAIL"
@@ -83,7 +114,11 @@ class PromotionRegistry:
             findings.append(f"candidate SHA mismatch {actual_sha} != {record['candidate']['sha256']}")
 
         try:
-            chapters = _split_chapters(text)
+            scope = project_chapters(root)
+            mismatch = coverage_errors([int(ch) for ch in record["baseline_chapter_sha256"]], scope, "promotion baseline chapters")
+            if mismatch:
+                raise ValueError("; ".join(mismatch))
+            chapters = _split_chapters(text, scope)
             gates["BOOK_STRUCTURE"] = "PASS"
         except ValueError as exc:
             chapters = {}
@@ -104,8 +139,14 @@ class PromotionRegistry:
                     non_target_ok = False
         gates["NON_TARGET_INTEGRITY"] = "PASS" if non_target_ok else "FAIL"
 
-        source_chapter = (root / record["candidate"]["source_chapter_path"]).read_text(encoding="utf-8")
-        target_matches = bool(chapters) and chapters[86].rstrip() == source_chapter.rstrip()
+        winner = next((c for c in (comp or {}).get("candidates", []) if c["id"] == record["winner_candidate_id"]), None)
+        replacements = record["candidate"]["replacements"]
+        source_chapter = repository_path(root, replacements[0]["path"]).read_bytes().decode("utf-8")
+        target_matches = bool(chapters) and bool(winner) and len(replacements) == 1 and (
+            replacements[0]["chapter"] == comp["chapter"]
+            and replacements[0]["path"] == winner["artifact"]["path"]
+            and chapters[comp["chapter"]].rstrip() == source_chapter.rstrip()
+        )
         if not target_matches:
             findings.append("embedded Chapter 86 does not match adjudicated B candidate")
 

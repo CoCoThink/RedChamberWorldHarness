@@ -1,8 +1,8 @@
-# R4 Evidence Core final regression — v0.2-beta.6
+# R4 Evidence Core regression
 
-## Result
+## Historical baseline
 
-**FINAL PASS**
+**v0.2-beta.6 FINAL PASS**。这是历史验收记录；当前结果以 `rcwh regression` 为准。
 
 Stable ACTIVE prose baseline:
 
@@ -23,7 +23,7 @@ It is now linked to a first-class source node based on the Jimao Chapter 18 comm
 
 `《离魂》……伏黛玉死……乃通部书之大过节、大关键。`
 
-The hard Daiyu-death direction is also represented in the main Source → Claim → Decision → Implementation graph.
+The hard Daiyu-death direction is represented in the main Source → Claim → Decision → Implementation graph. On 2026-10-08 the redundant v0.1 compatibility record and checker were retired; the graph is now the sole evidence path. The unfinished/death-poem working constraint remains in the scene contract and literary checks, with no evidence authority.
 
 ### 2. Chapter 92 R4 hard interfaces were not yet first-class Decisions
 
@@ -43,64 +43,43 @@ They are now explicit provenance nodes:
 
 with W1 source backing and stable-ACTIVE implementation locators.
 
-## Release-shape snapshot
+## 数据范围
 
-- Sources: 32
-- Claims: 72
-  - SUPPORTED: 42
-  - NOT_ESTABLISHED: 30
-- Decisions: 53
-  - LOCKED: 18
-  - CURRENT: 14
-  - OPEN: 21
-- Implementations: 28
-- T-axis records: 15
-- Literal constraints: 6
-- Historical mechanisms: 6
-- OPEN-LOCK interfaces: 28
-
-Source types:
-
-- EARLY_COMMENT: 14
-- EARLY_TRANSCRIPT: 6
-- HISTORICAL_PRIMARY: 11
-- SECONDARY_RESEARCH: 1
+当前节点数量由 `rcwh regression --json` 的 `population` 输出，不作为验收配额。旧数量基线保存在清理审计。已确认的证据锚点继续校验；新增合法节点须满足相同图与权威规则。
 
 ## Gates
 
-The executable regression runs ten release gates:
+The executable regression checks these semantic gates:
 
 1. **PROVENANCE**
    - supported graph integrity;
    - no duplicate provenance fingerprint;
-   - all legacy HARD evidence has a resolvable Source;
+   - hard anchors have source-backed Claims and eligible Decisions in the provenance graph;
    - EARLY_COMMENT sources have W1 tier.
 
 2. **ROLE_T_AXIS**
-   - exact T0/T1/T2/T2_W2/T3/TG release map.
+   - the confirmed T0/T1/T2/T2_W2/T3/TG anchor map, allowing valid additions.
 
 3. **MODALITY_W2**
-   - six W2 transcript sources;
    - W2-only claims are TRANSCRIPT_WEAK;
    - no LOCKED Decision can rest on W2-only basis.
 
 4. **LITERAL_TARGET**
-   - exact six literal constraints;
+   - confirmed literal constraints, allowing valid additions;
    - SOURCE_EXACT cannot become required prose;
    - NAME_EXACT/NOVEL_EXACT retain implementation requirements.
 
 5. **PLACEMENT_CURRENT**
-   - all 14 implementation/placement choices remain CURRENT/MAY.
+   - confirmed implementation/placement choices remain CURRENT/MAY.
 
 6. **IMPLEMENTATION_STABLE_ACTIVE**
-   - all ACTIVE implementation locators point to the same stable-v1.4 file and SHA.
+   - all ACTIVE implementation locators agree with the R4 regression manifest’s stable file and SHA.
 
 7. **SEMANTIC_HARD_ANCHORS**
-   - all 18 LOCKED Decisions are fully source-backed and lock-eligible.
+   - all LOCKED Decisions are fully source-backed and lock-eligible.
 
 8. **BOUNDARY_OPEN_LOCK**
-   - exactly OL-001..OL-028;
-   - 21 OPEN Decisions remain OPEN/OPEN;
+   - confirmed OPEN Decisions remain OPEN/OPEN;
    - current choices do not harden.
 
 9. **HISTORICAL_H01_H06**
@@ -111,9 +90,6 @@ The executable regression runs ten release gates:
    - H05 PASS;
    - H06 PASS-SOFT;
    - historical feasibility remains non-narrative.
-
-10. **RELEASE_SHAPE**
-    - exact node and status counts match the release manifest.
 
 ## Command
 
@@ -129,10 +105,4 @@ and every gate must be PASS.
 
 ## Scope boundary
 
-This is the final regression for the **R4 Evidence Core**.
-
-It does not claim that literary P-Locks, world simulation, character voice, object continuity, or the full 43–52 literary production pipeline have been fully machine-imported. Those belong to later RCWH infrastructure layers.
-
-The Evidence Core's responsibility is narrower and now frozen:
-
-> source provenance, evidence role, modality, literal target, placement authority, historical feasibility, weak-witness limits, OPEN uncertainty, and stable implementation traceability.
+PASS means the provenance, role, modality, literal-target, placement, weak-witness, OPEN and stable implementation rules hold for the current graph. It does not prove complete local Source content or validated locators, literary quality, adoption or publication. Use the separate self-contained profiles for storage and source closure.

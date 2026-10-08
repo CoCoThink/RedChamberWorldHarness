@@ -15,13 +15,10 @@ def runtime() -> CharacterKnowledgeRuntime:
     return CharacterKnowledgeRuntime.from_repo(ROOT)
 
 
-def test_issue3_first_slice_has_exact_six_characters_and_four_buckets():
+def test_knowledge_preserves_supported_characters_and_four_buckets():
     summary = runtime().summary()
-    assert set(summary["character_ids"]) == SLICE
-    assert summary["characters"] == 6
-    assert summary["event_driven_updates"] is True
-    assert summary["omniscience_validator"] is True
-    assert summary["voice_masking_hooks"] is True
+    assert SLICE <= set(summary["character_ids"])
+    assert summary["characters"] == len(runtime().characters)
     assert summary["automatic_voice_identity"] is False
     for scene_id in runtime().scenes:
         payload = runtime().scene(scene_id, "ENTRY")
@@ -106,7 +103,7 @@ def test_voice_hooks_are_source_backed_for_five_and_abstain_for_qianxue():
     for cid in SLICE - {"qianxue"}:
         profile = rt.voice(cid)
         assert profile["voice_profile"]["support"] == "SOURCE_BACKED"
-        assert profile["voice_profile"]["source_ref"] == "doc:3a6c54bfac7b"
+        assert profile["voice_profile"]["source_ref"] == "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
         probe = rt.mask(cid, "寻常一句话。")
         assert probe["status"] == "READY_FOR_HUMAN_MASKING"
         assert probe["automatic_identity_pass"] is False

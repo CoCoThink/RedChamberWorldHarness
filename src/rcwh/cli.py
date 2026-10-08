@@ -4,10 +4,9 @@ import argparse
 import json
 from pathlib import Path
 
+from .application.foundation import add_foundation_commands
 from .blind_microdraft_review import BlindMicrodraftReviewRuntime
 from .competition import CompetitionRegistry, format_competition
-from .completion import CompletionGateRuntime, format_completion
-from .coverage import CoverageAuditRuntime, format_coverage
 from .evaluate import evaluate_scene_text, overall_status
 from .graph import ProvenanceGraph
 from .history import HistoricalMechanismRegistry, format_mechanism
@@ -32,12 +31,7 @@ from .regression import format_regression, run_r4_evidence_regression
 from .revision_ablation import CrossRouteRevisionAblationRuntime
 from .promotion import PromotionRegistry, format_promotion
 from .prewrite import V5PrewriteRuntime, format_prewrite
-from .registry import (
-    MigrationRegistry,
-    format_current_authority,
-    format_registry_document,
-    format_registry_package,
-)
+from .assets import AssetCatalog
 from .reconstruction import ReconstructionRegistry, format_reconstruction
 from .runtime import WorldState
 from .scenarios import ScenarioRuntime
@@ -59,7 +53,7 @@ def cmd_validate(args: argparse.Namespace) -> int:
         for error in errors:
             print(f"- {error}")
         return 1
-    print("PASS: Full Migration Completion Gate valid; R4 Evidence Core frozen; stable ACTIVE unchanged")
+    print("PASS: repository integrity valid; check self-contained profiles for source closure")
     return 0
 
 
@@ -168,8 +162,6 @@ def cmd_open(args: argparse.Namespace) -> int:
     return 0
 
 
-
-
 def cmd_hypothesis(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     runtime = HypothesisRuntime.from_repo(root)
@@ -248,7 +240,6 @@ def cmd_scenario(args: argparse.Namespace) -> int:
     return 0
 
 
-
 def cmd_pareto(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     hypotheses = HypothesisRuntime.from_repo(root)
@@ -281,7 +272,6 @@ def cmd_pareto(args: argparse.Namespace) -> int:
     return 0
 
 
-
 def cmd_literary_stress(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     runtime = ScenarioLiteraryStressRuntime.from_repo(root)
@@ -305,7 +295,6 @@ def cmd_literary_stress(args: argparse.Namespace) -> int:
     if kind == "summary":
         return 0 if payload["status"] == "PASS" else 1
     return 0
-
 
 
 def cmd_narrative_discourse(args: argparse.Namespace) -> int:
@@ -335,7 +324,6 @@ def cmd_narrative_discourse(args: argparse.Namespace) -> int:
     return 0
 
 
-
 def cmd_microdraft(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     runtime = ControlledMicrodraftRuntime.from_repo(root)
@@ -363,7 +351,6 @@ def cmd_microdraft(args: argparse.Namespace) -> int:
     return 0
 
 
-
 def cmd_blind_microdraft_review(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     runtime = BlindMicrodraftReviewRuntime.from_repo(root)
@@ -382,7 +369,6 @@ def cmd_blind_microdraft_review(args: argparse.Namespace) -> int:
         return 1
     print(json.dumps(payload, ensure_ascii=False, indent=2))
     return 0
-
 
 
 def cmd_revision_ablation(args: argparse.Namespace) -> int:
@@ -444,7 +430,7 @@ def cmd_prewrite(args: argparse.Namespace) -> int:
     literary = LiteraryEcologyRuntime.from_repo(root)
     plocks = LiteraryProtectionRegistry.from_repo(root)
     adapters = HistoricalAdapterRuntime.from_repo(root)
-    registry = MigrationRegistry.from_repo(root)
+    registry = AssetCatalog.from_repo(root)
     try:
         kind = args.prewrite_command
         if kind == "summary":
@@ -507,11 +493,12 @@ def cmd_literary_suite(args: argparse.Namespace) -> int:
             if args.competition_id not in competitions.records:
                 raise KeyError(f"Unknown competition: {args.competition_id}")
             payload = suite.competition_blind_packet(
-                competitions.records[args.competition_id]
+                competitions.records[args.competition_id],
+                Path(args.output_dir) if args.output_dir else None,
             )
         else:
             raise KeyError(f"Unknown literary-suite command: {kind}")
-    except (KeyError, ValueError, FileNotFoundError) as exc:
+    except (KeyError, ValueError, OSError) as exc:
         print(str(exc))
         return 1
 
@@ -574,35 +561,6 @@ def cmd_competition(args: argparse.Namespace) -> int:
     else:
         print(format_competition(payload))
     return 1 if payload["consistency_errors"] else 0
-
-
-def cmd_registry(args: argparse.Namespace) -> int:
-    root = Path(args.root).resolve() if args.root else repo_root()
-    registry = MigrationRegistry.from_repo(root)
-    try:
-        if args.registry_command == "package":
-            payload = registry.package(args.key)
-            rendered = format_registry_package(payload)
-        elif args.registry_command == "document":
-            payload = registry.document(args.key)
-            rendered = format_registry_document(payload)
-        elif args.registry_command == "hash":
-            payload = registry.content_hash(args.key)
-            rendered = json.dumps(payload, ensure_ascii=False, indent=2)
-        elif args.registry_command == "current":
-            payload = registry.current_summary()
-            rendered = format_current_authority(payload)
-        else:
-            raise KeyError(f"Unknown registry command: {args.registry_command}")
-    except KeyError as exc:
-        print(str(exc))
-        return 1
-
-    if args.json:
-        print(json.dumps(payload, ensure_ascii=False, indent=2))
-    else:
-        print(rendered)
-    return 0
 
 
 def cmd_reconstruction(args: argparse.Namespace) -> int:
@@ -675,8 +633,8 @@ def cmd_world(args: argparse.Namespace) -> int:
 
 def cmd_object(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
-    objects = ObjectNetworkRuntime.from_repo(root)
     try:
+        objects = ObjectNetworkRuntime.from_repo(root)
         kind = args.object_command
         if kind == "summary":
             payload = objects.summary()
@@ -691,12 +649,12 @@ def cmd_object(args: argparse.Namespace) -> int:
         elif kind == "continuity":
             payload = objects.continuity_report()
         elif kind == "trace":
-            migration_registry = MigrationRegistry.from_repo(root)
+            migration_registry = AssetCatalog.from_repo(root)
             reconstruction = ReconstructionRegistry.from_repo(root)
             payload = objects.trace(args.object_id, migration_registry, reconstruction)
         else:
             raise KeyError(f"Unknown object command: {kind}")
-    except KeyError as exc:
+    except (KeyError, ValueError) as exc:
         print(str(exc))
         return 1
     if args.json:
@@ -738,7 +696,7 @@ def cmd_literary_ecology(args: argparse.Namespace) -> int:
         elif kind == "search":
             payload = ecology.search(args.term)
         elif kind == "trace":
-            registry = MigrationRegistry.from_repo(root)
+            registry = AssetCatalog.from_repo(root)
             payload = ecology.trace(args.kind, args.key, registry)
         else:
             raise KeyError(f"Unknown literary-ecology command: {kind}")
@@ -826,8 +784,6 @@ def cmd_literary_production(args: argparse.Namespace) -> int:
             payload = runtime.summary()
         elif kind == "chapter":
             payload = runtime.chapter(args.chapter, competitions)
-        elif kind == "quarantine":
-            payload = runtime.quarantine()
         else:
             raise KeyError(f"Unknown literary production command: {kind}")
     except (KeyError, ValueError) as exc:
@@ -837,100 +793,6 @@ def cmd_literary_production(args: argparse.Namespace) -> int:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
     else:
         print(format_literary_production(kind, payload))
-    if kind == "quarantine":
-        return 0 if payload["status"] == "PASS" else 1
-    return 0
-
-
-def cmd_completion(args: argparse.Namespace) -> int:
-    root = Path(args.root).resolve() if args.root else repo_root()
-    gate = CompletionGateRuntime.from_repo(root)
-    registry = MigrationRegistry.from_repo(root)
-    coverage = CoverageAuditRuntime.from_repo(root)
-    graph = ProvenanceGraph.from_repo(root)
-    try:
-        kind = args.completion_command
-        if kind == "summary":
-            payload = gate.state
-        elif kind == "traceability":
-            payload = gate.traceability(registry, coverage, graph)
-        elif kind == "gate":
-            reconstruction = ReconstructionRegistry.from_repo(root)
-            world = WorldRuntime.from_repo(root)
-            objects = ObjectNetworkRuntime.from_repo(root)
-            literary = LiteraryEcologyRuntime.from_repo(root)
-            implementation = ImplementationAlignmentRuntime.from_repo(root)
-            literals = LiteralRegistry.from_repo(root)
-            mechanisms = HistoricalMechanismRegistry.from_repo(root)
-            opens = OpenInterfaceRegistry.from_repo(root)
-            plocks = LiteraryProtectionRegistry.from_repo(root)
-            competitions = CompetitionRegistry.from_repo(root)
-            promotions = PromotionRegistry.from_repo(root)
-            evidence = run_r4_evidence_regression(root)
-            payload = gate.evaluate(
-                registry, coverage, reconstruction, world, objects, literary,
-                implementation, graph, literals, mechanisms, opens, plocks,
-                competitions, promotions, evidence
-            )
-        else:
-            raise KeyError(f"Unknown completion command: {kind}")
-    except (KeyError, ValueError) as exc:
-        print(str(exc))
-        return 1
-    if args.json:
-        print(json.dumps(payload, ensure_ascii=False, indent=2))
-    else:
-        print(format_completion(kind, payload))
-    if kind == "gate":
-        return 0 if payload["overall"] == "PASS" else 1
-    if kind == "traceability":
-        return 0 if payload["status"] == "PASS" else 1
-    return 0
-
-
-def cmd_coverage(args: argparse.Namespace) -> int:
-    root = Path(args.root).resolve() if args.root else repo_root()
-    coverage = CoverageAuditRuntime.from_repo(root)
-    registry = MigrationRegistry.from_repo(root)
-    try:
-        kind = args.coverage_command
-        if kind == "summary":
-            payload = coverage.summary(registry)
-        elif kind == "document":
-            payload = coverage.document(args.key, registry)
-        elif kind == "target":
-            payload = coverage.target(args.key)
-        elif kind == "layer":
-            payload = coverage.layer(args.key)
-        elif kind == "gaps":
-            payload = coverage.gaps()
-        elif kind == "regression":
-            reconstruction = ReconstructionRegistry.from_repo(root)
-            world = WorldRuntime.from_repo(root)
-            objects = ObjectNetworkRuntime.from_repo(root)
-            literary = LiteraryEcologyRuntime.from_repo(root)
-            implementation = ImplementationAlignmentRuntime.from_repo(root)
-            evidence = run_r4_evidence_regression(root)
-            payload = coverage.regression(
-                registry,
-                reconstruction,
-                world,
-                objects,
-                literary,
-                implementation,
-                evidence,
-            )
-        else:
-            raise KeyError(f"Unknown coverage command: {kind}")
-    except (KeyError, ValueError) as exc:
-        print(str(exc))
-        return 1
-    if args.json:
-        print(json.dumps(payload, ensure_ascii=False, indent=2))
-    else:
-        print(format_coverage(kind, payload))
-    if kind == "regression":
-        return 0 if payload["overall"] == "PASS" else 1
     return 0
 
 
@@ -952,7 +814,7 @@ def cmd_implementation(args: argparse.Namespace) -> int:
         elif kind == "competition":
             payload = runtime.competition(args.chapter)
         elif kind == "trace":
-            registry = MigrationRegistry.from_repo(root)
+            registry = AssetCatalog.from_repo(root)
             payload = runtime.trace(args.kind, args.key, registry)
         else:
             raise KeyError(f"Unknown implementation command: {kind}")
@@ -973,6 +835,15 @@ def cmd_promotion(args: argparse.Namespace) -> int:
         print(f"Unknown promotion: {args.promotion_id}")
         return 1
     payload = registry.evaluate(root, args.promotion_id)
+    if args.output and payload["overall"] == "PASS":
+        try:
+            raw = registry.build_candidate(root, args.promotion_id)
+            with Path(args.output).open("xb") as handle:
+                handle.write(raw)
+            payload["exported_to"] = str(args.output)
+        except (OSError, ValueError) as exc:
+            payload["overall"] = "FAIL"
+            payload["findings"].append(str(exc))
     if args.json:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
     else:
@@ -984,6 +855,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(prog="rcwh")
     parser.add_argument("--root", default=None)
     sub = parser.add_subparsers(dest="command", required=True)
+    add_foundation_commands(sub, repo_root)
 
     p_validate = sub.add_parser("validate")
     p_validate.set_defaults(func=cmd_validate)
@@ -1199,6 +1071,7 @@ def main() -> None:
         p.set_defaults(func=cmd_literary_suite)
     p = lit_suite_sub.add_parser("blind")
     p.add_argument("competition_id")
+    p.add_argument("--output-dir", help="Export anonymous texts and packet.json to a new directory")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_literary_suite)
 
@@ -1209,6 +1082,7 @@ def main() -> None:
 
     p_promotion = sub.add_parser("promotion")
     p_promotion.add_argument("promotion_id")
+    p_promotion.add_argument("--output", help="Write the verified assembled candidate to a new file")
     p_promotion.add_argument("--json", action="store_true")
     p_promotion.set_defaults(func=cmd_promotion)
 
@@ -1360,31 +1234,6 @@ def main() -> None:
     p.add_argument("chapter", type=int)
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_literary_production)
-    p = lit_prod_sub.add_parser("quarantine")
-    p.add_argument("--json", action="store_true")
-    p.set_defaults(func=cmd_literary_production)
-
-    p_completion = sub.add_parser("completion")
-    completion_sub = p_completion.add_subparsers(dest="completion_command", required=True)
-    for name in ("summary", "traceability", "gate"):
-        p = completion_sub.add_parser(name)
-        p.add_argument("--json", action="store_true")
-        p.set_defaults(func=cmd_completion)
-
-    p_coverage = sub.add_parser("coverage")
-    coverage_sub = p_coverage.add_subparsers(dest="coverage_command", required=True)
-    p = coverage_sub.add_parser("summary")
-    p.add_argument("--json", action="store_true")
-    p.set_defaults(func=cmd_coverage)
-    for name in ("document", "target", "layer"):
-        p = coverage_sub.add_parser(name)
-        p.add_argument("key")
-        p.add_argument("--json", action="store_true")
-        p.set_defaults(func=cmd_coverage)
-    for name in ("gaps", "regression"):
-        p = coverage_sub.add_parser(name)
-        p.add_argument("--json", action="store_true")
-        p.set_defaults(func=cmd_coverage)
 
     p_impl = sub.add_parser("implementation")
     impl_sub = p_impl.add_subparsers(dest="implementation_command", required=True)
@@ -1423,7 +1272,7 @@ def main() -> None:
     p.set_defaults(func=cmd_object)
     p = object_sub.add_parser("get")
     p.add_argument("object_id")
-    p.add_argument("--chapter", type=int, default=100)
+    p.add_argument("--chapter", type=int, help="Defaults to the last configured project chapter")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_object)
     p = object_sub.add_parser("history")
@@ -1431,7 +1280,7 @@ def main() -> None:
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_object)
     p = object_sub.add_parser("jade")
-    p.add_argument("--chapter", type=int, default=100)
+    p.add_argument("--chapter", type=int, help="Defaults to the last configured project chapter")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_object)
     p = object_sub.add_parser("location")
@@ -1446,17 +1295,6 @@ def main() -> None:
     p.add_argument("object_id")
     p.add_argument("--json", action="store_true")
     p.set_defaults(func=cmd_object)
-
-    p_registry = sub.add_parser("registry")
-    registry_sub = p_registry.add_subparsers(dest="registry_command", required=True)
-    for name in ("package", "document", "hash"):
-        p = registry_sub.add_parser(name)
-        p.add_argument("key")
-        p.add_argument("--json", action="store_true")
-        p.set_defaults(func=cmd_registry)
-    p = registry_sub.add_parser("current")
-    p.add_argument("--json", action="store_true")
-    p.set_defaults(func=cmd_registry)
 
     args = parser.parse_args()
     raise SystemExit(args.func(args))

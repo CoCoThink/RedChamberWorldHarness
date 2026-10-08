@@ -1,7 +1,6 @@
 {
+  "schema_version": 1,
   "id": "historical-adapters:v0.4",
-  "issue": 4,
-  "status": "PASS",
   "effect": "FEASIBILITY_ONLY",
   "authority_rule": "Adapters may test whether a current-C scene can run within supported historical/life-process boundaries. They may reject overclaim or missing process signals, but they may not create events, close OPEN questions, select plot outcomes, or promote historical feasibility into Red-Chamber evidence.",
   "adapters": [
@@ -15,7 +14,7 @@
       "support_class": "TEXTUAL_LIFE_FEASIBILITY",
       "mechanism_refs": [],
       "source_refs": [
-        "doc:98d9c0a13e69"
+        "asset:sha256:98d9c0a13e692043b440941fe50cdcb719ab9cb4f1623f061f894cb6d6a3155c"
       ],
       "research_status": "BOUNDARY_PROFILE",
       "open_questions": [
@@ -45,8 +44,8 @@
         "H05"
       ],
       "source_refs": [
-        "doc:3735d2b2d82d",
-        "doc:e9b9b54f25c6"
+        "asset:sha256:3735d2b2d82d70aac061f2cf7f5ccee84370064d6935364aa587402dccb7ff96",
+        "asset:sha256:e9b9b54f25c6c2419433b9b3da040e936d0f4d1bad4945817c5cad1643161f97"
       ],
       "research_status": "BOUNDARY_PROFILE",
       "open_questions": [
@@ -118,7 +117,7 @@
         "H05"
       ],
       "source_refs": [
-        "doc:e9b9b54f25c6"
+        "asset:sha256:e9b9b54f25c6c2419433b9b3da040e936d0f4d1bad4945817c5cad1643161f97"
       ],
       "research_status": "H_BACKED",
       "open_questions": [],
@@ -138,8 +137,8 @@
       "support_class": "OPEN_RESEARCH_PROFILE",
       "mechanism_refs": [],
       "source_refs": [
-        "doc:e9b9b54f25c6",
-        "doc:3735d2b2d82d"
+        "asset:sha256:e9b9b54f25c6c2419433b9b3da040e936d0f4d1bad4945817c5cad1643161f97",
+        "asset:sha256:3735d2b2d82d70aac061f2cf7f5ccee84370064d6935364aa587402dccb7ff96"
       ],
       "research_status": "OPEN_RESEARCH",
       "open_questions": [
@@ -167,8 +166,8 @@
       "support_class": "OPEN_RESEARCH_PROFILE",
       "mechanism_refs": [],
       "source_refs": [
-        "doc:e9b9b54f25c6",
-        "doc:121ea5f5687f"
+        "asset:sha256:e9b9b54f25c6c2419433b9b3da040e936d0f4d1bad4945817c5cad1643161f97",
+        "asset:sha256:121ea5f5687f121241204a19c4717de7df5631a617424e11a1f5e01e4aedef2e"
       ],
       "research_status": "OPEN_RESEARCH",
       "open_questions": [
@@ -207,22 +206,7 @@
       ]
     }
   ],
-  "completion": {
-    "required_issue4_adapters": [
-      "medical",
-      "household_economy",
-      "mourning_marriage",
-      "detention",
-      "pawnshop",
-      "transport_letters",
-      "monastic_economy"
-    ],
-    "compatibility_adapter": "confiscation",
-    "chapter86_first_implementation": [
-      "medical",
-      "household_economy"
-    ],
-    "structured_scene_findings": true,
+  "policy": {
     "preserves_open": true,
     "plot_invention": false
   }

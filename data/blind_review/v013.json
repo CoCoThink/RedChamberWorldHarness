@@ -1,177 +1,117 @@
 {
+  "schema_version": 1,
   "id": "blind-microdraft-review:v0.13",
-  "milestone": "P7",
   "status": "PASS",
   "authority": "SHADOW_ONLY",
   "output_authority": "BLIND_REVIEW_SIGNAL_ONLY",
   "source_basis": {
     "microdraft_ref": "controlled-microdraft:v0.12",
-    "raw_review_path": "artifacts/p7_blind_microdraft/INDEPENDENT_REVIEW.md",
-    "sealed_mapping_path": "artifacts/p6_microdraft/MAPPING.json",
     "reviewer_provenance": "USER_SUPPLIED_AS_INDEPENDENT_BLIND_REVIEW",
     "independence_verification": "USER_ATTESTED_NOT_SYSTEM_VERIFIED",
-    "mapping_unsealed_after_review": true
+    "mapping_unsealed_after_review": true,
+    "raw_review_asset_ref": "asset:sha256:287e092a8ba622e116c698b7fe0ba89339fe651fbfdd878421f64aaf2eb0294c",
+    "microdraft_snapshot_sha256": "f6b2e100869e9613b81ccf0053cd43ef6792e54ba41d0cd83345eef9b5b51e76"
   },
   "reviews": [
     {
       "token": "MD-W1-12",
-      "cell_id": "W1",
       "verdict": "PASS",
-      "engineering_feel": "低",
-      "top2": true,
-      "rank": 1
+      "engineering_feel": "低"
     },
     {
       "token": "MD-W1-29",
-      "cell_id": "W1",
       "verdict": "PASS",
-      "engineering_feel": "中",
-      "top2": true,
-      "rank": 2
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W1-47",
-      "cell_id": "W1",
       "verdict": "EDGE",
-      "engineering_feel": "中",
-      "top2": false,
-      "rank": 3
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W1-83",
-      "cell_id": "W1",
       "verdict": "EDGE",
-      "engineering_feel": "高",
-      "top2": false,
-      "rank": 4
+      "engineering_feel": "高"
     },
     {
       "token": "MD-W2-21",
-      "cell_id": "W2",
       "verdict": "PASS",
-      "engineering_feel": "中",
-      "top2": true,
-      "rank": 2
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W2-38",
-      "cell_id": "W2",
       "verdict": "PASS",
-      "engineering_feel": "低",
-      "top2": true,
-      "rank": 1
+      "engineering_feel": "低"
     },
     {
       "token": "MD-W2-64",
-      "cell_id": "W2",
       "verdict": "EDGE",
-      "engineering_feel": "中",
-      "top2": false,
-      "rank": 3
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W2-75",
-      "cell_id": "W2",
       "verdict": "EDGE",
-      "engineering_feel": "高",
-      "top2": false,
-      "rank": 4
+      "engineering_feel": "高"
     },
     {
       "token": "MD-W3-14",
-      "cell_id": "W3",
       "verdict": "EDGE(偏弱)",
-      "engineering_feel": "高",
-      "top2": false,
-      "rank": 4
+      "engineering_feel": "高"
     },
     {
       "token": "MD-W3-31",
-      "cell_id": "W3",
       "verdict": "PASS",
-      "engineering_feel": "低",
-      "top2": true,
-      "rank": 1
+      "engineering_feel": "低"
     },
     {
       "token": "MD-W3-56",
-      "cell_id": "W3",
       "verdict": "PASS",
-      "engineering_feel": "中",
-      "top2": true,
-      "rank": 2
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W3-92",
-      "cell_id": "W3",
       "verdict": "EDGE",
-      "engineering_feel": "中",
-      "top2": false,
-      "rank": 3
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W4-25",
-      "cell_id": "W4",
       "verdict": "EDGE",
-      "engineering_feel": "中",
-      "top2": false,
-      "rank": 3
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W4-43",
-      "cell_id": "W4",
       "verdict": "FAIL",
-      "engineering_feel": "高",
-      "top2": false,
-      "rank": 4
+      "engineering_feel": "高"
     },
     {
       "token": "MD-W4-68",
-      "cell_id": "W4",
       "verdict": "EDGE",
-      "engineering_feel": "中",
-      "top2": true,
-      "rank": 2
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W4-81",
-      "cell_id": "W4",
       "verdict": "PASS",
-      "engineering_feel": "中",
-      "top2": true,
-      "rank": 1
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W5-19",
-      "cell_id": "W5",
       "verdict": "PASS",
-      "engineering_feel": "中",
-      "top2": true,
-      "rank": 2
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W5-36",
-      "cell_id": "W5",
       "verdict": "EDGE",
-      "engineering_feel": "中",
-      "top2": false,
-      "rank": 3
+      "engineering_feel": "中"
     },
     {
       "token": "MD-W5-73",
-      "cell_id": "W5",
       "verdict": "PASS",
-      "engineering_feel": "低",
-      "top2": true,
-      "rank": 1
+      "engineering_feel": "低"
     },
     {
       "token": "MD-W5-84",
-      "cell_id": "W5",
       "verdict": "FAIL",
-      "engineering_feel": "高",
-      "top2": false,
-      "rank": 4
+      "engineering_feel": "高"
     }
   ],
   "cell_rankings": {
@@ -208,74 +148,18 @@
   },
   "scenario_summary": {
     "SCN-CURRENT-C": {
-      "rank_sum": 11,
-      "mean_rank": 2.2,
-      "first_place_count": 1,
-      "top2_count": 3,
-      "verdict_counts": {
-        "PASS": 2,
-        "EDGE": 3,
-        "FAIL": 0
-      },
-      "engineering_counts": {
-        "低": 1,
-        "中": 4,
-        "高": 0
-      },
       "status": "ROBUST_KEEP",
       "note": "五窗无FAIL；W5第一。弱点主要是叙述者总结与人为打断，不足以淘汰路线。"
     },
     "SCN-LATE-MARRIAGE": {
-      "rank_sum": 12,
-      "mean_rank": 2.4,
-      "first_place_count": 1,
-      "top2_count": 3,
-      "verdict_counts": {
-        "PASS": 3,
-        "EDGE": 2,
-        "FAIL": 0
-      },
-      "engineering_counts": {
-        "低": 1,
-        "中": 3,
-        "高": 1
-      },
       "status": "ROBUST_KEEP",
       "note": "五窗无FAIL；W1第一，W2/W5第二。W3贫困婚事容易退化为任务清单，需要场景化修复。"
     },
     "SCN-JADE-MULTILAYER": {
-      "rank_sum": 16,
-      "mean_rank": 3.2,
-      "first_place_count": 1,
-      "top2_count": 1,
-      "verdict_counts": {
-        "PASS": 1,
-        "EDGE": 3,
-        "FAIL": 1
-      },
-      "engineering_counts": {
-        "低": 0,
-        "中": 2,
-        "高": 3
-      },
       "status": "KEEP_FOR_TARGETED_REPAIR",
       "note": "W4第一证明多层玉并非不可写；其余窗口常滑向经手、认领、清点的账本型写法。单次盲评与不同probe任务不足以淘汰路线。"
     },
     "SCN-MINIMAL-CAUSE-OPEN": {
-      "rank_sum": 11,
-      "mean_rank": 2.2,
-      "first_place_count": 2,
-      "top2_count": 3,
-      "verdict_counts": {
-        "PASS": 3,
-        "EDGE": 1,
-        "FAIL": 1
-      },
-      "engineering_counts": {
-        "低": 2,
-        "中": 2,
-        "高": 1
-      },
       "status": "ROBUST_KEEP_WITH_W4_REPAIR",
       "note": "W2/W3连续第一，但W4在时间线核对与时辰算术上FAIL；说明OPEN路线必须具体而不能表格化。"
     }
@@ -445,9 +329,15 @@
     "open_interface_effect": "NONE",
     "stable_active_effect": "NONE",
     "canonical_prose_effect": "NONE",
-    "chapter89_competition_effect": "NONE",
     "automatic_winner": false,
-    "automatic_route_elimination": false
+    "automatic_route_elimination": false,
+    "competition_effect": "NONE"
   },
-  "next_gate": "P8_CROSS_ROUTE_REVISION_ABLATION"
+  "next_gate": "P8_CROSS_ROUTE_REVISION_ABLATION",
+  "verdict_categories": {
+    "PASS": "PASS",
+    "EDGE": "EDGE",
+    "EDGE(偏弱)": "EDGE",
+    "FAIL": "FAIL"
+  }
 }

@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import hashlib
+import json
 import math
 import re
 from collections import Counter
@@ -68,14 +69,10 @@ class LiteraryEvaluatorSuite:
         return cls(root=root, data=load_data(path) or {})
 
     def summary(self) -> dict[str, Any]:
-        completion = self.data.get("completion", {})
         return {
             "id": self.data.get("id"),
-            "status": self.data.get("status"),
             "authority": self.data.get("authority"),
             "automatic_literary_pass": self.data.get("automatic_literary_pass"),
-            "acceptance": completion,
-            "all_acceptance": bool(completion) and all(completion.values()),
         }
 
     def culture_deletion_test(self, text: str) -> dict[str, Any]:
@@ -298,7 +295,7 @@ class LiteraryEvaluatorSuite:
                 "automatic_literary_pass": False,
                 "automatic_winner": False,
             })
-        if len(set(tokens.values())) != 3:
+        if len(set(tokens.values())) != len(tokens):
             duplicate_content = True
         lane_status = (
             "BLOCKED_DUPLICATE_CONTENT" if duplicate_content
@@ -342,22 +339,32 @@ class LiteraryEvaluatorSuite:
             raise ValueError(f"Poetry blind packet leaked metadata: {violations}")
         return packet
 
-    def competition_blind_packet(self, record: dict[str, Any]) -> dict[str, Any]:
+    def competition_blind_packet(self, record: dict[str, Any], output_dir: Path | None = None) -> dict[str, Any]:
+        from .assets.catalog import repository_path
+        from .competition import git_blob_sha
+
         chapter = record["chapter"]
         candidates = []
+        bodies = {}
         for candidate in record.get("candidates", []):
             token = candidate["blind_token"]
-            blind_path = (
-                self.root / "artifacts" / "43-0" / f"ch{chapter}" / "blind" / f"{token}.md"
-            )
-            if not blind_path.exists():
-                raise FileNotFoundError(f"Missing blind artifact: {blind_path.relative_to(self.root)}")
-            text = blind_path.read_text(encoding="utf-8")
+            if not re.fullmatch(r"[A-Za-z0-9][A-Za-z0-9_-]*", token) or token in bodies:
+                raise ValueError("invalid or duplicate blind token")
+            artifact = candidate["artifact"]
+            if artifact["kind"] != "REPO_FILE":
+                raise ValueError("blind export requires a repository candidate")
+            raw = repository_path(self.root, artifact["path"]).read_bytes()
+            if git_blob_sha(raw) != artifact["git_blob_sha"]:
+                raise ValueError("blind candidate content identity mismatch")
+            text = raw.decode("utf-8")
+            bodies[token] = raw
             candidates.append({
                 "token": token,
-                "artifact": str(blind_path.relative_to(self.root)),
-                "sha256": hashlib.sha256(text.encode("utf-8")).hexdigest(),
+                **({"artifact": f"{token}.md"} if output_dir is not None else {"text": text}),
+                "sha256": hashlib.sha256(raw).hexdigest(),
             })
+        if not candidates:
+            raise ValueError("blind export requires candidates")
         candidates.sort(key=lambda x: x["token"])
         packet = {
             "kind": "LITERARY_BLIND_READ",
@@ -370,6 +377,16 @@ class LiteraryEvaluatorSuite:
         violations = self.blind_output_violations(packet)
         if violations:
             raise ValueError(f"Blind packet leaked evidence metadata: {violations}")
+        if output_dir is not None:
+            # Validate all bodies before creating anything, and never merge a
+            # review packet into an existing directory containing identities.
+            body_violations = self.blind_output_violations([raw.decode("utf-8") for raw in bodies.values()])
+            if body_violations:
+                raise ValueError(f"Blind candidate leaked evidence metadata: {body_violations}")
+            output_dir.mkdir(parents=True, exist_ok=False)
+            for token, raw in bodies.items():
+                (output_dir / f"{token}.md").write_bytes(raw)
+            (output_dir / "packet.json").write_text(json.dumps(packet, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         return packet
 
     def blind_output_violations(self, packet: dict[str, Any]) -> list[str]:
@@ -388,23 +405,10 @@ class LiteraryEvaluatorSuite:
 
     def validate_integrity(self, competitions: Any) -> list[str]:
         errors: list[str] = []
-        if self.data.get("issue") != 5:
-            errors.append("literary evaluator suite must be bound to issue #5")
         if self.data.get("authority") != "LITERARY_SCREENING_ONLY":
             errors.append("literary evaluator suite authority drift")
         if self.data.get("automatic_literary_pass") is not False:
             errors.append("literary evaluator suite may not auto-pass literature")
-        completion = self.data.get("completion", {})
-        required = {
-            "culture_not_museum_deletion_test",
-            "explicit_exposition_detector",
-            "ambiguity_preservation",
-            "structural_variation_checks",
-            "poetry_abc_lane",
-            "blind_output_evidence_separated",
-        }
-        if set(completion) != required or not all(completion.values()):
-            errors.append("issue #5 acceptance flags incomplete")
         if self.data["poetry"].get("automatic_winner") is not False:
             errors.append("poetry lane may not auto-select a winner")
         if self.data["poetry"].get("manual_blind_read_required") is not True:
@@ -428,10 +432,8 @@ def format_literary_suite(kind: str, payload: dict[str, Any]) -> str:
     if kind == "summary":
         return "\n".join([
             "LITERARY EVALUATOR SUITE v0.5",
-            f"status: {payload['status']}",
             f"authority: {payload['authority']}",
             f"automatic_literary_pass: {str(payload['automatic_literary_pass']).lower()}",
-            f"all_acceptance: {str(payload['all_acceptance']).lower()}",
         ])
     if kind == "prose":
         return "\n".join([

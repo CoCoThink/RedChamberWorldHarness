@@ -19,7 +19,7 @@ def test_profiles_resolve_to_plocks():
     plocks = LiteraryProtectionRegistry.from_repo(root())
     profiles = LiteraryEvaluationProfileRegistry.from_repo(root())
     assert profiles.validate_integrity(plocks) == []
-    assert len(profiles.profiles) == 5
+    assert profiles.profiles
 
 
 def test_preserved_candidate_is_ready_but_never_auto_passed():

@@ -4,175 +4,123 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import Any
 
-from .io import load_data
-
-
-STABLE_SHA = "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+from .competition import CompetitionRegistry, PIPELINE
+from .contracts import unique_index, project_chapters
+from .workflow import ProjectState
 
 
 @dataclass
 class LiteraryProductionRuntime:
     root: Path
     data: dict[str, Any]
-    governance: dict[str, Any]
 
     @classmethod
     def from_repo(cls, root: Path) -> "LiteraryProductionRuntime":
-        return cls(
-            root=root,
-            data=load_data(root / "data" / "project_state" / "literary_43_0_resume.json") or {},
-            governance=load_data(root / "data" / "project_state" / "repository_governance_20261007.json") or {},
-        )
+        return cls(root, ProjectState.from_repo(root).owner("literary"))
+
+    def _production(self, competitions: Any) -> dict[int, dict[str, Any]]:
+        return unique_index([r for r in competitions.records.values() if r["mode"] == "PRODUCTION_43_0"], "chapter")
 
     def summary(self) -> dict[str, Any]:
-        ch89 = self.data.get("chapter89", {})
+        competitions = CompetitionRegistry.from_repo(self.root)
+        records = self._production(competitions)
+        active = next((records[ch] for ch in self.data["sequence"]
+                       if records[ch]["state"] in {"READY_FOR_CANDIDATES", "IN_REVIEW"}), None)
+        if active:
+            unresolved = next((stage for stage in PIPELINE if active["workflow_progress"][stage] != "PASS"), "ADJUDICATION")
+            next_gate = f"CH{active['chapter']}_{unresolved}"
+        else:
+            next_gate = "COMPETITION_SEQUENCE_REVIEW"
         return {
             "phase": self.data.get("phase"),
             "status": self.data.get("status"),
-            "authorized_after": self.data.get("initiated_after"),
             "stable_sha256": self.data.get("stable_active", {}).get("sha256"),
-            "stable_changed": self.data.get("stable_active", {}).get("changed"),
-            "migration_freeze_released": self.data.get("migration_freeze_released"),
             "literary_resume_started": self.data.get("literary_resume_started"),
-            "active_chapter": 89,
-            "chapter_states": {
-                86: self.data.get("chapter86", {}).get("pressure_test"),
-                89: ch89.get("pressure_test"),
-                92: self.data.get("chapter92"),
-                97: self.data.get("chapter97"),
-            },
-            "ch89_gates": {
-                "six_field": ch89.get("six_field"),
-                "machine_literary_evaluation": ch89.get("machine_literary_evaluation"),
-                "manual_plock": ch89.get("plock_manual_review"),
-                "blind_read": ch89.get("blind_read"),
-                "adjudication": "PENDING",
-            },
-            "next_gate": self.data.get("next_gate"),
+            "active_chapter": active["chapter"] if active else None,
+            "chapter_states": {ch: records[ch]["state"] for ch in self.data["sequence"]},
+            "active_gates": self.gates(active["chapter"], competitions) if active else None,
+            "next_gate": next_gate,
+        }
+
+    def gates(self, chapter: int, competitions: Any | None = None) -> dict[str, Any]:
+        if chapter not in self.data["sequence"]:
+            raise KeyError(f"Chapter outside configured literary sequence: {chapter}")
+        competitions = competitions or CompetitionRegistry.from_repo(self.root)
+        record = self._production(competitions)[chapter]
+        rows = competitions.evaluate_record(self.root, record)["candidate_results"]
+        if any(row["machine_status"] == "REJECT_BEFORE_BLIND_READ" for row in rows):
+            machine = "FAIL"
+        elif rows and all(row["machine_status"] in {"READY_FOR_BLIND_READ", "REPLACEMENT_CASE"} for row in rows):
+            machine = "PASS"
+        else:
+            machine = "PENDING"
+        return {
+            "six_field": record["workflow_progress"]["SIX_FIELD_REGRESSION"],
+            "machine_literary_evaluation": machine,
+            "manual_plock": record["workflow_progress"]["PLOCK_REGRESSION"],
+            "blind_read": record["workflow_progress"]["BLIND_READ"],
+            "adjudication": record["adjudication"]["outcome"],
         }
 
     def chapter(self, chapter: int, competitions: Any) -> dict[str, Any]:
-        if chapter not in {86, 89, 92, 97}:
-            raise KeyError(f"Literary production pipeline covers 86/89/92/97: {chapter}")
-        if chapter == 86:
-            live = self.data["chapter86"]
-        elif chapter == 89:
-            live = self.data["chapter89"]
-        else:
-            live = {"state": self.data[f"chapter{chapter}"]}
+        if chapter not in self.data["sequence"]:
+            raise KeyError(f"Chapter outside configured literary sequence: {chapter}")
+        record = self._production(competitions)[chapter]
         return {
             "chapter": chapter,
-            "live_state": live,
-            "competition": competitions.records[f"comp:43-0:ch{chapter}:pressure-test"],
+            "live_state": {"state": record["state"], "workflow_progress": record["workflow_progress"]},
+            "competition": record,
+            "gates": self.gates(chapter, competitions),
         }
 
-    def quarantine(self) -> dict[str, Any]:
-        forks = self.governance.get("quarantined_forks", [])
-        return {
-            "status": "PASS" if forks else "FAIL",
-            "canonical_literary_branch": self.governance.get("authoritative_branches", {}).get("literary_work"),
-            "quarantined_forks": forks,
-            "safe_delete_when_tool_available": self.governance.get("safe_delete_when_tool_available", []),
-        }
-
-    def validate_integrity(self, completion: Any, competitions: Any) -> list[str]:
+    def validate_integrity(self, competitions: Any) -> list[str]:
         errors: list[str] = []
         if self.data.get("status") != "ACTIVE":
-            errors.append("post-M8 literary production must be ACTIVE")
-        if self.data.get("phase") != "43-0-resume":
-            errors.append("canonical literary phase must be 43-0-resume")
-
-        init = self.data.get("initiated_after", {})
-        if init.get("full_migration_m8") != "PASS" or init.get("main_post_merge") != "PASS":
-            errors.append("literary production may start only after M8 and post-merge PASS")
-        if completion.state.get("status") != "PASS":
-            errors.append("persisted M8 state must remain PASS")
-        if completion.state.get("completion_gate", {}).get("overall") != "PASS":
-            errors.append("persisted Completion Gate must remain PASS")
-
+            errors.append("literary production must be ACTIVE")
         stable = self.data.get("stable_active", {})
-        if stable.get("sha256") != STABLE_SHA or stable.get("changed") is not False:
+        release = ProjectState.from_repo(self.root).release()
+        errors.extend(release.validate_storage())
+        if stable.get("sha256") != release.data["text_sha256"]:
             errors.append("literary pressure testing may not mutate stable ACTIVE")
-        if self.data.get("migration_freeze_released") is not True:
-            errors.append("post-M8 literary resume must explicitly release the migration freeze")
         if self.data.get("literary_resume_started") is not True:
-            errors.append("post-M8 literary resume state must explicitly start literary work")
-        if self.data.get("sequence") != [86, 89, 92, 97]:
-            errors.append("43-0 sequence must remain 86/89/92/97")
-
-        ch86 = competitions.records.get("comp:43-0:ch86:pressure-test")
-        if ch86 is None or ch86["state"] != "ADJUDICATED":
-            errors.append("Chapter 86 must remain adjudicated")
-        elif ch86["adjudication"]["winner_candidate_id"] != "ch86-B":
-            errors.append("Chapter 86 winner must remain ch86-B")
-
-        ch89 = competitions.records.get("comp:43-0:ch89:pressure-test")
-        live89 = self.data.get("chapter89", {})
-        if ch89 is None:
-            errors.append("Chapter 89 competition missing")
-        else:
-            if ch89["state"] != "IN_REVIEW":
-                errors.append("Chapter 89 must remain IN_REVIEW until human gates finish")
-            if ch89["workflow_progress"].get("SIX_FIELD_REGRESSION") != "PASS":
-                errors.append("Chapter 89 six-field regression must be PASS")
-            if ch89["workflow_progress"].get("PLOCK_REGRESSION") != "PENDING":
-                errors.append("Chapter 89 manual P-Lock gate must remain PENDING")
-            if ch89["workflow_progress"].get("BLIND_READ") != "PENDING":
-                errors.append("Chapter 89 blind read must remain PENDING")
-            if ch89["adjudication"]["outcome"] != "PENDING":
-                errors.append("Chapter 89 adjudication must remain PENDING")
-            if ch89["adjudication"]["winner_candidate_id"] is not None:
-                errors.append("Chapter 89 cannot have a winner before real blind review")
-        if live89.get("six_field") != "PASS":
-            errors.append("live Chapter 89 six-field state must be PASS")
-        if live89.get("plock_manual_review") != "PENDING":
-            errors.append("live Chapter 89 manual P-Lock state must be PENDING")
-        if live89.get("blind_read") != "PENDING":
-            errors.append("live Chapter 89 blind-read state must be PENDING")
-
-        for chapter in (92, 97):
-            record = competitions.records.get(f"comp:43-0:ch{chapter}:pressure-test")
-            if record is None or record["state"] != "BLOCKED_BY_PREDECESSOR":
-                errors.append(f"Chapter {chapter} must remain BLOCKED_BY_PREDECESSOR")
-            if self.data.get(f"chapter{chapter}") != "BLOCKED_BY_PREDECESSOR":
-                errors.append(f"live Chapter {chapter} state drift")
-
-        q = self.quarantine()
-        if q["status"] != "PASS":
-            errors.append("repository governance must quarantine divergent literary forks")
-        if q.get("canonical_literary_branch") != "literary/43-0-resume":
-            errors.append("canonical literary branch must remain literary/43-0-resume")
-        fork = next((x for x in q["quarantined_forks"] if x.get("branch") == "literary/43-0-ch89-phase2"), None)
-        if fork is None:
-            errors.append("divergent Chapter 89 fork must remain explicitly quarantined")
-        elif fork.get("merge_policy") != "DO_NOT_MERGE":
-            errors.append("quarantined Chapter 89 fork must not be mergeable authority")
+            errors.append("literary workflow selection must explicitly start literary work")
+        sequence = self.data.get("sequence", [])
+        records = self._production(competitions)
+        ordered = sorted(records.values(), key=lambda r: r["sequence"])
+        if not sequence or len(sequence) != len(set(sequence)):
+            errors.append("literary sequence must be nonempty and unique")
+        if sequence != [r["chapter"] for r in ordered]:
+            errors.append("literary sequence must match production competition order")
+        if not set(sequence) <= set(project_chapters(self.root)):
+            errors.append("literary sequence outside configured project scope")
+        for record in ordered:
+            evaluation = competitions.evaluate_record(self.root, record)
+            errors.extend(f"{record['id']}: {e}" for e in evaluation["consistency_errors"])
+            if record["state"] == "ADJUDICATED" and record["adjudication"]["outcome"] == "PENDING":
+                errors.append(f"{record['id']}: adjudicated record cannot have pending adjudication")
+            if record["adjudication"]["outcome"] != "PENDING" and record["state"] != "ADJUDICATED":
+                errors.append(f"{record['id']}: completed adjudication requires ADJUDICATED state")
+            candidates = evaluation["candidate_results"]
+            for stage, key, values in [("PLOCK_REGRESSION", "human_plock_status", {"PASS", "REPLACEMENT_ACCEPTED", "FAIL"}),
+                                       ("BLIND_READ", "blind_read_status", {"PASS", "FAIL"})]:
+                if record["workflow_progress"][stage] == "PASS" and (not candidates or any(c[key] not in values for c in candidates)):
+                    errors.append(f"{record['id']}: {stage} completion lacks actual candidate reviews")
+            if record["workflow_progress"]["BLIND_READ"] == "PASS" and any(not c["reviewer_blinded"] for c in candidates):
+                errors.append(f"{record['id']}: completed blind review lacks blinded reviewer")
 
         return errors
 
 
 def format_literary_production(kind: str, payload: Any) -> str:
     if kind == "summary":
-        gates = payload["ch89_gates"]
         return "\n".join([
-            "POST-M8 LITERARY PRODUCTION",
+            "LITERARY PRODUCTION",
             f"phase: {payload['phase']}",
             f"status: {payload['status']}",
             f"stable_sha256: {payload['stable_sha256']}",
-            f"stable_changed: {str(payload['stable_changed']).lower()}",
             f"active_chapter: {payload['active_chapter']}",
-            f"ch89: six-field={gates['six_field']} machine={gates['machine_literary_evaluation']} "
-            f"manual-plock={gates['manual_plock']} blind={gates['blind_read']} adjudication={gates['adjudication']}",
-            f"ch92: {payload['chapter_states'][92]}",
-            f"ch97: {payload['chapter_states'][97]}",
+            *[f"ch{ch}: {state}" for ch, state in payload["chapter_states"].items()],
             f"next_gate: {payload['next_gate']}",
-        ])
-    if kind == "quarantine":
-        return "\n".join([
-            f"REPOSITORY LITERARY QUARANTINE: {payload['status']}",
-            f"canonical: {payload['canonical_literary_branch']}",
-            f"quarantined forks: {len(payload['quarantined_forks'])}",
-            f"safe-delete branches: {len(payload['safe_delete_when_tool_available'])}",
         ])
     if kind == "chapter":
         comp = payload["competition"]

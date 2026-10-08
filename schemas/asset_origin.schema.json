@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AssetOriginOccurrence",
+  "type": "object",
+  "required": ["id", "asset_ref", "sha256", "batch_id", "origin_type", "origin_container", "original_path", "disposition"],
+  "additionalProperties": false,
+  "properties": {
+    "id": {"type": "string", "pattern": "^origin:"},
+    "asset_ref": {"type": "string", "pattern": "^asset:"},
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "batch_id": {"type": "string", "minLength": 1},
+    "origin_type": {"type": "string", "minLength": 1},
+    "origin_container": {"type": "string", "minLength": 1},
+    "original_path": {"type": "string", "minLength": 1},
+    "disposition": {"enum": ["RETAINED", "DEDUPLICATED"]}
+  }
+}

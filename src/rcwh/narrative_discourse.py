@@ -206,7 +206,6 @@ class NarrativeDiscourseRuntime:
     def evaluate_all(self, stress: ScenarioLiteraryStressRuntime) -> dict[str, Any]:
         rows = [self.evaluate(sid, stress) for sid in sorted(stress.contracts)]
         return {
-            "milestone":"P5",
             "status":"PASS" if all(x["status"] == "DISCOURSE_RUNTIME_READY" for x in rows) else "NEEDS_REDESIGN",
             "scenarios":[
                 {
@@ -249,8 +248,6 @@ class NarrativeDiscourseRuntime:
         ecology: LiteraryEcologyRuntime,
     ) -> list[str]:
         errors: list[str] = []
-        if self.data.get("milestone") != "P5":
-            errors.append("Narrative discourse milestone must be P5")
         if self.data.get("authority") != "SHADOW_ONLY":
             errors.append("Narrative discourse runtime must remain SHADOW_ONLY")
         if self.data.get("output_authority") != "DISCOURSE_PLANNING_ONLY":
@@ -282,8 +279,8 @@ class NarrativeDiscourseRuntime:
         result = self.evaluate_all(stress)
         if result["status"] != "PASS":
             errors.append(f"P5 discourse runtime not ready: {result}")
-        if result["card_count"] != 20:
-            errors.append(f"P5 must expose exactly 20 discourse cards; got {result['card_count']}")
+        if result["card_count"] != sum(len(c["probes"]) for c in stress.contracts.values()):
+            errors.append(f"P5 must cover all upstream discourse cards; got {result['card_count']}")
         if result["winner"] is not None:
             errors.append("P5 may not select a winner")
         return errors

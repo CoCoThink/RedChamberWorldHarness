@@ -1,7 +1,6 @@
 {
+  "schema_version": 1,
   "id": "controlled-microdraft:v0.12",
-  "milestone": "P6",
-  "status": "PASS",
   "authority": "SHADOW_ONLY",
   "output_authority": "EXPERIMENTAL_PROSE_ONLY",
   "source_basis": {
@@ -58,9 +57,6 @@
       }
     ],
     "one_draft_per_discourse_card": true,
-    "drafts_per_scenario": 5,
-    "drafts_per_cell": 4,
-    "total_drafts": 20,
     "comparison_mode": "BLIND_BY_CELL",
     "generation_rule": "Each microdraft must instantiate its P5 card without extending fabula or resolving withheld information."
   },
@@ -446,7 +442,6 @@
   ],
   "blind_review": {
     "instructions_path": "artifacts/p6_microdraft/blind/REVIEWER_INSTRUCTIONS.md",
-    "sealed_mapping_path": "artifacts/p6_microdraft/MAPPING.json",
     "questions": [
       "不看路线身份，这一小段是否像小说场景，而不是情节提纲的扩写？",
       "人物是否通过动作、关系、声口和物件成立，而不是被叙述者解释？",
@@ -463,10 +458,10 @@
     "evidence_effect": "NONE",
     "open_interface_effect": "NONE",
     "stable_active_effect": "NONE",
-    "chapter89_competition_effect": "NONE",
     "automatic_literary_pass": false,
     "automatic_winner": false,
-    "route_elimination_by_machine": false
+    "route_elimination_by_machine": false,
+    "competition_effect": "NONE"
   },
   "next_gate": "P7_BLIND_MICRODRAFT_REVIEW"
 }

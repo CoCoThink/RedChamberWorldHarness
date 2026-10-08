@@ -81,7 +81,22 @@ Because region, class, and period differ from Baochai's reconstruction context, 
 
 Aid amount, frequency, duration, and even whether it occurs remain OPEN.
 
-## CLI
+## Scene adapter interface
+
+Scene contracts declare `historical_adapters` and optional `historical_adapter_requirements`. Results include adapter ID, support class, research status, H references, required signals and hits, missing signals, overclaims, OPEN questions and cannot-prove boundaries. Adapters use `FEASIBILITY_ONLY`, `plot_authority = NONE`, and `may_create_events = false`.
+
+Detention, confiscation, mourning/marriage, pawnshop and household economy inherit their H-backed boundaries. The medical adapter is a body/care boundary profile, not a new hard historical conclusion: it cannot establish a unique diagnosis, prescription, dose, doctor timetable or lost wording. Transport/letters and monastic economy remain `OPEN_RESEARCH`; `PASS_WITH_OPEN` retains those questions.
+
+The Chapter 86 scene exercises medical care and household labor signals, including warming medicine. These checks reject absent processes and explicit historical overclaims; they do not require a single preferred phrase. Adapter commands describe and evaluate downstream feasibility; `mechanism` exposes the underlying source boundaries.
+
+```bash
+rcwh historical-adapter summary
+rcwh historical-adapter describe detention
+rcwh historical-adapter describe transport_letters
+rcwh historical-adapter scene data/scenes/ch86_last_night.yaml artifacts/43-0/ch86/candidates/ch86_B_light_full.md
+```
+
+## Source mechanism CLI
 
     rcwh mechanism H01
     rcwh mechanism H03

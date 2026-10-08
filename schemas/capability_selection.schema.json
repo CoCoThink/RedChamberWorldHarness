@@ -1,0 +1,35 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Capability experiment selection",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "kind",
+    "experiment_ref",
+    "stable_active_sha256"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "REVISION_ABLATION"
+      ]
+    },
+    "experiment_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "stable_active_sha256": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{64}$"
+    }
+  },
+  "additionalProperties": false
+}

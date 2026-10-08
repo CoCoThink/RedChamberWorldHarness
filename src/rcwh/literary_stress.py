@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Any
 
 from .io import load_data
+from .contracts import unique_index
 from .literary_ecology import LiteraryEcologyRuntime
 from .pareto import ParetoEvaluationRuntime
 from .scenario_replay import CounterfactualReplayRuntime
@@ -24,8 +25,8 @@ class ScenarioLiteraryStressRuntime:
         data = load_data(root / "data" / "literary_stress" / "v010.json") or {}
         return cls(
             data=data,
-            contracts={x["scenario_id"]: x for x in data.get("contracts", [])},
-            dimensions={x["id"]: x for x in data.get("dimensions", [])},
+            contracts=unique_index(data.get('contracts', []), 'scenario_id'),
+            dimensions=unique_index(data.get('dimensions', []), 'id'),
         )
 
     def _coverage(self, contract: dict[str, Any]) -> dict[str, Any]:
@@ -209,7 +210,6 @@ class ScenarioLiteraryStressRuntime:
             for sid in sorted(self.contracts)
         ]
         return {
-            "milestone": "P4",
             "status": (
                 "PASS" if all(x["status"] == "STRESS_CONTRACT_READY" for x in rows)
                 else "NEEDS_REDESIGN"
@@ -275,8 +275,6 @@ class ScenarioLiteraryStressRuntime:
         ecology: LiteraryEcologyRuntime,
     ) -> list[str]:
         errors: list[str] = []
-        if self.data.get("milestone") != "P4":
-            errors.append("Literary stress milestone must be P4")
         if self.data.get("authority") != "SHADOW_ONLY":
             errors.append("Literary stress must remain SHADOW_ONLY")
         if self.data.get("output_authority") != "LITERARY_STRESS_ONLY":

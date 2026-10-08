@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ImportedReleaseManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "status", "text_asset_ref", "text_sha256", "related_asset_refs", "origin_batch", "evidence_closure"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^release:"},
+    "status": {"const": "IMPORTED_BASELINE"},
+    "text_asset_ref": {"type": "string", "pattern": "^asset:"},
+    "text_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "related_asset_refs": {"type": "array", "uniqueItems": true, "items": {"type": "string", "pattern": "^asset:"}},
+    "origin_batch": {"type": "string", "minLength": 1},
+    "evidence_closure": {"const": "NOT_VERIFIED"}
+  }
+}

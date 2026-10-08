@@ -4,6 +4,7 @@ from pathlib import Path
 from typing import Any
 import hashlib
 from .io import load_data
+from .contracts import unique_index, record_sha256
 from .literary_suite import LiteraryEvaluatorSuite
 from .literary_stress import ScenarioLiteraryStressRuntime
 from .narrative_discourse import NarrativeDiscourseRuntime
@@ -19,7 +20,19 @@ class ControlledMicrodraftRuntime:
 
     @property
     def drafts(self) -> dict[str, dict[str, Any]]:
-        return {x["token"]: x for x in self.data.get("drafts", [])}
+        return unique_index(self.data.get('drafts', []), 'token')
+
+    def snapshot_sha256(self) -> str:
+        """Bind draft identities, experimental controls, and original prose bytes."""
+        return record_sha256({
+            "record": self.data,
+            "artifacts": {token: hashlib.sha256((self.root / spec["artifact"]).read_bytes()).hexdigest()
+                          for token, spec in self.drafts.items()},
+        })
+
+    def require_snapshot(self, record_id: str, sha256: str) -> None:
+        if record_id != self.data["id"] or sha256 != self.snapshot_sha256():
+            raise ValueError("microdraft snapshot binding drift; review requires its original inputs")
 
     def text(self, token: str) -> str:
         if token not in self.drafts:
@@ -68,31 +81,29 @@ class ControlledMicrodraftRuntime:
 
     def evaluate_all(self, discourse: NarrativeDiscourseRuntime, stress: ScenarioLiteraryStressRuntime, suite: LiteraryEvaluatorSuite) -> dict[str, Any]:
         rows=[self.screen(token,discourse,stress,suite) for token in sorted(self.drafts)]
-        packets=[self.cell_packet(f"W{i}") for i in range(1,6)]
-        return {"milestone":"P6","status":"PASS" if all(x["status"]=="READY_FOR_BLIND_MICRODRAFT_REVIEW" for x in rows) else "BLOCKED","draft_count":len(rows),"ready_count":sum(x["status"]=="READY_FOR_BLIND_MICRODRAFT_REVIEW" for x in rows),"blocker_count":sum(len(x["blockers"]) for x in rows),"human_flag_count":sum(len(x["human_flags"]) for x in rows),"cells":[{"cell_id":p["cell_id"],"candidate_count":len(p["candidates"])} for p in packets],"winner":None,"automatic_literary_pass":False,"automatic_winner":False,"independent_human_review_required":True,"next_gate":"P7_BLIND_MICRODRAFT_REVIEW"}
+        packets=[self.cell_packet(cell["id"]) for cell in self.data["design"]["cells"]]
+        return {"status":"PASS" if all(x["status"]=="READY_FOR_BLIND_MICRODRAFT_REVIEW" for x in rows) else "BLOCKED","draft_count":len(rows),"ready_count":sum(x["status"]=="READY_FOR_BLIND_MICRODRAFT_REVIEW" for x in rows),"blocker_count":sum(len(x["blockers"]) for x in rows),"human_flag_count":sum(len(x["human_flags"]) for x in rows),"cells":[{"cell_id":p["cell_id"],"candidate_count":len(p["candidates"])} for p in packets],"winner":None,"automatic_literary_pass":False,"automatic_winner":False,"independent_human_review_required":True,"next_gate":"P7_BLIND_MICRODRAFT_REVIEW"}
 
     def validate_integrity(self, discourse: NarrativeDiscourseRuntime, stress: ScenarioLiteraryStressRuntime, suite: LiteraryEvaluatorSuite) -> list[str]:
         errors=[]
-        if self.data.get("milestone")!="P6": errors.append("Microdraft lab milestone must be P6")
         if self.data.get("authority")!="SHADOW_ONLY": errors.append("Microdraft lab must remain SHADOW_ONLY")
         if self.data.get("output_authority")!="EXPERIMENTAL_PROSE_ONLY": errors.append("Microdraft output authority drift")
         policy=self.data.get("policy",{})
-        for key in ("canonical_prose_effect","evidence_effect","open_interface_effect","stable_active_effect","chapter89_competition_effect"):
+        for key in ("canonical_prose_effect","evidence_effect","open_interface_effect","stable_active_effect","competition_effect"):
             if policy.get(key)!="NONE": errors.append(f"P6 authority effect {key} must remain NONE")
         for key in ("automatic_literary_pass","automatic_winner","route_elimination_by_machine"):
             if policy.get(key) is not False: errors.append(f"P6 policy {key} must remain false")
         required=set(self.data["source_basis"]["required_scenarios"])
         if required != set(stress.contracts): errors.append("P6 scenarios must equal P4/P5 frontier scenarios")
-        if len(self.drafts)!=20: errors.append(f"P6 requires exactly 20 microdrafts; got {len(self.drafts)}")
         cards={(sid,p["id"]) for sid,contract in stress.contracts.items() for p in contract["probes"]}
-        draft_cards={(x["scenario_id"],x["probe_id"]) for x in self.data["drafts"]}
-        if draft_cards != cards: errors.append("P6 must provide exactly one microdraft for every P4/P5 card")
-        for sid in required:
-            count=sum(x["scenario_id"]==sid for x in self.data["drafts"])
-            if count!=5: errors.append(f"{sid}: expected 5 microdrafts, got {count}")
-        for i in range(1,6):
-            cid=f"W{i}"; count=sum(x["cell_id"]==cid for x in self.data["drafts"])
-            if count!=4: errors.append(f"{cid}: expected 4 blind variants, got {count}")
+        draft_cards=[(x["scenario_id"],x["probe_id"]) for x in self.data["drafts"]]
+        if len(draft_cards) != len(set(draft_cards)) or set(draft_cards) != cards:
+            errors.append("P6 must provide one unique microdraft for every upstream card")
+        cells = unique_index(self.data["design"]["cells"])
+        actual_cells = {(x["scenario_id"], x["cell_id"]) for x in self.data["drafts"]}
+        expected_cells = {(sid, cell) for sid in required for cell in cells}
+        if actual_cells != expected_cells or len(actual_cells) != len(self.data["drafts"]):
+            errors.append("microdraft design cells must have one variant per required scenario")
         result=self.evaluate_all(discourse,stress,suite)
         if result["status"]!="PASS": errors.append(f"P6 microdraft screen failed: {result}")
         if result["winner"] is not None: errors.append("P6 may not select a winner")

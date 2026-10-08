@@ -12,9 +12,10 @@
     "decision_refs": {"type": "array", "items": {"type": "string"}},
     "locator": {
       "type": "object",
-      "required": ["file_ref", "file_sha256"],
+      "required": ["file_ref", "file_sha256", "asset_ref"],
       "properties": {
         "file_ref": {"type": "string"},
+        "asset_ref": {"type": "string", "pattern": "^asset:[a-zA-Z0-9._:-]+$"},
         "file_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
         "lines": {"type": ["string", "null"]}
       },

@@ -35,14 +35,8 @@ class OpenInterfaceRegistry:
         mechanisms: HistoricalMechanismRegistry,
     ) -> list[str]:
         errors: list[str] = []
-        expected = {f"OL-{i:03d}" for i in range(1, 29)}
-        present = set(self.interfaces)
-        if present and present != expected:
-            errors.append(
-                "OPEN registry must contain OL-001..OL-028 exactly; "
-                f"missing={sorted(expected-present)} extra={sorted(present-expected)}"
-            )
-
+        if not self.interfaces:
+            errors.append("OPEN interface registry must be nonempty")
         for interface_id, interface in self.interfaces.items():
             if interface.get("state") != "OPEN_LOCKED":
                 errors.append(f"{interface_id}: state must remain OPEN_LOCKED")

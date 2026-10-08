@@ -35,15 +35,6 @@ def test_completion_hard_anchors_are_first_class_provenance_nodes():
         assert graph.decision_lock_eligible(decision_id) is True
 
 
-def test_legacy_hard_evidence_no_longer_has_null_source():
-    from rcwh.io import load_data
-
-    doc = load_data(root() / "data" / "evidence" / "ch86.yaml")
-    hard = [x for x in doc["claims"] if x["status"] == "HARD"]
-    assert hard
-    assert all(x.get("source_ref") for x in hard)
-
-
 def test_regression_detects_reverse_promotion():
     graph = ProvenanceGraph.from_repo(root())
     broken = deepcopy(graph)

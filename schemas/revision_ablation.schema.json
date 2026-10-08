@@ -4,8 +4,6 @@
   "type": "object",
   "required": [
     "id",
-    "milestone",
-    "status",
     "authority",
     "output_authority",
     "source_basis",
@@ -16,20 +14,12 @@
     "thresholds",
     "pairs",
     "policy",
-    "next_gate"
+    "next_gate",
+    "schema_version"
   ],
   "properties": {
     "id": {
       "const": "cross-route-revision-ablation:v0.14"
-    },
-    "milestone": {
-      "const": "P8"
-    },
-    "status": {
-      "enum": [
-        "PASS_CANDIDATE",
-        "PASS"
-      ]
     },
     "authority": {
       "const": "SHADOW_ONLY"
@@ -42,7 +32,9 @@
       "required": [
         "p6_ref",
         "p7_ref",
-        "p5_ref"
+        "p5_ref",
+        "p6_snapshot_sha256",
+        "p7_snapshot_sha256"
       ],
       "properties": {
         "p6_ref": {
@@ -53,6 +45,14 @@
         },
         "p5_ref": {
           "const": "narrative-discourse:v0.11"
+        },
+        "p6_snapshot_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "p7_snapshot_sha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
         }
       },
       "additionalProperties": false
@@ -65,7 +65,7 @@
     },
     "strict_reduction_tokens": {
       "type": "array",
-      "minItems": 5,
+      "minItems": 1,
       "uniqueItems": true,
       "items": {
         "type": "string"
@@ -79,18 +79,13 @@
     },
     "pairs": {
       "type": "array",
-      "minItems": 20,
-      "maxItems": 20,
+      "minItems": 1,
       "items": {
         "type": "object",
         "required": [
           "baseline_token",
           "revised_token",
-          "scenario_id",
-          "probe_id",
-          "cell_id",
           "applied_targets",
-          "baseline_artifact",
           "revised_artifact"
         ],
         "properties": {
@@ -100,16 +95,6 @@
           "revised_token": {
             "type": "string"
           },
-          "scenario_id": {
-            "type": "string"
-          },
-          "probe_id": {
-            "type": "string"
-          },
-          "cell_id": {
-            "type": "string",
-            "pattern": "^W[1-5]$"
-          },
           "applied_targets": {
             "type": "array",
             "minItems": 1,
@@ -117,9 +102,6 @@
             "items": {
               "type": "string"
             }
-          },
-          "baseline_artifact": {
-            "type": "string"
           },
           "revised_artifact": {
             "type": "string"
@@ -129,13 +111,24 @@
       }
     },
     "policy": {
-      "type": "object"
+      "type": "object",
+      "properties": {
+        "competition_effect": {
+          "const": "NONE"
+        }
+      },
+      "required": [
+        "competition_effect"
+      ]
     },
     "next_gate": {
       "enum": [
         "P8_CI_THEN_P9_PAIRED_BLIND_REVISION_REVIEW",
         "P9_PAIRED_BLIND_REVISION_REVIEW"
       ]
+    },
+    "schema_version": {
+      "const": 1
     }
   },
   "additionalProperties": false

@@ -8,9 +8,7 @@
     "status",
     "authority",
     "hypotheses",
-    "hard_constraints",
     "open_interfaces",
-    "evaluation_axes",
     "current_c_relation",
     "search_policy",
     "world_replay",
@@ -45,29 +43,6 @@
         "pattern": "^HYP-[A-Z0-9-]+$"
       }
     },
-    "hard_constraints": {
-      "type": "object",
-      "required": [
-        "status",
-        "blockers"
-      ],
-      "properties": {
-        "status": {
-          "enum": [
-            "PENDING_P2_REPLAY",
-            "PASS",
-            "FAIL"
-          ]
-        },
-        "blockers": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        }
-      },
-      "additionalProperties": false
-    },
     "open_interfaces": {
       "type": "object",
       "required": [
@@ -81,46 +56,6 @@
         "closed_by_scenario": {
           "type": "array",
           "maxItems": 0
-        }
-      },
-      "additionalProperties": false
-    },
-    "evaluation_axes": {
-      "type": "object",
-      "required": [
-        "evidence_fit",
-        "contradiction_risk",
-        "open_consumption",
-        "historical_cost",
-        "world_coherence",
-        "chapter_economy",
-        "front80_structural_echo",
-        "literary_fertility"
-      ],
-      "properties": {
-        "evidence_fit": {
-          "const": "UNASSESSED"
-        },
-        "contradiction_risk": {
-          "const": "UNASSESSED"
-        },
-        "open_consumption": {
-          "const": "UNASSESSED"
-        },
-        "historical_cost": {
-          "const": "UNASSESSED"
-        },
-        "world_coherence": {
-          "const": "UNASSESSED"
-        },
-        "chapter_economy": {
-          "const": "UNASSESSED"
-        },
-        "front80_structural_echo": {
-          "const": "UNASSESSED"
-        },
-        "literary_fertility": {
-          "const": "UNASSESSED"
         }
       },
       "additionalProperties": false

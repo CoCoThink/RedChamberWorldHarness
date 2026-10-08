@@ -1,0 +1,38 @@
+schema_version: 1
+claims:
+- id: claim:daiyu:death-direction
+  statement: 后文黛玉死亡是通部“大过节、大关键”之一。
+  kind: EVENT
+  authority_scope: NARRATIVE_EVIDENCE
+  role: EVENT
+  modality: DIRECT_ASSERTION
+  literal_targets:
+  - SEM
+  support:
+  - source: src:jimao:ch18:daiyu-death
+    relation: DIRECT
+  status: SUPPORTED
+- id: claim:xiaohong:great-help
+  statement: 红玉/小红后文对宝玉有“大得力处”。
+  kind: EVENT
+  authority_scope: NARRATIVE_EVIDENCE
+  role: EVENT
+  modality: DIRECT_ASSERTION
+  literal_targets:
+  - SEM
+  support:
+  - source: src:gengchen:ch27:xiaohong-great-help
+    relation: DIRECT
+  status: SUPPORTED
+- id: claim:qianxue:prison-return
+  statement: 茜雪到“狱神庙”相关后文才呈其正文功能。
+  kind: EVENT
+  authority_scope: NARRATIVE_EVIDENCE
+  role: EVENT
+  modality: DIRECT_ASSERTION
+  literal_targets:
+  - SEM
+  support:
+  - source: src:gengchen:ch20:xiren-prison-drafts
+    relation: DIRECT
+  status: SUPPORTED

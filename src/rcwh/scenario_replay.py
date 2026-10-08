@@ -311,7 +311,7 @@ class CounterfactualReplayRuntime:
         scenario = scenarios.get(scenario_id)
         snaps = {
             ch: self.snapshot(scenario_id, ch, scenarios, world)
-            for ch in range(81, 101)
+            for ch in sorted(world.presence)
         }
         findings = self._findings(scenario, snaps)
         blockers = [x for x in findings if x["severity"] == "BLOCKER"]
@@ -357,7 +357,6 @@ class CounterfactualReplayRuntime:
                 "pressures": len(result["pressures"]),
             })
         return {
-            "milestone": "P2",
             "status": "PASS" if all(x["blockers"] == 0 for x in rows) else "BLOCKED_SCENARIOS_PRESENT",
             "scenarios": rows,
             "automatic_winner": False,
@@ -387,8 +386,6 @@ class CounterfactualReplayRuntime:
         world: WorldRuntime,
     ) -> list[str]:
         errors: list[str] = []
-        if self.data.get("milestone") != "P2":
-            errors.append("Scenario replay milestone must be P2")
         if self.data.get("authority") != "SHADOW_ONLY":
             errors.append("Scenario replay must remain SHADOW_ONLY")
         for field, value in self.data.get("effects", {}).items():
@@ -431,7 +428,7 @@ class CounterfactualReplayRuntime:
         current = self.evaluate("SCN-CURRENT-C", scenarios, world)
         if current["blockers"]:
             errors.append(f"Current-C reference replay has blockers: {current['blockers']}")
-        for chapter in range(81, 101):
+        for chapter in sorted(world.presence):
             baseline = world.snapshot(chapter)
             replay = self.snapshot("SCN-CURRENT-C", chapter, scenarios, world)["state"]
             if replay != baseline:

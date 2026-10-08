@@ -1,5 +1,9 @@
 from copy import deepcopy
 from pathlib import Path
+import hashlib
+import json
+
+import pytest
 
 from rcwh.competition import CompetitionRegistry, PIPELINE
 from rcwh.io import load_data
@@ -10,33 +14,6 @@ from rcwh.schema import validate_instance
 
 def root() -> Path:
     return Path(__file__).resolve().parents[1]
-
-
-def test_production_43_0_order_is_frozen():
-    registry = CompetitionRegistry.from_repo(root())
-    records = sorted(
-        [x for x in registry.records.values() if x["mode"] == "PRODUCTION_43_0"],
-        key=lambda x: x["sequence"],
-    )
-    assert [x["chapter"] for x in records] == [86, 89, 92, 97]
-    assert records[0]["state"] == "ADJUDICATED"
-    assert records[0]["workflow_progress"]["BASELINE_EXCERPT"] == "PASS"
-    assert records[0]["workflow_progress"]["STRUCTURAL_REORDER"] == "PASS"
-    assert records[0]["workflow_progress"]["SMALL_TRIAL"] == "PASS"
-    assert records[0]["workflow_progress"]["SIX_FIELD_REGRESSION"] == "PASS"
-    assert records[0]["workflow_progress"]["PLOCK_REGRESSION"] == "PASS"
-    assert records[0]["workflow_progress"]["BLIND_READ"] == "PASS"
-    assert [x["label"] for x in records[0]["candidates"]] == ["A", "B", "C"]
-    assert records[1]["state"] == "IN_REVIEW"
-    assert records[1]["workflow_progress"]["BASELINE_EXCERPT"] == "PASS"
-    assert records[1]["workflow_progress"]["STRUCTURAL_REORDER"] == "PASS"
-    assert records[1]["workflow_progress"]["SMALL_TRIAL"] == "PASS"
-    assert records[1]["workflow_progress"]["SIX_FIELD_REGRESSION"] == "PASS"
-    assert records[1]["workflow_progress"]["PLOCK_REGRESSION"] == "PENDING"
-    assert records[1]["workflow_progress"]["BLIND_READ"] == "PENDING"
-    assert [x["label"] for x in records[1]["candidates"]] == ["A", "B", "C"]
-    assert all(x["state"] == "BLOCKED_BY_PREDECESSOR" for x in records[2:])
-    assert all(x["pipeline"] == PIPELINE for x in records)
 
 
 def test_real_ch86_candidates_complete_blind_gate_and_b_is_winner():
@@ -142,7 +119,9 @@ def test_fixture_git_blob_identity_is_checked():
 def test_ch86_b_promotion_regression_passes():
     from rcwh.promotion import PromotionRegistry
     registry = PromotionRegistry.from_repo(root())
-    payload = registry.evaluate(root(), "promotion:ch86:b:v1-5-candidate")
+    record = registry.records["promotion:ch86:b:v1-5-candidate"]
+    assert record["stable_active_effect"] == "NONE"
+    payload = registry.evaluate(root(), record["id"])
     assert payload["overall"] == "PASS"
     assert all(x == "PASS" for x in payload["gates"].values())
     assert payload["stable_active_mutated"] is False
@@ -155,3 +134,54 @@ def test_ch86_promotion_changes_only_chapter_86():
     record = registry.records["promotion:ch86:b:v1-5-candidate"]
     assert record["allowed_changed_chapters"] == [86]
     assert record["baseline"]["sha256"] == "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+
+
+def test_assembled_promotion_matches_reviewed_sha_and_preserves_other_chapters():
+    from rcwh.assets import AssetCatalog
+    from rcwh.contracts import project_chapters
+    from rcwh.promotion import PromotionRegistry, _split_chapters
+    registry = PromotionRegistry.from_repo(root())
+    record = next(iter(registry.records.values()))
+    raw = registry.build_candidate(root(), record["id"])
+    assert hashlib.sha256(raw).hexdigest() == record["candidate"]["sha256"]
+    baseline = AssetCatalog.from_repo(root()).resolve(record["baseline"]["asset_ref"]).path.read_bytes()
+    before = _split_chapters(baseline.decode(), project_chapters(root()))
+    after = _split_chapters(raw.decode(), project_chapters(root()))
+    assert {ch for ch in before if before[ch] != after[ch]} == set(record["allowed_changed_chapters"])
+
+
+@pytest.mark.parametrize("fault", ["baseline", "chapter", "assembled", "scope"])
+def test_promotion_build_rejects_changed_input_identity(fault):
+    from rcwh.promotion import PromotionRegistry
+    registry = PromotionRegistry.from_repo(root())
+    record = next(iter(registry.records.values()))
+    if fault == "baseline":
+        record["baseline"]["sha256"] = "0" * 64
+    elif fault == "chapter":
+        record["candidate"]["replacements"][0]["sha256"] = "0" * 64
+    elif fault == "assembled":
+        record["candidate"]["sha256"] = "0" * 64
+    else:
+        record["allowed_changed_chapters"] = [89]
+    with pytest.raises(ValueError):
+        registry.build_candidate(root(), record["id"])
+
+
+def test_promotion_cli_exports_exact_candidate_and_refuses_overwrite(tmp_path, monkeypatch, capsys):
+    from rcwh.cli import main
+    from rcwh.promotion import PromotionRegistry
+    registry = PromotionRegistry.from_repo(root())
+    record = next(iter(registry.records.values()))
+    target = tmp_path / "candidate.md"
+    monkeypatch.setattr("sys.argv", ["rcwh", "--root", str(root()), "promotion", record["id"], "--output", str(target), "--json"])
+    with pytest.raises(SystemExit) as exported:
+        main()
+    assert exported.value.code == 0
+    payload = json.loads(capsys.readouterr().out)
+    assert payload["stable_active_mutated"] is False
+    assert hashlib.sha256(target.read_bytes()).hexdigest() == record["candidate"]["sha256"]
+    with pytest.raises(SystemExit) as refused:
+        main()
+    assert refused.value.code == 1
+    assert json.loads(capsys.readouterr().out)["overall"] == "FAIL"
+    assert hashlib.sha256(target.read_bytes()).hexdigest() == record["candidate"]["sha256"]

@@ -2,7 +2,8 @@ from pathlib import Path
 
 from rcwh.object_network import ObjectNetworkRuntime
 from rcwh.reconstruction import ReconstructionRegistry
-from rcwh.registry import MigrationRegistry
+from rcwh.assets import AssetCatalog
+from rcwh.workflow import ProjectState
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -10,17 +11,6 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def objects() -> ObjectNetworkRuntime:
     return ObjectNetworkRuntime.from_repo(ROOT)
-
-
-def test_m4_object_network_cardinality_and_query_surface():
-    summary = objects().summary()
-    assert summary["objects"] == 17
-    assert summary["transitions"] == 29
-    assert summary["identity_edges"] == 1
-    assert summary["containment_edges"] == 2
-    assert summary["completion"]["object_queryable"] is True
-    assert summary["completion"]["transition_replay"] is True
-    assert summary["completion"]["completion_gate_ready"] is False
 
 
 def test_tongling_jade_has_continuous_current_c_route_until_sashou_boundary():
@@ -89,49 +79,152 @@ def test_every_location_change_is_explicit_or_open_boundary():
     report = objects().continuity_report()
     assert report["status"] == "PASS"
     assert report["findings"] == []
-    assert report["transitions_checked"] == 29
+    assert report["transitions_checked"] == len(objects().transitions)
 
 
 def test_object_sources_are_registered_or_reconstruction_nodes():
-    registry = MigrationRegistry.from_repo(ROOT)
+    registry = AssetCatalog.from_repo(ROOT)
     reconstruction = ReconstructionRegistry.from_repo(ROOT)
     r_ids = {item["id"] for item in reconstruction.data["r_nodes"]}
     for item in objects().objects.values():
         for ref in item["source_refs"]:
-            if ref.startswith("doc:"):
-                assert ref in registry.documents
+            if ref.startswith("asset:"):
+                assert ref in registry.assets
             elif ref.startswith("R"):
                 assert ref in r_ids
             else:
                 raise AssertionError(f"unsupported source ref {ref}")
 
 
-def test_m4_integrity_passes_after_signed_m8_completion_gate():
-    registry = MigrationRegistry.from_repo(ROOT)
+def test_object_integrity_passes_against_local_assets():
+    registry = AssetCatalog.from_repo(ROOT)
     reconstruction = ReconstructionRegistry.from_repo(ROOT)
     assert objects().validate_integrity(ROOT, registry, reconstruction) == []
-    current = registry.current_summary()
-    assert current["object_queryable"] is True
-    assert current["current_markdown_islands"] == 0
-    assert current["completion_gate_ready"] is True
-    assert current["completion_gate_status"] == "PASS"
-    assert current["literature_resume_authorized"] is True
 
 
 def test_object_trace_resolves_document_and_reconstruction_sources():
-    registry = MigrationRegistry.from_repo(ROOT)
+    registry = AssetCatalog.from_repo(ROOT)
     reconstruction = ReconstructionRegistry.from_repo(ROOT)
     payload = objects().trace("OBJ-TONGLING-JADE", registry, reconstruction)
     assert payload["trace_complete"] is True
     kinds = {item["kind"] for item in payload["resolved_sources"]}
-    assert kinds == {"document", "reconstruction_evidence"}
+    assert kinds == {"asset", "reconstruction_evidence"}
     assert any(
-        item["ref"] == "doc:2b5f2bcae5ce" and item["sha256"].startswith("2b5f2bcae5ce")
+        item["ref"] == "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d" and item["sha256"].startswith("2b5f2bcae5ce")
         for item in payload["resolved_sources"]
-        if item["kind"] == "document"
+        if item["kind"] == "asset"
     )
     assert any(
         item["ref"] == "R01" and "终点" in item["boundary"]
         for item in payload["resolved_sources"]
         if item["kind"] == "reconstruction_evidence"
     )
+
+
+def _scoped_repository(tmp_path, *, chapters=None, baseline=80, transitions=()):
+    import json
+    from copy import deepcopy
+
+    data = deepcopy(objects().data)
+    data["baseline_chapter"] = baseline
+    data["transitions"].extend(transitions)
+    scope = json.loads((ROOT / "data/project/scope.json").read_text())
+    if chapters is not None:
+        scope["chapters"] = chapters
+    for relative, value in [("data/objects/m4.json", data), ("data/project/scope.json", scope)]:
+        target = tmp_path / relative
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_text(json.dumps(value), encoding="utf-8")
+    (tmp_path / "schemas").mkdir(exist_ok=True)
+    (tmp_path / "schemas/project_scope.schema.json").write_bytes((ROOT / "schemas/project_scope.schema.json").read_bytes())
+    return tmp_path
+
+
+def test_configured_extension_accepts_real_transition_and_cli_defaults_to_last_chapter(tmp_path, monkeypatch, capsys):
+    import json
+    from copy import deepcopy
+    import pytest
+    from rcwh.cli import main
+    from rcwh.schema import validate_instance
+
+    runtime = objects()
+    identity = "OBJ-MEDICINE-BOWL-86"
+    state = runtime.snapshot(identity)["state"]
+    extension = deepcopy(runtime.by_object[identity][-1])
+    extension.update(id="OT-EXTENSION", chapter=101, sequence=0, movement="NONE")
+    extension["from"] = deepcopy(state)
+    extension["to"] = {**state, "status": "TEST_EXTENSION_OBSERVED"}
+    repo = _scoped_repository(tmp_path, chapters=[*runtime.chapter_scope, 101], transitions=[extension])
+    selected = ObjectNetworkRuntime.from_repo(repo)
+    assert validate_instance(selected.data, ROOT / "schemas/object_network.schema.json") == []
+    assert selected.validate_integrity(ROOT, AssetCatalog.from_repo(ROOT), ReconstructionRegistry.from_repo(ROOT)) == []
+    assert selected.snapshot(identity)["state"]["status"] == "TEST_EXTENSION_OBSERVED"
+    for query in [("get", identity), ("jade",)]:
+        monkeypatch.setattr("sys.argv", ["rcwh", "--root", str(repo), "object", *query, "--json"])
+        with pytest.raises(SystemExit) as result:
+            main()
+        assert result.value.code == 0
+        assert json.loads(capsys.readouterr().out)["chapter"] == 101
+
+
+def test_queries_reject_scope_holes_and_use_explicit_baseline(tmp_path):
+    import pytest
+
+    scope = [chapter for chapter in objects().chapter_scope if chapter != 90]
+    runtime = ObjectNetworkRuntime.from_repo(_scoped_repository(tmp_path, chapters=scope, baseline=75))
+    assert runtime.snapshot("OBJ-TONGLING-JADE", 75)["applied_transitions"] == []
+    for chapter in [74, 80, 90, 101]:
+        for query in (lambda: runtime.snapshot("OBJ-TONGLING-JADE", chapter),
+                      lambda: runtime.jade(chapter), lambda: runtime.at_location("S02", chapter)):
+            with pytest.raises(KeyError, match="outside configured object scope"):
+                query()
+
+
+def test_transition_in_undeclared_chapter_fails_validation(tmp_path):
+    from copy import deepcopy
+
+    runtime = objects()
+    transition = deepcopy(runtime.transitions[0])
+    transition.update(id="OT-OUTSIDE-SCOPE", chapter=101)
+    selected = ObjectNetworkRuntime.from_repo(_scoped_repository(tmp_path, transitions=[transition]))
+    errors = selected.validate_integrity(ROOT, AssetCatalog.from_repo(ROOT), ReconstructionRegistry.from_repo(ROOT))
+    assert any("OT-OUTSIDE-SCOPE: chapter 101 outside configured object scope" in error for error in errors)
+
+
+def test_missing_protected_checkpoint_is_a_failure_not_a_skipped_check(tmp_path):
+    selected = ObjectNetworkRuntime.from_repo(_scoped_repository(tmp_path, chapters=list(range(81, 100))))
+    errors = selected.validate_integrity(ROOT, AssetCatalog.from_repo(ROOT), ReconstructionRegistry.from_repo(ROOT))
+    assert any("protected object checkpoint unavailable" in error for error in errors)
+
+
+def test_invalid_object_baseline_cannot_be_loaded(tmp_path):
+    import pytest
+
+    for baseline in [None, True, -1, 81, 100]:
+        repo = _scoped_repository(tmp_path, baseline=baseline)
+        with pytest.raises(ValueError, match="baseline_chapter"):
+            ObjectNetworkRuntime.from_repo(repo)
+
+
+def test_existing_identity_frame_and_resource_protections_reject_drift():
+    from copy import deepcopy
+
+    catalog = AssetCatalog.from_repo(ROOT)
+    reconstruction = ReconstructionRegistry.from_repo(ROOT)
+    snow = objects()
+    snow.objects["OBJ-SNOW-JADE-91"]["identity_status"] = "MERGED"
+    assert any("snow jade identity must remain OPEN" in e for e in snow.validate_integrity(ROOT, catalog, reconstruction))
+    for identity, chapter, field, value, expected in [
+        ("OBJ-TONGLING-JADE", 100, "frame_status", "LOST", "hard terminal outer-frame"),
+        ("OBJ-RICE-JAR-95", 96, "quantity_state", "FULL_RESTORATION", "measured/partial"),
+    ]:
+        runtime = objects()
+        state = runtime.snapshot(identity, chapter)["state"]
+        probe = deepcopy(runtime.by_object[identity][-1])
+        probe.update(id="OT-PROTECTION-PROBE", chapter=chapter, sequence=9999, movement="NONE")
+        probe["from"] = deepcopy(state)
+        probe["to"] = {**state, field: value}
+        runtime.transitions.append(probe)
+        runtime.by_object[identity].append(probe)
+        errors = runtime.validate_integrity(ROOT, catalog, reconstruction)
+        assert any(expected in error for error in errors)

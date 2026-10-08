@@ -4,22 +4,15 @@
   "type": "object",
   "required": [
     "id",
-    "issue",
-    "status",
     "effect",
     "authority_rule",
     "adapters",
-    "completion"
+    "schema_version",
+    "policy"
   ],
   "properties": {
     "id": {
       "const": "historical-adapters:v0.4"
-    },
-    "issue": {
-      "const": 4
-    },
-    "status": {
-      "type": "string"
     },
     "effect": {
       "const": "FEASIBILITY_ONLY"
@@ -30,7 +23,7 @@
     },
     "adapters": {
       "type": "array",
-      "minItems": 8,
+      "minItems": 1,
       "uniqueItems": false,
       "items": {
         "type": "object",
@@ -114,8 +107,24 @@
         "additionalProperties": false
       }
     },
-    "completion": {
-      "type": "object"
+    "schema_version": {
+      "const": 1
+    },
+    "policy": {
+      "type": "object",
+      "required": [
+        "preserves_open",
+        "plot_invention"
+      ],
+      "properties": {
+        "preserves_open": {
+          "const": true
+        },
+        "plot_invention": {
+          "const": false
+        }
+      },
+      "additionalProperties": false
     }
   },
   "additionalProperties": false

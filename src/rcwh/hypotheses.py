@@ -50,11 +50,11 @@ class HypothesisRuntime:
             return ref in graph.sources
         if ref.startswith("OL-"):
             return ref in open_interfaces.interfaces
-        if ref.startswith("H0") and len(ref) == 3:
+        if ref.startswith("H") and ref[1:].isdigit():
             return ref in mechanisms.mechanisms
-        if reconstruction is not None and ref.startswith("R") and len(ref) == 3:
+        if reconstruction is not None and ref.startswith("R") and ref[1:].isdigit():
             return ref in reconstruction.r_nodes
-        if reconstruction is not None and ref.startswith("P") and len(ref) == 3:
+        if reconstruction is not None and ref.startswith("P") and ref[1:].isdigit():
             return ref in reconstruction.p_edges
         return True
 

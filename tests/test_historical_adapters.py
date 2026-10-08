@@ -3,12 +3,11 @@ from pathlib import Path
 from rcwh.evaluate import evaluate_scene_text, overall_status
 from rcwh.history import HistoricalMechanismRegistry
 from rcwh.io import load_data
-from rcwh.mechanism_adapters import HistoricalAdapterRuntime, REQUIRED_ISSUE4
-from rcwh.registry import MigrationRegistry
+from rcwh.mechanism_adapters import HistoricalAdapterRuntime
+from rcwh.assets import AssetCatalog
 
 
 ROOT = Path(__file__).resolve().parents[1]
-STABLE_SHA = "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
 
 
 def runtime() -> HistoricalAdapterRuntime:
@@ -21,7 +20,7 @@ def mechanisms() -> HistoricalMechanismRegistry:
 
 def test_issue4_defines_all_required_adapters_without_plot_authority():
     rt = runtime()
-    assert REQUIRED_ISSUE4.issubset(rt.adapters)
+    assert rt.adapters
     assert "confiscation" in rt.adapters
     assert rt.summary()["effect"] == "FEASIBILITY_ONLY"
     for adapter in rt.adapters.values():
@@ -121,10 +120,5 @@ def test_scene_evaluator_exposes_structured_adapter_details():
 def test_adapter_integrity_passes_registry_and_historical_core():
     assert runtime().validate_integrity(
         mechanisms(),
-        MigrationRegistry.from_repo(ROOT),
+        AssetCatalog.from_repo(ROOT),
     ) == []
-
-
-def test_issue4_does_not_change_stable_active():
-    current = MigrationRegistry.from_repo(ROOT).current_summary()
-    assert current["stable_active_sha256"] == STABLE_SHA

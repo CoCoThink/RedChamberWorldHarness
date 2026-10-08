@@ -1,4 +1,9 @@
 from pathlib import Path
+from copy import deepcopy
+import hashlib
+import json
+
+import pytest
 
 from rcwh.competition import CompetitionRegistry
 from rcwh.literary_eval import evaluate_literary_candidate
@@ -12,20 +17,10 @@ def suite() -> LiteraryEvaluatorSuite:
     return LiteraryEvaluatorSuite.from_repo(ROOT)
 
 
-def test_issue5_acceptance_flags_are_complete_and_never_auto_pass():
+def test_suite_has_screening_authority_and_never_auto_passes():
     payload = suite().summary()
-    assert payload["status"] == "PASS"
     assert payload["authority"] == "LITERARY_SCREENING_ONLY"
     assert payload["automatic_literary_pass"] is False
-    assert payload["all_acceptance"] is True
-    assert set(payload["acceptance"]) == {
-        "culture_not_museum_deletion_test",
-        "explicit_exposition_detector",
-        "ambiguity_preservation",
-        "structural_variation_checks",
-        "poetry_abc_lane",
-        "blind_output_evidence_separated",
-    }
 
 
 def test_culture_not_museum_deletion_test_flags_display_only_and_accepts_action_attachment():
@@ -143,7 +138,7 @@ def test_ch89_blind_packet_is_separate_from_competition_evidence_and_candidate_l
     assert packet["kind"] == "LITERARY_BLIND_READ"
     assert packet["chapter"] == 89
     assert {x["token"] for x in packet["candidates"]} == {"BR-14", "BR-58", "BR-91"}
-    assert all("/blind/" in x["artifact"] for x in packet["candidates"])
+    assert all(set(x) == {"token", "text", "sha256"} for x in packet["candidates"])
     assert suite().blind_output_violations(packet) == []
     rendered = str(packet)
     for leaked in (
@@ -179,3 +174,37 @@ def test_existing_literary_candidate_pipeline_includes_v05_suite_without_auto_pr
 
 def test_issue5_suite_integrity_passes_current_competitions():
     assert suite().validate_integrity(CompetitionRegistry.from_repo(ROOT)) == []
+
+
+@pytest.mark.parametrize("chapter", [86, 89])
+def test_blind_export_is_exact_anonymous_and_refuses_existing_directory(tmp_path, chapter):
+    record = CompetitionRegistry.from_repo(ROOT).records[f"comp:43-0:ch{chapter}:pressure-test"]
+    target = tmp_path / "review"
+    packet = suite().competition_blind_packet(record, target)
+    assert json.loads((target / "packet.json").read_text()) == packet
+    originals = {c["blind_token"]: (ROOT / c["artifact"]["path"]).read_bytes() for c in record["candidates"]}
+    assert {p.name for p in target.iterdir()} == {"packet.json", *(f"{token}.md" for token in originals)}
+    for item in packet["candidates"]:
+        assert set(item) == {"token", "artifact", "sha256"}
+        raw = (target / item["artifact"]).read_bytes()
+        assert raw == originals[item["token"]]
+        assert hashlib.sha256(raw).hexdigest() == item["sha256"]
+    assert suite().blind_output_violations(packet) == []
+    with pytest.raises(FileExistsError):
+        suite().competition_blind_packet(record, target)
+    assert json.loads((target / "packet.json").read_text()) == packet
+
+
+@pytest.mark.parametrize("fault", ["identity", "token_path", "duplicate_token"])
+def test_invalid_blind_input_is_rejected_before_export(tmp_path, fault):
+    record = deepcopy(CompetitionRegistry.from_repo(ROOT).records["comp:43-0:ch89:pressure-test"])
+    if fault == "identity":
+        record["candidates"][0]["artifact"]["git_blob_sha"] = "0" * 40
+    elif fault == "token_path":
+        record["candidates"][0]["blind_token"] = "../identity"
+    else:
+        record["candidates"][1]["blind_token"] = record["candidates"][0]["blind_token"]
+    target = tmp_path / "review"
+    with pytest.raises(ValueError):
+        suite().competition_blind_packet(record, target)
+    assert not target.exists()

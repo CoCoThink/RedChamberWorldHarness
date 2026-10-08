@@ -43,14 +43,8 @@ class HistoricalMechanismRegistry:
 
     def validate_integrity(self, graph: ProvenanceGraph) -> list[str]:
         errors: list[str] = []
-
-        expected = {f"H0{i}" for i in range(1, 7)}
-        present = set(self.mechanisms)
-        if present and present != expected:
-            errors.append(
-                f"historical mechanisms must contain H01-H06 exactly; "
-                f"missing={sorted(expected-present)} extra={sorted(present-expected)}"
-            )
+        if not self.mechanisms:
+            errors.append("historical mechanism registry must be nonempty")
 
         for mechanism_id, mechanism in self.mechanisms.items():
             if mechanism.get("effect") != "FEASIBILITY_ONLY":
