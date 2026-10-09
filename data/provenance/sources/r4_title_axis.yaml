@@ -12,14 +12,32 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    chapter: 21
-    parsed_lines: 8603-8619
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:300
+      start: 250
+      end: 273
+    - unit_ref: pdf:page:300
+      start: 274
+      end: 290
+    joiner: ''
+    raw_text_sha256: 326d95c16cfcc89051cea051f84fcefe93b838c0dc80fab310c12ec7dace0a99
   text: 此曰“娇嗔箴宝玉”“软语救贾琏”，后曰“薛宝钗借词含讽谏，王熙凤知命强英雄”。
   text_sha256: 326d95c16cfcc89051cea051f84fcefe93b838c0dc80fab310c12ec7dace0a99
   notes: 该证据支持完整未来回目文字；不支持本工程“第90回”的具体编号。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:358745b8a7e9232434f7bc8b740a9109d176eebbd491982c748f3d34a118cf46
+    report_sha256: 358745b8a7e9232434f7bc8b740a9109d176eebbd491982c748f3d34a118cf46
+    source_record_sha256: 27671cf281c755a4bf9a0ff01c7c9114bb349277ecf29dd5a5226b560dbd6eca
+  legacy_locator:
+    chapter: 21
+    parsed_lines: 8603-8619
 - id: src:gengchen:ch20:xiren-prison-drafts
   type: EARLY_COMMENT
   tier: W1_SEEN
@@ -32,14 +50,35 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    chapter: 20
-    parsed_lines: 8311-8324
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:290
+      start: 643
+      end: 654
+    - unit_ref: pdf:page:290
+      start: 655
+      end: 690
+    - unit_ref: pdf:page:290
+      start: 691
+      end: 717
+    joiner: ''
+    raw_text_sha256: 32c3ec319cacd38a250240614677ef38604d603a0fd2d9f6c205aa97d226fa74
   text: 茜雪至“狱神庙”方呈正文。袭人正文标目曰“花袭人有始有终”，余只见有一次誊清时，与“狱神庙慰宝玉”等五六稿，被借阅者迷失，叹叹！丁亥夏。畸笏叟。
   text_sha256: 32c3ec319cacd38a250240614677ef38604d603a0fd2d9f6c205aa97d226fa74
   notes: “花袭人有始有终”明称正文标目；“狱神庙慰宝玉”处在见过的稿件/稿名语境。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:2c0efdf91f3bb930d07ca00df52c2b473e7c7343791e6d5bb2f81566f26fe5b0
+    report_sha256: 2c0efdf91f3bb930d07ca00df52c2b473e7c7343791e6d5bb2f81566f26fe5b0
+    source_record_sha256: 0f879d54fe0538fd4774ea4e10c46cfdedc6ee5800f7676d9131edb0845ae484
+  legacy_locator:
+    chapter: 20
+    parsed_lines: 8311-8324
 - id: src:jiazxu:ch8:mistaken-theft
   type: EARLY_COMMENT
   tier: W1_DIRECT
@@ -52,14 +91,32 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    chapter: 8
-    parsed_lines: 3983-3996
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:141
+      start: 389
+      end: 404
+    - unit_ref: pdf:page:141
+      start: 405
+      end: 424
+    joiner: ''
+    raw_text_sha256: b3f86a33132d43d705e4c6b70dfee95d0817d00efcaf3adabdde4a2049698fd7
   text: “塞玉”一段，又为“误窃”一回伏线。晴雯茜雪二婢，又为后文先作一引。
   text_sha256: b3f86a33132d43d705e4c6b70dfee95d0817d00efcaf3adabdde4a2049698fd7
   notes: 支持后文“误窃”回称/接口；不能单独证明正式原回目或具体回次。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:6c5a44d731284773e3f951ce539f0466bd56c784f5e0d06167e6b2b2c5b65ed0
+    report_sha256: 6c5a44d731284773e3f951ce539f0466bd56c784f5e0d06167e6b2b2c5b65ed0
+    source_record_sha256: b24630c021e24af3cfa5113dfbc44fd93a9a56c387264cdb5185f61fe4e0fc67
+  legacy_locator:
+    chapter: 8
+    parsed_lines: 3983-3996
 - id: src:jimao:ch19:cold-winter-torn-felt
   type: EARLY_COMMENT
   tier: W1_DIRECT
@@ -72,11 +129,29 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    chapter: 19
-    parsed_lines: 7798-7813
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:273
+      start: 671
+      end: 694
+    - unit_ref: pdf:page:273
+      start: 695
+      end: 714
+    joiner: ''
+    raw_text_sha256: 8f13aa31390b83c666e277021a2e82ddad316d0617e2f970c3fb907661c2378d
   text: 以此一句留与下部后数十回“寒冬噎酸虀，雪夜围破毡”等处对看，可为后生过分之戒。叹叹！
   text_sha256: 8f13aa31390b83c666e277021a2e82ddad316d0617e2f970c3fb907661c2378d
   notes: 这是未来场景描述/T3，不是正式回目证据。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:16d6b467a8d924a3bb45f7e872f7bf94fa786f535dbbf740258081e6a18a7d00
+    report_sha256: 16d6b467a8d924a3bb45f7e872f7bf94fa786f535dbbf740258081e6a18a7d00
+    source_record_sha256: a1aa759ba89a26120eb47f02ee7b4eeb14637f20d06674bf18039218aad8e0ab
+  legacy_locator:
+    chapter: 19
+    parsed_lines: 7798-7813

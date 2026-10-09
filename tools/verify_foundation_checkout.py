@@ -71,8 +71,22 @@ def verify(root: Path) -> dict:
             ("release-storage", ["self-contained", "check", "--profile", "release-storage", "--require-tracked"], 0),
             ("source-content", ["self-contained", "check", "--profile", "source-content", "--require-tracked"], None),
             ("source-locators", ["self-contained", "check", "--profile", "source-locators", "--require-tracked"], None),
+            ("sources-verify-all", ["sources", "verify-all", "--require-tracked"], 0),
+            ("source-gap-regression", ["sources", "gap-check", "--require-tracked"], 0),
+            ("declared-input-regression", ["self-contained", "check", "--profile", "declared-inputs-regression", "--require-tracked"], 0),
+            ("declared-input-closure", ["self-contained", "check", "--profile", "declared-inputs", "--require-tracked"], None),
+            ("project-acceptance", ["project", "acceptance", "--require-tracked"], 0),
+            ("project-acceptance-strict", ["project", "acceptance", "--require-tracked", "--require-complete"], None),
             ("project-status", ["project", "status"], 0),
             ("asset-history", ["assets", "history", "--list"], 0),
+            ("asset-collections", ["assets", "collections"], 0),
+            ("catalog-index", ["assets", "index"], 0),
+            ("chapter-asset-discovery", ["assets", "list", "--role", "CHAPTER_CARD", "--chapter", "92"], 0),
+            ("corpus-inputs", ["corpus", "inputs", "data/corpus/inputs/front80-pilot-v1.json", "--require-tracked"], 0),
+            ("corpus-pilot", ["corpus", "verify", "corpus:front80:pilot:v1", "--require-tracked", "--rebuild"], 0),
+            ("corpus-front80-candidate", ["corpus", "verify", "corpus:front80:v1-candidate", "--require-tracked", "--rebuild"], 0),
+            ("frozen-writing-inputs", ["literary-inputs", "package", "data/writing/packages/ch89-research-v2.json", "--require-tracked"], 0),
+            ("paired-review-submissions", ["paired-review", "summary"], 0),
             ("repository-validation", ["validate"], 0),
             ("literary-production", ["literary-production", "summary", "--json"], 0),
             ("prewrite-summary", ["prewrite", "summary", "--json"], 0),
@@ -95,28 +109,42 @@ def verify(root: Path) -> dict:
             ("promotion-export", ["promotion", "promotion:ch86:b:v1-5-candidate", "--output", str(base / "candidate.md"), "--json"], 0),
         ]
         results = {}
+        acceptance_report = None
         for name, args, expected in checks:
             result = subprocess.run(
                 [sys.executable, "-c", CLI_CODE, *args], cwd=clean, env=env,
-                capture_output=True, text=True, timeout=120,
+                capture_output=True, text=True, timeout=240 if name.startswith("project-acceptance") else 120,
             )
             payload = json.loads(result.stdout) if result.stdout.lstrip().startswith("{") else {"message": result.stdout.strip()}
             if expected is None:
-                if not payload.get("sources") or payload.get("graph_findings") or payload.get("storage_findings"):
-                    raise RuntimeError(f"{name}: invalid source closure report: {payload}")
-                expected = int(any(s["status"] != "PASS" for s in payload["sources"]))
-                if payload.get("status") != ("FAIL" if expected else "PASS"):
-                    raise RuntimeError(f"{name}: inconsistent source closure status")
+                if name == "project-acceptance-strict":
+                    if payload.get("scope") != "REVIEW_FOLLOWUP_INPUT_ACCEPTANCE":
+                        raise RuntimeError("Invalid project acceptance scope")
+                    expected = int(payload["status"] != "PASS")
+                elif name == "declared-input-closure":
+                    if payload.get("profile") != "declared-inputs" or payload.get("status") not in {"PASS", "FAIL"}:
+                        raise RuntimeError("Invalid strict declared-input closure report")
+                    expected = int(payload["status"] != "PASS")
+                else:
+                    if not payload.get("sources") or payload.get("graph_findings") or payload.get("storage_findings"):
+                        raise RuntimeError(f"{name}: invalid source closure report: {payload}")
+                    expected = int(any(s["status"] != "PASS" for s in payload["sources"]))
+                    if payload.get("status") != ("FAIL" if expected else "PASS"):
+                        raise RuntimeError(f"{name}: inconsistent source closure status")
             if result.returncode != expected:
                 raise RuntimeError(f"{name}: {result.returncode} != {expected}\n{result.stdout}\n{result.stderr}")
             if name.endswith("-trace") and payload.get("trace_complete") is not True:
                 raise RuntimeError(f"{name}: incomplete local asset trace")
+            if name == "project-acceptance":
+                acceptance_report = payload
             results[name] = {"returncode": result.returncode, "check_status": "PASS", "expected_returncode": expected}
             if "status" in payload:
                 results[name]["status"] = payload["status"]
             for key in ("assets", "origins", "roots", "local_containers", "unresolved_sources", "evidence_closure"):
                 if key in payload:
                     results[name][key] = payload[key]
+            for key in ("closure_status", "readiness", "human_acceptance", "review_count", "scope", "engineering_status", "pending_checks", "failed_checks"):
+                if key in payload: results[name][key] = payload[key]
             print(name, results[name], flush=True)
         # Exercise the workflow's real shell blocks, including expected nonzero exits.
         # Dependency installation is supplied by this environment; pytest runs below.
@@ -126,7 +154,7 @@ def verify(root: Path) -> dict:
         launcher.write_text(f"#!{sys.executable}\n" + CLI_CODE, encoding="utf-8")
         launcher.chmod(0o755)
         workflow = yaml.safe_load((clean / ".github/workflows/validate.yml").read_text(encoding="utf-8"))
-        workflow_env = {**env, "PATH": str(bin_dir) + os.pathsep + env["PATH"],
+        workflow_env = {**env, "PATH": os.pathsep.join((str(bin_dir), str(Path(sys.executable).parent), env["PATH"])),
                         "RCWH_ASSET_BASE": subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=clean, text=True).strip()}
         workflow_results = []
         for step in workflow["jobs"]["validate"]["steps"]:
@@ -136,7 +164,7 @@ def verify(root: Path) -> dict:
             name = step.get("name", script.splitlines()[0])
             result = subprocess.run(
                 ["bash", "-e", "-o", "pipefail", "-c", script], cwd=clean, env=workflow_env,
-                capture_output=True, text=True, timeout=180,
+                capture_output=True, text=True, timeout=600 if "verify_corpus_candidates" in script else 180,
             )
             if result.returncode:
                 raise RuntimeError(f"workflow {name} failed\n{result.stdout}\n{result.stderr}")
@@ -144,7 +172,7 @@ def verify(root: Path) -> dict:
             print("workflow:", name, "PASS", flush=True)
         test = subprocess.run(
             [sys.executable, "-m", "pytest", "-q", "-p", "no:cacheprovider"], cwd=clean, env=env,
-            capture_output=True, text=True, timeout=180,
+            capture_output=True, text=True, timeout=600,
         )
         summary = next((line for line in reversed(test.stdout.splitlines()) if "passed" in line or "failed" in line), "")
         print("clean checkout tests:", summary, flush=True)
@@ -162,20 +190,26 @@ def verify(root: Path) -> dict:
             "workflow_checks": workflow_results,
             "workflow_scope": "All validation shell steps; preinstalled dependencies; pytest executed separately below",
             "tests": {"returncode": test.returncode, "summary": summary},
-            "full_self_contained_status": "INCOMPLETE",
+            "full_self_contained_status": "COMPLETE" if results["declared-input-closure"]["status"] == "PASS" else "INCOMPLETE",
+            "review_followup_acceptance": results["project-acceptance"]["status"],
+            "input_acceptance": acceptance_report,
         }
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
+    parser.add_argument("--output", default=REPORT, help="New report path; existing audit reports are never overwritten")
     args = parser.parse_args()
     root = args.root.resolve()
+    from rcwh.assets.paths import repository_path
+    destination = repository_path(root, args.output)
+    if destination.exists(): raise FileExistsError(f"Audit report already exists: {args.output}")
     report = verify(root)
-    destination = root / REPORT
     destination.parent.mkdir(parents=True, exist_ok=True)
-    destination.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
-    print("Verification report written:", REPORT)
+    with destination.open("x", encoding="utf-8") as handle:
+        handle.write(json.dumps(report, ensure_ascii=False, indent=2) + "\n")
+    print("Verification report written:", args.output)
 
 
 if __name__ == "__main__":

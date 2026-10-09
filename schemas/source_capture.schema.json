@@ -1,0 +1,21 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "FixedHttpSourceCapture",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "kind", "requested_url", "final_url", "retrieved_at", "response", "carrier", "selection_note"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "HTTP_CAPTURE"},
+    "requested_url": {"type": "string", "pattern": "^https?://"},
+    "final_url": {"type": "string", "pattern": "^https?://"},
+    "retrieved_at": {"type": "string", "minLength": 1},
+    "response": {"type": "object", "additionalProperties": false, "required": ["status", "headers"],
+      "properties": {"status": {"const": 200}, "headers": {"type": "object", "additionalProperties": {"type": "string"}}}},
+    "carrier": {"type": "object", "additionalProperties": false, "required": ["ref", "sha256"],
+      "properties": {"ref": {"type": "string", "pattern": "^asset:"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "selection_note": {"type": "string", "minLength": 1},
+    "transport_option": {"type": "string"},
+    "superseded_attempts": {"type": "array", "items": {"type": "object"}}
+  }
+}

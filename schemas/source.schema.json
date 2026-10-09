@@ -47,15 +47,35 @@
       },
       "additionalProperties": true
     },
+    "carrier_capture": {
+      "type": "object", "additionalProperties": false, "required": ["ref", "sha256"],
+      "properties": {
+        "ref": {"type": "string", "pattern": "^asset:"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "excerpt_revision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["ref", "sha256", "previous_source_sha256"],
+      "properties": {
+        "ref": {"type": "string", "pattern": "^asset:"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "previous_source_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
     "locator": {"type": "object"},
     "locator_verification": {
       "type": "object",
       "required": ["status", "reason"],
       "additionalProperties": false,
       "properties": {
-        "status": {"const": "UNVERIFIED"},
-        "reason": {"type": "string", "minLength": 1}
-      }
+        "status": {"enum": ["UNVERIFIED", "STALE", "VERIFIED"]},
+        "reason": {"type": "string", "minLength": 1},
+        "report_ref": {"type": "string", "pattern": "^asset:"},
+        "report_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "source_record_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "allOf": [{"if": {"properties": {"status": {"const": "VERIFIED"}}}, "then": {"required": ["report_ref", "report_sha256", "source_record_sha256"]}}]
     },
     "text": {"type": "string", "minLength": 1},
     "text_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},

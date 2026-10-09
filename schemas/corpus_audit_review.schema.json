@@ -1,0 +1,126 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "id",
+    "dataset_ref",
+    "manifest_sha256",
+    "protocol_sha256",
+    "reviewer",
+    "raw_review",
+    "main_boundaries_confirmed",
+    "unknown_witnesses_acknowledged",
+    "unaligned_segments_acknowledged",
+    "checks",
+    "authority_effect"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "dataset_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "protocol_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "id",
+        "kind",
+        "independent_of_builder"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "const": "INDEPENDENT_HUMAN"
+        },
+        "independent_of_builder": {
+          "const": true
+        }
+      }
+    },
+    "raw_review": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "asset_ref",
+        "sha256"
+      ],
+      "properties": {
+        "asset_ref": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      }
+    },
+    "main_boundaries_confirmed": {
+      "type": "boolean"
+    },
+    "unknown_witnesses_acknowledged": {
+      "type": "boolean"
+    },
+    "unaligned_segments_acknowledged": {
+      "type": "boolean"
+    },
+    "checks": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "segment_id",
+          "layer_valid",
+          "locator_valid",
+          "context_valid",
+          "notes"
+        ],
+        "properties": {
+          "segment_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "layer_valid": {
+            "type": "boolean"
+          },
+          "locator_valid": {
+            "type": "boolean"
+          },
+          "context_valid": {
+            "type": "boolean"
+          },
+          "notes": {
+            "type": "string",
+            "minLength": 1
+          }
+        }
+      }
+    },
+    "authority_effect": {
+      "const": "NONE"
+    }
+  }
+}

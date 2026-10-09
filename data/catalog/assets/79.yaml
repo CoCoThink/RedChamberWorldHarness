@@ -1,0 +1,59 @@
+schema_version: 1
+assets:
+- id: asset:sha256:05a7bf5d9f4126127a32262d6b18ae2b17c07c5b5b072cc72f575a32c52cd085
+  path: artifacts/reviews/05a7bf5d9f4126127a32262d6b18ae2b17c07c5b5b072cc72f575a32c52cd085/05a7bf5d9f4126127a32262d6b18ae2b17c07c5b5b072cc72f575a32c52cd085.json
+  sha256: 05a7bf5d9f4126127a32262d6b18ae2b17c07c5b5b072cc72f575a32c52cd085
+  bytes: 1472
+  media_type: application/json
+  kind: REVIEW_RECORD
+  immutable: true
+  origin_refs:
+  - origin:ingest:644d716b8779b41b890468abbda3f175867a24876f9fb0805375654a63aed9c6
+- id: asset:sha256:19b1460e9d09a07eb91135287ca5844dd236b10fc5ed23bd6e94d2859ae859f4
+  path: corpus/extractions/e3a9fde9913d4c5ef3bfa93bf9b6e6507796d79aee32adb06c9c72ae17974992/manifest.json
+  sha256: 19b1460e9d09a07eb91135287ca5844dd236b10fc5ed23bd6e94d2859ae859f4
+  bytes: 944
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:extraction:e3a9fde9913d4c5ef3bfa93bf9b6e6507796d79aee32adb06c9c72ae17974992:manifest
+  derived_from:
+  - asset:sha256:94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c
+  - asset:sha256:6f825052070cb8862304edc2f59e275bd524158ecbd97941ea52a1e7e5eb48b4
+- id: asset:sha256:3df04c5a261ffb76eb2230f7b967b5c150be3ac57a721753fdd2e0e303cc4ba9
+  path: archive/imports/handover-20261008/06_LEGACY_INVENTORY_AND_MAPPINGS/04_全量文件出现记录_v2.0.csv
+  sha256: 3df04c5a261ffb76eb2230f7b967b5c150be3ac57a721753fdd2e0e303cc4ba9
+  bytes: 627469
+  media_type: text/csv
+  kind: IMPORT_RECORD
+  immutable: true
+  origin_refs:
+  - origin:handover-20261008:0a8dc28c76434407303211c7
+- id: asset:sha256:4af7c296dd95185c6b479de32cebec677444a4f0bef965a7cdfc247cb5f38313
+  path: corpus/front80/v1-candidate/chapters/ch01.json
+  sha256: 4af7c296dd95185c6b479de32cebec677444a4f0bef965a7cdfc247cb5f38313
+  bytes: 28529
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:26841e7fb3aa9c210743710695f658161d2797be5b68b41760808626a26bb36e
+  derived_from:
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
+- id: asset:sha256:db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522
+  path: corpus/extractions/f95f95556bdb0321f7eeb2b6fb7f358b4a95e5d441edb76d44db41faac2ffdf5/manifest.json
+  sha256: db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522
+  bytes: 942
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:extraction:f95f95556bdb0321f7eeb2b6fb7f358b4a95e5d441edb76d44db41faac2ffdf5:manifest
+  derived_from:
+  - asset:sha256:ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a
+  - asset:sha256:999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c

@@ -5,6 +5,7 @@
 ```bash
 python -m pip install -e '.[dev]'
 rcwh project status
+rcwh project acceptance
 rcwh validate
 pytest -q
 ```
@@ -15,6 +16,8 @@ pytest -q
 
 ```bash
 rcwh assets summary
+rcwh assets collections
+rcwh assets list --role CHAPTER_CARD --chapter 92
 rcwh assets validate
 rcwh assets resolve asset:primary:hlm:zhihui:v3.1416:pdf
 rcwh assets history
@@ -29,9 +32,19 @@ rcwh self-contained check --profile release-storage
 ```bash
 rcwh self-contained check --profile source-content
 rcwh self-contained check --profile source-locators
+rcwh sources verify-all
 ```
 
-这两项目前返回非零：12 条 bibliography-only Source 尚无本地载体；导入的页码/行号未建立对齐验证。保留这些失败用于推动来源和语料工作，不能把它们改成静默警告后宣称完成。
+在 CPython 3.12.13 声明环境下，当前 `source-content`、`source-locators` 与 `sources verify-all` 均可核对全部32条Source。曹家三段已按故宫005664原件图像作代理校录，使用明确标注的派生文本载体；`python tools/verify_cao_facsimile.py` 重算原PDF嵌入图像及派生关系。图像识读是代理判断，独立人工认可仍待提交，见[原件校录记录](../reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)。
+
+后续工作按[来源闭包与语料建设设计](../RCWH_来源闭包与语料建设后续设计_v1.1_20261008.md)推进。R0.1 的统一接收、R0.2 的确定性抽取／Locator v2 和 R0.4 的导航／固定输入已实现，操作见[日常资产接收](ASSET_INTAKE.md)、[来源定位](SOURCE_LOCATORS.md)和[导航与固定输入](ASSET_DISCOVERY_AND_CORPUS_INPUTS.md)。R0.3 的逐字定位缺口已归零；12条代理更正／校录的独立证据审查仍待提交。完整声明闭包及语料层次验收继续保留真实状态。
+
+```bash
+rcwh corpus inputs data/corpus/inputs/front80-pilot-v1.json
+rcwh corpus inputs data/corpus/inputs/front80-pilot-v1.json --require-tracked
+```
+
+该检查重建完整 PDF／EPUB 抽取并比对已登记盘点。输入已固定为 PDF 主输入与 EPUB 比较输入，但 `PASS` 不证明同版，也不表示 Corpus v1 已构建。原文层次、内嵌异文与 EPUB 图片略字的具体处理见[输入核对记录](../reviews/ASSET_DISCOVERY_AND_CORPUS_INPUTS_20261009.md)。
 
 ## 导入与历史记录
 
@@ -71,4 +84,10 @@ python tools/verify_foundation_checkout.py
 
 工具将待评审工作树物化到临时 Git 仓库，使用自动 CRLF 配置重新 clone，移除交接包可见性，在禁止 socket 连接与 DNS 的 CLI 环境下运行上述检查及匿名包／整书候选导出，并执行 `.github/workflows/validate.yml` 中实际配置的全部校验 shell 步骤，包括预期失败退出码；随后运行全部测试。`workflow_checks` 单独记录 CI 步骤结果。命令检查用 `check_status` 记录是否达到预期退出码；`status` 仅保存命令自身返回的状态，不为描述性摘要补造 PASS。仅使用已经安装的依赖，不修改当前仓库的索引或提交历史。
 
+工具还实际运行严格声明闭包和 `project acceptance --require-complete`，依真实状态核对退出码。报告的 `full_self_contained_status` 从严格声明闭包计算；独立评审仍待交时，工程检查可通过而完整闭包保持 INCOMPLETE。当前收口依据和剩余真实输入见[收口记录](../reviews/REVIEW_CLOSEOUT_20261009.md)。
+
 报告位于 `artifacts/migration/handover-20261008/verification_report.json`，首轮删除记录位于同目录的 `cleanup_report.json`，历史规则清理记录为 `rules_cleanup_report.json`。source-content/source-locators 按实际来源结果记录通过或失败，不要求缺口集合等于旧迁移快照；缺载体应失败，补齐后应允许通过。
+
+## 声明闭包、分片及语料候选
+
+目录已按完整 ID 分片，派生索引可重建；原来的单文件仅供旧 Git baseline 读取。当前构建了 pilot 和完整前80候选，两次离线独立重建摘要一致。`sources audit`、语料人工验收和 P9 submission 仍待真实独立意见。声明输入闭包包含全部 Sources、当前选定输入、派生物及所有正式代码／schema，CI 的临时缺口预算只能缩小。操作步骤见[闭包 runbook](DECLARED_INPUT_CLOSURE.md)和[语料／评审 runbook](CORPUS_AND_REVIEW_INPUTS.md)。

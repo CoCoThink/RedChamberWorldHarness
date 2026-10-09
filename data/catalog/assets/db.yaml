@@ -1,0 +1,27 @@
+schema_version: 1
+assets:
+- id: asset:primary:hlm:zhihui:v3.1416:pdf
+  path: sources/primary/hongloumeng/zhihui/v3.1416/original.pdf
+  sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
+  bytes: 7554963
+  media_type: application/pdf
+  kind: PRIMARY_TEXT_CONTAINER
+  immutable: true
+  origin_refs:
+  - origin:handover-20261008:49ece4ce0e37140646a98f27
+  - origin:handover-20261008:4c64f122c068d0099e86aa96
+- id: asset:sha256:92ca49814a5bb520b682407f4110046db9a2167db9db1bdf446c4c3d509895c0
+  path: corpus/front80/v1-candidate/chapters/ch25.json
+  sha256: 92ca49814a5bb520b682407f4110046db9a2167db9db1bdf446c4c3d509895c0
+  bytes: 28465
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:37bfb2f8b0051b8a129c591c4ba7bb540380badb3e4bcac17e3c6c2406fbda9e
+  derived_from:
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2

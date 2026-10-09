@@ -2,37 +2,12 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 import hashlib
-import json
-from pathlib import Path, PurePosixPath
+from pathlib import Path
 import subprocess
 from typing import Any
 
-from ..io import load_data
-from ..schema import validate_instance
-
-
-class AssetError(ValueError):
-    """A declared asset cannot be resolved to the expected repository bytes."""
-
-
-def repository_path(root: Path, relative: str) -> Path:
-    """Reject external paths and links, including links that resolve internally."""
-    path = PurePosixPath(relative)
-    if (
-        not relative or path.is_absolute() or ".." in path.parts
-        or "\\" in relative or ":" in relative or str(path) != relative
-    ):
-        raise AssetError(f"unsafe repository path: {relative}")
-    root = root.resolve()
-    candidate = root.joinpath(*path.parts)
-    current = root
-    for part in path.parts:
-        current = current / part
-        if current.is_symlink():
-            raise AssetError(f"symlink is not an asset: {relative}")
-    if not candidate.resolve().is_relative_to(root):
-        raise AssetError(f"asset leaves repository: {relative}")
-    return candidate
+from .paths import AssetError, repository_path
+from .store import CatalogStore
 
 
 @dataclass(frozen=True)
@@ -59,31 +34,7 @@ class AssetCatalog:
     @classmethod
     def from_repo(cls, root: Path) -> "AssetCatalog":
         root = root.resolve()
-        document = load_data(root / "data/catalog/assets.yaml")
-        problems = validate_instance(document, root / "schemas/asset_catalog.schema.json")
-        if problems:
-            raise AssetError("invalid asset catalog: " + "; ".join(problems))
-        assets: dict[str, dict[str, Any]] = {}
-        for asset in document["assets"]:
-            if asset["id"] in assets:
-                raise AssetError(f"duplicate asset id: {asset['id']}")
-            assets[asset["id"]] = asset
-        origins: dict[str, dict[str, Any]] = {}
-        schema = load_data(root / "schemas/asset_origin.schema.json")
-        path = root / "data/catalog/origins.jsonl"
-        for number, line in enumerate(path.read_text(encoding="utf-8").splitlines(), 1):
-            if not line.strip():
-                continue
-            try:
-                origin = json.loads(line)
-            except json.JSONDecodeError as exc:
-                raise AssetError(f"origins line {number}: {exc}") from exc
-            problems = validate_instance(origin, schema)
-            if problems:
-                raise AssetError(f"origins line {number}: " + "; ".join(problems))
-            if origin["id"] in origins:
-                raise AssetError(f"duplicate origin id: {origin['id']}")
-            origins[origin["id"]] = origin
+        assets, origins = CatalogStore(root).read()
         return cls(root, assets, origins)
 
     def resolve(self, asset_id: str) -> ResolvedAsset:
@@ -102,7 +53,10 @@ class AssetCatalog:
             )
         return ResolvedAsset(asset_id, path, asset["path"], actual, len(raw))
 
-    def validate(self, *, require_tracked: bool = False) -> list[str]:
+    def validate(
+        self, *, require_tracked: bool = False,
+        receipt_records: dict[str, dict[str, Any]] | None = None,
+    ) -> list[str]:
         errors: list[str] = []
         paths: dict[str, str] = {}
         hashes: dict[str, str] = {}
@@ -151,10 +105,25 @@ class AssetCatalog:
         for asset_id in self.assets:
             visit(asset_id)
         from .history import HistoryArchive
+        from .layout import CatalogLayout
+        try:
+            errors.extend(CatalogLayout(CatalogStore(self.root)).index_findings(self.assets, self.origins))
+        except (AssetError, OSError, ValueError) as exc:
+            errors.append(f"catalog index integrity: {exc}")
         try:
             errors.extend(HistoryArchive(self).validate())
         except (AssetError, OSError, ValueError) as exc:
             errors.append(f"asset history integrity: {exc}")
+        from .receipts import ReceiptLedger
+        try:
+            errors.extend(ReceiptLedger(self, receipt_records).validate())
+        except (AssetError, OSError, ValueError) as exc:
+            errors.append(f"asset receipt integrity: {exc}")
+        from .discovery import AssetDiscovery
+        try:
+            errors.extend(AssetDiscovery(self).validate())
+        except (AssetError, OSError, ValueError) as exc:
+            errors.append(f"asset discovery integrity: {exc}")
         if require_tracked:
             result = subprocess.run(
                 ["git", "ls-files", "-z"], cwd=self.root,
@@ -165,9 +134,7 @@ class AssetCatalog:
             else:
                 tracked = set(result.stdout.decode("utf-8").split("\0"))
                 required = {a["path"] for a in self.assets.values()}
-                required.update({"data/catalog/assets.yaml", "data/catalog/origins.jsonl"})
-                if (self.root / "data/catalog/history.json").exists():
-                    required.add("data/catalog/history.json")
+                required.update(CatalogStore(self.root).metadata_paths())
                 errors.extend(f"untracked formal asset: {p}" for p in sorted(required - tracked))
         return errors
 
@@ -184,20 +151,7 @@ class AssetCatalog:
         return errors
 
     def compare_git_baseline(self, ref: str) -> list[str]:
-        if ref.startswith("-") or not ref:
-            raise AssetError("invalid Git baseline reference")
-        result = subprocess.run(
-            ["git", "show", f"{ref}:data/catalog/assets.yaml"], cwd=self.root,
-            capture_output=True, text=True, check=False,
-        )
-        if result.returncode:
-            raise AssetError(f"cannot read catalog at Git baseline {ref}")
-        import yaml
-        previous = yaml.safe_load(result.stdout)
-        errors = validate_instance(previous, self.root / "schemas/asset_catalog.schema.json")
-        if errors:
-            raise AssetError("invalid baseline catalog: " + "; ".join(errors))
-        return self.compare_immutable(previous)
+        return self.compare_immutable(CatalogStore(self.root).read_git_catalog(ref))
 
     def summary(self) -> dict[str, Any]:
         return {

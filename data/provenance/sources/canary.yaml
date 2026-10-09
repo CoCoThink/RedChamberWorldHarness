@@ -12,15 +12,33 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    chapter: 21
-    pdf_page: 306
-    parsed_lines: 8784-8795
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:306
+      start: 409
+      end: 435
+    - unit_ref: pdf:page:306
+      start: 436
+      end: 446
+    joiner: ''
+    raw_text_sha256: 85bab4de5a8f62c50b20ff8da917ff2b7718905508d1098fa42fe9aa380980f4
   text: 故后文方有“悬崖撒手”一回。若他人得宝钗之妻、麝月之婢，岂能弃而为僧哉？
   text_sha256: 85bab4de5a8f62c50b20ff8da917ff2b7718905508d1098fa42fe9aa380980f4
   notes: 汇校本只是现代整理容器；Witness身份取自其中标明的庚辰本批语。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:de12e0e376ec0ef83f3c8e7762c72fa51980ef1c2f17d3516f5cadb22491a7ac
+    report_sha256: de12e0e376ec0ef83f3c8e7762c72fa51980ef1c2f17d3516f5cadb22491a7ac
+    source_record_sha256: 93490717d68e420ca386f3f9a879d822ebf57244c0ac0aa2fb7e67043f05d765
+  legacy_locator:
+    chapter: 21
+    pdf_page: 306
+    parsed_lines: 8784-8795
 - id: src:jimao:ch18:zhen-baoyu-sends-jade
   type: EARLY_COMMENT
   tier: W1_DIRECT
@@ -33,15 +51,30 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    chapter: 18
-    pdf_page: 265
-    parsed_lines: 7572-7586
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:265
+      start: 595
+      end: 619
+    joiner: ''
+    raw_text_sha256: 08f70451cf48ec958bd9b7b368f082fe103aa19e2fb250012c102c78258303be
   text: 第三出《仙缘》；己夹《邯郸梦》中。伏甄宝玉送玉。
   text_sha256: 08f70451cf48ec958bd9b7b368f082fe103aa19e2fb250012c102c78258303be
   notes: 同段并列贾家之败、元妃之死、黛玉死，批者又称四事为“通部书之大过节、大关键”。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:02c540a0c70baea0f9685947e4133b3a898c1d8f8403ac56c89f2aace6b56f7b
+    report_sha256: 02c540a0c70baea0f9685947e4133b3a898c1d8f8403ac56c89f2aace6b56f7b
+    source_record_sha256: 41c288d7d67506acdafe8d769743da33ed5e975c3462bcce249732e7619d2a06
+  legacy_locator:
+    chapter: 18
+    pdf_page: 265
+    parsed_lines: 7572-7586
 - id: src:gengchen:ch23:fengjie-snow-jade
   type: EARLY_COMMENT
   tier: W1_DIRECT
@@ -54,14 +87,29 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    pdf_page: 334
-    parsed_lines: 9616-9629
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:334
+      start: 285
+      end: 306
+    joiner: ''
+    raw_text_sha256: 3648509418292c33553d74e06c33178e96761a567208f136ca55f3aed2b2a5e8
   text: 庚夹妙！这便是凤姐扫雪拾玉之处，一丝不乱。
   text_sha256: 3648509418292c33553d74e06c33178e96761a567208f136ca55f3aed2b2a5e8
   notes: 原批语说未来“之处”；不能仅据此升级为正式回目。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:d8978bae3d4e3050095f438c313adcc0aec7ce62e1d0680ce9574ce572070562
+    report_sha256: d8978bae3d4e3050095f438c313adcc0aec7ce62e1d0680ce9574ce572070562
+    source_record_sha256: 0807664f57ae74beaf9e20e8fa5a22e7cd3b3595dd6355d1a9118cfb5c8668ec
+  legacy_locator:
+    pdf_page: 334
+    parsed_lines: 9616-9629
 - id: src:qixu:ch64:ten-solitary-chants
   type: EARLY_COMMENT
   tier: W1_DIRECT
@@ -74,15 +122,30 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    chapter: 64
-    pdf_page: 867
-    parsed_lines: 25249-25262
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:867
+      start: 417
+      end: 434
+    joiner: ''
+    raw_text_sha256: a077ddc72c2f54ad9861b3614ce186b09a648eba3c4ac1b334705092f9fadf51
   text: 戚夹《五美吟》与后《十独吟》对照。
   text_sha256: a077ddc72c2f54ad9861b3614ce186b09a648eba3c4ac1b334705092f9fadf51
   notes: 直接支持后文有《十独吟》及其与《五美吟》的对照；不锁作者、体裁、篇数、对象或具体回次。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:9ad76bae0b47fb78daed28633e0c37da7f7c5471af8e50338a7ce6094359764c
+    report_sha256: 9ad76bae0b47fb78daed28633e0c37da7f7c5471af8e50338a7ce6094359764c
+    source_record_sha256: 929f1a07f4ba4a1517235cfe8fb987da7eecef0b4881aebd23a706fbd0cf53a0
+  legacy_locator:
+    chapter: 64
+    pdf_page: 867
+    parsed_lines: 25249-25262
 - id: src:gengchen:ch18:qingbang-layers
   type: EARLY_COMMENT
   tier: W1_DIRECT
@@ -95,15 +158,33 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    chapter: 18
-    pdf_page: 253
-    parsed_lines: 7197-7218
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:253
+      start: 690
+      end: 704
+    - unit_ref: pdf:page:253
+      start: 705
+      end: 713
+    joiner: ''
+    raw_text_sha256: 6c6e1f75a6f9b7d8244253a3e200cc9960b73d765ad8e9503aa6be00172ccef2
   text: 至末回警幻情榜，方知正副、再副及三四副芳讳。
   text_sha256: 6c6e1f75a6f9b7d8244253a3e200cc9960b73d765ad8e9503aa6be00172ccef2
   notes: “警幻情榜”作为批语Source原字保存；是否为小说内正式总榜名另作Claim。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:ab18d047034f5439ef94f9aa33a6cb42b87313d2da5defd52d4b6fc9491861df
+    report_sha256: ab18d047034f5439ef94f9aa33a6cb42b87313d2da5defd52d4b6fc9491861df
+    source_record_sha256: 3a88f2a648d34bf65cb1bc5ee0e96b608142233c0a0cc07154a74efa83fdd9e5
+  legacy_locator:
+    chapter: 18
+    pdf_page: 253
+    parsed_lines: 7197-7218
 - id: src:jimao:qingbang-ratings
   type: EARLY_COMMENT
   tier: W1_DIRECT
@@ -116,11 +197,29 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    pdf_page: 277
-    parsed_lines: 7888-7929
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:277
+      start: 573
+      end: 606
+    - unit_ref: pdf:page:277
+      start: 607
+      end: 617
+    joiner: ''
+    raw_text_sha256: dc5cb00cb1cf0d94e1407cbd010198ee4114dcb27df8adfcabcc986da771b1ff
   text: 后观《情榜》评曰“宝玉情不情”，“黛玉情情”，此二评自在评痴之上，亦属囫囵不解，妙甚！
   text_sha256: dc5cb00cb1cf0d94e1407cbd010198ee4114dcb27df8adfcabcc986da771b1ff
   notes: 该句位于汇校本连续“己夹”批语段中；后续若取得原本影印，可替换容器而保持Claim ID不变。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:fc753eb8a5764e95296e6a3522f7fac06cba8a884b5312ebae9f92b55bf8ed13
+    report_sha256: fc753eb8a5764e95296e6a3522f7fac06cba8a884b5312ebae9f92b55bf8ed13
+    source_record_sha256: a22fec9fc970a4102ca0dd6f565dceed95e1923f2377bfb7d278650dccfa4fff
+  legacy_locator:
+    pdf_page: 277
+    parsed_lines: 7888-7929

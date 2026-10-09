@@ -1,0 +1,35 @@
+schema_version: 1
+assets:
+- id: asset:sha256:16d6b467a8d924a3bb45f7e872f7bf94fa786f535dbbf740258081e6a18a7d00
+  path: artifacts/reviews/16d6b467a8d924a3bb45f7e872f7bf94fa786f535dbbf740258081e6a18a7d00/16d6b467a8d924a3bb45f7e872f7bf94fa786f535dbbf740258081e6a18a7d00.json
+  sha256: 16d6b467a8d924a3bb45f7e872f7bf94fa786f535dbbf740258081e6a18a7d00
+  bytes: 1442
+  media_type: application/json
+  kind: REVIEW_RECORD
+  immutable: true
+  origin_refs:
+  - origin:ingest:111ecff7a681e4ad8272c25826280d09fdad6973272a3d36d2840b591516f9f1
+- id: asset:sha256:3609965f1dc67511807d89bf2b240227d8ea4120a92ad4191a4cab8fd5cf2d5f
+  path: corpus/front80/v1-candidate/chapters/ch32.json
+  sha256: 3609965f1dc67511807d89bf2b240227d8ea4120a92ad4191a4cab8fd5cf2d5f
+  bytes: 19429
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:a060614256f2784d74c19ebe145e9d0d96a657b53d56ab0968cf57ab998a41e5
+  derived_from:
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
+- id: asset:sha256:faae6f996071b532940ceddfdd55830df7eb60a59d98ee167f725dffd7b4f3d0
+  path: sources/project/faae6f996071b532/faae6f9960__81—100_十二维文学文化缺口总表_v1.6_当前版.md
+  sha256: faae6f996071b532940ceddfdd55830df7eb60a59d98ee167f725dffd7b4f3d0
+  bytes: 29410
+  media_type: text/markdown
+  kind: PROJECT_REFERENCE
+  immutable: true
+  origin_refs:
+  - origin:handover-20261008:bdfb35965f990a05bd5e7768

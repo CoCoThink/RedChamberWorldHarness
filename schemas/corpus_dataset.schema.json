@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "dataset_ref",
+    "manifest_ref",
+    "manifest_sha256",
+    "directory"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "dataset_ref": {
+      "type": "string",
+      "pattern": "^corpus:front80:[a-zA-Z0-9:_-]+$"
+    },
+    "manifest_ref": {
+      "type": "string",
+      "minLength": 1
+    },
+    "manifest_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "directory": {
+      "type": "string",
+      "pattern": "^corpus/front80/[^/].*"
+    }
+  }
+}

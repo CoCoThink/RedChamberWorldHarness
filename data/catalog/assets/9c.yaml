@@ -1,0 +1,36 @@
+schema_version: 1
+assets:
+- id: asset:sha256:a6f7ebf8fb41187919b6dcb4e25ac0989f16b1af15304cec195da746b80c1097
+  path: artifacts/reviews/a6f7ebf8fb41187919b6dcb4e25ac0989f16b1af15304cec195da746b80c1097/a6f7ebf8fb41187919b6dcb4e25ac0989f16b1af15304cec195da746b80c1097.json
+  sha256: a6f7ebf8fb41187919b6dcb4e25ac0989f16b1af15304cec195da746b80c1097
+  bytes: 3757
+  media_type: application/json
+  kind: REVIEW_RECORD
+  immutable: true
+  origin_refs:
+  - origin:ingest:33dc8720f123781a91bfcdf4da8a4fe903f4fc2cc2623dad37de6170a327f476
+- id: asset:sha256:f33e28fa234adf52120f9ded35190e6f8c6c46e8b10215444534c786484dcb84
+  path: corpus/front80/v1-candidate/chapters/ch05.json
+  sha256: f33e28fa234adf52120f9ded35190e6f8c6c46e8b10215444534c786484dcb84
+  bytes: 28424
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:d1e6878dbdd175217c652c635eb5295b41110b7104f8700bc7c5ff392a99929b
+  derived_from: &id001
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
+- id: asset:sha256:f3c6e6483a678c07e7447550963314f2f531c9e09f89583626e67f380ca2e593
+  path: corpus/front80/v1-candidate/chapters/ch17.json
+  sha256: f3c6e6483a678c07e7447550963314f2f531c9e09f89583626e67f380ca2e593
+  bytes: 28144
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:4db6694a3c6403d471e61c659f600e40fd9c0f2ace6f0ead1d0b7b746bfd41ff
+  derived_from: *id001

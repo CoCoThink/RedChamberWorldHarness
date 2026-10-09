@@ -1,0 +1,27 @@
+schema_version: 1
+assets:
+- id: asset:sha256:06a3140e64444b7f59ba8ba061904b54253ac077d009cf3924966896630197b4
+  path: corpus/front80/pilot-v1/segments.jsonl
+  sha256: 06a3140e64444b7f59ba8ba061904b54253ac077d009cf3924966896630197b4
+  bytes: 1222812
+  media_type: application/x-ndjson
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:746dcf5a1a75409c57451dab9ca48830e291f0ac89b2e9d74de8f818007f3756:a4eb8e2ebf9a12639a09eb9c8cfefd9600db5382b69c97996b9201008b86fdca
+  derived_from: &id001
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
+- id: asset:sha256:be252958754cba50173cceab4f1fc9a527d612b2beaec5f1e1a82d0bc355c730
+  path: corpus/front80/pilot-v1/chapters/ch80.json
+  sha256: be252958754cba50173cceab4f1fc9a527d612b2beaec5f1e1a82d0bc355c730
+  bytes: 22522
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:746dcf5a1a75409c57451dab9ca48830e291f0ac89b2e9d74de8f818007f3756:1c699ba2d99f7100a73a7ee0d54033f5af8ca6026e8fbc26272b156d5cec0690
+  derived_from: *id001

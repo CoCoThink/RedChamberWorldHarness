@@ -4,9 +4,10 @@
 
 - 当前状态由结构化记录持有；Markdown 是解释与阅读视图，编辑文档不改变证据或采用状态。架构决策统一位于 `docs/decisions/`。
 - 登记 Asset 或接收历史材料不产生 evidence、adoption、promotion 效果。
+- 日常 receipt 的 RECEIVED／CLASSIFIED 由实际存储及分类事实决定；BOUND 由当前有效 Source／Implementation 绑定计算。意图角色不改变证据层级；绑定消失时状态回退。tracked 与上述状态独立。
 - 证据 Source 与物理 Asset 独立；现代汇校载体不代替古本 witness 身份。
 - bibliography 和内嵌摘录不能单独证明本地来源闭包。
-- 导入的 page/parsed_lines 仅为定位声明，统一标记 UNVERIFIED；尚未实现的定位验证不能通过自报 VERIFIED 绕过。
+- 导入的 page/parsed_lines 仅为定位声明，保持 UNVERIFIED。Locator v2 从固定 carrier 重建抽取，按 Unicode 字符范围重取摘录；运行时重算并核对报告绑定，自报 VERIFIED 不能绕过验证。
 - imported baseline 发布清单核对正文与相关资产的字节，不伪造新的采用或审批记录。
 
 ## 当前状态 owner

@@ -1,0 +1,17 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SourceClosureMigrationBindings",
+  "type": "array", "minItems": 1,
+  "items": {
+    "type": "object", "additionalProperties": false,
+    "required": ["source_id", "before_sha256", "container_ref", "extraction_ref"],
+    "properties": {
+      "source_id": {"type": "string", "minLength": 1},
+      "before_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+      "container_ref": {"type": "string", "pattern": "^asset:"},
+      "extraction_ref": {"type": "string", "pattern": "^asset:"},
+      "capture_ref": {"type": ["string", "null"], "pattern": "^asset:"},
+      "allow_line_break_spans": {"type": "boolean"}
+    }
+  }
+}

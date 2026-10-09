@@ -28,7 +28,7 @@ class ProjectState:
         value = load_data(repository_path(self.root, self.data["owners"][name]))
         if not isinstance(value, dict):
             raise AssetError(f"project owner {name} must be an object")
-        schemas = {"implementation": "implementation_progress", "capability": "capability_selection", "literary": "literary_resume_state", "plan_constraints": "plan_constraints"}
+        schemas = {"implementation": "implementation_progress", "capability": "capability_selection", "literary": "literary_resume_state", "plan_constraints": "plan_constraints", "closure": "closure_roots"}
         if name in schemas:
             errors = validate_instance(value, self.root / f"schemas/{schemas[name]}.schema.json")
             if errors:

@@ -13,14 +13,14 @@ jobs:
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.12.13'
       - run: python -m pip install -e '.[dev]'
       - run: rcwh validate
       - name: Verify physical assets and immutable versions
         env:
           RCWH_ASSET_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
         run: |
-          if git cat-file -e "${RCWH_ASSET_BASE}:data/catalog/assets.yaml" 2>/dev/null; then
+          if git cat-file -e "${RCWH_ASSET_BASE}:data/catalog/catalog.json" 2>/dev/null || git cat-file -e "${RCWH_ASSET_BASE}:data/catalog/assets.yaml" 2>/dev/null; then
             rcwh assets validate --require-tracked --base-ref "$RCWH_ASSET_BASE"
           else
             rcwh assets validate --require-tracked
@@ -32,6 +32,32 @@ jobs:
           rcwh sources trace decision:cliff-release:function
           rcwh self-contained check --profile asset-storage --require-tracked
           rcwh self-contained check --profile release-storage --require-tracked
+      - name: Verify asset discovery and fixed corpus inputs
+        run: |
+          rcwh assets collections
+          rcwh assets index
+          rcwh assets list --role MASTER_DRAFT --collection collection:core:master-drafts
+          rcwh assets list --role CHAPTER_CARD --chapter 92
+          rcwh corpus inputs data/corpus/inputs/front80-pilot-v1.json --require-tracked
+      - name: Verify declared input regressions and corpus rebuilds offline
+        env:
+          RCWH_ASSET_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}
+        run: |
+          rcwh sources verify-all --require-tracked
+          python tools/verify_cao_facsimile.py
+          if git cat-file -e "${RCWH_ASSET_BASE}:data/project/source_gap_baseline.json" 2>/dev/null; then
+            rcwh sources gap-check --require-tracked --base-ref "$RCWH_ASSET_BASE"
+          else
+            rcwh sources gap-check --require-tracked
+          fi
+          rcwh self-contained check --profile declared-inputs-regression --require-tracked
+          python tools/verify_corpus_candidates.py
+          rcwh corpus verify corpus:front80:pilot:v1 --require-tracked --rebuild
+          rcwh corpus verify corpus:front80:v1-candidate --require-tracked --rebuild
+          rcwh corpus query corpus:front80:v1-candidate --chapter 27 --keyword 红玉 --limit 2
+          rcwh literary-inputs package data/writing/packages/ch89-research-v2.json --require-tracked
+          rcwh paired-review summary
+          rcwh project acceptance --require-tracked
       - name: Smoke domain runtimes
         run: |
           rcwh reconstruction summary

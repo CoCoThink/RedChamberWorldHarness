@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Fixed corpus input selection (no text authority)",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "id", "expected_chapters", "pilot_chapters", "selection_reason", "pdf", "epub", "inventory_report"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^corpus-inputs:[a-zA-Z0-9:_-]+$"},
+    "expected_chapters": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1, "maximum": 80}},
+    "pilot_chapters": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1, "maximum": 80}},
+    "selection_reason": {"type": "string", "minLength": 1},
+    "pdf": {
+      "allOf": [{"$ref": "#/$defs/input"}],
+      "unevaluatedProperties": false,
+      "required": ["body_pages"],
+      "properties": {"body_pages": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "integer", "minimum": 1}}}
+    },
+    "epub": {"allOf": [{"$ref": "#/$defs/input"}], "unevaluatedProperties": false},
+    "inventory_report": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/binding"}]}
+  },
+  "$defs": {
+    "asset_ref": {"type": "string", "pattern": "^asset:[a-zA-Z0-9][a-zA-Z0-9:._-]*$"},
+    "sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "binding": {
+      "type": "object", "additionalProperties": false, "required": ["asset_ref", "sha256"],
+      "properties": {"asset_ref": {"$ref": "#/$defs/asset_ref"}, "sha256": {"$ref": "#/$defs/sha"}}
+    },
+    "input": {
+      "type": "object", "required": ["asset_ref", "sha256", "extraction_ref", "extraction_sha256", "use", "edition_evidence"],
+      "properties": {
+        "asset_ref": {"$ref": "#/$defs/asset_ref"}, "sha256": {"$ref": "#/$defs/sha"},
+        "extraction_ref": {"$ref": "#/$defs/asset_ref"}, "extraction_sha256": {"$ref": "#/$defs/sha"},
+        "use": {"enum": ["MAIN", "COMPARISON"]},
+        "edition_evidence": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+      }
+    }
+  }
+}

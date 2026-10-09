@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["record_type", "dataset_ref", "segment_id", "chapter", "section_ref", "kind", "text", "text_sha256", "asset_ref", "locator", "classification"],
+  "properties": {
+    "record_type": {"const": "SEGMENT"}, "dataset_ref": {"type": "string", "pattern": "^corpus:"},
+    "segment_id": {"type": "string", "pattern": "^hlm80:"},
+    "chapter": {"type": ["integer", "null"], "minimum": 1, "maximum": 80},
+    "section_ref": {"type": "string", "minLength": 1},
+    "kind": {"enum": ["MAIN_TEXT", "ZHIPI", "EDITORIAL", "VARIANT", "APPENDIX", "UNCLASSIFIED"]},
+    "text": {"type": "string", "minLength": 1}, "text_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "asset_ref": {"type": "string", "pattern": "^asset:"},
+    "locator": {"type": "object", "additionalProperties": false, "required": ["extraction_ref", "spans", "transforms"], "properties": {
+      "extraction_ref": {"type": "string", "pattern": "^asset:"}, "transforms": {"const": []},
+      "spans": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["unit_ref", "start", "end"], "properties": {"unit_ref": {"type": "string", "minLength": 1}, "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 1}}}}
+    }},
+    "classification": {"type": "object", "additionalProperties": false, "required": ["method", "reasons", "styles", "human_review"], "properties": {
+      "method": {"const": "DECLARED_PDF_TYPOGRAPHY_V1"}, "reasons": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+      "styles": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "object", "required": ["font", "size", "color"], "additionalProperties": false, "properties": {"font": {"type": "string"}, "size": {"type": "number"}, "color": {"type": "integer"}}}},
+      "human_review": {"const": "PENDING"}
+    }}
+  }
+}

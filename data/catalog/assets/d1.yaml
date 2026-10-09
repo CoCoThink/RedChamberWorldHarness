@@ -1,0 +1,45 @@
+schema_version: 1
+assets:
+- id: asset:sha256:b0ae64b40715750cb469d555f65c4b74306a9d0e61f10283de11391eef6abe09
+  path: sources/project/b0ae64b40715750c/b0ae64b407__R4_最终审计摘要_v1.0.md
+  sha256: b0ae64b40715750cb469d555f65c4b74306a9d0e61f10283de11391eef6abe09
+  bytes: 1059
+  media_type: text/markdown
+  kind: PROJECT_REFERENCE
+  immutable: true
+  origin_refs:
+  - origin:handover-20261008:6d94f595f56379c18e69616d
+- id: asset:sha256:e0fab47a92b4859bf448fe3d89f6592515db6f4d06281329042ecc70f8fb9557
+  path: corpus/front80/v1-candidate/editorial_tags.jsonl
+  sha256: e0fab47a92b4859bf448fe3d89f6592515db6f4d06281329042ecc70f8fb9557
+  bytes: 2261724
+  media_type: application/x-ndjson
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:20f92071ffdeef85d64feccdd518680038b4df120d2d09f3769e870d34f3319f
+  derived_from: &id001
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
+- id: asset:sha256:e69b867af53d7a811c3365b7954143387fb4f59d0b201b91a4c86a7b5d5d171f
+  path: artifacts/reviews/e69b867af53d7a811c3365b7954143387fb4f59d0b201b91a4c86a7b5d5d171f/e69b867af53d7a811c3365b7954143387fb4f59d0b201b91a4c86a7b5d5d171f.json
+  sha256: e69b867af53d7a811c3365b7954143387fb4f59d0b201b91a4c86a7b5d5d171f
+  bytes: 1889
+  media_type: application/json
+  kind: REVIEW_RECORD
+  immutable: true
+  origin_refs:
+  - origin:ingest:e2997759f0b435e9750c039dca30a46e812849d6a08f449b1a3db65830c97551
+- id: asset:sha256:f2f0b34b45959f8f6d6ccac475d4829a1e69ff2234d04a18fe31ebd6385f5db2
+  path: corpus/front80/v1-candidate/chapters/ch34.json
+  sha256: f2f0b34b45959f8f6d6ccac475d4829a1e69ff2234d04a18fe31ebd6385f5db2
+  bytes: 24018
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:95caa1bb0a6c8dfeeb1f71b16082de2a71e28cc94854ce794bfa6b15b72e6e47
+  derived_from: *id001

@@ -1,0 +1,19 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SourceLocatorVerificationReport",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "source_id", "source_record_sha256", "locator_sha256", "verifier", "status", "findings"],
+  "properties": {
+    "schema_version": {"const": 1}, "source_id": {"type": "string", "minLength": 1},
+    "source_record_sha256": {"$ref": "#/$defs/sha"}, "locator_sha256": {"$ref": "#/$defs/sha"},
+    "verifier": {"type": "object", "additionalProperties": false,
+      "required": ["name", "version", "code_sha256"],
+      "properties": {"name": {"const": "rcwh-source-locator"}, "version": {"const": 1}, "code_sha256": {"$ref": "#/$defs/sha"}}
+    },
+    "status": {"enum": ["PASS", "FAIL"]},
+    "findings": {"type": "array", "items": {"type": "string"}},
+    "extraction": {"type": "object"}, "raw_excerpt": {"type": "string"},
+    "raw_text_sha256": {"$ref": "#/$defs/sha"}, "expected_text_sha256": {"$ref": "#/$defs/sha"}
+  },
+  "$defs": {"sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

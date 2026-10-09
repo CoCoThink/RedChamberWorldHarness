@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "title": "SourceExcerptCorrectionPlan",
+  "required": [
+    "schema_version",
+    "reviewer",
+    "corrections"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "reviewer": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "name"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "AGENT_TEXT_REVIEW",
+            "HUMAN_TEXT_REVIEW"
+          ]
+        },
+        "name": {
+          "type": "string",
+          "minLength": 1
+        }
+      }
+    },
+    "corrections": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "source_id",
+          "before_sha256",
+          "locator",
+          "rationale",
+          "limitations",
+          "claim_reviews"
+        ],
+        "properties": {
+          "source_id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "before_sha256": {
+            "type": "string",
+            "pattern": "^[a-f0-9]{64}$"
+          },
+          "locator": {
+            "title": "SourceLocatorV2",
+            "type": "object",
+            "additionalProperties": false,
+            "required": [
+              "schema_version",
+              "kind",
+              "extraction_ref",
+              "output_sha256",
+              "spans",
+              "joiner",
+              "raw_text_sha256"
+            ],
+            "properties": {
+              "schema_version": {
+                "const": 2
+              },
+              "kind": {
+                "enum": [
+                  "PDF_TEXT_SPANS",
+                  "EPUB_TEXT_SPANS",
+                  "HTML_TEXT_SPANS",
+                  "TEXT_SPANS"
+                ]
+              },
+              "extraction_ref": {
+                "type": "string",
+                "pattern": "^asset:"
+              },
+              "output_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              },
+              "spans": {
+                "type": "array",
+                "minItems": 1,
+                "items": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "required": [
+                    "unit_ref",
+                    "start",
+                    "end"
+                  ],
+                  "properties": {
+                    "unit_ref": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "start": {
+                      "type": "integer",
+                      "minimum": 0
+                    },
+                    "end": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  }
+                }
+              },
+              "joiner": {
+                "enum": [
+                  "",
+                  "\n",
+                  "…",
+                  "……",
+                  "..."
+                ]
+              },
+              "raw_text_sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$"
+              }
+            },
+            "$defs": {}
+          },
+          "rationale": {
+            "type": "string",
+            "minLength": 1
+          },
+          "limitations": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "claim_reviews": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "claim_id",
+                "claim_sha256",
+                "result",
+                "rationale"
+              ],
+              "properties": {
+                "claim_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "claim_sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                },
+                "result": {
+                  "const": "RETAIN_EXISTING_ASSERTION"
+                },
+                "rationale": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

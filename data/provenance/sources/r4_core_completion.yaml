@@ -12,15 +12,33 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    chapter: 18
-    pdf_page: 266
-    parsed_lines: 7574-7587
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:265
+      start: 623
+      end: 650
+    - unit_ref: pdf:page:265
+      start: 651
+      end: 669
+    joiner: ''
+    raw_text_sha256: 831c17f6dd030e4262b7b05cf5df9c5724f4f1de13a3e3b59b80c661cbe6de6f
   text: 第四出《离魂》。己夹《牡丹亭》中。伏黛玉死。◇所点之戏剧伏四事，乃通部书之大过节、大关键。
   text_sha256: 831c17f6dd030e4262b7b05cf5df9c5724f4f1de13a3e3b59b80c661cbe6de6f
   notes: 锁黛玉死亡方向，不锁具体回次、病程日数或临终写法。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:d0578049372ca24cedb9f3891710b896cee1ffab322f458e7eb8a27ceb710faa
+    report_sha256: d0578049372ca24cedb9f3891710b896cee1ffab322f458e7eb8a27ceb710faa
+    source_record_sha256: 556f34fd6f768c5869a8567d2b1e7a478135910b8cc6522b76664a1299e57b93
+  legacy_locator:
+    chapter: 18
+    pdf_page: 266
+    parsed_lines: 7574-7587
 - id: src:gengchen:ch27:xiaohong-great-help
   type: EARLY_COMMENT
   tier: W1_DIRECT
@@ -33,12 +51,27 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    chapter: 27
-    pdf_page: 400
-    parsed_lines: 11565-11578
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:400
+      start: 85
+      end: 106
+    joiner: ''
+    raw_text_sha256: f89dd2b5b05c4991f17a5367a4b1c2467fffaa9f589d149e0bccee310dc1854b
   text: 且红玉后有宝玉大得力处，此于千里外伏线也。
   text_sha256: f89dd2b5b05c4991f17a5367a4b1c2467fffaa9f589d149e0bccee310dc1854b
   notes: 锁“小红/红玉后有宝玉大得力处”的未来功能，不锁具体帮助方式与回次。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:3dd44d59fa6a613504e906cbb066d9a2d99867a1e4a8a8d6db75c52bf544042f
+    report_sha256: 3dd44d59fa6a613504e906cbb066d9a2d99867a1e4a8a8d6db75c52bf544042f
+    source_record_sha256: 757e5018c4b7f085ea91bf444872d38f51b8a0b7684305c0c3a117d7d78c73ed
+  legacy_locator:
+    chapter: 27
+    pdf_page: 400
+    parsed_lines: 11565-11578

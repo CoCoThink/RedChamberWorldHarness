@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SourceLocatorV2",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "kind", "extraction_ref", "output_sha256", "spans", "joiner", "raw_text_sha256"],
+  "properties": {
+    "schema_version": {"const": 2},
+    "kind": {"enum": ["PDF_TEXT_SPANS", "EPUB_TEXT_SPANS", "HTML_TEXT_SPANS", "TEXT_SPANS"]},
+    "extraction_ref": {"type": "string", "pattern": "^asset:"},
+    "output_sha256": {"$ref": "#/$defs/sha"},
+    "spans": {"type": "array", "minItems": 1, "items": {
+      "type": "object", "additionalProperties": false, "required": ["unit_ref", "start", "end"],
+      "properties": {
+        "unit_ref": {"type": "string", "minLength": 1},
+        "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 1}
+      }
+    }},
+    "joiner": {"enum": ["", "\n", "…", "……", "..."]},
+    "raw_text_sha256": {"$ref": "#/$defs/sha"}
+  },
+  "$defs": {"sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

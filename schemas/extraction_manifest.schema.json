@@ -1,0 +1,38 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExtractionManifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "input", "config", "extractor", "dependency_lock", "output", "unit_refs"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^extraction:[a-f0-9]{64}$"},
+    "input": {
+      "type": "object", "additionalProperties": false, "required": ["asset_ref", "sha256"],
+      "properties": {"asset_ref": {"type": "string", "pattern": "^asset:"}, "sha256": {"$ref": "#/$defs/sha"}}
+    },
+    "config": {"type": "object"},
+    "extractor": {
+      "type": "object", "additionalProperties": false,
+      "required": ["name", "version", "code_sha256", "python", "package_version"],
+      "properties": {
+        "name": {"const": "rcwh-extraction"}, "version": {"const": 1},
+        "code_sha256": {"$ref": "#/$defs/sha"}, "python": {"type": "string", "minLength": 1},
+        "package_version": {"type": ["string", "null"]}
+      }
+    },
+    "dependency_lock": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"const": "requirements/extraction.lock.json"}, "sha256": {"$ref": "#/$defs/sha"}}
+    },
+    "output": {
+      "type": "object", "additionalProperties": false, "required": ["asset_ref", "sha256", "bytes"],
+      "properties": {
+        "asset_ref": {"type": "string", "pattern": "^asset:"}, "sha256": {"$ref": "#/$defs/sha"},
+        "bytes": {"type": "integer", "minimum": 1}
+      }
+    },
+    "unit_refs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {"sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+}

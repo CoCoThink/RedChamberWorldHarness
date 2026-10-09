@@ -1,0 +1,46 @@
+schema_version: 1
+assets:
+- id: asset:sha256:15da766c875fee0cc85ffda56f6b5aca9a70960fed444886a7f781d63e6777cc
+  path: sources/primary/received/15da766c875fee0cc85ffda56f6b5aca9a70960fed444886a7f781d63e6777cc/rental.html
+  sha256: 15da766c875fee0cc85ffda56f6b5aca9a70960fed444886a7f781d63e6777cc
+  bytes: 37389
+  media_type: text/html
+  kind: PRIMARY_TEXT_CONTAINER
+  immutable: true
+  origin_refs:
+  - origin:ingest:401b4bf7efb50e438ea270e43d2a06bba4601f5e811e169bd166c7a7ac417ba9
+- id: asset:sha256:254fb197037f8e54cb3f90752e671140e9f2ee04badca72c97be20b5740c4945
+  path: corpus/front80/v1-candidate/chapters/ch11.json
+  sha256: 254fb197037f8e54cb3f90752e671140e9f2ee04badca72c97be20b5740c4945
+  bytes: 19292
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:8470dd2a4ae802c651141ab879182e55faf110f2d1fc25860d6ca0c817498b7e
+  derived_from: &id001
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
+- id: asset:sha256:6d430a031ae1663323f91796e0fb6a6ea1ffa358c302de3b1b396739b54e5b34
+  path: corpus/front80/v1-candidate/chapters/ch59.json
+  sha256: 6d430a031ae1663323f91796e0fb6a6ea1ffa358c302de3b1b396739b54e5b34
+  bytes: 15938
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:72878803d31dc8efcee6e33c585fe24126d45ee5b18147366e77eebe35ecc561
+  derived_from: *id001
+- id: asset:sha256:db4023b82cc4110a30caef0319e2130641f810a1e63ca2d3f6b46eb7a71b17e3
+  path: corpus/front80/v1-candidate/quality_report.json
+  sha256: db4023b82cc4110a30caef0319e2130641f810a1e63ca2d3f6b46eb7a71b17e3
+  bytes: 78499
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:ca93a1f58e0c3e89dd363bcd7230e5bbd549008986cb1f63b1753a58b2eee254
+  derived_from: *id001

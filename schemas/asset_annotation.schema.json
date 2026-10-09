@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AssetReadingAnnotation",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "asset_ref",
+    "title",
+    "version",
+    "roles",
+    "tags",
+    "chapters"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "asset_ref": {
+      "type": "string",
+      "pattern": "^asset:[a-zA-Z0-9._:-]+$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "version": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "roles": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "enum": [
+          "MASTER_DRAFT",
+          "GOVERNANCE",
+          "FRONT80_INDEX",
+          "CHAPTER_CARD",
+          "HISTORICAL_RESEARCH",
+          "LITERARY_REVIEW"
+        ]
+      }
+    },
+    "tags": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 100
+      }
+    }
+  }
+}

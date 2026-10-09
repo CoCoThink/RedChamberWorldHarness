@@ -12,10 +12,16 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    appendix: 3
-    transcript_item: 145
-    pdf_page: 1140
-    parsed_lines: 33227-33242
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:1140
+      start: 347
+      end: 356
+    joiner: ''
+    raw_text_sha256: 14e80a021f9afaff8cd8de87a78c9b3009dafa9e0b658eeb768842525f7fdc68
   text: 先为对景悼颦儿作引
   text_sha256: 14e80a021f9afaff8cd8de87a78c9b3009dafa9e0b658eeb768842525f7fdc68
   transmission:
@@ -24,8 +30,17 @@ sources:
     published: 南京师范学院《文教资料简报》1974年八、九月合刊
   notes: 汇校本附录明确称靖藏本后迷失，只有毛国瑶一人亲见，且后世存在真伪质疑；因此只按W2弱见证使用。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:4b9282c88b925aaf5a49fb8b74bc4410ed36627b22aed7250c18f1c97b462a60
+    report_sha256: 4b9282c88b925aaf5a49fb8b74bc4410ed36627b22aed7250c18f1c97b462a60
+    source_record_sha256: 5f86dfc14d837bb524e8335d0038addd7df1ff2ee10f9f68b907440c795e0d3c
+  legacy_locator:
+    appendix: 3
+    transcript_item: 145
+    pdf_page: 1140
+    parsed_lines: 33227-33242
 - id: src:w2:jingcang:92:yunge-tan-an
   type: EARLY_TRANSCRIPT
   tier: W2_TRANSCRIPT
@@ -38,10 +53,19 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    appendix: 3
-    transcript_item: 92
-    pdf_page: 1136
-    parsed_lines: 33076-33091
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:1135
+      start: 413
+      end: 436
+    - unit_ref: pdf:page:1135
+      start: 437
+      end: 462
+    joiner: ''
+    raw_text_sha256: 6a68b610944064485fa3907e445dc4fb0b3ea7f4ac5eec0f01a8e891a47bf385
   text: 醉金刚一回文字伏芸哥仗义探庵余卅年来得遇金刚之样人不少不及金刚者亦复不少惜不便一一注明耳壬午孟夏
   text_sha256: 6a68b610944064485fa3907e445dc4fb0b3ea7f4ac5eec0f01a8e891a47bf385
   transmission:
@@ -49,8 +73,17 @@ sources:
     intermediary: 毛国瑶横行练习簿过录
   notes: W2弱见证；“仗义探庵”不能独立锁死具体庵址、行为方式、回次或原标题。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:6a3c81e8f75630f919318a7bedd173a2ebd6b9399c58f30d8480e86f46ec3e0e
+    report_sha256: 6a3c81e8f75630f919318a7bedd173a2ebd6b9399c58f30d8480e86f46ec3e0e
+    source_record_sha256: b81c346f5b88f43ade464e61c0219faa2623320f1d7ae6ea10b032a253811945
+  legacy_locator:
+    appendix: 3
+    transcript_item: 92
+    pdf_page: 1136
+    parsed_lines: 33076-33091
 - id: src:w2:jingcang:102:yumiao-xiangfeng
   type: EARLY_TRANSCRIPT
   tier: W2_TRANSCRIPT
@@ -63,10 +96,22 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    appendix: 3
-    transcript_item: 102
-    pdf_page: 1137
-    parsed_lines: 33108-33123
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:1136
+      start: 414
+      end: 437
+    - unit_ref: pdf:page:1136
+      start: 438
+      end: 465
+    - unit_ref: pdf:page:1136
+      start: 466
+      end: 468
+    joiner: ''
+    raw_text_sha256: 885cbd3878a2c4bffc5f79c5aa8e8e74d192e23fc843036c5a7affea1475d277
   text: 应了这话固好批书人焉能不心伤狱庙相逢之日始知遇难成祥逢凶化吉实伏线于千里哀哉伤哉此后文字不忍卒读辛卯冬日
   text_sha256: 885cbd3878a2c4bffc5f79c5aa8e8e74d192e23fc843036c5a7affea1475d277
   transmission:
@@ -74,8 +119,17 @@ sources:
     intermediary: 毛国瑶横行练习簿过录
   notes: 只可作为狱庙/遇难成祥线的弱增权，不可单独承担人物、救援机制或回次锁定。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:05a7bf5d9f4126127a32262d6b18ae2b17c07c5b5b072cc72f575a32c52cd085
+    report_sha256: 05a7bf5d9f4126127a32262d6b18ae2b17c07c5b5b072cc72f575a32c52cd085
+    source_record_sha256: 056a14ef5a7c4e0e5f610e52e1e08cf6950fdf9c226512c205d6f808ae73271f
+  legacy_locator:
+    appendix: 3
+    transcript_item: 102
+    pdf_page: 1137
+    parsed_lines: 33108-33123
 - id: src:w2:jingcang:98:miaoyu-guazhou
   type: EARLY_TRANSCRIPT
   tier: W2_TRANSCRIPT
@@ -88,10 +142,19 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    appendix: 3
-    transcript_item: 98
-    pdf_page: 1136
-    parsed_lines: 33099-33114
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:1136
+      start: 206
+      end: 229
+    - unit_ref: pdf:page:1136
+      start: 230
+      end: 244
+    joiner: ''
+    raw_text_sha256: a89a3a8f7415bb9cbfb3a3f801f506dafd97142e727426cf5308ac3e92c11d44
   text: 妙玉偏辟处此所谓过洁世同嫌也他日瓜州渡口劝惩不哀哉屈从红颜固能不枯骨□□□
   text_sha256: a89a3a8f7415bb9cbfb3a3f801f506dafd97142e727426cf5308ac3e92c11d44
   transmission:
@@ -99,8 +162,17 @@ sources:
     intermediary: 毛国瑶横行练习簿过录
   notes: 原抄缺字且为W2；不得据此自动生成渡口、被掳、死亡地点等完整因果链。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:75bd520988a73f9ba75a84ef76ed5f8dc0778724171a75ab91fed46d1d91eb3c
+    report_sha256: 75bd520988a73f9ba75a84ef76ed5f8dc0778724171a75ab91fed46d1d91eb3c
+    source_record_sha256: b762f787bc3ca3dad8a8cf2bbda56c1996ca4683e0f7e27b805405c26d97b290
+  legacy_locator:
+    appendix: 3
+    transcript_item: 98
+    pdf_page: 1136
+    parsed_lines: 33099-33114
 - id: src:w2:jingcang:144:zheng-qianyuan
   type: EARLY_TRANSCRIPT
   tier: W2_TRANSCRIPT
@@ -113,10 +185,19 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    appendix: 3
-    transcript_item: 144
-    pdf_page: 1140
-    parsed_lines: 33225-33240
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:1140
+      start: 301
+      end: 324
+    - unit_ref: pdf:page:1140
+      start: 325
+      end: 329
+    joiner: ''
+    raw_text_sha256: 0f225b5d0f93256fbc93795f3ab4445be2c26c6020c83f1d6b3b165eeb633147
   text: 观此知虽诔晴雯实乃诔黛玉也试观证前缘回黛玉逝后诸文便知
   text_sha256: 0f225b5d0f93256fbc93795f3ab4445be2c26c6020c83f1d6b3b165eeb633147
   transmission:
@@ -124,8 +205,17 @@ sources:
     intermediary: 毛国瑶横行练习簿过录
   notes: “证前缘回”只按T2_W2弱回称处理，不升级为正式回目。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:088716097422ae74fc43721bab322dd4cb02173ec4a1dd6a32335501b28a97f1
+    report_sha256: 088716097422ae74fc43721bab322dd4cb02173ec4a1dd6a32335501b28a97f1
+    source_record_sha256: 989ad891342d8709962b896b5dc470e4d3d5eeb1cb348cf503557521e2c8d356
+  legacy_locator:
+    appendix: 3
+    transcript_item: 144
+    pdf_page: 1140
+    parsed_lines: 33225-33240
 - id: src:w2:jingcang:33:qingbang-confirmation
   type: EARLY_TRANSCRIPT
   tier: W2_TRANSCRIPT
@@ -138,10 +228,16 @@ sources:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
-    appendix: 3
-    transcript_item: 33
-    pdf_page: 1131
-    parsed_lines: 32924-32939
+    schema_version: 2
+    kind: PDF_TEXT_SPANS
+    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    spans:
+    - unit_ref: pdf:page:1130
+      start: 501
+      end: 512
+    joiner: ''
+    raw_text_sha256: 4f6b887a051307825bfa5b145e1f643e3a8fcb4e9e30e642a4d89b811b380438
   text: 观警幻情榜方知余言不谬
   text_sha256: 4f6b887a051307825bfa5b145e1f643e3a8fcb4e9e30e642a4d89b811b380438
   transmission:
@@ -149,5 +245,14 @@ sources:
     intermediary: 毛国瑶横行练习簿过录
   notes: 只作为情榜存在的W2旁证；当前情榜硬约束必须继续由W1见证承担。
   locator_verification:
-    status: UNVERIFIED
-    reason: Imported locator assertion; extraction alignment not yet reconstructed.
+    status: VERIFIED
+    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
+      in migration audit.
+    report_ref: asset:sha256:6758099d8dac4d541ade8e0b43b3c47e2eae5376509b474502d87fa5bf1cd11a
+    report_sha256: 6758099d8dac4d541ade8e0b43b3c47e2eae5376509b474502d87fa5bf1cd11a
+    source_record_sha256: 1d661f49e4f845047bd49dbd735390b6464b43b5823761a331f2e0f947ec41af
+  legacy_locator:
+    appendix: 3
+    transcript_item: 33
+    pdf_page: 1131
+    parsed_lines: 32924-32939

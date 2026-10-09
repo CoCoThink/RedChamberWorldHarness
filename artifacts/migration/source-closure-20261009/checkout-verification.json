@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "status": "PASS",
+  "python": "3.12.13",
+  "network": "DISABLED",
+  "checkout": "ISOLATED_WITH_CORE_AUTOCRLF_TRUE",
+  "checks": {
+    "assets": {
+      "returncode": 0,
+      "status": "PASS",
+      "storage_findings": 0,
+      "graph_findings": 0
+    },
+    "source-content": {
+      "returncode": 0,
+      "status": "PASS",
+      "storage_findings": 0,
+      "graph_findings": 0
+    },
+    "source-locators": {
+      "returncode": 1,
+      "status": "FAIL",
+      "storage_findings": 0,
+      "graph_findings": 0
+    },
+    "verify-all": {
+      "returncode": 1,
+      "status": "FAIL",
+      "storage_findings": 0,
+      "graph_findings": 0
+    }
+  },
+  "source_closure": "PARTIAL",
+  "tracked_current_workspace": "NOT_STAGED"
+}

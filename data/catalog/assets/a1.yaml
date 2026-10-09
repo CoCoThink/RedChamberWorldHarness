@@ -1,0 +1,26 @@
+schema_version: 1
+assets:
+- id: asset:sha256:7ba9445a6512dfa9b7e623811eab4d8fb4a78b90f8f044d35f2156028ca23649
+  path: archive/imports/received/7ba9445a6512dfa9b7e623811eab4d8fb4a78b90f8f044d35f2156028ca23649/dpm-cao-study.fixed-capture.json
+  sha256: 7ba9445a6512dfa9b7e623811eab4d8fb4a78b90f8f044d35f2156028ca23649
+  bytes: 1498
+  media_type: application/json
+  kind: IMPORT_RECORD
+  immutable: true
+  origin_refs:
+  - origin:ingest:f2bcbd711d84732e259f459433ac291da09006bd62bb6d597d79db833396099b
+- id: asset:sha256:bb63ca243f7eec2c039aa04bd979c00978d5830f0c407ead9813094ccec6f054
+  path: corpus/front80/v1-candidate/chapters/ch43.json
+  sha256: bb63ca243f7eec2c039aa04bd979c00978d5830f0c407ead9813094ccec6f054
+  bytes: 22224
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:7ee511c39fb16899bf167e7e5ec4fdf24b0874599ac2822804b08a024443ceaa
+  derived_from:
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2

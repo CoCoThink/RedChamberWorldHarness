@@ -41,7 +41,7 @@ def test_decision_trace_reaches_local_pdf_without_closing_open(monkeypatch, caps
     before = ProvenanceGraph.from_repo(ROOT)
     code, payload = run_cli(monkeypatch, capsys, "sources", "trace", "decision:cliff-release:function")
     assert code == 0 and payload["content_status"] == "PASS"
-    assert payload["locator_status"] == "UNVERIFIED"
+    assert payload["locator_status"] == "VERIFIED"
     assert all(s["asset"]["path"].startswith("sources/") for s in payload["source_assets"])
     after = ProvenanceGraph.from_repo(ROOT)
     assert after.decisions == before.decisions

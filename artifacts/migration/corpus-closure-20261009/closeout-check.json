@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "scope": "DOCUMENTATION_AND_NEXT_WORK_CLARIFICATION_ONLY",
+  "status": "PASS",
+  "authority_effect": "NONE",
+  "review_boundary": {
+    "source": "OPEN_DOCUMENTARY_VERIFICATION",
+    "corpus": "OPEN_LAYER_AUDIT",
+    "p9": "BLIND_LITERARY_COMPARISON"
+  },
+  "changed_files": [
+    {
+      "path": "README.md",
+      "sha256": "dc71e7187693910cfe74461bed5dd1dcae4172fcbb6a706feb4381f5a7a2898a"
+    },
+    {
+      "path": "docs/RCWH_来源闭包与语料建设后续设计_v1.1_20261008.md",
+      "sha256": "5bdaecfebe5b345737b5e2efcd28a831a98319478e4495c3857383587135340a"
+    },
+    {
+      "path": "docs/reviews/CORPUS_CLOSURE_IMPLEMENTATION_20261009.md",
+      "sha256": "750b0967d04684da30fbf4aebbd190ea4fe94f8c89519b6e4d023d05b42f3452"
+    },
+    {
+      "path": "docs/runbooks/CORPUS_AND_REVIEW_INPUTS.md",
+      "sha256": "8e7cc1d220cf6a041b0a9fdb35b4bfbb6f0f00cdbc8a710394ae7d3f7c84c5db"
+    },
+    {
+      "path": "docs/runbooks/DECLARED_INPUT_CLOSURE.md",
+      "sha256": "88d51190f51407aee7cc0bb366b7140908a8efe6c3ed7e5d7102e6e3fb870692"
+    },
+    {
+      "path": "artifacts/reviews/source-independent-20261009/README.md",
+      "sha256": "373443a49510420632f71147a58f05a81cd3292bac5ac2489d015f903caf2fcb"
+    },
+    {
+      "path": "data/project/implementation.json",
+      "sha256": "b7241be66cada18689b632e5c2f6fbd1bcb40b8ca0be892acf3ec1baa3e3bdaf"
+    }
+  ],
+  "unchanged_declared_code_schema_assets_and_data_files": 398,
+  "original_review_sha256": "dd2c31fcc331a835a1e8fb52f5ae2ddf29a9e3d5c017dd52759925a478f65320",
+  "catalog": {
+    "assets": 339,
+    "origins": 411,
+    "content_bytes": 58872593,
+    "authority_effect": "NONE"
+  },
+  "project_status": "IN_PROGRESS",
+  "cao_sources": [
+    {
+      "id": "src:history:cao:1728:inventory-seal",
+      "locator_status": "UNVERIFIED",
+      "findings": [
+        "LOCATOR_VERSION_UNVERIFIED: imported page/line assertions require a Locator v2"
+      ]
+    },
+    {
+      "id": "src:history:cao:1728:pawn-tickets",
+      "locator_status": "UNVERIFIED",
+      "findings": [
+        "LOCATOR_VERSION_UNVERIFIED: imported page/line assertions require a Locator v2"
+      ]
+    },
+    {
+      "id": "src:history:cao:1728:family-housing",
+      "locator_status": "UNVERIFIED",
+      "findings": [
+        "LOCATOR_VERSION_UNVERIFIED: imported page/line assertions require a Locator v2"
+      ]
+    }
+  ],
+  "source_evidence_audit": {
+    "status": "PENDING",
+    "scope": "SOURCE_INDEPENDENT_EVIDENCE_AUDIT",
+    "review_count": 0,
+    "authority_effect": "NONE",
+    "required_source_ids": [
+      "src:history:beijing:1774:rental-contract",
+      "src:history:cao:1728:family-housing",
+      "src:history:cao:1728:inventory-seal",
+      "src:history:cao:1728:pawn-tickets",
+      "src:history:daqinglu:v10:marriage-authority",
+      "src:history:daqinglu:v10:mourning-marriage",
+      "src:history:daqinglu:v36:outsider-access",
+      "src:history:daqinglu:v36:relative-visits",
+      "src:history:daqinglu:v36:waiting-for-questioning",
+      "src:history:huidian:v89:huangguifei-mourning",
+      "src:history:shuntianfu:prison-god",
+      "src:research:mao-liping:2013:natal-family"
+    ],
+    "pending_source_ids": [
+      "src:history:beijing:1774:rental-contract",
+      "src:history:cao:1728:family-housing",
+      "src:history:cao:1728:inventory-seal",
+      "src:history:cao:1728:pawn-tickets",
+      "src:history:daqinglu:v10:marriage-authority",
+      "src:history:daqinglu:v10:mourning-marriage",
+      "src:history:daqinglu:v36:outsider-access",
+      "src:history:daqinglu:v36:relative-visits",
+      "src:history:daqinglu:v36:waiting-for-questioning",
+      "src:history:huidian:v89:huangguifei-mourning",
+      "src:history:shuntianfu:prison-god",
+      "src:research:mao-liping:2013:natal-family"
+    ],
+    "independence_basis": "SUBMITTED_REVIEWER_ATTESTATIONS",
+    "reviewers": []
+  },
+  "paired_review": {
+    "status": "PENDING",
+    "scope": "PAIRED_REVIEW_SUBMISSION_INTEGRITY",
+    "review_count": 0,
+    "minimum_reviewers": 2,
+    "pair_count": 20,
+    "preferences": {
+      "BASELINE": 0,
+      "REVISED": 0,
+      "TIE": 0,
+      "NEITHER": 0
+    },
+    "independence_basis": "SUBMITTED_REVIEWER_ATTESTATIONS",
+    "automatic_literary_pass": false,
+    "winner": null,
+    "stable_active_effect": "NONE",
+    "authority_effect": "NONE"
+  },
+  "corpus_human_reviews": "PENDING_WITH_EMPTY_SELECTIONS",
+  "prior_implementation_validation": {
+    "path": "artifacts/migration/corpus-closure-20261009/verification_report.json",
+    "sha256": "85425bf21d629631dc6949a6e3d54036eff91a8b46378e9354fa7ddc323ac708",
+    "materialized_tree_sha": "413bcf45c89bf8c3141ad332f9b57b3de62bbb26",
+    "tests": "540 passed in 98.99s (0:01:38)",
+    "workflow_steps": 19,
+    "cli_checks": 36,
+    "rerun_for_this_documentation_change": false
+  },
+  "checks": [
+    "registered_asset_bytes_and_origins",
+    "declared_code_schema_assets_and_data_unchanged_except_next_work",
+    "provenance_integrity",
+    "project_owner_validation",
+    "three_cao_passages_of_one_memorial",
+    "source_and_p9_real_submissions_remain_pending",
+    "corpus_audit_selections_remain_empty",
+    "local_markdown_links",
+    "git_diff_check"
+  ],
+  "network_policy": "Connections and DNS disabled during runtime verification",
+  "full_self_contained_status": "INCOMPLETE"
+}

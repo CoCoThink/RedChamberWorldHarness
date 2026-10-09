@@ -17,11 +17,13 @@
 | Profile | 实际范围 | 当前限制 |
 |---|---|---|
 | asset-storage | catalog 中全部实体、origin 和派生关系 | 不证明定位与证据真实性 |
-| source-content | 当前 provenance Source 的本地载体、摘录摘要、图关系 | bibliography-only Source 阻断 |
-| source-locators | 来源定位验证 | 尚无对齐验证器，明确 FAIL |
+| source-content | 当前 provenance Source 的本地载体、采集绑定、摘录摘要、图关系 | 不核验摘录出现位置或替代载体忠实度 |
+| source-locators | Locator v2 重建、摘录范围与报告绑定验证 | 历史摘录差异未复核，明确 FAIL |
 | release-storage | imported baseline 正文和相关资产 | 不证明完整发布证据闭包 |
 
-空 Source root 集合必须失败。`--require-tracked` 检查登记实体和目录元数据已纳入 Git；新实现尚未提供全量 runtime/research/front80 闭包，不能把上述局部门禁称为最终自包含 PASS。
+空 Source root 集合必须失败。`--require-tracked` 检查登记实体和目录元数据已纳入 Git；声明闭包现在由 project owner 明确选择全部 Source、所用材料、语料和写作输入，验证器遍历类型化依赖并执行实际定位／重建；三条 Cao 定位及独立证据审查仍待收口，不能把局部门禁称为最终自包含 PASS。
+
+R0.4 另提供 `corpus inputs CONFIG --require-tracked`：核验固定载体／完整 extraction 的身份与 SHA，实际重建 PDF、EPUB 和登记盘点，并检查输入配置、导航与抽取依赖的 Git 跟踪。配置或代码改变须登记新报告；缺载体、环境漂移、失效盘点和错误回次范围返回非零。它验收输入选择与重建，不验收正文层次或全量语料。当前主输入为 PDF，EPUB 用作比较，见[实施记录](../reviews/ASSET_DISCOVERY_AND_CORPUS_INPUTS_20261009.md)。
 
 ## 后续迁移
 
