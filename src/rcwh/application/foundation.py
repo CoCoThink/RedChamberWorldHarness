@@ -321,7 +321,7 @@ def add_foundation_commands(subparsers: argparse._SubParsersAction, default_root
     project.set_defaults(foundation="project", func=command)
     actions = project.add_subparsers(dest="action", required=True)
     actions.add_parser("status")
-    acceptance = actions.add_parser("acceptance", help="Compute current Review follow-up input acceptance")
+    acceptance = actions.add_parser("acceptance", help="Compute current project input acceptance")
     acceptance.add_argument("--require-tracked", action="store_true")
     acceptance.add_argument("--require-complete", action="store_true", help="Fail while any admission or review is pending")
 

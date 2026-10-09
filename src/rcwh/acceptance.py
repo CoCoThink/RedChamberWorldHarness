@@ -1,4 +1,4 @@
-"""Live acceptance of the Review follow-up's declared inputs.
+"""Live acceptance of the current project's declared inputs.
 
 This reports admission, not literary adjudication or full-book delivery. A
 pending external submission cannot be turned into a PASS by editing progress.

@@ -1,6 +1,6 @@
 # 确定性抽取与来源定位
 
-R0.2 已实现 PDF、EPUB、HTML 和 UTF-8 文本抽取，以及 Locator v2 的实际摘录核验。前80章回数据集、文学标注、历史载体采集和旧定位批量对齐继续按后续批次完成。
+提供 PDF、EPUB、HTML 和 UTF-8 文本抽取，以及 Locator v2 的实际摘录核验。语料构建与人工分类审查另见[语料与评审输入](CORPUS_AND_REVIEW_INPUTS.md)。
 
 ## 声明环境
 
@@ -82,7 +82,7 @@ rcwh self-contained check --profile source-locators
 
 新接收网页和论文同时绑定 `carrier_capture`，指向已登记的 HTTP 采集记录；记录请求／最终 URL、获取时间、响应类型及可取得的 ETag／Last-Modified，并绑定 carrier ID／SHA。来源检查核对采集记录、载体关系及实际摘要；安全验证页不能当作原文。
 
-批量迁移工具 `tools/migrate_source_closure.py --plan PLAN.json` 默认只检查与提议；加 `--apply --audit-output artifacts/migration/NEW-AUDIT.json` 后注册成功报告，事务写入 Source 和审计。计划必须覆盖全部当前 roots，匹配原记录摘要；更改 witness、tier、引文或下游证据关系会被拒绝。未匹配项仅接收载体，继续 UNVERIFIED。迁移不接受任意跳字或文本替换；当前待复核项见[来源迁移评审](../reviews/SOURCE_CLOSURE_20261009.md)。
+批量迁移工具 `tools/migrate_source_closure.py --plan PLAN.json` 默认只检查与提议；加 `--apply --audit-output artifacts/migration/NEW-AUDIT.json` 后注册成功报告，事务写入 Source 和审计。计划必须覆盖全部当前 roots，匹配原记录摘要；更改 witness、tier、引文或下游证据关系会被拒绝。未匹配项仅接收载体，继续 UNVERIFIED。迁移不接受任意跳字或文本替换；既有迁移保存于[来源迁移审计](../../artifacts/migration/source-closure-20261009/audit.json)，独立复核状态用 `rcwh sources audit` 查询。
 
 `--require-tracked` 同时检查 Asset、当前 Source 文件、使用中的抽取配方和 schema／依赖锁。新输出和元数据需审查后纳入 Git；命令不自动 stage 或 commit。提取成功也不等于 Corpus v1 完成或证据解释已通过。
 

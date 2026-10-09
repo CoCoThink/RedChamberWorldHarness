@@ -1,35 +1,15 @@
 # RCWH｜来源闭包与语料建设后续设计 v1.1
 
-最新状态：故宫005664原件影像已核对，曹家三段完成明确代理校录；32条Source定位重取通过，三项临时豁免删除。12项独立来源复核仍为PENDING，史料不做盲评。见[原件核验](reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)。评审否定意见的保存／阻断及实时验收已补齐，当前工程状态和真实输入见[收口记录](reviews/REVIEW_CLOSEOUT_20261009.md)。下文阶段快照保留原实施时点。
-
 - 日期：2026-10-08
-- 依据：[Review.md](../Review.md)、[完整设计 v1.0](RCWH_红楼梦复原基础设施完整设计_v1.0_20261008.md)
-- 核对基线：`8e523c56d73bb6fcc5cb807f9d9811d07176345f`
-- 状态：分批实施。R0.1 的 `CatalogStore`、receipt 与日常接收、R0.2 的四格式抽取／Locator v2，以及 R0.4 的 roles／collections 导航与固定 PDF／EPUB 输入核对已实现，见[接收 runbook](runbooks/ASSET_INTAKE.md)、[来源定位 runbook](runbooks/SOURCE_LOCATORS.md)和[导航／输入 runbook](runbooks/ASSET_DISCOVERY_AND_CORPUS_INPUTS.md)；目录分片、声明输入闭包、完整语料候选与固定写作输入／独立评审接口也已落地，见[语料／评审 runbook](runbooks/CORPUS_AND_REVIEW_INPUTS.md)和[闭包 runbook](runbooks/DECLARED_INPUT_CLOSURE.md)。实际来源与人工验收尚未全部通过。实际进度继续由 `data/project/current.json` 选择的 owner 提供。
-- R0.3 进展（2026-10-09）：全部 roots 已绑定本地 carrier，20 条 PDF 引文完成定位，9 条历史／论文摘录已另行更正；曹家档案 3 条载体版本与独立证据审查仍待收口。见[更正复核](reviews/SOURCE_EXCERPT_CORRECTIONS_20261009.md)，来源闭包尚未通过。
-- R0.4 进展（2026-10-09）：核心材料可按用途／回次导航；两份完整提取均核对 80 回，配置固定 PDF 主输入、EPUB 比较输入及 pilot 回次，逐字节重算盘点。两份版本不能视作相同；后续已构建不可变 pilot 与完整前80候选，人工层次验收仍待评。见[实施记录](reviews/ASSET_DISCOVERY_AND_CORPUS_INPUTS_20261009.md)。
-- 本轮目标：把“材料已经入库”推进为“正式依赖可发现、可定位、可在干净检出中重建”，为后续文学生产提供可靠输入。
+- 依据：[完整设计 v1.0](RCWH_红楼梦复原基础设施完整设计_v1.0_20261008.md)
+- 定位：来源、语料与写作输入的实施及验收契约。当前状态取自 `data/project/current.json` 选择的 owner，并用 `rcwh project acceptance` 实时计算。
+- 操作：[资产接收](runbooks/ASSET_INTAKE.md)、[来源定位](runbooks/SOURCE_LOCATORS.md)、[导航与固定输入](runbooks/ASSET_DISCOVERY_AND_CORPUS_INPUTS.md)、[语料与评审](runbooks/CORPUS_AND_REVIEW_INPUTS.md)、[声明闭包](runbooks/DECLARED_INPUT_CLOSURE.md)。
 
-## 1. 设计结论与实际基线
+## 1. 设计结论
 
-实施顺序调整为 **R0 Repository Closure → Corpus v1／P9 → 范例接入 → P11 候选搜索**。R0 优先投入；P9 对已冻结候选的独立盲评可以并行，但文学评审通过不替代来源验收。完整世界／规划契约和连续章回生产继续沿用 v1.0 的领域路线，在来源与语料接口稳定后接入。
+实施顺序为 **R0 Repository Closure → Corpus v1／P9 → 范例接入 → P11 候选搜索**。R0 优先投入；P9 对已冻结候选的独立盲评可以并行，但文学评审通过不替代来源验收。完整世界／规划契约和连续章回生产沿用 v1.0 的领域路线，在来源与语料接口稳定后接入。
 
-2026-10-08 在实施前核对得到以下基线；下表保留当时结果，不作为当前运行能力声明：
-
-| 检查项 | 当前结果 | 对设计的影响 |
-|---|---|---|
-| Asset Catalog | 151 个资产，223 条 origin；其中 102 个 `PROJECT_REFERENCE` | 需要逻辑发现层；数量仅为本次快照 |
-| `source-content` | 32 个 Source root，20 个有本地载体，12 个失败；图关系检查无发现 | 优先接收缺失载体并确认所引版本 |
-| `source-locators` | 32 个失败 | 当前代码无条件报定位器未实现，不能靠修改状态字段收口 |
-| Source schema | `locator_verification.status` 仅允许 `UNVERIFIED` | 必须同时演进 schema、验证器和失效规则 |
-| 正式语料 | 尚无 `corpus/` | 现有 Markdown 索引和 `prewrite corpus` profile 不能当作原文语料 |
-| Catalog 读取 | `from_repo`、tracked 检查和 Git baseline 比较均直接读取单文件 | 分片之前先统一目录读取接口 |
-| 当前项目状态 | `IN_PROGRESS`；能力实验下一门为 `P9_PAIRED_BLIND_REVISION_REVIEW`；文学生产下一门为 `CH89_PLOCK_REGRESSION` | 能力实验与正文采用继续分别推进 |
-| CI | 检查实体、发布存储与领域行为；尚未把来源闭包作为必须通过项 | 需要先约束缺口不扩大，再切换成零缺口硬门禁 |
-
-复查入口为 `rcwh project status`、`rcwh assets summary` 和两项 `self-contained check`。未安装 editable package 时可用 `PYTHONPATH=src python -m rcwh.cli ...`。上述数量不能写成长期测试常量；验收应从当前明确的 root 集合计算覆盖率和缺口。
-
-本提案对应的 Review 原始字节 SHA256 为 `dd2c31fcc331a835a1e8fb52f5ae2ddf29a9e3d5c017dd52759925a478f65320`。设计引用不等于正式 Asset 登记；统一接收入口落地后，承重评审也按第 5 节登记。
+材料入库后，还须保证正式依赖可发现、可定位、可在干净检出中重建。数量和过去的测试结果不构成验收条件；覆盖率与缺口从当前明确的 root 集合计算。
 
 ## 2. 保持的领域边界与优先级修正
 
@@ -271,7 +251,7 @@ Corpus v1 验收包括：
 
 ## 7. R2：接入文学实验与生产
 
-这里按 Review 的后续顺序，将 P10 的工作边界规划为“Corpus／范例接入”，P11 为“候选搜索”；它们尚未成为新的 runtime gate。现有能力升级母本使用过不同阶段编号，实际阶段名称与状态继续取自被选中的结构化 owner；不能通过编辑历史母本重编号。
+这里将 P10 的工作边界规划为“Corpus／范例接入”，P11 为“候选搜索”；它们尚未成为新的 runtime gate。现有能力升级母本使用过不同阶段编号，实际阶段名称与状态继续取自被选中的结构化 owner；不能通过编辑历史母本重编号。
 
 | 工作 | 前置条件 | 交付与边界 |
 |---|---|---|
@@ -321,12 +301,5 @@ Corpus v1 验收包括：
 | R2.1 范例与写作包 | 旧索引映射、确定性检索、冻结范例输入 | R1.2 | 前80范例可直接回到原文；盲评材料隔离路线信息 |
 | R2.2 搜索与生产 | P11、世界／规划接入、评审失效、连续章回 | R2.1、有效 P9 结果及相应生产门禁 | 候选／修订效果可审计，连续性成立，采用与发布分别验证 |
 
-R0.1 已实现日常接收、分类、Source／Implementation 绑定计算和可恢复事务；R0.2 已实现四种格式的确定性抽取、Locator v2、实际摘录重取和报告失效校验。R0.3 已完成载体接收与20条PDF引文定位，并单独更正9条历史／论文摘录，记录代理审查及下游影响失效检查；曹家档案3条替代载体版本与独立证据审查仍待收口，阶段保持 PARTIAL，详见[更正复核记录](reviews/SOURCE_EXCERPT_CORRECTIONS_20261009.md)。R0.4 的阅读导航、版本核对及固定输入重建已实施；R1 先按所选回次验收正文层次 pilot，再建设 Corpus v1。Plan／Review 的 BOUND 计算随对应领域接入。UI、向量检索、自动全文生成和大规模候选搜索排在基础门禁之后。每批验收后再更新 `data/project/implementation.json` 的阶段状态；设计完成不能计作运行能力完成。
 
-## 10. R0.5／R1／R2 接口实施记录（2026-10-09）
-
-本批工程实现与隔离验收已完成。来源核验、语料抽查与 P9 文学盲评各自验收：曹家三个 Source 是同一份奏折的三处摘录，须公开版本与引文依据进行核对；独立证据复核及语料层次抽查同样公开原件和上下文。仅 P9 小说原稿／修订稿比较采用匿名 A/B，不将它列为史料版本核验的要求。
-
-Catalog 已切换 ID 分片；pilot 与完整前80候选均登记为不可变派生资产，两次独立离线重建字节一致，完整候选覆盖20条汇校本 Source 位置。声明闭包从全部 Sources、所选材料与版本化写作输入出发，另要求独立证据复核；三条曹家档案及真实人工意见仍待收口。CI 的临时逐ID缺口预算禁止扩大，并保留严格闭包失败。
-
-五份 Markdown 索引已逐表格项映射，未解析解释保留；固定范例／研究写作包、跨数据集范围映射、输入变更失效、独立语料审查和 P9 配对提交接口均已实现。真实生产准入继续失败；此批没有新增正文候选、采用决定或人工评审结果。后续文学生产依第7节前置条件推进。实施证据和待核材料见[当前实施复核](reviews/CORPUS_CLOSURE_IMPLEMENTATION_20261009.md)。
+每批验收后更新 `data/project/implementation.json` 的阶段状态。Plan／Review 的 BOUND 计算随对应领域接入；UI、向量检索、自动全文生成和大规模候选搜索排在基础门禁之后。操作与真实输入要求见[语料及评审 runbook](runbooks/CORPUS_AND_REVIEW_INPUTS.md)，设计完成不能计作运行能力完成。

@@ -27,13 +27,12 @@
 - [逐列校勘记录](../../artifacts/migration/cao-facsimile-20261009/collation-agent-v2.json)与[固定材料绑定](../../artifacts/migration/cao-facsimile-20261009/bundle-v1.json)：原档身份、下载、原图、图像位置、局部校录及三个当前 Source 摘要。
 - [载体迁移审计](../../artifacts/migration/cao-facsimile-20261009/carrier-migration.json)与[摘录更正审计](../../artifacts/migration/cao-facsimile-20261009/excerpt-corrections.json)：分别记录载体／定位变化和录文变化。新校录是本地派生资产，不沿用旧候选 PDF 的 HTTP 响应。
 - [公开独立复核材料 v2](../../artifacts/reviews/source-independent-v2-20261009/README.md)：绑定12条当前代理更正／校录及协议 v2。旧协议、旧 ZIP 与旧研究写作包保持原字节。
-- [第89回研究写作包 v2](../../data/writing/packages/ch89-research-v2.json)：引用新的 Source 摘要；文学范例、规划、世界输入保持原绑定。
+- [该次第89回研究写作包原件 v2](../../sources/project/4e752b83baeabb6f4295938576cdbe7bb5873dac88da3102db953cb2a77bd437/ch89-research-v2.json)：保存该次 Source、文学范例、规划和世界输入绑定。当前写作包由声明闭包配置选择，操作见[语料及评审输入](../runbooks/CORPUS_AND_REVIEW_INPUTS.md)。
 
 ```bash
 python tools/verify_cao_facsimile.py
 rcwh sources verify-all
 rcwh sources gap-check
-rcwh literary-inputs package data/writing/packages/ch89-research-v2.json
 rcwh sources audit
 ```
 
@@ -41,4 +40,4 @@ rcwh sources audit
 
 **图像识读由 Codex 以 AGENT_TEXT_REVIEW 完成。** 确定性检查验证下载、原图字节、派生关系、图像位置声明及校录摘录一致性；它不独立判断手写字识读是否正确。独立人工 Source 审查仍为 PENDING，语料人工抽查和 P9 文学盲评保留原实际状态。史料核验公开出处，无需盲评。
 
-隔离检出结果见[本次验证报告](../../artifacts/migration/cao-facsimile-20261009/verification_report.json)。原始 Review.md、既有资产、其余29条 Source 内容、全部下游证据对象、语料输入与 ACTIVE 均按本次完整性记录保护。
+该次隔离检出结果见[验证报告](../../artifacts/migration/cao-facsimile-20261009/verification_report.json)。当前验收用 `rcwh project acceptance` 重算。

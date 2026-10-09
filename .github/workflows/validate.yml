@@ -55,7 +55,7 @@ jobs:
           rcwh corpus verify corpus:front80:pilot:v1 --require-tracked --rebuild
           rcwh corpus verify corpus:front80:v1-candidate --require-tracked --rebuild
           rcwh corpus query corpus:front80:v1-candidate --chapter 27 --keyword 红玉 --limit 2
-          rcwh literary-inputs package data/writing/packages/ch89-research-v2.json --require-tracked
+          rcwh literary-inputs package data/writing/packages/ch89-research-v3.json --require-tracked
           rcwh paired-review summary
           rcwh project acceptance --require-tracked
       - name: Smoke domain runtimes

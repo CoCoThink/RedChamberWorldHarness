@@ -1,6 +1,6 @@
 # 声明范围的输入闭包与目录分片
 
-`data/project/current.json` 的 closure owner 选择 `data/project/closure_roots.json`。配置必须选择 ALL_LOADED Sources；还明确选择七个阅读集合、Review 原件、当前 P6/P7/P8、语料构建与数据集、语料审查协议、P9 selection 和第89回研究写作包。项目评审原件 Review.md 已通过统一入口登记，字节保持不变；新的 Source／语料／P9 人工复核记录尚未取得。
+`data/project/current.json` 的 closure owner 选择 `data/project/closure_roots.json`。配置必须选择 ALL_LOADED Sources；还明确选择阅读集合、当前文学实验、语料构建与数据集、语料审查协议、P9 selection 和研究写作包。历史工程评议不属于当前必需输入；原始登记记录仅供审计。独立 Source／语料／P9 复核通过实际提交及选择记录验收。
 
 验证器沿本地 Asset 的 derived_from、结构化 Asset 引用及 `{path, sha256}` 文件绑定遍历；Source 实际定位、corpus 实际重建及原有项目 owner 验证同时执行。所有正式输入、配置、schema、代码和产物纳入 Git tracked 检查。URL、旧接收路径只保留出处意义，不能被读取为内容回退；绝对路径、链接、缓存中的正式输入和未跟踪输入拒绝。报告输出明确范围、根集合摘要和实际输入摘要，不代表全书采用或发布完成。
 
@@ -28,7 +28,7 @@ python tools/verify_foundation_checkout.py --output artifacts/migration/new-clos
 
 ## Catalog 分片
 
-当前正式入口是 `data/catalog/catalog.json`（布局版本2）。Asset 和 Origin 分别按完整 ID 的 SHA256 前两位分片，非空分片内按完整 ID 排序；单文件 v1 只用于读取旧 Git commit。迁移前后的233个资产和305条 origin 完全一致。
+当前正式入口是 `data/catalog/catalog.json`（布局版本2）。Asset 和 Origin 分别按完整 ID 的 SHA256 前两位分片，非空分片内按完整 ID 排序；单文件 v1 只用于读取旧 Git commit。
 
 ```bash
 rcwh assets index

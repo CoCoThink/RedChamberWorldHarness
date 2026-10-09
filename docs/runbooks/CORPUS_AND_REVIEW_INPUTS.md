@@ -1,6 +1,6 @@
 # 语料候选、写作输入与独立评审
 
-史料核验和语料抽查均公开原件、出处、版本及定位信息。曹家三个 Source 是同一份奏折的三处摘录，按通常的版本核验与史料校勘处理；九条代理摘录更正另核对更正依据及 Claim 影响。`rcwh sources audit` 汇总独立证据复核，要求与实际 Source 版本绑定，不要求匿名或 A/B 评分。具体状态见[实施收尾记录](../reviews/CORPUS_CLOSURE_IMPLEMENTATION_20261009.md)。
+史料核验和语料抽查均公开原件、出处、版本及定位信息。曹家三个 Source 是同一份奏折的三处摘录，按通常的版本核验与史料校勘处理；九条代理摘录更正另核对更正依据及 Claim 影响。`rcwh sources audit` 汇总独立证据复核，要求与实际 Source 版本绑定，不要求匿名或 A/B 评分。当前工程检查、待交评审和生产准入由 `rcwh project acceptance` 实时计算。
 
 本 runbook 中的盲评仅指 P9 小说原稿／修订稿比较。语料审查者应看到原件和完整分类信息，以核对正文边界。
 
@@ -41,8 +41,8 @@ python tools/verify_corpus_candidates.py
 
 ```bash
 rcwh literary-inputs exemplars data/writing/exemplars/ch89-research-v1.json
-rcwh literary-inputs package data/writing/packages/ch89-research-v2.json --require-tracked
-rcwh literary-inputs package data/writing/packages/ch89-research-v2.json --production --require-tracked
+rcwh literary-inputs package data/writing/packages/ch89-research-v3.json --require-tracked
+rcwh literary-inputs package data/writing/packages/ch89-research-v3.json --production --require-tracked
 rcwh literary-inputs index-map corpus:front80:v1-candidate --output artifacts/new-index-map.json
 rcwh literary-inputs dataset-map corpus:front80:pilot:v1 corpus:front80:v1-candidate --output artifacts/new-version-map.json
 ```

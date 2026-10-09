@@ -9,7 +9,7 @@
 - 迁移报告保存原文件摘要、路径映射、文档与历史盘点对应及五个领域的语义摘要。
 - 语义等价性比较排除来源显示路径、资产引用和定位验证元数据等表示变化；证据正文、见证、等级、支持关系、决策约束等仍须一致。
 - 首次入库前裁剪无有效依赖的历史 baseline/superseded 副本，摘要和出处保存在导入报告。该裁剪不修改已提交的不可变资产规则。
-- 历史版本的整文副本收拢为不可变历史包；原身份、出处、文件名别名与逐行差异仍可查询，版本索引由账本生成。重复校验清单可声明由保留的 CSV 精确重建。资产校验逐份复原并核对原 SHA，历史内容不参与当前运行解析。研究备选与纠偏另有提取笔记；引用更正新建派生资产。实施结果见[历史版本清理](../reviews/HISTORICAL_ASSET_CLEANUP_20261008.md)。
+- 历史版本的整文副本收拢为不可变历史包；原身份、出处、文件名别名与逐行差异仍可查询，版本索引由账本生成。重复校验清单可声明由保留的 CSV 精确重建。资产校验逐份复原并核对原 SHA，历史内容不参与当前运行解析。研究备选与纠偏另有提取笔记；引用更正新建派生资产。实施结果见[历史版本执行报告](../../artifacts/analysis/historical-assets-20261008/execution_report.json)。
 - M1—M8 覆盖注册表、P0 压缩清单和完成门已退役。领域资产引用核对真实本地字节；历史迁移 PASS 不参与当前状态验收。
 
 ## 分范围验收
@@ -18,15 +18,15 @@
 |---|---|---|
 | asset-storage | catalog 中全部实体、origin 和派生关系 | 不证明定位与证据真实性 |
 | source-content | 当前 provenance Source 的本地载体、采集绑定、摘录摘要、图关系 | 不核验摘录出现位置或替代载体忠实度 |
-| source-locators | Locator v2 重建、摘录范围与报告绑定验证 | 历史摘录差异未复核，明确 FAIL |
+| source-locators | Locator v2 重建、摘录范围与报告绑定验证 | 定位通过不替代独立证据审查 |
 | release-storage | imported baseline 正文和相关资产 | 不证明完整发布证据闭包 |
 
-空 Source root 集合必须失败。`--require-tracked` 检查登记实体和目录元数据已纳入 Git；声明闭包现在由 project owner 明确选择全部 Source、所用材料、语料和写作输入，验证器遍历类型化依赖并执行实际定位／重建；三条 Cao 定位及独立证据审查仍待收口，不能把局部门禁称为最终自包含 PASS。
+空 Source root 集合必须失败。`--require-tracked` 检查登记实体和目录元数据已纳入 Git；声明闭包现在由 project owner 明确选择全部 Source、所用材料、语料和写作输入，验证器遍历类型化依赖并执行实际定位／重建；独立证据审查也须通过，不能把局部门禁称为最终自包含 PASS。
 
-R0.4 另提供 `corpus inputs CONFIG --require-tracked`：核验固定载体／完整 extraction 的身份与 SHA，实际重建 PDF、EPUB 和登记盘点，并检查输入配置、导航与抽取依赖的 Git 跟踪。配置或代码改变须登记新报告；缺载体、环境漂移、失效盘点和错误回次范围返回非零。它验收输入选择与重建，不验收正文层次或全量语料。当前主输入为 PDF，EPUB 用作比较，见[实施记录](../reviews/ASSET_DISCOVERY_AND_CORPUS_INPUTS_20261009.md)。
+R0.4 另提供 `corpus inputs CONFIG --require-tracked`：核验固定载体／完整 extraction 的身份与 SHA，实际重建 PDF、EPUB 和登记盘点，并检查输入配置、导航与抽取依赖的 Git 跟踪。配置或代码改变须登记新报告；缺载体、环境漂移、失效盘点和错误回次范围返回非零。它验收输入选择与重建，不验收正文层次或全量语料。当前主输入为 PDF，EPUB 用作比较，见[导航与固定输入](../runbooks/ASSET_DISCOVERY_AND_CORPUS_INPUTS.md)。
 
 ## 后续迁移
 
-补齐历史载体与定位；逐领域迁移 world/planning/writing/evaluation。迁移包数量、P0 数量和远端分支快照测试已删除；世界、文学及规划的历史数量门禁已由显式项目范围、身份唯一、上游覆盖、关系闭合和行为规则替换；具体实施见 [ADR 0003](../decisions/0003_RETIRE_HISTORICAL_RULES.md)。
+后续领域迁移继续核验 world/planning/writing/evaluation 的实际输入及引用。迁移包数量、P0 数量和远端分支快照测试已删除；世界、文学及规划的历史数量门禁已由显式项目范围、身份唯一、上游覆盖、关系闭合和行为规则替换；具体实施见 [ADR 0003](../decisions/0003_RETIRE_HISTORICAL_RULES.md)。
 
 最终验收从干净检出执行：来源闭包、声明环境下离线追溯、确定性语料重建、连续章回创作与修订、真实评审和可核验发布。

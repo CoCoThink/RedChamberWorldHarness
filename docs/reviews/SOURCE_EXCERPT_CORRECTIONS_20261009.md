@@ -1,8 +1,6 @@
 # 来源摘录更正与影响复核｜2026-10-09
 
-后续更新：曹家三处已按故宫005664原件影像完成代理校录，32条Source现均通过定位重取。新的材料、差异与独立复核状态见[曹家原件核验](CAO_FACSIMILE_VERIFICATION_20261009.md)。下文保留本批九项更正时的历史状态。
-
-本批已更正 9 条历史／论文 Source。当前 32 条 roots 全部有本地载体，29 条通过实际摘录核验，剩余 3 条为曹家档案同一奏折的三个摘录，仍 UNVERIFIED。R0.3 保持 PARTIAL，`source-locators` 和 `sources verify-all` 如实返回失败。
+本记录解释九条历史／论文 Source 的摘录更正依据与 Claim 影响。曹家三处的后续校录另见[曹家原件核验](CAO_FACSIMILE_VERIFICATION_20261009.md)。当前定位与独立复核状态分别用 `rcwh sources verify-all`、`rcwh sources audit` 查询。
 
 这是 Codex 的 **AGENT_TEXT_REVIEW**：本地录文比对与现有主张复核，没有声称独立人工评审或馆藏原件鉴定。载体重取、摘录更正依据和证据解释分别记录；数字录文可以重建，不代表现代标点、原始版本或历史真实性获得自动认证。
 
@@ -38,10 +36,4 @@
 
 原始 EPUB 曾被阅读器改写 `META-INF/calibre_bookmarks.txt`；正文及其余全部条目相同。当前文件与新书签已保存在 `.rcwh-cache/carrier-byte-investigation/`，正式 carrier 从 Git HEAD 恢复为登记摘要。后续阅读使用副本，以免阅读位置再次改写固定资产。
 
-3 条曹家档案摘录继续使用原值及待核状态。下一步需要取得能确认版本和录文的奏折原件、影印或有明确出处的可靠录文本，再单独更正；故宫研究转引不能替代原始 carrier，数字网站间相同文字也不能增加独立见证。独立证据审查及全零缺口条件未满足前，不将 R0.3 标成 COMPLETE。
-
-## 验收
-
-声明环境 CPython 3.12.13／PyMuPDF 1.27.2.3 下，隔离 Git 检出以 `core.autocrlf=true` 运行，CLI 的网络连接和 DNS 禁用：449 项测试及全部 CI 校验脚本通过；asset-storage、source-content 通过，source-locators 仅因上述3条来源如实失败，无 storage／graph 发现项。相对原 Git HEAD 的不可变资产检查、受保护证据快照比较和仓库校验均通过。
-
-当前目录有 228 个 Asset／300 个 origin；原工作区未执行 stage 或 commit，`sources verify-all --require-tracked` 还报告146项未跟踪输入。隔离检出中的通过只证明这批文件纳入 Git 后可离线验证，不替代原工作区的实际 Git 跟踪，也不将3项来源缺口计为通过。
+独立证据审查使用[语料及评审输入 runbook](../runbooks/CORPUS_AND_REVIEW_INPUTS.md)中的公开复核流程；代理更正记录不能替代独立意见。过去的测试与检出结果保存在上述审计文件中。

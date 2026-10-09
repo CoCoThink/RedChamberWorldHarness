@@ -85,7 +85,7 @@ def verify(root: Path) -> dict:
             ("corpus-inputs", ["corpus", "inputs", "data/corpus/inputs/front80-pilot-v1.json", "--require-tracked"], 0),
             ("corpus-pilot", ["corpus", "verify", "corpus:front80:pilot:v1", "--require-tracked", "--rebuild"], 0),
             ("corpus-front80-candidate", ["corpus", "verify", "corpus:front80:v1-candidate", "--require-tracked", "--rebuild"], 0),
-            ("frozen-writing-inputs", ["literary-inputs", "package", "data/writing/packages/ch89-research-v2.json", "--require-tracked"], 0),
+            ("frozen-writing-inputs", ["literary-inputs", "package", "data/writing/packages/ch89-research-v3.json", "--require-tracked"], 0),
             ("paired-review-submissions", ["paired-review", "summary"], 0),
             ("repository-validation", ["validate"], 0),
             ("literary-production", ["literary-production", "summary", "--json"], 0),
