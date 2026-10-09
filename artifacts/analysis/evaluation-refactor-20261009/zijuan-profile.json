@@ -1,0 +1,71 @@
+{
+  "id": "zijuan",
+  "name": "紫鹃",
+  "world": {
+    "id": "zijuan",
+    "name": "紫鹃",
+    "groups": [
+      "jia_household",
+      "human"
+    ],
+    "baseline": {
+      "location": "S02",
+      "life_state": "ACTIVE",
+      "legal_status": "NOT_AT_ISSUE",
+      "marital_status": "UNRESOLVED",
+      "household_role": "daiyu_attendant",
+      "body_state": "ordinary"
+    }
+  },
+  "voice": {
+    "id": "zijuan",
+    "name": "紫鹃",
+    "utterance_density": "约43",
+    "reference_chapters": [
+      "26",
+      "30",
+      "35",
+      "57",
+      "70",
+      "76"
+    ],
+    "voice": "少说时很实；一旦为黛玉打算，会非常主动甚至冒险试探。",
+    "relation_shift": "对黛玉是贴身人，对宝玉能直戳；对长辈仍守身份。",
+    "post80_forbidden": "85—86不能只做护理动作，应有判断、试探、急话和自责。",
+    "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+  },
+  "supplement": null,
+  "knowledge": {
+    "id": "zijuan",
+    "name": "紫鹃",
+    "coverage": "FULL",
+    "voice_profile": {
+      "support": "SOURCE_BACKED",
+      "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
+      "reference_chapters": [
+        "26",
+        "30",
+        "35",
+        "57",
+        "70",
+        "76"
+      ],
+      "voice": "少说时很实；一旦为黛玉打算，会非常主动甚至冒险试探。",
+      "relation_shift": "对黛玉是贴身人，对宝玉能直戳；对长辈仍守身份。",
+      "post80_forbidden": "85—86不能只做护理动作，应有判断、试探、急话和自责。"
+    },
+    "masking_hook": {
+      "positive_traits": [
+        "PRACTICAL_SPEECH",
+        "ACTIVE_TEST_FOR_DAIYU",
+        "DIRECT_TO_BAOYU"
+      ],
+      "forbidden_text": [],
+      "automatic_identity_pass": false
+    },
+    "world_binding_optional": false
+  },
+  "coverage": "REGISTERED_VOICE",
+  "literary_verification": "PENDING_INDEPENDENT_READING",
+  "authority_effect": "NONE"
+}

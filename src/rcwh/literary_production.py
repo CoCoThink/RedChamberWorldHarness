@@ -27,7 +27,11 @@ class LiteraryProductionRuntime:
         active = next((records[ch] for ch in self.data["sequence"]
                        if records[ch]["state"] in {"READY_FOR_CANDIDATES", "IN_REVIEW"}), None)
         if active:
-            unresolved = next((stage for stage in PIPELINE if active["workflow_progress"][stage] != "PASS"), "ADJUDICATION")
+            gates = self.gates(active["chapter"], competitions)
+            progress = dict(active["workflow_progress"])
+            progress.update(SIX_FIELD_REGRESSION=gates["six_field"],
+                            PLOCK_REGRESSION=gates["manual_plock"], BLIND_READ=gates["blind_read"])
+            unresolved = next((stage for stage in PIPELINE if progress[stage] != "PASS"), "ADJUDICATION")
             next_gate = f"CH{active['chapter']}_{unresolved}"
         else:
             next_gate = "COMPETITION_SEQUENCE_REVIEW"
@@ -47,19 +51,30 @@ class LiteraryProductionRuntime:
             raise KeyError(f"Chapter outside configured literary sequence: {chapter}")
         competitions = competitions or CompetitionRegistry.from_repo(self.root)
         record = self._production(competitions)[chapter]
-        rows = competitions.evaluate_record(self.root, record)["candidate_results"]
+        evaluation = competitions.evaluate_record(self.root, record)
+        rows = evaluation["candidate_results"]
         if any(row["machine_status"] == "REJECT_BEFORE_BLIND_READ" for row in rows):
             machine = "FAIL"
         elif rows and all(row["machine_status"] in {"READY_FOR_BLIND_READ", "REPLACEMENT_CASE"} for row in rows):
             machine = "PASS"
         else:
             machine = "PENDING"
+        def review_gate(names: list[str]) -> str:
+            values = [row["review_qualification"]["check_statuses"][name] for row in rows for name in names]
+            if any(value == "FAIL" for value in values):
+                return "FAIL"
+            return "PASS" if values and all(value in {"PASS", "REPLACEMENT_ACCEPTED"} for value in values) else "PENDING"
+
+        from .competition import SIX_FIELDS
         return {
-            "six_field": record["workflow_progress"]["SIX_FIELD_REGRESSION"],
+            "six_field": review_gate(SIX_FIELDS),
+            "scene_semantics": "FAIL" if any(c["semantic_qualification"]["status"] == "FAIL" for c in rows) else "PASS" if rows and all(c["semantic_qualification"]["status"] == "PASS" for c in rows) else "PENDING",
             "machine_literary_evaluation": machine,
-            "manual_plock": record["workflow_progress"]["PLOCK_REGRESSION"],
-            "blind_read": record["workflow_progress"]["BLIND_READ"],
-            "adjudication": record["adjudication"]["outcome"],
+            "manual_plock": review_gate(["HUMAN_PLOCK"]),
+            "blind_read": review_gate(["BLIND_READ"]),
+            "adjudication": evaluation["adjudication"]["outcome"],
+            "declared_workflow": record["workflow_progress"],
+            "declared_adjudication": record["adjudication"],
         }
 
     def chapter(self, chapter: int, competitions: Any) -> dict[str, Any]:
@@ -101,6 +116,8 @@ class LiteraryProductionRuntime:
             if record["adjudication"]["outcome"] != "PENDING" and record["state"] != "ADJUDICATED":
                 errors.append(f"{record['id']}: completed adjudication requires ADJUDICATED state")
             candidates = evaluation["candidate_results"]
+            if record.get("adjudication_basis") == "LEGACY_UNVERIFIED":
+                continue
             for stage, key, values in [("PLOCK_REGRESSION", "human_plock_status", {"PASS", "REPLACEMENT_ACCEPTED", "FAIL"}),
                                        ("BLIND_READ", "blind_read_status", {"PASS", "FAIL"})]:
                 if record["workflow_progress"][stage] == "PASS" and (not candidates or any(c[key] not in values for c in candidates)):
@@ -127,8 +144,10 @@ def format_literary_production(kind: str, payload: Any) -> str:
         return "\n".join([
             f"LITERARY PRODUCTION CH{payload['chapter']}",
             f"competition_state: {comp['state']}",
-            f"winner: {comp['adjudication']['winner_candidate_id']}",
-            f"promotion_state: {comp['adjudication']['promotion_state']}",
+            f"adjudication: {payload['gates']['adjudication']}",
+            f"declared_winner: {comp['adjudication']['winner_candidate_id']}",
+            f"manual_plock: {payload['gates']['manual_plock']}",
+            f"blind_read: {payload['gates']['blind_read']}",
             f"stable_effect: {comp['stable_active_effect']}",
         ])
     return str(payload)

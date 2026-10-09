@@ -1,0 +1,115 @@
+{
+  "date": "2026-10-09",
+  "scope": "EVALUATION_REFACTOR_ENGINEERING_AND_PREPARATION",
+  "engineering_status": "PASS",
+  "complete_literary_acceptance": "PENDING",
+  "tests": {
+    "3.12.3": {
+      "status": "PASS",
+      "passed": 670,
+      "report": "pytest-3.12.3.txt"
+    },
+    "3.12.13": {
+      "status": "PASS",
+      "passed": 670,
+      "autocrlf_checkout": true,
+      "report": "checkout-final-3.12.13.json"
+    }
+  },
+  "workflow_shell_steps": 20,
+  "project_acceptance": {
+    "3.12.3": {
+      "status": "PENDING",
+      "engineering_status": "PASS",
+      "failed_checks": [],
+      "pending_checks": [
+        "corpus_human_review:corpus:front80:pilot:v1",
+        "corpus_human_review:corpus:front80:v1-candidate",
+        "declared_input_closure",
+        "p9_submissions",
+        "production_admission:data/writing/packages/ch89-research-v4.json",
+        "source_independent_reviews"
+      ]
+    },
+    "3.12.13": {
+      "status": "PENDING",
+      "engineering_status": "PASS",
+      "failed_checks": [],
+      "pending_checks": [
+        "corpus_human_review:corpus:front80:pilot:v1",
+        "corpus_human_review:corpus:front80:v1-candidate",
+        "declared_input_closure",
+        "p9_submissions",
+        "production_admission:data/writing/packages/ch89-research-v4.json",
+        "source_independent_reviews"
+      ]
+    }
+  },
+  "workspace_byte_equivalence": {
+    "files": 957,
+    "mismatches": [],
+    "report": "workspace-byte-equivalence.json",
+    "git_tracking_materialized_in_isolated_checkout_only": true
+  },
+  "semantic_challenges": {
+    "cases": 5,
+    "result": "ALL_FAIL",
+    "scope": "INTERNAL_ATTRIBUTED_READING_REPLAY",
+    "negated_poem_is_not_a_forbidden_event": true,
+    "external_model_runs": 0,
+    "report": "semantic-replay-summary.json"
+  },
+  "pilot": {
+    "chapters": [
+      85,
+      86,
+      87
+    ],
+    "causal_routes": 2,
+    "short_drafts": 9,
+    "valid_independent_human_reviews": 0,
+    "direct_control": "CONTAMINATED_INTERNAL_EXAMPLE",
+    "workflow_effect": "NOT_ESTIMABLE",
+    "author_requests_prepared": 6,
+    "new_author_runs": 0,
+    "public_packet": "pilot-reading/public/packet.json",
+    "mapping_for_coordinator_only": "pilot-reading/coordinator/mapping.json"
+  },
+  "corpus": {
+    "focused_samples": 261,
+    "internal_page_observations": 5,
+    "independent_human_layer_audits": 0,
+    "formal_exemplar_use": "PENDING"
+  },
+  "storage": {
+    "removed_duplicate_files": 22,
+    "removed_duplicate_bytes": 32551643,
+    "all_removed_copies_restored_and_sha_verified": true,
+    "immutable_assets_relocated": false,
+    "release_attachments": "PREPARED_LOCALLY_NOT_PUBLISHED",
+    "manifest": "release-attachment-manifest.json"
+  },
+  "rights": {
+    "registered_assets_in_inventory": 363,
+    "license_granted": false,
+    "owner_decision": "DEFER_LICENSE_COMPLETE_RIGHTS_AND_PROPOSAL"
+  },
+  "remaining": [
+    "ACTUAL_EXTERNAL_MODEL_SEMANTIC_CALIBRATION",
+    "INDEPENDENT_SOURCE_AND_CORPUS_REVIEWS",
+    "FRESH_CONTROLLED_AUTHOR_RUNS",
+    "TWO_INDEPENDENT_WHOLE_SEQUENCE_READERS",
+    "SUBSTANTIVE_REVISION_AND_REREVIEW"
+  ],
+  "authority_effect": "NONE",
+  "stable_active_mutated": false,
+  "original_git_index_mutated": false,
+  "original_workspace_registered_asset_validation": {
+    "status": "PASS",
+    "assets": 363,
+    "content_bytes": 80619791,
+    "base_ref": "HEAD",
+    "require_tracked": true,
+    "report": "assets-original-workspace.json"
+  }
+}

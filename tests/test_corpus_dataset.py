@@ -116,13 +116,14 @@ def test_version_overwrite_and_missing_original_fail(corpus_repo):
     with pytest.raises(AssetError,match='missing file'): CorpusRepository(catalog).verify(DATASET)
 
 
-def test_config_code_and_product_tampering_invalidate_dataset(corpus_repo,monkeypatch):
+def test_config_and_product_tampering_fail_while_code_change_rebuilds_content(corpus_repo,monkeypatch):
     root,config,_=corpus_repo; CorpusRepository(AssetCatalog.from_repo(root)).build(BUILD,'corpus/front80/test-v1')
     config['layer_policy']['main_color']=1; (root/BUILD).write_bytes(canonical_bytes(config))
     with pytest.raises(AssetError,match='STALE_CORPUS_BUILD_CONFIG'): CorpusRepository(AssetCatalog.from_repo(root)).verify(DATASET)
     config['layer_policy']['main_color']=0; (root/BUILD).write_bytes(canonical_bytes(config))
     monkeypatch.setattr('rcwh.corpus.dataset.code_digest',lambda *args:'0'*64)
-    with pytest.raises(AssetError,match='STALE_CORPUS_BUILD'): CorpusRepository(AssetCatalog.from_repo(root)).verify(DATASET)
+    rebuilt = CorpusRepository(AssetCatalog.from_repo(root)).verify(DATASET)
+    assert rebuilt['status']=='PASS' and rebuilt['rebuild']['toolchain_diff']
     monkeypatch.undo()
     catalog=AssetCatalog.from_repo(root); binding=CorpusRepository(catalog).registry()[DATASET]; manifest=json.loads(catalog.resolve(binding['manifest_ref']).path.read_bytes()); ref=manifest['products']['segments.jsonl']['asset_ref']; catalog.resolve(ref).path.write_bytes(b'forged')
     with pytest.raises(AssetError,match='byte mismatch'): CorpusRepository(catalog).verify(DATASET)

@@ -35,22 +35,24 @@ def test_culture_not_museum_deletion_test_flags_display_only_and_accepts_action_
     assert attached["culture_spans"] >= 1
 
 
-def test_explicit_exposition_detector_blocks_high_confidence_authorial_explanation():
+def test_exposition_detector_flags_wording_without_semantic_verdict():
     payload = suite().exposition_detector(
         "众人散后，作者又补一句：这正说明富贵不过一梦。"
     )
-    assert payload["status"] == "FAIL_EXPLICIT_EXPOSITION"
+    assert payload["status"] == "FLAG_EXPOSITION"
+    assert payload["automatic_failure"] is False
     assert "这正说明" in payload["hits"]
 
 
-def test_ambiguity_preservation_blocks_downstream_closure_of_open_evidence():
+def test_ambiguity_wording_is_lint_without_semantic_verdict():
     payload = suite().ambiguity_preservation(
         "书中至此已经清楚：《十独吟》的作者就是黛玉。"
     )
-    assert payload["status"] == "FAIL_AMBIGUITY_CLOSURE"
+    assert payload["status"] == "FLAG_AMBIGUITY"
+    assert payload["automatic_failure"] is False
     assert payload["guard_hits"][0]["id"] == "ten-du-author-open"
     generic = suite().ambiguity_preservation("原稿一定如此，别无可说。")
-    assert generic["status"] == "FAIL_AMBIGUITY_CLOSURE"
+    assert generic["status"] == "FLAG_AMBIGUITY"
 
 
 def test_structural_variation_flags_mechanical_uniformity_without_auto_failure():
@@ -71,10 +73,11 @@ def test_structural_variation_flags_mechanical_uniformity_without_auto_failure()
     assert payload["risks"]
 
 
-def test_prose_suite_distinguishes_hard_blockers_from_human_flags():
+def test_current_prose_suite_demotes_legacy_blockers_to_reading_flags():
     hard = suite().evaluate_prose("她终于明白人生的意义在于一切皆空。", "hard")
-    assert hard["status"] == "REJECT_BEFORE_BLIND_READ"
-    assert "EXPLICIT_EXPOSITION" in hard["blockers"]
+    assert hard["status"] == "READY_WITH_HUMAN_FLAGS"
+    assert hard["blockers"] == []
+    assert "EXPLICIT_EXPOSITION" in hard["human_flags"]
 
     flagged = suite().evaluate_prose(
         ("琴棋书画，茶具香炉，古砚名帖，色色齐备。\n\n" * 30),

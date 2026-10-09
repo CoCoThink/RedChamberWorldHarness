@@ -77,6 +77,7 @@ class HistoricalAdapterRuntime:
                     "reason": "UNKNOWN_ADAPTER",
                     "plot_authority": "NONE",
                     "required_groups": [],
+                    "missing_required_groups": [],
                     "forbidden_hits": [],
                     "open_questions": [],
                 })
@@ -103,11 +104,11 @@ class HistoricalAdapterRuntime:
             forbidden_hits = [term for term in forbidden_terms if term in text]
 
             if forbidden_hits:
-                status = "FAIL"
-                reason = "HISTORICAL_OVERCLAIM"
+                status = "WARN"
+                reason = "LEXICAL_OVERCLAIM_FLAG"
             elif missing:
-                status = "FAIL"
-                reason = "MISSING_FEASIBILITY_SIGNAL"
+                status = "WARN"
+                reason = "MISSING_LEXICAL_SIGNAL"
             elif adapter["research_status"] == "OPEN_RESEARCH":
                 status = "PASS_WITH_OPEN"
                 reason = "OPEN_RESEARCH_PROFILE_ONLY"
@@ -117,6 +118,8 @@ class HistoricalAdapterRuntime:
 
             findings.append({
                 "adapter": adapter_id,
+                "report_kind": "LINT",
+                "feasibility_verified": False,
                 "status": status,
                 "reason": reason,
                 "support_class": adapter["support_class"],
@@ -141,7 +144,9 @@ class HistoricalAdapterRuntime:
         findings = self.evaluate_scene(contract, text, mechanisms)
         return {
             "scene_id": contract.get("id"),
-            "status": "FAIL" if any(x["status"] == "FAIL" for x in findings) else "PASS",
+            "status": "FAIL" if any(x["status"] == "FAIL" for x in findings) else "WARN" if any(x["status"] == "WARN" for x in findings) else "PASS",
+            "report_kind": "LINT",
+            "feasibility_verified": False,
             "findings": findings,
             "plot_authority": "NONE",
         }

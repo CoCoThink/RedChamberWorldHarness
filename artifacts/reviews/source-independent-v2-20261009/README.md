@@ -7,3 +7,9 @@
 sources/保存三条新来源的校录材料和原PDF；corrections/保存全部12项更正记录。source-contexts.json提供当前Source、载体、Locator v2与校勘包绑定。九项旧来源载体通过其Asset路径在仓库中读取。机械检查只验证校录精确重取与原图链路；手写字识读需独立复核。
 
 本核验公开出处，不采用匿名A/B或文学打分。填写human-review-template.json后，按docs/runbooks/CORPUS_AND_REVIEW_INPUTS.md登记真实原始REVIEW_RECORD和结构化评审；reviews保持空列表直至真实提交。P9文学盲评另行办理。
+
+## Materialize delivery copies
+
+The registered archive retains every original file. Expanded large copies and the duplicate ZIP were removed after exact byte comparison.
+
+Run `rcwh delivery materialize source-review-v2 /tmp/source-review-v2` to recreate the complete original reading directory. Run `rcwh delivery attachments /tmp/rcwh-release-attachments` to prepare checksum-bound attachments. This does not publish them or submit reviews.

@@ -18,21 +18,21 @@ class ScenarioRuntime:
     @classmethod
     def from_repo(cls, root: Path) -> "ScenarioRuntime":
         scenarios: dict[str, dict[str, Any]] = {}
-        path = root / "data" / "scenarios"
+        path = root / "data" / "research"
         if path.exists():
-            for file in sorted(path.glob("*.json")):
+            for file in sorted(path.glob("scenarios.json")):
                 doc = load_data(file) or {}
                 for item in doc.get("scenarios", []):
                     item_id = item["id"]
                     if item_id in scenarios:
                         raise ValueError(f"Duplicate scenario id: {item_id}")
                     scenarios[item_id] = item
-        cpath = root / "data" / "hypotheses" / "compatibility.json"
+        cpath = root / "data" / "research" / "hypothesis_compatibility.json"
         compatibility = load_data(cpath) if cpath.exists() else {}
         return cls(
             scenarios=scenarios,
             compatibility=compatibility,
-            replay_available=(root / "data" / "scenario_replay" / "v08.json").exists(),
+            replay_available=(root / "data" / "research" / "scenario_replay.json").exists(),
         )
 
     def validate_bundle(

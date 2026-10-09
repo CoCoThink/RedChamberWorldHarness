@@ -82,7 +82,8 @@ def test_ch89_missing_reviews_cannot_be_replaced_by_machine_pass():
     payload = registry.evaluate_record(ROOT, rec)
     assert payload["consistency_errors"] == []
     assert all(x["machine_status"] == "READY_FOR_BLIND_READ" for x in payload["candidate_results"])
-    assert all(x["six_field_pass"] is True for x in payload["candidate_results"])
+    assert all(x["six_field_pass"] is False for x in payload["candidate_results"])
+    assert all(all(v == "PASS" for v in x["declared_gates"]["six_field"].values()) for x in payload["candidate_results"])
     assert all(x["adjudication_eligible"] is False for x in payload["candidate_results"])
     assert payload["adjudication"]["outcome"] == "PENDING"
     assert payload["stable_active_mutated"] is False

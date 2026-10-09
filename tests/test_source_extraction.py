@@ -3,6 +3,7 @@ from __future__ import annotations
 from copy import deepcopy
 import io
 import json
+import platform
 from pathlib import Path
 import shutil
 import subprocess
@@ -332,17 +333,100 @@ def test_stored_status_is_ignored_and_stale_reports_are_blocked(extraction_repo)
     assert SourceLocatorVerifier(AssetCatalog.from_repo(root)).verify(source)["status"] == "FAIL"
 
 
-def test_changed_tool_and_dependency_lock_invalidate_extraction(extraction_repo, monkeypatch):
+@pytest.mark.parametrize("format_name", ["TEXT", "HTML", "EPUB", "PDF"])
+@pytest.mark.parametrize("change", ["python_patch", "code", "lock_format", "dependency"])
+def test_toolchain_changes_require_content_comparison_not_manifest_replacement(extraction_repo, monkeypatch, format_name, change):
+    root = extraction_repo
+    built, _ = setup_source(root, format_name)
+    catalog = AssetCatalog.from_repo(root)
+    original = catalog.resolve(built["manifest_ref"]).path.read_bytes()
+    import rcwh.corpus.extraction as extraction
+    if change == "python_patch":
+        other_patch = "3.12.13" if built["manifest"]["extractor"]["python"].endswith("3.12.3") else "3.12.3"
+        monkeypatch.setattr(extraction.platform, "python_version", lambda: other_patch)
+    elif change == "code":
+        monkeypatch.setattr(extraction, "code_digest", lambda *args: "0" * 64)
+    elif change == "lock_format":
+        path = root / "requirements/extraction.lock.json"
+        path.write_bytes(path.read_bytes() + b"\n")
+    else:
+        version = extraction.importlib.metadata.version
+        monkeypatch.setattr(extraction.importlib.metadata, "version", lambda name: "different-installed-version" if name == "PyMuPDF" else version(name))
+    repository = ExtractionRepository(catalog)
+    manifest, units = repository.load(built["manifest_ref"])
+    assert manifest == built["manifest"] and units
+    observation = repository.rebuild_reports[built["manifest_ref"]]
+    assert observation["status"] == "PASS"
+    if change != "dependency" or format_name == "PDF":
+        assert observation["toolchain_diff"]
+    assert catalog.resolve(built["manifest_ref"]).path.read_bytes() == original
+
+
+def test_changed_rebuild_bytes_fail_even_when_executor_identity_is_unchanged(extraction_repo, monkeypatch):
+    root = extraction_repo
+    built, _ = setup_source(root)
+    import rcwh.corpus.extraction as extraction
+    original = extraction.extract_units
+    def changed(raw, config):
+        units = original(raw, config)
+        units[0]["text"] = units[0]["text"].replace("引文材料", "虚构材料")
+        units[0]["text_sha256"] = digest(units[0]["text"].encode())
+        return units
+    repository = ExtractionRepository(AssetCatalog.from_repo(root))
+    repository.load(built["manifest_ref"])
+    monkeypatch.setattr(extraction, "extract_units", changed)
+    with pytest.raises(AssetError, match="EXTRACTION_REBUILD_MISMATCH"):
+        repository.load(built["manifest_ref"])
+    assert built["manifest_ref"] not in repository.rebuild_reports
+
+
+def test_locator_cache_rebuilds_after_executor_change_and_catches_changed_output(extraction_repo, monkeypatch):
     root = extraction_repo
     built, source = setup_source(root)
+    verifier = SourceLocatorVerifier(AssetCatalog.from_repo(root))
+    assert verifier.verify(source)["status"] == "PASS"
     import rcwh.corpus.extraction as extraction
+    other_patch = "3.12.13" if built["manifest"]["extractor"]["python"].endswith("3.12.3") else "3.12.3"
+    monkeypatch.setattr(extraction.platform, "python_version", lambda: other_patch)
+    observation = verifier.verify(source)
+    assert observation["status"] == "PASS" and observation["rebuild"]["toolchain_diff"]
+    original = extraction.extract_units
+    def changed(raw, config):
+        units = original(raw, config)
+        units[0]["text"] = units[0]["text"].replace("引文材料", "虚构材料")
+        units[0]["text_sha256"] = digest(units[0]["text"].encode())
+        return units
+    monkeypatch.setattr(extraction, "extract_units", changed)
     monkeypatch.setattr(extraction, "code_digest", lambda *args: "0" * 64)
-    with pytest.raises(AssetError, match="STALE_EXTRACTION_TOOL"):
-        ExtractionRepository(AssetCatalog.from_repo(root)).load(built["manifest_ref"])
-    monkeypatch.undo()
+    report = verifier.verify(source)
+    assert report["status"] == "FAIL" and "EXTRACTION_REBUILD_MISMATCH" in report["findings"]
+
+
+def test_historical_locator_report_keeps_binding_after_verifier_code_change(extraction_repo, monkeypatch):
+    root = extraction_repo
+    _, source = setup_source(root)
+    report = SourceLocatorVerifier(AssetCatalog.from_repo(root)).verify(source)
+    report.pop("rebuild")  # Historical v1 reports did not contain an observation.
+    file = root.parent / "historic-verification.json"
+    file.write_bytes(canonical_bytes(report))
+    received = AssetIntake(root).ingest(file, origin="test:historic-verification", kind="REVIEW_RECORD")
+    source["locator_verification"] = {
+        "status": "VERIFIED", "report_ref": received["asset_ref"], "report_sha256": received["sha256"],
+        "source_record_sha256": report["source_record_sha256"], "reason": "Historical bound report",
+    }
+    monkeypatch.setattr("rcwh.corpus.locators.code_digest", lambda *args: "0" * 64)
+    current = SourceLocatorVerifier(AssetCatalog.from_repo(root)).verify(source)
+    assert current["status"] == "PASS" and current["raw_excerpt"] == source["text"]
+    assert AssetCatalog.from_repo(root).resolve(received["asset_ref"]).path.read_bytes() == canonical_bytes(report)
+
+
+def test_semantic_lock_change_is_rejected_despite_identical_old_output(extraction_repo):
+    root = extraction_repo
+    built, _ = setup_source(root)
     path = root / "requirements/extraction.lock.json"
-    path.write_bytes(path.read_bytes() + b"\n")
-    with pytest.raises(AssetError, match="STALE_EXTRACTION_DEPENDENCY_LOCK"):
+    lock = json.loads(path.read_bytes()); lock["text"]["unicode_normalization"] = "NFC"
+    path.write_bytes(canonical_bytes(lock))
+    with pytest.raises(ExtractionConfigError, match="unsupported extraction dependency lock"):
         ExtractionRepository(AssetCatalog.from_repo(root)).load(built["manifest_ref"])
 
 
@@ -425,6 +509,8 @@ def test_cli_extract_locate_verify_and_report_export(extraction_repo, monkeypatc
     assert code == 0
     code, shown = run("corpus", "show", built["manifest_ref"], "--unit", "text:1")
     assert code == 0 and quote in shown["unit"]["text"]
+    assert shown["rebuild"]["status"] == "PASS"
+    assert shown["rebuild"]["current_toolchain"]["extractor"]["python"].endswith(platform.python_version())
     code, proposal = run("sources", "locate", source["id"], "--extraction", built["manifest_ref"])
     assert code == 0 and proposal["status"] == "PASS"
     assert ProvenanceRepository.from_repo(root).graph.sources[source["id"]]["locator"] == {"lines": "unknown"}

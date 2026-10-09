@@ -1,0 +1,1655 @@
+{
+  "characters": 29,
+  "registered_voices": 18,
+  "knowledge_profiles": 6,
+  "profiles": [
+    {
+      "id": "baoyu",
+      "name": "贾宝玉",
+      "world": {
+        "id": "baoyu",
+        "name": "贾宝玉",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "FREE",
+          "marital_status": "UNMARRIED",
+          "household_role": "jia_son",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "baoyu",
+        "name": "宝玉",
+        "utterance_density": "约692",
+        "reference_chapters": [
+          "19",
+          "28",
+          "31",
+          "35",
+          "51"
+        ],
+        "voice": "说话常从情绪与眼前物起；爱问、爱央、爱绕开正经结论；对女孩常以亲昵称呼软化冲突。",
+        "relation_shift": "面对长辈会收束；对丫鬟常直接却不摆主子架；遇现实/功名话题容易岔开。",
+        "post80_forbidden": "不能把他写成条理清楚的法律、婚姻、人生哲理陈述者。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": {
+        "id": "baoyu",
+        "name": "贾宝玉",
+        "coverage": "FULL",
+        "voice_profile": {
+          "support": "SOURCE_BACKED",
+          "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
+          "reference_chapters": [
+            "19",
+            "28",
+            "31",
+            "35",
+            "51"
+          ],
+          "voice": "说话常从情绪与眼前物起；爱问、爱央、爱绕开正经结论；对女孩常以亲昵称呼软化冲突。",
+          "relation_shift": "面对长辈会收束；对丫鬟常直接却不摆主子架；遇现实/功名话题容易岔开。",
+          "post80_forbidden": "不能把他写成条理清楚的法律、婚姻、人生哲理陈述者。"
+        },
+        "masking_hook": {
+          "positive_traits": [
+            "EMOTION_OR_OBJECT_FIRST",
+            "QUESTION_OR_REQUEST",
+            "INDIRECT_CONCLUSION"
+          ],
+          "forbidden_text": [
+            "依法应当",
+            "从法律上说",
+            "婚姻的本质",
+            "人生的意义在于"
+          ],
+          "automatic_identity_pass": false
+        }
+      },
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "baochai",
+      "name": "薛宝钗",
+      "world": {
+        "id": "baochai",
+        "name": "薛宝钗",
+        "groups": [
+          "jia_household",
+          "xue_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNMARRIED",
+          "household_role": "xue_daughter_guest",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "baochai",
+        "name": "宝钗",
+        "utterance_density": "约264",
+        "reference_chapters": [
+          "32",
+          "35",
+          "37",
+          "42",
+          "48",
+          "57"
+        ],
+        "voice": "句子完整但少自我炫耀；常先承认现实，再把话往可办处收；会打趣，不是永远端肃。",
+        "relation_shift": "对长辈圆融；对黛玉能细密坦白；对宝玉规劝往往借事、借物。",
+        "post80_forbidden": "不能写成现代高情商管理者或功名说教机器。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": {
+        "id": "baochai",
+        "name": "薛宝钗",
+        "coverage": "FULL",
+        "voice_profile": {
+          "support": "SOURCE_BACKED",
+          "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
+          "reference_chapters": [
+            "32",
+            "35",
+            "37",
+            "42",
+            "48",
+            "57"
+          ],
+          "voice": "句子完整但少自我炫耀；常先承认现实，再把话往可办处收；会打趣，不是永远端肃。",
+          "relation_shift": "对长辈圆融；对黛玉能细密坦白；对宝玉规劝往往借事、借物。",
+          "post80_forbidden": "不能写成现代高情商管理者或功名说教机器。"
+        },
+        "masking_hook": {
+          "positive_traits": [
+            "ACKNOWLEDGE_REALITY_THEN_ACTION",
+            "COMPLETE_SENTENCE_LOW_SELF_DISPLAY",
+            "ADVICE_THROUGH_THING_OR_TASK"
+          ],
+          "forbidden_text": [
+            "高情商",
+            "作为管理者",
+            "绩效",
+            "管理方法论"
+          ],
+          "automatic_identity_pass": false
+        }
+      },
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "daiyu",
+      "name": "林黛玉",
+      "world": {
+        "id": "daiyu",
+        "name": "林黛玉",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNMARRIED",
+          "household_role": "jia_guest",
+          "body_state": "chronic_declining"
+        }
+      },
+      "voice": {
+        "id": "daiyu",
+        "name": "黛玉",
+        "utterance_density": "约270",
+        "reference_chapters": [
+          "19",
+          "28",
+          "45",
+          "48",
+          "57",
+          "76"
+        ],
+        "voice": "反问、借题、双关、故意误解多；尖处通常同时带亲近，病中也不失观察与笑。",
+        "relation_shift": "对宝玉可半真半假；对宝钗从防备到能直说；对丫鬟并非时时诗化。",
+        "post80_forbidden": "不能病后只剩气若游丝和悲语；尤其86前仍须有俏语。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": {
+        "id": "daiyu",
+        "name": "林黛玉",
+        "coverage": "FULL",
+        "voice_profile": {
+          "support": "SOURCE_BACKED",
+          "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
+          "reference_chapters": [
+            "19",
+            "28",
+            "45",
+            "48",
+            "57",
+            "76"
+          ],
+          "voice": "反问、借题、双关、故意误解多；尖处通常同时带亲近，病中也不失观察与笑。",
+          "relation_shift": "对宝玉可半真半假；对宝钗从防备到能直说；对丫鬟并非时时诗化。",
+          "post80_forbidden": "不能病后只剩气若游丝和悲语；尤其86前仍须有俏语。"
+        },
+        "masking_hook": {
+          "positive_traits": [
+            "QUESTION_OR_IRONY",
+            "DOUBLE_MEANING",
+            "WIT_SURVIVES_ILLNESS"
+          ],
+          "forbidden_text": [
+            "我终于明白人生",
+            "我已看破红尘",
+            "我这一生的意义就是"
+          ],
+          "automatic_identity_pass": false
+        }
+      },
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "xiangling",
+      "name": "香菱",
+      "world": {
+        "id": "xiangling",
+        "name": "香菱",
+        "groups": [
+          "xue_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S01",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "CONCUBINE_OF_XUEPAN",
+          "household_role": "xue_household_concubine",
+          "body_state": "terminal_chronic"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "xiangling",
+        "name": "香菱",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "识字学诗与日常询问需区分，不能把诗学热情变成叙述者的完整理论。",
+        "examples": [
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:7:p00085",
+            "text_sha256": "1d814143b5e5c9af614787bc98fe1f642cf2bec98fbaf9f3cb93c1933f1604b8",
+            "span": {
+              "start": 65,
+              "end": 81,
+              "quote": "香菱听问，摇头\n说：“不记得了。"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 767,
+                  "start": 685,
+                  "unit_ref": "pdf:page:115"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          },
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:24:p00006",
+            "text_sha256": "9ae0010fad652df8624ab83369e84fffe65e88ee9ce6aa1eee6248911bede0c6",
+            "span": {
+              "start": 23,
+              "end": 60,
+              "quote": "香菱嘻嘻的笑\n道：“我来寻我们的姑娘的，找他总找不着。你们紫鹃也找你\n呢，"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 316,
+                  "start": 256,
+                  "unit_ref": "pdf:page:341"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          }
+        ],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "PROVISIONAL_EXAMPLES",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "tanchun",
+      "name": "贾探春",
+      "world": {
+        "id": "tanchun",
+        "name": "贾探春",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNMARRIED",
+          "household_role": "jia_daughter",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "tanchun",
+        "name": "探春",
+        "utterance_density": "约125",
+        "reference_chapters": [
+          "27",
+          "37",
+          "55",
+          "56",
+          "62",
+          "73"
+        ],
+        "voice": "办事时逻辑很强，但不是官样文章；遇尊卑伤处会骤然发硬；可用讥刺压人。",
+        "relation_shift": "对赵姨娘最复杂；对下人讲规矩；对姐妹仍有诗社与玩笑的一面。",
+        "post80_forbidden": "82远行不可写成外交官；后续家书也要有姑娘与女儿身份。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "xiren",
+      "name": "花袭人",
+      "world": {
+        "id": "xiren",
+        "name": "花袭人",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNMARRIED",
+          "household_role": "baoyu_attendant",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "xiren",
+        "name": "袭人",
+        "utterance_density": "约228",
+        "reference_chapters": [
+          "19",
+          "32",
+          "34",
+          "36",
+          "63",
+          "67"
+        ],
+        "voice": "生活劝诫最强：睡、吃、穿、出去、别惹事；情深时也常借规矩说，不爱抽象抒情。",
+        "relation_shift": "对宝玉既亲且管；对王夫人极谨慎；对姐妹/丫鬟有照料型语气。",
+        "post80_forbidden": "88离位、96回访时身份变了，但照料语言的肌理不能丢。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "sheyue",
+      "name": "麝月",
+      "world": {
+        "id": "sheyue",
+        "name": "麝月",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "baoyu_attendant",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "sheyue",
+        "name": "麝月",
+        "utterance_density": "约48",
+        "reference_chapters": [
+          "20",
+          "31",
+          "51",
+          "52",
+          "58",
+          "78"
+        ],
+        "voice": "稳、实、略带贫嘴；多从眼前家务开口，不抢情感中心。",
+        "relation_shift": "对宝玉可轻嗔；对晴雯能互损；对小丫头有实际管束。",
+        "post80_forbidden": "后20她是日常支柱，必须增加自己的笑、烦、手上活，而不只是答应着去了。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "fengjie",
+      "name": "王熙凤",
+      "world": {
+        "id": "fengjie",
+        "name": "王熙凤",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "MARRIED_JIALIAN",
+          "household_role": "household_manager",
+          "body_state": "chronic_old_illness"
+        }
+      },
+      "voice": {
+        "id": "fengjie",
+        "name": "凤姐",
+        "utterance_density": "约377",
+        "reference_chapters": [
+          "11",
+          "45",
+          "54",
+          "67",
+          "72",
+          "74"
+        ],
+        "voice": "快、密、转弯多；恭维、讥刺、恐吓、玩笑常在一段话里换挡；极少把真实意图全说完。",
+        "relation_shift": "对贾母逗趣；对下人威压；对平儿可私语；对外人能瞬间换面孔。",
+        "post80_forbidden": "90病中仍应有速度和算计，不能只剩虚弱强撑。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "ping_er",
+      "name": "平儿",
+      "world": {
+        "id": "ping_er",
+        "name": "平儿",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "fengjie_attendant",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "ping_er",
+        "name": "平儿",
+        "utterance_density": "约140",
+        "reference_chapters": [
+          "21",
+          "39",
+          "46",
+          "55",
+          "56",
+          "61"
+        ],
+        "voice": "先听清、再补一句实际办法；常替两边留体面；能笑能回刺，但很少抢中心。",
+        "relation_shift": "对凤姐亲近甚至顶嘴；对下人较宽；对探春知进退。",
+        "post80_forbidden": "94保护巧姐必须表现为听出不对、转话、上达，而非现代风险报告。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "qiaojie",
+      "name": "巧姐",
+      "world": {
+        "id": "qiaojie",
+        "name": "巧姐",
+        "groups": [
+          "jia_household",
+          "human",
+          "child"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "CHILD",
+          "household_role": "fengjie_daughter",
+          "body_state": "ordinary_child"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "qiaojie",
+        "name": "巧姐",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "直接对白样本不足；不把转述、他人议论或后八十回方案当作本人的声口依据。",
+        "examples": [],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "SPARSE_ABSTAIN",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "jia_yun",
+      "name": "贾芸",
+      "world": {
+        "id": "jia_yun",
+        "name": "贾芸",
+        "groups": [
+          "jia_network",
+          "human"
+        ],
+        "baseline": {
+          "location": null,
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "kin_runner",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "jia_yun",
+        "name": "贾芸",
+        "utterance_density": "约22",
+        "reference_chapters": [
+          "24",
+          "26"
+        ],
+        "voice": "乖觉、会顺势攀关系、说漂亮话但落脚在差事和银钱；街面感强。",
+        "relation_shift": "对宝玉谦而灵；对凤姐更会奉承；与倪二等又是另一层口气。",
+        "post80_forbidden": "败后不能突然成忠烈侠客；仍应先算路、车、门、谁能说上话。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "xiaohong",
+      "name": "小红",
+      "world": {
+        "id": "xiaohong",
+        "name": "小红",
+        "groups": [
+          "old_servant_network",
+          "human"
+        ],
+        "baseline": {
+          "location": null,
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "former_servant",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "xiaohong",
+        "name": "小红/红玉",
+        "utterance_density": "少量",
+        "reference_chapters": [
+          "24",
+          "26"
+        ],
+        "voice": "语速快、信息密、记人名事由清楚；能把复杂传话说清。",
+        "relation_shift": "对上位人紧凑，对同辈更机灵；有自己的上升欲与情感线。",
+        "post80_forbidden": "92要让她问清规则、找清经手人，不是万能情报员。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": {
+        "id": "xiaohong",
+        "name": "小红/红玉",
+        "coverage": "FULL",
+        "voice_profile": {
+          "support": "SOURCE_BACKED",
+          "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
+          "reference_chapters": [
+            "24",
+            "26"
+          ],
+          "voice": "语速快、信息密、记人名事由清楚；能把复杂传话说清。",
+          "relation_shift": "对上位人紧凑，对同辈更机灵；有自己的上升欲与情感线。",
+          "post80_forbidden": "92要让她问清规则、找清经手人，不是万能情报员。"
+        },
+        "masking_hook": {
+          "positive_traits": [
+            "FAST_DENSE_INFORMATION",
+            "NAMES_AND_REASONS_CLEAR",
+            "ASK_RULES_AND_CONTACTS"
+          ],
+          "forbidden_text": [
+            "我什么都知道",
+            "案情我都清楚",
+            "里面外面我全有消息"
+          ],
+          "automatic_identity_pass": false
+        }
+      },
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "qianxue",
+      "name": "茜雪",
+      "world": {
+        "id": "qianxue",
+        "name": "茜雪",
+        "groups": [
+          "old_servant_network",
+          "human"
+        ],
+        "baseline": {
+          "location": null,
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "former_servant",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "qianxue",
+        "name": "茜雪",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "前八十回对白稀疏，先核对茶事中的称谓与责任叙述；后续狱外行动声口暂不作强判断。",
+        "examples": [
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:8:p00349",
+            "text_sha256": "74bcc1c760feb341951995dd849a93c739f1909fde9166bcd7918207e9420d0d",
+            "span": {
+              "start": 2,
+              "end": 17,
+              "quote": "茜雪道：“早起潗了一碗枫露茶，"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 309,
+                  "start": 292,
+                  "unit_ref": "pdf:page:140"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          },
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:8:p00353",
+            "text_sha256": "277617a02ee8c32755812bb8c252b5c3f3381dbf257e8e38d2d29410ab400089",
+            "span": {
+              "start": 0,
+              "end": 33,
+              "quote": "茜雪道：\n“我原是留着的，那会子李奶奶来了，他要尝尝，就给他吃了。"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 405,
+                  "start": 370,
+                  "unit_ref": "pdf:page:140"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          }
+        ],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": {
+        "id": "qianxue",
+        "name": "茜雪",
+        "coverage": "FULL",
+        "voice_profile": {
+          "support": "SPARSE_ABSTAIN",
+          "source_ref": null,
+          "reference_chapters": [],
+          "voice": "当前 M5 机器语料中没有独立茜雪声口画像；不得从材料空缺反推一个确定声口。",
+          "relation_shift": "只允许使用当前世界角色功能约束，不据此制造稳定词癖。",
+          "post80_forbidden": "不得写成全知情报员，也不得用虚构的固定口头禅冒充前八十回声口证据。"
+        },
+        "masking_hook": {
+          "positive_traits": [],
+          "forbidden_text": [
+            "我早知道全部内情",
+            "官里所有人我都认得",
+            "案情从头到尾我都知道"
+          ],
+          "automatic_identity_pass": false,
+          "abstain_reason": "NO_DEDICATED_M5_VOICE_PROFILE"
+        }
+      },
+      "coverage": "SPARSE_ABSTAIN",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "liulaolao",
+      "name": "刘姥姥",
+      "world": {
+        "id": "liulaolao",
+        "name": "刘姥姥",
+        "groups": [
+          "liu_household",
+          "human"
+        ],
+        "baseline": {
+          "location": null,
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "rural_kin_network",
+          "body_state": "older_adult"
+        }
+      },
+      "voice": {
+        "id": "liulaolao",
+        "name": "刘姥姥",
+        "utterance_density": "约77",
+        "reference_chapters": [
+          "6",
+          "39",
+          "40",
+          "41",
+          "42"
+        ],
+        "voice": "土语、本色比拟、以吃用庄稼说事；会看脸色，绝非纯滑稽角色。",
+        "relation_shift": "面对凤姐谨慎，面对贾母敢逗；回乡语境会更自然。",
+        "post80_forbidden": "94救巧姐要让她说自己真能提供的屋、饭、庄稼活，不讲报恩大道理。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "xiangyun",
+      "name": "史湘云",
+      "world": {
+        "id": "xiangyun",
+        "name": "史湘云",
+        "groups": [
+          "human"
+        ],
+        "baseline": {
+          "location": null,
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "OPEN",
+          "household_role": "kin_friend",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "xiangyun",
+        "name": "湘云",
+        "utterance_density": "约142",
+        "reference_chapters": [
+          "31",
+          "32",
+          "37",
+          "49",
+          "50",
+          "76"
+        ],
+        "voice": "快、直、先说后想；笑声多，容易抢话；诗才敏捷但口语不文绉绉。",
+        "relation_shift": "跟宝钗可受照料；跟黛玉能互刺互怜；与翠缕也能长聊。",
+        "post80_forbidden": "97即使进入悲线，也不能突然只剩沉默薄命。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "wei_ruolan",
+      "name": "卫若兰",
+      "world": {
+        "id": "wei_ruolan",
+        "name": "卫若兰",
+        "groups": [
+          "human"
+        ],
+        "baseline": {
+          "location": null,
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "OPEN",
+          "household_role": "young_gentry",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "wei_ruolan",
+        "name": "卫若兰",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "直接对白样本不足；不把转述、他人议论或后八十回方案当作本人的声口依据。",
+        "examples": [],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "SPARSE_ABSTAIN",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "miaoyu",
+      "name": "妙玉",
+      "world": {
+        "id": "miaoyu",
+        "name": "妙玉",
+        "groups": [
+          "religious_network",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "independent_religious_woman",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "miaoyu",
+        "name": "妙玉",
+        "utterance_density": "约10",
+        "reference_chapters": [
+          "41",
+          "76"
+        ],
+        "voice": "话少而有门槛意识；用器、洁净、诗文判断比长篇自述更能表现她。",
+        "relation_shift": "对宝玉冷中有细别；对黛湘诗才有真正兴趣。",
+        "post80_forbidden": "97失自主时也不要突然变成哀诉者；一句不肯、一处动作比解释更有力。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "xichun",
+      "name": "贾惜春",
+      "world": {
+        "id": "xichun",
+        "name": "贾惜春",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNMARRIED",
+          "household_role": "jia_daughter",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "xichun",
+        "name": "惜春",
+        "utterance_density": "约21",
+        "reference_chapters": [
+          "39",
+          "42",
+          "74"
+        ],
+        "voice": "短、硬、把事情推到原则；越被劝越往绝处说；不是柔弱沉默型。",
+        "relation_shift": "对尤氏最能见其断裂；对众姐妹平日仍非全无情。",
+        "post80_forbidden": "97出家前要让她自己作决定，不写成老尼劝化成功。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "yingchun",
+      "name": "贾迎春",
+      "world": {
+        "id": "yingchun",
+        "name": "贾迎春",
+        "groups": [
+          "human"
+        ],
+        "baseline": {
+          "location": "OFFSTAGE_MARRIED_HOUSEHOLD",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "MARRIED_SUN",
+          "household_role": "married_daughter",
+          "body_state": "under_marital_pressure"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "yingchun",
+        "name": "贾迎春",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "少言与在姊妹间的玩笑可并存；沉默不等于没有感受，避免把受压迫写成自觉哲理总结。",
+        "examples": [],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "SPARSE_ABSTAIN",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "yuanchun",
+      "name": "贾元春",
+      "world": {
+        "id": "yuanchun",
+        "name": "贾元春",
+        "groups": [
+          "human"
+        ],
+        "baseline": {
+          "location": "PALACE_OFFSTAGE",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "MARRIED_IMPERIAL",
+          "household_role": "imperial_consort",
+          "body_state": "unknown"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "yuanchun",
+        "name": "贾元春",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "直接对白样本不足；不把转述、他人议论或后八十回方案当作本人的声口依据。",
+        "examples": [],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "SPARSE_ABSTAIN",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "liwan",
+      "name": "李纨",
+      "world": {
+        "id": "liwan",
+        "name": "李纨",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "WIDOWED",
+          "household_role": "widow_mother",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "liwan",
+        "name": "李纨",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "与诗社同辈可以风趣自谦；对贾兰的教养与寡居处境须另查情境，不能只套冷静长辈腔。",
+        "examples": [
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:27:p00134",
+            "text_sha256": "3c379dd07199f4158bfcddbe7422c5513cd9f727cc8cdf31da920814fc11fc49",
+            "span": {
+              "start": 64,
+              "end": 82,
+              "quote": "李纨笑道：“嗳哟哟！这话我就不懂了。"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 723,
+                  "start": 641,
+                  "unit_ref": "pdf:page:393"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          },
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:37:p00028",
+            "text_sha256": "9eb379268e28a50834d1e2d188db8b65a514d005835b8a00915a13ce27f379fd",
+            "span": {
+              "start": 5,
+              "end": 97,
+              "quote": "李纨也来了，进门笑道：“雅的紧！要\n起诗社，我自荐我掌坛。前儿春天我原有这个意思的。我想了\n一想，我又不会作诗，瞎乱些什么，因而也忘了，就没有说得。\n既是三妹妹高兴，我就帮你作兴起来。"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 413,
+                  "start": 315,
+                  "unit_ref": "pdf:page:511"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          }
+        ],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "PROVISIONAL_EXAMPLES",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "jialan",
+      "name": "贾兰",
+      "world": {
+        "id": "jialan",
+        "name": "贾兰",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "son_student",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "jialan",
+        "name": "贾兰",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "少年闲谈和骑射动作可取样；成年仕途声口缺少直接范例，明确弃判。",
+        "examples": [
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:26:p00162",
+            "text_sha256": "87228ef9b71852994707e3081feadfd5f2d3fcd81fe634db8f813c30365ae86d",
+            "span": {
+              "start": 57,
+              "end": 86,
+              "quote": "贾兰笑道：“这会子不念书，闲着作什\n么？所以演习演习骑射。"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 615,
+                  "start": 528,
+                  "unit_ref": "pdf:page:379"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          }
+        ],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "PROVISIONAL_EXAMPLES",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "jiang_yuhan",
+      "name": "蒋玉菡",
+      "world": {
+        "id": "jiang_yuhan",
+        "name": "蒋玉菡",
+        "groups": [
+          "human",
+          "profession_performer"
+        ],
+        "baseline": {
+          "location": null,
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "performer",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "jiang_yuhan",
+        "name": "蒋玉菡",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "席间应酬与私下赠物分别取样，不把戏曲演员的职业身份当作现成对白模板。",
+        "examples": [
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:28:p00195",
+            "text_sha256": "ffe158511bb23ee8b6c25622788d25360022144623d99265dcc590ee7d894ec7",
+            "span": {
+              "start": 4,
+              "end": 19,
+              "quote": "蒋玉菡等都道：“有理，有\n理。"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 742,
+                  "start": 669,
+                  "unit_ref": "pdf:page:410"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          },
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:28:p00233",
+            "text_sha256": "7ee51f0bd5338b75ba0151eac62f522a9985686f929ef3f48a32bc9f32590a47",
+            "span": {
+              "start": 11,
+              "end": 27,
+              "quote": "蒋玉菡怔了，说道：“何曾有宝贝？"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 339,
+                  "start": 170,
+                  "unit_ref": "pdf:page:414"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          }
+        ],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "PROVISIONAL_EXAMPLES",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "zhen_baoyu",
+      "name": "甄宝玉",
+      "world": {
+        "id": "zhen_baoyu",
+        "name": "甄宝玉",
+        "groups": [
+          "human"
+        ],
+        "baseline": {
+          "location": null,
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "zhen_household_member",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "zhen_baoyu",
+        "name": "甄宝玉",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "直接对白样本不足；不把转述、他人议论或后八十回方案当作本人的声口依据。",
+        "examples": [],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "SPARSE_ABSTAIN",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "jiamu",
+      "name": "贾母",
+      "world": {
+        "id": "jiamu",
+        "name": "贾母",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "WIDOWED",
+          "household_role": "senior_matriarch",
+          "body_state": "elderly"
+        }
+      },
+      "voice": {
+        "id": "jiamu",
+        "name": "贾母",
+        "utterance_density": "约281",
+        "reference_chapters": [
+          "29",
+          "40",
+          "43",
+          "50",
+          "54",
+          "75"
+        ],
+        "voice": "口语老辣，能突然打断、能讲旧事、能笑骂；权威常通过一句日常话落地。",
+        "relation_shift": "对孙辈宽、对媳妇有分寸、对下人熟悉；并非每句话都是正式裁决。",
+        "post80_forbidden": "87主婚、94准巧姐暂居时，少用宣判式台词，多用家常一句定局。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "wangfuren",
+      "name": "王夫人",
+      "world": {
+        "id": "wangfuren",
+        "name": "王夫人",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "MARRIED",
+          "household_role": "senior_household_woman",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "wangfuren",
+        "name": "王夫人",
+        "utterance_density": "约123",
+        "reference_chapters": [
+          "11",
+          "28",
+          "36",
+          "40",
+          "74",
+          "77"
+        ],
+        "voice": "表面慢、重体统；情绪一上来会重复追问、直接处理；常受旁人消息影响。",
+        "relation_shift": "对宝玉爱而管；对丫鬟有身份盲区；对凤姐等依赖又保留长辈权。",
+        "post80_forbidden": "84、87、89不能写成纯制度代表。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": null,
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "xue_yima",
+      "name": "薛姨妈",
+      "world": {
+        "id": "xue_yima",
+        "name": "薛姨妈",
+        "groups": [
+          "xue_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "WIDOWED",
+          "household_role": "xue_matriarch",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "xue_yima",
+        "name": "薛姨妈",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "家务指使与亲人交谈分别标注；慈和口气不证明她掌握任何婚配计划。",
+        "examples": [
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:7:p00073",
+            "text_sha256": "0861384459a18ce9cb66e1bcff30b8e70f5a40bc5525c06dc3ce7f96aade52d7",
+            "span": {
+              "start": 0,
+              "end": 18,
+              "quote": "薛姨妈道：“把那匣子里的\n花儿拿来。"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 303,
+                  "start": 152,
+                  "unit_ref": "pdf:page:115"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          },
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:7:p00075",
+            "text_sha256": "5e8f78f19484a4c68cd0f2d74b891125ef83919835db464c07b2302f5283728f",
+            "span": {
+              "start": 24,
+              "end": 41,
+              "quote": "薛姨妈道：“姨妈不知道，宝丫头古怪"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 363,
+                  "start": 322,
+                  "unit_ref": "pdf:page:115"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          }
+        ],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "PROVISIONAL_EXAMPLES",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "jialian",
+      "name": "贾琏",
+      "world": {
+        "id": "jialian",
+        "name": "贾琏",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "MARRIED_FENGJIE",
+          "household_role": "household_male_manager",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": null,
+      "supplement": {
+        "id": "jialian",
+        "name": "贾琏",
+        "scope": "RESEARCH_EDITING_CARD",
+        "voice_notes": "外务应酬、夫妻周旋和对下人的吩咐分别取样；不能以单句客套推定全部声口。",
+        "examples": [
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:16:p00069",
+            "text_sha256": "c6ad0458bab72415c3cf53bf5dc37213470e24faedeb21badaf591382d63e37a",
+            "span": {
+              "start": 11,
+              "end": 27,
+              "quote": "贾琏笑道：“岂敢岂敢，多承多承！"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 222,
+                  "start": 194,
+                  "unit_ref": "pdf:page:222"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          },
+          {
+            "dataset_ref": "corpus:front80:v1-candidate",
+            "segment_id": "hlm80:chapter:16:p00086",
+            "text_sha256": "3c7cdb685ef11cf866dc9454f0745c9ebcd52170a166a4c43c01c44ce228af0e",
+            "span": {
+              "start": 60,
+              "end": 105,
+              "quote": "贾琏笑道：“正是呢，方才我见姨妈去，不防和一个年轻的小\n媳妇子撞了个对面，生的好齐整模样。"
+            },
+            "locator": {
+              "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+              "spans": [
+                {
+                  "end": 172,
+                  "start": 67,
+                  "unit_ref": "pdf:page:223"
+                }
+              ],
+              "transforms": []
+            },
+            "attribution": "PROVISIONAL_EDITOR_LOCATED",
+            "human_audit": "PENDING"
+          }
+        ],
+        "abstain_when": "缺少同对象、同压力情境范例时停止判定；不填虚构的口吻分数。",
+        "authority_effect": "NONE"
+      },
+      "knowledge": null,
+      "coverage": "PROVISIONAL_EXAMPLES",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    },
+    {
+      "id": "zijuan",
+      "name": "紫鹃",
+      "world": {
+        "id": "zijuan",
+        "name": "紫鹃",
+        "groups": [
+          "jia_household",
+          "human"
+        ],
+        "baseline": {
+          "location": "S02",
+          "life_state": "ACTIVE",
+          "legal_status": "NOT_AT_ISSUE",
+          "marital_status": "UNRESOLVED",
+          "household_role": "daiyu_attendant",
+          "body_state": "ordinary"
+        }
+      },
+      "voice": {
+        "id": "zijuan",
+        "name": "紫鹃",
+        "utterance_density": "约43",
+        "reference_chapters": [
+          "26",
+          "30",
+          "35",
+          "57",
+          "70",
+          "76"
+        ],
+        "voice": "少说时很实；一旦为黛玉打算，会非常主动甚至冒险试探。",
+        "relation_shift": "对黛玉是贴身人，对宝玉能直戳；对长辈仍守身份。",
+        "post80_forbidden": "85—86不能只做护理动作，应有判断、试探、急话和自责。",
+        "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+      },
+      "supplement": null,
+      "knowledge": {
+        "id": "zijuan",
+        "name": "紫鹃",
+        "coverage": "FULL",
+        "voice_profile": {
+          "support": "SOURCE_BACKED",
+          "source_ref": "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a",
+          "reference_chapters": [
+            "26",
+            "30",
+            "35",
+            "57",
+            "70",
+            "76"
+          ],
+          "voice": "少说时很实；一旦为黛玉打算，会非常主动甚至冒险试探。",
+          "relation_shift": "对黛玉是贴身人，对宝玉能直戳；对长辈仍守身份。",
+          "post80_forbidden": "85—86不能只做护理动作，应有判断、试探、急话和自责。"
+        },
+        "masking_hook": {
+          "positive_traits": [
+            "PRACTICAL_SPEECH",
+            "ACTIVE_TEST_FOR_DAIYU",
+            "DIRECT_TO_BAOYU"
+          ],
+          "forbidden_text": [],
+          "automatic_identity_pass": false
+        },
+        "world_binding_optional": false
+      },
+      "coverage": "REGISTERED_VOICE",
+      "literary_verification": "PENDING_INDEPENDENT_READING",
+      "authority_effect": "NONE"
+    }
+  ],
+  "hooks": [
+    {
+      "scene": "ch86_last_night",
+      "character": "daiyu",
+      "resolved": true,
+      "coverage": "REGISTERED_VOICE"
+    },
+    {
+      "scene": "ch86_last_night",
+      "character": "baoyu",
+      "resolved": true,
+      "coverage": "REGISTERED_VOICE"
+    },
+    {
+      "scene": "ch86_last_night",
+      "character": "zijuan",
+      "resolved": true,
+      "coverage": "REGISTERED_VOICE"
+    },
+    {
+      "scene": "ch89_confiscation_message",
+      "character": "baochai",
+      "resolved": true,
+      "coverage": "REGISTERED_VOICE"
+    },
+    {
+      "scene": "ch89_confiscation_message",
+      "character": "xiaohong",
+      "resolved": true,
+      "coverage": "REGISTERED_VOICE"
+    },
+    {
+      "scene": "ch89_confiscation_message",
+      "character": "qianxue",
+      "resolved": true,
+      "coverage": "SPARSE_ABSTAIN"
+    },
+    {
+      "scene": "ch92_delivery_gate",
+      "character": "baochai",
+      "resolved": true,
+      "coverage": "REGISTERED_VOICE"
+    },
+    {
+      "scene": "ch92_delivery_gate",
+      "character": "xiaohong",
+      "resolved": true,
+      "coverage": "REGISTERED_VOICE"
+    },
+    {
+      "scene": "ch92_delivery_gate",
+      "character": "qianxue",
+      "resolved": true,
+      "coverage": "SPARSE_ABSTAIN"
+    },
+    {
+      "scene": "ch92_delivery_gate",
+      "character": "baoyu",
+      "resolved": true,
+      "coverage": "REGISTERED_VOICE"
+    }
+  ],
+  "status": "PENDING",
+  "authority_effect": "NONE"
+}

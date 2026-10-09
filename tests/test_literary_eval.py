@@ -49,15 +49,17 @@ def test_changed_terminal_becomes_replacement_case_not_automatic_failure():
     assert "HUMAN_BLIND_READ" in result["next_gates"]
 
 
-def test_explicit_drift_is_rejected_before_blind_read():
+def test_explicit_drift_is_flagged_for_semantic_reading():
     result = evaluate_literary_candidate(
         root(),
         "plock:ch86:cold-medicine",
         text("ch86_blocked.txt"),
         "C",
     )
-    assert result["machine_status"] == "REJECT_BEFORE_BLIND_READ"
-    assert {x["id"] for x in result["blockers"]} >= {
+    assert result["machine_status"] in {"READY_FOR_BLIND_READ", "REPLACEMENT_CASE"}
+    assert result["semantic_status"] == "NOT_EVALUATED"
+    assert result["blockers"] == []
+    assert {x["id"] for x in result["lexical_flags"]} >= {
         "explicit-death-poem",
         "explicit-philosophical-closure",
     }

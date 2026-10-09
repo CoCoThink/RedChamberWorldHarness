@@ -1,0 +1,221 @@
+{
+  "type": "object",
+  "required": [
+    "schema_version",
+    "id",
+    "report_kind",
+    "blind_token",
+    "candidate_sha256",
+    "context_sha256",
+    "protocol",
+    "packet",
+    "reviewer",
+    "raw_review",
+    "checks",
+    "authority_effect"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "report_kind": {
+      "const": "REVIEW_OPINION"
+    },
+    "blind_token": {
+      "type": "string",
+      "minLength": 1
+    },
+    "candidate_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "context_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "protocol": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "packet": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "reviewer": {
+      "type": "object",
+      "required": [
+        "principal_id",
+        "source_id",
+        "kind",
+        "independent_of_authors",
+        "mapping_unseen_during_review"
+      ],
+      "properties": {
+        "principal_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "const": "INDEPENDENT_HUMAN"
+        },
+        "independent_of_authors": {
+          "const": true
+        },
+        "mapping_unseen_during_review": {
+          "const": true
+        }
+      },
+      "additionalProperties": false
+    },
+    "raw_review": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "checks": {
+      "type": "object",
+      "required": [
+        "PROVENANCE",
+        "ROLE",
+        "MODALITY",
+        "TARGET",
+        "PLACEMENT",
+        "IMPLEMENTATION",
+        "HUMAN_PLOCK",
+        "BLIND_READ"
+      ],
+      "properties": {
+        "PROVENANCE": {
+          "$ref": "#/$defs/check"
+        },
+        "ROLE": {
+          "$ref": "#/$defs/check"
+        },
+        "MODALITY": {
+          "$ref": "#/$defs/check"
+        },
+        "TARGET": {
+          "$ref": "#/$defs/check"
+        },
+        "PLACEMENT": {
+          "$ref": "#/$defs/check"
+        },
+        "IMPLEMENTATION": {
+          "$ref": "#/$defs/check"
+        },
+        "HUMAN_PLOCK": {
+          "$ref": "#/$defs/check"
+        },
+        "BLIND_READ": {
+          "$ref": "#/$defs/check"
+        }
+      },
+      "additionalProperties": false
+    },
+    "authority_effect": {
+      "const": "NONE"
+    }
+  },
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$defs": {
+    "check": {
+      "type": "object",
+      "required": [
+        "status",
+        "reason",
+        "evidence_spans"
+      ],
+      "properties": {
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "REPLACEMENT_ACCEPTED"
+          ]
+        },
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "evidence_spans": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "required": [
+              "start",
+              "end",
+              "quote"
+            ],
+            "properties": {
+              "start": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "end": {
+                "type": "integer",
+                "minimum": 1
+              },
+              "quote": {
+                "type": "string",
+                "minLength": 1
+              }
+            },
+            "additionalProperties": false
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

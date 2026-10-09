@@ -8,9 +8,9 @@
 python -m pip install -e '.[dev]'
 ```
 
-PDF 抽取固定使用 `PyMuPDF==1.27.2.3`；规则及依赖声明位于 `requirements/extraction.lock.json`。manifest 记录实际 Python 实现／完整版本、抽取器版本、代码摘要、依赖锁摘要和配置。重建要求与记录的环境和代码一致；环境不同会报告失效，应使用对应环境验证或建立新的 extraction，不能覆盖旧版本。
+PDF 参考构建依赖为 `PyMuPDF==1.27.2.3`；规则及依赖声明位于 `requirements/extraction.lock.json`。manifest 记录实际 Python 实现／完整版本、抽取器版本、代码摘要、依赖锁摘要和配置。重建核验原件、配方、输出原字节及节点映射，环境与代码差异记录为 `toolchain_diff`，内容相同可通过；配置或内容改变仍失败。旧 manifest 和旧报告的原字节不因环境变动而改写。
 
-本次正式来源抽取使用 **CPython 3.12.13**，CI 固定到同一版本。可用 `uv venv --python 3.12.13 .venv` 建立环境，再激活并安装上述依赖。本次工作环境位于 `.rcwh-cache/extraction-env/`；其他 Python 版本可以构建新配方，但不能替代既有配方的重建环境。
+支持 CPython `>=3.12,<3.13`，参考构建使用 **3.12.13**，CI 同时验证 **3.12.3**。可用 `uv venv --python 3.12.13 .venv` 建立环境，再激活并安装上述依赖。其他 Python 范围尚未声明支持；同一支持范围内按实际重建内容判断一致性。
 
 原字符与 CRLF／LF 保留；不自动进行 Unicode 归一化、繁简转换、去标点、删空白或 OCR。HTML／EPUB 解码实体、将 `<br>` 转为 LF，跳过 head、script、style、template；每段保留 DOM 路径及原始字符范围。该抽取层不判断哪段是正文或脂批，也不把网页导航自动解释为正文。
 
@@ -33,7 +33,7 @@ rcwh corpus verify <manifest-asset-id> --require-tracked
 
 TEXT／HTML 的单位名分别为 `text:1`、`html:1`；EPUB 使用 `epub:<item-href>`，例如 `epub:OEBPS/Text/part0008.xhtml`。每单位保存原文、文本摘要、输入资产引用和覆盖全文的节点映射。
 
-验证从本地 carrier 实际重建并逐字节比较，检查配方身份、输入／输出摘要、派生关系、单元次序、节点范围及工具失效。即使同时改写 JSON 内容和 catalog 摘要，结果与原件重建不一致仍失败。抽取事务中断时使用 `rcwh assets recover` 恢复；读取未完成目录会失败。
+验证从本地 carrier 实际重建并逐字节比较，检查配方身份、输入／输出摘要、派生关系、单元次序和节点范围，另报当前执行环境。即使同时改写 JSON 内容和 catalog 摘要，结果与原件重建不一致仍失败。抽取事务中断时使用 `rcwh assets recover` 恢复；读取未完成目录会失败。
 
 ## 提议定位，不自动修改 Source
 
@@ -82,7 +82,7 @@ rcwh self-contained check --profile source-locators
 
 新接收网页和论文同时绑定 `carrier_capture`，指向已登记的 HTTP 采集记录；记录请求／最终 URL、获取时间、响应类型及可取得的 ETag／Last-Modified，并绑定 carrier ID／SHA。来源检查核对采集记录、载体关系及实际摘要；安全验证页不能当作原文。
 
-批量迁移工具 `tools/migrate_source_closure.py --plan PLAN.json` 默认只检查与提议；加 `--apply --audit-output artifacts/migration/NEW-AUDIT.json` 后注册成功报告，事务写入 Source 和审计。计划必须覆盖全部当前 roots，匹配原记录摘要；更改 witness、tier、引文或下游证据关系会被拒绝。未匹配项仅接收载体，继续 UNVERIFIED。迁移不接受任意跳字或文本替换；既有迁移保存于[来源迁移审计](../../artifacts/migration/source-closure-20261009/audit.json)，独立复核状态用 `rcwh sources audit` 查询。
+批量迁移工具 `tools/rebind_source_carriers.py --plan PLAN.json` 默认只检查与提议；加 `--apply --audit-output artifacts/migration/NEW-AUDIT.json` 后注册成功报告，事务写入 Source 和审计。计划必须覆盖全部当前 roots，匹配原记录摘要；更改 witness、tier、引文或下游证据关系会被拒绝。未匹配项仅接收载体，继续 UNVERIFIED。迁移不接受任意跳字或文本替换；既有迁移保存于[来源迁移审计](../../artifacts/migration/source-closure-20261009/audit.json)，独立复核状态用 `rcwh sources audit` 查询。
 
 `--require-tracked` 同时检查 Asset、当前 Source 文件、使用中的抽取配方和 schema／依赖锁。新输出和元数据需审查后纳入 Git；命令不自动 stage 或 commit。提取成功也不等于 Corpus v1 完成或证据解释已通过。
 

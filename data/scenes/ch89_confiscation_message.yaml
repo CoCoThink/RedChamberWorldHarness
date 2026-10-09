@@ -7,22 +7,29 @@ participants:
   - qianxue
 required_beats:
   - id: official_message_arrives
+    description: 官面消息实际传到在场人物，须写清谁听到何种有限消息。
     any_text: [官, 查, 封, 点]
   - id: meaning_remains_partial
+    description: 得到消息仍不能掌握最终处置范围，不把传言写成官面定论。
     any_text: [不知道, 未知, 只说, 暂]
 forbidden_beats:
   - id: universal_legal_exposition
+    description: 在场人物被写成掌握整个案情及最终法律处置，而没有获得这种知识的事件。
     any_text: [全部案情都已定准, 官里从头到尾的意思]
 p_locks: []
 historical_adapters:
   - confiscation
-exit_state: []
+exit_state:
+  - equals: character.xiaohong.knowledge.official_confiscation_message
+    value: knows
+  - equals: character.baochai.knowledge.official_confiscation_message
+    value: knows
 knowledge_checkpoint: K89-OFFICIAL-MESSAGE-HEARD
 knowledge_guards:
   - id: baochai_cannot_know_exact_official_scope
     actor: baochai
     fact: official_confiscation_exact_scope
-    modes: [DIALOGUE, ACTION]
+    modes: [DIALOGUE, ACTION, THOUGHT]
     allowed_status: [knows]
     any_text:
       - "宝钗已把官里最终如何处置全都弄清"
@@ -30,7 +37,7 @@ knowledge_guards:
   - id: xiaohong_cannot_be_universal_official_source
     actor: xiaohong
     fact: official_confiscation_exact_scope
-    modes: [DIALOGUE, ACTION]
+    modes: [DIALOGUE, ACTION, THOUGHT]
     allowed_status: [knows]
     any_text:
       - "小红早把官里的全部底细打听明白"
@@ -38,7 +45,7 @@ knowledge_guards:
   - id: qianxue_cannot_know_exact_official_scope
     actor: qianxue
     fact: official_confiscation_exact_scope
-    modes: [DIALOGUE, ACTION]
+    modes: [DIALOGUE, ACTION, THOUGHT]
     allowed_status: [knows]
     any_text:
       - "茜雪早知道官里最终如何处置"

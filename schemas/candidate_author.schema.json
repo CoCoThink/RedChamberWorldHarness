@@ -1,0 +1,60 @@
+{
+  "type": "object",
+  "required": [
+    "principal_id",
+    "source_id",
+    "kind"
+  ],
+  "properties": {
+    "principal_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "source_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "HUMAN",
+        "MODEL"
+      ]
+    },
+    "run": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "kind": {
+            "const": "MODEL"
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "run"
+        ]
+      }
+    }
+  ],
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

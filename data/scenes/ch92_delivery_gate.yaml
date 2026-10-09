@@ -8,23 +8,30 @@ participants:
   - baoyu
 required_beats:
   - id: ask_rule_before_action
+    description: 小红先在门外问明经手人与送物规则，再安排物品送入；不能先天全知。
     any_text: [问, 经手, 送, 门]
   - id: limited_information
+    description: 送物的实际可行规则不等于完整案情，人物仍保留不知道的部分。
     any_text: [暂候, 不知道, 只晓得, 只问]
 forbidden_beats:
   - id: whole_case_exposition
+    description: 人物通过送物接口被写成知道全案及官面最终判断。
     any_text: [全案已经清楚, 案情从头到尾]
 p_locks:
   - procedure_density
 historical_adapters:
   - detention
-exit_state: []
+exit_state:
+  - equals: character.xiaohong.knowledge.detention_delivery_rules
+    value: knows
+  - equals: character.qianxue.knowledge.detention_delivery_rules
+    value: knows
 knowledge_checkpoint: ENTRY
 knowledge_guards:
   - id: xiaohong_must_learn_delivery_rules_by_event
     actor: xiaohong
     fact: detention_delivery_rules
-    modes: [DIALOGUE, ACTION]
+    modes: [DIALOGUE, ACTION, THOUGHT]
     allowed_status: [knows]
     any_text:
       - "小红早知道送物的规矩"
@@ -32,7 +39,7 @@ knowledge_guards:
   - id: xiaohong_cannot_know_whole_case
     actor: xiaohong
     fact: baoyu_detention_whole_case
-    modes: [DIALOGUE, ACTION]
+    modes: [DIALOGUE, ACTION, THOUGHT]
     allowed_status: [knows]
     any_text:
       - "小红已把宝玉的全案打听明白"
@@ -40,7 +47,7 @@ knowledge_guards:
   - id: baochai_cannot_know_whole_case
     actor: baochai
     fact: baoyu_detention_whole_case
-    modes: [DIALOGUE, ACTION]
+    modes: [DIALOGUE, ACTION, THOUGHT]
     allowed_status: [knows]
     any_text:
       - "宝钗已知道官里对宝玉全案的判断"
@@ -48,7 +55,7 @@ knowledge_guards:
   - id: qianxue_cannot_know_whole_case
     actor: qianxue
     fact: baoyu_detention_whole_case
-    modes: [DIALOGUE, ACTION]
+    modes: [DIALOGUE, ACTION, THOUGHT]
     allowed_status: [knows]
     any_text:
       - "茜雪已知道宝玉全案的底细"

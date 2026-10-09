@@ -1,5 +1,8 @@
 id: ch86_last_night
 chapter: 86
+entry_state:
+  - equals: character.daiyu.resources.physical_strength
+    value: critical
 preconditions:
   - equals: character.daiyu.resources.physical_strength
     value: critical
@@ -13,29 +16,35 @@ required_objects:
   - medicine_bowl_86
 required_beats:
   - id: medicine_not_finished
+    description: 药仍未饮尽，须由人物拿取、递送、搁置或观察药碗的实际行动呈现。
     any_text:
       - 药
       - 药碗
   - id: baoyu_mundane_reaction
+    description: 宝玉来迟后仍以照常温药理解眼前处境，须有实际行动或对白。
     any_text:
       - 再温一温
       - 温药
   - id: ordinary_domestic_labor_continues
+    description: 人死前后仍有添水、挑灯、移炉等具体家务，不能只有物件名词。
     any_text:
       - 灯
       - 热水
       - 炉
 forbidden_beats:
   - id: complete_death_poem
+    description: 黛玉在此场景实际完成作为临终总结的诗稿；否定、引用或未成稿不算。
     any_text:
       - 绝命诗
       - 绝笔诗
   - id: philosophical_last_words
+    description: 临终黛玉以对白或内心总结参透人生、彻悟生死；叙述者比喻或人物猜测需另分。
     any_text:
       - 我终于明白
       - 人生不过
       - 看破红尘
   - id: supernatural_resolution
+    description: 神灵、魂魄等在现实事件中干预并化解病情；幻觉、梦境、比喻或否定不算。
     any_text:
       - 神迹
       - 显灵救活
@@ -72,7 +81,7 @@ knowledge_guards:
   - id: baoyu_no_exact_death_time_before_arrival
     actor: baoyu
     fact: daiyu_death_exact_moment
-    modes: [DIALOGUE, ACTION]
+    modes: [DIALOGUE, ACTION, THOUGHT]
     allowed_status: [knows]
     any_text:
       - "我早知道你就是这时候咽气"
@@ -80,7 +89,7 @@ knowledge_guards:
   - id: zijuan_no_exact_death_time_before_event
     actor: zijuan
     fact: daiyu_death_exact_moment
-    modes: [DIALOGUE, ACTION]
+    modes: [DIALOGUE, ACTION, THOUGHT]
     allowed_status: [knows]
     any_text:
       - "我早知道姑娘就是这一刻咽气"

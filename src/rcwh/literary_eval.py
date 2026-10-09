@@ -169,8 +169,6 @@ def evaluate_literary_candidate(
 
     if regression["overall"] != "PASS":
         machine_status = "INFRASTRUCTURE_BLOCKED"
-    elif blockers:
-        machine_status = "REJECT_BEFORE_BLIND_READ"
     elif anchor_losses:
         machine_status = "REPLACEMENT_CASE"
     else:
@@ -199,7 +197,10 @@ def evaluate_literary_candidate(
         "machine_status": machine_status,
         "automatic_literary_pass": False,
         "promotion_eligible": False,
-        "blockers": blockers,
+        "blockers": [],
+        "lexical_flags": blockers,
+        "report_kind": "LINT_AND_LITERAL_CHECK",
+        "semantic_status": "NOT_EVALUATED",
         "protected_anchor_results": anchor_results,
         "protected_anchor_losses": anchor_losses,
         "feature_signal_results": signal_results,
@@ -217,8 +218,8 @@ def evaluate_literary_candidate(
         ],
         "next_gates": next_gates,
         "note": (
-            "Machine signals can detect explicit drift, likely loss, explicit exposition, "
-            "ambiguity closure, and review risks, but they never prove literary adequacy. "
+            "Lexical signals flag possible drift, loss or exposition for reading. "
+            "Literal checks protect exact wording; neither proves literary adequacy. "
             "A candidate cannot be promoted without human P-Lock review and blind read."
         ),
     }
@@ -237,6 +238,9 @@ def format_literary_evaluation(payload: dict[str, Any]) -> str:
         "",
         "BLOCKERS",
     ]
+    if payload.get("lexical_flags"):
+        out.append("LEXICAL READING FLAGS (NOT GATES)")
+        out.extend(f"- {item['id']}: {item['reason']}" for item in payload["lexical_flags"])
     if payload["blockers"]:
         for item in payload["blockers"]:
             out.append(f"- {item['id']}: hits={item['hits']} — {item['reason']}")

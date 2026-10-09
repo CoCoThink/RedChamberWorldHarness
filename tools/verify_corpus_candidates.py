@@ -28,13 +28,13 @@ datasets=ProjectState.from_repo(root).owner("closure")["datasets"]
 if not datasets: raise RuntimeError("No declared corpus datasets")
 result={}
 for ref in datasets:
-    binding=corpus.registry()[ref]
-    stored_manifest, stored_products=corpus.load(ref, rebuild=False)
-    manifest, products=corpus.compile(stored_manifest["build_config"]["path"])
-    if manifest!=stored_manifest or products!=stored_products:
-        raise RuntimeError("Stored corpus differs from independent rebuild: "+ref)
+    # The public loader verifies the historical manifest and input bindings,
+    # then compares every rebuilt product byte. Builder metadata is reported
+    # separately so source-code or environment changes cannot mimic drift.
+    manifest, products=corpus.load(ref, rebuild=True)
     result[ref]={"manifest_sha256":digest(canonical_bytes(manifest)),
-                 "products":{name:digest(raw) for name,raw in sorted(products.items())}}
+                 "products":{name:digest(raw) for name,raw in sorted(products.items())},
+                 "rebuild":corpus.rebuild_reports[ref]}
 print(json.dumps(result,ensure_ascii=False,sort_keys=True))
 '''
 

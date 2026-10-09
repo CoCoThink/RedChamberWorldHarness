@@ -15,7 +15,7 @@ from ..assets import AssetCatalog, AssetError
 from ..assets.paths import repository_path
 from ..assets.transactions import digest
 from .adapters import MarkupText, zip_path
-from .extraction import ExtractionRepository, canonical_bytes, code_digest, validate
+from .extraction import ExtractionRepository, canonical_bytes, code_digest, toolchain_diff, validate
 
 
 CHINESE = {char: value for value, char in enumerate("零一二三四五六七八九")}
@@ -82,6 +82,7 @@ class CorpusInputs:
     def __init__(self, catalog: AssetCatalog):
         self.catalog = catalog
         self.root = catalog.root
+        self.extractions = ExtractionRepository(catalog)
 
     def config(self, relative: str) -> dict:
         config = json.loads(repository_path(self.root, relative).read_bytes())
@@ -102,7 +103,7 @@ class CorpusInputs:
         manifest_asset = self.catalog.resolve(record["extraction_ref"])
         if asset.sha256 != record["sha256"] or manifest_asset.sha256 != record["extraction_sha256"]:
             raise AssetError("CORPUS_INPUT_HASH_MISMATCH")
-        manifest, units = ExtractionRepository(self.catalog).load(record["extraction_ref"], rebuild=True)
+        manifest, units = self.extractions.load(record["extraction_ref"], rebuild=True)
         if manifest["input"] != {"asset_ref": asset.id, "sha256": asset.sha256} or manifest["config"]["format"] != format_name:
             raise AssetError("CORPUS_INPUT_EXTRACTION_MISMATCH")
         if "pdf_pages" in manifest["config"]:
@@ -242,7 +243,9 @@ class CorpusInputs:
         if report.sha256 != binding["sha256"] or self.catalog.assets[report.id]["kind"] != "REVIEW_RECORD":
             raise AssetError("INVALID_INPUT_INVENTORY_BINDING")
         inventory = self.inventory(relative)
-        if report.path.read_bytes() != canonical_bytes(inventory):
+        registered = json.loads(report.path.read_bytes())
+        if ({key: value for key, value in registered.items() if key != "inventory_code_sha256"}
+                != {key: value for key, value in inventory.items() if key != "inventory_code_sha256"}):
             raise AssetError("STALE_INPUT_INVENTORY: rebuild the inventory and review a new immutable record")
         findings = self.catalog.validate(require_tracked=require_tracked)
         if require_tracked:
@@ -256,6 +259,11 @@ class CorpusInputs:
             "status": "FAIL" if findings else "PASS", "scope": "FIXED_INPUT_SELECTION_AND_EXTRACTION_REBUILD",
             "input_set_id": config["id"], "findings": findings,
             "inventory_report": binding, "chapters_per_witness": len(config["expected_chapters"]),
+            "toolchain_diff": toolchain_diff(
+                {"inventory_code_sha256": registered.get("inventory_code_sha256")},
+                {"inventory_code_sha256": inventory["inventory_code_sha256"]},
+            ),
+            "extraction_rebuilds": [self.extractions.rebuild_reports[config[k]["extraction_ref"]] for k in ("pdf", "epub")],
             "main_asset_ref": config["pdf"]["asset_ref"], "comparison_asset_ref": config["epub"]["asset_ref"],
             "different_chapter_views": sum(not c["equal"] for c in inventory["comparison"]),
             "epub_font_patch_occurrences": inventory["witnesses"]["epub"]["font_patch_occurrences"],

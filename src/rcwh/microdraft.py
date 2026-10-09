@@ -54,7 +54,7 @@ class ControlledMicrodraftRuntime:
         if forbidden_hits: blockers.append({"kind":"DRAFT_SPEC_FORBIDDEN_TERM","hits":forbidden_hits})
         metadata_hits=[x for x in self.data["forbidden_metadata_terms"] if x in text]
         if metadata_hits: blockers.append({"kind":"BLIND_METADATA_CONTAMINATION","hits":metadata_hits})
-        literary=suite.evaluate_prose(text,token)
+        literary=suite.legacy_prose_screen(text,token)
         if literary["status"]=="REJECT_BEFORE_BLIND_READ":
             blockers.append({"kind":"LITERARY_SUITE_BLOCKER","blockers":literary["blockers"]})
         flags.extend(literary.get("human_flags",[]))

@@ -76,7 +76,7 @@ class CrossRouteRevisionAblationRuntime:
         if forbidden:
             blockers.append({"kind":"FORBIDDEN_TERM","hits":forbidden})
 
-        literary=suite.evaluate_prose(revised,spec["revised_token"])
+        literary=suite.legacy_prose_screen(revised,spec["revised_token"])
         if literary["status"]=="REJECT_BEFORE_BLIND_READ":
             blockers.append({"kind":"LITERARY_SUITE_REJECT","details":literary["blockers"]})
 

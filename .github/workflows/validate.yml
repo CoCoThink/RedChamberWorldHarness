@@ -7,13 +7,16 @@ on:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ['3.12.3', '3.12.13']
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
-          python-version: '3.12.13'
+          python-version: ${{ matrix.python-version }}
       - run: python -m pip install -e '.[dev]'
       - run: rcwh validate
       - name: Verify physical assets and immutable versions
@@ -55,7 +58,7 @@ jobs:
           rcwh corpus verify corpus:front80:pilot:v1 --require-tracked --rebuild
           rcwh corpus verify corpus:front80:v1-candidate --require-tracked --rebuild
           rcwh corpus query corpus:front80:v1-candidate --chapter 27 --keyword 红玉 --limit 2
-          rcwh literary-inputs package data/writing/packages/ch89-research-v3.json --require-tracked
+          rcwh literary-inputs package data/writing/packages/ch89-research-v4.json --require-tracked
           rcwh paired-review summary
           rcwh project acceptance --require-tracked
       - name: Smoke domain runtimes
@@ -101,7 +104,13 @@ jobs:
           rcwh prewrite step 40 --chapter 89
           rcwh prewrite contract 100
           rcwh prewrite stage 89
-      - run: rcwh evaluate data/scenes/ch86_last_night.yaml examples/ch86_candidate_stub.txt
+      - name: Verify unreviewed scene remains pending semantic evidence
+        run: |
+          set +e
+          rcwh evaluate data/scenes/ch86_last_night.yaml examples/ch86_candidate_stub.txt
+          code=$?
+          set -e
+          test "$code" -eq 2
       - run: rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_preserved.txt
       - name: Verify replacement-case exit code
         run: |
@@ -110,13 +119,13 @@ jobs:
           code=$?
           set -e
           test "$code" -eq 2
-      - name: Verify explicit-drift blocker exit code
+      - name: Verify lexical flags retain the separate literal-replacement status
         run: |
           set +e
           rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_blocked.txt
           code=$?
           set -e
-          test "$code" -eq 1
+          test "$code" -eq 2
       - run: rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_A_stable_full.md
       - run: rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_B_light_full.md
       - run: rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_C_strong_full.md
@@ -125,5 +134,21 @@ jobs:
       - run: rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_B_full.md
       - run: rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_C_full.md
       - run: rcwh competition comp:43-0:ch89:pressure-test
-      - run: rcwh promotion promotion:ch86:b:v1-5-candidate
+      - name: Verify historical promotion remains pending independent reviews
+        run: |
+          set +e
+          rcwh promotion promotion:ch86:b:v1-5-candidate --json > /tmp/promotion.json
+          code=$?
+          set -e
+          test "$code" -eq 2
+          python -c 'import json; p=json.load(open("/tmp/promotion.json")); assert p["overall"] == "PENDING"; assert p["pending_checks"] == ["COMPETITION_ELIGIBILITY"]; assert not p["findings"]'
+      - name: Replay archived internal semantic challenges
+        run: |
+          python - <<'PY'
+          import json, subprocess
+          for name in ("keyword-pile", "paraphrased-last-words", "supernatural-cure"):
+              p = subprocess.run(["rcwh", "evaluate", "data/scenes/ch86_last_night.yaml", f"examples/evaluation/ch86-{name}.txt"], capture_output=True, text=True)
+              report = json.loads(p.stdout)
+              assert p.returncode == 1 and report["overall"] == "FAIL", (name, report)
+          PY
       - run: pytest -q

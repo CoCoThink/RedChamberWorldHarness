@@ -85,7 +85,7 @@ def verify(root: Path) -> dict:
             ("corpus-inputs", ["corpus", "inputs", "data/corpus/inputs/front80-pilot-v1.json", "--require-tracked"], 0),
             ("corpus-pilot", ["corpus", "verify", "corpus:front80:pilot:v1", "--require-tracked", "--rebuild"], 0),
             ("corpus-front80-candidate", ["corpus", "verify", "corpus:front80:v1-candidate", "--require-tracked", "--rebuild"], 0),
-            ("frozen-writing-inputs", ["literary-inputs", "package", "data/writing/packages/ch89-research-v3.json", "--require-tracked"], 0),
+            ("frozen-writing-inputs", ["literary-inputs", "package", "data/writing/packages/ch89-research-v4.json", "--require-tracked"], 0),
             ("paired-review-submissions", ["paired-review", "summary"], 0),
             ("repository-validation", ["validate"], 0),
             ("literary-production", ["literary-production", "summary", "--json"], 0),
@@ -106,7 +106,7 @@ def verify(root: Path) -> dict:
             ("literary-trace", ["literary-ecology", "trace", "evidence", "A01", "--json"], 0),
             ("implementation-trace", ["implementation", "trace", "source", "asset:release:stable:v1.4:readable", "--json"], 0),
             ("blind-export", ["literary-suite", "blind", "comp:43-0:ch89:pressure-test", "--output-dir", str(base / "blind-review"), "--json"], 0),
-            ("promotion-export", ["promotion", "promotion:ch86:b:v1-5-candidate", "--output", str(base / "candidate.md"), "--json"], 0),
+            ("promotion-export", ["promotion", "promotion:ch86:b:v1-5-candidate", "--output", str(base / "candidate.md"), "--json"], 2),
         ]
         results = {}
         acceptance_report = None
@@ -137,6 +137,10 @@ def verify(root: Path) -> dict:
                 raise RuntimeError(f"{name}: incomplete local asset trace")
             if name == "project-acceptance":
                 acceptance_report = payload
+            if name == "promotion-export" and (payload.get("overall") != "PENDING"
+                    or payload.get("pending_checks") != ["COMPETITION_ELIGIBILITY"]
+                    or payload.get("findings")):
+                raise RuntimeError("Historical promotion must await independent reviews")
             results[name] = {"returncode": result.returncode, "check_status": "PASS", "expected_returncode": expected}
             if "status" in payload:
                 results[name]["status"] = payload["status"]

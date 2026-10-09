@@ -16,7 +16,7 @@ rcwh sources verify-all
 rcwh sources audit
 ```
 
-正式环境使用 CPython 3.12.13 和 `requirements/extraction.lock.json` 指定的依赖。当前已经构建两个不可变数据集：
+参考构建环境使用 CPython 3.12.13 和 `requirements/extraction.lock.json` 指定的依赖；支持范围为 `>=3.12,<3.13`，CI 也验证 3.12.3。当前已经构建两个不可变数据集：
 
 - `corpus:front80:pilot:v1`：第 1、5、27、67、80 回及靖藏附录。
 - `corpus:front80:v1-candidate`：前80回及汇校本全部附录；分类仍等待人工验收。
@@ -41,13 +41,15 @@ python tools/verify_corpus_candidates.py
 
 ```bash
 rcwh literary-inputs exemplars data/writing/exemplars/ch89-research-v1.json
-rcwh literary-inputs package data/writing/packages/ch89-research-v3.json --require-tracked
-rcwh literary-inputs package data/writing/packages/ch89-research-v3.json --production --require-tracked
+rcwh literary-inputs package data/writing/packages/ch89-research-v4.json --require-tracked
+rcwh literary-inputs package data/writing/packages/ch89-research-v4.json --production --require-tracked
 rcwh literary-inputs index-map corpus:front80:v1-candidate --output artifacts/new-index-map.json
 rcwh literary-inputs dataset-map corpus:front80:pilot:v1 corpus:front80:v1-candidate --output artifacts/new-version-map.json
 ```
 
 研究包固定 dataset／manifest、MAIN_TEXT segment／文字摘要、选择理由、Source 整条记录、核心母本资产、六份世界输入及选定规划版本。改变任一输入使对应绑定失效。正文范例拒绝混入 ZHIPI、EDITORIAL 或 VARIANT。包里的文学理由仍属研究解释。生产准入另检查完整世界／当前规划输入、来源闭包、语料人工审查和真实 P9 提交；当前应返回 FAIL。
+
+本次在世界模型补入紫鹃后建立 v4 研究包，并显式选择新世界 SHA。旧 v3 原字节保留，在当前世界下会报告 STALE_WRITING_INPUT；不刷新旧包来掩盖变更，不继承旧输入下的评审认可。
 
 五份旧 Markdown 索引的 88 条表格项已保存原始字符范围和逐条映射。只有确切引文出现才记录文字命中；87 条主题性或无确切引文的项目仍未解析。命中不证明研究解释成立。pilot 到完整候选的映射使用同一原件的字符范围交叠，显式区分一对一、拆分、合并、多对多和无对应；不根据相同段号推断同一内容。
 
@@ -76,3 +78,5 @@ rcwh project acceptance --require-tracked --require-complete
 首条用于查看当前声明输入的实际验收；正常待交时返回0且 status 为 PENDING，真实拒绝或工程错误返回1。严格命令只在全部声明准入通过时返回0，待交和拒绝均返回1。报告的工程结果、人工审查和生产阻塞分别列出；它不裁决候选文学质量、不授予采用权限，也不证明完整设计或全书已完成。
 
 选择记录属于可更新的当前 owner。加入真实 review 后，先保存原始资产与结构化 review 的绑定，再更新对应 selection；若该 selection 已列于 `data/project/closure_roots.json` 的 records，也须把其 sha256 更新为 selection 的实际完整字节摘要，否则严格闭包会正确报告旧绑定失效。所有新文件一并纳入 Git，再运行严格验收。协议、语料、Source或候选发生实质变化时，应新建相应版本并重新取得匹配版本的意见，不把旧提交改成新输入的认可。
+
+展开目录的大文件副本已去重。完整来源阅读材料用 `rcwh delivery materialize source-review-v2 /tmp/source-review-v2` 恢复，语料阅读材料用 `rcwh delivery materialize corpus-review /tmp/corpus-review` 恢复；登记 ZIP 和历史原字节未变。另有本次针对声口/层次的261样本研究包，见[连续三回试验](CONSECUTIVE_CHAPTER_TRIAL.md)，不能替代上述全局人工审计。

@@ -12,7 +12,7 @@ from ..assets import AssetCatalog, AssetError, CatalogStore
 from ..assets.paths import repository_path
 from ..assets.transactions import commit_unlocked, digest, recover_unlocked
 from ..graph import ProvenanceGraph
-from .extraction import ExtractionRepository, canonical_bytes, code_digest, validate
+from .extraction import ExtractionRepository, canonical_bytes, code_digest, toolchain_diff, validate
 from .inputs import CorpusInputs
 from .layers import classify, pdf_runs
 
@@ -30,6 +30,7 @@ class CorpusRepository:
     def __init__(self, catalog: AssetCatalog):
         self.catalog = catalog
         self.root = catalog.root
+        self.rebuild_reports: dict[str, dict] = {}
 
     def config(self, relative: str) -> dict:
         raw = repository_path(self.root, relative).read_bytes()
@@ -293,6 +294,7 @@ class CorpusRepository:
             return {"status": "PASS", "scope": "CORPUS_BUILD", **registry, "readiness": manifest["readiness"], "authority_effect": "NONE"}
 
     def load(self, dataset_ref: str, *, rebuild: bool = True) -> tuple[dict, dict[str, bytes]]:
+        self.rebuild_reports.pop(dataset_ref, None)
         registry = self.registry()
         if dataset_ref not in registry: raise AssetError(f"UNKNOWN_DATASET: {dataset_ref}")
         binding = registry[dataset_ref]; asset = self.catalog.resolve(binding["manifest_ref"])
@@ -320,8 +322,15 @@ class CorpusRepository:
             products[name] = product.path.read_bytes()
         if rebuild:
             expected_manifest, expected_products = self.compile(manifest["build_config"]["path"])
-            if canonical_bytes(expected_manifest) != asset.path.read_bytes() or expected_products != products:
+            def content(document):
+                return {**document, "builder": {key: value for key, value in document["builder"].items() if key != "code_sha256"}}
+            if content(expected_manifest) != content(manifest) or expected_products != products:
                 raise AssetError("STALE_CORPUS_BUILD_OR_PRODUCTS")
+            self.rebuild_reports[dataset_ref] = {
+                "status": "PASS", "scope": "CORPUS_CONTENT_REBUILD", "dataset_ref": dataset_ref,
+                "product_count": len(products), "toolchain_diff": toolchain_diff(manifest["builder"], expected_manifest["builder"]),
+                "registered_builder": manifest["builder"], "current_builder": expected_manifest["builder"],
+            }
         return manifest, products
 
     def verify(self, dataset_ref: str, *, rebuild: bool = True, require_tracked: bool = False) -> dict:
@@ -339,12 +348,23 @@ class CorpusRepository:
             required.update(p.relative_to(self.root).as_posix() for p in (self.root / "data/provenance/sources").glob("*.yaml"))
             findings.extend(f"untracked corpus dependency: {p}" for p in sorted(required-files))
         return {"status": "FAIL" if findings else "PASS", "scope": "CORPUS_INTEGRITY_AND_REBUILD" if rebuild else "CORPUS_STORAGE", "dataset_ref": dataset_ref,
+                "rebuild": self.rebuild_reports.get(dataset_ref),
                 "findings": findings, "segments_by_kind": quality["segments_by_kind"], "unclassified_nonempty": len(quality["unclassified_nonempty"]),
                 "readiness": quality["readiness"], "human_checks": quality["human_checks"], "authority_effect": "NONE"}
 
-    def query(self, dataset_ref: str, *, kind: str = "MAIN_TEXT", chapter: int | None = None, keyword: str | None = None, limit: int = 20) -> dict:
+    def query(self, dataset_ref: str, *, kind: str = "MAIN_TEXT", chapter: int | None = None, keyword: str | None = None, limit: int = 20, purpose: str = "RESEARCH") -> dict:
         if kind not in {"MAIN_TEXT", "ZHIPI", "EDITORIAL", "VARIANT", "APPENDIX", "UNCLASSIFIED"} or not 1 <= limit <= 200:
             raise AssetError("INVALID_CORPUS_QUERY")
+        if purpose not in {"RESEARCH", "FORMAL_EXEMPLAR"}:
+            raise AssetError("INVALID_CORPUS_QUERY_PURPOSE")
+        audit = None
+        if purpose == "FORMAL_EXEMPLAR":
+            from .audit import CorpusAudit
+            audit = CorpusAudit(self.catalog).summary(dataset_ref)
+            if kind != "MAIN_TEXT" or audit["status"] != "PASS":
+                return {"status": "FAIL" if audit["status"] == "FAIL" else "PENDING", "dataset_ref": dataset_ref,
+                        "count": 0, "segments": [], "human_audit": audit, "purpose": purpose,
+                        "findings": ["FORMAL_EXEMPLARS_REQUIRE_AUDITED_MAIN_TEXT"], "authority_effect": "NONE"}
         manifest, products = self.load(dataset_ref, rebuild=True)
         segments = [json.loads(line) for line in products["segments.jsonl"].splitlines()][1:]
         selected = [s for s in segments if s["kind"] == kind and s["text"].strip() and (chapter is None or s["chapter"] == chapter) and (keyword is None or keyword in s["text"])]
@@ -355,7 +375,8 @@ class CorpusRepository:
             item["match_reason"] = "EXACT_KEYWORD_AND_METADATA" if keyword else "METADATA_FILTER"
             results.append(item)
         return {"status": "PASS", "dataset_ref": dataset_ref, "count": len(selected), "segments": results,
-                "readiness": manifest["readiness"], "authority_effect": "NONE"}
+                "readiness": manifest["readiness"], "purpose": purpose, "human_audit": audit,
+                "formal_exemplar_authorized": purpose == "FORMAL_EXEMPLAR", "authority_effect": "NONE"}
 
     def show(self, dataset_ref: str, segment_id: str) -> dict:
         _, products = self.load(dataset_ref, rebuild=True)

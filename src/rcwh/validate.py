@@ -42,13 +42,13 @@ REQUIRED_DOCUMENTS = (
     ('data/implementation_alignment/m6.json', 'implementation_alignment.schema.json'),
     ('data/mechanism_adapters/v04.json', 'historical_mechanism_adapter.schema.json'),
     ('data/knowledge/v03_slice1.json', 'character_knowledge_graph.schema.json'),
-    ('data/fidelity/audit_registry.json', 'fidelity_audit.schema.json'),
-    ('data/fidelity/hypothesis_source_backfill.json', 'hypothesis_source_backfill.schema.json'),
-    ('data/hypotheses/compatibility.json', 'hypothesis_compatibility.schema.json'),
-    ('data/scenario_replay/v08.json', 'scenario_replay.schema.json'),
-    ('data/pareto/v09.json', 'pareto_evaluation.schema.json'),
-    ('data/literary_stress/v010.json', 'scenario_literary_stress.schema.json'),
-    ('data/narrative_discourse/v011.json', 'narrative_discourse.schema.json'),
+    ('data/research/fidelity_audit.json', 'fidelity_audit.schema.json'),
+    ('data/research/hypothesis_source_backfill.json', 'hypothesis_source_backfill.schema.json'),
+    ('data/research/hypothesis_compatibility.json', 'hypothesis_compatibility.schema.json'),
+    ('data/research/scenario_replay.json', 'scenario_replay.schema.json'),
+    ('data/research/pareto.json', 'pareto_evaluation.schema.json'),
+    ('data/research/literary_stress.json', 'scenario_literary_stress.schema.json'),
+    ('data/research/narrative_discourse.json', 'narrative_discourse.schema.json'),
     ('data/microdraft/v012.json', 'controlled_microdraft.schema.json'),
     ('data/blind_review/v013.json', 'blind_microdraft_review.schema.json'),
     ('data/prewrite/v06.json', 'v5_prewrite.schema.json'),
@@ -138,7 +138,7 @@ def validate_repository(root: Path) -> list[str]:
                 errors.extend(f"{path.relative_to(root)} {wrapper}[{i}]: {e}" for e in errs)
 
     hypothesis_schema = load_data(schema_dir / "hypothesis.schema.json")
-    for path in sorted((root / "data" / "hypotheses").glob("*.json")):
+    for path in sorted((root / "data" / "research").glob("*hypotheses.json")):
         doc = load_data(path) or {}
         for i, item in enumerate(doc.get("hypotheses", [])):
             errs = validate_instance(item, hypothesis_schema)
@@ -148,7 +148,7 @@ def validate_repository(root: Path) -> list[str]:
 
 
     scenario_schema = load_data(schema_dir / "scenario_bundle.schema.json")
-    for path in sorted((root / "data" / "scenarios").glob("*.json")):
+    for path in sorted((root / "data" / "research").glob("scenarios.json")):
         doc = load_data(path) or {}
         for i, item in enumerate(doc.get("scenarios", [])):
             errs = validate_instance(item, scenario_schema)
@@ -295,7 +295,7 @@ def validate_repository(root: Path) -> list[str]:
         )
         for promotion_id in promotions.records:
             payload = promotions.evaluate(root, promotion_id)
-            if payload["overall"] != "PASS":
+            if payload["overall"] == "FAIL":
                 errors.extend(
                     f"promotion {promotion_id}: {x}" for x in payload["findings"]
                 )

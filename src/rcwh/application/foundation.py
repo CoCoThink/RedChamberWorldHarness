@@ -179,7 +179,7 @@ def add_foundation_commands(subparsers: argparse._SubParsersAction, default_root
                     if args.action == "build":
                         payload = corpus.build(args.config, args.output)
                     elif args.action == "query":
-                        payload = corpus.query(args.dataset_ref, kind=args.kind, chapter=args.chapter, keyword=args.keyword, limit=args.limit)
+                        payload = corpus.query(args.dataset_ref, kind=args.kind, chapter=args.chapter, keyword=args.keyword, limit=args.limit, purpose=args.purpose)
                     elif args.action == "show":
                         if args.segment_id is None:
                             raise AssetError("corpus show requires a segment ID")
@@ -190,7 +190,8 @@ def add_foundation_commands(subparsers: argparse._SubParsersAction, default_root
                         payload["human_acceptance"] = CorpusAudit(catalog).summary(args.manifest_ref, rebuild=False)
                 else:
                     manifest, units = repository.load(args.manifest_ref, rebuild=True)
-                    payload = {"status": "PASS", "manifest_ref": args.manifest_ref, "manifest": manifest, "units": len(units)}
+                    payload = {"status": "PASS", "manifest_ref": args.manifest_ref, "manifest": manifest,
+                               "units": len(units), "rebuild": repository.rebuild_reports[args.manifest_ref]}
                     if args.action == "show" and args.unit is not None:
                         payload["unit"] = units[args.unit]
                     if args.require_tracked:
@@ -308,6 +309,7 @@ def add_foundation_commands(subparsers: argparse._SubParsersAction, default_root
     query.add_argument("--chapter", type=int)
     query.add_argument("--keyword")
     query.add_argument("--limit", type=int, default=20)
+    query.add_argument("--purpose", choices=["RESEARCH", "FORMAL_EXEMPLAR"], default="RESEARCH")
     for action in ("verify", "show"):
         parser = actions.add_parser(action)
         parser.add_argument("manifest_ref")

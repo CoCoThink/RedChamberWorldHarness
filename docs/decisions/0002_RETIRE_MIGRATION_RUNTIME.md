@@ -26,3 +26,7 @@
 证据等级、OPEN 边界、稳定发布原件、候选、评审和采用约束继续保留。当前状态用 `rcwh project acceptance` 查询。
 
 后续规则与阶段状态清理见 [ADR 0003](0003_RETIRE_HISTORICAL_RULES.md)。
+
+## 载体改绑服务的澄清（2026-10-09）
+
+退役的是首次导入的运行链。仍在使用的载体/定位改绑服务已从 `provenance/migration.py` 更名为 `provenance/rebinding.py`，类名为 `SourceCarrierRebinding`；工具和测试均改用新入口。其旧格式方案 schema、审计记录及错误码保留，以保证历史提案可重放。该服务核对改绑前后证据图不变，不能替代修改摘录的 corrections 服务。

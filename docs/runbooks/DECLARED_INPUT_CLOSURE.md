@@ -24,7 +24,7 @@ rcwh self-contained check --profile declared-inputs-regression --require-tracked
 python tools/verify_foundation_checkout.py --output artifacts/migration/new-closure-verification.json
 ```
 
-报告路径必须新建，不能覆盖过去登记的审计记录。工具核对 CRLF 检出、禁止 CLI 网络及 DNS、运行实际 workflow shell 步骤和完整测试。CI 以已固定的 CPython 3.12.13 安装依赖后进行校验。
+报告路径必须新建，不能覆盖过去登记的审计记录。工具核对 CRLF 检出、禁止 CLI 网络及 DNS、运行实际 workflow shell 步骤和完整测试。CI 分别在 CPython 3.12.3 和 3.12.13 安装依赖后进行校验。
 
 ## Catalog 分片
 

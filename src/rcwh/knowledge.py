@@ -94,7 +94,7 @@ class CharacterKnowledgeRuntime:
         hook = item["masking_hook"]
         hits = [x for x in hook.get("forbidden_text", []) if x in text]
         support = item["voice_profile"]["support"]
-        result = "FAIL_FORBIDDEN_VOICE" if hits else (
+        result = "FLAG_FORBIDDEN_VOICE" if hits else (
             "ABSTAIN_SPARSE_CORPUS" if support == "SPARSE_ABSTAIN"
             else "READY_FOR_HUMAN_MASKING"
         )
@@ -102,6 +102,7 @@ class CharacterKnowledgeRuntime:
             "character_id": character_id, "name": item["name"], "status": result,
             "support": support, "positive_traits": hook.get("positive_traits", []),
             "forbidden_hits": hits, "automatic_identity_pass": False,
+            "report_kind": "LINT", "semantic_coverage": False,
         }
 
     def text_guard(self, scene_id: str, contract: dict[str, Any],
@@ -124,7 +125,8 @@ class CharacterKnowledgeRuntime:
                 findings.append(
                     f"{g['id']}: {g['actor']}={state} for {g['fact']} at {cp}; hit={hits}"
                 )
-        return {"scene_id": scene_id, "status": "FAIL" if findings else "PASS",
+        return {"scene_id": scene_id, "status": "WARN" if findings else "PASS",
+                "report_kind": "LINT", "semantic_coverage": False,
                 "checks": checks, "findings": findings}
 
     def validate_integrity(self, world: Any, literary: Any) -> list[str]:

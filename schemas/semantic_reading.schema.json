@@ -1,0 +1,310 @@
+{
+  "type": "object",
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "report_kind": {
+      "const": "REVIEW_OPINION"
+    },
+    "candidate_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "contract_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "context_sha256": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$"
+    },
+    "producer": {
+      "type": "object",
+      "properties": {
+        "principal_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "source_id": {
+          "type": "string",
+          "minLength": 1
+        },
+        "kind": {
+          "enum": [
+            "INDEPENDENT_HUMAN",
+            "MODEL",
+            "INTERNAL_AGENT"
+          ]
+        },
+        "model": {
+          "type": "object",
+          "properties": {
+            "provider": {
+              "type": "string",
+              "minLength": 1
+            },
+            "name": {
+              "type": "string",
+              "minLength": 1
+            },
+            "version": {
+              "type": "string",
+              "minLength": 1
+            },
+            "family": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "required": [
+            "provider",
+            "name",
+            "version",
+            "family"
+          ],
+          "additionalProperties": false
+        },
+        "trace": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "minLength": 1
+            },
+            "sha256": {
+              "type": "string",
+              "pattern": "^[a-f0-9]{64}$"
+            }
+          },
+          "required": [
+            "path",
+            "sha256"
+          ],
+          "additionalProperties": false
+        }
+      },
+      "required": [
+        "principal_id",
+        "source_id",
+        "kind"
+      ],
+      "additionalProperties": false
+    },
+    "coverage": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "events": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "minLength": 1
+          },
+          "order": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "actor": {
+            "type": "string",
+            "minLength": 1
+          },
+          "mode": {
+            "enum": [
+              "NARRATION",
+              "ACTION",
+              "DIALOGUE",
+              "THOUGHT"
+            ]
+          },
+          "scope": {
+            "enum": [
+              "ACTUAL",
+              "NEGATED",
+              "HYPOTHETICAL",
+              "DREAM",
+              "METAPHOR",
+              "QUOTED"
+            ]
+          },
+          "spans": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "properties": {
+                "start": {
+                  "type": "integer",
+                  "minimum": 0
+                },
+                "end": {
+                  "type": "integer",
+                  "minimum": 1
+                },
+                "quote": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "start",
+                "end",
+                "quote"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "beats": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "violations": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "effects": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "target": {
+                  "type": "string",
+                  "pattern": "^(character|object)\\.[A-Za-z0-9_-]+\\.[a-z0-9_.]+$"
+                },
+                "value": {
+                  "type": [
+                    "string",
+                    "number",
+                    "boolean",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "target",
+                "value"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "knowledge": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "actor": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "fact": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "operation": {
+                  "enum": [
+                    "ACQUIRE",
+                    "ASSERT"
+                  ]
+                },
+                "status": {
+                  "enum": [
+                    "knows",
+                    "believes",
+                    "suspects",
+                    "does_not_know"
+                  ]
+                },
+                "source_event": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                }
+              },
+              "required": [
+                "actor",
+                "fact",
+                "operation",
+                "status",
+                "source_event"
+              ],
+              "additionalProperties": false
+            }
+          },
+          "observations": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          },
+          "observers": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "string",
+              "minLength": 1
+            }
+          }
+        },
+        "required": [
+          "id",
+          "order",
+          "actor",
+          "mode",
+          "scope",
+          "spans",
+          "beats",
+          "violations",
+          "effects",
+          "knowledge",
+          "observations",
+          "observers"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "notes": {
+      "type": "string",
+      "minLength": 1
+    }
+  },
+  "required": [
+    "schema_version",
+    "report_kind",
+    "candidate_sha256",
+    "contract_sha256",
+    "context_sha256",
+    "producer",
+    "coverage",
+    "unresolved",
+    "events",
+    "notes"
+  ],
+  "additionalProperties": false,
+  "$schema": "https://json-schema.org/draft/2020-12/schema"
+}

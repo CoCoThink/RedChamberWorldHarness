@@ -82,15 +82,15 @@ def test_v07_json_schemas_validate_new_data():
     from rcwh.schema import validate_instance
 
     hypothesis_schema = load_data(ROOT / "schemas" / "hypothesis.schema.json")
-    hypothesis_doc = load_data(ROOT / "data" / "hypotheses" / "h04_v07.json")
+    hypothesis_doc = load_data(ROOT / "data" / "research" / "confiscation_hypotheses.json")
     for item in hypothesis_doc["hypotheses"]:
         assert validate_instance(item, hypothesis_schema) == []
 
     assert validate_instance(
-        load_data(ROOT / "data" / "fidelity" / "audit_registry.json"),
+        load_data(ROOT / "data" / "research" / "fidelity_audit.json"),
         load_data(ROOT / "schemas" / "fidelity_audit.schema.json"),
     ) == []
     assert validate_instance(
-        load_data(ROOT / "data" / "fidelity" / "hypothesis_source_backfill.json"),
+        load_data(ROOT / "data" / "research" / "hypothesis_source_backfill.json"),
         load_data(ROOT / "schemas" / "hypothesis_source_backfill.schema.json"),
     ) == []

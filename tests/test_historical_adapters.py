@@ -76,13 +76,13 @@ def test_ch86_medical_and_household_first_implementation_passes_candidate_b():
     assert all(x["forbidden_hits"] == [] for x in payload["findings"])
 
 
-def test_ch86_adapter_rejects_missing_process_signals_without_inventing_plot():
+def test_missing_process_words_only_create_lint_without_inventing_plot():
     contract = load_data(ROOT / "data/scenes/ch86_last_night.yaml")
     payload = runtime().scene_status(contract, "黛玉静静坐着。", mechanisms())
-    assert payload["status"] == "FAIL"
+    assert payload["status"] == "WARN"
     by_id = {x["adapter"]: x for x in payload["findings"]}
-    assert by_id["medical"]["reason"] == "MISSING_FEASIBILITY_SIGNAL"
-    assert by_id["household_economy"]["reason"] == "MISSING_FEASIBILITY_SIGNAL"
+    assert by_id["medical"]["reason"] == "MISSING_LEXICAL_SIGNAL"
+    assert by_id["household_economy"]["reason"] == "MISSING_LEXICAL_SIGNAL"
     assert all(x["plot_authority"] == "NONE" for x in payload["findings"])
 
 
@@ -94,8 +94,8 @@ def test_ch86_adapter_rejects_historical_overclaim():
     text += "\n史料已经证明黛玉必用此方。"
     payload = runtime().scene_status(contract, text, mechanisms())
     medical = next(x for x in payload["findings"] if x["adapter"] == "medical")
-    assert payload["status"] == "FAIL"
-    assert medical["reason"] == "HISTORICAL_OVERCLAIM"
+    assert payload["status"] == "WARN"
+    assert medical["reason"] == "LEXICAL_OVERCLAIM_FLAG"
     assert medical["forbidden_hits"] == ["史料已经证明黛玉必用此方"]
 
 
@@ -111,10 +111,10 @@ def test_scene_evaluator_exposes_structured_adapter_details():
         historical_mechanisms=mechanisms(),
     )
     by_name = {x.evaluator: x for x in results}
-    assert by_name["historical_adapter:medical"].status == "PASS"
-    assert by_name["historical_adapter:medical"].details["plot_authority"] == "NONE"
-    assert by_name["historical_adapter:household_economy"].details["open_questions"]
-    assert overall_status(results) == "PASS"
+    assert by_name["lint:historical_adapter:medical"].status == "PASS"
+    assert by_name["lint:historical_adapter:medical"].details["plot_authority"] == "NONE"
+    assert by_name["lint:historical_adapter:household_economy"].details["open_questions"]
+    assert overall_status(results) == "PENDING"
 
 
 def test_adapter_integrity_passes_registry_and_historical_core():

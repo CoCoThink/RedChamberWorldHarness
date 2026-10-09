@@ -15,7 +15,7 @@ class NarrativeDiscourseRuntime:
 
     @classmethod
     def from_repo(cls, root: Path) -> "NarrativeDiscourseRuntime":
-        return cls(load_data(root / "data" / "narrative_discourse" / "v011.json") or {})
+        return cls(load_data(root / "data" / "research" / "narrative_discourse.json") or {})
 
     def _channels(self, probe: dict[str, Any], template: dict[str, Any], ending: dict[str, Any]) -> list[str]:
         channels = [template["primary_channel"]]

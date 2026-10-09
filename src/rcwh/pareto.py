@@ -21,7 +21,7 @@ class ParetoEvaluationRuntime:
 
     @classmethod
     def from_repo(cls, root: Path) -> "ParetoEvaluationRuntime":
-        data = load_data(root / "data" / "pareto" / "v09.json") or {}
+        data = load_data(root / "data" / "research" / "pareto.json") or {}
         return cls(
             root=root,
             data=data,

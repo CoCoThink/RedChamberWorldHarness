@@ -68,10 +68,10 @@ def test_scene_validator_catches_omniscient_dialogue_and_action():
     action = "小红已把宝玉的全案打听明白，回来便逐件说与众人。"
     for text in (dialogue, action):
         results = evaluate_scene_text(contract, text, knowledge_runtime=rt)
-        knowledge = next(x for x in results if x.evaluator == "knowledge_omniscience")
-        assert knowledge.status == "FAIL"
+        knowledge = next(x for x in results if x.evaluator == "lint:knowledge_omniscience")
+        assert knowledge.status == "WARN"
         assert knowledge.findings
-        assert overall_status(results) == "FAIL"
+        assert overall_status(results) == "PENDING"
 
 
 def test_scene_validator_allows_rule_knowledge_after_learning_event():
@@ -115,9 +115,9 @@ def test_voice_hooks_are_source_backed_for_five_and_abstain_for_qianxue():
 
 def test_voice_mask_rejects_explicit_forbidden_modernized_or_omniscient_voice():
     rt = runtime()
-    assert rt.mask("baochai", "作为管理者，这要讲绩效。")["status"] == "FAIL_FORBIDDEN_VOICE"
-    assert rt.mask("xiaohong", "我什么都知道，案情我都清楚。")["status"] == "FAIL_FORBIDDEN_VOICE"
-    assert rt.mask("qianxue", "案情从头到尾我都知道。")["status"] == "FAIL_FORBIDDEN_VOICE"
+    assert rt.mask("baochai", "作为管理者，这要讲绩效。")["status"] == "FLAG_FORBIDDEN_VOICE"
+    assert rt.mask("xiaohong", "我什么都知道，案情我都清楚。")["status"] == "FLAG_FORBIDDEN_VOICE"
+    assert rt.mask("qianxue", "案情从头到尾我都知道。")["status"] == "FLAG_FORBIDDEN_VOICE"
 
 
 def test_scene_contracts_bind_knowledge_guards_and_voice_hooks():

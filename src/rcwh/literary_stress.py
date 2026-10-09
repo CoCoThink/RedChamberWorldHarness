@@ -22,7 +22,7 @@ class ScenarioLiteraryStressRuntime:
 
     @classmethod
     def from_repo(cls, root: Path) -> "ScenarioLiteraryStressRuntime":
-        data = load_data(root / "data" / "literary_stress" / "v010.json") or {}
+        data = load_data(root / "data" / "research" / "literary_stress.json") or {}
         return cls(
             data=data,
             contracts=unique_index(data.get('contracts', []), 'scenario_id'),

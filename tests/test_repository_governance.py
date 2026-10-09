@@ -94,12 +94,15 @@ def test_each_selected_chapter_has_live_gates():
         payload = selected.chapter(ch, registry)
         gates = payload["gates"]
         record = payload["competition"]
-        assert gates["adjudication"] == record["adjudication"]["outcome"]
-        assert gates["manual_plock"] == record["workflow_progress"]["PLOCK_REGRESSION"]
+        assert gates["adjudication"] == "PENDING"
+        assert gates["manual_plock"] == "PENDING"
+        assert gates["declared_adjudication"] == record["adjudication"]
+        assert gates["declared_workflow"] == record["workflow_progress"]
         if not record["candidates"]:
             assert gates["machine_literary_evaluation"] == "PENDING"
     summary = selected.summary()
     assert summary["active_gates"] == selected.gates(summary["active_chapter"], registry)
+    assert summary["next_gate"] == "CH89_SIX_FIELD_REGRESSION"
 
 
 def test_required_documents_follow_selected_owners_and_experiment(tmp_path):

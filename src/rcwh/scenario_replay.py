@@ -20,7 +20,7 @@ class CounterfactualReplayRuntime:
 
     @classmethod
     def from_repo(cls, root: Path) -> "CounterfactualReplayRuntime":
-        data = load_data(root / "data" / "scenario_replay" / "v08.json") or {}
+        data = load_data(root / "data" / "research" / "scenario_replay.json") or {}
         effects: dict[str, list[dict[str, Any]]] = {}
         for item in data.get("hypothesis_effects", []):
             effects.setdefault(item["hypothesis_id"], []).append(item)

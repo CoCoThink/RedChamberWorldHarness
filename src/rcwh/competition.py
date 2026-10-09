@@ -9,6 +9,8 @@ from .io import load_data
 from .literary_eval import evaluate_literary_candidate
 from .plocks import LiteraryProtectionRegistry
 from .regression import run_r4_evidence_regression
+from .candidate_reviews import CandidateReviewService, SIX_FIELDS
+from .evaluation.candidates import candidate_semantics
 
 
 PIPELINE = [
@@ -19,9 +21,6 @@ PIPELINE = [
     "PLOCK_REGRESSION",
     "BLIND_READ",
 ]
-
-SIX_FIELDS = ["PROVENANCE", "ROLE", "MODALITY", "TARGET", "PLACEMENT", "IMPLEMENTATION"]
-
 
 def git_blob_sha(data: bytes) -> str:
     payload = f"blob {len(data)}\0".encode("utf-8") + data
@@ -174,13 +173,16 @@ class CompetitionRegistry:
 
     def evaluate_record(self, root: Path, record: dict[str, Any]) -> dict[str, Any]:
         regression = run_r4_evidence_regression(root)
+        reviews = CandidateReviewService(root, record)
         results = []
         for candidate in record["candidates"]:
             artifact = candidate["artifact"]
             machine = None
             machine_match = None
+            semantic = {"status": "PENDING", "pending": ["NO_CANDIDATE_TEXT"], "reports": []}
             if artifact["kind"] == "REPO_FILE":
-                text = (root / artifact["path"]).read_text(encoding="utf-8")
+                text = (root / artifact["path"]).read_bytes().decode("utf-8")
+                semantic = candidate_semantics(root, record["chapter"], text, candidate)
                 machine = evaluate_literary_candidate(
                     root, record["plock_ref"], text, candidate_name=candidate["id"]
                 )
@@ -188,20 +190,23 @@ class CompetitionRegistry:
                 machine_match = expected is None or machine["machine_status"] == expected
 
             machine_status = machine["machine_status"] if machine else "NOT_EVALUATED"
-            six_pass = all(candidate["six_field"][field] == "PASS" for field in SIX_FIELDS)
+            opinion = reviews.evaluate(candidate, machine_status)
+            checks = opinion["check_statuses"]
+            six_pass = all(checks[field] == "PASS" for field in SIX_FIELDS)
             can_continue = machine_status in {"READY_FOR_BLIND_READ", "REPLACEMENT_CASE"}
             if machine_status == "REPLACEMENT_CASE":
-                human_pass = candidate["human_plock"]["status"] == "REPLACEMENT_ACCEPTED"
+                human_pass = checks["HUMAN_PLOCK"] == "REPLACEMENT_ACCEPTED"
             else:
-                human_pass = candidate["human_plock"]["status"] == "PASS"
-            blind = candidate["blind_read"]
-            blind_pass = blind["status"] == "PASS" and blind["reviewer_blinded"] is True
+                human_pass = checks["HUMAN_PLOCK"] == "PASS"
+            blind_pass = checks["BLIND_READ"] == "PASS"
             eligible = (
                 regression["overall"] == "PASS"
                 and can_continue
                 and six_pass
                 and human_pass
                 and blind_pass
+                and opinion["status"] == "PASS"
+                and semantic["status"] == "PASS"
             )
             results.append({
                 "id": candidate["id"],
@@ -211,17 +216,32 @@ class CompetitionRegistry:
                 "machine_expected_status": candidate.get("machine_expected_status"),
                 "machine_matches_ledger": machine_match,
                 "six_field_pass": six_pass,
-                "human_plock_status": candidate["human_plock"]["status"],
-                "blind_read_status": blind["status"],
-                "reviewer_blinded": blind["reviewer_blinded"],
+                "human_plock_status": checks["HUMAN_PLOCK"],
+                "blind_read_status": checks["BLIND_READ"],
+                "reviewer_blinded": blind_pass,
+                "machine_report": {
+                    "report_kind": "COMPUTED_CHECK", "scope": "LITERARY_DIAGNOSTICS",
+                    "candidate_sha256": opinion["candidate_sha256"],
+                    "status": machine_status, "literary_quality_verified": False,
+                },
+                "review_qualification": opinion,
+                "semantic_qualification": semantic,
+                "declared_gates": {
+                    "six_field": candidate["six_field"],
+                    "human_plock": candidate["human_plock"],
+                    "blind_read": candidate["blind_read"],
+                },
                 "adjudication_eligible": eligible,
                 "automatic_promotion": False,
             })
 
         by_id = {x["id"]: x for x in results}
         adj = record["adjudication"]
+        legacy = record.get("adjudication_basis") == "LEGACY_UNVERIFIED"
         consistency = []
         for item in results:
+            consistency.extend(f"candidate {item['id']}: {finding}"
+                               for finding in item["review_qualification"]["findings"])
             if item["machine_matches_ledger"] is False:
                 consistency.append(
                     f"candidate {item['id']} machine status {item['machine_status']} "
@@ -230,13 +250,19 @@ class CompetitionRegistry:
         winner = adj["winner_candidate_id"]
         if winner:
             item = by_id.get(winner)
-            if item is None or not item["adjudication_eligible"]:
+            if (item is None or not item["adjudication_eligible"]) and not legacy:
                 consistency.append(f"declared winner {winner} has not passed all promotion gates")
             if adj["promotion_state"] != "PROMOTION_CANDIDATE":
                 consistency.append("eligible declared winner must be marked PROMOTION_CANDIDATE")
         elif adj["promotion_state"] == "PROMOTION_CANDIDATE":
             consistency.append("PROMOTION_CANDIDATE requires an adjudicated eligible winner")
 
+        qualified = bool(winner and by_id.get(winner, {}).get("adjudication_eligible"))
+        current_adj = dict(adj)
+        if winner and not qualified:
+            current_adj = {"outcome": "PENDING", "winner_candidate_id": None,
+                           "promotion_state": "NOT_ELIGIBLE"}
+        qualification = "FAIL" if consistency else "PASS" if qualified else "PENDING"
         return {
             "competition": record["id"],
             "mode": record["mode"],
@@ -246,7 +272,10 @@ class CompetitionRegistry:
             "stable_active_effect": record["stable_active_effect"],
             "workflow_progress": record["workflow_progress"],
             "candidate_results": results,
-            "adjudication": adj,
+            "adjudication": current_adj,
+            "declared_adjudication": adj,
+            "adjudication_basis": record.get("adjudication_basis", "CURRENT_SUBMISSIONS"),
+            "adjudication_qualification": qualification,
             "consistency_errors": consistency,
             "stable_active_mutated": False,
             "note": "A winner can only become a promotion candidate; this layer never overwrites stable ACTIVE.",
@@ -264,7 +293,7 @@ def format_competition(payload: dict[str, Any]) -> str:
         f"stable_active_effect: {payload['stable_active_effect']}",
         "stable_active_mutated: false",
         "",
-        "WORKFLOW",
+        "DECLARED WORKFLOW (NOT COMPUTED QUALIFICATION)",
     ]
     for stage in PIPELINE:
         out.append(f"- {stage}: {payload['workflow_progress'][stage]}")
@@ -283,6 +312,8 @@ def format_competition(payload: dict[str, Any]) -> str:
     out.append(f"- outcome: {payload['adjudication']['outcome']}")
     out.append(f"- winner: {payload['adjudication']['winner_candidate_id']}")
     out.append(f"- promotion_state: {payload['adjudication']['promotion_state']}")
+    out.append(f"- qualification: {payload['adjudication_qualification']}")
+    out.append(f"- declared_outcome: {payload['declared_adjudication']['outcome']} ({payload['adjudication_basis']})")
     if payload["consistency_errors"]:
         out.extend(["", "CONSISTENCY ERRORS"])
         out.extend(f"- {x}" for x in payload["consistency_errors"])

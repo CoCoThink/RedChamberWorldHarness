@@ -7,7 +7,6 @@ from typing import Any
 
 from ..assets import AssetCatalog, AssetError
 from ..assets.transactions import digest
-from ..assets.paths import repository_path
 from .extraction import ExtractionRepository, canonical_bytes, code_digest, validate
 
 
@@ -19,17 +18,27 @@ def source_digest(source: dict[str, Any]) -> str:
     return digest(canonical_bytes({key: value for key, value in source.items() if key != "locator_verification"}))
 
 
+def report_content(report: dict[str, Any]) -> dict[str, Any]:
+    """Keep all input/result bindings; only execution observations may vary."""
+    content = deepcopy(report)
+    content.pop("rebuild", None)
+    content["verifier"].pop("code_sha256", None)
+    return content
+
+
 class SourceLocatorVerifier:
     def __init__(self, catalog: AssetCatalog):
         self.catalog = catalog
         self.extractions = ExtractionRepository(catalog)
         self._loaded: dict[str, tuple[dict[str, Any], dict[str, dict[str, Any]]]] = {}
         self._manifest_shas: dict[str, str] = {}
+        self._execution_stamps: dict[str, dict[str, Any]] = {}
 
     def extraction(self, manifest_ref: str) -> tuple[dict[str, Any], dict[str, dict[str, Any]]]:
         if manifest_ref not in self._loaded:
             self._loaded[manifest_ref] = self.extractions.load(manifest_ref, rebuild=True)
             self._manifest_shas[manifest_ref] = self.catalog.resolve(manifest_ref).sha256
+            self._execution_stamps[manifest_ref] = self.extractions.rebuild_reports[manifest_ref]["current_toolchain"]
         else:
             manifest, _ = self._loaded[manifest_ref]
             manifest_asset = self.catalog.resolve(manifest_ref)
@@ -39,10 +48,13 @@ class SourceLocatorVerifier:
                 manifest_asset.sha256 != self._manifest_shas[manifest_ref]
                 or output.sha256 != manifest["output"]["sha256"]
                 or input_asset.sha256 != manifest["input"]["sha256"]
-                or self.extractions.extractor(manifest["config"]["format"]) != manifest["extractor"]
-                or digest(repository_path(self.catalog.root, manifest["dependency_lock"]["path"]).read_bytes()) != manifest["dependency_lock"]["sha256"]
             ):
-                raise AssetError("STALE_EXTRACTION_INPUT_OR_TOOL")
+                raise AssetError("STALE_EXTRACTION_INPUT")
+            # A changed executor invalidates the cached rebuild, not the source.
+            current = self.extractions.execution_stamp(manifest["config"]["format"])
+            if current != self._execution_stamps[manifest_ref]:
+                self._loaded.pop(manifest_ref)
+                return self.extraction(manifest_ref)
         return self._loaded[manifest_ref]
 
     def verify(self, source: dict[str, Any]) -> dict[str, Any]:
@@ -93,6 +105,7 @@ class SourceLocatorVerifier:
                 extraction={"manifest_ref": locator["extraction_ref"], "manifest_sha256": self.catalog.resolve(locator["extraction_ref"]).sha256,
                             "input": deepcopy(manifest["input"]), "output": deepcopy(manifest["output"]), "extractor": deepcopy(manifest["extractor"])},
                 raw_excerpt=excerpt, raw_text_sha256=actual_sha, expected_text_sha256=source["text_sha256"],
+                rebuild=deepcopy(self.extractions.rebuild_reports[locator["extraction_ref"]]),
             )
             if actual_sha != locator["raw_text_sha256"]:
                 raise AssetError("LOCATOR_EXCERPT_HASH_MISMATCH")
@@ -106,7 +119,7 @@ class SourceLocatorVerifier:
                     raise AssetError("STALE_VERIFICATION_REPORT_BINDING")
                 stored = json.loads(stored_asset.path.read_bytes())
                 validate(self.catalog.root, stored, "source_locator_report")
-                if stored != report:
+                if report_content(stored) != report_content(report):
                     raise AssetError("STALE_OR_INCONSISTENT_VERIFICATION_REPORT")
         except (AssetError, OSError, KeyError, ValueError) as exc:
             report["status"] = "FAIL"

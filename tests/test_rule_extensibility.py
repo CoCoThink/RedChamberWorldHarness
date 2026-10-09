@@ -136,7 +136,7 @@ def test_declared_cell_growth_is_not_bound_to_five_windows():
     assert any("design cells" in e for e in lab.validate_integrity(*dependencies))
 
 
-def test_real_human_results_can_advance_without_editing_literary_snapshot(monkeypatch):
+def test_verified_review_results_can_advance_without_editing_literary_snapshot(monkeypatch, tmp_path):
     competitions = CompetitionRegistry.from_repo(ROOT)
     record = competitions.records["comp:43-0:ch89:pressure-test"]
     successors = sorted((r for r in competitions.records.values()
@@ -154,10 +154,16 @@ def test_real_human_results_can_advance_without_editing_literary_snapshot(monkey
     plocks = LiteraryProtectionRegistry.from_repo(ROOT)
     assert any("BLOCKED_BY_PREDECESSOR" in error
                for error in competitions.validate_integrity(ROOT, plocks, record["baseline"]))
-    for candidate in record["candidates"]:
-        candidate["human_plock"]["status"] = "PASS"
-        candidate["blind_read"]["status"] = "PASS"
-        candidate["blind_read"]["reviewer_blinded"] = True
+    # Submit synthetic bound opinions in an isolated directory. Changing flags
+    # alone cannot qualify; the real submission validator supplies this result.
+    from test_candidate_reviews import make_reviewed_competition
+    from rcwh.candidate_reviews import CandidateReviewService
+    fixture_root, record, _ = make_reviewed_competition(tmp_path, record)
+    competitions.records[record["id"]] = record
+    # This workflow unit test assumes semantic qualification; separate tests replay actual events.
+    monkeypatch.setattr("rcwh.competition.candidate_semantics", lambda *a: {"status": "PASS", "reports": []})
+    monkeypatch.setattr("rcwh.competition.CandidateReviewService", lambda root, rec:
+                        CandidateReviewService(fixture_root if rec["id"] == record["id"] else root, rec))
     record["workflow_progress"] = {stage: "PASS" for stage in record["pipeline"]}
     record["state"] = "ADJUDICATED"
     record["adjudication"].update(outcome="WINNER", winner_candidate_id="ch89-A", promotion_state="PROMOTION_CANDIDATE")
@@ -212,9 +218,9 @@ def test_contiguous_but_wrong_chapter_boundaries_fail_against_actual_bytes():
 
 
 @pytest.mark.parametrize("path,schema,container,field", [
-    ("scenario_replay/v08", "scenario_replay", "effects", "competitions"),
-    ("pareto/v09", "pareto_evaluation", "effects", "competitions"),
-    ("literary_stress/v010", "scenario_literary_stress", "effects", "competitions"),
+    ("research/scenario_replay", "scenario_replay", "effects", "competitions"),
+    ("research/pareto", "pareto_evaluation", "effects", "competitions"),
+    ("research/literary_stress", "scenario_literary_stress", "effects", "competitions"),
     ("microdraft/v012", "controlled_microdraft", "policy", "competition_effect"),
     ("blind_review/v013", "blind_microdraft_review", "policy", "competition_effect"),
     ("revision_ablation/v014", "revision_ablation", "policy", "competition_effect"),

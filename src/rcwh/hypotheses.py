@@ -19,17 +19,17 @@ class HypothesisRuntime:
     @classmethod
     def from_repo(cls, root: Path) -> "HypothesisRuntime":
         hypotheses: dict[str, dict[str, Any]] = {}
-        path = root / "data" / "hypotheses"
+        path = root / "data" / "research"
         if path.exists():
-            for file in sorted(path.glob("*.json")):
+            for file in sorted(path.glob("*hypotheses.json")):
                 doc = load_data(file) or {}
                 for item in doc.get("hypotheses", []):
                     item_id = item["id"]
                     if item_id in hypotheses:
                         raise ValueError(f"Duplicate hypothesis id: {item_id}")
                     hypotheses[item_id] = item
-        audit_path = root / "data" / "fidelity" / "audit_registry.json"
-        backfill_path = root / "data" / "fidelity" / "hypothesis_source_backfill.json"
+        audit_path = root / "data" / "research" / "fidelity_audit.json"
+        backfill_path = root / "data" / "research" / "hypothesis_source_backfill.json"
         return cls(
             hypotheses=hypotheses,
             fidelity_audit=load_data(audit_path) if audit_path.exists() else {},

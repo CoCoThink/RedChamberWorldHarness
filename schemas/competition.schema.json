@@ -159,6 +159,91 @@
             },
             "additionalProperties": false
           },
+          "authors": {
+            "type": "array",
+            "minItems": 1,
+            "items": {
+              "type": "object",
+              "required": [
+                "principal_id",
+                "source_id",
+                "kind"
+              ],
+              "properties": {
+                "principal_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "source_id": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "kind": {
+                  "enum": [
+                    "HUMAN",
+                    "MODEL"
+                  ]
+                },
+                "run": {
+                  "type": "object",
+                  "required": [
+                    "path",
+                    "sha256"
+                  ],
+                  "properties": {
+                    "path": {
+                      "type": "string",
+                      "minLength": 1
+                    },
+                    "sha256": {
+                      "type": "string",
+                      "pattern": "^[a-f0-9]{64}$"
+                    }
+                  },
+                  "additionalProperties": false
+                }
+              },
+              "additionalProperties": false,
+              "allOf": [
+                {
+                  "if": {
+                    "properties": {
+                      "kind": {
+                        "const": "MODEL"
+                      }
+                    }
+                  },
+                  "then": {
+                    "required": [
+                      "run"
+                    ]
+                  }
+                }
+              ]
+            }
+          },
+          "review_records": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "type": "object",
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "properties": {
+                "path": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
           "origin": {
             "enum": [
               "STABLE_BASELINE",
@@ -248,10 +333,54 @@
               "string",
               "null"
             ]
+          },
+          "semantic_readings": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "path",
+                "sha256"
+              ],
+              "additionalProperties": false,
+              "properties": {
+                "path": {
+                  "type": "string"
+                },
+                "sha256": {
+                  "type": "string",
+                  "pattern": "^[a-f0-9]{64}$"
+                }
+              }
+            }
           }
         },
         "additionalProperties": false
       }
+    },
+    "review_protocol": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "adjudication_basis": {
+      "enum": [
+        "CURRENT_SUBMISSIONS",
+        "LEGACY_UNVERIFIED"
+      ]
     },
     "adjudication": {
       "type": "object",

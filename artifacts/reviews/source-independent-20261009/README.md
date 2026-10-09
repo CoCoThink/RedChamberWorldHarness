@@ -13,3 +13,9 @@
 请提供真实的独立复核记录与原始意见；程序的逐字定位成功仍不等于文献学或 Claim 推理获得独立认可。
 
 独立评审者填写原始 JSON 后接收为 REVIEW_RECORD。结构化记录增加 schema_version: 1、唯一 id、raw_review: {asset_ref, sha256} 与 authority_effect: NONE，存入 data/provenance/audits/reviews/，并用路径／完整摘要选择到 selection.json。原始声明和评审项必须逐字段一致；可以先提交九条已定位更正的意见，未覆盖的来源继续 PENDING。Source、协议或下游 Claim／Decision／Implementation／Axis 变化均使相关复核失效。对于新取得的曹家版本，应先完成独立载体／摘录更正，更新协议为新版本，再提交对应复核。
+
+## Materialize delivery copies
+
+The registered archive retains every original file. Expanded large copies and the duplicate ZIP were removed after exact byte comparison.
+
+Run `rcwh delivery materialize source-review-v1 /tmp/source-review-v1` to recreate the complete original reading directory. Run `rcwh delivery attachments /tmp/rcwh-release-attachments` to prepare checksum-bound attachments. This does not publish them or submit reviews.

@@ -118,7 +118,7 @@ class LiteraryEvaluatorSuite:
             ),
         }
 
-    def exposition_detector(self, text: str) -> dict[str, Any]:
+    def _legacy_exposition_detector(self, text: str) -> dict[str, Any]:
         cfg = self.data["exposition"]
         exact_hits = [x for x in cfg["hard_terms"] if x in text]
         pattern_hits = []
@@ -132,7 +132,7 @@ class LiteraryEvaluatorSuite:
             "automatic_failure": bool(hits),
         }
 
-    def ambiguity_preservation(self, text: str) -> dict[str, Any]:
+    def _legacy_ambiguity_preservation(self, text: str) -> dict[str, Any]:
         cfg = self.data["ambiguity"]
         guard_hits = []
         for guard in cfg.get("guards", []):
@@ -205,10 +205,10 @@ class LiteraryEvaluatorSuite:
             "risks": risks,
         }
 
-    def evaluate_prose(self, text: str, candidate_name: str = "candidate") -> dict[str, Any]:
+    def legacy_prose_screen(self, text: str, candidate_name: str = "candidate") -> dict[str, Any]:
         culture = self.culture_deletion_test(text)
-        exposition = self.exposition_detector(text)
-        ambiguity = self.ambiguity_preservation(text)
+        exposition = self._legacy_exposition_detector(text)
+        ambiguity = self._legacy_ambiguity_preservation(text)
         structure = self.structural_variation(text)
         blockers = []
         if exposition["automatic_failure"]:
@@ -228,6 +228,9 @@ class LiteraryEvaluatorSuite:
             status = "READY_FOR_BLIND_READ"
         return {
             "candidate": candidate_name,
+            "report_kind": "LINT",
+            "scope": "LEGACY_FROZEN_EXPERIMENT",
+            "semantic_coverage": False,
             "status": status,
             "automatic_literary_pass": False,
             "automatic_winner": False,
@@ -243,6 +246,29 @@ class LiteraryEvaluatorSuite:
                 "still requires human review and a blinded read."
             ),
         }
+
+    def exposition_detector(self, text: str) -> dict[str, Any]:
+        report = self._legacy_exposition_detector(text)
+        return {**report, "legacy_status": report["status"],
+                "status": "FLAG_EXPOSITION" if report["hits"] else "PASS",
+                "report_kind": "LINT", "automatic_failure": False, "semantic_coverage": False}
+
+    def ambiguity_preservation(self, text: str) -> dict[str, Any]:
+        report = self._legacy_ambiguity_preservation(text)
+        return {**report, "legacy_status": report["status"],
+                "status": "FLAG_AMBIGUITY" if report["guard_hits"] or report["generic_hits"] else "PASS",
+                "report_kind": "LINT", "automatic_failure": False, "semantic_coverage": False}
+
+    def evaluate_prose(self, text: str, candidate_name: str = "candidate") -> dict[str, Any]:
+        legacy = self.legacy_prose_screen(text, candidate_name)
+        flags = list(dict.fromkeys(legacy["human_flags"] + legacy["blockers"]))
+        return {**legacy, "legacy_status": legacy["status"], "report_kind": "LINT",
+                "scope": "LEXICAL_AND_FORMAT_OBSERVATIONS", "blockers": [], "human_flags": flags,
+                "status": "READY_WITH_HUMAN_FLAGS" if flags else "READY_FOR_BLIND_READ",
+                "explicit_exposition": self.exposition_detector(text),
+                "ambiguity_preservation": self.ambiguity_preservation(text),
+                "semantic_status": "NOT_EVALUATED", "automatic_literary_pass": False,
+                "note": "Lexical hits are reading prompts. Semantic qualification and literary judgement are separate."}
 
     def poetry_screen(self, candidates: dict[str, str]) -> dict[str, Any]:
         cfg = self.data["poetry"]

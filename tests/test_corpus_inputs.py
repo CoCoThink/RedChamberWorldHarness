@@ -139,15 +139,17 @@ def test_missing_carrier_and_mutated_epub_are_not_accepted(input_repo):
         CorpusInputs(catalog).verify(CONFIG)
 
 
-def test_runtime_dependency_drift_rejects_persisted_inventory(input_repo, monkeypatch):
+def test_runtime_dependency_and_inventory_code_drift_preserve_content_binding(input_repo, monkeypatch):
     root, _, _ = input_repo
     original = ExtractionRepository.extractor
     def changed(self, format_name):
         result = original(self, format_name)
         return {**result, "python": "different runtime"}
     monkeypatch.setattr(ExtractionRepository, "extractor", changed)
-    with pytest.raises(AssetError, match="STALE_EXTRACTION_TOOL"):
-        CorpusInputs(AssetCatalog.from_repo(root)).verify(CONFIG)
+    monkeypatch.setattr("rcwh.corpus.inputs.code_digest", lambda *args: "0" * 64)
+    result = CorpusInputs(AssetCatalog.from_repo(root)).verify(CONFIG)
+    assert result["status"] == "PASS" and result["toolchain_diff"]
+    assert all(r["toolchain_diff"] for r in result["extraction_rebuilds"])
 
 
 def test_omitted_or_repeated_epub_chapter_is_not_silently_counted(input_repo):

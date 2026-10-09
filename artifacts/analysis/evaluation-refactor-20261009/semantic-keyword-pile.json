@@ -1,0 +1,330 @@
+{
+  "overall": "FAIL",
+  "results": [
+    {
+      "evaluator": "lint:required_beats",
+      "status": "PASS",
+      "findings": [],
+      "details": {
+        "report_kind": "LINT",
+        "semantic_coverage": false
+      }
+    },
+    {
+      "evaluator": "lint:forbidden_beats",
+      "status": "PASS",
+      "findings": [],
+      "details": {
+        "report_kind": "LINT",
+        "semantic_coverage": false
+      }
+    },
+    {
+      "evaluator": "lint:exposition",
+      "status": "PASS",
+      "findings": [],
+      "details": null
+    },
+    {
+      "evaluator": "lint:knowledge_omniscience",
+      "status": "PASS",
+      "findings": [],
+      "details": {
+        "scene_id": "ch86_last_night",
+        "status": "PASS",
+        "report_kind": "LINT",
+        "semantic_coverage": false,
+        "checks": [
+          {
+            "id": "baoyu_no_exact_death_time_before_arrival",
+            "actor": "baoyu",
+            "fact": "daiyu_death_exact_moment",
+            "checkpoint": "ENTRY",
+            "epistemic_status": "does_not_know",
+            "allowed_status": [
+              "knows"
+            ],
+            "modes": [
+              "DIALOGUE",
+              "ACTION",
+              "THOUGHT"
+            ],
+            "hits": [],
+            "violation": false
+          },
+          {
+            "id": "zijuan_no_exact_death_time_before_event",
+            "actor": "zijuan",
+            "fact": "daiyu_death_exact_moment",
+            "checkpoint": "ENTRY",
+            "epistemic_status": "does_not_know",
+            "allowed_status": [
+              "knows"
+            ],
+            "modes": [
+              "DIALOGUE",
+              "ACTION",
+              "THOUGHT"
+            ],
+            "hits": [],
+            "violation": false
+          }
+        ],
+        "findings": []
+      }
+    },
+    {
+      "evaluator": "lint:historical_adapter:medical",
+      "status": "PASS",
+      "findings": [],
+      "details": {
+        "adapter": "medical",
+        "report_kind": "LINT",
+        "feasibility_verified": false,
+        "status": "PASS",
+        "reason": "FEASIBILITY_ONLY",
+        "support_class": "TEXTUAL_LIFE_FEASIBILITY",
+        "research_status": "BOUNDARY_PROFILE",
+        "plot_authority": "NONE",
+        "may_create_events": false,
+        "mechanism_refs": [],
+        "required_groups": [
+          {
+            "group": 1,
+            "terms": [
+              "药",
+              "药碗",
+              "大夫",
+              "医生",
+              "诊脉"
+            ],
+            "hits": [
+              "药",
+              "药碗"
+            ],
+            "pass": true
+          },
+          {
+            "group": 2,
+            "terms": [
+              "温",
+              "热水",
+              "炉",
+              "煎"
+            ],
+            "hits": [
+              "温"
+            ],
+            "pass": true
+          }
+        ],
+        "missing_required_groups": [],
+        "forbidden_hits": [],
+        "open_questions": [
+          "具体诊断名",
+          "具体药方、剂量与医嘱",
+          "死亡当夜医者是否到场及确切时辰"
+        ],
+        "cannot_prove": [
+          "现有材料不能证明第86回存在某一唯一药方或唯一诊断",
+          "前80医疗生活描写不能反推曹稿第86回逐字医疗程序"
+        ]
+      }
+    },
+    {
+      "evaluator": "lint:historical_adapter:household_economy",
+      "status": "PASS",
+      "findings": [],
+      "details": {
+        "adapter": "household_economy",
+        "report_kind": "LINT",
+        "feasibility_verified": false,
+        "status": "PASS",
+        "reason": "FEASIBILITY_ONLY",
+        "support_class": "MIXED_H05_AND_LIFE_REFERENCE",
+        "research_status": "BOUNDARY_PROFILE",
+        "plot_authority": "NONE",
+        "may_create_events": false,
+        "mechanism_refs": [
+          "H05"
+        ],
+        "required_groups": [
+          {
+            "group": 1,
+            "terms": [
+              "米汤",
+              "饭",
+              "热水",
+              "炉",
+              "炭",
+              "灯",
+              "跑腿",
+              "丫头"
+            ],
+            "hits": [
+              "灯"
+            ],
+            "pass": true
+          },
+          {
+            "group": 2,
+            "terms": [
+              "再温一温",
+              "温药",
+              "煎药",
+              "添水",
+              "送药",
+              "取药",
+              "药铺"
+            ],
+            "hits": [
+              "再温一温"
+            ],
+            "pass": true
+          }
+        ],
+        "missing_required_groups": [],
+        "forbidden_hits": [],
+        "open_questions": [
+          "第86回具体饭药炭水数量与价格",
+          "谁在何时承担每一项跑腿与照护",
+          "潇湘馆当夜具体库存",
+          "具体典当物",
+          "米量、炭量与具体物价",
+          "月租金额、赎期和每次现金缺口"
+        ],
+        "cannot_prove": [
+          "不能由持续贫困机制推出第86回某一具体米量、炭量或药费",
+          "不能把当前家务分工反推为佚稿原字",
+          "第95回“青夹袄”就是历史原型物",
+          "“两碗半”或任何具体米量",
+          "当前正文的具体租金、炭价、药费"
+        ]
+      }
+    },
+    {
+      "evaluator": "scene_semantics",
+      "status": "FAIL",
+      "findings": [
+        "required narrative event absent: baoyu_mundane_reaction",
+        "required narrative event absent: medicine_not_finished",
+        "required narrative event absent: ordinary_domestic_labor_continues",
+        "exit state not established: character.daiyu.life_state expected dead, observed None",
+        "exit state not established: object.medicine_bowl_86.temperature expected cold, observed None"
+      ],
+      "details": {
+        "report_kind": "COMPUTED_CHECK",
+        "scope": "SCENE_SEMANTIC_CONSTRAINTS",
+        "candidate_sha256": "004ac46af1b61fa8ed9d8c60161a02aa67a79ad1dea517c20879be352d502551",
+        "contract_sha256": "2476b1a97cdb19b56ddf882f25198d764e95cf902d14aa5cde3c65efbb5c9e2e",
+        "context_sha256": "a4959103662f28c59f8b31018f0aad0267c3496fa46c67674292f7830d32fd22",
+        "status": "FAIL",
+        "findings": [
+          "required narrative event absent: baoyu_mundane_reaction",
+          "required narrative event absent: medicine_not_finished",
+          "required narrative event absent: ordinary_domestic_labor_continues",
+          "exit state not established: character.daiyu.life_state expected dead, observed None",
+          "exit state not established: object.medicine_bowl_86.temperature expected cold, observed None"
+        ],
+        "pending": [
+          "CANDIDATE_AUTHOR_SOURCE_UNKNOWN",
+          "INTERNAL_AGENT_READING_REQUIRES_EXTERNAL_CONFIRMATION"
+        ],
+        "checks": [
+          {
+            "id": "baoyu_mundane_reaction",
+            "status": "FAIL"
+          },
+          {
+            "id": "medicine_not_finished",
+            "status": "FAIL"
+          },
+          {
+            "id": "ordinary_domestic_labor_continues",
+            "status": "FAIL"
+          },
+          {
+            "id": "complete_death_poem",
+            "status": "PASS",
+            "events": []
+          },
+          {
+            "id": "philosophical_last_words",
+            "status": "PASS",
+            "events": []
+          },
+          {
+            "id": "supernatural_resolution",
+            "status": "PASS",
+            "events": []
+          },
+          {
+            "id": "character.daiyu.life_state",
+            "status": "FAIL",
+            "expected": "dead",
+            "observed": null
+          },
+          {
+            "id": "object.medicine_bowl_86.temperature",
+            "status": "FAIL",
+            "expected": "cold",
+            "observed": null
+          },
+          {
+            "id": "baoyu_no_exact_death_time_before_arrival",
+            "status": "PASS"
+          },
+          {
+            "id": "zijuan_no_exact_death_time_before_event",
+            "status": "PASS"
+          }
+        ],
+        "state_changes": [],
+        "automatic_literary_pass": false,
+        "evidence_effect": "NONE",
+        "independence_basis": "SUBMITTED_PRODUCER_IDENTITIES",
+        "knowledge_final": {
+          "baoyu": {
+            "knows": [
+              "daiyu_illness_severe"
+            ],
+            "believes": [
+              "baoyu_may_still_arrive_in_time"
+            ],
+            "suspects": [],
+            "does_not_know": [
+              "daiyu_death_exact_moment"
+            ]
+          },
+          "daiyu": {
+            "knows": [
+              "daiyu_illness_severe"
+            ],
+            "believes": [],
+            "suspects": [],
+            "does_not_know": [
+              "daiyu_death_exact_moment"
+            ]
+          },
+          "zijuan": {
+            "knows": [
+              "daiyu_illness_severe"
+            ],
+            "believes": [
+              "baoyu_may_still_arrive_in_time"
+            ],
+            "suspects": [],
+            "does_not_know": [
+              "daiyu_death_exact_moment"
+            ]
+          }
+        },
+        "producer": {
+          "kind": "INTERNAL_AGENT",
+          "principal_id": "agent:codex:review-followup",
+          "source_id": "agent:codex"
+        }
+      }
+    }
+  ]
+}

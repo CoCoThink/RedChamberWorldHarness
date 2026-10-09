@@ -86,16 +86,21 @@ class PromotionRegistry:
 
         competitions = CompetitionRegistry.from_repo(root)
         comp = competitions.records.get(record["source_competition"])
-        eligible = bool(
+        declared_winner = bool(
             comp
             and comp["state"] == "ADJUDICATED"
             and comp["adjudication"]["outcome"] == "WINNER"
             and comp["adjudication"]["winner_candidate_id"] == record["winner_candidate_id"]
             and comp["adjudication"]["promotion_state"] == "PROMOTION_CANDIDATE"
         )
-        gates["COMPETITION_ELIGIBILITY"] = "PASS" if eligible else "FAIL"
-        if not eligible:
+        competition_report = competitions.evaluate_record(root, comp) if comp else None
+        eligible = bool(declared_winner and competition_report["adjudication_qualification"] == "PASS")
+        pending = bool(declared_winner and competition_report["adjudication_qualification"] == "PENDING")
+        gates["COMPETITION_ELIGIBILITY"] = "PASS" if eligible else "PENDING" if pending else "FAIL"
+        if not eligible and not pending:
             findings.append("source competition is not an eligible promotion winner")
+            if competition_report:
+                findings.extend(competition_report["consistency_errors"])
 
         regression = run_r4_evidence_regression(root)
         gates["EVIDENCE_CORE"] = regression["overall"]
@@ -199,15 +204,18 @@ class PromotionRegistry:
 
         expected = record["checks"]
         for name, value in expected.items():
-            if gates.get(name) != value:
+            if gates.get(name) != value and gates.get(name) != "PENDING":
                 findings.append(f"manifest expected {name}={value}, actual={gates.get(name)}")
 
-        overall = "PASS" if not findings and all(v == "PASS" for v in gates.values()) else "FAIL"
+        pending_checks = [name for name, value in gates.items() if value == "PENDING"]
+        overall = "FAIL" if findings or "FAIL" in gates.values() else "PENDING" if pending_checks else "PASS"
         return {
             "id": promotion_id,
             "overall": overall,
             "candidate_sha256": actual_sha,
             "gates": gates,
+            "declared_checks": expected,
+            "pending_checks": pending_checks,
             "findings": findings,
             "stable_active_mutated": False,
             "release_action": record["release_action"],
@@ -228,5 +236,8 @@ def format_promotion(payload: dict[str, Any]) -> str:
     if payload.get("findings"):
         out.extend(["","FINDINGS"])
         out.extend(f"- {x}" for x in payload["findings"])
+    if payload.get("pending_checks"):
+        out.extend(["", "PENDING CHECKS"])
+        out.extend(f"- {x}" for x in payload["pending_checks"])
     out.extend(["",f"release_action: {payload.get('release_action')}"])
     return "\n".join(out)

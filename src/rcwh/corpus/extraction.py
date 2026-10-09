@@ -36,10 +36,20 @@ def code_digest(*names: str) -> str:
     return digest(b"".join(name.encode("utf-8") + b"\0" + (Path(__file__).parent / name).read_bytes() for name in names))
 
 
+def toolchain_diff(registered: dict[str, Any], current: dict[str, Any]) -> dict[str, Any]:
+    """Describe execution metadata changes without declaring a content change."""
+    return {
+        key: {"registered": registered.get(key), "current": current.get(key)}
+        for key in sorted(registered.keys() | current.keys())
+        if registered.get(key) != current.get(key)
+    }
+
+
 class ExtractionRepository:
     def __init__(self, catalog: AssetCatalog):
         self.catalog = catalog
         self.root = catalog.root
+        self.rebuild_reports: dict[str, dict[str, Any]] = {}
 
     def config(self, asset_ref: str, supplied: dict[str, Any] | None = None) -> dict[str, Any]:
         supplied = {} if supplied is None else supplied
@@ -61,25 +71,29 @@ class ExtractionRepository:
     def extractor(self, format_name: str) -> dict[str, Any]:
         raw = repository_path(self.root, LOCK_PATH).read_bytes()
         lock = json.loads(raw)
-        if lock.get("schema_version") != 1 or lock.get("python") != ">=3.10" or lock.get("markup") != {"package": "python-stdlib", "adapter_version": 1} or lock.get("text") != {
+        if lock.get("schema_version") != 1 or lock.get("python") not in {">=3.10", ">=3.12,<3.13"} or lock.get("markup") != {"package": "python-stdlib", "adapter_version": 1} or lock.get("text") != {
             "encoding": "utf-8", "newline_conversion": "NONE", "unicode_normalization": "NONE",
         }:
             raise ExtractionConfigError("unsupported extraction dependency lock")
         package_version = None
         if format_name == "PDF":
-            if lock.get("pdf", {}).get("package") != "PyMuPDF":
+            if lock.get("pdf", {}).get("package") != "PyMuPDF" or not isinstance(lock["pdf"].get("version"), str) or not lock["pdf"]["version"]:
                 raise ExtractionConfigError("unsupported PDF extractor dependency")
             try:
                 package_version = importlib.metadata.version("PyMuPDF")
             except importlib.metadata.PackageNotFoundError as exc:
                 raise AssetError("PDF_EXTRACTOR_NOT_INSTALLED: install declared project dependencies") from exc
-            if package_version != lock["pdf"]["version"]:
-                raise AssetError("EXTRACTOR_DEPENDENCY_MISMATCH: installed PyMuPDF differs from extraction.lock.json")
         return {
             "name": "rcwh-extraction", "version": 1,
             "code_sha256": code_digest("adapters.py", "extraction.py"),
             "python": f"{platform.python_implementation()} {platform.python_version()}",
             "package_version": package_version,
+        }
+
+    def execution_stamp(self, format_name: str) -> dict[str, Any]:
+        return {
+            "extractor": self.extractor(format_name),
+            "dependency_lock": {"path": LOCK_PATH, "sha256": digest(repository_path(self.root, LOCK_PATH).read_bytes())},
         }
 
     def compile(self, asset_ref: str, supplied: dict[str, Any] | None = None) -> tuple[dict[str, Any], bytes]:
@@ -175,6 +189,8 @@ class ExtractionRepository:
             return {"manifest_ref": manifest_ref, "manifest": manifest, "authority_effect": "NONE"}
 
     def load(self, manifest_ref: str, *, rebuild: bool = True) -> tuple[dict[str, Any], dict[str, dict[str, Any]]]:
+        # A failed recheck must not leave a previous PASS observation available.
+        self.rebuild_reports.pop(manifest_ref, None)
         manifest_asset = self.catalog.resolve(manifest_ref)
         if self.catalog.assets[manifest_ref]["kind"] != "CORPUS_DERIVATIVE":
             raise AssetError("INVALID_EXTRACTION_ASSET_KIND")
@@ -216,11 +232,18 @@ class ExtractionRepository:
             raise AssetError("EXTRACTION_UNIT_SET_MISMATCH")
         if rebuild:
             current_config = self.config(input_asset.id, manifest["config"])
-            if current_config != manifest["config"] or self.extractor(current_config["format"]) != manifest["extractor"]:
-                raise AssetError("STALE_EXTRACTION_TOOL_OR_CONFIG")
-            if digest(repository_path(self.root, LOCK_PATH).read_bytes()) != manifest["dependency_lock"]["sha256"]:
-                raise AssetError("STALE_EXTRACTION_DEPENDENCY_LOCK")
+            if current_config != manifest["config"]:
+                raise AssetError("STALE_EXTRACTION_CONFIG")
             recreated, raw = self.compile(input_asset.id, current_config)
-            if raw != output.path.read_bytes() or canonical_bytes(recreated) != canonical_bytes(manifest):
+            content_fields = ("schema_version", "input", "config", "output", "unit_refs")
+            if raw != output.path.read_bytes() or any(recreated[key] != manifest[key] for key in content_fields):
                 raise AssetError("EXTRACTION_REBUILD_MISMATCH")
+            registered = {key: manifest[key] for key in ("extractor", "dependency_lock")}
+            current = {key: recreated[key] for key in ("extractor", "dependency_lock")}
+            self.rebuild_reports[manifest_ref] = {
+                "status": "PASS", "scope": "EXTRACTION_CONTENT_REBUILD",
+                "manifest_ref": manifest_ref, "output_sha256": manifest["output"]["sha256"],
+                "unit_count": len(units), "registered_toolchain": registered,
+                "current_toolchain": current, "toolchain_diff": toolchain_diff(registered, current),
+            }
         return manifest, units

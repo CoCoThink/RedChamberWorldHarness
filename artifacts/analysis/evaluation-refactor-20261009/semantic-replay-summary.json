@@ -1,0 +1,282 @@
+{
+  "scope": "INTERNAL_ATTRIBUTED_READING_CONSTRAINT_REPLAY",
+  "cases": [
+    {
+      "case": "keyword-pile",
+      "status": "FAIL",
+      "returncode": 1,
+      "semantic_checks": [
+        {
+          "id": "baoyu_mundane_reaction",
+          "status": "FAIL"
+        },
+        {
+          "id": "medicine_not_finished",
+          "status": "FAIL"
+        },
+        {
+          "id": "ordinary_domestic_labor_continues",
+          "status": "FAIL"
+        },
+        {
+          "id": "complete_death_poem",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "philosophical_last_words",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "supernatural_resolution",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "character.daiyu.life_state",
+          "status": "FAIL",
+          "expected": "dead",
+          "observed": null
+        },
+        {
+          "id": "object.medicine_bowl_86.temperature",
+          "status": "FAIL",
+          "expected": "cold",
+          "observed": null
+        },
+        {
+          "id": "baoyu_no_exact_death_time_before_arrival",
+          "status": "PASS"
+        },
+        {
+          "id": "zijuan_no_exact_death_time_before_event",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "case": "paraphrased-last-words",
+      "status": "FAIL",
+      "returncode": 1,
+      "semantic_checks": [
+        {
+          "id": "baoyu_mundane_reaction",
+          "status": "PASS"
+        },
+        {
+          "id": "medicine_not_finished",
+          "status": "FAIL"
+        },
+        {
+          "id": "ordinary_domestic_labor_continues",
+          "status": "PASS"
+        },
+        {
+          "id": "complete_death_poem",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "philosophical_last_words",
+          "status": "FAIL",
+          "events": [
+            "philosophy"
+          ]
+        },
+        {
+          "id": "supernatural_resolution",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "character.daiyu.life_state",
+          "status": "FAIL",
+          "expected": "dead",
+          "observed": null
+        },
+        {
+          "id": "object.medicine_bowl_86.temperature",
+          "status": "FAIL",
+          "expected": "cold",
+          "observed": null
+        },
+        {
+          "id": "baoyu_no_exact_death_time_before_arrival",
+          "status": "PASS"
+        },
+        {
+          "id": "zijuan_no_exact_death_time_before_event",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "case": "supernatural-cure",
+      "status": "FAIL",
+      "returncode": 1,
+      "semantic_checks": [
+        {
+          "id": "baoyu_mundane_reaction",
+          "status": "PASS"
+        },
+        {
+          "id": "medicine_not_finished",
+          "status": "FAIL"
+        },
+        {
+          "id": "ordinary_domestic_labor_continues",
+          "status": "FAIL"
+        },
+        {
+          "id": "complete_death_poem",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "philosophical_last_words",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "supernatural_resolution",
+          "status": "FAIL",
+          "events": [
+            "cure"
+          ]
+        },
+        {
+          "id": "character.daiyu.life_state",
+          "status": "FAIL",
+          "expected": "dead",
+          "observed": "active"
+        },
+        {
+          "id": "object.medicine_bowl_86.temperature",
+          "status": "FAIL",
+          "expected": "cold",
+          "observed": null
+        },
+        {
+          "id": "baoyu_no_exact_death_time_before_arrival",
+          "status": "PASS"
+        },
+        {
+          "id": "zijuan_no_exact_death_time_before_event",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "case": "exit-conflict",
+      "status": "FAIL",
+      "returncode": 1,
+      "semantic_checks": [
+        {
+          "id": "baoyu_mundane_reaction",
+          "status": "PASS"
+        },
+        {
+          "id": "medicine_not_finished",
+          "status": "FAIL"
+        },
+        {
+          "id": "ordinary_domestic_labor_continues",
+          "status": "FAIL"
+        },
+        {
+          "id": "complete_death_poem",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "philosophical_last_words",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "supernatural_resolution",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "character.daiyu.life_state",
+          "status": "FAIL",
+          "expected": "dead",
+          "observed": "active"
+        },
+        {
+          "id": "object.medicine_bowl_86.temperature",
+          "status": "FAIL",
+          "expected": "cold",
+          "observed": "hot"
+        },
+        {
+          "id": "baoyu_no_exact_death_time_before_arrival",
+          "status": "PASS"
+        },
+        {
+          "id": "zijuan_no_exact_death_time_before_event",
+          "status": "PASS"
+        }
+      ]
+    },
+    {
+      "case": "negated-poem",
+      "status": "FAIL",
+      "returncode": 1,
+      "semantic_checks": [
+        {
+          "id": "baoyu_mundane_reaction",
+          "status": "PASS"
+        },
+        {
+          "id": "medicine_not_finished",
+          "status": "FAIL"
+        },
+        {
+          "id": "ordinary_domestic_labor_continues",
+          "status": "FAIL"
+        },
+        {
+          "id": "complete_death_poem",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "philosophical_last_words",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "supernatural_resolution",
+          "status": "PASS",
+          "events": []
+        },
+        {
+          "id": "character.daiyu.life_state",
+          "status": "FAIL",
+          "expected": "dead",
+          "observed": null
+        },
+        {
+          "id": "object.medicine_bowl_86.temperature",
+          "status": "FAIL",
+          "expected": "cold",
+          "observed": null
+        },
+        {
+          "id": "baoyu_no_exact_death_time_before_arrival",
+          "status": "PASS"
+        },
+        {
+          "id": "zijuan_no_exact_death_time_before_event",
+          "status": "PASS"
+        }
+      ]
+    }
+  ],
+  "external_model_runs": 0,
+  "independent_human_reviews": 0,
+  "automatic_literary_pass": false
+}

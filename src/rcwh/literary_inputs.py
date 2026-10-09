@@ -50,6 +50,7 @@ class LiteraryInputs:
         from .corpus.audit import CorpusAudit
         audit = CorpusAudit(self.catalog).summary(spec["dataset_ref"], rebuild=False)
         return {"status": "PASS", "scope": "EXEMPLAR_REFERENCES", "spec": spec, "segments": selected,
+                "report_kind": "COMPUTED_CHECK", "formal_exemplar_authorized": audit["status"] == "PASS",
                 "readiness": "VERIFIED" if audit["status"] == "PASS" else manifest["readiness"], "human_audit": audit, "authority_effect": "NONE"}
 
     def package(self, relative: str, *, production: bool = False, require_tracked: bool = False) -> dict:

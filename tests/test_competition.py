@@ -16,7 +16,7 @@ def root() -> Path:
     return Path(__file__).resolve().parents[1]
 
 
-def test_real_ch86_candidates_complete_blind_gate_and_b_is_winner():
+def test_historical_ch86_opinions_do_not_grant_current_qualification():
     registry = CompetitionRegistry.from_repo(root())
     payload = registry.evaluate_record(
         root(), registry.records["comp:43-0:ch86:pressure-test"]
@@ -27,14 +27,15 @@ def test_real_ch86_candidates_complete_blind_gate_and_b_is_winner():
         "C": "READY_FOR_BLIND_READ",
     }
     assert all(x["machine_matches_ledger"] for x in payload["candidate_results"])
-    assert all(x["six_field_pass"] for x in payload["candidate_results"])
-    assert all(x["human_plock_status"] == "PASS" for x in payload["candidate_results"])
-    assert all(x["blind_read_status"] == "PASS" for x in payload["candidate_results"])
-    assert all(x["reviewer_blinded"] is True for x in payload["candidate_results"])
-    assert all(x["adjudication_eligible"] is True for x in payload["candidate_results"])
-    assert payload["adjudication"]["outcome"] == "WINNER"
-    assert payload["adjudication"]["winner_candidate_id"] == "ch86-B"
-    assert payload["adjudication"]["promotion_state"] == "PROMOTION_CANDIDATE"
+    assert not any(x["six_field_pass"] for x in payload["candidate_results"])
+    assert all(x["human_plock_status"] == "PENDING" for x in payload["candidate_results"])
+    assert all(x["blind_read_status"] == "PENDING" for x in payload["candidate_results"])
+    assert not any(x["adjudication_eligible"] for x in payload["candidate_results"])
+    assert all(x["declared_gates"]["blind_read"]["status"] == "PASS" for x in payload["candidate_results"])
+    assert payload["adjudication"]["outcome"] == "PENDING"
+    assert payload["adjudication"]["promotion_state"] == "NOT_ELIGIBLE"
+    assert payload["adjudication_qualification"] == "PENDING"
+    assert payload["declared_adjudication"]["winner_candidate_id"] == "ch86-B"
     assert payload["consistency_errors"] == []
     assert payload["stable_active_mutated"] is False
 
@@ -44,6 +45,17 @@ def test_production_ledger_validates_against_stable_active():
     plocks = LiteraryProtectionRegistry.from_repo(root())
     stable = run_r4_evidence_regression(root())["stable_active"]
     assert registry.validate_integrity(root(), plocks, stable) == []
+
+
+def test_all_declared_pass_flags_cannot_qualify_a_current_winner():
+    registry = CompetitionRegistry.from_repo(root())
+    record = registry.records["comp:43-0:ch86:pressure-test"]
+    record.pop("adjudication_basis")
+    assert all(c["blind_read"]["reviewer_blinded"] for c in record["candidates"])
+    payload = registry.evaluate_record(root(), record)
+    assert payload["adjudication_qualification"] == "FAIL"
+    assert not any(c["adjudication_eligible"] for c in payload["candidate_results"])
+    assert any("not passed all promotion gates" in e for e in payload["consistency_errors"])
 
 
 def test_fixture_schema_and_machine_results_match():
@@ -58,7 +70,7 @@ def test_fixture_schema_and_machine_results_match():
     assert statuses == {
         "A": "READY_FOR_BLIND_READ",
         "B": "REPLACEMENT_CASE",
-        "C": "REJECT_BEFORE_BLIND_READ",
+        "C": "REPLACEMENT_CASE",
     }
     assert all(x["machine_matches_ledger"] for x in payload["candidate_results"])
 
@@ -97,7 +109,7 @@ def test_competition_never_mutates_stable_active():
     )
     assert payload["stable_active_effect"] == "SEPARATE_PROMOTION_ONLY"
     assert payload["stable_active_mutated"] is False
-    assert payload["adjudication"]["promotion_state"] == "PROMOTION_CANDIDATE"
+    assert payload["adjudication"]["promotion_state"] == "NOT_ELIGIBLE"
 
 
 def test_fixture_git_blob_identity_is_checked():
@@ -116,14 +128,17 @@ def test_fixture_git_blob_identity_is_checked():
     assert any("git blob identity mismatch" in x for x in errors)
 
 
-def test_ch86_b_promotion_regression_passes():
+def test_ch86_b_promotion_content_passes_but_review_qualification_is_pending():
     from rcwh.promotion import PromotionRegistry
     registry = PromotionRegistry.from_repo(root())
     record = registry.records["promotion:ch86:b:v1-5-candidate"]
     assert record["stable_active_effect"] == "NONE"
     payload = registry.evaluate(root(), record["id"])
-    assert payload["overall"] == "PASS"
-    assert all(x == "PASS" for x in payload["gates"].values())
+    assert payload["overall"] == "PENDING"
+    assert payload["gates"]["COMPETITION_ELIGIBILITY"] == "PENDING"
+    assert all(value == "PASS" for name, value in payload["gates"].items() if name != "COMPETITION_ELIGIBILITY")
+    assert payload["pending_checks"] == ["COMPETITION_ELIGIBILITY"]
+    assert payload["findings"] == []
     assert payload["stable_active_mutated"] is False
     assert payload["release_action"] == "SEPARATE_EXPLICIT_PROMOTION_REQUIRED"
 
@@ -176,9 +191,10 @@ def test_promotion_cli_exports_exact_candidate_and_refuses_overwrite(tmp_path, m
     monkeypatch.setattr("sys.argv", ["rcwh", "--root", str(root()), "promotion", record["id"], "--output", str(target), "--json"])
     with pytest.raises(SystemExit) as exported:
         main()
-    assert exported.value.code == 0
+    assert exported.value.code == 2
     payload = json.loads(capsys.readouterr().out)
     assert payload["stable_active_mutated"] is False
+    assert payload["overall"] == "PENDING"
     assert hashlib.sha256(target.read_bytes()).hexdigest() == record["candidate"]["sha256"]
     with pytest.raises(SystemExit) as refused:
         main()
