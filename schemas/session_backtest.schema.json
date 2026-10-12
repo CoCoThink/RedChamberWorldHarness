@@ -1,0 +1,90 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "oneOf": [{"$ref": "#/$defs/preparation"}, {"$ref": "#/$defs/packet"}, {"$ref": "#/$defs/round"}, {"$ref": "#/$defs/registry"}, {"$ref": "#/$defs/mapping"}],
+  "$defs": {
+    "label": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "binding": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/label"}, "sha256": {"$ref": "#/$defs/sha"}}},
+    "optionalBinding": {"anyOf": [{"$ref": "#/$defs/binding"}, {"type": "null"}]},
+    "base": {
+      "type": "object",
+      "required": ["execution_basis", "resource_parity", "model_pretraining_exposure", "controlled_workflow_effect", "independent_human_admission", "usage", "authority_effect"],
+      "properties": {
+        "execution_basis": {"const": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED"}, "resource_parity": {"const": "NOT_VERIFIED"},
+        "model_pretraining_exposure": {"const": "UNKNOWN"}, "controlled_workflow_effect": {"const": "NOT_ESTIMABLE"},
+        "independent_human_admission": {"const": false}, "usage": {"const": "RESEARCH_ONLY"}, "authority_effect": {"const": "NONE"}
+      }
+    },
+    "preparation": {
+      "allOf": [{"$ref": "#/$defs/base"}], "type": "object", "unevaluatedProperties": false,
+      "required": ["schema_version", "kind", "config", "context_sha256", "inputs", "tasks", "requests", "characters", "sample_ids", "coordinator_session_id"],
+      "properties": {
+        "schema_version": {"const": 1}, "kind": {"const": "SESSION_BACKTEST_PREPARATION"}, "config": {"$ref": "#/$defs/binding"},
+        "context_sha256": {"$ref": "#/$defs/sha"}, "inputs": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/binding"}},
+        "tasks": {"type": "object", "additionalProperties": false, "required": ["DIRECT", "HARNESS"], "properties": {"DIRECT": {"type": "object"}, "HARNESS": {"type": "object"}}},
+        "requests": {"type": "object", "additionalProperties": false, "required": ["DIRECT", "HARNESS"], "properties": {"DIRECT": {"$ref": "#/$defs/request"}, "HARNESS": {"$ref": "#/$defs/request"}}},
+        "characters": {"type": "integer", "minimum": 1}, "sample_ids": {"type": "array", "minItems": 2, "uniqueItems": true, "items": {"$ref": "#/$defs/label"}},
+        "coordinator_session_id": {"$ref": "#/$defs/label"}
+      }
+    },
+    "request": {
+      "type": "object", "additionalProperties": false, "required": ["model", "max_tokens", "system", "messages"],
+      "properties": {
+        "model": {"$ref": "#/$defs/label"}, "max_tokens": {"type": "integer", "minimum": 1}, "system": {"$ref": "#/$defs/label"},
+        "messages": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["role", "content"], "properties": {"role": {"enum": ["user", "assistant"]}, "content": {"$ref": "#/$defs/label"}}}}
+      }
+    },
+    "packet": {
+      "allOf": [{"$ref": "#/$defs/base"}], "type": "object", "unevaluatedProperties": false,
+      "required": ["schema_version", "kind", "preparation", "workflow", "sample_id", "round_index", "characters", "request", "request_sha256", "parent", "feedback"],
+      "properties": {
+        "schema_version": {"const": 1}, "kind": {"const": "SESSION_BACKTEST_AUTHOR_PACKET"}, "preparation": {"$ref": "#/$defs/binding"},
+        "workflow": {"enum": ["DIRECT", "HARNESS"]}, "sample_id": {"$ref": "#/$defs/label"}, "round_index": {"type": "integer", "minimum": 0},
+        "characters": {"type": "integer", "minimum": 1}, "request": {"$ref": "#/$defs/request"}, "request_sha256": {"$ref": "#/$defs/sha"},
+        "parent": {"$ref": "#/$defs/optionalBinding"}, "feedback": {"$ref": "#/$defs/optionalBinding"}
+      }
+    },
+    "round": {
+      "allOf": [{"$ref": "#/$defs/base"}], "type": "object", "unevaluatedProperties": false,
+      "required": ["schema_version", "kind", "session_id", "session_configured_model", "preparation", "workflow", "sample_id", "round_index", "packet_source", "packet", "request_sha256", "text_source", "candidate", "output", "output_sha256", "parent", "feedback"],
+      "properties": {
+        "schema_version": {"const": 1}, "kind": {"const": "SESSION_BACKTEST_ROUND"}, "session_id": {"$ref": "#/$defs/label"},
+        "session_configured_model": {"type": "object", "additionalProperties": false, "required": ["label", "basis"], "properties": {"label": {"$ref": "#/$defs/label"}, "basis": {"const": "UNVERIFIED_DECLARATION"}}},
+        "preparation": {"$ref": "#/$defs/binding"}, "workflow": {"enum": ["DIRECT", "HARNESS"]}, "sample_id": {"$ref": "#/$defs/label"},
+        "round_index": {"type": "integer", "minimum": 0}, "packet_source": {"$ref": "#/$defs/binding"}, "packet": {"$ref": "#/$defs/binding"},
+        "request_sha256": {"$ref": "#/$defs/sha"}, "text_source": {"$ref": "#/$defs/binding"}, "candidate": {"$ref": "#/$defs/binding"},
+        "output": {"$ref": "#/$defs/label"}, "output_sha256": {"$ref": "#/$defs/sha"}, "parent": {"$ref": "#/$defs/optionalBinding"}, "feedback": {"$ref": "#/$defs/optionalBinding"}
+      }
+    },
+    "feedback": {
+      "type": "object", "additionalProperties": false, "required": ["qualification", "parent", "candidate_sha256", "text", "authority_effect"],
+      "properties": {"qualification": {"const": "FEEDBACK_ONLY"}, "parent": {"$ref": "#/$defs/binding"}, "candidate_sha256": {"$ref": "#/$defs/sha"}, "text": {"$ref": "#/$defs/label"}, "authority_effect": {"const": "NONE"}}
+    },
+    "registry": {
+      "allOf": [{"$ref": "#/$defs/base"}], "type": "object", "unevaluatedProperties": false,
+      "required": ["schema_version", "kind", "preparation", "samples"],
+      "properties": {
+        "schema_version": {"const": 1}, "kind": {"const": "SESSION_BACKTEST_REGISTRY"}, "preparation": {"$ref": "#/$defs/binding"},
+        "samples": {"type": "array", "minItems": 4, "items": {"type": "object", "additionalProperties": false, "required": ["workflow", "sample_id", "final_round", "text"], "properties": {
+          "workflow": {"enum": ["DIRECT", "HARNESS"]}, "sample_id": {"$ref": "#/$defs/label"}, "final_round": {"$ref": "#/$defs/binding"}, "text": {"$ref": "#/$defs/binding"}
+        }}}
+      }
+    },
+    "mappingRow": {
+      "type": "object", "additionalProperties": false, "required": ["token", "public_text", "kind", "text"],
+      "properties": {
+        "token": {"type": "string", "pattern": "^read-[a-f0-9]{24}$"}, "public_text": {"$ref": "#/$defs/binding"},
+        "kind": {"enum": ["SESSION_CANDIDATE", "ORIGINAL_REFERENCE"]}, "text": {"$ref": "#/$defs/binding"}, "id": {"$ref": "#/$defs/label"},
+        "author_session_ids": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/label"}}
+      },
+      "allOf": [{"if": {"properties": {"kind": {"const": "SESSION_CANDIDATE"}}}, "then": {"required": ["id", "author_session_ids"]}, "else": {"not": {"anyOf": [{"required": ["id"]}, {"required": ["author_session_ids"]}]}}}]
+    },
+    "mapping": {
+      "type": "object", "additionalProperties": false, "required": ["schema_version", "kind", "context", "packet", "mapping", "authority_effect", "usage"],
+      "properties": {
+        "schema_version": {"const": 1}, "kind": {"const": "SESSION_ANONYMOUS_MAPPING"}, "context": {"$ref": "#/$defs/binding"}, "packet": {"$ref": "#/$defs/binding"},
+        "mapping": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/mappingRow"}}, "authority_effect": {"const": "NONE"}, "usage": {"const": "RESEARCH_ONLY"}
+      }
+    }
+  }
+}
