@@ -1,0 +1,669 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch90.json",
+      "sha256": "6a84320ad0d6531ef7ca2af8899ee3db03f9f38503c2186624fcef42ebfc5b2e"
+    },
+    "seed": {
+      "path": "data/planning/scenes/90-S1.json",
+      "sha256": "acab3cd6daee2a3e09fa0b49c8fa14193fc8aea02c2d13f4024b515ecccb8464"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 90,
+  "chapter_plan_ref": "data/planning/chapters/ch90.json",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 89
+  },
+  "entry_from": "CHAPTER_ENTRY:89",
+  "entry_state": [
+    {
+      "equals": "character.fengjie.location",
+      "value": "S06",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/6/effects/6/value",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/6/effects/6/value",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "d62d20891603da45a11c7a619d9da530db560ea2e41f517b1a058f5d4de7ce38",
+          "value": "S06"
+        }
+      ]
+    },
+    {
+      "equals": "character.fengjie.body_state",
+      "value": "chronic_old_illness",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/fengjie/body_state",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/fengjie/body_state",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "49d9a8dc8130ce57a379fb74606e3fcfeae8be2f61dd1a89ddfe9a3a219022da",
+          "value": "chronic_old_illness"
+        }
+      ]
+    },
+    {
+      "equals": "character.ping_er.location",
+      "value": "S06",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/6/effects/7/value",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/6/effects/7/value",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "d62d20891603da45a11c7a619d9da530db560ea2e41f517b1a058f5d4de7ce38",
+          "value": "S06"
+        }
+      ]
+    },
+    {
+      "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location",
+      "value": "S06",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/objects/m4.json#/transitions/5/to/location",
+          "path": "data/objects/m4.json",
+          "pointer": "/transitions/5/to/location",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+          "text_sha256": "d62d20891603da45a11c7a619d9da530db560ea2e41f517b1a058f5d4de7ce38",
+          "value": "S06"
+        }
+      ]
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.fengjie.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W90-MANAGEMENT-DECLINE只给全回劳作下恶化，不能独立划入第一次吩咐落空的场级出口。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "凤姐悟道“命该如此”，因病彻底不管事，或恢复旧府万能调度权。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f21aa9845a64f6e95ed9f3e527f2fe922076d686e5bc982f9d1be4c772db4ce9",
+          "value": {
+            "id": "90-S1",
+            "title": "凤姐第一次发现“吩咐了也未必有人做”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            27064,
+            27167
+          ],
+          "lines": [
+            661,
+            663
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "2f2d2a44c8cf808ed58f6f9cc0524bdb32f37491ee4f6d3503a76532ee0c8bfa"
+        },
+        {
+          "byte_range": [
+            27167,
+            27420
+          ],
+          "lines": [
+            664,
+            666
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "37eeb07cb23be54075439b07f8242bd2d9c1a3464b44d08314318ade5df40269"
+        },
+        {
+          "byte_range": [
+            28198,
+            28326
+          ],
+          "lines": [
+            691,
+            693
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "025952528cf2266b4f1d74de0b6518f2e3cbd71e246feb6e94fd0f9ac7c1de96"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "更改整副硬回目为借衣/病里版本，或加诗琴画、教训式情理长论。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f21aa9845a64f6e95ed9f3e527f2fe922076d686e5bc982f9d1be4c772db4ce9",
+          "value": {
+            "id": "90-S1",
+            "title": "凤姐第一次发现“吩咐了也未必有人做”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            26602,
+            26910
+          ],
+          "lines": [
+            650,
+            657
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "776b7d07b0dedb0de597b4616480b48ee313dcc6dd0a5588eb41108011eb11fe"
+        },
+        {
+          "byte_range": [
+            27523,
+            27592
+          ],
+          "lines": [
+            670,
+            672
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "eb226d44d92879e383072abcd8f777ea8d9c3fb8a587c6aefb187b24f781536c"
+        },
+        {
+          "byte_range": [
+            27592,
+            27707
+          ],
+          "lines": [
+            673,
+            675
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "47b193a23e99d452e87275c8abad587235342dbcf29da7ad39ebf36b3eaec97a"
+        },
+        {
+          "byte_range": [
+            27789,
+            27878
+          ],
+          "lines": [
+            679,
+            681
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "77f4874a0d50fc34afd8742696320f093bd079f7acc3c77adebcc74858068886"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f21aa9845a64f6e95ed9f3e527f2fe922076d686e5bc982f9d1be4c772db4ce9",
+          "value": {
+            "id": "90-S1",
+            "title": "凤姐第一次发现“吩咐了也未必有人做”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            28492,
+            28520
+          ],
+          "lines": [
+            700,
+            700
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            28520,
+            28547
+          ],
+          "lines": [
+            701,
+            702
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4ce526aecba789d8fb664d11031ea1dcfb21bf96efab2e4510b2cee0f78d282d"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "90-S1",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 1,
+  "participants": [
+    "fengjie",
+    "ping_er"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "character.fengjie.life_state",
+      "value": "ACTIVE",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/fengjie/life_state",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/fengjie/life_state",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "77ff42a3ee266d7bdd15afca0b44c7ae71d875464026dcf96b158e450c797a93",
+          "value": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status",
+      "value": "MOVED_TO_BORROWED_HOUSE",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/objects/m4.json#/transitions/5/to/status",
+          "path": "data/objects/m4.json",
+          "pointer": "/transitions/5/to/status",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+          "text_sha256": "14e973c137e7ad601cb028bd902c7f8c41abaae9a5d66af396435c9ef5d3fabd",
+          "value": "MOVED_TO_BORROWED_HOUSE"
+        }
+      ]
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/7",
+        "ref": "data/world/m3_core.json#/characters/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bca44063796cdc27c5e8076a896ecdbedfbe135109b5461cd9af292e5d0fbaa0",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_old_illness",
+            "household_role": "household_manager",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED_JIALIAN"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "fengjie",
+          "name": "王熙凤"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/8",
+        "ref": "data/world/m3_core.json#/characters/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "18eb0f602b315bef39498961532a6d16a05dbd3cac2e572c07257b6fdf99a63d",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "fengjie_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "ping_er",
+          "name": "平儿"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/5",
+        "ref": "data/objects/m4.json#/objects/5",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "ccec5081b501878b4d0e5edd7c0dc3d9c0a8a57baa680db06dd545a0df97a063",
+        "value": {
+          "baseline": {
+            "holder": "jia_household",
+            "location": "S02",
+            "status": "IN_OLD_HOUSE"
+          },
+          "continuity_rules": [
+            "抄没后通过搬运进入借住院落，不允许物件瞬移"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-HOUSEHOLD-BEDDING-BUNDLE",
+          "identity_status": "C_WORLD_OBJECT_GROUP",
+          "kind": "bedding_bundle",
+          "name": "事败迁居铺盖包",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "description": "凤姐仍发吩咐，却发现旧府体系不能再如前调动；平儿的跑单与回话使有限执行能力可见。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f21aa9845a64f6e95ed9f3e527f2fe922076d686e5bc982f9d1be4c772db4ce9",
+          "value": {
+            "id": "90-S1",
+            "title": "凤姐第一次发现“吩咐了也未必有人做”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            27064,
+            27167
+          ],
+          "lines": [
+            661,
+            663
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "2f2d2a44c8cf808ed58f6f9cc0524bdb32f37491ee4f6d3503a76532ee0c8bfa"
+        },
+        {
+          "byte_range": [
+            27167,
+            27420
+          ],
+          "lines": [
+            664,
+            666
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "37eeb07cb23be54075439b07f8242bd2d9c1a3464b44d08314318ade5df40269"
+        },
+        {
+          "byte_range": [
+            27420,
+            27523
+          ],
+          "lines": [
+            667,
+            669
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "7012714ae1d9a5a829d142b19f589a9ea267499f7d2fab8e3e5a00313fe3761b"
+        },
+        {
+          "byte_range": [
+            28547,
+            28810
+          ],
+          "lines": [
+            703,
+            706
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "1170b926879b598eb134a9b1e86cd0bd2f92a3d7d928d61529112912cf7eeea6"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "小屋药炉、痰盒、热水壶与米铺盖同挤；凤姐喝药仍算米、铺盖和冬物，身体连续性不脱离经济。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f21aa9845a64f6e95ed9f3e527f2fe922076d686e5bc982f9d1be4c772db4ce9",
+          "value": {
+            "id": "90-S1",
+            "title": "凤姐第一次发现“吩咐了也未必有人做”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            26910,
+            27064
+          ],
+          "lines": [
+            658,
+            660
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "48ca71f39bd96218e8f373e7ea629f7de678063970767b48b9ae1c9eb78e9d3d"
+        },
+        {
+          "byte_range": [
+            27878,
+            27968
+          ],
+          "lines": [
+            682,
+            684
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "cff5adc597ca3c184be17404aa9c333a2fd0aed74a131f753c15e5a747a92e8d"
+        },
+        {
+          "byte_range": [
+            27968,
+            28100
+          ],
+          "lines": [
+            685,
+            687
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "313017755dc3b28f649cc1e2a9fcb8b5f533206c2f0289c3307138971a4d4faf"
+        },
+        {
+          "byte_range": [
+            28100,
+            28198
+          ],
+          "lines": [
+            688,
+            690
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "7e9dba6c3667a82710525ac9d634589f12d8bd77dc684f035b129da84579d459"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "“知命”落在承认旧办法回不来后仍作现实取舍，不说命该如此或停办家务。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f21aa9845a64f6e95ed9f3e527f2fe922076d686e5bc982f9d1be4c772db4ce9",
+          "value": {
+            "id": "90-S1",
+            "title": "凤姐第一次发现“吩咐了也未必有人做”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            27064,
+            27167
+          ],
+          "lines": [
+            661,
+            663
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "2f2d2a44c8cf808ed58f6f9cc0524bdb32f37491ee4f6d3503a76532ee0c8bfa"
+        },
+        {
+          "byte_range": [
+            27167,
+            27420
+          ],
+          "lines": [
+            664,
+            666
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "37eeb07cb23be54075439b07f8242bd2d9c1a3464b44d08314318ade5df40269"
+        },
+        {
+          "byte_range": [
+            28198,
+            28326
+          ],
+          "lines": [
+            691,
+            693
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "025952528cf2266b4f1d74de0b6518f2e3cbd71e246feb6e94fd0f9ac7c1de96"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [
+    "OBJ-HOUSEHOLD-BEDDING-BUNDLE"
+  ],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "objects: 只绑定已迁借院的铺盖组；药炉、痰盒、热水壶、米升与本场药无对象记录，不借用黛玉药碗。",
+    "authority: 具体哪一项吩咐落空、谁不能执行及取物名目办理未有原子事件，需作者现实选择。",
+    "events: W90-MANAGEMENT-DECLINE不能替代此场局部身体/权力变化。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。"
+  ],
+  "function": "在迁居后第一轮吩咐未能兑现中显出凤姐名义与实际权力分离：旧病与米铺盖挤在小屋，她仍做事但旧系统不可复。",
+  "notes": "DRAFT_GENERATED：这是生成的当前实现约束，不是独立编辑、审查或历史原稿证据。演员ID及对象/事实ID均引用真实注册记录；KNOWN演员集合只表示所选ID已登记，不证明已出场或局部时序。第一场的KNOWN条件仅来自实际基线或前回已注册效果叶值，约束显式chapter-1粗层入口；不作作者学证据。后场的前驱仅为显式声明的来源列表顺序，局部检查点一律UNKNOWN，不注入或传承场态。required/forbidden beats是有卡/种子依据的待写目标，不能成为条件basis；未绑定全回事件或旧知识场。"
+}

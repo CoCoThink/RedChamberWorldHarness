@@ -1,0 +1,523 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v1",
+  "id": "93-S1",
+  "chapter": 93,
+  "order": 1,
+  "chapter_plan_ref": "data/planning/chapters/ch93.json",
+  "status": "DRAFT_GENERATED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/93-S1.json",
+      "sha256": "7100e4fb1d7074cd689ee311687adb2753f570c8177d024e9920800918004093"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch93.json",
+      "sha256": "515ed9ce4f4aa83ba37ed0124f4ac31303b4fb375279500a0951cf74019301ce"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "CHAPTER_ENTRY:92",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 92
+  },
+  "participants": [
+    "baoyu",
+    "jia_yun"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/10",
+        "ref": "data/world/m3_core.json#/characters/10",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "340eb8abc9247bbb71dbde20970aad2d26ba92195c40678d53b29fcd43b5c3c2",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "kin_runner",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_network",
+            "human"
+          ],
+          "id": "jia_yun",
+          "name": "贾芸"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": [
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/8",
+        "ref": "data/knowledge/v03_slice2.json#/facts/8",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "376cd3c7003b671db97190fcf395e6087df19ad31f3c0254b4ec62835ce7b241",
+        "value": {
+          "epistemic": "CURRENT_SCENE_UNKNOWN",
+          "id": "baoyu_detention_whole_case",
+          "label": "宝玉羁押案全部案情与官面判断"
+        }
+      }
+    ]
+  },
+  "entry_state": [
+    {
+      "equals": "character.baoyu.legal_status",
+      "value": "DETAINED_PENDING_INQUIRY",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/9/effects/2",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/9/effects/2",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "22727569762c84a0ee4fe7abad423a90d2e85737916dd86ad8f8a01ea85426b3",
+          "value": {
+            "set": "characters.baoyu.legal_status",
+            "value": "DETAINED_PENDING_INQUIRY"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.baoyu.body_state",
+      "value": "detention_cold_sleep_food_hygiene_strain",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/9/effects/4",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/9/effects/4",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "180850d17d07cbf4fbff4ec47ed0b2449c5c28c363f15be30ded27ff238a6c0e",
+          "value": {
+            "set": "characters.baoyu.body_state",
+            "value": "detention_cold_sleep_food_hygiene_strain"
+          }
+        }
+      ]
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "character.baoyu.legal_status",
+      "value": "DETAINED_PENDING_INQUIRY",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/9/effects/2",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/9/effects/2",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "22727569762c84a0ee4fe7abad423a90d2e85737916dd86ad8f8a01ea85426b3",
+          "value": {
+            "set": "characters.baoyu.legal_status",
+            "value": "DETAINED_PENDING_INQUIRY"
+          }
+        }
+      ]
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "character.baoyu.legal_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W93确有RELEASED_NO_RESTORATION，但同时包含凤姐死亡；没有本场独立释放事件，不能整包执行制造早死。"
+    },
+    {
+      "equals": "character.baoyu.knowledge.baoyu_detention_whole_case",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "领物获释不证明宝玉已知全案及最终官面判断，知识接口无此场更新。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "93-S1-R1",
+      "description": "正常释放须先核手续、清点领取随身物，再离开；说明仍可传问，而不是开门就走。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "33a62fe06ad9520b4eb4b0d4152c7adaf5a56f573882baf94c534b1ff6e9f8b3",
+          "value": {
+            "id": "93-S1",
+            "title": "释放有手续，不是开门就走"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34225,
+                34340
+              ],
+              "lines": [
+                843,
+                845
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d260746d432ea4ea17f3e8ce6844e215bca76547ca9f02df20e9306c25c6f783"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n释放手续、凤姐死前“最后一件管事”、死后“谁来主丧”可以更清。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                34340,
+                34520
+              ],
+              "lines": [
+                846,
+                848
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "24c75446bbadf3e0a5a544feaa3b251e5f41cf772e5918e4ce448363682d12ea"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n93-S1领取随身物/仍可传问；S2回家先吃；S3凤姐在宝玉回来前已末段；S4最后只管一件事；S5她一死立刻出现组织真空。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35618,
+                35900
+              ],
+              "lines": [
+                885,
+                888
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b024aef7267d8e0f55de72f25a39d4a76cd408f26c09300906dd304dd185b6b3"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n释放 → 回家吃热饭 → 看凤姐 → 最后一件具体管事 → 身体退出 → 死 → 丧务组织真空 → 平儿留下陪巧姐又被现实叫走。  \n**风险：**死亡压过宝玉获释或反之；需保持“双恢复/双退出”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "93-S1-R2",
+      "description": "获释只恢复有限行动自由，不带来钱或旧产业；以回家热饭的需要承接后场。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "33a62fe06ad9520b4eb4b0d4152c7adaf5a56f573882baf94c534b1ff6e9f8b3",
+          "value": {
+            "id": "93-S1",
+            "title": "释放有手续，不是开门就走"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34043,
+                34225
+              ],
+              "lines": [
+                840,
+                842
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "efa37f4b209fe5a191064f129e6a0b8ee8b28df41dedd5cf00f176dc9873bc75"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n宝玉回家第一件事是热饭、洗手、换衣；凤姐死后两张纸仍是买米/巧姐药钱；钥匙有些已无柜可开；平儿被叫去补白布。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35028,
+                35195
+              ],
+              "lines": [
+                867,
+                869
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "2369b960bd77349ce3570b4f2bfdac3cb767cd2a7937d9803939fb138c0e688b"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE2：宝玉获释不带来钱，凤死立刻要钱。物链从热饭/水转到白布/灯/棺/遗物；信息上释放小喜立即被病危压过。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35618,
+                35900
+              ],
+              "lines": [
+                885,
+                888
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b024aef7267d8e0f55de72f25a39d4a76cd408f26c09300906dd304dd185b6b3"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n释放 → 回家吃热饭 → 看凤姐 → 最后一件具体管事 → 身体退出 → 死 → 丧务组织真空 → 平儿留下陪巧姐又被现实叫走。  \n**风险：**死亡压过宝玉获释或反之；需保持“双恢复/双退出”。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "93-S1-F1",
+      "description": "不得把获释写成全案最终洗清、爵产归还或重金权贵救回；手续不能引发恢弘胜利场。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "33a62fe06ad9520b4eb4b0d4152c7adaf5a56f573882baf94c534b1ff6e9f8b3",
+          "value": {
+            "id": "93-S1",
+            "title": "释放有手续，不是开门就走"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34340,
+                34520
+              ],
+              "lines": [
+                846,
+                848
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "24c75446bbadf3e0a5a544feaa3b251e5f41cf772e5918e4ce448363682d12ea"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n93-S1领取随身物/仍可传问；S2回家先吃；S3凤姐在宝玉回来前已末段；S4最后只管一件事；S5她一死立刻出现组织真空。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35028,
+                35195
+              ],
+              "lines": [
+                867,
+                869
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "2369b960bd77349ce3570b4f2bfdac3cb767cd2a7937d9803939fb138c0e688b"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE2：宝玉获释不带来钱，凤死立刻要钱。物链从热饭/水转到白布/灯/棺/遗物；信息上释放小喜立即被病危压过。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35618,
+                35900
+              ],
+              "lines": [
+                885,
+                888
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b024aef7267d8e0f55de72f25a39d4a76cd408f26c09300906dd304dd185b6b3"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n释放 → 回家吃热饭 → 看凤姐 → 最后一件具体管事 → 身体退出 → 死 → 丧务组织真空 → 平儿留下陪巧姐又被现实叫走。  \n**风险：**死亡压过宝玉获释或反之；需保持“双恢复/双退出”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "93-S1-F2",
+      "description": "不得为使释放“有戏”提前执行凤姐死亡，或让喜讯吞没持续病危的另一条线。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "33a62fe06ad9520b4eb4b0d4152c7adaf5a56f573882baf94c534b1ff6e9f8b3",
+          "value": {
+            "id": "93-S1",
+            "title": "释放有手续，不是开门就走"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34340,
+                34520
+              ],
+              "lines": [
+                846,
+                848
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "24c75446bbadf3e0a5a544feaa3b251e5f41cf772e5918e4ce448363682d12ea"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n93-S1领取随身物/仍可传问；S2回家先吃；S3凤姐在宝玉回来前已末段；S4最后只管一件事；S5她一死立刻出现组织真空。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35618,
+                35900
+              ],
+              "lines": [
+                885,
+                888
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b024aef7267d8e0f55de72f25a39d4a76cd408f26c09300906dd304dd185b6b3"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n释放 → 回家吃热饭 → 看凤姐 → 最后一件具体管事 → 身体退出 → 死 → 丧务组织真空 → 平儿留下陪巧姐又被现实叫走。  \n**风险：**死亡压过宝玉获释或反之；需保持“双恢复/双退出”。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "independent_edit_and_semantics: DRAFT_GENERATED；本次生成没有独立编辑、正文语义核验或人类/提供方证明。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "participants: 释放书办、看守和随身物清点人未有ID，贾芸不能代替官面手续。",
+    "implementation_gap: 随身物和领物凭据没有对象ID；仍可传问的通知形式、92末与93初时间边界待核定。",
+    "implementation_gap: W93-RELEASE-FENGJIE-DEATH为混合章级事件，故不在本场绑定执行；只以UNKNOWN出口保留释放义务。",
+    "exit_state: character.baoyu.legal_status — W93确有RELEASED_NO_RESTORATION，但同时包含凤姐死亡；没有本场独立释放事件，不能整包执行制造早死。",
+    "exit_state: character.baoyu.knowledge.baoyu_detention_whole_case — 领物获释不证明宝玉已知全案及最终官面判断，知识接口无此场更新。",
+    "knowledge_binding_scope: 事实ID或旧送物场记录不自动授权任何角色知情；种子场的实际获得、传话与未知范围须独立落实。"
+  ],
+  "function": "承接第二轮问讯后的正常释放，以领取随身物及仍可传问的手续完成回家桥；获释不等于复产或全案终局。",
+  "notes": "按91–95作者包与93-S1源种子拟定。具名参与者是章卡支持的拟写角色，实体引用只证明ID存在；未注册职业人物/道具保留在义务与未决项中，不造ID。第一场KNOWN条件仅描述chapter-1选定运行世界入口，basis为实际基线或此前事件，不是章卡、重建声明或待写正文。其他场局部状态及全部出口保持UNKNOWN。event_refs/object_transition_refs是涉及的当前C章级接口，不是失传正文、历史回次或场级可执行性证明；原三份data/scenes合同及所有种子、章卡、世界与评论数据不变。"
+}

@@ -1,0 +1,577 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v1",
+  "id": "91-S3",
+  "chapter": 91,
+  "order": 3,
+  "chapter_plan_ref": "data/planning/chapters/ch91.json",
+  "status": "DRAFT_GENERATED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/91-S3.json",
+      "sha256": "3da50d1585f1597a9702eb308ccec10a66f70b6aba8b4a6990f0b7794572552b"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch91.json",
+      "sha256": "0f14584a05e775e71bcaab70f890741f99ae417f288b364a169cb00caab56830"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "data/planning/scenes/91-S2.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "participants": [
+    "fengjie",
+    "ping_er"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [
+    "OBJ-SNOW-JADE-91"
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/7",
+        "ref": "data/world/m3_core.json#/characters/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bca44063796cdc27c5e8076a896ecdbedfbe135109b5461cd9af292e5d0fbaa0",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_old_illness",
+            "household_role": "household_manager",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED_JIALIAN"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "fengjie",
+          "name": "王熙凤"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/8",
+        "ref": "data/world/m3_core.json#/characters/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "18eb0f602b315bef39498961532a6d16a05dbd3cac2e572c07257b6fdf99a63d",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "fengjie_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "ping_er",
+          "name": "平儿"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/1",
+        "ref": "data/objects/m4.json#/objects/1",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "0a7860369bc36083e4cd29b2f4418de20ce3d464aa977555793f684b3926f48d",
+        "value": {
+          "baseline": {
+            "holder": null,
+            "location": null,
+            "status": "UNOBSERVED"
+          },
+          "continuity_rules": [
+            "不得与OBJ-TONGLING-JADE自动合并",
+            "拾得身份始终保持OPEN，除非上游证据改变"
+          ],
+          "evidence_status": "HARD_FIND_EVENT_IDENTITY_OPEN",
+          "id": "OBJ-SNOW-JADE-91",
+          "identity_status": "OPEN_MAY_OR_MAY_NOT_BE_TONGLING",
+          "kind": "jade_like_found_object",
+          "name": "第91回雪中玉样物",
+          "source_refs": [
+            "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+            "R17"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "entry_state": [
+    {
+      "equals": "object.OBJ-SNOW-JADE-91.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "此场不是章初；注册章前UNOBSERVED只说明网络未观察，不能证明本场拾取前的确切物理状态。"
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "character.fengjie.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "扫雪拾物的局部位置尚未绑定；OT91-01的S05为当前章级发现接口，不替代场内路径。"
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "object.OBJ-SNOW-JADE-91.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT91-01/02确有发现与交回接口，但本场如何完成登记及交回的对应未独立核定。"
+    },
+    {
+      "equals": "object.OBJ-SNOW-JADE-91.holder",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT91-02的收受者为UNSPECIFIED_RECIPIENT；不得把未指明者改填宝玉、书办或其他具名人物。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "91-S3-R1",
+      "description": "凤姐在残雪中拾得玉样物后，先交登记，以“玉样物一”留在处理链，再交回而不解释身份。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "5e4a228597dca7a30b6d0277a2ba9fff0dc4c924dbc0a90028e316dc88d7dfd1",
+          "value": {
+            "id": "91-S3",
+            "title": "拾物之后先登记，不解释"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                28962,
+                29083
+              ],
+              "lines": [
+                714,
+                716
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c7463fb8a074108c2a16e33905ba5ce6478dbeb5e64aa1cb6122efdd2e8c0d9e"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR17；O03：扫雪所拾是否与R16同一通灵玉不锁。当前“玉样物一”必须开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29361,
+                29489
+              ],
+              "lines": [
+                723,
+                725
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "6cc97a13cccbe3c1ca4ba6a3367927bf54834a3c460b0ed70af9841e0f1b3730"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n91-S1凭名目准取；S2物分可取/不可取/无人要；S3拾物先登记；S4旧单带到宝玉。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29910,
+                29960
+              ],
+              "lines": [
+                741,
+                743
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5cccc9256b3b4906dc6d4e10575ab5f420404f5e7754882c2735ffa822519aec"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n准取看守、登记书办。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29960,
+                30094
+              ],
+              "lines": [
+                744,
+                746
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0986195f3b5121029cd0cf22da526cf3e42027a12d567463e7d9095c12087c08"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE1：物权/使用权分离。信息：准取通知→进府→登记“玉样物一”→旧单→次日传问。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30094,
+                30204
+              ],
+              "lines": [
+                747,
+                749
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bc579f52775a9e049e48a9ecabbbaedc96232b0563ed1ac0a68afb9cf4c11692"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“玉样物一”不定身份；残雪；旧府不是鬼宅而是受控制财产现场。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "91-S3-R2",
+      "description": "拾物是受控旧府中一件需经手的实物动作；把登记和物件交接写清，避免感应式认玉。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "5e4a228597dca7a30b6d0277a2ba9fff0dc4c924dbc0a90028e316dc88d7dfd1",
+          "value": {
+            "id": "91-S3",
+            "title": "拾物之后先登记，不解释"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29246,
+                29361
+              ],
+              "lines": [
+                720,
+                722
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c09af1619f9c59637d33a14642909c4ceba9d16cdebd6971e5413238b7a40a81"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n旧府文化物的“失主化”可加一两笔；准入规则与登记人再清楚一点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29361,
+                29489
+              ],
+              "lines": [
+                723,
+                725
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "6cc97a13cccbe3c1ca4ba6a3367927bf54834a3c460b0ed70af9841e0f1b3730"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n91-S1凭名目准取；S2物分可取/不可取/无人要；S3拾物先登记；S4旧单带到宝玉。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30094,
+                30204
+              ],
+              "lines": [
+                747,
+                749
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bc579f52775a9e049e48a9ecabbbaedc96232b0563ed1ac0a68afb9cf4c11692"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“玉样物一”不定身份；残雪；旧府不是鬼宅而是受控制财产现场。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "91-S3-F1",
+      "description": "不得看到玉字便认定通灵玉；不得把拾物与宝玉的通灵玉自动合并或借神光、感应锁死同一身份。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "5e4a228597dca7a30b6d0277a2ba9fff0dc4c924dbc0a90028e316dc88d7dfd1",
+          "value": {
+            "id": "91-S3",
+            "title": "拾物之后先登记，不解释"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                28962,
+                29083
+              ],
+              "lines": [
+                714,
+                716
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c7463fb8a074108c2a16e33905ba5ce6478dbeb5e64aa1cb6122efdd2e8c0d9e"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR17；O03：扫雪所拾是否与R16同一通灵玉不锁。当前“玉样物一”必须开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30094,
+                30204
+              ],
+              "lines": [
+                747,
+                749
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bc579f52775a9e049e48a9ecabbbaedc96232b0563ed1ac0a68afb9cf4c11692"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“玉样物一”不定身份；残雪；旧府不是鬼宅而是受控制财产现场。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30204,
+                30278
+              ],
+              "lines": [
+                750,
+                752
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b2c09c83e7b4ff4b595ce9ca5edae7da408488efbde64377cd495f3a0e519265"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n看到“玉”立即认定通灵玉；大段怀旧。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30456,
+                30669
+              ],
+              "lines": [
+                761,
+                764
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c65a248f72ffd8fbb07ad1ccfe7525f0af07c56b354539ebe051b2f7bb1b2fc6"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n准取通知 → 雪中回旧府 → 三类物件 → 凤姐拾物登记 → 旧单引宝玉 → 夜间传话 → 五更出门认单。  \n**风险：**玉线偷锁、文化物过多。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "91-S3-F2",
+      "description": "不得以大段怀旧、佛理或鬼宅奇观替代登记和交回。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "5e4a228597dca7a30b6d0277a2ba9fff0dc4c924dbc0a90028e316dc88d7dfd1",
+          "value": {
+            "id": "91-S3",
+            "title": "拾物之后先登记，不解释"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29821,
+                29910
+              ],
+              "lines": [
+                738,
+                740
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c4cfed8f8d149f8dd5702c7e908575cdfd5d3e7c0f0fee40574b71656453bc2d"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n低。旧府“无常感”让物件自己承担，不引佛理。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30094,
+                30204
+              ],
+              "lines": [
+                747,
+                749
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bc579f52775a9e049e48a9ecabbbaedc96232b0563ed1ac0a68afb9cf4c11692"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“玉样物一”不定身份；残雪；旧府不是鬼宅而是受控制财产现场。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30204,
+                30278
+              ],
+              "lines": [
+                750,
+                752
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b2c09c83e7b4ff4b595ce9ca5edae7da408488efbde64377cd495f3a0e519265"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n看到“玉”立即认定通灵玉；大段怀旧。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [
+    "OT91-01",
+    "OT91-02"
+  ],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "independent_edit_and_semantics: DRAFT_GENERATED；本次生成没有独立编辑、正文语义核验或人类/提供方证明。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+    "participants: 登记书办及交回收受者未注册，不能由章卡的职业称谓造具名人物。",
+    "implementation_gap: O03身份未决：雪中玉样物不得合并为OBJ-TONGLING-JADE；登记用语不能成为物件鉴定。",
+    "entry_state: object.OBJ-SNOW-JADE-91.status — 此场不是章初；注册章前UNOBSERVED只说明网络未观察，不能证明本场拾取前的确切物理状态。",
+    "preconditions: character.fengjie.location — 扫雪拾物的局部位置尚未绑定；OT91-01的S05为当前章级发现接口，不替代场内路径。",
+    "exit_state: object.OBJ-SNOW-JADE-91.status — OT91-01/02确有发现与交回接口，但本场如何完成登记及交回的对应未独立核定。",
+    "exit_state: object.OBJ-SNOW-JADE-91.holder — OT91-02的收受者为UNSPECIFIED_RECIPIENT；不得把未指明者改填宝玉、书办或其他具名人物。",
+    "registered_event_placement: 已引用的世界/物件事件仅为义务涉及的现行章级接口，不证明这些事件在此种子场逐项执行；局部条件保持UNKNOWN。"
+  ],
+  "function": "把凤姐雪中拾物接入登记和交回的处理链，严格保持“玉样物一”的身份开放。",
+  "notes": "按91–95作者包与91-S3源种子拟定。具名参与者是章卡支持的拟写角色，实体引用只证明ID存在；未注册职业人物/道具保留在义务与未决项中，不造ID。第一场KNOWN条件仅描述chapter-1选定运行世界入口，basis为实际基线或此前事件，不是章卡、重建声明或待写正文。其他场局部状态及全部出口保持UNKNOWN。event_refs/object_transition_refs是涉及的当前C章级接口，不是失传正文、历史回次或场级可执行性证明；原三份data/scenes合同及所有种子、章卡、世界与评论数据不变。"
+}

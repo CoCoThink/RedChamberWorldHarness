@@ -1,0 +1,632 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch87.json",
+      "sha256": "f58985724470b3c84ce01dad4223c06926a8b152676b986b89ad5350de3352e8"
+    },
+    "seed": {
+      "path": "data/planning/scenes/87-S1.json",
+      "sha256": "f372b5b5e7bb81f1a4d89292f563ffbe7b6da6834693201ad5a27a77d9b958b0"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 87,
+  "chapter_plan_ref": "data/planning/chapters/ch87.json",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 86
+  },
+  "entry_from": "CHAPTER_ENTRY:86",
+  "entry_state": [
+    {
+      "equals": "character.jiamu.household_role",
+      "value": "senior_matriarch",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/jiamu/household_role",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/jiamu/household_role",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "64cdec280ffc3e01e757680cbd1a7a4dd3ea7871b57485e471b2f6690748d05d",
+          "value": "senior_matriarch"
+        }
+      ]
+    },
+    {
+      "equals": "character.fengjie.body_state",
+      "value": "chronic_old_illness",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/fengjie/body_state",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/fengjie/body_state",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "49d9a8dc8130ce57a379fb74606e3fcfeae8be2f61dd1a89ddfe9a3a219022da",
+          "value": "chronic_old_illness"
+        }
+      ]
+    },
+    {
+      "equals": "character.wangfuren.location",
+      "value": "S02",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/wangfuren/location",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/wangfuren/location",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "f94d8485b86e642835379ab3ae6b2f3802992642bec041c5db84f15b65a13a8d",
+          "value": "S02"
+        }
+      ]
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.wangfuren.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "多次小谈的地点与收束场位未有局部移动记录；不能由内宅身份锁定同一场所。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "黛玉死后立即举行婚礼，或把元春丧期和主婚权处理成一句万能许可。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3ff762aec1ecc0a3f9b87d9d9a3ba7a6d4dc9e86383cc4160bbf9426f6f8b56a",
+          "value": {
+            "id": "87-S1",
+            "title": "婚议不是一次会议决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18204,
+            18409
+          ],
+          "lines": [
+            465,
+            467
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "89a63f4a56592b0557e013d34eb829eac06d1f5cc80a369da960d09f3c280e98"
+        },
+        {
+          "byte_range": [
+            18409,
+            18572
+          ],
+          "lines": [
+            468,
+            470
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "bf2ed8f8ae231349371b1950cf98ee9f7dbd17d2384b7da43e8d6bc115764d2e"
+        },
+        {
+          "byte_range": [
+            19887,
+            20042
+          ],
+          "lines": [
+            498,
+            500
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5c7f2161f09bd80af5764caf51bac9e0a66adcb16202bcd5ff1ed870a2d68d58"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "用骗婚、掉包或宝玉大闹替代婚议的现实形成。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3ff762aec1ecc0a3f9b87d9d9a3ba7a6d4dc9e86383cc4160bbf9426f6f8b56a",
+          "value": {
+            "id": "87-S1",
+            "title": "婚议不是一次会议决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18572,
+            18717
+          ],
+          "lines": [
+            471,
+            473
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "33a62592ccb0ff34be1ea1249612e49e0244699f3f380c94ac59c1a781c51f4d"
+        },
+        {
+          "byte_range": [
+            20042,
+            20176
+          ],
+          "lines": [
+            501,
+            503
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "138b518e0d0b59cf358ceb18bf22d7554a3fcd17488730d93becb7033be04bb8"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3ff762aec1ecc0a3f9b87d9d9a3ba7a6d4dc9e86383cc4160bbf9426f6f8b56a",
+          "value": {
+            "id": "87-S1",
+            "title": "婚议不是一次会议决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            20516,
+            20544
+          ],
+          "lines": [
+            510,
+            510
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            20544,
+            20571
+          ],
+          "lines": [
+            511,
+            512
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4ce526aecba789d8fb664d11031ea1dcfb21bf96efab2e4510b2cee0f78d282d"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "87-S1",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 1,
+  "participants": [
+    "jiamu",
+    "wangfuren",
+    "xue_yima",
+    "fengjie"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "character.jiamu.life_state",
+      "value": "ACTIVE",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/jiamu/life_state",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/jiamu/life_state",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "77ff42a3ee266d7bdd15afca0b44c7ae71d875464026dcf96b158e450c797a93",
+          "value": "ACTIVE"
+        }
+      ]
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/24",
+        "ref": "data/world/m3_core.json#/characters/24",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "2cf082751e433eb468cd874dc43d7de79d779f4bd3f374e53e348c7abedeb0d8",
+        "value": {
+          "baseline": {
+            "body_state": "elderly",
+            "household_role": "senior_matriarch",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "WIDOWED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "jiamu",
+          "name": "贾母"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/25",
+        "ref": "data/world/m3_core.json#/characters/25",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "a65f17f6bbf2cfddd4d5c2094fd86646d034352e611faed657faf9db1383095e",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "senior_household_woman",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "wangfuren",
+          "name": "王夫人"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/26",
+        "ref": "data/world/m3_core.json#/characters/26",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "26f65be472892755beebd1cf953ca0f7c7b048431c54ce82d5eff8da83bd880b",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_matriarch",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "WIDOWED"
+          },
+          "groups": [
+            "xue_household",
+            "human"
+          ],
+          "id": "xue_yima",
+          "name": "薛姨妈"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/7",
+        "ref": "data/world/m3_core.json#/characters/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bca44063796cdc27c5e8076a896ecdbedfbe135109b5461cd9af292e5d0fbaa0",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_old_illness",
+            "household_role": "household_manager",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED_JIALIAN"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "fengjie",
+          "name": "王熙凤"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "description": "先给出“又过了几个月”的缓冲与仍在的元春丧期背景，再通过不同小谈逐步形成婚议。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3ff762aec1ecc0a3f9b87d9d9a3ba7a6d4dc9e86383cc4160bbf9426f6f8b56a",
+          "value": {
+            "id": "87-S1",
+            "title": "婚议不是一次会议决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18204,
+            18409
+          ],
+          "lines": [
+            465,
+            467
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "89a63f4a56592b0557e013d34eb829eac06d1f5cc80a369da960d09f3c280e98"
+        },
+        {
+          "byte_range": [
+            18409,
+            18572
+          ],
+          "lines": [
+            468,
+            470
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "bf2ed8f8ae231349371b1950cf98ee9f7dbd17d2384b7da43e8d6bc115764d2e"
+        },
+        {
+          "byte_range": [
+            18572,
+            18717
+          ],
+          "lines": [
+            471,
+            473
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "33a62592ccb0ff34be1ea1249612e49e0244699f3f380c94ac59c1a781c51f4d"
+        },
+        {
+          "byte_range": [
+            19887,
+            20042
+          ],
+          "lines": [
+            498,
+            500
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5c7f2161f09bd80af5764caf51bac9e0a66adcb16202bcd5ff1ed870a2d68d58"
+        },
+        {
+          "byte_range": [
+            20571,
+            20907
+          ],
+          "lines": [
+            513,
+            516
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "701a1a0240887652ca12872467bbc7636dc2ef1e4f3146fca9811dc604dad297"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "婚议先在内宅流转，仆役得知在后；不靠一次全员会议或突然宣布完成决策。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3ff762aec1ecc0a3f9b87d9d9a3ba7a6d4dc9e86383cc4160bbf9426f6f8b56a",
+          "value": {
+            "id": "87-S1",
+            "title": "婚议不是一次会议决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18572,
+            18717
+          ],
+          "lines": [
+            471,
+            473
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "33a62592ccb0ff34be1ea1249612e49e0244699f3f380c94ac59c1a781c51f4d"
+        },
+        {
+          "byte_range": [
+            18717,
+            18881
+          ],
+          "lines": [
+            474,
+            476
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "a03b403ff96a64bbdf8cb75d1fe4fbe548d0e330f8c3f2cd8597031493676ba9"
+        },
+        {
+          "byte_range": [
+            19713,
+            19887
+          ],
+          "lines": [
+            495,
+            497
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5bf1197c0432ea2351b08eca8a9ee908c0ce11405e491e8e4b399746f020a66c"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "贾母保持最高名义认可，王夫人与薛姨妈落实组织；把要做的差事和连续支出的压力接到后续筹备。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3ff762aec1ecc0a3f9b87d9d9a3ba7a6d4dc9e86383cc4160bbf9426f6f8b56a",
+          "value": {
+            "id": "87-S1",
+            "title": "婚议不是一次会议决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18204,
+            18409
+          ],
+          "lines": [
+            465,
+            467
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "89a63f4a56592b0557e013d34eb829eac06d1f5cc80a369da960d09f3c280e98"
+        },
+        {
+          "byte_range": [
+            18881,
+            19006
+          ],
+          "lines": [
+            477,
+            479
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "a856e99554271521412a41c08dd9f4c5356ba4b17dfc0f9545f7f7256fd68d37"
+        },
+        {
+          "byte_range": [
+            19713,
+            19887
+          ],
+          "lines": [
+            495,
+            497
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5bf1197c0432ea2351b08eca8a9ee908c0ce11405e491e8e4b399746f020a66c"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "timing: 几个月是卡规定的当前实现缓冲，起止日期和丧期礼制办理尚无世界事件叶值；不声明KNOWN精确时间。",
+    "state_model: 婚议的各次小谈、许可与仆役知情范围没有注册知识事实；不得发明marriage_approved等事实ID。",
+    "objects: 内宅筹备纸、布与礼务清单无独立对象记录。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。"
+  ],
+  "function": "把丧期逐渐常态化后的婚议拆成多次内宅小谈，为主婚权、资源压缩与不同动机留下真实形成过程。",
+  "notes": "DRAFT_GENERATED：这是生成的当前实现约束，不是独立编辑、审查或历史原稿证据。演员ID及对象/事实ID均引用真实注册记录；KNOWN演员集合只表示所选ID已登记，不证明已出场或局部时序。第一场的KNOWN条件仅来自实际基线或前回已注册效果叶值，约束显式chapter-1粗层入口；不作作者学证据。后场的前驱仅为显式声明的来源列表顺序，局部检查点一律UNKNOWN，不注入或传承场态。required/forbidden beats是有卡/种子依据的待写目标，不能成为条件basis；未绑定全回事件或旧知识场。"
+}

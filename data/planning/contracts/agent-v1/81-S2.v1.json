@@ -1,0 +1,687 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch81.json",
+      "sha256": "2a0cbae8058f6022e842336a99acbfcb8bc703954eb86c4e873a1cbf50251f6c"
+    },
+    "seed": {
+      "path": "data/planning/scenes/81-S2.json",
+      "sha256": "636ee5a52a3b473842a791a1aabe27848b9614d3b73af5d945f54458826a43f5"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-81-85.json",
+      "sha256": "64a339142412c537b6caf39c03642449db6d69e5da39d1f239037a1a34e05b35"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 81,
+  "chapter_plan_ref": "data/planning/chapters/ch81.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-v1/81-S1.v1.json",
+  "entry_state": [
+    {
+      "equals": "character.xiangling.life_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "前场只声明换医讨论；没有81-S1出口可执行快照，本场不能把章级死亡或计划中的病危当作已发生。"
+    },
+    {
+      "equals": "character.xiangling.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "病危的场间起点及具体症候未有局部注册事件；第80回基线不自动成为81-S2入口。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.xiangling.life_state",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "预备后事并非已登记的死亡；本场是否紧接死亡及先后时点待独立核对。"
+    },
+    {
+      "equals": "character.baochai.household_role",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "预备物件、报信、费用授权没有对应职责转移事件，不能修改为已成历史的照护角色。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "81-S2-F1",
+      "description": "不得把备白布写成死讯已经正式发布、医者精确预知时刻，或提前转入大规模丧礼。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/0/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/0/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ae707c1a2a525c1fccf88b6a7c7130ab223166b6f09ee54dc2f580ed665708d3",
+          "value": {
+            "id": "81-S2",
+            "title": "病危后的“先把什么备下”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                4776,
+                4957
+              ],
+              "lines": [
+                120,
+                122
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "a13f7d23002b036937d0acdcdc8bcc5cce743b37083f8054a98e45d057a5fbde"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n补81-S1小争执：是否换医；81-S2病危后先备什么；81-S3死后第一轮谁料理、谁守、谁报信。只补过程，不加第二场危机。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                5650,
+                5794
+              ],
+              "lines": [
+                138,
+                140
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "389c8ad25226231e7e1f32902e9727ed2a4baf79c2f398b381656e9e73bb66e5"
+            },
+            "name": "职业人物",
+            "number": 10,
+            "text": "**10｜职业人物**  \n大夫、药铺伙计只承担真实医药链；后事可有普通买棺/白布接口，但不要展开行业展示。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                5794,
+                6024
+              ],
+              "lines": [
+                141,
+                143
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c25ae2da466fd1bb06d1f27066219d885d8188bb098617b4905f0e88fd1cb22d"
+            },
+            "name": "人钱物信四链",
+            "number": 11,
+            "text": "**11｜人钱物信四链**  \n人：薛姨妈—宝钗—莺儿—医者。钱：仍属E0，薛家有钱但不是无限。物：药、米汤、甜羹、寿衣/白布、诗稿。信：病危先在内宅，死后再分头报人。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                6547,
+                6830
+              ],
+              "lines": [
+                162,
+                165
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4fc2d6eb3d26982bacc72a3385e0066eb197112b17d8b57d417640929e63e596"
+            },
+            "name": "最终章法 / 风险",
+            "number": 18,
+            "text": "**18｜最终章法 / 风险**  \n病日常 → 是否换医的小争执 → 短暂好转/饮食 → 病危 → 女眷处理身体 → 报信与后事 → 诗稿/袖口归置 → 无人再念。  \n**风险：**把香菱写成第二黛玉；把“诗命”写成临终才华展览。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "81-S2-F2",
+      "description": "不得新增临终笑料、托梦返乡、悟道、绝命诗或诗成命尽的作者总结。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/0/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/0/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ae707c1a2a525c1fccf88b6a7c7130ab223166b6f09ee54dc2f580ed665708d3",
+          "value": {
+            "id": "81-S2",
+            "title": "病危后的“先把什么备下”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                5194,
+                5400
+              ],
+              "lines": [
+                129,
+                131
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "75205d4f3524473192ddf886335faa979e8db919fa738b8db63e3e1455ea152b"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG02唯一开放：可在三张旧月诗之外夹一张**病前未成旧稿**，最多一两句；第45三案竞选。不得临终口占、绝命诗。作者回前/回末诗：无。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                5400,
+                5534
+              ],
+              "lines": [
+                132,
+                134
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "abc7114b6235f49d80259c7b5007dbf662d5e06f1b0d7335b4f7f496d7e48e8c"
+            },
+            "name": "笑料/俗文化",
+            "number": 8,
+            "text": "**8｜笑料/俗文化**  \n保留“药苦是不是莺儿煎久了”等轻口角，让病回仍有人味；不新增临终笑料。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                5534,
+                5650
+              ],
+              "lines": [
+                135,
+                137
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "589fddb1c50bf47a5f899b6e0e855604ad48847f520f0b4c908fc81fe81741c4"
+            },
+            "name": "梦/宗教",
+            "number": 9,
+            "text": "**9｜梦/宗教**  \n低强度。人物可说“命苦”等俗语，不做香菱梦归故乡、托梦、悟道。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                6113,
+                6233
+              ],
+              "lines": [
+                147,
+                149
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "44868fa023026893e476840b3e9d860421adf22f498b597e35b5512801855557"
+            },
+            "name": "应删/应降",
+            "number": 13,
+            "text": "**13｜应删/应降**  \n任何把香菱一生概括成“诗成而命尽”的作者说明；任何新咳血奇观。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "81-S2",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 2,
+  "participants": [
+    "xiangling",
+    "xue_yima",
+    "baochai"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "character.xue_yima.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "谁在场决定预备后事仍是作者要求，未有本场位置或动作记录。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/3",
+        "ref": "data/world/m3_core.json#/characters/3",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "258762fbcedf06308334686b9af172f3c4616dbd82c070d37c77576c914d6f57",
+        "value": {
+          "baseline": {
+            "body_state": "terminal_chronic",
+            "household_role": "xue_household_concubine",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S01",
+            "marital_status": "CONCUBINE_OF_XUEPAN"
+          },
+          "groups": [
+            "xue_household",
+            "human"
+          ],
+          "id": "xiangling",
+          "name": "香菱"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/26",
+        "ref": "data/world/m3_core.json#/characters/26",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "26f65be472892755beebd1cf953ca0f7c7b048431c54ce82d5eff8da83bd880b",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_matriarch",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "WIDOWED"
+          },
+          "groups": [
+            "xue_household",
+            "human"
+          ],
+          "id": "xue_yima",
+          "name": "薛姨妈"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "81-S2-R1",
+      "description": "承接前场病中饮食和照护，女眷从日常动作变慢或入口受阻提出先备些什么；只作待写的家庭判断，不增造另一次病危。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/0/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/0/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ae707c1a2a525c1fccf88b6a7c7130ab223166b6f09ee54dc2f580ed665708d3",
+          "value": {
+            "id": "81-S2",
+            "title": "病危后的“先把什么备下”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                4577,
+                4776
+              ],
+              "lines": [
+                117,
+                119
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "27c6a142b564a9acd734196fe15be392177c7e2290430abc7d111cc668fbe3a5"
+            },
+            "name": "当前正文最薄处",
+            "number": 3,
+            "text": "**3｜当前正文最薄处**  \n病程从“已经坏下去”到死亡的家庭判断过程仍略快；谁决定换不换医生、谁开始预备后事、薛家如何分担费用可再实一层。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                4776,
+                4957
+              ],
+              "lines": [
+                120,
+                122
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "a13f7d23002b036937d0acdcdc8bcc5cce743b37083f8054a98e45d057a5fbde"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n补81-S1小争执：是否换医；81-S2病危后先备什么；81-S3死后第一轮谁料理、谁守、谁报信。只补过程，不加第二场危机。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                6547,
+                6830
+              ],
+              "lines": [
+                162,
+                165
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4fc2d6eb3d26982bacc72a3385e0066eb197112b17d8b57d417640929e63e596"
+            },
+            "name": "最终章法 / 风险",
+            "number": 18,
+            "text": "**18｜最终章法 / 风险**  \n病日常 → 是否换医的小争执 → 短暂好转/饮食 → 病危 → 女眷处理身体 → 报信与后事 → 诗稿/袖口归置 → 无人再念。  \n**风险：**把香菱写成第二黛玉；把“诗命”写成临终才华展览。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "81-S2-R2",
+      "description": "让薛姨妈与宝钗以实际轻声交代区分眼前仍需的药、热食与备而不宣的白布或寿衣；是否购置、由谁去取和钱从何处出必须在正文有经手动作，数目待核。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/0/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/0/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ae707c1a2a525c1fccf88b6a7c7130ab223166b6f09ee54dc2f580ed665708d3",
+          "value": {
+            "id": "81-S2",
+            "title": "病危后的“先把什么备下”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                4776,
+                4957
+              ],
+              "lines": [
+                120,
+                122
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "a13f7d23002b036937d0acdcdc8bcc5cce743b37083f8054a98e45d057a5fbde"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n补81-S1小争执：是否换医；81-S2病危后先备什么；81-S3死后第一轮谁料理、谁守、谁报信。只补过程，不加第二场危机。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                5650,
+                5794
+              ],
+              "lines": [
+                138,
+                140
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "389c8ad25226231e7e1f32902e9727ed2a4baf79c2f398b381656e9e73bb66e5"
+            },
+            "name": "职业人物",
+            "number": 10,
+            "text": "**10｜职业人物**  \n大夫、药铺伙计只承担真实医药链；后事可有普通买棺/白布接口，但不要展开行业展示。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                5794,
+                6024
+              ],
+              "lines": [
+                141,
+                143
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c25ae2da466fd1bb06d1f27066219d885d8188bb098617b4905f0e88fd1cb22d"
+            },
+            "name": "人钱物信四链",
+            "number": 11,
+            "text": "**11｜人钱物信四链**  \n人：薛姨妈—宝钗—莺儿—医者。钱：仍属E0，薛家有钱但不是无限。物：药、米汤、甜羹、寿衣/白布、诗稿。信：病危先在内宅，死后再分头报人。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "81-S2-R3",
+      "description": "病危消息先限于内宅；传话要有接话者与去向，莺儿接口未注册，不能写成已验证的全宅同时知情。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/0/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/0/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ae707c1a2a525c1fccf88b6a7c7130ab223166b6f09ee54dc2f580ed665708d3",
+          "value": {
+            "id": "81-S2",
+            "title": "病危后的“先把什么备下”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                4957,
+                5106
+              ],
+              "lines": [
+                123,
+                125
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "2b9586da6ba1c5848634b2f92bcce0d00397aa3b91c2a227aef055688b317c4c"
+            },
+            "name": "缺失人物",
+            "number": 5,
+            "text": "**5｜缺失人物**  \n药铺跑腿、旧大夫/替换大夫可一闪而过；薛姨妈、宝钗、莺儿权责要清。不得新造“名医”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                5794,
+                6024
+              ],
+              "lines": [
+                141,
+                143
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c25ae2da466fd1bb06d1f27066219d885d8188bb098617b4905f0e88fd1cb22d"
+            },
+            "name": "人钱物信四链",
+            "number": 11,
+            "text": "**11｜人钱物信四链**  \n人：薛姨妈—宝钗—莺儿—医者。钱：仍属E0，薛家有钱但不是无限。物：药、米汤、甜羹、寿衣/白布、诗稿。信：病危先在内宅，死后再分头报人。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "81-S2-R4",
+      "description": "保留甜羹银匙与未完的淡青袖口在照护中的位置，普通家务继续；准备物件的沉默不得代替已记录的死亡时刻。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/0/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/0/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ae707c1a2a525c1fccf88b6a7c7130ab223166b6f09ee54dc2f580ed665708d3",
+          "value": {
+            "id": "81-S2",
+            "title": "病危后的“先把什么备下”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                4390,
+                4577
+              ],
+              "lines": [
+                114,
+                116
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f0879c9ca2829acf13a4d6803a04c8a7ba938d4250c61c309de7be8b82b901b7"
+            },
+            "name": "当前正文最强处",
+            "number": 2,
+            "text": "**2｜当前正文最强处**  \n莺儿抢针线、甜羹银匙、淡青袖口未缝完；宝钗把旧诗稿夹入匣中；最终“并没人再念一遍”。这是本回最高P-Lock。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                6024,
+                6113
+              ],
+              "lines": [
+                144,
+                146
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "15aa16c8737f925efc18b5cf931fa8df6c839e745041936244018df0589aad62"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n淡青袖口、银匙、甜羹、诗稿合匣、无人重读。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                6547,
+                6830
+              ],
+              "lines": [
+                162,
+                165
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4fc2d6eb3d26982bacc72a3385e0066eb197112b17d8b57d417640929e63e596"
+            },
+            "name": "最终章法 / 风险",
+            "number": 18,
+            "text": "**18｜最终章法 / 风险**  \n病日常 → 是否换医的小争执 → 短暂好转/饮食 → 病危 → 女眷处理身体 → 报信与后事 → 诗稿/袖口归置 → 无人再念。  \n**风险：**把香菱写成第二黛玉；把“诗命”写成临终才华展览。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "independent_review: 新作者草案尚未独立审读，不能标为AGENT_EDITED、语义通过、证据或权威。",
+    "declared_sequence_only: 依候选列表显式声明前驱；历史场景顺序和与既有正文的精确放置未核验。",
+    "scene_local_checkpoint: 后场入口UNKNOWN；前一覆盖文件只是显式顺序，不产生或继承局部状态快照。",
+    "unregistered_participants: 莺儿、普通购置经手人和医者没有注册ID，需后续登记或在正文限定非绑定角色。",
+    "unregistered_objects: 药、热食、白布、寿衣、银匙、淡青袖口均无可绑定本章对象。",
+    "event_localization: W81-XIANGLING-DEATH只锁章级死亡，本场备物阶段不选该事件作为局部出口。",
+    "knowledge_registry_gap: 病危判断、备物决定、消息收受均无本章注册事实/知识事件，不能宣称任何人已经知道确切死时。"
+  ],
+  "function": "从病势转重后的含蓄家庭判断，落实先备何物、谁去取、如何遮住病人及费用由谁承接；准备后事不等于提前宣布死亡。",
+  "notes": "本文件是新建v1作者草案，status=DRAFT_GENERATED，authority_effect=NONE，evidence_effect=NONE；必须由独立审读者另行核对来源、正文语义、参与者及场间衔接。participants_status=KNOWN只指拟定参与者集合有实际注册ID与章卡依据，不证明他们在某历史时刻确实同时到场，现场位置由UNKNOWN/PENDING条件保留。entry_from是本草案显式声明的候选顺序：首场指定chapter-1章入口，后场引用前一v1覆盖文件；SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY不是原文年代顺序的证明，也不传播前场状态。required/forbidden beats全属待实现叙事要求，grounding只说明其来自不可变种子与章卡，不充当状态事实。非KNOWN条件value=null且给出原因；任何注册事件均只按同章连续前缀关联，不把粗粒度章事件当场级重放。不得宣称确定性或正文支持的语义重放PASS；knowledge事实定义不等同任何角色已经知道，跨章86知识场景不注入81—85。"
+}

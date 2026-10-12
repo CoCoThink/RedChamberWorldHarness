@@ -1,0 +1,576 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch87.json",
+      "sha256": "f58985724470b3c84ce01dad4223c06926a8b152676b986b89ad5350de3352e8"
+    },
+    "seed": {
+      "path": "data/planning/scenes/87-S4.json",
+      "sha256": "f96972d4b2eb65a3b4f65ebc6390534c670336a1de381c97ab186f46f10b7f52"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 87,
+  "chapter_plan_ref": "data/planning/chapters/ch87.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-v1/87-S3.v1.json",
+  "entry_state": [
+    {
+      "equals": "character.baochai.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W87妻位终态不能代替重新分房这一后场的局部入口。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.baochai.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "房内空间重排没有独立世界效果；不因叙事写妻位就注入已执行wife状态。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "为腾房清除全部旧纸，进入潇湘馆翻黛玉遗物或发现续庄子。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72fe78a66c839fe95c187bfe7bde99e9ad81e9be8002e67b0b4a0a006fd61f7d",
+          "value": {
+            "id": "87-S4",
+            "title": "房间不是“新房”，而是重新分配旧生活"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            19887,
+            20042
+          ],
+          "lines": [
+            498,
+            500
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5c7f2161f09bd80af5764caf51bac9e0a66adcb16202bcd5ff1ed870a2d68d58"
+        },
+        {
+          "byte_range": [
+            20042,
+            20176
+          ],
+          "lines": [
+            501,
+            503
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "138b518e0d0b59cf358ceb18bf22d7554a3fcd17488730d93becb7033be04bb8"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "把匿名素笺确定为某份已失传名作或把不全棋具扩成新的文化表演。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72fe78a66c839fe95c187bfe7bde99e9ad81e9be8002e67b0b4a0a006fd61f7d",
+          "value": {
+            "id": "87-S4",
+            "title": "房间不是“新房”，而是重新分配旧生活"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            19006,
+            19119
+          ],
+          "lines": [
+            480,
+            482
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "27f5483fca4bc66e98397f50134b54ecfb15f2bad1af6485b3843ba6ab8b6c38"
+        },
+        {
+          "byte_range": [
+            19119,
+            19431
+          ],
+          "lines": [
+            483,
+            485
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "59acc5826bee6cf4c8124c7ecdea5a5d78ecdefb831c1623c36f343e645a5e06"
+        },
+        {
+          "byte_range": [
+            20042,
+            20176
+          ],
+          "lines": [
+            501,
+            503
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "138b518e0d0b59cf358ceb18bf22d7554a3fcd17488730d93becb7033be04bb8"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72fe78a66c839fe95c187bfe7bde99e9ad81e9be8002e67b0b4a0a006fd61f7d",
+          "value": {
+            "id": "87-S4",
+            "title": "房间不是“新房”，而是重新分配旧生活"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            20516,
+            20544
+          ],
+          "lines": [
+            510,
+            510
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            20544,
+            20571
+          ],
+          "lines": [
+            511,
+            512
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4ce526aecba789d8fb664d11031ea1dcfb21bf96efab2e4510b2cee0f78d282d"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "87-S4",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 4,
+  "participants": [
+    "baoyu",
+    "baochai",
+    "xiren",
+    "sheyue"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "character.baoyu.marital_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "相邻种子婚礼出口未回放，不能将成婚目标自动继承到此场。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/5",
+        "ref": "data/world/m3_core.json#/characters/5",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "b64f1c0390f062cb8366790030ca19afb986e82e378a7b725e3f89a737af3e53",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "xiren",
+          "name": "花袭人"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "description": "不是新造一间无旧痕的新房：书案与妆奁争位置，布被旧书在原房实际腾挪。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72fe78a66c839fe95c187bfe7bde99e9ad81e9be8002e67b0b4a0a006fd61f7d",
+          "value": {
+            "id": "87-S4",
+            "title": "房间不是“新房”，而是重新分配旧生活"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18409,
+            18572
+          ],
+          "lines": [
+            468,
+            470
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "bf2ed8f8ae231349371b1950cf98ee9f7dbd17d2384b7da43e8d6bc115764d2e"
+        },
+        {
+          "byte_range": [
+            18717,
+            18881
+          ],
+          "lines": [
+            474,
+            476
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "a03b403ff96a64bbdf8cb75d1fe4fbe548d0e330f8c3f2cd8597031493676ba9"
+        },
+        {
+          "byte_range": [
+            19006,
+            19119
+          ],
+          "lines": [
+            480,
+            482
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "27f5483fca4bc66e98397f50134b54ecfb15f2bad1af6485b3843ba6ab8b6c38"
+        },
+        {
+          "byte_range": [
+            19713,
+            19887
+          ],
+          "lines": [
+            495,
+            497
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5bf1197c0432ea2351b08eca8a9ee908c0ce11405e491e8e4b399746f020a66c"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "旧帖只露旧生活痕迹，不全棋具只一笔；87旧素笺保持匿名，宝钗不清也不追问旧纸。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72fe78a66c839fe95c187bfe7bde99e9ad81e9be8002e67b0b4a0a006fd61f7d",
+          "value": {
+            "id": "87-S4",
+            "title": "房间不是“新房”，而是重新分配旧生活"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            19006,
+            19119
+          ],
+          "lines": [
+            480,
+            482
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "27f5483fca4bc66e98397f50134b54ecfb15f2bad1af6485b3843ba6ab8b6c38"
+        },
+        {
+          "byte_range": [
+            19119,
+            19431
+          ],
+          "lines": [
+            483,
+            485
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "59acc5826bee6cf4c8124c7ecdea5a5d78ecdefb831c1623c36f343e645a5e06"
+        },
+        {
+          "byte_range": [
+            19887,
+            20042
+          ],
+          "lines": [
+            498,
+            500
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5c7f2161f09bd80af5764caf51bac9e0a66adcb16202bcd5ff1ed870a2d68d58"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "袭人麝月处理实际放置和衣物，妻位与旧伤并存，不把房间变成钗黛对判的讲台。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72fe78a66c839fe95c187bfe7bde99e9ad81e9be8002e67b0b4a0a006fd61f7d",
+          "value": {
+            "id": "87-S4",
+            "title": "房间不是“新房”，而是重新分配旧生活"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18881,
+            19006
+          ],
+          "lines": [
+            477,
+            479
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "a856e99554271521412a41c08dd9f4c5356ba4b17dfc0f9545f7f7256fd68d37"
+        },
+        {
+          "byte_range": [
+            19431,
+            19519
+          ],
+          "lines": [
+            486,
+            488
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "3297245dfe176707fa94e8c7e6627f501f27e2ff03dd00ea0b5eee850a87e9b5"
+        },
+        {
+          "byte_range": [
+            20571,
+            20907
+          ],
+          "lines": [
+            513,
+            516
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "701a1a0240887652ca12872467bbc7636dc2ef1e4f3146fca9811dc604dad297"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "objects: 书案、妆奁、旧帖、匿名素笺与不全棋具均无对象注册ID，不能使用玉或迁居包袱假充。",
+    "placement: 卡规定宝玉无目的走园/潇湘馆外景反照，但五个种子没有单独园外场；其与房内重排/第一餐的衔接须独立编辑，不能硬化VW2-05回次。",
+    "entry_checkpoint: 87-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+    "entry_state.character.baochai.household_role: W87妻位终态不能代替重新分房这一后场的局部入口。",
+    "preconditions.character.baoyu.marital_status: 相邻种子婚礼出口未回放，不能将成婚目标自动继承到此场。"
+  ],
+  "function": "把新婚空间写成旧生活重新分配，书案、妆奁和旧纸共同占位而非清空前情；宝钗的妻位从实际房内管理开始。",
+  "notes": "DRAFT_GENERATED：这是生成的当前实现约束，不是独立编辑、审查或历史原稿证据。演员ID及对象/事实ID均引用真实注册记录；KNOWN演员集合只表示所选ID已登记，不证明已出场或局部时序。第一场的KNOWN条件仅来自实际基线或前回已注册效果叶值，约束显式chapter-1粗层入口；不作作者学证据。后场的前驱仅为显式声明的来源列表顺序，局部检查点一律UNKNOWN，不注入或传承场态。required/forbidden beats是有卡/种子依据的待写目标，不能成为条件basis；未绑定全回事件或旧知识场。"
+}

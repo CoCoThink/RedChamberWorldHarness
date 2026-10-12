@@ -1,0 +1,710 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch83.json",
+      "sha256": "3143dabccd8387dafecf57133b4eb0b50445ca958a00250d9599993efa1714db"
+    },
+    "seed": {
+      "path": "data/planning/scenes/83-S2.json",
+      "sha256": "bba3c4f957996eb442369f5c3ef52b9c0e3263f6eccb5cb7c639a5d5d8464c9a"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-81-85.json",
+      "sha256": "64a339142412c537b6caf39c03642449db6d69e5da39d1f239037a1a34e05b35"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 83,
+  "chapter_plan_ref": "data/planning/chapters/ch83.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-v1/83-S1.v1.json",
+  "entry_state": [
+    {
+      "equals": "object.OBJ-GOLDEN-QILIN-LARGE.holder",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "83-S1无局部出口快照；注册基线holder为null，后续发现记录不能作为本场已知入口。"
+    },
+    {
+      "equals": "object.OBJ-GOLDEN-QILIN-LARGE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "第80回UNOBSERVED不等于83-S2现场未见；本场发现前状态尚无局部检查点。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "object.OBJ-GOLDEN-QILIN-LARGE.holder",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "OT83-01真实登记若兰佩戴，但UNKNOWN局部入口不能把该章级发现自动重放为83-S2出口。"
+    },
+    {
+      "equals": "object.OBJ-GOLDEN-QILIN-LARGE.status",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "WORN_AT_ARCHERY_GROUND属注册对象事件结果；场内看见、继续射圃和离场的切点仍待映射，不写成已验证状态。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "83-S2-F1",
+      "description": "不得让佩物发光、托梦、识命，或用作者旁白预告将主婚姻吉凶。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "1d79de2859e794ef9b85b8cd640fd6ca85340013edb8a732fd4c1c979949e34d",
+          "value": {
+            "id": "83-S2",
+            "title": "金麒麟不是一上场就被认作“命物”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                9463,
+                9560
+              ],
+              "lines": [
+                244,
+                246
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "95592d01dcc7ca1d91dcbe30050eac122dbcd90f2c1393052d493d64bcc3de93"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n看圃老仆是好用的小人物；不得再添“神秘老人识麒麟”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9779,
+                9856
+              ],
+              "lines": [
+                256,
+                258
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "16bfbd866384572757d3b84f8a15bcecf2d4b5b06d3a8f5d98eb057e10502d50"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n麒麟是佩物与关系伏线，不写宿命灵物。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                10141,
+                10221
+              ],
+              "lines": [
+                268,
+                270
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0afd7a254f9529d6585e834ab912cde4c229fc4b1a8845c53da83cedc715d417"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n任何“此物后来必主婚姻吉凶”的作者提示。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "83-S2-F2",
+      "description": "不得追造麒麟此前取得路径、把白首双星解释成确定婚期、事故或生死；不得以金麒麟为唯一焦点。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "1d79de2859e794ef9b85b8cd640fd6ca85340013edb8a732fd4c1c979949e34d",
+          "value": {
+            "id": "83-S2",
+            "title": "金麒麟不是一上场就被认作“命物”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                8961,
+                9088
+              ],
+              "lines": [
+                232,
+                234
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9f3170f6233f48fd860765ba61edc59268d026ab107b9e4882b22de1275b219a"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR34：卫若兰射圃佩金麒麟、与“白首双星”关联；婚期、事故、生死均O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9560,
+                9636
+              ],
+              "lines": [
+                247,
+                249
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3cde87953b8474a9793724c74117ad412f7b6bae423826e3d45b6eb6a1457fbb"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n射圃已充分，P-Lock；不军事化，不补琴诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                10388,
+                10606
+              ],
+              "lines": [
+                277,
+                280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "27b63f4928441d75752a6c7ae884d576de5c009322ec3e8d8c5e05859c01d4f1"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n射圃社交 → 若兰佩物偶露 → 宝玉回府 → 消息二次传播 → 湘云问旧麒麟 → 探春家书把视线拉开。  \n**风险：**把R34写成确定婚姻/死亡答案。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "83-S2",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [
+    "OT83-01"
+  ],
+  "order": 2,
+  "participants": [
+    "baoyu",
+    "wei_ruolan"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "现场目击需要宝玉在圃，但没有角色位置事件或83-S2独立入口证实到场。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/15",
+        "ref": "data/world/m3_core.json#/characters/15",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "8f543e3b362a99323a2781ced88d21c169d3da64bb39e6813606809ac0b32a50",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "young_gentry",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "OPEN"
+          },
+          "groups": [
+            "human"
+          ],
+          "id": "wei_ruolan",
+          "name": "卫若兰"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/2",
+        "ref": "data/objects/m4.json#/objects/2",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "93be922ca93898d6acc2da99a0e07914e2615489122c302a28978619f0fa5528",
+        "value": {
+          "baseline": {
+            "holder": null,
+            "location": null,
+            "status": "UNOBSERVED"
+          },
+          "continuity_rules": [
+            "锁卫若兰射圃佩麒麟功能，不补造其此前取得路径"
+          ],
+          "evidence_status": "HARD_FUTURE_APPEARANCE_CURRENT_C_PLACEMENT",
+          "id": "OBJ-GOLDEN-QILIN-LARGE",
+          "identity_status": "DISTINCT_QILIN_OBJECT",
+          "kind": "ornament",
+          "name": "大金麒麟",
+          "source_refs": [
+            "R34",
+            "asset:sha256:30a6ecd37a4f3e846a72ef3cd445ba78db902fa788d45ee7cd3d73d86eb4df32"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "83-S2-R1",
+      "description": "麒麟在若兰射圃活动的普通衣带或动作中被看见，首先仍是佩物；使用OBJ-GOLDEN-QILIN-LARGE的身份，不另造一枚金麒麟。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "1d79de2859e794ef9b85b8cd640fd6ca85340013edb8a732fd4c1c979949e34d",
+          "value": {
+            "id": "83-S2",
+            "title": "金麒麟不是一上场就被认作“命物”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                8961,
+                9088
+              ],
+              "lines": [
+                232,
+                234
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9f3170f6233f48fd860765ba61edc59268d026ab107b9e4882b22de1275b219a"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR34：卫若兰射圃佩金麒麟、与“白首双星”关联；婚期、事故、生死均O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9088,
+                9242
+              ],
+              "lines": [
+                235,
+                237
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1de270ace294fba609234a47a800adcb54a01cc1f6fec46ac986af44502cfdde"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n射圃规则、横风、找箭、老仆担心箭落菜地、输赢玩笑；金麒麟先只是佩物；消息经二手链到湘云。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9363,
+                9463
+              ],
+              "lines": [
+                241,
+                243
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "072f90fe1fd94d3362e61f85da67d218802623cc3f38fa41bb906cb2fc506cac"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n83-S1社交缘由；83-S2麒麟不立刻神化；83-S3消息经人转述。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9779,
+                9856
+              ],
+              "lines": [
+                256,
+                258
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "16bfbd866384572757d3b84f8a15bcecf2d4b5b06d3a8f5d98eb057e10502d50"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n麒麟是佩物与关系伏线，不写宿命灵物。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "83-S2-R2",
+      "description": "佩物被注意之后仍继续横风、射圃规则、找箭和输赢说笑，箭落菜地与老仆顾虑不能被首饰寓意吞掉。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "1d79de2859e794ef9b85b8cd640fd6ca85340013edb8a732fd4c1c979949e34d",
+          "value": {
+            "id": "83-S2",
+            "title": "金麒麟不是一上场就被认作“命物”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                9088,
+                9242
+              ],
+              "lines": [
+                235,
+                237
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1de270ace294fba609234a47a800adcb54a01cc1f6fec46ac986af44502cfdde"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n射圃规则、横风、找箭、老仆担心箭落菜地、输赢玩笑；金麒麟先只是佩物；消息经二手链到湘云。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9560,
+                9636
+              ],
+              "lines": [
+                247,
+                249
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3cde87953b8474a9793724c74117ad412f7b6bae423826e3d45b6eb6a1457fbb"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n射圃已充分，P-Lock；不军事化，不补琴诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9706,
+                9779
+              ],
+              "lines": [
+                253,
+                255
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "522be8bc8228f221a1d9b52151b0bed1dc0ca26c4da9babe55d25bae4c065553"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n箭落菜地、宝玉“不射便不输”等保护。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9912,
+                10067
+              ],
+              "lines": [
+                262,
+                264
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1c93d5a0da95fa70c424cbccf3eaafb06841f58dbcc12c628425833e10692cfc"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱物：场地、弓箭、茶食属于旧家社交体系，不需要夸豪奢；信息：射圃目击→二手讲述→湘云发问。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                10067,
+                10141
+              ],
+              "lines": [
+                265,
+                267
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4437d6779abd6b4450b309a1b454170b90db189e5fa0046230b0cfc7da24654f"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n旧麒麟疑问、空食盒、脚费、菜地笑话。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "83-S2-R3",
+      "description": "让宝玉的疑问停在看到的物与记起旧麒麟的关联；原先取得、借佩、赠受和归属前史没有来源，不能填成交易记录。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "1d79de2859e794ef9b85b8cd640fd6ca85340013edb8a732fd4c1c979949e34d",
+          "value": {
+            "id": "83-S2",
+            "title": "金麒麟不是一上场就被认作“命物”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                8961,
+                9088
+              ],
+              "lines": [
+                232,
+                234
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9f3170f6233f48fd860765ba61edc59268d026ab107b9e4882b22de1275b219a"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR34：卫若兰射圃佩金麒麟、与“白首双星”关联；婚期、事故、生死均O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                10067,
+                10141
+              ],
+              "lines": [
+                265,
+                267
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4437d6779abd6b4450b309a1b454170b90db189e5fa0046230b0cfc7da24654f"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n旧麒麟疑问、空食盒、脚费、菜地笑话。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                10242,
+                10333
+              ],
+              "lines": [
+                272,
+                273
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "de451af0eb801af0054e4cc82bdfbf0db31997b748b7ff6a714a98eca9981164"
+            },
+            "name": "前80同构",
+            "number": 15,
+            "text": "**15｜前80同构** 31“因麒麟伏白首双星”但本回只续物，不解释命。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "83-S2-R4",
+      "description": "收束到宝玉回府和信息将再传播的接口；此处看见不是湘云已知，更不是两人婚配或吉凶的证据。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "1d79de2859e794ef9b85b8cd640fd6ca85340013edb8a732fd4c1c979949e34d",
+          "value": {
+            "id": "83-S2",
+            "title": "金麒麟不是一上场就被认作“命物”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                9912,
+                10067
+              ],
+              "lines": [
+                262,
+                264
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1c93d5a0da95fa70c424cbccf3eaafb06841f58dbcc12c628425833e10692cfc"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱物：场地、弓箭、茶食属于旧家社交体系，不需要夸豪奢；信息：射圃目击→二手讲述→湘云发问。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                10388,
+                10606
+              ],
+              "lines": [
+                277,
+                280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "27b63f4928441d75752a6c7ae884d576de5c009322ec3e8d8c5e05859c01d4f1"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n射圃社交 → 若兰佩物偶露 → 宝玉回府 → 消息二次传播 → 湘云问旧麒麟 → 探春家书把视线拉开。  \n**风险：**把R34写成确定婚姻/死亡答案。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [
+    "OBJ-GOLDEN-QILIN-LARGE"
+  ],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "independent_review: 新作者草案尚未独立审读，不能标为AGENT_EDITED、语义通过、证据或权威。",
+    "declared_sequence_only: 依候选列表显式声明前驱；历史场景顺序和与既有正文的精确放置未核验。",
+    "scene_local_checkpoint: 后场入口UNKNOWN；前一覆盖文件只是显式顺序，不产生或继承局部状态快照。",
+    "unregistered_participants: 老仆等射圃工作角色没有注册ID，保持未绑定接口。",
+    "event_localization: OT83-01为同章第一对象事件，仅绑定登记关联；83-S2的UNKNOWN入口不支持局部重放或此前来源追溯。",
+    "object_detail_gap: 已绑定大金麒麟；弓箭、空食匣等无对象ID，旧麒麟的具体既往归属不能新造转移。",
+    "knowledge_registry_gap: 宝玉看见与想起旧麒麟没有注册知识事实/获取事件，不推定湘云或若兰知道命物解释。"
+  ],
+  "function": "在射圃的普通动作中让已注册大金麒麟作为若兰佩物偶露；先有工序、玩笑与看见，后有疑问，锁物的照面功能而不解释命。",
+  "notes": "本文件是新建v1作者草案，status=DRAFT_GENERATED，authority_effect=NONE，evidence_effect=NONE；必须由独立审读者另行核对来源、正文语义、参与者及场间衔接。participants_status=KNOWN只指拟定参与者集合有实际注册ID与章卡依据，不证明他们在某历史时刻确实同时到场，现场位置由UNKNOWN/PENDING条件保留。entry_from是本草案显式声明的候选顺序：首场指定chapter-1章入口，后场引用前一v1覆盖文件；SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY不是原文年代顺序的证明，也不传播前场状态。required/forbidden beats全属待实现叙事要求，grounding只说明其来自不可变种子与章卡，不充当状态事实。非KNOWN条件value=null且给出原因；任何注册事件均只按同章连续前缀关联，不把粗粒度章事件当场级重放。不得宣称确定性或正文支持的语义重放PASS；knowledge事实定义不等同任何角色已经知道，跨章86知识场景不注入81—85。"
+}

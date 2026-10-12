@@ -1,0 +1,657 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v1",
+  "id": "95-S1",
+  "chapter": 95,
+  "order": 1,
+  "chapter_plan_ref": "data/planning/chapters/ch95.json",
+  "status": "DRAFT_GENERATED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/95-S1.json",
+      "sha256": "84b7834b4cc2d53133955ac8da5c2cb849f412b8044057d4f195cd7139e37e99"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch95.json",
+      "sha256": "8a0e52223bae43389aa9cbae7b83fc5dc78edf06fabf2a7870558c4a99274e0b"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "CHAPTER_ENTRY:94",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 94
+  },
+  "participants": [
+    "baoyu",
+    "baochai",
+    "sheyue",
+    "jia_yun"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/10",
+        "ref": "data/world/m3_core.json#/characters/10",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "340eb8abc9247bbb71dbde20970aad2d26ba92195c40678d53b29fcd43b5c3c2",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "kin_runner",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_network",
+            "human"
+          ],
+          "id": "jia_yun",
+          "name": "贾芸"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "entry_state": [
+    {
+      "equals": "character.baoyu.location",
+      "value": "S06",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/10/effects/1",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/10/effects/1",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "a2f77385e16c1ed455555267bec75ea9583a04a920eab4cb70b90d0b15c83262",
+          "value": {
+            "set": "characters.baoyu.location",
+            "value": "S06"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.baochai.location",
+      "value": "S06",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/6/effects/4",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/6/effects/4",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "3a536721a18edd32f9eab03011b07053c9de9974bd4a705115276e16a73ed0b0",
+          "value": {
+            "set": "characters.baochai.location",
+            "value": "S06"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.sheyue.location",
+      "value": "S06",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/6/effects/5",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/6/effects/5",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "9cc30bd5279a477249864fc4cc5de556afbc96f7e13d82556a148f856c1b13de",
+          "value": {
+            "set": "characters.sheyue.location",
+            "value": "S06"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.baochai.household_role",
+      "value": "wife_and_daily_manager",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/7/effects/0",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/7/effects/0",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "b48bba06a9ec618fdc3d18135677a5dee8a7123840d2c6b19ebaad4e013f294d",
+          "value": {
+            "set": "characters.baochai.household_role",
+            "value": "wife_and_daily_manager"
+          }
+        }
+      ]
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "character.baochai.location",
+      "value": "S06",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/6/effects/4",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/6/effects/4",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "3a536721a18edd32f9eab03011b07053c9de9974bd4a705115276e16a73ed0b0",
+          "value": {
+            "set": "characters.baochai.location",
+            "value": "S06"
+          }
+        }
+      ]
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "character.baochai.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "借住将到期不等于已搬S09；W95将新住所与贫困合成章级事件，不能在期限商量场提前执行。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "95-S1-R1",
+      "description": "说明借院不能久居的现实理由与通知经手，再由宝钗先知现金缺口、麝月知米量的分工提出找房。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/14/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/14/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ff1576b4f803b5ac7291df404d63ec6e65e4975fd4e897191868da0212eb7434",
+          "value": {
+            "id": "95-S1",
+            "title": "原借住处不能久居"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                39070,
+                39155
+              ],
+              "lines": [
+                968,
+                970
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "19583312c2318dc5fc0b410c9b053c6d7f8b59b697e8c0e68bfed97c4d1d6ed2"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n仅需补“为什么从借住院搬到偏院”的住房桥。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                39155,
+                39294
+              ],
+              "lines": [
+                971,
+                973
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "01c5b312333a9bce40f50b60f913e6419bb08d90ec4869e10707539b43e6a8cc"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n95-S1借住不能久；S2贾芸带看两三处；S3选漏风但便宜；搬家第一次主动舍弃笨重旧物。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                39294,
+                39383
+              ],
+              "lines": [
+                974,
+                976
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3333cad16c51abb5a641bcd1f5d800b4e7ccfb73d645d7a8b855999df44c7d98"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n贾芸、房东/代管者、当铺伙计、米铺、炭贩、邻妇。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                39798,
+                39962
+              ],
+              "lines": [
+                992,
+                994
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "45d33bddcca5fba7fb4486f420fcaa98543b7dcc20c2cc17df615dc0b09b3bc3"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE3：现金稀缺，房钱/米/炭/药/灯油不能同时满足。宝钗最早知钱，麝月最清楚米，宝玉在物件消失时才感知。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                40344,
+                40563
+              ],
+              "lines": [
+                1010,
+                1013
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "be05e81b763f4ffb014ae8016242dcd32eb6f2e36c96e930e75f558d6b5bd719"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n借院到期 → 看房 → 舍弃/搬 → 典物 → 买米炭 → 一日三餐与针线 → 夜风破毡 → 明日仍“两碗半”。  \n**风险：**把贫困当审美或苦难竞赛。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "95-S1-R2",
+      "description": "明确95处于不同于91的另一个冬天；换住处是持续低现金下的住房选择，不再制造查抄或断炊大危机。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/14/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/14/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ff1576b4f803b5ac7291df404d63ec6e65e4975fd4e897191868da0212eb7434",
+          "value": {
+            "id": "95-S1",
+            "title": "原借住处不能久居"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                38766,
+                38889
+              ],
+              "lines": [
+                962,
+                964
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "401a539e0f743d6deee178eecb629fdac84bfd92bd053fce93e13d4d876dfd13"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR19；H05持续贫困。91与95必须是两个不同冬天。当前婚后贫困为C级相位实现。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                40021,
+                40107
+              ],
+              "lines": [
+                998,
+                1000
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7f7daa8e31e0636dee700775b01a2e82aed69e6f39e049e0aef5c54359c1dbbc"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n断炊、冻死风险、第二次大危机、恶商羞辱主角。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                40344,
+                40563
+              ],
+              "lines": [
+                1010,
+                1013
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "be05e81b763f4ffb014ae8016242dcd32eb6f2e36c96e930e75f558d6b5bd719"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n借院到期 → 看房 → 舍弃/搬 → 典物 → 买米炭 → 一日三餐与针线 → 夜风破毡 → 明日仍“两碗半”。  \n**风险：**把贫困当审美或苦难竞赛。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "95-S1-F1",
+      "description": "不得让借住到期变成恶房东羞辱、无家可归冻死或第二次大灾难。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/14/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/14/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ff1576b4f803b5ac7291df404d63ec6e65e4975fd4e897191868da0212eb7434",
+          "value": {
+            "id": "95-S1",
+            "title": "原借住处不能久居"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                39646,
+                39712
+              ],
+              "lines": [
+                986,
+                988
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "879e85d17cc71d98be85f3edf4c112f215230b2e6a31fdc87ab16b60027b6dab"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n低。贫困不得美化成修行/清净。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                39712,
+                39798
+              ],
+              "lines": [
+                989,
+                991
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "103b002df442e53f4827cfbbe2ee10f77299a8e4323aa8d1a044859123f91184"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n当铺只按成色；米炭小贩不必恶；贫困来自结构。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                40021,
+                40107
+              ],
+              "lines": [
+                998,
+                1000
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7f7daa8e31e0636dee700775b01a2e82aed69e6f39e049e0aef5c54359c1dbbc"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n断炊、冻死风险、第二次大危机、恶商羞辱主角。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "95-S1-F2",
+      "description": "不得把贫困美化为清净修行，或增贫困组诗、名画古砚典卖寓言。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/14/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/14/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ff1576b4f803b5ac7291df404d63ec6e65e4975fd4e897191868da0212eb7434",
+          "value": {
+            "id": "95-S1",
+            "title": "原借住处不能久居"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                39383,
+                39488
+              ],
+              "lines": [
+                977,
+                979
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3406417cba3f83dc727feac332b86a52e8eb8bbe4993752200895b5a548f47be"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n38判“已经完成文化降格”，P-Lock不增。严禁名画古砚典卖寓言。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                39488,
+                39552
+              ],
+              "lines": [
+                980,
+                982
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "234679c340ae232a8a71f17f66bf4001de9d4a40a10545ae979caa938e1b8392"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \n无贫困组诗、无作者贫士吟。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                39646,
+                39712
+              ],
+              "lines": [
+                986,
+                988
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "879e85d17cc71d98be85f3edf4c112f215230b2e6a31fdc87ab16b60027b6dab"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n低。贫困不得美化成修行/清净。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                40304,
+                40344
+              ],
+              "lines": [
+                1008,
+                1009
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "44e50474767c8d9301ed3c5c77ae2942e439a0cef17b919c728501c816f9af53"
+            },
+            "name": "回末诗",
+            "number": 17,
+            "text": "**17｜回末诗** **强锁无诗**。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "independent_edit_and_semantics: DRAFT_GENERATED；本次生成没有独立编辑、正文语义核验或人类/提供方证明。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "participants: 房东/代管者未有实体ID，借住期限由誰接话与旧约内容仍待落实。",
+    "implementation_gap: 房钱、借院期限、住处约据未有对象ID；91第一冬与95第二冬的间隔为当前C时间框，不反升原稿准确纪年。",
+    "exit_state: character.baochai.location — 借住将到期不等于已搬S09；W95将新住所与贫困合成章级事件，不能在期限商量场提前执行。"
+  ],
+  "function": "补借院不能久居的住房桥，以期限、房钱与生活分工提出换低成本住处的必要性；这是第二个冬天的持续贫困，不是第二次家败。",
+  "notes": "按91–95作者包与95-S1源种子拟定。具名参与者是章卡支持的拟写角色，实体引用只证明ID存在；未注册职业人物/道具保留在义务与未决项中，不造ID。第一场KNOWN条件仅描述chapter-1选定运行世界入口，basis为实际基线或此前事件，不是章卡、重建声明或待写正文。其他场局部状态及全部出口保持UNKNOWN。event_refs/object_transition_refs是涉及的当前C章级接口，不是失传正文、历史回次或场级可执行性证明；原三份data/scenes合同及所有种子、章卡、世界与评论数据不变。"
+}

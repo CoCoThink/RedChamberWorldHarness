@@ -92,6 +92,10 @@ rcwh backtest check
 
 Writing defaults to dry-run, with an optional Anthropic API adapter (`.[generate]`) and offline replay. Real calls require an environment key and explicit execution/network consent. New feedback never qualifies as independent review. Imported chapter cards and scene skeletons remain drafts; book allocations are shadow examples. The 79–80 holdout is a given-plan writing study, not recovery of an unseen original, and its effect remains `NOT_ESTIMABLE` without real controlled runs and readers. Production input admission is chapter-scoped and shared by competition/promotion; actual used materials still require audit, while unrelated global conditions remain publication preconditions. See [operations and limitations](docs/runbooks/WRITING_AND_HOLDOUT.md).
 
+## Session agent research
+
+`write import-draft` records session-authored text against exact offline prepared prompts without pretending that a provider API was executed. `agent-panel` retains model peer opinions separately from independent-human submissions; `session-backtest` runs a separate given-plan session study with anonymous local reading packets. `plan check --contracts-directory` opts into versioned agent contracts. `agent-release` can build only a research edition under `releases/agent/` after its own gates; it never writes stable ACTIVE. Model/session identity and resource parity remain unverified declarations. See [agent operations and boundaries](docs/runbooks/AGENT_RECONSTRUCTION.md).
+
 ## Documentation
 
 - [Architecture](docs/ARCHITECTURE.md) and [complete design](docs/RCWH_红楼梦复原基础设施完整设计_v1.0_20261008.md)

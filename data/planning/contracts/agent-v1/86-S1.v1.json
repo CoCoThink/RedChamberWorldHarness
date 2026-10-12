@@ -1,0 +1,624 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch86.json",
+      "sha256": "5f520934ec7e98bd6f20ebeafb45dfabee46c46253c883a3d82bc549e9c2c4a9"
+    },
+    "seed": {
+      "path": "data/planning/scenes/86-S1.json",
+      "sha256": "64565acd124aa6b86e2cc987ad5def15848b4fdda33517541e4ca2b68344092d"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 86,
+  "chapter_plan_ref": "data/planning/chapters/ch86.json",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 85
+  },
+  "entry_from": "CHAPTER_ENTRY:85",
+  "entry_state": [
+    {
+      "equals": "character.daiyu.life_state",
+      "value": "ACTIVE",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/daiyu/life_state",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/daiyu/life_state",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "77ff42a3ee266d7bdd15afca0b44c7ae71d875464026dcf96b158e450c797a93",
+          "value": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "equals": "character.daiyu.body_state",
+      "value": "declining_under_mourning",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/2/effects/2/value",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/2/effects/2/value",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "574d44bbe043e161a5016bc91549b2c857a6bf5d2ba16edf39da19a7eb516b96",
+          "value": "declining_under_mourning"
+        }
+      ]
+    },
+    {
+      "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+      "value": "warm",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/objects/m4.json#/objects/3/baseline/temperature",
+          "path": "data/objects/m4.json",
+          "pointer": "/objects/3/baseline/temperature",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+          "text_sha256": "e40310fbec639c561d2d469785addfa0da3897f2a0758b21c9f5d708f6a66563",
+          "value": "warm"
+        }
+      ]
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.daiyu.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "普通病晨到下一场的身体变化没有场级事件；W86-DAIYU-DEATH只给全回终态。"
+    },
+    {
+      "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT86-01在全回末端转冷，不能据此断定明日安排结束时的药温。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "把未能活到明日解释成宝玉结婚、失玉或断药断钱的单因果。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec4af178d1edd558d28f1214624fe7130781d6c1e74643dc257d89dc99f83deb",
+          "value": {
+            "id": "86-S1",
+            "title": "最后一次“明日安排”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            15442,
+            15574
+          ],
+          "lines": [
+            406,
+            408
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ba579384b0678013d16620ec834d82d7b5808820069a6e71847930743ba19c2b"
+        },
+        {
+          "byte_range": [
+            16984,
+            17170
+          ],
+          "lines": [
+            436,
+            438
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "35c6a9a0cdd9c2ba9f86db12541717d70b9d68b1e86bd65d6a9c6e1f024dcd09"
+        },
+        {
+          "byte_range": [
+            17286,
+            17433
+          ],
+          "lines": [
+            442,
+            444
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ce0fb459938c863d8d51711a9daa666372f309271941913db29597c3e6367ae3"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "此时用临终遗言、冷月显灵、托梦或悟道提前封死普通病日。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec4af178d1edd558d28f1214624fe7130781d6c1e74643dc257d89dc99f83deb",
+          "value": {
+            "id": "86-S1",
+            "title": "最后一次“明日安排”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            16752,
+            16859
+          ],
+          "lines": [
+            430,
+            432
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "a8005e17d65f111ad5300ff6f9b3dc230b02dd81f04d471497f79130b4fc9ca5"
+        },
+        {
+          "byte_range": [
+            17286,
+            17433
+          ],
+          "lines": [
+            442,
+            444
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ce0fb459938c863d8d51711a9daa666372f309271941913db29597c3e6367ae3"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec4af178d1edd558d28f1214624fe7130781d6c1e74643dc257d89dc99f83deb",
+          "value": {
+            "id": "86-S1",
+            "title": "最后一次“明日安排”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            17632,
+            17660
+          ],
+          "lines": [
+            451,
+            451
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            17660,
+            17700
+          ],
+          "lines": [
+            452,
+            453
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44e50474767c8d9301ed3c5c77ae2942e439a0cef17b919c728501c816f9af53"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "86-S1",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 1,
+  "participants": [
+    "daiyu",
+    "zijuan"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.daiyu.life_state",
+      "value": "ACTIVE",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/daiyu/life_state",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/daiyu/life_state",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "77ff42a3ee266d7bdd15afca0b44c7ae71d875464026dcf96b158e450c797a93",
+          "value": "ACTIVE"
+        }
+      ]
+    },
+    {
+      "equals": "object.OBJ-MEDICINE-BOWL-86.status",
+      "value": "CONTAINS_UNFINISHED_MEDICINE",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/objects/m4.json#/objects/3/baseline/status",
+          "path": "data/objects/m4.json",
+          "pointer": "/objects/3/baseline/status",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+          "text_sha256": "b77336acf7796734183dc6312a7f43b1a5520048972809c1af17d90857bd225f",
+          "value": "CONTAINS_UNFINISHED_MEDICINE"
+        }
+      ]
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/2",
+        "ref": "data/world/m3_core.json#/characters/2",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "7a8cf2f8057851bc3567ddbecbe17a44ec3ed061b238276e2235cea507a777ec",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_declining",
+            "household_role": "jia_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "daiyu",
+          "name": "林黛玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/28",
+        "ref": "data/world/m3_core.json#/characters/28",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "3b707fbd7be9241f9d10978db2507e02c5466802019e9c3bdd78bb3c5f231249",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "daiyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "zijuan",
+          "name": "紫鹃"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/3",
+        "ref": "data/objects/m4.json#/objects/3",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "ff8e37e26a9bb86c228a0713f303e67c705b445a4648fa5e220c3f542a8bf232",
+        "value": {
+          "baseline": {
+            "holder": "zijuan",
+            "location": "S02",
+            "status": "CONTAINS_UNFINISHED_MEDICINE",
+            "temperature": "warm"
+          },
+          "continuity_rules": [
+            "药冷是死亡场的物理连续性，不作象征学解释"
+          ],
+          "evidence_status": "LEGACY_ACTIVE_BRIDGED_TO_M4",
+          "id": "OBJ-MEDICINE-BOWL-86",
+          "identity_status": "CURRENT_IMPLEMENTATION_OBJECT",
+          "kind": "medicine_vessel",
+          "legacy_location_refinements": [
+            {
+              "authority_effect": "NONE",
+              "basis_segments": [
+                "hlm80:chapter:23:p00078",
+                "hlm80:chapter:78:p00028"
+              ],
+              "epistemic": "CURRENT_IMPLEMENTATION",
+              "legacy_value": "xiaoxiang_room",
+              "note": "前八十回：潇湘馆为大观园内林黛玉住处（第23回），第78回黛玉仍居潇湘馆；S02为贾府/大观园末期空间。仅声明空间包含，不使两个位置等同，也不证明药碗或黛玉死所的位置。",
+              "relation": "CONTAINED_IN",
+              "within": "S02"
+            }
+          ],
+          "legacy_ref": "data/objects/medicine_bowl.yaml",
+          "name": "第86回药碗",
+          "source_refs": [
+            "asset:sha256:7e4ba5576d56cf953338ef9dfa98b9dea3da4be4a595fff241a5c26d4c7e23bf"
+          ]
+        }
+      }
+    ],
+    "knowledge": [
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/0",
+        "ref": "data/knowledge/v03_slice2.json#/facts/0",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "7cb069f7b63f2630f45c0691fe041c94026f4afeec69fc8d9c76047727ca1561",
+        "value": {
+          "epistemic": "CURRENT_SCENE_FACT",
+          "id": "daiyu_illness_severe",
+          "label": "黛玉病势已重"
+        }
+      }
+    ]
+  },
+  "required_beats": [
+    {
+      "description": "黛玉仍对明日作小安排，紫鹃把安排接入已有照护差事；语气保留病日的普通性，而非预知死亡。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec4af178d1edd558d28f1214624fe7130781d6c1e74643dc257d89dc99f83deb",
+          "value": {
+            "id": "86-S1",
+            "title": "最后一次“明日安排”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            15574,
+            15819
+          ],
+          "lines": [
+            409,
+            411
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "6294a4b92d26277a59da7e8bc02363262507446bc5fe5720ddeb32b03006fb46"
+        },
+        {
+          "byte_range": [
+            15973,
+            16172
+          ],
+          "lines": [
+            415,
+            417
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "c8442b0289c134a0b8a563cf0f2b30ce93f402e6064b68bb05aeb4552739a40e"
+        },
+        {
+          "byte_range": [
+            17700,
+            18079
+          ],
+          "lines": [
+            454,
+            457
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ca835b9c0cc0faa57e527da203559a9747367ae96a4fd542615428deec253849"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "米汤、药、热水与炉火仍可供用；火箸碰茶盘的声音落在实际照护动作里，钱物不得先写成败后匮乏。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec4af178d1edd558d28f1214624fe7130781d6c1e74643dc257d89dc99f83deb",
+          "value": {
+            "id": "86-S1",
+            "title": "最后一次“明日安排”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            15574,
+            15819
+          ],
+          "lines": [
+            409,
+            411
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "6294a4b92d26277a59da7e8bc02363262507446bc5fe5720ddeb32b03006fb46"
+        },
+        {
+          "byte_range": [
+            16984,
+            17170
+          ],
+          "lines": [
+            436,
+            438
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "35c6a9a0cdd9c2ba9f86db12541717d70b9d68b1e86bd65d6a9c6e1f024dcd09"
+        },
+        {
+          "byte_range": [
+            17170,
+            17286
+          ],
+          "lines": [
+            439,
+            441
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "6d15feb53097e6205fe066b2c72adcdc0766ade8d867826e11f4f329e94c9ec9"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "若用米汤或小丫头的短口角，仅限死亡前的病晨生活；它不能取代吞咽、取水、温药的身体困难。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec4af178d1edd558d28f1214624fe7130781d6c1e74643dc257d89dc99f83deb",
+          "value": {
+            "id": "86-S1",
+            "title": "最后一次“明日安排”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            16663,
+            16752
+          ],
+          "lines": [
+            427,
+            429
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "064346ed111e36b35f22d852a99262c53086a8d096b8e9d4bbcebc800d5dc39e"
+        },
+        {
+          "byte_range": [
+            16984,
+            17170
+          ],
+          "lines": [
+            436,
+            438
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "35c6a9a0cdd9c2ba9f86db12541717d70b9d68b1e86bd65d6a9c6e1f024dcd09"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [
+    "OBJ-MEDICINE-BOWL-86"
+  ],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "participants: 雪雁及厨房小丫头在卡中有角色，但实体库没有对应ID；不能伪造xueyan或厨房人员。",
+    "objects: 米汤器、药吊子、火箸、茶盘、热水器与炉火没有独立对象记录；仅药碗可实名绑定。",
+    "knowledge: daiyu_illness_severe是已注册事实，但ch86_last_night入口不能自动充当86-S1局部认知入口。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。"
+  ],
+  "function": "以仍能安排明日的普通病晨建立长期照护的延续，使终末病程不是因缺药缺钱或戏剧性刺激骤然发动。",
+  "notes": "DRAFT_GENERATED：这是生成的当前实现约束，不是独立编辑、审查或历史原稿证据。演员ID及对象/事实ID均引用真实注册记录；KNOWN演员集合只表示所选ID已登记，不证明已出场或局部时序。第一场的KNOWN条件仅来自实际基线或前回已注册效果叶值，约束显式chapter-1粗层入口；不作作者学证据。后场的前驱仅为显式声明的来源列表顺序，局部检查点一律UNKNOWN，不注入或传承场态。required/forbidden beats是有卡/种子依据的待写目标，不能成为条件basis；未绑定全回事件或旧知识场。"
+}

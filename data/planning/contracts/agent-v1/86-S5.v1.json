@@ -1,0 +1,567 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch86.json",
+      "sha256": "5f520934ec7e98bd6f20ebeafb45dfabee46c46253c883a3d82bc549e9c2c4a9"
+    },
+    "seed": {
+      "path": "data/planning/scenes/86-S5.json",
+      "sha256": "6fa557f436180dff8313420e50a67806ca2719ed8eb16763b58e83c3f0988374"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 86,
+  "chapter_plan_ref": "data/planning/chapters/ch86.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-v1/86-S4.v1.json",
+  "entry_state": [
+    {
+      "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "旧场入口记宝玉不知确切死时，但无法证明86-S5起点与该入口相同。"
+    },
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "S02只是粗府域；未有宝玉收到消息时的场级位置与行程。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "K86-BAOYU-LEARNS-AFTER-ARRIVAL须在到达后；此场信息传递边界未定，不提前给知情终态。"
+    },
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "赶来路径与抵达边界未有场级移动事件；不能由同府位置推断已经入室。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "用骗婚、失玉消息或家人拦门制造死亡与迟到的单一因果。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "15ecf02ecfe9d24466dce41028fdfc587f3e2e6b23efbdc052c68353336918fc",
+          "value": {
+            "id": "86-S5",
+            "title": "宝玉为什么“来迟”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            15442,
+            15574
+          ],
+          "lines": [
+            406,
+            408
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ba579384b0678013d16620ec834d82d7b5808820069a6e71847930743ba19c2b"
+        },
+        {
+          "byte_range": [
+            15819,
+            15973
+          ],
+          "lines": [
+            412,
+            414
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e34ce345aab8ce8482fb7b5f85e293931a8b3995005ad570602acbb4a69621e0"
+        },
+        {
+          "byte_range": [
+            17286,
+            17433
+          ],
+          "lines": [
+            442,
+            444
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ce0fb459938c863d8d51711a9daa666372f309271941913db29597c3e6367ae3"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "把宝玉获得病危消息直接等同知道确切死时，或把可能赶上这一belief写成事实。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "15ecf02ecfe9d24466dce41028fdfc587f3e2e6b23efbdc052c68353336918fc",
+          "value": {
+            "id": "86-S5",
+            "title": "宝玉为什么“来迟”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            15819,
+            15973
+          ],
+          "lines": [
+            412,
+            414
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e34ce345aab8ce8482fb7b5f85e293931a8b3995005ad570602acbb4a69621e0"
+        },
+        {
+          "byte_range": [
+            16984,
+            17170
+          ],
+          "lines": [
+            436,
+            438
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "35c6a9a0cdd9c2ba9f86db12541717d70b9d68b1e86bd65d6a9c6e1f024dcd09"
+        },
+        {
+          "byte_range": [
+            17700,
+            18079
+          ],
+          "lines": [
+            454,
+            457
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ca835b9c0cc0faa57e527da203559a9747367ae96a4fd542615428deec253849"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "15ecf02ecfe9d24466dce41028fdfc587f3e2e6b23efbdc052c68353336918fc",
+          "value": {
+            "id": "86-S5",
+            "title": "宝玉为什么“来迟”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            17632,
+            17660
+          ],
+          "lines": [
+            451,
+            451
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            17660,
+            17700
+          ],
+          "lines": [
+            452,
+            453
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44e50474767c8d9301ed3c5c77ae2942e439a0cef17b919c728501c816f9af53"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "86-S5",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 5,
+  "participants": [
+    "baoyu",
+    "zijuan"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.baoyu.knowledge.baoyu_may_still_arrive_in_time",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "注册belief不证明本场收到消息前后仍持同一信念。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/28",
+        "ref": "data/world/m3_core.json#/characters/28",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "3b707fbd7be9241f9d10978db2507e02c5466802019e9c3bdd78bb3c5f231249",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "daiyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "zijuan",
+          "name": "紫鹃"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": [
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/0",
+        "ref": "data/knowledge/v03_slice2.json#/facts/0",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "7cb069f7b63f2630f45c0691fe041c94026f4afeec69fc8d9c76047727ca1561",
+        "value": {
+          "epistemic": "CURRENT_SCENE_FACT",
+          "id": "daiyu_illness_severe",
+          "label": "黛玉病势已重"
+        }
+      },
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/2",
+        "ref": "data/knowledge/v03_slice2.json#/facts/2",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "68e7d247eb72ebe11b7aecebdd4b80142fd221e5827fcd945a5206d36f534f00",
+        "value": {
+          "epistemic": "CURRENT_SCENE_FACT",
+          "id": "daiyu_death_exact_moment",
+          "label": "黛玉死亡的确切时刻"
+        }
+      },
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/3",
+        "ref": "data/knowledge/v03_slice2.json#/facts/3",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "d7aa3fbaac5a28d349fffecc4740867fa3e06398d9282431f5a0f8e96e78f006",
+        "value": {
+          "epistemic": "CURRENT_CHARACTER_BELIEF",
+          "id": "baoyu_may_still_arrive_in_time",
+          "label": "宝玉或仍能赶在最后一刻前到"
+        }
+      }
+    ]
+  },
+  "required_beats": [
+    {
+      "description": "病危先被照护者感知，再由雪雁或其他经手人去报，宝玉迟获消息后才赶来。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "15ecf02ecfe9d24466dce41028fdfc587f3e2e6b23efbdc052c68353336918fc",
+          "value": {
+            "id": "86-S5",
+            "title": "宝玉为什么“来迟”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            15819,
+            15973
+          ],
+          "lines": [
+            412,
+            414
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e34ce345aab8ce8482fb7b5f85e293931a8b3995005ad570602acbb4a69621e0"
+        },
+        {
+          "byte_range": [
+            16984,
+            17170
+          ],
+          "lines": [
+            436,
+            438
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "35c6a9a0cdd9c2ba9f86db12541717d70b9d68b1e86bd65d6a9c6e1f024dcd09"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "把消息发生、传递、宝玉得知及身体料理的相对先后写清；不让迟来变成有人刻意不准相见。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "15ecf02ecfe9d24466dce41028fdfc587f3e2e6b23efbdc052c68353336918fc",
+          "value": {
+            "id": "86-S5",
+            "title": "宝玉为什么“来迟”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            15819,
+            15973
+          ],
+          "lines": [
+            412,
+            414
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e34ce345aab8ce8482fb7b5f85e293931a8b3995005ad570602acbb4a69621e0"
+        },
+        {
+          "byte_range": [
+            15973,
+            16172
+          ],
+          "lines": [
+            415,
+            417
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "c8442b0289c134a0b8a563cf0f2b30ce93f402e6064b68bb05aeb4552739a40e"
+        },
+        {
+          "byte_range": [
+            17700,
+            18079
+          ],
+          "lines": [
+            454,
+            457
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ca835b9c0cc0faa57e527da203559a9747367ae96a4fd542615428deec253849"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "来迟的痛感靠尚在进行的照护与信息差成立；宝玉不得赶上黛玉最后一息作同步诀别。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/5/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/5/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "15ecf02ecfe9d24466dce41028fdfc587f3e2e6b23efbdc052c68353336918fc",
+          "value": {
+            "id": "86-S5",
+            "title": "宝玉为什么“来迟”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            15442,
+            15574
+          ],
+          "lines": [
+            406,
+            408
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ba579384b0678013d16620ec834d82d7b5808820069a6e71847930743ba19c2b"
+        },
+        {
+          "byte_range": [
+            15819,
+            15973
+          ],
+          "lines": [
+            412,
+            414
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e34ce345aab8ce8482fb7b5f85e293931a8b3995005ad570602acbb4a69621e0"
+        },
+        {
+          "byte_range": [
+            17700,
+            18079
+          ],
+          "lines": [
+            454,
+            457
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ca835b9c0cc0faa57e527da203559a9747367ae96a4fd542615428deec253849"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "participants: 报信的雪雁/跑腿没有注册ID，不能把信息链压缩成只有宝玉与紫鹃面对面。",
+    "timing: 报信者路线、宝玉获信地点及到达边界未记录；当前列表顺序也不证明通知发生在全部料理之后。",
+    "knowledge: 三个相关事实/信念均可引用，但旧场K86更新在六个种子之间的分配未独立核定。",
+    "entry_checkpoint: 86-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+    "entry_state.character.baoyu.knowledge.daiyu_death_exact_moment: 旧场入口记宝玉不知确切死时，但无法证明86-S5起点与该入口相同。",
+    "entry_state.character.baoyu.location: S02只是粗府域；未有宝玉收到消息时的场级位置与行程。",
+    "preconditions.character.baoyu.knowledge.baoyu_may_still_arrive_in_time: 注册belief不证明本场收到消息前后仍持同一信念。"
+  ],
+  "function": "用病危信息经手、迟获与赶来的真实链条解释来迟；场面压力来自信息落差而非增加哭喊或人为阻挠。",
+  "notes": "DRAFT_GENERATED：这是生成的当前实现约束，不是独立编辑、审查或历史原稿证据。演员ID及对象/事实ID均引用真实注册记录；KNOWN演员集合只表示所选ID已登记，不证明已出场或局部时序。第一场的KNOWN条件仅来自实际基线或前回已注册效果叶值，约束显式chapter-1粗层入口；不作作者学证据。后场的前驱仅为显式声明的来源列表顺序，局部检查点一律UNKNOWN，不注入或传承场态。required/forbidden beats是有卡/种子依据的待写目标，不能成为条件basis；未绑定全回事件或旧知识场。"
+}

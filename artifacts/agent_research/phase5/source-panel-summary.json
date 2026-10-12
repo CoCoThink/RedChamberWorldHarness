@@ -1,0 +1,648 @@
+{
+  "scope": "AGENT_RESEARCH_REVIEW_PANEL",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "automatic_literary_pass": false,
+  "minimum_reviewers": 2,
+  "independence_limitations": {
+    "identity_basis": "DECLARED_REVIEWER_IDS_AND_SESSION_IDS_NOT_AUTHENTICATED",
+    "model_identity": "DECLARED_NOT_VERIFIED",
+    "context_isolation": "ASSERTION_NOT_PROVEN",
+    "peer_independence": "DISTINCT_DECLARED_IDS_AND_SESSIONS_NOT_EXTERNAL_INDEPENDENCE"
+  },
+  "status": "PENDING",
+  "record_integrity_status": "PASS",
+  "findings": [],
+  "pending": [],
+  "panels": [
+    {
+      "packet": {
+        "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+        "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+      },
+      "id": "agent-packet:phase5:ch89:sources:v1",
+      "status": "PENDING",
+      "subjects": [
+        {
+          "binding": {
+            "path": "data/provenance/sources/r4_historical.yaml",
+            "sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820"
+          },
+          "id": "src:history:beijing:1774:rental-contract",
+          "scope": "SOURCE",
+          "source_ref": "src:history:beijing:1774:rental-contract",
+          "status": "PASS",
+          "review_count": 2,
+          "distinct_reviewer_count": 2,
+          "full_reviewers": [
+            {
+              "id": "agent:source-reader-1",
+              "session_id": "session:source-reader-1:phase5"
+            },
+            {
+              "id": "agent:source-reader-2",
+              "session_id": "session:source-reader-2:phase5"
+            }
+          ],
+          "sample_coverage": [],
+          "opinions": [
+            {
+              "record": {
+                "path": "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+                "sha256": "27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361.json",
+                "sha256": "12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-1",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-1:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "src:history:beijing:1774:rental-contract",
+              "subject_sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+              "verdict": "PASS",
+              "notes": "PASS for the bounded local captured transcription and historical-mechanism claims, not original-contract authentication. rental.html lines 287-289 identify the article and Dajuesi source; line 307 gives the 1774 contract, date and Changping context. Carrier/capture and extraction hashes match. The witness is a modern simplified transcription of a commercial shop lease, not an inspected original. No rental photograph was available in the bound bundle; the HTML image URL is not itself captured image evidence. Annual rent supports rental obligations by analogy, not Jia-household housing, price or a lost chapter.\n\nObserved diagnostic details (not packet-declared samples):\n[\n  {\n    \"sample_id\": \"rental:carrier-capture\",\n    \"sha256\": \"fa65f0a770344fc760af3411b5fa3a4665d83c73496664f980a4f9ee8191da76\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Read fixed-capture JSON: requested/final Beijing Cultural Heritage Administration URLs agree with bibliography; recorded HTTP 200 and carrier SHA match actual rental.html bytes (15da766c875fee0cc85ffda56f6b5aca9a70960fed444886a7f781d63e6777cc). Capture history is recorded metadata, not independently observed network provenance. Its old omission warning is not proof of a current omission.\"\n  },\n  {\n    \"sample_id\": \"rental:excerpt-and-locator\",\n    \"sha256\": \"2d55220e01fcfc97b08f161106190e4fde784050856539382f3b65ab96e6e8b4\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Manifest e0953b78c0d81651b56b799c02495d66c4dc5429578cffc85569b259e53e86f4 and units.jsonl output 44977b3557cf6ec3d400a1311f98bf03ac97b4331cd00f0293511a7c5380110d reproduce html:1[3760:3879] exactly. Overlapping node raw HTML characters equal extracted characters. Read line 307 includes 连借缸三口, annual fifty-thousand qian, received thirty-thousand qian and no rent increase.\"\n  },\n  {\n    \"sample_id\": \"rental:claims-h04-h05\",\n    \"sha256\": \"82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Read material claims h04:rental-mechanism and h05:rental-cost. Written terms and 每年租价 support the narrow mechanism; ANALOGICAL relation and HISTORICAL_FEASIBILITY scope correctly exclude specific Jia residential architecture or rent.\"\n  }\n]",
+              "sample_checks": []
+            },
+            {
+              "record": {
+                "path": "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+                "sha256": "6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc.json",
+                "sha256": "5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-2",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-2:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "src:history:beijing:1774:rental-contract",
+              "subject_sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+              "verdict": "PASS",
+              "notes": "Research-level PASS for the bound digital source and its two narrowly scoped feasibility claims, not original-document authentication. I hashed the actual r4_historical.yaml bytes and compared this Source against the material JSON: they agree. The source-record hash d75e42caf94a7e3018466178aa019c7cd6dfef5d8c7a5b8aaacb7737d5426ec0 is reproducible as sorted compact UTF-8 JSON, excluding locator_verification, followed by LF. rental.html hashes to 15da766c875fee0cc85ffda56f6b5aca9a70960fed444886a7f781d63e6777cc; the capture hashes to fa65f0a770344fc760af3411b5fa3a4665d83c73496664f980a4f9ee8191da76 and names the same carrier, Beijing cultural-heritage URL and HTTP 200 response. I inspected the actual HTML title, transcription and adjacent date/signatories, rather than accepting the capture label alone. Extraction manifest 61197a8d322c939c88c51d70a86b1f649b1243b4452cf2d4da3e7b6b7e2f59f6 has actual byte hash e0953b78c0d81651b56b799c02495d66c4dc5429578cffc85569b259e53e86f4; units.jsonl hashes to 44977b3557cf6ec3d400a1311f98bf03ac97b4331cd00f0293511a7c5380110d. html:1[3760:3879] exactly yields the 119-character Source text and hash 2d55220e01fcfc97b08f161106190e4fde784050856539382f3b65ab96e6e8b4. Independent standard-library parsing, excluding head/script/style and converting BR to LF, reproduces the full extracted text. The excerpt restores 连借缸三口 and the repair/termination/rent provisions. Context identifies the 1774 shop lease and 乾隆三十九年六月初六日. 每年租价清钱五十千正 is annual agreed rent, whereas 现收租价清钱三十千正 is an amount received; they must not be conflated. Witness BJ-RENT-1774 and HISTORICAL_PRIMARY are coherent as an institutional transcription of a historical contract, not a inspected contract facsimile. No explicit numeric tier is supplied, so none is certified or upgraded. claim:history:h04:rental-mechanism and claim:history:h05:rental-cost remain HISTORICAL_FEASIBILITY with ANALOGICAL support. They establish a written shop-rental mechanism and recurrent rent obligation, not a Jia household courtyard, its price, or lost novel text. I did not fetch or inspect the lease's linked original-document image; HTTP-capture statements are local records, not independently verified network history.",
+              "sample_checks": []
+            }
+          ],
+          "findings": [],
+          "pending": []
+        },
+        {
+          "binding": {
+            "path": "data/provenance/sources/r4_historical.yaml",
+            "sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820"
+          },
+          "id": "src:history:cao:1728:family-housing",
+          "scope": "SOURCE",
+          "source_ref": "src:history:cao:1728:family-housing",
+          "status": "PENDING",
+          "review_count": 2,
+          "distinct_reviewer_count": 0,
+          "full_reviewers": [],
+          "sample_coverage": [],
+          "opinions": [
+            {
+              "record": {
+                "path": "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+                "sha256": "27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361.json",
+                "sha256": "12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-1",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-1:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "src:history:cao:1728:family-housing",
+              "subject_sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+              "verdict": "PENDING",
+              "notes": "Cao accession/date and core housing passage are supported by inspected museum facsimiles, but the current source bibliography still names 《曹家档案史料》二百八十六 and ctext. npm005664-excerpts-agent-v2.txt line 13 explicitly says the edition of legacy number 286 was not established. That bibliographic linkage remains PENDING rather than silently replacing it with museum accession 故宮005664. Local transcription is model-authored, not museum transcription or human review; this model reading cannot certify every handwritten graph.\n\nObserved diagnostic details (not packet-declared samples):\n[\n  {\n    \"sample_id\": \"cao:family-housing:local-span\",\n    \"sha256\": \"9ba7cd55b8d09ee9c5507205bd23683145444b01730efb66eeef2e63fee60809\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Read transcription lines 21-22; text:1[909:955] equals source text. Manifest db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522 binds actual model-transcription input ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a and output 999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c. This proves span fidelity, not handwriting fidelity.\"\n  },\n  {\n    \"sample_id\": \"cao:family-housing:image-content\",\n    \"sha256\": \"fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Actually viewed family-and-date JPEG and museum documents PDF physical pages 15-16, printed 82-83, figure 19. Visible columns support 少留房產以資養贍 and 在京房屋人口酌量撥給, with date at left. PDF extraction xref 112 reproduces JPEG bytes; that hash check is separate from visual recognition. The wording reports grace/instruction and intended allocation, not proof of eventual execution.\"\n  },\n  {\n    \"sample_id\": \"cao:family-housing:witness-and-edition\",\n    \"sha256\": \"ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a\",\n    \"verdict\": \"PENDING\",\n    \"notes\": \"Museum catalogue item 9 and PDF figure captions identify 隋赫德, 雍正六年三月初二日, 故宮005664, 20.2 by 67 cm. Museum carrier/capture hashes match. Two magazine reproductions are the same witness, not independent documents. Current source citation edition/number 286 was not verified; transcription lines 2-3 explicitly disclose agent-only collation.\"\n  },\n  {\n    \"sample_id\": \"cao:family-housing:claim-scope\",\n    \"sha256\": \"82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Claim h04:post-confiscation-housing is limited to possible reserved/discretionarily allocated resources in the Cao case. 少留 and 酌量 support this possibility, not a universal entitlement, actual Jia housing or authorial lost-chapter intention.\"\n  }\n]",
+              "sample_checks": []
+            },
+            {
+              "record": {
+                "path": "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+                "sha256": "6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc.json",
+                "sha256": "5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-2",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-2:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "src:history:cao:1728:family-housing",
+              "subject_sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+              "verdict": "PENDING",
+              "notes": "The carrier, exact excerpt and limited housing mechanism checks pass; overall Source identity/edition clearance remains PENDING because the current bibliography still cites 《曹家档案史料》二百八十六 and ctext while the actual bound carrier is a modern agent transcription from 故宮005664. I did not verify the legacy edition or the correspondence of its number 286 to that manuscript, and cannot certify that bibliographic field merely because the new excerpt matches. Actual r4_historical.yaml bytes hash to the subject hash and this Source equals the material entry. Its declared record hash 0c3635de07d31847ec83ef0d8dfc0e89f80ff40260d52822e6339863b6e8cb56 is reproducible with sorted compact UTF-8 JSON excluding locator_verification plus LF. The text carrier hashes to ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a and explicitly labels itself AGENT_TEXT_REVIEW, not museum transcription or OCR. Manifest f95f95556bdb0321f7eeb2b6fb7f358b4a95e5d441edb76d44db41faac2ffdf5 hashes to db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522; units.jsonl hashes to 999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c. text:1[909:955] is exactly the 46-character Source text with hash 9ba7cd55b8d09ee9c5507205bd23683145444b01730efb66eeef2e63fee60809. I visually read the actual family-and-date JPEG fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7, reading vertical columns right-to-left and joining the honorific breaks. The visible 少留房產以資養贍, 不久回京, 在京房屋人口酌量撥給 and 以彰聖主覆載之恩 are consistent with the supplied excerpt; the left date column visibly uses the formal-numeral date corresponding to 雍正六年三月初二日. Catalogue carrier cce14a18edb5fb0599583db891619535ae24d5c81ebc008a47b352789c0bda37 item 9 and the figure 19 caption on official documents PDF 1798f0451e35b8383c48661fd4fe9fc94c97ba67b281498dc6a5a36ecd6d1314, physical page 15 / printed page 82, independently within this supplied evidence identify 隋赫德, the date and 故宮005664. The catalogue and both official PDF capture-to-carrier/URL bindings agree; native PDF image xref 112 reproduces the JPEG bytes. Byte identity is separate from my fallible visual reading. Both articles reproduce one historical witness, not two independent witnesses. HISTORICAL_PRIMARY is defensible for the underlying memorial only; the carrier remains a declared agent derivative, and no numeric tier is supplied. claim:history:h04:post-confiscation-housing is supported as a possibility of retained/discretionarily allotted resources, not proof that the proposed allocation was executed, of a particular quantity, of Jia housing, or of a lost chapter.",
+              "sample_checks": []
+            }
+          ],
+          "findings": [],
+          "pending": [
+            {
+              "record": {
+                "path": "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+                "sha256": "27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0"
+              },
+              "reason": "PENDING"
+            },
+            {
+              "record": {
+                "path": "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+                "sha256": "6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873"
+              },
+              "reason": "PENDING"
+            },
+            {
+              "reason": "TWO_DISTINCT_FULL_SUBJECT_REVIEWERS_REQUIRED",
+              "actual": 0
+            }
+          ]
+        },
+        {
+          "binding": {
+            "path": "data/provenance/sources/r4_historical.yaml",
+            "sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820"
+          },
+          "id": "src:history:cao:1728:inventory-seal",
+          "scope": "SOURCE",
+          "source_ref": "src:history:cao:1728:inventory-seal",
+          "status": "PENDING",
+          "review_count": 2,
+          "distinct_reviewer_count": 0,
+          "full_reviewers": [],
+          "sample_coverage": [],
+          "opinions": [
+            {
+              "record": {
+                "path": "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+                "sha256": "27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361.json",
+                "sha256": "12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-1",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-1:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "src:history:cao:1728:inventory-seal",
+              "subject_sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+              "verdict": "PENDING",
+              "notes": "Core custody/inventory/sealing mechanism is visually supported and local locator is exact. Source-level PENDING is retained for the unverified cited 《曹家档案史料》 edition and number 286. The actual inspected museum witness is 故宮005664, not an inspected ctext edition. No attestation of human review, exhaustive diplomatic accuracy or transfer of Cao procedure to fictional Jia events.\n\nObserved diagnostic details (not packet-declared samples):\n[\n  {\n    \"sample_id\": \"cao:inventory-seal:local-span\",\n    \"sha256\": \"53e9608a793b9b1be1bf5876a6996f817779cbed964cb477150c13cc20812e87\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Read transcription lines 15-16 and verified text:1[810:844] against actual bound extraction output and input. It exactly reproduces the source excerpt, including 管事數人, 夾訊監禁 and 造冊封固. Hash equality establishes local text integrity only.\"\n  },\n  {\n    \"sample_id\": \"cao:inventory-seal:image-content\",\n    \"sha256\": \"92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Actually viewed opening-and-inventory JPEG, first-and-middle JPEG and corresponding PDF figure pages. At the opening-image left edge the excerpt reaches 所有房產什物一併; following image continues 查清造冊封固. 管事數人/夾訊監禁 core is visible. PDF documents xref 124 matches this image's bytes, separate from reading handwritten content.\"\n  },\n  {\n    \"sample_id\": \"cao:inventory-seal:witness-and-edition\",\n    \"sha256\": \"ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a\",\n    \"verdict\": \"PENDING\",\n    \"notes\": \"Catalogue item 9 and printed pages 58 and 82 figure captions support the accession, author and date of the museum document. Transcription line 13 expressly leaves publication edition/legacy number 286 unestablished, while current YAML still cites that publication and ctext. Need edition-specific reconciliation; not a finding that the museum document is false.\"\n  },\n  {\n    \"sample_id\": \"cao:inventory-seal:claim-scope\",\n    \"sha256\": \"82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Claim h02:inventory-sealing describes questioning of stewards, checking property/items, register-making and sealing in this Cao case. Those mechanisms are supported by the core passage. This does not prove their universal ordering or any specific Jia/lost-chapter scene.\"\n  }\n]",
+              "sample_checks": []
+            },
+            {
+              "record": {
+                "path": "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+                "sha256": "6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc.json",
+                "sha256": "5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-2",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-2:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "src:history:cao:1728:inventory-seal",
+              "subject_sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+              "verdict": "PENDING",
+              "notes": "The current local carrier/excerpt checks pass and the visible manuscript supports the inventory/sealing mechanism. Overall Source identity/edition clearance is PENDING: its bibliography and witness siglum retain 《曹家档案史料》二百八十六 / CAO-ARCHIVE-286, whose legacy edition and numbering were not verified against the actual current 故宮005664-derived carrier. This is an unresolved bibliographic qualification, not an observed contradiction of the historical mechanism. I hashed r4_historical.yaml to the subject hash and found this Source identical to its material entry. Record hash 48884ba83e41c57b754aa31a25b1962fc7e1070340302a69efc97d42e4184306 reproduces from sorted compact UTF-8 JSON excluding locator_verification plus LF. The explicitly agent-authored text carrier hashes to ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a. The actual Cao extraction manifest hash is db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522 and output hash is 999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c. text:1[810:844] exactly reproduces the 34-character excerpt and its 53e9608a793b9b1be1bf5876a6996f817779cbed964cb477150c13cc20812e87 hash. I visually inspected first-and-middle JPEG 5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20 and the opening JPEG 92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89. Reading from the lower 總督范時繹已將曹頫 column into the next column, 管事數人拿去夾訊監禁 and 所有房產什物一併查清造冊封固 are consistent with the candidate transcription; the visible spelling supports 一併 rather than upgrading a byte comparison into handwriting recognition. The 1009x443 first-and-middle JPEG is exactly the native xref 22 image in exhibition PDF 5791f0fee06af35e1f5d98c0ab4f06a7c088f818f5597b4eab6f30bd519327fa physical page 4 / printed page 59; the opening JPEG is xref 124 on documents PDF physical page 16 / printed page 83. Official catalogue item 9 and figure captions support author/date/accession identity, and the three HTTP captures bind the actual declared carriers and URLs. These observations support the new facsimile identity, not an authenticated old printed edition. The two publications show one witness. HISTORICAL_PRIMARY describes that memorial; the exact local text is an agent derivative, with no supplied numeric tier and no institutional transcription claim. claim:history:h02:inventory-sealing accurately remains confined to the Cao case and HISTORICAL_FEASIBILITY: questioning/imprisonment of managers, inventorying and sealing are evidenced, but their sequence, detailed application to Jia characters and lost-novel scenes are not thereby established. Visual reading is model judgement, not palaeographic or independent-human qualification.",
+              "sample_checks": []
+            }
+          ],
+          "findings": [],
+          "pending": [
+            {
+              "record": {
+                "path": "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+                "sha256": "27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0"
+              },
+              "reason": "PENDING"
+            },
+            {
+              "record": {
+                "path": "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+                "sha256": "6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873"
+              },
+              "reason": "PENDING"
+            },
+            {
+              "reason": "TWO_DISTINCT_FULL_SUBJECT_REVIEWERS_REQUIRED",
+              "actual": 0
+            }
+          ]
+        },
+        {
+          "binding": {
+            "path": "data/provenance/sources/r4_historical.yaml",
+            "sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820"
+          },
+          "id": "src:history:cao:1728:pawn-tickets",
+          "scope": "SOURCE",
+          "source_ref": "src:history:cao:1728:pawn-tickets",
+          "status": "PENDING",
+          "review_count": 2,
+          "distinct_reviewer_count": 0,
+          "full_reviewers": [],
+          "sample_coverage": [],
+          "opinions": [
+            {
+              "record": {
+                "path": "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+                "sha256": "27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361.json",
+                "sha256": "12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-1",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-1:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "src:history:cao:1728:pawn-tickets",
+              "subject_sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+              "verdict": "PENDING",
+              "notes": "The count 當票百餘張 is supported by actual facsimile inspection and exact local extraction. Cited edition/number 286 remains unverified. More than one hundred tickets at one inventory supports accumulated pawning and its plausibility, but by itself does not establish timing, duration, frequency, ownership of every ticket, continued post-confiscation pawning or cash-flow purpose. DIRECT must not make those inferred details direct documentary facts.\n\nObserved diagnostic details (not packet-declared samples):\n[\n  {\n    \"sample_id\": \"cao:pawn-tickets:local-span\",\n    \"sha256\": \"6cf2527f22d7863e69d0d20fea4841da0d165db14d4a9208f82ec230f72148b5\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Read transcription lines 18-19; bound text:1[859:892] and excerpt SHA reproduce exactly, including 當票百餘張 and 與總督所查冊內彷彿. This is an agent transcription, explicitly not an independently human-reviewed museum text.\"\n  },\n  {\n    \"sample_id\": \"cao:pawn-tickets:image-content\",\n    \"sha256\": \"5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Actually viewed first-and-middle JPEG and museum exhibition PDF physical page 4, printed 59. Visible mid-right columns read 舊衣裳零星等件及當票百餘張外並無別項與總督所查冊內彷彿 across column breaks. PDF xref 22 extracts the same JPEG bytes; visible reading, not that equality, supports the count.\"\n  },\n  {\n    \"sample_id\": \"cao:pawn-tickets:witness-and-edition\",\n    \"sha256\": \"ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a\",\n    \"verdict\": \"PENDING\",\n    \"notes\": \"Museum catalogue and inspected PDF captions support 故宮005664 and the 1728 memorial identity. Current 《曹家档案史料》二百八十六 citation/ctext linkage is not established by those captions; transcription line 13 itself reserves the edition question.\"\n  },\n  {\n    \"sample_id\": \"cao:pawn-tickets:claim-scope\",\n    \"sha256\": \"82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798\",\n    \"verdict\": \"PENDING\",\n    \"notes\": \"Claim h05:pawn-as-cashflow and source note move from count to 持续/长期典当作为现金流. As historical possibility this is plausible, but count alone does not directly evidence duration or financial purpose. Preserve the inferential limitation; no specific pawned objects, schedule or Jia/lost-chapter event is proved.\"\n  }\n]",
+              "sample_checks": []
+            },
+            {
+              "record": {
+                "path": "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+                "sha256": "6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc.json",
+                "sha256": "5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-2",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-2:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "src:history:cao:1728:pawn-tickets",
+              "subject_sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+              "verdict": "PENDING",
+              "notes": "The exact local excerpt and the manuscript's pawn-ticket observation pass, but full Source clearance is PENDING for the unverified retained 《曹家档案史料》286 edition/numbering. There is also a claim-scope qualification: the tickets substantiate actual pawning and feasibility, not a documented duration or transaction cadence. Actual r4_historical.yaml bytes match the subject hash and this Source matches the material entry. Record hash 19a44068e9dd9d3813cd5dd811e3e3fe6460d9ea41a04db7de2c3dab417c5164 reproduces with sorted compact UTF-8 JSON excluding locator_verification plus LF. Carrier ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a is explicitly a local agent transcription; Cao manifest byte hash db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522 and output hash 999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c agree with the locator. text:1[859:892] exactly gives the 33-character text and hash 6cf2527f22d7863e69d0d20fea4841da0d165db14d4a9208f82ec230f72148b5. I visually inspected the actual first-and-middle JPEG 5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20, including the column continuation from 餘則桌椅床 to 杌舊衣裳零星等件及當票百餘張外並無別項與總 and then 督所查冊內彷彿. In particular, the supplied readings 床杌, 舊衣裳 and 當票百餘張 are consistent with the visible facsimile, rather than merely with transcription bytes. The museum catalogue item 9 and figure captions identify the memorial as 隋赫德 / 雍正六年三月初二日 / 故宮005664. JPEG bytes match exhibition PDF xref 22 on physical page 4 / printed page 59; the official PDF and catalogue capture bindings agree. This is one underlying historical witness reproduced twice, not multiple independent attestations. HISTORICAL_PRIMARY may describe the memorial but does not make the derivative text a museum-authored transcription; no numeric tier is supplied. claim:history:h05:pawn-as-cashflow can be retained only in its expressed HISTORICAL_FEASIBILITY sense: numerous pawn tickets make repeated pawning as a cash-raising mechanism plausible. Its DIRECT support directly covers 當票百餘張, not the inferred 持续/长期 dimension. The excerpt gives no dates of individual tickets, pledged objects, amounts, redemption activity or frequency. It cannot prove an actual long-running cash-flow schedule, a specific Jia-family pawn transaction or lost text. Neither a matching SHA nor this fallible model visual reading is independent-human qualification.",
+              "sample_checks": []
+            }
+          ],
+          "findings": [],
+          "pending": [
+            {
+              "record": {
+                "path": "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+                "sha256": "27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0"
+              },
+              "reason": "PENDING"
+            },
+            {
+              "record": {
+                "path": "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+                "sha256": "6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873"
+              },
+              "reason": "PENDING"
+            },
+            {
+              "reason": "TWO_DISTINCT_FULL_SUBJECT_REVIEWERS_REQUIRED",
+              "actual": 0
+            }
+          ]
+        },
+        {
+          "binding": {
+            "path": "data/provenance/sources/r4_historical.yaml",
+            "sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820"
+          },
+          "id": "src:history:daqinglu:v10:marriage-authority",
+          "scope": "SOURCE",
+          "source_ref": "src:history:daqinglu:v10:marriage-authority",
+          "status": "PASS",
+          "review_count": 2,
+          "distinct_reviewer_count": 2,
+          "full_reviewers": [
+            {
+              "id": "agent:source-reader-1",
+              "session_id": "session:source-reader-1:phase5"
+            },
+            {
+              "id": "agent:source-reader-2",
+              "session_id": "session:source-reader-2:phase5"
+            }
+          ],
+          "sample_coverage": [],
+          "opinions": [
+            {
+              "record": {
+                "path": "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+                "sha256": "27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361.json",
+                "sha256": "12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-1",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-1:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "src:history:daqinglu:v10:marriage-authority",
+              "subject_sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+              "verdict": "PASS",
+              "notes": "PASS for the captured Wikisource transcription of the identified Siku-text volume and narrow normative claim. Read daqinglu10.html lines 549, 555-591 and 593-594: volume ten, household law/marriage, 男女婚姻條例. This is not a inspected original legal-edition facsimile and does not establish real-world compliance, exact kin negotiations, or lost-chapter text.\n\nObserved diagnostic details (not packet-declared samples):\n[\n  {\n    \"sample_id\": \"marriage-authority:carrier-capture\",\n    \"sha256\": \"ddacd6d2c41f42848594247d289b52bc635e84c3d39176f2ccdad9b9bdb53e26\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Read fixed-capture metadata: requested/final Wikisource volume-ten URLs agree with bibliography and actual carrier SHA 94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c. Local byte consistency does not independently authenticate the historical edition or HTTP capture event.\"\n  },\n  {\n    \"sample_id\": \"marriage-authority:excerpt-and-locator\",\n    \"sha256\": \"d92a70af440769ee86254c79979857f302f781379cf86b2303eafccee8d1185b\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Manifest 19b1460e9d09a07eb91135287ca5844dd236b10fc5ed23bd6e94d2859ae859f4 and output 6f825052070cb8862304edc2f59e275bd524158ecbd97941ea52a1e7e5eb48b4 reproduce html:1[2443:2468]. The overlapping extraction node equals its raw HTML origin. Line 594 continues with a widowed mother accompanying a daughter into remarriage; the selected clause is not the entire rule.\"\n  },\n  {\n    \"sample_id\": \"marriage-authority:claim-scope\",\n    \"sha256\": \"82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Claim h04:senior-kin-marriage says a normative framework exists for grandparents/parents and, when absent, remaining kin to arrange marriage. The quoted rule directly supports that limited proposition. It does not select Jia Mu, Wang Furen or Xue Yima, override the following qualification, or prove actual behavior.\"\n  }\n]",
+              "sample_checks": []
+            },
+            {
+              "record": {
+                "path": "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+                "sha256": "6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc.json",
+                "sha256": "5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-2",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-2:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "src:history:daqinglu:v10:marriage-authority",
+              "subject_sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+              "verdict": "PASS",
+              "notes": "Research-level PASS for the bound digital transcription and limited marriage-authority claim, not a physical Siku edition authentication. I hashed the actual r4_historical.yaml bytes and matched this Source to its material entry. Record hash 12be6469c6959c6d402e50e460d734933e7694a869f42fbf77c39de8a3f6ccc6 reproduces with sorted compact UTF-8 JSON excluding locator_verification plus LF. daqinglu10.html hashes to 94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c; capture ddacd6d2c41f42848594247d289b52bc635e84c3d39176f2ccdad9b9bdb53e26 declares the same carrier, Wikisource 卷10 URL and HTTP 200. I inspected the actual HTML title 大清律例 (四庫全書本)/卷10, the 婚姻/男女婚姻 context and the 條例 containing the quotation. Manifest e3a9fde9913d4c5ef3bfa93bf9b6e6507796d79aee32adb06c9c72ae17974992 hashes to 19b1460e9d09a07eb91135287ca5844dd236b10fc5ed23bd6e94d2859ae859f4; units.jsonl hashes to 6f825052070cb8862304edc2f59e275bd524158ecbd97941ea52a1e7e5eb48b4. html:1[2443:2468] exactly yields the 25-character Source excerpt and hash d92a70af440769ee86254c79979857f302f781379cf86b2303eafccee8d1185b. An independent standard-library parser excluding head/script/style and mapping BR to LF reproduces the whole extracted text. The current excerpt correctly does not retain an invented final full stop. The following same-clause text includes 其夫亡攜女適人者其女從母主婚 and then provisions about death before marriage; I inspected these rather than reading the selected prefix as the complete rule. Ancestors/parents have stated authority, and 餘親 is specified when both ancestors and parents are absent, not as an unrestricted concurrent entitlement. Witness DQLL-V10 and HISTORICAL_PRIMARY are coherent for a digital transcription of the named legal text; no numeric tier is present and none is certified. claim:history:h04:senior-kin-marriage stays HISTORICAL_FEASIBILITY and supports only the kinship-authority framework. It does not establish uniform historical practice, a hierarchy among Jia Mu/Wang Furen/Xue Yima in a specific negotiation, its dialogue or a recovered chapter. I did not inspect an original Siku facsimile or independently verify the capture's network provenance.",
+              "sample_checks": []
+            }
+          ],
+          "findings": [],
+          "pending": []
+        },
+        {
+          "binding": {
+            "path": "artifacts/agent_research/phase5/inputs/ch89-source-material.json",
+            "sha256": "82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798"
+          },
+          "id": "ch89:source-material",
+          "scope": "ASSET",
+          "status": "PASS",
+          "review_count": 2,
+          "distinct_reviewer_count": 2,
+          "full_reviewers": [
+            {
+              "id": "agent:source-reader-1",
+              "session_id": "session:source-reader-1:phase5"
+            },
+            {
+              "id": "agent:source-reader-2",
+              "session_id": "session:source-reader-2:phase5"
+            }
+          ],
+          "sample_coverage": [],
+          "opinions": [
+            {
+              "record": {
+                "path": "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+                "sha256": "27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361.json",
+                "sha256": "12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-1",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-1:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "ch89:source-material",
+              "subject_sha256": "82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798",
+              "verdict": "PASS",
+              "notes": "PASS as an intact research-only evidence packet, not an endorsement that every embedded source audit is complete. Actual material SHA matches packet binding; all five source snapshots exactly equal their corresponding bound YAML entries, and all six packet subjects have one result here. Three Cao source outcomes remain PENDING. Only bound source/capture/extraction evidence and permitted facsimile material were used; no other reviewers' conclusions were consulted. Model label and context isolation are declarations, not verified provenance. No human admission is attested; no historical fact proves a lost chapter.\n\nObserved diagnostic details (not packet-declared samples):\n[\n  {\n    \"sample_id\": \"source-material:packet-integrity\",\n    \"sha256\": \"82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798\",\n    \"verdict\": \"PASS\",\n    \"notes\": \"Recomputed actual packet/material/YAML, carrier, capture, extraction manifest/output and three JPEG/PDF hashes. All checked byte bindings match. Bound locator outputs reproduce all five excerpts. These mechanism checks do not constitute image recognition, historic authenticity or human independence.\"\n  },\n  {\n    \"sample_id\": \"source-material:protocol-beyond-five\",\n    \"sha256\": \"82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798\",\n    \"verdict\": \"NOT_CHECKED\",\n    \"notes\": \"The embedded protocol lists twelve source references and a graph SHA, but this packet submits five source subjects. Remaining seven sources, graph hash, claim registry synchronization, audit-report verdicts, extractor implementation/dependency reproducibility and live HTTP authenticity were not independently checked. Reading a VERIFIED label does not establish its authority.\"\n  }\n]",
+              "sample_checks": []
+            },
+            {
+              "record": {
+                "path": "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+                "sha256": "6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873"
+              },
+              "raw_output": {
+                "path": "data/agent_panel/raw/5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc.json",
+                "sha256": "5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc"
+              },
+              "packet": {
+                "path": "artifacts/agent_research/phase5/inputs/ch89-source-packet.json",
+                "sha256": "d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d"
+              },
+              "same_packet_context": true,
+              "reviewer": {
+                "id": "agent:source-reader-2",
+                "kind": "MODEL_SUBAGENT",
+                "session_id": "session:source-reader-2:phase5",
+                "model": {
+                  "label": "session-default",
+                  "verification": "DECLARED_NOT_VERIFIED"
+                },
+                "context_isolation": {
+                  "asserted": true,
+                  "verification": "NOT_PROVEN"
+                }
+              },
+              "subject_id": "ch89:source-material",
+              "subject_sha256": "82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798",
+              "verdict": "PASS",
+              "notes": "PASS for byte identity, packet/material coherence and research-only framing of this input asset; this does not override the three individual Cao PENDING results. I hashed the actual material JSON bytes to 82ab351227d670dc42b40e8b1ce88854f0644a653d843270d11c7ecf6feae798 and the packet bytes to d6b234c29aabe56921b8c1af850084495e20a3bb13455f15af092775f6b53a0d. The five SOURCE subject bindings all match the actual r4_historical.yaml byte hash cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820; all five embedded Source records equal their YAML records. Each source_record_sha256 reproduces from its source record excluding locator_verification, using sorted compact UTF-8 JSON plus LF. All six bound claims match the five explicitly bound correction records' claim payloads; their recorded claim hashes reproduce with the same compact-JSON-plus-LF convention. All five excerpt texts and offsets, three extraction manifest hashes and three units.jsonl hashes were checked from bytes. rental/law HTML content and surrounding clauses were inspected directly. All three actual Cao JPEGs were opened visually, and native image xrefs 22/112/124 were checked against the two bound official PDFs without treating those byte checks as handwriting recognition. The catalogue item 9 and PDF captions corroborate the new underlying manuscript identity. Local capture declarations consistently identify their carriers and URLs but are not independently verified network transactions. The packet declares no samples, so every sample_checks array is empty; no invented sample IDs were added. The material embeds a 12-source protocol, but only five Source subjects and this asset are requested; the remaining seven source entries and graph_sha256 were not audited. Numeric tier fields are absent from the supplied five Sources, so no numerical tier, upgrade or admission finding is made. Caveats remain explicit: Cao's source-level legacy bibliography/286 edition linkage is not verified; two publications reproduce one witness; the local Cao text is an agent transcription; ticket counts do not directly prove long-term cash-flow chronology. None of these historical mechanisms proves the Jia family's specific events or lost novel text. This raw opinion has authority_effect NONE, usage RESEARCH_ONLY and no independent-human admission; producer correction/transcription declarations were not treated as peer-review authority.",
+              "sample_checks": []
+            }
+          ],
+          "findings": [],
+          "pending": []
+        }
+      ],
+      "review_count": 2
+    }
+  ],
+  "records": [
+    {
+      "receipt": "data/agent_panel/receipts/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+      "status": "PASS",
+      "findings": [],
+      "record": {
+        "path": "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+        "sha256": "27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0"
+      },
+      "raw_output": {
+        "path": "data/agent_panel/raw/12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361.json",
+        "sha256": "12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361"
+      }
+    },
+    {
+      "receipt": "data/agent_panel/receipts/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+      "status": "PASS",
+      "findings": [],
+      "record": {
+        "path": "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+        "sha256": "6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873"
+      },
+      "raw_output": {
+        "path": "data/agent_panel/raw/5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc.json",
+        "sha256": "5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc"
+      }
+    }
+  ],
+  "review_count": 2
+}

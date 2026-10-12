@@ -1,0 +1,867 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch100.json",
+      "sha256": "04adbb27665d5901abb41e787328a3439267414ee9167fbeb1b6a3ae3c5998e1"
+    },
+    "seed": {
+      "path": "data/planning/scenes/100-S5.json",
+      "sha256": "f03af0ef513a8388e4a4043a9ecf99af801b21a23a7977cfedc34e4c5868d484"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 100,
+  "chapter_plan_ref": "data/planning/chapters/ch100.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-v1/100-S4.v1.json",
+  "entry_state": [
+    {
+      "equals": "character.jialan.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "仅列人间封口可能涉及的已注册残余人物；章回切换不意味着他们进入太虚或与外框人物同场。"
+    }
+  ],
+  "event_refs": [
+    "W100-LATE-HUMAN",
+    "W100-LIWAN-DEATH",
+    "W100-OUTER-FRAME"
+  ],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "object.OBJ-TONGLING-JADE.frame_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT100-01有硬终态外框记录，但本場局部检查点未知，收卷—青埂峰—抄写门槛尚未执行；不可用草案声明自证终态。"
+    },
+    {
+      "equals": "object.OBJ-TONGLING-JADE.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "即使章级外框归本质，尘世路线仍未定；不得把UNKNOWN字符串当石飞回的位置事实。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "100-S5-F1",
+      "description": "不得恢复五册逐本重开、五册60人完成态、下层确名、新情评或榜首哲学总释；“皆系漫拟”与OPEN-LOCK阻止数据库式补齐。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "9be67931a32dae52f521d9579f504b0aab670d00f46b9ea2e802d6bba184c841",
+          "value": {
+            "id": "100-S5",
+            "title": "由何物/何叙事门槛转入外框"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                51546,
+                51998
+              ],
+              "lines": [
+                1272,
+                1280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0f8c98f59636ebca22e70494e23174aff057b666c1571cf5fb2d4a13e3e18b30"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR40\n\n**EVIDENCE-INTERFACES｜**\n- STRUCTURE：末回情榜；`警幻情榜`仅SOURCE-EXACT批语称谓；\n- V4：`宝玉情不情 / 黛玉情情`；\n- V5：末回五层`正、副、再副、三副、四副芳讳`；\n- NEG：`皆系漫拟`，下层猜名不得硬化。贾兰功名、R39李纨“因子得荣而终归虚幻”强约束；R08/R09/P11末回情榜；R01/P10石归。李纨具体病程、贾兰官品、年份开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                53275,
+                53686
+              ],
+              "lines": [
+                1296,
+                1298
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0814acf05ea5c05402bf7cbd516f36912b05c0e480b404cae041de0dfafe17e1"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nA02为批语中的情榜/五层结构证据；A03“林黛玉——情情”“贾宝玉——情不情”原样硬锁。当前正文正层十二名为C-format；副层仅显香菱、再副显晴雯袭人；三副四副留白。正式总榜名、下层全名单、每层人数与绝大多数情评均已进入OPEN-LOCK，禁止恢复五册60人完成态。G16终篇韵文继续关闭。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54732,
+                54956
+              ],
+              "lines": [
+                1314,
+                1316
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "a9d2f6194a1c7e0d96d9390f4a849db6aeca2d76dc6acf0d0aac7a6b1f3fe938"
+            },
+            "name": "禁止重新引入",
+            "number": 13,
+            "text": "**13｜禁止重新引入**  \n五册逐本重开；下层名单的确定口吻；未经源证支持的新情评；事迹摘要式评语；榜首哲学总释；终篇总结诗。以上均受OPEN-LOCK与P-Lock共同约束。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54956,
+                55127
+              ],
+              "lines": [
+                1317,
+                1319
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1f5e7cb368c1bb5ed36cb9e9bc0de94d87e1ad7acedb555dd23aa0a800a82266"
+            },
+            "name": "L3",
+            "number": 14,
+            "text": "**14｜L3**  \n本回必须L3，且必须最后正式定稿。情榜下层名单现为OPEN-LOCK；除非出现新上游证据，不以“微调”名义补全或锁定。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "100-S5-F2",
+      "description": "不得把太虚变凡人做梦或让情榜信息倒灌人间；不得以榜收解释玉的尘世去向、石归教义或终篇总结诗。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "9be67931a32dae52f521d9579f504b0aab670d00f46b9ea2e802d6bba184c841",
+          "value": {
+            "id": "100-S5",
+            "title": "由何物/何叙事门槛转入外框"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                53830,
+                54110
+              ],
+              "lines": [
+                1302,
+                1304
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cbb7a7f96ec8865248485b4046eb32a658bea37ad34b1fbc138a664ad0c6021c"
+            },
+            "name": "宗教/梦/哲学",
+            "number": 9,
+            "text": "**9｜宗教/梦/哲学**  \n太虚不是凡人做梦；保留“不知何日何时”。可有极轻旧香/卷轴声，不重播《红楼梦》曲。情榜不解释；删除榜首“情有所钟……”总释。情榜与石归用章回切换，不写“榜收即石飞回”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54732,
+                54956
+              ],
+              "lines": [
+                1314,
+                1316
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "a9d2f6194a1c7e0d96d9390f4a849db6aeca2d76dc6acf0d0aac7a6b1f3fe938"
+            },
+            "name": "禁止重新引入",
+            "number": 13,
+            "text": "**13｜禁止重新引入**  \n五册逐本重开；下层名单的确定口吻；未经源证支持的新情评；事迹摘要式评语；榜首哲学总释；终篇总结诗。以上均受OPEN-LOCK与P-Lock共同约束。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                55310,
+                55370
+              ],
+              "lines": [
+                1324,
+                1325
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f834eb17399f734189ca7f827ac04d83f4518e4df2692314f22a4d661546a0fa"
+            },
+            "name": "回末诗",
+            "number": 17,
+            "text": "**17｜回末诗** 无；“石在，字在”终局锁。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                55370,
+                55918
+              ],
+              "lines": [
+                1326,
+                1329
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "64af51dbefdc142c1db5508ac3a3701da71b21898b37000c051f4c02d2552aa9"
+            },
+            "name": "最终章法 / 风险",
+            "number": 18,
+            "text": "**18｜最终章法 / 风险**  \n多年压缩 → 贾兰实授 → 晚荣的现实礼务 → 李纨数月衰退与日常移交 → 人间丧务收束 → “人间这些余事，到此按下” → 太虚感官回声 → 一轴情榜五层 → 宝黛硬评、少量G评 → 宝玉榜末“情不情” → “收罢” → 青埂峰切换 → 道人粗纸残墨抄录 → 漫漶留空 → 石在，字在。  \n**风险：**把100写成“答案发布会”、把贾兰写成家族中兴、把情榜写成数据库、把石归写成佛理结论。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "100-S5",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [
+    "OT100-01"
+  ],
+  "order": 5,
+  "participants": [
+    "jialan",
+    "baochai",
+    "sheyue"
+  ],
+  "participants_status": "UNKNOWN",
+  "preconditions": [
+    {
+      "equals": "object.OBJ-TONGLING-JADE.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT99-01与OT100-01均将尘世location保持UNKNOWN；不能用外框身份归石补物理交通。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/21",
+        "ref": "data/world/m3_core.json#/characters/21",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "6fe4b5d3a561bb33d7992f53a27dbb86b3a79d0112945ff234a85df3289f8971",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "son_student",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "jialan",
+          "name": "贾兰"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/0",
+        "ref": "data/objects/m4.json#/objects/0",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "7039eac261456c40f732f1322b22ca25814dd97df2c70ae82c537009bf332c47",
+        "value": {
+          "baseline": {
+            "frame_status": "IN_HUMAN_WORLD",
+            "holder": "baoyu",
+            "location": "S02",
+            "status": "WITH_BAOYU"
+          },
+          "continuity_rules": [
+            "第98回误取—发现—送还属于当前C实现，不证明原稿绝对回次",
+            "第99回不得强制写成主动弃玉仪式",
+            "第100回石归本质是外框身份终态，不要求尘世物流闭合"
+          ],
+          "evidence_status": "MIXED_HARD_IDENTITY_CURRENT_C_PLACEMENT",
+          "id": "OBJ-TONGLING-JADE",
+          "identity_status": "LOCKED_TONGLING_OBJECT_BUT_EARTHLY_ROUTE_OPEN",
+          "kind": "jade",
+          "name": "通灵玉（当前C运行对象）",
+          "source_refs": [
+            "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+            "R01",
+            "R16",
+            "R18",
+            "R43"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "100-S5-R1",
+      "description": "先停止人间余事，再以“不知何日何时”的非凡人梦境门槛进入太虚；旧册只略现不重读，另展一轴素情榜，不逐册重开。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "9be67931a32dae52f521d9579f504b0aab670d00f46b9ea2e802d6bba184c841",
+          "value": {
+            "id": "100-S5",
+            "title": "由何物/何叙事门槛转入外框"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                52269,
+                52595
+              ],
+              "lines": [
+                1284,
+                1286
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "550595fba6e20c38a859b545cfab4b91ec24f2067b28c0f026ae81743245c7e1"
+            },
+            "name": "当前正文最薄处",
+            "number": 3,
+            "text": "**3｜当前正文最薄处**  \n当前情榜已压到“一轴素榜+最小硬锚”；R4-G真正遗留曾在情榜收卷后的石/道人尾段过长，Phase 4已裁定采用100-B中压尾。李纨数月普通老衰、贾兰丁忧等历史机制已完成R4-E可行性复核，但具体年份与制度细节仍属C/H边界。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                52595,
+                52924
+              ],
+              "lines": [
+                1287,
+                1289
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0760ba1695c6c800ca9a97371ca156fa2050244ee9406a60e6c3aa165e8877bf"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n人间层：实授→贺客/礼务→李纨受封后疲倦→数月衰退→日常移交→死→简化但有礼的丧务。太虚层：旧册略现但不重读→另展一轴情榜→五层芳讳→少量评语→榜末宝玉“情不情”→警幻“收罢”→章回切换青埂峰→道人抄录。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                53830,
+                54110
+              ],
+              "lines": [
+                1302,
+                1304
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cbb7a7f96ec8865248485b4046eb32a658bea37ad34b1fbc138a664ad0c6021c"
+            },
+            "name": "宗教/梦/哲学",
+            "number": 9,
+            "text": "**9｜宗教/梦/哲学**  \n太虚不是凡人做梦；保留“不知何日何时”。可有极轻旧香/卷轴声，不重播《红楼梦》曲。情榜不解释；删除榜首“情有所钟……”总释。情榜与石归用章回切换，不写“榜收即石飞回”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                55370,
+                55918
+              ],
+              "lines": [
+                1326,
+                1329
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "64af51dbefdc142c1db5508ac3a3701da71b21898b37000c051f4c02d2552aa9"
+            },
+            "name": "最终章法 / 风险",
+            "number": 18,
+            "text": "**18｜最终章法 / 风险**  \n多年压缩 → 贾兰实授 → 晚荣的现实礼务 → 李纨数月衰退与日常移交 → 人间丧务收束 → “人间这些余事，到此按下” → 太虚感官回声 → 一轴情榜五层 → 宝黛硬评、少量G评 → 宝玉榜末“情不情” → “收罢” → 青埂峰切换 → 道人粗纸残墨抄录 → 漫漶留空 → 石在，字在。  \n**风险：**把100写成“答案发布会”、把贾兰写成家族中兴、把情榜写成数据库、把石归写成佛理结论。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "100-S5-R2",
+      "description": "情榜只显五层芳讳结构及少量文字：黛玉“情情”、宝玉“情不情”原样保留，宝玉在榜末；正层十二名为C-format，不把正式总榜名、人数、下层名单或其余评语硬化。副层香菱、再副晴雯袭人是当前少量显示，三副四副留白。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "9be67931a32dae52f521d9579f504b0aab670d00f46b9ea2e802d6bba184c841",
+          "value": {
+            "id": "100-S5",
+            "title": "由何物/何叙事门槛转入外框"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                51546,
+                51998
+              ],
+              "lines": [
+                1272,
+                1280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0f8c98f59636ebca22e70494e23174aff057b666c1571cf5fb2d4a13e3e18b30"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR40\n\n**EVIDENCE-INTERFACES｜**\n- STRUCTURE：末回情榜；`警幻情榜`仅SOURCE-EXACT批语称谓；\n- V4：`宝玉情不情 / 黛玉情情`；\n- V5：末回五层`正、副、再副、三副、四副芳讳`；\n- NEG：`皆系漫拟`，下层猜名不得硬化。贾兰功名、R39李纨“因子得荣而终归虚幻”强约束；R08/R09/P11末回情榜；R01/P10石归。李纨具体病程、贾兰官品、年份开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                53275,
+                53686
+              ],
+              "lines": [
+                1296,
+                1298
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0814acf05ea5c05402bf7cbd516f36912b05c0e480b404cae041de0dfafe17e1"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nA02为批语中的情榜/五层结构证据；A03“林黛玉——情情”“贾宝玉——情不情”原样硬锁。当前正文正层十二名为C-format；副层仅显香菱、再副显晴雯袭人；三副四副留白。正式总榜名、下层全名单、每层人数与绝大多数情评均已进入OPEN-LOCK，禁止恢复五册60人完成态。G16终篇韵文继续关闭。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54732,
+                54956
+              ],
+              "lines": [
+                1314,
+                1316
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "a9d2f6194a1c7e0d96d9390f4a849db6aeca2d76dc6acf0d0aac7a6b1f3fe938"
+            },
+            "name": "禁止重新引入",
+            "number": 13,
+            "text": "**13｜禁止重新引入**  \n五册逐本重开；下层名单的确定口吻；未经源证支持的新情评；事迹摘要式评语；榜首哲学总释；终篇总结诗。以上均受OPEN-LOCK与P-Lock共同约束。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                55370,
+                55918
+              ],
+              "lines": [
+                1326,
+                1329
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "64af51dbefdc142c1db5508ac3a3701da71b21898b37000c051f4c02d2552aa9"
+            },
+            "name": "最终章法 / 风险",
+            "number": 18,
+            "text": "**18｜最终章法 / 风险**  \n多年压缩 → 贾兰实授 → 晚荣的现实礼务 → 李纨数月衰退与日常移交 → 人间丧务收束 → “人间这些余事，到此按下” → 太虚感官回声 → 一轴情榜五层 → 宝黛硬评、少量G评 → 宝玉榜末“情不情” → “收罢” → 青埂峰切换 → 道人粗纸残墨抄录 → 漫漶留空 → 石在，字在。  \n**风险：**把100写成“答案发布会”、把贾兰写成家族中兴、把情榜写成数据库、把石归写成佛理结论。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "100-S5-R3",
+      "description": "警幻只管收卷，以“收罢”结束，不逐人解释；此名未注册，保持角色而非伪造identity。榜收之后用章回切换到青埂峰，绝不写榜收即石飞回的因果物流。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "9be67931a32dae52f521d9579f504b0aab670d00f46b9ea2e802d6bba184c841",
+          "value": {
+            "id": "100-S5",
+            "title": "由何物/何叙事门槛转入外框"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                52595,
+                52924
+              ],
+              "lines": [
+                1287,
+                1289
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0760ba1695c6c800ca9a97371ca156fa2050244ee9406a60e6c3aa165e8877bf"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n人间层：实授→贺客/礼务→李纨受封后疲倦→数月衰退→日常移交→死→简化但有礼的丧务。太虚层：旧册略现但不重读→另展一轴情榜→五层芳讳→少量评语→榜末宝玉“情不情”→警幻“收罢”→章回切换青埂峰→道人抄录。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                52924,
+                53157
+              ],
+              "lines": [
+                1290,
+                1292
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1e8b7734f131ad20db05cc39a845f59add46a73d6815940cac08feb362ce4d5c"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n人间：贾兰、李纨、宝钗/麝月等残余人物、报喜人、贺客、帮厨、医者、丧务人。太虚：警幻只管理，不讲解。外框：空空道人是抄写劳动者，不是哲学解说员。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                53830,
+                54110
+              ],
+              "lines": [
+                1302,
+                1304
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cbb7a7f96ec8865248485b4046eb32a658bea37ad34b1fbc138a664ad0c6021c"
+            },
+            "name": "宗教/梦/哲学",
+            "number": 9,
+            "text": "**9｜宗教/梦/哲学**  \n太虚不是凡人做梦；保留“不知何日何时”。可有极轻旧香/卷轴声，不重播《红楼梦》曲。情榜不解释；删除榜首“情有所钟……”总释。情榜与石归用章回切换，不写“榜收即石飞回”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54556,
+                54732
+              ],
+              "lines": [
+                1311,
+                1313
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ad4f27831ba15d8b08b8b371c9b143048ebd399eb24dad718ca158515d19094d"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n真实多年；官礼与破家具并存；李纨旧衣；父亲旧书；“收罢”；道人不解释；石文漫漶留空；“石在，字在”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "100-S5-R4",
+      "description": "空空道人只做粗纸残墨的抄录劳动，漫漶处留空不补字；采用已裁定的中压尾边界，止于“石在，字在”，无新终篇韵文或佛理说明。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "9be67931a32dae52f521d9579f504b0aab670d00f46b9ea2e802d6bba184c841",
+          "value": {
+            "id": "100-S5",
+            "title": "由何物/何叙事门槛转入外框"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                51998,
+                52269
+              ],
+              "lines": [
+                1281,
+                1283
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b34ed3ce60a291c1adf97cb95a1c0e40c328105d157eb98907b6ff38746ba2b6"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n多年真实时间；厨房听见官讯先问“饭够不够”；借桌腿歪；孩子以为做官便有钱；李纨冠帔压额、仍爱旧衣；贾珠旧书；空空道人粗纸残墨抄石、漫漶留空；结尾“石在，字在”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                52269,
+                52595
+              ],
+              "lines": [
+                1284,
+                1286
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "550595fba6e20c38a859b545cfab4b91ec24f2067b28c0f026ae81743245c7e1"
+            },
+            "name": "当前正文最薄处",
+            "number": 3,
+            "text": "**3｜当前正文最薄处**  \n当前情榜已压到“一轴素榜+最小硬锚”；R4-G真正遗留曾在情榜收卷后的石/道人尾段过长，Phase 4已裁定采用100-B中压尾。李纨数月普通老衰、贾兰丁忧等历史机制已完成R4-E可行性复核，但具体年份与制度细节仍属C/H边界。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54110,
+                54290
+              ],
+              "lines": [
+                1305,
+                1307
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f5773c28f5384c276a35cd6229fe2c92adf00a6a8da9816acbb7214853cce581"
+            },
+            "name": "职业人物",
+            "number": 10,
+            "text": "**10｜职业人物**  \n报喜、医者、贺客、帮厨、丧务；道人抄写需要纸墨劳动。官礼/丁忧具体制度措辞在正式正文前再做一次历史校核。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54556,
+                54732
+              ],
+              "lines": [
+                1311,
+                1313
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ad4f27831ba15d8b08b8b371c9b143048ebd399eb24dad718ca158515d19094d"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n真实多年；官礼与破家具并存；李纨旧衣；父亲旧书；“收罢”；道人不解释；石文漫漶留空；“石在，字在”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                55310,
+                55370
+              ],
+              "lines": [
+                1324,
+                1325
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f834eb17399f734189ca7f827ac04d83f4518e4df2692314f22a4d661546a0fa"
+            },
+            "name": "回末诗",
+            "number": 17,
+            "text": "**17｜回末诗** 无；“石在，字在”终局锁。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                55370,
+                55918
+              ],
+              "lines": [
+                1326,
+                1329
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "64af51dbefdc142c1db5508ac3a3701da71b21898b37000c051f4c02d2552aa9"
+            },
+            "name": "最终章法 / 风险",
+            "number": 18,
+            "text": "**18｜最终章法 / 风险**  \n多年压缩 → 贾兰实授 → 晚荣的现实礼务 → 李纨数月衰退与日常移交 → 人间丧务收束 → “人间这些余事，到此按下” → 太虚感官回声 → 一轴情榜五层 → 宝黛硬评、少量G评 → 宝玉榜末“情不情” → “收罢” → 青埂峰切换 → 道人粗纸残墨抄录 → 漫漶留空 → 石在，字在。  \n**风险：**把100写成“答案发布会”、把贾兰写成家族中兴、把情榜写成数据库、把石归写成佛理结论。\n\n"
+          }
+        ],
+        "world_information_rule": {
+          "ref": "data/world/m3_knowledge.json#/knowledge_rules/10",
+          "path": "data/world/m3_knowledge.json",
+          "pointer": "/knowledge_rules/10",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+          "text_sha256": "d2cfe3a886b2e2b37cd85529e47e50b3154e7ef593a0ea4b262619628e8b0d9f",
+          "value": {
+            "chapter": 100,
+            "epistemic": "REFERENCE_INFORMATION_ASYMMETRY",
+            "fact": "outer_frame_emotion_register",
+            "kind": "FORBIDDEN_KNOWLEDGE",
+            "note": "太虚/情榜层的信息绝不倒灌给人间人物",
+            "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+            "targets": [
+              "human"
+            ]
+          }
+        }
+      }
+    }
+  ],
+  "required_objects": [
+    "OBJ-TONGLING-JADE"
+  ],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "independent_review: 作者草案尚未独立审读；不是正文、证据或权威。",
+    "declared_sequence_only: 依种子列表声明前驱；历史顺序、局部检查点与既有正文放置未核验。",
+    "frame_actors_unregistered: 警幻与空空道人均不在实际角色注册表；participants仅列人间封口的候选残余人物，不含虚构frame身份，完整参与者集合UNKNOWN。",
+    "frame_local_checkpoint: 章回门槛、情榜展示和抄写没有场级事件；OT100-01非本章对象连续前缀，不能作为本地确定性重放。",
+    "open_register: 正式榜名、下层名单、每层人数、绝大多数情评保持开放；不得生成新诗新评。",
+    "stone_earthly_route: 外框归本质与尘世物理路线分层，location/holder未知不补。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。"
+  ],
+  "function": "明确人间封口、太虚情榜与青埂峰外框的叙事门槛：一轴五层最小硬锚后收卷、章回切山、道人抄写，不生成完整答案。",
+  "notes": "本文件为新建v1作者草案，status=DRAFT_GENERATED，authority_effect=NONE，evidence_effect=NONE；未独立审读，不宣称AGENT_EDITED、原稿事实或语义重放通过。entry_from是本草案按SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY显式提出的候选前驱，不是历史顺序证据；后场局部检查点UNKNOWN，不继承前场状态。KNOWN仅可表示实际所选运行输入在chapter-1入口的粗状态，基于世界基线/实际既有事件，不基于种子或章卡自我声明。章卡、seed与grounding只支持待实现叙事义务；章级CURRENT_C/硬终态事件与对象转移不证明已执行本场、原稿具体回次或历史佚文。participants的注册ID表示拟用叙事人物，非确定到场；并置线不等于同场，未注册小人物/外框人物保持unresolved，不增加身份。references.knowledge为空：v03只有86/89/92的事实与知识场景，不能借其填96—100新事实；M3本章信息边界只作为义务依据，不冒充fact登记或知识获取事件。非KNOWN条件value=null并给局部缺口原因；未绑定正文，因此正文支持语义重放仍NOT_CHECKED。"
+}

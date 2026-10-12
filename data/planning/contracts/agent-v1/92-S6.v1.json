@@ -1,0 +1,625 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v1",
+  "id": "92-S6",
+  "chapter": 92,
+  "order": 6,
+  "chapter_plan_ref": "data/planning/chapters/ch92.json",
+  "status": "DRAFT_GENERATED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/92-S6.json",
+      "sha256": "a5cdc5ed10f9c2eb919c9a5df556c75f5ea37a0b4e162e5760162d0bd3f3ae4b"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch92.json",
+      "sha256": "93a5fdbbff10ccb65cd601e344d3b46d15fa38172bb5b29b88caa6f980a2b797"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "data/planning/scenes/92-S5.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "participants": [
+    "baoyu",
+    "jia_yun"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/10",
+        "ref": "data/world/m3_core.json#/characters/10",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "340eb8abc9247bbb71dbde20970aad2d26ba92195c40678d53b29fcd43b5c3c2",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "kin_runner",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_network",
+            "human"
+          ],
+          "id": "jia_yun",
+          "name": "贾芸"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": [
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/8",
+        "ref": "data/knowledge/v03_slice2.json#/facts/8",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "376cd3c7003b671db97190fcf395e6087df19ad31f3c0254b4ec62835ce7b241",
+        "value": {
+          "epistemic": "CURRENT_SCENE_UNKNOWN",
+          "id": "baoyu_detention_whole_case",
+          "label": "宝玉羁押案全部案情与官面判断"
+        }
+      }
+    ]
+  },
+  "entry_state": [
+    {
+      "equals": "character.baoyu.legal_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "第一夜、送物与第二轮问讯间无注册场级状态推进，不从章末快照反造问讯入口。"
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "character.baoyu.knowledge.baoyu_detention_whole_case",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "送物规则不等于全案；第二轮问讯实际使宝玉知悉哪些内容尚无知识记录。"
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "character.baoyu.legal_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "92卡要求正常释放，而W93把释放与凤姐死合并在93；本场结束于范围收窄还是释放决定仍待与93-S1手续划界。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "92-S6-R1",
+      "description": "第二轮问讯根据旧单与记录核对缩小范围，交代为何不再继续留质；接正常释放而非突然翻案。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "078bcc832010348d8a99a9ccd34f4626472975c14db9b4943273df89e8afe0e8",
+          "value": {
+            "id": "92-S6",
+            "title": "第二轮问讯以后，案情不是“突然翻案”，而是范围变窄"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                31534,
+                31700
+              ],
+              "lines": [
+                783,
+                785
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c04613526fd337f964446697d4e207ceaaadf2335cc01f8654cbb2c1d9c081bf"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n“为什么留质—问什么—范围如何变窄—为什么放”需要司法链更清楚；小红“大得力”必须具体而非万能。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31700,
+                31908
+              ],
+              "lines": [
+                786,
+                788
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e9955259a25cacca5651767990721298088a9e0a8ab597e8a6de8d12f908d41"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n92-S1认单≠定罪；S2第一次留质家里不知多久；S3第一夜规则学习；S4小红办能不能送；S5茜雪办保暖；S6第二轮问讯使范围缩小；正常释放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32543,
+                32693
+              ],
+              "lines": [
+                805,
+                807
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "691f1024a95d253812f2620688e641beb554b5e454142152b155e0e99a7bd18a"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n本回职业密度最高：狱卒关心班次/规矩，书办关心记录一致，同监关心饭和毡，小红先搞清制度。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33398,
+                33795
+              ],
+              "lines": [
+                826,
+                829
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fb8033734c34167c334c5c15e4ff3e09d2a92e4fc9451811424991f81a7d1565"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n传问等候 → 留质突然发生 → 第一夜规则 → 家中信息断裂 → 小红制度性帮助 → 茜雪旧情保暖 → 第二轮问讯 → 范围收窄 → 正常释放 → 饭香/窄门。  \n**压力测试问题：**是否既有法律可信度又仍是小说；小红帮助是否“大得力”但不传奇；宗教是否真实存在却完全不救案。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "92-S6-R2",
+      "description": "收束仍落饭香、窄门和回窄巷的生活空间；保留当前唯一“正是”两句：门里十日，只知饭冷灯昏；门外一程，才觉人间路窄。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "078bcc832010348d8a99a9ccd34f4626472975c14db9b4943273df89e8afe0e8",
+          "value": {
+            "id": "92-S6",
+            "title": "第二轮问讯以后，案情不是“突然翻案”，而是范围变窄"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                31264,
+                31534
+              ],
+              "lines": [
+                780,
+                782
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "af0a58a3a34bbfed6c415bc3ee97a025838f0bad479a929041e0afe1efad5649"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n等候、冷茶、湿鞋泥、粗瓷碗、萝卜、毡、饭钱规则；宝玉先学“不能换碗”；小红先问规则；茜雪只管冷不冷、送袜；最后回窄巷；现有“正是”二句为81—100唯一作者韵化收束。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32122,
+                32271
+              ],
+              "lines": [
+                795,
+                798
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fd06c6797c1d1fc992b71c98caf02a88caa2030abb12c7f15497e1210b286e26"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \n无人物诗。作者韵文只保留现有：\n“门里十日，只知饭冷灯昏；门外一程，才觉人间路窄。”\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33344,
+                33398
+              ],
+              "lines": [
+                824,
+                825
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ffc3ad1a8d1707c48dd47831124bf457876ba23fa6ff9b2a7dd6b092677d4fe1"
+            },
+            "name": "回末诗",
+            "number": 17,
+            "text": "**17｜回末诗** 保留唯一“正是”二句。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33398,
+                33795
+              ],
+              "lines": [
+                826,
+                829
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fb8033734c34167c334c5c15e4ff3e09d2a92e4fc9451811424991f81a7d1565"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n传问等候 → 留质突然发生 → 第一夜规则 → 家中信息断裂 → 小红制度性帮助 → 茜雪旧情保暖 → 第二轮问讯 → 范围收窄 → 正常释放 → 饭香/窄门。  \n**压力测试问题：**是否既有法律可信度又仍是小说；小红帮助是否“大得力”但不传奇；宗教是否真实存在却完全不救案。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "92-S6-R3",
+      "description": "为93-S1留清随身物领取、可再传问等程序接口，不将小红和茜雪的日用帮助变成案件结论。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "078bcc832010348d8a99a9ccd34f4626472975c14db9b4943273df89e8afe0e8",
+          "value": {
+            "id": "92-S6",
+            "title": "第二轮问讯以后，案情不是“突然翻案”，而是范围变窄"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                31534,
+                31700
+              ],
+              "lines": [
+                783,
+                785
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c04613526fd337f964446697d4e207ceaaadf2335cc01f8654cbb2c1d9c081bf"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n“为什么留质—问什么—范围如何变窄—为什么放”需要司法链更清楚；小红“大得力”必须具体而非万能。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31908,
+                32032
+              ],
+              "lines": [
+                789,
+                791
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "41a30df75a701738f517eb6131617c994db5502e03255ab72a22f17db29ed8de"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n狱卒、书办、同监、小红、茜雪、贾芸。每人各做一件，不组成“营救小队”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32693,
+                32881
+              ],
+              "lines": [
+                808,
+                810
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5142c870dc1c08deab17bed386e12efd04fd25facc0a6f149133cdf67cc9acf7"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：钱只能改善饭、跑腿、送物，不能买结案。物：厚袜、粗饭、毡、包裹。信：家里最初只知“留一留”，信息延迟是痛点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33398,
+                33795
+              ],
+              "lines": [
+                826,
+                829
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fb8033734c34167c334c5c15e4ff3e09d2a92e4fc9451811424991f81a7d1565"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n传问等候 → 留质突然发生 → 第一夜规则 → 家中信息断裂 → 小红制度性帮助 → 茜雪旧情保暖 → 第二轮问讯 → 范围收窄 → 正常释放 → 饭香/窄门。  \n**压力测试问题：**是否既有法律可信度又仍是小说；小红帮助是否“大得力”但不传奇；宗教是否真实存在却完全不救案。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "92-S6-F1",
+      "description": "不得靠酷刑口供、全知大反派、权贵、金钱或神迹突然翻案；不得宣布男丁连坐。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "078bcc832010348d8a99a9ccd34f4626472975c14db9b4943273df89e8afe0e8",
+          "value": {
+            "id": "92-S6",
+            "title": "第二轮问讯以后，案情不是“突然翻案”，而是范围变窄"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                32693,
+                32881
+              ],
+              "lines": [
+                808,
+                810
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5142c870dc1c08deab17bed386e12efd04fd25facc0a6f149133cdf67cc9acf7"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：钱只能改善饭、跑腿、送物，不能买结案。物：厚袜、粗饭、毡、包裹。信：家里最初只知“留一留”，信息延迟是痛点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33000,
+                33107
+              ],
+              "lines": [
+                814,
+                816
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "993cf13ed67f3f2e9aebcca285d5bf370934ee2e4425c9fd83a70b10d548b615"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n酷刑、屈打成招、大反派、权贵搭救、神迹翻案；“男丁连坐”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33398,
+                33795
+              ],
+              "lines": [
+                826,
+                829
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fb8033734c34167c334c5c15e4ff3e09d2a92e4fc9451811424991f81a7d1565"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n传问等候 → 留质突然发生 → 第一夜规则 → 家中信息断裂 → 小红制度性帮助 → 茜雪旧情保暖 → 第二轮问讯 → 范围收窄 → 正常释放 → 饭香/窄门。  \n**压力测试问题：**是否既有法律可信度又仍是小说；小红帮助是否“大得力”但不传奇；宗教是否真实存在却完全不救案。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "92-S6-F2",
+      "description": "不得增人物诗、第二首作者韵文或扩文化雅趣；现有两句以外不造获释颂。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "078bcc832010348d8a99a9ccd34f4626472975c14db9b4943273df89e8afe0e8",
+          "value": {
+            "id": "92-S6",
+            "title": "第二轮问讯以后，案情不是“突然翻案”，而是范围变窄"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                32032,
+                32122
+              ],
+              "lines": [
+                792,
+                794
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d04bf41f68c9501dcc1051d2b002387123fb9913f9c2a024dcac3f86ddda2163"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n38禁补；粗歌若有也不必。宗教只许狱神日常微仪式。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32122,
+                32271
+              ],
+              "lines": [
+                795,
+                798
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fd06c6797c1d1fc992b71c98caf02a88caa2030abb12c7f15497e1210b286e26"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \n无人物诗。作者韵文只保留现有：\n“门里十日，只知饭冷灯昏；门外一程，才觉人间路窄。”\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33344,
+                33398
+              ],
+              "lines": [
+                824,
+                825
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ffc3ad1a8d1707c48dd47831124bf457876ba23fa6ff9b2a7dd6b092677d4fe1"
+            },
+            "name": "回末诗",
+            "number": 17,
+            "text": "**17｜回末诗** 保留唯一“正是”二句。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "independent_edit_and_semantics: DRAFT_GENERATED；本次生成没有独立编辑、正文语义核验或人类/提供方证明。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+    "participants: 问讯书办、释放决定及送达执行者未有ID，不能由贾芸包办司法程序。",
+    "implementation_gap: 问项如何减少、正常释放的实际依据和92-S6/93-S1交界未核定；不将W93混合事件搬进92。",
+    "implementation_gap: “门里十日”是现有保留韵文，不因此把未验证的羁押时长填为精确十日。",
+    "entry_state: character.baoyu.legal_status — 第一夜、送物与第二轮问讯间无注册场级状态推进，不从章末快照反造问讯入口。",
+    "preconditions: character.baoyu.knowledge.baoyu_detention_whole_case — 送物规则不等于全案；第二轮问讯实际使宝玉知悉哪些内容尚无知识记录。",
+    "exit_state: character.baoyu.legal_status — 92卡要求正常释放，而W93把释放与凤姐死合并在93；本场结束于范围收窄还是释放决定仍待与93-S1手续划界。",
+    "knowledge_binding_scope: 事实ID或旧送物场记录不自动授权任何角色知情；种子场的实际获得、传话与未知范围须独立落实。"
+  ],
+  "function": "把第二轮问讯写成记录和问题范围逐步收窄，接正常释放的程序桥；不将有限日常援助误作突然翻案。",
+  "notes": "按91–95作者包与92-S6源种子拟定。具名参与者是章卡支持的拟写角色，实体引用只证明ID存在；未注册职业人物/道具保留在义务与未决项中，不造ID。第一场KNOWN条件仅描述chapter-1选定运行世界入口，basis为实际基线或此前事件，不是章卡、重建声明或待写正文。其他场局部状态及全部出口保持UNKNOWN。event_refs/object_transition_refs是涉及的当前C章级接口，不是失传正文、历史回次或场级可执行性证明；原三份data/scenes合同及所有种子、章卡、世界与评论数据不变。"
+}

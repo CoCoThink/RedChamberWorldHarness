@@ -1,0 +1,654 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch96.json",
+      "sha256": "a16c88eecea1bbe2a0281b4c0073985994e9663e7d921b76a3f099064d764086"
+    },
+    "seed": {
+      "path": "data/planning/scenes/96-S2.json",
+      "sha256": "937b6b3f700394e7abb3762b564bf0ba51af3689fde1bdb84ef96014aae14de9"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 96,
+  "chapter_plan_ref": "data/planning/chapters/ch96.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-v1/96-S1.v1.json",
+  "entry_state": [
+    {
+      "equals": "character.jiang_yuhan.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "蒋玉菡有注册身份，无本场登台、教唱或同行的场级行程；候选理由不能由职业标签自行推出。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.jiang_yuhan.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "章卡要求门外不抢戏与够用的职业一层，实际同行路线和离开时刻未登记。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "96-S2-F1",
+      "description": "不得当场唱完整一折戏或列出戏曲知识展示；戏业是生计约束，不是客厅舞台。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "d9e234306c912ce78501b65098813d724acfe62150e1991f16a0a6c57afd72ad",
+          "value": {
+            "id": "96-S2",
+            "title": "蒋玉菡是否同行要有自己的理由"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41668,
+                41770
+              ],
+              "lines": [
+                1042,
+                1044
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c775415659cb2d13e9424decfb59ef38f379be99e3d4b0de1dc03cd235784492"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n96戏曲职业世界、湘云被生活切断的诗性均P-Lock；不当场唱曲。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42009,
+                42137
+              ],
+              "lines": [
+                1054,
+                1056
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cb7cecc43f3a2b5a43ba6bf343f2fdc8c89be0ed0c1ec49fa0d5d9e2b26b9c0d"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n蒋有登台、教唱、行头、嗓子、同行和收入周期；不要把他变“旧友友情客串”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42363,
+                42440
+              ],
+              "lines": [
+                1063,
+                1065
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e6d0a4027d4c68ee2beecefa02165d4a09996fa5ffab9bfa8fa27fb589c2340e"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n大笔银钱；蒋唱整折戏；湘云完整婚后诗。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S2-F2",
+      "description": "不得开怀旧大会、送大笔银钱或让袭人重新回府同住；故人照应不能取消贫困。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "d9e234306c912ce78501b65098813d724acfe62150e1991f16a0a6c57afd72ad",
+          "value": {
+            "id": "96-S2",
+            "title": "蒋玉菡是否同行要有自己的理由"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                40868,
+                41151
+              ],
+              "lines": [
+                1023,
+                1029
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e1dfebff884225a9db0a5e67e733e67da9491c353b277cad34eae7ed88ccaf4"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR25/R26\n\n**V-INTERFACES｜**\n- V5：`后回与袭人供奉玉兄宝卿得同终始`；\n- “供奉”锁照应关系，不锁大额救济、同住或恢复阶级。：袭人蒋玉菡后期照应宝玉宝钗；O04贫寒相位开放。湘云/若兰仍O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42363,
+                42440
+              ],
+              "lines": [
+                1063,
+                1065
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e6d0a4027d4c68ee2beecefa02165d4a09996fa5ffab9bfa8fa27fb589c2340e"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n大笔银钱；蒋唱整折戏；湘云完整婚后诗。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "96-S2",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 2,
+  "participants": [
+    "xiren",
+    "jiang_yuhan",
+    "baoyu",
+    "baochai",
+    "sheyue"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "character.xiren.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "前驱仅为声明的地址桥；没有可执行到门状态。"
+    },
+    {
+      "equals": "character.sheyue.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "虽第95回粗状态在S09，本场何时迎客及门内门外位置未登记，不能传播章入口到本地检查点。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/5",
+        "ref": "data/world/m3_core.json#/characters/5",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "b64f1c0390f062cb8366790030ca19afb986e82e378a7b725e3f89a737af3e53",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "xiren",
+          "name": "花袭人"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/22",
+        "ref": "data/world/m3_core.json#/characters/22",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "9c0f5f79ae07e5caf3cbc8cd7c9748ae3c8a1840e25edd3aa61420d31a35be97",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "performer",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "human",
+            "profession_performer"
+          ],
+          "id": "jiang_yuhan",
+          "name": "蒋玉菡"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "96-S2-R1",
+      "description": "袭人先敲门，蒋玉菡在门外略候，不抢故人相见；麝月加入互揭短，让淡茶、便宜油膏等落回具体小户日常。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "d9e234306c912ce78501b65098813d724acfe62150e1991f16a0a6c57afd72ad",
+          "value": {
+            "id": "96-S2",
+            "title": "蒋玉菡是否同行要有自己的理由"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41151,
+                41347
+              ],
+              "lines": [
+                1030,
+                1032
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "dc3cd383fee0133c3409d89f7e4404e402549069d08f926d39dc26f1aadc4646"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n袭人敲门、蒋玉菡站门外不抢戏；戏业生计完整；援助物多钱少；湘云长信里婚后生活与“写两句揉掉”；新旧米同淘、仍两碗半。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41904,
+                41980
+              ],
+              "lines": [
+                1048,
+                1050
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "55047834fc6c02f7760cb18b54e8dca122aef24599cd40c6860b2634cd02aba6"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n淡茶、松子、两碗半、纸边沾饭气等保护。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42252,
+                42363
+              ],
+              "lines": [
+                1060,
+                1062
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3ce548c361059810c314274f1dfe95d917f8127986d53f3faa0a18ddb7f4599c"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n袭/蒋/麝 teasing；便宜油膏；银子先收；两碗半不变；春菜叫卖。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S2-R2",
+      "description": "给蒋玉菡一个与登台、教唱、行头或嗓子照料及收入周期有关的现实同行缘由；只露够用的一两笔，选择与日程仍待核，不把职业写成友情客串。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "d9e234306c912ce78501b65098813d724acfe62150e1991f16a0a6c57afd72ad",
+          "value": {
+            "id": "96-S2",
+            "title": "蒋玉菡是否同行要有自己的理由"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41347,
+                41450
+              ],
+              "lines": [
+                1033,
+                1035
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5d7be63035e663b59f92a7a999e6de1ccd5453a75876ae5bac86b89480c58d3b"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n袭人如何知道地址、蒋为何同行、湘云信如何转递可补很轻。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41450,
+                41592
+              ],
+              "lines": [
+                1036,
+                1038
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5370e9ec10523670b884650f3380fdf4820b44af93d84c66b5697264cabf11dc"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n96-S1贾芸/花家旧人转地址；S2蒋正好有现实理由同行；S3宝钗分配援助；S4信件延迟路径。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42009,
+                42137
+              ],
+              "lines": [
+                1054,
+                1056
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cb7cecc43f3a2b5a43ba6bf343f2fdc8c89be0ed0c1ec49fa0d5d9e2b26b9c0d"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n蒋有登台、教唱、行头、嗓子、同行和收入周期；不要把他变“旧友友情客串”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S2-R3",
+      "description": "援助物多钱少，与蒋袭自己的生计周期相容；来访是已婚故人的照应，不宣布命定终始或恢复旧等级。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "d9e234306c912ce78501b65098813d724acfe62150e1991f16a0a6c57afd72ad",
+          "value": {
+            "id": "96-S2",
+            "title": "蒋玉菡是否同行要有自己的理由"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                40868,
+                41151
+              ],
+              "lines": [
+                1023,
+                1029
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e1dfebff884225a9db0a5e67e733e67da9491c353b277cad34eae7ed88ccaf4"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR25/R26\n\n**V-INTERFACES｜**\n- V5：`后回与袭人供奉玉兄宝卿得同终始`；\n- “供奉”锁照应关系，不锁大额救济、同住或恢复阶级。：袭人蒋玉菡后期照应宝玉宝钗；O04贫寒相位开放。湘云/若兰仍O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41151,
+                41347
+              ],
+              "lines": [
+                1030,
+                1032
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "dc3cd383fee0133c3409d89f7e4404e402549069d08f926d39dc26f1aadc4646"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n袭人敲门、蒋玉菡站门外不抢戏；戏业生计完整；援助物多钱少；湘云长信里婚后生活与“写两句揉掉”；新旧米同淘、仍两碗半。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42471,
+                42565
+              ],
+              "lines": [
+                1069,
+                1071
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b9532267343142c18ef12257e812ac98fc0e6ff6edbb51486dc7299933e7ddbb"
+            },
+            "name": "前80同构",
+            "number": 15,
+            "text": "**15｜前80同构**  \n28汗巾/蒋袭伏线在贫困现实中回收，不写命运宣言。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "independent_review: 作者草案尚未独立审读；不是正文、证据或权威。",
+    "declared_sequence_only: 依种子列表声明前驱；历史顺序、局部检查点与既有正文放置未核验。",
+    "professional_schedule: 同行现实理由尚未选定，戏业收入、开演/教唱地点和时间没有事件记录。",
+    "visit_handoff: 96-S1地址取得不能自动证明门外、入屋与离开路径。",
+    "objects_unregistered: 油膏、淡茶及送来物的容器未注册，不新增对象ID。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。"
+  ],
+  "function": "让蒋玉菡同行出于戏业安排和家庭现实理由；故人重逢以有限职业生活和互揭短成立，不变成演出或怀旧大会。",
+  "notes": "本文件为新建v1作者草案，status=DRAFT_GENERATED，authority_effect=NONE，evidence_effect=NONE；未独立审读，不宣称AGENT_EDITED、原稿事实或语义重放通过。entry_from是本草案按SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY显式提出的候选前驱，不是历史顺序证据；后场局部检查点UNKNOWN，不继承前场状态。KNOWN仅可表示实际所选运行输入在chapter-1入口的粗状态，基于世界基线/实际既有事件，不基于种子或章卡自我声明。章卡、seed与grounding只支持待实现叙事义务；章级CURRENT_C/硬终态事件与对象转移不证明已执行本场、原稿具体回次或历史佚文。participants的注册ID表示拟用叙事人物，非确定到场；并置线不等于同场，未注册小人物/外框人物保持unresolved，不增加身份。references.knowledge为空：v03只有86/89/92的事实与知识场景，不能借其填96—100新事实；M3本章信息边界只作为义务依据，不冒充fact登记或知识获取事件。非KNOWN条件value=null并给局部缺口原因；未绑定正文，因此正文支持语义重放仍NOT_CHECKED。"
+}

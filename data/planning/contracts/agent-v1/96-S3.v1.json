@@ -1,0 +1,743 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch96.json",
+      "sha256": "a16c88eecea1bbe2a0281b4c0073985994e9663e7d921b76a3f099064d764086"
+    },
+    "seed": {
+      "path": "data/planning/scenes/96-S3.json",
+      "sha256": "12b770915aead389c82fbedc9c7f6ed56ce9d874ff9f66a68d5f58d91dbd47a1"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 96,
+  "chapter_plan_ref": "data/planning/chapters/ch96.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-v1/96-S2.v1.json",
+  "entry_state": [
+    {
+      "equals": "object.OBJ-RICE-JAR-95.quantity_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "第95回章末LOW是实际粗值，但本场在96-S2到访后的局部补米进度未知；不把它直接当本场入口。"
+    }
+  ],
+  "event_refs": [
+    "W96-LIMITED-AID-WEIXIANG"
+  ],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "object.OBJ-RICE-JAR-95.quantity_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT96-01/02只支持当前C章级部分补入及量用终点；尚未绑定本场可执行入口和半倒动作。"
+    },
+    {
+      "equals": "object.OBJ-PAWNABLE-JACKET-95.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "第95回已典当有实际记录；本场当票如何收置、是否暂不赎回没有场级转移，不能由叙事要求推出对象状态。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "96-S3-F1",
+      "description": "不得用米炭碎银逆转E4、赎回阶级或让全家立刻消费一空；两碗半不能随援助突然变成丰餐。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "31ee937f27af00caa2d9e091c41c2f5257d6628373d23cbc77bb19d36ec652df",
+          "value": {
+            "id": "96-S3",
+            "title": "援助被宝钗重新分配，而不是立刻消费"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                40868,
+                41151
+              ],
+              "lines": [
+                1023,
+                1029
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e1dfebff884225a9db0a5e67e733e67da9491c353b277cad34eae7ed88ccaf4"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR25/R26\n\n**V-INTERFACES｜**\n- V5：`后回与袭人供奉玉兄宝卿得同终始`；\n- “供奉”锁照应关系，不锁大额救济、同住或恢复阶级。：袭人蒋玉菡后期照应宝玉宝钗；O04贫寒相位开放。湘云/若兰仍O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42252,
+                42363
+              ],
+              "lines": [
+                1060,
+                1062
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3ce548c361059810c314274f1dfe95d917f8127986d53f3faa0a18ddb7f4599c"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n袭/蒋/麝 teasing；便宜油膏；银子先收；两碗半不变；春菜叫卖。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42363,
+                42440
+              ],
+              "lines": [
+                1063,
+                1065
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e6d0a4027d4c68ee2beecefa02165d4a09996fa5ffab9bfa8fa27fb589c2340e"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n大笔银钱；蒋唱整折戏；湘云完整婚后诗。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S3-F2",
+      "description": "不得给碎银、当铺或米炭添加未经来源支持的确切金额、数量、经手人；章级对象组不等于物目清单。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "31ee937f27af00caa2d9e091c41c2f5257d6628373d23cbc77bb19d36ec652df",
+          "value": {
+            "id": "96-S3",
+            "title": "援助被宝钗重新分配，而不是立刻消费"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41450,
+                41592
+              ],
+              "lines": [
+                1036,
+                1038
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5370e9ec10523670b884650f3380fdf4820b44af93d84c66b5697264cabf11dc"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n96-S1贾芸/花家旧人转地址；S2蒋正好有现实理由同行；S3宝钗分配援助；S4信件延迟路径。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "96-S3",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [
+    "OT96-01",
+    "OT96-03",
+    "OT96-02"
+  ],
+  "order": 3,
+  "participants": [
+    "baochai",
+    "sheyue",
+    "baoyu",
+    "xiren",
+    "jiang_yuhan"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "object.OBJ-CHARCOAL-BASKET-95.quantity_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "炭的有限补入有OT96-03章级记录，未登记本场分配时刻或各包数量。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/5",
+        "ref": "data/world/m3_core.json#/characters/5",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "b64f1c0390f062cb8366790030ca19afb986e82e378a7b725e3f89a737af3e53",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "xiren",
+          "name": "花袭人"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/22",
+        "ref": "data/world/m3_core.json#/characters/22",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "9c0f5f79ae07e5caf3cbc8cd7c9748ae3c8a1840e25edd3aa61420d31a35be97",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "performer",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "human",
+            "profession_performer"
+          ],
+          "id": "jiang_yuhan",
+          "name": "蒋玉菡"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/10",
+        "ref": "data/objects/m4.json#/objects/10",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "a1f99c276440ea457b38b14c77d2aa7dda051df6b87c737b46376064c0cf47d2",
+        "value": {
+          "baseline": {
+            "holder": "baochai_sheyue_household",
+            "location": "S09",
+            "quantity_state": "UNKNOWN",
+            "status": "UNINITIALIZED"
+          },
+          "continuity_rules": [
+            "第95回进入低量；第96回外援只部分补入，不逆转E4贫困"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-RICE-JAR-95",
+          "identity_status": "C_WORLD_OBJECT",
+          "kind": "food_store",
+          "name": "贫居米瓮",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "R19"
+          ]
+        }
+      },
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/11",
+        "ref": "data/objects/m4.json#/objects/11",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "a9fb7a82396fb2fe90a763529a807bdb244bcdd91d7032ed98af165a55a79153",
+        "value": {
+          "baseline": {
+            "holder": "baochai_sheyue_household",
+            "location": "S09",
+            "quantity_state": "UNKNOWN",
+            "status": "UNINITIALIZED"
+          },
+          "continuity_rules": [
+            "炭少是持续生活压力，不制造当日断炭绝境"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-CHARCOAL-BASKET-95",
+          "identity_status": "C_WORLD_OBJECT",
+          "kind": "fuel_store",
+          "name": "贫居炭筐",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "R19"
+          ]
+        }
+      },
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/13",
+        "ref": "data/objects/m4.json#/objects/13",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "4bb720b983f477d4813d8fe3049da1d24b4663d6c2b1099a37a9c2b0d9789bbf",
+        "value": {
+          "baseline": {
+            "holder": "baoyu_household",
+            "location": "S09",
+            "status": "OLD_REPAIRABLE"
+          },
+          "continuity_rules": [
+            "典当属于外出经济行为之一；不锁价格与当铺身份"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-PAWNABLE-JACKET-95",
+          "identity_status": "C_WORLD_OBJECT",
+          "kind": "clothing",
+          "name": "可典旧夹袄",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "96-S3-R1",
+      "description": "宝钗先分米与炭，把碎银压匣收好；银子先收而非立即花光，以后几餐、燃料与租用压力体现她的实际选择。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "31ee937f27af00caa2d9e091c41c2f5257d6628373d23cbc77bb19d36ec652df",
+          "value": {
+            "id": "96-S3",
+            "title": "援助被宝钗重新分配，而不是立刻消费"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41450,
+                41592
+              ],
+              "lines": [
+                1036,
+                1038
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5370e9ec10523670b884650f3380fdf4820b44af93d84c66b5697264cabf11dc"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n96-S1贾芸/花家旧人转地址；S2蒋正好有现实理由同行；S3宝钗分配援助；S4信件延迟路径。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42252,
+                42363
+              ],
+              "lines": [
+                1060,
+                1062
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3ce548c361059810c314274f1dfe95d917f8127986d53f3faa0a18ddb7f4599c"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n袭/蒋/麝 teasing；便宜油膏；银子先收；两碗半不变；春菜叫卖。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S3-R2",
+      "description": "新旧米同淘，仍量两碗半；只倒一半援米形成缓冲，让量米动作而非总结句证明援助不改结构贫困。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "31ee937f27af00caa2d9e091c41c2f5257d6628373d23cbc77bb19d36ec652df",
+          "value": {
+            "id": "96-S3",
+            "title": "援助被宝钗重新分配，而不是立刻消费"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41151,
+                41347
+              ],
+              "lines": [
+                1030,
+                1032
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "dc3cd383fee0133c3409d89f7e4404e402549069d08f926d39dc26f1aadc4646"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n袭人敲门、蒋玉菡站门外不抢戏；戏业生计完整；援助物多钱少；湘云长信里婚后生活与“写两句揉掉”；新旧米同淘、仍两碗半。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41904,
+                41980
+              ],
+              "lines": [
+                1048,
+                1050
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "55047834fc6c02f7760cb18b54e8dca122aef24599cd40c6860b2634cd02aba6"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n淡茶、松子、两碗半、纸边沾饭气等保护。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42252,
+                42363
+              ],
+              "lines": [
+                1060,
+                1062
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3ce548c361059810c314274f1dfe95d917f8127986d53f3faa0a18ddb7f4599c"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n袭/蒋/麝 teasing；便宜油膏；银子先收；两碗半不变；春菜叫卖。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S3-R3",
+      "description": "旧夹袄当票不急赎，与收银、节用并置；收束仍听卖春菜声，不把援物变成新衣、新家具或阔绰宴席。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "31ee937f27af00caa2d9e091c41c2f5257d6628373d23cbc77bb19d36ec652df",
+          "value": {
+            "id": "96-S3",
+            "title": "援助被宝钗重新分配，而不是立刻消费"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42252,
+                42363
+              ],
+              "lines": [
+                1060,
+                1062
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3ce548c361059810c314274f1dfe95d917f8127986d53f3faa0a18ddb7f4599c"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n袭/蒋/麝 teasing；便宜油膏；银子先收；两碗半不变；春菜叫卖。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42620,
+                42880
+              ],
+              "lines": [
+                1075,
+                1078
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "8832c9bcf625976cfbdd882062f9389a0bec721ddae393d26670e34ced117b8a"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n贫居春日 → 袭人到门 → 故人相见 → 蒋职业生活只露够用的一层 → 援助分配 → 湘云信到 → “两句揉掉” → 新旧米同锅。  \n**风险：**故人援助恢复阶级；文化展示过满。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [
+    "OBJ-RICE-JAR-95",
+    "OBJ-CHARCOAL-BASKET-95",
+    "OBJ-PAWNABLE-JACKET-95"
+  ],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "independent_review: 作者草案尚未独立审读；不是正文、证据或权威。",
+    "declared_sequence_only: 依种子列表声明前驱；历史顺序、局部检查点与既有正文放置未核验。",
+    "aid_accounting: 碎银金额、储米炭具体量及当票收置未定，三条实际对象事件只是章级前缀。",
+    "minor_objects_unregistered: 碎银匣、当票、盛援米器具没有独立对象ID；不补造。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。"
+  ],
+  "function": "把有限外援转成宝钗对储米、用炭与碎银的分配动作；缓解眼前压力而不赎回旧生活。",
+  "notes": "本文件为新建v1作者草案，status=DRAFT_GENERATED，authority_effect=NONE，evidence_effect=NONE；未独立审读，不宣称AGENT_EDITED、原稿事实或语义重放通过。entry_from是本草案按SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY显式提出的候选前驱，不是历史顺序证据；后场局部检查点UNKNOWN，不继承前场状态。KNOWN仅可表示实际所选运行输入在chapter-1入口的粗状态，基于世界基线/实际既有事件，不基于种子或章卡自我声明。章卡、seed与grounding只支持待实现叙事义务；章级CURRENT_C/硬终态事件与对象转移不证明已执行本场、原稿具体回次或历史佚文。participants的注册ID表示拟用叙事人物，非确定到场；并置线不等于同场，未注册小人物/外框人物保持unresolved，不增加身份。references.knowledge为空：v03只有86/89/92的事实与知识场景，不能借其填96—100新事实；M3本章信息边界只作为义务依据，不冒充fact登记或知识获取事件。非KNOWN条件value=null并给局部缺口原因；未绑定正文，因此正文支持语义重放仍NOT_CHECKED。"
+}

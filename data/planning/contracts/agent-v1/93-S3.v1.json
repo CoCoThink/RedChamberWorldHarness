@@ -1,0 +1,488 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v1",
+  "id": "93-S3",
+  "chapter": 93,
+  "order": 3,
+  "chapter_plan_ref": "data/planning/chapters/ch93.json",
+  "status": "DRAFT_GENERATED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/93-S3.json",
+      "sha256": "653b3f35e1a53d795316e9d845907667dd5508f7be78b932923a11a69a6e9732"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch93.json",
+      "sha256": "515ed9ce4f4aa83ba37ed0124f4ac31303b4fb375279500a0951cf74019301ce"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "data/planning/scenes/93-S2.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "participants": [
+    "fengjie",
+    "ping_er",
+    "qiaojie"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/7",
+        "ref": "data/world/m3_core.json#/characters/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bca44063796cdc27c5e8076a896ecdbedfbe135109b5461cd9af292e5d0fbaa0",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_old_illness",
+            "household_role": "household_manager",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED_JIALIAN"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "fengjie",
+          "name": "王熙凤"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/8",
+        "ref": "data/world/m3_core.json#/characters/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "18eb0f602b315bef39498961532a6d16a05dbd3cac2e572c07257b6fdf99a63d",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "fengjie_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "ping_er",
+          "name": "平儿"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/9",
+        "ref": "data/world/m3_core.json#/characters/9",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "30c29d3a2465ba5aeda93f0359e32a72d1b5424fa9ee01f8cc480d957f3f2ec9",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary_child",
+            "household_role": "fengjie_daughter",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "CHILD"
+          },
+          "groups": [
+            "jia_household",
+            "human",
+            "child"
+          ],
+          "id": "qiaojie",
+          "name": "巧姐"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "entry_state": [
+    {
+      "equals": "character.fengjie.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W90仅有old_illness_worsening_under_labor；未注册临终末段的场级入口，不能从死亡结果反填。"
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "character.fengjie.life_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "本场前驱是宝玉回家线，未提供凤姐的同步入口记录；历史基线ACTIVE不代替本场已核实存活。"
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "character.fengjie.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "医者判断、空药吊子与末段照料没有独立状态效果；不把待写病危宣告当作已验证身体值。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "93-S3-R1",
+      "description": "让读者知道凤姐的病势在宝玉回来前已入末段，承接旧病与劳作而不是被喜讯突然刺激出的新急病。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f5987f8a4544b4f1f3ad54a53c6171a89dc2dd1c6b222efb75c3c13cf1fa5e99",
+          "value": {
+            "id": "93-S3",
+            "title": "凤姐病势在宝玉回来前已进入末段"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                33921,
+                34043
+              ],
+              "lines": [
+                837,
+                839
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0296a869f06695cc2bf468405bca8879e9f4c3a803873c67f7decca611c6a32f"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR29凤姐短命；当前93为凤死是C级现行排程；R37/R38巧姐线从此转由平儿保护。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                34225,
+                34340
+              ],
+              "lines": [
+                843,
+                845
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d260746d432ea4ea17f3e8ce6844e215bca76547ca9f02df20e9306c25c6f783"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n释放手续、凤姐死前“最后一件管事”、死后“谁来主丧”可以更清。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                34340,
+                34520
+              ],
+              "lines": [
+                846,
+                848
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "24c75446bbadf3e0a5a544feaa3b251e5f41cf772e5918e4ce448363682d12ea"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n93-S1领取随身物/仍可传问；S2回家先吃；S3凤姐在宝玉回来前已末段；S4最后只管一件事；S5她一死立刻出现组织真空。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35618,
+                35900
+              ],
+              "lines": [
+                885,
+                888
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b024aef7267d8e0f55de72f25a39d4a76cd408f26c09300906dd304dd185b6b3"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n释放 → 回家吃热饭 → 看凤姐 → 最后一件具体管事 → 身体退出 → 死 → 丧务组织真空 → 平儿留下陪巧姐又被现实叫走。  \n**风险：**死亡压过宝玉获释或反之；需保持“双恢复/双退出”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "93-S3-R2",
+      "description": "保留空药吊子与医者、抓药、照料的具体困难；巧姐和平儿的贴身需要压过抽象评判。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f5987f8a4544b4f1f3ad54a53c6171a89dc2dd1c6b222efb75c3c13cf1fa5e99",
+          "value": {
+            "id": "93-S3",
+            "title": "凤姐病势在宝玉回来前已进入末段"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34520,
+                34607
+              ],
+              "lines": [
+                849,
+                851
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bbf552991c41fb791958c2408cc605faeb7a360a78f0e85e97bc015a375c6d57"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n宝玉/宝钗/麝月A线；凤姐/平儿/巧姐/医者/婆子B线。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                34948,
+                35028
+              ],
+              "lines": [
+                864,
+                866
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "65a580973cae786f4633de0eed353709abd035ec95c00ad4d68f728844547fc5"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n医者、抓药、白事执行者；丧务比过去简陋。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35195,
+                35305
+              ],
+              "lines": [
+                870,
+                872
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "83d1dcf9f335e7fa03c6553c1d6649d486aea624c3973611c3d120a4f5894663"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n热粥、巧姐问薄不薄、空药吊子、白布短一截、平儿起身去办。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "93-S3-F1",
+      "description": "不得玄奇吐血、另造绝症、病中审判梦或报应裁决；怕、命、报只可作人物有限言语。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f5987f8a4544b4f1f3ad54a53c6171a89dc2dd1c6b222efb75c3c13cf1fa5e99",
+          "value": {
+            "id": "93-S3",
+            "title": "凤姐病势在宝玉回来前已进入末段"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34847,
+                34948
+              ],
+              "lines": [
+                861,
+                863
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e01b0ebcdf52c8b45fec3c1903ab60916809614e63b39ebee8621c0cc1d6142b"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n凤姐可说怕、命、报，但不作报应裁决；不写病中审判梦。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35305,
+                35394
+              ],
+              "lines": [
+                873,
+                875
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "158fbb0475de9d26e0e0da1d16bf66bd596fe74f12f70bdec0deb8de8d64eff6"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n凤姐“机关算尽”自我总结、玄奇吐血、恢弘大丧。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "93-S3-F2",
+      "description": "不得加入凤姐临终诗、忏悔文、作者挽诗或文化补景。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f5987f8a4544b4f1f3ad54a53c6171a89dc2dd1c6b222efb75c3c13cf1fa5e99",
+          "value": {
+            "id": "93-S3",
+            "title": "凤姐病势在宝玉回来前已进入末段"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34607,
+                34637
+              ],
+              "lines": [
+                852,
+                854
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d7207cfdc40358c5b738d63c52fd413318c96c4148be864cd4c0cc0d7d889a5c"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n38禁补。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                34637,
+                34717
+              ],
+              "lines": [
+                855,
+                857
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "eece0456252fc3d1e6e2c5f896a7d1fa635a40e2adc98b970074aa370d119c14"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG11凤姐临终诗/忏悔文淘汰；作者挽诗无。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "independent_edit_and_semantics: DRAFT_GENERATED；本次生成没有独立编辑、正文语义核验或人类/提供方证明。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+    "participants: 医者、抓药者与照料婆子未有实体ID，不能造具名医案权威。",
+    "implementation_gap: 空药吊子、药与药钱凭据未注册；不能冒用第86回药碗，死亡时刻与末段医学细目仍未决。",
+    "entry_state: character.fengjie.body_state — W90仅有old_illness_worsening_under_labor；未注册临终末段的场级入口，不能从死亡结果反填。",
+    "preconditions: character.fengjie.life_state — 本场前驱是宝玉回家线，未提供凤姐的同步入口记录；历史基线ACTIVE不代替本场已核实存活。",
+    "exit_state: character.fengjie.body_state — 医者判断、空药吊子与末段照料没有独立状态效果；不把待写病危宣告当作已验证身体值。"
+  ],
+  "function": "把凤姐在宝玉回来前已入末段的慢病明确呈现，使看病、药和照料成为独立于获释喜讯的身体退出线。",
+  "notes": "按91–95作者包与93-S3源种子拟定。具名参与者是章卡支持的拟写角色，实体引用只证明ID存在；未注册职业人物/道具保留在义务与未决项中，不造ID。第一场KNOWN条件仅描述chapter-1选定运行世界入口，basis为实际基线或此前事件，不是章卡、重建声明或待写正文。其他场局部状态及全部出口保持UNKNOWN。event_refs/object_transition_refs是涉及的当前C章级接口，不是失传正文、历史回次或场级可执行性证明；原三份data/scenes合同及所有种子、章卡、世界与评论数据不变。"
+}

@@ -1,0 +1,608 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch88.json",
+      "sha256": "1e430cea49987663351ccb3eb0275b610fb9cc647f4f7aae9cb3068aeab26479"
+    },
+    "seed": {
+      "path": "data/planning/scenes/88-S1.json",
+      "sha256": "64eefcfc0503f2e983becd5f291deef0ce4584c28e5b64d0248cfb1b9181088f"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 88,
+  "chapter_plan_ref": "data/planning/chapters/ch88.json",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 87
+  },
+  "entry_from": "CHAPTER_ENTRY:87",
+  "entry_state": [
+    {
+      "equals": "character.xiren.marital_status",
+      "value": "UNMARRIED",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/xiren/marital_status",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/xiren/marital_status",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "311ea8c1b24fdd88677f8b79b26ec52489728d59afac86e407d75c0c6a9c2f4a",
+          "value": "UNMARRIED"
+        }
+      ]
+    },
+    {
+      "equals": "character.xiren.household_role",
+      "value": "baoyu_attendant",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/xiren/household_role",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/xiren/household_role",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "5f9c353e4847001da7fc96f752f986fd88e0aac4e5abbc34f2241580356777cc",
+          "value": "baoyu_attendant"
+        }
+      ]
+    },
+    {
+      "equals": "character.jiang_yuhan.household_role",
+      "value": "performer",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/jiang_yuhan/household_role",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/jiang_yuhan/household_role",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "a7967af04f4e25921833bf9a91ea55dd3deb89a6d0eeefa0a6d056066f5dcc04",
+          "value": "performer"
+        }
+      ]
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.xiren.marital_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W88-XIREN-EXITS把出嫁与迎春死亡等多线合并，不能给花蒋侧谈定时的具体婚姻出口。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "在花蒋婚事形成前提前说硬引语，或把王夫人的内部许可当作已经成礼。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72b815e4507c014ad09e1ee146a010aaec45a195c8ad52e65087d62a2fa50680",
+          "value": {
+            "id": "88-S1",
+            "title": "婚事不能只从怡红院内部决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            21063,
+            21484
+          ],
+          "lines": [
+            524,
+            531
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44c59fa7e004c69a8e52835a55ef26316717ea46a45ec7ddf7729404f7f94661"
+        },
+        {
+          "byte_range": [
+            21826,
+            22035
+          ],
+          "lines": [
+            538,
+            540
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fb5f093d0ec66ca9c5a460eedab0f67926bde0ad5692ca6a5994099d0f06ba37"
+        },
+        {
+          "byte_range": [
+            23233,
+            23623
+          ],
+          "lines": [
+            577,
+            580
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "7dea032f7b86c121946d5b3850a8ef4592401ff4ceb26cd14a82b8777cc445a6"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "以长告别/袭人短札代替婚嫁流程，或将蒋家职业扩成戏曲展演。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72b815e4507c014ad09e1ee146a010aaec45a195c8ad52e65087d62a2fa50680",
+          "value": {
+            "id": "88-S1",
+            "title": "婚事不能只从怡红院内部决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            22174,
+            22262
+          ],
+          "lines": [
+            544,
+            546
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "968d44148c00e238b22d719aa94222c5bfa3260c9fd32c6736577c50ed726ad3"
+        },
+        {
+          "byte_range": [
+            22262,
+            22360
+          ],
+          "lines": [
+            547,
+            549
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94449cc2d7d85e3d2f2e5e1c07526b41500b6897b0172b44de0a4d182c9dea4f"
+        },
+        {
+          "byte_range": [
+            22895,
+            22972
+          ],
+          "lines": [
+            565,
+            567
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fce0ae558bf16630b75f7dd8b6c32397787c28d54c80b3f62195b16ae8dbdc3e"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72b815e4507c014ad09e1ee146a010aaec45a195c8ad52e65087d62a2fa50680",
+          "value": {
+            "id": "88-S1",
+            "title": "婚事不能只从怡红院内部决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            23178,
+            23206
+          ],
+          "lines": [
+            574,
+            574
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            23206,
+            23233
+          ],
+          "lines": [
+            575,
+            576
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4ce526aecba789d8fb664d11031ea1dcfb21bf96efab2e4510b2cee0f78d282d"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "88-S1",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 1,
+  "participants": [
+    "xiren",
+    "jiang_yuhan",
+    "wangfuren"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.xiren.location",
+      "value": "S02",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/xiren/location",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/xiren/location",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "f94d8485b86e642835379ab3ae6b2f3802992642bec041c5db84f15b65a13a8d",
+          "value": "S02"
+        }
+      ]
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/5",
+        "ref": "data/world/m3_core.json#/characters/5",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "b64f1c0390f062cb8366790030ca19afb986e82e378a7b725e3f89a737af3e53",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "xiren",
+          "name": "花袭人"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/22",
+        "ref": "data/world/m3_core.json#/characters/22",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "9c0f5f79ae07e5caf3cbc8cd7c9748ae3c8a1840e25edd3aa61420d31a35be97",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "performer",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "human",
+            "profession_performer"
+          ],
+          "id": "jiang_yuhan",
+          "name": "蒋玉菡"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/25",
+        "ref": "data/world/m3_core.json#/characters/25",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "a65f17f6bbf2cfddd4d5c2094fd86646d034352e611faed657faf9db1383095e",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "senior_household_woman",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "wangfuren",
+          "name": "王夫人"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "description": "花家/蒋家侧的婚嫁形成过程与王夫人一侧衔接，交代谁经手和随身物由谁出，而非由怡红院单方面决定。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72b815e4507c014ad09e1ee146a010aaec45a195c8ad52e65087d62a2fa50680",
+          "value": {
+            "id": "88-S1",
+            "title": "婚事不能只从怡红院内部决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            21674,
+            21826
+          ],
+          "lines": [
+            535,
+            537
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "6ec3971f4ab47d21b5e56b5121ef2434187a934d4cb1fedefa7f1637ec81f4f9"
+        },
+        {
+          "byte_range": [
+            21826,
+            22035
+          ],
+          "lines": [
+            538,
+            540
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fb5f093d0ec66ca9c5a460eedab0f67926bde0ad5692ca6a5994099d0f06ba37"
+        },
+        {
+          "byte_range": [
+            22035,
+            22174
+          ],
+          "lines": [
+            541,
+            543
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29f1ea5d322c90ee9bbfefe1cf20b6f392e3aacb699199c47a3eb6cb5bf794ef"
+        },
+        {
+          "byte_range": [
+            22614,
+            22761
+          ],
+          "lines": [
+            559,
+            561
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ab716736a05ead801e8dc836d4fc75d4441bea728ddc875ec53fc6e4cdee8329"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "蒋玉菡的戏业只露生计边角；婚嫁跑腿有自己的时间和成本，不另开唱戏场。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72b815e4507c014ad09e1ee146a010aaec45a195c8ad52e65087d62a2fa50680",
+          "value": {
+            "id": "88-S1",
+            "title": "婚事不能只从怡红院内部决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            22035,
+            22174
+          ],
+          "lines": [
+            541,
+            543
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29f1ea5d322c90ee9bbfefe1cf20b6f392e3aacb699199c47a3eb6cb5bf794ef"
+        },
+        {
+          "byte_range": [
+            22174,
+            22262
+          ],
+          "lines": [
+            544,
+            546
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "968d44148c00e238b22d719aa94222c5bfa3260c9fd32c6736577c50ed726ad3"
+        },
+        {
+          "byte_range": [
+            22525,
+            22614
+          ],
+          "lines": [
+            556,
+            558
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "17cf1f4f23998c1b6e7661ef27a7ba2c77a82805b2afda4964f668a7df18e09f"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "成礼与离位必须真实经过；“好歹留着麝月”只属于出嫁后的短返府谢恩，不能在此婚前谈事中先说。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "72b815e4507c014ad09e1ee146a010aaec45a195c8ad52e65087d62a2fa50680",
+          "value": {
+            "id": "88-S1",
+            "title": "婚事不能只从怡红院内部决定"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            21063,
+            21484
+          ],
+          "lines": [
+            524,
+            531
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44c59fa7e004c69a8e52835a55ef26316717ea46a45ec7ddf7729404f7f94661"
+        },
+        {
+          "byte_range": [
+            21826,
+            22035
+          ],
+          "lines": [
+            538,
+            540
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fb5f093d0ec66ca9c5a460eedab0f67926bde0ad5692ca6a5994099d0f06ba37"
+        },
+        {
+          "byte_range": [
+            23233,
+            23623
+          ],
+          "lines": [
+            577,
+            580
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "7dea032f7b86c121946d5b3850a8ef4592401ff4ceb26cd14a82b8777cc445a6"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "participants: 花家人、蒋家婚嫁跑腿没有实体记录；蒋玉菡有ID不证明所有洽谈都由他亲自完成。",
+    "objects: 嫁妆、随身衣物及职业物件没有对象ID，具体金额和物目未锁。",
+    "bridge: 新卡要求88-S3b成礼后短返谢恩，现有五种子无该ID；不能创建第六种子或提前回灌硬引语。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。"
+  ],
+  "function": "把袭人婚事接上花家与蒋家的外部婚嫁/生计过程，不让怡红院内部一句放人代替出嫁现实。",
+  "notes": "DRAFT_GENERATED：这是生成的当前实现约束，不是独立编辑、审查或历史原稿证据。演员ID及对象/事实ID均引用真实注册记录；KNOWN演员集合只表示所选ID已登记，不证明已出场或局部时序。第一场的KNOWN条件仅来自实际基线或前回已注册效果叶值，约束显式chapter-1粗层入口；不作作者学证据。后场的前驱仅为显式声明的来源列表顺序，局部检查点一律UNKNOWN，不注入或传承场态。required/forbidden beats是有卡/种子依据的待写目标，不能成为条件basis；未绑定全回事件或旧知识场。"
+}

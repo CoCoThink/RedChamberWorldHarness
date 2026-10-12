@@ -1,0 +1,643 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v1",
+  "id": "91-S2",
+  "chapter": 91,
+  "order": 2,
+  "chapter_plan_ref": "data/planning/chapters/ch91.json",
+  "status": "DRAFT_GENERATED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/91-S2.json",
+      "sha256": "2ba1b6debeacd8c1ba3f4d83e2762ad8906e8ebce70d8c8ac752e4b82f39e1b2"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch91.json",
+      "sha256": "0f14584a05e775e71bcaab70f890741f99ae417f288b364a169cb00caab56830"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "data/planning/scenes/91-S1.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "participants": [
+    "fengjie",
+    "ping_er",
+    "sheyue"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [
+    "OBJ-WINTER-CLOTHES-BUNDLE"
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/7",
+        "ref": "data/world/m3_core.json#/characters/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bca44063796cdc27c5e8076a896ecdbedfbe135109b5461cd9af292e5d0fbaa0",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_old_illness",
+            "household_role": "household_manager",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED_JIALIAN"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "fengjie",
+          "name": "王熙凤"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/8",
+        "ref": "data/world/m3_core.json#/characters/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "18eb0f602b315bef39498961532a6d16a05dbd3cac2e572c07257b6fdf99a63d",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "fengjie_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "ping_er",
+          "name": "平儿"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/6",
+        "ref": "data/objects/m4.json#/objects/6",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "b924a929b1f5d41f717ca703a3392cc5a21ca41f088431a529348cc4c73fdcc6",
+        "value": {
+          "baseline": {
+            "holder": "jia_household",
+            "location": "S02",
+            "status": "IN_OLD_HOUSE"
+          },
+          "continuity_rules": [
+            "第91回只能按名目从受控旧府准取，不是自由搬家"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-WINTER-CLOTHES-BUNDLE",
+          "identity_status": "C_WORLD_OBJECT_GROUP",
+          "kind": "clothing_bundle",
+          "name": "准取冬衣靠褥包",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "entry_state": [
+    {
+      "equals": "object.OBJ-WINTER-CLOTHES-BUNDLE.holder",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "上场准取没有可执行场末记录；现登记的章前持有人不能证明本场谁在分拣和领物。"
+    },
+    {
+      "equals": "character.sheyue.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "旧府内的房间、取物路径与麝月在场位置均无局部检查点。"
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "object.OBJ-WINTER-CLOTHES-BUNDLE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "许可名目与实物核对尚待写出；不是从章级搬运结果反推每件冬衣都可取。"
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "object.OBJ-WINTER-CLOTHES-BUNDLE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "可取、不可取、无人要的具体物目未注册；只能保留分拣义务，不能填出领取完成值。"
+    },
+    {
+      "equals": "character.sheyue.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "钥匙失去用处是生活动作与旧关系的变化，不是已注册的新身份转变。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "91-S2-R1",
+      "description": "将旧物实分为可取、不可取、无人要三类；冬衣靠褥只能按许可名目收领，取舍有经手动作。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a1086d75d71f8a9a158963adfeec0f543eeee9b99916281354f7944387cacf00",
+          "value": {
+            "id": "91-S2",
+            "title": "旧府里的东西分成三类"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29361,
+                29489
+              ],
+              "lines": [
+                723,
+                725
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "6cc97a13cccbe3c1ca4ba6a3367927bf54834a3c460b0ed70af9841e0f1b3730"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n91-S1凭名目准取；S2物分可取/不可取/无人要；S3拾物先登记；S4旧单带到宝玉。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29960,
+                30094
+              ],
+              "lines": [
+                744,
+                746
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0986195f3b5121029cd0cf22da526cf3e42027a12d567463e7d9095c12087c08"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE1：物权/使用权分离。信息：准取通知→进府→登记“玉样物一”→旧单→次日传问。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30094,
+                30204
+              ],
+              "lines": [
+                747,
+                749
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bc579f52775a9e049e48a9ecabbbaedc96232b0563ed1ac0a68afb9cf4c11692"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“玉样物一”不定身份；残雪；旧府不是鬼宅而是受控制财产现场。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "91-S2-R2",
+      "description": "保留麝月湿鞋先烤、旧衣“认人”及钥匙今日无柜可开的生活话；旧府物回小院仍要重新认领。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a1086d75d71f8a9a158963adfeec0f543eeee9b99916281354f7944387cacf00",
+          "value": {
+            "id": "91-S2",
+            "title": "旧府里的东西分成三类"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29083,
+                29246
+              ],
+              "lines": [
+                717,
+                719
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "464493c8e77fcf3e01f53a96492dd235548be95f574e7651acdcdcbfe9e74ec1"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n准取不是自由回府；雪地、湿鞋、旧府物件重新认领；旧单从取物自然生出；麝月钥匙“今日没什么用”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29760,
+                29821
+              ],
+              "lines": [
+                735,
+                737
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "a1e2b27c78993d534175713db29604ab9da606d9748b6af3245af73b29cf7ff8"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n麝月湿鞋、旧衣“认人”保留。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30094,
+                30204
+              ],
+              "lines": [
+                747,
+                749
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bc579f52775a9e049e48a9ecabbbaedc96232b0563ed1ac0a68afb9cf4c11692"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“玉样物一”不定身份；残雪；旧府不是鬼宅而是受控制财产现场。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "91-S2-R3",
+      "description": "文化物只从空画轴匣、匾额色差、缺角砚中择一两笔，使“物在而主人关系失效”可见。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a1086d75d71f8a9a158963adfeec0f543eeee9b99916281354f7944387cacf00",
+          "value": {
+            "id": "91-S2",
+            "title": "旧府里的东西分成三类"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29246,
+                29361
+              ],
+              "lines": [
+                720,
+                722
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c09af1619f9c59637d33a14642909c4ceba9d16cdebd6971e5413238b7a40a81"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n旧府文化物的“失主化”可加一两笔；准入规则与登记人再清楚一点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29569,
+                29667
+              ],
+              "lines": [
+                729,
+                731
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e8003f09e5679b53efd7df9b8f14f81da5efecf7d86284e3c48b683bb1e45373"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n38-A：空画轴匣、匾额留下颜色差、缺角砚中选一两笔即可。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30303,
+                30401
+              ],
+              "lines": [
+                755,
+                757
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "deabf1d15eb6aebc0defc1b58bb5a0118c065d0b8d63ac838e8e5cdb47cbb18c"
+            },
+            "name": "前80同构",
+            "number": 15,
+            "text": "**15｜前80同构**  \n前80物件总有主人关系；91反写“物还在，关系失效”。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "91-S2-F1",
+      "description": "不得把三类物件都写成可随意拿走，更不能用钥匙证明旧日支配权恢复。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a1086d75d71f8a9a158963adfeec0f543eeee9b99916281354f7944387cacf00",
+          "value": {
+            "id": "91-S2",
+            "title": "旧府里的东西分成三类"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29083,
+                29246
+              ],
+              "lines": [
+                717,
+                719
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "464493c8e77fcf3e01f53a96492dd235548be95f574e7651acdcdcbfe9e74ec1"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n准取不是自由回府；雪地、湿鞋、旧府物件重新认领；旧单从取物自然生出；麝月钥匙“今日没什么用”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29361,
+                29489
+              ],
+              "lines": [
+                723,
+                725
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "6cc97a13cccbe3c1ca4ba6a3367927bf54834a3c460b0ed70af9841e0f1b3730"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n91-S1凭名目准取；S2物分可取/不可取/无人要；S3拾物先登记；S4旧单带到宝玉。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29960,
+                30094
+              ],
+              "lines": [
+                744,
+                746
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0986195f3b5121029cd0cf22da526cf3e42027a12d567463e7d9095c12087c08"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE1：物权/使用权分离。信息：准取通知→进府→登记“玉样物一”→旧单→次日传问。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "91-S2-F2",
+      "description": "不得堆叠文化遗物、新作诗或重新触发已在89带出的《续庄子》载体；不可扩成怀旧展览。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a1086d75d71f8a9a158963adfeec0f543eeee9b99916281354f7944387cacf00",
+          "value": {
+            "id": "91-S2",
+            "title": "旧府里的东西分成三类"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29569,
+                29667
+              ],
+              "lines": [
+                729,
+                731
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e8003f09e5679b53efd7df9b8f14f81da5efecf7d86284e3c48b683bb1e45373"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n38-A：空画轴匣、匾额留下颜色差、缺角砚中选一两笔即可。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29667,
+                29760
+              ],
+              "lines": [
+                732,
+                734
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "991dfb5854b86774e0bc9fc20944861dec531b3a0e5c047f41d3c59c1b9f731b"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \n无新诗。《续庄子》载体若89已带出，此回不触发。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30204,
+                30278
+              ],
+              "lines": [
+                750,
+                752
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b2c09c83e7b4ff4b595ce9ca5edae7da408488efbde64377cd495f3a0e519265"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n看到“玉”立即认定通灵玉；大段怀旧。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30456,
+                30669
+              ],
+              "lines": [
+                761,
+                764
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c65a248f72ffd8fbb07ad1ccfe7525f0af07c56b354539ebe051b2f7bb1b2fc6"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n准取通知 → 雪中回旧府 → 三类物件 → 凤姐拾物登记 → 旧单引宝玉 → 夜间传话 → 五更出门认单。  \n**风险：**玉线偷锁、文化物过多。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "independent_edit_and_semantics: DRAFT_GENERATED；本次生成没有独立编辑、正文语义核验或人类/提供方证明。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+    "participants: 看守、登记书办未有实体ID，取物监督的具名落实仍待补。",
+    "implementation_gap: 钥匙、柜、空画轴匣、匾额色差、缺角砚与旧衣细目未注册，不冒用其他对象ID。",
+    "entry_state: object.OBJ-WINTER-CLOTHES-BUNDLE.holder — 上场准取没有可执行场末记录；现登记的章前持有人不能证明本场谁在分拣和领物。",
+    "entry_state: character.sheyue.location — 旧府内的房间、取物路径与麝月在场位置均无局部检查点。",
+    "preconditions: object.OBJ-WINTER-CLOTHES-BUNDLE.status — 许可名目与实物核对尚待写出；不是从章级搬运结果反推每件冬衣都可取。",
+    "exit_state: object.OBJ-WINTER-CLOTHES-BUNDLE.status — 可取、不可取、无人要的具体物目未注册；只能保留分拣义务，不能填出领取完成值。",
+    "exit_state: character.sheyue.household_role — 钥匙失去用处是生活动作与旧关系的变化，不是已注册的新身份转变。"
+  ],
+  "function": "用三类旧物的取舍把所有权与可用权分开，并让湿鞋、旧衣和无柜可开的钥匙维持生活层面的活气。",
+  "notes": "按91–95作者包与91-S2源种子拟定。具名参与者是章卡支持的拟写角色，实体引用只证明ID存在；未注册职业人物/道具保留在义务与未决项中，不造ID。第一场KNOWN条件仅描述chapter-1选定运行世界入口，basis为实际基线或此前事件，不是章卡、重建声明或待写正文。其他场局部状态及全部出口保持UNKNOWN。event_refs/object_transition_refs是涉及的当前C章级接口，不是失传正文、历史回次或场级可执行性证明；原三份data/scenes合同及所有种子、章卡、世界与评论数据不变。"
+}

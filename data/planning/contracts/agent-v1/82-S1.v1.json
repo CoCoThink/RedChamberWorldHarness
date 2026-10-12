@@ -1,0 +1,739 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch82.json",
+      "sha256": "e6ed2590ac9197cc773ca9cbc4b4cee9598ebb61b3135b732c5765f706431899"
+    },
+    "seed": {
+      "path": "data/planning/scenes/82-S1.json",
+      "sha256": "57eff5d9043de25a90f8014b243d6aba8653c542bd4e9b09bf63360e3cec87dd"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-81-85.json",
+      "sha256": "64a339142412c537b6caf39c03642449db6d69e5da39d1f239037a1a34e05b35"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 82,
+  "chapter_plan_ref": "data/planning/chapters/ch82.json",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 81
+  },
+  "entry_from": "CHAPTER_ENTRY:81",
+  "entry_state": [
+    {
+      "equals": "character.tanchun.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "本场没有上船前的专属快照；章入口81不是船位确认时的实际位置。"
+    },
+    {
+      "equals": "object.OBJ-TANCHUN-TRAVEL-CHESTS.holder",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "对象有第80回jia_household基线，但第82回确认船位的交接经手人没有独立状态记录。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.tanchun.location",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "船位确认不证明已开船或抵达婚家，禁止将W82远离主空间的章级效果提早注入。"
+    },
+    {
+      "equals": "object.OBJ-TANCHUN-TRAVEL-CHESTS.location",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "OT82-01记录整组行李进入路线，不提供本场确认船位的完成时点或具体舱位。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "82-S1-F1",
+      "description": "不得追加一场哭别、送别诗或琴曲；不得写此去再无归日、命定远嫁或海外神梦。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/1/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/1/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c41f9bc4a28f74b11860773134b3d7c945773c0ed6bc01d3f7998ef1388d7cd6",
+          "value": {
+            "id": "82-S1",
+            "title": "船位与随行人口确认"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                7550,
+                7626
+              ],
+              "lines": [
+                188,
+                190
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "97c510dc9f7339dd01f759d2d675e014b700cc8197aef991c6b6db9ab2479fd6"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n家书、箱笼题签即可；不补送别诗、琴曲。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                7626,
+                7762
+              ],
+              "lines": [
+                191,
+                193
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "db0ec5f73cc128ec2d48ac3379409749654fb9917b966e3c921133ca1d66c900"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG04：现有实用家书胜出，不新增诗。Q03“后文许多妙文”不得用来证明探春有佚诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                7835,
+                7942
+              ],
+              "lines": [
+                197,
+                199
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0c79ad5d542e1fcbe64aacda2c98263fb4bee3b6def732ffe97fdab1531bad06"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n只许行旅祈安俗礼背景；不得“海外神梦”“命定远嫁”解释。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                8358,
+                8432
+              ],
+              "lines": [
+                209,
+                211
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b308448e5004df08dd4b3a65dd75fa40d9daa8327ddc74c606161306bb72b5aa"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n任何一句“此去天涯再无归日”式预判。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "82-S1-F2",
+      "description": "不得把本场船位核对等同已到远方婚家；婚期、对象、地点和精确箱数仍未锁定。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/1/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/1/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c41f9bc4a28f74b11860773134b3d7c945773c0ed6bc01d3f7998ef1388d7cd6",
+          "value": {
+            "id": "82-S1",
+            "title": "船位与随行人口确认"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                6955,
+                7076
+              ],
+              "lines": [
+                173,
+                175
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cff95f8cb294c884775789294dbc0b1d61f93087fc1a55f927c756e9fc5bc4e4"
+            },
+            "name": "现有硬节点",
+            "number": 1,
+            "text": "**1｜现有硬节点**  \nR07 / P01：探春远适必须早于后来事败；对象、地点、婚期细节仍开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                8037,
+                8266
+              ],
+              "lines": [
+                203,
+                205
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b5a649fe3d0acf5022cca3166160ea13dfd9a9e947d5cc8949a5f11bd6fa4aa1"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n人：探春—待书—随从—船家。钱：公家/家内行旅费与私人小包分开。物：五口箱、两包、姜、药、针线。信：信何时能交可靠船/人转递，是远适真正距离。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                8617,
+                8836
+              ],
+              "lines": [
+                221,
+                224
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4cd5a18ce39ef61d42494697df50211967fc15bbf5492f80870e7306e7e539ad"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n收拾—送别—上船—晕船—第一次行旅晚餐—写信—开船后补信。  \n**风险：**把远适写成抒情长亭，把探春的“才干”写成现代项目管理口吻。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "82-S1",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 1,
+  "participants": [
+    "tanchun"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "object.OBJ-TANCHUN-TRAVEL-CHESTS.status",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "箱笼登记仅锁带走/留下的物流功能；实际点件、题签、拆封和随行人数需后续落实。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/4",
+        "ref": "data/world/m3_core.json#/characters/4",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "165e5cd14b163e612017a2db62d8ec1aefca95ba917c821e79e6e38cdeaccb93",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_daughter",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "tanchun",
+          "name": "贾探春"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/4",
+        "ref": "data/objects/m4.json#/objects/4",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "ead3d6c9a01397077570e4e6979bf8ea12ca6a098a986f019b178dde9e6e34d0",
+        "value": {
+          "baseline": {
+            "holder": "jia_household",
+            "location": "S02",
+            "status": "PACKED_FOR_DEPARTURE"
+          },
+          "continuity_rules": [
+            "仅锁带走/留下的物流功能，不锁具体箱数与物目"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-TANCHUN-TRAVEL-CHESTS",
+          "identity_status": "C_WORLD_OBJECT_GROUP",
+          "kind": "luggage_group",
+          "name": "探春远行箱笼",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "82-S1-R1",
+      "description": "把三分筐、箱笼题签与针线包的分类接到上船准备：明确人先后如何上船、箱包放在哪里及谁复核；具体人数和船位待正文落实，不把章卡数目反升硬证。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/1/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/1/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c41f9bc4a28f74b11860773134b3d7c945773c0ed6bc01d3f7998ef1388d7cd6",
+          "value": {
+            "id": "82-S1",
+            "title": "船位与随行人口确认"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                7076,
+                7242
+              ],
+              "lines": [
+                176,
+                178
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "921145cfa0690c3c2e7aff9a77c2192b1fd0ae9a3d80e4322bb7699d54ab32b2"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n三分筐、箱笼清点、待书晕船、姜粥、第一封家书夹进行装册、次晨补“已能吃粥”。远嫁被写成真正行旅。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                7345,
+                7449
+              ],
+              "lines": [
+                182,
+                184
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "874434b1347cfef5e9617b40c846e50debff9c6d3ee0b16644244bce31acb37f"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n只补82-S1船位/随行人口确认；82-S2开船后重新点物。L1即可。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                8037,
+                8266
+              ],
+              "lines": [
+                203,
+                205
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b5a649fe3d0acf5022cca3166160ea13dfd9a9e947d5cc8949a5f11bd6fa4aa1"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n人：探春—待书—随从—船家。钱：公家/家内行旅费与私人小包分开。物：五口箱、两包、姜、药、针线。信：信何时能交可靠船/人转递，是远适真正距离。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                8266,
+                8358
+              ],
+              "lines": [
+                206,
+                208
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cad89eab78bb5b3ed6fb75a514e4973da91261f0bafbba1af23c444531070936"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“三分筐”、短夹袄争论、待书晕船、补日期、船火。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "82-S1-R2",
+      "description": "让探春问清随行人口和是否留出照看行李的位置；待书、跟船婆子、船家、挑夫只作为未绑定接口承担工序与时间。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/1/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/1/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c41f9bc4a28f74b11860773134b3d7c945773c0ed6bc01d3f7998ef1388d7cd6",
+          "value": {
+            "id": "82-S1",
+            "title": "船位与随行人口确认"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                7242,
+                7345
+              ],
+              "lines": [
+                179,
+                181
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "89ed440fedb07c90e4d6a44c3519c28fbe9f454e20de10c604bffb52e4ce5a81"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n随行人口、船位、费用归属可再明确一点；不需要增加悲情。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                7449,
+                7550
+              ],
+              "lines": [
+                185,
+                187
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "79a8e7064e93a09dc8ffc7bdf3cba292e1e2fefdb31ab6b2ea1dfc7f707c3c47"
+            },
+            "name": "缺失人物",
+            "number": 5,
+            "text": "**5｜缺失人物**  \n船家、跟船婆子、挑夫/脚力已有接口；不造重要新角色。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                7942,
+                8037
+              ],
+              "lines": [
+                200,
+                202
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0cd8fae3fc3a8daf20bdf152fedd5564f39125c1f63986927b96f2d955f1e29e"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n船家、婆子、码头脚力只写工序与时间，不做风俗展览。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                8037,
+                8266
+              ],
+              "lines": [
+                203,
+                205
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b5a649fe3d0acf5022cca3166160ea13dfd9a9e947d5cc8949a5f11bd6fa4aa1"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n人：探春—待书—随从—船家。钱：公家/家内行旅费与私人小包分开。物：五口箱、两包、姜、药、针线。信：信何时能交可靠船/人转递，是远适真正距离。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "82-S1-R3",
+      "description": "分开公家或家内行旅费与私人小包，脚力和装船由实际经手承接；不新增精确价目、婚家名称或行程地名作定论。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/1/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/1/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c41f9bc4a28f74b11860773134b3d7c945773c0ed6bc01d3f7998ef1388d7cd6",
+          "value": {
+            "id": "82-S1",
+            "title": "船位与随行人口确认"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                6955,
+                7076
+              ],
+              "lines": [
+                173,
+                175
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cff95f8cb294c884775789294dbc0b1d61f93087fc1a55f927c756e9fc5bc4e4"
+            },
+            "name": "现有硬节点",
+            "number": 1,
+            "text": "**1｜现有硬节点**  \nR07 / P01：探春远适必须早于后来事败；对象、地点、婚期细节仍开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                7242,
+                7345
+              ],
+              "lines": [
+                179,
+                181
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "89ed440fedb07c90e4d6a44c3519c28fbe9f454e20de10c604bffb52e4ce5a81"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n随行人口、船位、费用归属可再明确一点；不需要增加悲情。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                8037,
+                8266
+              ],
+              "lines": [
+                203,
+                205
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b5a649fe3d0acf5022cca3166160ea13dfd9a9e947d5cc8949a5f11bd6fa4aa1"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n人：探春—待书—随从—船家。钱：公家/家内行旅费与私人小包分开。物：五口箱、两包、姜、药、针线。信：信何时能交可靠船/人转递，是远适真正距离。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "82-S1-R4",
+      "description": "短夹袄争论与箱笼反复拆封留下生活声音；交信需可靠船或人、何时可递须问清，不能用长亭诗替代这些安排。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/1/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/1/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c41f9bc4a28f74b11860773134b3d7c945773c0ed6bc01d3f7998ef1388d7cd6",
+          "value": {
+            "id": "82-S1",
+            "title": "船位与随行人口确认"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                7550,
+                7626
+              ],
+              "lines": [
+                188,
+                190
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "97c510dc9f7339dd01f759d2d675e014b700cc8197aef991c6b6db9ab2479fd6"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n家书、箱笼题签即可；不补送别诗、琴曲。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                7626,
+                7762
+              ],
+              "lines": [
+                191,
+                193
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "db0ec5f73cc128ec2d48ac3379409749654fb9917b966e3c921133ca1d66c900"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG04：现有实用家书胜出，不新增诗。Q03“后文许多妙文”不得用来证明探春有佚诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                7762,
+                7835
+              ],
+              "lines": [
+                194,
+                196
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "dd58f79f05f3139a59286b6715788a219e83147adc569ad3fa23bd587d983936"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n待书晕船还嘴硬、箱笼反复拆封可保留。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                8037,
+                8266
+              ],
+              "lines": [
+                203,
+                205
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b5a649fe3d0acf5022cca3166160ea13dfd9a9e947d5cc8949a5f11bd6fa4aa1"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n人：探春—待书—随从—船家。钱：公家/家内行旅费与私人小包分开。物：五口箱、两包、姜、药、针线。信：信何时能交可靠船/人转递，是远适真正距离。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                8266,
+                8358
+              ],
+              "lines": [
+                206,
+                208
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cad89eab78bb5b3ed6fb75a514e4973da91261f0bafbba1af23c444531070936"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“三分筐”、短夹袄争论、待书晕船、补日期、船火。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [
+    "OBJ-TANCHUN-TRAVEL-CHESTS"
+  ],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "independent_review: 新作者草案尚未独立审读，不能标为AGENT_EDITED、语义通过、证据或权威。",
+    "declared_sequence_only: 依候选列表显式声明前驱；历史场景顺序和与既有正文的精确放置未核验。",
+    "chapter_entry_not_scene_snapshot: 首场chapter-1仅是显式章入口，未覆盖本场所有位置、医学、物态和知情条件。",
+    "unregistered_participants: 待书、船家、跟船婆子、挑夫没有实际注册ID，不能编造随从姓名或人数作为已知状态。",
+    "object_detail_gap: OBJ-TANCHUN-TRAVEL-CHESTS已绑定；针线包、三分筐、家书、姜药及私人钱物无独立对象ID，确切箱数不属硬锁。",
+    "event_localization: W82-TANCHUN-DEPARTS及OT82-01/02是章级远行链，本场船位核对不预选整章到达/范围退出事件。",
+    "knowledge_registry_gap: 船位、费用归属与可靠递信渠道没有本章注册事实及获取事件。"
+  ],
+  "function": "以船位、随行人口与费用归属的核对，补足告别之后真正迁徙的劳务入口；探春的才干体现于分类和问清工序，不写成现代项目管理。",
+  "notes": "本文件是新建v1作者草案，status=DRAFT_GENERATED，authority_effect=NONE，evidence_effect=NONE；必须由独立审读者另行核对来源、正文语义、参与者及场间衔接。participants_status=KNOWN只指拟定参与者集合有实际注册ID与章卡依据，不证明他们在某历史时刻确实同时到场，现场位置由UNKNOWN/PENDING条件保留。entry_from是本草案显式声明的候选顺序：首场指定chapter-1章入口，后场引用前一v1覆盖文件；SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY不是原文年代顺序的证明，也不传播前场状态。required/forbidden beats全属待实现叙事要求，grounding只说明其来自不可变种子与章卡，不充当状态事实。非KNOWN条件value=null且给出原因；任何注册事件均只按同章连续前缀关联，不把粗粒度章事件当场级重放。不得宣称确定性或正文支持的语义重放PASS；knowledge事实定义不等同任何角色已经知道，跨章86知识场景不注入81—85。"
+}

@@ -1,0 +1,589 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch89.json",
+      "sha256": "ad6cee1c1ac402ffd24afb1faea19b82eb1a6620ae8ca98f2547eb107d0bcfcf"
+    },
+    "seed": {
+      "path": "data/planning/scenes/89-S5.json",
+      "sha256": "b790c9f1438d93b3b66572f804fe9509a586a26f60242192f5f405ef4a07af22"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 89,
+  "chapter_plan_ref": "data/planning/chapters/ch89.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-v1/89-S4.v1.json",
+  "entry_state": [
+    {
+      "equals": "character.baochai.knowledge.household_relocation_required",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "旧场入口的suspects与后续knows不能自动映射仆役分流场。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.baochai.knowledge.household_relocation_required",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "K89-HOUSEHOLD-SEES-RELOCATION-NEED的取得时点未划入本种子，不能自行变为knows。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "以统一忠仆/忘恩仆标签吞掉欠薪和生计差异。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "35128941da23da9508cb93c4bf1736b28dbad1ad05a92a2c8799246beffd37ad",
+          "value": {
+            "id": "89-S5",
+            "title": "仆役开始分流"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            23894,
+            24102
+          ],
+          "lines": [
+            591,
+            593
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "897fe57decd0f317fec467b5902e081c6d17d03a02234bae2d5bdac8391cb46f"
+        },
+        {
+          "byte_range": [
+            24387,
+            24736
+          ],
+          "lines": [
+            600,
+            605
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4d392c82f8ef9c3899bb2c28f17f44f10f34792ec9df64a72d9603902ff94773"
+        },
+        {
+          "byte_range": [
+            25090,
+            25242
+          ],
+          "lines": [
+            618,
+            620
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "d325b978aa536dea18211626009f54c7c9e049d0eebc3e87bb65e584cce6af6a"
+        },
+        {
+          "byte_range": [
+            25460,
+            25672
+          ],
+          "lines": [
+            624,
+            626
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "732277eb372452254f040fa8d30a6fe1186bb92a384c831aa3f5d0b506b7e949"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "主动插入探庵W2情节、权贵救场或大额资源补入。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "35128941da23da9508cb93c4bf1736b28dbad1ad05a92a2c8799246beffd37ad",
+          "value": {
+            "id": "89-S5",
+            "title": "仆役开始分流"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24387,
+            24736
+          ],
+          "lines": [
+            600,
+            605
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4d392c82f8ef9c3899bb2c28f17f44f10f34792ec9df64a72d9603902ff94773"
+        },
+        {
+          "byte_range": [
+            25672,
+            25779
+          ],
+          "lines": [
+            627,
+            629
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "d19c0f3d8108cb247e7d1056b399a022f07db43deda2c883507ad32b6eb40d89"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "35128941da23da9508cb93c4bf1736b28dbad1ad05a92a2c8799246beffd37ad",
+          "value": {
+            "id": "89-S5",
+            "title": "仆役开始分流"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            26016,
+            26044
+          ],
+          "lines": [
+            636,
+            636
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            26044,
+            26084
+          ],
+          "lines": [
+            637,
+            638
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44e50474767c8d9301ed3c5c77ae2942e439a0cef17b919c728501c816f9af53"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "89-S5",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 5,
+  "participants": [
+    "baochai",
+    "sheyue",
+    "jia_yun",
+    "wangfuren"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.jia_yun.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "贾芸经手迁居的往返无种子级移动记录，亲族跑腿身份不是即时在场证据。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/10",
+        "ref": "data/world/m3_core.json#/characters/10",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "340eb8abc9247bbb71dbde20970aad2d26ba92195c40678d53b29fcd43b5c3c2",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "kin_runner",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_network",
+            "human"
+          ],
+          "id": "jia_yun",
+          "name": "贾芸"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/25",
+        "ref": "data/world/m3_core.json#/characters/25",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "a65f17f6bbf2cfddd4d5c2094fd86646d034352e611faed657faf9db1383095e",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "senior_household_woman",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "wangfuren",
+          "name": "王夫人"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": [
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/6",
+        "ref": "data/knowledge/v03_slice2.json#/facts/6",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "9337db7d990f6a5a48d5a02d7fd25ca481385c73ba9f34c4849bef584871cb29",
+        "value": {
+          "epistemic": "CURRENT_SCENE_INFERENCE",
+          "id": "household_relocation_required",
+          "label": "家中将不得不迁出/压缩居所"
+        }
+      },
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/5",
+        "ref": "data/knowledge/v03_slice2.json#/facts/5",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "ebaefa03e4a518e8d4f6c81524908abb048884b854fba24633e6658640a2e67d",
+        "value": {
+          "epistemic": "CURRENT_SCENE_UNKNOWN",
+          "id": "official_confiscation_exact_scope",
+          "label": "官面处置的完整法律范围与最终去向"
+        }
+      }
+    ]
+  },
+  "required_beats": [
+    {
+      "description": "一个仆人走，一个因欠薪留；分流各有自身生活理由，不让全体旧仆统一忠义或统一背叛。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "35128941da23da9508cb93c4bf1736b28dbad1ad05a92a2c8799246beffd37ad",
+          "value": {
+            "id": "89-S5",
+            "title": "仆役开始分流"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            23894,
+            24102
+          ],
+          "lines": [
+            591,
+            593
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "897fe57decd0f317fec467b5902e081c6d17d03a02234bae2d5bdac8391cb46f"
+        },
+        {
+          "byte_range": [
+            24387,
+            24736
+          ],
+          "lines": [
+            600,
+            605
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4d392c82f8ef9c3899bb2c28f17f44f10f34792ec9df64a72d9603902ff94773"
+        },
+        {
+          "byte_range": [
+            25460,
+            25672
+          ],
+          "lines": [
+            624,
+            626
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "732277eb372452254f040fa8d30a6fe1186bb92a384c831aa3f5d0b506b7e949"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "E1的压力落在钱仍可能有却不能自由取用、工钱显形及车脚等待上，不写全家一日赤贫。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "35128941da23da9508cb93c4bf1736b28dbad1ad05a92a2c8799246beffd37ad",
+          "value": {
+            "id": "89-S5",
+            "title": "仆役开始分流"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            25090,
+            25242
+          ],
+          "lines": [
+            618,
+            620
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "d325b978aa536dea18211626009f54c7c9e049d0eebc3e87bb65e584cce6af6a"
+        },
+        {
+          "byte_range": [
+            25242,
+            25460
+          ],
+          "lines": [
+            621,
+            623
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94c0575c7208193d80e426a36153389c086004736dc1647e4fa8a940e97d389b"
+        },
+        {
+          "byte_range": [
+            25672,
+            25779
+          ],
+          "lines": [
+            627,
+            629
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "d19c0f3d8108cb247e7d1056b399a022f07db43deda2c883507ad32b6eb40d89"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "贾芸为实际迁居门路和搬运奔走；这有自身现实动机，不标成“芸哥仗义探庵”的W2兑现。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "35128941da23da9508cb93c4bf1736b28dbad1ad05a92a2c8799246beffd37ad",
+          "value": {
+            "id": "89-S5",
+            "title": "仆役开始分流"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24387,
+            24736
+          ],
+          "lines": [
+            600,
+            605
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4d392c82f8ef9c3899bb2c28f17f44f10f34792ec9df64a72d9603902ff94773"
+        },
+        {
+          "byte_range": [
+            26084,
+            26438
+          ],
+          "lines": [
+            639,
+            642
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29a25382814bd3e8bee73e0b9772b840132042ec9fbd96dfb5c9fedd979585dd"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "participants: 两个作不同选择的仆人、车脚和搬运者没有实体ID；sheyue不能同时替代全部欠薪者。",
+    "money: 工钱数额、债权优先级与可动现金未有原子状态，不创造工资账户字段。",
+    "knowledge: 迁居需要与完整处置范围有真实事实记录，但获得/怀疑的种子边界未对齐。",
+    "entry_checkpoint: 89-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+    "entry_state.character.baochai.knowledge.household_relocation_required: 旧场入口的suspects与后续knows不能自动映射仆役分流场。",
+    "preconditions.character.jia_yun.location: 贾芸经手迁居的往返无种子级移动记录，亲族跑腿身份不是即时在场证据。"
+  ],
+  "function": "以一个仆人走、一个因欠薪留下的不同选择显示劳动网络分流，并接贾芸为迁居奔走的现实动机。",
+  "notes": "DRAFT_GENERATED：这是生成的当前实现约束，不是独立编辑、审查或历史原稿证据。演员ID及对象/事实ID均引用真实注册记录；KNOWN演员集合只表示所选ID已登记，不证明已出场或局部时序。第一场的KNOWN条件仅来自实际基线或前回已注册效果叶值，约束显式chapter-1粗层入口；不作作者学证据。后场的前驱仅为显式声明的来源列表顺序，局部检查点一律UNKNOWN，不注入或传承场态。required/forbidden beats是有卡/种子依据的待写目标，不能成为条件basis；未绑定全回事件或旧知识场。"
+}

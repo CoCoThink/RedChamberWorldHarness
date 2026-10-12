@@ -1,0 +1,740 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch84.json",
+      "sha256": "be22c331600ca2f1f889d335916f2ce245cb596d41bf46ca8c92954b0d1a2bff"
+    },
+    "seed": {
+      "path": "data/planning/scenes/84-S3.json",
+      "sha256": "a30430de498bd07a90deb5e457439b5bb5325b5711947deba5aa4d43cc8b4eab"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-81-85.json",
+      "sha256": "64a339142412c537b6caf39c03642449db6d69e5da39d1f239037a1a34e05b35"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 84,
+  "chapter_plan_ref": "data/planning/chapters/ch84.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-v1/84-S2.v1.json",
+  "entry_state": [
+    {
+      "equals": "character.fengjie.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "有household_manager基线身份，但本场丧务授权和各工序执行状态尚未登记，不能以角色基线证明已下令。"
+    },
+    {
+      "equals": "character.wangfuren.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "未知正式命令经过哪一位置与时刻；前场接報声明不提供局部快照。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.fengjie.household_role",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "更改饭食与服色的职责和落实情况无场级状态字段或事件，保留待落实而非改写家庭身份。"
+    },
+    {
+      "equals": "character.ping_er.location",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "传令完成与去向需独立正文支持；全局ritual_state变化不提供个人局部移动。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "84-S3-F1",
+      "description": "不得把一两小时内安排扩成精确宫廷丧礼百科或全家同步执行同一情绪；流程文字不变成完整挽诗祭辞。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/3/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/3/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "7c82c378b4c8050154eca87dff2a79d0f80d3fb1819cde230b28b1fd109f184e",
+          "value": {
+            "id": "84-S3",
+            "title": "日常规则在一两个时辰内被改"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                11058,
+                11194
+              ],
+              "lines": [
+                294,
+                296
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d51d7fc35c96626406fb3a7723fb38291db8438236435b1a6018fa3752707cfd"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n“消息”与“正式服制命令”可分得更清；丧务常例如何在数日形成可再补一个过渡。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11496,
+                11550
+              ],
+              "lines": [
+                303,
+                305
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c84c7cd5fc18cd127989e04b61baa8ff4c205108e2dc1a836f2740c518f63cb8"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n第38禁补；不写挽联展览。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11550,
+                11660
+              ],
+              "lines": [
+                306,
+                308
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "00709f943e80372ebdc9115bd1b9ba9695b28e3d39dec9f2819c2eed6ca862e8"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG09完整挽诗/祭辞淘汰；只许讣帖、祭单等流程文字。作者诗无。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                12540,
+                12774
+              ],
+              "lines": [
+                336,
+                339
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fea32bee25faf6aee09ff2714c888ee920e8831edde0a53bd1d45bed43db3f58"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n饭单闲笔 → 宫门异常 → 消息进门 → 规则改变 → 各房反应差异 → 黛玉收到延迟消息 → 起居纸落笔。  \n**风险：**把宫廷死因具体化、把丧礼写成百科。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "84-S3-F2",
+      "description": "不得删掉继续送饭和勿糟践东西的冷笔，不得以丧仪变化宣告即刻查抄或无缓冲提前婚期。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/3/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/3/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "7c82c378b4c8050154eca87dff2a79d0f80d3fb1819cde230b28b1fd109f184e",
+          "value": {
+            "id": "84-S3",
+            "title": "日常规则在一两个时辰内被改"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                10731,
+                10879
+              ],
+              "lines": [
+                288,
+                290
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7b07450675f278ff1efcf644414265baca7a5fb5ebf11844af8c211c73c3dd2d"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR03 / P02：元春必须死；死因、精确日期开放。H03：若死在婚前，必须给后续婚期真实丧期缓冲。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                12114,
+                12239
+              ],
+              "lines": [
+                321,
+                323
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "86d53fb97fb24cc2b5c65531bc77e10a861a1732e4387e8c53276a2d5e8cd612"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n饭单、传讯人袖上水、压低声音、紫鹃“夜醒二次”、黛玉嫌扇子“瞧着冷”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                12239,
+                12319
+              ],
+              "lines": [
+                324,
+                326
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bb5607c725cf69b8205ba4e658e2248688b1a65249bdd5973278007f18bf0c20"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n任何“元妃一死贾府即刻注定抄家”的直说。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "84-S3",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 3,
+  "participants": [
+    "fengjie",
+    "ping_er",
+    "wangfuren"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "character.ping_er.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "厨房、针线房和各房传令路线没有位置/知识事件，不能假定平儿已经走完全程。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/7",
+        "ref": "data/world/m3_core.json#/characters/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bca44063796cdc27c5e8076a896ecdbedfbe135109b5461cd9af292e5d0fbaa0",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_old_illness",
+            "household_role": "household_manager",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED_JIALIAN"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "fengjie",
+          "name": "王熙凤"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/8",
+        "ref": "data/world/m3_core.json#/characters/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "18eb0f602b315bef39498961532a6d16a05dbd3cac2e572c07257b6fdf99a63d",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "fengjie_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "ping_er",
+          "name": "平儿"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/25",
+        "ref": "data/world/m3_core.json#/characters/25",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "a65f17f6bbf2cfddd4d5c2094fd86646d034352e611faed657faf9db1383095e",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "senior_household_woman",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "wangfuren",
+          "name": "王夫人"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "84-S3-R1",
+      "description": "凤姐、平儿与王夫人的权责经实际传令动作区分，饭单如何改、谁接到、先哪一房执行必须交代；丧务改变不许只靠一段全知概述。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/3/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/3/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "7c82c378b4c8050154eca87dff2a79d0f80d3fb1819cde230b28b1fd109f184e",
+          "value": {
+            "id": "84-S3",
+            "title": "日常规则在一两个时辰内被改"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                11058,
+                11194
+              ],
+              "lines": [
+                294,
+                296
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d51d7fc35c96626406fb3a7723fb38291db8438236435b1a6018fa3752707cfd"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n“消息”与“正式服制命令”可分得更清；丧务常例如何在数日形成可再补一个过渡。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11194,
+                11356
+              ],
+              "lines": [
+                297,
+                299
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "282d1ba6980cce17e5054bc6037105db1e18dc18dd0494166eae3d45d99fb745"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n84-S1门上不知道先领谁；S2死讯与细节分开；S3饭食、服色、走动规则在数小时内改变；S4延迟传到黛玉。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11356,
+                11496
+              ],
+              "lines": [
+                300,
+                302
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "066483255f9082bde799f746197e8eef35c721845b3e707ed1da2dfb8c5c830e"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n宫中传讯者、门房、凤姐/平儿、王夫人、针线房、厨房、紫鹃。不要新增宫廷内幕知情者。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11846,
+                11920
+              ],
+              "lines": [
+                315,
+                317
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9d00df8f018878792fb516743ded13e74964255b2cc6e88be788561def034a39"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n门房、传令、针线、厨房承担社会机制。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "84-S3-R2",
+      "description": "素衣、白布与针线房的工序接上服色调整，走动、停宴禁乐各有指令来路；暂行安排与稍后形成的常例分开，不虚造精确法令。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/3/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/3/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "7c82c378b4c8050154eca87dff2a79d0f80d3fb1819cde230b28b1fd109f184e",
+          "value": {
+            "id": "84-S3",
+            "title": "日常规则在一两个时辰内被改"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                11058,
+                11194
+              ],
+              "lines": [
+                294,
+                296
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d51d7fc35c96626406fb3a7723fb38291db8438236435b1a6018fa3752707cfd"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n“消息”与“正式服制命令”可分得更清；丧务常例如何在数日形成可再补一个过渡。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11194,
+                11356
+              ],
+              "lines": [
+                297,
+                299
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "282d1ba6980cce17e5054bc6037105db1e18dc18dd0494166eae3d45d99fb745"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n84-S1门上不知道先领谁；S2死讯与细节分开；S3饭食、服色、走动规则在数小时内改变；S4延迟传到黛玉。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11846,
+                11920
+              ],
+              "lines": [
+                315,
+                317
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9d00df8f018878792fb516743ded13e74964255b2cc6e88be788561def034a39"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n门房、传令、针线、厨房承担社会机制。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11920,
+                12114
+              ],
+              "lines": [
+                318,
+                320
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "07ae172c2ea20250db3ffaf85c28c31b995c334faa29395e37c00bd0e8b85d71"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：E0尚能支撑丧制，但支出结构改变。物：素衣、白布、饭单、灯、药。信：宫门→外门→内宅→各房→潇湘馆，层层失真/延迟。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "84-S3-R3",
+      "description": "厨房照样供饭、东西别糟践与报信丫头急跑的冷笔保留；饭单传错可表现差事摩擦，笑点不针对元春死亡。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/3/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/3/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "7c82c378b4c8050154eca87dff2a79d0f80d3fb1819cde230b28b1fd109f184e",
+          "value": {
+            "id": "84-S3",
+            "title": "日常规则在一两个时辰内被改"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                10879,
+                11058
+              ],
+              "lines": [
+                291,
+                293
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0cfef6f0481993352d24c875a50ba4f86d94e251aec392de447bbcff6c796433"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n死讯先撞进厨房/饭单与门房体系；“别满院乱嚷”；不同人知情层次不同；最终压到潇湘馆，紫鹃开始记夜醒、饭药。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11660,
+                11769
+              ],
+              "lines": [
+                309,
+                311
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c63b413d1ac09f8927aec3404dc4c4f34787fcfbd4d917855c96e8f63c06d779"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n小丫头跑急滴水、饭单传错等日常轻笔可保留，不拿元妃死亡开笑。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11920,
+                12114
+              ],
+              "lines": [
+                318,
+                320
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "07ae172c2ea20250db3ffaf85c28c31b995c334faa29395e37c00bd0e8b85d71"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：E0尚能支撑丧制，但支出结构改变。物：素衣、白布、饭单、灯、药。信：宫门→外门→内宅→各房→潇湘馆，层层失真/延迟。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                12114,
+                12239
+              ],
+              "lines": [
+                321,
+                323
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "86d53fb97fb24cc2b5c65531bc77e10a861a1732e4387e8c53276a2d5e8cd612"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n饭单、传讯人袖上水、压低声音、紫鹃“夜醒二次”、黛玉嫌扇子“瞧着冷”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "84-S3-R4",
+      "description": "支出仍属E0能支撑但结构改变，领取布料或送饭要有经手；让各房反应速度不同，为潇湘馆后到消息留出延迟。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/3/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/3/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "7c82c378b4c8050154eca87dff2a79d0f80d3fb1819cde230b28b1fd109f184e",
+          "value": {
+            "id": "84-S3",
+            "title": "日常规则在一两个时辰内被改"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                10879,
+                11058
+              ],
+              "lines": [
+                291,
+                293
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0cfef6f0481993352d24c875a50ba4f86d94e251aec392de447bbcff6c796433"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n死讯先撞进厨房/饭单与门房体系；“别满院乱嚷”；不同人知情层次不同；最终压到潇湘馆，紫鹃开始记夜醒、饭药。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                11920,
+                12114
+              ],
+              "lines": [
+                318,
+                320
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "07ae172c2ea20250db3ffaf85c28c31b995c334faa29395e37c00bd0e8b85d71"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：E0尚能支撑丧制，但支出结构改变。物：素衣、白布、饭单、灯、药。信：宫门→外门→内宅→各房→潇湘馆，层层失真/延迟。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                12540,
+                12774
+              ],
+              "lines": [
+                336,
+                339
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fea32bee25faf6aee09ff2714c888ee920e8831edde0a53bd1d45bed43db3f58"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n饭单闲笔 → 宫门异常 → 消息进门 → 规则改变 → 各房反应差异 → 黛玉收到延迟消息 → 起居纸落笔。  \n**风险：**把宫廷死因具体化、把丧礼写成百科。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "independent_review: 新作者草案尚未独立审读，不能标为AGENT_EDITED、语义通过、证据或权威。",
+    "declared_sequence_only: 依候选列表显式声明前驱；历史场景顺序和与既有正文的精确放置未核验。",
+    "scene_local_checkpoint: 后场入口UNKNOWN；前一覆盖文件只是显式顺序，不产生或继承局部状态快照。",
+    "unregistered_participants: 厨房、针线房、传令、报信丫头无实际ID，不能按行业补造角色。",
+    "unregistered_objects: 饭单、素衣、白布、布料与药灯没有对象ID/领取转移，具体数量金额待核。",
+    "event_localization: W84的全局YUANCHUN_MOURNING不是各房执行或数小时进度事件；本场不重复绑定为已成局部服制状态。",
+    "knowledge_registry_gap: 暂行丧务、正式服制与传令是否接到未注册，不能声明众人已同步获知。"
+  ],
+  "function": "将丧务从消息转换为数小时内可感的饭食、服色与走动规则；让命令经过厨房、针线房和传令实际落地，仍保持正常供应而非礼制百科。",
+  "notes": "本文件是新建v1作者草案，status=DRAFT_GENERATED，authority_effect=NONE，evidence_effect=NONE；必须由独立审读者另行核对来源、正文语义、参与者及场间衔接。participants_status=KNOWN只指拟定参与者集合有实际注册ID与章卡依据，不证明他们在某历史时刻确实同时到场，现场位置由UNKNOWN/PENDING条件保留。entry_from是本草案显式声明的候选顺序：首场指定chapter-1章入口，后场引用前一v1覆盖文件；SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY不是原文年代顺序的证明，也不传播前场状态。required/forbidden beats全属待实现叙事要求，grounding只说明其来自不可变种子与章卡，不充当状态事实。非KNOWN条件value=null且给出原因；任何注册事件均只按同章连续前缀关联，不把粗粒度章事件当场级重放。不得宣称确定性或正文支持的语义重放PASS；knowledge事实定义不等同任何角色已经知道，跨章86知识场景不注入81—85。"
+}

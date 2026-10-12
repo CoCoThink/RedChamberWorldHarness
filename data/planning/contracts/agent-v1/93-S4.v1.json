@@ -1,0 +1,603 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v1",
+  "id": "93-S4",
+  "chapter": 93,
+  "order": 4,
+  "chapter_plan_ref": "data/planning/chapters/ch93.json",
+  "status": "DRAFT_GENERATED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/93-S4.json",
+      "sha256": "d875ac76864928e3968c940719fe0a879a2bf01cc1ddabf5de96c34e9a036731"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch93.json",
+      "sha256": "515ed9ce4f4aa83ba37ed0124f4ac31303b4fb375279500a0951cf74019301ce"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "data/planning/scenes/93-S3.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "participants": [
+    "fengjie",
+    "ping_er",
+    "qiaojie"
+  ],
+  "participants_status": "KNOWN",
+  "required_objects": [
+    "OBJ-FENGJIE-LEGACY-BUNDLE"
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/7",
+        "ref": "data/world/m3_core.json#/characters/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bca44063796cdc27c5e8076a896ecdbedfbe135109b5461cd9af292e5d0fbaa0",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_old_illness",
+            "household_role": "household_manager",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED_JIALIAN"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "fengjie",
+          "name": "王熙凤"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/8",
+        "ref": "data/world/m3_core.json#/characters/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "18eb0f602b315bef39498961532a6d16a05dbd3cac2e572c07257b6fdf99a63d",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "fengjie_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "ping_er",
+          "name": "平儿"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/9",
+        "ref": "data/world/m3_core.json#/characters/9",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "30c29d3a2465ba5aeda93f0359e32a72d1b5424fa9ee01f8cc480d957f3f2ec9",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary_child",
+            "household_role": "fengjie_daughter",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "CHILD"
+          },
+          "groups": [
+            "jia_household",
+            "human",
+            "child"
+          ],
+          "id": "qiaojie",
+          "name": "巧姐"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/8",
+        "ref": "data/objects/m4.json#/objects/8",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "fdbeeb643e1df65b6fb3b739bb6d4f6e4af06230e62859b1d21c9feb33dd0f55",
+        "value": {
+          "baseline": {
+            "holder": "fengjie",
+            "location": "S02",
+            "status": "HOUSEHOLD_CONTROL_ITEMS"
+          },
+          "continuity_rules": [
+            "只表示旧账/钥匙/衣物作为后事接口，不锁具体钥匙清单"
+          ],
+          "evidence_status": "REFERENCE_WORLD_INFERENCE",
+          "id": "OBJ-FENGJIE-LEGACY-BUNDLE",
+          "identity_status": "C_WORLD_OBJECT_GROUP",
+          "kind": "household_control_bundle",
+          "name": "凤姐旧账钥匙衣物束",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "entry_state": [
+    {
+      "equals": "character.fengjie.life_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "此前末病场无可执行结束检查点；不能从章末死亡事件反定她此刻的生命状态。"
+    },
+    {
+      "equals": "object.OBJ-FENGJIE-LEGACY-BUNDLE.holder",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "遗物束基线仍在凤姐旧府位置，但本场搬后经手和保管范围未核定。"
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "character.fengjie.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "最后管一件事的能力、停顿和疲惫未有独立医学/身体事件。"
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "object.OBJ-FENGJIE-LEGACY-BUNDLE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "两张纸、钥匙与衣物如何交代到平儿尚待落在正文；OT93-01是死后的接口，不能抢作临终场已移交完成。"
+    },
+    {
+      "equals": "character.fengjie.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "最后一次管事后的身体退出仍无场级状态记录，不以待写动作自证终态。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "93-S4-R1",
+      "description": "凤姐最后只管一件实际事，可落在把巧姐药钱与经手交给平儿；两张纸仍是买米、药钱的日用接口，不写宏大遗训。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "7fba918e5e337880e9880a163ec5c702930e6e47c43f2b407dc04d36a3322d27",
+          "value": {
+            "id": "93-S4",
+            "title": "凤姐最后一次“管事”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34043,
+                34225
+              ],
+              "lines": [
+                840,
+                842
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "efa37f4b209fe5a191064f129e6a0b8ee8b28df41dedd5cf00f176dc9873bc75"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n宝玉回家第一件事是热饭、洗手、换衣；凤姐死后两张纸仍是买米/巧姐药钱；钥匙有些已无柜可开；平儿被叫去补白布。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                34225,
+                34340
+              ],
+              "lines": [
+                843,
+                845
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d260746d432ea4ea17f3e8ce6844e215bca76547ca9f02df20e9306c25c6f783"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n释放手续、凤姐死前“最后一件管事”、死后“谁来主丧”可以更清。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                34340,
+                34520
+              ],
+              "lines": [
+                846,
+                848
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "24c75446bbadf3e0a5a544feaa3b251e5f41cf772e5918e4ce448363682d12ea"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n93-S1领取随身物/仍可传问；S2回家先吃；S3凤姐在宝玉回来前已末段；S4最后只管一件事；S5她一死立刻出现组织真空。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35028,
+                35195
+              ],
+              "lines": [
+                867,
+                869
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "2369b960bd77349ce3570b4f2bfdac3cb767cd2a7937d9803939fb138c0e688b"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE2：宝玉获释不带来钱，凤死立刻要钱。物链从热饭/水转到白布/灯/棺/遗物；信息上释放小喜立即被病危压过。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35195,
+                35305
+              ],
+              "lines": [
+                870,
+                872
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "83d1dcf9f335e7fa03c6553c1d6649d486aea624c3973611c3d120a4f5894663"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n热粥、巧姐问薄不薄、空药吊子、白布短一截、平儿起身去办。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "93-S4-R2",
+      "description": "旧账、钥匙、衣物的接续须有动作，钥匙有些已无柜可开；巧姐问薄不薄，让母女需要仍具体。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "7fba918e5e337880e9880a163ec5c702930e6e47c43f2b407dc04d36a3322d27",
+          "value": {
+            "id": "93-S4",
+            "title": "凤姐最后一次“管事”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34043,
+                34225
+              ],
+              "lines": [
+                840,
+                842
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "efa37f4b209fe5a191064f129e6a0b8ee8b28df41dedd5cf00f176dc9873bc75"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n宝玉回家第一件事是热饭、洗手、换衣；凤姐死后两张纸仍是买米/巧姐药钱；钥匙有些已无柜可开；平儿被叫去补白布。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                34520,
+                34607
+              ],
+              "lines": [
+                849,
+                851
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bbf552991c41fb791958c2408cc605faeb7a360a78f0e85e97bc015a375c6d57"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n宝玉/宝钗/麝月A线；凤姐/平儿/巧姐/医者/婆子B线。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35195,
+                35305
+              ],
+              "lines": [
+                870,
+                872
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "83d1dcf9f335e7fa03c6553c1d6649d486aea624c3973611c3d120a4f5894663"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n热粥、巧姐问薄不薄、空药吊子、白布短一截、平儿起身去办。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35618,
+                35900
+              ],
+              "lines": [
+                885,
+                888
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b024aef7267d8e0f55de72f25a39d4a76cd408f26c09300906dd304dd185b6b3"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n释放 → 回家吃热饭 → 看凤姐 → 最后一件具体管事 → 身体退出 → 死 → 丧务组织真空 → 平儿留下陪巧姐又被现实叫走。  \n**风险：**死亡压过宝玉获释或反之；需保持“双恢复/双退出”。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "93-S4-F1",
+      "description": "不得让凤姐自作“机关算尽”一生总结、忏悔诗文或全盘安排后世；能力只够最后一件现实事。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "7fba918e5e337880e9880a163ec5c702930e6e47c43f2b407dc04d36a3322d27",
+          "value": {
+            "id": "93-S4",
+            "title": "凤姐最后一次“管事”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34340,
+                34520
+              ],
+              "lines": [
+                846,
+                848
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "24c75446bbadf3e0a5a544feaa3b251e5f41cf772e5918e4ce448363682d12ea"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n93-S1领取随身物/仍可传问；S2回家先吃；S3凤姐在宝玉回来前已末段；S4最后只管一件事；S5她一死立刻出现组织真空。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                34637,
+                34717
+              ],
+              "lines": [
+                855,
+                857
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "eece0456252fc3d1e6e2c5f896a7d1fa635a40e2adc98b970074aa370d119c14"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG11凤姐临终诗/忏悔文淘汰；作者挽诗无。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35305,
+                35394
+              ],
+              "lines": [
+                873,
+                875
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "158fbb0475de9d26e0e0da1d16bf66bd596fe74f12f70bdec0deb8de8d64eff6"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n凤姐“机关算尽”自我总结、玄奇吐血、恢弘大丧。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "93-S4-F2",
+      "description": "不得以钥匙和旧账恢复她的全府掌控或变出足以治病、厚葬、保亲的大额财产。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/12/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/12/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "7fba918e5e337880e9880a163ec5c702930e6e47c43f2b407dc04d36a3322d27",
+          "value": {
+            "id": "93-S4",
+            "title": "凤姐最后一次“管事”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                34043,
+                34225
+              ],
+              "lines": [
+                840,
+                842
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "efa37f4b209fe5a191064f129e6a0b8ee8b28df41dedd5cf00f176dc9873bc75"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n宝玉回家第一件事是热饭、洗手、换衣；凤姐死后两张纸仍是买米/巧姐药钱；钥匙有些已无柜可开；平儿被叫去补白布。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35028,
+                35195
+              ],
+              "lines": [
+                867,
+                869
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "2369b960bd77349ce3570b4f2bfdac3cb767cd2a7937d9803939fb138c0e688b"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE2：宝玉获释不带来钱，凤死立刻要钱。物链从热饭/水转到白布/灯/棺/遗物；信息上释放小喜立即被病危压过。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                35305,
+                35394
+              ],
+              "lines": [
+                873,
+                875
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "158fbb0475de9d26e0e0da1d16bf66bd596fe74f12f70bdec0deb8de8d64eff6"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n凤姐“机关算尽”自我总结、玄奇吐血、恢弘大丧。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "independent_edit_and_semantics: DRAFT_GENERATED；本次生成没有独立编辑、正文语义核验或人类/提供方证明。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+    "implementation_gap: 遗物束只提供功能组，不锁钥匙清单或纸张内容细目；最后具体事项与药钱数额未独立核定。",
+    "entry_state: character.fengjie.life_state — 此前末病场无可执行结束检查点；不能从章末死亡事件反定她此刻的生命状态。",
+    "entry_state: object.OBJ-FENGJIE-LEGACY-BUNDLE.holder — 遗物束基线仍在凤姐旧府位置，但本场搬后经手和保管范围未核定。",
+    "preconditions: character.fengjie.body_state — 最后管一件事的能力、停顿和疲惫未有独立医学/身体事件。",
+    "exit_state: object.OBJ-FENGJIE-LEGACY-BUNDLE.status — 两张纸、钥匙与衣物如何交代到平儿尚待落在正文；OT93-01是死后的接口，不能抢作临终场已移交完成。",
+    "exit_state: character.fengjie.body_state — 最后一次管事后的身体退出仍无场级状态记录，不以待写动作自证终态。"
+  ],
+  "function": "以最后一件具体管事维持凤姐的旧能力和身体限度，将旧账钥匙衣物接向平儿的后事及巧姐保护接口。",
+  "notes": "按91–95作者包与93-S4源种子拟定。具名参与者是章卡支持的拟写角色，实体引用只证明ID存在；未注册职业人物/道具保留在义务与未决项中，不造ID。第一场KNOWN条件仅描述chapter-1选定运行世界入口，basis为实际基线或此前事件，不是章卡、重建声明或待写正文。其他场局部状态及全部出口保持UNKNOWN。event_refs/object_transition_refs是涉及的当前C章级接口，不是失传正文、历史回次或场级可执行性证明；原三份data/scenes合同及所有种子、章卡、世界与评论数据不变。"
+}

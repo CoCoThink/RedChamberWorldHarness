@@ -1,0 +1,705 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v1",
+  "id": "94-S6",
+  "chapter": 94,
+  "order": 6,
+  "chapter_plan_ref": "data/planning/chapters/ch94.json",
+  "status": "DRAFT_GENERATED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/94-S6.json",
+      "sha256": "7081b4152667728a0e88900daadb069ad264a6aea07ef5664537b6f0a1ab996d"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch94.json",
+      "sha256": "cacd7c08f626cefa5a068864a9cdc36d890d10aad662dfdd258841fda4b48a3b"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "data/planning/scenes/94-S5.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "participants": [
+    "liulaolao",
+    "qiaojie"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [
+    "OBJ-QIAOJIE-BUNDLE"
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/13",
+        "ref": "data/world/m3_core.json#/characters/13",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "ce3bde062f05abf24e6817646b467df49526510e3592edecfeb82048f7aff950",
+        "value": {
+          "baseline": {
+            "body_state": "older_adult",
+            "household_role": "rural_kin_network",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "liu_household",
+            "human"
+          ],
+          "id": "liulaolao",
+          "name": "刘姥姥"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/9",
+        "ref": "data/world/m3_core.json#/characters/9",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "30c29d3a2465ba5aeda93f0359e32a72d1b5424fa9ee01f8cc480d957f3f2ec9",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary_child",
+            "household_role": "fengjie_daughter",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "CHILD"
+          },
+          "groups": [
+            "jia_household",
+            "human",
+            "child"
+          ],
+          "id": "qiaojie",
+          "name": "巧姐"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/9",
+        "ref": "data/objects/m4.json#/objects/9",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "8d8d763b7d48c7dec4f6e36f4b04da36e7ca9bcc83d22aef9c1142163934e902",
+        "value": {
+          "baseline": {
+            "holder": "qiaojie",
+            "location": "S02",
+            "status": "HOUSEHOLD_BELONGINGS"
+          },
+          "continuity_rules": [
+            "随巧姐转入刘姥姥乡居，不把包袱扩大为大额财产"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-QIAOJIE-BUNDLE",
+          "identity_status": "C_WORLD_OBJECT_GROUP",
+          "kind": "personal_bundle",
+          "name": "巧姐转移包袱",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "entry_state": [
+    {
+      "equals": "character.qiaojie.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "前场出城到乡未有独立入口核验；W94的S08章级终点不能代替第一夜/第一日时序。"
+    },
+    {
+      "equals": "object.OBJ-QIAOJIE-BUNDLE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "包袱已到、打开和换衣的局部物态未注册。"
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "character.qiaojie.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "guest_under_liu_care为章级照顾接口，具体第一日照料分工与劳动学习未形成场级前置记录。"
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "character.qiaojie.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "鞋跟、饭和纺线的适应成本没有独立身体事件，不能称彻底安心、脱困或劳动即治愈。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "94-S6-R1",
+      "description": "包袱到炕、粗饭到鞋跟、鸡狗到纺车，逐项写生活难题；邻人有人好奇、有人嫌娇、有人肯借针线。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec3238c27c8fb1956ca7a9979253c87e3bb5ee7bed64310078275d79395fa39d",
+          "value": {
+            "id": "94-S6",
+            "title": "乡下第一日不是田园解脱"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                36447,
+                36682
+              ],
+              "lines": [
+                904,
+                906
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "135860b221082b18275aafef2bf4205009dafc102d87d8e2ab245aa30453387e"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n王仁先算礼钱；平儿追问家情；贾母一句“人没问明白，礼倒先算清了”；刘姥姥提供空间、饭、劳动网络；巧姐乡下鞋跟、鸡狗、纺车；两句不定词劳动小曲。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                36815,
+                37029
+              ],
+              "lines": [
+                910,
+                912
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "af109a504aacd0b27b977e5c2515968bb574e8172efd225f0d65c1880c8341db"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n94-S1条件表面不错 → S2平儿逐项核问 → S3只需证明“不对劲”而非人口买卖大阴谋 → S4刘姥姥给空间 → S5小包袱/路费/谁陪 → S6乡下第一日。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37029,
+                37174
+              ],
+              "lines": [
+                913,
+                915
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ff7f8933d12457b3e1a4116e33233eea38b1bbeb08dc3a3f1fa38ca264c267af"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n媒人不是恶魔，只关心说成；王仁贪但不必大反派；乡邻有人好奇、有人嫌娇、有人肯借针线。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37597,
+                37662
+              ],
+              "lines": [
+                930,
+                932
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f7694a45870f0109fefab7dd0e46b9559d3f93ad31ba3da0a728a9892bcd67e6"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n媒人、车脚、乡妇、邻里、小贩。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37662,
+                37872
+              ],
+              "lines": [
+                933,
+                935
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "23b67b7e92911914f052fc5addfb3743639841fdcd9437fac09d7d9aa0429b40"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：小额路费/衣物即可；坏亲事的危险首先从定礼、急办、信息含糊显现。物：小包袱→炕→粗饭→鞋→纺线。信：巧姐本人只知“住几日”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37872,
+                37988
+              ],
+              "lines": [
+                936,
+                938
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cb54057cd85d931e7aafa9dc6e198b3ebc75e610f9b0eaf03933e473481526bc"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n贾母那句；王仁钱先行；刘姥姥不拿大银；鸡狗纺车；不定词小曲。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "94-S6-R2",
+      "description": "保留板儿追鸡改口、巧姐误认平儿及乡下口语的笑；笑里仍有适应和离开旧照料者的成本。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec3238c27c8fb1956ca7a9979253c87e3bb5ee7bed64310078275d79395fa39d",
+          "value": {
+            "id": "94-S6",
+            "title": "乡下第一日不是田园解脱"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                37411,
+                37496
+              ],
+              "lines": [
+                924,
+                926
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "88db1e2d2067f8e54e592a1abc92591f4def45307bf377e951b673a615a8821b"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n板儿说追鸡改口、巧姐误认平儿、乡下口语保留。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                38326,
+                38620
+              ],
+              "lines": [
+                951,
+                954
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7cf2354a0c38324e701179105e9987ad7fe4a0a833c36e94fb135ce2a6053e2e"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n凤姐后事余波 → 王仁/媒人正常说亲 → 平儿调查 → 危险渐显 → 刘姥姥现实方案 → 低调转移 → 乡间第一夜/劳动 → 平儿收到消息 → 巧姐慢慢适应。  \n**风险：**反派化、田园化、提前锁板儿婚姻。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "94-S6-R3",
+      "description": "只保留口传劳动小曲“线儿长，莫着忙；手一急，线先伤。”及“伤/断都使得，哪有定词”的不定词性质；劳动属日用而非田园诗。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec3238c27c8fb1956ca7a9979253c87e3bb5ee7bed64310078275d79395fa39d",
+          "value": {
+            "id": "94-S6",
+            "title": "乡下第一日不是田园解脱"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                37174,
+                37236
+              ],
+              "lines": [
+                916,
+                918
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f1277cd08c4405775b8179f4e1b12766f5c7cb618ec98dc1744b31243940f758"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n劳动/纺织属生活；不补田园诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37236,
+                37411
+              ],
+              "lines": [
+                919,
+                923
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b33028b7f0b527e606407977c3f090996da55b11fb4a26e677192b0e2a0158cc"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG12两句口传小曲保留：\n“线儿长，莫着忙；手一急，线先伤。”\n“伤/断都使得，哪有定词。”不得扩完整民歌。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37872,
+                37988
+              ],
+              "lines": [
+                936,
+                938
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cb54057cd85d931e7aafa9dc6e198b3ebc75e610f9b0eaf03933e473481526bc"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n贾母那句；王仁钱先行；刘姥姥不拿大银；鸡狗纺车；不定词小曲。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "94-S6-R4",
+      "description": "由实际消息让平儿知道抵达与近况，巧姐慢慢适应，刘氏照顾不是一夜终结所有难题。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec3238c27c8fb1956ca7a9979253c87e3bb5ee7bed64310078275d79395fa39d",
+          "value": {
+            "id": "94-S6",
+            "title": "乡下第一日不是田园解脱"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                37662,
+                37872
+              ],
+              "lines": [
+                933,
+                935
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "23b67b7e92911914f052fc5addfb3743639841fdcd9437fac09d7d9aa0429b40"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：小额路费/衣物即可；坏亲事的危险首先从定礼、急办、信息含糊显现。物：小包袱→炕→粗饭→鞋→纺线。信：巧姐本人只知“住几日”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                38326,
+                38620
+              ],
+              "lines": [
+                951,
+                954
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7cf2354a0c38324e701179105e9987ad7fe4a0a833c36e94fb135ce2a6053e2e"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n凤姐后事余波 → 王仁/媒人正常说亲 → 平儿调查 → 危险渐显 → 刘姥姥现实方案 → 低调转移 → 乡间第一夜/劳动 → 平儿收到消息 → 巧姐慢慢适应。  \n**风险：**反派化、田园化、提前锁板儿婚姻。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "94-S6-F1",
+      "description": "不得扩成完整民歌、田园诗或乡村桃花源；贫寒者的生活网络不写成高贵神迹。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec3238c27c8fb1956ca7a9979253c87e3bb5ee7bed64310078275d79395fa39d",
+          "value": {
+            "id": "94-S6",
+            "title": "乡下第一日不是田园解脱"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                37174,
+                37236
+              ],
+              "lines": [
+                916,
+                918
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f1277cd08c4405775b8179f4e1b12766f5c7cb618ec98dc1744b31243940f758"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n劳动/纺织属生活；不补田园诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37236,
+                37411
+              ],
+              "lines": [
+                919,
+                923
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b33028b7f0b527e606407977c3f090996da55b11fb4a26e677192b0e2a0158cc"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG12两句口传小曲保留：\n“线儿长，莫着忙；手一急，线先伤。”\n“伤/断都使得，哪有定词。”不得扩完整民歌。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37988,
+                38092
+              ],
+              "lines": [
+                939,
+                941
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d19db58f4456da5d50604961b87c1908f5730c13104d52b8886f477495dbd426"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n真正卖掉再神救；乡村桃花源；把王仁写成庞大拐卖阴谋主谋。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                38161,
+                38271
+              ],
+              "lines": [
+                945,
+                947
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ef18ef3ea5a2f54851395574eb0ea01c38b1a952280a5aa14ca97d398c757fb6"
+            },
+            "name": "前80同构",
+            "number": 15,
+            "text": "**15｜前80同构**  \n6/39刘姥姥线：她的救不是“高贵”，而是贫寒者熟悉生活网络。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "94-S6-F2",
+      "description": "不得把板儿的日常动作解释成婚配已定，也不得以念佛或狱庙替代旧恩照顾。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "ec3238c27c8fb1956ca7a9979253c87e3bb5ee7bed64310078275d79395fa39d",
+          "value": {
+            "id": "94-S6",
+            "title": "乡下第一日不是田园解脱"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                36026,
+                36447
+              ],
+              "lines": [
+                896,
+                903
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b4b285a5633cc2383beb306fd469293a9c6fb4bbac8f640a730cdb7cfe097a85"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR37/R38/R42\n\n**V-INTERFACES｜**\n- 巧姐得救硬骨架仍来自判词/曲文与旧恩线；\n- W2：`狱庙相逢之日始知遇难成祥，逢凶化吉`在批语附着关系上最自然地增权巧姐线；\n- **D2裁定：当前不采用。94继续用刘氏旧恩现实救援，不增狱庙。**；板儿婚配时机仍开放。巧姐得救必须来自刘姥姥旧恩，但不许神奇大救援。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37496,
+                37597
+              ],
+              "lines": [
+                927,
+                929
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9784dddb703b5999d4b26d6a5fae01d618defd99847da5cb6a4050f0a76ac537"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n刘姥姥念佛只作民间口语。救命机制仍是旧恩与社会信用。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                38326,
+                38620
+              ],
+              "lines": [
+                951,
+                954
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7cf2354a0c38324e701179105e9987ad7fe4a0a833c36e94fb135ce2a6053e2e"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n凤姐后事余波 → 王仁/媒人正常说亲 → 平儿调查 → 危险渐显 → 刘姥姥现实方案 → 低调转移 → 乡间第一夜/劳动 → 平儿收到消息 → 巧姐慢慢适应。  \n**风险：**反派化、田园化、提前锁板儿婚姻。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "independent_edit_and_semantics: DRAFT_GENERATED；本次生成没有独立编辑、正文语义核验或人类/提供方证明。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+    "participants: 板儿、乡妇、好奇或嫌娇的邻人、小贩未有实体ID，不能用另一注册人物代替。",
+    "implementation_gap: 乡下鞋、鸡狗、炕、粗饭、纺车与针线没有单独对象ID；平儿收到消息的渠道与第一夜/第一日界限待核定。",
+    "entry_state: character.qiaojie.location — 前场出城到乡未有独立入口核验；W94的S08章级终点不能代替第一夜/第一日时序。",
+    "entry_state: object.OBJ-QIAOJIE-BUNDLE.status — 包袱已到、打开和换衣的局部物态未注册。",
+    "preconditions: character.qiaojie.household_role — guest_under_liu_care为章级照顾接口，具体第一日照料分工与劳动学习未形成场级前置记录。",
+    "exit_state: character.qiaojie.body_state — 鞋跟、饭和纺线的适应成本没有独立身体事件，不能称彻底安心、脱困或劳动即治愈。"
+  ],
+  "function": "用乡下第一日的鞋、鸡狗、炕、粗饭与纺线写缓慢适应及社会网络的差异；安置是生活劳动，不是田园解脱。",
+  "notes": "按91–95作者包与94-S6源种子拟定。具名参与者是章卡支持的拟写角色，实体引用只证明ID存在；未注册职业人物/道具保留在义务与未决项中，不造ID。第一场KNOWN条件仅描述chapter-1选定运行世界入口，basis为实际基线或此前事件，不是章卡、重建声明或待写正文。其他场局部状态及全部出口保持UNKNOWN。event_refs/object_transition_refs是涉及的当前C章级接口，不是失传正文、历史回次或场级可执行性证明；原三份data/scenes合同及所有种子、章卡、世界与评论数据不变。"
+}

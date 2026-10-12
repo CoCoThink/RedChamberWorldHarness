@@ -1,0 +1,594 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v1",
+  "id": "92-S1",
+  "chapter": 92,
+  "order": 1,
+  "chapter_plan_ref": "data/planning/chapters/ch92.json",
+  "status": "DRAFT_GENERATED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/92-S1.json",
+      "sha256": "523b7df6f8264e7650fe52f1512aaf97daacc7fbf98e84d29fc182378a94e611"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch92.json",
+      "sha256": "93a5fdbbff10ccb65cd601e344d3b46d15fa38172bb5b29b88caa6f980a2b797"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "CHAPTER_ENTRY:91",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 91
+  },
+  "participants": [
+    "baoyu",
+    "jia_yun"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/10",
+        "ref": "data/world/m3_core.json#/characters/10",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "340eb8abc9247bbb71dbde20970aad2d26ba92195c40678d53b29fcd43b5c3c2",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "kin_runner",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_network",
+            "human"
+          ],
+          "id": "jia_yun",
+          "name": "贾芸"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": [
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/8",
+        "ref": "data/knowledge/v03_slice2.json#/facts/8",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "376cd3c7003b671db97190fcf395e6087df19ad31f3c0254b4ec62835ce7b241",
+        "value": {
+          "epistemic": "CURRENT_SCENE_UNKNOWN",
+          "id": "baoyu_detention_whole_case",
+          "label": "宝玉羁押案全部案情与官面判断"
+        }
+      }
+    ]
+  },
+  "entry_state": [
+    {
+      "equals": "character.baoyu.legal_status",
+      "value": "FORMALLY_SUMMONED_PENDING_INQUIRY",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/8/effects/0",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/8/effects/0",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "31c372ea2d77907b3b83623ef6c641071b4d910e1863886d076d8515c6919686",
+          "value": {
+            "set": "characters.baoyu.legal_status",
+            "value": "FORMALLY_SUMMONED_PENDING_INQUIRY"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.baoyu.location",
+      "value": "S06",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/6/effects/3",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/6/effects/3",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "a2f77385e16c1ed455555267bec75ea9583a04a920eab4cb70b90d0b15c83262",
+          "value": {
+            "set": "characters.baoyu.location",
+            "value": "S06"
+          }
+        }
+      ]
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "character.baoyu.legal_status",
+      "value": "FORMALLY_SUMMONED_PENDING_INQUIRY",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/8/effects/0",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/8/effects/0",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "31c372ea2d77907b3b83623ef6c641071b4d910e1863886d076d8515c6919686",
+          "value": {
+            "set": "characters.baoyu.legal_status",
+            "value": "FORMALLY_SUMMONED_PENDING_INQUIRY"
+          }
+        }
+      ]
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "character.baoyu.legal_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "认单与等候本身不等于已留质或定罪；W92的羁押是后续章级事件，不应抢填本场结果。"
+    },
+    {
+      "equals": "character.baoyu.knowledge.baoyu_detention_whole_case",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "没有此时的知识事件；送物接口注册的全案未知也不能替代认单现场的实际问项。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "92-S1-R1",
+      "description": "宝玉带着旧单关联进入传问与等候，书办以记录一致为要务；认单不写成审判或宣罪。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "9be1439eeb2636b5227f4cb83ec949668fd4f8ca6f5464fae6f3ea13abf37d59",
+          "value": {
+            "id": "92-S1",
+            "title": "认单不是审判"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                30851,
+                31264
+              ],
+              "lines": [
+                772,
+                779
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "747f3dded7f17758329dc18f6add30897c7b5175d8bbaafa7a3dc93209b1f75b"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR05\n\n**EVIDENCE-INTERFACES｜**\n- T2/DRAFT-LABEL：`狱神庙慰宝玉`；\n- V5：`茜雪至狱神庙方呈正文`、`红玉茜雪一大回文字`、`红玉后有宝玉大得力处`；\n- **W2已裁：`狱庙相逢` = OPEN-W2 / NO-ACTIVE-INSERTION。92明确不加巧姐/刘姥姥。**/R30/R31/R32；H01/H02；O02开放具体法律接口。必须是真实羁押/待质，不是地牢传奇。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31534,
+                31700
+              ],
+              "lines": [
+                783,
+                785
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c04613526fd337f964446697d4e207ceaaadf2335cc01f8654cbb2c1d9c081bf"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n“为什么留质—问什么—范围如何变窄—为什么放”需要司法链更清楚；小红“大得力”必须具体而非万能。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31700,
+                31908
+              ],
+              "lines": [
+                786,
+                788
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e9955259a25cacca5651767990721298088a9e0a8ab597e8a6de8d12f908d41"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n92-S1认单≠定罪；S2第一次留质家里不知多久；S3第一夜规则学习；S4小红办能不能送；S5茜雪办保暖；S6第二轮问讯使范围缩小；正常释放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32543,
+                32693
+              ],
+              "lines": [
+                805,
+                807
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "691f1024a95d253812f2620688e641beb554b5e454142152b155e0e99a7bd18a"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n本回职业密度最高：狱卒关心班次/规矩，书办关心记录一致，同监关心饭和毡，小红先搞清制度。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33398,
+                33795
+              ],
+              "lines": [
+                826,
+                829
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fb8033734c34167c334c5c15e4ff3e09d2a92e4fc9451811424991f81a7d1565"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n传问等候 → 留质突然发生 → 第一夜规则 → 家中信息断裂 → 小红制度性帮助 → 茜雪旧情保暖 → 第二轮问讯 → 范围收窄 → 正常释放 → 饭香/窄门。  \n**压力测试问题：**是否既有法律可信度又仍是小说；小红帮助是否“大得力”但不传奇；宗教是否真实存在却完全不救案。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "92-S1-R2",
+      "description": "用冷茶、鞋泥、等候和问项的间断维持日常压力；宝玉从眼前物与疑问回应，不作条理完备的全案解说。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "9be1439eeb2636b5227f4cb83ec949668fd4f8ca6f5464fae6f3ea13abf37d59",
+          "value": {
+            "id": "92-S1",
+            "title": "认单不是审判"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                31264,
+                31534
+              ],
+              "lines": [
+                780,
+                782
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "af0a58a3a34bbfed6c415bc3ee97a025838f0bad479a929041e0afe1efad5649"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n等候、冷茶、湿鞋泥、粗瓷碗、萝卜、毡、饭钱规则；宝玉先学“不能换碗”；小红先问规则；茜雪只管冷不冷、送袜；最后回窄巷；现有“正是”二句为81—100唯一作者韵化收束。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31534,
+                31700
+              ],
+              "lines": [
+                783,
+                785
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c04613526fd337f964446697d4e207ceaaadf2335cc01f8654cbb2c1d9c081bf"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n“为什么留质—问什么—范围如何变窄—为什么放”需要司法链更清楚；小红“大得力”必须具体而非万能。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32543,
+                32693
+              ],
+              "lines": [
+                805,
+                807
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "691f1024a95d253812f2620688e641beb554b5e454142152b155e0e99a7bd18a"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n本回职业密度最高：狱卒关心班次/规矩，书办关心记录一致，同监关心饭和毡，小红先搞清制度。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33398,
+                33795
+              ],
+              "lines": [
+                826,
+                829
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fb8033734c34167c334c5c15e4ff3e09d2a92e4fc9451811424991f81a7d1565"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n传问等候 → 留质突然发生 → 第一夜规则 → 家中信息断裂 → 小红制度性帮助 → 茜雪旧情保暖 → 第二轮问讯 → 范围收窄 → 正常释放 → 饭香/窄门。  \n**压力测试问题：**是否既有法律可信度又仍是小说；小红帮助是否“大得力”但不传奇；宗教是否真实存在却完全不救案。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "92-S1-F1",
+      "description": "不得把认单等同定罪、拷问、男丁连坐或地牢传奇；不得先造一个全能大反派。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "9be1439eeb2636b5227f4cb83ec949668fd4f8ca6f5464fae6f3ea13abf37d59",
+          "value": {
+            "id": "92-S1",
+            "title": "认单不是审判"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                30851,
+                31264
+              ],
+              "lines": [
+                772,
+                779
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "747f3dded7f17758329dc18f6add30897c7b5175d8bbaafa7a3dc93209b1f75b"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR05\n\n**EVIDENCE-INTERFACES｜**\n- T2/DRAFT-LABEL：`狱神庙慰宝玉`；\n- V5：`茜雪至狱神庙方呈正文`、`红玉茜雪一大回文字`、`红玉后有宝玉大得力处`；\n- **W2已裁：`狱庙相逢` = OPEN-W2 / NO-ACTIVE-INSERTION。92明确不加巧姐/刘姥姥。**/R30/R31/R32；H01/H02；O02开放具体法律接口。必须是真实羁押/待质，不是地牢传奇。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31700,
+                31908
+              ],
+              "lines": [
+                786,
+                788
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e9955259a25cacca5651767990721298088a9e0a8ab597e8a6de8d12f908d41"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n92-S1认单≠定罪；S2第一次留质家里不知多久；S3第一夜规则学习；S4小红办能不能送；S5茜雪办保暖；S6第二轮问讯使范围缩小；正常释放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33000,
+                33107
+              ],
+              "lines": [
+                814,
+                816
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "993cf13ed67f3f2e9aebcca285d5bf370934ee2e4425c9fd83a70b10d548b615"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n酷刑、屈打成招、大反派、权贵搭救、神迹翻案；“男丁连坐”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "92-S1-F2",
+      "description": "不得让贾芸以钱、人情或权贵门路买出立即结案。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "9be1439eeb2636b5227f4cb83ec949668fd4f8ca6f5464fae6f3ea13abf37d59",
+          "value": {
+            "id": "92-S1",
+            "title": "认单不是审判"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                31908,
+                32032
+              ],
+              "lines": [
+                789,
+                791
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "41a30df75a701738f517eb6131617c994db5502e03255ab72a22f17db29ed8de"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n狱卒、书办、同监、小红、茜雪、贾芸。每人各做一件，不组成“营救小队”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32693,
+                32881
+              ],
+              "lines": [
+                808,
+                810
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5142c870dc1c08deab17bed386e12efd04fd25facc0a6f149133cdf67cc9acf7"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：钱只能改善饭、跑腿、送物，不能买结案。物：厚袜、粗饭、毡、包裹。信：家里最初只知“留一留”，信息延迟是痛点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33000,
+                33107
+              ],
+              "lines": [
+                814,
+                816
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "993cf13ed67f3f2e9aebcca285d5bf370934ee2e4425c9fd83a70b10d548b615"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n酷刑、屈打成招、大反派、权贵搭救、神迹翻案；“男丁连坐”。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "independent_edit_and_semantics: DRAFT_GENERATED；本次生成没有独立编辑、正文语义核验或人类/提供方证明。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "participants: 书办、看守与传问执行者未有注册人物ID，记录核对仍是待落实的职业行动。",
+    "implementation_gap: 旧单、签押、等候冷茶与湿鞋泥未有注册对象；O02的具体法律接口、问项和时间长度未决。",
+    "exit_state: character.baoyu.legal_status — 认单与等候本身不等于已留质或定罪；W92的羁押是后续章级事件，不应抢填本场结果。",
+    "exit_state: character.baoyu.knowledge.baoyu_detention_whole_case — 没有此时的知识事件；送物接口注册的全案未知也不能替代认单现场的实际问项。",
+    "knowledge_binding_scope: 事实ID或旧送物场记录不自动授权任何角色知情；种子场的实际获得、传话与未知范围须独立落实。"
+  ],
+  "function": "把91的认单通知接成传问、等候与记录核对；区分认旧单、待质和审判，不先造罪名。",
+  "notes": "按91–95作者包与92-S1源种子拟定。具名参与者是章卡支持的拟写角色，实体引用只证明ID存在；未注册职业人物/道具保留在义务与未决项中，不造ID。第一场KNOWN条件仅描述chapter-1选定运行世界入口，basis为实际基线或此前事件，不是章卡、重建声明或待写正文。其他场局部状态及全部出口保持UNKNOWN。event_refs/object_transition_refs是涉及的当前C章级接口，不是失传正文、历史回次或场级可执行性证明；原三份data/scenes合同及所有种子、章卡、世界与评论数据不变。"
+}

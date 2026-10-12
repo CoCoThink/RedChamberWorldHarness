@@ -1,0 +1,608 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch98.json",
+      "sha256": "67797bb3651577dcb5d62b962736363215518fbbd351c169199de2afa4d308dd"
+    },
+    "seed": {
+      "path": "data/planning/scenes/98-S1.json",
+      "sha256": "4c61d4a6b318afde35931f28daef402c561099ca65e565eb5abef33ad632bfbb"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 98,
+  "chapter_plan_ref": "data/planning/chapters/ch98.json",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 97
+  },
+  "entry_from": "CHAPTER_ENTRY:97",
+  "entry_state": [
+    {
+      "equals": "character.baoyu.location",
+      "value": "S09",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/12/effects/3",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/12/effects/3",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "5769052b614a2d7eaecdd0afe7ffbedb302be922336b9b8abf6b6c2bf6ed2248",
+          "value": {
+            "set": "characters.baoyu.location",
+            "value": "S09"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.zhen_baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "第97回实际运行位置为空，W98访客落点属于本章粗事件；不能预先当作到门入口。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "object.OBJ-ZHEN-PACKAGE-98.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT98-01支持书札包进入S12客座的当前C章级节点，地址桥结束不等于包裹已到桌角。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "98-S1-F1",
+      "description": "不得把甄贾互知地址、现实会面或同一玉写成原稿硬证；不得把标题工作方案充当R节点。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f56db17231ba82af6bbe7cd106b4a8db72b7dfe4cef8591c15090793c0079cce",
+          "value": {
+            "id": "98-S1",
+            "title": "甄家地址与贾家地址如何互相知道"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                45942,
+                46311
+              ],
+              "lines": [
+                1147,
+                1154
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3c16f97ea72a957d33c276aeda1dcb03ec94af1e7c587cfe7f829b67c9b4d312"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR18\n\n**EVIDENCE-INTERFACES｜**\n- T3/EVENT：`甄宝玉送玉`；\n- V1-FRAG：`误窃`来自更早“塞玉”伏线；\n- 当前“通灵玉误带—送还”只是一种C案，标题不得把它伪装成R。“甄宝玉送玉”；O03玉同一性、O07二宝是否现实照面原本开放；当前现实相见与单次误包为C级工作主案。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                48108,
+                48364
+              ],
+              "lines": [
+                1200,
+                1203
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f383384fac7fe9a430194580c3304bb9c2fa3b2a5236d49def3016ecb283abe0"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n拜帖 → 旧书相会 → 异手/《续庄子》迟见 → 回到校书 → 包裹误拿 → 通灵玉归 → 继续抄字/吃饭。  \n**风险：**让C级“亲见”伪装硬证；把98变成通往99的“悟道机关”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "98-S1-F2",
+      "description": "不得追加第二个偶然找门、贵人引荐或甄家送钱来完成会面。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f56db17231ba82af6bbe7cd106b4a8db72b7dfe4cef8591c15090793c0079cce",
+          "value": {
+            "id": "98-S1",
+            "title": "甄家地址与贾家地址如何互相知道"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                47524,
+                47687
+              ],
+              "lines": [
+                1182,
+                1184
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0b7eacce8cb5b040b4ec62560eaa250b1027ed32f4201f172c7a4c608c5e8059"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47791,
+                47910
+              ],
+              "lines": [
+                1188,
+                1190
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7fa837444174c174331919f256df2e09bcf81209fa32d54880a03da7fea9196c"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n第二次巧合；甄贾哲学论战；宝钗专门见证黛玉四句；“原来这是遗言”。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "98-S1",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 1,
+  "participants": [
+    "jia_yun",
+    "zhen_baoyu",
+    "baoyu"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "character.jia_yun.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "贾芸可作旧交中介但登记位置为空，无此次转帖的场级路线。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/10",
+        "ref": "data/world/m3_core.json#/characters/10",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "340eb8abc9247bbb71dbde20970aad2d26ba92195c40678d53b29fcd43b5c3c2",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "kin_runner",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_network",
+            "human"
+          ],
+          "id": "jia_yun",
+          "name": "贾芸"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/23",
+        "ref": "data/world/m3_core.json#/characters/23",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bd7a8e1c9927bff34f49badc580eb381a73e8bb3d90c17a0a82cf47abd1ef299",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "zhen_household_member",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "human"
+          ],
+          "id": "zhen_baoyu",
+          "name": "甄宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/15",
+        "ref": "data/objects/m4.json#/objects/15",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "3d63a2e2b15aaec7dc8d5d325791fd8979839838c6bb514788d01bd0df5c844c",
+        "value": {
+          "baseline": {
+            "holder": null,
+            "location": null,
+            "status": "OFFSTAGE_BEFORE_VISIT"
+          },
+          "continuity_rules": [
+            "作为误包偶然的现实容器；不携带大额资源，不承担真假哲理说明"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-ZHEN-PACKAGE-98",
+          "identity_status": "C_WORLD_OBJECT",
+          "kind": "visitor_package",
+          "name": "甄家来访书札包",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb",
+            "R18"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "98-S1-R1",
+      "description": "由贾芸或旧交中介说明甄家如何得知贫居、贾家如何接到拜帖和回话；双方地址与送帖顺序只补到足够现实，不新开探访冒险。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f56db17231ba82af6bbe7cd106b4a8db72b7dfe4cef8591c15090793c0079cce",
+          "value": {
+            "id": "98-S1",
+            "title": "甄家地址与贾家地址如何互相知道"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                46492,
+                46637
+              ],
+              "lines": [
+                1158,
+                1160
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7edc02b8a86d5a4d449b9336fac5b26ec962ff6c6fe7624896fa99aad05e56cd"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n37-0-C《续庄子》接口需嵌入现有“女子手笔”位置；甄家误拿包裹的物流要只保留一次偶然。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                46832,
+                46947
+              ],
+              "lines": [
+                1164,
+                1166
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "20013126b02c513f7ffc84c5378b45fe416ca508a12e3fcf954ff88d4e6cb60c"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n贾芸/旧交中介、甄宝玉、甄小厮、宝玉、宝钗/麝月、书摊/抄书人远端。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47524,
+                47687
+              ],
+              "lines": [
+                1182,
+                1184
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0b7eacce8cb5b040b4ec62560eaa250b1027ed32f4201f172c7a4c608c5e8059"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                48108,
+                48364
+              ],
+              "lines": [
+                1200,
+                1203
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f383384fac7fe9a430194580c3304bb9c2fa3b2a5236d49def3016ecb283abe0"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n拜帖 → 旧书相会 → 异手/《续庄子》迟见 → 回到校书 → 包裹误拿 → 通灵玉归 → 继续抄字/吃饭。  \n**风险：**让C级“亲见”伪装硬证；把98变成通往99的“悟道机关”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "98-S1-R2",
+      "description": "访客带书札包的来意通向借书校书而非送钱；现实相见、同一玉与误包链的C级身份明示为当前实施要求。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f56db17231ba82af6bbe7cd106b4a8db72b7dfe4cef8591c15090793c0079cce",
+          "value": {
+            "id": "98-S1",
+            "title": "甄家地址与贾家地址如何互相知道"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                45942,
+                46311
+              ],
+              "lines": [
+                1147,
+                1154
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3c16f97ea72a957d33c276aeda1dcb03ec94af1e7c587cfe7f829b67c9b4d312"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR18\n\n**EVIDENCE-INTERFACES｜**\n- T3/EVENT：`甄宝玉送玉`；\n- V1-FRAG：`误窃`来自更早“塞玉”伏线；\n- 当前“通灵玉误带—送还”只是一种C案，标题不得把它伪装成R。“甄宝玉送玉”；O03玉同一性、O07二宝是否现实照面原本开放；当前现实相见与单次误包为C级工作主案。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                46311,
+                46492
+              ],
+              "lines": [
+                1155,
+                1157
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3b5fe6f166c300b2fe7f50d313706c1dcf91a928a28e60a164d5d571b1425794"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n旧钞本、虫蛀缺页、不同手迹、借阅条、米数纸背抄字；甄贾相见不哲学辩论；一包误拿、一次归还；待客仍淡茶简饭。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47524,
+                47687
+              ],
+              "lines": [
+                1182,
+                1184
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0b7eacce8cb5b040b4ec62560eaa250b1027ed32f4201f172c7a4c608c5e8059"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "98-S1-R3",
+      "description": "待客仍先数茶叶、用木桶坐客后装柴；客座接口不改家庭经济尺度，不让访客自动变赞助人。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f56db17231ba82af6bbe7cd106b4a8db72b7dfe4cef8591c15090793c0079cce",
+          "value": {
+            "id": "98-S1",
+            "title": "甄家地址与贾家地址如何互相知道"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                46311,
+                46492
+              ],
+              "lines": [
+                1155,
+                1157
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3b5fe6f166c300b2fe7f50d313706c1dcf91a928a28e60a164d5d571b1425794"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n旧钞本、虫蛀缺页、不同手迹、借阅条、米数纸背抄字；甄贾相见不哲学辩论；一包误拿、一次归还；待客仍淡茶简饭。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47212,
+                47303
+              ],
+              "lines": [
+                1173,
+                1175
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d054d43659beff779dde0d9cf167d072af9be8dd5a29382536935ee6f81bd154"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n麝月“米数纸最忙”“名字不要钱”、红绳叫卖保留。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47687,
+                47791
+              ],
+              "lines": [
+                1185,
+                1187
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d3d5807ac867fb0d457481e9081eba672a9c7f92e8f73d4d491d1a6cd340a534"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n数茶、木桶、米数纸、虫蛀旧书、单一包裹误拿、无钱赠。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [
+    "OBJ-ZHEN-PACKAGE-98"
+  ],
+  "revision": "v1",
+  "schema_version": 1,
+  "status": "DRAFT_GENERATED",
+  "unresolved": [
+    "independent_review: 作者草案尚未独立审读；不是正文、证据或权威。",
+    "declared_sequence_only: 依种子列表声明前驱；历史顺序、局部检查点与既有正文放置未核验。",
+    "address_intermediary: 贾芸或旧交的具体选择、拜帖收送路线及双方地址未定；旧交未注册。",
+    "minor_actors: 甄小厮、递帖人、远端书摊/抄书人未注册。",
+    "visit_scene_mapping: W98与OT98-01无此地址桥的局部时刻映射。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。"
+  ],
+  "function": "建立甄贾地址相互可达的现实中介与拜帖接口；把当前C照面当工作方案，不伪装原本必然相会。",
+  "notes": "本文件为新建v1作者草案，status=DRAFT_GENERATED，authority_effect=NONE，evidence_effect=NONE；未独立审读，不宣称AGENT_EDITED、原稿事实或语义重放通过。entry_from是本草案按SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY显式提出的候选前驱，不是历史顺序证据；后场局部检查点UNKNOWN，不继承前场状态。KNOWN仅可表示实际所选运行输入在chapter-1入口的粗状态，基于世界基线/实际既有事件，不基于种子或章卡自我声明。章卡、seed与grounding只支持待实现叙事义务；章级CURRENT_C/硬终态事件与对象转移不证明已执行本场、原稿具体回次或历史佚文。participants的注册ID表示拟用叙事人物，非确定到场；并置线不等于同场，未注册小人物/外框人物保持unresolved，不增加身份。references.knowledge为空：v03只有86/89/92的事实与知识场景，不能借其填96—100新事实；M3本章信息边界只作为义务依据，不冒充fact登记或知识获取事件。非KNOWN条件value=null并给局部缺口原因；未绑定正文，因此正文支持语义重放仍NOT_CHECKED。"
+}
