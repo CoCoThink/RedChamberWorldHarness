@@ -153,7 +153,9 @@ class ProjectState:
             next_gate = f"CH{active['chapter']}_{next((stage for stage in PIPELINE if progress[stage] != 'PASS'), 'ADJUDICATION')}"
         else:
             next_gate = "COMPETITION_SEQUENCE_REVIEW"
+        from .agent_panel import AgentPanel
         return {
+            "agent_panel": AgentPanel(self.root).summary(),
             "project_id": self.data["id"], "owners": self.data["owners"],
             "status": self.owner("implementation")["status"],
             "capability": capability,

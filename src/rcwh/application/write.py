@@ -8,6 +8,7 @@ from ..assets.paths import repository_path
 from ..generation.records import binding, store
 from ..generation.render import PromptRenderer, request_for
 from ..generation.runner import AnthropicRunner, Budget, DEFAULT_MODEL, ReplayRunner
+from ..generation.session import import_draft, prepare_rendered, selection_context
 from ..generation.writing import diff_report, feedback_report, generate, load_draft, revision_prompt
 from ..io import load_data
 from .common import repo_root
@@ -30,7 +31,10 @@ def is_dry(args) -> bool:
     return args.dry_run or (not args.execute and not args.replay)
 
 
-def preview(rendered: dict, budget: Budget, args) -> dict:
+def preview(rendered: dict, budget: Budget, args, *, root: Path | None = None,
+            context: dict | None = None) -> dict:
+    if root is not None and context is not None:
+        return prepare_rendered(root, rendered, budget, args.model, context)
     request = request_for(rendered, budget, args.model, fallbacks=args.fallbacks)
     from ..candidate_reviews import canonical_bytes, digest
     if len(canonical_bytes(request)) > budget.max_input_bytes:
@@ -45,7 +49,11 @@ def preview(rendered: dict, budget: Budget, args) -> dict:
 def command(args) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     try:
-        if args.write_action == "diff":
+        if args.write_action == "import-draft":
+            payload = import_draft(root, args.text, args.request, session_id=args.session_id,
+                                   session_model_label=args.session_model_label,
+                                   parent_path=args.parent, feedback_path=args.feedback)
+        elif args.write_action == "diff":
             payload = diff_report(root, args.left, args.right)
         elif args.write_action == "draft":
             if not 1 <= args.samples <= 10:
@@ -56,7 +64,10 @@ def command(args) -> int:
                                                  characters=args.characters, plan_path=args.plan,
                                                  previous_path=args.previous)
             if is_dry(args):
-                payload = {**preview(rendered, budget, args), "samples": args.samples}
+                context = selection_context(root, package_path=args.package, chapter=args.chapter,
+                                            route=args.route, characters=args.characters,
+                                            plan_path=args.plan, previous_path=args.previous)
+                payload = {**preview(rendered, budget, args, root=root, context=context), "samples": args.samples}
             else:
                 runner = runner_for(args, root)
                 results = []
@@ -81,7 +92,9 @@ def command(args) -> int:
             rendered = revision_prompt(root, args.candidate, args.feedback, args.notes)
             budget = budget_for(args)
             if is_dry(args):
-                payload = preview(rendered, budget, args)
+                context = selection_context(root, parent_path=args.candidate,
+                                            feedback_path=args.feedback, notes_path=args.notes)
+                payload = preview(rendered, budget, args, root=root, context=context)
             else:
                 payload = generate(root, runner_for(args, root), rendered, budget, chapter=draft["chapter"],
                                    model=args.model, route=draft["route"], parent=binding(root, args.candidate),
@@ -111,6 +124,13 @@ def add_commands(sub) -> None:
     revise.add_argument("candidate", help="Repository-relative immutable draft record")
     revise.add_argument("--feedback", required=True)
     revise.add_argument("--notes", help="Repository-relative editorial notes")
+    imported = commands.add_parser("import-draft", help="Import session-authored research text; no provider execution claimed")
+    imported.add_argument("text", help="Repository-relative UTF-8 prose; exact bytes are retained")
+    imported.add_argument("--request", required=True, help="Repository-relative exact draft/revise dry-run JSON manifest")
+    imported.add_argument("--session-id", required=True, help="Declared session author identity, not a provider request ID")
+    imported.add_argument("--session-model-label", required=True, help="Unverified session-configured model declaration")
+    imported.add_argument("--parent", help="Optional assertion matching prepared revision parent")
+    imported.add_argument("--feedback", help="Optional assertion matching prepared revision feedback")
     diff = commands.add_parser("diff")
     diff.add_argument("left")
     diff.add_argument("right")

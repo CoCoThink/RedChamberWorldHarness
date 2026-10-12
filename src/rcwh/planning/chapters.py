@@ -132,6 +132,7 @@ def parse_chapters(value: str) -> list[int]:
     return sorted(set(chapters))
 
 
-def check_plans(root: Path, chapters=None, *, directory: str | None = None) -> dict:
+def check_plans(root: Path, chapters=None, *, directory: str | None = None,
+                contracts_directory: str | None = None) -> dict:
     from .checking import check_selected
-    return check_selected(root, chapters, directory=directory)
+    return check_selected(root, chapters, directory=directory, contracts_directory=contracts_directory)

@@ -9,6 +9,8 @@ from .application.reviews import add_commands as add_reviews
 from .application.write import add_commands as add_write
 from .application.backtest import add_commands as add_backtest
 from .application.plan import add_commands as add_plan
+from .application.agent_panel import add_commands as add_agent_panel
+from .application.agent_release import add_commands as add_agent_release
 from .application.foundation import add_foundation_commands
 from .application.evidence import add_commands as add_evidence, cmd_validate, cmd_trace, cmd_literal, cmd_mechanism, cmd_open, cmd_regression, cmd_plock
 from .application.evaluation import add_commands as add_evaluation, cmd_evaluate, cmd_semantic, cmd_literary_suite, cmd_literary_evaluate, cmd_historical_adapter, cmd_knowledge
@@ -30,6 +32,8 @@ def main() -> None:
     add_write(sub)
     add_backtest(sub)
     add_plan(sub)
+    add_agent_panel(sub)
+    add_agent_release(sub)
     add_evidence(sub)
     add_evaluation(sub)
     add_planning(sub)

@@ -16,7 +16,8 @@ def cmd_plan(args: argparse.Namespace) -> int:
             payload = import_cards(root, source_path=args.source, output=args.output)
         elif args.plan_command == "check":
             chapters = parse_chapters(args.chapters) if args.chapters else None
-            payload = check_plans(root, chapters, directory=args.directory)
+            payload = check_plans(root, chapters, directory=args.directory,
+                                  contracts_directory=getattr(args, "contracts_directory", None))
         elif args.plan_command == "threads":
             payload = threads_report(root, directory=args.directory)
         else:
@@ -37,6 +38,7 @@ def add_commands(sub) -> None:
     p = commands.add_parser("check")
     p.add_argument("--chapters", help="positive chapter range/list, e.g. 85-87,89")
     p.add_argument("--directory", help="repository-relative chapter plan directory")
+    p.add_argument("--contracts-directory", help="explicit versioned agent overlay selection under data/planning/contracts")
     p = commands.add_parser("threads")
     p.add_argument("--directory")
     p = commands.add_parser("compare-books")

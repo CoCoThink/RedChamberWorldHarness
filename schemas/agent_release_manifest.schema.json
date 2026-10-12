@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research Agent Release Manifest",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "manifest_kind", "id", "status", "provenance", "authority_effect", "usage", "independent_human_admission", "stable_active_effect", "automatic_winner", "baseline", "request_sha256", "scope", "changed_chapters", "chapters", "gates", "findings", "pending", "output"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "manifest_kind": {"const": "AGENT_RELEASE_MANIFEST"},
+    "id": {"$ref": "#/$defs/release_id"},
+    "status": {"$ref": "#/$defs/status"},
+    "provenance": {"enum": ["RESEARCH_AGENT_REVIEWED", "RESEARCH_AGENT_PENDING", "RESEARCH_AGENT_FAILED"]},
+    "authority_effect": {"const": "NONE"},
+    "usage": {"const": "RESEARCH_ONLY"},
+    "independent_human_admission": {"const": false},
+    "stable_active_effect": {"const": "NONE"},
+    "automatic_winner": {"const": false},
+    "baseline": {"type": "object", "additionalProperties": false, "required": ["asset_ref", "sha256", "path", "bytes"], "properties": {"asset_ref": {"type": "string", "pattern": "^asset:"}, "sha256": {"$ref": "#/$defs/sha256"}, "path": {"type": "string"}, "bytes": {"type": "integer", "minimum": 1}}},
+    "request_sha256": {"$ref": "#/$defs/sha256"},
+    "scope": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1}},
+    "changed_chapters": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1}},
+    "chapters": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/chapter_report"}},
+    "gates": {"$ref": "#/$defs/gates"},
+    "findings": {"type": "array", "items": {"type": "string"}},
+    "pending": {"type": "array", "items": {"type": "string"}},
+    "output": {"type": "object", "additionalProperties": false, "required": ["directory", "manifest_path", "text"], "properties": {"directory": {"type": "string", "pattern": "^releases/agent/[a-z0-9][a-z0-9._-]*$"}, "manifest_path": {"type": "string", "pattern": "^releases/agent/"}, "text": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/byte_binding"}]}}}
+  },
+  "allOf": [
+    {"if": {"properties": {"status": {"const": "PASS"}}}, "then": {"properties": {"provenance": {"const": "RESEARCH_AGENT_REVIEWED"}, "output": {"properties": {"text": {"$ref": "#/$defs/byte_binding"}}}, "gates": {"additionalProperties": {"const": "PASS"}}, "findings": {"maxItems": 0}, "pending": {"maxItems": 0}}}},
+    {"if": {"properties": {"status": {"const": "PENDING"}}}, "then": {"properties": {"provenance": {"const": "RESEARCH_AGENT_PENDING"}, "output": {"properties": {"text": {"type": "null"}}}}}},
+    {"if": {"properties": {"status": {"const": "FAIL"}}}, "then": {"properties": {"provenance": {"const": "RESEARCH_AGENT_FAILED"}, "output": {"properties": {"text": {"type": "null"}}}}}}
+  ],
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "release_id": {"type": "string", "pattern": "^[a-z0-9][a-z0-9._-]{0,79}$"},
+    "label": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "status": {"enum": ["PASS", "FAIL", "PENDING"]},
+    "binding": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"$ref": "#/$defs/label"}, "sha256": {"$ref": "#/$defs/sha256"}}},
+    "byte_binding": {"type": "object", "additionalProperties": false, "required": ["path", "sha256", "bytes"], "properties": {"path": {"type": "string", "pattern": "^releases/agent/"}, "sha256": {"$ref": "#/$defs/sha256"}, "bytes": {"type": "integer", "minimum": 1}}},
+    "panel_ref": {"type": "object", "additionalProperties": false, "required": ["packet", "subject_id"], "properties": {"packet": {"$ref": "#/$defs/binding"}, "subject_id": {"$ref": "#/$defs/label"}}},
+    "gates": {"type": "object", "additionalProperties": {"$ref": "#/$defs/status"}},
+    "request": {
+      "type": "object", "additionalProperties": false, "required": ["schema_version", "id", "baseline", "chapters"],
+      "properties": {
+        "schema_version": {"const": 1}, "id": {"$ref": "#/$defs/release_id"},
+        "baseline": {"type": "object", "additionalProperties": false, "required": ["asset_ref", "sha256"], "properties": {"asset_ref": {"type": "string", "pattern": "^asset:"}, "sha256": {"$ref": "#/$defs/sha256"}}},
+        "chapters": {"type": "array", "minItems": 1, "items": {"oneOf": [
+          {"type": "object", "additionalProperties": false, "required": ["chapter", "mode"], "properties": {"chapter": {"type": "integer", "minimum": 1}, "mode": {"const": "NOT_NEW_AUTHORED"}}},
+          {"type": "object", "additionalProperties": false, "required": ["chapter", "mode", "candidate", "plock_ref", "minimum_body_characters", "minimum_baseline_ratio", "panel"], "properties": {
+            "chapter": {"type": "integer", "minimum": 1}, "mode": {"const": "AGENT_CANDIDATE"}, "candidate": {"$ref": "#/$defs/binding"}, "plock_ref": {"$ref": "#/$defs/label"},
+            "minimum_body_characters": {"type": "integer", "minimum": 1}, "minimum_baseline_ratio": {"type": "number", "minimum": 0.8, "maximum": 2},
+            "panel": {"$ref": "#/$defs/panel_ref"}, "policy": {"$ref": "#/$defs/binding"}, "decision": {"$ref": "#/$defs/binding"}, "writing_package": {"$ref": "#/$defs/binding"}, "draft": {"$ref": "#/$defs/binding"},
+            "source_reviews": {"type": "array", "items": {"$ref": "#/$defs/panel_ref"}}, "corpus_reviews": {"type": "array", "items": {"$ref": "#/$defs/panel_ref"}}
+          }}
+        ]}}
+      }
+    },
+    "decision": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "decision_kind", "chapter", "candidate", "outcome", "coordinator_session_id", "rationale", "considered_opinions", "rejected_opinions", "authority_effect"],
+      "properties": {
+        "schema_version": {"const": 1}, "decision_kind": {"const": "AGENT_RELEASE_COORDINATOR_DECISION"}, "chapter": {"type": "integer", "minimum": 1}, "candidate": {"$ref": "#/$defs/binding"},
+        "outcome": {"enum": ["ADOPT", "REJECT", "PENDING", "TIE", "NEUTRAL"]}, "coordinator_session_id": {"$ref": "#/$defs/label"}, "rationale": {"$ref": "#/$defs/label"},
+        "considered_opinions": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/binding"}},
+        "rejected_opinions": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["record", "rationale"], "properties": {"record": {"$ref": "#/$defs/binding"}, "rationale": {"$ref": "#/$defs/label"}}}},
+        "authority_effect": {"const": "NONE"}
+      }
+    },
+    "integrity": {"type": "object", "additionalProperties": false, "required": ["sha256", "bytes", "characters", "body_characters", "heading"], "properties": {"sha256": {"$ref": "#/$defs/sha256"}, "bytes": {"type": "integer", "minimum": 1}, "characters": {"type": "integer", "minimum": 1}, "body_characters": {"type": "integer", "minimum": 1}, "heading": {"$ref": "#/$defs/label"}}},
+    "chapter_report": {"type": "object", "additionalProperties": false, "required": ["chapter", "provenance", "status", "baseline", "integrity", "gates", "findings", "pending", "bindings", "reviews", "minimum_body_characters"], "properties": {
+      "chapter": {"type": "integer", "minimum": 1}, "provenance": {"enum": ["NOT_NEW_AUTHORED", "RESEARCH_AGENT_REVIEWED", "RESEARCH_AGENT_PENDING", "RESEARCH_AGENT_FAILED"]}, "status": {"$ref": "#/$defs/status"},
+      "baseline": {"$ref": "#/$defs/integrity"}, "integrity": {"$ref": "#/$defs/integrity"}, "gates": {"$ref": "#/$defs/gates"}, "findings": {"type": "array", "items": {"type": "string"}}, "pending": {"type": "array", "items": {"type": "string"}},
+      "bindings": {"type": "object"}, "reviews": {"type": "object"}, "minimum_body_characters": {"type": "integer", "minimum": 0}
+    }}
+  }
+}

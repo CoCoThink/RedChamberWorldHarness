@@ -86,11 +86,19 @@ def validate_required_documents(root: Path) -> list[str]:
         ("data/backtest/*/world.json", "backtest_world"),
         ("data/writing/drafts/ch*/*.json", "draft_registry"),
         ("data/writing/feedback/*.json", "writing_feedback"),
+        ("data/agent_panel/records/*.json", "agent_review"),
+        ("data/planning/contracts/*/*.json", "agent_scene_contract"),
+        ("data/promotion/policies/*.json", "promotion_policy"),
     )
     for pattern, schema in research_patterns:
         for path in sorted(root.glob(pattern)):
             errors.extend(validate_required_document(root, path.relative_to(root).as_posix(),
                                                      f"{schema}.schema.json"))
+    if (root / "data/agent_panel").exists():
+        from .workflow.agent_panel import AgentPanel
+        panel = AgentPanel(root).summary()
+        if panel["record_integrity_status"] != "PASS":
+            errors.extend(f"agent record integrity: {item}" for item in panel["findings"])
     try:
         project = ProjectState.from_repo(root)
         for owner, schema in (("capability", "capability_selection"), ("literary", "literary_resume_state"), ("plan_constraints", "plan_constraints")):

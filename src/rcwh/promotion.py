@@ -13,6 +13,27 @@ from .regression import run_r4_evidence_regression
 from .contracts import project_chapters, coverage_errors
 from .assets import AssetCatalog
 from .assets.catalog import repository_path
+from .schema import validate_instance
+
+
+def load_promotion_policy(root: Path, chapter: int) -> dict[str, Any] | None:
+    """Only a schema-valid, declared chapter policy can supply safety checks."""
+    path = repository_path(root, f"data/promotion/policies/ch{chapter}.json")
+    if not path.is_file():
+        return None
+    policy = load_data(path)
+    errors = validate_instance(policy, root / "schemas/promotion_policy.schema.json")
+    if errors or policy["chapter"] != chapter:
+        raise ValueError("invalid promotion policy: " + "; ".join(errors or ["chapter mismatch"]))
+    return policy
+
+
+def policy_supported(policy: dict[str, Any] | None, chapter: int, changed: set[int], plock_ref: str) -> bool:
+    return bool(policy and policy["status"] == "SUPPORTED"
+                and policy["evaluator"] == "LITERARY_PLOCK_V1"
+                and policy["chapter"] == chapter
+                and set(policy["preconditions"]["allowed_changed_chapters"]) == changed
+                and policy["preconditions"]["plock_ref"] == plock_ref)
 
 
 HEADING_RE = re.compile(r"(?m)^# 第[^\n]+回[^\n]*$")
@@ -155,37 +176,22 @@ class PromotionRegistry:
         if not target_matches:
             findings.append("embedded target chapter does not match adjudicated winner candidate")
 
-        hard_strings = [
-            "# 第九十回　薛宝钗借词含讽谏　王熙凤知命强英雄",
-            "落叶萧萧，寒烟漠漠",
-            "好歹留着麝月",
-            "悬崖撒手",
-            "情情",
-            "情不情",
-            "正层",
-            "副层",
-            "再副层",
-            "三副",
-            "四副",
-            "十独吟",
-        ]
-        r4f_ok = all(x in text for x in hard_strings) and "警幻情榜" not in text
-        gates["R4F_HARD_INTERFACES"] = "PASS" if r4f_ok else "FAIL"
-        if not r4f_ok:
+        try:
+            policy = load_promotion_policy(root, comp["chapter"]) if comp else None
+        except (OSError, ValueError) as exc:
+            policy = None
+            findings.append(str(exc))
+        supported_policy = bool(comp and policy_supported(policy, comp["chapter"], allowed, comp["plock_ref"]))
+        r4f_ok = bool(policy) and all(x in text for x in policy["required_book_strings"]) and not any(
+            x in text for x in policy["forbidden_book_strings"])
+        gates["R4F_HARD_INTERFACES"] = "PENDING" if not supported_policy else "PASS" if r4f_ok else "FAIL"
+        if supported_policy and not r4f_ok:
             findings.append("R4-F hard-interface sentinel mismatch")
-
-        supported_policy = bool(comp and comp["chapter"] == 86 and allowed == {86}
-                                and comp["plock_ref"] == "plock:ch86:cold-medicine")
         plock_payload = evaluate_literary_candidate(
             root, comp["plock_ref"], chapters.get(comp["chapter"], "") if chapters else "",
             candidate_name=record["winner_candidate_id"],
         ) if supported_policy else None
-        other_plock_anchors = [
-            "谁家的水桶还在井边？",
-            "从前也有数。",
-            "谁同你说我件件想得明白？",
-            "石在，字在。",
-        ]
+        other_plock_anchors = policy["carry_over_anchors"] if policy else []
         plock_ok = (
             plock_payload is not None and plock_payload["machine_status"] == "READY_FOR_BLIND_READ"
             and all(x in text for x in other_plock_anchors)

@@ -221,7 +221,9 @@ class ChapterAdmission:
             findings.append("WRITING_PACKAGE_SELECTED_PLAN_MISSING")
         findings.extend(WorldRuntime.from_repo(self.root).validate_integrity(
             self.catalog, ReconstructionRegistry.from_repo(self.root)))
+        from .agent_panel import AgentPanel
         return {"status": "FAIL" if findings else "PENDING" if blockers else "PASS",
+                "agent_panel": AgentPanel(self.root).summary(),
                 "scope": "CHAPTER_PRODUCTION_INPUT_ADMISSION", "chapter": chapter,
                 "input_scope": scope, "used_source_ids": scope["used_source_ids"],
                 "writing_inputs": inputs,

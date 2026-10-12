@@ -9,10 +9,18 @@ from .chapters import ChapterPlans
 from .references import BOUNDARY, verify_citation, verify_record
 
 
-def check_selected(root: Path, chapters=None, *, directory=None) -> dict:
+def check_selected(root: Path, chapters=None, *, directory=None, contracts_directory=None) -> dict:
     checks, scenes, plans = [], [], []
+    contract_reports, effective_scenes, used_seeds, overlay_refs = [], {}, set(), {}
+    overlays = None
     def add(status, code, ref, detail):
         checks.append({"status": status, "code": code, "ref": ref, "detail": detail})
+    if contracts_directory is not None:
+        from .contracts import AgentContracts
+        try:
+            overlays = AgentContracts(root, contracts_directory)
+        except (OSError, ValueError, KeyError, TypeError) as exc:
+            add("FAIL", "CONTRACT_SELECTION_INVALID", contracts_directory, str(exc))
     runtime = ChapterPlans(root, directory)
     try:
         selected = list(chapters) if chapters is not None else [x["chapter"] for x in runtime.selected()]
@@ -56,15 +64,31 @@ def check_selected(root: Path, chapters=None, *, directory=None) -> dict:
                 if scene.get("source_record"):
                     for error in verify_record(root, scene["source_record"]):
                         add("FAIL", error, item["ref"], "scene source changed")
+                overlay_ref = None
+                if overlays is not None:
+                    selected_overlay = overlays.get(item["ref"])
+                    if selected_overlay is None:
+                        add("PENDING", "AGENT_CONTRACT_MISSING", item["ref"], "no explicit selected overlay; skeleton not promoted")
+                    else:
+                        from .contracts import inspect_contract
+                        overlay_ref, scene = selected_overlay
+                        used_seeds.add(item["ref"])
+                        overlay_refs[item["ref"]] = overlay_ref
+                        report = inspect_contract(root, scene, overlay_ref, seed_ref=item["ref"], plan_ref=ref)
+                        contract_reports.append(report)
+                        for tier in ("declared_compatibility", "deterministic_world_state_replay", "prose_supported_semantic_replay"):
+                            for finding in report[tier]["checks"]:
+                                add(**finding)
+                effective_scenes[item["ref"]] = scene
                 expected = previous[0]["ref"] if previous else plan["entry_ref"]
                 actual = scene.get("entry_from")
-                if not actual or not expected:
+                if not actual or actual == "UNKNOWN" or not expected:
                     add("PENDING", "SCENE_CHAIN_UNDECLARED", item["ref"], "no explicit predecessor binding")
-                elif actual not in {expected, previous[1]["id"] if previous else expected}:
+                elif actual not in {expected, previous[1]["id"] if previous else expected, overlay_refs.get(expected, expected)}:
                     add("FAIL", "SCENE_CHAIN_MISMATCH", item["ref"], f"expected {expected}, declared {actual}")
                 else:
                     add("PASS", "SCENE_CHAIN_DECLARED", item["ref"], "declaration consistency only")
-                if scene.get("entry_from"):
+                if scene.get("entry_from") and not overlay_ref:
                     for error in validate_instance(scene, root / "schemas/scene_contract.schema.json"):
                         add("FAIL", "INVALID_SCENE_STRUCTURE", item["ref"], error)
                 if previous:
@@ -93,29 +117,52 @@ def check_selected(root: Path, chapters=None, *, directory=None) -> dict:
             add("PASS", "CHAPTER_BOUNDARY_DECLARED", f"ch{chapter}", "matching declaration; not semantic replay")
             if prior["scenes"] and plan["scenes"]:
                 try:
-                    exit_scene = load_data(repository_path(root, prior["scenes"][-1]["ref"]))
-                    entry_scene = load_data(repository_path(root, plan["scenes"][0]["ref"]))
+                    exit_ref = prior["scenes"][-1]["ref"]
+                    entry_ref = plan["scenes"][0]["ref"]
+                    exit_scene = effective_scenes.get(exit_ref) or load_data(repository_path(root, exit_ref))
+                    entry_scene = effective_scenes.get(entry_ref) or load_data(repository_path(root, entry_ref))
                     _state_link(exit_scene, entry_scene, f"ch{chapter}", add)
                 except (OSError, ValueError, KeyError, TypeError) as exc:
                     add("FAIL", "CHAPTER_STATE_LINK_INVALID", f"ch{chapter}", str(exc))
     ids = [scene.get("id") for _, scene in scenes]
     if len(ids) != len(set(ids)):
         add("FAIL", "DUPLICATE_SCENE_ID", "scenes", "scene ids must be unique")
+    if overlays is not None:
+        for seed_ref, (overlay_ref, contract) in overlays.by_seed.items():
+            if contract["chapter"] in selected and seed_ref not in used_seeds:
+                add("FAIL", "CONTRACT_SEED_NOT_SELECTED", overlay_ref, seed_ref)
     _direct_checks(root, selected, scenes, add)
     checks.sort(key=lambda row: (row["ref"], row["code"], row["detail"]))
     statuses = {x["status"] for x in checks}
-    return {**BOUNDARY, "kind": "PLANNING_DECLARATION_CONSISTENCY", "status": "FAIL" if "FAIL" in statuses else "PENDING" if "PENDING" in statuses else "PASS",
-            "chapters": selected, "checks": checks, "semantic_verified_replay": "NOT_CHECKED", "automatic_repair": False}
+    result = {**BOUNDARY, "kind": "PLANNING_DECLARATION_CONSISTENCY", "status": "FAIL" if "FAIL" in statuses else "PENDING" if statuses & {"PENDING", "NOT_CHECKED"} else "PASS",
+              "chapters": selected, "checks": checks, "semantic_verified_replay": "NOT_CHECKED", "automatic_repair": False}
+    if contracts_directory is not None:
+        from .contracts import _status
+        replay_checks = [finding for report in contract_reports for finding in report["deterministic_world_state_replay"]["checks"]]
+        other_tiers = {(finding["code"], finding["ref"], finding["detail"])
+                       for report in contract_reports for tier in ("deterministic_world_state_replay", "prose_supported_semantic_replay")
+                       for finding in report[tier]["checks"]}
+        declared_checks = [finding for finding in checks if (finding["code"], finding["ref"], finding["detail"]) not in other_tiers]
+        result.update({"contracts_directory": contracts_directory, "agent_contracts": contract_reports,
+                       "declared_compatibility": {"status": _status(declared_checks), "scope": "DECLARATION_CONSISTENCY_ONLY"},
+                       "deterministic_world_state_replay": {"status": _status(replay_checks), "scope": "SELECTED_OVERLAYS_ONLY_NOT_WHOLE_PLAN"},
+                       "prose_supported_semantic_replay": {"status": "NOT_CHECKED"}})
+    return result
 
 
 def _state_link(previous, current, ref, add):
+    agent = any(scene.get("kind") == "AGENT_SCENE_CONTRACT" for scene in (previous, current))
     def states(rows):
         values = {}
         for row in rows or []:
             target = canonical_target(row["equals"])
             if target in values:
                 raise ValueError(f"duplicate state target {target}")
-            values[target] = normalized(row["value"])
+            value = row["value"]
+            if agent and (row.get("status", "KNOWN") != "KNOWN" or value is None or isinstance(value, str) and value.upper() in {"UNKNOWN", "PENDING", "UNSPECIFIED"}):
+                add("PENDING", "EXIT_ENTRY_STATE_UNKNOWN", ref, target)
+                continue
+            values[target] = normalized(value)
         return values
     exit_values = states(previous.get("exit_state"))
     entry_values = states((current.get("entry_state") or []) + (current.get("preconditions") or [])) if not current.get("entry_state") else states(current["entry_state"])
@@ -135,6 +182,8 @@ def _direct_checks(root, selected, scenes, add):
             projector = SceneStateProjector(root)
             scope = load_data(root / "data/project/scope.json")["chapters"]
             for ref, scene in scenes:
+                if scene.get("kind") == "AGENT_SCENE_CONTRACT":
+                    continue  # Dedicated overlay inspection excludes self-injected entry declarations.
                 if scene.get("kind") == "SCENE_SKELETON":
                     add("PENDING", "SCENE_STATE_UNRESOLVED", ref, "draft skeleton is not a complete contract")
                 elif scene["chapter"] in scope:
@@ -173,7 +222,7 @@ def _direct_checks(root, selected, scenes, add):
         for source_scene in knowledge_scenes:
             if source_scene["chapter"] not in selected:
                 continue
-            if not any(scene.get("id") == source_scene["id"] for _, scene in scenes):
+            if not any(scene.get("id") == source_scene["id"] or (scene.get("knowledge_binding") or {}).get("scene_id") == source_scene["id"] for _, scene in scenes):
                 add("PENDING", "KNOWLEDGE_SCENE_UNCOVERED", source_scene["id"], "knowledge acquisitions have no direct selected scene")
             for event in source_scene.get("events", []):
                 if not any(event["id"] in scene.get("knowledge_event_refs", []) for _, scene in scenes):

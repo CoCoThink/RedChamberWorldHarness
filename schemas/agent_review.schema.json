@@ -1,0 +1,74 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Research Agent Review",
+  "description": "Local model opinions, not independent-human qualification or admission evidence. Model labels and context isolation are declarations, not verification.",
+  "oneOf": [{"$ref": "#/$defs/opinion"}, {"$ref": "#/$defs/record"}],
+  "$defs": {
+    "label": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "binding": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      }
+    },
+    "verdict": {"enum": ["PASS", "FAIL", "REJECT", "PENDING", "UNVERIFIED", "NOT_CHECKED"]},
+    "reviewer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["id", "kind", "session_id", "model", "context_isolation"],
+      "properties": {
+        "id": {"$ref": "#/$defs/label"},
+        "kind": {"const": "MODEL_SUBAGENT"},
+        "session_id": {"$ref": "#/$defs/label"},
+        "model": {
+          "type": "object", "additionalProperties": false, "required": ["label", "verification"],
+          "properties": {"label": {"$ref": "#/$defs/label"}, "verification": {"const": "DECLARED_NOT_VERIFIED"}}
+        },
+        "context_isolation": {
+          "type": "object", "additionalProperties": false, "required": ["asserted", "verification"],
+          "properties": {"asserted": {"type": "boolean"}, "verification": {"const": "NOT_PROVEN"}}
+        }
+      }
+    },
+    "sample_check": {
+      "type": "object", "additionalProperties": false, "required": ["sample_id", "sha256", "verdict", "notes"],
+      "properties": {
+        "sample_id": {"$ref": "#/$defs/label"},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "verdict": {"$ref": "#/$defs/verdict"}, "notes": {"$ref": "#/$defs/label"}
+      }
+    },
+    "result": {
+      "type": "object", "additionalProperties": false, "required": ["subject_id", "subject_sha256", "verdict", "notes", "sample_checks"],
+      "properties": {
+        "subject_id": {"$ref": "#/$defs/label"},
+        "subject_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+        "verdict": {"$ref": "#/$defs/verdict"}, "notes": {"$ref": "#/$defs/label"},
+        "sample_checks": {"type": "array", "items": {"$ref": "#/$defs/sample_check"}}
+      }
+    },
+    "opinion": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "report_kind", "packet", "reviewer", "results", "authority_effect", "usage", "independent_human_admission"],
+      "properties": {
+        "schema_version": {"const": 1}, "report_kind": {"const": "AGENT_REVIEW_OPINION"},
+        "packet": {"$ref": "#/$defs/binding"}, "reviewer": {"$ref": "#/$defs/reviewer"},
+        "results": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/result"}},
+        "authority_effect": {"const": "NONE"}, "usage": {"const": "RESEARCH_ONLY"},
+        "independent_human_admission": {"const": false}
+      }
+    },
+    "record": {
+      "type": "object", "additionalProperties": false,
+      "required": ["schema_version", "record_kind", "origin_kind", "origin", "packet", "raw_output", "opinion", "authority_effect", "usage", "independent_human_admission"],
+      "properties": {
+        "schema_version": {"const": 1}, "record_kind": {"const": "REGISTERED_AGENT_REVIEW"},
+        "origin_kind": {"const": "FILE"}, "origin": {"$ref": "#/$defs/label"},
+        "packet": {"$ref": "#/$defs/binding"}, "raw_output": {"$ref": "#/$defs/binding"},
+        "opinion": {"$ref": "#/$defs/opinion"},
+        "authority_effect": {"const": "NONE"}, "usage": {"const": "RESEARCH_ONLY"},
+        "independent_human_admission": {"const": false}
+      }
+    }
+  }
+}

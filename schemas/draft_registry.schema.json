@@ -10,7 +10,6 @@
     "chapter",
     "route",
     "run",
-    "raw_run",
     "authors",
     "template",
     "task",
@@ -95,6 +94,12 @@
       },
       "additionalProperties": false
     },
+    "execution_basis": {"enum": ["PROVIDER_RUN", "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED"]},
+    "prepared_request": {"$ref": "#/$defs/binding"},
+    "package": {"$ref": "#/$defs/binding"},
+    "qualification": {"const": "RESEARCH_ONLY"},
+    "formal_eligibility": {"const": false},
+    "human_qualification": {"const": false},
     "raw_run": {
       "type": "object",
       "required": [
@@ -202,6 +207,24 @@
           "type": "null"
         }
       ]
+    }
+  },
+  "allOf": [{
+    "if": {"required": ["execution_basis"], "properties": {"execution_basis": {"const": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED"}}},
+    "then": {
+      "required": ["prepared_request", "package", "qualification", "formal_eligibility", "human_qualification"],
+      "not": {"required": ["raw_run"]}
+    },
+    "else": {
+      "required": ["raw_run"],
+      "not": {"anyOf": [{"required": ["prepared_request"]}, {"required": ["package"]}]}
+    }
+  }],
+  "$defs": {
+    "binding": {
+      "type": "object", "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}},
+      "additionalProperties": false
     }
   },
   "additionalProperties": false

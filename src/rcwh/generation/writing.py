@@ -29,6 +29,10 @@ def load_draft(root: Path, relative: str) -> tuple[dict, str]:
     if errors:
         raise ValueError("invalid draft record: " + "; ".join(errors))
     raw = bound_bytes(root, draft["candidate"])
+    from .session import EXECUTION_BASIS, verify_session_draft
+    if draft.get("execution_basis") == EXECUTION_BASIS:
+        verify_session_draft(root, draft, raw)
+        return draft, raw.decode("utf-8")
     run = json.loads(bound_bytes(root, draft["run"]))
     verify_raw_run(root, run, raw)
     trace = json.loads(bound_bytes(root, draft["raw_run"]))

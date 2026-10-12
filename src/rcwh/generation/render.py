@@ -50,6 +50,10 @@ class PromptRenderer:
             if data["chapter_plan"]["chapter"] != chapter:
                 raise ValueError("chapter plan chapter mismatch")
             paths.add(selected_plan)
+        # Agent overlays are advisory planning inputs, never silently substituted
+        # for legacy executable scene contracts or independent semantic readings.
+        data["agent_contracts"] = [value for value in data["plan"].values()
+                                   if value.get("kind") == "AGENT_SCENE_CONTRACT"]
         scene_paths = []
         for path in sorted((self.root / "data/scenes").glob("*")):
             if path.suffix not in {".json", ".yaml", ".yml"}:

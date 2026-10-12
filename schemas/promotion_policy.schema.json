@@ -1,0 +1,25 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Chapter Promotion Policy",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "chapter", "status", "evaluator", "preconditions", "required_book_strings", "forbidden_book_strings", "carry_over_anchors"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "pattern": "^promotion-policy:"},
+    "chapter": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["SUPPORTED", "UNKNOWN"]},
+    "evaluator": {"type": "string", "minLength": 1},
+    "preconditions": {
+      "type": "object", "additionalProperties": false,
+      "required": ["allowed_changed_chapters", "plock_ref"],
+      "properties": {
+        "allowed_changed_chapters": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1}},
+        "plock_ref": {"type": "string", "minLength": 1}
+      }
+    },
+    "required_book_strings": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "forbidden_book_strings": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "carry_over_anchors": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}}
+  }
+}

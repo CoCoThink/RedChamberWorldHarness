@@ -1,0 +1,229 @@
+"""Offline session-authored imports, not provider execution attestations.
+
+A prepared request is the exact draft/revise dry-run packet. Imports verify it
+against a fresh renderer and retain its original bytes; model labels describe
+session configuration only, never a served model or measured usage.
+"""
+from __future__ import annotations
+
+from copy import deepcopy
+import json
+from pathlib import Path
+
+from ..assets.paths import repository_path
+from ..candidate_reviews import canonical_bytes, digest
+from ..io import load_data
+from ..schema import validate_instance
+from .records import append_bytes, binding, bound_bytes
+from .render import PromptRenderer, request_for
+from .runner import Budget, DEFAULT_MODEL
+
+EXECUTION_BASIS = "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED"
+BUDGET_LIMITATION = "Prepared request ceilings only; session token usage and provider billing are not measured."
+
+
+def _schema(root: Path) -> dict:
+    return load_data(root / "schemas/session_author_run.schema.json")
+
+
+def _validate(root: Path, value: dict, *, prepared: bool = False) -> None:
+    schema = _schema(root)
+    if prepared:
+        schema = {"$schema": schema["$schema"], "$defs": schema["$defs"], "$ref": "#/$defs/prepared"}
+    errors = validate_instance(value, schema)
+    if errors:
+        raise ValueError("invalid session " + ("prepared request" if prepared else "author run") + ": " + "; ".join(errors))
+
+
+def _writing_task(task: dict) -> dict:
+    while "writing_task" in task:
+        task = task["writing_task"]
+    return task
+
+
+def _parent_package(root: Path, draft: dict) -> dict:
+    if draft.get("execution_basis") == EXECUTION_BASIS:
+        return deepcopy(draft["package"])
+    package = _writing_task(draft["task"])["package"]
+    matches = [ref for ref in draft["inputs"]
+               if Path(ref["path"]).suffix in {".json", ".yaml", ".yml"}
+               and load_data(repository_path(root, ref["path"])) == package]
+    if len(matches) != 1:
+        raise ValueError("revision parent must bind exactly one writing package")
+    return deepcopy(matches[0])
+
+
+def prepare_rendered(root: Path, rendered: dict, budget: Budget, model: str, context: dict) -> dict:
+    """Attach reproducible selection context to an already rendered CLI preview."""
+    request = request_for(rendered, budget, model)
+    if len(canonical_bytes(request)) > budget.max_input_bytes:
+        raise ValueError("request exceeds input byte budget; no truncation performed")
+    parent = binding(root, context["parent_path"]) if context["parent_path"] else None
+    feedback = binding(root, context["feedback_path"]) if context["feedback_path"] else None
+    return {"schema_version": 1, "kind": "WRITING_PREPARED_REQUEST", "status": "PASS", "mode": "DRY_RUN",
+            "context": deepcopy(context), "chapter": context["chapter"], "route": context["route"],
+            "package": binding(root, context["package_path"]), "parent": parent, "feedback": feedback,
+            "task": deepcopy(rendered["task"]), "prompt_sha256": rendered["prompt_sha256"],
+            "request_sha256": digest(canonical_bytes(request)), "request": request,
+            "template": deepcopy(rendered["template"]), "inputs": deepcopy(rendered["inputs"]),
+            "budget": budget.to_dict(), "budget_limitation": BUDGET_LIMITATION,
+            "qualification": "RESEARCH_ONLY", "formal_eligibility": False, "human_qualification": False,
+            "authority_effect": "NONE"}
+
+
+def selection_context(root: Path, *, package_path: str | None = None, chapter: int | None = None,
+                      route: str = "harness", characters: int = 6000, plan_path: str | None = None,
+                      previous_path: str | None = None, parent_path: str | None = None,
+                      feedback_path: str | None = None, notes_path: str | None = None) -> dict:
+    if parent_path:
+        from .writing import load_draft
+        if not feedback_path or package_path or chapter is not None or plan_path or previous_path:
+            raise ValueError("revision preparation requires parent and feedback, not draft selections")
+        draft, _ = load_draft(root, parent_path)
+        package_path = _parent_package(root, draft)["path"]
+        chapter, route = draft["chapter"], draft["route"]
+        characters = None
+    elif not package_path or chapter is None or feedback_path or notes_path:
+        raise ValueError("draft preparation requires package and chapter, without revision selections")
+    return {"operation": "revise" if parent_path else "draft", "package_path": package_path,
+            "chapter": chapter, "route": route, "characters": characters,
+            "plan_path": plan_path, "previous_path": previous_path,
+            "parent_path": parent_path, "feedback_path": feedback_path, "notes_path": notes_path}
+
+
+def _render_context(root: Path, context: dict) -> dict:
+    if context["operation"] == "draft":
+        return PromptRenderer(root).draft(context["package_path"], context["chapter"], route=context["route"],
+                                          characters=context["characters"], plan_path=context["plan_path"],
+                                          previous_path=context["previous_path"])
+    from .writing import revision_prompt
+    return revision_prompt(root, context["parent_path"], context["feedback_path"], context["notes_path"])
+
+
+def prepare_request(root: Path, *, package_path: str | None = None, chapter: int | None = None,
+                    route: str = "harness", characters: int = 6000, plan_path: str | None = None,
+                    previous_path: str | None = None, parent_path: str | None = None,
+                    feedback_path: str | None = None, notes_path: str | None = None,
+                    budget: Budget | None = None, model: str = DEFAULT_MODEL) -> dict:
+    """Prepare a draft (package/chapter) or revision (parent/feedback) offline."""
+    context = selection_context(root, package_path=package_path, chapter=chapter, route=route,
+                                characters=characters, plan_path=plan_path, previous_path=previous_path,
+                                parent_path=parent_path, feedback_path=feedback_path, notes_path=notes_path)
+    return prepare_rendered(root, _render_context(root, context), budget or Budget(), model, context)
+
+
+def verify_prepared_request(root: Path, prepared: dict) -> dict:
+    """Reproduce every request/task/input/template selection with today's renderer."""
+    _validate(root, prepared, prepared=True)
+    for ref in prepared["inputs"] + [prepared["template"], prepared["package"], prepared["parent"], prepared["feedback"]]:
+        if ref is not None:
+            bound_bytes(root, ref)
+    context = prepared["context"]
+    if context["operation"] == "revise":
+        expected_context = selection_context(root, parent_path=context["parent_path"],
+                                             feedback_path=context["feedback_path"], notes_path=context["notes_path"])
+    else:
+        expected_context = selection_context(root, package_path=context["package_path"], chapter=context["chapter"],
+                                             route=context["route"], characters=context["characters"],
+                                             plan_path=context["plan_path"], previous_path=context["previous_path"])
+    if canonical_bytes(context) != canonical_bytes(expected_context):
+        raise ValueError("prepared request selection context mismatch")
+    rendered = _render_context(root, context)
+    budget = Budget(**prepared["budget"])
+    budget.validate(prepared.get("samples", 1))
+    current = prepare_rendered(root, rendered, budget, prepared["request"]["model"], context)
+    if "samples" in prepared:
+        current["samples"] = prepared["samples"]
+    if canonical_bytes(current) != canonical_bytes(prepared):
+        raise ValueError("prepared request differs from current renderer/context manifest")
+    return rendered
+
+
+def _publish(root: Path, directory: str, raw: bytes, suffix: str) -> dict:
+    """Reuse identical content, but never replace an existing file or a link."""
+    relative = f"{directory}/{digest(raw)}.{suffix}"
+    ref = {"path": relative, "sha256": digest(raw)}
+    path = repository_path(root, relative)
+    try:
+        return append_bytes(root, relative, raw)
+    except FileExistsError:
+        if not path.is_file() or bound_bytes(root, ref) != raw:
+            raise ValueError("content-addressed session file conflicts with existing bytes")
+        return ref
+
+
+def import_draft(root: Path, text_path: str, request_path: str, *, session_id: str,
+                 session_model_label: str, parent_path: str | None = None,
+                 feedback_path: str | None = None) -> dict:
+    """Import exact UTF-8 text plus a prepared manifest; no API/SDK is invoked."""
+    imported_text, request_source = binding(root, text_path), binding(root, request_path)
+    raw, prepared_raw = bound_bytes(root, imported_text), bound_bytes(root, request_source)
+    text = raw.decode("utf-8")
+    if not text.strip():
+        raise ValueError("empty session-authored draft")
+    prepared = json.loads(prepared_raw)
+    verify_prepared_request(root, prepared)
+    for path, field in ((parent_path, "parent"), (feedback_path, "feedback")):
+        if path is not None and binding(root, path) != prepared[field]:
+            raise ValueError(f"session import {field} differs from prepared request")
+    chapter = prepared["chapter"]
+    candidate = {"path": f"artifacts/candidates/ch{chapter}/{digest(raw)}.txt", "sha256": digest(raw)}
+    request_ref = {"path": f"artifacts/writing-requests/{digest(prepared_raw)}.json", "sha256": digest(prepared_raw)}
+    run = {"schema_version": 1, "kind": "SESSION_AUTHOR_RUN", "execution_basis": EXECUTION_BASIS,
+           "session_id": session_id, "session_configured_model": {"label": session_model_label, "basis": "UNVERIFIED_DECLARATION"},
+           "request_source": request_source, "prepared_request": request_ref, "imported_text": imported_text,
+           "package": prepared["package"], "request_sha256": prepared["request_sha256"],
+           "prompt_sha256": prepared["prompt_sha256"], "inputs": prepared["inputs"], "template": prepared["template"],
+           "candidate": candidate, "output": text, "output_sha256": digest(raw),
+           "parent": prepared["parent"], "feedback": prepared["feedback"], "qualification": "RESEARCH_ONLY",
+           "formal_eligibility": False, "human_qualification": False, "authority_effect": "NONE"}
+    _validate(root, run)
+    _publish(root, f"artifacts/candidates/ch{chapter}", raw, "txt")
+    _publish(root, "artifacts/writing-requests", prepared_raw, "json")
+    author_run = _publish(root, "artifacts/author-runs", canonical_bytes(run), "json")
+    source_id = "session-author:" + author_run["sha256"]
+    draft = {"schema_version": 1, "kind": "WRITING_DRAFT", "execution_basis": EXECUTION_BASIS,
+             "chapter": chapter, "route": prepared["route"], "candidate": candidate, "run": author_run,
+             "authors": [{"principal_id": "session:" + session_id, "source_id": source_id, "kind": "MODEL", "run": author_run}],
+             "prepared_request": request_ref, "package": prepared["package"], "inputs": prepared["inputs"],
+             "template": prepared["template"], "task": prepared["task"], "prompt_sha256": prepared["prompt_sha256"],
+             "parent": prepared["parent"], "feedback": prepared["feedback"], "qualification": "RESEARCH_ONLY",
+             "formal_eligibility": False, "human_qualification": False, "authority_effect": "NONE"}
+    verify_session_draft(root, draft, raw)
+    draft_ref = _publish(root, f"data/writing/drafts/ch{chapter}", canonical_bytes(draft), "json")
+    return {"status": "PASS", "draft": draft_ref, "candidate": candidate, "run": author_run,
+            "prepared_request": request_ref, "execution_basis": EXECUTION_BASIS,
+            "session_configured_model": run["session_configured_model"], "qualification": "RESEARCH_ONLY",
+            "formal_eligibility": False, "human_qualification": False, "authority_effect": "NONE"}
+
+
+def verify_session_draft(root: Path, draft: dict, candidate_raw: bytes) -> None:
+    """Strict alternative to raw-run validation, without claiming provider proof."""
+    errors = validate_instance(draft, root / "schemas/draft_registry.schema.json")
+    if errors:
+        raise ValueError("invalid session draft record: " + "; ".join(errors))
+    run = json.loads(bound_bytes(root, draft["run"]))
+    _validate(root, run)
+    if run["output"].encode("utf-8") != candidate_raw or digest(candidate_raw) != run["output_sha256"]:
+        raise ValueError("session output differs from authored candidate")
+    if bound_bytes(root, run["imported_text"]) != candidate_raw:
+        raise ValueError("session import text identity mismatch")
+    prepared_raw = bound_bytes(root, run["prepared_request"])
+    if bound_bytes(root, run["request_source"]) != prepared_raw:
+        raise ValueError("session prepared request source identity mismatch")
+    prepared = json.loads(prepared_raw)
+    verify_prepared_request(root, prepared)
+    for field in ("candidate", "prepared_request", "package", "inputs", "template", "prompt_sha256", "parent", "feedback"):
+        if canonical_bytes(draft[field]) != canonical_bytes(run[field]):
+            raise ValueError(f"session draft/run {field} binding mismatch")
+    for field in ("package", "inputs", "template", "prompt_sha256", "request_sha256", "parent", "feedback"):
+        if canonical_bytes(run[field]) != canonical_bytes(prepared[field]):
+            raise ValueError(f"session run/prepared request {field} binding mismatch")
+    if (draft["chapter"] != prepared["chapter"] or draft["route"] != prepared["route"]
+            or canonical_bytes(draft["task"]) != canonical_bytes(prepared["task"])):
+        raise ValueError("session draft task/chapter/route differs from prepared request")
+    source_id = "session-author:" + draft["run"]["sha256"]
+    expected = [{"principal_id": "session:" + run["session_id"], "source_id": source_id,
+                 "kind": "MODEL", "run": draft["run"]}]
+    if draft["authors"] != expected:
+        raise ValueError("session draft author identity mismatch")

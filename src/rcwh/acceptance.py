@@ -91,7 +91,9 @@ class ProjectAcceptance:
         }
         failures = sorted(name for name, row in checks.items() if row["status"] == "FAIL")
         pending = sorted(name for name, row in checks.items() if row["status"] in {"PENDING", "BLOCKED"})
+        from .workflow.agent_panel import AgentPanel
         return {
+            "agent_panel": AgentPanel(self.root).summary(),
             "schema_version": 1, "scope": "REVIEW_FOLLOWUP_INPUT_ACCEPTANCE",
             "status": "FAIL" if failures else "PENDING" if pending else "PASS",
             "engineering_status": "PASS" if engineering and all(checks[name]["status"] == "PASS" for name in engineering) else "FAIL",

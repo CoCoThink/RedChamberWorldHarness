@@ -1,0 +1,133 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentSceneContractV1",
+  "type": "object",
+  "required": ["schema_version", "kind", "revision", "id", "chapter", "order", "chapter_plan_ref", "status", "authority_effect", "evidence_effect", "bindings", "entry_from", "entry_checkpoint", "participants", "participants_status", "required_objects", "references", "entry_state", "preconditions", "exit_state", "required_beats", "forbidden_beats", "event_refs", "object_transition_refs", "knowledge_event_refs", "knowledge_binding", "unresolved"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "AGENT_SCENE_CONTRACT"},
+    "revision": {"type": "string", "pattern": "^v[1-9][0-9]*$"},
+    "id": {"type": "string", "pattern": "^[A-Za-z0-9_-]+$"},
+    "chapter": {"type": "integer", "minimum": 1},
+    "order": {"type": "integer", "minimum": 1},
+    "chapter_plan_ref": {"type": "string", "minLength": 1},
+    "status": {"enum": ["DRAFT_GENERATED", "AGENT_EDITED"]},
+    "authority_effect": {"const": "NONE"},
+    "evidence_effect": {"const": "NONE"},
+    "bindings": {
+      "type": "object",
+      "required": ["source_packet", "seed", "chapter_plan", "world"],
+      "properties": {
+        "source_packet": {"$ref": "#/$defs/file"},
+        "seed": {"$ref": "#/$defs/file"},
+        "chapter_plan": {"$ref": "#/$defs/file"},
+        "world": {
+          "type": "object",
+          "required": ["status", "inputs"],
+          "properties": {
+            "status": {"enum": ["BOUND", "UNKNOWN"]},
+            "inputs": {"type": "array", "items": {"$ref": "#/$defs/file"}},
+            "reason": {"type": "string", "minLength": 1}
+          },
+          "allOf": [{"if": {"properties": {"status": {"const": "UNKNOWN"}}}, "then": {"required": ["reason"]}}],
+          "additionalProperties": false
+        },
+        "prose": {"$ref": "#/$defs/file"}
+      },
+      "additionalProperties": false
+    },
+    "entry_from": {"type": "string", "minLength": 1, "description": "Explicit predecessor seed/overlay ref, scene id, or UNKNOWN. Never inferred from adjacency."},
+    "entry_checkpoint": {
+      "type": "object",
+      "required": ["kind", "chapter"],
+      "properties": {
+        "kind": {"enum": ["CHAPTER_ENTRY", "UNKNOWN"]},
+        "chapter": {"type": ["integer", "null"], "minimum": 0}
+      },
+      "additionalProperties": false
+    },
+    "participants": {"$ref": "#/$defs/ids"},
+    "participants_status": {"enum": ["KNOWN", "UNKNOWN", "PENDING"]},
+    "required_objects": {"$ref": "#/$defs/ids"},
+    "references": {
+      "type": "object",
+      "required": ["participants", "objects", "knowledge"],
+      "properties": {
+        "participants": {"$ref": "#/$defs/records"},
+        "objects": {"$ref": "#/$defs/records"},
+        "knowledge": {"$ref": "#/$defs/records"}
+      },
+      "additionalProperties": false
+    },
+    "entry_state": {"$ref": "#/$defs/conditions"},
+    "preconditions": {"$ref": "#/$defs/conditions"},
+    "exit_state": {"$ref": "#/$defs/conditions"},
+    "required_beats": {"type": "array", "items": {"type": "object"}},
+    "forbidden_beats": {"type": "array", "items": {"type": "object"}},
+    "event_refs": {"$ref": "#/$defs/ids"},
+    "object_transition_refs": {"$ref": "#/$defs/ids"},
+    "knowledge_event_refs": {"$ref": "#/$defs/ids"},
+    "knowledge_binding": {
+      "oneOf": [
+        {"type": "null"},
+        {
+          "type": "object",
+          "required": ["scene_id", "entry_checkpoint"],
+          "properties": {
+            "scene_id": {"type": "string", "minLength": 1},
+            "entry_checkpoint": {"const": "ENTRY"}
+          },
+          "additionalProperties": false
+        }
+      ]
+    },
+    "unresolved": {"$ref": "#/$defs/ids"},
+    "function": {"type": ["string", "null"]},
+    "notes": {"type": "string"}
+  },
+  "$defs": {
+    "file": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"}
+      },
+      "additionalProperties": false
+    },
+    "ids": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+    "record": {
+      "type": "object",
+      "required": ["ref", "path", "pointer", "sha256", "text_sha256", "value"],
+      "properties": {
+        "ref": {"type": "string"},
+        "path": {"type": "string", "minLength": 1},
+        "pointer": {"type": "string"},
+        "sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "text_sha256": {"type": "string", "pattern": "^[0-9a-f]{64}$"},
+        "value": {}
+      },
+      "additionalProperties": false
+    },
+    "records": {"type": "array", "items": {"$ref": "#/$defs/record"}},
+    "conditions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["equals", "value", "status", "basis"],
+        "properties": {
+          "equals": {"type": "string", "pattern": "^(character|object)\\.[^.]+\\..+$"},
+          "value": {},
+          "status": {"enum": ["KNOWN", "UNKNOWN", "PENDING"]},
+          "basis": {"$ref": "#/$defs/records"},
+          "reason": {"type": "string", "minLength": 1}
+        },
+        "allOf": [
+          {"if": {"properties": {"status": {"const": "KNOWN"}}}, "then": {"properties": {"basis": {"minItems": 1}}}, "else": {"required": ["reason"], "properties": {"value": {"const": null}}}}
+        ],
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

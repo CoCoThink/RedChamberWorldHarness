@@ -1,0 +1,124 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "required": ["schema_version", "kind", "execution_basis", "session_id", "session_configured_model", "request_source", "prepared_request", "imported_text", "package", "request_sha256", "prompt_sha256", "inputs", "template", "candidate", "output", "output_sha256", "parent", "feedback", "qualification", "formal_eligibility", "human_qualification", "authority_effect"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "SESSION_AUTHOR_RUN"},
+    "execution_basis": {"const": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED"},
+    "session_id": {"type": "string", "pattern": "\\S", "minLength": 1},
+    "session_configured_model": {
+      "type": "object",
+      "required": ["label", "basis"],
+      "properties": {
+        "label": {"type": "string", "minLength": 1, "pattern": "\\S"},
+        "basis": {"const": "UNVERIFIED_DECLARATION"}
+      },
+      "additionalProperties": false
+    },
+    "request_source": {"$ref": "#/$defs/binding"},
+    "prepared_request": {"$ref": "#/$defs/binding"},
+    "imported_text": {"$ref": "#/$defs/binding"},
+    "package": {"$ref": "#/$defs/binding"},
+    "request_sha256": {"$ref": "#/$defs/sha256"},
+    "prompt_sha256": {"$ref": "#/$defs/sha256"},
+    "inputs": {"type": "array", "items": {"$ref": "#/$defs/binding"}},
+    "template": {"$ref": "#/$defs/binding"},
+    "candidate": {"$ref": "#/$defs/binding"},
+    "output": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "output_sha256": {"$ref": "#/$defs/sha256"},
+    "parent": {"$ref": "#/$defs/optionalBinding"},
+    "feedback": {"$ref": "#/$defs/optionalBinding"},
+    "qualification": {"const": "RESEARCH_ONLY"},
+    "formal_eligibility": {"const": false},
+    "human_qualification": {"const": false},
+    "authority_effect": {"const": "NONE"}
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "binding": {
+      "type": "object", "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha256"}},
+      "additionalProperties": false
+    },
+    "optionalBinding": {"anyOf": [{"$ref": "#/$defs/binding"}, {"type": "null"}]},
+    "optionalPath": {"anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]},
+    "context": {
+      "type": "object",
+      "required": ["operation", "package_path", "chapter", "route", "characters", "plan_path", "previous_path", "parent_path", "feedback_path", "notes_path"],
+      "properties": {
+        "operation": {"enum": ["draft", "revise"]},
+        "package_path": {"type": "string", "minLength": 1},
+        "chapter": {"type": "integer", "minimum": 1},
+        "route": {"enum": ["direct", "harness"]},
+        "characters": {"anyOf": [{"type": "integer", "minimum": 1}, {"type": "null"}]},
+        "plan_path": {"$ref": "#/$defs/optionalPath"},
+        "previous_path": {"$ref": "#/$defs/optionalPath"},
+        "parent_path": {"$ref": "#/$defs/optionalPath"},
+        "feedback_path": {"$ref": "#/$defs/optionalPath"},
+        "notes_path": {"$ref": "#/$defs/optionalPath"}
+      },
+      "allOf": [{
+        "if": {"properties": {"operation": {"const": "draft"}}},
+        "then": {"properties": {"characters": {"type": "integer", "minimum": 1}, "parent_path": {"type": "null"}, "feedback_path": {"type": "null"}, "notes_path": {"type": "null"}}},
+        "else": {"properties": {"characters": {"type": "null"}, "plan_path": {"type": "null"}, "previous_path": {"type": "null"}, "parent_path": {"type": "string", "minLength": 1}, "feedback_path": {"type": "string", "minLength": 1}}}
+      }],
+      "additionalProperties": false
+    },
+    "prepared": {
+      "type": "object",
+      "required": ["schema_version", "kind", "status", "mode", "context", "chapter", "route", "package", "parent", "feedback", "task", "prompt_sha256", "request_sha256", "request", "template", "inputs", "budget", "budget_limitation", "qualification", "formal_eligibility", "human_qualification", "authority_effect"],
+      "properties": {
+        "schema_version": {"const": 1},
+        "kind": {"const": "WRITING_PREPARED_REQUEST"},
+        "status": {"const": "PASS"},
+        "mode": {"const": "DRY_RUN"},
+        "context": {"$ref": "#/$defs/context"},
+        "chapter": {"type": "integer", "minimum": 1},
+        "route": {"enum": ["direct", "harness"]},
+        "package": {"$ref": "#/$defs/binding"},
+        "parent": {"$ref": "#/$defs/optionalBinding"},
+        "feedback": {"$ref": "#/$defs/optionalBinding"},
+        "task": {"type": "object"},
+        "prompt_sha256": {"$ref": "#/$defs/sha256"},
+        "request_sha256": {"$ref": "#/$defs/sha256"},
+        "request": {
+          "type": "object", "required": ["model", "max_tokens", "system", "messages"],
+          "properties": {
+            "model": {"type": "string", "pattern": "^claude-.+"},
+            "max_tokens": {"type": "integer", "minimum": 1, "maximum": 128000},
+            "system": {"type": "string"},
+            "messages": {"type": "array", "minItems": 1, "maxItems": 1, "items": {
+              "type": "object", "required": ["role", "content"],
+              "properties": {"role": {"const": "user"}, "content": {"type": "string"}},
+              "additionalProperties": false
+            }}
+          },
+          "additionalProperties": false
+        },
+        "template": {"$ref": "#/$defs/binding"},
+        "inputs": {"type": "array", "items": {"$ref": "#/$defs/binding"}},
+        "budget": {
+          "type": "object", "required": ["max_tokens", "timeout_seconds", "max_retries", "max_requests", "max_output_tokens", "max_input_bytes"],
+          "properties": {
+            "max_tokens": {"type": "integer", "minimum": 1, "maximum": 128000},
+            "timeout_seconds": {"type": "number", "exclusiveMinimum": 0, "maximum": 600},
+            "max_retries": {"type": "integer", "minimum": 0, "maximum": 2},
+            "max_requests": {"type": "integer", "minimum": 1},
+            "max_output_tokens": {"type": "integer", "minimum": 1},
+            "max_input_bytes": {"type": "integer", "minimum": 1}
+          },
+          "additionalProperties": false
+        },
+        "samples": {"type": "integer", "minimum": 1, "maximum": 10},
+        "budget_limitation": {"type": "string"},
+        "qualification": {"const": "RESEARCH_ONLY"},
+        "formal_eligibility": {"const": false},
+        "human_qualification": {"const": false},
+        "authority_effect": {"const": "NONE"}
+      },
+      "additionalProperties": false
+    }
+  }
+}
