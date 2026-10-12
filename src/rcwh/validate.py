@@ -42,6 +42,8 @@ REQUIRED_DOCUMENTS = (
     ('data/implementation_alignment/m6.json', 'implementation_alignment.schema.json'),
     ('data/mechanism_adapters/v04.json', 'historical_mechanism_adapter.schema.json'),
     ('data/knowledge/v03_slice1.json', 'character_knowledge_graph.schema.json'),
+    ('data/knowledge/v03_slice2.json', 'character_knowledge_graph.schema.json'),
+    ('data/evaluation/pilot85_87/review_selection.json', 'pilot_review_selection.schema.json'),
     ('data/research/fidelity_audit.json', 'fidelity_audit.schema.json'),
     ('data/research/hypothesis_source_backfill.json', 'hypothesis_source_backfill.schema.json'),
     ('data/research/hypothesis_compatibility.json', 'hypothesis_compatibility.schema.json'),
@@ -73,6 +75,22 @@ def validate_required_documents(root: Path) -> list[str]:
     errors = []
     for path, schema in REQUIRED_DOCUMENTS:
         errors.extend(validate_required_document(root, path, schema))
+    # Research artifacts are optional, but their presence is never exempt from
+    # structural validation. Draft readiness is not a literary acceptance gate.
+    research_patterns = (
+        ("data/planning/chapters/ch*.json", "chapter_plan"),
+        ("data/planning/books/*.json", "book_plan"),
+        ("data/planning/hints.json", "hint_ledger"),
+        ("data/backtest/*/holdout.json", "backtest_holdout"),
+        ("data/backtest/*/task.json", "backtest_task"),
+        ("data/backtest/*/world.json", "backtest_world"),
+        ("data/writing/drafts/ch*/*.json", "draft_registry"),
+        ("data/writing/feedback/*.json", "writing_feedback"),
+    )
+    for pattern, schema in research_patterns:
+        for path in sorted(root.glob(pattern)):
+            errors.extend(validate_required_document(root, path.relative_to(root).as_posix(),
+                                                     f"{schema}.schema.json"))
     try:
         project = ProjectState.from_repo(root)
         for owner, schema in (("capability", "capability_selection"), ("literary", "literary_resume_state"), ("plan_constraints", "plan_constraints")):

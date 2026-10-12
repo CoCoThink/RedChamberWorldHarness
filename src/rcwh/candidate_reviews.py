@@ -64,11 +64,20 @@ def verified_author_model(root: Path, author: dict, candidate_raw: bytes) -> dic
             raise ValueError(f"model {key} identity mismatch")
     if run["output"].encode("utf-8") != candidate_raw:
         raise ValueError("model output does not match authored candidate")
+    if run.get("raw_run"):
+        from .generation.records import verify_raw_run
+        verify_raw_run(root, run, candidate_raw)
     return run["model"]
 
 
 def context_sha256(root: Path, record: dict[str, Any]) -> str:
     """Freeze substantive context without including mutable opinions or flags."""
+    version = record.get("context_version", 1)
+    if version == 2:
+        from .review_context import context_v2
+        return context_v2(root, record)
+    if version != 1:
+        raise ValueError("unsupported review context version")
     inputs = {}
     for domain in CONTEXT_DOMAINS:
         for path in sorted((root / "data" / domain).rglob("*")):

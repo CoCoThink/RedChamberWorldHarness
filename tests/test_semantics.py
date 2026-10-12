@@ -9,7 +9,7 @@ from test_candidate_reviews import reviewed_competition
 
 from rcwh.candidate_reviews import canonical_bytes, digest
 from rcwh.evaluate import evaluate_scene_text, overall_status
-from rcwh.evaluation.semantics import make_request, check_reading, run_extractor
+from rcwh.evaluation.semantics import make_request, check_reading, run_extractor, validate_request
 from rcwh.evaluation.state import SceneStateAdapter, canonical_target
 from rcwh.io import load_data
 from rcwh.knowledge import CharacterKnowledgeRuntime
@@ -253,3 +253,130 @@ def test_good_readers_do_not_override_missing_semantic_qualification(reviewed_co
     report = CompetitionRegistry({}).evaluate_record(root, record)
     assert all(c["review_qualification"]["status"] == "PASS" for c in report["candidate_results"])
     assert not any(c["adjudication_eligible"] for c in report["candidate_results"])
+
+
+@pytest.mark.parametrize("case,expected", [("missing", "FAIL"), ("unexamined", "PENDING"), ("unresolved", "PENDING"), ("actual", "PASS"), ("dream", "FAIL")])
+def test_null_exit_requires_present_actual_effect(case, expected):
+    request, reading = positive()
+    contract = deepcopy(request["contract"])
+    contract["exit_state"][1]["value"] = None
+    request = make_request(contract, TEXT, request["entry"], request["authors"])
+    reading.update({key: request[key] for key in ("candidate_sha256", "contract_sha256", "context_sha256")})
+    target = "object.medicine_bowl_86.temperature"
+    cold = reading["events"][-1]
+    cold["effects"] = []
+    if case == "unexamined":
+        reading["coverage"].remove(target)
+    elif case == "unresolved":
+        reading["unresolved"].append(target)
+    elif case in {"actual", "dream"}:
+        cold["effects"] = [{"target": target, "value": None}]
+        if case == "dream":
+            cold["scope"] = "DREAM"
+    row = next(row for row in check(request, reading)["checks"] if row["id"] == target)
+    assert row["status"] == expected
+    assert row["observed_present"] is (case == "actual")
+
+
+def acquisition_request(version=2, strip_entry=False):
+    contract = load_data(ROOT / "data/scenes/ch89_confiscation_message.yaml")
+    text = "小红说官面消息来了，宝钗听见，只说暂不知道最终范围。"
+    entry = SceneStateAdapter(ROOT, contract).snapshot(request_version=version)
+    if strip_entry:
+        # Simulate a knowledge version that never marked the fact in any entry bucket.
+        for buckets in entry["knowledge"]["states"].values():
+            for facts in buckets.values():
+                if "official_confiscation_message" in facts:
+                    facts.remove("official_confiscation_message")
+    request = make_request(contract, text, entry, [{"principal_id": "test:author", "source_id": "test:author-origin", "kind": "HUMAN"}], request_version=version)
+    fact = "official_confiscation_message"
+    observed = event(text, "官面消息来了", "message", 10, "xiaohong")
+    observed.update(mode="DIALOGUE", beats=["official_message_arrives"], observations=[fact], observers=["xiaohong", "baochai"])
+    acquired = event(text, "宝钗听见", "heard", 20, "baochai")
+    acquired.update(mode="ACTION", knowledge=[{"actor": actor, "fact": fact, "operation": "ACQUIRE", "status": "knows", "source_event": "message"} for actor in ("xiaohong", "baochai")])
+    partial = event(text, "暂不知道最终范围", "partial", 30)
+    partial["beats"] = ["meaning_remains_partial"]
+    reading = {"schema_version": 1, "report_kind": "REVIEW_OPINION",
+               **{key: request[key] for key in ("candidate_sha256", "contract_sha256", "context_sha256")},
+               "producer": {"principal_id": "test:reader", "source_id": "test:reader-origin", "kind": "INDEPENDENT_HUMAN"},
+               "coverage": [beat["id"] for beat in contract["required_beats"] + contract["forbidden_beats"] + contract["knowledge_guards"]] + [canonical_target(row["equals"]) for row in contract["exit_state"]],
+               "unresolved": [], "events": [observed, acquired, partial], "notes": "Synthetic versioned acquisition regression, not a human review."}
+    return request, reading
+
+
+def test_ch89_entry_marks_message_unknown_so_version_one_accepts_acquisition():
+    fact = "official_confiscation_message"
+    states = KNOWLEDGE.scene("ch89_confiscation_message", "ENTRY")["states"]
+    assert all(fact in states[actor]["does_not_know"] for actor in ("baochai", "xiaohong", "qianxue"))
+    after = KNOWLEDGE.scene("ch89_confiscation_message", "K89-OFFICIAL-MESSAGE-HEARD")["states"]
+    assert all(fact in after[actor]["knows"] and fact not in after[actor]["does_not_know"] for actor in ("baochai", "xiaohong", "qianxue"))
+    request, reading = acquisition_request(1)
+    report = check(request, reading)
+    assert report["status"] == "PASS"
+    assert fact in report["knowledge_final"]["baochai"]["knows"]
+    assert fact not in report["knowledge_final"]["baochai"]["does_not_know"]
+
+
+def test_version_one_still_rejects_facts_absent_from_frozen_entry():
+    request, reading = acquisition_request(1, strip_entry=True)
+    request = make_request(request["contract"], request["text"], request["entry"], request["authors"])
+    reading.update({key: request[key] for key in ("candidate_sha256", "contract_sha256", "context_sha256")})
+    assert check(request, reading)["status"] == "FAIL"
+
+
+def test_version_two_registered_fact_can_be_acquired_without_entry_knowledge():
+    request, reading = acquisition_request(strip_entry=True)
+    request = make_request(request["contract"], request["text"], request["entry"], request["authors"], request_version=2)
+    reading.update({key: request[key] for key in ("candidate_sha256", "contract_sha256", "context_sha256")})
+    fact = "official_confiscation_message"
+    assert fact in request["entry"]["fact_registry"]
+    assert all(fact not in facts for buckets in request["entry"]["knowledge"]["states"].values() for facts in buckets.values())
+    report = check(request, reading)
+    assert report["status"] == "PASS"
+    assert fact in report["knowledge_final"]["baochai"]["knows"]
+    old, _ = acquisition_request(1)
+    assert request["context_sha256"] != old["context_sha256"]
+
+
+def test_retired_knowledge_version_keeps_its_bound_bytes():
+    from rcwh.candidate_reviews import digest
+    study = load_data(ROOT / "data/evaluation/pilot85_87/study.json")
+    binding = next(b for b in study["inputs"] if b["path"] == "data/knowledge/v03_slice1.json")
+    assert digest((ROOT / binding["path"]).read_bytes()) == binding["sha256"]
+    old, new = (load_data(ROOT / f"data/knowledge/v03_slice{n}.json") for n in (1, 2))
+    assert old["id"].endswith("slice1") and new["id"].endswith("slice2")
+    assert KNOWLEDGE.data["id"] == new["id"]
+
+
+@pytest.mark.parametrize("change", ["unknown", "no_observer", "future", "dream"])
+def test_version_two_acquisition_still_requires_registered_observation(change):
+    request, reading = acquisition_request()
+    if change == "unknown":
+        reading["events"][1]["knowledge"][0]["fact"] = "unregistered_fact"
+    elif change == "no_observer":
+        reading["events"][0]["observers"] = []
+    elif change == "future":
+        reading["events"][0]["order"] = 50
+    else:
+        reading["events"][0]["scope"] = "DREAM"
+    assert check(request, reading)["status"] == "FAIL"
+
+
+def test_version_two_request_is_frozen_and_rejects_registry_tampering():
+    request, reading = acquisition_request()
+    changed_runtime = deepcopy(KNOWLEDGE)
+    changed_runtime.data["facts"] = []
+    assert check_reading(request, reading, SCHEMA, changed_runtime, ROOT)["status"] == "PASS"
+    altered = deepcopy(request)
+    altered["entry"]["fact_registry"].append("new_registered_fact")
+    with pytest.raises(ValueError):
+        validate_request(altered)
+    altered = deepcopy(request)
+    altered["schema_version"] = 3
+    with pytest.raises(ValueError, match="unsupported"):
+        validate_request(altered)
+    for registry in (None, ["duplicate", "duplicate"], [3], ["z", "a"]):
+        entry = deepcopy(request["entry"])
+        entry["fact_registry"] = registry
+        with pytest.raises(ValueError):
+            make_request(request["contract"], request["text"], entry, request["authors"], request_version=2)

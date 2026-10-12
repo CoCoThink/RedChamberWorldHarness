@@ -6,6 +6,7 @@ from typing import Any
 
 import yaml
 
+from ..io import parse_yaml
 from ..schema import validate_instance
 from .catalog import AssetCatalog
 from .ingest import ROLES
@@ -22,7 +23,7 @@ class AssetDiscovery:
         store = CatalogStore(catalog.root)
         for relative in store.discovery_paths():
             try:
-                document = yaml.safe_load(repository_path(catalog.root, relative).read_bytes())
+                document = parse_yaml(repository_path(catalog.root, relative).read_bytes())
                 kind = "annotation" if relative.startswith("data/catalog/annotations/") else "collection"
                 errors = validate_instance(document, catalog.root / f"schemas/asset_{kind}.schema.json")
                 if errors:

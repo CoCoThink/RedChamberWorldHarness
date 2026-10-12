@@ -3,15 +3,17 @@ import json
 import re
 from pathlib import Path
 
+from ..assets.paths import repository_path
 from ..candidate_reviews import bound_data, canonical_bytes, digest
 
 DIMENSIONS = ("scene_cohesion", "character_voice", "life_detail", "engineering_feel")
 
 
-def comparative_reviews(export_root: Path, bindings: list[dict], expected_context: str | None = None) -> dict:
-    packet_raw = (export_root / "public/packet.json").read_bytes()
+def load_comparative_packet(export_root: Path, expected_context: str | None = None) -> tuple[dict, dict, dict[str, str]]:
+    """Load the committed anonymous packet and its hash-verified candidate texts."""
+    packet_raw = repository_path(export_root, "public/packet.json").read_bytes()
     packet = json.loads(packet_raw)
-    mapping = json.loads((export_root / "coordinator/mapping.json").read_bytes())
+    mapping = json.loads(repository_path(export_root, "coordinator/mapping.json").read_bytes())
     if mapping["packet_sha256"] != digest(packet_raw):
         raise ValueError("anonymous packet differs from coordinator record")
     core = {k: v for k, v in mapping.items() if k != "packet_sha256"}
@@ -23,55 +25,80 @@ def comparative_reviews(export_root: Path, bindings: list[dict], expected_contex
     for candidate in packet["candidates"]:
         if not isinstance(candidate["token"], str) or candidate["file"] != candidate["token"] + ".txt" or not re.fullmatch(r"read-[a-f0-9]{12}", candidate["token"]):
             raise ValueError("invalid anonymous text path")
-        raw = (export_root / "public" / candidate["file"]).read_bytes()
+        raw = repository_path(export_root, "public/" + candidate["file"]).read_bytes()
         if digest(raw) != candidate["sha256"]:
             raise ValueError("anonymous candidate text changed")
         if candidate["token"] in texts:
             raise ValueError("duplicate anonymous candidate")
         texts[candidate["token"]] = raw.decode()
+    return packet, mapping, texts
+
+
+def validate_comparative_review(review: dict, packet: dict, mapping: dict, texts: dict[str, str]) -> None:
+    """Validate an opinion before filing, without reading or creating its receipt.
+
+    Callers still check duplicate identities against selected opinions and bind
+    the original submission. The mapping must come from a verified packet load.
+    """
+    required = {"report_kind", "id", "packet_sha256", "context_sha256", "reviewer", "ranking", "recommendation", "observations"}
+    if not isinstance(review, dict) or not required <= review.keys() or review.keys() - required - {"authority_effect", "raw_review"}:
+        raise ValueError("invalid comparative opinion fields")
+    if "authority_effect" in review and review["authority_effect"] != "NONE":
+        raise ValueError("comparative opinion cannot grant authority")
+    if review["report_kind"] != "REVIEW_OPINION":
+        raise ValueError("reading template is not a submitted comparative opinion")
+    reviewer = review["reviewer"]
+    if review["packet_sha256"] != mapping["packet_sha256"] or review["context_sha256"] != packet["context_sha256"]:
+        raise ValueError("stale comparative review input")
+    if reviewer["kind"] != "INDEPENDENT_HUMAN" or any(not isinstance(reviewer[k], str) or not reviewer[k].strip() for k in ("principal_id", "source_id")):
+        raise ValueError("comparative review requires identified independent human")
+    if not isinstance(review["id"], str) or not review["id"].strip():
+        raise ValueError("comparative review requires a nonempty stable review ID")
+    if reviewer["mapping_unseen_during_review"] is not True or reviewer["independent_of_authors"] is not True:
+        raise ValueError("reader discloses contamination or author dependence")
+    if any(reviewer[k] == a[k] for a in mapping["authors"] for k in ("principal_id", "source_id")):
+        raise ValueError("comparative reader shares author identity or source")
+    ranks = review["ranking"]
+    if not isinstance(ranks, list) or any(not isinstance(group, list) for group in ranks):
+        raise ValueError("ranking must be a list of token groups")
+    flattened = [token for group in ranks for token in group]
+    if not ranks or any(not group for group in ranks) or len(flattened) != len(set(flattened)) or set(flattened) != set(texts):
+        raise ValueError("ranking must cover all candidates exactly once; groups express ties")
+    if review["recommendation"] not in {"CONTINUE", "NEITHER"}:
+        raise ValueError("invalid comparative recommendation")
+    if not isinstance(review["observations"], dict) or set(review["observations"]) != set(texts):
+        raise ValueError("incomplete comparative observations")
+    for token, dimensions in review["observations"].items():
+        if not isinstance(dimensions, dict) or set(dimensions) != set(DIMENSIONS):
+            raise ValueError("incomplete reading dimensions")
+        for opinion in dimensions.values():
+            if not isinstance(opinion, dict) or not isinstance(opinion["reason"], str) or not opinion["reason"].strip() or not isinstance(opinion["spans"], list) or not opinion["spans"]:
+                raise ValueError("comparative judgement requires reason and text spans")
+            for span in opinion["spans"]:
+                text = texts[token]
+                if not isinstance(span, dict) or type(span["start"]) is not int or type(span["end"]) is not int or not 0 <= span["start"] < span["end"] <= len(text) or text[span["start"]:span["end"]] != span["quote"]:
+                    raise ValueError("invalid comparative text span")
+
+
+def comparative_reviews(export_root: Path, bindings: list[dict], expected_context: str | None = None, *, review_root: Path | None = None) -> dict:
+    packet, mapping, texts = load_comparative_packet(export_root, expected_context)
+    review_root = export_root if review_root is None else review_root
     principals, sources, ids = set(), set(), set()
     valid, findings = [], []
-    authors = mapping["authors"]
     for binding in bindings:
         try:
-            review = bound_data(export_root, binding)
-            if review["report_kind"] != "REVIEW_OPINION":
-                raise ValueError("reading template is not a submitted comparative opinion")
+            review = bound_data(review_root, binding)
+            validate_comparative_review(review, packet, mapping, texts)
             reviewer = review["reviewer"]
-            if review["packet_sha256"] != digest(packet_raw) or review["context_sha256"] != packet["context_sha256"]:
-                raise ValueError("stale comparative review input")
-            if reviewer["kind"] != "INDEPENDENT_HUMAN" or any(not isinstance(reviewer[k], str) or not reviewer[k].strip() for k in ("principal_id", "source_id")):
-                raise ValueError("comparative review requires identified independent human")
-            if not isinstance(review["id"], str) or not review["id"].strip():
-                raise ValueError("comparative review requires a nonempty stable review ID")
-            if reviewer["mapping_unseen_during_review"] is not True or reviewer["independent_of_authors"] is not True:
-                raise ValueError("reader discloses contamination or author dependence")
             if reviewer["principal_id"] in principals or reviewer["source_id"] in sources or review["id"] in ids:
                 raise ValueError("duplicate comparative reviewer, source or review")
-            if any(reviewer[k] == a[k] for a in authors for k in ("principal_id", "source_id")):
-                raise ValueError("comparative reader shares author identity or source")
-            ranks = review["ranking"]
-            if not isinstance(ranks, list) or any(not isinstance(group, list) for group in ranks):
-                raise ValueError("ranking must be a list of token groups")
-            flattened = [token for group in ranks for token in group]
-            if not ranks or any(not group for group in ranks) or len(flattened) != len(set(flattened)) or set(flattened) != set(texts):
-                raise ValueError("ranking must cover all candidates exactly once; groups express ties")
-            if review["recommendation"] not in {"CONTINUE", "NEITHER"}:
-                raise ValueError("invalid comparative recommendation")
-            if set(review["observations"]) != set(texts):
-                raise ValueError("incomplete comparative observations")
-            for token, dimensions in review["observations"].items():
-                if set(dimensions) != set(DIMENSIONS):
-                    raise ValueError("incomplete reading dimensions")
-                for opinion in dimensions.values():
-                    if not opinion["reason"].strip() or not opinion["spans"]:
-                        raise ValueError("comparative judgement requires reason and text spans")
-                    for span in opinion["spans"]:
-                        text = texts[token]
-                        if not 0 <= span["start"] < span["end"] <= len(text) or text[span["start"]:span["end"]] != span["quote"]:
-                            raise ValueError("invalid comparative text span")
             original = {k: v for k, v in review.items() if k not in {"raw_review", "authority_effect"}}
-            if bound_data(export_root, review["raw_review"]) != original:
+            submitted = bound_data(review_root, review["raw_review"])
+            if not isinstance(submitted, dict) or "raw_review" in submitted:
+                raise ValueError("original comparative submission cannot contain a raw_review receipt")
+            if "authority_effect" in submitted and submitted["authority_effect"] != "NONE":
+                raise ValueError("original comparative submission cannot grant authority")
+            if {k: v for k, v in submitted.items() if k != "authority_effect"} != original:
                 raise ValueError("comparative opinion differs from original submission")
             principals.add(reviewer["principal_id"]); sources.add(reviewer["source_id"]); ids.add(review["id"])
             valid.append(original)

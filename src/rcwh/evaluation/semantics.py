@@ -26,7 +26,25 @@ Return JSON matching the supplied semantic_reading schema. The local checker det
 """
 
 
-def make_request(contract: dict, text: str, entry: dict | None = None, authors: list[dict] | None = None) -> dict:
+PROMPT_V2 = PROMPT + "\nThe frozen fact_registry lists valid fact IDs, not what any character knows.\n"
+
+
+def make_request(contract: dict, text: str, entry: dict | None = None, authors: list[dict] | None = None, *, request_version: int = 1) -> dict:
+    if type(request_version) is not int or request_version not in {1, 2}:
+        raise ValueError(f"unsupported semantic request version: {request_version}")
+    if request_version == 2:
+        registry = (entry or {}).get("fact_registry")
+        if not isinstance(registry, list) or any(not isinstance(fact, str) or not fact for fact in registry) or registry != sorted(set(registry)):
+            raise ValueError("version 2 requires a sorted unique frozen fact registry")
+        knowledge = (entry or {}).get("knowledge")
+        if knowledge:
+            for buckets in knowledge["states"].values():
+                if any(fact not in registry for facts in buckets.values() for fact in facts):
+                    raise ValueError("knowledge entry contains unregistered frozen fact")
+    prompt = PROMPT if request_version == 1 else PROMPT_V2
+    context = {"entry": entry, "authors": authors or []}
+    if request_version == 2:
+        context.update(request_version=2, prompt_sha256=digest(prompt.encode()))
     if authors is not None and (not isinstance(authors, list) or any(not isinstance(a, dict) or not a.get("principal_id") or not a.get("source_id") for a in authors)):
         raise ValueError("candidate authors require principal_id and source_id")
     identities = [b["id"] for b in contract.get("required_beats", []) + contract.get("forbidden_beats", []) + contract.get("knowledge_guards", [])]
@@ -34,16 +52,16 @@ def make_request(contract: dict, text: str, entry: dict | None = None, authors: 
     if len(identities) != len(set(identities)):
         raise ValueError("duplicate scene constraint identity or canonical exit target")
     return {
-        "schema_version": 1, "kind": "SCENE_SEMANTIC_REQUEST", "prompt": PROMPT,
-        "prompt_sha256": digest(PROMPT.encode()), "contract": contract,
+        "schema_version": request_version, "kind": "SCENE_SEMANTIC_REQUEST", "prompt": prompt,
+        "prompt_sha256": digest(prompt.encode()), "contract": contract,
         "contract_sha256": digest(canonical_bytes(contract)), "text": text,
         "candidate_sha256": digest(text.encode("utf-8")), "entry": entry,
-        "context_sha256": digest(canonical_bytes({"entry": entry, "authors": authors or []})), "authors": authors or [],
+        "context_sha256": digest(canonical_bytes(context)), "authors": authors or [],
     }
 
 
 def validate_request(request: dict) -> None:
-    rebuilt = make_request(request["contract"], request["text"], request["entry"], request["authors"])
+    rebuilt = make_request(request["contract"], request["text"], request["entry"], request["authors"], request_version=request["schema_version"])
     if request != rebuilt:
         raise ValueError("stale or malformed semantic request")
 
@@ -169,7 +187,7 @@ def check_reading(request: dict, reading: dict | None, schema: dict, knowledge_r
     # Production creates a fresh request, so changed entries still stale old opinions.
     frozen_knowledge = (request["entry"] or {}).get("knowledge")
     knowledge = deepcopy(frozen_knowledge["states"]) if frozen_knowledge else {}
-    known_facts = {fact for buckets in knowledge.values() for facts in buckets.values() for fact in facts}
+    known_facts = set(request["entry"]["fact_registry"]) if request["schema_version"] == 2 else {fact for buckets in knowledge.values() for facts in buckets.values() for fact in facts}
     if not frozen_knowledge and (knowledge_exits or contract.get("knowledge_guards") or any(e["knowledge"] for e in reading["events"])):
         report["pending"].append("KNOWLEDGE_ENTRY_NOT_BOUND")
     for target, wanted in knowledge_exits.items():
@@ -241,8 +259,8 @@ def check_reading(request: dict, reading: dict | None, schema: dict, knowledge_r
     for target, wanted in exits.items():
         if target in knowledge_exits:
             continue
-        status = "PASS" if final.get(target) == wanted else "FAIL" if target in final or (target in examined and target not in reading["unresolved"]) else "PENDING"
-        report["checks"].append({"id": target, "status": status, "expected": wanted, "observed": final.get(target)})
+        status = "PASS" if target in final and final[target] == wanted else "FAIL" if target in final or (target in examined and target not in reading["unresolved"]) else "PENDING"
+        report["checks"].append({"id": target, "status": status, "expected": wanted, "observed": final.get(target), "observed_present": target in final})
         if status == "FAIL":
             report["findings"].append(f"exit state not established: {target} expected {wanted}, observed {final.get(target)}")
     knowledge = deepcopy(frozen_knowledge["states"]) if frozen_knowledge else {}

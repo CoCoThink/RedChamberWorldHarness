@@ -1,0 +1,20 @@
+{
+ "schema_version": 1,
+ "status": "DRAFT_UNREVIEWED",
+ "authority_effect": "NONE",
+ "operation_scope": "BACKTEST",
+ "chapters": [79, 80],
+ "instruction": "Given the same editorial plan and entry facts, write one original-chapter research unit represented by this edition's chapters 79 and 80. This is a given-plan writing comparison, not recovery of a lost manuscript. This source-grounded task and minimal entry state remain editorial drafts. No generation is authorized until an editor has checked and completed them, and materials/network/budget consent has been separately obtained.",
+ "plan_summary": "编辑草案：由宝玉与黛玉商改祭文转入迎春婚事，再写薛家婚后香菱受压迫，以宝玉庙中问医的戏谑收束。79–80仅作本版本拆分的一原回单元；下列事件是给定任务，不是复原真值判定。",
+ "events": ["宝玉祭晴雯后与黛玉商议祭文措辞，戏语转为不安。", "贾赦为迎春择孙绍祖，贾母保留意见，贾政劝阻未果；宝玉对迎春离园感到失落。", "夏金桂借名字与服侍安排压制香菱，薛蟠追逐宝蟾，香菱处境恶化。", "镇魇纸人之事引出对香菱的指控与殴打，薛姨妈介入，不将指控写成香菱确实施术的事实。", "宝玉赴天齐庙还愿，向王一贴问疗妒之方；以江湖药方的戏谑表现对现实烦恼的无解。"],
+ "constraints": ["Treat the edition's 79–80 split as one original chapter, not two independent observations.", "Do not consult held-out original prose; familiarity from model pretraining is unknown.", "Both workflows receive exactly the same task information and total token/request budgets; harness revision and feedback resources must fit inside that budget."],
+ "source_refs": [
+  {"segment_id":"hlm80:chapter:79:p00004","text_sha256":"058fa21d475e869b90eb34e3db26867b0c4475a543f0832aad128b6eac388e16"},
+  {"segment_id":"hlm80:chapter:79:p00028","text_sha256":"475214fa215cb8ff21cbc65234f2ec944037735a0b70add1b39da2bcf674acde"},
+  {"segment_id":"hlm80:chapter:80:p00014","text_sha256":"1174cd1800a53433935b37b824d8a3da1e61ea28a21de59d14efe6282d08d18b"},
+  {"segment_id":"hlm80:chapter:80:p00026","text_sha256":"c57308ac71efaa7e8b24d583753ef864031cbf4bbc58ce7f460ad0ed943e4d23"},
+  {"segment_id":"hlm80:chapter:80:p00036","text_sha256":"4fc49ed1757a53df3072491feb31d8c2270aed53df3c2bb7571efa17340ca674"},
+  {"segment_id":"hlm80:chapter:80:p00058","text_sha256":"6796ada2f16ac55d16dc1fd598d709b95acae9426f51df131cf016c7b609e5d9"},
+  {"segment_id":"hlm80:chapter:80:p00075","text_sha256":"f66ceb521190445f6f285a627c79f7a7675eb8a12ae8c5b95e3417470fcc3c71"}
+ ]
+}

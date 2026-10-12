@@ -68,13 +68,29 @@ rcwh pilot summary
 rcwh pilot export /tmp/chapter-reading-round-1
 rcwh diagnostics characters --character zijuan
 rcwh diagnostics style data/evaluation/pilot85_87/drafts/medical-86.txt
+rcwh diagnostics style releases/stable/v1.4/readable/baseline.md --reference corpus:front80:v1-candidate
+rcwh reviews status
 rcwh diagnostics corpus-focus
 rcwh delivery materialize source-review-v2 /tmp/source-review-v2
 ```
 
+`reviews register` receives original human opinions, creates bound records and updates the corresponding selection and its closure digest; it does not grant adoption. See the [reader guide](docs/runbooks/REVIEWER_GUIDE_ZH.md). Optional `diagnostics style --reference` compares narration/quotation observations against verified MAIN_TEXT corpus bytes, retaining provisional audit status and no literary verdict.
+
 The 85–87 trial contains two causal routes and a direct-writing example, nine short drafts in total. The example has prior Harness exposure and is not a valid control. Two independent whole-sequence readings, fresh control runs and revision/review remain pending. See the [trial runbook](docs/runbooks/CONSECUTIVE_CHAPTER_TRIAL.md).
 
 31.04 MiB of duplicate delivery copies were removed after byte comparison. Registered bundles still materialize offline; [attachment preparation](docs/runbooks/DELIVERY_STORAGE.md) creates checked local files without publishing. Git history retains prior copies.
+
+## Planning, API writing and holdout research
+
+```bash
+rcwh plan check --chapters 85-87
+rcwh plan threads
+rcwh plan compare-books
+rcwh write draft data/writing/packages/ch89-research-v4.json --chapter 89
+rcwh backtest check
+```
+
+Writing defaults to dry-run, with an optional Anthropic API adapter (`.[generate]`) and offline replay. Real calls require an environment key and explicit execution/network consent. New feedback never qualifies as independent review. Imported chapter cards and scene skeletons remain drafts; book allocations are shadow examples. The 79–80 holdout is a given-plan writing study, not recovery of an unseen original, and its effect remains `NOT_ESTIMABLE` without real controlled runs and readers. Production input admission is chapter-scoped and shared by competition/promotion; actual used materials still require audit, while unrelated global conditions remain publication preconditions. See [operations and limitations](docs/runbooks/WRITING_AND_HOLDOUT.md).
 
 ## Documentation
 

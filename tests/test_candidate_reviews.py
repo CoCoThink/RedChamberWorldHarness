@@ -92,6 +92,9 @@ def test_two_bound_independent_opinions_qualify_and_hand_flags_are_ignored(revie
         candidate["human_plock"]["status"] = "PENDING"
         candidate["blind_read"].update(status="PENDING", reviewer_blinded=False)
     assert evaluate(reviewed_competition)["status"] == "PASS"
+    # Review qualification is isolated from input admission in this fixture.
+    # Real production missing-package rejection is tested in scoped admission.
+    monkeypatch.setattr("rcwh.workflow.admission.ChapterAdmission.for_competition", lambda *a: {"status": "PASS"})
     monkeypatch.setattr("rcwh.competition.candidate_semantics", lambda *a: {"status": "PASS", "reports": []})
     monkeypatch.setattr("rcwh.competition.run_r4_evidence_regression", lambda _: {"overall": "PASS"})
     monkeypatch.setattr("rcwh.competition.evaluate_literary_candidate", lambda *a, **k: {"machine_status": "READY_FOR_BLIND_READ"})
@@ -247,6 +250,7 @@ def test_production_promotion_reads_current_review_qualification(reviewed_compet
     monkeypatch.setattr("rcwh.competition.candidate_semantics", lambda *a: {"status": "PASS", "reports": []})
     monkeypatch.setattr("rcwh.competition.run_r4_evidence_regression", lambda _: run_r4_evidence_regression(ROOT))
     monkeypatch.setattr("rcwh.competition.evaluate_literary_candidate", lambda root, *a, **k: evaluate_literary_candidate(ROOT, *a, **k))
+    monkeypatch.setattr("rcwh.workflow.admission.ChapterAdmission.for_competition", lambda *a: {"status": "PASS"})
     promotions = PromotionRegistry.from_repo(ROOT)
     promotion_id = "promotion:ch86:b:v1-5-candidate"
     assert promotions.evaluate(ROOT, promotion_id)["overall"] == "PASS"

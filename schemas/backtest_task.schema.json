@@ -1,0 +1,10 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,
+ "required":["schema_version","status","authority_effect","operation_scope","chapters","instruction","plan_summary","events","constraints","source_refs"],
+ "properties":{
+  "schema_version":{"const":1},"status":{"const":"DRAFT_UNREVIEWED"},"authority_effect":{"const":"NONE"},"operation_scope":{"const":"BACKTEST"},
+  "chapters":{"const":[79,80]},"instruction":{"type":"string","minLength":1},"plan_summary":{"type":"string"},
+  "events":{"type":"array","items":{"type":"string","minLength":1}},"constraints":{"type":"array","items":{"type":"string","minLength":1}},
+  "source_refs":{"type":"array","items":{"type":"object","additionalProperties":false,"required":["segment_id","text_sha256"],"properties":{"segment_id":{"type":"string","minLength":1},"text_sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"}}}}
+ }
+}

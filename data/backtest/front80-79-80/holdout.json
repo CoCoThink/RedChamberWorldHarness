@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "id": "front80-79-80",
+  "status": "DRAFT_UNREVIEWED",
+  "authority_effect": "NONE",
+  "dataset_ref": "corpus:front80:v1-candidate",
+  "manifest_sha256": "033395831d12b5809eb0c87a71fd2728367d1e191ccf1db94eda7259ef5057e3",
+  "edition_asset_ref": "asset:primary:hlm:zhihui:v3.1416:pdf",
+  "holdout_chapters": [
+    79,
+    80
+  ],
+  "original_chapter_units": 1,
+  "retrieval_exclude_chapters": [
+    79,
+    80
+  ],
+  "style_exclude_chapters": [
+    79,
+    80
+  ],
+  "shared_task": {
+    "path": "data/backtest/front80-79-80/task.json",
+    "sha256": "958842978d1ae49a485afb11738b253d1347cd19ca1fd739debe79d105b03cdf"
+  },
+  "world": {
+    "path": "data/backtest/front80-79-80/world.json",
+    "sha256": "c5bd7f778af2134cc24e8df8f98375d5cbacf8a79245a34052e1876d22798e64"
+  },
+  "exemplar_segment_ids": [],
+  "samples_per_workflow": 2,
+  "budget": {
+    "model": "claude-fable-5-1",
+    "max_total_tokens_per_sample": 65536,
+    "max_requests_per_sample": 2,
+    "max_output_tokens_per_request": 8192,
+    "revision_reserve_tokens": 32768,
+    "revision_reserve_requests": 1,
+    "minimum_characters": 1000,
+    "maximum_characters": 30000
+  },
+  "limitations": [
+    "No generation, independent reading, budget consent or literary acceptance is recorded. Effect is NOT_ESTIMABLE.",
+    "Shared task and minimal chapter78 entry facts are source-grounded editorial drafts, incomplete and independently unreviewed; no generation is authorized.",
+    "Model pretraining exposure is unknown. Exact or normalized overlap is observational, not proof of memorization or contamination.",
+    "The original chapter represented by this edition's 79–80 split is one holdout unit; small-sample given-plan findings cannot establish lost-manuscript reconstruction.",
+    "Source dataset readiness and human audit describe the whole registered dataset; the 1–78 style subset has not received an independent subset audit.",
+    "Existing declared style vocabulary is exploratory, not a target-blind preregistered literary standard."
+  ]
+}

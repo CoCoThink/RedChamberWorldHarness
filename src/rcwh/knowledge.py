@@ -9,6 +9,8 @@ from .io import load_data
 from .contracts import unique_index
 
 BUCKETS = ("knows", "believes", "suspects", "does_not_know")
+# Selected knowledge version. slice1 stays untouched for records bound to its bytes.
+KNOWLEDGE_PATH = "data/knowledge/v03_slice2.json"
 
 
 @dataclass
@@ -18,7 +20,7 @@ class CharacterKnowledgeRuntime:
 
     @classmethod
     def from_repo(cls, root: Path) -> "CharacterKnowledgeRuntime":
-        return cls(root, load_data(root / "data/knowledge/v03_slice1.json") or {})
+        return cls(root, load_data(root / KNOWLEDGE_PATH) or {})
 
     @property
     def facts(self):

@@ -10,6 +10,7 @@ from typing import Any, Iterator
 
 import yaml
 
+from ..io import ParseMemo
 from ..schema import validate_instance
 from .paths import AssetError, repository_path
 
@@ -64,12 +65,12 @@ class CatalogStore:
     def read(self) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
         with self.lock():
             self.assert_ready()
-            return self.read_unlocked()
+            return self.read_unlocked(memo=ParseMemo())
 
-    def read_unlocked(self) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
+    def read_unlocked(self, *, memo: ParseMemo | None = None) -> tuple[dict[str, dict[str, Any]], dict[str, dict[str, Any]]]:
         from .layout import CatalogLayout
         layout = CatalogLayout(self)
-        return layout.read(layout.selected(), lambda path: repository_path(self.root, path).read_bytes())
+        return layout.read(layout.selected(memo=memo), lambda path: repository_path(self.root, path).read_bytes(), memo=memo)
 
     @staticmethod
     def unique(records: list[dict[str, Any]], kind: str) -> dict[str, dict[str, Any]]:
@@ -80,8 +81,8 @@ class CatalogStore:
             result[record["id"]] = record
         return result
 
-    def check_document(self, document: dict[str, Any]) -> None:
-        errors = validate_instance(document, self.root / "schemas/asset_catalog.schema.json")
+    def check_document(self, document: dict[str, Any], *, memo: ParseMemo | None = None) -> None:
+        errors = validate_instance(document, self.root / "schemas/asset_catalog.schema.json", memo=memo)
         if errors:
             raise AssetError("invalid asset catalog: " + "; ".join(errors))
 

@@ -28,7 +28,7 @@ class LiteraryProductionRuntime:
                        if records[ch]["state"] in {"READY_FOR_CANDIDATES", "IN_REVIEW"}), None)
         if active:
             gates = self.gates(active["chapter"], competitions)
-            progress = dict(active["workflow_progress"])
+            progress = dict(gates["derived_progress"])
             progress.update(SIX_FIELD_REGRESSION=gates["six_field"],
                             PLOCK_REGRESSION=gates["manual_plock"], BLIND_READ=gates["blind_read"])
             unresolved = next((stage for stage in PIPELINE if progress[stage] != "PASS"), "ADJUDICATION")
@@ -42,16 +42,16 @@ class LiteraryProductionRuntime:
             "literary_resume_started": self.data.get("literary_resume_started"),
             "active_chapter": active["chapter"] if active else None,
             "chapter_states": {ch: records[ch]["state"] for ch in self.data["sequence"]},
-            "active_gates": self.gates(active["chapter"], competitions) if active else None,
+            "active_gates": gates if active else None,
             "next_gate": next_gate,
         }
 
-    def gates(self, chapter: int, competitions: Any | None = None) -> dict[str, Any]:
+    def gates(self, chapter: int, competitions: Any | None = None, *, evaluation: dict | None = None) -> dict[str, Any]:
         if chapter not in self.data["sequence"]:
             raise KeyError(f"Chapter outside configured literary sequence: {chapter}")
         competitions = competitions or CompetitionRegistry.from_repo(self.root)
         record = self._production(competitions)[chapter]
-        evaluation = competitions.evaluate_record(self.root, record)
+        evaluation = evaluation if evaluation is not None else competitions.evaluate_record(self.root, record)
         rows = evaluation["candidate_results"]
         if any(row["machine_status"] == "REJECT_BEFORE_BLIND_READ" for row in rows):
             machine = "FAIL"
@@ -73,6 +73,9 @@ class LiteraryProductionRuntime:
             "manual_plock": review_gate(["HUMAN_PLOCK"]),
             "blind_read": review_gate(["BLIND_READ"]),
             "adjudication": evaluation["adjudication"]["outcome"],
+            "derived_progress": evaluation["derived_progress"],
+            "warnings": evaluation["warnings"],
+            "input_admission": evaluation["input_admission"],
             "declared_workflow": record["workflow_progress"],
             "declared_adjudication": record["adjudication"],
         }

@@ -44,6 +44,19 @@ def test_pending_submissions_are_not_engineering_failures_or_acceptance_passes(a
     assert result["checks"]["declared_input_closure"]["status"] == "BLOCKED"
 
 
+def test_scoped_production_pass_does_not_clear_global_publication_preconditions(acceptance_inputs, monkeypatch):
+    root, _, _ = acceptance_inputs
+    monkeypatch.setattr("rcwh.acceptance.LiteraryInputs.package", lambda *args, **kwargs: {
+        "status": "PASS", "findings": [], "production_blockers": []})
+    result = ProjectAcceptance(root).summary()
+    assert result["checks"]["production_admission:writing.json"]["status"] == "PASS"
+    assert result["status"] == "PENDING"
+    assert result["engineering_status"] == "PASS"
+    assert result["publication_preconditions"]["source_independent_reviews"]["status"] == "PENDING"
+    assert result["publication_preconditions"]["corpus_human_review:corpus:fixture"]["status"] == "PENDING"
+    assert result["publication_preconditions"]["p9_submissions"]["status"] == "PENDING"
+
+
 def test_current_admissions_can_pass_without_claiming_literary_adoption(acceptance_inputs):
     root, state, _ = acceptance_inputs
     state.update(source_review="PASS", corpus_review="PASS", paired="PASS")

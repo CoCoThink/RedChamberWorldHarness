@@ -17,6 +17,21 @@ def cmd_competition(args: argparse.Namespace) -> int:
     if args.competition_id not in registry.records:
         print(f"Unknown competition: {args.competition_id}")
         return 1
+    if getattr(args, "prepare_context", None):
+        from ..candidate_reviews import canonical_bytes, digest
+        from ..review_context import prepare_manifest
+        try:
+            manifest = prepare_manifest(root, registry.records[args.competition_id])
+            with Path(args.prepare_context).open("xb") as handle:
+                handle.write(canonical_bytes(manifest))
+            print(json.dumps({"status": "PASS", "context_version": 2,
+                "context_manifest": {"path": args.prepare_context,
+                    "sha256": digest(canonical_bytes(manifest))},
+                "qualification": "NOT_GRANTED"}, ensure_ascii=False, indent=2))
+            return 0
+        except (KeyError, OSError, ValueError) as exc:
+            print(json.dumps({"status": "FAIL", "findings": [str(exc)]}, ensure_ascii=False))
+            return 1
     if args.review_packet:
         from ..candidate_reviews import canonical_bytes, review_packet
         try:
@@ -113,6 +128,7 @@ def cmd_promotion(args: argparse.Namespace) -> int:
 def add_commands(sub) -> None:
     p_comp = sub.add_parser("competition")
     p_comp.add_argument("competition_id")
+    p_comp.add_argument("--prepare-context", help="Prepare an explicit v2 semantic input manifest; does not update the competition")
     p_comp.add_argument("--review-packet", help="Export a bound anonymous packet to a new file; requires review_protocol")
     p_comp.add_argument("--json", action="store_true")
     p_comp.set_defaults(func=cmd_competition)

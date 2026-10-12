@@ -4,6 +4,21 @@
 
 本 runbook 中的盲评仅指 P9 小说原稿／修订稿比较。语料审查者应看到原件和完整分类信息，以核对正文边界。
 
+## 一步接收与登记
+
+下文说明的数据绑定规则仍有效，但不必手工执行 ingest、结构化记录和 selection/闭包摘要更新。收到真实完整原件后可用：
+
+```bash
+rcwh reviews status
+rcwh reviews register source opinion.json --origin '实际接收的来源复核' --dry-run
+rcwh reviews register source opinion.json --origin '实际接收的来源复核'
+rcwh reviews register corpus-pilot opinion.json --origin '实际接收的 pilot 语料审核'
+rcwh reviews register corpus-full opinion.json --origin '实际接收的完整语料审核'
+rcwh reviews register p9 opinion.json --origin '实际接收的配对盲评'
+```
+
+命令保留原始 JSON 字节，按现有 schema 生成记录，追加对应选择文件，仅同步该选择文件的既有闭包摘要。预检拒绝空值、模板、重复或过期绑定；有效否定意见仍登记，并如实返回 FAIL。普通写入/验证异常恢复原选择和闭包，不删除已接收原件；并发冲突不覆盖，明确报告。登记成功的退出码可能为1或2，请看 `registered: true` 和 lane_report。未提供任何真实原件时不会生成评审。详细填写方法见[独立读者指南](REVIEWER_GUIDE_ZH.md)。
+
 ## 公开来源复核
 
 当前材料为 `artifacts/reviews/source-independent-v2-20261009/`，绑定 `data/provenance/audits/protocol-v2.json` 的12条Source。曹家三段已按故宫005664原件影像完成代理校录；图像识读判断与校录文本重取分开记录，详见[原件核验](../reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)。

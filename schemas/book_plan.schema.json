@@ -1,0 +1,166 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "BookPlan",
+  "type": "object",
+  "required": [
+    "id",
+    "status",
+    "total_chapters",
+    "hypothesis_ref",
+    "event_allocations",
+    "chapters",
+    "hint_allocations",
+    "unresolved",
+    "authority_effect",
+    "evidence_effect",
+    "production_scope_effect"
+  ],
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "status": {
+      "const": "SHADOW_ILLUSTRATIVE"
+    },
+    "total_chapters": {
+      "type": "integer",
+      "minimum": 1
+    },
+    "hypothesis_ref": {
+      "type": "string"
+    },
+    "authority_effect": {
+      "const": "NONE"
+    },
+    "evidence_effect": {
+      "const": "NONE"
+    },
+    "production_scope_effect": {
+      "const": "NONE"
+    },
+    "event_allocations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "event_id",
+          "chapter",
+          "source_record",
+          "placement_status"
+        ],
+        "properties": {
+          "event_id": {
+            "type": "string"
+          },
+          "chapter": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "source_record": {
+            "type": "object",
+            "required": [
+              "ref",
+              "path",
+              "pointer",
+              "sha256",
+              "text_sha256",
+              "value"
+            ],
+            "properties": {
+              "ref": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "pointer": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "text_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "value": {
+                "type": "object"
+              }
+            },
+            "additionalProperties": false
+          },
+          "placement_status": {
+            "const": "ILLUSTRATIVE_DRAFT"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "chapter",
+          "event_ids",
+          "planned_han_characters",
+          "burden_status"
+        ],
+        "properties": {
+          "chapter": {
+            "type": "integer",
+            "minimum": 1
+          },
+          "event_ids": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "planned_han_characters": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          },
+          "burden_status": {
+            "type": "string"
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "hint_allocations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "hint_id",
+          "chapter"
+        ],
+        "properties": {
+          "hint_id": {
+            "type": "string"
+          },
+          "chapter": {
+            "type": [
+              "integer",
+              "null"
+            ],
+            "minimum": 1
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "unresolved": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  },
+  "additionalProperties": true
+}

@@ -153,7 +153,7 @@ class PromotionRegistry:
             and chapters[comp["chapter"]].rstrip() == source_chapter.rstrip()
         )
         if not target_matches:
-            findings.append("embedded Chapter 86 does not match adjudicated B candidate")
+            findings.append("embedded target chapter does not match adjudicated winner candidate")
 
         hard_strings = [
             "# 第九十回　薛宝钗借词含讽谏　王熙凤知命强英雄",
@@ -174,12 +174,12 @@ class PromotionRegistry:
         if not r4f_ok:
             findings.append("R4-F hard-interface sentinel mismatch")
 
+        supported_policy = bool(comp and comp["chapter"] == 86 and allowed == {86}
+                                and comp["plock_ref"] == "plock:ch86:cold-medicine")
         plock_payload = evaluate_literary_candidate(
-            root,
-            "plock:ch86:cold-medicine",
-            chapters.get(86, "") if chapters else "",
-            candidate_name="promotion-ch86-B",
-        )
+            root, comp["plock_ref"], chapters.get(comp["chapter"], "") if chapters else "",
+            candidate_name=record["winner_candidate_id"],
+        ) if supported_policy else None
         other_plock_anchors = [
             "谁家的水桶还在井边？",
             "从前也有数。",
@@ -187,11 +187,11 @@ class PromotionRegistry:
             "石在，字在。",
         ]
         plock_ok = (
-            plock_payload["machine_status"] == "READY_FOR_BLIND_READ"
+            plock_payload is not None and plock_payload["machine_status"] == "READY_FOR_BLIND_READ"
             and all(x in text for x in other_plock_anchors)
         )
-        gates["PLOCK"] = "PASS" if plock_ok else "FAIL"
-        if not plock_ok:
+        gates["PLOCK"] = "PENDING" if not supported_policy else "PASS" if plock_ok else "FAIL"
+        if supported_policy and not plock_ok:
             findings.append("P-Lock regression failed")
 
         active_unchanged = regression["stable_active"]["sha256"] == record["baseline"]["sha256"]
@@ -216,6 +216,8 @@ class PromotionRegistry:
             "gates": gates,
             "declared_checks": expected,
             "pending_checks": pending_checks,
+            "pending_reasons": [] if supported_policy else ["PROMOTION_CHAPTER_SAFETY_POLICY_MISSING"],
+            "input_admission": competition_report.get("input_admission") if competition_report else None,
             "findings": findings,
             "stable_active_mutated": False,
             "release_action": record["release_action"],

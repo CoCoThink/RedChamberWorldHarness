@@ -19,6 +19,7 @@ from ..assets.transactions import commit_unlocked, digest, recover_unlocked
 from ..corpus.extraction import canonical_bytes
 from ..corpus.locators import SourceLocatorVerifier, source_digest
 from ..graph import ProvenanceGraph
+from ..io import parse_yaml
 from ..schema import validate_instance
 
 
@@ -247,7 +248,7 @@ class SourceExcerptCorrection:
                     raise AssetError("registered correction verification failed")
             changes = {}
             for path in sorted((self.root / "data/provenance/sources").glob("*.yaml")):
-                document = yaml.safe_load(path.read_bytes())
+                document = parse_yaml(path.read_bytes())
                 if not any(item["id"] in {result["source_id"] for result in proposal["results"]} for item in document["sources"]):
                     continue
                 document["sources"] = [after[source["id"]] for source in document["sources"]]

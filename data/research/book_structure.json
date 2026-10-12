@@ -1,0 +1,230 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "id": "book-structure-shadow",
+  "status": "SHADOW_ONLY",
+  "source_records": [
+    {
+      "ref": "data/open_interfaces/r4_open.yaml#/open_interfaces/0",
+      "path": "data/open_interfaces/r4_open.yaml",
+      "pointer": "/open_interfaces/0",
+      "sha256": "44cbfcc47f5f3bf4bdd88691020172f1bea9e3d86e1a3acc3e2c332b515e7fae",
+      "text_sha256": "50e75a9fdc855c3664049e4afff5983a58226891df8c153f850d70596661c1b4",
+      "value": {
+        "id": "OL-001",
+        "title": "全书总回数",
+        "state": "OPEN_LOCKED",
+        "uncertainty": [
+          "现有证据不能唯一证明原作总回数必为100回。"
+        ],
+        "current_model": {
+          "status": "CURRENT_C_HIGH",
+          "summary": "当前以100回作为高置信工作模型，服务81—100结构安排。"
+        },
+        "forbidden_hardening": [
+          "不得把“当前采用100回”改写成“原作唯一总回数已证实为100回”。"
+        ],
+        "reopen_triggers": [
+          "NEW_DIRECT_WITNESS",
+          "PROVENANCE_REGRADE",
+          "DOWNSTREAM_VIOLATION"
+        ],
+        "project_refs": [
+          "81—100_OPEN接口冻结表_v1.0.md"
+        ]
+      }
+    },
+    {
+      "ref": "data/open_interfaces/r4_open.yaml#/open_interfaces/4",
+      "path": "data/open_interfaces/r4_open.yaml",
+      "pointer": "/open_interfaces/4",
+      "sha256": "44cbfcc47f5f3bf4bdd88691020172f1bea9e3d86e1a3acc3e2c332b515e7fae",
+      "text_sha256": "0d122315546de49339a83e4f99f74de1a34a775df00e57a8fb44e53a2cf5589d",
+      "value": {
+        "id": "OL-005",
+        "title": "黛亡至金玉婚的顺序与间隔",
+        "state": "OPEN_LOCKED",
+        "uncertainty": [
+          "当前采用黛玉先亡、相隔若干月后金玉婚；精确间隔未被唯一锁定。"
+        ],
+        "current_model": {
+          "status": "CURRENT_C",
+          "summary": "当前正文采用“黛亡→若干月→金玉婚”的工作顺序。"
+        },
+        "mechanism_refs": [
+          "H03"
+        ],
+        "implementation_refs": [
+          "impl:active:ch86:open-scope",
+          "impl:active:ch87:historical-mourning-marriage"
+        ],
+        "forbidden_hardening": [
+          "不得把当前月数或相邻回次当作证据唯一要求。"
+        ],
+        "reopen_triggers": [
+          "NEW_DIRECT_WITNESS",
+          "PLACEMENT_REGRADE",
+          "NEW_PRIMARY_HISTORY_CONTRADICTION"
+        ]
+      }
+    },
+    {
+      "ref": "data/open_interfaces/r4_open.yaml#/open_interfaces/6",
+      "path": "data/open_interfaces/r4_open.yaml",
+      "pointer": "/open_interfaces/6",
+      "sha256": "44cbfcc47f5f3bf4bdd88691020172f1bea9e3d86e1a3acc3e2c332b515e7fae",
+      "text_sha256": "5023069887818d12430af39d3a7a481088d55d30b531dfc3303c1fdbf24d60e9",
+      "value": {
+        "id": "OL-007",
+        "title": "金玉婚第87回安置",
+        "state": "OPEN_LOCKED",
+        "uncertainty": [
+          "金玉婚方向与关系强，但第87回为工作安置。"
+        ],
+        "current_model": {
+          "status": "CURRENT_C",
+          "summary": "当前第87回完成金玉婚相关核心实现。"
+        },
+        "mechanism_refs": [
+          "H03",
+          "H04"
+        ],
+        "implementation_refs": [
+          "impl:active:ch87:historical-mourning-marriage",
+          "impl:active:ch87:historical-senior-kin-marriage-talk"
+        ],
+        "forbidden_hardening": [
+          "不得把第87回当作原稿固定回次。"
+        ],
+        "reopen_triggers": [
+          "NEW_DIRECT_WITNESS",
+          "PLACEMENT_REGRADE"
+        ]
+      }
+    },
+    {
+      "ref": "data/open_interfaces/r4_open.yaml#/open_interfaces/22",
+      "path": "data/open_interfaces/r4_open.yaml",
+      "pointer": "/open_interfaces/22",
+      "sha256": "44cbfcc47f5f3bf4bdd88691020172f1bea9e3d86e1a3acc3e2c332b515e7fae",
+      "text_sha256": "19e7083df7ed2e1f9b406635df9178caff6bf34566b5e4bd40668a43d033593c",
+      "value": {
+        "id": "OL-023",
+        "title": "悬崖撒手的回次、寺庙与路径",
+        "state": "OPEN_LOCKED",
+        "uncertainty": [
+          "“悬崖撒手”及弃宝钗麝月为僧方向强；第99回、具体寺庙、行走路径和出家仪式为C。"
+        ],
+        "current_model": {
+          "status": "CURRENT_C",
+          "summary": "当前第99回写宝玉离家后在寺中剃发并拒绝回家。"
+        },
+        "hard_anchor_decision_refs": [
+          "decision:cliff-release:function"
+        ],
+        "open_decision_refs": [
+          "decision:cliff-release:formal-title"
+        ],
+        "current_decision_refs": [
+          "decision:cliff-release:placement"
+        ],
+        "implementation_refs": [
+          "impl:active:ch99:cliff-release",
+          "impl:active:ch99:title"
+        ],
+        "forbidden_hardening": [
+          "不得把T2“悬崖撒手”升级为正式原标题。",
+          "不得把第99回、寺庙、路径或仪式写成源证锁定。"
+        ],
+        "reopen_triggers": [
+          "NEW_DIRECT_WITNESS",
+          "ROLE_REGRADE",
+          "PLACEMENT_REGRADE"
+        ]
+      }
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "current-100",
+      "status": "SHADOW_ILLUSTRATIVE",
+      "total_chapters": 100,
+      "open_refs": [
+        "OL-001",
+        "OL-005",
+        "OL-007",
+        "OL-023"
+      ],
+      "interpretation": "Illustrative allocation only; no claim of original chapter count or event dating."
+    },
+    {
+      "id": "extended-110",
+      "status": "SHADOW_ILLUSTRATIVE",
+      "total_chapters": 110,
+      "open_refs": [
+        "OL-001",
+        "OL-005",
+        "OL-007",
+        "OL-023"
+      ],
+      "interpretation": "Illustrative allocation only; no claim of original chapter count or event dating."
+    }
+  ],
+  "production_scope_effect": "NONE",
+  "selection": null,
+  "claim_records": [
+    {
+      "ref": "data/provenance/claims/canary.yaml#/claims/0",
+      "path": "data/provenance/claims/canary.yaml",
+      "pointer": "/claims/0",
+      "sha256": "2744f2158596c4102efc847bf4e16f3701cd95300b61420469dad756a804d502",
+      "text_sha256": "2a2b7925f7ace63be5d38b77711c00af0fb853e403df6758aa8eeef85424e833",
+      "value": {
+        "id": "claim:cliff-release:future-interface",
+        "statement": "后文存在被批者称作“悬崖撒手”的一回/接口。",
+        "kind": "CHAPTER_CALL",
+        "role": "CHAPTER_CALL",
+        "modality": "DIRECT_ASSERTION",
+        "literal_targets": [
+          "SOURCE_EXACT",
+          "SEM"
+        ],
+        "t_axis": "T2",
+        "support": [
+          {
+            "source": "src:gengchen:ch21:cliff-release",
+            "relation": "DIRECT"
+          }
+        ],
+        "status": "SUPPORTED"
+      }
+    },
+    {
+      "ref": "data/provenance/claims/r4_core_completion.yaml#/claims/0",
+      "path": "data/provenance/claims/r4_core_completion.yaml",
+      "pointer": "/claims/0",
+      "sha256": "18f15488748558f5721123438edffa56edbba852862dda75a4becabbab0ddeda",
+      "text_sha256": "efe993507bdedb76376d11108c1167357dd4c381ee9df4518cc05eba2a8d0073",
+      "value": {
+        "id": "claim:daiyu:death-direction",
+        "statement": "后文黛玉死亡是通部“大过节、大关键”之一。",
+        "kind": "EVENT",
+        "authority_scope": "NARRATIVE_EVIDENCE",
+        "role": "EVENT",
+        "modality": "DIRECT_ASSERTION",
+        "literal_targets": [
+          "SEM"
+        ],
+        "support": [
+          {
+            "source": "src:jimao:ch18:daiyu-death",
+            "relation": "DIRECT"
+          }
+        ],
+        "status": "SUPPORTED"
+      }
+    }
+  ],
+  "corpus_citations": [],
+  "corpus_link_status": "PENDING_NO_EDITOR_SELECTED_SEGMENTS"
+}

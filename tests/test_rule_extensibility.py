@@ -160,7 +160,9 @@ def test_verified_review_results_can_advance_without_editing_literary_snapshot(m
     from rcwh.candidate_reviews import CandidateReviewService
     fixture_root, record, _ = make_reviewed_competition(tmp_path, record)
     competitions.records[record["id"]] = record
-    # This workflow unit test assumes semantic qualification; separate tests replay actual events.
+    # This workflow unit test assumes semantic and input qualification;
+    # separate scoped-admission tests reject real missing package bindings.
+    monkeypatch.setattr("rcwh.workflow.admission.ChapterAdmission.for_competition", lambda *a: {"status": "PASS"})
     monkeypatch.setattr("rcwh.competition.candidate_semantics", lambda *a: {"status": "PASS", "reports": []})
     monkeypatch.setattr("rcwh.competition.CandidateReviewService", lambda root, rec:
                         CandidateReviewService(fixture_root if rec["id"] == record["id"] else root, rec))

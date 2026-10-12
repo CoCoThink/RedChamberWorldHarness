@@ -174,6 +174,9 @@ class CompetitionRegistry:
     def evaluate_record(self, root: Path, record: dict[str, Any]) -> dict[str, Any]:
         regression = run_r4_evidence_regression(root)
         reviews = CandidateReviewService(root, record)
+        from .workflow.admission import ChapterAdmission
+        admission = ChapterAdmission(root).for_competition(record)
+        admission_pass = admission["status"] in {"PASS", "NOT_APPLICABLE"}
         results = []
         for candidate in record["candidates"]:
             artifact = candidate["artifact"]
@@ -208,6 +211,8 @@ class CompetitionRegistry:
                 and opinion["status"] == "PASS"
                 and semantic["status"] == "PASS"
             )
+            content_eligible = eligible
+            eligible = content_eligible and admission_pass
             results.append({
                 "id": candidate["id"],
                 "label": candidate["label"],
@@ -231,6 +236,7 @@ class CompetitionRegistry:
                     "human_plock": candidate["human_plock"],
                     "blind_read": candidate["blind_read"],
                 },
+                "content_qualification_pass": content_eligible,
                 "adjudication_eligible": eligible,
                 "automatic_promotion": False,
             })
@@ -250,7 +256,7 @@ class CompetitionRegistry:
         winner = adj["winner_candidate_id"]
         if winner:
             item = by_id.get(winner)
-            if (item is None or not item["adjudication_eligible"]) and not legacy:
+            if (item is None or not item["content_qualification_pass"]) and not legacy:
                 consistency.append(f"declared winner {winner} has not passed all promotion gates")
             if adj["promotion_state"] != "PROMOTION_CANDIDATE":
                 consistency.append("eligible declared winner must be marked PROMOTION_CANDIDATE")
@@ -262,7 +268,20 @@ class CompetitionRegistry:
         if winner and not qualified:
             current_adj = {"outcome": "PENDING", "winner_candidate_id": None,
                            "promotion_state": "NOT_ELIGIBLE"}
-        qualification = "FAIL" if consistency else "PASS" if qualified else "PENDING"
+        qualification = "FAIL" if consistency or admission["status"] == "FAIL" else "PASS" if qualified else "PENDING"
+        derived = dict(record["workflow_progress"])
+        def gate(values):
+            return "FAIL" if "FAIL" in values else "PASS" if values and all(
+                value in {"PASS", "REPLACEMENT_ACCEPTED"} for value in values) else "PENDING"
+        derived.update(
+            SIX_FIELD_REGRESSION=gate([r["review_qualification"]["check_statuses"][field]
+                                       for r in results for field in SIX_FIELDS]),
+            PLOCK_REGRESSION=gate([r["human_plock_status"] for r in results]),
+            BLIND_READ=gate([r["blind_read_status"] for r in results]))
+        warnings = [f"DECLARED_PROGRESS_UNBACKED: {stage}" for stage in PIPELINE
+                    if derived[stage] != record["workflow_progress"][stage]]
+        if current_adj != adj:
+            warnings.append("DECLARED_ADJUDICATION_UNBACKED")
         return {
             "competition": record["id"],
             "mode": record["mode"],
@@ -270,7 +289,12 @@ class CompetitionRegistry:
             "state": record["state"],
             "evidence_core_regression": regression["overall"],
             "stable_active_effect": record["stable_active_effect"],
-            "workflow_progress": record["workflow_progress"],
+            "workflow_progress": derived,
+            "derived_progress": derived,
+            "declared_progress": record["workflow_progress"],
+            "progress_basis": "DERIVED_CURRENT_QUALIFICATION",
+            "warnings": warnings,
+            "input_admission": admission,
             "candidate_results": results,
             "adjudication": current_adj,
             "declared_adjudication": adj,
@@ -293,7 +317,7 @@ def format_competition(payload: dict[str, Any]) -> str:
         f"stable_active_effect: {payload['stable_active_effect']}",
         "stable_active_mutated: false",
         "",
-        "DECLARED WORKFLOW (NOT COMPUTED QUALIFICATION)",
+        "DERIVED WORKFLOW (CURRENT QUALIFICATION)",
     ]
     for stage in PIPELINE:
         out.append(f"- {stage}: {payload['workflow_progress'][stage]}")

@@ -128,19 +128,36 @@ class ProjectState:
         records = self.owner("competitions")["competition_records"]
         release = self.release()
         plan = self.plan_constraints(release.catalog)
+        from ..competition import CompetitionRegistry, PIPELINE
+        registry = CompetitionRegistry({record["id"]: record for record in records})
+        evaluations = {record["chapter"]: registry.evaluate_record(self.root, record) for record in records}
         chapters = {
             str(record["chapter"]): {
                 "state": record["state"],
-                "workflow_progress": record["workflow_progress"],
-                "adjudication": record["adjudication"],
+                "workflow_progress": evaluations[record["chapter"]]["derived_progress"],
+                "derived_progress": evaluations[record["chapter"]]["derived_progress"],
+                "declared_progress": record["workflow_progress"],
+                "adjudication": evaluations[record["chapter"]]["adjudication"],
+                "declared_adjudication": record["adjudication"],
+                "progress_basis": "DERIVED_CURRENT_QUALIFICATION",
+                "warnings": evaluations[record["chapter"]]["warnings"],
+                "input_admission": evaluations[record["chapter"]]["input_admission"],
             }
             for record in records
         }
+        runtime = LiteraryProductionRuntime.from_repo(self.root)
+        active = next((record for record in records if record["chapter"] in runtime.data["sequence"]
+                       and record["state"] in {"READY_FOR_CANDIDATES", "IN_REVIEW"}), None)
+        if active:
+            progress = evaluations[active["chapter"]]["derived_progress"]
+            next_gate = f"CH{active['chapter']}_{next((stage for stage in PIPELINE if progress[stage] != 'PASS'), 'ADJUDICATION')}"
+        else:
+            next_gate = "COMPETITION_SEQUENCE_REVIEW"
         return {
             "project_id": self.data["id"], "owners": self.data["owners"],
             "status": self.owner("implementation")["status"],
             "capability": capability,
-            "literary_next_gate": LiteraryProductionRuntime.from_repo(self.root).summary()["next_gate"], "chapters": chapters,
+            "literary_next_gate": next_gate, "chapters": chapters,
             "active_release": {"id": release.data["id"], "sha256": release.data["text_sha256"]},
             "plan_constraints": {**self.data["plan_constraints_binding"], "authority": plan["authority"], "provenance": plan["provenance"]},
             "implementation": self.owner("implementation"),

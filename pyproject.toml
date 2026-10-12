@@ -15,6 +15,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<9"]
+generate = ["anthropic==1.8.0"]
 
 [project.scripts]
 rcwh = "rcwh.cli:main"

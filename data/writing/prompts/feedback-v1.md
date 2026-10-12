@@ -1,0 +1,1 @@
+This extraction is FEEDBACK_ONLY regardless of model family. It cannot serve as an independent review. Return one semantic_reading JSON object, no Markdown fences. Use the supplied request identities and exact candidate spans. Do not claim official qualification.

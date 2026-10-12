@@ -5,6 +5,10 @@ from .application.common import repo_root
 from .application.diagnostics import add_commands as add_diagnostics
 from .application.pilot import add_commands as add_pilot
 from .application.delivery import add_commands as add_delivery
+from .application.reviews import add_commands as add_reviews
+from .application.write import add_commands as add_write
+from .application.backtest import add_commands as add_backtest
+from .application.plan import add_commands as add_plan
 from .application.foundation import add_foundation_commands
 from .application.evidence import add_commands as add_evidence, cmd_validate, cmd_trace, cmd_literal, cmd_mechanism, cmd_open, cmd_regression, cmd_plock
 from .application.evaluation import add_commands as add_evaluation, cmd_evaluate, cmd_semantic, cmd_literary_suite, cmd_literary_evaluate, cmd_historical_adapter, cmd_knowledge
@@ -22,6 +26,10 @@ def main() -> None:
     add_diagnostics(sub)
     add_pilot(sub)
     add_delivery(sub)
+    add_reviews(sub)
+    add_write(sub)
+    add_backtest(sub)
+    add_plan(sub)
     add_evidence(sub)
     add_evaluation(sub)
     add_planning(sub)

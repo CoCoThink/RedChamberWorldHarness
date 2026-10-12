@@ -15,6 +15,7 @@ from ..assets.transactions import commit_unlocked, digest, recover_unlocked
 from ..corpus.extraction import canonical_bytes
 from ..corpus.locators import SourceLocatorVerifier, report_content, source_digest
 from ..graph import ProvenanceGraph
+from ..io import parse_yaml
 from ..schema import validate_instance
 from .repository import ProvenanceRepository
 
@@ -157,7 +158,7 @@ class SourceCarrierRebinding:
                     raise AssetError("registered verification report failed")
             changes = {}
             for path in sorted((self.root / "data/provenance/sources").glob("*.yaml")):
-                document = yaml.safe_load(path.read_bytes())
+                document = parse_yaml(path.read_bytes())
                 document["sources"] = [after[source["id"]] for source in document["sources"]]
                 changes[path.relative_to(self.root).as_posix()] = yaml.safe_dump(document, allow_unicode=True, sort_keys=False).encode("utf-8")
             audit = {**proposal, "status": "APPLIED", "after_sources": after}

@@ -84,6 +84,11 @@ class ProjectAcceptance:
                     and set(production["production_blockers"]) <= pending):
                 production["strict_status"] = "FAIL"
                 production["status"] = "BLOCKED"
+        publication_preconditions = {
+            name: row for name, row in checks.items()
+            if name in {"declared_input_closure", "source_independent_reviews", "p9_submissions"}
+            or name.startswith("corpus_human_review:")
+        }
         failures = sorted(name for name, row in checks.items() if row["status"] == "FAIL")
         pending = sorted(name for name, row in checks.items() if row["status"] in {"PENDING", "BLOCKED"})
         return {
@@ -91,6 +96,7 @@ class ProjectAcceptance:
             "status": "FAIL" if failures else "PENDING" if pending else "PASS",
             "engineering_status": "PASS" if engineering and all(checks[name]["status"] == "PASS" for name in engineering) else "FAIL",
             "closure_ref": scope["id"], "checks": checks,
+            "publication_preconditions": publication_preconditions,
             "failed_checks": failures, "pending_checks": pending,
             "full_design_acceptance": "NOT_ASSESSED",
             "automatic_literary_pass": False, "authority_effect": "NONE",

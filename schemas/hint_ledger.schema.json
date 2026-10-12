@@ -1,0 +1,180 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HintLedger",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "status",
+    "authority_effect",
+    "evidence_effect",
+    "hints",
+    "rules"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": 1
+    },
+    "status": {
+      "enum": [
+        "DRAFT_IMPORTED",
+        "DRAFT_GENERATED",
+        "EDITED"
+      ]
+    },
+    "authority_effect": {
+      "const": "NONE"
+    },
+    "evidence_effect": {
+      "const": "NONE"
+    },
+    "hints": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "kind",
+          "label",
+          "source_record",
+          "evidence_level",
+          "claim_ref",
+          "target_refs",
+          "planned_responses",
+          "status",
+          "unresolved"
+        ],
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "kind": {
+            "enum": [
+              "POETIC_HINT",
+              "LONG_LINE",
+              "OBJECT",
+              "COMMENTARY",
+              "VERDICT",
+              "SONG",
+              "TITLE"
+            ]
+          },
+          "label": {
+            "type": "string"
+          },
+          "source_record": {
+            "type": "object",
+            "required": [
+              "ref",
+              "path",
+              "pointer",
+              "sha256",
+              "text_sha256",
+              "value"
+            ],
+            "properties": {
+              "ref": {
+                "type": "string"
+              },
+              "path": {
+                "type": "string"
+              },
+              "pointer": {
+                "type": "string"
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "text_sha256": {
+                "type": "string",
+                "pattern": "^[0-9a-f]{64}$"
+              },
+              "value": {
+                "type": "object"
+              }
+            },
+            "additionalProperties": false
+          },
+          "evidence_level": {
+            "enum": [
+              "EXISTING_CLAIM_SUPPORT",
+              "EDITORIAL_INTERPRETATION_DRAFT"
+            ]
+          },
+          "claim_ref": {
+            "type": [
+              "string",
+              "null"
+            ]
+          },
+          "target_refs": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "planned_responses": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": [
+                "chapter",
+                "scene",
+                "mode"
+              ],
+              "properties": {
+                "chapter": {
+                  "type": [
+                    "integer",
+                    "null"
+                  ],
+                  "minimum": 1
+                },
+                "scene": {
+                  "type": [
+                    "string",
+                    "null"
+                  ]
+                },
+                "mode": {
+                  "enum": [
+                    "DIRECT",
+                    "ECHO",
+                    "DEFERRED",
+                    "OPEN_UNANSWERED"
+                  ]
+                },
+                "creates_new_verdicts": {
+                  "type": "boolean"
+                }
+              },
+              "additionalProperties": false
+            }
+          },
+          "status": {
+            "enum": [
+              "DRAFT_IMPORTED",
+              "DRAFT_GENERATED",
+              "CANDIDATE",
+              "EDITED"
+            ]
+          },
+          "unresolved": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object"
+      }
+    }
+  },
+  "additionalProperties": true
+}

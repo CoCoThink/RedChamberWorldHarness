@@ -52,10 +52,19 @@ def test_project_status_uses_owners_and_does_not_claim_implementation_complete(m
     assert code == 0 and payload["integrity_status"] == "PASS"
     project = ProjectState.from_repo(ROOT)
     assert payload["status"] == project.owner("implementation")["status"]
-    assert payload["chapters"] == {
-        str(record["chapter"]): {key: record[key] for key in ("state", "workflow_progress", "adjudication")}
-        for record in project.owner("competitions")["competition_records"]
-    }
+    records = project.owner("competitions")["competition_records"]
+    assert set(payload["chapters"]) == {str(record["chapter"]) for record in records}
+    for record in records:
+        chapter = payload["chapters"][str(record["chapter"])]
+        assert chapter["state"] == record["state"]
+        assert chapter["declared_progress"] == record["workflow_progress"]
+        assert chapter["declared_adjudication"] == record["adjudication"]
+        assert chapter["workflow_progress"] == chapter["derived_progress"]
+        assert chapter["progress_basis"] == "DERIVED_CURRENT_QUALIFICATION"
+    legacy = payload["chapters"]["86"]
+    assert legacy["derived_progress"]["SIX_FIELD_REGRESSION"] == "PENDING"
+    assert legacy["adjudication"]["outcome"] == "PENDING"
+    assert "DECLARED_PROGRESS_UNBACKED: SIX_FIELD_REGRESSION" in legacy["warnings"]
     assert project.validate() == []
 
 

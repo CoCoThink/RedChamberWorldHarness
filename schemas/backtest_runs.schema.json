@@ -1,0 +1,13 @@
+{
+ "$schema":"https://json-schema.org/draft/2020-12/schema","type":"object","additionalProperties":false,
+ "required":["schema_version","context_sha256","samples","authors","authority_effect"],
+ "properties":{
+  "schema_version":{"const":1},"context_sha256":{"$ref":"#/$defs/sha"},"authority_effect":{"const":"NONE"},
+  "authors":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,"required":["principal_id","source_id"],"properties":{"principal_id":{"type":"string","minLength":1},"source_id":{"type":"string","minLength":1}}}},
+  "samples":{"type":"array","minItems":4,"items":{"type":"object","additionalProperties":false,"required":["workflow","sample_id","rounds","text"],"properties":{
+   "workflow":{"enum":["DIRECT","HARNESS"]},"sample_id":{"type":"string","minLength":1},"text":{"$ref":"#/$defs/binding"},
+   "rounds":{"type":"array","minItems":1,"items":{"type":"object","additionalProperties":false,"required":["raw_run"],"properties":{"raw_run":{"$ref":"#/$defs/binding"},"feedback":{"$ref":"#/$defs/binding"}}}}
+  }}}
+ },
+ "$defs":{"sha":{"type":"string","pattern":"^[a-f0-9]{64}$"},"binding":{"type":"object","additionalProperties":false,"required":["path","sha256"],"properties":{"path":{"type":"string","minLength":1},"sha256":{"$ref":"#/$defs/sha"}}}}
+}

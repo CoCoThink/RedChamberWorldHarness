@@ -8,7 +8,7 @@ from ..competition import CompetitionRegistry
 from ..evaluate import evaluate_scene_text, overall_status
 from ..history import HistoricalMechanismRegistry
 from ..io import load_data
-from ..knowledge import CharacterKnowledgeRuntime, format_knowledge
+from ..knowledge import KNOWLEDGE_PATH, CharacterKnowledgeRuntime, format_knowledge
 from ..literary_eval import evaluate_literary_candidate, format_literary_evaluation
 from ..literary_suite import LiteraryEvaluatorSuite, format_literary_suite
 from ..mechanism_adapters import HistoricalAdapterRuntime, format_adapter
@@ -25,7 +25,7 @@ def cmd_evaluate(args: argparse.Namespace) -> int:
     precondition_findings = state.assert_contract_preconditions(contract)
     knowledge = (
         CharacterKnowledgeRuntime.from_repo(root)
-        if (root / "data" / "knowledge" / "v03_slice1.json").exists()
+        if (root / KNOWLEDGE_PATH).exists()
         else None
     )
     historical_adapters = (
@@ -43,9 +43,10 @@ def cmd_evaluate(args: argparse.Namespace) -> int:
         mechanism_adapter_runtime=historical_adapters,
         historical_mechanisms=historical_mechanisms,
         semantic_reading=reading,
-        entry_state=state.snapshot(),
+        entry_state=state.snapshot(request_version=args.request_version),
         candidate_authors=authors,
         root=root,
+        request_version=args.request_version,
     )
     if precondition_findings:
         results.insert(0, type(results[0])("preconditions", "FAIL", precondition_findings))
@@ -67,7 +68,7 @@ def cmd_semantic(args: argparse.Namespace) -> int:
             contract = load_data(Path(args.contract))
             text = Path(args.text).read_bytes().decode()
             authors = load_data(Path(args.authors)) if args.authors else []
-            packet = make_request(contract, text, SceneStateAdapter(root, contract).snapshot(), authors)
+            packet = make_request(contract, text, SceneStateAdapter(root, contract).snapshot(request_version=args.request_version), authors, request_version=args.request_version)
             with Path(args.output).open("xb") as handle:
                 handle.write(canonical_bytes(packet))
             payload = {"status": "PASS", "request_sha256": digest(canonical_bytes(packet)), "output": args.output,
@@ -239,6 +240,7 @@ def add_commands(sub) -> None:
     p_eval.add_argument("contract")
     p_eval.add_argument("text")
     p_eval.add_argument("--semantic-reading")
+    p_eval.add_argument("--request-version", type=int, choices=(1, 2), default=1)
     p_eval.add_argument("--authors", help="Bound candidate author identities as a JSON list")
     p_eval.set_defaults(func=cmd_evaluate)
 
@@ -248,6 +250,7 @@ def add_commands(sub) -> None:
     p.add_argument("contract")
     p.add_argument("text")
     p.add_argument("--authors")
+    p.add_argument("--request-version", type=int, choices=(1, 2), default=1)
     p.add_argument("--output", required=True)
     p.set_defaults(func=cmd_semantic)
     p = semantic_sub.add_parser("check")

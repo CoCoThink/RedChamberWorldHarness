@@ -24,6 +24,8 @@ rcwh pilot run-author --route medical --workflow DIRECT_WRITING --command 'pytho
 
 observations 按 token 写 scene_cohesion、character_voice、life_detail、engineering_feel，各有 reason 和原文 spans。raw_review 是原始 JSON 的 `{path,sha256}`，原件投影只去掉 raw_review 和 authority_effect。外层绑定数组传给 `pilot reviews --bindings bindings.json`；路径相对导出目录。需两位不同人、不同来源、与作者不同源；保留分歧、平局及全部淘汰。输出没有自动赢家。
 
+默认登记入口使用 `data/evaluation/pilot85_87/review_selection.json`，与冻结 `study.json` 分离，避免意见登记改变 context 摘要。其 export_root 和 packet/mapping 摘要显式选择当前匿名包。收到读者完整意见后运行 `rcwh reviews register pilot opinion.json --origin '实际独立整段阅读'`；原件路径与摘要保存，`pilot summary` 实时核对并计数。两份有效意见只移除 `TWO_COMPARATIVE_READERS` 待项，不使整个试验自动 PASS。既有 `pilot reviews --bindings` 的导出目录相对路径方式仍兼容，用于临时核对。给读者的说明及提交前引句偏移辅助见[读者填写指南](REVIEWER_GUIDE_ZH.md)。不要把读者意见写回 study.json。
+
 目前作者意图的出口/入口链可核验；它不证明正文实现了该状态。实际语义复核、两份独立整段阅读、一轮实质修订与重评仍待完成。缺少这些时保持 PENDING，不能扩大为连续章回生产通过。
 
 ## 声口、文体与语料

@@ -73,6 +73,15 @@
       "type": "string",
       "pattern": "^[a-f0-9]{64}$"
     },
+    "raw_run": {
+      "type": "object",
+      "required": ["path", "sha256"],
+      "properties": {
+        "path": {"type": "string", "minLength": 1},
+        "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+      },
+      "additionalProperties": false
+    },
     "output": {
       "type": "string",
       "minLength": 1

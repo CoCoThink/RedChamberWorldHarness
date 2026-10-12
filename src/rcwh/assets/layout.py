@@ -7,6 +7,7 @@ from typing import Callable, Any
 
 import yaml
 
+from ..io import ParseMemo, parse_yaml
 from ..schema import validate_instance
 from .paths import AssetError, repository_path
 
@@ -34,7 +35,7 @@ class CatalogLayout:
         self.store = store
         self.root = store.root
 
-    def selected(self) -> dict | None:
+    def selected(self, *, memo: ParseMemo | None = None) -> dict | None:
         path = repository_path(self.root, LAYOUT)
         if not path.exists():
             for directory in ("assets", "origins"):
@@ -43,7 +44,7 @@ class CatalogLayout:
             return None
         if any(repository_path(self.root, p).exists() for p in LEGACY):
             raise AssetError("AMBIGUOUS_CATALOG_LAYOUT: legacy files coexist with sharded layout")
-        config = self.validate(json.loads(path.read_bytes()))
+        config = self.validate(json.loads(path.read_bytes()), memo=memo)
         declared = set(config["assets"] + config["origins"])
         actual = set()
         for name in ("assets", "origins"):
@@ -59,24 +60,24 @@ class CatalogLayout:
             raise AssetError(f"CATALOG_SHARD_SET_MISMATCH: missing={sorted(declared-actual)}, undeclared={sorted(actual-declared)}")
         return config
 
-    def validate(self, config: dict) -> dict:
-        errors = validate_instance(config, self.root / "schemas/asset_catalog_layout.schema.json")
+    def validate(self, config: dict, *, memo: ParseMemo | None = None) -> dict:
+        errors = validate_instance(config, self.root / "schemas/asset_catalog_layout.schema.json", memo=memo)
         if errors:
             raise AssetError("invalid catalog layout: " + "; ".join(errors))
         if any(config[key] != sorted(config[key]) for key in ("assets", "origins")):
             raise AssetError("UNSORTED_CATALOG_SHARD_LIST")
         return config
 
-    def read(self, config: dict | None, reader: Callable[[str], bytes]) -> tuple[dict, dict]:
+    def read(self, config: dict | None, reader: Callable[[str], bytes], *, memo: ParseMemo | None = None) -> tuple[dict, dict]:
         paths = {"assets": config["assets"] if config else [LEGACY[0]],
                  "origins": config["origins"] if config else [LEGACY[1]]}
         assets, origins = [], []
         for path in paths["assets"]:
             try:
-                document = yaml.safe_load(reader(path))
+                document = parse_yaml(reader(path))
             except yaml.YAMLError as exc:
                 raise AssetError(f"invalid catalog YAML: {path}: {exc}") from exc
-            self.store.check_document(document)
+            self.store.check_document(document, memo=memo)
             records = document["assets"]
             if config:
                 self.check_shard(records, path, "assets")
@@ -87,7 +88,7 @@ class CatalogLayout:
                 if not line.strip():
                     continue
                 origin = json.loads(line)
-                errors = validate_instance(origin, self.root / "schemas/asset_origin.schema.json")
+                errors = validate_instance(origin, self.root / "schemas/asset_origin.schema.json", memo=memo)
                 if errors:
                     raise AssetError(f"{path}:{number}: " + "; ".join(errors))
                 records.append(origin)

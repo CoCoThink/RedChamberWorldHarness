@@ -1,0 +1,1094 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "id": "extended-110",
+  "status": "SHADOW_ILLUSTRATIVE",
+  "total_chapters": 110,
+  "hypothesis_ref": "data/research/book_structure.json#extended-110",
+  "hypothesis": {
+    "id": "extended-110",
+    "status": "SHADOW_ILLUSTRATIVE",
+    "total_chapters": 110,
+    "open_refs": [
+      "OL-001",
+      "OL-005",
+      "OL-007",
+      "OL-023"
+    ],
+    "interpretation": "Illustrative allocation only; no claim of original chapter count or event dating."
+  },
+  "event_allocations": [
+    {
+      "event_id": "W81-XIANGLING-DEATH",
+      "chapter": 81,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/0",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "55cac0b8a604ab39a9b9de1b593bfc7924409351aebcf8f98607c653cf40534f",
+        "value": {
+          "id": "W81-XIANGLING-DEATH",
+          "chapter": 81,
+          "sequence": 90,
+          "effects": [
+            {
+              "set": "characters.xiangling.life_state",
+              "value": "DEAD"
+            },
+            {
+              "set": "characters.xiangling.body_state",
+              "value": "DEAD_AFTER_TERMINAL_ILLNESS"
+            }
+          ],
+          "source_refs": [
+            "R36"
+          ],
+          "epistemic": "CURRENT_RECONSTRUCTION"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W82-TANCHUN-DEPARTS",
+      "chapter": 82,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/1",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "1d7cbb00f5834ffe9be8cec6cd55a88cd68ec507118b60c60b080348a3cd9bb2",
+        "value": {
+          "id": "W82-TANCHUN-DEPARTS",
+          "chapter": 82,
+          "sequence": 80,
+          "effects": [
+            {
+              "set": "characters.tanchun.location",
+              "value": "REMOTE_MARRIED_HOUSEHOLD_UNPINNED"
+            },
+            {
+              "set": "characters.tanchun.household_role",
+              "value": "remote_married_daughter"
+            }
+          ],
+          "source_refs": [
+            "R07"
+          ],
+          "epistemic": "CURRENT_RECONSTRUCTION"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W84-YUANCHUN-DEATH",
+      "chapter": 85,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/2",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/2",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "34970fc75a4a68f443cd0dffa63be853bdbac2ef148094aec7ae3bf1dbb8e1bb",
+        "value": {
+          "id": "W84-YUANCHUN-DEATH",
+          "chapter": 84,
+          "sequence": 30,
+          "effects": [
+            {
+              "set": "characters.yuanchun.life_state",
+              "value": "DEAD"
+            },
+            {
+              "set": "global.ritual_state",
+              "value": "YUANCHUN_MOURNING"
+            },
+            {
+              "set": "characters.daiyu.body_state",
+              "value": "declining_under_mourning"
+            }
+          ],
+          "source_refs": [
+            "R03"
+          ],
+          "epistemic": "MIXED_HARD_EVENT_CURRENT_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W86-DAIYU-DEATH",
+      "chapter": 88,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/3",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/3",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "7180440e21bb5489b37460be30de9104b68385fc2ae86c30ad01cd649b497ba1",
+        "value": {
+          "id": "W86-DAIYU-DEATH",
+          "chapter": 86,
+          "sequence": 90,
+          "effects": [
+            {
+              "set": "characters.daiyu.life_state",
+              "value": "DEAD"
+            },
+            {
+              "set": "characters.daiyu.body_state",
+              "value": "DEAD_AFTER_CHRONIC_DECLINE"
+            },
+            {
+              "set": "relations.rel:baoyu_daiyu.status",
+              "value": "ENDED_BY_DEATH"
+            }
+          ],
+          "source_refs": [
+            "R10",
+            "R11"
+          ],
+          "epistemic": "MIXED_HARD_EVENT_CURRENT_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W87-GOLD-JADE-MARRIAGE",
+      "chapter": 90,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/4",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/4",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "478d4b11567ac027dedef25374d6c1b4bbd7fe31f19b95248b09b96fa138853b",
+        "value": {
+          "id": "W87-GOLD-JADE-MARRIAGE",
+          "chapter": 87,
+          "sequence": 70,
+          "effects": [
+            {
+              "set": "characters.baoyu.marital_status",
+              "value": "MARRIED_BAOCHAI"
+            },
+            {
+              "set": "characters.baochai.marital_status",
+              "value": "MARRIED_BAOYU"
+            },
+            {
+              "set": "characters.baochai.household_role",
+              "value": "wife"
+            },
+            {
+              "set": "relations.rel:baoyu_baochai.status",
+              "value": "ACTIVE_SPOUSES"
+            }
+          ],
+          "source_refs": [
+            "R13",
+            "R14"
+          ],
+          "epistemic": "CURRENT_C_PLACEMENT_HARD_RELATION"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W88-XIREN-EXITS",
+      "chapter": 91,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/5",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/5",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "ac871381583ac0cbcaacca0141d99914d295b474e5534c4fb832680f111f7317",
+        "value": {
+          "id": "W88-XIREN-EXITS",
+          "chapter": 88,
+          "sequence": 60,
+          "effects": [
+            {
+              "set": "characters.xiren.marital_status",
+              "value": "MARRIED_JIANG_YUHAN"
+            },
+            {
+              "set": "characters.xiren.household_role",
+              "value": "former_baoyu_attendant"
+            },
+            {
+              "set": "characters.xiren.location",
+              "value": "OFFSTAGE_MARRIED_HOUSEHOLD"
+            },
+            {
+              "set": "relations.rel:xiren_baoyu.status",
+              "value": "FORMER_ATTENDANT"
+            },
+            {
+              "set": "relations.rel:xiren_jiang.status",
+              "value": "ACTIVE_SPOUSES"
+            },
+            {
+              "set": "characters.sheyue.household_role",
+              "value": "remaining_baoyu_baochai_attendant"
+            },
+            {
+              "set": "characters.yingchun.life_state",
+              "value": "DEAD"
+            }
+          ],
+          "source_refs": [
+            "R20",
+            "R21",
+            "R22",
+            "R26",
+            "R35"
+          ],
+          "epistemic": "CURRENT_RECONSTRUCTION"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W89-COLLAPSE-AND-RELOCATION",
+      "chapter": 93,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/6",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "576091e7bb3444cc543313122f04f31381a200d94aa3056c628adb1f7cc9ff6f",
+        "value": {
+          "id": "W89-COLLAPSE-AND-RELOCATION",
+          "chapter": 89,
+          "sequence": 70,
+          "effects": [
+            {
+              "set": "global.economy_stage",
+              "value": "E1"
+            },
+            {
+              "set": "global.estate_control",
+              "value": "OFFICIAL_CONTROL"
+            },
+            {
+              "set": "global.resource_mode",
+              "value": "CONTROLLED_ASSETS_REALLOCATION"
+            },
+            {
+              "set": "characters.baoyu.location",
+              "value": "S06"
+            },
+            {
+              "set": "characters.baochai.location",
+              "value": "S06"
+            },
+            {
+              "set": "characters.sheyue.location",
+              "value": "S06"
+            },
+            {
+              "set": "characters.fengjie.location",
+              "value": "S06"
+            },
+            {
+              "set": "characters.ping_er.location",
+              "value": "S06"
+            },
+            {
+              "set": "characters.qiaojie.location",
+              "value": "S06"
+            },
+            {
+              "set": "characters.jiamu.location",
+              "value": "S06"
+            },
+            {
+              "set": "characters.wangfuren.location",
+              "value": "S06"
+            },
+            {
+              "set": "characters.liwan.location",
+              "value": "S06"
+            },
+            {
+              "set": "characters.jialan.location",
+              "value": "S06"
+            }
+          ],
+          "source_refs": [
+            "R02",
+            "R04"
+          ],
+          "epistemic": "CURRENT_C_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W90-MANAGEMENT-DECLINE",
+      "chapter": 94,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/7",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "3c8069ddfa7ff5264786e0a016f2c42c10a7b1e5176aa44bfe544221b8e12796",
+        "value": {
+          "id": "W90-MANAGEMENT-DECLINE",
+          "chapter": 90,
+          "sequence": 50,
+          "effects": [
+            {
+              "set": "characters.baochai.household_role",
+              "value": "wife_and_daily_manager"
+            },
+            {
+              "set": "characters.fengjie.body_state",
+              "value": "old_illness_worsening_under_labor"
+            },
+            {
+              "set": "global.household_authority",
+              "value": "NOMINAL_AND_ACTUAL_POWER_SEPARATING"
+            }
+          ],
+          "source_refs": [
+            "R23",
+            "R24",
+            "R27",
+            "R28"
+          ],
+          "epistemic": "CURRENT_C_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W91-SUMMONED-FIRST-WINTER",
+      "chapter": 96,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/8",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "9da6d7c5c08d17e630846c755fc0d79b95a3a305a4964390c11dbd6b66946299",
+        "value": {
+          "id": "W91-SUMMONED-FIRST-WINTER",
+          "chapter": 91,
+          "sequence": 80,
+          "effects": [
+            {
+              "set": "characters.baoyu.legal_status",
+              "value": "FORMALLY_SUMMONED_PENDING_INQUIRY"
+            },
+            {
+              "set": "global.season_marker",
+              "value": "FIRST_POST_COLLAPSE_WINTER"
+            }
+          ],
+          "source_refs": [],
+          "epistemic": "CURRENT_C_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W92-DETENTION",
+      "chapter": 97,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/9",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/9",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "ea337c84366180b9707ba0ee498c99c6d17c5a0b92b4adb2df1ff4b920973433",
+        "value": {
+          "id": "W92-DETENTION",
+          "chapter": 92,
+          "sequence": 40,
+          "effects": [
+            {
+              "set": "global.economy_stage",
+              "value": "E2"
+            },
+            {
+              "set": "global.resource_mode",
+              "value": "SMALL_DELIVERIES_AND_SPATIAL_AID"
+            },
+            {
+              "set": "characters.baoyu.legal_status",
+              "value": "DETAINED_PENDING_INQUIRY"
+            },
+            {
+              "set": "characters.baoyu.location",
+              "value": "S07"
+            },
+            {
+              "set": "characters.baoyu.body_state",
+              "value": "detention_cold_sleep_food_hygiene_strain"
+            },
+            {
+              "set": "characters.xiaohong.household_role",
+              "value": "external_rule_navigator"
+            },
+            {
+              "set": "characters.qianxue.household_role",
+              "value": "old_servant_material_helper"
+            }
+          ],
+          "source_refs": [
+            "R05",
+            "R30",
+            "R31",
+            "R32"
+          ],
+          "epistemic": "CURRENT_C_WORLD_WITH_HARD_DETENTION"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W93-RELEASE-FENGJIE-DEATH",
+      "chapter": 99,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/10",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/10",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "d680d4cba780dc6f288c27e8d9c10919b42b5b7d41e9bc211eee23ffe30948fd",
+        "value": {
+          "id": "W93-RELEASE-FENGJIE-DEATH",
+          "chapter": 93,
+          "sequence": 70,
+          "effects": [
+            {
+              "set": "characters.baoyu.legal_status",
+              "value": "RELEASED_NO_RESTORATION"
+            },
+            {
+              "set": "characters.baoyu.location",
+              "value": "S06"
+            },
+            {
+              "set": "characters.baoyu.body_state",
+              "value": "post_detention_recovery"
+            },
+            {
+              "set": "characters.fengjie.life_state",
+              "value": "DEAD"
+            },
+            {
+              "set": "characters.fengjie.body_state",
+              "value": "DEAD_AFTER_CHRONIC_DECLINE"
+            },
+            {
+              "set": "relations.rel:fengjie_ping.status",
+              "value": "ENDED_BY_DEATH"
+            },
+            {
+              "set": "relations.rel:fengjie_qiaojie.status",
+              "value": "ENDED_BY_DEATH"
+            },
+            {
+              "set": "characters.ping_er.household_role",
+              "value": "qiaojie_protection_executor"
+            }
+          ],
+          "source_refs": [
+            "R29"
+          ],
+          "epistemic": "CURRENT_C_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W94-QIAOJIE-RURAL-SHELTER",
+      "chapter": 100,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/11",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/11",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "9bdb6818b5111bc3e0f4727ff8cad16bc0d21f18e46d2f206a5e24a97d1d606c",
+        "value": {
+          "id": "W94-QIAOJIE-RURAL-SHELTER",
+          "chapter": 94,
+          "sequence": 80,
+          "effects": [
+            {
+              "set": "characters.qiaojie.location",
+              "value": "S08"
+            },
+            {
+              "set": "characters.liulaolao.location",
+              "value": "S08"
+            },
+            {
+              "set": "characters.qiaojie.household_role",
+              "value": "guest_under_liu_care"
+            },
+            {
+              "set": "relations.rel:liulaolao_qiaojie.status",
+              "value": "ACTIVE_CAREGIVER"
+            }
+          ],
+          "source_refs": [
+            "R37",
+            "R38"
+          ],
+          "epistemic": "CURRENT_C_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W95-STABLE-POVERTY",
+      "chapter": 102,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/12",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/12",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "ec100cc2eb88b4397b0e03f44b80759b5814faa09e415b6788797e92ae417ef7",
+        "value": {
+          "id": "W95-STABLE-POVERTY",
+          "chapter": 95,
+          "sequence": 30,
+          "effects": [
+            {
+              "set": "global.economy_stage",
+              "value": "E3"
+            },
+            {
+              "set": "global.resource_mode",
+              "value": "STABLE_LOW_CASH_REPAIR_PAWN_BORROW_MEASURE"
+            },
+            {
+              "set": "global.season_marker",
+              "value": "SECOND_POST_COLLAPSE_WINTER"
+            },
+            {
+              "set": "characters.baoyu.location",
+              "value": "S09"
+            },
+            {
+              "set": "characters.baochai.location",
+              "value": "S09"
+            },
+            {
+              "set": "characters.sheyue.location",
+              "value": "S09"
+            },
+            {
+              "set": "characters.baoyu.body_state",
+              "value": "cold_and_labor_cost_without_new_disease"
+            }
+          ],
+          "source_refs": [
+            "R19"
+          ],
+          "epistemic": "CURRENT_C_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W96-LIMITED-AID-WEIXIANG",
+      "chapter": 103,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/13",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/13",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "524f1c0f85b2bb1d14cd3872c907cc6a64da8b33ade7b2782788019730d1bf29",
+        "value": {
+          "id": "W96-LIMITED-AID-WEIXIANG",
+          "chapter": 96,
+          "sequence": 50,
+          "effects": [
+            {
+              "set": "global.economy_stage",
+              "value": "E4"
+            },
+            {
+              "set": "global.resource_mode",
+              "value": "SMALL_EXTERNAL_AID_NO_STRUCTURAL_REVERSAL"
+            },
+            {
+              "set": "characters.xiren.household_role",
+              "value": "married_former_attendant_visiting_as_guest"
+            },
+            {
+              "set": "relations.rel:xiangyun_weiruolan.status",
+              "value": "MARRIED_CURRENT_C"
+            }
+          ],
+          "source_refs": [
+            "R25",
+            "R26",
+            "R34"
+          ],
+          "epistemic": "CURRENT_C_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W97-THREE-DIVERGENT-LIVES",
+      "chapter": 105,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/14",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/14",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "ac0781ca76544774adbd8708035149a878c16f08aaed75039f06506d019924a8",
+        "value": {
+          "id": "W97-THREE-DIVERGENT-LIVES",
+          "chapter": 97,
+          "sequence": 70,
+          "effects": [
+            {
+              "set": "relations.rel:xiangyun_weiruolan.status",
+              "value": "COHABITATION_INTERRUPTED_CAUSE_OPEN"
+            },
+            {
+              "set": "characters.xiangyun.location",
+              "value": "XIANGYUN_HOUSEHOLD_UNPINNED"
+            },
+            {
+              "set": "characters.miaoyu.location",
+              "value": "S10"
+            },
+            {
+              "set": "characters.miaoyu.household_role",
+              "value": "dependent_religious_resident"
+            },
+            {
+              "set": "characters.xichun.location",
+              "value": "S11"
+            },
+            {
+              "set": "characters.xichun.household_role",
+              "value": "nun_by_choice"
+            }
+          ],
+          "source_refs": [
+            "R33",
+            "R34",
+            "R41"
+          ],
+          "epistemic": "CURRENT_C_WORLD_OPEN_CAUSE"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W98-ZHEN-VISIT",
+      "chapter": 106,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/15",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/15",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "5d543368014528fc2ce2dbc646cef797d7af1062a04c7c2516ddf97a180a9fb9",
+        "value": {
+          "id": "W98-ZHEN-VISIT",
+          "chapter": 98,
+          "sequence": 40,
+          "effects": [
+            {
+              "set": "characters.zhen_baoyu.location",
+              "value": "S12"
+            }
+          ],
+          "source_refs": [
+            "R18"
+          ],
+          "epistemic": "CURRENT_C_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W99-BAOYU-LEAVES",
+      "chapter": 108,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/16",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/16",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "6b222b7862dcd5fc4ec70e43652b646629f5f0d6e3a72d790571644cbd455afa",
+        "value": {
+          "id": "W99-BAOYU-LEAVES",
+          "chapter": 99,
+          "sequence": 80,
+          "effects": [
+            {
+              "set": "characters.baoyu.location",
+              "value": "S13"
+            },
+            {
+              "set": "characters.baoyu.household_role",
+              "value": "monk_left_household"
+            },
+            {
+              "set": "characters.baoyu.legal_status",
+              "value": "FREE_VOLUNTARY_RELIGIOUS_RESIDENCE"
+            },
+            {
+              "set": "relations.rel:baoyu_baochai.status",
+              "value": "SPOUSES_SEPARATED_BY_BAOYU_DEPARTURE"
+            },
+            {
+              "set": "characters.zhen_baoyu.location",
+              "value": "OFFSTAGE"
+            }
+          ],
+          "source_refs": [
+            "R43"
+          ],
+          "epistemic": "CURRENT_C_PLACEMENT_HARD_END_RELATION_STATE"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W100-LATE-HUMAN",
+      "chapter": 110,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/17",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/17",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "57cfcea5392b999691349393bb2cc3eb07d3f104859e85b903bb9b3c122d7508",
+        "value": {
+          "id": "W100-LATE-HUMAN",
+          "chapter": 100,
+          "sequence": 30,
+          "effects": [
+            {
+              "set": "global.economy_stage",
+              "value": "E5"
+            },
+            {
+              "set": "global.resource_mode",
+              "value": "RANK_UP_NO_PROPERTY_RESTORATION"
+            },
+            {
+              "set": "characters.jialan.location",
+              "value": "S14"
+            },
+            {
+              "set": "characters.jialan.household_role",
+              "value": "official_son"
+            },
+            {
+              "set": "characters.liwan.location",
+              "value": "S14"
+            },
+            {
+              "set": "characters.liwan.body_state",
+              "value": "late_life_decline"
+            }
+          ],
+          "source_refs": [
+            "R39",
+            "R40"
+          ],
+          "epistemic": "CURRENT_C_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W100-LIWAN-DEATH",
+      "chapter": 110,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/18",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/18",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "1c49c7837d59604c95bd27385a6b3a52ffbfd86f0f42fc5b0eb5ef5595e2ee0b",
+        "value": {
+          "id": "W100-LIWAN-DEATH",
+          "chapter": 100,
+          "sequence": 60,
+          "effects": [
+            {
+              "set": "characters.liwan.life_state",
+              "value": "DEAD"
+            },
+            {
+              "set": "characters.liwan.body_state",
+              "value": "DEAD_AFTER_ORDINARY_LATE_LIFE_DECLINE"
+            }
+          ],
+          "source_refs": [
+            "R39"
+          ],
+          "epistemic": "CURRENT_C_WORLD"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    },
+    {
+      "event_id": "W100-OUTER-FRAME",
+      "chapter": 110,
+      "source_record": {
+        "ref": "data/world/m3_core.json#/events/19",
+        "path": "data/world/m3_core.json",
+        "pointer": "/events/19",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "ac227de69a58b8f333a5732c49752a578b9f3caecc97f32af6f409111aca4f92",
+        "value": {
+          "id": "W100-OUTER-FRAME",
+          "chapter": 100,
+          "sequence": 90,
+          "effects": [
+            {
+              "set": "global.outer_frame",
+              "value": "S15_OPEN"
+            },
+            {
+              "set": "global.human_access_to_outer_frame_knowledge",
+              "value": false
+            }
+          ],
+          "source_refs": [
+            "R01",
+            "R08",
+            "R09"
+          ],
+          "epistemic": "HARD_FUNCTION_CURRENT_PLACEMENT"
+        }
+      },
+      "placement_status": "ILLUSTRATIVE_DRAFT"
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 81,
+      "event_ids": [
+        "W81-XIANGLING-DEATH"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 82,
+      "event_ids": [
+        "W82-TANCHUN-DEPARTS"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 83,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 84,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 85,
+      "event_ids": [
+        "W84-YUANCHUN-DEATH"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 86,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 87,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 88,
+      "event_ids": [
+        "W86-DAIYU-DEATH"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 89,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 90,
+      "event_ids": [
+        "W87-GOLD-JADE-MARRIAGE"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 91,
+      "event_ids": [
+        "W88-XIREN-EXITS"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 92,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 93,
+      "event_ids": [
+        "W89-COLLAPSE-AND-RELOCATION"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 94,
+      "event_ids": [
+        "W90-MANAGEMENT-DECLINE"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 95,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 96,
+      "event_ids": [
+        "W91-SUMMONED-FIRST-WINTER"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 97,
+      "event_ids": [
+        "W92-DETENTION"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 98,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 99,
+      "event_ids": [
+        "W93-RELEASE-FENGJIE-DEATH"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 100,
+      "event_ids": [
+        "W94-QIAOJIE-RURAL-SHELTER"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 101,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 102,
+      "event_ids": [
+        "W95-STABLE-POVERTY"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 103,
+      "event_ids": [
+        "W96-LIMITED-AID-WEIXIANG"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 104,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 105,
+      "event_ids": [
+        "W97-THREE-DIVERGENT-LIVES"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 106,
+      "event_ids": [
+        "W98-ZHEN-VISIT"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 107,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 108,
+      "event_ids": [
+        "W99-BAOYU-LEAVES"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 109,
+      "event_ids": [],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    },
+    {
+      "chapter": 110,
+      "event_ids": [
+        "W100-LATE-HUMAN",
+        "W100-LIWAN-DEATH",
+        "W100-OUTER-FRAME"
+      ],
+      "planned_han_characters": null,
+      "burden_status": "EVENT_COUNT_PROXY_ONLY"
+    }
+  ],
+  "hint_allocations": [],
+  "unresolved": [
+    "editorial_choice",
+    "scene_allocation",
+    "length_budget",
+    "hint_allocation",
+    "world_replay"
+  ],
+  "production_scope_effect": "NONE"
+}

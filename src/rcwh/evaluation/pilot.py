@@ -6,11 +6,33 @@ import secrets
 import subprocess
 import time
 
+from ..assets.paths import repository_path
 from ..candidate_reviews import bound_data, canonical_bytes, digest
 from ..io import load_data
+from ..schema import validate_instance
+from .comparison import comparative_reviews
 from .style import style_diagnostics
 
 STUDY_PATH = "data/evaluation/pilot85_87/study.json"
+REVIEW_SELECTION_PATH = "data/evaluation/pilot85_87/review_selection.json"
+
+
+def selected_reviews(root: Path, expected_context: str) -> dict:
+    """Check the mutable review selection without mutating the frozen study.
+
+    Selection and export integrity failures raise; individual invalid receipts
+    are returned as comparative FAIL findings, never silently dropped.
+    """
+    selection = load_data(repository_path(root, REVIEW_SELECTION_PATH))
+    errors = validate_instance(selection, root / "schemas/pilot_review_selection.schema.json")
+    if errors:
+        raise ValueError("invalid pilot review selection: " + "; ".join(errors))
+    export_root = repository_path(root, selection["export_root"])
+    for relative, expected in (("public/packet.json", selection["packet_sha256"]),
+                               ("coordinator/mapping.json", selection["mapping_sha256"])):
+        if digest(repository_path(export_root, relative).read_bytes()) != expected:
+            raise ValueError(f"pilot review selection identity mismatch: {relative}")
+    return comparative_reviews(export_root, selection["reviews"], expected_context, review_root=root)
 
 
 class PilotStudy:
@@ -65,13 +87,30 @@ class PilotStudy:
                 drafts.append({"arm": arm["id"], "chapter": chapter["chapter"], "sha256": digest(raw),
                                "length": len(text), "intent_links": "CONSISTENT", "semantic_realisation": "PENDING_INDEPENDENT_READING",
                                "style": style_diagnostics(text)})
-        return {"status": "PENDING", "scope": "CONSECUTIVE_RESEARCH_TRIAL", "chapters": chapters,
+        result = {"status": "PENDING", "scope": "CONSECUTIVE_RESEARCH_TRIAL", "chapters": chapters,
                 "context_sha256": digest(canonical_bytes(context)), "drafts": drafts, "route_comparisons": comparisons,
                 "direct_control_status": "CONTAMINATED_INTERNAL_EXAMPLE_REQUIRES_FRESH_AUTHOR_RUN",
                 "controlled_workflow_effect": "NOT_ESTIMABLE", "valid_independent_review_count": 0,
                 "costs": [{"arm": a["id"], "record": a["costs"]} for a in arms],
                 "remaining": ["FRESH_DIRECT_AND_OLD_WORKFLOW_CONTROL", "INDEPENDENT_SEMANTIC_READINGS", "TWO_COMPARATIVE_READERS", "REVISION_AND_REREVIEW"],
                 "authority_effect": "NONE", "stable_active_mutated": False}
+        selection_path = self.root / REVIEW_SELECTION_PATH
+        if not selection_path.exists() and not selection_path.is_symlink():
+            return result
+        try:
+            reading = selected_reviews(self.root, result["context_sha256"])
+        except (KeyError, OSError, TypeError, ValueError) as exc:
+            reading = {"status": "FAIL", "report_kind": "COMPUTED_CHECK", "scope": "COMPARATIVE_READING_ONLY",
+                       "review_count": 0, "minimum_reviewers": 2, "reviews": [], "findings": [str(exc)],
+                       "automatic_winner": None, "literary_acceptance": "PENDING", "authority_effect": "NONE"}
+        result["comparative_reading"] = reading
+        result["valid_independent_review_count"] = reading["review_count"]
+        if reading["review_count"] >= 2:
+            result["remaining"].remove("TWO_COMPARATIVE_READERS")
+        if reading["status"] == "FAIL":
+            result["status"] = "FAIL"
+            result["findings"] = reading["findings"]
+        return result
 
     def export(self, destination: Path) -> dict:
         summary = self.summary()

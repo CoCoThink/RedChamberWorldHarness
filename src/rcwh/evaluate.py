@@ -30,6 +30,7 @@ def evaluate_scene_text(
     entry_state: dict | None = None,
     candidate_authors: list[dict] | None = None,
     root: Path | None = None,
+    request_version: int = 1,
 ) -> list[EvaluationResult]:
     results: list[EvaluationResult] = []
 
@@ -104,8 +105,8 @@ def evaluate_scene_text(
     schema_root = root or getattr(knowledge_runtime, "root", None) or Path(__file__).resolve().parents[2]
     if entry_state is None:
         from .evaluation.state import SceneStateAdapter
-        entry_state = SceneStateAdapter(schema_root, contract).snapshot()
-    request = make_request(contract, text, entry_state, candidate_authors)
+        entry_state = SceneStateAdapter(schema_root, contract).snapshot(request_version=request_version)
+    request = make_request(contract, text, entry_state, candidate_authors, request_version=request_version)
     if semantic_reading is None:
         semantic_reading = registered_reading(schema_root, request)
     semantic = check_reading(request, semantic_reading, load_data(schema_root / "schemas/semantic_reading.schema.json"), knowledge_runtime, schema_root)

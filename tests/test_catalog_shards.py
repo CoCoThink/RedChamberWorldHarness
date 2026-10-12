@@ -13,6 +13,7 @@ from rcwh.assets import AssetCatalog, AssetError, CatalogStore
 from rcwh.assets.ingest import AssetIntake
 from rcwh.assets.layout import INDEX, LAYOUT, shard_path
 from rcwh.assets import transactions
+from rcwh import io
 from test_asset_intake import intake_repo
 
 
@@ -107,3 +108,98 @@ def test_interrupted_layout_switch_recovers_and_retains_intake(intake_repo, monk
     assert store.read() == before
     AssetIntake(root).ingest(file, origin="after recovery")
     assert AssetCatalog.from_repo(root).validate() == []
+
+
+def test_catalog_read_memo_reuses_schema_parses_not_reads_or_checks(intake_repo, monkeypatch):
+    root, file = intake_repo
+    prepare(root)
+    AssetIntake(root).ingest(file, origin="memo-test", kind="PROJECT_REFERENCE")
+    store = CatalogStore(root)
+    store.migrate_shards()
+    expected = store.read_unlocked()
+    reads, parses, checks, readiness = [], [], [], []
+    original_read = Path.read_text
+    original_parse = io.json.loads
+    original_check = store.check_document
+    original_ready = store.assert_ready
+    schema_texts = {path.read_text(encoding="utf-8") for path in (root / "schemas").glob("*.json")}
+
+    def read(path, *args, **kwargs):
+        if path.parent == root / "schemas":
+            reads.append(path.name)
+        return original_read(path, *args, **kwargs)
+
+    def parse(text):
+        if isinstance(text, str) and text in schema_texts:
+            parses.append(text)
+        return original_parse(text)
+
+    def check(document, **kwargs):
+        checks.append(document)
+        return original_check(document, **kwargs)
+
+    def ready():
+        readiness.append(True)
+        return original_ready()
+
+    monkeypatch.setattr(Path, "read_text", read)
+    monkeypatch.setattr(io.json, "loads", parse)
+    monkeypatch.setattr(store, "check_document", check)
+    monkeypatch.setattr(store, "assert_ready", ready)
+    assert store.read() == expected
+    assert readiness == [True]
+    config = original_parse((root / LAYOUT).read_bytes())
+    assert len(checks) == len(config["assets"])
+    assert len(reads) > 3
+    assert len(parses) < len(reads)
+    first_count = len(parses)
+    first_reads, first_checks = len(reads), len(checks)
+    assert store.read() == expected
+    assert readiness == [True, True]
+    assert len(parses) == first_count * 2
+    assert len(reads) == first_reads * 2
+    assert len(checks) == first_checks * 2
+
+
+def test_catalog_reload_observes_schema_and_metadata_changes(intake_repo):
+    root, _ = intake_repo
+    prepare(root)
+    store = CatalogStore(root)
+    store.migrate_shards()
+    before = store.read()
+    config = json.loads((root / LAYOUT).read_bytes())
+    shard = root / config["assets"][0]
+    document = yaml.safe_load(shard.read_bytes())
+    document["assets"][0]["media_type"] = "text/changed"
+    shard.write_text(yaml.safe_dump(document), encoding="utf-8")
+    assert store.read() != before
+    schema = root / "schemas/asset_catalog.schema.json"
+    schema.write_text('{"type": "null"}', encoding="utf-8")
+    with pytest.raises(AssetError, match="invalid asset catalog"):
+        store.read()
+
+
+@pytest.mark.parametrize("replacement", ["shard", "directory", "pending"])
+def test_catalog_reload_rechecks_paths_and_pending_transactions(intake_repo, replacement):
+    root, _ = intake_repo
+    prepare(root)
+    store = CatalogStore(root)
+    store.migrate_shards()
+    store.read()
+    config = json.loads((root / LAYOUT).read_bytes())
+    shard = root / config["assets"][0]
+    if replacement == "shard":
+        target = root / "saved-shard.yaml"
+        shard.rename(target)
+        shard.symlink_to(target)
+    elif replacement == "directory":
+        directory = shard.parent
+        target = root / "saved-assets"
+        directory.rename(target)
+        directory.symlink_to(target, target_is_directory=True)
+    else:
+        journal = root / store.transaction_directory / "interrupted/journal.json"
+        journal.parent.mkdir(parents=True)
+        journal.write_text("{}", encoding="utf-8")
+    with pytest.raises(AssetError, match="unfinished asset transaction" if replacement == "pending" else "symlink"):
+        store.read()

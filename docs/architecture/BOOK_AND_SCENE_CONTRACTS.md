@@ -66,3 +66,5 @@ BookPlan 包括全书人物线和关系发展；跨回计划包括因果、资�
 合同与 `V5_PREWRITE_STAGING_PACKET` 只允许产出场景计划、合同草案、候选简报及评审清单。硬证据作为只读输入；高概率方案与作者性生成均不取得证据权威。预写作不自动写正文、不关闭 OPEN、不产生采用或发布。
 
 2026-10-09 场景评估改为分列词串 lint 和绑定正文的语义复核，实际出口与人物获知按事件顺序核对。无独立语义判读返回 PENDING。声口词表仅作提示，稀疏人物继续弃判；运行说明见 [SEMANTIC_SCENE_REVIEW](../runbooks/SEMANTIC_SCENE_REVIEW.md)。
+
+场景入口由共享的 `SceneStateProjector` 提供，默认快照与既有绑定不变；语义请求另有显式启用的版本 2（冻结事实目录）。`diagnostics continuity` 与 `diagnostics impact` 只对已登记合同和声明的直接引用作研究诊断：现有正式场景合同仍很稀疏，全范围连续性保持 PENDING，不构成全书规划，也不推断跨回因果。药碗的 M4 位置 `S02` 与登记 YAML 的 `xiaoxiang_room` 通过 `legacy_location_refinements` 声明为空间包含（依第23、78回），诊断显示为 REFINES 而非一致；这不证明药碗或黛玉死所的位置。

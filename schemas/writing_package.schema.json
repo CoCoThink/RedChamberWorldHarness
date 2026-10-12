@@ -28,8 +28,7 @@
     },
     "chapter": {
       "type": "integer",
-      "minimum": 81,
-      "maximum": 100
+      "minimum": 1
     },
     "exemplar_set": {
       "type": "object",
@@ -143,6 +142,13 @@
     },
     "authority_effect": {
       "const": "NONE"
+    },
+    "operation_scope": {
+      "enum": [
+        "PRODUCTION",
+        "RESEARCH",
+        "BACKTEST"
+      ]
     }
   }
 }

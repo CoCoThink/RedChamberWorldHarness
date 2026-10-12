@@ -54,6 +54,16 @@ class LiteraryInputs:
                 "readiness": "VERIFIED" if audit["status"] == "PASS" else manifest["readiness"], "human_audit": audit, "authority_effect": "NONE"}
 
     def package(self, relative: str, *, production: bool = False, require_tracked: bool = False) -> dict:
+        if production:
+            from .workflow.admission import ChapterAdmission
+            spec = load_data(repository_path(self.root, relative))
+            admission = ChapterAdmission(self.catalog).summary(
+                spec["chapter"], relative, require_tracked=require_tracked)
+            result = dict(admission["writing_inputs"])
+            result.update(status=admission["status"], scope="PRODUCTION_INPUT_ADMISSION",
+                          findings=admission["findings"], production_blockers=admission["production_blockers"],
+                          chapter_admission={key: value for key, value in admission.items() if key != "writing_inputs"})
+            return result
         spec = load_data(repository_path(self.root, relative))
         validate(self.root, spec, "writing_package")
         self.record(spec["exemplar_set"])
@@ -87,30 +97,12 @@ class LiteraryInputs:
         if examples["readiness"] != "VERIFIED":
             blockers.append("CORPUS_HUMAN_LAYER_AUDIT_FAILED" if examples["human_audit"]["status"] == "FAIL" else "CORPUS_HUMAN_LAYER_AUDIT_PENDING")
         if any(row["status"] != "PASS" for row in source_rows): blockers.append("WRITING_SOURCE_LOCATOR_UNVERIFIED")
-        # Actual full-source closure and paired blind-review admission are runtime
-        # prerequisites. Frozen research packages cannot authorize production.
-        if production:
-            from .closure import InputClosure
-            if InputClosure(self.root).verify(require_tracked=require_tracked)["status"] != "PASS":
-                blockers.append("DECLARED_INPUT_CLOSURE_INCOMPLETE")
-            from .paired_review import PairedReview
-            if PairedReview(self.catalog).selected_summary()["status"] != "PASS":
-                blockers.append("P9_PAIRED_REVIEW_PENDING")
-            from .workflow import ProjectState
-            from .world import WorldRuntime
-            from .reconstruction import ReconstructionRegistry
-            expected_world = {f"data/world/m3_{name}.json" for name in ("core", "locations", "presence", "body", "resources", "knowledge")}
-            project = ProjectState.from_repo(self.root)
-            if {item["path"] for item in spec["world"]} != expected_world:
-                blockers.append("WRITING_PACKAGE_WORLD_INPUTS_INCOMPLETE")
-            if project.data["owners"]["plan_constraints"] not in {item["path"] for item in spec["plan"]}:
-                blockers.append("WRITING_PACKAGE_SELECTED_PLAN_MISSING")
-            findings.extend(WorldRuntime.from_repo(self.root).validate_integrity(self.catalog, ReconstructionRegistry.from_repo(self.root)))
-        return {"status": "FAIL" if findings or (production and blockers) else "PASS",
-                "scope": "PRODUCTION_INPUT_ADMISSION" if production else "FROZEN_RESEARCH_WRITING_INPUTS",
-                "package": spec, "input_sha256": digest(canonical_bytes(spec)), "exemplars": examples,
-                "sources": source_rows, "findings": sorted(set(findings)), "production_blockers": blockers,
-                "authority_effect": "NONE"}
+        result = {"status": "FAIL" if findings else "PASS",
+                  "scope": "FROZEN_RESEARCH_WRITING_INPUTS",
+                  "package": spec, "input_sha256": digest(canonical_bytes(spec)), "exemplars": examples,
+                  "sources": source_rows, "findings": sorted(set(findings)), "production_blockers": blockers,
+                  "authority_effect": "NONE"}
+        return result
 
     def index_map(self, dataset_ref: str, collection_ref: str) -> dict:
         """Map each Markdown table row; thematic references stay unresolved.

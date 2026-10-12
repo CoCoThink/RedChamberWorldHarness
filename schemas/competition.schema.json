@@ -427,7 +427,69 @@
         "string",
         "null"
       ]
+    },
+    "writing_package": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
+    },
+    "context_version": {
+      "enum": [
+        1,
+        2
+      ]
+    },
+    "context_manifest": {
+      "type": "object",
+      "required": [
+        "path",
+        "sha256"
+      ],
+      "properties": {
+        "path": {
+          "type": "string",
+          "minLength": 1
+        },
+        "sha256": {
+          "type": "string",
+          "pattern": "^[a-f0-9]{64}$"
+        }
+      },
+      "additionalProperties": false
     }
   },
-  "additionalProperties": false
+  "additionalProperties": false,
+  "allOf": [
+    {
+      "if": {
+        "required": [
+          "context_version"
+        ],
+        "properties": {
+          "context_version": {
+            "const": 2
+          }
+        }
+      },
+      "then": {
+        "required": [
+          "context_manifest",
+          "writing_package"
+        ]
+      }
+    }
+  ]
 }
