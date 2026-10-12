@@ -57,12 +57,12 @@ python tools/verify_corpus_candidates.py
 ```bash
 rcwh literary-inputs exemplars data/writing/exemplars/ch89-research-v1.json
 rcwh literary-inputs package data/writing/packages/ch89-research-v4.json --require-tracked
-rcwh literary-inputs package data/writing/packages/ch89-research-v4.json --production --require-tracked
+rcwh literary-inputs package data/writing/packages/ch89-production-v5.json --production --require-tracked
 rcwh literary-inputs index-map corpus:front80:v1-candidate --output artifacts/new-index-map.json
 rcwh literary-inputs dataset-map corpus:front80:pilot:v1 corpus:front80:v1-candidate --output artifacts/new-version-map.json
 ```
 
-研究包固定 dataset／manifest、MAIN_TEXT segment／文字摘要、选择理由、Source 整条记录、核心母本资产、六份世界输入及选定规划版本。改变任一输入使对应绑定失效。正文范例拒绝混入 ZHIPI、EDITORIAL 或 VARIANT。包里的文学理由仍属研究解释。生产准入另检查完整世界／当前规划输入、来源闭包、语料人工审查和真实 P9 提交；当前应返回 FAIL。
+研究包固定 dataset／manifest、MAIN_TEXT segment／文字摘要、选择理由、Source 整条记录、核心母本资产、六份世界输入及选定规划版本。改变任一输入使对应绑定失效。v4 漏列了由场景合同推导出的两项来源，按回准入报 `PACKAGE_SOURCE_SCOPE_MISMATCH`；`ch89-production-v5.json` 补齐五项来源，作为第89回正式准入候选，v4 原样保留。审核清单见[第89回准入工作单](CH89_ADMISSION_WORKLIST.md)。正文范例拒绝混入 ZHIPI、EDITORIAL 或 VARIANT。包里的文学理由仍属研究解释。生产准入另检查完整世界／当前规划输入、来源闭包、语料人工审查和真实 P9 提交；当前应返回 FAIL。
 
 本次在世界模型补入紫鹃后建立 v4 研究包，并显式选择新世界 SHA。旧 v3 原字节保留，在当前世界下会报告 STALE_WRITING_INPUT；不刷新旧包来掩盖变更，不继承旧输入下的评审认可。
 

@@ -30,7 +30,7 @@ rcwh plan compare-books
 
 ```bash
 # 默认 dry-run，无须密钥；打印完整请求与预算，不调用 API。
-rcwh write draft data/writing/packages/ch89-research-v4.json --chapter 89
+rcwh write draft data/writing/packages/ch89-production-v5.json --chapter 89
 
 # 候选参数是不可变 draft 登记 JSON，而不是裸正文。
 rcwh write feedback data/writing/drafts/ch89/<draft-sha>.json

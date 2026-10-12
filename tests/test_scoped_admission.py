@@ -128,6 +128,14 @@ def test_actual_ch89_package_undeclared_sources_are_blockers():
                for ref in scope["dependent_source_ids"])
 
 
+def test_actual_ch89_v5_declares_every_derived_source():
+    root = Path(__file__).resolve().parents[1]
+    scope = chapter_scope(root, "data/writing/packages/ch89-production-v5.json")
+    assert scope["findings"] == [] and scope["dependent_source_ids"] == []
+    assert len(scope["used_source_ids"]) == 5
+    assert scope["dataset_refs"] == ["corpus:front80:v1-candidate"]
+
+
 def test_current_competition_cannot_formally_qualify_with_missing_admission(monkeypatch):
     from rcwh.candidate_reviews import SIX_FIELDS
     from rcwh.competition import CompetitionRegistry
