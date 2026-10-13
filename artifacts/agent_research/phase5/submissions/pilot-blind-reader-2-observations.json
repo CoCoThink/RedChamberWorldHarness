@@ -1,0 +1,295 @@
+{
+  "schema_version": 1,
+  "report_kind": "PILOT_BLIND_READER_OBSERVATIONS",
+  "packet": {
+    "path": "artifacts/agent_research/phase5/pilot-anonymous-v1/public/packet.json",
+    "sha256": "687589f7ec65efa59e181af4cc8ac06db4159164272992a2d7899c1c7eb93a47"
+  },
+  "reviewer": {
+    "id": "agent:pilot-blind-reader-2",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:pilot-blind-reader-2:phase5",
+    "model": {"label": "session-default", "verification": "DECLARED_NOT_VERIFIED"},
+    "context_isolation": {"asserted": true, "verification": "NOT_PROVEN"}
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "verdict_scope": "All four raw opinions are UNVERIFIED as qualification evidence. Their full-text consumption and literary judgments are complete; UNVERIFIED is not a claim that the reader left them unread. No archival, historical-rule, provider-identity or independent-human pass is issued.",
+  "consumption": {
+    "status": "COMPLETE_FULL_TEXT_READING",
+    "actual_subjects_read": 4,
+    "actual_chapters_read": 12,
+    "chapters_per_subject": [85, 86, 87],
+    "total_utf8_bytes": 322993,
+    "total_unicode_codepoints": 108441,
+    "total_splitlines": 1146,
+    "method": "Read all four complete public text files in line-contiguous chunks, with two separately retrieved boundary lines. Quotations were selected only after full reading, not substituted for it. Reading the bytes programmatically was used for binding and exact-quote checks, not as a substitute for consuming the story.",
+    "reading_order": ["read-6aa712b0359c98f49720d3a3", "read-cc6a6dfce4df89e5d3f76985", "read-cda9dc2b519ce26a634cb60a", "read-b364bc8365255d0e64c2e60a"],
+    "inputs_accessed": [
+      "artifacts/agent_research/phase5/pilot-anonymous-v1/public/packet.json",
+      "artifacts/agent_research/phase5/pilot-anonymous-v1/public/read-6aa712b0359c98f49720d3a3.txt",
+      "artifacts/agent_research/phase5/pilot-anonymous-v1/public/read-cc6a6dfce4df89e5d3f76985.txt",
+      "artifacts/agent_research/phase5/pilot-anonymous-v1/public/read-cda9dc2b519ce26a634cb60a.txt",
+      "artifacts/agent_research/phase5/pilot-anonymous-v1/public/read-b364bc8365255d0e64c2e60a.txt",
+      "schemas/agent_review.schema.json"
+    ],
+    "prohibited_context_accessed": false,
+    "not_accessed": ["coordinator content", "anonymous mapping", "registry content", "author drafts", "edit feedback", "baseline", "source corpus", "peer reader opinions"],
+    "outside_actions": "No API or network call, delegation, registration or git commit. Read-only filename/directory-existence checks located the explicitly permitted schema and requested output directory; they were not literary evidence. Coordinator logistical messages were not treated as story evidence or permission authority."
+  },
+  "subjects": [
+    {
+      "subject_id": "read-6aa712b0359c98f49720d3a3",
+      "binding": {"path": "artifacts/agent_research/phase5/pilot-anonymous-v1/public/read-6aa712b0359c98f49720d3a3.txt", "sha256": "6984d0d98ab749a0fa2352f0fac2245bc01e10dac64e46828bff495485e69c3d"},
+      "complete_read": true,
+      "utf8_bytes": 82011,
+      "unicode_codepoints": 27513,
+      "splitlines": 264,
+      "chapter_line_ranges": [{"chapter": 85, "first": 1, "last": 86}, {"chapter": 86, "first": 87, "last": 178}, {"chapter": 87, "first": 179, "last": 264}],
+      "strengths": [
+        {"claim": "Slow physical attrition coexists with apparently better complexion and a still-witty subject; Daiyu's subjective half-day is not interchangeable with another patient's promised recovery.", "evidence_ids": ["A85-01", "A85-02", "A86-01"]},
+        {"claim": "The final promise of tomorrow and the unwarmed medicine let ordinary caregiving continue beyond its possible recipient; the subsequent shared meal is not advertised as marriage curing bereavement.", "evidence_ids": ["A86-03", "A86-05", "A86-06", "A87-03"]}
+      ],
+      "issues": [
+        {"claim": "Baoyu's assent is knowledgeable but resigned. Compared with the explicit delay and self-doubt in read-cc6a6dfce4df89e5d3f76985, his personal decision is thinner.", "evidence_ids": ["A87-02", "B87-01", "B87-02"]},
+        {"claim": "Procedure and openly formulated domestic ethics sometimes occupy space that could carry less explained character friction. The claim that nobody withheld the summons is plausible, but exceptionally reassuring.", "evidence_ids": ["A86-04", "A87-01"]},
+        {"claim": "The final ostensibly private quiet is interrupted by Ying'er closing the box and dropping the curtain. This is a small scene-staging reservation, not a continuity failure.", "evidence_ids": ["A87-04"]}
+      ],
+      "conditional_concerns": [
+        {"claim": "The poem remains unfinished, but a tried character and its half-deletion make its visual revision state less transparent than an untouched blank. This is not an assertion that the poem was completed, given away or falsely attributed.", "evidence_ids": ["A85-03", "A86-02"]}
+      ]
+    },
+    {
+      "subject_id": "read-cc6a6dfce4df89e5d3f76985",
+      "binding": {"path": "artifacts/agent_research/phase5/pilot-anonymous-v1/public/read-cc6a6dfce4df89e5d3f76985.txt", "sha256": "edfb579adbefda7c195d9fa191cdcf42acb73d76cbc97db001c6abf3eaf2e643"},
+      "complete_read": true,
+      "utf8_bytes": 81485,
+      "unicode_codepoints": 27375,
+      "splitlines": 318,
+      "chapter_line_ranges": [{"chapter": 85, "first": 1, "last": 108}, {"chapter": 86, "first": 109, "last": 212}, {"chapter": 87, "first": 213, "last": 318}],
+      "strengths": [
+        {"claim": "The patient's wit and Baoyu's feeling of becoming someone she must entertain complicate the care arrangement. The physician does not reduce chronic wasting to a servant's single missed timing.", "evidence_ids": ["B85-01", "B85-02", "B85-03"]},
+        {"claim": "The use of water changes at death while familiar movements continue; the fire-tongs sound later becomes an absence rather than an announced symbol.", "evidence_ids": ["B86-04", "B86-06"]},
+        {"claim": "Marriage permits delay, self-doubt and Baochai's refusal to be blamed for haste. The eating couple handle tough food without turning every movement into a moral lesson.", "evidence_ids": ["B87-01", "B87-02", "B87-03", "B87-04", "B87-05"]}
+      ],
+      "issues": [
+        {"claim": "An additional two-month summary at the start of ch86 gives a legible chronic timescale but partially releases the immediate tension inherited from ch85.", "evidence_ids": ["B86-01"]},
+        {"claim": "Tracking the departed carriage and repeated waiting places risks stage-management. It gives a credible distance barrier, but its exposition can exceed its emotional return.", "evidence_ids": ["B86-02"]},
+        {"claim": "The narrator explicitly announcing that nobody delivers a memorable final speech shows the refusal instead of relying entirely on the scene to enact it.", "evidence_ids": ["B86-03"]}
+      ],
+      "conditional_concerns": [
+        {"claim": "The scene's kind, uncomplicated return to a warm meal may suit a compassionate domestic reading, but readers preferring a little marital resistance may favor read-b364bc8365255d0e64c2e60a's disagreement instead.", "evidence_ids": ["B87-05", "D87-03", "D87-04"]}
+      ]
+    },
+    {
+      "subject_id": "read-cda9dc2b519ce26a634cb60a",
+      "binding": {"path": "artifacts/agent_research/phase5/pilot-anonymous-v1/public/read-cda9dc2b519ce26a634cb60a.txt", "sha256": "11d533a5efaaff7683f4dbbbb43d52a9d0b21a9db4e0aac076b628405fd2e4dd"},
+      "complete_read": true,
+      "utf8_bytes": 81341,
+      "unicode_codepoints": 27287,
+      "splitlines": 256,
+      "chapter_line_ranges": [{"chapter": 85, "first": 1, "last": 86}, {"chapter": 86, "first": 87, "last": 166}, {"chapter": 87, "first": 167, "last": 256}],
+      "strengths": [
+        {"claim": "Baochai's attempted timetable repair must be repaired itself. Daiyu explicitly wants useless talk, and Baoyu asks to stay rather than merely being allotted a care slot.", "evidence_ids": ["C85-01", "C85-02", "C85-03"]},
+        {"claim": "After failing to revise the ordinary poem, Daiyu notices an insect; the story does not insist that her last acts all concern art. Recording the next morning finally stops without explaining its symbolic meaning.", "evidence_ids": ["C86-01", "C86-02", "C86-06"]},
+        {"claim": "The fine-blue-line bowl tracks the last dose to the arrival scene. The newly shared bed allows Baochai a bodily preference rather than prescribing complete compliance.", "evidence_ids": ["C86-04", "C86-05", "C87-04"]}
+      ],
+      "issues": [
+        {"claim": "The late-arrival cause is clear on the page, but it relies on Baoyu leaving severe illness to supervise a task the household could plausibly delegate.", "evidence_ids": ["C86-03"]},
+        {"claim": "The two-item permission slip resolves mourning-to-wedding by a document and may sound like a procedural authorization inserted to settle a difficulty rather than a naturally occurring family exchange.", "evidence_ids": ["C87-02"]},
+        {"claim": "The marriage has clear information about the bride but less first-person desire or deliberation from Baoyu than read-cc6a6dfce4df89e5d3f76985. Baochai's instruction not to deceive him makes the intention especially explicit.", "evidence_ids": ["C87-01", "B87-01", "B87-02"]}
+      ],
+      "conditional_concerns": [
+        {"claim": "Neither the transport errand nor the permission slip is claimed to be an internal contradiction or a verified historical impossibility. The reservation is about felt motivation and literary texture.", "evidence_ids": ["C86-03", "C87-02"]}
+      ]
+    },
+    {
+      "subject_id": "read-b364bc8365255d0e64c2e60a",
+      "binding": {"path": "artifacts/agent_research/phase5/pilot-anonymous-v1/public/read-b364bc8365255d0e64c2e60a.txt", "sha256": "cee9f9f5a68faaaedcc9c8c78f1be79443feabe97904cfc2669b423e818e6dc3"},
+      "complete_read": true,
+      "utf8_bytes": 78156,
+      "unicode_codepoints": 26266,
+      "splitlines": 308,
+      "chapter_line_ranges": [{"chapter": 85, "first": 1, "last": 98}, {"chapter": 86, "first": 99, "last": 204}, {"chapter": 87, "first": 205, "last": 308}],
+      "strengths": [
+        {"claim": "Daiyu refuses both turning preferences into permanent rules and excessive cough-counting. Small involuntary tears bring inward life into the long illness without manufacturing a last testament.", "evidence_ids": ["D85-01", "D85-02", "D85-03"]},
+        {"claim": "The useless folded lap-cloth and the cooling evening dose make bereavement bodily and habitual, not simply a run of instructions for the survivors.", "evidence_ids": ["D86-04", "D86-05", "D86-06"]},
+        {"claim": "Baochai's food preference and their dispute over which book thickness was supplied make marriage a real encounter between imperfect people. The final book-turn and line-spool click need little interpretation.", "evidence_ids": ["D87-03", "D87-04", "D87-05"]}
+      ],
+      "issues": [
+        {"claim": "The delayed summons is plausible but extensively routed. Baoyu's stop to fetch the old book is an additional convenient reason for arriving too late.", "evidence_ids": ["D86-03"]},
+        {"claim": "A wife being more than a replacement persuader of meals is a sound theme, but the aunt states it with unusual doctrinal clarity; even the measuring-room proverb neatly embodies an argument.", "evidence_ids": ["D87-01", "D87-02"]},
+        {"claim": "The final domestic sequence spreads across further days rather than maintaining one concentrated first-day close. That gains lived duration but diffuses the closing pressure of the ordinary first meal.", "evidence_ids": ["D87-04", "D87-05"]}
+      ],
+      "conditional_concerns": [
+        {"claim": "The seven-month marker supplies chronological clarity, not proof of historical plausibility. The open-poem handling is an aesthetic strength without any source-corpus comparison.", "evidence_ids": ["D86-01", "D86-02"]}
+      ]
+    }
+  ],
+  "quote_validation": {
+    "status": "54_OF_54_EXACT_BEFORE_WRITE",
+    "method": "Independently loaded each quote's own packet-bound subject, checked its SHA-256, checked literal substring membership in the specified 1-based line, checked the chapter range, and counted occurrences. All 54 quotations occur once in their own subject. No replacement by a matching passage from another token was accepted.",
+    "source_binding_rule": "Each evidence subject_id resolves to exactly one subjects[].binding path and SHA-256 above; the quotation is bound to that file, not to the shared sequence template. Evidence id prefixes are local citation handles, not author or method aliases.",
+    "shared_phrase_caution": "The same arrival request occurs in all four stories. A86-03, B86-05, C86-05 and D86-05 were each checked separately at their own token's line. Agreement on that phrase is not evidence that the surrounding scenes are interchangeable."
+  },
+  "evidence": [
+    {"id": "A85-01", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 85, "line": 25, "quote": "天将亮时黛玉睡去，睡着脸色仍比前日好看，紫鹃在纸上却写不出一个“好”字，只记了吃的、醒的与坐的时刻。"},
+    {"id": "A85-02", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 85, "line": 55, "quote": "半年倒容易说，我今儿这半日还没过完呢。"},
+    {"id": "A85-03", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 85, "line": 73, "quote": "她拿笔在旁边试写一个字，又觉得不妥，另搁下了，叫紫鹃不要将这张和刚收齐的旧纸夹在一起，自己明日还要看。"},
+    {"id": "A86-01", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 86, "line": 95, "quote": "你托着，我倒不知它究竟重不重了。"},
+    {"id": "A86-02", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 86, "line": 111, "quote": "笔尖才落下，手腕便沉，那个字只划去了半边。"},
+    {"id": "A86-03", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 86, "line": 155, "quote": "药还没吃么？再温一温。"},
+    {"id": "A86-04", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 86, "line": 159, "quote": "已经去叫，大家各有脚程，并没有谁不肯报。"},
+    {"id": "A86-05", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 86, "line": 165, "quote": "没什么。早上都是说明日的事。"},
+    {"id": "A86-06", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 86, "line": 177, "quote": "那盏药早已冷透，再没有人去温。"},
+    {"id": "A87-01", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 87, "line": 197, "quote": "别说娶个人便能治病，人家女孩儿不是药。"},
+    {"id": "A87-02", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 87, "line": 203, "quote": "我知道，是宝姐姐。既议定了，我依长辈的意思。"},
+    {"id": "A87-03", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 87, "line": 251, "quote": "宝钗吃得慢，宝玉比往日多用几口，却没有谁拿这个数来报喜。"},
+    {"id": "A87-04", "subject_id": "read-6aa712b0359c98f49720d3a3", "chapter": 87, "line": 261, "quote": "宝钗抬眼看了一下，便又低头收线，莺儿替她把匣子扣好，帘子随手放下。"},
+    {"id": "B85-01", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 85, "line": 23, "quote": "我也成了要她支应的人了。"},
+    {"id": "B85-02", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 85, "line": 61, "quote": "你不用这样替它掩饰，衣裳也不曾犯错。"},
+    {"id": "B85-03", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 85, "line": 71, "quote": "大夫说旧病已久，切莫将一日一时的差迟都归在自己身上；该照管的仍照管，有些事并不能由谁一句话改过。"},
+    {"id": "B86-01", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 86, "line": 113, "quote": "如此又过了两个月。"},
+    {"id": "B86-02", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 86, "line": 157, "quote": "跑到祠所时，车已走了，小厮拉住看门人问走向，听见说往东，便沿街口追去。"},
+    {"id": "B86-03", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 86, "line": 169, "quote": "屋里没有谁说一段等着旁人记住的话。"},
+    {"id": "B86-04", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 86, "line": 181, "quote": "衣物展开，盆换过，帕子洗过，屋里热水的用处变了，动作却还须继续。"},
+    {"id": "B86-05", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 86, "line": 187, "quote": "药还没吃么？再温一温。"},
+    {"id": "B86-06", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 86, "line": 207, "quote": "收完才想起，里面再没有人嫌它响了，遂在门边站着，手里旧布一直未放下。"},
+    {"id": "B87-01", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 87, "line": 229, "quote": "他隔了一会儿才说：“我没有说她不好。只是有些事，我怕自己做得不周全。”"},
+    {"id": "B87-02", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 87, "line": 237, "quote": "我愿意照所议的办，只求不要急在眼下。"},
+    {"id": "B87-03", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 87, "line": 241, "quote": "只是他请缓些，就缓些，不要催了他又说是我等不及。"},
+    {"id": "B87-04", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 87, "line": 303, "quote": "她夹起一片，觉得有筋，顺手放在小碟上，并不特地解释，他也将一块过大的菜分开。"},
+    {"id": "B87-05", "subject_id": "read-cc6a6dfce4df89e5d3f76985", "chapter": 87, "line": 305, "quote": "回来就好，饭也没凉。"},
+    {"id": "C85-01", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 85, "line": 47, "quote": "我只说晚一刻，倒没有问她这一刻在哪里。"},
+    {"id": "C85-02", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 85, "line": 49, "quote": "正是要没用处的，有用处的你们背着我说够了。"},
+    {"id": "C85-03", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 85, "line": 75, "quote": "宝玉忽问黛玉：“我还在这里坐坐，好不好？”黛玉看着他，道：“你若坐得住，就坐。”"},
+    {"id": "C86-01", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 86, "line": 123, "quote": "小笺上那一处空着，纸角虽然被她手指压出一道浅痕，字却不曾添上。"},
+    {"id": "C86-02", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 86, "line": 125, "quote": "她摇头，说那虫子怎么不走了。"},
+    {"id": "C86-03", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 86, "line": 135, "quote": "宝玉问他回去还看不看旁人，得知尚有一位旧约的病人，心里总不踏实，便向李纨说去前头叫车，送医者过去，另留人在他住处候着。"},
+    {"id": "C86-04", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 86, "line": 137, "quote": "那碗的细青线还露在盖布边，药面没有再低下去。"},
+    {"id": "C86-05", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 86, "line": 151, "quote": "药还没吃么？再温一温。"},
+    {"id": "C86-06", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 86, "line": 165, "quote": "紫鹃坐在原来的地方，没有拿起居纸添晨起的字。"},
+    {"id": "C87-01", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 87, "line": 183, "quote": "我也不是只想箱子。既议这件事，先前的话都明白告诉他，不要临了又说是为他好，叫他才知道。"},
+    {"id": "C87-02", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 87, "line": 193, "quote": "条上分写两项：本府此时议定的婚嫁家礼准行，宴乐仍停。"},
+    {"id": "C87-03", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 87, "line": 243, "quote": "宝玉低头吃饭，忽道这菜略咸。宝钗尝了一口，说自己觉得还好，想来他先喝汤，口里味重了些，另将较淡的一碟移过来，不叫厨房立刻重做。"},
+    {"id": "C87-04", "subject_id": "read-cda9dc2b519ce26a634cb60a", "chapter": 87, "line": 255, "quote": "这一边别全掖死，我夜里要翻身。"},
+    {"id": "D85-01", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 85, "line": 41, "quote": "二爷，我这里只怕记漏，不是要一声声数。姑娘嫌烦呢。"},
+    {"id": "D85-02", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 85, "line": 89, "quote": "我今日爱这个，明日未必。你别把一口话做成一年规矩。"},
+    {"id": "D85-03", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 85, "line": 91, "quote": "不过看着竹子，忽然就有了，若真想哭又没有多少。"},
+    {"id": "D86-01", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 86, "line": 103, "quote": "元春身后的丧务，自初时忙乱至今，已过了七个月。"},
+    {"id": "D86-02", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 86, "line": 119, "quote": "那纸拿来。我昨儿想了一个字，睡过又忘了，兴许看着便记起。"},
+    {"id": "D86-03", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 86, "line": 163, "quote": "宝玉交过书后，尚以为黛玉睡着，回园时顺道去取先前答应带回的旧书。"},
+    {"id": "D86-04", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 86, "line": 177, "quote": "紫鹃拿起那块平日铺在膝上托碗的细布，折了一下，才发现今日无处再铺。"},
+    {"id": "D86-05", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 86, "line": 187, "quote": "药还没吃么？再温一温。"},
+    {"id": "D86-06", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 86, "line": 203, "quote": "那一盏傍晚只饮下少许的药，早已冷透，炉火也熄了，再没有人去温。"},
+    {"id": "D87-01", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 87, "line": 217, "quote": "只是孩子是来过日子的，不是送来替丫头们劝饭。"},
+    {"id": "D87-02", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 87, "line": 219, "quote": "床柜不会因熟就宽了。"},
+    {"id": "D87-03", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 87, "line": 295, "quote": "你既爱这个，不必都说和我一样。"},
+    {"id": "D87-04", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 87, "line": 299, "quote": "宝钗抬眼道：“你给我的另一本，原比这个薄。”"},
+    {"id": "D87-05", "subject_id": "read-b364bc8365255d0e64c2e60a", "chapter": 87, "line": 307, "quote": "屋里只听得一页书轻轻翻过去，隔一会，针线筐里收好的线轴碰了一下。"}
+  ],
+  "dimension_ranks": [
+    {
+      "dimension": "three_chapter_sequence_cohesion",
+      "criterion": "Felt linkage of shrinking illness-world, lost recipient of care, and the changed shared household; not mere checklist compliance.",
+      "rank_groups": [
+        {"rank": 1, "subject_ids": ["read-6aa712b0359c98f49720d3a3", "read-b364bc8365255d0e64c2e60a"]},
+        {"rank": 3, "subject_ids": ["read-cc6a6dfce4df89e5d3f76985"]},
+        {"rank": 4, "subject_ids": ["read-cda9dc2b519ce26a634cb60a"]}
+      ],
+      "rationale": "The tied sequences most steadily turn illness habits into absence and then a household with two real occupants. The additional two-month bridge in read-cc6a6dfce4df89e5d3f76985 is chronologically clear but less immediate. read-cda9dc2b519ce26a634cb60a has fine continuities, yet its late-arrival motivation and authorization slip are more visibly arranged.",
+      "evidence_ids": ["A85-01", "A86-05", "A87-03", "D86-04", "D87-03", "B86-01", "C86-03", "C87-02"]
+    },
+    {
+      "dimension": "slow_illness_and_death",
+      "criterion": "Accumulated bodily losses without erasing personality, contrasted with fluctuation and the survivors' habits.",
+      "rank_groups": [
+        {"rank": 1, "subject_ids": ["read-6aa712b0359c98f49720d3a3", "read-b364bc8365255d0e64c2e60a"]},
+        {"rank": 3, "subject_ids": ["read-cc6a6dfce4df89e5d3f76985", "read-cda9dc2b519ce26a634cb60a"]}
+      ],
+      "rationale": "The half-day exchange and too-heavy supported cup in the first token, and slight tears and the purposeless lap-cloth in the second, are especially memorable bodily/personality conjunctions. The other two are also moving; I do not force a distinction between their dress/water transitions and unwritten next-morning record.",
+      "evidence_ids": ["A85-02", "A86-01", "D85-03", "D86-04", "B85-02", "B86-04", "C86-02", "C86-06"]
+    },
+    {
+      "dimension": "late_arrival_motivation",
+      "criterion": "How naturally information delay and Baoyu's whereabouts produce the missed final encounter, separately from logistical completeness.",
+      "rank_groups": [
+        {"rank": 1, "subject_ids": ["read-6aa712b0359c98f49720d3a3", "read-cc6a6dfce4df89e5d3f76985"]},
+        {"rank": 3, "subject_ids": ["read-b364bc8365255d0e64c2e60a"]},
+        {"rank": 4, "subject_ids": ["read-cda9dc2b519ce26a634cb60a"]}
+      ],
+      "rationale": "Work away from the bedside or travel with the father can credibly precede escalation, although both scenes reassure or route too much. The book-fetching detour is somewhat convenient. Personally supervising the doctor's transport after two visits and knowledge of the grave condition is the least natural choice for Baoyu, even though the text accounts for it.",
+      "evidence_ids": ["A86-04", "B86-02", "D86-03", "C86-03"]
+    },
+    {
+      "dimension": "cold_medicine_embodiment",
+      "criterion": "The medicine's changing physical use and Baoyu's futile care impulse, not whether a required phrase appears.",
+      "rank_groups": [
+        {"rank": 1, "subject_ids": ["read-b364bc8365255d0e64c2e60a", "read-cda9dc2b519ce26a634cb60a"]},
+        {"rank": 3, "subject_ids": ["read-6aa712b0359c98f49720d3a3", "read-cc6a6dfce4df89e5d3f76985"]}
+      ],
+      "rationale": "Tracing the final evening dose and its basin, or the fine-blue-line bowl and unchanged drug level, makes the request to rewarm specifically impossible. All four independently contain the same request; the tied lower pair still gives it emotional force. Excess labeling in the blue-line version partly offsets its traceability, so no strict distinction between the leading pair.",
+      "evidence_ids": ["D86-05", "D86-06", "C86-04", "C86-05", "A86-03", "A86-06", "B86-05", "B86-04"]
+    },
+    {
+      "dimension": "ordinary_poem_left_open",
+      "criterion": "Unresolved creative work stays ordinary work, without filled blank, posthumous solution or conversion to a last testament.",
+      "rank_groups": [
+        {"rank": 1, "subject_ids": ["read-cc6a6dfce4df89e5d3f76985", "read-cda9dc2b519ce26a634cb60a", "read-b364bc8365255d0e64c2e60a"]},
+        {"rank": 4, "subject_ids": ["read-6aa712b0359c98f49720d3a3"]}
+      ],
+      "rationale": "No strong preference among three clear versions of an unfilled ordinary revision. The remaining token also leaves the work open; its previously tried character and half-deletion complicate the visible state slightly. This rank is not an archival fail and does not allege completion. On preservation/non-testamentary treatment alone I would tie all four.",
+      "evidence_ids": ["C86-01", "C86-02", "D86-02", "B86-03", "A85-03", "A86-02"]
+    },
+    {
+      "dimension": "mourning_to_marriage_and_couple_agency",
+      "criterion": "Grief remains live while an informed marriage becomes a genuine, imperfect shared life; no external verification of legal permission.",
+      "rank_groups": [
+        {"rank": 1, "subject_ids": ["read-cc6a6dfce4df89e5d3f76985"]},
+        {"rank": 2, "subject_ids": ["read-b364bc8365255d0e64c2e60a"]},
+        {"rank": 3, "subject_ids": ["read-6aa712b0359c98f49720d3a3", "read-cda9dc2b519ce26a634cb60a"]}
+      ],
+      "rationale": "The first token makes willingness, fear of failing, a requested delay and Baochai's pride actual exchanges. The second has less searching assent but better ordinary disagreement after marriage. The last pair is informed, compassionate and bodily convincing, yet relies more on resignation or explicit advance disclosure than personal decision.",
+      "evidence_ids": ["B87-01", "B87-02", "B87-03", "D87-03", "D87-04", "A87-02", "A87-03", "C87-01", "C87-04"]
+    },
+    {
+      "dimension": "differentiated_voice_and_dialogue",
+      "criterion": "Persons interrupt, misrecognize, object and joke from their own temperaments, instead of simply voicing the care ethic.",
+      "rank_groups": [
+        {"rank": 1, "subject_ids": ["read-b364bc8365255d0e64c2e60a"]},
+        {"rank": 2, "subject_ids": ["read-cda9dc2b519ce26a634cb60a"]},
+        {"rank": 3, "subject_ids": ["read-6aa712b0359c98f49720d3a3", "read-cc6a6dfce4df89e5d3f76985"]}
+      ],
+      "rationale": "Daiyu's resistance to yearly food rules and Baochai's refusal of false matching preferences are the strongest differentiated speech. Useful-versus-useless talk and corrected timetable help are next. The tied pair has excellent individual lines, but more repeated reassurance, anti-cure declarations or smoothly considerate replies.",
+      "evidence_ids": ["D85-02", "D87-03", "D87-04", "C85-01", "C85-02", "A85-02", "A87-01", "B85-01", "B87-05"]
+    },
+    {
+      "dimension": "felt_life_versus_visible_engineering",
+      "criterion": "Higher rank means less obviously engineered: ordinary friction, unfinished tasks and bodily wants exceed demonstration of correct procedures.",
+      "rank_groups": [
+        {"rank": 1, "subject_ids": ["read-b364bc8365255d0e64c2e60a"]},
+        {"rank": 2, "subject_ids": ["read-cda9dc2b519ce26a634cb60a"]},
+        {"rank": 3, "subject_ids": ["read-6aa712b0359c98f49720d3a3", "read-cc6a6dfce4df89e5d3f76985"]}
+      ],
+      "rationale": "The leading version allows incompatibility and leaves the repair imperfect. The second acknowledges that the well-meaning logistical fix failed and lets the patient wish for unproductive conversation. The tied pair still contains real friction and bodily detail, but the caring arrangements and explicit assurances more often seem to demonstrate how a conscientious household ought to work. None is wholly lifeless; no author method or source origin is inferred.",
+      "evidence_ids": ["D87-03", "D87-04", "C85-01", "C85-02", "C86-02", "A86-04", "A87-01", "B86-03", "B85-03"]
+    }
+  ],
+  "preference_scope": {
+    "kind": "DIMENSION_SPECIFIC_WITH_TIES",
+    "summary": "Prefer read-b364bc8365255d0e64c2e60a for differentiated voices and lived domestic resistance; prefer read-cc6a6dfce4df89e5d3f76985 for the marriage decision. read-6aa712b0359c98f49720d3a3 and read-b364bc8365255d0e64c2e60a tie on slow decline and death. read-cda9dc2b519ce26a634cb60a has strong patient resistance and material continuity but the weakest felt reason for Baoyu to leave. No whole-sequence winner follows from these local preferences.",
+    "neither_dimension": "Neither historical legality nor archival conformity is chosen or ranked: both are outside this blind literary reading.",
+    "no_aggregation": "Rank groups are comparative opinions, not scores. Shared ranks mean ties and subsequent ranks skip occupied positions. Do not add, average, weight or convert them into a total or automatic winner."
+  },
+  "limitations": [
+    "This is one MODEL_SUBAGENT's reading, not an independent human jury. Model label is session-default, DECLARED_NOT_VERIFIED; context isolation is asserted true, NOT_PROVEN.",
+    "The inherited task/context included logistical instructions and a git-status snapshot with filenames. I did not open or use those drafts, infer anonymous mappings, consult coordinator private content or read another review. Complete isolation cannot be demonstrated from a declaration.",
+    "All judgments are relative to these four full public sequences. No source corpus, baseline, author identity, generation method, historical marriage regulation or wider novel was compared.",
+    "The four texts share many anchors and near-identical formulas. Reading order can create contrast or carryover effects; token-bound exact checking prevents quotation substitution, not all cognitive order effects.",
+    "Procedural clarity and claimed permission inside a story are not proof that its events comply with external historical rules. Likewise an explained delay can be logically possible and still feel narratively arranged.",
+    "Quote evidence highlights reasons for the judgments but is not exhaustive of the complete reading. Exact byte hashes and substring matches establish source binding, not literary truth or provider authenticity.",
+    "Ties are deliberate. Small rank differences, especially poem revision surface and continuity versus duration, depend on aesthetic weighting rather than a reproducible measurement. The concerns are identified as texture/motivation reservations, not fabricated contradictions.",
+    "Shared domestic benevolence may feel more plausible to a reader who values protective understatement; a reader wanting a harsher satirical household or more historically inflected diction may rank the sequences differently. No claim of canonical voice authenticity is made."
+  ]
+}
