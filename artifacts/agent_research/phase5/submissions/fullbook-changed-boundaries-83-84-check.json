@@ -1,0 +1,677 @@
+{
+  "schema_version": 1,
+  "report_kind": "LOCAL_CHANGED_BOUNDARIES_CONTINUITY_CHECK",
+  "reviewer": {
+    "id": "agent:fullbook-middle-reader-1",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:fullbook-middle-reader-1:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "review_identity": {
+    "anonymous": false,
+    "new_independent_reader": false,
+    "same_reviewer_and_session_as_prior_middle_task": true,
+    "independence_note": "This is a separate, explicitly non-anonymous local check by the already-used reader1, not a third opinion or additional independent evidence. The earlier completed middle review is not rewritten."
+  },
+  "scope": {
+    "sequence": "Selected chapter82 revision1 ending → entire selected chapter83 revision1 → selected chapter84 revision1 opening",
+    "allowed_substantive_inputs": [
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-revision1.txt",
+        "sha256": "2be54dfb8395f7b3c39a839708651596a14dde3cd03770792741b1e86fd06a10"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch84-revision1.txt",
+        "sha256": "841c8caf718fca541bd216794a1acc636f624669c2a7577da9bcec66e85a3228"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-v1.txt",
+        "sha256": "7112d38dfd90eb244b1657908a2568b461bff23f92f2ef7e5e6eacc8a034f128"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-v1.txt",
+        "sha256": "505282e53c5fc882c5c67e9ebb3719b75705e93d8858f8aa5772f22875019c8e"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch83-chain-v1-prepared.json",
+        "sha256": "f9c4d1c728b27bb7029ea7d567f45d0b6b57db9be6c8278ab3a11d3938e198ca"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch84-chain-v1-prepared.json",
+        "sha256": "4cb875d2f632e05b167c99f3a509d2a2f799018bc815143ee2bf1b5f42acff2a"
+      }
+    ],
+    "reading_rule": "Full files were hashed mechanically; substantive consumption is only the excerpt/field coverage below. Prepared JSON was parsed solely to extract task.previous_ending; no other prepared fields were displayed or used as evidence.",
+    "no_source_or_human_or_literary_pass": true,
+    "predecessor_rebinding_claim": false,
+    "author_generation_consumption_claim": "NONE. This checker newly consumed the listed excerpts; that does not prove revision83 or revision84 generation consumed selected predecessor bytes. The historical prepared fields remain historical.",
+    "mechanical_test_caveat": "The coordinator reported 1373 pass / 1 skip. I did not rerun or inspect those tests. That reported mechanical result is not treated as semantic continuity evidence."
+  },
+  "coverage": [
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-revision1.txt",
+        "sha256": "2be54dfb8395f7b3c39a839708651596a14dde3cd03770792741b1e86fd06a10"
+      },
+      "consumption": "BOUNDARY_EXCERPT_ONLY",
+      "line_ranges": [
+        [
+          109,
+          119
+        ]
+      ],
+      "paragraphs_read": 6,
+      "entire_file_read_substantively": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "consumption": "ENTIRE_CHAPTER",
+      "line_ranges": [
+        [
+          1,
+          43
+        ],
+        [
+          44,
+          85
+        ],
+        [
+          86,
+          123
+        ]
+      ],
+      "paragraph_blocks_read": 62,
+      "paragraph_definition": "61 prose paragraphs plus one heading, each a contiguous nonblank-line block.",
+      "entire_file_read_substantively": true
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch84-revision1.txt",
+        "sha256": "841c8caf718fca541bd216794a1acc636f624669c2a7577da9bcec66e85a3228"
+      },
+      "consumption": "OPENING_EXCERPT_ONLY",
+      "line_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "prose_paragraphs_read": 8,
+      "heading_also_read": true,
+      "entire_file_read_substantively": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-v1.txt",
+        "sha256": "7112d38dfd90eb244b1657908a2568b461bff23f92f2ef7e5e6eacc8a034f128"
+      },
+      "consumption": "BOUNDARY_EXCERPT_ONLY",
+      "line_ranges": [
+        [
+          105,
+          109
+        ]
+      ],
+      "paragraphs_read": 3,
+      "entire_file_read_substantively": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-v1.txt",
+        "sha256": "505282e53c5fc882c5c67e9ebb3719b75705e93d8858f8aa5772f22875019c8e"
+      },
+      "consumption": "BOUNDARY_EXCERPT_ONLY",
+      "line_ranges": [
+        [
+          103,
+          107
+        ]
+      ],
+      "paragraphs_read": 3,
+      "entire_file_read_substantively": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch83-chain-v1-prepared.json",
+        "sha256": "f9c4d1c728b27bb7029ea7d567f45d0b6b57db9be6c8278ab3a11d3938e198ca"
+      },
+      "consumption": "BOUNDED_JSON_FIELD_EXTRACTION_ONLY",
+      "json_pointer": "/task/previous_ending",
+      "field_keys_read": [
+        "selection",
+        "text"
+      ],
+      "text_field_lines": 5,
+      "text_field_characters": 502,
+      "text_field_utf8_sha256": "a9a2cf86e92f8f228ad71d552a08f1e76e2e031070098890f815793bedf5e9b8",
+      "text_has_terminal_newline": true,
+      "other_fields_read_substantively": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch84-chain-v1-prepared.json",
+        "sha256": "4cb875d2f632e05b167c99f3a509d2a2f799018bc815143ee2bf1b5f42acff2a"
+      },
+      "consumption": "BOUNDED_JSON_FIELD_EXTRACTION_ONLY",
+      "json_pointer": "/task/previous_ending",
+      "field_keys_read": [
+        "selection",
+        "text"
+      ],
+      "text_field_lines": 5,
+      "text_field_characters": 422,
+      "text_field_utf8_sha256": "be66529149735bf5011132a9e58331e4f5b18fb1d0940f1a55b5baca7d25d39b",
+      "text_has_terminal_newline": true,
+      "other_fields_read_substantively": false
+    }
+  ],
+  "display_truncation_observed": false,
+  "operation_limitations": [
+    "Initial metadata/hash command printed all five prose-file metadata rows, then failed while treating the first previous_ending object as a string. It displayed no previous_ending prose; no field consumption was credited to that call.",
+    "The first corrected field extraction was blocked by a transient Bash safety-classifier timeout. It executed no substantive read. Retried corrected extraction succeeded and displayed both complete five-line previous_ending text fields, plus their selection values and hashes.",
+    "No compaction or displayed truncation occurred in the actual bounded reads. Chapter82 bodies outside their ending excerpts and chapter84 beyond line17 were not substantively read."
+  ],
+  "byte_audits": [
+    {
+      "selected_predecessor": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-revision1.txt",
+        "sha256": "2be54dfb8395f7b3c39a839708651596a14dde3cd03770792741b1e86fd06a10"
+      },
+      "historical_predecessor": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-v1.txt",
+        "sha256": "7112d38dfd90eb244b1657908a2568b461bff23f92f2ef7e5e6eacc8a034f128"
+      },
+      "prepared_input": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch83-chain-v1-prepared.json",
+        "sha256": "f9c4d1c728b27bb7029ea7d567f45d0b6b57db9be6c8278ab3a11d3938e198ca"
+      },
+      "prepared_json_pointer": "/task/previous_ending/text",
+      "prepared_field_utf8_sha256": "a9a2cf86e92f8f228ad71d552a08f1e76e2e031070098890f815793bedf5e9b8",
+      "prepared_field_exact_historical_suffix": true,
+      "prepared_field_exact_selected_suffix": false,
+      "selected_last_three_line_start": 115,
+      "selected_last_three_line_end": 119,
+      "selected_last_three_utf8_sha256_including_terminal_newline": "120a625707f323cdd9664878219d3591aa16aa3b77f5bdc7f6b607ebd63e0055",
+      "terminal_paragraph_exact_equal_to_historical": false,
+      "interpretation": "Historical prepared field is not selected-predecessor byte evidence. The final paragraph is itself changed."
+    },
+    {
+      "selected_predecessor": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "historical_predecessor": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-v1.txt",
+        "sha256": "505282e53c5fc882c5c67e9ebb3719b75705e93d8858f8aa5772f22875019c8e"
+      },
+      "prepared_input": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch84-chain-v1-prepared.json",
+        "sha256": "4cb875d2f632e05b167c99f3a509d2a2f799018bc815143ee2bf1b5f42acff2a"
+      },
+      "prepared_json_pointer": "/task/previous_ending/text",
+      "prepared_field_utf8_sha256": "be66529149735bf5011132a9e58331e4f5b18fb1d0940f1a55b5baca7d25d39b",
+      "prepared_field_exact_historical_suffix": true,
+      "prepared_field_exact_selected_suffix": false,
+      "selected_last_three_line_start": 119,
+      "selected_last_three_line_end": 123,
+      "selected_last_three_utf8_sha256_including_terminal_newline": "4d0be7c54249fdcf78e54e18300aa016648464c17c3af940497e5f5807711f18",
+      "terminal_paragraph_exact_equal_to_historical": true,
+      "interpretation": "Historical prepared field is not selected-predecessor byte evidence. The final paragraph is byte-identical; the last-three extraction differs because a new penultimate paragraph displaces the older extraction first paragraph. The soup paragraph is also byte-identical; the earlier letter close is expanded elsewhere in revision1."
+    }
+  ],
+  "quotes": [
+    {
+      "id": "r82-date-two-days",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-revision1.txt",
+        "sha256": "2be54dfb8395f7b3c39a839708651596a14dde3cd03770792741b1e86fd06a10"
+      },
+      "chapter": 82,
+      "line": 115,
+      "text": "先报昨日初写信那一日，又指着下一处说这是今日次晨的记日"
+    },
+    {
+      "id": "r82-food-witness",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-revision1.txt",
+        "sha256": "2be54dfb8395f7b3c39a839708651596a14dde3cd03770792741b1e86fd06a10"
+      },
+      "chapter": 82,
+      "line": 111,
+      "text": "她吃过两口温粥，说今日好些"
+    },
+    {
+      "id": "r82-note",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-revision1.txt",
+        "sha256": "2be54dfb8395f7b3c39a839708651596a14dde3cd03770792741b1e86fd06a10"
+      },
+      "chapter": 82,
+      "line": 117,
+      "text": "添了“今晨已能吃粥”几字"
+    },
+    {
+      "id": "r82-date-and-sheets",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-revision1.txt",
+        "sha256": "2be54dfb8395f7b3c39a839708651596a14dde3cd03770792741b1e86fd06a10"
+      },
+      "chapter": 82,
+      "line": 119,
+      "text": "今晨所添几字旁另注明是次日晨间所补，同在这封原信上。"
+    },
+    {
+      "id": "r82-two-sheets-held",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-revision1.txt",
+        "sha256": "2be54dfb8395f7b3c39a839708651596a14dde3cd03770792741b1e86fd06a10"
+      },
+      "chapter": 82,
+      "line": 119,
+      "text": "将前后两张依旧折回，仍夹在行装册原来那一页里。"
+    },
+    {
+      "id": "h82-routing",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-v1.txt",
+        "sha256": "7112d38dfd90eb244b1657908a2568b461bff23f92f2ef7e5e6eacc8a034f128"
+      },
+      "chapter": 82,
+      "line": 105,
+      "text": "只是如今还不能说有谁回去，更不敢许日子。"
+    },
+    {
+      "id": "h82-date",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch82-v1.txt",
+        "sha256": "7112d38dfd90eb244b1657908a2568b461bff23f92f2ef7e5e6eacc8a034f128"
+      },
+      "chapter": 82,
+      "line": 109,
+      "text": "补上昨晚留空的月日，又将今晨添的几字旁标明是次日所补。"
+    },
+    {
+      "id": "p83-historical-routing",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch83-chain-v1-prepared.json",
+        "sha256": "f9c4d1c728b27bb7029ea7d567f45d0b6b57db9be6c8278ab3a11d3938e198ca"
+      },
+      "json_pointer": "/task/previous_ending/text",
+      "field_utf8_sha256": "a9a2cf86e92f8f228ad71d552a08f1e76e2e031070098890f815793bedf5e9b8",
+      "field_line": 1,
+      "text": "只是如今还不能说有谁回去，更不敢许日子。"
+    },
+    {
+      "id": "p83-historical-note",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch83-chain-v1-prepared.json",
+        "sha256": "f9c4d1c728b27bb7029ea7d567f45d0b6b57db9be6c8278ab3a11d3938e198ca"
+      },
+      "json_pointer": "/task/previous_ending/text",
+      "field_utf8_sha256": "a9a2cf86e92f8f228ad71d552a08f1e76e2e031070098890f815793bedf5e9b8",
+      "field_line": 3,
+      "text": "添了“今晨已能吃粥”几字"
+    },
+    {
+      "id": "p83-historical-date",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch83-chain-v1-prepared.json",
+        "sha256": "f9c4d1c728b27bb7029ea7d567f45d0b6b57db9be6c8278ab3a11d3938e198ca"
+      },
+      "json_pointer": "/task/previous_ending/text",
+      "field_utf8_sha256": "a9a2cf86e92f8f228ad71d552a08f1e76e2e031070098890f815793bedf5e9b8",
+      "field_line": 5,
+      "text": "补上昨晚留空的月日，又将今晨添的几字旁标明是次日所补。"
+    },
+    {
+      "id": "r83-elapsed",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 3,
+      "text": "探春去后，又过了些日子。"
+    },
+    {
+      "id": "r83-arrival-route",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 97,
+      "text": "是随回来的信送到府门，再递进来的，带信人现候在门里。"
+    },
+    {
+      "id": "r83-two-sheets-note",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 101,
+      "text": "信是前后两张，第二张续着第一张未完的话，写了一页多；次晨添的几字挨着正文旁的空白，字比原来略小。"
+    },
+    {
+      "id": "r83-note-read",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 101,
+      "text": "看见注明次日晨间所补，又顺着正文往下念。"
+    },
+    {
+      "id": "r83-date-read",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 103,
+      "text": "末尾月日是初写那一天。"
+    },
+    {
+      "id": "r83-transit-unknown",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 107,
+      "text": "尚没有详细话。"
+    },
+    {
+      "id": "r83-fee-pending",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 111,
+      "text": "付过没有还得等话。"
+    },
+    {
+      "id": "r83-box-return",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 111,
+      "text": "丫头说袭人已带去，只不知茶房的小碟算在哪一处。"
+    },
+    {
+      "id": "r83-sheets-order",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 115,
+      "text": "后一张夹在前一张内，收入套中"
+    },
+    {
+      "id": "r83-letter-held",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 117,
+      "text": "丫头将托信的干盘移到里边桌上，带走两只空杯。回信纸仍在原处，还没有写。"
+    },
+    {
+      "id": "r83-soup",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 119,
+      "text": "便同宝钗商量添个清淡的汤。"
+    },
+    {
+      "id": "r83-new-bridge",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 121,
+      "text": "只剩身边这一小束，便将针插住。"
+    },
+    {
+      "id": "r83-thread-chase",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 123,
+      "text": "丫头说压在食匣底下，才发觉食匣已送走了，忙转身去追。"
+    },
+    {
+      "id": "r83-coat",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-revision1.txt",
+        "sha256": "d85f3efd2896c2ae2bcfdc53d4c13beb04e80f022bf3c62b735a57ca187b16b1"
+      },
+      "chapter": 83,
+      "line": 123,
+      "text": "若还潮着，就留在廊下别收。"
+    },
+    {
+      "id": "h83-letter-held",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-v1.txt",
+        "sha256": "505282e53c5fc882c5c67e9ebb3719b75705e93d8858f8aa5772f22875019c8e"
+      },
+      "chapter": 83,
+      "line": 103,
+      "text": "探春的信已读完了，宝玉还拿着空封套"
+    },
+    {
+      "id": "h83-soup",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-v1.txt",
+        "sha256": "505282e53c5fc882c5c67e9ebb3719b75705e93d8858f8aa5772f22875019c8e"
+      },
+      "chapter": 83,
+      "line": 105,
+      "text": "便同宝钗商量添个清淡的汤。"
+    },
+    {
+      "id": "h83-thread-chase",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch83-v1.txt",
+        "sha256": "505282e53c5fc882c5c67e9ebb3719b75705e93d8858f8aa5772f22875019c8e"
+      },
+      "chapter": 83,
+      "line": 107,
+      "text": "丫头说压在食匣底下，才发觉食匣已送走了，忙转身去追。"
+    },
+    {
+      "id": "p84-letter-held",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch84-chain-v1-prepared.json",
+        "sha256": "4cb875d2f632e05b167c99f3a509d2a2f799018bc815143ee2bf1b5f42acff2a"
+      },
+      "json_pointer": "/task/previous_ending/text",
+      "field_utf8_sha256": "be66529149735bf5011132a9e58331e4f5b18fb1d0940f1a55b5baca7d25d39b",
+      "field_line": 1,
+      "text": "探春的信已读完了，宝玉还拿着空封套"
+    },
+    {
+      "id": "p84-soup",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch84-chain-v1-prepared.json",
+        "sha256": "4cb875d2f632e05b167c99f3a509d2a2f799018bc815143ee2bf1b5f42acff2a"
+      },
+      "json_pointer": "/task/previous_ending/text",
+      "field_utf8_sha256": "be66529149735bf5011132a9e58331e4f5b18fb1d0940f1a55b5baca7d25d39b",
+      "field_line": 3,
+      "text": "便同宝钗商量添个清淡的汤。"
+    },
+    {
+      "id": "p84-thread-chase",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch84-chain-v1-prepared.json",
+        "sha256": "4cb875d2f632e05b167c99f3a509d2a2f799018bc815143ee2bf1b5f42acff2a"
+      },
+      "json_pointer": "/task/previous_ending/text",
+      "field_utf8_sha256": "be66529149735bf5011132a9e58331e4f5b18fb1d0940f1a55b5baca7d25d39b",
+      "field_line": 5,
+      "text": "丫头说压在食匣底下，才发觉食匣已送走了，忙转身去追。"
+    },
+    {
+      "id": "r84-next-day",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch84-revision1.txt",
+        "sha256": "841c8caf718fca541bd216794a1acc636f624669c2a7577da9bcec66e85a3228"
+      },
+      "chapter": 84,
+      "line": 3,
+      "text": "次日厨房理饭单，昨日添汤的那一笔还没销。"
+    },
+    {
+      "id": "r84-soup-box-completed",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch84-revision1.txt",
+        "sha256": "841c8caf718fca541bd216794a1acc636f624669c2a7577da9bcec66e85a3228"
+      },
+      "chapter": 84,
+      "line": 3,
+      "text": "婆子说汤送去了，匣子也取回了，只为找一团线，叫人追到半路，揭开匣盖又盖上。"
+    },
+    {
+      "id": "r84-thread-result",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch84-revision1.txt",
+        "sha256": "841c8caf718fca541bd216794a1acc636f624669c2a7577da9bcec66e85a3228"
+      },
+      "chapter": 84,
+      "line": 3,
+      "text": "她说找着了，贴在匣底的布角上"
+    },
+    {
+      "id": "r84-gate-new-event",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch84-revision1.txt",
+        "sha256": "841c8caf718fca541bd216794a1acc636f624669c2a7577da9bcec66e85a3228"
+      },
+      "chapter": 84,
+      "line": 5,
+      "text": "忽见宫中传讯的人到了"
+    },
+    {
+      "id": "r84-message-limits",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch84-revision1.txt",
+        "sha256": "841c8caf718fca541bd216794a1acc636f624669c2a7577da9bcec66e85a3228"
+      },
+      "chapter": 84,
+      "line": 13,
+      "text": "我还没到门上，只听二门转来的，已叫人再去问。"
+    }
+  ],
+  "boundaries": [
+    {
+      "boundary": "82revision1→83revision1",
+      "classification": "CHANGED_BUT_COMPATIBLE",
+      "contradiction_shown": false,
+      "interface_actually_narrated": "Revision82 keeps the original two-sheet letter, dates its body to the first-writing day, explicitly distinguishes the following morning’s annotation, waits for ink to dry, and returns both sheets to the same travel-ledger page. Revision83 occurs some days after departure, then receives and reads two ordered sheets with the same morning-food annotation and first-writing date. The selected successor is semantically aligned with the clarified selected predecessor, not contradicted by it.",
+      "quote_ids": [
+        "r82-date-two-days",
+        "r82-note",
+        "r82-date-and-sheets",
+        "r82-two-sheets-held",
+        "r83-elapsed",
+        "r83-two-sheets-note",
+        "r83-note-read",
+        "r83-date-read",
+        "r83-sheets-order"
+      ],
+      "changed_vs_historical": "The old prepared ending was ambiguous about which day supplied the body date, and did not itself state the two-sheet detail in its last three paragraphs. Revision82 clarifies the two day indices and retains two sheets. Revision83 explicitly follows the first-writing day for the terminal date and second morning for the marginal annotation. Absence of the sheet count in the old excerpt is not proof that the unread earlier old chapter lacked it.",
+      "unshown_route": {
+        "classification": "UNSHOWN",
+        "description": "Revision82 has no confirmed carrier and leaves the letter held. Revision83 later reports receipt at the gate through returned mail, not the actual outbound handoff from Tanchun, carrier identity, departure date, or duration. The elapsed days permit such an intervening route; the selected texts do not show it. Do not infer a contradiction from a previously pending request becoming a later reported arrival.",
+        "quote_ids": [
+          "h82-routing",
+          "r83-arrival-route",
+          "r83-transit-unknown",
+          "r83-fee-pending"
+        ]
+      },
+      "optional_minimal_patch": {
+        "recommended": false,
+        "reason": "No local patch is required for the displayed date, sheets, food annotation or order. Adding a named carrier or transmission date without evidence would fabricate the presently unshown route."
+      }
+    },
+    {
+      "boundary": "83revision1→84revision1",
+      "classification": "CHANGED_BUT_COMPATIBLE",
+      "contradiction_shown": false,
+      "interface_actually_narrated": "Revision83 requests a light soup, answers the kitchen, and ends with a servant chasing an already-dispatched food box to recover thread; the coat is to stay out if damp. Revision84 starts the following day with a kitchen servant reporting soup delivered, box returned, the chase intercepted halfway, and thread found at the box-bottom cloth corner. This is a completed next-day report of the predecessor’s pending errands, not a reversal.",
+      "quote_ids": [
+        "r83-soup",
+        "r83-thread-chase",
+        "r83-coat",
+        "r84-next-day",
+        "r84-soup-box-completed",
+        "r84-thread-result"
+      ],
+      "changed_vs_historical": "Revision83’s final soup paragraph and terminal chase/coat paragraph are byte-identical to historical83v1. A new penultimate paragraph at revision1 line121 makes the last-three-paragraph extraction differ by pushing the prior letter close outside that window. The new paragraph explicitly leaves only the small thread bundle in hand and stops the needle; it does not say the missing larger thread ball was recovered. The successor’s actual soup/thread hooks therefore survive the byte change.",
+      "supporting_revision83_context": "All of revision83 was read. Xiren sends the food box back toward the kitchen at line85; line111 reports she has carried it away; lines113/115 distinguish the box-bottom cloth from Xiangyun’s lap handkerchief and the dry letter tray. Lines115–117 put the two-sheet letter back into its envelope on a dry tray at the inner table. Revision84’s found thread is on the food-box cloth corner, not on that letter tray. No paper/cloth substitution is narrated.",
+      "unshown_route": {
+        "classification": "UNSHOWN",
+        "description": "The actual soup transport and the interception/finding are not dramatized at the end of83. They are reported directly in84’s first prose paragraph. That new report is visible current prose consumption, not an inferred reconstruction of author-input consumption. Jia Mu’s eventual reading, reply writing, and eventual fee payment remain outside this narrow boundary check; the new palace messenger is a separate event.",
+        "quote_ids": [
+          "r83-box-return",
+          "r83-letter-held",
+          "r84-soup-box-completed",
+          "r84-thread-result",
+          "r84-gate-new-event"
+        ]
+      },
+      "optional_minimal_patch": {
+        "recommended": false,
+        "reason": "The last paragraph driving the successor opening is unchanged, and revision84 supplies the pending errand results. Rebinding historical prepared input would be a custody/metadata question outside this report, not a prose patch. No change is proposed."
+      }
+    }
+  ],
+  "findings": {
+    "contradictions_shown": [],
+    "changed_but_compatible": [
+      "The selected82 body-date/morning-annotation clarification matches selected83’s actual reading.",
+      "The selected83 last-three window changes while its soup and chase terminal hooks remain identical; selected84’s next-day results fit both those hooks and the new small-thread penultimate paragraph."
+    ],
+    "unshown": [
+      "Who carried Tanchun’s letter out, when it left, and its transit chain/duration.",
+      "The actual soup delivery and food-box interception, supplied only through the next-day kitchen report.",
+      "Any later letter reply, payment, or palace-death development beyond chapter84 line17."
+    ],
+    "literary_quality_or_source_verdict": "NOT_CHECKED; no literary pass, historical authentication, human qualification, or source claim.",
+    "predecessor_rebinding": "NOT_PROVEN by this local semantic compatibility finding; prepared previous_ending still exactly binds the historical suffix, not the selected revised suffix.",
+    "patch_recommendation": "No local prose patch needed within displayed coverage. No prose, prepared input, or registration edited."
+  }
+}
