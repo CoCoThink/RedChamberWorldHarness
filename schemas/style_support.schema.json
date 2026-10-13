@@ -1,0 +1,146 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Bounded style advisory support",
+  "description": "Standalone, read-only metadata and exact aggregate statistics for chapters 1..78. No audit, literary truth, model-exposure or workflow-effect claim. Python helper additionally checks finite statistics, source-row consistency, issue totals, status consistency and canonical UTF-8 bytes <=64000; a schema cannot enforce serialized size or provenance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "kind", "support_policy", "read_only", "advisory", "literary_quality_verified", "editing_rule", "dataset_ref", "manifest_sha256", "feature_set", "feature_policy", "reference_scope", "readiness", "human_audit_status", "provisional", "human_audit", "chapter_count", "main_text_segment_count", "statistic_columns", "quantile_method", "layers", "segmentation", "verdict", "authority_effect", "evidence_effect"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "STYLE_REFERENCE_AGGREGATE_SUPPORT"},
+    "support_policy": {"const": "style-reference-aggregate-support:v1"},
+    "read_only": {"const": true},
+    "advisory": {"const": true},
+    "literary_quality_verified": {"const": false},
+    "editing_rule": {"const": "Descriptive aggregate and interquartile editing advice only, not a literary threshold, truth, or evidence of superiority. Quotation is not speaker attribution; source audit and subset caveats still apply."},
+    "dataset_ref": {"type": "string", "pattern": "^corpus:[A-Za-z0-9][A-Za-z0-9._:-]*$"},
+    "manifest_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "feature_set": {"const": "style-reference-features:v1"},
+    "feature_policy": {
+      "const": {
+        "declared_words": ["了", "的", "因", "只见", "一面", "罢了", "已经", "觉得", "然后", "于是", "心中", "便", "却", "遂", "且", "原来", "不由", "如今", "只是", "果然", "说道", "笑道"],
+        "word_list_basis": "EXPLORATORY_DEVISED_AFTER_VIEWING_CURRENT_BASELINE",
+        "address_forms": "SHARED_REGEX_MATCHES_GROUPED_BY_SUFFIX",
+        "rate_denominator": "LAYER_HAN_CHARACTERS",
+        "rate_scale": 10000,
+        "bigram_selection": "TOP_300_PER_LAYER_BY_REFERENCE_COUNT_THEN_LEXICAL_ORDER",
+        "minimum_reference_bigram_count": 5,
+        "minimum_nonzero_candidate_bigram_count": 3,
+        "zero_candidate_counts_retained": true,
+        "boundaries": "NO_CROSS_PARAGRAPH_SEGMENT_CHAPTER_QUOTE_OR_NON_HAN_BIGRAMS",
+        "unknown_region_policy": "EXCLUDED_FROM_BOTH_LAYER_DENOMINATORS",
+        "quotation_limitations": "QUOTED_TEXT_IS_NOT_PROOF_OF_SPEECH; SEGMENT_CONTINUATIONS_ARE_NOT_JOINED",
+        "holdout_policy": {
+          "corpus_features": "EXCLUDED_CHAPTERS_NOT_USED",
+          "declared_words": "EXPLORATORY_FIXED_LIST_NOT_TARGET_BLIND_PREREGISTRATION"
+        }
+      }
+    },
+    "reference_scope": {
+      "const": {
+        "included_chapters": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74, 75, 76, 77, 78],
+        "excluded_chapters": [79, 80],
+        "audit_scope": "WHOLE_DATASET_NOT_INDEPENDENT_SUBSET_AUDIT",
+        "subset_audit_status": "NOT_SEPARATELY_AUDITED",
+        "readiness_scope": "SOURCE_DATASET",
+        "feature_selection_scope": "INCLUDED_CHAPTERS_ONLY"
+      }
+    },
+    "readiness": {"const": "CANDIDATE_PENDING_HUMAN_AUDIT"},
+    "human_audit_status": {"enum": ["PENDING", "PASS", "FAIL"]},
+    "provisional": {"type": "boolean"},
+    "human_audit": {
+      "type": "object", "additionalProperties": false,
+      "required": ["status", "scope", "review_count", "authority_effect"],
+      "properties": {
+        "status": {"enum": ["PENDING", "PASS", "FAIL"]},
+        "scope": {"const": "CORPUS_HUMAN_LAYER_AUDIT"},
+        "review_count": {"$ref": "#/$defs/nonnegativeInteger"},
+        "authority_effect": {"const": "NONE"}
+      }
+    },
+    "chapter_count": {"const": 78},
+    "main_text_segment_count": {"$ref": "#/$defs/nonnegativeInteger"},
+    "statistic_columns": {"const": ["count", "rate_per_10k_han", "q1", "median", "q3"]},
+    "quantile_method": {"const": "LINEAR_INTERPOLATION"},
+    "layers": {
+      "type": "object", "additionalProperties": false, "required": ["narration", "dialogue"],
+      "properties": {"narration": {"$ref": "#/$defs/layer"}, "dialogue": {"$ref": "#/$defs/layer"}}
+    },
+    "segmentation": {
+      "type": "object", "additionalProperties": false,
+      "required": ["method", "status", "unknown_han_characters", "unknown_han_fraction", "issue_count", "issue_counts_by_code"],
+      "properties": {
+        "method": {"const": "NESTED_QUOTATION_HEURISTIC_NOT_SPEAKER_ATTRIBUTION"},
+        "status": {"enum": ["BALANCED_QUOTES", "QUOTE_ISSUES_PRESENT"]},
+        "unknown_han_characters": {"$ref": "#/$defs/nonnegativeInteger"},
+        "unknown_han_fraction": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "issue_count": {"$ref": "#/$defs/nonnegativeInteger"},
+        "issue_counts_by_code": {
+          "type": "object", "additionalProperties": false,
+          "properties": {
+            "UNCLOSED_QUOTE": {"type": "integer", "minimum": 1},
+            "UNMATCHED_CLOSING_QUOTE": {"type": "integer", "minimum": 1},
+            "MISMATCHED_CLOSING_QUOTE": {"type": "integer", "minimum": 1}
+          }
+        }
+      }
+    },
+    "verdict": {"type": "null"},
+    "authority_effect": {"const": "NONE"},
+    "evidence_effect": {"const": "NONE"}
+  },
+  "$defs": {
+    "nonnegativeInteger": {"type": "integer", "minimum": 0},
+    "nullableNumber": {"type": ["number", "null"], "minimum": 0},
+    "statistics": {
+      "type": "array", "minItems": 5, "maxItems": 5,
+      "prefixItems": [
+        {"$ref": "#/$defs/nonnegativeInteger"},
+        {"$ref": "#/$defs/nullableNumber"},
+        {"$ref": "#/$defs/nullableNumber"},
+        {"$ref": "#/$defs/nullableNumber"},
+        {"$ref": "#/$defs/nullableNumber"}
+      ],
+      "items": false
+    },
+    "narratorMarkers": {
+      "type": "object", "minProperties": 6, "maxProperties": 6,
+      "propertyNames": {"enum": ["话说", "且说", "却说", "原来", "不在话下", "欲知后事"]},
+      "additionalProperties": {"$ref": "#/$defs/statistics"}
+    },
+    "addressForms": {
+      "type": "object", "minProperties": 9, "maxProperties": 9,
+      "propertyNames": {"enum": ["姑娘", "奶奶", "太太", "老爷", "姐姐", "妹妹", "二爷", "哥儿", "嫂子"]},
+      "additionalProperties": {"$ref": "#/$defs/statistics"}
+    },
+    "declaredWords": {
+      "type": "object", "minProperties": 22, "maxProperties": 22,
+      "propertyNames": {"enum": ["了", "的", "因", "只见", "一面", "罢了", "已经", "觉得", "然后", "于是", "心中", "便", "却", "遂", "且", "原来", "不由", "如今", "只是", "果然", "说道", "笑道"]},
+      "additionalProperties": {"$ref": "#/$defs/statistics"}
+    },
+    "layer": {
+      "type": "object", "additionalProperties": false,
+      "required": ["han_characters", "defined_chapters", "total_chapters", "features", "top_han_bigrams"],
+      "properties": {
+        "han_characters": {"$ref": "#/$defs/nonnegativeInteger"},
+        "defined_chapters": {"type": "integer", "minimum": 0, "maximum": 78},
+        "total_chapters": {"const": 78},
+        "features": {
+          "type": "object", "additionalProperties": false,
+          "required": ["narrator_markers", "address_forms", "declared_words"],
+          "properties": {
+            "narrator_markers": {"$ref": "#/$defs/narratorMarkers"},
+            "address_forms": {"$ref": "#/$defs/addressForms"},
+            "declared_words": {"$ref": "#/$defs/declaredWords"}
+          }
+        },
+        "top_han_bigrams": {
+          "type": "object", "maxProperties": 300,
+          "propertyNames": {"pattern": "^[㐀-鿿]{2}$"},
+          "additionalProperties": {"$ref": "#/$defs/statistics"}
+        }
+      }
+    }
+  }
+}
