@@ -336,6 +336,12 @@ class AgentRelease:
                 report["gates"]["FULL_CHAPTER_LENGTH"] = "PASS" if integrity["body_characters"] >= minimum else "FAIL"
                 if integrity["body_characters"] < minimum:
                     report["findings"].append(f"chapter excerpt/length regression: {integrity['body_characters']} < {minimum}")
+                from ..generation.prose_integrity import prose_integrity
+                prose_check = prose_integrity(body)
+                report["gates"]["PROSE_INTEGRITY"] = "PENDING" if prose_check["status"] == "WARN" else prose_check["status"]
+                report["reviews"]["prose_integrity"] = prose_check
+                if prose_check["status"] == "FAIL":
+                    report["findings"].append("repeated paragraph padding cannot qualify as full-chapter prose")
                 after[ch] = body  # Exact reviewed bytes; no implicit normalization.
             except (KeyError, OSError, UnicodeError, ValueError) as exc:
                 report["gates"]["BYTE_INTEGRITY"] = "FAIL"

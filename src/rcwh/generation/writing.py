@@ -121,6 +121,9 @@ def feedback_report(root: Path, draft_path: str, *, runner: ModelRunner | None =
                         "findings": ["MODEL_SEMANTIC_FEEDBACK_NOT_REQUESTED"],
                         "details": {"reading_requested": False, "semantic_coverage": False}}
             checks.append({**item, "scene": contract["id"], "qualification": "FEEDBACK_ONLY"})
+    from .prose_integrity import prose_integrity
+    checks.append({"evaluator": "prose_integrity", "qualification": "FEEDBACK_ONLY",
+                   **prose_integrity(text)})
     reference = None
     if style_reference:
         reference = reference_profile(root, task.get("exemplar_dataset_ref") or draft_dataset(root, task),

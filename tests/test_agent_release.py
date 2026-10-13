@@ -145,6 +145,20 @@ def test_reviewed_build_exact_full_scope_and_stable_storage_unchanged(edition, m
     assert digest(text) == report["output"]["text"]["sha256"]
 
 
+def test_length_cannot_hide_repeated_numbered_padding(edition, monkeypatch):
+    e = edition
+    positive_gates(e, monkeypatch)
+    text = "# 第八十六回 新题\n\n" + "\n\n".join(
+        f"平儿将钥匙重新系紧，绳结太短，拆开一次便要重新打。这是第{i}次清点后的细小阻滞，仍需下一只手来接。"
+        for i in range(40))
+    e.request['chapters'][0]['candidate'] = write(e.root, e.candidate['path'], text)
+    report = e.runtime.evaluate(e.request)
+    assert report['status'] == 'FAIL'
+    assert report['chapters'][0]['gates']['FULL_CHAPTER_LENGTH'] == 'PASS'
+    assert report['chapters'][0]['gates']['PROSE_INTEGRITY'] == 'FAIL'
+    assert report['output']['text'] is None
+
+
 def test_no_overwrite_even_empty_output_directory(edition, monkeypatch):
     e = edition
     positive_gates(e, monkeypatch)
