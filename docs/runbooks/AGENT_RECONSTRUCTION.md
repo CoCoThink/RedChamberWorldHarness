@@ -25,6 +25,16 @@
 - 缺合同、政策、来源核对、语料核对或足够阅读时只产生待验收材料，不能标成 `agent-reviewed` 成稿。
 - `releases/stable/v1.4` 不动；研究版目标固定为 `releases/agent/`，不改 stable ACTIVE。
 
+## 明确选择合同版本
+
+模型初稿、编辑修订和协调者修正都追加保存，不取目录中的“最新版本”作为默认。当前混合选择 `data/planning/contracts/agent-final-v1/` 使用80份 v2及第99回5份 v3的原字节副本。
+
+```bash
+rcwh plan check --chapters 81-100 --contracts-directory data/planning/contracts/agent-final-v1
+```
+
+副本保留原前驱路径，检查只在该原前驱与当前选中前驱**字节完全一致**时允许路径别名；同ID或同回次但内容不同仍拒绝。第99回的另一改序只是未选中的文学方案，不通过篡改源场景顺序获得 PASS。零 FAIL仍可能整体 PENDING，尤其局部入口和正文语义尚未核查。
+
 ## 已知限制
 
 模型预训练接触前八十回的情况未知，不能以重合阈值证明记忆。79–80在所选版本中是一原回拆成两半，不是两个独立留出样本。原文识别和同类写作偏好会影响模型读者。会话路由、耗时与实际资源无法按原 API 预算核算，因此研究比较必须另标 `RESOURCE_PARITY_NOT_VERIFIED`，现有 provider 回测的严格资格不被改写。

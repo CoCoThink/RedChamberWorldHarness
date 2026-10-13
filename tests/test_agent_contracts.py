@@ -142,6 +142,47 @@ def test_opt_in_overlay_cli_and_default_output_compatible(tmp_path, capsys):
     assert json.loads(capsys.readouterr().out)["contracts_directory"] == SELECTION
 
 
+def test_relocated_selection_accepts_only_byte_identical_predecessor(tmp_path):
+    root = fixture_repo(tmp_path)
+    value = draft_contract(root, SEED, PACKET)
+    first = write_contract(root, value, directory=SELECTION)
+    second_seed = "data/planning/scenes/s2.json"
+    store(root, second_seed, {"id": "s2", "chapter": 81, "order": 2,
+                             "chapter_plan_ref": PLAN, "kind": "SCENE_SKELETON"})
+    plan = load_data(root / PLAN)
+    plan["scenes"].append({"id": "s2", "order": 2, "ref": second_seed})
+    store(root, PLAN, plan)
+    # Prepare both again after the immutable chapter plan is finalized.
+    (root / first).unlink()
+    first = write_contract(root, draft_contract(root, SEED, PACKET), directory=SELECTION)
+    second = draft_contract(root, second_seed, PACKET)
+    second["entry_from"] = first
+    second_ref = write_contract(root, second, directory=SELECTION)
+    relocated = "data/planning/contracts/relocated"
+    for ref in (first, second_ref):
+        target = root / relocated / Path(ref).name
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(root / ref, target)
+    report = check_plans(root, [81], contracts_directory=relocated)
+    assert not any(c["code"] == "SCENE_CHAIN_MISMATCH" for c in report["checks"])
+    original = load_data(root / first)
+    original["notes"] = "same identity is insufficient when predecessor bytes differ"
+    store(root, first, original)
+    report = check_plans(root, [81], contracts_directory=relocated)
+    assert any(c["code"] == "SCENE_CHAIN_MISMATCH" for c in report["checks"])
+
+
+def test_predecessor_alias_rejects_escape_missing_and_symlink(tmp_path):
+    from rcwh.planning.checking import _identical_selected_predecessor
+    root = fixture_repo(tmp_path)
+    store(root, "selected.json", {"id": "s"})
+    assert not _identical_selected_predecessor(root, "../selected.json", "selected.json")
+    assert not _identical_selected_predecessor(root, "missing.json", "selected.json")
+    assert not _identical_selected_predecessor(root, "selected.json", None)
+    (root / "alias.json").symlink_to(root / "selected.json")
+    assert not _identical_selected_predecessor(root, "alias.json", "selected.json")
+
+
 def test_edited_label_does_not_pass_empty_or_unknown_contract(tmp_path):
     root = fixture_repo(tmp_path)
     value = draft_contract(root, SEED, PACKET)

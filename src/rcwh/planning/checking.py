@@ -84,7 +84,9 @@ def check_selected(root: Path, chapters=None, *, directory=None, contracts_direc
                 actual = scene.get("entry_from")
                 if not actual or actual == "UNKNOWN" or not expected:
                     add("PENDING", "SCENE_CHAIN_UNDECLARED", item["ref"], "no explicit predecessor binding")
-                elif actual not in {expected, previous[1]["id"] if previous else expected, overlay_refs.get(expected, expected)}:
+                elif (actual not in {expected, previous[1]["id"] if previous else expected,
+                                    overlay_refs.get(expected, expected)}
+                      and not _identical_selected_predecessor(root, actual, overlay_refs.get(expected))):
                     add("FAIL", "SCENE_CHAIN_MISMATCH", item["ref"], f"expected {expected}, declared {actual}")
                 else:
                     add("PASS", "SCENE_CHAIN_DECLARED", item["ref"], "declaration consistency only")
@@ -148,6 +150,20 @@ def check_selected(root: Path, chapters=None, *, directory=None, contracts_direc
                        "deterministic_world_state_replay": {"status": _status(replay_checks), "scope": "SELECTED_OVERLAYS_ONLY_NOT_WHOLE_PLAN"},
                        "prose_supported_semantic_replay": {"status": "NOT_CHECKED"}})
     return result
+
+
+def _identical_selected_predecessor(root: Path, actual: str, selected: str | None) -> bool:
+    """Relocated immutable copies may name their original byte-identical source."""
+    if selected is None or not isinstance(actual, str):
+        return False
+    try:
+        original = repository_path(root, actual)
+        current = repository_path(root, selected)
+        if original == current:
+            return True
+        return original.is_file() and original.read_bytes() == current.read_bytes()
+    except (OSError, ValueError):
+        return False
 
 
 def _state_link(previous, current, ref, add):
