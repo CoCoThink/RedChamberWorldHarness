@@ -161,6 +161,10 @@ def import_draft(root: Path, text_path: str, request_path: str, *, session_id: s
     text = raw.decode("utf-8")
     if not text.strip():
         raise ValueError("empty session-authored draft")
+    from .prose_integrity import prose_integrity
+    integrity = prose_integrity(text)
+    if integrity["status"] == "FAIL":
+        raise ValueError("session prose integrity failed: " + "; ".join(integrity["findings"]))
     prepared = json.loads(prepared_raw)
     verify_prepared_request(root, prepared)
     for path, field in ((parent_path, "parent"), (feedback_path, "feedback")):

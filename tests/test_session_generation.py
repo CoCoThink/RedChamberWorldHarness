@@ -84,6 +84,20 @@ def test_exact_session_import_research_pending_package_no_provider_or_human_clai
         verified_author_model(root, draft['authors'][0], text.encode())
 
 
+@pytest.mark.parametrize('text', [
+    "正文\n\nexpanded=[]\nfor i,p in enumerate(paras):\n expanded.append(p)",
+    "\n\n".join(f"平儿将钥匙重新系紧，绳结太短，拆开一次便要重新打。这是第{i}次清点后的细小阻滞，仍需下一只手来接。" for i in range(20)),
+])
+def test_failed_prose_integrity_rejected_before_session_files_are_written(session_root, text):
+    root = session_root
+    prepare(root)
+    (root / 'authored.txt').write_text(text)
+    with pytest.raises(ValueError, match='session prose integrity failed'):
+        imported(root)
+    assert not (root / 'data/writing/drafts').exists()
+    assert not (root / 'artifacts/candidates').exists()
+
+
 def test_session_feedback_revision_lineage_and_diff_are_offline(session_root):
     root = session_root
     prepare(root, route='direct')

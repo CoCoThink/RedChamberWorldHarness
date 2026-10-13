@@ -1,7 +1,6 @@
 """High-confidence repeated-padding lint, not a literary-quality evaluator."""
 from __future__ import annotations
 
-from collections import Counter
 import re
 
 from ..candidate_reviews import digest
