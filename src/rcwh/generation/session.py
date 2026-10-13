@@ -9,6 +9,7 @@ from __future__ import annotations
 from copy import deepcopy
 import json
 from pathlib import Path
+import re
 
 from ..assets.paths import repository_path
 from ..candidate_reviews import canonical_bytes, digest
@@ -112,12 +113,76 @@ def prepare_request(root: Path, *, package_path: str | None = None, chapter: int
     return prepare_rendered(root, _render_context(root, context), budget or Budget(), model, context)
 
 
-def verify_prepared_request(root: Path, prepared: dict) -> dict:
-    """Reproduce every request/task/input/template selection with today's renderer."""
+def _saved_task_render(root: Path, prepared: dict, task: dict) -> dict:
+    """Rebuild the frozen envelope, without consulting runtime observations."""
+    prompt = {"system": bound_bytes(root, prepared["template"]).decode("utf-8"),
+              "messages": [{"role": "user", "content": canonical_bytes(task).decode()}]}
+    return {**prompt, "prompt_sha256": digest(canonical_bytes(prompt)), "task": task,
+            "template": prepared["template"], "inputs": prepared["inputs"]}
+
+
+# Only these two freshly observed leaves vary across the known CPython rebuilds.
+# Registered toolchains, code/lock hashes, rebuild status and diff shape stay exact.
+_RUNTIME_PYTHON_PATHS = (("current_toolchain", "extractor", "python"),
+                         ("toolchain_diff", "extractor", "current", "python"))
+_CPYTHON_VERSION = re.compile(r"CPython 3\.[0-9]+\.[0-9]+")
+
+
+def _object_at(value: dict, keys: tuple[str, ...]) -> dict | None:
+    for key in keys:
+        if not isinstance(value, dict) or key not in value:
+            return None
+        value = value[key]
+    return value if isinstance(value, dict) else None
+
+
+def _runtime_observations(saved_task: dict, fresh_task: dict) -> tuple[dict, list[dict]]:
+    """Copy only named source observation leaves, including revision task nesting."""
+    normalized = deepcopy(saved_task)
+    saved, fresh, task_path = normalized, fresh_task, "task"
+    variations = []
+    while isinstance(saved, dict) and isinstance(fresh, dict):
+        saved_sources, fresh_sources = saved.get("sources"), fresh.get("sources")
+        if isinstance(saved_sources, list) and isinstance(fresh_sources, list) and len(saved_sources) == len(fresh_sources):
+            for index, (old_source, new_source) in enumerate(zip(saved_sources, fresh_sources, strict=True)):
+                prefix = ("verification", "verification_report", "rebuild")
+                old_rebuild, new_rebuild = _object_at(old_source, prefix), _object_at(new_source, prefix)
+                if (old_rebuild is None or new_rebuild is None
+                        or old_rebuild.get("status") != "PASS" or new_rebuild.get("status") != "PASS"
+                        or old_rebuild.get("scope") != "EXTRACTION_CONTENT_REBUILD"
+                        or new_rebuild.get("scope") != "EXTRACTION_CONTENT_REBUILD"):
+                    continue
+                for keys in _RUNTIME_PYTHON_PATHS:
+                    old_parent, new_parent = _object_at(old_rebuild, keys[:-1]), _object_at(new_rebuild, keys[:-1])
+                    if old_parent is None or new_parent is None:
+                        continue
+                    old, new = old_parent.get(keys[-1]), new_parent.get(keys[-1])
+                    if (isinstance(old, str) and isinstance(new, str) and old != new
+                            and _CPYTHON_VERSION.fullmatch(old) and _CPYTHON_VERSION.fullmatch(new)):
+                        old_parent[keys[-1]] = new
+                        variations.append({"path": f"{task_path}.sources[{index}]." + ".".join(prefix + keys),
+                                           "stored": old, "current": new})
+        saved, fresh = saved.get("writing_task"), fresh.get("writing_task")
+        task_path += ".writing_task"
+    return normalized, variations
+
+
+def _verify_prepared_request(root: Path, prepared: dict) -> tuple[dict, dict]:
     _validate(root, prepared, prepared=True)
     for ref in prepared["inputs"] + [prepared["template"], prepared["package"], prepared["parent"], prepared["feedback"]]:
         if ref is not None:
             bound_bytes(root, ref)
+    budget = Budget(**prepared["budget"])
+    budget.validate(prepared.get("samples", 1))
+    frozen = _saved_task_render(root, prepared, prepared["task"])
+    if prepared["prompt_sha256"] != frozen["prompt_sha256"]:
+        raise ValueError("prepared request frozen prompt hash mismatch")
+    if prepared["request_sha256"] != digest(canonical_bytes(prepared["request"])):
+        raise ValueError("prepared request frozen request hash mismatch")
+    if canonical_bytes(prepared["request"]) != canonical_bytes(request_for(frozen, budget, prepared["request"]["model"])):
+        raise ValueError("prepared request differs from frozen task/template")
+    if len(canonical_bytes(prepared["request"])) > budget.max_input_bytes:
+        raise ValueError("prepared request exceeds input byte budget; no truncation performed")
     context = prepared["context"]
     if context["operation"] == "revise":
         expected_context = selection_context(root, parent_path=context["parent_path"],
@@ -129,14 +194,32 @@ def verify_prepared_request(root: Path, prepared: dict) -> dict:
     if canonical_bytes(context) != canonical_bytes(expected_context):
         raise ValueError("prepared request selection context mismatch")
     rendered = _render_context(root, context)
-    budget = Budget(**prepared["budget"])
-    budget.validate(prepared.get("samples", 1))
     current = prepare_rendered(root, rendered, budget, prepared["request"]["model"], context)
     if "samples" in prepared:
         current["samples"] = prepared["samples"]
-    if canonical_bytes(current) != canonical_bytes(prepared):
+    normalized_task, variations = _runtime_observations(prepared["task"], rendered["task"])
+    semantic = deepcopy(prepared)
+    semantic_render = _saved_task_render(root, prepared, normalized_task)
+    semantic["task"], semantic["prompt_sha256"] = normalized_task, semantic_render["prompt_sha256"]
+    semantic["request"] = request_for(semantic_render, budget, prepared["request"]["model"])
+    semantic["request_sha256"] = digest(canonical_bytes(semantic["request"]))
+    if canonical_bytes(current) != canonical_bytes(semantic):
         raise ValueError("prepared request differs from current renderer/context manifest")
-    return rendered
+    report = {"status": "PASS", "scope": "PREPARED_REQUEST_INTEGRITY",
+              "stored_prompt_sha256": prepared["prompt_sha256"], "stored_request_sha256": prepared["request_sha256"],
+              "fresh_prompt_sha256": current["prompt_sha256"], "fresh_request_sha256": current["request_sha256"],
+              "runtime_observation_variations": variations}
+    return rendered, report
+
+
+def verify_prepared_request(root: Path, prepared: dict) -> dict:
+    """Verify exact frozen custody, then fresh semantics with two Python leaves allowed."""
+    return _verify_prepared_request(root, prepared)[0]
+
+
+def prepared_request_integrity_report(root: Path, prepared: dict) -> dict:
+    """Disclose allowed stored/current observations; not execution or consumption proof."""
+    return _verify_prepared_request(root, prepared)[1]
 
 
 def _publish(root: Path, directory: str, raw: bytes, suffix: str) -> dict:

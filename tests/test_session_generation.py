@@ -7,9 +7,11 @@ import pytest
 
 from rcwh.candidate_reviews import canonical_bytes, digest, verified_author_model
 from rcwh.generation.records import binding, store
-from rcwh.generation.render import PromptRenderer
+from rcwh.generation.render import PromptRenderer, request_for
 from rcwh.generation.runner import Budget, ReplayRunner
-from rcwh.generation.session import EXECUTION_BASIS, import_draft, prepare_request, verify_prepared_request
+from rcwh.generation.session import (
+    EXECUTION_BASIS, import_draft, prepare_request, prepared_request_integrity_report, verify_prepared_request,
+)
 from rcwh.generation.writing import diff_report, feedback_report, generate, load_draft, revision_prompt
 from test_generation import response, root
 
@@ -253,6 +255,221 @@ def test_content_addressed_duplicate_is_reused_without_overwrite_and_conflicts_f
         imported(root)
     assert (root / first['candidate']['path']).read_bytes() == b'corrupted existing file'
     assert not list(root.rglob('.generation-*'))
+
+
+@pytest.fixture
+def observed_session(session_root, monkeypatch):
+    """Synthetic source report with the same custody/diff shape as the ch95 report."""
+    extractor = {'name': 'rcwh-extraction', 'version': 1, 'code_sha256': 'a' * 64,
+                 'package_version': None, 'python': 'CPython 3.14.6'}
+    registered = {**extractor, 'code_sha256': 'b' * 64, 'python': 'CPython 3.12.13'}
+    lock = {'path': 'requirements/extraction.lock.json', 'sha256': 'c' * 64}
+    source = {'record': {'id': 'src:observed', 'excerpt': 'unchanged carrier excerpt', 'locator': 'unit:1'},
+              'verification': {'status': 'PASS', 'verification_report': {
+                  'status': 'VERIFIED', 'rebuild': {
+                      'status': 'PASS', 'scope': 'EXTRACTION_CONTENT_REBUILD', 'manifest_ref': 'asset:sha256:' + 'd' * 64,
+                      'output_sha256': 'e' * 64, 'unit_count': 1,
+                      'registered_toolchain': {'extractor': deepcopy(registered), 'dependency_lock': deepcopy(lock)},
+                      'current_toolchain': {'extractor': deepcopy(extractor), 'dependency_lock': deepcopy(lock)},
+                      'toolchain_diff': {'extractor': {'registered': deepcopy(registered), 'current': deepcopy(extractor)}}}}}}
+    original = PromptRenderer.draft
+    def draft(renderer, *args, **kwargs):
+        rendered = original(renderer, *args, **kwargs)
+        task = deepcopy(rendered['task'])
+        task['sources'] = [deepcopy(source)]
+        return renderer.render('author-v1', task, rendered['inputs'])
+    monkeypatch.setattr(PromptRenderer, 'draft', draft)
+    return session_root, source
+
+
+def observer_parents(source):
+    rebuild = source['verification']['verification_report']['rebuild']
+    return rebuild['current_toolchain']['extractor'], rebuild['toolchain_diff']['extractor']['current']
+
+
+def set_observer_python(source, version):
+    for parent in observer_parents(source):
+        parent['python'] = version
+
+
+def rehash_frozen_packet(root, packet):
+    template = Path(packet['template']['path']).stem
+    rendered = PromptRenderer(root).render(template, packet['task'], packet['inputs'])
+    packet['prompt_sha256'] = rendered['prompt_sha256']
+    packet['request'] = request_for(rendered, Budget(**packet['budget']), packet['request']['model'])
+    packet['request_sha256'] = digest(canonical_bytes(packet['request']))
+
+
+@pytest.mark.parametrize('stored,current', [('CPython 3.14.6', 'CPython 3.12.13'), ('CPython 3.12.13', 'CPython 3.14.6')])
+def test_only_two_runtime_python_observations_vary_and_frozen_bytes_are_retained(observed_session, stored, current):
+    root, source = observed_session
+    set_observer_python(source, stored)
+    packet = prepare(root)
+    frozen_bytes = (root / 'request.json').read_bytes()
+    frozen_packet = deepcopy(packet)
+    assert prepared_request_integrity_report(root, packet)['runtime_observation_variations'] == []
+    set_observer_python(source, current)
+    fresh = verify_prepared_request(root, packet)
+    report = prepared_request_integrity_report(root, packet)
+    prefix = 'task.sources[0].verification.verification_report.rebuild.'
+    assert report['runtime_observation_variations'] == [
+        {'path': prefix + 'current_toolchain.extractor.python', 'stored': stored, 'current': current},
+        {'path': prefix + 'toolchain_diff.extractor.current.python', 'stored': stored, 'current': current}]
+    assert report['stored_prompt_sha256'] == packet['prompt_sha256'] != report['fresh_prompt_sha256']
+    assert report['stored_request_sha256'] == packet['request_sha256'] != report['fresh_request_sha256']
+    assert fresh == PromptRenderer(root).draft('package.json', 89)
+    assert prepare_request(root, package_path='package.json', chapter=89)['task'] == fresh['task']
+    assert packet == frozen_packet and (root / 'request.json').read_bytes() == frozen_bytes
+    result = imported(root)
+    draft, _ = load_draft(root, result['draft']['path'])
+    run = json.loads((root / result['run']['path']).read_bytes())
+    assert (root / result['prepared_request']['path']).read_bytes() == frozen_bytes
+    assert draft['task'] == packet['task'] and run['request_sha256'] == packet['request_sha256']
+    assert draft['prompt_sha256'] == run['prompt_sha256'] == packet['prompt_sha256']
+    assert not {'usage', 'request_id', 'elapsed', 'consumed', 'response'}.intersection(report)
+
+
+@pytest.mark.parametrize('tamper', ['prompt_hash', 'fresh_prompt_hash', 'request_hash', 'task', 'request',
+                                   'task_body_rehashed', 'system_rehashed', 'messages_rehashed', 'params_rehashed'])
+def test_runtime_drift_does_not_waive_frozen_envelope_or_hash_forgery(observed_session, tamper):
+    root, source = observed_session
+    packet = prepare(root)
+    set_observer_python(source, 'CPython 3.12.13')
+    if tamper == 'prompt_hash':
+        packet['prompt_sha256'] = '0' * 64
+    elif tamper == 'fresh_prompt_hash':
+        packet['prompt_sha256'] = PromptRenderer(root).draft('package.json', 89)['prompt_sha256']
+    elif tamper == 'request_hash':
+        packet['request_sha256'] = '0' * 64
+    elif tamper == 'task':
+        set_observer_python(packet['task']['sources'][0], 'CPython 3.13.1')
+    elif tamper == 'request':
+        packet['request']['system'] += '\nForged instruction'
+    elif tamper == 'task_body_rehashed':
+        packet['task']['target_characters'] = 1
+        rehash_frozen_packet(root, packet)
+    else:
+        if tamper == 'system_rehashed':
+            packet['request']['system'] += '\nForged instruction'
+        elif tamper == 'messages_rehashed':
+            packet['request']['messages'][0]['content'] += ' '
+        else:
+            packet['request']['max_tokens'] -= 1
+        packet['prompt_sha256'] = digest(canonical_bytes({key: packet['request'][key] for key in ('system', 'messages')}))
+        packet['request_sha256'] = digest(canonical_bytes(packet['request']))
+    saved(root, 'request.json', packet)
+    with pytest.raises(ValueError, match='prepared request'):
+        imported(root)
+    assert not (root / 'artifacts').exists()
+
+
+@pytest.mark.parametrize('version', ['PyPy 3.12.13', 'CPython 2.7.18', 'CPython 3.12', 'CPython 3.12.13rc1',
+                                    'CPython 3.12.13\n', 'CPython 3.12.13 arbitrary', 31213, None])
+@pytest.mark.parametrize('field', [0, 1])
+@pytest.mark.parametrize('side', ['stored', 'fresh'])
+def test_runtime_python_allowance_rejects_non_version_values(observed_session, version, field, side):
+    root, source = observed_session
+    packet = prepare(root)
+    set_observer_python(source, 'CPython 3.12.13')
+    selected = packet['task']['sources'][0] if side == 'stored' else source
+    observer_parents(selected)[field]['python'] = version
+    if side == 'stored':
+        rehash_frozen_packet(root, packet)
+    with pytest.raises(ValueError, match='prepared request'):
+        verify_prepared_request(root, packet)
+
+
+@pytest.mark.parametrize('side', ['stored', 'fresh'])
+@pytest.mark.parametrize('path,value', [
+    (('record', 'excerpt'), 'changed excerpt'), (('record', 'locator'), 'unit:2'),
+    (('record', 'python'), 'CPython 3.12.13'), (('verification', 'status'), 'FAIL'),
+    (('verification', 'verification_report', 'status'), 'UNVERIFIED'),
+    (('verification', 'verification_report', 'rebuild', 'status'), 'FAIL'),
+    (('verification', 'verification_report', 'rebuild', 'scope'), 'OTHER_REBUILD'),
+    (('verification', 'verification_report', 'rebuild', 'output_sha256'), 'f' * 64),
+    (('verification', 'verification_report', 'rebuild', 'unit_count'), 2),
+    (('verification', 'verification_report', 'rebuild', 'python'), 'CPython 3.12.13'),
+    (('verification', 'verification_report', 'rebuild', 'current_toolchain', 'extractor', 'code_sha256'), 'f' * 64),
+    (('verification', 'verification_report', 'rebuild', 'current_toolchain', 'extractor', 'version'), 2),
+    (('verification', 'verification_report', 'rebuild', 'current_toolchain', 'dependency_lock', 'sha256'), 'f' * 64),
+    (('verification', 'verification_report', 'rebuild', 'registered_toolchain', 'extractor', 'python'), 'CPython 3.13.1'),
+    (('verification', 'verification_report', 'rebuild', 'toolchain_diff', 'extractor', 'registered', 'python'), 'CPython 3.13.1'),
+    (('verification', 'verification_report', 'rebuild', 'toolchain_diff', 'extractor', 'current', 'code_sha256'), 'f' * 64),
+    (('verification', 'verification_report', 'rebuild', 'toolchain_diff', 'status'), 'PASS'),
+])
+def test_runtime_allowance_keeps_every_other_source_and_rebuild_field_exact(observed_session, side, path, value):
+    root, source = observed_session
+    packet = prepare(root)
+    set_observer_python(source, 'CPython 3.12.13')
+    selected = packet['task']['sources'][0] if side == 'stored' else source
+    for key in path[:-1]:
+        selected = selected[key]
+    selected[path[-1]] = value
+    if side == 'stored':
+        rehash_frozen_packet(root, packet)
+    with pytest.raises(ValueError, match='prepared request'):
+        verify_prepared_request(root, packet)
+
+
+@pytest.mark.parametrize('side', ['stored', 'fresh'])
+@pytest.mark.parametrize('path', [
+    ('verification', 'verification_report', 'rebuild', 'current_toolchain', 'extractor', 'python'),
+    ('verification', 'verification_report', 'rebuild', 'toolchain_diff', 'extractor'),
+])
+def test_runtime_allowance_never_waives_missing_observers_or_diff_shape(observed_session, side, path):
+    root, source = observed_session
+    packet = prepare(root)
+    set_observer_python(source, 'CPython 3.12.13')
+    selected = packet['task']['sources'][0] if side == 'stored' else source
+    for key in path[:-1]:
+        selected = selected[key]
+    del selected[path[-1]]
+    if side == 'stored':
+        rehash_frozen_packet(root, packet)
+    with pytest.raises(ValueError, match='prepared request'):
+        verify_prepared_request(root, packet)
+
+
+def test_runtime_drift_preserves_real_revision_preparation_and_import(observed_session):
+    root, source = observed_session
+    prepare(root)
+    first = imported(root)
+    feedback = store(root, 'data/writing/feedback', feedback_report(root, first['draft']['path']))
+    revision = prepare_request(root, parent_path=first['draft']['path'], feedback_path=feedback['path'])
+    saved(root, 'revision.json', revision)
+    revision_bytes = (root / 'revision.json').read_bytes()
+    set_observer_python(source, 'CPython 3.12.13')
+    assert verify_prepared_request(root, revision)['task'] == revision['task']
+    result = import_draft(root, 'authored.txt', 'revision.json', session_id='session-test',
+                          session_model_label='configured writer (unverified)')
+    draft, _ = load_draft(root, result['draft']['path'])
+    assert draft['parent'] == first['draft'] and draft['task'] == revision['task']
+    assert (root / result['prepared_request']['path']).read_bytes() == revision_bytes
+
+
+def test_runtime_allowance_traverses_only_named_nested_writing_tasks(observed_session, monkeypatch):
+    root, source = observed_session
+    original = PromptRenderer.draft
+    def nested(renderer, *args, **kwargs):
+        rendered = original(renderer, *args, **kwargs)
+        task = {'writing_task': {'writing_task': rendered['task']}, 'other': {'sources': [deepcopy(source)]}}
+        return renderer.render('author-v1', task, rendered['inputs'])
+    monkeypatch.setattr(PromptRenderer, 'draft', nested)
+    packet = prepare(root)
+    old_source = deepcopy(source)
+    set_observer_python(source, 'CPython 3.12.13')
+    # Only named writing_task nesting is eligible, not identical containers elsewhere.
+    with pytest.raises(ValueError, match='prepared request'):
+        verify_prepared_request(root, packet)
+    def bounded(renderer, *args, **kwargs):
+        rendered = nested(renderer, *args, **kwargs)
+        rendered['task']['other']['sources'] = [deepcopy(old_source)]
+        return renderer.render('author-v1', rendered['task'], rendered['inputs'])
+    monkeypatch.setattr(PromptRenderer, 'draft', bounded)
+    report = prepared_request_integrity_report(root, packet)
+    assert len(report['runtime_observation_variations']) == 2
+    assert all(row['path'].startswith('task.writing_task.writing_task.sources[0].')
+               for row in report['runtime_observation_variations'])
 
 
 def test_prepared_parent_assertions_empty_labels_and_empty_output_rejected(session_root):
