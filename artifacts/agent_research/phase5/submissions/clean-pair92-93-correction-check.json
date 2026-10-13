@@ -1,0 +1,120 @@
+{
+  "kind": "CLEAN_REPAIR_PAIR_CORRECTION_CHECK",
+  "qualification": "FEEDBACK_ONLY",
+  "status": "SCOPED_FIXED",
+  "scope": "仅核原报告C93-RETURNED-PROPERTY-CONTINUITY指出的扣存小纸/钱发还缺口，以及炒米空纸是否被明确区分；不是93-v3或全书重新审读。",
+  "bindings": {
+    "chapter92": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch92-v2.txt",
+      "sha256": "51ebfaa2825cef4b7bc1232be0ffb7c548764c750ad37266951600d6c76c1d3d",
+      "version": "v2"
+    },
+    "chapter93_prior": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch93-v2.txt",
+      "sha256": "09682d38bd9f451ab011ae41fc2fb2417ac70a929b4121dfa259d3a1030caf43",
+      "version": "v2",
+      "binding_source": "旧报告及此前实际全文读取；本次未重开旧93正文"
+    },
+    "chapter93_correction": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch93-v3.txt",
+      "sha256": "4f875f5a0ccee71865a9a8c3270f2124217301a4e571a8f062b3f32cdd524c3d",
+      "version": "v3"
+    },
+    "prior_report": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/clean-pair92-93-feedback.json",
+      "sha256": "2c4489e049ded86ccaaf10f0599811602fbc7b9670d31c89705e0c29b2e02895",
+      "finding_id": "C93-RETURNED-PROPERTY-CONTINUITY",
+      "chapter93_verdict": "FAIL",
+      "preserved_without_modification": true
+    }
+  },
+  "reading_scope": {
+    "prior_report": "本次完整读取",
+    "chapter92_v2_lines_read_this_check": [21, 23],
+    "chapter93_v3_line_ranges_read_this_check": [[1, 15], [123, 127]],
+    "chapter93_v3_full_reading_complete": false,
+    "prior_pair_full_reading": "92-v2及93-v2此前已实际完整通读；旧报告仍只绑定原v2字节",
+    "byte_comparison": {
+      "changed_lines": [9, 11],
+      "only_these_lines_changed": true,
+      "method": "读取93-v3实际字节作哈希，在内存中仅将其第9/11行替换为本次会话此前实际读到的93-v2两行原文，保持行结束符；重建结果SHA-256与旧报告所绑定93-v2哈希完全相等。未重开旧93文件，也未写回任何正文。此比较证明其余字节未变，不等于重新全文文学审读。",
+      "reconstructed_prior_sha256": "09682d38bd9f451ab011ae41fc2fb2417ac70a929b4121dfa259d3a1030caf43",
+      "last_three_paragraphs_unchanged": true,
+      "last_three_paragraph_line_numbers": [123, 125, 127]
+    }
+  },
+  "findings": [
+    {
+      "id": "C93-RETURNED-PROPERTY-CONTINUITY-CORRECTION",
+      "status": "SCOPED_FIXED",
+      "evidence": [
+        {
+          "chapter": 92,
+          "version": "v2",
+          "lines": [21, 23],
+          "quotes": [
+            "看守叫他把随身的零碎交出来，另候发还。",
+            "他将小纸和身边所带的钱放在面前，看着一件件收起"
+          ]
+        },
+        {
+          "chapter": 93,
+          "version": "v3",
+          "lines": [9, 9],
+          "quotes": [
+            "另放着入内时收去的小纸和身边所带的零碎钱。",
+            "宝玉先把小纸打开，见折口仍是自己摸软的那处，又把钱拢到掌心看过；",
+            "臂弯里那张炒米的空纸却仍夹在袜子下，并没有混进去。"
+          ]
+        },
+        {
+          "chapter": 93,
+          "version": "v3",
+          "lines": [11, 11],
+          "quotes": [
+            "宝玉将小纸仍照原折口折好，把方才看过的钱包进帕子，一并放回布包。",
+            "按着桌后人的指点留了领过的记认，经手人收起领物的纸，才将包推给他。"
+          ]
+        }
+      ],
+      "assessment": "原缺口在限定范围内确实修复：92收起的小纸和钱在93-v3明确重新出现，由宝玉实际展开、看过、收好，再随经手人推交的布包带走。炒米空纸仍在袜下，被明说未混入；经手人收起的纸也改称领物的纸，因此不再误读为又扣下宝玉的小纸。原先是这些的确认如今跟在实际展示小纸/钱之后，不再替缺失物件作空泛完成。新增文字没有给钱补造数额或以此解决案子，仍是在一次出门前的原存物环节完成发还。此结论只消除原报告的具体叙事断点，不证明全部历史领物规范或全案已结束。"
+    },
+    {
+      "id": "C93-UNCHANGED-ENDING-AND-DOWNSTREAM-BINDING",
+      "status": "SCOPED_FIXED",
+      "evidence": [
+        {
+          "chapter": 93,
+          "version": "v3",
+          "lines": [123, 127],
+          "quotes": [
+            "平儿收起旧衣和账纸，将钥匙包在布里",
+            "裁的白布短了一截，合到末端遮不住",
+            "我坐这里，你去看一看。",
+            "低头穿线。"
+          ]
+        }
+      ],
+      "assessment": "末三段已定点读取，且字节比较证明与旧93-v2保持相同；本次窄改没有改写遗物暂管、白布缺口、宝钗接看孩子和平儿起身的章末接口。不据此宣布94运行输入已切换。",
+      "chapter94_binding": {
+        "status": "NOT_REBOUND_BY_THIS_CHECK",
+        "coordinator_reported_actual_input_version": "93-v2",
+        "coordinator_reported_actual_input_sha256": "09682d38bd9f451ab011ae41fc2fb2417ac70a929b4121dfa259d3a1030caf43",
+        "independently_read_or_verified_here": false,
+        "note": "94实际运行原绑定93-v2为协调方提供的范围说明，本次没有读取94运行记录，也未修改其来源、输入绑定或注册。不得把现存94的实际输入描述为93-v3。"
+      }
+    }
+  ],
+  "unresolved_within_reported_correction": [],
+  "prior_review_effect": "NONE；旧pair-v2报告、原FAIL与其字节绑定完整保留。本报告另行记录该单项在93-v3字节上的SCOPED_FIXED，不回写旧意见，不将旧全文审读自动换绑为v3全文通过。",
+  "limitations": [
+    "本次未重新阅读全文93-v3；没有重新作全章或全对PASS/FAIL判定。仅实际读取所列段落并核对字节窄改，其他未变段落沿用旧报告的历史记录而非声称新审读完成。",
+    "92原有非阻断节奏保留意见不因93窄改消失；诗文边界、监中知识、旧病衰退、死亡与长期巧姐保护未作新一轮全面审评。未变字节不是完美文学质量证明。",
+    "没有读取其他正文、同行反馈、拒绝稿、基线、pilot、代码或运行来源；94的原绑定说明不是本次独立验证。没有改正文、旧报告、正式状态、源数据或运行注册。",
+    "UNKNOWN/PENDING和历史法律规范未核本身不判小说失败；本次SCOPED_FIXED不授予法律史真实性、史料权威、正式状态执行或人类承认。",
+    "本报告仍为MODEL、FEEDBACK_ONLY；没有自动采纳、全书通过、独立合资格同行通过或人类全通过。哈希只绑定实际已读取字节，不能移用到未来版本。"
+  ],
+  "authority_effect": "NONE",
+  "human_admission": false,
+  "auto_adoption": false
+}
