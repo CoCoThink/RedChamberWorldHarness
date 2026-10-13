@@ -17,3 +17,9 @@ examples/** text eol=lf
 artifacts/migration/** text eol=lf
 # Byte-identical chapter context retains the baseline's separator blank lines.
 artifacts/agent_research/phase5/inputs/writing/baseline-ch*.md whitespace=-blank-at-eof
+# Exact held-out source bytes retain the registered edition's extraction spacing.
+artifacts/session-backtest/coordinator/reference/cf89843e56eb893d356b05074d162d7e9313f0db3534f4fcd2e2d57bfe6f97d9.txt whitespace=-blank-at-eol,-blank-at-eof
+artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-39e35dd52d8e08bf125de6b9.txt whitespace=-blank-at-eol,-blank-at-eof
+# Sequence composition keeps an explicit terminal chapter separator.
+artifacts/agent_research/phase5/pilot-sequences/*.txt whitespace=-blank-at-eof
+artifacts/agent_research/phase5/pilot-anonymous-v1/public/*.txt whitespace=-blank-at-eof

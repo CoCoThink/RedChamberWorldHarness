@@ -1,0 +1,27 @@
+{
+  "kind": "PILOT_SESSION_CONSUMPTION_DISCLOSURE",
+  "authority_effect": "NONE",
+  "qualification": "RESEARCH_ONLY",
+  "actual_context_consumption": "DECLARED_SELECTED_FIELDS_NOT_COMPLETE_RAW_PAYLOAD",
+  "actual_resource_parity": "NOT_VERIFIED",
+  "sample_unit": "THREE_CHAPTER_AUTHOR_SEQUENCE_NOT_THREE_INDEPENDENT_RUNS",
+  "disclosures": [
+    {
+      "route": "direct",
+      "sample_id": "one",
+      "round": "revision1",
+      "session_id": "session:pilot-direct-one-revision1:phase5",
+      "author_report": "Initial chapter85 Read was truncated at51817 of155394 characters. Complete originals, editorial notes, frozen previous endings, chapter card obligations and relevant scene/world facts were consumed with bounded field extraction. Not every duplicated plan/provenance/thread/world record or feedback metadata was consumed; some broad tool previews were limited.",
+      "implication": "Saving exact complete prompts and byte hashes does not prove complete model consumption. Preserve this as a research sequence; no causal or provider-execution claim."
+    },
+    {
+      "route": "harness",
+      "sample_id": "one",
+      "round": "revision1",
+      "session_id": "session:pilot-harness-one-revision1:phase5",
+      "author_report": "Large nested inputs were accessed through bounded field extraction: full original prose, exact editorial notes and chapter-specific task constraints were consumed; initial broad dumps were truncated. The entire raw metadata payload is not claimed read.",
+      "implication": "Actual exposure is declared, not independently verified. Same author context is reused for the three chapters."
+    }
+  ],
+  "previous_ending_policy": "Each author used the exact supplied previous ending, not a new baseline read or the newly revised preceding chapter. Full-book chained authoring must later bind the chosen actual predecessor explicitly."
+}
