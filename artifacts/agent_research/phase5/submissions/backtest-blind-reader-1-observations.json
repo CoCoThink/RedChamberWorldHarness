@@ -1,0 +1,380 @@
+{
+  "schema_version": 1,
+  "report_kind": "BLIND_READER_DESCRIPTIVE_OBSERVATIONS",
+  "packet": {
+    "path": "artifacts/agent_research/phase5/backtest/anonymous-v1/public/packet.json",
+    "sha256": "279cb69883f53adaabb249f4199f695da66c6c95f843986b8f8b42dd8b247bb2"
+  },
+  "reviewer": {
+    "id": "agent:backtest-blind-reader-1",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:backtest-blind-reader-1:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "reading_scope": {
+    "completed_full_prose_reading": true,
+    "subject_count": 5,
+    "inputs_read": [
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/packet.json",
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-39e35dd52d8e08bf125de6b9.txt",
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-907f1462026835c5d35c8f40.txt",
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-73b5ff7c1321bdf4e41e4377.txt",
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-c7969595d6b7404eaa78be70.txt",
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-f31b2cd180dfcdabb051dae9.txt",
+      "schemas/agent_review.schema.json"
+    ],
+    "private_mapping_or_coordinator_files_read": false,
+    "original_corpus_or_preparation_or_author_request_or_authored_files_read": false,
+    "other_reader_opinions_read": false,
+    "external_lookup_performed": false,
+    "recognition_basis": "仅用既有文本与情节记忆；熟悉感不等于出处核证。包内五篇具有共同人物和故事线，不据此推断私有映射。",
+    "verdict_semantics": "原始五个PASS只曾表示阅读完成及材料可比较，不代表历史或来源真实；现发现c796/f31b2判断归属错误及其污染全组偏好引用，已在同一reader/session的独立纠错意见中将五条明确记为PENDING。阅读确实完成，本描述排序是公有文本逐引语核对后的纠正关联，不用它覆盖旧错或恢复aggregate PASS。",
+    "comparison_limits": [
+      "read-39e35dd52d8e08bf125de6b9明显较长，跨两段回目分解的材料，包含另外几篇没有完整呈现的迎春回门等情节。篇幅与观察机会不均，不能把生活细节丰富度当作控制变量后的质量效应。",
+      "对read-39e35dd52d8e08bf125de6b9的逐字熟悉可能同时帮助理解并产生偏好偏置；本报告明确保留这项不确定性，不宣称盲法消除了训练记忆。",
+      "工程感是对叙事安排可见程度的阅读感受，不是作者、生成过程或任何模型身份的检测。",
+      "本报告比较当前提供的完整文本，不把未提供的后文、私有目标或映射当作已知。"
+    ]
+  },
+  "tokens_ranking": {
+    "kind": "DESCRIPTIVE_ORDINAL_READING_PREFERENCE",
+    "ordered_preference_groups": [
+      [
+        "read-39e35dd52d8e08bf125de6b9"
+      ],
+      [
+        "read-c7969595d6b7404eaa78be70"
+      ],
+      [
+        "read-907f1462026835c5d35c8f40",
+        "read-f31b2cd180dfcdabb051dae9"
+      ],
+      [
+        "read-73b5ff7c1321bdf4e41e4377"
+      ]
+    ],
+    "ties": [
+      {
+        "tokens": [
+          "read-907f1462026835c5d35c8f40",
+          "read-f31b2cd180dfcdabb051dae9"
+        ],
+        "reason": "前者微动作、对话和空方笑话更活，后者身体、劳动细节与照看花盆更厚；综合不足以硬分高下。并列不表示逐维度相同。"
+      }
+    ],
+    "neither_cases": [
+      {
+        "tokens": [
+          "read-907f1462026835c5d35c8f40",
+          "read-73b5ff7c1321bdf4e41e4377",
+          "read-f31b2cd180dfcdabb051dae9",
+          "read-c7969595d6b7404eaa78be70"
+        ],
+        "question": "仅就祭文讨论中否定拟人的方法，是否有一篇让我满意？",
+        "answer": "四篇都没有充分说服我。黛玉反复以风、灯影、衣针、花不会按字面行动来驳诗，容易成为具体化写作教练；各篇仍有不同程度的亲昵、失言和悲感，不能说四个开场全坏。"
+      }
+    ],
+    "basis": "综合偏重人物声口、关系复杂度、生活杂质，而非最整齐的首尾结构。是我个人对当前token的相对阅读选择。",
+    "numerical_total": null,
+    "automatic_winner": null,
+    "historical_or_authorship_inference": "不从排序产生任何来源判决、原作真伪结论或私有映射。"
+  },
+  "dimension_comparisons": {
+    "scene_cohesion": "read-907f1462026835c5d35c8f40与read-f31b2cd180dfcdabb051dae9最显出首尾呼应的集中短篇构造；前者祭文墨污/空纸与锁门，后者花盆照护/祭文空处。read-73b5ff7c1321bdf4e41e4377也集中，但议论把连接讲得太清楚。read-c7969595d6b7404eaa78be70更松，靠香菱隔帘说迎春接上两家危险，祭文线少回收。read-39e35dd52d8e08bf125de6b9跨月多、集中度不优，却以误认、婚姻处境和宝玉的悲喜推进而不只凭象征串联。",
+    "voice": "read-39e35dd52d8e08bf125de6b9的身份声口、亲昵尺度、撒泼与江湖笑话差别最鲜明；read-c7969595d6b7404eaa78be70的姨妈仍顾脸面、说不清家务，其次最能留下说话人的限制。read-907f1462026835c5d35c8f40机锋较亮，read-f31b2cd180dfcdabb051dae9较沉，二者各有证据辨析过清的问题。read-73b5ff7c1321bdf4e41e4377最常让人物直接交付伦理或写作判断。",
+    "life_detail": "read-39e35dd52d8e08bf125de6b9的桂花生意、婚姻门第、好吃炸骨头、奴婢买卖等有不止服务一条论题的杂质，且有篇幅优势。read-c7969595d6b7404eaa78be70的摸书、接汤碗、被索银梳后自验包袱更像角色已内化恐惧。read-907f1462026835c5d35c8f40的果子、穿针、帮铺床小丫头与read-f31b2cd180dfcdabb051dae9的湿鞋、拖鞋跟、夹袄缺失各有佳处。read-73b5ff7c1321bdf4e41e4377旧线和枕头细节好，并非缺少生活，只是道理常盖过它们。",
+    "engineering_feel": "较低：read-39e35dd52d8e08bf125de6b9，仍有明白人物定性与因果概述。其次read-c7969595d6b7404eaa78be70，伦理药方仍显专门设计。read-907f1462026835c5d35c8f40与read-f31b2cd180dfcdabb051dae9的纸/空白/小事照护很有效，却反复整齐兑付。最显眼：read-73b5ff7c1321bdf4e41e4377，把不能替人担保、该查证、勿把无辜者挪开逐一摆成论证。这里不把安排清楚本身当罪过，只指出读者能看见安排时人物自由度的损失。"
+  },
+  "per_token": [
+    {
+      "token": "read-39e35dd52d8e08bf125de6b9",
+      "subject_sha256": "cf89843e56eb893d356b05074d162d7e9313f0db3534f4fcd2e2d57bfe6f97d9",
+      "recognized": {
+        "status": "STRONG_MEMORY_RECOGNITION_UNVERIFIED",
+        "reason": "茜纱祭文双关与王一贴的吃梨至死疗妒笑话，我记得具体文字，不只记得人物或情节。记忆指向熟悉的《红楼梦》段落，但没有核验章节号、版本、复制来源或作者身份。",
+        "exact_quote_indices": [
+          0,
+          1
+        ]
+      },
+      "familiarity": {
+        "level": "具体句子强熟悉，故事线也熟悉",
+        "bias_note": "熟悉感可能提高偏好，且较长篇幅提供更多关系与闲枝，不能宣称这些影响已消除。"
+      },
+      "dimensions": {
+        "scene_cohesion": "用香菱误把新婚看作护身符与宝玉的担忧形成戏剧反差，用迎春回门反照婚事开始。跨月概述与金桂背景铺写较长，不适合当作最紧的短篇。",
+        "voice": "黛玉的闺阁亲昵、宝玉的认真过头、姨妈责儿、金桂撒泼、道人油嘴互不相同。人物不总知道危机或说出正确道理。",
+        "life_detail": "桂花田与贡奉生意，陪嫁人数，菱叶气味，炸骨头嗜好，卖人与只知买人，显示物质与身份背景，并非都是象征。",
+        "engineering_feel": "相对最低，但叙述直接把金桂规定成恶妇，把妒与疾病归因写得很满。不可把这些旧解释当医疗或女性事实。"
+      },
+      "quotes": [
+        {
+          "exact": "茜纱窗下，我本无缘；黄土垄中，卿何薄命。",
+          "use": "记忆识别；一篇祭文在亲昵改字中忽然碰到两个人的命运，而非外加伦理点评。"
+        },
+        {
+          "exact": "吃过一百岁，人横竖是要死的，死了还妒什么！",
+          "use": "记忆识别；道人从药方绕到死亡，用市井油嘴把伤心问题敷衍成笑话。"
+        },
+        {
+          "exact": "再不然，留下他，就卖了我。",
+          "use": "金桂用自己的地位反过来挟制一家人；不是平面一句嫉妒告白。"
+        },
+        {
+          "exact": "只单以油炸焦骨头下酒。",
+          "use": "个别嗜好带来不服务主论题的闲枝与怪气。"
+        },
+        {
+          "exact": "外具花柳之姿，内秉风雷之性。",
+          "use": "负面证据：叙述者先行给出美貌恶性的固定反差，对金桂缺少内在余地。"
+        },
+        {
+          "exact": "咱们家从来只知买人，并不知卖人之说。",
+          "use": "救人借助家族身份和体面话，不是纯粹人道审判；其残酷背景不能隐去。"
+        }
+      ],
+      "relative_preference": "综合偏好层最前；若只比集中短篇构造，不优于read-907f1462026835c5d35c8f40或read-f31b2cd180dfcdabb051dae9。没有借熟悉感确认来源。"
+    },
+    {
+      "token": "read-907f1462026835c5d35c8f40",
+      "subject_sha256": "591ada8c23451d1e7113ecdbfdad8293bf6102ad8d5d7dc4f5ab93b01f2a1f5f",
+      "recognized": {
+        "status": "PLOT_FAMILIAR_NO_EXACT_TEXT_RECOGNITION",
+        "reason": "共同人物与事件可认得，但我没有把这篇的具体措辞识别为记忆中的原句。未认出不证明原创，也不证明改写或模型生成。",
+        "exact_quote_indices": []
+      },
+      "familiarity": {
+        "level": "情节熟悉，措辞无可确认的先前熟悉",
+        "bias_note": "因其他token也使用同一故事，情节熟悉本身没有来源区分力。"
+      },
+      "dimensions": {
+        "scene_cohesion": "五段通过祭文、门锁、纸人、庙中空白药纸回扣，最集中的一篇之一。回扣次数多也是人为安排感的来源。",
+        "voice": "贾赦围绕退礼发怒，金桂拿桌子牢讥丈夫，道人追逐钱，台词有生活攻守。黛玉拆解风的修辞更像写作纠错。",
+        "life_detail": "帮穿针和理缠线、拒绝果子后又折返、叫新名先放稳物件、两个小丫头不敢关门，都让情感落实为动作。",
+        "engineering_feel": "中高；空白药方与祭文墨污互照十分漂亮，结尾宝玉明确拒绝笼统回报也过于准确地满足读者期待。"
+      },
+      "quotes": [
+        {
+          "exact": "线头捻了两遍，仍穿不进针眼，宝玉便接过去替她穿好。",
+          "use": "宝玉改不了婚事，却能做眼下小事；动作而非总结让两人相近。"
+        },
+        {
+          "exact": "出去又折回来，拿了一个放在袖里。",
+          "use": "宝玉不肯吃果子又带一个走，别扭和依恋没有被对白说尽。"
+        },
+        {
+          "exact": "听见“阿菱”两字，便先将手里的物件搁稳。",
+          "use": "改名的压迫进入身体反应，不只是名字的象征含义。"
+        },
+        {
+          "exact": "姨妈出去应客时，两人也不敢把门关紧。",
+          "use": "保护者缺席时小丫头也怕，援救不是立即安全的闭幕。"
+        },
+        {
+          "exact": "到太太屋里拍去，那里桌子牢。",
+          "use": "金桂机锋鲜明，又把丈夫的虚张声势戳破。"
+        },
+        {
+          "exact": "风若不来，屋里人岂不要闷死？",
+          "use": "负面证据：修辞被当字面错误，黛玉有机智而欠诗意亲昵。"
+        },
+        {
+          "exact": "不许只带“好些了”三个字回来。",
+          "use": "负面兼正面：能照顾事实的动作很好，却像为读者提供明确的学习成果。"
+        }
+      ],
+      "relative_preference": "与read-f31b2cd180dfcdabb051dae9并列；此篇微动作与笑话略占优，不足抵消对方身体、差使与花盆照料的优势。综合在read-c7969595d6b7404eaa78be70之后、read-73b5ff7c1321bdf4e41e4377之前。"
+    },
+    {
+      "token": "read-73b5ff7c1321bdf4e41e4377",
+      "subject_sha256": "74c476a70edb777ee8c8a81348ce7aa5acb5025a2d3d80b5449d0c322648df9e",
+      "recognized": {
+        "status": "PLOT_FAMILIAR_NO_EXACT_TEXT_RECOGNITION",
+        "reason": "认得共同的人物与事件，未认出本篇逐字原句。既有记忆有限，不能由不熟悉推断出处类别。",
+        "exact_quote_indices": []
+      },
+      "familiarity": {
+        "level": "情节熟悉；某些句法让我想到当代写作评语或照护话语，但不是具体作品识别",
+        "bias_note": "时代语感的距离是主观声音判断，不构成作者或生成来源检测。"
+      },
+      "dimensions": {
+        "scene_cohesion": "旧针包、旧线、未读完书、祭文和药方都得到照应。完整而清楚，主题也被解释得最充分，较少让关系自己呈现。",
+        "voice": "贾赦挖苦文章考试、香客讥方子随药走不错；黛玉、姨妈、宝钗和宝玉轮番输出写作伦理、证据公平与照护原则，个人限制减弱。",
+        "life_detail": "带旧线不带杯子的理由非常好；枕头挪向墙边、噪声一响就缩身也细。不是无生活，而是生活常被道理包围。",
+        "engineering_feel": "本组最强：祈愿、空盒不见、不该挪开无辜者，近乎先题目后例证。结尾夹书页较好，仍能看出前面记页的精准回收。"
+      },
+      "quotes": [
+        {
+          "exact": "杯子碎了，叫人笑话；这个不值什么，夹着便走了。",
+          "use": "迎春的迁居小选择有具体风险和不值钱的安心，不是抽象婚姻议论。"
+        },
+        {
+          "exact": "灯是要换油的，影是跟着人走的，何必叫它们替人担保？",
+          "use": "负面证据：黛玉像给修辞下伦理评语，反复禁止虚构性担保。"
+        },
+        {
+          "exact": "纸是纸，人是人。",
+          "use": "负面证据：姨妈判断像高度概括的命题，比家庭纠纷中的局限声口更清醒。"
+        },
+        {
+          "exact": "我在这里听你说，你不用一句一句抢着说。",
+          "use": "关怀温厚，但带很强的当代创伤照护语感。"
+        },
+        {
+          "exact": "若碍眼的是一个没做错事的人，也要挪开么？",
+          "use": "宝玉直取寓意，纸人冤屈被变成清楚的道德辩题。"
+        },
+        {
+          "exact": "原来方子也随着药走，倒比病人听话。",
+          "use": "香客钱货关系中的反讥给药摊场面添一点不纯粹说理的活气。"
+        }
+      ],
+      "relative_preference": "综合最末一层，不等于无价值或FAIL。旧线、枕头、香客都可取，场景也比长篇token集中；但主角轮流讲对道理的声音损失，在我这次比较中权重更大。"
+    },
+    {
+      "token": "read-c7969595d6b7404eaa78be70",
+      "subject_sha256": "c107ca18e247899af1217f68987347f0c2aff43a5f03197528820fea9947e822",
+      "recognized": {
+        "status": "PLOT_FAMILIAR_NO_EXACT_TEXT_RECOGNITION",
+        "reason": "情节母题熟悉，本篇的措辞没有可确认的原句识别。它较贴近家务声口的感觉不等于身份验证。",
+        "exact_quote_indices": []
+      },
+      "familiarity": {
+        "level": "人物关系熟悉，具体文字未逐字认出",
+        "bias_note": "偏好它较混杂的家务声口，是当前阅读判断，不是对某个隐匿类别的偏爱声明。"
+      },
+      "dimensions": {
+        "scene_cohesion": "较松但香菱隔帘说迎春让两线短暂相碰；宝玉知道打伤后问妒药，动机直观。结尾只过旧院、按纸角有余味，祭文开场却较少回收。",
+        "voice": "金桂善于将别人的辩解反转为冒犯，宝蟾怕乱奶奶跟前，姨妈既救人又劝别外传，都比全知公允判官更有关系阻力。",
+        "life_detail": "书页与针伤、习惯性接热汤、怕报痛、主动摊包袱、听宝蟾名便撤销要书，这些不是只把伤势写重，而是把恐惧写进日常。",
+        "engineering_feel": "四篇未被逐字识别的文本中相对较低，不执意将所有物件摆成结尾。但伦理处方与真伤先请医仍像专项论题回应，主题外闲枝较少。"
+      },
+      "quotes": [
+        {
+          "exact": "我并没说你敢，你倒先替我立了一个凶名。",
+          "use": "金桂将弱者否认翻成污蔑主人，和声口一致的控制方式。"
+        },
+        {
+          "exact": "别把奶奶跟前弄乱了。",
+          "use": "宝蟾面对挨打只顾屋内规矩，简短而冷酷。"
+        },
+        {
+          "exact": "热汁顺着桌沿流下，她却仍忙着伸手接碗。",
+          "use": "挨打也先想着差使和收拾，恐惧已嵌入行动。"
+        },
+        {
+          "exact": "那人说太太没叫查，她仍把最后一件抖开了，才肯收回去。",
+          "use": "不需要外部命令也自我验包袱，不能轻易相信已安全。"
+        },
+        {
+          "exact": "二姑娘那样好脾气，到哪里，人家都该敬重她。",
+          "use": "香菱不知未来的善意误认接上迎春线，而非叙述者直接类比两个受害者。"
+        },
+        {
+          "exact": "他们房里的事，叫我一句两句怎么说？问了这个，那个就闹。",
+          "use": "姨妈的家务局限与烦难比完整证据审理更合角色声口。"
+        },
+        {
+          "exact": "温水送服，不许叫旁人替吃。",
+          "use": "负面证据：王一贴的笑话也像定制的责任伦理处方，多少显题目先行。"
+        },
+        {
+          "exact": "花若认得，花就该开口了。",
+          "use": "负面证据：黛玉把拟人视作常识错误，诗意交流容易沦为纠错练习。"
+        }
+      ],
+      "relative_preference": "综合在read-39e35dd52d8e08bf125de6b9之后，在read-907f1462026835c5d35c8f40与read-f31b2cd180dfcdabb051dae9并列层之前，偏重的是家务关系的杂质与内化恐惧，不是它的结构最紧。"
+    },
+    {
+      "token": "read-f31b2cd180dfcdabb051dae9",
+      "subject_sha256": "5a38ffb01cbbf4ee1af0cd58fdbfd080f336d777bcd148920efad179973ab29f",
+      "recognized": {
+        "status": "PLOT_FAMILIAR_NO_EXACT_TEXT_RECOGNITION",
+        "reason": "共同故事线熟悉，本篇具体措辞没有被我识别为记忆里的原文。没有查版本，也不由此判断创作身份。",
+        "exact_quote_indices": []
+      },
+      "familiarity": {
+        "level": "情节熟悉，文字未逐字认出",
+        "bias_note": "本篇开头和其他几篇共同采用否定拟人、实物取代辞藻的路数；这是包内观察，不是知道写作要求。"
+      },
+      "dimensions": {
+        "scene_cohesion": "迎春托付花盆、宝玉听不进去、最终搬走积水盆，是最好的动作闭合。孙绍祖婚后问银钱补了危险的即时表现，也略快兑现此前预示。",
+        "voice": "贾赦把‘父亲’当授权，金桂训诫和宝蟾反指控有区别。黛玉对衣针拟人及姨妈的来源辨析，都较像替作品校正表达或证据。",
+        "life_detail": "湿鞋冷脚、睡眠被夺、缩手报炭火足、鞋跟踩塌、夹袄缺失、宝玉不知缺什么，身体与劳动是本篇最强一项。",
+        "engineering_feel": "中高；强在把压迫的渐变做细，弱在每件物、每句问答都可迅速进入一套完整伤害机制。空圈和结尾未落墨也显得已设计好象征。"
+      },
+      "quotes": [
+        {
+          "exact": "你若寂寞，何必推给它。",
+          "use": "负面证据：把诗的拟人当转嫁；同样的寂寞未必不能写在衣针上。"
+        },
+        {
+          "exact": "湿鞋里一层冷气，脚趾也不敢动。",
+          "use": "罚站的控制落在身体忍耐，不仅是‘受欺负’的标签。"
+        },
+        {
+          "exact": "一只鞋跟踩塌了，走一步便拖一下。",
+          "use": "获救离房不是体面的仪式，拖步留下伤后狼狈。"
+        },
+        {
+          "exact": "写的是要害谁，又没写是谁做的。",
+          "use": "清楚辨析被害姓名与作者身份，但这种明白也让姨妈像证据课发言者。"
+        },
+        {
+          "exact": "问完才想起并不知道她那里缺什么。",
+          "use": "宝玉善意仍会落空，保留同情的局限而非立即正确行动。"
+        },
+        {
+          "exact": "我知道。你也知道，便不算我骗了你。",
+          "use": "道人空圈笑话不错，亦过于精确宣示无药及免账逻辑。"
+        },
+        {
+          "exact": "他走过去，把积着水的一盆搬到檐下。",
+          "use": "回应迎春实际托付，小事可做而婚事不可逆；比全用思想收束好。"
+        }
+      ],
+      "relative_preference": "与read-907f1462026835c5d35c8f40并列；此篇劳动和身体细节较强，对方果子、缠线、笑话和旁观小丫头较鲜活。综合在read-c7969595d6b7404eaa78be70之后、read-73b5ff7c1321bdf4e41e4377之前。"
+    }
+  ],
+  "raw_opinion_correction": {
+    "raw_path": "artifacts/agent_research/phase5/submissions/backtest-blind-reader-1.json",
+    "raw_sha256": "3eac0a7a6e023c4ea5035279935f8abfbb6f3b7b50d90604b03f236a30536a64",
+    "raw_preserved_unmodified": true,
+    "status": "PUBLIC_TOKEN_ATTRIBUTION_ERROR_CORRECTED_IN_THIS_OBSERVATIONS_REPORT",
+    "description": "原始意见写出后，逐引语校验发现我把两条并行Read输出的文本归属混淆：raw中read-c7969595d6b7404eaa78be70的notes描述的是实际read-f31b2cd180dfcdabb051dae9；raw中read-f31b2cd180dfcdabb051dae9的notes描述的是实际read-c7969595d6b7404eaa78be70。raw内涉及这两个token的相对偏好引用也相反。SHA绑定本身正确，问题在文字判断归属。按已注册原始字节不得改动的要求保留raw；本报告已对调相应文字归属、排序和比较引用，并将各自正确SHA重新绑定。不是改变阅读评价，是纠正评价关联的公有token。",
+    "public_binding_checks": [
+      {
+        "token": "read-c7969595d6b7404eaa78be70",
+        "opening_exact": "宝玉听见山石后有人唤住，便停了脚，往暗处看去。",
+        "identifying_detail": "银梳被说丢失后香菱主动摊包袱，隔帘说迎春，结尾按平方纸硬角"
+      },
+      {
+        "token": "read-f31b2cd180dfcdabb051dae9",
+        "opening_exact": "改诔词灯影生疑　问妒方药囊无济",
+        "identifying_detail": "迎春托付花盆，湿鞋冷脚与塌鞋跟，结尾搬积水盆并重看祭文"
+      }
+    ],
+    "no_private_mapping_used": true,
+    "remaining_raw_limitation": "原始意见通过JSON结构和绑定检验，但c796/f31b2两条notes及排序引用不能当作已核对的token专属意见；请使用本报告的纠正关联。",
+    "correction_opinion_path": "artifacts/agent_research/phase5/submissions/backtest-blind-reader-1-correction.json",
+    "correction_opinion_verdicts": "ALL_FIVE_PENDING",
+    "pending_reason": "c796/f31b2本条文字归属错；其余三条的自身阅读与引语未错，但notes内的跨篇相对偏好同样用错这两个标签。五条PENDING不否认通读，不抹掉优缺点，明确原始PASS不足以作为可靠完整比较证据。"
+  },
+  "validation": {
+    "exact_quotes_checked_against_public_subjects": true,
+    "all_five_subject_hashes_match_packet_and_bytes": true,
+    "raw_opinion_schema_valid": true,
+    "raw_note_attributions_valid": false,
+    "corrected_observations_note_attributions_valid": true
+  }
+}

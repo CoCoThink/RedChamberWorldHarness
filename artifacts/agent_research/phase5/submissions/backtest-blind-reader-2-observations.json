@@ -1,0 +1,398 @@
+{
+  "schema_version": 1,
+  "report_kind": "BLIND_READER_OBSERVATIONS",
+  "packet": {
+    "path": "artifacts/agent_research/phase5/backtest/anonymous-v1/public/packet.json",
+    "sha256": "279cb69883f53adaabb249f4199f695da66c6c95f843986b8f8b42dd8b247bb2"
+  },
+  "reviewer": {
+    "id": "agent:backtest-blind-reader-2",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:backtest-blind-reader-2:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "read_scope": {
+    "read_mode": "FULL_TEXT_ALL_FIVE",
+    "authorized_input_files": [
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/packet.json",
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-39e35dd52d8e08bf125de6b9.txt",
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-907f1462026835c5d35c8f40.txt",
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-73b5ff7c1321bdf4e41e4377.txt",
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-c7969595d6b7404eaa78be70.txt",
+      "artifacts/agent_research/phase5/backtest/anonymous-v1/public/read-f31b2cd180dfcdabb051dae9.txt",
+      "schemas/agent_review.schema.json"
+    ],
+    "private_material_consulted": false,
+    "other_reader_opinion_consulted": false,
+    "external_lookup_used": false,
+    "packet_and_subject_hashes_verified": true,
+    "limitations": [
+      "匿名仅涉及public token与未查看私有映射；文本自身可以唤起旧阅读记忆，不能据此声称彻底盲法或身份未被猜到。",
+      "对read-39e35dd52d8e08bf125de6b9有较强熟悉感；这可能使人物声音及少工程感偏好受记忆影响，不是来源证明。",
+      "篇幅、叙述跨度和分段不同。scene_cohesion按当前全文作为独立阅读单元衡量，不把更长的长篇节选自动判为较差文学。",
+      "所有偏好均为本次MODEL读者的质性判断，不是人类资格、独立人类验证、真实性检验或测量出的效应。"
+    ]
+  },
+  "verdict_scope": {
+    "meaning": "PASS表示完整读后认为该篇可作为有上述限制的相对阅读研究材料：叙事可读、人物及场面有足够内容可讨论。PASS不是排名，不是完整盲法成功、历史真伪、发表标准或录用决定。",
+    "all_subjects_read": true,
+    "historic_authenticity": "NOT_VERIFIED",
+    "blind_identity_status": "NOT_PROVEN"
+  },
+  "ranking_convention": {
+    "unit": "PUBLIC_TOKEN",
+    "preference_groups_order": "EARLIER_GROUP_PREFERRED_ON_THIS_DIMENSION_ONLY",
+    "same_group_meaning": "NO_CLEAR_PREFERENCE_NOT_MEASURED_EQUALITY",
+    "engineering_feel_direction": "LESS_VISIBLE_THEMATIC_OR_PROCEDURAL_ENGINEERING_PREFERRED",
+    "numeric_total": null,
+    "overall_winner": null,
+    "automatic_selection": false,
+    "neither_note": "没有整体胜者判断；不同维度回答不同问题，同组即没有清楚的二选一偏好，并非强制排出先后。"
+  },
+  "dimension_preferences": {
+    "scene_cohesion": {
+      "preference_groups": [
+        ["read-907f1462026835c5d35c8f40"],
+        ["read-c7969595d6b7404eaa78be70", "read-f31b2cd180dfcdabb051dae9"],
+        ["read-73b5ff7c1321bdf4e41e4377"],
+        ["read-39e35dd52d8e08bf125de6b9"]
+      ],
+      "rationale": "read-907f1462026835c5d35c8f40的墨污、箱笼、纸人、空白方子和末尾迟应吃饭形成完整短篇的节奏；read-c7969595d6b7404eaa78be70与read-f31b2cd180dfcdabb051dae9也有物件承接，难作稳定取舍。read-73b5ff7c1321bdf4e41e4377的未读完书本收束好，但数场同说不替人说定的主题较显。read-39e35dd52d8e08bf125de6b9更是长时段、含说书分回痕迹的连续材料，局部场面强，此处末组仅关乎独立短篇集中度。"
+    },
+    "character_voice": {
+      "preference_groups": [
+        ["read-39e35dd52d8e08bf125de6b9"],
+        ["read-907f1462026835c5d35c8f40"],
+        ["read-c7969595d6b7404eaa78be70", "read-f31b2cd180dfcdabb051dae9"],
+        ["read-73b5ff7c1321bdf4e41e4377"]
+      ],
+      "rationale": "前一篇的人物语言在风雅、身份、算计、含混和恐惧之间有较多不一致的动机；read-907f1462026835c5d35c8f40的迎春缓语和道人钱话也较独立。中间两篇各有尖巧与畏缩，不择其一。read-73b5ff7c1321bdf4e41e4377中几名较善人物说话更一致地清醒、分析和支持。此排序可能受旧文熟悉感影响，不指作者判别。"
+    },
+    "life_detail": {
+      "preference_groups": [
+        ["read-39e35dd52d8e08bf125de6b9", "read-907f1462026835c5d35c8f40"],
+        ["read-c7969595d6b7404eaa78be70"],
+        ["read-73b5ff7c1321bdf4e41e4377", "read-f31b2cd180dfcdabb051dae9"]
+      ],
+      "rationale": "首组一篇有清香、油炸骨头等出人意料的生活范围，另一篇把端水、更衣和小丫头助人写成相互牵制的动作，无稳定取舍。read-c7969595d6b7404eaa78be70的书上药汁和无须搜查仍抖包袱尤其具体。末组两篇也各有枕头让位与塌鞋拖步的好细节，只是在总体丰富程度上我较偏好前组；末组并非生活细节缺失。"
+    },
+    "engineering_feel": {
+      "preference_groups": [
+        ["read-39e35dd52d8e08bf125de6b9"],
+        ["read-907f1462026835c5d35c8f40"],
+        ["read-c7969595d6b7404eaa78be70"],
+        ["read-73b5ff7c1321bdf4e41e4377", "read-f31b2cd180dfcdabb051dae9"]
+      ],
+      "rationale": "衡量的是主题如何被显眼地安排进人物，不是猜是否由机器写成。首篇的道人诡辩不负责解决伤害，宝钗又同时维护体面与收留人。read-907f1462026835c5d35c8f40仍有两宗病的安排，但旁枝与误听破坏过分整齐。read-c7969595d6b7404eaa78be70的劝医结论稍显直白，数钱追客与姨妈还要两头劝又留出复杂性。末组都有从谨慎表述、婚事查问、纸人查证到最后照料程序或药方伦理的较完整论点链，无清楚二者优先。"
+    }
+  },
+  "tie_and_neither_preferences": [
+    {
+      "dimension": "scene_cohesion",
+      "tokens": ["read-c7969595d6b7404eaa78be70", "read-f31b2cd180dfcdabb051dae9"],
+      "choice": "NEITHER_PREFERRED",
+      "reason": "一篇以纸硬角收住，另一篇以未写满的祭文收住，各有动作与情绪连续性，无法稳定选一。"
+    },
+    {
+      "dimension": "character_voice",
+      "tokens": ["read-c7969595d6b7404eaa78be70", "read-f31b2cd180dfcdabb051dae9"],
+      "choice": "NEITHER_PREFERRED",
+      "reason": "前者金桂的反向话术和香菱避疼有力，后者黛玉挑字与避谈更尖巧，缺点亦不同。"
+    },
+    {
+      "dimension": "life_detail",
+      "tokens": ["read-39e35dd52d8e08bf125de6b9", "read-907f1462026835c5d35c8f40"],
+      "choice": "NEITHER_PREFERRED",
+      "reason": "生活世界的广度与小场身体动作的密度不是可自动合成的同一优势。"
+    },
+    {
+      "dimension": "life_detail",
+      "tokens": ["read-73b5ff7c1321bdf4e41e4377", "read-f31b2cd180dfcdabb051dae9"],
+      "choice": "NEITHER_PREFERRED",
+      "reason": "枕头让位与塌鞋拖步都能在不直接说明心理的情况下给身体以位置，未形成稳定差别。"
+    },
+    {
+      "dimension": "engineering_feel",
+      "tokens": ["read-73b5ff7c1321bdf4e41e4377", "read-f31b2cd180dfcdabb051dae9"],
+      "choice": "NEITHER_PREFERRED",
+      "reason": "都使几个不同场景服务于明确的谨慎推断及照顾受害者主题，不用单一用词或否定词次数排先后。"
+    }
+  ],
+  "recognition": {
+    "disclosure": "阅读前即对《红楼梦》人物关系和这组情节有模型既有熟悉感。read-39e35dd52d8e08bf125de6b9的茜纱改句、疗妒汤笑话引起较强逐字或近逐字记忆，因而怀疑是熟悉的旧文段；此判断来自记忆而非外部对照，具体版本及匿名来源均未核验。其余四篇只可靠识得故事框架，未可靠识得逐字文本。",
+    "external_verification": "NONE",
+    "source_or_author_attribution": "WITHHELD_UNVERIFIED",
+    "effect_on_comparison": "保留匿名token判断并明确熟悉感可能使read-39e35dd52d8e08bf125de6b9的声音和工程感偏好受先验影响；这些结果不能作为无识别污染的盲测成绩。",
+    "by_subject": [
+      {
+        "subject_id": "read-39e35dd52d8e08bf125de6b9",
+        "familiarity": "STRONG_TEXTUAL_FAMILIARITY_FROM_MEMORY",
+        "suspected_old_passage": true,
+        "verification": "NOT_VERIFIED",
+        "memory_triggers": [
+          "茜纱窗下，我本无缘；黄土垄中，卿何薄命。",
+          "吃过一百岁，人横竖是要死的，死了还妒什么！"
+        ]
+      },
+      {
+        "subject_id": "read-907f1462026835c5d35c8f40",
+        "familiarity": "SHARED_STORY_FRAMEWORK_ONLY",
+        "suspected_old_passage": null,
+        "verification": "NOT_VERIFIED",
+        "memory_triggers": []
+      },
+      {
+        "subject_id": "read-73b5ff7c1321bdf4e41e4377",
+        "familiarity": "SHARED_STORY_FRAMEWORK_ONLY",
+        "suspected_old_passage": null,
+        "verification": "NOT_VERIFIED",
+        "memory_triggers": []
+      },
+      {
+        "subject_id": "read-c7969595d6b7404eaa78be70",
+        "familiarity": "SHARED_STORY_FRAMEWORK_ONLY",
+        "suspected_old_passage": null,
+        "verification": "NOT_VERIFIED",
+        "memory_triggers": []
+      },
+      {
+        "subject_id": "read-f31b2cd180dfcdabb051dae9",
+        "familiarity": "SHARED_STORY_FRAMEWORK_ONLY",
+        "suspected_old_passage": null,
+        "verification": "NOT_VERIFIED",
+        "memory_triggers": []
+      }
+    ]
+  },
+  "quote_policy": "以下quotes保留所读token的确切文字。解释是质性阅读感受；不用任意字面否定词、单词黑名单或工程感来断言学术真实性或来源。",
+  "subjects": [
+    {
+      "subject_id": "read-39e35dd52d8e08bf125de6b9",
+      "subject_sha256": "cf89843e56eb893d356b05074d162d7e9313f0db3534f4fcd2e2d57bfe6f97d9",
+      "verdict": "PASS",
+      "quote_notes": [
+        {
+          "dimension": "scene_cohesion",
+          "quotes": ["如今且不消细说。"],
+          "observation": "长时段病程和婚事能用略叙跨过，连同分回痕迹使它不像其他token那样有意建成一篇紧凑短篇；这是单位差异，不是情节失控。"
+        },
+        {
+          "dimension": "character_voice",
+          "quotes": [
+            "茜纱窗下，我本无缘；黄土垄中，卿何薄命。",
+            "咱们家从来只知买人，并不知卖人之说。"
+          ],
+          "observation": "前句在改词过程中越界到不能明言的人际关系；后句既收留香菱又以家族体面为说辞，不是无条件站到现代读者满意的立场。"
+        },
+        {
+          "dimension": "life_detail",
+          "quotes": ["只单以油炸焦骨头下酒。"],
+          "observation": "金桂的饮食嗜好带出具体欲望和粗烈趣味，既不只为证明纸人疑案，也不只是受害者心理。与另一篇的水盆照料相比，我不能自动把生活广度换算成较细的微动作。"
+        },
+        {
+          "dimension": "engineering_feel",
+          "quotes": ["吃过一百岁，人横竖是要死的，死了还妒什么！"],
+          "observation": "道人用寿命终点假装疗效，笑话首先服务于他混饭解盹，并不规范地回答如何保护挨打者；人物可以偏离读者希望得到的伦理结论。"
+        },
+        {
+          "dimension": "recognition_familiarity",
+          "quotes": ["茜纱窗下，我本无缘；黄土垄中，卿何薄命。"],
+          "observation": "引发较强既有记忆，怀疑熟悉旧文。没有做文本版本或来源核验，不能把熟悉当作真实性证据。"
+        }
+      ]
+    },
+    {
+      "subject_id": "read-907f1462026835c5d35c8f40",
+      "subject_sha256": "591ada8c23451d1e7113ecdbfdad8293bf6102ad8d5d7dc4f5ab93b01f2a1f5f",
+      "verdict": "PASS",
+      "quote_notes": [
+        {
+          "dimension": "scene_cohesion",
+          "quotes": [
+            "宝玉的笔停在纸上，滴下一个墨点。",
+            "待那一点衣影被暮色遮没，他回来收笔，见墨点恰把“卿”字的一撇浸开，便用袖角去按；越按越污，最后只好把纸折起。"
+          ],
+          "observation": "误触死亡的玩笑先成为停笔，再成为无法抹清的污字，后来出庙仍留在袖里；两人的疏离因此有具体动作承接，而非只加一句心理总结。"
+        },
+        {
+          "dimension": "character_voice",
+          "quotes": [
+            "我还没有走呢。",
+            "那是两宗。爷既问两宗，方钱也须两份。",
+            "衣裳让她们做，日子也让她们替你过么？"
+          ],
+          "observation": "迎春缓缓劝下焦躁的宝玉，道人却往钱账上躲，各有口气。最后一条是保留意见：宝玉的话过于完整像警句，比他的穿针理线更像替问题作结。"
+        },
+        {
+          "dimension": "life_detail",
+          "quotes": [
+            "水端来，又叫取衣；衣取到了，水便凉了。",
+            "一个把水盆揽到自己跟前，一个悄悄按住她被角。",
+            "姨妈出去应客时，两人也不敢把门关紧。"
+          ],
+          "observation": "差使互相排斥，温度和时序真正造成犯错；小丫头具体替她挡差使，却不敢把安全封成一间完全私密的房。此处支持动作带着身份限制，很有生活质地。"
+        },
+        {
+          "dimension": "engineering_feel",
+          "quotes": [
+            "若病是她的，旁人却先挨了打，你这方管不管？",
+            "她撑着地，半晌才说出一个“太太”。"
+          ],
+          "observation": "第一句确实是作者可能预设的两类病问题；但前面香菱误听姨妈要她走，以撑地、哽语打乱清楚的论证，所以人物不全在替论点发言。"
+        },
+        {
+          "dimension": "recognition_familiarity",
+          "quotes": ["身上的病有药，心里生妒的病，也有一贴么？"],
+          "observation": "可识得共用妒药框架，不能可靠识别此句为既读旧文，也不能推断作者身份。"
+        }
+      ]
+    },
+    {
+      "subject_id": "read-73b5ff7c1321bdf4e41e4377",
+      "subject_sha256": "74c476a70edb777ee8c8a81348ce7aa5acb5025a2d3d80b5449d0c322648df9e",
+      "verdict": "PASS",
+      "quote_notes": [
+        {
+          "dimension": "scene_cohesion",
+          "quotes": [
+            "宝玉把书放回原处，不知为什么，竟要替她记住翻到哪一页。",
+            "里头那一页别折过去，替她夹一片纸。"
+          ],
+          "observation": "最后不是改变婚事，而是记住姐姐暂搁的一页，承接前半篇的书；细小照管使离别线有收束，不等于伤害被解决。"
+        },
+        {
+          "dimension": "character_voice",
+          "quotes": [
+            "女孩儿过日子，是在他自己屋里。",
+            "我在这里听你说，你不用一句一句抢着说。"
+          ],
+          "observation": "两句都表达清醒、善意，后句作为宝钗话尤其让我听到当代支持性谈话的语言组织。问题是几名善人物分析语气过于一致，不是据字面用词作年代鉴定。"
+        },
+        {
+          "dimension": "life_detail",
+          "quotes": [
+            "香菱已把自己的枕头挪向墙边，给旁人留出大半个空处。",
+            "原是小丫头问旧衣服放在哪里，并不是金桂来了。"
+          ],
+          "observation": "借旧衣询问和枕头位置显示离开施暴房间后仍缩小占位；她的恐惧不是只在被打瞬间成立。"
+        },
+        {
+          "dimension": "engineering_feel",
+          "quotes": [
+            "她身上痛，也是请大夫。",
+            "若碍眼的是一个没做错事的人，也要挪开么？",
+            "死者没了言语，活人倒把她的心事都说定了。"
+          ],
+          "observation": "开篇不替死者说定、姨妈区分病痛、末场拒绝移除无辜人，构成高度一致的伦理推理链。推理合理，但各场独立的生活歧义被主题安排得较整齐，是工程感而非来源证据。"
+        },
+        {
+          "dimension": "recognition_familiarity",
+          "quotes": ["人的妒心，可有药治？"],
+          "observation": "只识得故事框架，未可靠逐字识别，来源未验证。"
+        }
+      ]
+    },
+    {
+      "subject_id": "read-c7969595d6b7404eaa78be70",
+      "subject_sha256": "c107ca18e247899af1217f68987347f0c2aff43a5f03197528820fea9947e822",
+      "verdict": "PASS",
+      "quote_notes": [
+        {
+          "dimension": "scene_cohesion",
+          "quotes": [
+            "那纸一碰便碎，二人都住了口。",
+            "袖中的纸折出了硬角，他将那一角按平，慢慢往自己屋里去了。"
+          ],
+          "observation": "纸灰使调笑中断，后来带回的纸有硬角而无疗效；停在按平、走回的动作，不在末尾许诺谁会被救好。对比另一篇未完成祭文，我无稳定优先。"
+        },
+        {
+          "dimension": "character_voice",
+          "quotes": [
+            "我并没说你敢，你倒先替我立了一个凶名。",
+            "若爷问起来，太太只说是这里有事，别说我身上疼。"
+          ],
+          "observation": "金桂将恭顺也翻为给她凶名，香菱连报告疼痛都担心让丈夫追责。两种说话各随权力位置，不只是主旨的两面。"
+        },
+        {
+          "dimension": "life_detail",
+          "quotes": [
+            "书角沾了一点干药汁。",
+            "那人说太太没叫查，她仍把最后一件抖开了，才肯收回去。",
+            "宝玉隔帘看不真切，只见一只手把帘边攥住。"
+          ],
+          "observation": "旧书留有药汁；已经没人要搜查，她仍主动抖完包袱；宝玉先见攥帘的手而非直接听全案情。这些物件和身体动作能先于解释显示处境。"
+        },
+        {
+          "dimension": "engineering_feel",
+          "quotes": [
+            "真伤了人，先请先生看伤，可别拿我这几行字去抓药。",
+            "王一贴低头数那人留下的钱，数过一遍，仍少了一枚，便赶到廊口叫住他。"
+          ],
+          "observation": "第一句像正确劝医的收束，第二句让道人又回到追钱的生活逻辑，削弱人物彻底成为伦理讲师的感觉。"
+        },
+        {
+          "dimension": "recognition_familiarity",
+          "quotes": ["这叫妒病。"],
+          "observation": "共用人物和故事框架熟悉；短短病名不具有版本或逐字来源识别能力。"
+        }
+      ]
+    },
+    {
+      "subject_id": "read-f31b2cd180dfcdabb051dae9",
+      "subject_sha256": "5a38ffb01cbbf4ee1af0cd58fdbfd080f336d777bcd148920efad179973ab29f",
+      "verdict": "PASS",
+      "quote_notes": [
+        {
+          "dimension": "scene_cohesion",
+          "quotes": [
+            "抄到先前两人发笑的地方，他看着纸上的“尚想”，竟想不起后来商定换什么字，只得留下空处。",
+            "等她退下，宝玉将笔拿起，停在白处，仍没落墨。"
+          ],
+          "observation": "记不起来的改字与最后停笔呼应，祭文不是一次已完成的仪式，而是未完的感受。纸、灯、空白反复回返略显安排，但情绪连续。"
+        },
+        {
+          "dimension": "character_voice",
+          "quotes": [
+            "你若寂寞，何必推给它。",
+            "我也没问你什么意思。",
+            "父亲已经定了，我说愿不愿，又有什么不同？"
+          ],
+          "observation": "黛玉前句挑字、后句拒绝追问，语锋与避谈同在；迎春则较直接概括自己的无权。与read-c7969595d6b7404eaa78be70的金桂话术和香菱避疼比较，各有优势，不强择一。"
+        },
+        {
+          "dimension": "life_detail",
+          "quotes": [
+            "一只鞋跟踩塌了，走一步便拖一下。",
+            "扶她的婆子想停下来替她提鞋，她摇头，只攥紧那婆子的袖口。",
+            "盆底压着一片落叶，他腾不出手，便用鞋尖拨开。"
+          ],
+          "observation": "不敢停下来提鞋，既是身体不适也是急于脱身；花盆在手有重量，鞋尖拨叶是可做的微小照管。细节确实落到行动，不只用泥水象征悲伤。"
+        },
+        {
+          "dimension": "engineering_feel",
+          "quotes": [
+            "写的是要害谁，又没写是谁做的。",
+            "先问明白缺什么，别只将盒子搬来搬去。",
+            "她生前替你做过什么，你记着什么，写得明白些，倒比那些云车霞旆亲近。"
+          ],
+          "observation": "祭文改为实际记忆、姨妈分辨证据、末尾先问真实需求，有明确而反复的反空话、重事实方法。方法合理，但人物不同场面的发言共同替一套正确程序作证明，工程感较明显；不能据此判机器作者或学术不真实。"
+        },
+        {
+          "dimension": "recognition_familiarity",
+          "quotes": ["可有治人妒忌的药。"],
+          "observation": "识得故事框架，不可靠识得逐字旧文，不推断来源身份。"
+        }
+      ]
+    }
+  ]
+}
