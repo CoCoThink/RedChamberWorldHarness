@@ -1,0 +1,2375 @@
+{
+  "schema_version": 1,
+  "report_kind": "ANONYMOUS_FULL_SEQUENCE_READER_OBSERVATIONS",
+  "packet": {
+    "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/packet.json",
+    "sha256": "d0a2e8633a81c133226f74fbd32e2e48e5f6dbf507b7cb5902967dc57266a828"
+  },
+  "reviewer": {
+    "id": "agent:fullbook-late-reader-1",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "fullbook-late-reader-1:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "opinion_correction": {
+    "original_opinion_path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-1.json",
+    "original_opinion_sha256": "0c780b3bcaf580ada20d1697ec967b95e1c79176870b7e0fe6d4d448cd62992c",
+    "original_retained_unchanged": true,
+    "corrected_opinion_path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-1-verdict-v2.json",
+    "same_reviewer_session_packet": true,
+    "additional_reader_count": 0,
+    "subject_verdicts": [
+      {"token": "read-78587806869ace36fc3d4afa", "verdict": "FAIL", "reasons": ["r785-ch92-snack-count", "r785-ch96-letter-requotation"]},
+      {"token": "read-1eab93c8ee577086c27685a0", "verdict": "PASS", "scope": "仅本次完整阅读和绑定核验，以及该范围未找到已核实的具体矛盾；非全局质量/来源/采用认证"}
+    ],
+    "coverage_stays_pass": true,
+    "panel_instruction": "不得用原subject阅读PASS覆盖两个已核实局部FAIL；应列本v2为同一读者裁决校正，并仍分别列出PENDING/UNVERIFIED，不作综合胜者或资格晋升。"
+  },
+  "scope": {
+    "chapters": [
+      92,
+      93,
+      94,
+      95,
+      96,
+      97
+    ],
+    "sample_checks": [],
+    "sampling": "UNSAMPLED_COMPLETE_BOUND_SEQUENCES",
+    "pass_meaning": "完整实际读取与哈希绑定通过；不得转用为质量全局、来源相容、采用或作者资格通过。局部FAIL独立保留。",
+    "global_quality_verdict": "NOT_CHECKED",
+    "source_conformance": "NOT_CHECKED",
+    "author_or_token_mapping": "NOT_CHECKED",
+    "adoption_or_promotion": "NOT_CHECKED",
+    "model_history": "UNVERIFIED"
+  },
+  "input_discipline": {
+    "substantive_inputs": [
+      "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/packet.json",
+      "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt"
+    ],
+    "formatting_input": "schemas/agent_review.schema.json",
+    "prohibited_substantive_files_read": [],
+    "other_opinions_consulted": false,
+    "external_sources_consulted": false,
+    "api_calls_for_review": false,
+    "agents_spawned": false,
+    "commits_created": false
+  },
+  "bias_disclosure": {
+    "recognition": "能认出红楼人物、回目和常见情境；有一般作品熟悉性，不把这种熟悉当本包外史实、作者身份或版本映射证据。没有尝试揭开两token对应哪一份实作。",
+    "automatic_context": "任务前自动上下文带有分支、git状态与若干文件名；未打开那些文件。故不能证明完全无历史线索、真盲评或上下文隔离，asserted仅声明而NOT_PROVEN保留。",
+    "read_order": "先完整读read-78587806869ace36fc3d4afa，再完整读read-1eab93c8ee577086c27685a0。Read请求的分块起点按物理行递增；成对并行工具结果有时后块先显示，按行号复位理解，不声称随机交错或反平衡阅读。之后两token五个回界窗口都实际重读。",
+    "order_effect": "先读版的多人物斗嘴和直接会面可能使后读版克制动作显得冷；后读版更细的交接又可能使先读版正常省略显得断线。以下只给维度理由，不把这种先后差当来源证据。",
+    "length_effect": "不以长短自动优选。93回A6625汉字、B7440汉字，仍可偏A凤姐声口；95回A8997、B6675，偏B租屋与技巧是现场决定更多而非字数较少。97回A较长但外部佛事和归约写出，B身体代价仍另有优势。",
+    "limits": "匿名token、模型标签、模型会话历史及隔离均没有独立验证；这只是同一模型会话的研究意见，不是独立人类评审。"
+  },
+  "coverage": [
+    {
+      "token": "read-78587806869ace36fc3d4afa",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+        "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c"
+      },
+      "first_line": 1,
+      "last_line": 719,
+      "bytes": 166841,
+      "characters_including_file_newlines": 56101,
+      "chinese_characters": 45698,
+      "coverage_status": "PASS",
+      "scope": "仅实际读取整个绑定六回序列，不是全局质量/来源/采用通过",
+      "gaps": [],
+      "unconsumed_truncations_in_primary_read": false,
+      "primary_excerpts": [
+        {
+          "first_line": 1,
+          "last_line": 65,
+          "characters": 5248,
+          "chinese_characters": 4278,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 66,
+          "last_line": 130,
+          "characters": 4786,
+          "chinese_characters": 3861,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 131,
+          "last_line": 195,
+          "characters": 5220,
+          "chinese_characters": 4210,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 196,
+          "last_line": 260,
+          "characters": 4884,
+          "chinese_characters": 4038,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 261,
+          "last_line": 325,
+          "characters": 5414,
+          "chinese_characters": 4450,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 326,
+          "last_line": 390,
+          "characters": 5149,
+          "chinese_characters": 4222,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 391,
+          "last_line": 455,
+          "characters": 5163,
+          "chinese_characters": 4162,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 456,
+          "last_line": 520,
+          "characters": 4509,
+          "chinese_characters": 3637,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 521,
+          "last_line": 585,
+          "characters": 5303,
+          "chinese_characters": 4319,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 586,
+          "last_line": 650,
+          "characters": 5085,
+          "chinese_characters": 4184,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 651,
+          "last_line": 715,
+          "characters": 5102,
+          "chinese_characters": 4146,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 716,
+          "last_line": 719,
+          "characters": 226,
+          "chinese_characters": 191,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        }
+      ],
+      "chapters": [
+        {
+          "chapter": 92,
+          "first_line": 1,
+          "last_line": 134,
+          "nonblank_physical_lines": 67,
+          "chinese_characters": 8373,
+          "read_status": "COMPLETE"
+        },
+        {
+          "chapter": 93,
+          "first_line": 135,
+          "last_line": 240,
+          "nonblank_physical_lines": 53,
+          "chinese_characters": 6625,
+          "read_status": "COMPLETE"
+        },
+        {
+          "chapter": 94,
+          "first_line": 241,
+          "last_line": 352,
+          "nonblank_physical_lines": 56,
+          "chinese_characters": 7595,
+          "read_status": "COMPLETE"
+        },
+        {
+          "chapter": 95,
+          "first_line": 353,
+          "last_line": 500,
+          "nonblank_physical_lines": 74,
+          "chinese_characters": 8997,
+          "read_status": "COMPLETE"
+        },
+        {
+          "chapter": 96,
+          "first_line": 501,
+          "last_line": 600,
+          "nonblank_physical_lines": 50,
+          "chinese_characters": 6453,
+          "read_status": "COMPLETE"
+        },
+        {
+          "chapter": 97,
+          "first_line": 601,
+          "last_line": 719,
+          "nonblank_physical_lines": 60,
+          "chinese_characters": 7655,
+          "read_status": "COMPLETE"
+        }
+      ]
+    },
+    {
+      "token": "read-1eab93c8ee577086c27685a0",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+        "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f"
+      },
+      "first_line": 1,
+      "last_line": 633,
+      "bytes": 141238,
+      "characters_including_file_newlines": 47504,
+      "chinese_characters": 40804,
+      "coverage_status": "PASS",
+      "scope": "仅实际读取整个绑定六回序列，不是全局质量/来源/采用通过",
+      "gaps": [],
+      "unconsumed_truncations_in_primary_read": false,
+      "primary_excerpts": [
+        {
+          "first_line": 1,
+          "last_line": 65,
+          "characters": 4484,
+          "chinese_characters": 3830,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 66,
+          "last_line": 130,
+          "characters": 4419,
+          "chinese_characters": 3848,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 131,
+          "last_line": 195,
+          "characters": 4484,
+          "chinese_characters": 3777,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 196,
+          "last_line": 260,
+          "characters": 4330,
+          "chinese_characters": 3673,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 261,
+          "last_line": 325,
+          "characters": 5405,
+          "chinese_characters": 4651,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 326,
+          "last_line": 390,
+          "characters": 5178,
+          "chinese_characters": 4494,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 391,
+          "last_line": 455,
+          "characters": 5159,
+          "chinese_characters": 4457,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 456,
+          "last_line": 520,
+          "characters": 5049,
+          "chinese_characters": 4365,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 521,
+          "last_line": 585,
+          "characters": 5218,
+          "chinese_characters": 4501,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        },
+        {
+          "first_line": 586,
+          "last_line": 633,
+          "characters": 3768,
+          "chinese_characters": 3208,
+          "paragraphs_split": false,
+          "displayed_without_truncation": true
+        }
+      ],
+      "chapters": [
+        {
+          "chapter": 92,
+          "first_line": 1,
+          "last_line": 132,
+          "nonblank_physical_lines": 67,
+          "chinese_characters": 7688,
+          "read_status": "COMPLETE"
+        },
+        {
+          "chapter": 93,
+          "first_line": 133,
+          "last_line": 260,
+          "nonblank_physical_lines": 64,
+          "chinese_characters": 7440,
+          "read_status": "COMPLETE"
+        },
+        {
+          "chapter": 94,
+          "first_line": 261,
+          "last_line": 358,
+          "nonblank_physical_lines": 49,
+          "chinese_characters": 6927,
+          "read_status": "COMPLETE"
+        },
+        {
+          "chapter": 95,
+          "first_line": 359,
+          "last_line": 456,
+          "nonblank_physical_lines": 49,
+          "chinese_characters": 6675,
+          "read_status": "COMPLETE"
+        },
+        {
+          "chapter": 96,
+          "first_line": 457,
+          "last_line": 544,
+          "nonblank_physical_lines": 44,
+          "chinese_characters": 6053,
+          "read_status": "COMPLETE"
+        },
+        {
+          "chapter": 97,
+          "first_line": 545,
+          "last_line": 633,
+          "nonblank_physical_lines": 45,
+          "chinese_characters": 6021,
+          "read_status": "COMPLETE"
+        }
+      ]
+    }
+  ],
+  "cross_boundary_reread_windows": [
+    {
+      "token": "read-78587806869ace36fc3d4afa",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "from_chapter": 92,
+      "to_chapter": 93,
+      "first_line": 125,
+      "last_line": 143,
+      "chinese_characters": 1288,
+      "read_status": "COMPLETE_REREAD",
+      "displayed_without_truncation": true
+    },
+    {
+      "token": "read-78587806869ace36fc3d4afa",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "from_chapter": 93,
+      "to_chapter": 94,
+      "first_line": 231,
+      "last_line": 251,
+      "chinese_characters": 1468,
+      "read_status": "COMPLETE_REREAD",
+      "displayed_without_truncation": true
+    },
+    {
+      "token": "read-78587806869ace36fc3d4afa",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "from_chapter": 94,
+      "to_chapter": 95,
+      "first_line": 343,
+      "last_line": 363,
+      "chinese_characters": 1436,
+      "read_status": "COMPLETE_REREAD",
+      "displayed_without_truncation": true
+    },
+    {
+      "token": "read-78587806869ace36fc3d4afa",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "from_chapter": 95,
+      "to_chapter": 96,
+      "first_line": 489,
+      "last_line": 511,
+      "chinese_characters": 1374,
+      "read_status": "COMPLETE_REREAD",
+      "displayed_without_truncation": true
+    },
+    {
+      "token": "read-78587806869ace36fc3d4afa",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "from_chapter": 96,
+      "to_chapter": 97,
+      "first_line": 589,
+      "last_line": 609,
+      "chinese_characters": 1284,
+      "read_status": "COMPLETE_REREAD",
+      "displayed_without_truncation": true
+    },
+    {
+      "token": "read-1eab93c8ee577086c27685a0",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "from_chapter": 92,
+      "to_chapter": 93,
+      "first_line": 121,
+      "last_line": 143,
+      "chinese_characters": 1213,
+      "read_status": "COMPLETE_REREAD",
+      "displayed_without_truncation": true
+    },
+    {
+      "token": "read-1eab93c8ee577086c27685a0",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "from_chapter": 93,
+      "to_chapter": 94,
+      "first_line": 249,
+      "last_line": 269,
+      "chinese_characters": 1286,
+      "read_status": "COMPLETE_REREAD",
+      "displayed_without_truncation": true
+    },
+    {
+      "token": "read-1eab93c8ee577086c27685a0",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "from_chapter": 94,
+      "to_chapter": 95,
+      "first_line": 347,
+      "last_line": 367,
+      "chinese_characters": 1460,
+      "read_status": "COMPLETE_REREAD",
+      "displayed_without_truncation": true
+    },
+    {
+      "token": "read-1eab93c8ee577086c27685a0",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "from_chapter": 95,
+      "to_chapter": 96,
+      "first_line": 445,
+      "last_line": 467,
+      "chinese_characters": 1491,
+      "read_status": "COMPLETE_REREAD",
+      "displayed_without_truncation": true
+    },
+    {
+      "token": "read-1eab93c8ee577086c27685a0",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "from_chapter": 96,
+      "to_chapter": 97,
+      "first_line": 533,
+      "last_line": 553,
+      "chinese_characters": 1496,
+      "read_status": "COMPLETE_REREAD",
+      "displayed_without_truncation": true
+    }
+  ],
+  "truncation_disclosure": "一次把全部十个回界再读窗口拼成单个Bash输出时，输出被工具转存且只显示预览；没有把该未显示部分当已消费。随后十个选定窗口全部分别经Read完整显示（每个均少于6000汉字），上述重读覆盖以那些Read为准。初读22个Read摘录均完整显示，没有用哈希/字符计数代替正文阅读。",
+  "chapter_observations": [
+    {
+      "chapter": 92,
+      "readings": [
+        {
+          "token": "read-78587806869ace36fc3d4afa",
+          "findings": [
+            "入狱先是候问而非宝玉自知被监禁：他盯门盼午前回家，至狱神庙才辨出身份。瘦汉子既索饭、索袜又争铺位，把慰藉与占便宜放在同一人身上；这比纯粹热心的狱友更有社会摩擦。茜雪当面截断旧账，袜子只图厚、叫翻面穿，她没有接受宝玉的自我感动作为这场会面的中心。",
+            "小红知道总处—园门—各院的收物分工，常婆子只证明交接的前半截，另一经手人离京。这是有用压缩：没重演每次访人，但给出了能证到哪里、不能证到哪里的边界；不能读成全案已核清。衣袜到手后，宝玉对针脚才有推测，直至见茜雪才知道制作者，认物和认人不是同一次完成。",
+            "点心数量有一处硬性不一致：开篇袖里一块，稍后吃一块又剩另一块。另有按例入视、茜雪隔门会面，却没有逐段交代许可取得；这是省写手续而非证明非法会面。宝钗留下点心与后来麝月那两块的说法可能有同一包食物的制作/转交分工，单凭给物者不同不能判为第二项硬错。"
+          ],
+          "quote_ids": [
+            "r785-ch92-l003",
+            "r785-ch92-l007",
+            "r785-ch92-l059",
+            "r785-ch92-l095",
+            "r785-ch92-l111"
+          ]
+        },
+        {
+          "token": "read-1eab93c8ee577086c27685a0",
+          "findings": [
+            "等待不靠不断插入笑话，而靠端冷茶、脚不能伸过道、豁碗不许换、湿鞋不可踩毡。瘦汉和老人并不专为宝玉开导：萝卜软处、毡是否会湿、水够不够洗手都各有利益。宝玉从避碗缺口、卷袖、晾袜学的只是有限日用本领，仍不能控制问讯时刻。",
+            "小红的手续真正区分问到准话、外头收物、向里接去、宝玉亲领、回家报领到、是否已经穿上。茜雪拆硬结、用布垫指拔针、手裂勾线，劳动不是一件成品从叙述外凭空到场。她没见人，也没被代说冷不冷；袜领到了仍不能代说穿了。",
+            "释放的知识被拆开：姓名属于宝玉不等于经手属于宝玉，眼下不再留认不等于最后门已开。92回终止于候办，93回才领原有物件出去。缺口是题目中小红寻证在这六回内没有独立旧经手人寻访：她主要跑送物渠道，案上另一份记录的产生没有经过她的可见证据线。不能把书办新解释等同于小红搜证已完成。"
+          ],
+          "quote_ids": [
+            "r1ea-ch92-l061",
+            "r1ea-ch92-l077",
+            "r1ea-ch92-l093",
+            "r1ea-ch92-l097",
+            "r1ea-ch92-l113",
+            "r1ea-ch92-l121"
+          ]
+        }
+      ],
+      "preferences": [
+        {
+          "dimension": "声音与人与人斗嘴",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "瘦汉的索取与玩笑、宝钗责备、小红夫妇差使/衣裳之分、茜雪不肯让人算旧情，各有不同的言语利益。"
+        },
+        {
+          "dimension": "正面相认的戏剧场面",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "茜雪自己打断宝玉的歉意，场景冲突确实发生；B选择不见面，减少了这一场直接摩擦。"
+        },
+        {
+          "dimension": "身体劳动及物件到手的分段可见性",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "袜口硬结、缝头、验看、领物与穿物的分段有行动和代价，不只是反复喊规矩。"
+        },
+        {
+          "dimension": "知识边界及放行时间",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "未见单/未见事、认姓名/认经手、准放/领物/出门区分更扎实。"
+        },
+        {
+          "dimension": "寻证线路的实际写出",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "常婆子与总处分房的证词是可见线路；B这一条题目承诺未充分兑现。"
+        },
+        {
+          "dimension": "压缩与节奏",
+          "preference": "TIE",
+          "reason": "A十来日的日常与局部寻证压缩有效，B少了见面却增加送物阶段。B领后回话仍不代说穿上有新信息，但多次莫误会放人的提醒边际收益下降。"
+        }
+      ]
+    },
+    {
+      "chapter": 93,
+      "readings": [
+        {
+          "token": "read-78587806869ace36fc3d4afa",
+          "findings": [
+            "凤姐仍能拿喘气、问一句不费钱、枕头不如意来还嘴，身体衰败没有立刻消除她管事与调侃的口气。人数漏一个的米纸和夹鞋所在都让她显出旧本领；但坐半刻出汗、药吐出来、平儿不断端水又把那本领的体力价格落实。",
+            "死亡前问谁来、平儿答是风没有人，随后不应；贾琏摸靠枕的手停在半空。这里不急着替人物讲清害怕的是旧府问事还是死亡，情绪由动作留下。丧帖只写地点与病故时辰、普通棺木先问价，李纨有一条属于自己而非凤姐的办事声音。",
+            "银子记数交贾琏、钥匙暂归平儿、买米纸明早仍用，三种东西没有一概变成纪念品。巧姐的旧荷包、红帽带、散扣另用蓝布包起，给94回可追的衣用交接，但不是说这些无价旧物能替孩子支付所有将来花用。宝玉听门响先紧身的反应与分炭仍并存，不是归家就恢复从前。"
+          ],
+          "quote_ids": [
+            "r785-ch93-l159",
+            "r785-ch93-l191",
+            "r785-ch93-l213",
+            "r785-ch93-l233"
+          ]
+        },
+        {
+          "token": "read-1eab93c8ee577086c27685a0",
+          "findings": [
+            "凤姐我怕、平儿我在这里是一组没有安慰保证的短句；终末写凤姐死了是直陈，不把死亡只留在含糊神色里。巧姐以为母亲会因平儿哭而起来看，把成人死亡理解的缺口演成一次扯袖，不是作者给她一篇幼年悼词。",
+            "平儿一手抱人不能擦泪，婆子问守夜算不算工又惦自己家，王夫人起初不悦随后承认换手；这不是人人凭旧情无限熬夜的家务。贾琏有钱不够、棺木须亲看、写一半又停的无从着手，宝玉能帮开门而不能搬桌，是身体与主事资格两种不足。",
+            "巧姐那碗饭的记号从凤姐留饭带到纸上，再到喂饭时明日也留，物件与言语形成真正回响。药钱纸未因病人死而不用付，也不混进白事账。原收去的小纸、钱、旧衣带帕子当面辨认，另与炒米空纸分开，92–93回释放不是口头准话直接变成归家。"
+          ],
+          "quote_ids": [
+            "r1ea-ch93-l141",
+            "r1ea-ch93-l201",
+            "r1ea-ch93-l207",
+            "r1ea-ch93-l219",
+            "r1ea-ch93-l237",
+            "r1ea-ch93-l243"
+          ]
+        }
+      ],
+      "preferences": [
+        {
+          "dimension": "凤姐临终仍有辨识度的声音",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "短章仍保有讥诮、算数、找鞋和嫌枕头的旧习，不靠加长临终对白。"
+        },
+        {
+          "dimension": "死亡场面的情绪安排",
+          "preference": "TIE",
+          "reason": "A靠没有人和摸枕动作保留恐惧的对象，B直说我怕与凤姐死了，并写孩子误认，各有不同有效性。"
+        },
+        {
+          "dimension": "身体照护及雇工的自身生活",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "挪病人、孩子不放手、夜工换班这些互相抢时间，照护者并不无代价地永远在场。"
+        },
+        {
+          "dimension": "纸、钱、钥匙分项",
+          "preference": "TIE",
+          "reason": "A交付次序清楚，B把饭记号与药钱追到下一次用处；两者都没有把账一合便万事办齐。"
+        },
+        {
+          "dimension": "节奏",
+          "preference": "TIE",
+          "reason": "A从归家数日到死亡保留渐变，B先明说病势在归家前已恶化，再集中到当日。B多写不是自动更细腻，A少写也不是自动略过死亡。"
+        }
+      ]
+    },
+    {
+      "chapter": 94,
+      "readings": [
+        {
+          "token": "read-78587806869ace36fc3d4afa",
+          "findings": [
+            "王仁问孩子几岁记不清、定礼却立刻报数，平儿把两个问题并排，贾母凭礼先算清拒绝。王仁以亲舅舅不是外人、替家中省负担来压人；平儿不得公开骂贪财，冷茶、盖碰碗沿和借长辈的名义使摩擦可见。",
+            "刘姥姥先说有麻烦、粗饭、井在外头，平儿亲送、过夜、摸炕温并点数衣袜，迁居不只是一句有恩必报。乡里借筛、找鸡蛋、谷抵柴钱三种交换互不相同；不是任何互助都立即等价付钱，也不是任何粮物都免付。柜上层收蓝布包、急用钱缝内层，不混粮袋，物件保管有落点。",
+            "乡下让巧姐较快进入饭碗大小和看鸡的玩笑，她也问明日就想平儿怎么办，最后仍把卖豆腐的狗叫错盼为来人。这里的较温暖适应并非完全没有不安。部分农家主人会解释、会笑的比例偏高，平儿各有自己的事的观察比某些场景本身更先把结论说出。"
+          ],
+          "quote_ids": [
+            "r785-ch94-l257",
+            "r785-ch94-l281",
+            "r785-ch94-l321",
+            "r785-ch94-l337"
+          ]
+        },
+        {
+          "token": "read-1eab93c8ee577086c27685a0",
+          "findings": [
+            "媒人不是一次把秘密讲完的坏人：她只见前门和一个孩子，反问谁能把人家锅底翻来；王仁又用没意思直说压问细节。两次孩子常住/随父来往的信息并不能直接算作者自相矛盾，却使将要跟哪一个人住仍未核清。询铺的婆子也顾怕消息传开；查证有自己的劳动与名声成本。",
+            "刘姥姥说以前受的东西早吃用才活到如今，明确拆掉善报必须原数存着待还的想象。她可能打盹、女儿须下田、炕先清、屋顶待雨验，几枚路钱、共车空筐、妇人顺路送到门再回话，形成有限能力的实际搭手，不是乡下无条件安全。",
+            "旧包袱没人能认亲手到场，于是只包眼前正在用的衣被，鞋在手边补，不冒认旧物已经在手。巧姐闻谷皮嫌硌、误叫陌生妇人平姐姐、怕陪送妇人也走；乡妇嫌娇，纺线女儿因停轮皱眉。她试绕线确实拖了别人的活，乡村没有变成专陪她玩的一群人。回话人亲见午饭却不亲见夜里，平儿不能把到门等同后来安稳。"
+          ],
+          "quote_ids": [
+            "r1ea-ch94-l283",
+            "r1ea-ch94-l313",
+            "r1ea-ch94-l317",
+            "r1ea-ch94-l327",
+            "r1ea-ch94-l337",
+            "r1ea-ch94-l351",
+            "r1ea-ch94-l355"
+          ]
+        }
+      ],
+      "preferences": [
+        {
+          "dimension": "议亲中的社会摩擦",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "媒人有见闻限度与两头交代的私心，王仁的利益不是唯一阻力；问细者也要担问坏好事的指责。"
+        },
+        {
+          "dimension": "农村多种交换的差别",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "借筛与鸡蛋消耗、柴谷互抵并列且不被压成一项救济资金，经济关系更可辨。"
+        },
+        {
+          "dimension": "孩子身体及别人的劳动不围着她转",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "谷皮、后跟磨痛、炕温、狗闻味、停纺车都能触发与别人时间利益的冲突。"
+        },
+        {
+          "dimension": "交物与陪送照料能力的限制",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "包袱未到即另包眼前物，顺车费用和有限见证范围清楚；这不是用PENDING冒充已安顿。"
+        },
+        {
+          "dimension": "乡曲及童言",
+          "preference": "TIE",
+          "reason": "A用把伤念成断给童谣非定词性，B用线会疼么与女儿催手让唱词同时影响劳动；两者并无完整新作诗的证据。"
+        },
+        {
+          "dimension": "节奏",
+          "preference": "TIE",
+          "reason": "A单次议亲后移到亲送探视，B多次媒话后移到共车和难适应，给不同重点。B虽更短，也有多次抓袖怕人走的回环；A较长的借物、担子与纺车并非全可当填充删掉。"
+        }
+      ]
+    },
+    {
+      "chapter": 95,
+      "readings": [
+        {
+          "token": "read-78587806869ace36fc3d4afa",
+          "findings": [
+            "把移居先压为看过住人尽够，腾出篇幅给三人围着旧衣、米炭争论。宝玉想送围巾给扫雪孩子，宝钗要摊开今年会少哪件；末后不是永久不准给，而是下次看手里有多少再给。这段有谁有资格慷慨、谁替慷慨省下炭米的道德摩擦。",
+            "青夹袄换当票，米比炭先足，针线匣因能闭严成为好物；邻家送菜、淡茶仍称香，麝月怕真来借茶，宝钗要求两筷酸齑回礼。穷又不是不见人了不是一条空格言，次日豆角回赠落实了来往。",
+            "补窗从指缝进风、隔窗一里一外到毡倒罩头，动作好笑而有所失。后面酸齑酸度、还能有几顿、两碗半、明早还是那碗几次返回；米、油、炭约束各不等同，但临收束处的问数和取笑有一部分只恢复已经知道的状态。书签怡红保留与围巾重议给回环添新意义，不能把整段一律标机械 padding。"
+          ],
+          "quote_ids": [
+            "r785-ch95-l383",
+            "r785-ch95-l389",
+            "r785-ch95-l399",
+            "r785-ch95-l435",
+            "r785-ch95-l469",
+            "r785-ch95-l499"
+          ]
+        },
+        {
+          "token": "read-1eab93c8ee577086c27685a0",
+          "findings": [
+            "三处房不是看了便租：第一处整齐但押钱且共灶，第二处便宜却要额外挑水搭灶，最后漏风但能单独做饭。宝钗和麝月算等待饭凉又热的炭耗；贾芸不担保能全好。押款退还条件、窗纸与屋梁的修理责任、旧瓮缺口、衣架过不了门，都是实际选择的组成，而非付钱两个字代替一串决定。",
+            "当铺不问旧主人身份只看成色；麝月并非忽然识全字，当票请念，再夹贴身布。炭大小的烧得快/须劈、药价记了回去说、井水半桶先试，身体动作与知识一起慢慢发生。小木碗先误拿盛水、擦干回位，再问半碗如何量，解释同一容器不是同一锅稠度；这些返回不是只有口号。",
+            "邻妇的竹片刮锅和窗纸别久贴湿布是具体技巧，主人经手人则说朽框不能胡钉，谁能做什么没有抹平。窗纸补好仍有风，雨水从墙脚纸边而不是已证明屋顶漏，大修还不能据此宣布。整包铺盖没确认去向、玉只在搬入时忽然触胸，这两个问题不可同当前衣被确在手里混成一项成功交接。"
+          ],
+          "quote_ids": [
+            "r1ea-ch95-l373",
+            "r1ea-ch95-l381",
+            "r1ea-ch95-l389",
+            "r1ea-ch95-l391",
+            "r1ea-ch95-l399",
+            "r1ea-ch95-l423",
+            "r1ea-ch95-l429",
+            "r1ea-ch95-l435",
+            "r1ea-ch95-l445",
+            "r1ea-ch95-l451"
+          ]
+        }
+      ],
+      "preferences": [
+        {
+          "dimension": "穷中慷慨与礼数的道德冲突",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "围巾赠人先被拦又有条件再议，回两筷菜的成本由谁付，不只是学会不浪费。"
+        },
+        {
+          "dimension": "可执行的家务、补窗和工具",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "纸贴骨先干、朽木不胡钉、刮锅竹片、水桶半满与身体反馈，比一路越帮越忙更能区别技能。"
+        },
+        {
+          "dimension": "找屋、典衣与付款的现场",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "租屋三项成本真正使人物取舍，典当成色与读票角色也有现场。A省房屋线路在这里是一种压缩，不等于同样内容已写了。"
+        },
+        {
+          "dimension": "相互取笑的声口",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "麝月米不认字、替风烧炭、宝玉有刀、宝钗不笑难道哭的短接合仍有喜剧力度；B较多绕物让人通过，声口趋于实用提醒。"
+        },
+        {
+          "dimension": "篇幅安排与节奏",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "B以较少汉字写到迁居判断、典当、用物，并把天气反复接入未修窗框；A最后几次酸齑和量米问答在更长章里容易机械回原点。偏好不是按短长打分：A围巾和邻里来往的社会内容在B没有等量替代。"
+        }
+      ]
+    },
+    {
+      "chapter": 96,
+      "readings": [
+        {
+          "token": "read-78587806869ace36fc3d4afa",
+          "findings": [
+            "袭人抢扫帚被从前是从前拦住，碰旧药盒又收手；她承认自己如今也忙自家破衣、夜里先以为是宝玉咳后知不是。宝钗一回不是月例与说完回自己家双重界线，让情义不把新妇身份抹成永远待召的旧丫头。",
+            "蒋玉菡有时教人唱、有时钉戏箱、挑旧衣只有一顿肉饭，无固定收入还会夸大袭人揭短；并非只有带援物来站着的人。他与袭人替彼此续茶和补破袖，有新夫妻的日常，也让宝玉停在旧称呼不能占据其间。赠油膏专给麝月、米炭银包与当票不混，援助留给房钱灯油盐而不先赎好看的青衣。",
+            "湘云信里的浓淡茶互报、射箭泥靴、旧骑射褂与麒麟系带各有夫妻说话的指向，使97回收起若兰衣物有前一回物件。诗只剩写两句揉掉，不该由读者替她写出；但信文与随后宝钗念到的引述多一个最字，保留可查的局部引文不一致。尾部又量米与麝月贫嘴几次，与95回末的节奏相近。"
+          ],
+          "quote_ids": [
+            "r785-ch96-l513",
+            "r785-ch96-l519",
+            "r785-ch96-l525",
+            "r785-ch96-l553",
+            "r785-ch96-l579",
+            "r785-ch96-l583",
+            "r785-ch96-l587",
+            "r785-ch96-l591"
+          ]
+        },
+        {
+          "token": "read-1eab93c8ee577086c27685a0",
+          "findings": [
+            "袭人照旧行礼却不伸手整领口，问剪刀在哪而宝玉望到水盆；他听他家的人，整领子的手收回。这些手上停顿不必另让人物宣布从今我只是客了，旧习惯与现身份可以在一场里并存。油膏味狠、手暖、旧裂碰水仍痛，不把一次见面写成劳动创伤治愈。",
+            "蒋玉菡来客包与门外行头包严格分开，改袖边须还去让别人试、不合还要改，迟到会误同行，不只是泛说还有事。钱在手才挪一回、不许尚未收到的钱，下次米袋用空洗净再拿；受援家把米银分放，米多并不能立即赎衣，也还要问上月零用。",
+            "送信妇人有自己的进城活、雨里湿包所以延迟，宝钗先确认托付和给谁带话，回信墨未干折坏再摊开；出门转向街里，并不是她一领信就读者可知已经送到。湘云不还原两句、叫不必为了那两句夸她，把不写诗的选择保留成本人语言。冬里漏风要不要写长，被宝钗问你最想问她什么打断，也提醒本阅读不要替对方猜一天。"
+          ],
+          "quote_ids": [
+            "r1ea-ch96-l467",
+            "r1ea-ch96-l479",
+            "r1ea-ch96-l483",
+            "r1ea-ch96-l487",
+            "r1ea-ch96-l491",
+            "r1ea-ch96-l527",
+            "r1ea-ch96-l531",
+            "r1ea-ch96-l535",
+            "r1ea-ch96-l541"
+          ]
+        }
+      ],
+      "preferences": [
+        {
+          "dimension": "旧丫头与现为人妻的角色边界",
+          "preference": "TIE",
+          "reason": "A以客/当差和月例对话设界，B以不整领口、不知道剪刀所在及他家的人设界，两者都没有把善意等同复职。"
+        },
+        {
+          "dimension": "演员身体、收入和行头还交的时间约束",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "嗓子、针线手迹、试袖的别人、未拿到的钱与行头仍须带走互相牵制，援物不能算成行头包。"
+        },
+        {
+          "dimension": "熟人相见的斗嘴与夫妻声口",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "蒋玉菡算白忙有没有肉、袭人剪破衣、麝月替拆，都有具体笑话推动；B松子壳和油味也有笑，但普遍更克制。"
+        },
+        {
+          "dimension": "来信给下一回若兰衣物的独特形状",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "骑射、旧褂针脚和麒麟系带比B折衣热饭更集中铺出下一回同件物的缺席感，不据此认定物的旧来源。"
+        },
+        {
+          "dimension": "回信和借物归还路线的实际展开",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "已拿到信不等于回信送到，米袋未空即不能洗，路线与劳动日程都有具体中间状态。"
+        },
+        {
+          "dimension": "援助不能合并两家经济",
+          "preference": "TIE",
+          "reason": "A明确不能月例，B明确手头收到才给、下次不能许，受援后两版都仍计量和留房钱。"
+        },
+        {
+          "dimension": "诗的留下与不留下",
+          "preference": "TIE",
+          "reason": "都没有重造揉掉的诗。A评第二句像拌嘴，B拒绝为诗引出夸文，前者较俏皮后者较明确，各非正文诗艺优劣的实测。"
+        },
+        {
+          "dimension": "节奏",
+          "preference": "TIE",
+          "reason": "A相见长谈多转旧情，B客时受行头期限截住并写来回信。A反复米量容易沿95末套路，B末尾油膏、炭、菜、袋与补窗也在恢复日常；两者均有可压之处。"
+        }
+      ]
+    },
+    {
+      "chapter": 97,
+      "readings": [
+        {
+          "token": "read-78587806869ace36fc3d4afa",
+          "findings": [
+            "前封长信过月余，若兰月内归又不归，月末仍不能定，湘云才改变摆两副箸；并无死讯。她能作主修四瓦与出租闲屋，仍不肯替没回的人扔靴套，付改衣人的旧工钱不能等归人再算。这种自主不是把对方一口删去。收双箸只改一份饭，并非通章专写悲伤。",
+            "妙玉被住持用已经吃过的米油邀去念经，提出不去仍要有说法；到内宅遇辰时开经和客人要摆桌的催促，事毕得米票油。她不因收供就主动加快经文，也不因爱净就能独占热水。白瓷盆借筛香灰后洗净仍有一粒、再过水照旧用，灰衣有淡印未再洗：坚持与妥协不是一次改邪归正。",
+            "惜春退衣鞋和画袋，宝玉亲到庵里才见所留经砚厚衣和忘扔梳子；想劝她回住几日被问既还要回来何必。她择菜、搬篮、誊不清人名留空仍有自己的锋利口气，也不宣称件件都想明白。伞尾撑不开但没有下雨的写法语义不够明白，不能无证据决定是伞已坏还是只未打开；身份之变也不能让旧梳子自动成为已经舍不得俗世的口供。"
+          ],
+          "quote_ids": [
+            "r785-ch97-l603",
+            "r785-ch97-l627",
+            "r785-ch97-l647",
+            "r785-ch97-l667",
+            "r785-ch97-l699",
+            "r785-ch97-l705",
+            "r785-ch97-l707",
+            "r785-ch97-l717"
+          ]
+        },
+        {
+          "token": "read-1eab93c8ee577086c27685a0",
+          "findings": [
+            "湘云付的是房钱，瓦匠报料与搬梯脚手的工，旧瓦翻尖面防伤，三片坏瓦另片只是挪正；这处付款比A修四片不加价更见用工份量。麒麟单独入盒软布隔、袖口仍开着，缺席的人没有因物收了就被完成解释。可是若兰为什么、何时开始缺席、何种归约未给出，长短信时间差不能自行填成长期离别。",
+            "妙玉抢不到独用盆水和最好晾处，刚换灰衣又染、旧衣未干再不能换；仍选白盏干布，仍不说灰衣更好。热壶未稳不抽手、留给下一人热水、先辨经册再擦油，洁癖没有被故事粗暴判无用，但她的选择受到共同用水与等人的顺序限制。缺的却是外部功课如何换庵里米油的正面场面，入尘主要发生在厨房与供前。",
+            "惜春画袋旧笔改作抄，旧衣可拆补或给人由她截，梳子反复挡尺还未扔；并非画艺全凭一种不可回收的出世宣言消失。宝玉说能不能收梳子、猜糊字皆受她拦，最后雨已下，伞实际打开、回屋不近米袋。誊纸那一格到收尾仍空，不把留空读成字已问明。",
+            "交错三处饭、灰、衣、纸和端盆，能够对照不同取用秩序，却把湘云、妙玉和惜春的语言都拉向先移物再让路。A里湘云的租屋争执、妙玉与施主的功课速度、惜春挡劝返有不同场景冲突；B反复洗盆/等衣干的身体约束真有作用，但一些重来仅换一星灰与一处停手，戏剧张力容易被流程重演稀释。"
+          ],
+          "quote_ids": [
+            "r1ea-ch97-l553",
+            "r1ea-ch97-l567",
+            "r1ea-ch97-l573",
+            "r1ea-ch97-l589",
+            "r1ea-ch97-l607",
+            "r1ea-ch97-l617",
+            "r1ea-ch97-l619",
+            "r1ea-ch97-l629",
+            "r1ea-ch97-l631",
+            "r1ea-ch97-l633"
+          ]
+        }
+      ],
+      "preferences": [
+        {
+          "dimension": "声音与每个人所争的不同事",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "湘云可以抢家务主事权，妙玉被催经而不加速，惜春用园子已不在与劝返对抗；三种声口不只共用小心用水的句式。"
+        },
+        {
+          "dimension": "外部供养、宗教服务与人情权力",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "内宅功课、客人时刻、米票油的交易现场写出，B留在庵内共同家务，不能自动补上同一佛事。"
+        },
+        {
+          "dimension": "若兰缺席的时间与知识",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "前信延误与现在归期未定有明确月余、月尽等区别，B不写原因不能被读成原因已知。A也没有证据可宣布死别。"
+        },
+        {
+          "dimension": "衣物和身体劳动的有限替换",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "洗后内折不干、再落灰不能立即换、壶稳后才抽手、袖开一边待续，代价更难被情节立刻抹掉。"
+        },
+        {
+          "dimension": "伞、旧衣给用、画笔用途与纸上留空",
+          "preference": "read-1eab93c8ee577086c27685a0",
+          "reason": "伞在雨中开且回家隔米袋放，衣既给由人改，旧笔用于抄，糊字直到尾仍空，动作后果与保留状态具体。"
+        },
+        {
+          "dimension": "物件不能替人声明唯一内心",
+          "preference": "TIE",
+          "reason": "两版梳子都忘了扔且有谁说我件件想明白；麒麟及若兰旧衣有收放，没有足以定缘分、死生或作者身份的证据。"
+        },
+        {
+          "dimension": "跨三条线的戏剧组织与节奏",
+          "preference": "read-78587806869ace36fc3d4afa",
+          "reason": "A各线持续展开不同人与人矛盾，B频繁切换可成用物对照也可机械列队。不是长篇自然胜短篇：B干湿循环有真实劳动，但少写功课交易和离人归约不能叫已被高效压缩。"
+        },
+        {
+          "dimension": "正文诗艺",
+          "preference": "NEITHER",
+          "reason": "97回没有足以比较完整新作诗的材料；96回的揉诗与94回乡曲不能借来冒充此回诗艺实测。"
+        }
+      ]
+    }
+  ],
+  "selected_adjacency_observations": [
+    {
+      "from_chapter": 92,
+      "to_chapter": 93,
+      "finding": "A把出门、车回及见窄门放92末，93接真正入院；131芸儿夸日日留饭到141麝月改释并非天天多煮，是熟人夸张被当事人拆，不另判作者硬错。B92末准放仍候办，93先辨当面领原物再出门。B129–131结诗先出现门外一程而实际仍在里头，读作前摄收束有一点滞后感，但不是明说人已出去，不能冒充一次时间矛盾。",
+      "quote_ids": [
+        "r785-ch92-l131",
+        "r785-ch93-l141",
+        "r1ea-ch92-l121",
+        "r1ea-ch93-l141"
+      ],
+      "preference": "read-1eab93c8ee577086c27685a0",
+      "preference_dimension": "放行与领物动作的连续性"
+    },
+    {
+      "from_chapter": 93,
+      "to_chapter": 94,
+      "finding": "A白布短一截的来叫之后直接十来日丧事渐静，换来王仁入场，是可理解时间压缩，短布如何接没写不能说已接好。B下一回继续穿同一针与薄白布，巧姐把布与褂两个破处补好误认母亲会起来，丧务和孩子误解没有在回界被清零。",
+      "quote_ids": [
+        "r785-ch93-l237",
+        "r785-ch94-l243",
+        "r1ea-ch93-l259",
+        "r1ea-ch94-l263"
+      ],
+      "preference": "read-1eab93c8ee577086c27685a0",
+      "preference_dimension": "未完劳动接入下一回"
+    },
+    {
+      "from_chapter": 94,
+      "to_chapter": 95,
+      "finding": "A以板儿口信吃睡渐稳使几个月来信变稀，原先借院不可久住便另租，未假装农村已变终身归宿。B以最后绕线到小包软米及袜子口信，明确到家败后第二冬，劳动和消息继续但不是平儿每夜亲见；三处租房随后实际展开。两版时间轴不相同，不拿其中一版当另一版的历史标准。",
+      "quote_ids": [
+        "r785-ch94-l347",
+        "r785-ch95-l355",
+        "r1ea-ch94-l355",
+        "r1ea-ch95-l361",
+        "r1ea-ch95-l363"
+      ],
+      "preference": "TIE",
+      "preference_dimension": "季节跳跃仍保留孩子非终身定局"
+    },
+    {
+      "from_chapter": 95,
+      "to_chapter": 96,
+      "finding": "两版同一只量米木碗、毡和当票继续到春。A499再问还是这个碗，503次早又照旧量米，能锁住容器也有重复余量。B455留待明早、459天亮真取同一碗，而天气逐渐硬地到春菜，不是一次援助就取消日用。",
+      "quote_ids": [
+        "r785-ch95-l499",
+        "r785-ch96-l503",
+        "r1ea-ch95-l455",
+        "r1ea-ch96-l459"
+      ],
+      "preference": "TIE",
+      "preference_dimension": "计量器与季节跨界连续性"
+    },
+    {
+      "from_chapter": 96,
+      "to_chapter": 97,
+      "finding": "A597行仍量两碗半而97转收到前信月余之后若兰外出迟归，有真写出的迟延。B543补小角窗纸到547开头确实刚补完，随后两副箸在另一家构成形式桥；但哪次出门导致湘云独膳没有同等展开，不能替它推算月约或死别。",
+      "quote_ids": [
+        "r785-ch96-l597",
+        "r785-ch97-l603",
+        "r1ea-ch96-l543",
+        "r1ea-ch97-l547",
+        "r1ea-ch97-l549"
+      ],
+      "preference": "read-78587806869ace36fc3d4afa",
+      "preference_dimension": "从夫妻家常到缺席的时间因果"
+    }
+  ],
+  "local_checks": [
+    {
+      "id": "r785-ch92-snack-count",
+      "token": "read-78587806869ace36fc3d4afa",
+      "chapter": 92,
+      "verdict": "FAIL",
+      "scope": "局部字面数量，不是全回质量总判",
+      "finding": "3行写袖里一块干点心，7行只吃一块而另一块包好；没有在中间写出添第二块。27行再称两块不能使3行的一块自动变两块。",
+      "quote_ids": [
+        "r785-ch92-l003",
+        "r785-ch92-l007",
+        "r785-ch92-l027"
+      ]
+    },
+    {
+      "id": "r785-ch96-letter-requotation",
+      "token": "read-78587806869ace36fc3d4afa",
+      "chapter": 96,
+      "verdict": "FAIL",
+      "scope": "局部标成直引的文本一致性",
+      "finding": "579行信文写天下会强嘴的原不只宝哥哥一个，587行宝钗念到处的直引写天下最会强嘴的原不只宝哥哥一个，多一个最字。不是诗内容的来源判定，也不足推成重大剧情失败。",
+      "quote_ids": [
+        "r785-ch96-l579",
+        "r785-ch96-l587"
+      ]
+    },
+    {
+      "id": "r785-ch92-witness-rest",
+      "token": "read-78587806869ace36fc3d4afa",
+      "chapter": 92,
+      "verdict": "PENDING",
+      "scope": "故事明确未完的一截经手",
+      "finding": "常婆子与另一旧人核到前半截，后半截经手离京未找；放回候问不是全案结清。",
+      "quote_ids": [
+        "r785-ch92-l111",
+        "r785-ch92-l121"
+      ]
+    },
+    {
+      "id": "r785-ch92-visit-authorisation",
+      "token": "read-78587806869ace36fc3d4afa",
+      "chapter": 92,
+      "verdict": "UNVERIFIED",
+      "scope": "被省写的手续路线",
+      "finding": "宝钗按例一次入视，茜雪托隔门见人已经成场；文本未充分展开取得许可的路径。不凭省略判未获许可，也不凭到场为全部手续认证。",
+      "quote_ids": [
+        "r785-ch92-l079",
+        "r785-ch92-l091"
+      ]
+    },
+    {
+      "id": "r785-ch95-recalled-felt-nailing",
+      "token": "read-78587806869ace36fc3d4afa",
+      "chapter": 95,
+      "verdict": "UNVERIFIED",
+      "scope": "笑话中的未演出前事",
+      "finding": "469行麝月说昨日一钉钉出两个眼；前面主要演缝毡、凳滑和支毡，未正面演该次钉眼。可能是省去的日常失误，不把未演出等同明确否定做过。",
+      "quote_ids": [
+        "r785-ch95-l425",
+        "r785-ch95-l469"
+      ]
+    },
+    {
+      "id": "r1ea-ch92-xiaohong-evidence",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "chapter": 92,
+      "verdict": "PENDING",
+      "scope": "寻证题目的可见路线",
+      "finding": "小红送物渠道很充分，另一份案录与宅内身份的区别来自书办场景；没有等量写出小红找旧经手人的线索。不宣布寻证承诺已被完成，也不把未写线路判作书办必然造假。",
+      "quote_ids": [
+        "r1ea-ch92-l067",
+        "r1ea-ch92-l113"
+      ]
+    },
+    {
+      "id": "r1ea-ch94-old-bundle",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "chapter": 94,
+      "verdict": "PENDING",
+      "scope": "明确另寻的原有包袱",
+      "finding": "旧包袱是否随箱到借院不能确认，补眼前鞋、临包现物；明确留待另寻，不允许报告全部旧物顺利转交。",
+      "quote_ids": [
+        "r1ea-ch94-l317",
+        "r1ea-ch94-l327"
+      ]
+    },
+    {
+      "id": "r1ea-ch95-whole-bedding-package",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "chapter": 95,
+      "verdict": "PENDING",
+      "scope": "整包铺盖保管与部分现用铺盖区分",
+      "finding": "床上亲卷的已带，箱后另一包需等主人；437行经手的人尚未都见，不能由有铺盖睡反推整包领回。",
+      "quote_ids": [
+        "r1ea-ch95-l389",
+        "r1ea-ch95-l437"
+      ]
+    },
+    {
+      "id": "r1ea-ch95-jade-route",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "chapter": 95,
+      "verdict": "UNVERIFIED",
+      "scope": "随身玉首次可见不证明前路",
+      "finding": "391行玉硌胸是当前持有的写法；92–93回交存和领物写纸钱衣带帕，没有在本六回内给出玉单独保管/发还的同等线路。交存所说零碎并不明文排除玉，也不能据此硬判玉不该在身；从这些页不能给其历史修复或来源认证。",
+      "quote_ids": [
+        "r1ea-ch92-l023",
+        "r1ea-ch93-l141",
+        "r1ea-ch95-l391"
+      ]
+    },
+    {
+      "id": "r1ea-ch95-window-frame",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "chapter": 95,
+      "verdict": "PENDING",
+      "scope": "租屋修理权限与完成度",
+      "finding": "435行朽木须换，主人何时肯换难讲；糊纸、毡遮风不等于框已换好。",
+      "quote_ids": [
+        "r1ea-ch95-l409",
+        "r1ea-ch95-l435",
+        "r1ea-ch95-l449"
+      ]
+    },
+    {
+      "id": "r1ea-ch96-rice-bag-return",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "chapter": 96,
+      "verdict": "PENDING",
+      "scope": "借袋归还",
+      "finding": "487行约用空洗净方便时还，541行仍是空了一半不能立即还；袋清了米屑不等于已洗返。",
+      "quote_ids": [
+        "r1ea-ch96-l487",
+        "r1ea-ch96-l541"
+      ]
+    },
+    {
+      "id": "r1ea-ch96-small-debts",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "chapter": 96,
+      "verdict": "PENDING",
+      "scope": "小贩零用旧欠核数",
+      "finding": "497行提欠小贩须还，537行零用数要问；收援银不是证明数已核齐或旧欠已结。",
+      "quote_ids": [
+        "r1ea-ch96-l497",
+        "r1ea-ch96-l537"
+      ]
+    },
+    {
+      "id": "r1ea-ch97-waklan-absence",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "chapter": 97,
+      "verdict": "UNVERIFIED",
+      "scope": "若兰缺席的开始、期限和原由",
+      "finding": "单人饭与629行半梦中手搭身旁表明当前缺席感，但缺少A那种约月内归而迟的具体线；不能断言已死、出走、久别的准确月数，也不能把留白认定明写原因。",
+      "quote_ids": [
+        "r1ea-ch97-l549",
+        "r1ea-ch97-l629"
+      ]
+    },
+    {
+      "id": "r1ea-ch97-miaoyu-external-exchange",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "chapter": 97,
+      "verdict": "UNVERIFIED",
+      "scope": "庵中饭和外部功课给付之间的路线",
+      "finding": "供前收纸、辨经册与端茶有现场家务，但没有A内宅念经并受米票油的完整交换；不能自动并入同一佛事经历。",
+      "quote_ids": [
+        "r1ea-ch97-l555",
+        "r1ea-ch97-l603",
+        "r1ea-ch97-l607"
+      ]
+    },
+    {
+      "id": "r1ea-ch97-blurred-character",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "chapter": 97,
+      "verdict": "PENDING",
+      "scope": "惜春纸上一个未辨字",
+      "finding": "619行等问再补，633行尚未问明仍空，跨过接待客人并没有变成已核清。",
+      "quote_ids": [
+        "r1ea-ch97-l619",
+        "r1ea-ch97-l633"
+      ]
+    },
+    {
+      "id": "both-ch97-comb-symbol",
+      "tokens": [
+        "read-78587806869ace36fc3d4afa",
+        "read-1eab93c8ee577086c27685a0"
+      ],
+      "chapter": 97,
+      "verdict": "UNVERIFIED",
+      "scope": "旧梳子解释不唯一",
+      "finding": "人物说忘了扔且否认件件想明白；这不是足以排他证明恋俗、彻底出世或某个作者观点的符号。",
+      "quote_ids": [
+        "r785-ch97-l705",
+        "r1ea-ch97-l589",
+        "r1ea-ch97-l617"
+      ]
+    },
+    {
+      "id": "both-poetry-unsent-lines",
+      "tokens": [
+        "read-78587806869ace36fc3d4afa",
+        "read-1eab93c8ee577086c27685a0"
+      ],
+      "chapter": 96,
+      "verdict": "NOT_CHECKED",
+      "scope": "被揉掉的诗句本身",
+      "finding": "只读到了想写/写两句/揉掉及不还原，未获两句正文；不能评价该两句格律诗艺或另造引文。乡曲另见94回。",
+      "quote_ids": [
+        "r785-ch96-l583",
+        "r1ea-ch96-l519"
+      ]
+    }
+  ],
+  "poetry_and_identity_notes": {
+    "poetry": "94回两版乡曲有线儿长/莫着忙/手一急/线先伤及伤断无定词的实际文本，声音服务绕线手速与孩子误解。96回两句诗未给正文，97回没有完整新诗材料，不补造格律或惊人佳句，也不把小曲与失稿等价。",
+    "named_and_ambiguous_identity": "A小红被麝月先叫红玉，茜雪到场才把袜子制作者确认为她；B物件携带话先报小红与茜雪，见不到本人就不假认。袭人旧称仍在而现为蒋家的人，两版都有边界。若兰金麒麟的当前收放不能单靠一般红楼记忆认定其前史；惜春短发/已剃的措辞不能无时间证据判头发长短自相矛盾。",
+    "separate_economies": "贾芸有车脚和别处营生，蒋玉菡有嗓子/戏箱/行头及收入到账早晚，袭人有自己家的衣锅；刘家田纺互借，湘云租出屋或付房租是两token不同安排，庵里共同水油另算。没有将所有帮助者并入贾家预算，也没有拿一版房产权安排认证另一版。",
+    "remaining_risk_of_mechanical_detail": "同一米量反复确认有容器稳定的意义，纸/衣/盆干湿和旧新区别有实际劳动。但从95到97若每段只新增一处灰、一声门、一次收手，没有新利益冲突、技术改变或情绪后果，便不能仅凭物多算更真实。判断已分到具体回次，未给统一加长或统一删短意见。",
+    "quote_ids": [
+      "r785-ch92-l055",
+      "r785-ch92-l095",
+      "r785-ch94-l321",
+      "r785-ch94-l335",
+      "r785-ch96-l519",
+      "r785-ch96-l525",
+      "r785-ch96-l579",
+      "r785-ch97-l613",
+      "r785-ch97-l705",
+      "r1ea-ch92-l083",
+      "r1ea-ch94-l313",
+      "r1ea-ch94-l353",
+      "r1ea-ch96-l467",
+      "r1ea-ch96-l487",
+      "r1ea-ch96-l519",
+      "r1ea-ch97-l573",
+      "r1ea-ch97-l617"
+    ]
+  },
+  "citation_convention": {
+    "quote_field": "quote",
+    "line_field": "line",
+    "line_numbering": "1-based physical lines of the exact UTF-8 bound file; chapter headings and empty lines count",
+    "quote_form": "该物理行的完整正文段；不拼接不改字，无省略号代替正文",
+    "minimum_chinese_characters_per_quote": 24,
+    "chapter_requirement": "92–97每回每token至少两条，各带path/token/sha256/chapter/line/quote"
+  },
+  "quotes": [
+    {
+      "id": "r785-ch92-l003",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 3,
+      "quote": "却说宝玉随来人出了小巷，天还没有亮透。街北背阴处残雪未化，车辙里却尽是黑泥。他身上穿着昨日才从旧府取回的青灰厚袍，袖里揣着宝钗留下的一块干点心，走了一程还想着：不过认几张旧单，自己知道的说知道，不知道的说不知道，晌午前后总该回去。贾芸远远跟到门外，见里面不许闲人再近，便在街口停住。宝玉回头瞧见他，还笑着摆了摆手，意思叫他不必等。及至进门，却并不就问，先叫在一处廊下候着。廊下已有三四个人，有穿棉袄的，也有披毡的，各自低头坐着。一个小吏拿一张窄纸来，挨次问姓名、住处。问到宝玉时，先写“贾宝玉”，住处照他说的巷名记下，末后又添一个小小的“到”字，才叫他站到另一边去。"
+    },
+    {
+      "id": "r785-ch92-l007",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 7,
+      "quote": "宝玉点头。那人笑道：“看你老盯着门。这里的门，盯是盯不开的。”宝玉听了也笑，道：“我只想着问完好回去。”那人道：“谁不是这样想。”说罢便把两手笼在袖里，靠柱闭目。宝玉这才想起袖中点心，摸出来看时，油纸仍温温的，想了一想，只吃了一块，另一块仍包好。到了午后，才有人叫“贾宝玉”。宝玉忙答应着进去。"
+    },
+    {
+      "id": "r785-ch92-l059",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 59,
+      "quote": "小红道：“谁说现买？旧的也有旧的用处。”说着又道，“还有一件。外头问的若真是园子旧单，只在怡红院的人里找未必找得着。那时园子里的东西，多是总处开了，再分到各房；房里只知道收，不知道外头从谁手里来。芸哥如今正找旧门上的。我想着，若找着一个从前往园里送东西的人，比问十个小丫头有用。”"
+    },
+    {
+      "id": "r785-ch92-l095",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 95,
+      "quote": "宝玉方才明白，忙道：“原来是你送的！我说针线不像家里。”茜雪道：“不像就对了。我又不是麝月。她的针线齐整，我的只图厚。脚跟那里还是昨夜赶着补的，若硌脚，你就翻过来穿。”宝玉低声道：“你还想着我……”茜雪道：“你这话说得倒稀罕。从前我在那屋里端茶倒水，不也是这些事？如今不过换个门送进来，便值得你这样看我？”"
+    },
+    {
+      "id": "r785-ch92-l111",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 111,
+      "quote": "外头小红、贾芸那里也渐有一点眉目。常婆子所说的交接路数，同另一旧人对得上，那一项东西原是先从外头总处送进，再由园门分给各院，并非怡红院自行往外领。至于秋里后来又转到哪里，中间还有一人经手，恰已离京，不能立时找到。小红便道：“找不到便说找不到，至少前半截说清了。不能为了后半截没着落，把前半截也搅乱。”"
+    },
+    {
+      "id": "r1ea-ch92-l061",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 92,
+      "line": 61,
+      "quote": "那人正将门边的凳移开，听见这话，停了手，道：“收在外头和转到里头，如何是一样？进去还有经手的。”小红问以后在哪里问确实送到没有，那人仍指先前那处，叫向接物的人问，不要隔着门喊姓名。她又问如带一句家中平安的话，能不能转，那人道可将所带的话先说清，能传的才传，别夹旁的事情。"
+    },
+    {
+      "id": "r1ea-ch92-l077",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 92,
+      "line": 77,
+      "quote": "次日她收了晾干的布，手背有小裂口，线头一过便勾住。袜底缝得慢，针从厚处穿出来，她用布垫着指头拔，不让接缝硌在脚心。缝到袜口，特意翻到里面摸了一回，摸出一处线结，拆了重接。那针眼极小，她挨着窗亮穿线，穿了两回才穿上，低头时脸上没有什么表情，只将那块布又抚平了。"
+    },
+    {
+      "id": "r1ea-ch92-l093",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 92,
+      "line": 93,
+      "quote": "到外头得了宝玉已经亲手领去的回话，小红才把带回的布叠好。贾芸听清袜子和炒米两样都领了，才将僵冷的手从袖中抽出来，接过那块布。他问宝玉还说什么，小红照回话说仍在等，别候饭，没添上快回来了。两人出门一段便各走各的，小红回家中交代，贾芸将布带回茜雪处。路上鞋底沾着湿沙，他到石沿上蹭了蹭，沙粒落在鞋面上，又用手掸掉。"
+    },
+    {
+      "id": "r1ea-ch92-l097",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 92,
+      "line": 97,
+      "quote": "贾芸回来，将外裹布递还，告诉茜雪袜子和炒米已经领去。她正搓洗另一条布，水从腕上流到袖口，停下来问真穿上了么，贾芸说只回领到，没有回穿上。她便将布拧干，低声道领到也好，叫他自己翻着摸，硬结都拆过了。有人问她宝玉何时出来，她说这个不曾告诉她，将盆里的水泼到该泼处，提着空盆回来，又把未做完的活计摊在膝上。"
+    },
+    {
+      "id": "r1ea-ch92-l113",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 92,
+      "line": 113,
+      "quote": "有人将旧单旁的另一份记录铺开，问的是名字所指的宅内身份，不再叫他把未曾经手的事说一遍。宝玉答自己在那家中住，旁的不能凭这一行名字认作自己所办。问话的人指着纸道：“这处先前混写着，如今要分开。你认的是你的姓名，不是叫你认别人的经手。”宝玉听见“分开”两个字，才稍稍把缩在袖内的手松开。"
+    },
+    {
+      "id": "r1ea-ch92-l121",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 92,
+      "line": 121,
+      "quote": "又候过一回，宝玉被叫到桌旁，书办已将先前应他认的几处夹在一起。那人说这一头所问已经对过，不须为这些仍留着等认；余下旧单的事还须另核，若再传问，仍要来。他听到不须再留，先问是不是如今可走，得到的却是离去尚待办妥，不由这桌旁一句话便开门。书办叫他候着领取随身物，也将可再传问的话又说一遍。"
+    },
+    {
+      "id": "r785-ch93-l159",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 93,
+      "line": 159,
+      "quote": "宝玉道：“只说先回来候着。若再叫，还得去。”凤姐点点头，道：“那就先住着。别觉得出了门便完了。”说了这几句，呼吸已有些促。宝玉忙道：“姐姐别说话了。”凤姐道：“我不说话，你来做什么？坐着看我喘气？”平儿在旁道：“二爷才回来，你还拿他取笑。”凤姐嘴角动了一下，道：“他从小叫我取笑惯了，多这一回也不伤。”说完停了一会，又问，“里头冷不冷？”"
+    },
+    {
+      "id": "r785-ch93-l191",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 93,
+      "line": 191,
+      "quote": "平儿道：“你看一眼便要问十句。”凤姐瞪她。平儿到底把买米那张递过去。凤姐眯眼看了半日，道：“人数少算一个。”平儿吃了一惊，拿回重看，果然漏了一个近日留下帮忙的老婆子。她笑道：“我的奶奶，你病成这样，眼倒还比我尖。”凤姐道：“你忙昏了。”说罢把纸推回去，“以后这种小数自己看。别什么都拿来问我。”"
+    },
+    {
+      "id": "r785-ch93-l213",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 93,
+      "line": 213,
+      "quote": "平儿道：“是风。没有人。”凤姐听见“没有人”三字，像放下什么似的，慢慢把眼合上。平儿替她把被角往上拉了拉，仍坐在旁边。过了一会儿，觉得屋里太静，便低声叫：“奶奶？”凤姐没有应。平儿又叫一声，伸手摸她的手。那只手还温，却一点力气也没有。平儿脸色骤然变了，忙俯身去听，又回头叫：“快去请二爷！去回太太！再叫大夫——”"
+    },
+    {
+      "id": "r785-ch93-l233",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 93,
+      "line": 233,
+      "quote": "凤姐床边的小几上还放着那两张昨日看过的纸，一张买米，一张巧姐药钱。旁边有一个小布包，里头剩几块碎银，又有两把如今已经没有多少柜可开的钥匙。一个婆子问：“这些先交给二爷？”平儿道：“银子记清数交二爷。钥匙先放我这里，明日再问哪些还有用。纸别扔，买米那张明早灶上还要看。”婆子听了照做。"
+    },
+    {
+      "id": "r1ea-ch93-l141",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 93,
+      "line": 141,
+      "quote": "那人将案旁的纸移开，另叫经手存物的人来。一个布包放到桌上，结扣已经解松，里头有旧衣带和一方帕子，另放着入内时收去的小纸和身边所带的零碎钱。宝玉先把小纸打开，见折口仍是自己摸软的那处，又把钱拢到掌心看过；臂弯里那张炒米的空纸却仍夹在袜子下，并没有混进去。宝玉见帕角那处歪了的针脚，便认得是自己的，拿起来一看，帕子折痕深，早没了往日软润。经手人叫他当面看清，他把衣带展开，摸了摸带头，又把帕子翻过来，点头说：“是这些。”"
+    },
+    {
+      "id": "r1ea-ch93-l201",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 93,
+      "line": 201,
+      "quote": "平儿不肯把纸递近，凤姐望着她，眼里露出从前那一点不耐烦。她便把纸放在凤姐看得见的地方，扶着她稍稍起了些。凤姐看不清细字，叫婆子把方才的话再说。婆子越发惶恐，说不过是省柴米的意思。凤姐听到这里，慢慢道：“我不吃……孩子还吃。留她那碗。”说罢歇了好一会，仍望着婆子，等她应下。"
+    },
+    {
+      "id": "r1ea-ch93-l207",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 93,
+      "line": 207,
+      "quote": "傍晚光暗下来，婆子出去端灯，平儿坐在床边，听凤姐叫了她一声。她忙答应，凑近问要什么。凤姐望着门帘，低低说：“我怕。”平儿心里一酸，却不好说不必怕，只握住她手道：“我在这里。”巧姐也要学着握，平儿将孩子放在自己身边。凤姐看了她们一会，口唇还动，后面却没有成句。"
+    },
+    {
+      "id": "r1ea-ch93-l219",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 93,
+      "line": 219,
+      "quote": "一个老些的婆子从前也见过凤姐办白事，遇事先等吩咐，如今脱口说：“还得问奶奶……”话出了一半，便将嘴掩住。贾琏抬眼看她，她低头退到门边。平儿听见这半句，脸上忽然又落下泪来。床头那盏灯仍须有人拨，孩子仍在她怀里，外头等的话却再也送不到凤姐耳边去了。"
+    },
+    {
+      "id": "r1ea-ch93-l237",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 93,
+      "line": 237,
+      "quote": "零散旧账底下有两张近日还要用的纸，一张记着买米，一张是巧姐的药钱。平儿放到灯下看，第一张边上还留着白日那件小事的记认，巧姐那碗饭须留。她方才听凤姐说时，只想着别叫她劳神，如今盯住那个小小的记号，手竟不肯移。婆子在旁提醒，说纸近灯了，她才往回收。另张药钱也并没有因这屋里人死了便不用付。"
+    },
+    {
+      "id": "r1ea-ch93-l243",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 93,
+      "line": 243,
+      "quote": "他们走后，婆子问夜里留守是否也算工。王夫人听了，先有些不悦，随后看她揉着肩，便道：“你今夜留，明早有人替你，不叫你白熬。”那婆子怕这句话只是好听，低低说家里也等她回去。宝钗便同她商量换手的事，麝月在灶旁听见，答应到时来叫。婆子这才进去，不是人人哭过便能一直守到天亮。"
+    },
+    {
+      "id": "r785-ch94-l257",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 94,
+      "line": 257,
+      "quote": "王仁这回倒答得快，说了一个数，又说衣料几件、首饰一两样都可照常例。平儿听完，道：“方才问孩子几岁，舅老爷说没细问；这礼倒记得明白。”王仁脸上一红，随即笑道：“你们做内务的人，自然都爱算这个。我不过听他们说时顺耳记下。人家肯先拿出东西，也是诚意。”平儿道：“既是诚意，何必急？”王仁道：“也不是急。只是那家还看着另一处亲事，若咱们拖得久，人家未必一直等。还有一层，姐儿如今住这里，来来往往人杂。我想着不如先到我家住一阵，我那边好歹宽些；那家若有女眷来看，也便当。”"
+    },
+    {
+      "id": "r785-ch94-l281",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 94,
+      "line": 281,
+      "quote": "平儿听她说得这样细，便问：“若多一个孩子住些日子，可添麻烦？”刘姥姥先看巧姐，道：“添一张嘴自然添一张嘴，哪有不添麻烦的。可一个孩子能吃多少？我们粗饭粗菜，她若吃得惯，住一阵没什么。只是我得先把话说在前头：没有这里的细米细面，也没有随叫随到的丫头；夜里鸡叫狗叫，怕她睡不着；离城又远，若忽然想家，不能抬脚就送回来。”"
+    },
+    {
+      "id": "r785-ch94-l321",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 94,
+      "line": 321,
+      "quote": "巧姐看她拿筛子要走，忽问：“借了不用还钱么？”那媳妇笑道：“筛子又不是米，明儿还筛子就是。”巧姐想了想，又问：“那鸡蛋呢？”板儿抢着道：“鸡蛋吃了就还不回来了，所以要拿别的换。”刘姥姥道：“别听他胡说。乡里乡亲，今日你借我筛子，明日我借你车，哪样都先拿钱算，日子便过不成了。”说罢叫那媳妇慢走，明日若筛完顺手把院门那把坏扫帚捎给篾匠看看。"
+    },
+    {
+      "id": "r785-ch94-l337",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 94,
+      "line": 337,
+      "quote": "平儿站在门口看了一会儿，没有叫她。临吃饭前，她又把带来的东西同刘姥姥女儿点了一遍：两身衣裳、一件厚外衣、一双备用袜子、小梳子并那床小铺盖；没有首饰，也没有另放银包。平儿只把几枚零用钱缝在蓝布包内层，嘱咐真有急用再拆。刘姥姥女儿听见，便把包放进墙边木柜上层，道：“柜里只搁针线布头，不同粮袋混，省得孩子自己翻着玩。”平儿亲眼看她合上柜门，才算放下这一件心。"
+    },
+    {
+      "id": "r1ea-ch94-l283",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 94,
+      "line": 283,
+      "quote": "“有家人，是哪一个呢？”平儿还待说，门里巧姐又叫她。她侧身应了一声，回头见媒人已把帕子折起。媒人道：“做媒还能把人家锅底翻来看么？街坊都说他家好。你们这一家素日也有人说好，难道句句都要亲见。”平儿道：“你知道什么，只说什么，不知道的容我再问，不是怪你。”茶还剩半碗，她拿起壶要添，媒人摇头，说回去问问便是。平儿送到门边，才赶回里间。"
+    },
+    {
+      "id": "r1ea-ch94-l313",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 94,
+      "line": 313,
+      "quote": "从屋里出来，平儿送她到院门，刘姥姥停住道：“姑奶奶当年给我的东西，我也不是全藏起来等着还。那时就吃了用了，才活到如今。我手里没有那个数，不能拿出来给你。可屋里挪挪，仍容得一个孩子。”平儿说并不求银子，只怕多一个人使她家难过。刘姥姥道：“难过自然有。你只别把她说成什么都不吃、什么都不闹，那不是孩子。咱们先试几日，真有不行的，再告诉你。”平儿握了握她的手，眼圈才红起来。"
+    },
+    {
+      "id": "r1ea-ch94-l317",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 94,
+      "line": 317,
+      "quote": "收拾衣物，又有难处。旧宅那只早先裹好的包袱，这里没有人能说清是否随箱到了借院。平儿问了经手的两人，一个说见过布角，一个说当时只搬大箱，谁也不敢认作亲手拿来。旧包袱仍待另寻，她只将借院里正用着的两件小衣、换洗布袜和一块薄被拿出来，另用旧布临时包起。缺的一双鞋，原说在旧包内，如今还未取到，只好给孩子脚上这双先补后跟。她把新结的布结扯牢，鞋却留在手边，灯照着里边磨薄的地方。"
+    },
+    {
+      "id": "r1ea-ch94-l327",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 94,
+      "line": 327,
+      "quote": "车脚原要赶早，见孩子哭，催了一声，刘姥姥说且慢半步，不添钱也给人个工夫。平儿将临时包好的旧布包交给妇人，告诉她衣服在哪一边，熟水另放，别压在下面；路费由自己交了，余下几枚钱给妇人备歇脚用。她看着车走，听得巧姐的声音隔着筐传来，却没有再跟。回院时，房里那张小凳还在，竟比放着时更占地方。她将凳子贴墙移近，没有收进别人的箱内。"
+    },
+    {
+      "id": "r1ea-ch94-l337",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 94,
+      "line": 337,
+      "quote": "饭是杂粮熬的，汤里有干菜。巧姐先把菜拨到边上，闻到味道不肯吃，刘姥姥说只喝热汤也成。女儿把锅边稀些的舀给她，仍有细碎的谷皮，孩子吃一口便说硌。旁边来的一个乡妇笑道：“这牙口还挑哪。”另一个却说先给她捣细些，孩子才来，腹里不惯。那乡妇自己端着碗，见她又把勺放下，不耐烦地叹了一声。刘姥姥不与她争，把自己碗里的软处添进小碗，叫巧姐慢慢喝。"
+    },
+    {
+      "id": "r1ea-ch94-l351",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 94,
+      "line": 351,
+      "quote": "晌午纺车搬到亮处，巧姐才想起平儿说过有车。她绕着看一圈，道这车怎么没有地方坐。刘姥姥说不坐人，是人坐在旁边转它。女儿忙着做活，不许她摸转得快的轮，却把绕好的线递给她托一会。巧姐捧住，觉得比碗轻，手一松便散了一圈。女儿皱眉，叫她先放下。孩子红着脸，几乎又哭，刘姥姥伸手捡起那一段，叫她绕得慢些，自己先绕两圈给她看。女儿等着要用线，轮暂时停了，院外那只鸡却又钻到菜边去。"
+    },
+    {
+      "id": "r1ea-ch94-l355",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 94,
+      "line": 355,
+      "quote": "那陪送的妇人后来果然进城，先去卖完菜，才到借院找平儿。她说自己送到屋里，亲见炕面腾出，包袱也打开，孩子午饭喝了些汤，夜里怎样却未亲见。平儿问刘姥姥可曾不便，她说屋小，家人也忙，眼下是容下了，不能替她夸口往后都好。平儿听得孩子只喝汤，找出一小包能熬软的米，请她下回带去，又问回程几时，不敢因一句送到了便把这一笔放下。"
+    },
+    {
+      "id": "r785-ch95-l383",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 95,
+      "line": 383,
+      "quote": "宝玉道：“他比我更冷。”宝钗抬头看他：“他冷，你便要给。明儿你冷呢？”宝玉道：“我总还有屋子。”宝钗把手里的包袱结紧了些，道：“屋子里也要烧炭。你要给，我也不拦，只是先把这几件摊开看看。”宝玉脸上微红，道：“难道穷了便只顾自己？”麝月本在系包袱，听见这话也没抬头，只把结又勒紧了一道。宝钗将围巾摊在箱盖上，又把那件薄灰袄、棉坎肩一件件指给他看，道：“你自己拣罢。这个冬天少哪一件？”"
+    },
+    {
+      "id": "r785-ch95-l389",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 95,
+      "line": 389,
+      "quote": "宝玉自己也笑，道：“早知道等麝月回来。”宝钗从针线篮里找出一小块厚纸，道：“你别动。我在里面贴，你在外头按着。”宝玉道：“雪地里叫我出去？”“方才还说屋子总有呢。屋子要补窗时，你倒嫌雪了。”宝玉没法，只得披衣出去。两人隔着窗一里一外，把纸按平。宝玉在外头哈着手，忽从纸后看见宝钗的影子映在雪光里，一手扶窗，一手抹浆糊，头上只一根素簪。那影子随着窗纸微微动着。宝玉一时出了神，手下松了，纸边立刻翘起。"
+    },
+    {
+      "id": "r785-ch95-l399",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 95,
+      "line": 399,
+      "quote": "麝月道：“有钱自然可赎。没钱看它也不会自己走回来。”宝钗把票接过去，同碎银放在一处，先数银钱，道：“先去买米。”"
+    },
+    {
+      "id": "r785-ch95-l435",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 95,
+      "line": 435,
+      "quote": "麝月道：“咱们自己还吃不够呢。”宝钗道：“只夹两筷子。人家送半碗来，咱们一点不回，往后井边见面也不好。”麝月叹道：“奶奶连穷也要穷得有来有往。”宝钗道：“穷又不是不见人了。”宝玉听见这句话，抬头看了她一眼。宝钗已经低头去收针线，并没有别的意思。这天夜里风比前一夜更紧。那领破毡到底不甚听话，半夜里上角松了一处，冷风从窗棂缝里钻进来。宝玉先醒，听见窗纸哗啦哗啦，便披衣下床，想把毡重新塞好。屋里没有点灯，他摸索着搬凳子，不防踢着炭盆，幸而盆里只余冷灰，并没火星，却把灰扬了一地。"
+    },
+    {
+      "id": "r785-ch95-l469",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 95,
+      "line": 469,
+      "quote": "次早麝月又把几件换下的贴身衣物泡在盆里，因不舍得多烧热水，只兑了一瓢昨日剩的温水。冬日井水刺骨，她搓了一会，手背便红起来。宝玉看见，伸手要帮她拧一件，麝月忙道：“二爷可别。你一拧把领子扯坏了，我还得再找线补。”宝玉道：“我总不至于连衣裳也不会拧。”麝月笑道：“前日米袋是谁险些掉在街上？昨日破毡是谁一钉钉出两个眼？这会子又来保衣裳。”"
+    },
+    {
+      "id": "r785-ch95-l499",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 95,
+      "line": 499,
+      "quote": "过了一会儿，麝月像想起什么，在黑里又问：“两碗半，明儿还是这个碗？”宝钗道：“还是那个。”“知道了。”麝月摸黑把那只小木碗仍搁回米瓮边。这才再无人说话。"
+    },
+    {
+      "id": "r1ea-ch95-l373",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 373,
+      "quote": "房钱说到后面，还另要添一笔留作损坏时扣用。宝钗问若无损坏几时还，妇人说到搬走时看墙门再讲。她把数字听准，换问若窗纸坏了，归谁补。妇人道日常的小处自然是住的人补，屋脊屋梁却是主人管。出门后贾芸问可还中意，宝钗说屋是好的，只头一笔便用去太多，留下的米炭要挤。贾芸道再看看。那妇人送到门外，还说有了主意可来留话，宝钗谢过，并没因为看得仔细便给她一句准话。"
+    },
+    {
+      "id": "r1ea-ch95-l381",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 381,
+      "quote": "回借院，贾芸将三处条件再说一遍。宝玉听见末一处有破毡，问怎么不选头一处。宝钗道头一处的钱除了要付的，还有要押的，不能只见窗好便算住得起。麝月问偏院的灶怎样，贾芸说可单独用，只是门外一角要清出来。她听了反倒倾向那里，道等人家灶空，粥便凉一回，炭也多烧一回。宝玉还想问有没有更好的，又见两人把刚盛出的饭盖好，便给贾芸移来凳子，让他坐下喝水。"
+    },
+    {
+      "id": "r1ea-ch95-l389",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 389,
+      "quote": "原先进借院的铺盖有一大包，搬这一天打开各人的东西，却没有谁能将那一整包旧时如何分开的说齐。麝月只认得眼前自己拿着的褥子，宝钗指明床上正用的两床；另有一包压在别人的箱后，得等箱主人回来才能问。宝玉想去拉，宝钗止住，叫他别把别人的箱碰倒。车上先装他们当日从床上卷起的几床，麝月把绳递给宝玉，叫他托住，自己勒紧一边。箱后那包还留着，她临出门又回头望了一眼。"
+    },
+    {
+      "id": "r1ea-ch95-l391",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 391,
+      "quote": "车到偏院，贾芸先把门推到不碰墙的位置，麝月抱着小锅入内，宝钗将刚取下的衣被放在暂扫净的一角。宝玉抱一卷褥子进门，进得急，衣襟内那件随身的玉硌在胸前，他伸手护住，侧身才过了。贾芸将自己这一趟抬下的放好，回头又去取车上的。小瓮从隔壁搬来，洗净才纳米；旧毡从墙边取下重抖，炭筐原是空的，麝月将筐底拣净，先用来放今日带的零物。"
+    },
+    {
+      "id": "r1ea-ch95-l399",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 399,
+      "quote": "价开出来，只够换有限的日用。宝玉觉得比想的少，伙计说若不中意，可拿回，手仍放在衣边等着。麝月问到期怎样、票若折了能否看清，听明白才回头看宝玉。他终于点了头。伙计写票，画出件数与成色，叫他们当面看；麝月不识全字，请他念过，将票夹在贴身的布里。走出门时宝玉回望一眼，夹袄已在柜后，只剩那一张纸能带回来，风吹到袖口，他忽然将两只手都缩进去。"
+    },
+    {
+      "id": "r1ea-ch95-l423",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 423,
+      "quote": "她比着木碗给宝玉看，说现时煮粥先取两碗半，若有别的来，便要重算。他听到半，问半碗是浅浅半碗，还是满了再去一半。麝月道先用这只，不是拿出从前大碗比一比，也不是每回另换个好看的。他笑说原来先得问是哪一个碗。宝钗说所以放在米瓮旁，不要盛别的。他擦好木碗，放到瓮边，碗底不平，怕落下来，便给下面垫一小片折布。"
+    },
+    {
+      "id": "r1ea-ch95-l429",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 429,
+      "quote": "另一回邻妇来还盆，见他们才吃完，问锅底是否糊了。麝月答没有，只是小灶炭块不匀，须将锅移半边。妇人看她手上裂处，教别用指甲刮锅，拿一片小竹便可。麝月寻个干净竹片，刮完果然省力，洗过立在灶旁。妇人又看窗纸，说最外一边别总贴湿布，受潮更松；风急先压着，等晴日再补。她讲罢也要回去收锅，麝月送她到门边，又把还来的盆挪开，宝玉差点一脚碰上。"
+    },
+    {
+      "id": "r1ea-ch95-l435",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 435,
+      "quote": "到下午，房屋经手的老人来问住得如何，顺手看看窗。他见宝玉补的几处不齐，说最好等干才压，过早便牵裂。宝玉问窗框那缝能否再钉，老人摸过，摇头说得换木，不能胡钉一根将朽处挤开。他说会告诉主人，何时肯换仍难讲。宝钗叫麝月夜里将毡留在那一边，别挡火路。老人问桶好不好用，她说暂未见漏，请他坐一会，他还得往别家去，只在门前喝了一口水。"
+    },
+    {
+      "id": "r1ea-ch95-l445",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 445,
+      "quote": "隔日午后洗衣，一盆水热过又凉。麝月先洗要明日穿的那件，另一件搓净领袖，留着下回再洗。宝钗也下手漂，指尖冻僵，稍后缝衣，针顶不动，便握在掌中暖一暖。宝玉拿旧毡来，她们怕灰碰到正洗净的衣，他只好放回，替晾绳较松处系紧。绳紧了，窗前一条路得留着，他捧洗好的衣走过，肘上还沾着毡毛，不敢再往布上碰。"
+    },
+    {
+      "id": "r1ea-ch95-l451",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 451,
+      "quote": "灯没有立即熄，宝钗趁它还亮将明日要穿的衣放到枕边。宝玉摸领口，一边是新接的布，略硬，问洗过会不会软。她说会软些，不要只拽着摸。他放下，麝月又检查门闩，回身坐到灶旁，听炭里还有一点轻响。房里没有许多话，窗纸动时他们抬头，静了便各做一小件手里的。宝玉原想说这样也好，说到一半，见宝钗将当票重新压回盒下，竟不再把那“好”字接出来。"
+    },
+    {
+      "id": "r785-ch96-l513",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 96,
+      "line": 513,
+      "quote": "麝月道：“枯叶。这里树不多，偏风爱替人家送叶子来。”袭人便挽了袖子，说帮她扫完。麝月忙夺扫帚：“你如今是客，少一进门便抢我的差。”袭人道：“我从前扫得还少？”“从前是从前。”这一句说出来，两个人都静了一息。袭人随即笑道：“好，我如今不会扫了。你自己慢慢扫。”说着真把手放下，跟宝钗进屋。蒋玉菡仍在门边。宝玉道：“你也进来坐。”"
+    },
+    {
+      "id": "r785-ch96-l519",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 96,
+      "line": 519,
+      "quote": "袭人道：“那就更不用说了。带都带来了，难道叫人再抬回去？”她说着把纸包往宝钗面前推了一点，“这个也不多，是我们两个凑的。不是叫你们从此不买米了，不过手边周转几日。”宝钗打开纸包，里面是几块碎银，并没有整锭。她看了一眼，便合上道：“米和炭既来了，我不同你们推。银子也先收着，只是说在前头：这一回是来看人，不能往后定成月例。你们也有自己的日子。”"
+    },
+    {
+      "id": "r785-ch96-l525",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 96,
+      "line": 525,
+      "quote": "宝玉道：“那岂不是没有定数？”“吃这碗饭，哪有什么定数。”蒋玉菡笑道，“忙起来半月不着家，闲起来三日只磨一副嗓子。好在我会的也不只唱，戏箱坏了能钉两下，年轻的不会身段也能教。前日还有人叫我替他挑一套旧衣裳，挑完了请我吃一顿，钱倒没给。”宝玉笑道：“白忙？”“也不算。那顿饭有肉。”蒋玉菡说得一本正经，宝玉不觉笑出声。蒋玉菡也笑，“如今我知道了，别人请饭先问有没有工钱；没工钱，再问饭里有没有肉。两样都没有，才真是白忙。”"
+    },
+    {
+      "id": "r785-ch96-l553",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 96,
+      "line": 553,
+      "quote": "宝玉道：“哪一件？”麝月道：“你看，他又忘了。旧府取回的那件，后来穿进——”说到这里，想起监中，不肯往下说，只改口道，“冬里常穿的。”宝玉道：“还在。领口翻过一次。”袭人道：“留着好。如今衣裳能补便补，别又——”说到一半，自己笑道，“罢了，我不说了。说多了真像回来当差。”宝钗道：“说两句无妨。只是今日说完，仍回你自己家去。”"
+    },
+    {
+      "id": "r785-ch96-l579",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 96,
+      "line": 579,
+      "quote": "“还有他那件旧骑射褂子，袖口早磨了，我说换一件，他偏说穿顺手了。前日果然勾在鞍边，扯开半掌。我拿去叫人补，他又嫌针脚紧了碍手。照他的意思，衣裳破了最好自己长好。我叫他以后穿铁衣，他还说铁衣也要人修。才把袖口弄好，他那只旧麒麟的系带又断了一股，我说他身上的东西像约好了都来找针线，他还不服。可见天下会强嘴的原不只宝哥哥一个。"
+    },
+    {
+      "id": "r785-ch96-l583",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 96,
+      "line": 583,
+      "quote": "“你们若问我如今可还作诗，倒少了。不是不想，只是一坐下来便有人问这件衣服收哪里、那封帖子回不回；好容易安静，自己又想睡。前日倒写了两句，若兰看了，说第一句还可，第二句像我同谁拌嘴。我问哪里像，他又说不上来。我一恼揉了，后来又后悔，白费一张纸。宝哥哥若看见，大约又要替纸可惜。"
+    },
+    {
+      "id": "r785-ch96-l587",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 96,
+      "line": 587,
+      "quote": "“若兰在旁说，宝哥哥还欠他一场箭；我说你如今未必还有心射，他说不射也可坐着看。这些都是闲话。饭已经催二次，再写菜真凉了。宝姐姐下回多写两页，别只替纸省地方；宝哥哥也不许代笔。湘云字。”宝钗念到“天下最会强嘴的原不只宝哥哥一个”，宝玉已经笑起来，道：“她隔这么远还不忘捎上我。”麝月道：“史姑娘若在跟前，只怕还要多说十句。”贾芸坐在门边听了一半，也跟着笑。"
+    },
+    {
+      "id": "r785-ch96-l591",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 96,
+      "line": 591,
+      "quote": "贾芸道：“若哪日真能出去，我替二叔问地方。”宝玉道：“如今先不说这个。”说着把信重新折好，却折得不齐。宝钗接过去，照原印折了两折，先放到针线篮里，道：“晚上再收。你再折，边都折毛了。”麝月道：“这倒好。针线篮如今既收当票，又收银包，又收史姑娘的信，越发什么都管。”宝钗道：“当票在匣底，银子也在匣底，信只暂放。你少把三样说成一处。”"
+    },
+    {
+      "id": "r1ea-ch96-l467",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 467,
+      "quote": "麝月将门关些，又推开一线，怕灶烟进来。蒋玉菡说站门边也成，她道那里还要出入，来做客便先坐。宝玉叫他不必急走，他却望一眼门外，说另有个行头包还在那里，改过的一处袖边今日得送还试穿，迟了，那边等着的人也误工夫。袭人笑道：“便是怕他把来这里只当闲坐，才早说了这话。夜里又有事，不是专来吃你们一日饭。”"
+    },
+    {
+      "id": "r1ea-ch96-l479",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 479,
+      "quote": "麝月问袭人用什么抹手，手背不大见裂。袭人从包内取一个小盒，说街边常卖的便宜油膏，味不好闻，却能擦，原就带给她。麝月揭盖便道这味道真有些狠，蒋玉菡笑说她在家也嫌，夜里用了，却不许人碰她手。袭人道：“你倒记着这个，前日是谁袖里抹过一块还不认？”宝玉笑道如今两个人揭短，比从前听她说别人还齐全。袭人看他一眼，说换了地方，也不要以为没有旧账。"
+    },
+    {
+      "id": "r1ea-ch96-l483",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 483,
+      "quote": "宝玉听见“他家的人”，眼下略一动，伸到衣领上的手收回了。袭人问衣服可还穿暖，他答够穿，宝钗说眼下换季，够用的都补过，冬里仍紧。袭人点头，道夜里也要换，别日日穿一件捂着。麝月说洗的时候他还在问能不能快干，宝玉道不是每回。袭人笑道少问一回，便算你帮一回忙。她在衣边找到一根未剪的线头，先问宝钗剪刀在哪里，宝玉向从前放的地方看去，那里如今只有水盆。"
+    },
+    {
+      "id": "r1ea-ch96-l487",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 487,
+      "quote": "宝玉想推，说他们自己有家要过。袭人道正因为有家，才知道这些能用，又不是整家都搬来。蒋玉菡说这一回手里正取到些钱，能挪一点，往后收钱有早晚，尚未拿到的也不敢许。他回身去看门外日头，宝玉便不再推。宝钗道了“先收”，将碎银收近身。麝月拢米袋口，问袋是否带回，袭人说下回方便时洗净再拿，不必为这一只袋走一趟。"
+    },
+    {
+      "id": "r1ea-ch96-l491",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 491,
+      "quote": "宝钗叫麝月留饭，蒋玉菡道不能久坐，行头得送还，别人试过不合还要改。他若迟，那边也迟。袭人说今日不要另煮，往后认得门便好。麝月道锅里还没下米，晚些放多少自己知道，不是客人一说不吃便不肯留。袭人握她手，道不是怕这一碗，是真还有活。宝钗让他们回去也照顾自己的饭，有余暇再来。麝月把小盒往里推，免得送人时碰落，蒋玉菡已经去门外提行头包。"
+    },
+    {
+      "id": "r1ea-ch96-l527",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 527,
+      "quote": "宝玉问如何回信，宝钗说先把新处怎样寻人写清。麝月道鞋后跟里垫布别厚，挤了，还得拆，这句要告诉她。宝玉笑说这是真有用，记在一旁，又想将冬里漏风写长些，提笔半日，起头却只写得搬屋。宝钗把那张纸取来看，问你最想问她什么。他道两个人每日怎样，她答那便问，不必先替她猜一天。宝玉将方才写的转过面，另找干净处，纸薄，背面的字还透着。"
+    },
+    {
+      "id": "r1ea-ch96-l531",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 531,
+      "quote": "宝玉在旁添水，问可否把热饭那段也回她几句。麝月道这边叫你起，你也说一刻，倒好拿去同她比。宝钗等两人笑过，说写给她看罢，自己别忘了明早起来。他还真提笔，却先问若兰若方便，可一同回来话，不必另做一封。到末行停了停，添一句那两句不问了，已寄来的收着。墨未干，他急着折，一角印上微痕，麝月笑道这也给人看你一伸手的本事。他将纸摊回，不敢再用袖去压。"
+    },
+    {
+      "id": "r1ea-ch96-l535",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 535,
+      "quote": "米已用过一些，干处的半袋还未全倒。旧当票仍在，青夹袄尚不在柜里，宝玉取薄衣时，手又向从前放它的地方伸了一回。麝月用油膏几日，旧裂有的浅些，有的碰热水仍痛。邻妇闻了嫌冲，说自家用的贵些，不能天天擦，想认认盒样。麝月拿给她，也叫薄抹，竟学了袭人口气。宝玉在窗边笑，她说别笑得像你会用，那日还抹到袖上，叫我寻布来擦。"
+    },
+    {
+      "id": "r1ea-ch96-l541",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 541,
+      "quote": "小贩找钱慢些，麝月在门边等，手背油膏遇日头微亮，她忽然想起袭人叫她将袋洗好，便回屋取出那空了一半的外袋，不能立即还，只先把布边的米屑拂净。宝玉说待袋空再洗，她道自然，不然洗了往里盛湿气倒不好。宝钗把买来的菜放在盆内，择去硬根，回信留下的纸边仍干着，没有沾到菜水。窗前那块破纸又起风，她用手按住一角，等麝月做完饭再补。"
+    },
+    {
+      "id": "r785-ch97-l603",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 97,
+      "line": 603,
+      "quote": "话说湘云前一封长信到宝钗手里时，满纸还是茶浓茶淡、旧褂松子的话。谁知隔了月余，她家里仍是原来的院落，门前那两株树却已经换了一层叶色。卫若兰自前番出门，原说月内便归；月尽不归，又捎信说还要多留些时日。所为何事，信里并不细写，湘云起初还同家里人说“不过迟几日”，后来连这句话也懒得说了。"
+    },
+    {
+      "id": "r785-ch97-l627",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 97,
+      "line": 627,
+      "quote": "“人可安稳？”“邻里都说安稳，就是手头不宽。”湘云道：“那便租。价钱别因人家只有一个女人就乱添，也别少到咱们倒替她修屋。照旧街价就是。”管家娘子应下，又问：“西屋那两只箱子往哪里挪？”湘云想了想：“一只搬我这边，一只放后房。弓袋也收进来。”她说得很快，管家娘子却迟疑道：“若爷回来，问西屋怎么租了出去——”湘云抬头：“回来再说。屋子空三个月，难道专等他一句话才会长租钱？”说完见管家娘子还有些不安，便笑道，“他若怪，叫他来找我。横竖从前拌嘴也不是一回了。”"
+    },
+    {
+      "id": "r785-ch97-l647",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 97,
+      "line": 647,
+      "quote": "妙玉把布折好，道：“我若不去呢？”住持也不恼，只道：“你不去，我自然还能想法子。只是人家的米油咱们已经吃了，明日叫我一个人去回这个话，也得有个说法。”说完又补一句，“不过半日。午后就回来。”屋里静了一会儿。外头小尼正在扫院子，扫帚刮地一下一下。妙玉把经架最后一角擦完，才道：“念哪几卷？”住持把经名说了。妙玉道：“经先拿来，我看一遍。”"
+    },
+    {
+      "id": "r785-ch97-l667",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 97,
+      "line": 667,
+      "quote": "第二日午前，灶上的小尼抱着一只裂了口的粗瓷钵来，说拌香灰的钵坏了，想借妙玉屋里那只白瓷小盆用半日。那盆原是她洗茶具的，从不拿去灶边。妙玉一听便道：“另找一个。”小尼道：“能盛的都在用。住持说下午有人来上香，香炉灰要筛。”妙玉皱眉：“那是洗盏的。”小尼不敢再求，抱着裂钵要走。走到门口，钵底忽掉下一小片，险些砸在脚上。妙玉看了一眼，叫住她，把白瓷盆拿出来，道：“只盛干灰，不许兑水。用完洗净送回来。”小尼忙答应。"
+    },
+    {
+      "id": "r785-ch97-l699",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 97,
+      "line": 699,
+      "quote": "宝玉问：“你如今还替她们抄这些？”惜春道：“我字还能认，为什么不抄。”“天天都有？”“有就抄，没有就看经。灶上缺人也择菜。”宝玉道：“你还会择菜？”惜春抬头道：“菜叶还能比画笔难？”宝玉被她说得笑了，想起从前她作画时最嫌人催，如今却坐在这里替老尼誊人名，心里一酸，嘴上只道：“别把好字写坏了。”惜春道：“纸背都要用，还挑什么好坏。”"
+    },
+    {
+      "id": "r785-ch97-l705",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 97,
+      "line": 705,
+      "quote": "回到小屋后，桌角果然压着一张写坏的纸，背面空着半幅。惜春顺手把它翻过来压平，像不过是一件寻常事。宝玉又问：“你带来的东西都退回去了？”惜春道：“留了一件厚衣，一把梳子——后来也不用了，一卷经，还有砚。别的在那里占地方。”宝玉道：“梳子也不用，怎么还留？”惜春看了他一眼，道：“忘了扔。”宝玉一怔，忍不住笑道：“我还当你件件都想得明白。”惜春道：“谁同你说我件件想得明白？”这回她嘴角也略动了一下，很快又低下头去。"
+    },
+    {
+      "id": "r785-ch97-l707",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 97,
+      "line": 707,
+      "quote": "这时前院小尼把老尼方才说的簿子送来，上头已有几行名字，有一处墨水洇开，看不清字。小尼道：“师父说这一处先空着，等明日问清再补。”惜春接过簿子，用镇纸压住，磨了两下墨。宝玉见她提笔，仍是从前写字作画的手势，忍不住凑近看。惜春道：“别挡光。”宝玉忙往旁边让。惜春把两个名字誊好，到模糊处果然空下一格，并不猜。小尼又送来两张叠过的黄纸，说晚课后还要裁成签子。惜春道：“放在柜上，我写完再裁。”"
+    },
+    {
+      "id": "r785-ch97-l717",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 97,
+      "line": 717,
+      "quote": "走到院门外，天仍阴着，却没有下雨。他回头看了一眼，只见木门已经半掩。门里并无谁来送。宝玉撑不开伞，便仍夹在腋下，沿原路慢慢走回。"
+    },
+    {
+      "id": "r1ea-ch97-l553",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 553,
+      "quote": "饭未吃完，房屋经手的人在外问昨夜可有雨进，仆妇答一处，湘云叫进来。来人看屋角的盆，盆底已干，说屋上几片瓦松，找瓦匠换。湘云问可是上去看过，他道自己未上，旧时有个角不合，须工人看。他手里还拿着收房钱的纸，湘云便将该付的一份取出。仆妇问等不等男主人回来再定，她把钱放到桌上，道：“三片瓦也等人回来，雨来了又向谁借干地方？”来人说未必只三片，她答那就看过再说。纸留在桌边，修瓦的须另日来；门上人催他，湘云的汤也凉了，她先将碗向里推开。"
+    },
+    {
+      "id": "r1ea-ch97-l567",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 567,
+      "quote": "湘云那边瓦匠来了，仆妇挪饭桌，碗罩到锅边，湘云自己站在院里听。工人上去，拨下松瓦，坏的三片，另有一片只须挪正。下来讲料与工，湘云叫将旧瓦放墙边，问只换三片，为何还算上去一趟。工人指梯子和脚手，道这些也得搬，不能只算手里三下。她听过，仍将料与工分开问，数目听齐才取钱，仆妇拿水来，放在没有碎瓦的一边。"
+    },
+    {
+      "id": "r1ea-ch97-l573",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 573,
+      "quote": "金麒麟从布褶下露一点光。仆妇怕叠衣刮着，问是否先取开，湘云叫放盒里，衣另收。盒内有别的小物，她让出一处，拿软布隔好，盖才合上。仆妇来问饭锅，她从箱前起身，叫留下的一份热过；走到门边，又回来将箱内压歪的衣角按平。仆妇已取锅盖，盖沿响了一下，湘云将箱合起，那块软布仍有一个小角夹在盒边，她顺手收进去。"
+    },
+    {
+      "id": "r1ea-ch97-l589",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 589,
+      "quote": "惜春收退下的衣，同住的人问留着还是拆补。她打开画袋旁布包，外边旧，内里尚可用，说有需要便拆，先问师父。师父看过，叫宽些的作补，窄条捆起，别散地上。惜春折里布，拿衣领时碰到小梳子，梳齿压着旧线，一直夹在布折中。同住的人笑还留梳子，她答忘了扔。那人看她短发说用不着了，她将齿间线拈出，梳子另放，手里线有一个死结，留着待会儿解。"
+    },
+    {
+      "id": "r1ea-ch97-l607",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 607,
+      "quote": "院里人问茶，妙玉没取屋内盏，灶旁有大家用的，挑一只看缺口，再取热水。水得先给吃饭的人，掌锅的让稍待。小徒抱壶嫌烫，她叫垫布，自己扶一边；壶口偏，水溅灰衣，在袖边散开。她手仍扶着，壶稳才收回。香客道谢，她点头，转身去看还有多少水。小徒要倒尽，她叫留下，说那边还有一人未用。袖上湿处贴着手腕，她将袖往外牵开些，没有立即回屋。"
+    },
+    {
+      "id": "r1ea-ch97-l617",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 617,
+      "quote": "梳子让他看见，他先笑，又觉不该，道：“你都这样了，如何还留这个？”惜春答：“忘了扔。”他摸梳齿，问今日可收去，她说要用便拿，不拿先别压纸。他不带走，又问是否舍不得旧日。惜春将梳子移开，看着他道：“谁同你说我件件想得明白？”宝玉手停，竟没找出一句能接得平常的话。梳子拿走，手下只剩纸角，他也不敢再按，便将手收回膝上。"
+    },
+    {
+      "id": "r1ea-ch97-l619",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 619,
+      "quote": "她摊师父要的纸，宝玉站看，影子盖字，惜春道让一让，挡光。他移向另一侧，又碰水碗，只得退些。纸上留一处空，他问未写什么，她拿底本给看，那里受水，旧字糊开，认不清，得问过再补。他看前后，刚想猜，她已将底本收回，叫帮递桌边短笔。宝玉拿的是干硬一支，她让放回，指另一支。他递过，短笔蘸墨，到了空处仍停，下一字写在后边。"
+    },
+    {
+      "id": "r1ea-ch97-l629",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 629,
+      "quote": "湘云夜里听门闩一响，从半梦中醒来，手往身旁搭了一下，随即睁眼。外间仆妇说是风将门带上，自己要添一道闩，问她需不需要水。她道要一碗，仆妇端来，她喝过放在原处，并未因梦里一瞬的错听便叫人去外头迎谁。灯下若兰旧衣的折痕仍在，早上收到的信也在，她将灯移离衣些，怕手边一碰掉油，留自己写了几字的那张纸到明日再写。门栓添好，响声少了，屋里那一份饭已收在锅中。"
+    },
+    {
+      "id": "r1ea-ch97-l631",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 631,
+      "quote": "妙玉睡前把盏移到不碰经册的一边，盆借给厨房，尚未回来。小徒说明早一起洗，她只答盆用完送到洗处，莫藏到别人寻不着的地方。灰衣袖上干了一片，深浅尚能看见，她折衣时避开那里，手上沾到细灰，仍以布擦，不说灰衣比原来的更好。门外供纸已经收净，灶边未净的留到明早，她关门，不再端盏出去找一盆水；屋内那只盏却照旧扣在她选的干布上。"
+    },
+    {
+      "id": "r1ea-ch97-l633",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 633,
+      "quote": "惜春用完饭，将黄纸摊到桌上，先比师父交代的宽窄。剪刀刃一处不快，纸角咬住，她不硬拉，退回一点重新下剪。旧笔与梳子在旁，梳子又碍着尺，她把它移到画袋上，今日仍没有出门扔。灯芯须剪短些，旁人还要用油，她只添到眼下能照纸，不说一盏足照长夜。剪下的窄条束好，废纸翻过留下可用一面，底本那个糊字尚未问明，仍空着。门外人叫她，她应一声，按住纸边，将余下的一角裁齐。"
+    },
+    {
+      "id": "r785-ch92-l131",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 131,
+      "quote": "行了半晌，他忽又问：“今儿家里可等我吃饭？”贾芸隔着帘子笑道：“这我可不知道。不过麝月这几日天天多留一碗饭，留凉了再热，热了你又不回来，倒把她气得够呛。”宝玉听了，也笑道：“回去先叫她别热了。”贾芸道：“二叔若真能赶上热的，才算有福。”车轮又轧过一洼泥水，溅在车帮上。天色已向晚，一家人住的那条小巷渐渐到了。宝玉坐在车里，闻见不知谁家灶上烧煤，烟气夹着饭香从帘缝里钻进来。他掀起帘子，已经看见自家那扇窄门；门口没有人声，只墙根放着一只才倒过药渣的簸箕。"
+    },
+    {
+      "id": "r785-ch93-l141",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 93,
+      "line": 141,
+      "quote": "宝玉正夹一箸菜，听见“留饭”二字，抬头道：“真天天留？”麝月道：“谁有那个闲钱天天多煮？不过你那一份没敢先分人。到二更还不回来，才叫别人吃了。”宝钗道：“你别听她夸功。第三日她自己饿了，先吃了半碗。”麝月忙道：“奶奶怎么专揭这个。”宝玉笑了一声，笑着笑着却慢下来，只低头把碗里的粥吃完。小丫头来收碗时，他下意识把筷子并得整整齐齐放在碗沿上，又把剩下半片咸菜往中间推了推。麝月见了奇道：“如今倒比从前会收拾。”"
+    },
+    {
+      "id": "r785-ch93-l237",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 93,
+      "line": 237,
+      "quote": "奶妈见了问：“这些还留着？”平儿只道：“孩子的东西，先收着。”说完吹暗灯，只留炕角一盏极小的灯，自己和衣躺在巧姐身边。奶妈守在外间，隔一会儿还去看灶边有没有热水；原先凤姐房里的药炉已经撤了，只剩一只空药吊子倒扣在墙根。外头仍有人走动，时不时来问一句明日的事。平儿听见脚步，几次要起，想到巧姐睡在身边，才又等人真正叫她名字再出去。少顷外头果然有人低声叫：“平姑娘，明早用的白布还短一截，先记在哪里？”平儿看巧姐睡熟了，轻轻把她搭在自己袖口上的手挪到被面，起身披衣，道：“等我来瞧。”说着便掀帘出去。"
+    },
+    {
+      "id": "r785-ch94-l243",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 94,
+      "line": 243,
+      "quote": "话说凤姐身后诸事，虽都从简，到底也忙乱了十来日。小院本来窄，白布一挂，来往的人再一多，连井边都要让路。贾琏白日往外跑，或是结棺木钱，或是回亲友，或是为旧府的事听一句准话，往往天黑才回来；王夫人同李纨照应贾母，平儿则一头管丧中零碎，一头带着巧姐。巧姐自母亲没了以后，夜里仍睡平儿炕边，白日也不肯离得远。那双青面夹鞋大了一点，后跟塞着棉，走快了还是脱，奶妈每日不知替她提多少回。"
+    },
+    {
+      "id": "r1ea-ch93-l259",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 93,
+      "line": 259,
+      "quote": "宝钗在旁道：“我坐这里，你去看一看。”巧姐不肯，平儿便先把凳子移近宝钗，将孩子仍放在眼前，道：“我到门边，叫我听得见。”孩子问她还回来么，她答回来，又把那碗放妥，不叫人经过踢翻。宝玉在外头见她起身，便替她把灯往前移，照着地上放开的布。她走出屋门，先蹲下量了那处短的，又将手边能够接上的旧白布铺平，拿起针，把针尖向灯下转了转，低头穿线。"
+    },
+    {
+      "id": "r1ea-ch94-l263",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 94,
+      "line": 263,
+      "quote": "平儿穿了两次，线头仍软软的伏在针眼旁。宝玉将灯又移近些，她却道：“不必了，里面还要照着。”便把线头在指间捻细，终于穿过去。旧白布洗得薄，针脚若密，反倒要裂，她只沿着两边好的地方接。门里巧姐叫了一声，她应着，手却不敢快；接到一半，孩子又问：“好了没有？”宝钗在里面说，且替你留着凳子。平儿听见凳脚一响，知道孩子又要下地，连忙把针插在布上，进去看了一回。"
+    },
+    {
+      "id": "r785-ch94-l347",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 94,
+      "line": 347,
+      "quote": "平儿把消息回贾母。贾母听说她已经肯吃粗饭，也肯跟人理线，只点点头，道：“在那里安稳，就仍住着。别因一时安稳，便替她把一辈子也定了。”平儿道：“知道。”她从贾母屋里出来，正碰见奶妈收巧姐原先睡的小铺。炕脚还放着一只孩子不用的旧木凳，奶妈问要不要也收进箱里。平儿道：“先别收。她还要回来坐呢。”奶妈便把木凳推回墙边。"
+    },
+    {
+      "id": "r785-ch95-l355",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 95,
+      "line": 355,
+      "quote": "却说平儿送巧姐到刘姥姥处以后，隔些日子还托人问一声；后来捎来的话无非是吃得下、睡得稳、跟着理线看鸡，来回便渐渐稀了。如此又过了几个月，天气由暖转凉。城里这边，凤姐身后诸事早已收束，原先借住的院落到底不能久居，各房只得分头另寻落脚处。宝钗这边亏贾芸从中寻了一处人家闲下的偏院，不过两间正屋，东边一间小屋，后墙挨着别人家的灶房，院角另搭着半间灶棚。地方虽窄，倒有一眼井在巷口，赁钱也还勉强。宝钗看了，只说：“住人尽够。”便搬了来。"
+    },
+    {
+      "id": "r1ea-ch95-l361",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 361,
+      "quote": "乡里的线绕在木架上，城里的针线却又压在小包米底下。平儿请那妇人带去的，原也只够添几顿软饭，妇人这回来城没有见到她，只在院门告诉麝月，孩子鞋已补好，天冷还要添袜。麝月把话留给平儿，回屋见宝钗正算日用，便将包米余下的布拿给她看。宝钗问是哪里拿的，她道破了边的一块，不能再做衣，却仍可裹物。两人便把布重新叠小，搁在针线旁，免得下回要包，临时又寻不着。"
+    },
+    {
+      "id": "r1ea-ch95-l363",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 363,
+      "quote": "一年中的暑热退尽，菜叶黄了又落，到如今迎来的，已是家败后的第二个冬天。借院门上一个代管的人来，向宝钗说明，原主家有人要回来用屋，不能再这样长借，愿留些时候让他们寻房。他说话也有些难，怕人道趁着别人不便催赶，先解释不是今日就搬。宝钗请他坐下，问到几时须把哪几间腾出。他看着脚边的衣包，道自己只管传话，还能回去商量宽几日，总不能整冬空着等。"
+    },
+    {
+      "id": "r785-ch96-l503",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 96,
+      "line": 503,
+      "quote": "话说宝玉、宝钗自迁到这处偏院，这一冬终于挨到开春。风虽软了些，屋角那领旧毡却还没有撤；早晚仍冷，炭筐里的炭也只敢一点点添。次早麝月照旧拿那只小木碗量米，宝钗仍叫留出中午的一顿。只是窗纸不再夜夜被风鼓动，巷口泥雪渐干，井边挑水的人也少跌几跤了。"
+    },
+    {
+      "id": "r1ea-ch95-l455",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 455,
+      "quote": "麝月最后把门缝塞上，衣上沾的毡毛掉了一点，她弯腰拾起，见灶边水盆还放着，便移到不碍脚处。宝玉挪凳让她过，凳脚在地上轻轻磨响。宝钗吹灭灯，屋内暗了，窗边还听得风。没人再去掀毡看补得全不全，只各将身边能用的衣拉近。那只小木碗留在米瓮旁，等天亮后再拿起来，量下一锅。"
+    },
+    {
+      "id": "r1ea-ch96-l459",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 459,
+      "quote": "天亮后，麝月仍从米瓮旁取那只木碗。门缝塞着的旧布，过夜也湿了，她将布抽出来，门才开得顺些。宝玉坐起，先摸放在枕边的衣，手在补处停一停，便穿上了；宝钗将当票收妥，叫他把窗前盆水端出去。窗外积的冬雨还未全干，待偏院泥地渐硬，街上便有卖春菜的声音。破毡不再整日遮着窗，日头出来，麝月将它卷起半边，屋里总算看得见针线细处。"
+    },
+    {
+      "id": "r785-ch96-l597",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 96,
+      "line": 597,
+      "quote": "宝玉这才把信递给宝钗。宝钗仍收进针线篮，起身去淘米。新米混着旧米在盆底打了两个旋，水还是照旧留下一钵预备浆布。灶上的炭比前日多了些，却只添了两块。麝月把锅盖扣上，听见里头水响，问：“明早呢？”宝钗道：“明早还是两碗半。”宝玉在旁道：“我可没说要多。”麝月道：“今日没人问你。”三人都笑了一声。灶上饭气渐渐起来，院外卖春菜的叫声已经远了。"
+    },
+    {
+      "id": "r1ea-ch96-l543",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 543,
+      "quote": "晚饭下米，麝月把旧米同新添的淘在一盆，木碗照例量足两碗半。宝玉从门外端回水，先放稳桶，才来接盆，袖边湿了一小片。宝钗叫他换个干处拎，不然盆滑；他换过，淘米水沿盆口流出去，米留下。远处春菜的吆喝还听得见，已移到别人的门前。麝月叫他把门掩上，自己将米落进滚水，盖好锅，方去补白日按住的那一小角窗纸。"
+    },
+    {
+      "id": "r1ea-ch97-l547",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 547,
+      "quote": "麝月补上那一小角窗纸，锅里的米也开了花。宝玉想把从前湘云寄来的家书再寻出来，宝钗道已包好，今日别挨着灶拆，纸边沾了油，日后不好看。他便把手缩回，只将桌上的箸摆齐。麝月端碗来，说这边只坐一个人，那一副放远了。宝玉挪过，问四妹妹那里如今吃什么，宝钗道要知道，得亲去问。他说想去一回，宝钗应着，先叫吃饭。宝玉低头拨碗边的菜，菜根有一处未断，拨了两下，又将箸拿稳些。"
+    },
+    {
+      "id": "r1ea-ch97-l549",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 549,
+      "quote": "且说湘云住处，案边也摆过两副箸。做饭的仆妇端一碗来，又去取另一碗，湘云抬头道今日只盛这一份。仆妇照从前摆惯了，听见便把那一副收去，问锅里多的如何放。湘云叫留着，过些时候自己还有一顿。仆妇将罩子盖在锅上，桌上还留两块放箸的小垫，她拿一个要收，湘云道垫不占地方，先放着。箸进竹筒，垫却仍在，湘云将自己的往近处挪一点，碗边正抵着另一块。"
+    },
+    {
+      "id": "r785-ch92-l027",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 27,
+      "quote": "宝玉道：“躺得下么？”“横着躺不下，侧着总躺得下。”宝玉只得侧身靠墙。隔壁有人咳嗽，远处不时有门闩开合的声音，一开一合，铁器相碰，响得格外清楚。有人翻身骂冷，有人低声同旁边说话，也有人刚躺下便打鼾。宝玉一闭眼，就想起早晨宝钗站在门边说“午前回来便好”。又想麝月那两块点心，自己竟真一块也没带回来。"
+    },
+    {
+      "id": "r785-ch92-l121",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 121,
+      "quote": "瘦汉道：“不知道。可你若不出去，回来再拿就是。”宝玉想了一想，果然把炒米递给他。瘦汉接了，已经拆开纸包抓了一撮，道：“快走你的罢。回来若没有，我赔你。”来人又催，宝玉只得提起小包出去。又从狱神庙前经过时，案上那盏灯仍点着，灯芯结了一小朵黑花。宝玉脚步微顿，却没有像第一夜那样盯着看。走到外头，仍叫他候着。足足又坐了半日，才有人拿着一张纸出来，道：“你这一处暂且问明白了，先回去候着。家里的事还没有完，若再叫你，仍须来。”"
+    },
+    {
+      "id": "r785-ch92-l079",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 79,
+      "quote": "过了两日，家里按例得了一次入视。宝玉被领到外廊，木栏外先站着一个老妈妈，旁边才是宝钗。她穿一件半旧斗篷，脸色比平日更白，见宝玉出来，先从头到脚看了一遍，却只问：“衣裳收到了？”宝玉道：“收到了。”“夜里冷不冷？”“还好。”宝钗看着他道：“下巴都尖了，还说好。”宝玉笑道：“这里饭不大合口。”"
+    },
+    {
+      "id": "r785-ch92-l091",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 91,
+      "quote": "又过两日，宝玉午睡才醒，忽有人来叫，说外头送东西的人中，有一个旧日在家里服侍过的，托着想隔门见一面。宝玉心中疑惑，随着出去。隔着栅门，只见一个女人穿着青布棉袄，头上只簪一根银簪，手里提着空布包。那人见他来，先抿嘴一笑，道：“二爷如今还认得人不认得？”宝玉看了半晌，猛然道：“茜雪！”"
+    },
+    {
+      "id": "r785-ch95-l425",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 95,
+      "line": 425,
+      "quote": "宝玉道：“那拿旧布补。”宝钗道：“旧布也有旧布的用处。先把裂处缝两针，不必好看。”于是麝月找粗线，宝玉按毡，宝钗穿针。三个人围着一领破毡折腾半日，好容易缝住。到了傍晚，北风忽又起来，窗下那张新糊的纸被吹得一鼓一鼓。麝月把毡立起来，想用两个旧箱子压住。宝玉自告奋勇去搬一个木凳顶在中间，谁知凳脚一滑，“咣”的一声倒在地上，毡也跟着扑下来，正把宝玉从肩到头罩住。"
+    },
+    {
+      "id": "r1ea-ch92-l067",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 92,
+      "line": 67,
+      "quote": "麝月听到不能自己带进去，问那他认不认得送的是哪家的。小红说到时须把姓名说清，不能只喊宝二爷，外头也未必人人知道这称呼。宝钗叫她把方才问到的地方记住，家里的人不要各跑各的。小红道记得，只是她能办的是交物的这一头，里面问什么、什么时候放，人家并未对她说。宝钗将厚衣从桌边取回，另放在柜上。"
+    },
+    {
+      "id": "r1ea-ch95-l437",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 437,
+      "quote": "贾芸再来，问房钱交过没有，宝钗说依讲好的交了，往后仍逐月备。宝玉叫他看总裂的窗，贾芸摸纸道先不乱补，找一块够长的压边更省；若要寻窄纸，可顺路带，价由他们自己出。他坐一会喝热水，说另有日常营生，若需帮抬大物，要早些讲，不可等车来才找。麝月问箱后那包铺盖可有回话，他道经手的人尚未都见。宝玉只请下回到借院时问一句，贾芸答若去便问，说完起身，宝玉送到门外，回来随手关住门。"
+    },
+    {
+      "id": "r1ea-ch92-l023",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 92,
+      "line": 23,
+      "quote": "他将小纸和身边所带的钱放在面前，看着一件件收起，心里总觉得还欠一句话没有说。等看守问有无家人等在外头，他才忙说，家里只当他来认单，午间便回。那人答应向外传一句留下候问，旁的不能替他应。他还想托带“没有什么”，想了想却说不出这话凭的是什么，只道：“告诉他们，我在这里等。”"
+    },
+    {
+      "id": "r1ea-ch95-l409",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 409,
+      "quote": "午后糊窗，麝月端一小碗糨糊，宝玉铺纸，想替她做个省力的。纸原是旧纸，碰着竹骨尖端便裂，他把裂处折回来，旁边又牵出一道口。麝月看见道：“你先别救那一处了，再救一救，窗就全救没了。”宝玉笑道原还好好的，越补越破，麝月说纸薄，手快也不成。宝钗从衣包内拣出裁剩的窄纸，教先糊在骨上，等干些再盖大纸。到日色斜了，这扇常用的窗才补过一遍，另外几处仍有风。"
+    },
+    {
+      "id": "r1ea-ch95-l449",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 95,
+      "line": 449,
+      "quote": "夜风从窗框旧缝进来，白日糊过的纸在里面轻响。麝月取旧毡挂到壁边，才发现上端裂口不能一把搭住。宝玉托一端，宝钗寻针，用粗线固在两处。毡边一垂，遮了门旁通路，他们又折上些，门得开得动，灶也得看得见。粗毛扎手，宝玉捏久了，换一处托，麝月就道别半夜落下来盖锅，他赶紧让出灶角。三人看过，才松手，灯影落在毡上，缝下那一边仍轻轻动着。"
+    },
+    {
+      "id": "r1ea-ch96-l497",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 497,
+      "quote": "木碗碰着新添的米面，麝月照旧量两碗半。宝玉说新的是否另煮，她道同淘就是，饭只这几个人吃。宝钗看袋口扎牢，又展开当票查期限，宝玉以为要赎青夹袄，问还来得及么。她说只是看看，房钱仍得留，春日先换薄衣。麝月道还有上月零用要问齐，有欠小贩的须还。宝玉不再问，将米袋布边一个线头理出来，怕扯松了口，便放回原处，去端窗前的盆。"
+    },
+    {
+      "id": "r1ea-ch96-l537",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 537,
+      "quote": "一日收炭，麝月把小碎的另拣出，好热汤用。宝玉见蒋玉菡送来的同旧炭混在一处，问哪块是新来的，她忙着拾一片掉在筐外的，只答如今认不出了。宝钗在桌边数这月还须用的钱，停笔问麝月一笔零用，麝月说数目要去问卖物的，自己记得有买，却不敢说齐。宝玉放下碗，筐底还压着一张旧包纸，炭灰浸进纸纹，他拿起来，手指又黑了。"
+    },
+    {
+      "id": "r1ea-ch97-l555",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 555,
+      "quote": "别处小庵里，妙玉的粥却须等众人的锅开。厨房小徒揭盖太早，米未烂，老尼叫再等，她已把碗端在手中，听见便放回。灶旁油瓶底还有一些，掌锅的人说今日用菜，不好再给别的一碗添，妙玉只见桌面有一处油印，将碗往干处挪。小徒以为嫌粥，低声说今日是粟米，她答自己看见了，别将未煮好的先舀出来。锅盖合下，热气从边上钻出，她退开半步，袖口擦着案边，又看了一眼。"
+    },
+    {
+      "id": "r1ea-ch97-l603",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 97,
+      "line": 603,
+      "quote": "妙玉案上经卷，须先辨哪册给人用。小徒抱来一册，边沾油，里面字清，外边摸黑。她用布擦，老尼说有人等，先辨次序。缺的一册从架下寻到厨房外桌上，旁放油瓶；掌锅的说收桌不晓得归哪架，先避饭盆。妙玉捧回，将沾油的单放，手里布也染上一点黄，她先折进去，不许油面再擦净册，小徒已经来取排好的几册，她叫等一等，册次尚差一处。"
+    },
+    {
+      "id": "r1ea-ch96-l519",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 96,
+      "line": 519,
+      "quote": "“我也曾想写两句，”信里这样说，“写两句，揉掉了。不是一揉便又有更好的，那时灶边有人叫我，回来时笔边都是做活的东西，看那两句也不想留下。你们若问是哪两句，我如今也不还原给你们。倒是替我省些话，免得寄去了，你们为了那两句又写一篇夸我，我自己读着，更不好意思。下回若有可说的，再说给你们，今天这一纸先让你们知道我每日都在忙些什么。”"
+    },
+    {
+      "id": "r785-ch92-l055",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 92,
+      "line": 55,
+      "quote": "宝钗道：“你问得这样细，倒省了我们乱撞。”小红道：“乱撞也没用。这样的地方，多跑十趟不如先问清一句。”麝月拿着针从里间出来，见是她，怔了一怔，道：“红玉？”小红笑道：“姐姐还肯认我，我如今可不敢叫这个名儿了。”麝月也笑：“我一时叫顺了嘴。”小红看见她手里的棉衣，道：“这是给二爷的？”"
+    },
+    {
+      "id": "r785-ch94-l335",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 94,
+      "line": 335,
+      "quote": "巧姐做了一会儿，嫌只是捏线没意思，问能不能摇。妇人便让她坐到旁边，用手带着她摇两圈。纺车一转，巧姐眼睛也跟着轮子转。板儿从外头进来，见了笑道：“你昨日还怕鸡，今日倒会转轮了。”巧姐道：“这个不啄人。”那妇人笑道：“轮子不啄人，夹手比鸡还疼。慢着些。”她一面做，一面哼着两句不成调的乡下小曲：“线儿长，莫着忙；手一急，线先伤。”巧姐听了两遍，也跟着念，念到第二句把“伤”说成“断”，板儿笑她记错。妇人却道：“断也使得，本来就是哄手慢些的，哪有定词。”"
+    },
+    {
+      "id": "r785-ch97-l613",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+      "token": "read-78587806869ace36fc3d4afa",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "chapter": 97,
+      "line": 613,
+      "quote": "女使笑道：“这带子总不会再断了。”湘云道：“你可别替它赌咒。”拿起来看了一眼，又道，“别搁最底下，压久了带子又折。放在那件褂子上就是。”女使依言放好。湘云自己把箱里一件薄衫抖开，看见领口有一点霉印，便皱眉叫人拿去晒透。箱盖合上时，那枚麒麟也同衣裳一道收了进去。"
+    },
+    {
+      "id": "r1ea-ch92-l083",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 92,
+      "line": 83,
+      "quote": "当日风比前一日大，贾芸到了约处，小红已经等着。贾芸只替她拿物，到接物处由她说姓名、来意。接物的人将小包打开，袜子内外看过，炒米也摊了，问所带的那句话是什么。小红道：“我是小红，袜子是茜雪做的。她惦记他冷不冷，让他换掉湿袜；若能说，请照这个带。”那人听完，将东西分别放下，叫他们在外头等，先容里面来接。"
+    },
+    {
+      "id": "r1ea-ch94-l353",
+      "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-1eab93c8ee577086c27685a0.txt",
+      "token": "read-1eab93c8ee577086c27685a0",
+      "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "chapter": 94,
+      "line": 353,
+      "quote": "借针线的妇人坐下补自己一件破衣，顺口唱：“线儿长，莫着忙；手一急，线先伤。”巧姐听到伤，问线也疼么。妇人笑，说是把线弄坏了。刘姥姥道她听见人唱的是断，妇人道：“伤、断都使得，哪有定词。”女儿只催把线绕好，莫一唱又忘了手里的。巧姐于是把那段线托近些，嘴唇动着，没有唱出别的话。绕错时她仍急，越急越缠，刘姥姥便叫她停住，两人一同找到线头。"
+    }
+  ],
+  "preferences_policy": {
+    "allowed_values": [
+      "read-78587806869ace36fc3d4afa",
+      "read-1eab93c8ee577086c27685a0",
+      "TIE",
+      "NEITHER"
+    ],
+    "scope": "各回各维度的局部阅读偏好",
+    "aggregate_score_produced": false,
+    "overall_winner_produced": false,
+    "promotion_recommendation_produced": false
+  },
+  "validation": {
+    "strict_opinion_schema": "PASS",
+    "packet_and_subject_sha256": "PASS",
+    "quotes_exact_at_physical_lines": "PASS",
+    "quote_chapter_membership": "PASS",
+    "minimum_two_24_chinese_character_quotes_each_token_each_chapter": "PASS",
+    "full_coverage_and_excerpt_bounds": "PASS",
+    "preference_values_and_no_aggregate": "PASS"
+  }
+}

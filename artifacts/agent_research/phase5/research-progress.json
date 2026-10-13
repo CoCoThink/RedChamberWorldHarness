@@ -82,7 +82,10 @@
     94,
     95,
     96,
-    97
+    97,
+    98,
+    99,
+    100
   ],
   "fullbook_revision1_frozen_pending_registration": [],
   "new_fullbook_missing": [],
@@ -93,7 +96,8 @@
     83,
     84,
     96,
-    97
+    97,
+    100
   ],
   "changed_boundary_actual_reading": "83_84_CHANGED_BUT_COMPATIBLE_SCOPED_NO_REBIND",
   "full_predecessor_rebinding": "NOT_COMPLETED",
@@ -108,14 +112,14 @@
     "python": "CPython 3.12.13",
     "passed": 1373,
     "skipped": 1,
-    "seconds": 142.33,
+    "seconds": 142.85,
     "validation": "PASS",
-    "scope": "Twenty new chapter registrations, four94-97 revisions, both middle reading records"
+    "scope": "All20newchapters,18firstrevisions plus clean92/93 repairs, all segmented actualreading records and preserved original/corrected opinions; no release"
   },
-  "scope_notes": "Twenty actual research chapters are not twenty adopted chapters. Failed originals and negative opinions remain. Authorship contexts are reused and model/provider identities unverified; no automatic winner or human admission. Source/corpus/contracts/policies and final book readings remain unresolved.",
-  "final_three_revision": "PENDING_ACTIVE_AUTHOR",
+  "scope_notes": "Twenty actual research chapters and segmented dual-readings are not twenty adopted chapters or a single-reader fullbooksemanticPASS. Failed originals and negative opinions retained. Authorcontexts reused/modelprovideridentity unverified. Source/corpus/contracts/policies, length and source-card interfaces unresolved; noautomaticwinner/humanadmission/stablechange.",
+  "final_three_revision": "REGISTERED_SHORTENED_RESEARCH_NOT_ADOPTED",
   "middle84_91_panel": "PASS_LIMITED_READING_NOT_ADOPTED",
-  "late92_97_anonymous_reading": "PENDING_TWO_ACTUAL_READERS",
+  "late92_97_anonymous_reading": "COMPLETED_TWO_ACTUAL_READERS191QUOTES;BASELINEFAIL_TWO_LOCALISSUES;NEWLIMITEDPASS_NOTADOPTED",
   "release_observation": {
     "sources": "PENDING",
     "corpus": "FAIL",
@@ -125,6 +129,72 @@
     "existing86_policy_fullbook_scope": "NOT_SUPPORTED",
     "project_acceptance": "PENDING",
     "engineering": "PASS",
-    "adoption": "NOT_GRANTED"
-  }
+    "adoption": "NOT_GRANTED",
+    "final_gate_record": "artifacts/agent_research/phase5/gate-observation-73ab9331e3deb9a25e1ae3bdd407cb8cacd5b1a72399819a3895651eaad0f259.json"
+  },
+  "tail98_100_anonymous_reading": "COMPLETED_TWO_ACTUAL_READERS117QUOTES;BASELINEPARCELFAIL;NEWLIMITEDPASS_NOTADOPTED",
+  "remaining_changed_boundary_actual_reading": "96_97_100_CHANGED_BUT_COMPATIBLE_SCOPED_SAME_REVIEWER39QUOTES_NO_REBIND",
+  "revised_draftbook": {
+    "path": "artifacts/agent_research/phase5/draftbook/research81-100-5cd704d41ef32f0972e78c7ba94cc24a6f526f9c4dc9b24d6c323bb76bbe641e.txt",
+    "sha256": "5cd704d41ef32f0972e78c7ba94cc24a6f526f9c4dc9b24d6c323bb76bbe641e",
+    "characters": 166111,
+    "status": "NOT_ADOPTED_NOT_RELEASED",
+    "selection": "81-91revision1;92v2;93v3;94-100revision1, all explicit research versions without winners"
+  },
+  "length_observation": {
+    "requested_bodyHan7000_short_chapters": [
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100
+    ],
+    "baseline_ratio80percent_short_chapters": [
+      95,
+      97,
+      98,
+      99,
+      100
+    ],
+    "automatic_padding": false,
+    "corrected_report": "artifacts/agent_research/phase5/length-observation-825b6d2b21acaa420020fb3f8175f9208d6ba03a63fd7518803ca3e64e08894e.json",
+    "frozen_character_target": 9000
+  },
+  "late92_97_panel": "FAIL_RETAINS_BASELINE_NEGATIVE_OPINIONS",
+  "tail98_100_panel": "FAIL_RETAINS_BASELINE_NEGATIVE_OPINIONS",
+  "fullbook_selected_versions_read_chapters": [
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100
+  ],
+  "fullbook_segment_readers": {
+    "81-83": 2,
+    "84-91": 2,
+    "92-97": 2,
+    "98-100": 2
+  },
+  "single_reader_fullbook_pass": "NOT_CLAIMED_SEGMENTED_READINGS_ONLY",
+  "automatic_winner": null,
+  "release_status": "NOT_ADOPTED_NOT_RELEASED",
+  "coordinator_dispositions": "artifacts/agent_research/phase5/fullbook-coordinator-dispositions-v1.json",
+  "active_agents": []
 }

@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "packet": {
+    "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+    "sha256": "e15dfd5c85cbe9d3108fb22796a1392664efaef43c7020a6a041c25c423230ff"
+  },
+  "reviewer": {
+    "id": "agent:fullbook-tail-reader-2",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "fullbook-tail-reader-2:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "verdict": "FAIL",
+      "notes": "FAIL for the verified chapter-98 parcel-location contradiction at physical lines 68/76/78 (observations q04-q06). All 414 lines and all three chapters were actually read in bounded outputs, but reading coverage does not excuse or downgrade this contradiction. Other local strengths and limits are recorded dimension by dimension; no global ranking, provenance claim, promotion, or human adoption follows.\n\nFORMAT-ONLY DIAGNOSTIC ADDENDUM: The public packet declares no samples. The original sample_checks entries below are retained as diagnostic JSON only, not as declared packet samples, new findings, or new reviewer identities. The subject verdict and original notes above are unchanged. ORIGINAL_SAMPLE_CHECKS_JSON=[{\"sample_id\":\"read-ebb4df28f7a34edb1404ade9\",\"sha256\":\"7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8\",\"verdict\":\"PASS\",\"notes\":\"Exact public packet subject binding and complete physical-line consumption checked; this sample PASS establishes bytes/read coverage only, not prose coherence, provenance, global quality, identity, historical accuracy, or human adoption.\"},{\"sample_id\":\"read-ebb4df28f7a34edb1404ade9:chapter-98:physical-lines-1-123\",\"sha256\":\"af0f40c06770901f21991998c83ae703e7666190833eea9326b813d5603609cd\",\"verdict\":\"FAIL\",\"notes\":\"FAIL: physical line 68 says the servant takes the small jade bundle together with his own letters bundle (q04), but line 76 leaves that same grey-blue letters bundle on the table (q05), and line 78 opens it there with five letters and two slips (q06). No intervening return or putting it back is narrated. This is a definite local parcel-location contradiction, not a coverage failure.\"},{\"sample_id\":\"read-ebb4df28f7a34edb1404ade9:chapter-99:physical-lines-124-279\",\"sha256\":\"816bfd9675dd53708167462af4ed3c5346542792981cdfa7f40b95c560e9d82a\",\"verdict\":\"PASS\",\"notes\":\"PASS limited to complete chapter reading and no additional definite local contradiction identified in this span. Borrowed book and rice-count paper remain at home, departure creates search and domestic costs, temple meals are distinguished from eyewitness proof (q12-q16). Prior chapter parcel FAIL is not repaired by this sample.\"},{\"sample_id\":\"read-ebb4df28f7a34edb1404ade9:chapter-100:physical-lines-280-414\",\"sha256\":\"99a86508d2b8d34421b35839e617eb643466c3ad31d6c81a3c21bbbe7e35fb46\",\"verdict\":\"PASS\",\"notes\":\"PASS limited to complete chapter reading and no definite local contradiction identified. Years precede an actual appointment; illness lasts months; mourning and named supernatural frames are separate (q17-q25). The claim that the stone text is complete is a narrated claim, not my verification of unread chapters.\"}]",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "verdict": "PASS",
+      "notes": "Narrow reading PASS: all 225 lines and all three chapters were actually read in bounded outputs; no definite narrator-level local contradiction was verified. This does not certify global quality, fullbook completeness, independent origins, routes, identity, historical/institutional validity, human adoption, or superiority to the other token. Sender wording at line 59 and unshown admission/transition details remain specifically limited in observations.\n\nFORMAT-ONLY DIAGNOSTIC ADDENDUM: The public packet declares no samples. The original sample_checks entries below are retained as diagnostic JSON only, not as declared packet samples, new findings, or new reviewer identities. The subject verdict and original notes above are unchanged. ORIGINAL_SAMPLE_CHECKS_JSON=[{\"sample_id\":\"read-063ef83a6e129d2c56090291\",\"sha256\":\"274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8\",\"verdict\":\"PASS\",\"notes\":\"Exact public packet subject binding and complete physical-line consumption checked; this sample PASS establishes bytes/read coverage only, not prose coherence, provenance, global quality, identity, historical accuracy, or human adoption.\"},{\"sample_id\":\"read-063ef83a6e129d2c56090291:chapter-98:physical-lines-1-80\",\"sha256\":\"d2a6f006c9c11299a3b475b5315b295d733e59bd9a192ad9ed34b9a597891f36\",\"verdict\":\"PASS\",\"notes\":\"PASS limited to complete chapter reading and no definite narrator-level local contradiction identified. One wrong paper parcel is taken, dispatched back with a short note, opened and acknowledged; the other book stays home (q30-q35). Sender phrase 没有钱物 at line 59 is flagged as ambiguous against the enclosed jade, not treated as verified absence of valuables.\"},{\"sample_id\":\"read-063ef83a6e129d2c56090291:chapter-99:physical-lines-81-152\",\"sha256\":\"8f03a5eb03aa61e366995be3bbc8e8e05c6511ccfd307ef8095dc84104f9ed83\",\"verdict\":\"PASS\",\"notes\":\"PASS limited to complete chapter reading and no definite local contradiction identified. The prior guest book is actually returned before withdrawal; temple contact uses a name/request check; bodily work and reimbursable search costs remain human (q36-q44). Formal admission/ordination validity remains unverified.\"},{\"sample_id\":\"read-063ef83a6e129d2c56090291:chapter-100:physical-lines-153-225\",\"sha256\":\"95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3\",\"verdict\":\"PASS\",\"notes\":\"PASS limited to complete chapter reading and no definite local contradiction identified. Repeated winters/summers and later months support growth/illness; actual office is not instant restoration of property; death and meal grief precede a separately marked frame (q45-q56). No unshown roster, route, or ending identity is certified.\"}]",
+      "sample_checks": []
+    }
+  ]
+}

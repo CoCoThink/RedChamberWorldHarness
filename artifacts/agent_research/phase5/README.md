@@ -2,6 +2,13 @@
 
 所有文件是会话 agent 研究材料，不是真人提交、provider API 实测或已通过文学验收的成稿。
 
+## 当前实际阅读入口
+
+- 全部81–100实际新稿已研究登记。未采用首轮研究合订稿179333字符：`draftbook/research81-100-9f79656973430f7d7731f157741f8928d9831e003707b2d391e13ef918c51720.txt`。
+- 另选实际修订的研究合订稿166111字符：`draftbook/research81-100-5cd704d41ef32f0972e78c7ba94cc24a6f526f9c4dc9b24d6c323bb76bbe641e.txt`。两份选择与转换各有内容寻址manifest，均NOT_ADOPTED_NOT_RELEASED，不覆盖彼此，不自动取较新或较长稿。
+- 81–91及94–100均完成一轮实际修订；92干净重写、93干净重写＋真实发还物窄修。后七回短稿有明显长度不足，实际文学阅读与发表资格分开。
+- 实际中段双读者结果见`MIDDLE_READING_RESULTS.md`，全书进度见`FULLBOOK_PROGRESS.md`，阻塞见`RELEASE_BLOCKERS.md`，后段与末三回全文评读继续。所有原负面意见／拒用稿保留；稳定ACTIVE不变。
+
 ## 已完成的基础
 
 - `7a25eeb`：当前输入闭包显式选择第89回 v5 包。总体验收 PENDING，工程 PASS。

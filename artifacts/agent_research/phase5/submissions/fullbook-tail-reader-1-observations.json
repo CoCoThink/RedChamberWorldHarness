@@ -1,0 +1,1281 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OBSERVATIONS",
+  "packet": {
+    "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+    "sha256": "e15dfd5c85cbe9d3108fb22796a1392664efaef43c7020a6a041c25c423230ff"
+  },
+  "packet_id": "reading-ff413df041ac2e31ce8f4f5b",
+  "reviewer": {
+    "id": "fullbook-tail-reader-1",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "fullbook-tail-reader-1:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "scope": {
+    "substantive_materials_read": [
+      "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+      "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt"
+    ],
+    "format_only_material_read": "schemas/agent_review.schema.json",
+    "prohibited_mappings_context_private_export_authored_stable_reports_source_read": false,
+    "external_apis_git_agents_or_delegation_used": false,
+    "new_poem_or_invented_evidence_created": false,
+    "overall_winner_numeric_total_or_adoption_recommendation": null,
+    "limitation": "Complete permitted anonymous tail, not complete novel or source authentication. Subject bytes are verified only against the packet. Only the two requested owned report files were created."
+  },
+  "reading_coverage": {
+    "verdict": "PASS",
+    "unsampled": true,
+    "sample_checks": [],
+    "actual_reading_order": [
+      "read-ebb4df28f7a34edb1404ade9",
+      "read-063ef83a6e129d2c56090291"
+    ],
+    "each_full_text_output_under_6000_characters": true,
+    "notes": "Every physical line, including headings, blank separators and terminal endings, was exposed in the bounded full Read outputs, without ellipsis, sampling or skipped ranges. Separate line-based quote checks read only the permitted subject bytes.",
+    "subjects": [
+      {
+        "token": "read-ebb4df28f7a34edb1404ade9",
+        "binding": {
+          "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+          "sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8"
+        },
+        "byte_count": 87164,
+        "character_count": 29340,
+        "physical_line_count": 414,
+        "byte_hash_matches_packet": true,
+        "reading_coverage_verdict": "PASS",
+        "full_sequence_read": true,
+        "unsampled": true,
+        "sample_checks": [],
+        "chapter_physical_line_ranges": {
+          "98": [
+            1,
+            123
+          ],
+          "99": [
+            124,
+            279
+          ],
+          "100": [
+            280,
+            414
+          ]
+        },
+        "actual_bounded_full_read_outputs": [
+          {
+            "start_line": 1,
+            "end_line": 67,
+            "conservative_rendered_character_count": 5106
+          },
+          {
+            "start_line": 68,
+            "end_line": 131,
+            "conservative_rendered_character_count": 5297
+          },
+          {
+            "start_line": 132,
+            "end_line": 199,
+            "conservative_rendered_character_count": 5154
+          },
+          {
+            "start_line": 200,
+            "end_line": 267,
+            "conservative_rendered_character_count": 5130
+          },
+          {
+            "start_line": 268,
+            "end_line": 323,
+            "conservative_rendered_character_count": 5139
+          },
+          {
+            "start_line": 324,
+            "end_line": 399,
+            "conservative_rendered_character_count": 5264
+          },
+          {
+            "start_line": 400,
+            "end_line": 414,
+            "conservative_rendered_character_count": 626
+          }
+        ],
+        "verified_quote_counts_by_chapter": {
+          "98": 9,
+          "99": 8,
+          "100": 14
+        }
+      },
+      {
+        "token": "read-063ef83a6e129d2c56090291",
+        "binding": {
+          "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+          "sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8"
+        },
+        "byte_count": 47778,
+        "character_count": 16076,
+        "physical_line_count": 225,
+        "byte_hash_matches_packet": true,
+        "reading_coverage_verdict": "PASS",
+        "full_sequence_read": true,
+        "unsampled": true,
+        "sample_checks": [],
+        "chapter_physical_line_ranges": {
+          "98": [
+            1,
+            80
+          ],
+          "99": [
+            81,
+            152
+          ],
+          "100": [
+            153,
+            225
+          ]
+        },
+        "actual_bounded_full_read_outputs": [
+          {
+            "start_line": 1,
+            "end_line": 68,
+            "conservative_rendered_character_count": 5173
+          },
+          {
+            "start_line": 69,
+            "end_line": 134,
+            "conservative_rendered_character_count": 5265
+          },
+          {
+            "start_line": 135,
+            "end_line": 200,
+            "conservative_rendered_character_count": 5152
+          },
+          {
+            "start_line": 201,
+            "end_line": 225,
+            "conservative_rendered_character_count": 1728
+          }
+        ],
+        "verified_quote_counts_by_chapter": {
+          "98": 7,
+          "99": 9,
+          "100": 14
+        }
+      }
+    ]
+  },
+  "subject_assessment_verdicts": {
+    "read-ebb4df28f7a34edb1404ade9": "FAIL",
+    "read-063ef83a6e129d2c56090291": "PASS"
+  },
+  "verified_prose_findings": [
+    {
+      "finding_id": "A-98-packet-custody",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "chapter": 98,
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "kind": "LOCAL_ON_PAGE_PACKET_CUSTODY_INCONSISTENCY",
+      "subject_verdict": "FAIL",
+      "reading_coverage_verdict": "PASS",
+      "quote_refs": [
+        "A98-03",
+        "A98-04",
+        "A98-05",
+        "A98-07"
+      ],
+      "finding": "Line 68 explicitly lifts the mistaken jade bundle together with the servant's own letter bundle during departure. Line 76 leaves that same letter bundle on the host table; line 78 unpacks its letters there; line 98 hands back the yesterday-left bundle. Thus the prose narrates taking up both packages while later treating the letters as the object left in a two-package exchange. No putting-down, return or replacement is narrated between the incompatible displayed custody states.",
+      "classification_limit": "FAIL is confined to this on-page chapter-98 custody chain, not a historical/canonical transport rule. An imagined off-page putting-down could patch it but would add missing evidence. Full reading coverage remains PASS; literary dimensions remain separate."
+    }
+  ],
+  "chapter_specific_checks": [
+    {
+      "chapter": 98,
+      "tokens": {
+        "read-ebb4df28f7a34edb1404ade9": {
+          "inspection": "Actual returned jade has cord-hole wear; letters remain sealed and unread; a second in-person encounter develops same-name humor. The old marginal verse printed in the candidate was read, but no new verse was supplied.",
+          "recognition_limit": "Handwriting recognition and spoken ownership are scene claims, not externally authenticated source history."
+        },
+        "read-063ef83a6e129d2c56090291": {
+          "inspection": "First actual seeing of the marginal four lines is stated, but the verse is not reproduced. The home loose-leaf booklet and jade are mistaken for the guest worm-eaten book packet. Zhen Baoyu accepts joint responsibility and sends an instructed messenger; the host inspects the received objects.",
+          "recognition_limit": "The sender note claims contents, and the messenger knows the commission rather than the taking. Inspection validates limited contents only."
+        }
+      },
+      "comparison_limit": "Different lunches, cord repairs and returns are scene choices, not identity mappings or proof of which token is a revision. No unseen source-card constraint is authenticated."
+    },
+    {
+      "chapter": 99,
+      "tokens": {
+        "read-ebb4df28f7a34edb1404ade9": {
+          "inspection": "Gradual withdrawal from tomorrow's tasks leads to an announced permanent departure, false leads, a novice message, and Jia Yun witnessing refusal at an unnamed temple. Baochai distinguishes food reported by Baoyu from eating that Jia Yun did not see; sleeping quarters also remain uninspected.",
+          "unshown": "Baoyu's first days, complete route, each travel mode and continuing physical jade custody are not shown."
+        },
+        "read-063ef83a6e129d2c56090291": {
+          "inspection": "Meals, writing and purchases detach before leaving. Jia Yun refuses conflated passenger identities and an unconfirmed river crossing; direct temple recognition and 不肯 establish voluntary refusal. Rent, rice, search expenses and an interrupted needle stay consequential.",
+          "unshown": "First travel route and a named exact temple are absent. Searcher travel must not be substituted for Baoyu's route."
+        }
+      },
+      "comparison_limit": "Unknown initial travel is not a verified contradiction. Saying he is safe does not make the women safe or remove their continuing fear and work."
+    },
+    {
+      "chapter": 100,
+      "tokens": {
+        "read-ebb4df28f7a34edb1404ade9": {
+          "inspection": "Explicit years separate exams and actual appointment. Gifts, repairs, medicine debt and honor dress do not restore wealth. Death, formal mourning withdrawal from office, storage and reuse of objects accumulate. A winter-end conversation precedes several later days, without a numbered death month."
+        },
+        "read-063ef83a6e129d2c56090291": {
+          "inspection": "Several winters/summers and waiting for a vacancy precede appointment; future income does not settle present bills or return old property. Death months after maternal honor, nursing and funeral work remain enacted. Baochai and 麝月 connect the human tail; no numbered death month is established."
+        }
+      },
+      "frame_note": "Five displayed strata, principal twelve, lower examples and two ratings are described only as observed. The longer token explicitly narrates stone return; the shorter body narrates finding/copying under a title that names return. Both finish 石在，字在。 Neither ending proves jade's physical travel."
+    }
+  ],
+  "dimensions": [
+    {
+      "dimension": "actual_scene_propulsion_and_compression",
+      "preference": "read-063ef83a6e129d2c56090291",
+      "assessment": "Neither token is merely a synopsis. The shorter token keeps causally productive turns: wet ink obstructs moving the loan slip, lunch requires repacking, the wrong bundle prompts actual unpacking, dispatch and inspection, and withdrawal changes who writes and buys. The longer token gains a second face-to-face visit and a longer relationship, but repeated tea, paper and guest-talk loops sometimes restate a point already made. This dimension favors the shorter token for specific causal density, not shortness itself.",
+      "quote_refs": [
+        "A98-03",
+        "A98-07",
+        "A98-08",
+        "B98-04",
+        "B98-05",
+        "B98-06",
+        "B99-01"
+      ]
+    },
+    {
+      "dimension": "same_name_humor_and_visitor_relationship",
+      "preference": "read-ebb4df28f7a34edb1404ade9",
+      "assessment": "The longer token gives the two Baoyus reciprocal wit: the guest offers to witness a conversation he could not hear, the host plays back his book-return joke, and 麝月 treats a name as a free resource. The shorter token's same-name/tea joke is economical and work-connected, but a messenger returning the jade loses the second in-person round and some of Zhen Baoyu's sociability. Extra length earns its place here because of a particular added relationship, not by default.",
+      "quote_refs": [
+        "A98-08",
+        "A98-09",
+        "B98-01",
+        "B98-05"
+      ]
+    },
+    {
+      "dimension": "material_packet_identity_ownership_and_claim",
+      "preference": "read-063ef83a6e129d2c56090291",
+      "assessment": "The longer token distinguishes wrapping colors, seals, addressees and worn cord-hole marks, and the hosts do not read the letters. However its lifting-both/letter-bundle-left inconsistency breaks the displayed exchange. The shorter token distinguishes the missing home loose-leaf booklet from the guest's worm-eaten volume, reconstructs custody with the servant, limits the deliverer's knowledge to his commission, and checks booklet, cloth and jade on receipt. A sender's note remains a claim until unpacking confirms those contents; neither spoken ownership nor a note is external provenance proof.",
+      "quote_refs": [
+        "A98-03",
+        "A98-04",
+        "A98-05",
+        "A98-06",
+        "A98-07",
+        "B98-04",
+        "B98-05",
+        "B98-06"
+      ]
+    },
+    {
+      "dimension": "voices_and_turn_taking",
+      "preference": "TIE",
+      "assessment": "The longer token's 麝月 barbs, Zhen Baoyu's light evasions and Baochai's spending decisions are distinguishable; the grief pause interrupts book talk rather than becoming an exposition speech. The shorter token gives Baochai sharper practical boundaries, Jia Yun verification questions, 麝月 blunt care and Zhen Baoyu responsibility rather than blame. Both sometimes give several people similarly polished object-jokes, so wit alone is not proof of individual voices. The shorter token joins talk more closely to hands and bowls; the longer token develops the visitor's voice more expansively.",
+      "quote_refs": [
+        "A98-01",
+        "A98-02",
+        "A98-08",
+        "A99-08",
+        "B98-04",
+        "B99-01",
+        "B99-02",
+        "B99-06"
+      ]
+    },
+    {
+      "dimension": "fear_and_refusal_without_mystical_absolution",
+      "preference": "read-063ef83a6e129d2c56090291",
+      "assessment": "The longer token lets Baochai fear illness/lodging, 麝月 wait, and Baoyu admit leaving is wrong; no monk supplies a revelation excusing him. The shorter token more sharply separates refusing to live at home from lacking an itinerary. 麝月 will not use feeding as a bribe; Baochai pulls the unfinished garment away from his reaching hand and asserts her own decision. It loses some repeated days of worried waiting but gains a clear, morally costly refusal without a narrator declaring enlightenment.",
+      "quote_refs": [
+        "A99-01",
+        "A99-02",
+        "A99-05",
+        "A99-08",
+        "B99-01",
+        "B99-02",
+        "B99-05",
+        "B99-06"
+      ]
+    },
+    {
+      "dimension": "grief_as_lived_action_and_afterlife_of_objects",
+      "preference": "TIE",
+      "assessment": "The longer token's son retaining the worn sleeve and the gradual conversion of an empty room to ordinary storage give bereavement a longer material aftermath. Clothes and an unchanged old box outlast congratulations. The shorter token compresses that duration but has the son accidentally ask whether his dead mother's meal has been delivered, then still eat and answer funeral work. Its old robe is familiar to a hand, not only an economy symbol. Accretive aftermath and concentrated habit-error are different gains; neither cancels the other.",
+      "quote_refs": [
+        "A100-05",
+        "A100-06",
+        "B100-03",
+        "B100-07"
+      ]
+    },
+    {
+      "dimension": "financial_life_as_constraints_and_labor",
+      "preference": "read-063ef83a6e129d2c56090291",
+      "assessment": "Both make tea, rice, repairs, medicine and borrowed furniture constrain behavior. The longer token's tea decision and pharmacy debt avoid effortless abundance. The shorter token also reserves rent money, reimburses Jia Yun's search rather than treating his labor as free, distinguishes future salary from present bills, and notices that non-cash funeral gifts do not pay a deposit. Medical watching requires another person to watch food. Compression retains choices and labor rather than merely listing poverty props.",
+      "quote_refs": [
+        "A98-01",
+        "A100-04",
+        "B99-07",
+        "B100-04",
+        "B100-05"
+      ]
+    },
+    {
+      "dimension": "real_years_and_exam_to_appointment_legibility",
+      "preference": "read-ebb4df28f7a34edb1404ade9",
+      "assessment": "The longer token explicitly places several years before examination success and further years before actual appointment, making the distinction hard to miss. The shorter token gives several winters/summers through changing hems, book threads, window patches and repeated waiting for a vacancy: its elapsed time is enacted and not absent. It compresses the exam-stage/appointment distinction more. The longer token is more legible on that specific dimension; the shorter token gains lived waiting instead of a bare date jump.",
+      "quote_refs": [
+        "A100-01",
+        "B100-01",
+        "B100-04"
+      ]
+    },
+    {
+      "dimension": "appointment_and_maternal_honor_versus_restored_wealth",
+      "preference": "TIE",
+      "assessment": "The longer token rejects an expensive gift precisely because an office now exists, keeps the old box and borrowed furniture, and fixes a roof rather than buying a facade. The shorter token lets a child ask why money has not reached the cooking pot and explicitly says old house and property have not returned. Appointment and honor do not automatically repair finances. Both show real financial limits; neither scene authenticates a historical office, legal restoration rule or unseen plot constraint.",
+      "quote_refs": [
+        "A100-02",
+        "A100-03",
+        "B100-02",
+        "B100-04",
+        "B100-05"
+      ]
+    },
+    {
+      "dimension": "coronet_honor_and_embodied_cost",
+      "preference": "TIE",
+      "assessment": "The longer token supplies a heavy coronet, two pressure marks, airing and storage in the unchanged old box. The shorter token enacts repeated fitting, tightness, standing fatigue and the known sleeve of the old robe after removal. The former gains the ceremonial object's longer afterlife; the latter tactile familiarity and the son's participation. Neither turns Li Wan into only an emblem of glory. Neither independently proves the rank or costume specification.",
+      "quote_refs": [
+        "A100-03",
+        "A100-06",
+        "B100-03",
+        "B100-05"
+      ]
+    },
+    {
+      "dimension": "death_month_external_constraint_authentication",
+      "preference": "NEITHER",
+      "assessment": "No source card or external calendar is exposed. The longer token starts a final conversation at winter's end, then says several days pass before terminal decline; death occurs toward late afternoon with no numbered month. The shorter token explicitly puts death several months after honor and enacts reduced eating, drinking and waking, but gives no named death month. Both establish elapsed months/nursing, not an externally required exact month. Missing external verification is not converted into FAIL.",
+      "quote_refs": [
+        "A100-04",
+        "A100-05",
+        "B100-06",
+        "B100-07"
+      ]
+    },
+    {
+      "dimension": "actual_jade_identity_and_transport_as_shown",
+      "preference": "TIE",
+      "assessment": "The longer token recognizes the returned jade by cord-hole abrasion; the guest's claim to have barely looked is not external authentication. The shorter token follows the packed object, disallows wiping it, dispatches a messenger, and recognizes the still-snagging cord on receipt. Both show actual jade in chapter 98 rather than a metaphysical label. The longer token's local packet-chain FAIL is separately retained. Neither departure tracks continued jade wearing, and neither shows jade materially changing into the mountain stone. Such missing custody/transport remains unverified; no route is invented.",
+      "quote_refs": [
+        "A98-06",
+        "B98-04",
+        "B98-05",
+        "B98-06",
+        "B98-07",
+        "A100-13",
+        "B100-12"
+      ]
+    },
+    {
+      "dimension": "search_temple_location_and_unshown_initial_route",
+      "preference": "TIE",
+      "assessment": "The longer token keeps false east/north/ferry reports distinct from the later message; its unnamed temple lies beyond two village roads by a pine grove, and Jia Yun misses a fork. The novice admits not knowing the first days. The shorter token keeps incompatible cart reports apart, declines a hearsay river crossing, and asks several unnamed temples before direct recognition. Both show Baoyu working at a temple. Neither verifies a named real temple, precise city, first itinerary or transport constraint. Searcher travel is not Baoyu's route, and an unshown route is not a verified contradictory route or a FAIL.",
+      "quote_refs": [
+        "A99-03",
+        "A99-04",
+        "A99-06",
+        "B99-03",
+        "B99-04",
+        "B99-05"
+      ]
+    },
+    {
+      "dimension": "needle_thread_chapter_99_ending",
+      "preference": "TIE",
+      "assessment": "The longer token leaves Baochai with a rough thread and unfinished shoulder seam, not immediately rethreading, while boiling water grows audible: a stopped hand holds absence. The shorter token gives 麝月 an old eye plugged by broken thread, a new needle only half threaded, interruption by the fire, and the question of whom the garment is for. It ends by moving the unfinished sleeve away from soup while two women eat. Bodily continuation and a sparer suspended gesture are distinct effects. Neither completes the garment to manufacture emotional closure.",
+      "quote_refs": [
+        "A99-07",
+        "B99-08",
+        "B99-09"
+      ]
+    },
+    {
+      "dimension": "five_layers_names_and_two_visible_ratings",
+      "preference": "read-ebb4df28f7a34edb1404ade9",
+      "assessment": "Both expose 正、副、再副、三副、四副. The principal layer has the same twelve women, with a different initial order and 巧姐 versus 贾巧姐. 香菱 is visible in 副, 晴雯 and 袭人 in 再副. Only 黛玉's 情情 and the final Baoyu 情不情 are supplied as ratings. The longer token says the deepest layers hold denser names without reading them aloud. The shorter token labels five layers of names but says no writing is visible on the 三副/四副 remaining paper, reducing their populatedness on-page. This is a visibility weakness, not a proven contradiction: 未见 need not mean nonexistent. No unseen complete roster/rating rule is authenticated.",
+      "quote_refs": [
+        "A100-08",
+        "A100-09",
+        "A100-10",
+        "A100-11",
+        "A100-12",
+        "B100-08",
+        "B100-09",
+        "B100-10",
+        "B100-11"
+      ]
+    },
+    {
+      "dimension": "human_dream_mountain_frame_separation",
+      "preference": "TIE",
+      "assessment": "The longer token closes human affairs, opens a timeless 太虚 sequence, closes the thin-fate doors, then moves to 大荒山无稽崖青埂峰 before the copyist. The shorter token also closes human affairs, leaves 太虚 undated, and explicitly sets that realm aside before 青埂峰. Neither gives the humans a dream explanation excusing Baoyu's refusal or Li Wan's death, nor lets the roster rewrite household choices. The short transition preserves boundaries; the longer version gives fuller thresholds. Both copyists leave illegibility blank rather than manufacture text.",
+      "quote_refs": [
+        "A100-07",
+        "A100-08",
+        "A100-13",
+        "A100-14",
+        "B100-08",
+        "B100-12",
+        "B100-13",
+        "B100-14"
+      ]
+    },
+    {
+      "dimension": "stone_return_event_versus_terminal_copying",
+      "preference": "read-ebb4df28f7a34edb1404ade9",
+      "assessment": "The longer token explicitly states restored original stone form and return to the old place, then distinguishes a later visitor and copying. The shorter token's chapter title claims 石归山 but the body begins with a visitor finding a stone still inscribed; it stages copying, not the return event. Compression gains economy and a careful copyist but loses the event and full mountain-location wording. This shown-versus-claimed narrational gap is not authentication of mythic geography or proof of an external constraint violation, and it does not supply an unseen physical jade transport chain.",
+      "quote_refs": [
+        "A100-13",
+        "A100-14",
+        "B100-12",
+        "B100-13",
+        "B100-14"
+      ]
+    },
+    {
+      "dimension": "external_source_canon_and_training_authentication",
+      "preference": "NEITHER",
+      "assessment": "The public packet supplies two candidate sequences and byte bindings only: no source card, earlier chapters, complete novel, canonical route, historical appointment data, exact required death month or complete roster. Neither token can be authenticated against such absent material. Recognizing character names and familiar frame motifs is a possible learned-model bias, not evidence that either token is canonical or training-known.",
+      "quote_refs": []
+    }
+  ],
+  "quote_ledger": [
+    {
+      "quote_id": "A98-01",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "physical_line": 15,
+      "text": "有银子也不是为明日一壶茶专留的。家里有什么就用什么。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A98-02",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "physical_line": 44,
+      "text": "宝玉低声道：“她从前看书，见不顺眼便要添话。”",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A98-03",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "physical_line": 68,
+      "text": "见桌角有一个小布包，顺手同自己的书札包一起拿起，因大小相近、颜色又都旧，并没有拆看。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A98-04",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "physical_line": 76,
+      "text": "桌角那只留下的青灰布包，谁也没有去动。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A98-05",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "physical_line": 78,
+      "text": "她拆开一看，里头不是玉，却是五封折好的书札，外加两张题签。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A98-06",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "physical_line": 96,
+      "text": "宝玉拿起来看了一眼，又翻到背面看绳孔边那一道旧磨痕，道：“是我的。”",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A98-07",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "physical_line": 98,
+      "text": "麝月已经把昨日留下的书札包从木盒里拿出来，交给甄家小厮，道：“你也看看，少不少。可别出了门又回来。”",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A98-08",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "physical_line": 102,
+      "text": "这件事我可以作证，昨日我已经走了，听不见。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A98-09",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "physical_line": 118,
+      "text": "“名字又不要钱。”",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A99-01",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "physical_line": 164,
+      "text": "宝钗看着他：“还回来么？”宝玉手里的书签没有再动。停了很久，才道：“不回了。”",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A99-02",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "physical_line": 182,
+      "text": "你还不知道去哪里，倒先知道不住店？",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A99-03",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "physical_line": 234,
+      "text": "原来在城外再走一段，过两处村路，旁边有一片旧松林。寺不大，平日香火也不盛。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A99-04",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "physical_line": 236,
+      "text": "约有四五日。前头几日我不知道他在哪里。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A99-05",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "physical_line": 252,
+      "text": "我知道她们找我，也知道这样走不好。再问下去，我还是那些不知道。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A99-06",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "physical_line": 268,
+      "text": "没见吃饭，只见寺里有人做饭。他自己说吃寺里的。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A99-07",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "physical_line": 276,
+      "text": "她捻了两下，没有立即再穿，只听见外头锅里水声渐响。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A99-08",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "physical_line": 198,
+      "text": "我若不让，他便不走么？",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-01",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 282,
+      "text": "只说光阴来往，寒暑几番，不觉多年，少年渐长，旧屋渐旧，贾兰也从读书应试一步步走到外头去。起初不过得了科名，家里接一两回喜信；后来又隔些年，方有实授，真正有了官身。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-02",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 300,
+      "text": "正因为有官身，才别第一日就叫人看见什么都收。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-03",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 322,
+      "text": "那冠比她平日戴的重，取下以后，额角压出两道红痕。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-04",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 332,
+      "text": "药铺那边这个月还欠一点。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-05",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 354,
+      "text": "到日影偏西，气息渐渐轻了，老嬷嬷低声叫了两次，贾兰伏近去听，终于再听不见。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-06",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 368,
+      "text": "贾兰伸手摸了摸袖边，道：“先留着罢。”",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-07",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 376,
+      "text": "人间这些余事，到此按下。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-08",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 380,
+      "text": "榜上并无总题，只在行间分作正、副、再副、三副、四副几层。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-09",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 384,
+      "text": "**情情。**",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-10",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 386,
+      "text": "其后薛宝钗、贾元春、贾探春、史湘云、妙玉、贾迎春、贾惜春、王熙凤、巧姐、李纨、秦可卿诸名次第在列，皆只具芳讳，并无旁语。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-11",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 388,
+      "text": "再往下是副层。香菱之名先可辨，以下尚有数行，墨色深浅不一。再副层中，晴雯、袭人二名相次，余者亦列其间。三副、四副两层行次更密，芳讳仍多，警幻只令侍者按次展开，并不逐名唱出。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-12",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 392,
+      "text": "**贾宝玉——情不情。**",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-13",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 398,
+      "text": "那块无材补天的顽石，劫数既满，仍复本来形质，归到旧处。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "A100-14",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_id": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "physical_line": 404,
+      "text": "抄到名字多处，怕错一字，仍回石前核对；石上若有漫漶，纸上便照样空着，不肯自补。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B98-01",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "physical_line": 17,
+      "text": "我还以为同了名字，连喝茶也省问了。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B98-02",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "physical_line": 25,
+      "text": "线可换，字不能照着一个意思就添。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B98-03",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "physical_line": 33,
+      "text": "他认得那一手，也认得那四句对着自己从前所写而来；却到今日才亲眼看见这纸上的字。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B98-04",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "physical_line": 57,
+      "text": "我只说桌上那包，没说清。你拿了，我也没验，就一道带出来。这不是赖谁的时候。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B98-05",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "physical_line": 59,
+      "text": "札放在外层，他叫一个送信的人立即送还，嘱到门先说甄家退还误取的书包，须亲交屋里收件的人，不能放下就走。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B98-06",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "physical_line": 67,
+      "text": "玉在帕折里，起毛的绦头还勾着；他摸那一处，停了手。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B98-07",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "physical_line": 71,
+      "text": "新绦也不是全新，从存线里挑一段不毛的接上，接处藏里，拉一拉，问磨不磨脖子。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B99-01",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "physical_line": 101,
+      "text": "看着未缝完的衣，伸手要接，宝钗往自己一侧收了点，道：“这也是我自己定的。”",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B99-02",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "physical_line": 107,
+      "text": "吃完，我又不是拿饭买你回来。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B99-03",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "physical_line": 119,
+      "text": "他问是否亲见过河，答没有，便未为这个影子买过河的脚钱。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B99-04",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "physical_line": 125,
+      "text": "门边僧人使人到灶下问，答有宝玉，先问来客何事。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B99-05",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "physical_line": 129,
+      "text": "回去住，我不肯。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B99-06",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "physical_line": 131,
+      "text": "你说平安，和她们平安不是一回事。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B99-07",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "physical_line": 141,
+      "text": "按钱买的。不能为店里一句话，先使掉付租的钱。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B99-08",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "physical_line": 149,
+      "text": "线头送进新针眼，还未拉齐，她听见灶里火响，将这根针别回衣边，手又放下。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B99-09",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "physical_line": 151,
+      "text": "针还别在边上，方才穿了一半的线松着。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-01",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 161,
+      "text": "如此过了几番冬夏，衣边放过又收，书线换过，窗纸不止补了一回。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-02",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 173,
+      "text": "孩子咬一口，问钱还没到锅里么，众人笑。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-03",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 179,
+      "text": "我也不只为省。穿惯了，手往里伸，知道袖子在哪里。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-04",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 185,
+      "text": "贾兰往后收入有了来路，眼下该付的却须先算。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-05",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 185,
+      "text": "旧宅旧产并未回到手里，现在住处也有用度。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-06",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 205,
+      "text": "李纨辞世，离受荣已过数月。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-07",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 213,
+      "text": "贾兰坐桌边，妇人端粥，他先问母亲的可送了。话出口，妇人停，他也停，过一会儿说糊涂，接过碗。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-08",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 217,
+      "text": "不知何日何时，太虚境中，旧香微在，卷轴轻响。旧册置于案侧，未再逐册重开。警幻另展一轴素榜，纸上分正、副、再副、三副、四副，五层芳讳，疏密各异。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-09",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 217,
+      "text": "正层所见，薛宝钗、林黛玉、贾元春、贾探春、史湘云、妙玉、贾迎春、贾惜春、王熙凤、贾巧姐、李纨、秦可卿。字旁不逐一铺叙平生。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-10",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 219,
+      "text": "其中一处明列：林黛玉——情情。副层略见香菱，再副见晴雯、袭人，三副、四副余纸未见字迹。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-11",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 221,
+      "text": "榜渐展至末，贾宝玉——情不情。案边无人为这几个字另作解释，也无一曲重唱。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-12",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 223,
+      "text": "且把太虚一境按下，另说青埂峰下。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-13",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 223,
+      "text": "遇漫漶处，看过仍不可辨，便留空，不另添字。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    },
+    {
+      "quote_id": "B100-14",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_id": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "physical_line": 225,
+      "text": "石在，字在。",
+      "substring_verified": true,
+      "physical_line_verified": true,
+      "verification_method": "UTF-8 decoding, 1-based physical splitlines, exact substring assertion, whole-file SHA-256 matched packet"
+    }
+  ],
+  "bias_and_independence_disclosure": {
+    "recognition": "I recognize Red Chamber names, the Baoyu/jade frame, 太虚 and the stone-copying motif from general learned literary context. That may bias expectations of voices/pathos/tail structure. I did not turn it into source authentication or identify either anonymous token as authored/revised.",
+    "training": "I cannot inspect training data or verify membership of either exact text. No claim is made that I have never encountered related source prose or that training isolation/model-family independence is proven.",
+    "order": "Packet order was reading order: complete read-ebb4df28f7a34edb1404ade9 first, then complete read-063ef83a6e129d2c56090291. There was no randomization or counterbalancing; primacy, contrast and recency remain possible biases.",
+    "context": "asserted=true is the requested context-isolation declaration, NOT_PROVEN. The task named target dimensions and session/repository metadata were visible. No prohibited content or mapping was opened, but global blindness cannot be proved.",
+    "model": "session-default is a declared label, DECLARED_NOT_VERIFIED, not independently checked model identity.",
+    "authority": "Local model subagent research opinion only: authority NONE, usage RESEARCH_ONLY, independent human admission false. Hash/line/schema checks do not confer admission authority."
+  },
+  "validation": {
+    "packet_byte_sha256_matches_record": true,
+    "both_subject_byte_sha256_match_packet": true,
+    "strict_opinion_schema": "schemas/agent_review.schema.json",
+    "strict_opinion_schema_validation": "PASS",
+    "each_quote_substring_and_physical_line_verification": "PASS",
+    "minimum_three_verified_quotes_per_token_per_chapter": "PASS",
+    "no_sample_ids_fabricated": true,
+    "observation_report_schema_limit": "No observation schema was supplied; this companion JSON is not an AGENT_REVIEW_OPINION and carries the same non-authoritative declarations."
+  }
+}

@@ -1,0 +1,888 @@
+{
+  "schema_version": 1,
+  "report_kind": "LOCAL_CHANGED_BOUNDARIES_CONTINUITY_CHECK",
+  "reviewer": {
+    "id": "agent:fullbook-middle-reader-1",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:fullbook-middle-reader-1:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "review_identity": {
+    "anonymous": false,
+    "new_independent_reader": false,
+    "same_existing_reviewer_and_session": true,
+    "prior_reports_not_modified": true,
+    "note": "Separate limited nonanonymous followup by the already-used reviewer, not an additional independent blind opinion."
+  },
+  "scope": {
+    "requested_boundaries": [
+      "95revision1→96revision1",
+      "96revision1→97revision1",
+      "99revision1→100revision1"
+    ],
+    "bindings": [
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-revision1.txt",
+        "sha256": "8542fc5397d4c26a4f3e462863a05bab606d2d29ae4f00509477885f02338527"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch97-revision1.txt",
+        "sha256": "e2b3ee39083c92eaa0435621cab76ae0ffd1ca209602d3d13ce078c221572f21"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt",
+        "sha256": "17257cf8ba8acc27d07f3a67b01416668d0885d0c6a694875ad5d932edeafb58"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch100-revision1.txt",
+        "sha256": "95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-v1.txt",
+        "sha256": "24e4a57a32fa7c8ef184a455a03dd3f01d9c175a8c925b007f1527958a31c6fb"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-v1.txt",
+        "sha256": "0b9145b1061266f78be1232fd1bb728939c4dc952aeb9f40d08ea563f9fee2be"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-v1.txt",
+        "sha256": "843e66964dd2e2e935b0472b352236efb1706646f4c692679cb7ea3d9306ba5f"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch96-revision1-author.json",
+        "sha256": "9653b485c87742fb7f482820547d937c89f7ec85746ce74b31bcc4a0208386bf"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch97-revision1-author.json",
+        "sha256": "2e6d10cfcc6db7bc49d5de01e866218806337ba20548269820190cd94f319e3b"
+      },
+      {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch100-revision1-author.json",
+        "sha256": "25bd499e011e57014ab205ef2f667a4aaaaf28949bc2565ee1bf7f38d1b807e0"
+      }
+    ],
+    "whole_chapter_consumption": false,
+    "quality_pass_claim": false,
+    "predecessor_rebinding_claim": false,
+    "historical_author_input_consumption_claim": "NONE. Exact frozen explicit fields were newly inspected here; this does not change what their authors originally consumed. The recorded fields remain old95/96/99v1 ending text.",
+    "other_references_opinions_or_inputs_read": false,
+    "automatic_adoption": "NONE"
+  },
+  "coverage": [
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-revision1.txt",
+        "sha256": "8542fc5397d4c26a4f3e462863a05bab606d2d29ae4f00509477885f02338527"
+      },
+      "read_kind": "BOUNDARY_EXCERPTS_ONLY",
+      "line_ranges": [
+        [
+          87,
+          97
+        ]
+      ],
+      "all_lines_in_ranges_displayed": true,
+      "whole_chapter_consumed": false,
+      "nonblank_prose_paragraphs_read": 6,
+      "heading_read": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      "read_kind": "BOUNDARY_EXCERPTS_ONLY",
+      "line_ranges": [
+        [
+          1,
+          17
+        ],
+        [
+          77,
+          87
+        ]
+      ],
+      "all_lines_in_ranges_displayed": true,
+      "whole_chapter_consumed": false,
+      "nonblank_prose_paragraphs_read": 14,
+      "heading_read": true
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch97-revision1.txt",
+        "sha256": "e2b3ee39083c92eaa0435621cab76ae0ffd1ca209602d3d13ce078c221572f21"
+      },
+      "read_kind": "BOUNDARY_EXCERPTS_ONLY",
+      "line_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "all_lines_in_ranges_displayed": true,
+      "whole_chapter_consumed": false,
+      "nonblank_prose_paragraphs_read": 8,
+      "heading_read": true
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt",
+        "sha256": "17257cf8ba8acc27d07f3a67b01416668d0885d0c6a694875ad5d932edeafb58"
+      },
+      "read_kind": "BOUNDARY_EXCERPTS_ONLY",
+      "line_ranges": [
+        [
+          61,
+          71
+        ]
+      ],
+      "all_lines_in_ranges_displayed": true,
+      "whole_chapter_consumed": false,
+      "nonblank_prose_paragraphs_read": 6,
+      "heading_read": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch100-revision1.txt",
+        "sha256": "95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3"
+      },
+      "read_kind": "BOUNDARY_EXCERPTS_ONLY",
+      "line_ranges": [
+        [
+          1,
+          17
+        ]
+      ],
+      "all_lines_in_ranges_displayed": true,
+      "whole_chapter_consumed": false,
+      "nonblank_prose_paragraphs_read": 8,
+      "heading_read": true
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-v1.txt",
+        "sha256": "24e4a57a32fa7c8ef184a455a03dd3f01d9c175a8c925b007f1527958a31c6fb"
+      },
+      "read_kind": "BOUNDARY_EXCERPTS_ONLY",
+      "line_ranges": [
+        [
+          99,
+          103
+        ]
+      ],
+      "all_lines_in_ranges_displayed": true,
+      "whole_chapter_consumed": false,
+      "nonblank_prose_paragraphs_read": 3,
+      "heading_read": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-v1.txt",
+        "sha256": "0b9145b1061266f78be1232fd1bb728939c4dc952aeb9f40d08ea563f9fee2be"
+      },
+      "read_kind": "BOUNDARY_EXCERPTS_ONLY",
+      "line_ranges": [
+        [
+          93,
+          97
+        ]
+      ],
+      "all_lines_in_ranges_displayed": true,
+      "whole_chapter_consumed": false,
+      "nonblank_prose_paragraphs_read": 3,
+      "heading_read": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-v1.txt",
+        "sha256": "843e66964dd2e2e935b0472b352236efb1706646f4c692679cb7ea3d9306ba5f"
+      },
+      "read_kind": "BOUNDARY_EXCERPTS_ONLY",
+      "line_ranges": [
+        [
+          95,
+          99
+        ]
+      ],
+      "all_lines_in_ranges_displayed": true,
+      "whole_chapter_consumed": false,
+      "nonblank_prose_paragraphs_read": 3,
+      "heading_read": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch96-revision1-author.json",
+        "sha256": "9653b485c87742fb7f482820547d937c89f7ec85746ce74b31bcc4a0208386bf"
+      },
+      "read_kind": "BOUNDED_EXPLICIT_FIELD_ONLY",
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending",
+      "content_decoded_as": "JSON object",
+      "selection": "LAST_THREE_PARAGRAPHS",
+      "text_field_lines": 5,
+      "text_field_characters": 444,
+      "text_field_utf8_sha256": "f62a1784f1ce13d940ed1f06045572a5c6a31d472315e7837e14e44e5354b16b",
+      "text_has_terminal_newline": true,
+      "other_values_consumed_substantively": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch97-revision1-author.json",
+        "sha256": "2e6d10cfcc6db7bc49d5de01e866218806337ba20548269820190cd94f319e3b"
+      },
+      "read_kind": "BOUNDED_EXPLICIT_FIELD_ONLY",
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending",
+      "content_decoded_as": "JSON object",
+      "selection": "LAST_THREE_PARAGRAPHS",
+      "text_field_lines": 5,
+      "text_field_characters": 486,
+      "text_field_utf8_sha256": "09c38577cff52281e79ff83fcaaa0af47a19a6a34797fa0175ce17c81d7d724b",
+      "text_has_terminal_newline": true,
+      "other_values_consumed_substantively": false
+    },
+    {
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch100-revision1-author.json",
+        "sha256": "25bd499e011e57014ab205ef2f667a4aaaaf28949bc2565ee1bf7f38d1b807e0"
+      },
+      "read_kind": "BOUNDED_EXPLICIT_FIELD_ONLY",
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending",
+      "content_decoded_as": "JSON object",
+      "selection": "LAST_THREE_PARAGRAPHS",
+      "text_field_lines": 5,
+      "text_field_characters": 477,
+      "text_field_utf8_sha256": "c51a225d1053bffce9c734b867b98ff5e87842ab3092249d22b867f566d9e872",
+      "text_has_terminal_newline": true,
+      "other_values_consumed_substantively": false
+    }
+  ],
+  "display_truncation_observed": false,
+  "operation_limitations": [
+    "The first metadata command successfully printed eight prose-file metadata rows, then failed on a top-level writing_task lookup. No frozen previous_ending prose was printed or credited as read.",
+    "Read-only structural inspection found outer messages/system and string-valued message content. The next bounded extraction decoded messages[0].content as JSON and printed only writing_task.previous_ending values; sibling value contents and system text were not displayed or used. Structural key names are not substantive input consumption.",
+    "All requested predecessor ending, successor opening, historical ending and explicit frozen field excerpts were then displayed completely. No full chapter was read for this task; revision96 was read only at its requested opening and ending, not its middle.",
+    "Hashes concern whole files mechanically; substantive reading is restricted to the reported excerpts and fields. No test result is used as a semantic verdict."
+  ],
+  "byte_audits": [
+    {
+      "selected_predecessor": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-revision1.txt",
+        "sha256": "8542fc5397d4c26a4f3e462863a05bab606d2d29ae4f00509477885f02338527"
+      },
+      "historical_predecessor": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-v1.txt",
+        "sha256": "24e4a57a32fa7c8ef184a455a03dd3f01d9c175a8c925b007f1527958a31c6fb"
+      },
+      "frozen_successor_author_input": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch96-revision1-author.json",
+        "sha256": "9653b485c87742fb7f482820547d937c89f7ec85746ce74b31bcc4a0208386bf"
+      },
+      "explicit_field_location": "Decode /messages/0/content as JSON, then /writing_task/previous_ending/text",
+      "historical_field_utf8_sha256": "f62a1784f1ce13d940ed1f06045572a5c6a31d472315e7837e14e44e5354b16b",
+      "field_exact_historical_suffix_including_newline": true,
+      "field_exact_selected_suffix_including_newline": false,
+      "selected_last_three_line_range": [
+        93,
+        97
+      ],
+      "selected_last_three_utf8_sha256_including_newline": "ba3b8eed9c5a2c688cf286289ead1b79596ef6454c2f8b30ac3e674ee49b7138",
+      "paragraph_equalities_in_order": [
+        true,
+        false,
+        true
+      ],
+      "historical_custody_changed": false,
+      "semantic_compatibility_does_not_rebind": true
+    },
+    {
+      "selected_predecessor": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      "historical_predecessor": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-v1.txt",
+        "sha256": "0b9145b1061266f78be1232fd1bb728939c4dc952aeb9f40d08ea563f9fee2be"
+      },
+      "frozen_successor_author_input": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch97-revision1-author.json",
+        "sha256": "2e6d10cfcc6db7bc49d5de01e866218806337ba20548269820190cd94f319e3b"
+      },
+      "explicit_field_location": "Decode /messages/0/content as JSON, then /writing_task/previous_ending/text",
+      "historical_field_utf8_sha256": "09c38577cff52281e79ff83fcaaa0af47a19a6a34797fa0175ce17c81d7d724b",
+      "field_exact_historical_suffix_including_newline": true,
+      "field_exact_selected_suffix_including_newline": false,
+      "selected_last_three_line_range": [
+        83,
+        87
+      ],
+      "selected_last_three_utf8_sha256_including_newline": "0bda3a8ef0d5b54e197c8e91775f3c6e3e69f24acbd225ee66f555b628ab79e1",
+      "paragraph_equalities_in_order": [
+        true,
+        true,
+        false
+      ],
+      "historical_custody_changed": false,
+      "semantic_compatibility_does_not_rebind": true
+    },
+    {
+      "selected_predecessor": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt",
+        "sha256": "17257cf8ba8acc27d07f3a67b01416668d0885d0c6a694875ad5d932edeafb58"
+      },
+      "historical_predecessor": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-v1.txt",
+        "sha256": "843e66964dd2e2e935b0472b352236efb1706646f4c692679cb7ea3d9306ba5f"
+      },
+      "frozen_successor_author_input": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch100-revision1-author.json",
+        "sha256": "25bd499e011e57014ab205ef2f667a4aaaaf28949bc2565ee1bf7f38d1b807e0"
+      },
+      "explicit_field_location": "Decode /messages/0/content as JSON, then /writing_task/previous_ending/text",
+      "historical_field_utf8_sha256": "c51a225d1053bffce9c734b867b98ff5e87842ab3092249d22b867f566d9e872",
+      "field_exact_historical_suffix_including_newline": true,
+      "field_exact_selected_suffix_including_newline": false,
+      "selected_last_three_line_range": [
+        67,
+        71
+      ],
+      "selected_last_three_utf8_sha256_including_newline": "862933cb92d3154e9246792532ec57de197f1b610368a7f2b7a80e3a3d3b6930",
+      "paragraph_equalities_in_order": [
+        true,
+        false,
+        true
+      ],
+      "historical_custody_changed": false,
+      "semantic_compatibility_does_not_rebind": true
+    }
+  ],
+  "quotes": [
+    {
+      "id": "95r-clothing-held",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-revision1.txt",
+        "sha256": "8542fc5397d4c26a4f3e462863a05bab606d2d29ae4f00509477885f02338527"
+      },
+      "chapter": 95,
+      "line": 93,
+      "text": "宝钗趁它还亮将明日要穿的衣放到枕边。"
+    },
+    {
+      "id": "95r-rice-referent",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-revision1.txt",
+        "sha256": "8542fc5397d4c26a4f3e462863a05bab606d2d29ae4f00509477885f02338527"
+      },
+      "chapter": 95,
+      "line": 95,
+      "text": "宝钗将明日要熬的那份米单放小瓮一侧，其他不动"
+    },
+    {
+      "id": "95r-bowl-position",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-revision1.txt",
+        "sha256": "8542fc5397d4c26a4f3e462863a05bab606d2d29ae4f00509477885f02338527"
+      },
+      "chapter": 95,
+      "line": 97,
+      "text": "那只小木碗留在米瓮旁，等天亮后再拿起来，量下一锅。"
+    },
+    {
+      "id": "95old-ambiguous-referent",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-v1.txt",
+        "sha256": "24e4a57a32fa7c8ef184a455a03dd3f01d9c175a8c925b007f1527958a31c6fb"
+      },
+      "chapter": 95,
+      "line": 101,
+      "text": "宝钗将明日要熬的单放小瓮一侧，其他不动"
+    },
+    {
+      "id": "95old-bowl-position",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch95-v1.txt",
+        "sha256": "24e4a57a32fa7c8ef184a455a03dd3f01d9c175a8c925b007f1527958a31c6fb"
+      },
+      "chapter": 95,
+      "line": 103,
+      "text": "那只小木碗留在米瓮旁，等天亮后再拿起来，量下一锅。"
+    },
+    {
+      "id": "96input-clothes",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch96-revision1-author.json",
+        "sha256": "9653b485c87742fb7f482820547d937c89f7ec85746ce74b31bcc4a0208386bf"
+      },
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending/text",
+      "field_line": 1,
+      "field_utf8_sha256": "f62a1784f1ce13d940ed1f06045572a5c6a31d472315e7837e14e44e5354b16b",
+      "text": "将明日要穿的衣放到枕边。"
+    },
+    {
+      "id": "96input-old-wording",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch96-revision1-author.json",
+        "sha256": "9653b485c87742fb7f482820547d937c89f7ec85746ce74b31bcc4a0208386bf"
+      },
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending/text",
+      "field_line": 3,
+      "field_utf8_sha256": "f62a1784f1ce13d940ed1f06045572a5c6a31d472315e7837e14e44e5354b16b",
+      "text": "将明日要熬的单放小瓮一侧"
+    },
+    {
+      "id": "96input-bowl",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch96-revision1-author.json",
+        "sha256": "9653b485c87742fb7f482820547d937c89f7ec85746ce74b31bcc4a0208386bf"
+      },
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending/text",
+      "field_line": 5,
+      "field_utf8_sha256": "f62a1784f1ce13d940ed1f06045572a5c6a31d472315e7837e14e44e5354b16b",
+      "text": "那只小木碗留在米瓮旁，等天亮后再拿起来，量下一锅。"
+    },
+    {
+      "id": "96r-opening-bowl",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      "chapter": 96,
+      "line": 3,
+      "text": "天亮后，麝月仍从米瓮旁取那只木碗。"
+    },
+    {
+      "id": "96r-opening-clothes",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      "chapter": 96,
+      "line": 3,
+      "text": "宝玉坐起，先摸放在枕边的衣，手在补处停一停，便穿上了；宝钗将当票收妥"
+    },
+    {
+      "id": "96r-elapsed-thaw",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      "chapter": 96,
+      "line": 3,
+      "text": "待偏院泥地渐硬，街上便有卖春菜的声音。"
+    },
+    {
+      "id": "96r-new-visit",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      "chapter": 96,
+      "line": 7,
+      "text": "过了些时候，袭人果然敲门。"
+    },
+    {
+      "id": "96r-held-rice",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      "chapter": 96,
+      "line": 79,
+      "text": "米已用过一些，干处的半袋还未全倒。"
+    },
+    {
+      "id": "96r-letter-dry",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      "chapter": 96,
+      "line": 85,
+      "text": "回信留下的纸边仍干着，没有沾到菜水。"
+    },
+    {
+      "id": "96r-window-pending",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      "chapter": 96,
+      "line": 85,
+      "text": "窗前那块破纸又起风，她用手按住一角，等麝月做完饭再补。"
+    },
+    {
+      "id": "96r-pot-and-window",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-revision1.txt",
+        "sha256": "9351a0e99a983a0f04e7b8c7ee2daa725c7f7db09db095c481be1876002529ee"
+      },
+      "chapter": 96,
+      "line": 87,
+      "text": "自己将米落进滚水，盖好锅，方去补白日按住的那一小角窗纸。"
+    },
+    {
+      "id": "96old-window-pending",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-v1.txt",
+        "sha256": "0b9145b1061266f78be1232fd1bb728939c4dc952aeb9f40d08ea563f9fee2be"
+      },
+      "chapter": 96,
+      "line": 95,
+      "text": "等麝月做完饭再补。"
+    },
+    {
+      "id": "96old-needle",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch96-v1.txt",
+        "sha256": "0b9145b1061266f78be1232fd1bb728939c4dc952aeb9f40d08ea563f9fee2be"
+      },
+      "chapter": 96,
+      "line": 97,
+      "text": "盖好锅，方拿针去补白日按住的那一小角窗纸。"
+    },
+    {
+      "id": "97input-spring",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch97-revision1-author.json",
+        "sha256": "2e6d10cfcc6db7bc49d5de01e866218806337ba20548269820190cd94f319e3b"
+      },
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending/text",
+      "field_line": 1,
+      "field_utf8_sha256": "09c38577cff52281e79ff83fcaaa0af47a19a6a34797fa0175ce17c81d7d724b",
+      "text": "春菜小贩停在院外"
+    },
+    {
+      "id": "97input-window-pending",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch97-revision1-author.json",
+        "sha256": "2e6d10cfcc6db7bc49d5de01e866218806337ba20548269820190cd94f319e3b"
+      },
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending/text",
+      "field_line": 3,
+      "field_utf8_sha256": "09c38577cff52281e79ff83fcaaa0af47a19a6a34797fa0175ce17c81d7d724b",
+      "text": "等麝月做完饭再补。"
+    },
+    {
+      "id": "97input-old-needle",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch97-revision1-author.json",
+        "sha256": "2e6d10cfcc6db7bc49d5de01e866218806337ba20548269820190cd94f319e3b"
+      },
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending/text",
+      "field_line": 5,
+      "field_utf8_sha256": "09c38577cff52281e79ff83fcaaa0af47a19a6a34797fa0175ce17c81d7d724b",
+      "text": "盖好锅，方拿针去补白日按住的那一小角窗纸。"
+    },
+    {
+      "id": "97r-window-completed",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch97-revision1.txt",
+        "sha256": "e2b3ee39083c92eaa0435621cab76ae0ffd1ca209602d3d13ce078c221572f21"
+      },
+      "chapter": 97,
+      "line": 3,
+      "text": "麝月补上那一小角窗纸，锅里的米也开了花。"
+    },
+    {
+      "id": "97r-letter-protected",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch97-revision1.txt",
+        "sha256": "e2b3ee39083c92eaa0435621cab76ae0ffd1ca209602d3d13ce078c221572f21"
+      },
+      "chapter": 97,
+      "line": 3,
+      "text": "宝钗道已包好，今日别挨着灶拆，纸边沾了油，日后不好看。"
+    },
+    {
+      "id": "97r-single-seat-local",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch97-revision1.txt",
+        "sha256": "e2b3ee39083c92eaa0435621cab76ae0ffd1ca209602d3d13ce078c221572f21"
+      },
+      "chapter": 97,
+      "line": 3,
+      "text": "这边只坐一个人，那一副放远了。"
+    },
+    {
+      "id": "97r-other-household",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch97-revision1.txt",
+        "sha256": "e2b3ee39083c92eaa0435621cab76ae0ffd1ca209602d3d13ce078c221572f21"
+      },
+      "chapter": 97,
+      "line": 5,
+      "text": "且说湘云住处，案边也摆过两副箸。"
+    },
+    {
+      "id": "99r-reduced-diners",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt",
+        "sha256": "17257cf8ba8acc27d07f3a67b01416668d0885d0c6a694875ad5d932edeafb58"
+      },
+      "chapter": 99,
+      "line": 67,
+      "text": "够咱们两个吃的就是了。"
+    },
+    {
+      "id": "99r-new-needle-established",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt",
+        "sha256": "17257cf8ba8acc27d07f3a67b01416668d0885d0c6a694875ad5d932edeafb58"
+      },
+      "chapter": 99,
+      "line": 69,
+      "text": "她将线头往旧针眼里送，才发现针孔被断线塞住，便另取一根针。"
+    },
+    {
+      "id": "99r-thread-pinned",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt",
+        "sha256": "17257cf8ba8acc27d07f3a67b01416668d0885d0c6a694875ad5d932edeafb58"
+      },
+      "chapter": 99,
+      "line": 69,
+      "text": "线头送进新针眼，还未拉齐，她听见灶里火响，将这根针别回衣边，手又放下。"
+    },
+    {
+      "id": "99r-unfinished-held",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt",
+        "sha256": "17257cf8ba8acc27d07f3a67b01416668d0885d0c6a694875ad5d932edeafb58"
+      },
+      "chapter": 99,
+      "line": 71,
+      "text": "针还别在边上，方才穿了一半的线松着。"
+    },
+    {
+      "id": "99old-needle-wording",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-v1.txt",
+        "sha256": "843e66964dd2e2e935b0472b352236efb1706646f4c692679cb7ea3d9306ba5f"
+      },
+      "chapter": 99,
+      "line": 97,
+      "text": "她把它穿进针，穿到一半才发现针孔被旧线塞住，便取另一根，手又放下。"
+    },
+    {
+      "id": "99old-unfinished-held",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch99-v1.txt",
+        "sha256": "843e66964dd2e2e935b0472b352236efb1706646f4c692679cb7ea3d9306ba5f"
+      },
+      "chapter": 99,
+      "line": 99,
+      "text": "针还别在边上，方才穿了一半的线松着。"
+    },
+    {
+      "id": "100input-two-diners",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch100-revision1-author.json",
+        "sha256": "25bd499e011e57014ab205ef2f667a4aaaaf28949bc2565ee1bf7f38d1b807e0"
+      },
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending/text",
+      "field_line": 1,
+      "field_utf8_sha256": "c51a225d1053bffce9c734b867b98ff5e87842ab3092249d22b867f566d9e872",
+      "text": "够咱们两个吃的就是了。"
+    },
+    {
+      "id": "100input-old-needle",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch100-revision1-author.json",
+        "sha256": "25bd499e011e57014ab205ef2f667a4aaaaf28949bc2565ee1bf7f38d1b807e0"
+      },
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending/text",
+      "field_line": 3,
+      "field_utf8_sha256": "c51a225d1053bffce9c734b867b98ff5e87842ab3092249d22b867f566d9e872",
+      "text": "她把它穿进针，穿到一半才发现针孔被旧线塞住，便取另一根，手又放下。"
+    },
+    {
+      "id": "100input-held-needle",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/inputs/fullbook/ch100-revision1-author.json",
+        "sha256": "25bd499e011e57014ab205ef2f667a4aaaaf28949bc2565ee1bf7f38d1b807e0"
+      },
+      "outer_json_pointer": "/messages/0/content",
+      "embedded_json_pointer": "/writing_task/previous_ending/text",
+      "field_line": 5,
+      "field_utf8_sha256": "c51a225d1053bffce9c734b867b98ff5e87842ab3092249d22b867f566d9e872",
+      "text": "针还别在边上，方才穿了一半的线松着。"
+    },
+    {
+      "id": "100r-new-focal-household",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch100-revision1.txt",
+        "sha256": "95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3"
+      },
+      "chapter": 100,
+      "line": 3,
+      "text": "却说贾兰从前来问安"
+    },
+    {
+      "id": "100r-lan-domestic-task",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch100-revision1.txt",
+        "sha256": "95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3"
+      },
+      "chapter": 100,
+      "line": 5,
+      "text": "贾兰绕绳固定，想让母亲写字稳些"
+    },
+    {
+      "id": "100r-book-and-needle",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch100-revision1.txt",
+        "sha256": "95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3"
+      },
+      "chapter": 100,
+      "line": 7,
+      "text": "父亲贾珠留下的书，他常带出去，翻得书脊开线。"
+    },
+    {
+      "id": "100r-needle-owner",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch100-revision1.txt",
+        "sha256": "95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3"
+      },
+      "chapter": 100,
+      "line": 7,
+      "text": "他想自己缝，针扎进纸里抽不出，李纨接过，寻着原孔"
+    },
+    {
+      "id": "100r-season-span",
+      "binding": {
+        "path": "artifacts/agent_research/phase5/authored/fullbook-ch100-revision1.txt",
+        "sha256": "95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3"
+      },
+      "chapter": 100,
+      "line": 9,
+      "text": "如此过了几番冬夏，衣边放过又收，书线换过，窗纸不止补了一回。"
+    }
+  ],
+  "boundaries": [
+    {
+      "boundary": "95revision1→96revision1",
+      "classification": "CHANGED_BUT_COMPATIBLE",
+      "contradiction_shown": false,
+      "actually_narrated_interface": "Selected95 puts the next morning’s patched garment at the pillow, the pawn ticket under the box, the small wooden measuring bowl by the rice jar, and the next cooking share of rice separately at the little jar’s side. Selected96 begins after dawn with Sheyue taking that same bowl from that location, Baoyu feeling and wearing the patched garment at the pillow, and Baochai putting the pawn ticket away. These holder, object and location transitions match.",
+      "change": "Selected95 replaces the old ambiguous 要熬的单 with 要熬的那份米单放. In context this parses as 那份米 / 单放: the share of rice placed separately, not a newly introduced paper 米单. The amounts, next-morning plan, bowl and terminal paragraph remain unchanged. Selected96’s displayed opening never retrieves or refers to a document called 单, so it makes no contrary claim about that object.",
+      "time": "Dawn directly continues95’s night. Within96’s first paragraph the narration then compresses time through drying winter rain, hardening ground and spring-vegetable cries; the visit occurs after some more time. This is not a demand that the whole visit happen the very next dawn.",
+      "quote_ids": [
+        "95r-clothing-held",
+        "95r-rice-referent",
+        "95r-bowl-position",
+        "95old-ambiguous-referent",
+        "96input-old-wording",
+        "96r-opening-bowl",
+        "96r-opening-clothes",
+        "96r-elapsed-thaw",
+        "96r-new-visit"
+      ],
+      "unshown": {
+        "classification": "UNSHOWN",
+        "description": "The opener shows using the measure but does not individually dramatize retrieving the separately placed rice share, its exact container, or washing/cooking that first breakfast. That absence does not contradict the rice placement. The visit’s route is independently narrated later within the permitted first eight paragraphs; no additional chain is inferred from the historical field."
+      },
+      "optional_minimal_patch": {
+        "recommended": false,
+        "reason": "The successor’s visible hooks concern bowl, garment, pawn ticket and dawn, all retained. Adding a paper list would undo the clarified rice referent; no local successor patch is needed."
+      }
+    },
+    {
+      "boundary": "96revision1→97revision1",
+      "classification": "CHANGED_BUT_COMPATIBLE",
+      "contradiction_shown": false,
+      "actually_narrated_interface": "Selected96 leaves a broken window-paper corner pressed by Baochai until Sheyue is done with the meal preparation. Sheyue measures two and a half bowls, puts washed rice into boiling water, covers the pot, then goes to mend that same small paper corner. Selected97 immediately names Sheyue completing that corner while the rice opens in the pot. The two actions have enough simultaneous time: pot covered and cooking while the worker repairs the paper.",
+      "change": "Historical96 and the frozen97 author field say 拿针去补. Selected96 deletes the specified needle and only says 方去补. Selected97’s repair-completion sentence specifies no needle, paste, thread or instrument; it does not restore the removed implausible tool or assert that an instrument from another action is in hand.",
+      "objects_and_knowledge": "Selected96 keeps the returned-letter paper edge dry beside vegetable work. Selected97 says the earlier Xiangyun letter is already wrapped and not to be opened by the oily stove; the visible handling remains protective, not a switch into food wrapping. The excerpt cannot establish that the written reply edge and incoming letter are the same sheet; it need not be. In97, 这边只坐一个人 identifies one side/place of the current table, not an assertion that the whole household has one diner. The next paragraph explicitly changes scene to Xiangyun’s residence.",
+      "quote_ids": [
+        "96r-held-rice",
+        "96r-letter-dry",
+        "96r-window-pending",
+        "96r-pot-and-window",
+        "96old-needle",
+        "97input-old-needle",
+        "97r-window-completed",
+        "97r-letter-protected",
+        "97r-single-seat-local",
+        "97r-other-household"
+      ],
+      "unshown": {
+        "classification": "UNSHOWN",
+        "description": "The exact repair method after removing the needle is unspecified. No repair-method contradiction is shown because97 also leaves it unspecified. Exact identity and storage chain of incoming versus reply papers require unpermitted middle text and are not authenticated here. Later dinner counts or other households’ chronology are outside the opener check."
+      },
+      "optional_minimal_patch": {
+        "recommended": false,
+        "reason": "The tool deletion retains the repair action and the successor only completes it. No need to add a new instrument or alter cooking time."
+      }
+    },
+    {
+      "boundary": "99revision1→100revision1",
+      "classification": "CHANGED_BUT_COMPATIBLE",
+      "contradiction_shown": false,
+      "actually_narrated_interface": "Selected99 explicitly attempts the blocked old needle, takes a different needle, puts the thread into that new eye only partway, and pins the same new needle back into the unfinished garment when the stove calls attention away. Its unchanged last paragraph then finds the pinned needle and loose partly threaded line at the garment edge; Baochai moves the unfinished sleeve away from soup and leaves it on the table as the two women eat. This locally resolves holder/instrument sequencing instead of contradicting the terminal image.",
+      "change": "Frozen100’s explicit previous_ending still contains old99’s ambiguous threading/blocked-eye/taking-another wording. It exactly matches old99v1, not selected99revision1. Selected99 changes the middle of the last three paragraphs while retaining their first and last paragraphs. Nothing in this report edits, replaces or reattributes that historical frozen field.",
+      "successor_interface": "Selected100 does not immediately continue the old garment, sewing hand or two women’s stove. It opens with 却说贾兰从前 and moves to Li Wan/Jia Lan’s household. Its visible needle action is Jia Lan trying to stitch Jia Zhu’s old book, then Li Wan taking over; different actors and a book rather than the previous sleeve. Several winters and summers then pass within100’s narrated sequence. A repeated sewing motif is not evidence that the same physical needle or unfinished garment crossed households.",
+      "quote_ids": [
+        "99r-reduced-diners",
+        "99r-new-needle-established",
+        "99r-thread-pinned",
+        "99r-unfinished-held",
+        "99old-needle-wording",
+        "100input-old-needle",
+        "100input-held-needle",
+        "100r-new-focal-household",
+        "100r-book-and-needle",
+        "100r-needle-owner",
+        "100r-season-span"
+      ],
+      "unshown": {
+        "classification": "UNSHOWN",
+        "description": "There is no displayed99→100 handoff of the unfinished garment, pinned needle, leftover meal or rent cash. The opener is a focal/time reset, not a shown continuation resolving Baochai and Sheyue’s remaining tasks. Its relative start date versus99’s last evening is not specified; the opening recalls earlier visits before advancing through seasons. Completion/disposal of the99 sleeve and broader narrative resolution cannot be evaluated from100’s first eight paragraphs."
+      },
+      "optional_minimal_patch": {
+        "recommended": false,
+        "reason": "No visible successor claim depends on the old blocked-needle wording. Adding a bridge would create extra narrative/interface claims without need. The selected99 correction is locally compatible; it cannot authorize retrospective input rebinding."
+      }
+    }
+  ],
+  "findings": {
+    "contradictions_shown": [],
+    "classification_scope": "CHANGED_BUT_COMPATIBLE applies only to the displayed local object/action/time interfaces, not to entire chapter quality or a complete chain of custody.",
+    "historical_fields": "All three frozen revision1-author explicit previous_ending.text fields exactly match the corresponding old v1 terminal three paragraphs, including terminal newline. None exactly matches the selected revised ending.",
+    "key_observations": [
+      "95 adds the rice referent, while96’s bowl-at-jar, patched-garment and pawn-ticket dawn hooks are retained.",
+      "96 removes the repair needle, while97 completes the same paper-corner repair without specifying a tool.",
+      "99 explicitly pins the replacement needle with partially passed thread;100 switches actors/household and sews a book, making no physical carryover claim."
+    ],
+    "unshown_routes_retained": true,
+    "whole_chapter_or_quality_verdict": "NOT_CHECKED",
+    "source_authentication": "NOT_CHECKED",
+    "historical_input_custody_changed": false,
+    "predecessor_rebinding": "NOT_PROVEN",
+    "automatic_adoption": "NONE",
+    "optional_patch": "None recommended for these limited displayed interfaces. No prose or input changed."
+  }
+}

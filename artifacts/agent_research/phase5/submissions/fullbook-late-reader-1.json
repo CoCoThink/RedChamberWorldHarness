@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "packet": {
+    "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/packet.json",
+    "sha256": "d0a2e8633a81c133226f74fbd32e2e48e5f6dbf507b7cb5902967dc57266a828"
+  },
+  "reviewer": {
+    "id": "agent:fullbook-late-reader-1",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "fullbook-late-reader-1:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "results": [
+    {
+      "subject_id": "read-78587806869ace36fc3d4afa",
+      "subject_sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "verdict": "PASS",
+      "notes": "PASS仅指本次实际完整阅读与文件绑定核验：92–97回全部正文、标题、空行和收尾，物理行1–719；12个不截段的有界完整阅读摘录，每个少于6000汉字，另实际重读五组相邻回边界。不是文本质量全局通过、来源相容、采用、作者身份或模型历史认证。点检中92回袖内点心数量/给物者叙述不一致、96回信文与引述多出一个‘最’字，分别保留局部FAIL；缺少完整入视许可/物件来路等只记PENDING或UNVERIFIED，不将省略当成矛盾。详细逐回引文、差异、分维偏好和限制见同目录fullbook-late-reader-1-observations.json；无总分、总胜者或晋升意见。sample_checks为空，因为对象是完整六回连续文本，并非抽样包。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-1eab93c8ee577086c27685a0",
+      "subject_sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "verdict": "PASS",
+      "notes": "PASS仅指本次实际完整阅读与文件绑定核验：92–97回全部正文、标题、空行和收尾，物理行1–633；10个不截段的有界完整阅读摘录，每个少于6000汉字，另实际重读五组相邻回边界。不是文本质量全局通过、来源相容、采用、作者身份或模型历史认证。未把明确待办的旧包袱、整包铺盖、租屋朽窗框、米袋归还或未述的玉保管路线说成已完成；它们各自保留PENDING/UNVERIFIED。97回若兰缺席的原由、期限以及庵中外部交换路线没有充分写出，不能据此推断死亡、出走、既有定论或已完成佛事。详细逐回引文、差异、分维偏好和限制见同目录fullbook-late-reader-1-observations.json；无总分、总胜者或晋升意见。sample_checks为空，因为对象是完整六回连续文本，并非抽样包。",
+      "sample_checks": []
+    }
+  ],
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false
+}

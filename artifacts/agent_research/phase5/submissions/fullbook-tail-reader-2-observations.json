@@ -1,0 +1,1237 @@
+{
+  "schema_version": 1,
+  "packet": {
+    "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+    "sha256": "e15dfd5c85cbe9d3108fb22796a1392664efaef43c7020a6a041c25c423230ff"
+  },
+  "reviewer": {
+    "id": "agent:fullbook-tail-reader-2",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "fullbook-tail-reader-2:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "report_kind": "ANONYMOUS_TAIL_READER_OBSERVATIONS",
+  "scope": "Complete byte-bound anonymous sequences, chapters 98-100 only; local comparative reading, not a global quality decision.",
+  "method": {
+    "allowed_reads": [
+      "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+      "schemas/agent_review.schema.json",
+      "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt"
+    ],
+    "consumption": "Both exact bound text files were displayed without omission in six and four physical-line contiguous Bash outputs respectively, each strictly below 6000 characters including the short progress footer. Character-bounded chunks are not excerpts substituted for a full read. All later evidence selection was limited to those same files.",
+    "schema_use": "The repository agent_review schema was read for output format only. The opinion is validated against that schema. Observations have a local strict structural schema and mechanical evidence checks, not an asserted repository observations-schema certification.",
+    "quote_rule": "Every quote has the same fields, at least 18 Unicode characters, one verified physical line, exact token/path/chapter/full-file hash, and a separate UTF-8 quote hash. Chapter sample hashes cover exact original bytes including terminal separators within the declared line span.",
+    "comparison_rule": "Only dimension-specific token/TIE/NEITHER preferences; no aggregation, quality-wide PASS, global winner, ranking score, promotion or selection recommendation."
+  },
+  "disclosures": {
+    "familiarity_and_training": "I am a model subagent, not an independent human. General training may include Hongloumeng names, motifs and prior critical conventions; exact training overlap with these files is unknown and was not tested. I did not consult an edition or external text, so source-fidelity knowledge must not be smuggled into these local conclusions.",
+    "sequence_order_bias": "Read in packet order: read-ebb4df28f7a34edb1404ade9 first, then read-063ef83a6e129d2c56090291. I did not counterbalance or blind myself to length. First-sequence anchoring and later-sequence compression/recency advantages remain possible. The shorter token is not assumed to be a successor, excerpt, repair, original or descendant.",
+    "context_isolation": "A separate reviewer session and asserted isolation are declarations only; NOT_PROVEN. The invocation included branch/file-name metadata, not contents of forbidden sources; those names were not used to identify tokens. No mapping, context manifest, export, authored/stable text, other opinion, or peer-agent result was opened.",
+    "identity_and_authority": "Model label session-default is DECLARED_NOT_VERIFIED. Subject tokens identify only the public packet entries. Authority effect NONE; usage RESEARCH_ONLY; independent_human_admission false. No independent human uptake, provenance, or training independence has been established."
+  },
+  "coverage": [
+    {
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "byte_count": 87164,
+      "character_count": 29340,
+      "physical_line_count": 414,
+      "reading_status": "COMPLETE",
+      "binding_status": "PASS",
+      "chapters": [
+        {
+          "chapter": 98,
+          "line_start": 1,
+          "line_end": 123,
+          "sha256": "af0f40c06770901f21991998c83ae703e7666190833eea9326b813d5603609cd",
+          "reading_status": "COMPLETE"
+        },
+        {
+          "chapter": 99,
+          "line_start": 124,
+          "line_end": 279,
+          "sha256": "816bfd9675dd53708167462af4ed3c5346542792981cdfa7f40b95c560e9d82a",
+          "reading_status": "COMPLETE"
+        },
+        {
+          "chapter": 100,
+          "line_start": 280,
+          "line_end": 414,
+          "sha256": "99a86508d2b8d34421b35839e617eb643466c3ad31d6c81a3c21bbbe7e35fb46",
+          "reading_status": "COMPLETE"
+        }
+      ],
+      "bounded_output_batches": [
+        {
+          "line_start": 1,
+          "line_end": 69,
+          "displayed_content_characters": 5412,
+          "output_character_ceiling": 6000
+        },
+        {
+          "line_start": 70,
+          "line_end": 137,
+          "displayed_content_characters": 5401,
+          "output_character_ceiling": 6000
+        },
+        {
+          "line_start": 138,
+          "line_end": 209,
+          "displayed_content_characters": 5446,
+          "output_character_ceiling": 6000
+        },
+        {
+          "line_start": 210,
+          "line_end": 285,
+          "displayed_content_characters": 5497,
+          "output_character_ceiling": 6000
+        },
+        {
+          "line_start": 286,
+          "line_end": 343,
+          "displayed_content_characters": 5432,
+          "output_character_ceiling": 6000
+        },
+        {
+          "line_start": 344,
+          "line_end": 414,
+          "displayed_content_characters": 4222,
+          "output_character_ceiling": 6000
+        }
+      ]
+    },
+    {
+      "token": "read-063ef83a6e129d2c56090291",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "byte_count": 47778,
+      "character_count": 16076,
+      "physical_line_count": 225,
+      "reading_status": "COMPLETE",
+      "binding_status": "PASS",
+      "chapters": [
+        {
+          "chapter": 98,
+          "line_start": 1,
+          "line_end": 80,
+          "sha256": "d2a6f006c9c11299a3b475b5315b295d733e59bd9a192ad9ed34b9a597891f36",
+          "reading_status": "COMPLETE"
+        },
+        {
+          "chapter": 99,
+          "line_start": 81,
+          "line_end": 152,
+          "sha256": "8f03a5eb03aa61e366995be3bbc8e8e05c6511ccfd307ef8095dc84104f9ed83",
+          "reading_status": "COMPLETE"
+        },
+        {
+          "chapter": 100,
+          "line_start": 153,
+          "line_end": 225,
+          "sha256": "95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3",
+          "reading_status": "COMPLETE"
+        }
+      ],
+      "bounded_output_batches": [
+        {
+          "line_start": 1,
+          "line_end": 72,
+          "displayed_content_characters": 5505,
+          "output_character_ceiling": 6000
+        },
+        {
+          "line_start": 73,
+          "line_end": 140,
+          "displayed_content_characters": 5427,
+          "output_character_ceiling": 6000
+        },
+        {
+          "line_start": 141,
+          "line_end": 212,
+          "displayed_content_characters": 5474,
+          "output_character_ceiling": 6000
+        },
+        {
+          "line_start": 213,
+          "line_end": 225,
+          "displayed_content_characters": 795,
+          "output_character_ceiling": 6000
+        }
+      ]
+    }
+  ],
+  "subject_dispositions": [
+    {
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "verdict": "FAIL",
+      "basis": "Definite local parcel-location contradiction f01; complete reading coverage remains separately established."
+    },
+    {
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "verdict": "PASS",
+      "basis": "Narrow complete reading/local consistency check only; no definite narrator-level local contradiction verified, and f02/f04/f06 remain explicitly pending or unverified."
+    }
+  ],
+  "quotes": [
+    {
+      "quote_id": "q01",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "line_start": 15,
+      "line_end": 15,
+      "text": "有银子也不是为明日一壶茶专留的。家里有什么就用什么。",
+      "character_count": 26,
+      "quote_sha256": "0ea1480268478c8d7dc90623db82768ed92766cfa34a71341b9e332f5a5b960e"
+    },
+    {
+      "quote_id": "q02",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "line_start": 31,
+      "line_end": 31,
+      "text": "麝月道：“桶又不是主子，你同它讲什么礼？”说完自己先把桶翻正，见里面原装着几根柴，又只得把柴倒出来。",
+      "character_count": 50,
+      "quote_sha256": "dd922cf64540bb5a1b9021bd29afa4393693eb009c9c674578404cc6808b916b"
+    },
+    {
+      "quote_id": "q03",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "line_start": 44,
+      "line_end": 44,
+      "text": "宝玉看完，嘴角微微动了一下，手却停在书页上。隔了一会儿，才道：“是她的字。”",
+      "character_count": 38,
+      "quote_sha256": "161e97e0671e43e6199fec2b68117c0ba1307fc8b65b38200016414c0f773d96"
+    },
+    {
+      "quote_id": "q04",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "line_start": 68,
+      "line_end": 68,
+      "text": "见桌角有一个小布包，顺手同自己的书札包一起拿起，因大小相近、颜色又都旧，并没有拆看。",
+      "character_count": 42,
+      "quote_sha256": "faaa429371c3348dfe0bea546b5d45eea6e05ae1f7ad5703d485356cfdab182f"
+    },
+    {
+      "quote_id": "q05",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "line_start": 76,
+      "line_end": 76,
+      "text": "桌角那只留下的青灰布包，谁也没有去动。",
+      "character_count": 19,
+      "quote_sha256": "ab167c496fb2aba02f4dd4602874450a4876be35e1c42b25e2aa8e68bfc2e3e8"
+    },
+    {
+      "quote_id": "q06",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "line_start": 78,
+      "line_end": 78,
+      "text": "她拆开一看，里头不是玉，却是五封折好的书札，外加两张题签。",
+      "character_count": 29,
+      "quote_sha256": "58da84eaa02191300eb61a577c513d159f9a6915427c44eaaebd6e5bdde2d0af"
+    },
+    {
+      "quote_id": "q07",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "line_start": 80,
+      "line_end": 80,
+      "text": "下面两封只见收信人的称谓，里头一个字也看不见。宝玉拿起最上面一封看了看封皮，并没有拆",
+      "character_count": 42,
+      "quote_sha256": "d5bbe6af59419c91798942a35834e85ebb6b43092295e51258795f97db5306d3"
+    },
+    {
+      "quote_id": "q08",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "line_start": 112,
+      "line_end": 112,
+      "text": "红绳不贵，颜色也不十分鲜。她穿了一回嫌结头大，又拆开重穿。",
+      "character_count": 29,
+      "quote_sha256": "fdc0d619bdef934cf01d5762e7e5c480ea909d4c337770f756fbc2d4413c17bb"
+    },
+    {
+      "quote_id": "q09",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 98,
+      "line_start": 122,
+      "line_end": 122,
+      "text": "宝钗把饭碗递给他，道：“先吃这一顿。绳子明年再说。”宝玉接过碗，也就不再提。",
+      "character_count": 38,
+      "quote_sha256": "df968bdfa792002d126a241a90cde656775f8b4b191b77deafa3ae37b00ee63c"
+    },
+    {
+      "quote_id": "q10",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "line_start": 164,
+      "line_end": 164,
+      "text": "灯芯爆了一点小花，她伸针挑掉，屋里又暗下来一点。过了半晌，宝玉才道：“先出去。走到哪里算哪里。”",
+      "character_count": 48,
+      "quote_sha256": "62a432b71ea34457bd6e584326df72c5c851f044efc7d8e6704bc3fa51f00c50"
+    },
+    {
+      "quote_id": "q11",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "line_start": 214,
+      "line_end": 214,
+      "text": "贾芸回城时鞋上沾了一层河泥，麝月见了便先看他身后；见没人，什么也没问，只去拿了一块旧布叫他擦鞋。",
+      "character_count": 48,
+      "quote_sha256": "a921cfb191089d95a2b5234ce07c009ecba5ec3818c415da0404fc2e06bcf64d"
+    },
+    {
+      "quote_id": "q12",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "line_start": 224,
+      "line_end": 224,
+      "text": "书架仍是原样，换下来的旧鞋还在床下，甄宝玉下回要取的那册书仍夹着那张背面写米数的纸。",
+      "character_count": 42,
+      "quote_sha256": "0869ceb51029f3b05233cb6e846956906e08387ac1795cf47a46404f5fc05a49"
+    },
+    {
+      "quote_id": "q13",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "line_start": 258,
+      "line_end": 258,
+      "text": "“他们肯留你？”“缺人做事，添一双手也没什么。”“钱呢？”“前几日我给了一点。如今吃寺里的，也做寺里的事。”",
+      "character_count": 54,
+      "quote_sha256": "fe6cab20806b6eae2487d95ec29efc040c794e62f94aa812a32f73950addc7f8"
+    },
+    {
+      "quote_id": "q14",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "line_start": 264,
+      "line_end": 264,
+      "text": "贾芸道：“你倒还记得。”宝玉笑了一下：“那本来就是答应人的。”“家里答应的事呢？”宝玉脸上的笑淡了，却没有答。",
+      "character_count": 55,
+      "quote_sha256": "18517a57fa521e5278c56f7ea9da11e3cbf392d9422d9def513500e04727e6eb"
+    },
+    {
+      "quote_id": "q15",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "line_start": 268,
+      "line_end": 268,
+      "text": "宝钗一直听到最后，才问：“你亲眼见他吃过东西么？”贾芸道：“没见吃饭，只见寺里有人做饭。他自己说吃寺里的。”",
+      "character_count": 54,
+      "quote_sha256": "121f4fd8196d51e8071b4250523137cc59c59b40bb62db2e1e5a12786e24b907"
+    },
+    {
+      "quote_id": "q16",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 99,
+      "line_start": 276,
+      "line_end": 276,
+      "text": "她捻了两下，没有立即再穿，只听见外头锅里水声渐响。",
+      "character_count": 25,
+      "quote_sha256": "b51f14eee0d911b195fe2fcca385c18ef552e9dac04f7497a1fb70e518f0a353"
+    },
+    {
+      "quote_id": "q17",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "line_start": 282,
+      "line_end": 282,
+      "text": "只说光阴来往，寒暑几番，不觉多年，少年渐长，旧屋渐旧，贾兰也从读书应试一步步走到外头去。起初不过得了科名，家里接一两回喜信；后来又隔些年，方有实授，真正有了官身。",
+      "character_count": 81,
+      "quote_sha256": "ba8135b6d8a319c995bc59093a4f5b92b7ee3c956688e79d10844b9fd7f1bd90"
+    },
+    {
+      "quote_id": "q18",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "line_start": 322,
+      "line_end": 322,
+      "text": "屋里的箱柜并没有因为这一层荣封添一只，桌椅也仍是从邻家借过来又还回去的那几样。",
+      "character_count": 39,
+      "quote_sha256": "da5ca101aad3fff66c672dd87e73e95129b26acf74d802ff66a1f11972a1cb52"
+    },
+    {
+      "quote_id": "q19",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "line_start": 340,
+      "line_end": 340,
+      "text": "病势就这样一阵好一阵坏，拖了几个月。",
+      "character_count": 18,
+      "quote_sha256": "c5d128c150a0faee28f7374abcc79fce06807946ecee2bca5de065c86348876d"
+    },
+    {
+      "quote_id": "q20",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "line_start": 360,
+      "line_end": 360,
+      "text": "丧期既定，贾兰便依制丁忧，暂离原职。前日还来贺他官身的人，如今又来吊母",
+      "character_count": 35,
+      "quote_sha256": "87ed10241773bc3586b71516b68b51b74c55c8471da77dd04f111b7083a0e3a5"
+    },
+    {
+      "quote_id": "q21",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "line_start": 368,
+      "line_end": 368,
+      "text": "贾兰伸手摸了摸袖边，道：“先留着罢。”老嬷嬷看他一眼，没有说什么，把旧袄叠好，仍放在冠帔下面一层。",
+      "character_count": 49,
+      "quote_sha256": "4cf9b2783d3373ffbda096acd23f8a9387a2315f9a60e737bb71e570a9fd644d"
+    },
+    {
+      "quote_id": "q22",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "line_start": 378,
+      "line_end": 378,
+      "text": "却说太虚幻境之中，不知何日何时，诸司云路澄明，花影不惊。警幻仙姑来到旧日册籍之前，命侍者开启薄命诸司封藏。",
+      "character_count": 53,
+      "quote_sha256": "f58fbcc00c5380aad4e5e643e5c0058b7e9198a368eb27dc31bbb0d5aa12cd94"
+    },
+    {
+      "quote_id": "q23",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "line_start": 388,
+      "line_end": 388,
+      "text": "再副层中，晴雯、袭人二名相次，余者亦列其间。三副、四副两层行次更密，芳讳仍多，警幻只令侍者按次展开，并不逐名唱出。",
+      "character_count": 57,
+      "quote_sha256": "178e968358e8f9f50f303c8072740cc741ff38080bfe53121d7de95566cced1c"
+    },
+    {
+      "quote_id": "q24",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "line_start": 400,
+      "line_end": 400,
+      "text": "开头一段似曾相识，再往后看，却见从前未尽的文字如今已经续全。",
+      "character_count": 30,
+      "quote_sha256": "92fe8e0d3f9621c70c688230de2a5753e1109d1c46d7a1c1a51a78cb26a88c0d"
+    },
+    {
+      "quote_id": "q25",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "subject_sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+      "chapter": 100,
+      "line_start": 404,
+      "line_end": 404,
+      "text": "抄到名字多处，怕错一字，仍回石前核对；石上若有漫漶，纸上便照样空着，不肯自补。",
+      "character_count": 39,
+      "quote_sha256": "22445f65c3b89bf9f0f4496bad3675c5ffe5efe342e6c35b479dca91dbfe6178"
+    },
+    {
+      "quote_id": "q26",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "line_start": 5,
+      "line_end": 5,
+      "text": "我昨日才把怎么来告诉他，今日替他送这张帖，明儿带他走一趟。他自己的住处写在后头，我回话也有地方去。",
+      "character_count": 49,
+      "quote_sha256": "12d53c618543a1e2dffd2dd25c6a0242eaec4687d587226dde415b67420b0e32"
+    },
+    {
+      "quote_id": "q27",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "line_start": 9,
+      "line_end": 9,
+      "text": "宝钗道：“水得你提，真要数，也先由你数。”麝月将包口折紧，去洗明日用的碗盏。",
+      "character_count": 38,
+      "quote_sha256": "8ab2d0af1b78ddae95a871ca4dbff589a74ab7aa66efb9791db29e8e0ec55934"
+    },
+    {
+      "quote_id": "q28",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "line_start": 25,
+      "line_end": 25,
+      "text": "宝玉听了，放开正要按平书页的手，道：“线可换，字不能照着一个意思就添。”",
+      "character_count": 36,
+      "quote_sha256": "4f4d1eb2a4bf370f4951bd7d2aba09f0a4df628f089910e974a191232c2aa191"
+    },
+    {
+      "quote_id": "q29",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "line_start": 33,
+      "line_end": 33,
+      "text": "他认得那一手，也认得那四句对着自己从前所写而来；却到今日才亲眼看见这纸上的字。甄宝玉仍扶虫蛀册等他，没有凑近。",
+      "character_count": 55,
+      "quote_sha256": "28194cf260e0a675b0b7b178a3cd04c44ed24b692614f82f40817c3b2d8a3f0e"
+    },
+    {
+      "quote_id": "q30",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "line_start": 49,
+      "line_end": 49,
+      "text": "小厮拿了折口朝坐客处的厚纸包，双手托起，未拆看；甄宝玉收抄页，也没转身验。",
+      "character_count": 37,
+      "quote_sha256": "8372a77e1856fbbf5835955a513b229aaed4cc85c4a97e20c08bce806da6b93f"
+    },
+    {
+      "quote_id": "q31",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "line_start": 57,
+      "line_end": 57,
+      "text": "甄宝玉道：“我只说桌上那包，没说清。你拿了，我也没验，就一道带出来。这不是赖谁的时候。”",
+      "character_count": 44,
+      "quote_sha256": "d32238b5027a83a531f20c42d39fc95cca0cf73d6decbfadfa3b5e8207d368f3"
+    },
+    {
+      "quote_id": "q32",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "line_start": 59,
+      "line_end": 59,
+      "text": "他叫一个送信的人立即送还，嘱到门先说甄家退还误取的书包，须亲交屋里收件的人，不能放下就走。",
+      "character_count": 45,
+      "quote_sha256": "c394fb83339b48f5949a3b222b5013bc34ec2f01c119cf9da51f1502cd26daf5"
+    },
+    {
+      "quote_id": "q33",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "line_start": 59,
+      "line_end": 59,
+      "text": "来人问只带这一包，还是等旁的，他说只有这个，没有钱物，到了回话。",
+      "character_count": 32,
+      "quote_sha256": "3f70f919249ca3f394401d135761e3fee5d4853f981d0d38d3282165d45e2b7e"
+    },
+    {
+      "quote_id": "q34",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "line_start": 67,
+      "line_end": 67,
+      "text": "他只知受托，没有在客座上看见取包。宝玉出来读札，展开外纸，挪开册，拿起旧帕。玉在帕折里，起毛的绦头还勾着",
+      "character_count": 52,
+      "quote_sha256": "e56b9d468019df31aa2324daba27140f3dcc26b9993613834d2d953528906f7c"
+    },
+    {
+      "quote_id": "q35",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 98,
+      "line_start": 73,
+      "line_end": 73,
+      "text": "晚饭后她要裁布，他收册腾出靠灯处，压平夹页露出的尖角，又把借阅条放回虫蛀册封面。",
+      "character_count": 40,
+      "quote_sha256": "a64e49efb09a4a6ec8dfc29497a79d63ddb529623521b2a77d5b01e7df95e88f"
+    },
+    {
+      "quote_id": "q36",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "line_start": 83,
+      "line_end": 83,
+      "text": "到了约定取书的时候，甄家的人来，麝月叫宝玉亲自看过册子、借阅条和包皮，才交来人。",
+      "character_count": 40,
+      "quote_sha256": "89bbb9c443d0cca6d7f4154a375b5e6b5cc25414faa6ff593f437efadc359bcb"
+    },
+    {
+      "quote_id": "q37",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "line_start": 101,
+      "line_end": 101,
+      "text": "他没换一句话，看着未缝完的衣，伸手要接，宝钗往自己一侧收了点，道：“这也是我自己定的。”他的手落回膝上。",
+      "character_count": 52,
+      "quote_sha256": "2c3d2a8e48b56be1cdf56c2be9ea5b17e9912d798023504ecb6d510aaaccf734"
+    },
+    {
+      "quote_id": "q38",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "line_start": 113,
+      "line_end": 113,
+      "text": "宝钗教回来记着，该花的不能让他贴，家里也不敢没头没尾雇人。他答眼下自己走。",
+      "character_count": 37,
+      "quote_sha256": "f693e8de5b0c3c39aa66da03eae95d8eb0aad3be49315f0d357455c957479539"
+    },
+    {
+      "quote_id": "q39",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "line_start": 125,
+      "line_end": 125,
+      "text": "门边僧人使人到灶下问，答有宝玉，先问来客何事。贾芸说送家里的话，再报自己名，倘他认得，请出来。",
+      "character_count": 47,
+      "quote_sha256": "fb052af91d039dc36624311494c4c2562e355fe52d1ff41aafc097b3aa78e15e"
+    },
+    {
+      "quote_id": "q40",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "line_start": 129,
+      "line_end": 129,
+      "text": "挑水肩磨疼了，换边挑，今天还没走远。贾芸问需不需钱，他说眼下不要",
+      "character_count": 32,
+      "quote_sha256": "d3fe86f62b9d1ecf9d5a5488d5d1d8bfbf1612b0480a29697a25132bdc6bf208"
+    },
+    {
+      "quote_id": "q41",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "line_start": 131,
+      "line_end": 131,
+      "text": "贾芸道：“你说平安，和她们平安不是一回事。”宝玉低头捏布角，过一会儿摊开。",
+      "character_count": 37,
+      "quote_sha256": "6bba72bad5a432a4cf2b77ac8e5944f8643b8d0557ad8a2b75ea8a53b83d17b1"
+    },
+    {
+      "quote_id": "q42",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "line_start": 137,
+      "line_end": 137,
+      "text": "宝钗道：“是这里托你问的。你的脚钱不能也成我们不知道的。”麝月教若再去，须先回话。",
+      "character_count": 41,
+      "quote_sha256": "07585a0d365aa3d494959c95b41c1e16c8be9ec79b8970011aa4291ef1d50bdf"
+    },
+    {
+      "quote_id": "q43",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "line_start": 149,
+      "line_end": 149,
+      "text": "她将线头往旧针眼里送，才发现针孔被断线塞住，便另取一根针。线头送进新针眼，还未拉齐，她听见灶里火响，将这根针别回衣边，手又放下。",
+      "character_count": 64,
+      "quote_sha256": "691427170a13c10d00e7494a4380917d6be14ec72d77278404e73550f49d004a"
+    },
+    {
+      "quote_id": "q44",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 99,
+      "line_start": 151,
+      "line_end": 151,
+      "text": "宝钗将衣往离汤远的一边挪，袖口未补完，仍留在桌角；两人把眼前这顿饭吃了。",
+      "character_count": 36,
+      "quote_sha256": "9db3253f485f9bc094924b4c9707a3febc563042f956747ccc390bee813a3db1"
+    },
+    {
+      "quote_id": "q45",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 159,
+      "line_end": 159,
+      "text": "李纨接过，寻着原孔，道：“莫另扎得满身都是。”翻到贾珠旧字，手指在旁停一停，仍接开线。",
+      "character_count": 43,
+      "quote_sha256": "bd137827a98d1c5a73be76092355d9caa0df56306b1dd61bb93a0bba6558f27d"
+    },
+    {
+      "quote_id": "q46",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 161,
+      "line_end": 161,
+      "text": "如此过了几番冬夏，衣边放过又收，书线换过，窗纸不止补了一回。",
+      "character_count": 30,
+      "quote_sha256": "a967beefde4c81032d00b7cacb9bbdb51a245e30e552508c0ff2aa173fdcb388"
+    },
+    {
+      "quote_id": "q47",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 171,
+      "line_end": 171,
+      "text": "贾兰回来，官身已经有了。他向母亲说清所领的与还须办的，李纨先问今日还出去么，他说稍后仍去",
+      "character_count": 44,
+      "quote_sha256": "66f62bff8b39a73f542af21851002541b487832431d762de165b17f448ddfffc"
+    },
+    {
+      "quote_id": "q48",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 179,
+      "line_end": 179,
+      "text": "贾兰说另做一件，她答可以，这件仍留。他说不是为省，她道：“我也不只为省。穿惯了，手往里伸，知道袖子在哪里。”",
+      "character_count": 54,
+      "quote_sha256": "872c34603796c121fae6f773be86b1ef3506eeffaff1b2322b4981f9c877b7ad"
+    },
+    {
+      "quote_id": "q49",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 185,
+      "line_end": 185,
+      "text": "贾兰往后收入有了来路，眼下该付的却须先算。",
+      "character_count": 21,
+      "quote_sha256": "50e3ed8d63a465580e079204008c1b208e34fd0b831a615d7542340045c99162"
+    },
+    {
+      "quote_id": "q50",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 185,
+      "line_end": 185,
+      "text": "旧宅旧产并未回到手里，现在住处也有用度。",
+      "character_count": 20,
+      "quote_sha256": "539dbc1c4b53a95406f153ce7cc3afe3188d8a0779633e4410ef3fc27bdbff00"
+    },
+    {
+      "quote_id": "q51",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 193,
+      "line_end": 193,
+      "text": "药回来，妇人分开药包与茶纸，贾兰让煎时守着，她说守药还须别人看饭，他才叫帮手。添人添药，钱也另付。",
+      "character_count": 49,
+      "quote_sha256": "73655eee5bb7a644239888d8c25cc7964964d023fdf0ff4f91854694bfa9789e"
+    },
+    {
+      "quote_id": "q52",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 205,
+      "line_end": 205,
+      "text": "李纨辞世，离受荣已过数月。前日还饮几口水，夜里照料的人轮替，移被都慢。",
+      "character_count": 35,
+      "quote_sha256": "6c6407307b4adebd3f4a09d6c4547fd4ea494414d9014d3b67fad585cee81c9a"
+    },
+    {
+      "quote_id": "q53",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 213,
+      "line_end": 213,
+      "text": "贾兰坐桌边，妇人端粥，他先问母亲的可送了。话出口，妇人停，他也停，过一会儿说糊涂，接过碗。",
+      "character_count": 45,
+      "quote_sha256": "e4c31f82e3aa6bccc502b5c988fadd88c1df0264015abf6ca41df2d8f3512d07"
+    },
+    {
+      "quote_id": "q54",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 219,
+      "line_end": 219,
+      "text": "其中一处明列：林黛玉——情情。副层略见香菱，再副见晴雯、袭人，三副、四副余纸未见字迹。",
+      "character_count": 43,
+      "quote_sha256": "de638290204c865d081080e1ab566743c5012d4b084b661d4c3f80ed46f0f5b5"
+    },
+    {
+      "quote_id": "q55",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 221,
+      "line_end": 221,
+      "text": "榜渐展至末，贾宝玉——情不情。案边无人为这几个字另作解释，也无一曲重唱。警幻看过，止道：“收罢。”",
+      "character_count": 49,
+      "quote_sha256": "6cb64cfe942caf53a43893720162d8f67538fa5938ced07f15faa97ec025759f"
+    },
+    {
+      "quote_id": "q56",
+      "token": "read-063ef83a6e129d2c56090291",
+      "subject_sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-063ef83a6e129d2c56090291.txt",
+      "chapter": 100,
+      "line_start": 223,
+      "line_end": 223,
+      "text": "遇漫漶处，看过仍不可辨，便留空，不另添字。抄到末了，将纸平着晾干，收笔收砚，石前少了那一片身影。",
+      "character_count": 48,
+      "quote_sha256": "dcc2ba868cc2b8b0bb92e4e5f0ce3d4c3ccf953f84832b61936930b6a57f84b1"
+    }
+  ],
+  "findings": [
+    {
+      "finding_id": "f01",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "chapter": 98,
+      "status": "FAIL",
+      "dimension": "local_parcel_location_consistency",
+      "evidence": [
+        "q04",
+        "q05",
+        "q06"
+      ],
+      "notes": "Narrated departure takes both the jade bundle and the servant's letters bundle together, yet the same letters bundle remains and is opened in the home next morning. The preceding table description at line 68 identifies the letters as the grey-blue bundle, so these are not merely two unrelated similarly coloured packages. No subsequent action puts that bundle back. Minimum repair would change the taking to a substitution rather than taking together, or explicitly return the letters before departure; this review makes no edit and guesses no ancestry."
+    },
+    {
+      "finding_id": "f02",
+      "token": "read-063ef83a6e129d2c56090291",
+      "chapter": 98,
+      "status": "PENDING",
+      "dimension": "sender_no_money_property_wording",
+      "evidence": [
+        "q30",
+        "q31",
+        "q32",
+        "q33",
+        "q34"
+      ],
+      "notes": "Line 59 says 只有这个，没有钱物 while returning a known jade-containing book parcel. Read literally as an assertion about every enclosed object, 没有钱物 is in tension with the jade. In the actual dialogue, the courier asks whether there are additional things to wait for; the reply can mean no separate money/goods consignment, and it is a character's classification rather than a narrator statement that the parcel has no jade. I therefore do not call this a definite contradiction and do not certify the phrase as an accurate inventory. Clarifying the scope would remove an avoidable ambiguity."
+    },
+    {
+      "finding_id": "f03",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "chapter": 99,
+      "status": "UNVERIFIED",
+      "dimension": "temple_admission_and_eyewitness_limits",
+      "evidence": [
+        "q13",
+        "q15"
+      ],
+      "notes": "Labour-for-food and a small initial payment are said by Baoyu, not verified institutional rules. Baochai explicitly asks what Jia Yun actually saw; he did not see eating or inspect sleeping space. The monk messenger's earlier report supplies indirect evidence only. I can read this evidentiary distinction, not certify real ordination, legal access, doctrine, or admission validity."
+    },
+    {
+      "finding_id": "f04",
+      "token": "read-063ef83a6e129d2c56090291",
+      "chapter": 99,
+      "status": "UNVERIFIED",
+      "dimension": "temple_admission_and_eyewitness_limits",
+      "evidence": [
+        "q39",
+        "q40",
+        "q41"
+      ],
+      "notes": "The gate monk relays a name and asks the visitor's purpose before Baoyu comes out, making access locally legible. Shaved hair, moving wood and shoulder soreness are shown; regular meals, longer-term accommodation, formal ordination and future intent are not externally verified. The missing admission process is an unshown bridge, not a verified prose contradiction."
+    },
+    {
+      "finding_id": "f05",
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "chapter": 100,
+      "status": "UNVERIFIED",
+      "dimension": "stone_complete_text_claim",
+      "evidence": [
+        "q22",
+        "q23",
+        "q24",
+        "q25"
+      ],
+      "notes": "The narrator says the previously unfinished stone text is now complete, and the copier refuses to fill unreadable places. Those are compatible as fictional complete composition versus imperfect legibility. This reviewer has read only the packet's 98-100, not the alleged stone corpus or chapters 1-97, and cannot turn the narrated completeness into proof of wholebook coherence or full roster coverage."
+    },
+    {
+      "finding_id": "f06",
+      "token": "read-063ef83a6e129d2c56090291",
+      "chapter": 100,
+      "status": "PENDING",
+      "dimension": "unshown_return_and_institutional_mourning_bridge",
+      "evidence": [
+        "q47",
+        "q52",
+        "q54",
+        "q55",
+        "q56"
+      ],
+      "notes": "There is an actual office and a notice of maternal death to the place of duty, but no independently checked title, historical rule, mourning leave outcome, or comprehensive emotion roster. The final shift finds writing on a stone; the metamorphosis/return route is not dramatized. These are bounded omissions or unverified institutions/identity, not a definite local contradiction or a license to supply a hidden sequel."
+    }
+  ],
+  "cross_chapter_adjacency": [
+    {
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "boundary": "98->99",
+      "status": "OBSERVED",
+      "line_spans": [
+        [
+          112,
+          122
+        ],
+        [
+          124,
+          146
+        ],
+        [
+          224,
+          224
+        ],
+        [
+          262,
+          264
+        ]
+      ],
+      "evidence": [
+        "q08",
+        "q09",
+        "q12",
+        "q14"
+      ],
+      "notes": "The actual chapter-98 end handles the new jade cord and rice-count paper, then chapter 99 opens with ordinary spring days, borrowed-book sorting and mending. The Zhen book and rice-count copy remain at home and return as Jia Yun's unfulfilled-book/promise question. The book is not falsely assumed to have been returned before this boundary. This material adjacency is real despite the chapter-98 parcel FAIL."
+    },
+    {
+      "token": "read-063ef83a6e129d2c56090291",
+      "boundary": "98->99",
+      "status": "OBSERVED",
+      "line_spans": [
+        [
+          73,
+          79
+        ],
+        [
+          81,
+          97
+        ]
+      ],
+      "evidence": [
+        "q35",
+        "q36"
+      ],
+      "notes": "Chapter 98 finishes putting the borrowing slip back, clearing scissors and paper from work, and keeping the sender note. Chapter 99 immediately checks the book/slip/wrapper and actually hands them back when collected, before several days of ordinary assistance decline into refusal. The adjacent text itself supports the contrast between earlier cooperation and later withdrawal; I do not supply an unseen intervening episode."
+    },
+    {
+      "token": "read-ebb4df28f7a34edb1404ade9",
+      "boundary": "99->100",
+      "status": "OBSERVED",
+      "line_spans": [
+        [
+          274,
+          278
+        ],
+        [
+          280,
+          282
+        ]
+      ],
+      "evidence": [
+        "q16",
+        "q17"
+      ],
+      "notes": "Chapter 99 closes on enough noodles for two and a stalled needle, then the next chapter explicitly jumps over many years to Jia Lan growing, examinations and later real appointment. The first-read sequence grants no observed reconciliation between that stalled seam and later honours. The jump is a signalled ellipsis, not demonstrated continuous day-by-day chronology."
+    },
+    {
+      "token": "read-063ef83a6e129d2c56090291",
+      "boundary": "99->100",
+      "status": "OBSERVED",
+      "line_spans": [
+        [
+          147,
+          151
+        ],
+        [
+          153,
+          167
+        ]
+      ],
+      "evidence": [
+        "q43",
+        "q44",
+        "q45",
+        "q46"
+      ],
+      "notes": "Chapter 99 ends with two bowls, the interrupted needle and unfinished sleeve. Chapter 100 opens 从前 with earlier studying and replays the mother/son work of books, clothing and waiting through winters/summers. It is a retrospective relay, not evidence that Jia Lan's whole educational history happens after the immediately preceding supper. Later Baochai/Sheyue food help and funeral tasks rejoin the surviving households without claiming their departure wound has healed."
+    }
+  ],
+  "local_dimension_comparisons": [
+    {
+      "dimension": "chapter_98_parcel_transport_causality",
+      "local_preference": "read-063ef83a6e129d2c56090291",
+      "evidence": [
+        "q04",
+        "q05",
+        "q06",
+        "q30",
+        "q31",
+        "q32",
+        "q34"
+      ],
+      "notes": "The single wrong book-and-jade parcel, sender note, explicit courier handoff and recipient inventory form a traceable local chain in the second-read token. The first-read token has a definite two-bundles-taken versus letters-left contradiction. This preference is only for the transport mechanism, not a whole-sequence winner or certification of hidden routes."
+    },
+    {
+      "dimension": "distinct_voices_and_resource_based_laughter",
+      "local_preference": "TIE",
+      "evidence": [
+        "q01",
+        "q02",
+        "q27",
+        "q31",
+        "q37",
+        "q53"
+      ],
+      "notes": "The first-read token separates Baoyu's conversational play, Sheyue's teasing practical labour, and Baochai's allocation decisions; the bucket joke makes servant rank visible. The second-read token gives water-carrying costs a reply, lets Zhen own an unclear instruction, and gives Baochai a bodily refusal rather than merely a budget speech. Both have laughter rooted in work, not a generic witty narrator. Tightness does not automatically make every voice stronger."
+    },
+    {
+      "dimension": "chapter_98_delayed_visual_recognition",
+      "local_preference": "read-063ef83a6e129d2c56090291",
+      "evidence": [
+        "q03",
+        "q28",
+        "q29"
+      ],
+      "notes": "The first-read token stages a real small pause and the subdued 是她的字, then resumes collation. The second-read token distinguishes recognition of handwriting/retort from first seeing these folded physical marks today; the waiting visitor does not intrude. The reveal is locally more explicit about unread text, without proving whether any upstream scene had already shown that page."
+    },
+    {
+      "dimension": "chapter_99_departure_dramatic_pauses",
+      "local_preference": "read-ebb4df28f7a34edb1404ade9",
+      "evidence": [
+        "q10",
+        "q11",
+        "q14",
+        "q16",
+        "q37",
+        "q41",
+        "q43"
+      ],
+      "notes": "The first-read token makes repeated silence, failed answers, eight-day waiting/search, shoe mud, and an unthreaded needle coexist; the lamp-flower pause is time that the scene actually spends. The second-read token retains the withdrawn garment/hand and the peace-not-their-peace rebuke, but compresses the repeated waiting into fewer beats. The local preference is for duration of unresolved interpersonal pressure, not for length as such."
+    },
+    {
+      "dimension": "human_cost_and_accounting_of_departure",
+      "local_preference": "read-063ef83a6e129d2c56090291",
+      "evidence": [
+        "q11",
+        "q15",
+        "q38",
+        "q40",
+        "q41",
+        "q42"
+      ],
+      "notes": "The first-read token makes worry, false leads, and missed meals credible. The second-read token is particularly concrete about Jia Yun's reimbursable foot costs, Baoyu's sore shoulder, and the unequal meanings of peace. These gains keep the searcher and women from becoming costless servants of a spiritual plot; they do not absolve Baoyu or establish the economic total."
+    },
+    {
+      "dimension": "no_easy_enlightenment_after_departure",
+      "local_preference": "TIE",
+      "evidence": [
+        "q14",
+        "q16",
+        "q37",
+        "q40",
+        "q41",
+        "q44"
+      ],
+      "notes": "Neither observed departure is answered by an authoritative revelation that the women ought to understand. The first-read token lets the promise-to-a-book versus promises-at-home question stop Baoyu's smile. The second-read token explicitly denies that his safety equals theirs and shows clumsy work. The later supernatural labels do not supply an observed reconciliation, doctrinal proof, or human consent."
+    },
+    {
+      "dimension": "needle_thread_tool_specificity",
+      "local_preference": "read-063ef83a6e129d2c56090291",
+      "evidence": [
+        "q08",
+        "q16",
+        "q28",
+        "q43",
+        "q45"
+      ],
+      "notes": "The first-read token shows cheap red cord, a bulky knot remade, and an unfinished shoulder seam. The second-read token develops original book-stitch holes, a needle eye blocked by broken thread, changing the needle, and interruption by the fire. Needle, thread, page, and stove compete physically; they are not merely repeated symbols. No impossibility is inferred from the old eye being blocked."
+    },
+    {
+      "dimension": "temple_visitor_access_and_local_knowledge",
+      "local_preference": "read-063ef83a6e129d2c56090291",
+      "evidence": [
+        "q13",
+        "q15",
+        "q39",
+        "q40"
+      ],
+      "notes": "The first-read token deliberately leaves casual access unchallenged by temple people and separates hearsay meals from observation. The second-read token stages a purpose/name inquiry and then a recognized person appearing; this better limits who knows what. The preference concerns depicted access, not historical correctness, proof of origin, or formal admission."
+    },
+    {
+      "dimension": "elapsed_years_months_and_actual_appointment",
+      "local_preference": "TIE",
+      "evidence": [
+        "q17",
+        "q19",
+        "q46",
+        "q47",
+        "q52"
+      ],
+      "notes": "The first-read token explicitly supplies many years, an interval after examination success, actual appointment, later illness months and seasonal changes. The second-read token uses several winters/summers, waiting for a vacancy, changed clothing and damaged books before office, then months after honour before death. Both distinguish maturation/appointment from a single lucky day. Neither names a verified office or supplies a datable calendar."
+    },
+    {
+      "dimension": "appointment_not_instant_wealth_restoration",
+      "local_preference": "read-063ef83a6e129d2c56090291",
+      "evidence": [
+        "q18",
+        "q47",
+        "q49",
+        "q50"
+      ],
+      "notes": "The first-read token keeps borrowed furniture, repaired roof and old boxes despite honours. The second-read token adds income having a future source versus bills payable now, and explicitly says the former estate/property has not come back. This is a local gain against equating real office with instant liquid wealth, not proof of external finances."
+    },
+    {
+      "dimension": "mourning_afterlife_duration_and_dramatic_pauses",
+      "local_preference": "read-ebb4df28f7a34edb1404ade9",
+      "evidence": [
+        "q20",
+        "q21",
+        "q53",
+        "q56"
+      ],
+      "notes": "The first-read token spends time after mourning arrangements on the worn sleeve, reused medicine bowl and white sewing thread, airing official clothes and not adding a new box. That sustained domestic afterlife gives grief room beyond the death announcement. The second-read token's mistaken request for mother's meal is a particularly strong short pause, but has less post-funeral duration and a much quicker stone transcription. This is not a verdict that every expansion succeeds."
+    },
+    {
+      "dimension": "human_world_and_supernatural_frame_boundaries",
+      "local_preference": "TIE",
+      "evidence": [
+        "q22",
+        "q24",
+        "q25",
+        "q54",
+        "q55",
+        "q56"
+      ],
+      "notes": "Both mark the human account as laid aside before an undated separate supernatural scene, then another stone scene. The first-read token gives the copier wind, rain, repeated checking and incomplete legibility; the second-read token sharply restricts itself to discernible letters and blanks. The stone narrator's voice must not be mistaken for this reader's omniscient knowledge of unseen chapters."
+    },
+    {
+      "dimension": "emotion_name_display_limited_not_full_biography",
+      "local_preference": "TIE",
+      "evidence": [
+        "q23",
+        "q54",
+        "q55"
+      ],
+      "notes": "Both give Daiyu 情情 and Baoyu 情不情 without turning the labels into explanatory biographies or proofs of moral vindication. The first-read token asserts more lower-tier names while declining to chant each. The second-read token leaves lower-tier paper without visible characters. I do not invent those names, demand unseen roster completeness, or certify that the displayed names explain all human costs."
+    },
+    {
+      "dimension": "hidden_ancestry_routes_identity_institutional_validity",
+      "local_preference": "NEITHER",
+      "evidence": [
+        "q26",
+        "q13",
+        "q39",
+        "q20",
+        "q56"
+      ],
+      "notes": "PENDING/UNVERIFIED: a shown invitation route or gate inquiry is not a verified origin, independent ancestry, historically authorized institution, complete ordination, legal mourning rule, or human adoption. The public packet contains only opaque candidate tokens and byte bindings. No successor, source, excerpt, or relation to chapters outside 98-100 is inferred."
+    }
+  ],
+  "compression_and_pauses": {
+    "evidence": [
+      "q03",
+      "q10",
+      "q16",
+      "q21",
+      "q29",
+      "q31",
+      "q37",
+      "q41",
+      "q43",
+      "q53",
+      "q56"
+    ],
+    "gains": "The second-read token uses fewer repetitions while showing invitation routing, a single wrong parcel with note/acknowledgement, owner responsibility, distinctions between recognized handwriting and first-seen words, gate inquiry, foot costs, sore work, appointment versus cash, and a startling habitual request for mother's meal. These are actual staged gains, not benefits inferred from shorter length.",
+    "losses_or_tradeoffs": "The first-read token offers more space for a guest's withheld question, cup-hand hesitation, lamp noise before a refusal, successive evenings of waiting and false leads, post-death sorting/airing and transcription interrupted by weather. The second-read token preserves several sharp pauses, especially the hand retreat, still thread, and maternal meal slip, but passes through the search and the stone ending faster. Its reduced illness/post-funeral/transcription duration does not itself make it weak, and the longer token's repetition does not automatically earn success. Neither shape excuses the definite parcel contradiction."
+  },
+  "limits": [
+    "No chapters 1-97 were read; the first-read token's opening return from Xichun and any upstream handling of the handwriting page are PENDING outside-scope references.",
+    "Anonymous bindings and actual full consumption do not prove authorship, genealogy, independent model training, coordinator intention or process isolation.",
+    "Invitation paths, courier testimony and temple witnesses were assessed as depicted local knowledge, not verified external routes, person identities or institutional permissions.",
+    "Actual office is stated and economic costs shown, but rank, calendar dates, legal appointment and mourning rules are UNVERIFIED; omitted procedures are not turned into prose FAIL.",
+    "Lower-tier emotion names and unreadable stone marks are not supplied from memory. A narrated complete stone text is not verified fullbook completeness or a global narrative verdict.",
+    "No scoring total, aggregate preference, global winner, promotion, admission, human adoption, or automatic longer/shorter-successor/excerpt assumption is made."
+  ]
+}
