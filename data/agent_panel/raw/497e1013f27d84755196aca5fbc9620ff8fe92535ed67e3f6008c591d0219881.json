@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "packet": {
+    "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/packet.json",
+    "sha256": "7a7123ef1887e5ae737e8dd2d29533e12d4a65a253a5ac77304abc997c084e8c"
+  },
+  "reviewer": {
+    "id": "agent:fullbook-early-reader-2",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:fullbook-early-reader-2:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "results": [
+    {
+      "subject_id": "read-6b307b189ab945c93f3a279d",
+      "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+      "verdict": "FAIL",
+      "notes": "Scope: bounded literary research on the supplied complete chapters 81–83, not source authenticity, admission, or an overall ranking. I actually read every paragraph of this token file, including its opening and final paragraphs; its bytes match the packet binding. PASS for intelligible local action and sustained characterization: Xiangling's wish to mend and remember poetry, Baochai's practical care, Tanchun's brisk departures, and the archery party's teasing all work as enacted scenes. Character voices and scene momentum are my dimension-specific preferences here, not an overall winner. Grief is a comparative TIE: this sequence preserves the dying woman's living poetic agency especially well, while the other token offers a different strength in anticipatory and bodily grief. FAIL specifically for chapter 83's internally stated day continuity: the narrator advances to Xiangyun's visit with ‘谁知隔了几日，湘云果然过来。’, but Baoyu then places the already narrated archery encounter on that same visiting day with ‘我今日在他身上见了一个，像得很。’ This is a repairable temporal wording lapse; it is not a claim that the whole plot is unusable. PENDING for the letter's separate initial-writing and next-morning addition dates: the sequence establishes their order but supplies only an undifferentiated date-completion statement. PENDING for offstage dispatch/courier custody and the physical route by which the narrator-identified old qilin reached Ruolan; neither route may be invented from a household-origin answer. Repeated corrective jokes sometimes flatten different speakers into the same repartee pattern. UNVERIFIED for archival truth, historical/medical plausibility, continuity outside these chapters, model identity, and independently proven context isolation. Exact token-bound evidence and the dimensional comparison are in the separate observations file. sample_checks is empty because this packet binds whole subjects and provides no distinct sample IDs; it does not denote excerpt-only reading.",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-53c6aea232ad878e996d9a5e",
+      "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+      "verdict": "PASS",
+      "notes": "Scope: observed internal consistency in the supplied complete chapters 81–83, as bounded literary research only. I actually read every paragraph of this token file, including its opening and final paragraphs; its bytes match the packet binding. PASS for the checked letter chronology: the initial evening letter has two continuous leaves, next-morning recovery is added to that original, the initial date and later annotation are separately identified, and receipt is explicitly later. PASS for the checked immediate knowledge relay: Baoyu describes a glimpse of a still-attached qilin rather than a hand inspection; Xiren reports that limited account to Xiangyun; Xiangyun subsequently questions Baoyu without converting resemblance into established identity. PASS for distributed ordinary labor and bodily consequences: food, fatigue, wet cloth, accessible baggage, staff meals, public versus private money, and uncertain handovers constrain the action. My dimensional preferences here are ordinary-labor embodiment, explicit letter dating, and bounded day/knowledge consistency; these do not constitute an overall winner. Grief is a comparative TIE, and neither token completes a physical qilin-transfer chain. The main literary cost is prolonged attention to container, cloth, and handoff management, especially late in chapter 83; it dilutes both individual verbal distinctiveness and the urgency of the qilin encounter. Xiangling's poetry is preserved as an object after her death rather than substantially voiced by her while alive. PENDING for the unshown letter dispatch/intermediate carrier route and for any future identification or transfer provenance of the qilin. PASS means no definite contradiction was found in the narrowly checked local sequences, not proof of exhaustive correctness or a requirement to prefer this prose. UNVERIFIED for archival truth, historical/medical plausibility, continuity outside these chapters, model identity, and independently proven context isolation. Exact token-bound evidence and the dimensional comparison are in the separate observations file. sample_checks is empty because this packet binds whole subjects and provides no distinct sample IDs; it does not denote excerpt-only reading.",
+      "sample_checks": []
+    }
+  ],
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false
+}

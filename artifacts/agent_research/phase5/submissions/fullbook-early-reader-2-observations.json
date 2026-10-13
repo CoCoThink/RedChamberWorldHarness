@@ -1,0 +1,619 @@
+{
+  "schema_version": 1,
+  "observation_kind": "ANONYMOUS_FULL_SEQUENCE_LITERARY_OBSERVATIONS",
+  "packet": {
+    "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/packet.json",
+    "sha256": "7a7123ef1887e5ae737e8dd2d29533e12d4a65a253a5ac77304abc997c084e8c"
+  },
+  "reviewer": {
+    "id": "agent:fullbook-early-reader-2",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:fullbook-early-reader-2:phase5",
+    "model": {
+      "label": "session-default",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "scope": {
+    "question": "How do the two anonymous, complete chapters 81–83 sequences differ in voices, grief, ordinary labor, letter chronology, qilin relays, scene rhythm, and bounded story integrity?",
+    "comparison_policy": "Dimension-specific literary preferences only. TIE means competing strengths without a dimensional choice. NEITHER means the named demanding condition is established by neither text. No numeric ratings, aggregate totals, or overall winner are supplied. All identities below are packet tokens, not inferred creators or origins.",
+    "verdict_policy": "PASS is limited to the identified observable check. FAIL identifies a definite local contradiction rather than a global rejection. PENDING identifies an unshown route or needed clarification. UNVERIFIED applies to claims the permitted readings cannot establish. A literary preference is not automatically a PASS or FAIL."
+  },
+  "read_coverage": [
+    {
+      "subject_id": "read-6b307b189ab945c93f3a279d",
+      "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+      "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+      "byte_count": 68230,
+      "binding_verdict": "PASS",
+      "actual_reading": "All complete paragraphs were read in sequence, not just selected samples. Opening, endings, dialogue, intervening labor, archery action, and the final receipt of the letter were included.",
+      "chapters": [
+        {"chapter": 81, "line_span": [1, 114], "complete_paragraph_reading": true},
+        {"chapter": 82, "line_span": [115, 232], "complete_paragraph_reading": true},
+        {"chapter": 83, "line_span": [233, 386], "complete_paragraph_reading": true}
+      ]
+    },
+    {
+      "subject_id": "read-53c6aea232ad878e996d9a5e",
+      "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+      "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+      "byte_count": 82871,
+      "binding_verdict": "PASS",
+      "actual_reading": "All complete paragraphs were read in sequence, not just selected samples. Medical consultation and anticipation of death, departure and shipboard care, writing and next-morning dating, archery, the spoken relay, and the final household scene were included.",
+      "chapters": [
+        {"chapter": 81, "line_span": [1, 142], "complete_paragraph_reading": true},
+        {"chapter": 82, "line_span": [143, 262], "complete_paragraph_reading": true},
+        {"chapter": 83, "line_span": [263, 386], "complete_paragraph_reading": true}
+      ]
+    }
+  ],
+  "dimensions": [
+    {
+      "dimension": "character_voices",
+      "preference": {
+        "outcome": "TOKEN",
+        "preferred_token": "read-6b307b189ab945c93f3a279d",
+        "reason": "Its speakers more often have audible, socially differentiated intentions: Xiangling refuses grandeur by worrying about stitches and poetic drafts; Baochai corrects wishful moral accounting; Tanchun thinks through the cost to other people's feet; Xiangyun's brisk questions expose her involuntary interest. The second token preserves credible bodily manners but makes more of its cast share a quiet, careful, object-managing register."
+      },
+      "token_observations": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "verdict": "PASS",
+          "notes": "Baochai's refusal to credit Xue Pan's one purchase, Tanchun's practical independence, and Xiangyun's self-betraying curiosity are legible through dialogue. Reservation: recurrent ‘you correct me, I correct you’ punch lines travel too readily between patient, maid, siblings, old servant, and archery companions; individual sparkle sometimes becomes a shared house style.",
+          "evidence": [
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 81,
+              "line": 41,
+              "quote": "宝钗把纸包放到高处，道：“记得便记得。你也别为这一包杏脯替他算功劳。”"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 82,
+              "line": 127,
+              "quote": "探春抬头看她：“路上箱子每多一口，抬的人便多一分事。东西是自己的，脚力不是自己长出来的。”"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 351,
+              "quote": "宝玉笑道：“若兰也是这么说。”湘云立刻道：“他也这么说？”"
+            }
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "verdict": "PASS",
+          "notes": "The restraint is not mere voicelessness: Baochai's dry practicality, Daishu's embarrassed self-defense, and Xiangyun's impatience with Baoyu remain audible. Nevertheless much of their individuality is carried by looking, folding, holding, and checking rather than distinctive verbal turns. That strengthens embodiment while weakening this particular comparative dimension.",
+          "evidence": [
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 81,
+              "line": 13,
+              "quote": "宝钗道：“换枕头原不是请客，何必客气。”"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 82,
+              "line": 217,
+              "quote": "待书认出，忙道：“那块不能擦脸。”婆子换过，她又低低说自己还明白。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 371,
+              "quote": "宝玉替她可惜，她道：“这一截还穿得过针么？你先把凳子放稳。”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "grief_and_the_dying_persons_agency",
+      "preference": {
+        "outcome": "TIE",
+        "preferred_token": null,
+        "reason": "The first token better preserves Xiangling as a living maker and remembered learner: she reopens failed poems and asks for their safekeeping herself. The second token better embodies anticipatory grief and the survivors' exhausted, misfiring habits without requiring a final thematic speech. These are different important strengths; neither displaces the other for this dimension."
+      },
+      "token_observations": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "verdict": "PASS",
+          "notes": "The poems move through three stages: a living conversation about learning, a dying request not to lose the sheets, and Baochai's unspectacular preservation. The unfinished sleeve and unfinished consumption of Xue Pan's gift also hold grief outside speech. Reservation: the last request and the final unopened literary object produce a visibly shaped elegiac closure; some of the verbal liveliness is more continuous than the severe exhaustion might lead a reader to expect, without my asserting a medical impossibility.",
+          "evidence": [
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 81,
+              "line": 59,
+              "quote": "香菱道：“如今想起来也好笑。人家学诗，不过闲时玩一玩，我偏像欠了它的债。”"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 81,
+              "line": 83,
+              "quote": "过一会儿，她才低声道：“那几张纸……别叫莺儿乱塞。”宝钗道：“在我那里。”"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 81,
+              "line": 111,
+              "quote": "书匣已经合上，香菱那几页旧诗稿夹在里面，并没人再念一遍。"
+            }
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "verdict": "PASS",
+          "notes": "Aunt Xue quietly prepares clean cloth before death; Ying'er cannot complete the ordinary act of eating afterward. Xiangling's concern for the unstraightened thread preserves a small working person's agency. Reservation: her poet-self is largely supplied by Baochai's identification of papers after death, so the strong bodily presence does not fully replace the first token's living artistic self-disclosure.",
+          "evidence": [
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 81,
+              "line": 7,
+              "quote": "香菱看了一看，低声道：“那一边别压死了，线还没抽匀。”"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 81,
+              "line": 61,
+              "quote": "“不是说这就用了。总不能到要用的时候，屋里连一件干净的都拿不出。”"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 81,
+              "line": 119,
+              "quote": "隔了一会，莺儿伸出匙在饭上划了划，拨开一小块，仍送不到嘴边。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 81,
+              "line": 135,
+              "quote": "她接过，凭纸幅和折痕认得是香菱从前的月诗稿，共是三张。莺儿回过头来，说：“原来搁在这里。我还说她收到哪里去了。”宝钗没有翻开念，只把卷起的边轻轻捋平。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "ordinary_labor_and_material_consequence",
+      "preference": {
+        "outcome": "TOKEN",
+        "preferred_token": "read-53c6aea232ad878e996d9a5e",
+        "reason": "The second token makes arrangements answer to fatigue, body weight, limited heat, access to bundles, and separately responsible workers. Care is distributed rather than only a witty competent person's command. The first token's servants, paid rope, changed night watch, and archery accounting are meaningful too, but fewer changes in the physical state of a task accumulate on the page."
+      },
+      "token_observations": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "verdict": "PASS",
+          "notes": "The extra rope needs payment, food breaks under pressure, Daishu's sickness requires a changed watch, and the old servant makes arrow loss somebody's work. These details stop rank from magically performing labor. Reservation: brisk repartee often resolves these frictions quickly; Tanchun remains almost continuously the competent source of each solution.",
+          "evidence": [
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 82,
+              "line": 185,
+              "quote": "管行李的人忙叫加绳。那挑夫原有些不耐，听说会另算两文绳钱，才不再嘟囔。"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 82,
+              "line": 213,
+              "quote": "原先排的是待书同另一个丫头轮着醒一回，探春看待书这副样子，便改叫跟船婆子头一夜多照看一次，第二夜再换回来。"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 239,
+              "quote": "老仆道：“射出去是你的，掉进人家菜地便成我的事了。”"
+            }
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "verdict": "PASS",
+          "notes": "Keeping a sickroom functioning includes feeding its tired attendant; shipboard labor is performed by people who must themselves balance hot bowls; the shipowner has knowledge and constraints that Tanchun cannot replace from inside a carriage. Public travel expenditure does not silently migrate to a maid's private purse. Reservation: the later accumulation of checking and returning containers grows disproportionate to what each recurrence changes.",
+          "evidence": [
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 81,
+              "line": 47,
+              "quote": "厨房的人在门外道：“饭留久了就硬，重蒸又得等。里头要人，我们在这儿候着，你快去快回。”"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 82,
+              "line": 195,
+              "quote": "她便不再隔着车指点，只叫待书认准随手包，自己等来扶的人站稳了才下车。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 82,
+              "line": 227,
+              "quote": "婆子坐在门内，碗底托着一方布，吃一口便侧耳听外头，听见没人叫才又低头。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 82,
+              "line": 233,
+              "quote": "外面问明日米柴若不够，从哪里取钱。婆子正要摸私包，却先住手，隔帘叫来问的找管行旅钱的人。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "letter_chronology_and_leaf_continuity",
+      "preference": {
+        "outcome": "TOKEN",
+        "preferred_token": "read-53c6aea232ad878e996d9a5e",
+        "reason": "The second token distinctly carries the first evening's writing, the next morning's added recovery, their separately indicated dates, the same continuous leaves, and a later receipt. The first token gives an easily readable sequence of drafting, amendment, and reception but its final undifferentiated date completion could make the appended morning report stand under a single date. Neither text shows every actual dispatch or intermediate custody step."
+      },
+      "token_observations": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "verdict": "PENDING",
+          "notes": "PASS for the order evening draft → unsealed retention → next-morning addition → later family reading. PENDING, not FAIL, for distinct dating of the original and addition: ‘随后补上日期’ does not tell the reader which date is assigned or whether both are distinguished. The received letter correctly includes the added recovery. Formal dispatch is not narrated; an earlier indirect report explicitly is not the same as receipt of the formal letter.",
+          "evidence": [
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 82,
+              "line": 225,
+              "quote": "信写完后，探春没有立刻封。还不知明日能否遇到可靠递信的人，便把纸晾干，夹在自己的小册里。"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 82,
+              "line": 229,
+              "quote": "探春把昨夜那封未封的信从册中拿出来，在末后又添一行：“今早又行，待书已能起身吃粥，不必挂念。”随后补上日期，才重新夹好。"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 355,
+              "quote": "笑过以后，宝钗便把话岔到探春身上，说前两日已有外头人传话，水路尚稳，只是正式家书还未到。"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 371,
+              "quote": "宝玉往下看，道：“前头说略有晕眩，末后又添了小字，说今早已经能起身吃粥，叫家里不必挂念。”"
+            }
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "verdict": "PASS",
+          "notes": "The exact text establishes two connected leaves, preserves the original writing date, locates the second-day annotation on the same original, and keeps the letter's reported illness and recovery in the same order at reception. Elapsed days are explicitly acknowledged. PENDING for the unshown dispatch and individual intermediate carrier identities; the front-door report and unsettled foot fee are not a complete transport chain and should not be mistaken for one.",
+          "evidence": [
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 82,
+              "line": 243,
+              "quote": "信写了一页多，后一张写了半幅，接的是前一张未完的话，末尾月日暂空着。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 82,
+              "line": 261,
+              "quote": "探春依经手人所报的昨日初写之日，补上正文末尾留空的月日；今晨所添几字旁另注明是次日晨间所补，同在这封原信上。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 363,
+              "quote": "信是前后两张，第二张续着第一张未完的话，写了一页多；次晨添的几字挨着正文旁的空白，字比原来略小。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 369,
+              "quote": "宝玉低头看月日，距收到时已有些日子，便问不知在路上走了多久。宝钗说婆子也只听得前头这样回，尚没有详细话。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "qilin_relays_and_transfer_route",
+      "preference": {
+        "outcome": "NEITHER",
+        "preferred_token": null,
+        "reason": "Neither sequence establishes the whole physical route from an earlier possessor to Ruolan. In the first token the narrator identifies the old object through marks, but ‘家里给的’ supplies no connecting transfer. In the second token no identity match is established at all. This NEITHER is confined to a complete transfer route, not a refusal to recognize their different dramatic achievements: the first is more charged in recognition and Xiangyun's interest; the second more carefully bounds what each person actually saw and heard."
+      },
+      "token_observations": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "verdict": "PENDING",
+          "notes": "The object is twice glimpsed, then physically handed to Baoyu for a closer look. The narrator goes further than resemblance and identifies it as the old object, while Baoyu's spoken report remains qualified. Xiren and Baochai discuss the report; a grandmother's-room maid's gossip then reaches Xiangyun, who asks Baoyu directly. The full gossip intermediary chain is not shown. Neither the rumor of a Wei household connection nor Ruolan's household-origin answer establishes a betrothal or a transfer route. A separate temporal FAIL in this visit is recorded under bounded story integrity, not hidden by the successful immediate observation/report chain.",
+          "evidence": [
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 287,
+              "quote": "麒麟颈侧一道极细的旧擦痕、背后扣环边一处小磕，他越看越熟，正是旧日自己曾得过、后来一度失落，湘云替他拾见的那枚金麒麟。"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 289,
+              "quote": "他抬头问：“这个是你家的？”若兰道：“家里给的。”"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 317,
+              "quote": "宝钗道：“什么叫原来就是他？人家不过提一个姓，你便替人认定了。”"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 347,
+              "quote": "湘云本来还装作不经意，这时抬眼看他：“你真拿来看了？”“他递给我的。”“他怎么说？”“只说家里给的。”"
+            }
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "verdict": "PENDING",
+          "notes": "PASS for the bounded immediate knowledge chain: Ruolan's movement exposes a still-attached large gold qilin; Baoyu explicitly cannot establish identity; he tells Xiren he never held it; Xiren gives Xiangyun that limited account in a shown visit; Xiangyun later verifies with Baoyu that he saw one face only. PENDING for identity and physical transfer. The absence of proof is respected rather than converted into a successful transfer; however the scene's literary forward pressure is weaker when nearly all recognition remains provisional and questions quickly return to needlework and containers.",
+          "evidence": [
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 309,
+              "quote": "宝玉迟疑一下，道：“不拿在一处，哪里说得准。我原当自己记得，才一看，又觉得有处不同。”"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 339,
+              "quote": "宝玉说只是眼熟，佩物一直系着，若兰未解下，自己也没拿在手中。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 345,
+              "quote": "湘云手停在帕角，问：“是旧麒麟么？”袭人说他自己也未认准，只在衣带收动时看见，后又藏进衣内。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 353,
+              "quote": "湘云问：“只见这一面？”宝玉道：“可不是。再坐一会，他们又拿弓出去了。”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "scene_rhythm_and_sequence_pressure",
+      "preference": {
+        "outcome": "TOKEN",
+        "preferred_token": "read-6b307b189ab945c93f3a279d",
+        "reason": "The first token gives clearer alternation among banter, silence, crisis, departure, competitive archery, recognition, and delayed teasing. The second token's slower bodily time is valuable in the sickroom and first shipboard meal, but repeated small checks later consume attention after the emotional or narrative turn has already been understood."
+      },
+      "token_observations": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "verdict": "PASS",
+          "notes": "Daytime talk is broken by a night reversal, death reopens necessary tasks, the departure converts family repartee into actual separation, and the archery day gives the recognition two preliminary glimpses. Xiangyun's late return-question is an economical recurrence with changed emotional meaning. Reservation: archery banter and counting disputes can still repeat the same comic beat, and quick lines sometimes smooth over silence too efficiently.",
+          "evidence": [
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 81,
+              "line": 71,
+              "quote": "谁知这一夜病势却又转了。起初只是咳嗽较密，到二更后身上忽冷忽热，手脚发凉，额上却烫。"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 82,
+              "line": 193,
+              "quote": "岸渐远，人脸模糊起来，只剩衣色还能分辨。宝玉像还在摆手。探春也抬了一下手，风把袖口吹得翻起。"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 359,
+              "quote": "湘云顿了顿，道：“他那弓后来换弦没有？”"
+            }
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "verdict": "PASS",
+          "notes": "The deterioration over several days and incremental difficulty of holding a bowl suit the embodied scale; Tanchun's own unsettlement prevents shipboard competence from becoming invulnerability. Comparative concern, not a consistency FAIL: much of late chapter 83 cycles through dish ownership, letter wrapping, fees, dinner, a lost thread ball, and drying clothes after the letter has already been understood. Some returns deepen ordinary life, but too many carry no comparable new relational change. The qilin thread is consequently submerged rather than simply left open.",
+          "evidence": [
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 81,
+              "line": 53,
+              "quote": "以后几日，热食照时送，药也照时煎，香菱的精神却只够应付眼前这一口、那一口。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 82,
+              "line": 217,
+              "quote": "探春自己也觉身子有些浮，坐稳了才把簿页折齐。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 373,
+              "quote": "婆子忽想起厨房催盘子，又问空食匣可已送回，丫头说袭人已带去，只不知茶房的小碟算在哪一处。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 385,
+              "quote": "湘云说线团先找回来，衣裳尽可慢慢晾，自己把帕子展开，等着续方才没有做完的针脚。"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "bounded_story_integrity",
+      "preference": {
+        "outcome": "TOKEN",
+        "preferred_token": "read-53c6aea232ad878e996d9a5e",
+        "reason": "The second token maintains the checked local limits on seeing, hearing, illness reports, and the two-day letter. The first contains a definite visiting-day mismatch in chapter 83. This is a narrow consistency preference and explicitly does not convert into an overall prose preference or a claim of archival truth."
+      },
+      "token_observations": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "verdict": "FAIL",
+          "notes": "The archery encounter is narrated before Baoyu returns home, discusses it with Xiren and Baochai, and then several days elapse before Xiangyun visits. Xiangyun herself calls the report ‘前日’. In that visit Baoyu says ‘我今日在他身上见了一个’. With no second outing narrated, this wrongly relocates the prior encounter to the visit day. A later inspection report also says ‘我还拿在手里看了’, correctly describing the older event rather than supplying a new one. The intended emotional action is recoverable, so a temporal-wording repair is proportionate. Additional PENDING items are the letter's dating precision and the unshown transfer/courier routes; they are not asserted contradictions.",
+          "evidence": [
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 325,
+              "quote": "谁知隔了几日，湘云果然过来。她一进门便先问：“你们谁前日说我坏话？我才到老太太那里，就听见一个婆子笑，说宝兄弟如今在外头替我认人。”"
+            },
+            {
+              "subject_id": "read-6b307b189ab945c93f3a279d",
+              "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+              "chapter": 83,
+              "line": 345,
+              "quote": "宝玉这才道：“还有那枚金麒麟。”湘云手里那块果子停了一下：“什么麒麟？”“就是我从前丢过，你替我拾回来的那个金麒麟。我今日在他身上见了一个，像得很。”"
+            }
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "verdict": "PASS",
+          "notes": "Observed scope only: the immediate same-day Xiren relay is shown, the sight of the pendant is not inflated into a hand examination, the received letter preserves initial and later writing, and death notification distinguishes discovery of no breath from an invented precise death time. I found no definite contradiction in these checked transitions. PENDING remains for unshown courier custody and any later identification or provenance of the pendant; the greater number of careful arrangements is not itself proof that all possible plot issues have been excluded.",
+          "evidence": [
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 81,
+              "line": 113,
+              "quote": "也别说一个什么时辰，只说今早发现已没了气，医者也来瞧过。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 343,
+              "quote": "袭人说他刚从城外射圃回来，衣服还沾着土，才洗了手。"
+            },
+            {
+              "subject_id": "read-53c6aea232ad878e996d9a5e",
+              "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+              "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+              "chapter": 83,
+              "line": 351,
+              "quote": "湘云说袭人方才带食匣来，讲了射圃，又提他看见若兰佩个大金麒麟，问：“你当它是旧日那个么？”宝玉把凳子拉近，说当时只觉得眼熟。"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    {"verdict": "UNVERIFIED", "notes": "These are complete supplied chapters 81–83, not either entire novel. Earlier setup and later payoff were outside permitted reading. A local deferred relay must not be declared permanently impossible because later chapters were not read."},
+    {"verdict": "UNVERIFIED", "notes": "No source text, source apparatus, other baseline, coordinator file, map, registry, author/editor material, or other reviewer output was consulted. Authenticity, intended original ending, historical truth, and matching to an external tradition were not tested."},
+    {"verdict": "UNVERIFIED", "notes": "The packet/schema and two public token texts were the only input files read. Context isolation is asserted as a reading-boundary declaration, NOT_PROVEN as an independent system guarantee. session-default is a declared label, not independently verified model provenance."},
+    {"verdict": "PENDING", "notes": "Both letter routes have unshown dispatch/intermediate transport, and neither token supplies a complete physical qilin-transfer route. The first narratively identifies its object; the second leaves identity open. These distinct textual claims must not be mixed across files."},
+    {"verdict": "UNVERIFIED", "notes": "Care, illness, archery repair, shipboard arrangements, kinship etiquette, and monetary amounts were assessed for their within-text literary function, not certified for medical, technical, or period accuracy."},
+    {"verdict": "UNVERIFIED", "notes": "Voice, emotional effect, and pacing are one model reader's scoped judgments. Exact quote binding permits inspection of evidence, not numerical objectivity, independent-human qualification, or an overall winner."}
+  ]
+}

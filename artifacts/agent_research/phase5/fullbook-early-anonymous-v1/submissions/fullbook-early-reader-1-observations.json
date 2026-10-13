@@ -1,0 +1,329 @@
+{
+  "schema_version": 1,
+  "report_kind": "ANONYMOUS_SEQUENCE_OBSERVATIONS",
+  "packet": {
+    "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/packet.json",
+    "sha256": "7a7123ef1887e5ae737e8dd2d29533e12d4a65a253a5ac77304abc997c084e8c"
+  },
+  "reviewer": {
+    "id": "agent:fullbook-early-reader-1",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:fullbook-early-reader-1:phase5",
+    "model": {"label": "session-default", "verification": "DECLARED_NOT_VERIFIED"},
+    "context_isolation": {"asserted": true, "verification": "NOT_PROVEN"}
+  },
+  "reading_coverage": {
+    "method": "先核对packet及两份文本的完整原始字节哈希，再按packet顺序单独顺读两份全文。没有并行混读，没有以词频、摘要或引文搜索代替阅读。所有报告引文在各自token文本内逐字验证。",
+    "subjects": [
+      {
+        "subject_id": "read-6b307b189ab945c93f3a279d",
+        "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+        "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+        "read_order": 1,
+        "bytes": 68230,
+        "unicode_characters": 23006,
+        "lines": 386,
+        "chapters": [81, 82, 83],
+        "read_tool_ranges": ["1-100", "101-200", "201-300", "301-EOF"],
+        "complete_read": true,
+        "partial_read_limitations": "无工具截断；已读至385行下回分解及尾部空行。此处的完整是所给三回，不是全部一百余回。"
+      },
+      {
+        "subject_id": "read-53c6aea232ad878e996d9a5e",
+        "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+        "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-53c6aea232ad878e996d9a5e.txt",
+        "read_order": 2,
+        "bytes": 82871,
+        "unicode_characters": 27881,
+        "lines": 386,
+        "chapters": [81, 82, 83],
+        "read_tool_ranges": ["1-95", "96-190", "191-285", "286-EOF"],
+        "complete_read": true,
+        "partial_read_limitations": "无工具截断；已读至385行湘云等着续针脚的末段及尾部空行。此处的完整是所给三回，不是全部一百余回。"
+      }
+    ],
+    "other_files_read": [
+      {
+        "path": "schemas/agent_review.schema.json",
+        "purpose": "仅在协调者明确追加授权后核对原始意见的字段和数据类型；不含作品或身份材料。"
+      }
+    ],
+    "excluded_materials": "未读协调材料、映射、注册表、作者、源本、其他基线、反馈、另一评阅者意见或两份匿名文本以外的章节；未调用外部API、注册、提交git或委派。",
+    "context_limits": "任务自动附带了分支和状态元信息，但没有据其推断token身份。MODEL_SUBAGENT、session-default及上下文隔离仅按要求声明，不是独立验证。仅凭这些文本不能验证全书既有情节约束、源本准确性、原作者身份或人类准入。"
+  },
+  "preference_policy": {
+    "allowed_outcomes": ["PREFER_SUBJECT", "TIE", "NEITHER"],
+    "interpretation": "偏好是具体维度中的有条件阅读判断。TIE不表示两者相同；NEITHER表示两者均不足以达到该维度中明确说出的要求。",
+    "aggregation": "不计分、不累计偏好、不计算总体赢家；不默认任何一份为基线或应当更好。两份原始意见的PASS仅为研究可接受性。"
+  },
+  "dimensions": [
+    {
+      "dimension": "scene_voice_and_relational_difference",
+      "outcome": "PREFER_SUBJECT",
+      "preferred_subject_id": "read-6b307b189ab945c93f3a279d",
+      "condition": "若重视人物在场景中彼此造成的难堪、抵抗和亲近，而非仅看口语顺滑。",
+      "reason": "这一token的宝钗有不冷不热的截话，赵姨娘送镯银引出公私身份，贾环不服仍收书，湘云问得快又掩饰，关系更有棱角。另一token并非全无好声音：病房里薛姨妈的问句、射圃老仆护菜都鲜活；但许多发言转成确认物品与交接，人之间的摩擦少，尤其探春与赵姨娘、贾环的分歧缩为平顺关心。优选token仍有全员爱说机巧短句的同质化。",
+      "evidence": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+          "quotes": [
+            {"line": 13, "text": "她念她的，你吃你的。", "reason": "宝钗把病人受念叨与喝粥拆开，不需叙述宣布她稳重。"},
+            {"line": 141, "text": "她伸手接过来，却没有打开，只交给待书，“另记一笔，不同公中的混。”", "reason": "接收母亲私物而不混进公中，是情感让步同时也是制度划线。"},
+            {"line": 331, "text": "话一出口，她自己先觉问得太快，便低头吹茶。", "reason": "湘云的问话速度与随后的动作产生羞意，不只是大家替她笑。"}
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+          "quotes": [
+            {"line": 31, "text": "炉子一直热着，人怎么还不见精神。", "reason": "薛姨妈用照料的可见连续追问生命的不可控，是此token的好声音。"},
+            {"line": 295, "text": "风不吃菜，我吃。", "reason": "老仆的经济利害进入口吻，有具体立场。"},
+            {"line": 185, "text": "他含糊应着，只盯着地上的箱笼。", "reason": "贾环的不自在看得到，但本回未让它发展成更复杂的姐弟往返；袖内物亦悬着。"}
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "ordinary_life_as_embodied_action",
+      "outcome": "PREFER_SUBJECT",
+      "preferred_subject_id": "read-53c6aea232ad878e996d9a5e",
+      "condition": "偏好动作中有身体阻力、使用者与照料者，而不是偏好多写手续；需要删去重复确认。",
+      "reason": "此token的米汤碗滑手、羹黏匙底、船上烫碗和婆子也要吃饭，使日常不是悲剧布景。另一token的酥皮先吃裂的、药与粥争空间也很好，却更常把细节迅速变成俏皮话。前者的手巾、布角、碗盘反复安放到末回已经过量，不能用细节精确掩护篇幅和动作无新意。",
+      "evidence": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+          "quotes": [
+            {"line": 197, "text": "先吃裂的。好的留后面。", "reason": "离别后的损耗仍要处理，日常不为抒情让路。"},
+            {"line": 197, "text": "裂的若再放两日，全成渣了。", "reason": "观察准确，但随即用一句利落回复收尾，这类节拍在三回里使用过密。"}
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+          "quotes": [
+            {"line": 15, "text": "她捧了一会，指头便往下滑，宝钗仍接住，只当没有看见", "reason": "衰弱表现为握持失败，照护又保护病人的体面。"},
+            {"line": 121, "text": "她伸手拿匙，匙底牵起一缕，便又放回碗沿，叫小丫头连碗端走，匙洗净给莺儿收。", "reason": "食物仍有温度与黏性而人已不能吃，物的用途改变承担了哀伤。"},
+            {"line": 225, "text": "你且坐稳，别端着碗来回道歉。", "reason": "不让仆人的饭变成不停道歉的服侍，照顾有对象而非仅有规矩。"}
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "sequence_rhythm_and_scene_economy",
+      "outcome": "PREFER_SUBJECT",
+      "preferred_subject_id": "read-6b307b189ab945c93f3a279d",
+      "condition": "仅相对偏好较清楚的推进与情感回声，不等于认可笑场密度或待书受损时的笑话。",
+      "reason": "病中诗稿到封匣、整装到江岸到舱中、射圃到湘云问讯到家书到达，较能形成各自起落。另一token并非静态到毫无发展：看病、死亡、装船与家书有真改变；问题是改变之后长时间逐件重复确认钱、纸、盘、布和归处，叙述对每个手续给近似重量，末回家书的关系反应被厨房小碟、脚费和线团挤开。优选token也常一问一堵再众人笑，三个题材因而容易变同一种谈笑节拍；若要求两者直接成为精炼定稿，则都需修改。",
+      "evidence": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+          "quotes": [
+            {"line": 221, "text": "第一封信倒先成了行李回单。", "reason": "把前场整装收束成家书，自嘲兼有章节桥梁作用。"},
+            {"line": 213, "text": "你若半夜起来吐在箱子上，我还得多洗一口箱。", "reason": "同一种针对呕吐箱子的笑话在本回反复，护理容易被包袱抢去重量。"},
+            {"line": 265, "text": "你没说，是你脸上写的。", "reason": "射圃人人善用堵人的机智回复，热闹虽足，声调变化不足。"}
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+          "quotes": [
+            {"line": 101, "text": "别让他听两样话。回来告诉我，话交在谁手里。", "reason": "死讯初次准确传话有必要；后面继续逐人交接、复命和报账，超过这次动作的叙事收益。"},
+            {"line": 375, "text": "婆子怕垫布也算厨房的", "reason": "家书读完后仍延长盘匣归属确认，本可压缩而保留生活的余波。"},
+            {"line": 385, "text": "自己把帕子展开，等着续方才没有做完的针脚。", "reason": "未完日常有余韵，但前面已经绕行食匣、线头、饭菜过久，章末更像拖延而非一次有力的回落。"}
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "poems_and_mourning_restraint",
+      "outcome": "TIE",
+      "reason": "两者都没有编造临终新诗或要求众人用长篇吟诵替死亡盖章。一个以旧诗一联和学诗失败的记忆让香菱先作为会学习、会不服气的人出现；另一个只以纸幅、折痕和妥善归处保存未被念出的诗。前者有情感辨识，后者有更冷静的物感，两者都付出代价：前者诗稿与临终嘱托略过于整齐地扣合标题，后者缺少具体字句使诗人的一面更薄。不能以诗句多少直接判谁克制。",
+      "evidence": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+          "quotes": [
+            {"line": 57, "text": "一片砧敲千里白，半轮鸡唱五更残。", "reason": "重提一联旧作而非让她临终再作，具体诗句给旧稿可记的内容。"},
+            {"line": 83, "text": "那几张纸……别叫莺儿乱塞。", "reason": "小声交代而不作绝笔演说；同时使诗稿保存的伏笔收束过于齐整。"},
+            {"line": 111, "text": "书匣已经合上，香菱那几页旧诗稿夹在里面，并没人再念一遍。", "reason": "封存后让外部事务继续，不把哀悼变成朗诵场。"}
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+          "quotes": [
+            {"line": 135, "text": "她接过，凭纸幅和折痕认得是香菱从前的月诗稿，共是三张。", "reason": "认纸而不展示诗句，克制但也削薄了诗稿与个人学习经历的连接。"},
+            {"line": 141, "text": "那只匣子已安放好了，匣里的三张旧诗稿，并没人再念一遍。", "reason": "同样停在保存而非公开吟诵，不凭零引用自动优胜。"}
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "illness_and_care_without_erasing_the_patient",
+      "outcome": "PREFER_SUBJECT",
+      "preferred_subject_id": "read-53c6aea232ad878e996d9a5e",
+      "condition": "限于当下病体、进食与照护压力的描写；不包含薄命社会原因的充分表达。",
+      "reason": "病势通过半碗、匙重、握持、翻身和不再操心逐步缩窄行动，而不是主要由大夫定性与一夜恶化推进。宝钗阻止病人一件件应酬，医者不以一次进食误判好转，照护者也要轮替进饭。另一token同样有药不强灌、冷热交替及薛姨妈的慌乱，不是差到不可信；它较快把恶化集中在最后一夜，并常以口头斗趣显精神。优选token仍把死后手续写得过长，且‘血分亏损’不能代替病人与家庭压迫的联系。",
+      "evidence": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+          "quotes": [
+            {"line": 71, "text": "莺儿起来添被，香菱又嫌压得重；撤去一层，又说冷。", "reason": "护理面对相互冲突的身体需求，实际而非空泛怜悯。"},
+            {"line": 77, "text": "药仍可进一点，却不可强灌。", "reason": "病势末段并非凭强迫进药显示尽心，保留照护边界。"}
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+          "quotes": [
+            {"line": 39, "text": "这一碗还剩着，慢慢吃，不必叫她望着两碗发愁。", "reason": "病人面前的数量本身就是压力，善意不是无限添食。"},
+            {"line": 55, "text": "以后还是这样送，不必另添咸的甜的，叫她一件件应酬。", "reason": "把回应照料也视为劳动，揭示病人不断客气的负担。"},
+            {"line": 53, "text": "早先替人操的那些心也慢慢少了。", "reason": "病势使原有性格行为渐不能维持，而不靠突然神智变化。"}
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "housing_mobility_and_labor_boundaries",
+      "outcome": "PREFER_SUBJECT",
+      "preferred_subject_id": "read-53c6aea232ad878e996d9a5e",
+      "condition": "重视谁能看见、谁负责、谁睡何处及身体能否通过的具体生活约束；不要求所有手续逐条展开。",
+      "reason": "探春先问而不隔车指挥已经看不见的装船，船家为平衡和通行制止立箱，婆子的铺盖、钱包和吃饭也进入空间。探春自己有些晕浮，使管理不是替她免除环境后果。另一token五箱两包、舱窄开箱移凳明确可感，夜值安排也合理，问题是探春几乎无身体限度、常用箱单和嘲笑待书解决一切。优选token同样因对每个布角和签子等量关注而繁冗。",
+      "evidence": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+          "quotes": [
+            {"line": 209, "text": "船上房舱比她们原先想的窄。两只常用箱只能叠放，一只大箱横在床尾，开盖时要先挪凳子。", "reason": "窄不是抽象形容，直接改变开盖和取用，是这个token的长处。"},
+            {"line": 213, "text": "便改叫跟船婆子头一夜多照看一次，第二夜再换回来。", "reason": "待书病时改变轮值，而非仍要她照旧服务；并非没有劳动边界。"}
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+          "quotes": [
+            {"line": 195, "text": "中舱不堆大箱，常取的放在能开盖的地方，其余平码，留下过人的空处。", "reason": "通行、箱盖和摆放有可检验的关系。"},
+            {"line": 195, "text": "她便不再隔着车指点，只叫待书认准随手包，自己等来扶的人站稳了才下车。", "reason": "地位高者不自动拥有隔帘外的观察视野，分工因此可信。"},
+            {"line": 167, "text": "婆子却摸出一个小钱包，想一并交给他。探春叫她留下，私包只买路上的零食杂物，挑夫的钱向岸上经手的领。", "reason": "费用不落到服侍者私包，物的交接有权责后果。"},
+            {"line": 217, "text": "探春自己也觉身子有些浮，坐稳了才把簿页折齐。", "reason": "她也要适应船身，使生活环境能限制主人。"}
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "letter_relay_material_continuity_and_emotional_return",
+      "outcome": "TIE",
+      "reason": "两份都在八十二回写同一封信、次晨补待书的病况，并在八十三回收到读出；没有理由把未逐人明说的每段路都当错误。一份以箱数和问宝玉看完否建立轻巧、可记的情感回声，转送细节较省；另一份两张续纸、初写日期与次晨旁注、晾干及折回的连续性更精确，代价是家书被当成核对纸张和脚费的手续，家里人物的情感反应偏薄。实际递信人两份都未完整给出，不能宣称覆盖所给三回以外的全书传递。物的精细不自动胜过信的关系作用。",
+      "evidence": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+          "quotes": [
+            {"line": 219, "text": "箱笼五口，小包二件，俱已点明。", "reason": "装箱前场进入书信，369行复读同一句，构成可核对回声。"},
+            {"line": 219, "also_at_line": 375, "text": "二哥哥前说必要看信，此书到时，问他果然从头看完不曾。", "reason": "写信与读信两个场景都保留了探春的口吻，收信者有关系反应。"},
+            {"line": 225, "text": "还不知明日能否遇到可靠递信的人", "reason": "不把写完等同立即寄出，有现实递送约束但不详写全链。"}
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+          "quotes": [
+            {"line": 261, "text": "今晨所添几字旁另注明是次日晨间所补，同在这封原信上。", "reason": "区分初写与补写日而不另造一封新信。"},
+            {"line": 363, "text": "信是前后两张，第二张续着第一张未完的话，写了一页多；次晨添的几字挨着正文旁的空白，字比原来略小。", "reason": "收到的两页和旁注与写信场景相接。"},
+            {"line": 365, "text": "前一张的话到纸底还没完，宝钗叫他接着看后一张。", "reason": "阅读次序守住接续文本，但此处的反应更多为程序提醒。"}
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "qilin_relay_and_limits_of_recognition",
+      "outcome": "PREFER_SUBJECT",
+      "preferred_subject_id": "read-53c6aea232ad878e996d9a5e",
+      "condition": "限于所见、所认与所传不越界；若要求已证明旧物从宝玉转到若兰，两份都没有完成。",
+      "reason": "此token麒麟未解、宝玉只见一面，回府转述和袭人转告都守住这一限度，湘云问话未凭空扩大证据。另一token有真实上手与细伤痕，悬念较响亮；问题不是不得认出，而是叙述已经用‘正是’确认，宝玉随后仍多次说像、把问题简化为不便问来历，身份认定与疑问的层级没有处理清楚。这可以是人物故意保留，但文中未给足动机。两份都未叙明实物转交，比较的是本场认知与消息接力，不是原作者伏笔兑现或来源鉴定。",
+      "evidence": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+          "quotes": [
+            {"line": 287, "text": "麒麟颈侧一道极细的旧擦痕、背后扣环边一处小磕，他越看越熟，正是旧日自己曾得过、后来一度失落，湘云替他拾见的那枚金麒麟。", "reason": "在场证据比另一token强，叙述已把旧物同一性确认。"},
+            {"line": 289, "text": "我从前见过一个极像的。", "reason": "若这是面对外人的谨慎话语，需要把内心已认定与对外措辞区分清楚。"},
+            {"line": 321, "text": "我今日拿在手里看，连一处小磕都像。", "reason": "回到亲近者前仍停在像，前面的确定和后面的不追问衔接仍悬。"}
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+          "quotes": [
+            {"line": 309, "text": "不拿在一处，哪里说得准。我原当自己记得，才一看，又觉得有处不同。", "reason": "一面所见只支持眼熟而非同一物，话语强度与可见证据一致。"},
+            {"line": 339, "text": "宝玉说只是眼熟，佩物一直系着，若兰未解下，自己也没拿在手中。", "reason": "回府仍保留未上手的事实，不在转述里偷增证据。"},
+            {"line": 345, "text": "她将手停下，把那一小圈线慢慢挑开了。", "reason": "湘云听讯后用失手与续针反应，不必靠全屋连续拿婚事起哄。"}
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "coercion_effects_visible_within_current_scenes",
+      "outcome": "PREFER_SUBJECT",
+      "preferred_subject_id": "read-6b307b189ab945c93f3a279d",
+      "condition": "相对更能显出压迫的回声，不等于已经充分写出强制的来源和全部后果。",
+      "reason": "药炉被甜羹争用、病人替争灶者解释、隔墙声音使她装未闻，说明权力已进入照护空间和自我压低的话语。薛蟠的杏脯不让读者立刻替他算功，保护薄命女免被一份善意赠物抹去旧伤。赵姨娘、贾环担心探春受欺也给远去添了不确定。另一token对当下照护更体贴，钱与劳动分界好；但金桂几乎只剩院口一个办物口信，薛蟠在死后回家，病中香菱减少操心主要由病势解释，家庭强制对她的身体和言语后果被淡化。温暖照护并非罪过，欠缺的是它不能替代社会伤害的呈现。",
+      "evidence": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+          "quotes": [
+            {"line": 23, "text": "药炉还占着小灶么？我们奶奶午饭要做甜羹，别到时候又说腾不开。", "reason": "病人的治疗会占到他人的优先享用，日常资源显出等级。"},
+            {"line": 21, "text": "香菱低头理被角，仿佛没听见。", "reason": "隔墙声音后的回避让受伤不是仅存在于标签。"},
+            {"line": 41, "text": "记得便记得。你也别为这一包杏脯替他算功劳。", "reason": "不以临终小礼物给薛蟠清账，是克制的责任辨别。"}
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+          "quotes": [
+            {"line": 111, "text": "金桂那边使来的丫头也到院口问话，手上还拿着未交出去的一件东西。", "reason": "那边进入死亡场景主要为问物和转话，几乎没有当下权力冲撞；不是据缺席直接断定无历史伤害。"},
+            {"line": 55, "text": "叫她一件件应酬", "reason": "确实看见病人回应好意也有压力，但这种体贴主要修补照护，不直接展示造成薄命的家庭支配。"},
+            {"line": 183, "text": "你别只会管别人，自己饿了冷了，倒说不出。", "reason": "赵姨娘口吻还有锋芒，却主要为女儿照顾自己的劝告，远去的权力不对等较少入戏。"}
+          ]
+        }
+      ]
+    },
+    {
+      "dimension": "coercion_structural_adequacy_of_death_and_departure",
+      "outcome": "NEITHER",
+      "reason": "若要求仅靠所给三回就看见谁造成不可逆的死亡、谁决定女儿远去以及被决定者怎样失去选择，两者都不足。不是要求补讲一切前情，也不是从未读的源本指控它们违反情节：所给文本自身使用薄命、辞骨肉和人物的惧怕，承诺了比照护和装运更深的关系后果。一个有伤害回声却把决定前提留在‘日期早定’，另一个使离家大体成为安全交接，金桂与薛蟠对病体的关联更弱。探春能分箱、记账、护仆人不等于她有权决定去留；香菱被妥善照顾也不等于她的身世与受害已获表现。这一不足不否定两份作为研究材料的PASS。",
+      "evidence": [
+        {
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+          "quotes": [
+            {"line": 135, "text": "日期早定了，哪里来的转圜。", "reason": "决定的不可改写在场，但何人如何决定和她怎样受制未被展开。"},
+            {"line": 151, "text": "若人家欺负你呢？", "reason": "亲人知道她将进入陌生权力关系，后面的答话却很快转为规劝弟弟在家别惹事。"}
+          ]
+        },
+        {
+          "subject_id": "read-53c6aea232ad878e996d9a5e",
+          "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+          "quotes": [
+            {"line": 3, "text": "原是从血分亏损上积下来", "reason": "交代积病，不直接揭示积病与生活支配的关联；不能替它补出未写的因果。"},
+            {"line": 185, "text": "请安的信，自会给你们知道。", "reason": "姐弟的远行联系主要收束为请安信可共享，姐弟对她去处与选择的反应不够展开。"},
+            {"line": 195, "text": "留下过人的空处。", "reason": "很好的运输安全细节，却不能作为她拥有决定远行之权的证据。"}
+          ]
+        }
+      ]
+    }
+  ],
+  "unresolved_story_questions": [
+    "金麒麟从旧持有人到卫若兰的实物转交，两份都未交代；认物和传话做得好不等于实物接力已闭合。",
+    "探春远去的决定者、目的地的实际生活与她自身可选范围，两份都没有足够展开；不可因会管理箱笼而推断无强制。",
+    "无后续章节授权，不能把这些尚悬的问题判成最终永不兑现，也不能先替作者宣称后文必将兑现。"
+  ],
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false
+}
