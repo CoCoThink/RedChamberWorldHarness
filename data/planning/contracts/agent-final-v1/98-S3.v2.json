@@ -1,0 +1,1199 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch98.json",
+      "sha256": "67797bb3651577dcb5d62b962736363215518fbbd351c169199de2afa4d308dd"
+    },
+    "seed": {
+      "path": "data/planning/scenes/98-S3.json",
+      "sha256": "5380fea749faeea1389fb1588e63ed65d6871716e439397a1125bd9134b29f2f"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 98,
+  "chapter_plan_ref": "data/planning/chapters/ch98.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/98-S2.v2.json",
+  "entry_state": [
+    {
+      "equals": "object.OBJ-TONGLING-JADE.holder",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "截至97章末为宝玉所持有实际运行依据，但前驱校书后放玉位置与本场包裹入口未登记，不能据旧粗值假定局部持有。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "object.OBJ-TONGLING-JADE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT98-02—05给出当前C误取、发现、运输及归还章级链；本地未知检查点不支持场级归还重放。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "98-S3-F1",
+      "description": "不得再有第二次巧合、偷换两玉、甄家送钱或以玉归触发99出家；通灵玉尘世链只是C方案。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "e429df444187d3d322e315bd0b5d66c074243a1607983001e9994888ddeadb4e",
+          "value": {
+            "id": "98-S3",
+            "title": "误拿事件严格维持一个核心巧合"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                45942,
+                46311
+              ],
+              "lines": [
+                1147,
+                1154
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3c16f97ea72a957d33c276aeda1dcb03ec94af1e7c587cfe7f829b67c9b4d312"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR18\n\n**EVIDENCE-INTERFACES｜**\n- T3/EVENT：`甄宝玉送玉`；\n- V1-FRAG：`误窃`来自更早“塞玉”伏线；\n- 当前“通灵玉误带—送还”只是一种C案，标题不得把它伪装成R。“甄宝玉送玉”；O03玉同一性、O07二宝是否现实照面原本开放；当前现实相见与单次误包为C级工作主案。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47303,
+                47459
+              ],
+              "lines": [
+                1176,
+                1178
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "55ba0c52a893f669be05b5c6d6c90e08c2ef53062bb503e337e66b49b970672a"
+            },
+            "name": "宗教/哲学",
+            "number": 9,
+            "text": "**9｜宗教/哲学**  \n真假必须由“越像越不可替代”的物/字/反应表达；甄宝玉不说“真假一体”。庄子旧文不点化99。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47524,
+                47687
+              ],
+              "lines": [
+                1182,
+                1184
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0b7eacce8cb5b040b4ec62560eaa250b1027ed32f4201f172c7a4c608c5e8059"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47791,
+                47910
+              ],
+              "lines": [
+                1188,
+                1190
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7fa837444174c174331919f256df2e09bcf81209fa32d54880a03da7fea9196c"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n第二次巧合；甄贾哲学论战；宝钗专门见证黛玉四句；“原来这是遗言”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "98-S3-F2",
+      "description": "不得把甄家先知扩成两家同步全知；不得把T3“甄宝玉送玉”扩为现实照面、同玉或亲自搬运细节硬证。严禁将zhen_messenger这个holder标签当已注册人名，也不得把代理运输与章卡亲送宣称已兼容。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "e429df444187d3d322e315bd0b5d66c074243a1607983001e9994888ddeadb4e",
+          "value": {
+            "id": "98-S3",
+            "title": "误拿事件严格维持一个核心巧合"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                45942,
+                46311
+              ],
+              "lines": [
+                1147,
+                1154
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3c16f97ea72a957d33c276aeda1dcb03ec94af1e7c587cfe7f829b67c9b4d312"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR18\n\n**EVIDENCE-INTERFACES｜**\n- T3/EVENT：`甄宝玉送玉`；\n- V1-FRAG：`误窃`来自更早“塞玉”伏线；\n- 当前“通灵玉误带—送还”只是一种C案，标题不得把它伪装成R。“甄宝玉送玉”；O03玉同一性、O07二宝是否现实照面原本开放；当前现实相见与单次误包为C级工作主案。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47524,
+                47687
+              ],
+              "lines": [
+                1182,
+                1184
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0b7eacce8cb5b040b4ec62560eaa250b1027ed32f4201f172c7a4c608c5e8059"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                48108,
+                48364
+              ],
+              "lines": [
+                1200,
+                1203
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f383384fac7fe9a430194580c3304bb9c2fa3b2a5236d49def3016ecb283abe0"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n拜帖 → 旧书相会 → 异手/《续庄子》迟见 → 回到校书 → 包裹误拿 → 通灵玉归 → 继续抄字/吃饭。  \n**风险：**让C级“亲见”伪装硬证；把98变成通往99的“悟道机关”。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/17",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/17",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "a5ccf3cd6e541eb3f5dbeda4545621dc0e1434133909c20046beeb23aca4655e",
+            "value": {
+              "chapter": 98,
+              "money_state": "贫居仍可最低待客",
+              "food_medicine": "茶、绦线、旧帕、书札",
+              "labor": "麝月换绦送茶；甄仆收包",
+              "object_interface": "两个相邻小包",
+              "boundary": "甄家不送钱",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/8",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/8",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "8d0ca42b5e6714b32f3c3c1e8bff6f2cb6e6f6ca79f4e93477c98e6b75cbe51c",
+            "value": {
+              "chapter": 98,
+              "targets": [
+                "zhen_baoyu"
+              ],
+              "kind": "EARLY_KNOWLEDGE",
+              "fact": "mistaken_jade_package",
+              "note": "甄家一侧先发现误拿，贾家最初不知道发生了什么",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          },
+          {
+            "ref": "data/objects/m4.json#/transitions/24",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/24",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "628043d9fe43d1faa58f29e7d6e15cc9cadc6156324b92325954d217619ffc21",
+            "value": {
+              "id": "OT98-04",
+              "chapter": 98,
+              "sequence": 70,
+              "object_id": "OBJ-TONGLING-JADE",
+              "action": "MOVE",
+              "from": {
+                "holder": "zhen_baoyu",
+                "location": "ZHEN_OFFSTAGE",
+                "status": "MISTAKE_DISCOVERED",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "to": {
+                "holder": "zhen_messenger",
+                "location": "IN_TRANSIT",
+                "status": "RETURN_TRANSIT",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "source_refs": [
+                "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+                "R18"
+              ],
+              "epistemic": "CURRENT_C",
+              "note": "甄宝玉送还的运输阶段",
+              "movement": "EXPLICIT"
+            }
+          },
+          {
+            "ref": "data/objects/m4.json#/transitions/25",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/25",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "2f3c0cb03625ae4343d1fb6d6612e29b6103493fa3fdf72b0c454a07d732f56b",
+            "value": {
+              "id": "OT98-05",
+              "chapter": 98,
+              "sequence": 90,
+              "object_id": "OBJ-TONGLING-JADE",
+              "action": "MOVE",
+              "from": {
+                "holder": "zhen_messenger",
+                "location": "IN_TRANSIT",
+                "status": "RETURN_TRANSIT",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "to": {
+                "holder": "baoyu",
+                "location": "S09",
+                "status": "RETURNED",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "source_refs": [
+                "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+                "R18"
+              ],
+              "epistemic": "CURRENT_C",
+              "note": "送还完成；不把91拾玉并入此链",
+              "movement": "EXPLICIT"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "id": "98-S3",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [
+    "OT98-01",
+    "OT98-02",
+    "OT98-03",
+    "OT98-04",
+    "OT98-05"
+  ],
+  "order": 3,
+  "participants": [
+    "baoyu",
+    "zhen_baoyu",
+    "sheyue"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "object.OBJ-ZHEN-PACKAGE-98.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "S12书札包章级落点有记录，但只有一个桌角布包如何被小厮误取、书玉摆放距离尚未绑定。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/23",
+        "ref": "data/world/m3_core.json#/characters/23",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bd7a8e1c9927bff34f49badc580eb381a73e8bb3d90c17a0a82cf47abd1ef299",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "zhen_household_member",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "human"
+          ],
+          "id": "zhen_baoyu",
+          "name": "甄宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/15",
+        "ref": "data/objects/m4.json#/objects/15",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "3d63a2e2b15aaec7dc8d5d325791fd8979839838c6bb514788d01bd0df5c844c",
+        "value": {
+          "baseline": {
+            "holder": null,
+            "location": null,
+            "status": "OFFSTAGE_BEFORE_VISIT"
+          },
+          "continuity_rules": [
+            "作为误包偶然的现实容器；不携带大额资源，不承担真假哲理说明"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-ZHEN-PACKAGE-98",
+          "identity_status": "C_WORLD_OBJECT",
+          "kind": "visitor_package",
+          "name": "甄家来访书札包",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb",
+            "R18"
+          ]
+        }
+      },
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/0",
+        "ref": "data/objects/m4.json#/objects/0",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "7039eac261456c40f732f1322b22ca25814dd97df2c70ae82c537009bf332c47",
+        "value": {
+          "baseline": {
+            "frame_status": "IN_HUMAN_WORLD",
+            "holder": "baoyu",
+            "location": "S02",
+            "status": "WITH_BAOYU"
+          },
+          "continuity_rules": [
+            "第98回误取—发现—送还属于当前C实现，不证明原稿绝对回次",
+            "第99回不得强制写成主动弃玉仪式",
+            "第100回石归本质是外框身份终态，不要求尘世物流闭合"
+          ],
+          "evidence_status": "MIXED_HARD_IDENTITY_CURRENT_C_PLACEMENT",
+          "id": "OBJ-TONGLING-JADE",
+          "identity_status": "LOCKED_TONGLING_OBJECT_BUT_EARTHLY_ROUTE_OPEN",
+          "kind": "jade",
+          "name": "通灵玉（当前C运行对象）",
+          "source_refs": [
+            "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+            "R01",
+            "R16",
+            "R18",
+            "R43"
+          ]
+        }
+      },
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/1",
+        "ref": "data/objects/m4.json#/objects/1",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "0a7860369bc36083e4cd29b2f4418de20ce3d464aa977555793f684b3926f48d",
+        "value": {
+          "baseline": {
+            "holder": null,
+            "location": null,
+            "status": "UNOBSERVED"
+          },
+          "continuity_rules": [
+            "不得与OBJ-TONGLING-JADE自动合并",
+            "拾得身份始终保持OPEN，除非上游证据改变"
+          ],
+          "evidence_status": "HARD_FIND_EVENT_IDENTITY_OPEN",
+          "id": "OBJ-SNOW-JADE-91",
+          "identity_status": "OPEN_MAY_OR_MAY_NOT_BE_TONGLING",
+          "kind": "jade_like_found_object",
+          "name": "第91回雪中玉样物",
+          "source_refs": [
+            "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+            "R17"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "98-S3-R1",
+      "description": "只一次核心误取。章卡“一包误拿”锁错误次数，并不证明桌上只有一个物包；M3资源表“两个相邻小包”与v1“只一个桌角布包”不能偷换。保留可辨认的容器/相邻位置接口，确切包数、内容摆放和哪一个误取仍待协调；不添第二次掉包或巧遇。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "e429df444187d3d322e315bd0b5d66c074243a1607983001e9994888ddeadb4e",
+          "value": {
+            "id": "98-S3",
+            "title": "误拿事件严格维持一个核心巧合"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                46311,
+                46492
+              ],
+              "lines": [
+                1155,
+                1157
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3b5fe6f166c300b2fe7f50d313706c1dcf91a928a28e60a164d5d571b1425794"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n旧钞本、虫蛀缺页、不同手迹、借阅条、米数纸背抄字；甄贾相见不哲学辩论；一包误拿、一次归还；待客仍淡茶简饭。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                46492,
+                46637
+              ],
+              "lines": [
+                1158,
+                1160
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7edc02b8a86d5a4d449b9336fac5b26ec962ff6c6fe7624896fa99aad05e56cd"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n37-0-C《续庄子》接口需嵌入现有“女子手笔”位置；甄家误拿包裹的物流要只保留一次偶然。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47524,
+                47687
+              ],
+              "lines": [
+                1182,
+                1184
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0b7eacce8cb5b040b4ec62560eaa250b1027ed32f4201f172c7a4c608c5e8059"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47687,
+                47791
+              ],
+              "lines": [
+                1185,
+                1187
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d3d5807ac867fb0d457481e9081eba672a9c7f92e8f73d4d491d1a6cd340a534"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n数茶、木桶、米数纸、虫蛀旧书、单一包裹误拿、无钱赠。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/17",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/17",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "a5ccf3cd6e541eb3f5dbeda4545621dc0e1434133909c20046beeb23aca4655e",
+            "value": {
+              "chapter": 98,
+              "money_state": "贫居仍可最低待客",
+              "food_medicine": "茶、绦线、旧帕、书札",
+              "labor": "麝月换绦送茶；甄仆收包",
+              "object_interface": "两个相邻小包",
+              "boundary": "甄家不送钱",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/8",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/8",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "8d0ca42b5e6714b32f3c3c1e8bff6f2cb6e6f6ca79f4e93477c98e6b75cbe51c",
+            "value": {
+              "chapter": 98,
+              "targets": [
+                "zhen_baoyu"
+              ],
+              "kind": "EARLY_KNOWLEDGE",
+              "fact": "mistaken_jade_package",
+              "note": "甄家一侧先发现误拿，贾家最初不知道发生了什么",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          },
+          {
+            "ref": "data/objects/m4.json#/transitions/24",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/24",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "628043d9fe43d1faa58f29e7d6e15cc9cadc6156324b92325954d217619ffc21",
+            "value": {
+              "id": "OT98-04",
+              "chapter": 98,
+              "sequence": 70,
+              "object_id": "OBJ-TONGLING-JADE",
+              "action": "MOVE",
+              "from": {
+                "holder": "zhen_baoyu",
+                "location": "ZHEN_OFFSTAGE",
+                "status": "MISTAKE_DISCOVERED",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "to": {
+                "holder": "zhen_messenger",
+                "location": "IN_TRANSIT",
+                "status": "RETURN_TRANSIT",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "source_refs": [
+                "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+                "R18"
+              ],
+              "epistemic": "CURRENT_C",
+              "note": "甄宝玉送还的运输阶段",
+              "movement": "EXPLICIT"
+            }
+          },
+          {
+            "ref": "data/objects/m4.json#/transitions/25",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/25",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "2f3c0cb03625ae4343d1fb6d6612e29b6103493fa3fdf72b0c454a07d732f56b",
+            "value": {
+              "id": "OT98-05",
+              "chapter": 98,
+              "sequence": 90,
+              "object_id": "OBJ-TONGLING-JADE",
+              "action": "MOVE",
+              "from": {
+                "holder": "zhen_messenger",
+                "location": "IN_TRANSIT",
+                "status": "RETURN_TRANSIT",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "to": {
+                "holder": "baoyu",
+                "location": "S09",
+                "status": "RETURNED",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "source_refs": [
+                "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+                "R18"
+              ],
+              "epistemic": "CURRENT_C",
+              "note": "送还完成；不把91拾玉并入此链",
+              "movement": "EXPLICIT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "98-S3-R2",
+      "description": "甄家先发现、贾家起初未知；送还责任与亲自搬运分开：章卡信息链说甄家发现后“亲送”，实际OT98-04把holder设为zhen_messenger，OT98-05也从该信使交回baoyu。两者是尚未解决的实现冲突，不得把“承担责任/委托”自动写成满足亲送；未协调前，不选定亲送或代理，不新增信使identity、陪送或二次交通事件。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "e429df444187d3d322e315bd0b5d66c074243a1607983001e9994888ddeadb4e",
+          "value": {
+            "id": "98-S3",
+            "title": "误拿事件严格维持一个核心巧合"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                45942,
+                46311
+              ],
+              "lines": [
+                1147,
+                1154
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3c16f97ea72a957d33c276aeda1dcb03ec94af1e7c587cfe7f829b67c9b4d312"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR18\n\n**EVIDENCE-INTERFACES｜**\n- T3/EVENT：`甄宝玉送玉`；\n- V1-FRAG：`误窃`来自更早“塞玉”伏线；\n- 当前“通灵玉误带—送还”只是一种C案，标题不得把它伪装成R。“甄宝玉送玉”；O03玉同一性、O07二宝是否现实照面原本开放；当前现实相见与单次误包为C级工作主案。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                46832,
+                46947
+              ],
+              "lines": [
+                1164,
+                1166
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "20013126b02c513f7ffc84c5378b45fe416ca508a12e3fcf954ff88d4e6cb60c"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n贾芸/旧交中介、甄宝玉、甄小厮、宝玉、宝钗/麝月、书摊/抄书人远端。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47524,
+                47687
+              ],
+              "lines": [
+                1182,
+                1184
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0b7eacce8cb5b040b4ec62560eaa250b1027ed32f4201f172c7a4c608c5e8059"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                48108,
+                48364
+              ],
+              "lines": [
+                1200,
+                1203
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f383384fac7fe9a430194580c3304bb9c2fa3b2a5236d49def3016ecb283abe0"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n拜帖 → 旧书相会 → 异手/《续庄子》迟见 → 回到校书 → 包裹误拿 → 通灵玉归 → 继续抄字/吃饭。  \n**风险：**让C级“亲见”伪装硬证；把98变成通往99的“悟道机关”。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/17",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/17",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "a5ccf3cd6e541eb3f5dbeda4545621dc0e1434133909c20046beeb23aca4655e",
+            "value": {
+              "chapter": 98,
+              "money_state": "贫居仍可最低待客",
+              "food_medicine": "茶、绦线、旧帕、书札",
+              "labor": "麝月换绦送茶；甄仆收包",
+              "object_interface": "两个相邻小包",
+              "boundary": "甄家不送钱",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/8",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/8",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "8d0ca42b5e6714b32f3c3c1e8bff6f2cb6e6f6ca79f4e93477c98e6b75cbe51c",
+            "value": {
+              "chapter": 98,
+              "targets": [
+                "zhen_baoyu"
+              ],
+              "kind": "EARLY_KNOWLEDGE",
+              "fact": "mistaken_jade_package",
+              "note": "甄家一侧先发现误拿，贾家最初不知道发生了什么",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          },
+          {
+            "ref": "data/objects/m4.json#/transitions/24",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/24",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "628043d9fe43d1faa58f29e7d6e15cc9cadc6156324b92325954d217619ffc21",
+            "value": {
+              "id": "OT98-04",
+              "chapter": 98,
+              "sequence": 70,
+              "object_id": "OBJ-TONGLING-JADE",
+              "action": "MOVE",
+              "from": {
+                "holder": "zhen_baoyu",
+                "location": "ZHEN_OFFSTAGE",
+                "status": "MISTAKE_DISCOVERED",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "to": {
+                "holder": "zhen_messenger",
+                "location": "IN_TRANSIT",
+                "status": "RETURN_TRANSIT",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "source_refs": [
+                "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+                "R18"
+              ],
+              "epistemic": "CURRENT_C",
+              "note": "甄宝玉送还的运输阶段",
+              "movement": "EXPLICIT"
+            }
+          },
+          {
+            "ref": "data/objects/m4.json#/transitions/25",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/25",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "2f3c0cb03625ae4343d1fb6d6612e29b6103493fa3fdf72b0c454a07d732f56b",
+            "value": {
+              "id": "OT98-05",
+              "chapter": 98,
+              "sequence": 90,
+              "object_id": "OBJ-TONGLING-JADE",
+              "action": "MOVE",
+              "from": {
+                "holder": "zhen_messenger",
+                "location": "IN_TRANSIT",
+                "status": "RETURN_TRANSIT",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "to": {
+                "holder": "baoyu",
+                "location": "S09",
+                "status": "RETURNED",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "source_refs": [
+                "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+                "R18"
+              ],
+              "epistemic": "CURRENT_C",
+              "note": "送还完成；不把91拾玉并入此链",
+              "movement": "EXPLICIT"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "98-S3-R3",
+      "description": "OT98-01作为98-S2已有包到的上下文，随后仅关联OT98-02→03→04→05误取、甄家发现、在途、收到的当前C链，不当作第二次包到。只要求书札包与通灵玉链；91雪玉仅作禁止混同的注册对照，不要求出现在现场或并入包裹。收到后回抄字、接饭碗，无钱赠、无顿悟。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "e429df444187d3d322e315bd0b5d66c074243a1607983001e9994888ddeadb4e",
+          "value": {
+            "id": "98-S3",
+            "title": "误拿事件严格维持一个核心巧合"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                45942,
+                46311
+              ],
+              "lines": [
+                1147,
+                1154
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3c16f97ea72a957d33c276aeda1dcb03ec94af1e7c587cfe7f829b67c9b4d312"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR18\n\n**EVIDENCE-INTERFACES｜**\n- T3/EVENT：`甄宝玉送玉`；\n- V1-FRAG：`误窃`来自更早“塞玉”伏线；\n- 当前“通灵玉误带—送还”只是一种C案，标题不得把它伪装成R。“甄宝玉送玉”；O03玉同一性、O07二宝是否现实照面原本开放；当前现实相见与单次误包为C级工作主案。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47303,
+                47459
+              ],
+              "lines": [
+                1176,
+                1178
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "55ba0c52a893f669be05b5c6d6c90e08c2ef53062bb503e337e66b49b970672a"
+            },
+            "name": "宗教/哲学",
+            "number": 9,
+            "text": "**9｜宗教/哲学**  \n真假必须由“越像越不可替代”的物/字/反应表达；甄宝玉不说“真假一体”。庄子旧文不点化99。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47524,
+                47687
+              ],
+              "lines": [
+                1182,
+                1184
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0b7eacce8cb5b040b4ec62560eaa250b1027ed32f4201f172c7a4c608c5e8059"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47687,
+                47791
+              ],
+              "lines": [
+                1185,
+                1187
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d3d5807ac867fb0d457481e9081eba672a9c7f92e8f73d4d491d1a6cd340a534"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n数茶、木桶、米数纸、虫蛀旧书、单一包裹误拿、无钱赠。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                48108,
+                48364
+              ],
+              "lines": [
+                1200,
+                1203
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f383384fac7fe9a430194580c3304bb9c2fa3b2a5236d49def3016ecb283abe0"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n拜帖 → 旧书相会 → 异手/《续庄子》迟见 → 回到校书 → 包裹误拿 → 通灵玉归 → 继续抄字/吃饭。  \n**风险：**让C级“亲见”伪装硬证；把98变成通往99的“悟道机关”。\n\n"
+          }
+        ],
+        "world_information_rule": {
+          "ref": "data/world/m3_knowledge.json#/knowledge_rules/8",
+          "path": "data/world/m3_knowledge.json",
+          "pointer": "/knowledge_rules/8",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+          "text_sha256": "8d0ca42b5e6714b32f3c3c1e8bff6f2cb6e6f6ca79f4e93477c98e6b75cbe51c",
+          "value": {
+            "chapter": 98,
+            "epistemic": "REFERENCE_INFORMATION_ASYMMETRY",
+            "fact": "mistaken_jade_package",
+            "kind": "EARLY_KNOWLEDGE",
+            "note": "甄家一侧先发现误拿，贾家最初不知道发生了什么",
+            "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+            "targets": [
+              "zhen_baoyu"
+            ]
+          }
+        },
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/17",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/17",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "a5ccf3cd6e541eb3f5dbeda4545621dc0e1434133909c20046beeb23aca4655e",
+            "value": {
+              "chapter": 98,
+              "money_state": "贫居仍可最低待客",
+              "food_medicine": "茶、绦线、旧帕、书札",
+              "labor": "麝月换绦送茶；甄仆收包",
+              "object_interface": "两个相邻小包",
+              "boundary": "甄家不送钱",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/8",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/8",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "8d0ca42b5e6714b32f3c3c1e8bff6f2cb6e6f6ca79f4e93477c98e6b75cbe51c",
+            "value": {
+              "chapter": 98,
+              "targets": [
+                "zhen_baoyu"
+              ],
+              "kind": "EARLY_KNOWLEDGE",
+              "fact": "mistaken_jade_package",
+              "note": "甄家一侧先发现误拿，贾家最初不知道发生了什么",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          },
+          {
+            "ref": "data/objects/m4.json#/transitions/24",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/24",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "628043d9fe43d1faa58f29e7d6e15cc9cadc6156324b92325954d217619ffc21",
+            "value": {
+              "id": "OT98-04",
+              "chapter": 98,
+              "sequence": 70,
+              "object_id": "OBJ-TONGLING-JADE",
+              "action": "MOVE",
+              "from": {
+                "holder": "zhen_baoyu",
+                "location": "ZHEN_OFFSTAGE",
+                "status": "MISTAKE_DISCOVERED",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "to": {
+                "holder": "zhen_messenger",
+                "location": "IN_TRANSIT",
+                "status": "RETURN_TRANSIT",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "source_refs": [
+                "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+                "R18"
+              ],
+              "epistemic": "CURRENT_C",
+              "note": "甄宝玉送还的运输阶段",
+              "movement": "EXPLICIT"
+            }
+          },
+          {
+            "ref": "data/objects/m4.json#/transitions/25",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/25",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "2f3c0cb03625ae4343d1fb6d6612e29b6103493fa3fdf72b0c454a07d732f56b",
+            "value": {
+              "id": "OT98-05",
+              "chapter": 98,
+              "sequence": 90,
+              "object_id": "OBJ-TONGLING-JADE",
+              "action": "MOVE",
+              "from": {
+                "holder": "zhen_messenger",
+                "location": "IN_TRANSIT",
+                "status": "RETURN_TRANSIT",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "to": {
+                "holder": "baoyu",
+                "location": "S09",
+                "status": "RETURNED",
+                "frame_status": "IN_HUMAN_WORLD"
+              },
+              "source_refs": [
+                "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+                "R18"
+              ],
+              "epistemic": "CURRENT_C",
+              "note": "送还完成；不把91拾玉并入此链",
+              "movement": "EXPLICIT"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [
+    "OBJ-ZHEN-PACKAGE-98",
+    "OBJ-TONGLING-JADE"
+  ],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+    "declared_sequence_only: 依种子列表声明前驱；历史顺序、局部检查点与既有正文放置未核验。",
+    "carrier_conflict: 未解决。章卡11“亲送”与OT98-04.to.holder=zhen_messenger／OT98-05.from.holder=zhen_messenger冲突；送还责任不等于本人搬运，保持PENDING，不改输入、不造演员/事件。",
+    "minor_actors: 甄小厮及送还信使未注册，包裹实际经手路线不新增身份。",
+    "jade_identity: O03与91雪玉同一性保持开放，不因本章当前C物流提升为历史证据。",
+    "knowledge_registry_gap: mistaken_jade_package有M3规则但非v03事实ID，无本章知识获取场景可执行。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+    "local_cast_pending: 地址中介、甄小厮/信使及收件者的完整到场集合未核；已有注册主角只为候选，不把registry或holder标签当localcast。",
+    "package_layout_conflict: v1只一包措辞、章卡一次误拿与M3两个相邻小包分属包数/错拿次数；v2撤销只有一包断言，具体容器摆放和物流仍PENDING。",
+    "snow_jade_negative_reference: 雪玉留在references作OPEN同一性对照，不是本场required_objects或退出对象；不得补它现场存在。"
+  ],
+  "function": "将桌角单包误拿、甄家发现与归还串成一次偶然后的可追踪物信链；通灵玉归不提供顿悟或经济救济。",
+  "notes": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+}

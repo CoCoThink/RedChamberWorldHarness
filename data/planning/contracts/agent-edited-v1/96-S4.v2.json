@@ -1,0 +1,669 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch96.json",
+      "sha256": "a16c88eecea1bbe2a0281b4c0073985994e9663e7d921b76a3f099064d764086"
+    },
+    "seed": {
+      "path": "data/planning/scenes/96-S4.json",
+      "sha256": "747ead68a8a198fee58e6ef3e07c1e1e8c0b891a0f0082df98ef12b20584e35c"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 96,
+  "chapter_plan_ref": "data/planning/chapters/ch96.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/96-S3.v2.json",
+  "entry_state": [
+    {
+      "equals": "character.baochai.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "前驱分援助没有局部检查点，不能把S09章末位置等同家书当时落到谁手中的场景。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "object.OBJ-RICE-JAR-95.quantity_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "量米终点有96章级事件，家书与做饭的局部相接仍未登记，不以新旧米同淘义务自证退出状态。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "96-S4-F1",
+      "description": "不得补湘云完整婚后新诗、望夫诗或把信当佚诗；两句揉掉就是缺口，不能凭猜测复原。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "afb53ad08797dd720b7a58905d1f6b4fead65f91deeec06b92f345185d268349",
+          "value": {
+            "id": "96-S4",
+            "title": "湘云的信有真实传递路径"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41770,
+                41904
+              ],
+              "lines": [
+                1045,
+                1047
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "676c911f34cdf99f1adc4c9e8d105431e5277f604baf1308987615926849d044"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG03完整湘云新诗淘汰；揉掉的两句不恢复。信是实用/人物声口文字，不冒充佚诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42363,
+                42440
+              ],
+              "lines": [
+                1063,
+                1065
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e6d0a4027d4c68ee2beecefa02165d4a09996fa5ffab9bfa8fa27fb589c2340e"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n大笔银钱；蒋唱整折戏；湘云完整婚后诗。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S4-F2",
+      "description": "不得藉信锁定湘云若兰开放终局、确切住址或把援助写成阶级恢复。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "afb53ad08797dd720b7a58905d1f6b4fead65f91deeec06b92f345185d268349",
+          "value": {
+            "id": "96-S4",
+            "title": "湘云的信有真实传递路径"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                40868,
+                41151
+              ],
+              "lines": [
+                1023,
+                1029
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e1dfebff884225a9db0a5e67e733e67da9491c353b277cad34eae7ed88ccaf4"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR25/R26\n\n**V-INTERFACES｜**\n- V5：`后回与袭人供奉玉兄宝卿得同终始`；\n- “供奉”锁照应关系，不锁大额救济、同住或恢复阶级。：袭人蒋玉菡后期照应宝玉宝钗；O04贫寒相位开放。湘云/若兰仍O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42620,
+                42880
+              ],
+              "lines": [
+                1075,
+                1078
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "8832c9bcf625976cfbdd882062f9389a0bec721ddae393d26670e34ced117b8a"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n贫居春日 → 袭人到门 → 故人相见 → 蒋职业生活只露够用的一层 → 援助分配 → 湘云信到 → “两句揉掉” → 新旧米同锅。  \n**风险：**故人援助恢复阶级；文化展示过满。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "96-S4",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 4,
+  "participants": [
+    "baochai",
+    "sheyue",
+    "baoyu"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "家书转递终点与读信人的先后未登记；收件、读到及湘云写信属于不同信息节点。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/10",
+        "ref": "data/objects/m4.json#/objects/10",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "a1f99c276440ea457b38b14c77d2aa7dda051df6b87c737b46376064c0cf47d2",
+        "value": {
+          "baseline": {
+            "holder": "baochai_sheyue_household",
+            "location": "S09",
+            "quantity_state": "UNKNOWN",
+            "status": "UNINITIALIZED"
+          },
+          "continuity_rules": [
+            "第95回进入低量；第96回外援只部分补入，不逆转E4贫困"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-RICE-JAR-95",
+          "identity_status": "C_WORLD_OBJECT",
+          "kind": "food_store",
+          "name": "贫居米瓮",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "R19"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "96-S4-R1",
+      "description": "给信件安排接信—转交—延迟—收件—读到的轻量接口；路线、经手人和读信顺序未定，不能因章卡列送信人就标完整localcast为KNOWN，也不能把湘云在远端写信变为到场。只让读信者在真正收到后知道信中家常。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "afb53ad08797dd720b7a58905d1f6b4fead65f91deeec06b92f345185d268349",
+          "value": {
+            "id": "96-S4",
+            "title": "湘云的信有真实传递路径"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41347,
+                41450
+              ],
+              "lines": [
+                1033,
+                1035
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5d7be63035e663b59f92a7a999e6de1ccd5453a75876ae5bac86b89480c58d3b"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n袭人如何知道地址、蒋为何同行、湘云信如何转递可补很轻。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41450,
+                41592
+              ],
+              "lines": [
+                1036,
+                1038
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5370e9ec10523670b884650f3380fdf4820b44af93d84c66b5697264cabf11dc"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n96-S1贾芸/花家旧人转地址；S2蒋正好有现实理由同行；S3宝钗分配援助；S4信件延迟路径。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41592,
+                41668
+              ],
+              "lines": [
+                1039,
+                1041
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "818b3da12b7774ef5e1223244715c6f8f88d6f436128e34f6832fd288f8870e1"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n袭人、蒋、贾芸、宝钗麝月宝玉；送信人。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/15",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/15",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "5fc4a72fc39fcc12e4293c5d4b80fbc1da8bfe02aec5e50c1bfe2661a8e0c397",
+            "value": {
+              "chapter": 96,
+              "money_state": "有限外援，不能逆转贫困",
+              "food_medicine": "一袋米、一筐炭、小包碎银；晚饭标准不变",
+              "labor": "蒋玉菡搬物/出钱，袭人问日用，麝月收放",
+              "object_interface": "米只倒一半、银收匣",
+              "boundary": "援助应被节制使用",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S4-R2",
+      "description": "信只展开婚后家常和生活截断的诗性；保留“写两句揉掉”，不恢复被揉掉的诗；寄信的湘云不因此被安排到贫居现场。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "afb53ad08797dd720b7a58905d1f6b4fead65f91deeec06b92f345185d268349",
+          "value": {
+            "id": "96-S4",
+            "title": "湘云的信有真实传递路径"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41151,
+                41347
+              ],
+              "lines": [
+                1030,
+                1032
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "dc3cd383fee0133c3409d89f7e4404e402549069d08f926d39dc26f1aadc4646"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n袭人敲门、蒋玉菡站门外不抢戏；戏业生计完整；援助物多钱少；湘云长信里婚后生活与“写两句揉掉”；新旧米同淘、仍两碗半。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41668,
+                41770
+              ],
+              "lines": [
+                1042,
+                1044
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c775415659cb2d13e9424decfb59ef38f379be99e3d4b0de1dc03cd235784492"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n96戏曲职业世界、湘云被生活切断的诗性均P-Lock；不当场唱曲。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41770,
+                41904
+              ],
+              "lines": [
+                1045,
+                1047
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "676c911f34cdf99f1adc4c9e8d105431e5277f604baf1308987615926849d044"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG03完整湘云新诗淘汰；揉掉的两句不恢复。信是实用/人物声口文字，不冒充佚诗。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S4-R3",
+      "description": "读信回到淡茶、纸边饭气与新旧米同锅，仍两碗半。96-S3量用和本场家书到达的接合时点仍待定，OT96-02不得在两个场中被当成两次新增补米或重复量用事件。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "afb53ad08797dd720b7a58905d1f6b4fead65f91deeec06b92f345185d268349",
+          "value": {
+            "id": "96-S4",
+            "title": "湘云的信有真实传递路径"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41904,
+                41980
+              ],
+              "lines": [
+                1048,
+                1050
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "55047834fc6c02f7760cb18b54e8dca122aef24599cd40c6860b2634cd02aba6"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n淡茶、松子、两碗半、纸边沾饭气等保护。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42252,
+                42363
+              ],
+              "lines": [
+                1060,
+                1062
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3ce548c361059810c314274f1dfe95d917f8127986d53f3faa0a18ddb7f4599c"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n袭/蒋/麝 teasing；便宜油膏；银子先收；两碗半不变；春菜叫卖。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42471,
+                42565
+              ],
+              "lines": [
+                1069,
+                1071
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b9532267343142c18ef12257e812ac98fc0e6ff6edbb51486dc7299933e7ddbb"
+            },
+            "name": "前80同构",
+            "number": 15,
+            "text": "**15｜前80同构**  \n28汗巾/蒋袭伏线在贫困现实中回收，不写命运宣言。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42620,
+                42880
+              ],
+              "lines": [
+                1075,
+                1078
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "8832c9bcf625976cfbdd882062f9389a0bec721ddae393d26670e34ced117b8a"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n贫居春日 → 袭人到门 → 故人相见 → 蒋职业生活只露够用的一层 → 援助分配 → 湘云信到 → “两句揉掉” → 新旧米同锅。  \n**风险：**故人援助恢复阶级；文化展示过满。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/15",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/15",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "5fc4a72fc39fcc12e4293c5d4b80fbc1da8bfe02aec5e50c1bfe2661a8e0c397",
+            "value": {
+              "chapter": 96,
+              "money_state": "有限外援，不能逆转贫困",
+              "food_medicine": "一袋米、一筐炭、小包碎银；晚饭标准不变",
+              "labor": "蒋玉菡搬物/出钱，袭人问日用，麝月收放",
+              "object_interface": "米只倒一半、银收匣",
+              "boundary": "援助应被节制使用",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [
+    "OBJ-RICE-JAR-95"
+  ],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+    "declared_sequence_only: 依种子列表声明前驱；历史顺序、局部检查点与既有正文放置未核验。",
+    "courier: 送信人未注册；接信地、转交人、延误长短、收件/读信顺序未定。",
+    "letter_unregistered: 湘云信、信封和揉掉纸页未注册，不新增对象或知识事实。",
+    "writer_offstage: 湘云为远端写信人而非本场共同在场者；她的现场位置及写信时间不由此确定。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+    "local_cast_pending: 已注册候选人物的同场范围与未注册经手人未核，participants_status=PENDING；不得从registry推出本场到场。",
+    "aid_letter_handoff: OT96-02只作为既有章级量用节点，信到与煮饭的具体接合不重复建立对象转移。"
+  ],
+  "function": "补湘云家书的转递与延迟，使婚后生活、未成两句和贫居饭事在信件到达处相接。",
+  "notes": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+}

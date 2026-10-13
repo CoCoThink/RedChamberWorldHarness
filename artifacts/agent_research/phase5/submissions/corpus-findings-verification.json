@@ -1,0 +1,257 @@
+{
+  "schema_version": 1,
+  "report_kind": "MODEL_CORPUS_FINDINGS_VERIFICATION",
+  "id": "agent:phase5:corpus-findings-verification:v1",
+  "reviewer_kind": "MODEL_SUBAGENT",
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "repo_root": "/mnt/d/Code/RedChamberWorldHarness",
+  "dataset_ref": "corpus:front80:v1-candidate",
+  "scope": "Read-only adjudication of four allegations, not replacement of either submitted opinion or a full corpus acceptance audit. Only this new JSON is authored.",
+  "summary": {
+    "confirmed_current_contract_defects": 0,
+    "plausible_contract_or_design_gaps": 2,
+    "nondefects_under_current_contract": 2,
+    "conclusion": "The reported header/page-number inclusions and chapter-79 page prefix are real, reproducible observations. Current scope-first APPENDIX/VARIANT classification explicitly produces those inclusions; a content-only guarantee for those two kinds was not found. These are plausible layer-design/contract gaps, not established breaches of the documented MAIN_TEXT-purity contract. Chapter ownership follows fixed extraction heading offsets, not physical-page ownership. [麂] reproduces this edition's declared correction notation, not an unrecorded corpus correction. None of this rescinds corpus-reader-2's FAIL or supplies a human PASS.",
+    "candidate_readiness_retained": "CANDIDATE_PENDING_HUMAN_AUDIT",
+    "negative_report_preserved": true,
+    "no_admission_or_selection_change": true
+  },
+  "bindings": {
+    "reader_1": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/corpus-reader-1.json",
+      "sha256": "8d3dac7f135312ac04a47ec017b38e3aaafdd0011eb186596604f9ec818ade8b",
+      "corpus_verdict_retained": "PENDING"
+    },
+    "reader_2": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/corpus-reader-2.json",
+      "sha256": "1d4fb85f361ae26cb36820c73d35b1af364ca5d572ae4e392f7a6ae0708777c3",
+      "corpus_verdict_retained": "FAIL"
+    },
+    "packet": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/inputs/full91-corpus-packet.json",
+      "sha256": "6bf10aca78318924946e66bf18b518cd1e5a0e410e8654717ea3d1955b5e90ad"
+    },
+    "material": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/inputs/full91-corpus-material.json",
+      "sha256": "3022d11e887b757aaac73317095a0061d639d4e3d6b937d03321bd0ac596176a"
+    },
+    "protocol": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/corpus/audit-protocols/3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc.json",
+      "sha256": "c7e91e51629b6ae1ee4dc53a5708873ff772433c2a1fcf2ae210f0c4f07b76dc",
+      "minimum_reviewers_declared": 1
+    },
+    "manifest": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/corpus/front80/v1-candidate/manifest.json",
+      "sha256": "033395831d12b5809eb0c87a71fd2728367d1e191ccf1db94eda7259ef5057e3"
+    },
+    "segments": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/corpus/front80/v1-candidate/segments.jsonl",
+      "sha256": "bf2d6d7e988e798444aad9ef62de54fba970edd9df72f5be4c94ccaf18f770a6"
+    },
+    "build": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/corpus/builds/front80-v1-candidate.json",
+      "sha256": "6ed0cbf7152eaa4d57a37dd9dc3c48952581123cb5324eb6f18e35935128926f"
+    },
+    "original_pdf": {
+      "asset_ref": "asset:primary:hlm:zhihui:v3.1416:pdf",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/sources/primary/hongloumeng/zhihui/v3.1416/original.pdf",
+      "sha256": "37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7"
+    },
+    "extraction_manifest": {
+      "asset_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/manifest.json",
+      "sha256": "1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900"
+    },
+    "extraction_units": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/units.jsonl",
+      "sha256": "b9278b790bc2fd8a7e90ec8ca86295a60105b0defe0843fc39cdc598e6826353"
+    },
+    "input_inventory": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/reviews/1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2/input-inventory.json",
+      "sha256": "1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2"
+    }
+  },
+  "checks_performed": [
+    "Read both submissions and packet; selectively inspected material/protocol fields and disputed samples. Recomputed all bindings listed above.",
+    "The 91 unique packet/material/protocol sample IDs agree. Every material segment equals its actual bound segments row, its UTF-8 digest recomputes, and its locator reconstructs the exact text from the bound extraction. This is engineering consistency, not 91 visual judgments.",
+    "Read supplied images at /tmp/rcwh-phase5-corpus-review/page-images/physical-page-0007.png, physical-page-0666.png, physical-page-0916.png and physical-page-1097.png. Directly viewed original.pdf physical pages 917 and 1109-1110, adding source-image evidence missing from the two reports for these allegations.",
+    "Direct PDF dict extraction of physical pages 666, 917, 918, 1097, 1109 and 1110 exactly matches their bound extraction text. Inspected disputed font sizes, colors and bounding boxes. Runtime was CPython 3.14.6 / PyMuPDF 1.27.2.3, not the declared CPython 3.12.13 build environment; no canonical rebuild or acceptance command was run.",
+    "Inspected current layer classifier, dataset builder, heading-offset inventory logic, layer/build schemas, relevant tests and documented corpus contract. Checked ch49/ch67 reading-view impact and the empty corrections table."
+  ],
+  "contract_basis": [
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/docs/runbooks/CORPUS_AND_REVIEW_INPUTS.md",
+      "lines": "34-53, 65, 84-95",
+      "rule": "Candidate includes all appendices; text/newlines/raw Unicode ranges are preserved; chapter files are MAIN_TEXT reading views. New rules/text/splits require a new dataset ID/output directory. Corrections table records corpus-applied corrections, currently none. Negative opinions remain preserved; engineering consistency does not imply human acceptance."
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/docs/RCWH_来源闭包与语料建设后续设计_v1.1_20261008.md",
+      "lines": "223-248",
+      "rule": "Six kinds are distinguished, with separate appendix sections. Explicit purity acceptance requirement at line 246 concerns the default MAIN_TEXT collection. This text does not explicitly promise content-only APPENDIX/VARIANT or physical-page-based ownership of editorial metadata."
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/corpus/layers.py",
+      "lines": "29-53",
+      "rule": "Watermark fonts and white invisible text are EDITORIAL first; then appendix scope returns APPENDIX and alternate-chapter scope returns VARIANT before font/size-derived EDITORIAL. Thus visible running headers/page numbers inside those scopes are deliberately classified by scope in the current implementation. This code establishes the mechanism, not literary acceptance or an unqualified documented semantic exception."
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/corpus/inputs.py",
+      "lines": "23, 123-159",
+      "rule": "Chapter scopes start at the standalone heading's character offset and stop at the next such offset; slices retain mixed page metadata. Ownership describes extraction slices, not every item on the physical page."
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/corpus/dataset.py",
+      "lines": "67-83, 118-150, 184-188",
+      "rule": "Builder consumes fixed chapter/appendix scopes, classifies each exact raw run and merges adjacent same-kind chunks across pages. Locator transforms remain empty. Chapter reading views concatenate only MAIN_TEXT."
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/schemas/corpus_audit_review.schema.json",
+      "lines": "39-57, 78-125",
+      "rule": "Formal corpus review requires an INDEPENDENT_HUMAN and separate layer/locator/context checks. This verification is a model research artifact, not such a review."
+    }
+  ],
+  "findings": [
+    {
+      "id": "appendix-page-metadata",
+      "classification": "PLAUSIBLE_DEFECT",
+      "observation_status": "CONFIRMED",
+      "current_documented_contract_violation": "NOT_ESTABLISHED",
+      "evidence": [
+        {
+          "segment_id": "hlm80:appendix:all:p00002",
+          "segments_line": 12082,
+          "kind": "APPENDIX",
+          "text_sha256": "44e079b7652b78c8bd255edc5994ce5d70f91033dbae83783ac0de90eaffcfef",
+          "spans": ["pdf:page:1109:[18,467)", "pdf:page:1110:[0,19)"],
+          "exact_prefix": "1098\n \n \n《红楼梦》各抄本收藏者序跋 \n",
+          "exact_suffix": "附录一 《红楼梦》各抄本收藏者序跋 \n",
+          "page_metadata_subspans": ["pdf:page:1109:[18,23) = 1098\\n", "pdf:page:1110:[0,19) = running header plus newline"]
+        },
+        {
+          "segment_id": "hlm80:appendix:all:p00004",
+          "segments_line": 12084,
+          "exact_prefix": "1099\n \n戚 蓼 生 序 \n",
+          "page_metadata_subspan": "pdf:page:1110:[35,40)"
+        }
+      ],
+      "image_and_style_check": "Original PDF physical 1109 shows 1098 at the footer; physical 1110 shows the running header above a rule and 1099 at the footer. 1098/1099 are TimesNewRomanPSMT 10.38pt, not the appendix body; header is KaiTi 10.38pt. Confirmed as page metadata, not a historical colophon date or body text.",
+      "adjudication": "Reader-2 correctly reports inclusion. Current DECLARED_APPENDIX_SCOPE overrides the generic size-derived EDITORIAL branch and coalesces page metadata with appendix content. Dataset intentionally covers editorial appendices, so mere non-novel content is not a defect. Whether its APPENDIX kind must exclude carrier furniture is an unresolved semantic contract question; the explicit MAIN_TEXT-purity guarantee is not breached by this example. No APPENDIX text enters chapter reading views.",
+      "surgical_action_if_content_only_scope_is_adopted": "In a new rule/dataset version, classify only identified page-header/footer runs as EDITORIAL before appendix scope, retaining section_ref=appendix:all and exact raw spans. Preserve Liu Quanfu's colophon, substantive titles and citation lines as APPENDIX; do not globally demote all small appendix text."
+    },
+    {
+      "id": "variant-page-metadata",
+      "classification": "PLAUSIBLE_DEFECT",
+      "observation_status": "CONFIRMED",
+      "current_documented_contract_violation": "NOT_ESTABLISHED",
+      "evidence": [
+        {
+          "segment_id": "hlm80:chapter:67:p00040",
+          "segments_line": 10889,
+          "kind": "VARIANT",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+          "span": "pdf:page:917:[3,13)",
+          "exact_text": "红楼梦脂评汇校本 \n"
+        },
+        {
+          "segment_id": "hlm80:chapter:67:p00042",
+          "segments_line": 10891,
+          "kind": "VARIANT",
+          "text_sha256": "8ed8a823e2dc4b3928098f8ae86fe904b3f6b43e3b5223b3210f5c01d95323a9",
+          "spans": ["pdf:page:917:[33,931)", "pdf:page:918:[0,25)"],
+          "exact_prefix": "906\n都说没看见。”薛姨妈说：",
+          "exact_suffix": "第六十七回 馈土物颦卿念故里 讯家童凤姐蓄阴谋 \n",
+          "page_metadata_subspans": ["pdf:page:917:[33,37) = 906\\n", "pdf:page:918:[0,25) = running header plus newline"]
+        }
+      ],
+      "image_and_style_check": "Original PDF physical 917 visibly separates the book running header and printed footer 906 from Chengjia alternate narrative. Header is KaiTi 10.38pt, footer TimesNewRomanPSMT 10.38pt, alternate body SimSun 12.11pt. Supplied physical 916 image shows the independently titled alternate section.",
+      "adjudication": "The metadata inclusion is confirmed and produced by DECLARED_ALTERNATE_CHAPTER_SCOPE precedence. Keeping the separately printed Chengjia alternate as VARIANT is explicitly intended: bound p00037 states '故本书正文依据早出的列藏本，另将程甲本文字附录于下。' No content-only VARIANT promise was located; hence plausible design gap rather than confirmed current-contract bug. ch67 MAIN_TEXT reading view contains neither 906 nor the running book header or alternate '自尽之后' opening.",
+      "surgical_action_if_content_only_scope_is_adopted": "In the new version, extract page furniture as EDITORIAL without removing the alternate narrative or changing its chapter. Do NOT simply move the existing generic size test ahead of VARIANT: its legitimate body is 12.11pt, below MAIN_TEXT's 13pt lower bound, and that change would demote the entire alternate."
+    },
+    {
+      "id": "chapter79-page1097-prefix-ownership",
+      "classification": "NONDEFECT",
+      "observation_status": "CONFIRMED",
+      "current_documented_contract_violation": "NOT_ESTABLISHED",
+      "evidence": [
+        {
+          "segment_id": "hlm80:chapter:79:p00082",
+          "segments_line": 11972,
+          "kind": "EDITORIAL",
+          "chapter": 79,
+          "span": "pdf:page:1097:[0,23)",
+          "text_sha256": "6588e74d4370f57db095117ab77f7a1a01a960eb7d657e99a81dda71439c50f3",
+          "exact_text": "www.hlmbbs.com \n \n1086\n"
+        },
+        {
+          "segment_id": "hlm80:chapter:79:p00083",
+          "segments_line": 11973,
+          "kind": "MAIN_TEXT",
+          "span": "pdf:page:1097:[23,27)",
+          "exact_text": " \n \n"
+        },
+        {
+          "segment_id": "hlm80:chapter:80:p00001",
+          "segments_line": 11974,
+          "kind": "EDITORIAL",
+          "span": "pdf:page:1097:[27,58)",
+          "exact_prefix": "第 八 十 回 \n薛文龙悔娶河东狮 贾迎春误嫁中山狼（续）"
+        }
+      ],
+      "image_and_inventory_check": "Supplied physical 1097 image clearly starts chapter 80 and has footer 1086. Actual extraction orders invisible URL and footer before heading; fixed inventory ends chapter79 at physical1097 offset27 and starts chapter80 there. Prefix [0,27) contains metadata/whitespace, no chapter80 narrative. Locator refers to the correct physical page and reconstructs exactly.",
+      "adjudication": "Reader-2 correctly observes a mismatch if chapter is interpreted as physical-page ownership. Existing chapter is heading-to-heading extraction-scope ownership, so these rows obey the declared inventory and do not misassign chapter80 story text. Documentation explains character-range slicing but does not explicitly explain this counterintuitive page-prefix consequence. Treat as a context/documentation improvement opportunity, not proven corruption of chapter boundaries. Invisible URL was checked in PDF extraction/styles, not claimed visually legible.",
+      "surgical_action": "Do not relabel existing records. First explicitly distinguish extraction-scope chapter from physical-page context. If physical-page ownership is desired, introduce that mapping in a versioned schema or new inventory/build version and move only page1097 prefix [0,27), with complete raw-span mapping; preserve story boundaries."
+    },
+    {
+      "id": "chapter49-corrected-glyph-brackets",
+      "classification": "NONDEFECT",
+      "observation_status": "CONFIRMED",
+      "current_documented_contract_violation": "NOT_ESTABLISHED",
+      "evidence": [
+        {
+          "segment_id": "hlm80:chapter:49:p00053",
+          "segments_line": 9845,
+          "kind": "EDITORIAL",
+          "span": "pdf:page:666:[534,537)",
+          "exact_text": "(麀)",
+          "style": "SimSun-GBK-EUC-H / 11.56pt / color2301728"
+        },
+        {
+          "segment_id": "hlm80:chapter:49:p00054",
+          "segments_line": 9846,
+          "kind": "MAIN_TEXT",
+          "span": "pdf:page:666:[537,558)",
+          "text_sha256": "b88f6ddb4eeed0faf46920ea61919d0255484215b62f1999eed66eedececdd9a",
+          "exact_text": "[麂]皮小靴，越显的蜂腰猿背，\n鹤势螂形。",
+          "style": "SimSun-GBK-EUC-H / 15.58pt / color2301728"
+        }
+      ],
+      "source_rule_quote": "本书使用半角圆括号( )和半角方括号[ ]作为校改文字记号：(某)表示删字，[某]表示补字，(甲)[乙]表示改字。",
+      "source_rule_location": "Bound extraction pdf:page:7 and inspected physical-page-0007.png; original edition, not a newly invented corpus exception.",
+      "reading_view_path": "/mnt/d/Code/RedChamberWorldHarness/corpus/front80/v1-candidate/chapters/ch49.json",
+      "reading_view_observation": "The exact [麂] is retained in MAIN_TEXT_READING_VIEW at character offset4973. The view is a raw MAIN_TEXT concatenation, not a separately promised bracket-normalized reading text.",
+      "adjudication": "This is the edition's printed corrected reading. The corpus preserves its Unicode brackets and classifies the corrected run by normal body typography; it did not itself change 麀 to 麂. Empty corpus corrections.jsonl is therefore not evidence of an unrecorded corpus correction. A clean normalized-text requirement would need a new explicit contract. Reader-1's notes calling this [鹿] are a local glyph-identification error: bound extraction, segment and PDF span show [麂]. Reader-2's glyph identification is corroborated; both opinions remain untouched.",
+      "surgical_action": "No source-text correction warranted. If a bracket-free reading view is later requested, keep the raw segment and declare a separate derived-view transform/mapping, or version the semantic segmentation of the two brackets to EDITORIAL while retaining 麂 as MAIN_TEXT. Do not strip all brackets blindly or silently replace this immutable segment."
+    }
+  ],
+  "requested_surgical_versioned_plan": {
+    "status": "PROPOSAL_ONLY_NOT_EXECUTED",
+    "steps": [
+      "Preserve v1 corpus/config/input inventory, both raw opinions and current selections. Decide explicitly whether APPENDIX/VARIANT mean scope-preserving source regions or content-only layers; scope-first code alone does not settle that literary contract. Record the page-prefix and correction-marker semantics rather than retrospectively claiming a human accepted exception.",
+      "If content-only scope is adopted, add a version-selected page-furniture rule before APPENDIX/VARIANT, using explicit page spans/geometry and header/footer evidence. Keep raw text and locator transforms empty. Target only appendix1098/1099 and running header, variant906 and book/chapter running headers; retain substantive appendix/alternate titles, colophons, citations and 12.11pt alternate body. Preserve the legacy classifier path so v1 remains reproducible.",
+      "Use proposed new dataset corpus:front80:v2-candidate, new build config /mnt/d/Code/RedChamberWorldHarness/data/corpus/builds/front80-v2-candidate.json and new output /mnt/d/Code/RedChamberWorldHarness/corpus/front80/v2-candidate/. Do not create or refresh these in this verification. If ownership semantics change, also version the input inventory/config; classifier changes alone cannot override the old fixed chapter spans correctly.",
+      "Regression-check header/footer versus actual small alternate/appendix body, chapter-opening page prefixes, correction brackets, watermark/invisible text, cross-page merges and exact raw reconstruction. Verify targeted furniture no longer enters content-only scope and that no MAIN_TEXT narrative is lost. Preserve [麂] unless a separately authorized normalized-view contract is introduced.",
+      "Rebuild the chosen new version twice in the declared locked environment; produce raw-span overlap one-to-many/many-to-one mapping instead of relying on reused p-numbers. Recompute products, manifest and dependent bindings in new versions. Publish a new audit protocol/material selecting the newly split affected rows and actual relevant page images, without changing the old reports to approve new inputs.",
+      "Obtain genuine independent-human review for the new manifest/protocol before any admission. Existing negative model opinion remains available as historical evidence; another model report or successful engineering rebuild cannot override it or supply human PASS."
+    ],
+    "no_current_corpus_correction_applied": true
+  },
+  "limitations": [
+    "Only disputed cases and relevant context received visual adjudication; no full 80-chapter visual boundary certification.",
+    "No claim that all APPENDIX/VARIANT furniture has been inventoried or that broad classifier precedence alone proves a documentation violation.",
+    "Supplied PNGs were read and their local bytes hashed, but not independently authenticated as canonical renders. Additional 917/1109/1110 evidence was viewed directly from the hash-authenticated original PDF.",
+    "Unknown witnesses162 and unaligned7497 are acknowledged report declarations, not independently recounted or solved here.",
+    "No APIs, commits, delegation, corpus/claims/audit-opinion edits, human impersonation, acceptance commands or PASS override."
+  ]
+}

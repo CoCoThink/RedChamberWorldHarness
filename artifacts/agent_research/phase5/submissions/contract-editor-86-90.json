@@ -1,0 +1,4159 @@
+{
+  "schema_version": 1,
+  "kind": "AGENT_CONTRACT_EDITOR_REPORT",
+  "editor": "EDITOR86-90",
+  "status": "SUBMITTED_WITH_PENDING_ISSUES",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "scope": {
+    "chapters": [
+      86,
+      87,
+      88,
+      89,
+      90
+    ],
+    "actual_v1_contracts_read": 25,
+    "new_v2_contracts_written": 25,
+    "owned_output_directory": "data/planning/contracts/agent-edited-v1",
+    "writer": "rcwh.planning.contracts.write_contract -> references.write_new(path.open(\"xb\"))",
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "bound_inputs_only": true
+  },
+  "qualification": {
+    "independent_editorial_pass": "This editor read the actual v1 documents and their bound inputs, then prescribed new v2 obligations; independence does not confer semantic reviewer qualification.",
+    "peer_semantic_review_claimed": false,
+    "human_expert_review_claimed": false,
+    "prose_reviewed": false,
+    "qualified_review_artifacts_created": false,
+    "semantic_status": "NOT_CHECKED"
+  },
+  "preservation": {
+    "original_contracts_unchanged": true,
+    "seed_plan_world_source_bytes_unchanged": true,
+    "protected_input_file_count": 68,
+    "all_existing_unknown_and_pending_state_conditions_retained": true,
+    "event_bindings_not_invented": true,
+    "original_reference_and_input_bindings_retained": true,
+    "new_scene_ids_created": [],
+    "commits_created": false,
+    "provider_api_calls": false
+  },
+  "chapter_level_pending_issues": [
+    {
+      "id": "88-S3b",
+      "code": "MISSING_BOUND_SCENE_SEED",
+      "severity": "HIGH",
+      "status": "UNRESOLVED",
+      "finding": "Chapter 88 card fields 1, 4 and 18 require a post-marriage short return/thanks scene with exact 好歹留着麝月, but the bound plan and immutable source seed list contain only 88-S1..88-S5. This batch cannot supply a legitimate 88-S3b contract.",
+      "rationale": "Premarital departure is not marriage completion; a card quotation is not an executed post-marriage bridge. No hidden scene, new id, event, or premature quotation was invented.",
+      "required_next_step": "Resolve the upstream missing bound seed and separately authorize/verify its contract and post-marriage placement. Until then chapter-88 bridge coverage remains incomplete.",
+      "support": {
+        "card_citations": [
+          {
+            "byte_range": [
+              21063,
+              21484
+            ],
+            "lines": [
+              524,
+              531
+            ],
+            "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+            "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+            "text_sha256": "44c59fa7e004c69a8e52835a55ef26316717ea46a45ec7ddf7729404f7f94661"
+          },
+          {
+            "byte_range": [
+              21826,
+              22035
+            ],
+            "lines": [
+              538,
+              540
+            ],
+            "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+            "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+            "text_sha256": "fb5f093d0ec66ca9c5a460eedab0f67926bde0ad5692ca6a5994099d0f06ba37"
+          },
+          {
+            "byte_range": [
+              23233,
+              23623
+            ],
+            "lines": [
+              577,
+              580
+            ],
+            "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+            "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+            "text_sha256": "7dea032f7b86c121946d5b3850a8ef4592401ff4ceb26cd14a82b8777cc445a6"
+          }
+        ],
+        "seed_list_record": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "8130d4719ae3ad6b6272d1a126dbb6fa8eb3c4ee186743d5ff3601031c695252",
+          "value": {
+            "action": "重点重构",
+            "candidate_scenes": [
+              {
+                "id": "88-S1",
+                "title": "婚事不能只从怡红院内部决定"
+              },
+              {
+                "id": "88-S2",
+                "title": "袭人不是只交钥匙，也要处理“哪些东西属于自己”"
+              },
+              {
+                "id": "88-S3",
+                "title": "出门前最后一个日常动作"
+              },
+              {
+                "id": "88-S4",
+                "title": "消息必须从孙家那边“有成本地”传来"
+              },
+              {
+                "id": "88-S5",
+                "title": "娘家想“做点什么”，却发现权力有限"
+              }
+            ],
+            "chapter": 88,
+            "core_process": "袭人离位/出阁；迎春死讯由孙家进入贾家",
+            "handoff": "40、39、38",
+            "intensity": "高",
+            "source_ref": "asset:sha256:4e1dd2a2d7669011ece72f8d7a5b93903b235042aadd528f0178f6544901dc7b"
+          }
+        }
+      }
+    }
+  ],
+  "common_pending_issues": [
+    {
+      "code": "LOCAL_CHECKPOINTS_NOT_BOUND",
+      "affected_scenes": [
+        "86-S1",
+        "86-S2",
+        "86-S3",
+        "86-S4",
+        "86-S5",
+        "86-S6",
+        "87-S1",
+        "87-S2",
+        "87-S3",
+        "87-S4",
+        "87-S5",
+        "88-S1",
+        "88-S2",
+        "88-S3",
+        "88-S4",
+        "88-S5",
+        "89-S1",
+        "89-S2",
+        "89-S3",
+        "89-S4",
+        "89-S5",
+        "89-S6",
+        "90-S1",
+        "90-S2",
+        "90-S3"
+      ],
+      "status": "PENDING",
+      "detail": "First scenes retain coarse chapter-entry values; later scenes lack supported scene-local checkpoints. Editorial order declarations do not inherit state."
+    },
+    {
+      "code": "COARSE_EVENTS_NOT_SCENE_EXECUTION",
+      "affected_scenes": [
+        "86-S1",
+        "86-S2",
+        "86-S3",
+        "86-S4",
+        "86-S5",
+        "86-S6",
+        "87-S1",
+        "87-S2",
+        "87-S3",
+        "87-S4",
+        "87-S5",
+        "88-S1",
+        "88-S2",
+        "88-S3",
+        "88-S4",
+        "88-S5",
+        "89-S1",
+        "89-S2",
+        "89-S3",
+        "89-S4",
+        "89-S5",
+        "89-S6",
+        "90-S1",
+        "90-S2",
+        "90-S3"
+      ],
+      "status": "PENDING",
+      "detail": "W86/W87/W88/W89/W90 and OT/K chapter or legacy-scene events remain unbound; they cannot certify scene-local obligations, transport, role transfers, arrival or medicine timing."
+    },
+    {
+      "code": "PROSE_SEMANTICS_UNREVIEWED",
+      "affected_scenes": [
+        "86-S1",
+        "86-S2",
+        "86-S3",
+        "86-S4",
+        "86-S5",
+        "86-S6",
+        "87-S1",
+        "87-S2",
+        "87-S3",
+        "87-S4",
+        "87-S5",
+        "88-S1",
+        "88-S2",
+        "88-S3",
+        "88-S4",
+        "88-S5",
+        "89-S1",
+        "89-S2",
+        "89-S3",
+        "89-S4",
+        "89-S5",
+        "89-S6",
+        "90-S1",
+        "90-S2",
+        "90-S3"
+      ],
+      "status": "NOT_CHECKED",
+      "detail": "No bound prose or qualified independent semantic attestation was supplied. Every scene remains non-PASS semantically."
+    }
+  ],
+  "summary": {
+    "edited_contract_count": 25,
+    "edited_count_by_chapter": {
+      "86": 6,
+      "87": 5,
+      "88": 5,
+      "89": 6,
+      "90": 3
+    },
+    "scenes_with_pending_issues": 25,
+    "unresolved_item_count": 206,
+    "pending_state_condition_count": 84,
+    "schema_error_count": 0,
+    "beat_reference_error_count": 0,
+    "deterministic_failure_count": 0,
+    "diagnostic_status_counts": {
+      "declared_compatibility": {
+        "PENDING": 25
+      },
+      "deterministic_world_state_replay": {
+        "PENDING": 5,
+        "NOT_CHECKED": 20
+      },
+      "prose_supported_semantic_replay": {
+        "NOT_CHECKED": 25
+      }
+    },
+    "semantic_pass_count": 0
+  },
+  "scenes": [
+    {
+      "scene_id": "86-S1",
+      "chapter": 86,
+      "order": 1,
+      "title": "最后一次“明日安排”",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/86-S1.v1.json",
+        "sha256": "a89c5b370f03bceb16d1627b29f7b51492d61ab2884365a63ef7469d42876c19"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+        "sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "CARE_VERSUS_TERMINAL_COOLING",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "病晨照护供给与终局冷药缺少明确分界；可能把药冷误当断药或死亡发动原因。",
+          "rationale": "明确仍有资源却身体不能承受，使冷药只在不可继续照护的末端承担收束；不新增药温事件。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "required_beats/1",
+          "before": "米汤、药、热水与炉火仍可供用；火箸碰茶盘的声音落在实际照护动作里，钱物不得先写成败后匮乏。",
+          "after": "病晨温药、取米汤、备热水与炉火仍在可继续的照护链上；火箸碰茶盘来自这次劳作。资源齐全而身体难以承受，与86-S6最后无人再温的冷药分开，不用药冷倒推缺药致死。"
+        },
+        {
+          "field": "required_beats/3",
+          "operation": "ADD",
+          "after": "明日安排是病者尚在安排下一次日常照护，不是叙述者替她预告死期；元春丧后的长期病程不能被压缩成元春死后几天。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "timing: 元春丧后长期病程与本场最后病晨必须区分；T+开放窗不是精确日期，未绑定本场时刻。"
+        }
+      ],
+      "unresolved": [
+        "participants: 雪雁及厨房小丫头在卡中有角色，但实体库没有对应ID；不能伪造xueyan或厨房人员。",
+        "objects: 米汤器、药吊子、火箸、茶盘、热水器与炉火没有独立对象记录；仅药碗可实名绑定。",
+        "knowledge: daiyu_illness_severe是已注册事实，但ch86_last_night入口不能自动充当86-S1局部认知入口。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "timing: 元春丧后长期病程与本场最后病晨必须区分；T+开放窗不是精确日期，未绑定本场时刻。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "exit_state",
+          "equals": "character.daiyu.body_state",
+          "reason": "普通病晨到下一场的身体变化没有场级事件；W86-DAIYU-DEATH只给全回终态。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+          "reason": "OT86-01在全回末端转冷，不能据此断定明日安排结束时的药温。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "participants: 雪雁及厨房小丫头在卡中有角色，但实体库没有对应ID；不能伪造xueyan或厨房人员。, objects: 米汤器、药吊子、火箸、茶盘、热水器与炉火没有独立对象记录；仅药碗可实名绑定。, knowledge: daiyu_illness_severe是已注册事实，但ch86_last_night入口不能自动充当86-S1局部认知入口。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, timing: 元春丧后长期病程与本场最后病晨必须区分；T+开放窗不是精确日期，未绑定本场时刻。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "exit_state: character.daiyu.body_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "exit_state: object.OBJ-MEDICINE-BOWL-86.temperature"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "PENDING",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "entry_state: character.daiyu.life_state; declared='ACTIVE', actual='active'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "entry_state: character.daiyu.body_state; declared='declining_under_mourning', actual='declining_under_mourning'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "entry_state: object.OBJ-MEDICINE-BOWL-86.temperature; declared='warm', actual='warm'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "preconditions: character.daiyu.life_state; declared='ACTIVE', actual='active'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "preconditions: object.OBJ-MEDICINE-BOWL-86.status; declared='CONTAINS_UNFINISHED_MEDICINE', actual='contains_unfinished_medicine'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "exit_state: character.daiyu.body_state; actual='declining_under_mourning'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "exit_state: object.OBJ-MEDICINE-BOWL-86.temperature; actual='warm'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "requires supported explicit entry/exit targets and bound events; empty data is not replay success"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "draft/unresolved contract cannot receive an aggregate replay PASS"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "86-S2",
+      "chapter": 86,
+      "order": 2,
+      "title": "医生“迟”必须有现实原因",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/86-S2.v1.json",
+        "sha256": "d7883d68ce0cd150643bd3bc8069d89f9f9d4fec16fd8f84febc9c0490e99e1d"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+        "sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "DOCTOR_AND_MESSAGE_RELAYS",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "医生被绊住只是背景句时，两条迟链仍可能合并为单一便利性延误。",
+          "rationale": "要求可见的请医反馈与报病危经手动作分别存在，避免人为封锁和全员同步知情。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/86-S1.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/86-S1.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "医者被别处事务绊住；只把普通现实缘由写到足以交代迟到，不补造具体病家、诊断或精确时辰。",
+          "after": "至少让候医者收到医者被别处事务绊住的现实反馈，和跑腿去请、返回/再问的劳务接上；反馈足以说明迟到而不伪造具体病家、诊断、时辰或已解决的行程。"
+        },
+        {
+          "field": "required_beats/2",
+          "before": "身体恶化与外传消息分别落到动作上；候医与通知宝玉两条迟链不可混成有人故意设障。",
+          "after": "医者迟到的反馈与病危消息报宝玉是两条经手链：病势先恶化，报信再外传；不能因为医生未到就令宝玉同步知道死亡，更不能让等医生暂停紫鹃的照护。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "relay: 请医反馈、报病危与宝玉到达仍缺三种局部时间边界；本次只规定分链，不给出路线或取得事件。"
+        }
+      ],
+      "unresolved": [
+        "participants: 医者、药铺经手人、跑腿及可能报信的雪雁都无实体ID，故演员集合仅部分可绑定。",
+        "timing: 医者在别处何事、往返路径及病危报信先后尚未有独立场级事实，必须留作具体作者选择而非KNOWN。",
+        "knowledge: 病重与今夜可能不起均有事实记录，但怀疑获得的种子场位置未核定。",
+        "entry_checkpoint: 86-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.daiyu.body_state: 未有86-S1出口到此场的身体检查点；全回病程不能注入局部入口。",
+        "entry_state.object.OBJ-MEDICINE-BOWL-86.temperature: 已注册药碗基线与全回转冷事件不足以给出候医时药温。",
+        "preconditions.character.zijuan.knowledge.daiyu_illness_severe: legacy认知场的入口虽列病重，尚无86-S2与该入口的明确对应。",
+        "relay: 请医反馈、报病危与宝玉到达仍缺三种局部时间边界；本次只规定分链，不给出路线或取得事件。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.daiyu.body_state",
+          "reason": "未有86-S1出口到此场的身体检查点；全回病程不能注入局部入口。"
+        },
+        {
+          "field": "entry_state",
+          "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+          "reason": "已注册药碗基线与全回转冷事件不足以给出候医时药温。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.zijuan.knowledge.daiyu_illness_severe",
+          "reason": "legacy认知场的入口虽列病重，尚无86-S2与该入口的明确对应。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.daiyu.body_state",
+          "reason": "候医延误的具体时长及身体结果没有场级世界事件。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.zijuan.knowledge.daiyu_may_die_tonight",
+          "reason": "K86-ZIJUAN-SEES-RAPID-DECLINE是真实注册事件，但没有证据把它精确放进此候医场。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+              "detail": "participants: 医者、药铺经手人、跑腿及可能报信的雪雁都无实体ID，故演员集合仅部分可绑定。, timing: 医者在别处何事、往返路径及病危报信先后尚未有独立场级事实，必须留作具体作者选择而非KNOWN。, knowledge: 病重与今夜可能不起均有事实记录，但怀疑获得的种子场位置未核定。, entry_checkpoint: 86-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.daiyu.body_state: 未有86-S1出口到此场的身体检查点；全回病程不能注入局部入口。, entry_state.object.OBJ-MEDICINE-BOWL-86.temperature: 已注册药碗基线与全回转冷事件不足以给出候医时药温。, preconditions.character.zijuan.knowledge.daiyu_illness_severe: legacy认知场的入口虽列病重，尚无86-S2与该入口的明确对应。, relay: 请医反馈、报病危与宝玉到达仍缺三种局部时间边界；本次只规定分链，不给出路线或取得事件。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+              "detail": "entry_state: character.daiyu.body_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+              "detail": "entry_state: object.OBJ-MEDICINE-BOWL-86.temperature"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+              "detail": "preconditions: character.zijuan.knowledge.daiyu_illness_severe"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+              "detail": "exit_state: character.daiyu.body_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+              "detail": "exit_state: character.zijuan.knowledge.daiyu_may_die_tonight"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "86-S3",
+      "chapter": 86,
+      "order": 3,
+      "title": "临终前最后一个文人动作只做到一半",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/86-S3.v1.json",
+        "sha256": "ce9381d2f9050dbb668388f89326020fd2df3d6797501ae6c3df23a9139fc531"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/86-S3.v2.json",
+        "sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "UNFINISHED_ACTION_NOT_TEXT_COMPLETION",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "空字虽被保护，旁人辨稿、叙述者补字或完整遗言仍可能从未成动作旁路进入。",
+          "rationale": "把中止点限定为身体不能续做，封住旁人/叙述者补全和遗稿展览；旧稿仍不伪装为对象ID。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/86-S2.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/86-S2.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "旧集或稿夹只在临终生活中被触及，紫鹃不翻稿，未成动作由身体不能续做而止。",
+          "after": "紫鹃面对的是黛玉伸手改字却不能续做的身体动作；旧集/稿夹只为这一临终生活动作服务，紫鹃不翻稿、不辨作品、不替她续写。G01的空字也不由叙述者或旁人补出。"
+        },
+        {
+          "field": "forbidden_beats/3",
+          "operation": "ADD",
+          "after": "借改字未成转出一段可完整引用的遗言或绝命诗，或把85的A01完成任务当作本场新作完成事实。"
+        }
+      ],
+      "unresolved": [
+        "objects: G01草稿、旧集、稿夹与书写用具没有对象注册ID；G01是卡内诗文接口，不得冒充对象ID。",
+        "timing: 改字未成相对医者迟到和身体不可逆的场级顺序尚待编辑，不能把source-list order当死亡计时。",
+        "entry_checkpoint: 86-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.daiyu.life_state: 该种子在局部时序上标为临终前，但顺序仍是来源列表顺序，不能作为实际生命检查点。",
+        "preconditions.character.daiyu.body_state: 伸手改字所需身体能力没有86-S3的世界记录；不可从宣言推回可行动状态。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.daiyu.life_state",
+          "reason": "该种子在局部时序上标为临终前，但顺序仍是来源列表顺序，不能作为实际生命检查点。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.daiyu.body_state",
+          "reason": "伸手改字所需身体能力没有86-S3的世界记录；不可从宣言推回可行动状态。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.daiyu.body_state",
+          "reason": "未成改字不是可执行身体效果；W86仅有长期病程终态。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/86-S3.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S3.v2.json",
+              "detail": "objects: G01草稿、旧集、稿夹与书写用具没有对象注册ID；G01是卡内诗文接口，不得冒充对象ID。, timing: 改字未成相对医者迟到和身体不可逆的场级顺序尚待编辑，不能把source-list order当死亡计时。, entry_checkpoint: 86-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.daiyu.life_state: 该种子在局部时序上标为临终前，但顺序仍是来源列表顺序，不能作为实际生命检查点。, preconditions.character.daiyu.body_state: 伸手改字所需身体能力没有86-S3的世界记录；不可从宣言推回可行动状态。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S3.v2.json",
+              "detail": "entry_state: character.daiyu.life_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S3.v2.json",
+              "detail": "preconditions: character.daiyu.body_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S3.v2.json",
+              "detail": "exit_state: character.daiyu.body_state"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S3.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S3.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S3.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "86-S4",
+      "chapter": 86,
+      "order": 4,
+      "title": "死亡之后先处理“身体”",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/86-S4.v1.json",
+        "sha256": "5fdef5e3c9400f22d2151b91730e47ed4fd38ea5577151d40f6ec7d30145cdb0"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+        "sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "BODY_INFORMATION_FUNERAL_CLOCK",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "身体料理与后事第一轮容易合并成抒情总场，且列表顺序可能误读为必须办完后事才报信。",
+          "rationale": "显式分层实务承接并允许信息链交错；死亡和确切死时仍不由要求本身自证。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/86-S3.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/86-S3.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "身体跨过不可逆边界后，先安排热水、衣物和身体料理；李纨、王夫人的参与各落实际差事。",
+          "after": "不可逆之后先分清床边身体料理、拿热水衣物、第一轮后事安排的承接；紫鹃保持床边照护位置，李纨/王夫人的参与必须落在可见实务而非轮流哭说。具体礼俗动作不扩写为未有依据的仪式清单。"
+        },
+        {
+          "field": "required_beats/3",
+          "operation": "ADD",
+          "after": "身体处理与外传病危/死讯可以交错，但必须标清各自经手和消息所指；86-S4在列表中先于86-S5，不等于所有后事完毕之后才准许报信。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "obligations: 身体、热水衣物与后事第一轮已有编辑任务分层；具体承接时刻、死讯内容与礼俗操作仍无场级事实，不声明已执行。"
+        }
+      ],
+      "unresolved": [
+        "events: W86-DAIYU-DEATH含全回生命终态及关系变化，不等于86-S4的精确身体入口/出口；暂不绑定事件。",
+        "knowledge: K86-DEATH-OCCURS的目击者更新已注册，但旧场覆盖整个最后一夜，不能默认本种子等同旧场。",
+        "objects: 热水、衣物、炉火与死后身体料理器具未独立注册；药碗不替代这些物。",
+        "entry_checkpoint: 86-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.daiyu.life_state: 种子要求死后身体料理，但W86死亡事件是全回粗粒度终点，未给此场入口的检查点。",
+        "preconditions.character.zijuan.knowledge.daiyu_death_exact_moment: K86-DEATH-OCCURS只绑定ch86_last_night；本种子的目击时点未独立对应。",
+        "obligations: 身体、热水衣物与后事第一轮已有编辑任务分层；具体承接时刻、死讯内容与礼俗操作仍无场级事实，不声明已执行。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.daiyu.life_state",
+          "reason": "种子要求死后身体料理，但W86死亡事件是全回粗粒度终点，未给此场入口的检查点。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.zijuan.knowledge.daiyu_death_exact_moment",
+          "reason": "K86-DEATH-OCCURS只绑定ch86_last_night；本种子的目击时点未独立对应。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.daiyu.life_state",
+          "reason": "死亡是所需叙事节点，不能因本合同声明就把此场出口当已回放DEAD。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+          "reason": "身体料理阶段药温何时转冷未有种子级对象事件；OT86-01不能整段回灌。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+              "detail": "events: W86-DAIYU-DEATH含全回生命终态及关系变化，不等于86-S4的精确身体入口/出口；暂不绑定事件。, knowledge: K86-DEATH-OCCURS的目击者更新已注册，但旧场覆盖整个最后一夜，不能默认本种子等同旧场。, objects: 热水、衣物、炉火与死后身体料理器具未独立注册；药碗不替代这些物。, entry_checkpoint: 86-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.daiyu.life_state: 种子要求死后身体料理，但W86死亡事件是全回粗粒度终点，未给此场入口的检查点。, preconditions.character.zijuan.knowledge.daiyu_death_exact_moment: K86-DEATH-OCCURS只绑定ch86_last_night；本种子的目击时点未独立对应。, obligations: 身体、热水衣物与后事第一轮已有编辑任务分层；具体承接时刻、死讯内容与礼俗操作仍无场级事实，不声明已执行。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+              "detail": "entry_state: character.daiyu.life_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+              "detail": "preconditions: character.zijuan.knowledge.daiyu_death_exact_moment"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+              "detail": "exit_state: character.daiyu.life_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+              "detail": "exit_state: object.OBJ-MEDICINE-BOWL-86.temperature"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "86-S5",
+      "chapter": 86,
+      "order": 5,
+      "title": "宝玉为什么“来迟”",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/86-S5.v1.json",
+        "sha256": "20b66f0464782200fdb8bf8179619a01a7397b06c0650e5b0e3e1f16868b3101"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+        "sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "ARRIVAL_KNOWLEDGE_BOUNDARY",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "HIGH",
+          "finding": "病危消息、确切死时与可能赶上的信念虽被提到，缺少独立到场前/后的写作边界。",
+          "rationale": "要求报病危与获知死时分离，把真实到达留给下一场；不把K86旧场的取得事件搬入本场。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/86-S4.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/86-S4.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "把消息发生、传递、宝玉得知及身体料理的相对先后写清；不让迟来变成有人刻意不准相见。",
+          "after": "把照护者感到病危、经手人去报、宝玉迟获病势突变、赶来及死后身体料理的相对边界写清；消息只是病危不等于确切死时，SOURCE_LIST顺序不能把报信硬放在所有料理之后。"
+        },
+        {
+          "field": "required_beats/3",
+          "operation": "ADD",
+          "after": "到场前宝玉不得知道最后一息的确切时刻；可能赶上只是人物信念，不能变成他确曾赶上。到达边界交给86-S6的到场动作，不以同在S02替代赶路。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "arrival_boundary: 已限定到场前不得知确切死时，但报信内容、获信地点与抵达时刻未有本种子知识/移动检查点。"
+        }
+      ],
+      "unresolved": [
+        "participants: 报信的雪雁/跑腿没有注册ID，不能把信息链压缩成只有宝玉与紫鹃面对面。",
+        "timing: 报信者路线、宝玉获信地点及到达边界未记录；当前列表顺序也不证明通知发生在全部料理之后。",
+        "knowledge: 三个相关事实/信念均可引用，但旧场K86更新在六个种子之间的分配未独立核定。",
+        "entry_checkpoint: 86-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.baoyu.knowledge.daiyu_death_exact_moment: 旧场入口记宝玉不知确切死时，但无法证明86-S5起点与该入口相同。",
+        "entry_state.character.baoyu.location: S02只是粗府域；未有宝玉收到消息时的场级位置与行程。",
+        "preconditions.character.baoyu.knowledge.baoyu_may_still_arrive_in_time: 注册belief不证明本场收到消息前后仍持同一信念。",
+        "arrival_boundary: 已限定到场前不得知确切死时，但报信内容、获信地点与抵达时刻未有本种子知识/移动检查点。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+          "reason": "旧场入口记宝玉不知确切死时，但无法证明86-S5起点与该入口相同。"
+        },
+        {
+          "field": "entry_state",
+          "equals": "character.baoyu.location",
+          "reason": "S02只是粗府域；未有宝玉收到消息时的场级位置与行程。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.baoyu.knowledge.baoyu_may_still_arrive_in_time",
+          "reason": "注册belief不证明本场收到消息前后仍持同一信念。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+          "reason": "K86-BAOYU-LEARNS-AFTER-ARRIVAL须在到达后；此场信息传递边界未定，不提前给知情终态。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baoyu.location",
+          "reason": "赶来路径与抵达边界未有场级移动事件；不能由同府位置推断已经入室。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+              "detail": "participants: 报信的雪雁/跑腿没有注册ID，不能把信息链压缩成只有宝玉与紫鹃面对面。, timing: 报信者路线、宝玉获信地点及到达边界未记录；当前列表顺序也不证明通知发生在全部料理之后。, knowledge: 三个相关事实/信念均可引用，但旧场K86更新在六个种子之间的分配未独立核定。, entry_checkpoint: 86-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.baoyu.knowledge.daiyu_death_exact_moment: 旧场入口记宝玉不知确切死时，但无法证明86-S5起点与该入口相同。, entry_state.character.baoyu.location: S02只是粗府域；未有宝玉收到消息时的场级位置与行程。, preconditions.character.baoyu.knowledge.baoyu_may_still_arrive_in_time: 注册belief不证明本场收到消息前后仍持同一信念。, arrival_boundary: 已限定到场前不得知确切死时，但报信内容、获信地点与抵达时刻未有本种子知识/移动检查点。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+              "detail": "entry_state: character.baoyu.knowledge.daiyu_death_exact_moment"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+              "detail": "entry_state: character.baoyu.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+              "detail": "preconditions: character.baoyu.knowledge.baoyu_may_still_arrive_in_time"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+              "detail": "exit_state: character.baoyu.knowledge.daiyu_death_exact_moment"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+              "detail": "exit_state: character.baoyu.location"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "86-S6",
+      "chapter": 86,
+      "order": 6,
+      "title": "宝玉来时“冷药仍在”",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/86-S6.v1.json",
+        "sha256": "f59ffd5398999032c0a73073cf36a35eaa42fa639abaf3c8a29a76a1cc4081c3"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+        "sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "REQUEST_IS_NOT_REHEATING",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "HIGH",
+          "finding": "“再温一温”可能被执行为复温动作，或药温/知识时点被旧事件终态替代。",
+          "rationale": "区分请求与执行，并把未尽药作为独立UNKNOWN出口目标；死亡、到场、获知和末端冷药不自证。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/86-S5.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/86-S5.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "宝玉来到后只问“药还没吃么？再温一温”；以普通问药显出已无法继续的照护。",
+          "after": "实际到场后宝玉面对仍未吃完的药，只问“药还没吃么？再温一温”；问药是请求，不是温药执行，也不证明到场前已知确切死时。到场后获知与问话的精确相位仍待场级核定。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "保留药吊子、炉火熄与药仍未尽的现实连续性；紫鹃不翻稿，无人再温冷药。",
+          "after": "药吊子与熄去的炉火保留照护留下的物理痕迹；药仍未尽，无人落实宝玉再温的请求，紫鹃不翻稿。冷药保持为结尾实物，不因一个祈使句转成温热或已服完。"
+        },
+        {
+          "field": "exit_state/object.OBJ-MEDICINE-BOWL-86.status",
+          "operation": "ADD_UNKNOWN",
+          "reason": "末端仍为未尽药是新增明确写作义务，但OT86-01未映射此种子，不能把全回to.status自动当本场回放结果。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "terminal_object: 必须同时守住未尽药与冷两种末端义务；冷药请求未执行，但种子级状态/温度转换仍未知。"
+        }
+      ],
+      "unresolved": [
+        "objects: 只使用OBJ-MEDICINE-BOWL-86；medicine_bowl_86是独立legacy记录，位置包含声明不构成两ID或两地点相等。",
+        "events: OT86-01是全回末端药温转换，未宣称它等于此种子的场级事件。",
+        "knowledge: ch86_last_night不自动等于86-S6；宝玉获知死时的具体局部边界未核定。",
+        "entry_checkpoint: 86-S6为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.object.OBJ-MEDICINE-BOWL-86.temperature: OT86-01支持本回药转冷，但种子抵达时的具体转冷检查点仍未绑定。",
+        "entry_state.character.baoyu.knowledge.daiyu_death_exact_moment: 到达与获知先后尚未映射到86-S6；不可把K86到达后更新当入口已知。",
+        "preconditions.object.OBJ-MEDICINE-BOWL-86.status: 全回药碗基线未尽药不能自动成为后场局部入口；需独立确认是否始终同碗未动。",
+        "terminal_object: 必须同时守住未尽药与冷两种末端义务；冷药请求未执行，但种子级状态/温度转换仍未知。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+          "reason": "OT86-01支持本回药转冷，但种子抵达时的具体转冷检查点仍未绑定。"
+        },
+        {
+          "field": "entry_state",
+          "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+          "reason": "到达与获知先后尚未映射到86-S6；不可把K86到达后更新当入口已知。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "object.OBJ-MEDICINE-BOWL-86.status",
+          "reason": "全回药碗基线未尽药不能自动成为后场局部入口；需独立确认是否始终同碗未动。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+          "reason": "冷药是必须写出的目标；缺少86-S6事件绑定，故不能因写作要求声称已回放cold。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+          "reason": "K86-BAOYU-LEARNS-AFTER-ARRIVAL是真实旧场事件，其具体种子归属和取证尚待独立编辑。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "object.OBJ-MEDICINE-BOWL-86.status",
+          "reason": "末端仍为未尽药是新增明确写作义务，但OT86-01未映射此种子，不能把全回to.status自动当本场回放结果。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+              "detail": "objects: 只使用OBJ-MEDICINE-BOWL-86；medicine_bowl_86是独立legacy记录，位置包含声明不构成两ID或两地点相等。, events: OT86-01是全回末端药温转换，未宣称它等于此种子的场级事件。, knowledge: ch86_last_night不自动等于86-S6；宝玉获知死时的具体局部边界未核定。, entry_checkpoint: 86-S6为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.object.OBJ-MEDICINE-BOWL-86.temperature: OT86-01支持本回药转冷，但种子抵达时的具体转冷检查点仍未绑定。, entry_state.character.baoyu.knowledge.daiyu_death_exact_moment: 到达与获知先后尚未映射到86-S6；不可把K86到达后更新当入口已知。, preconditions.object.OBJ-MEDICINE-BOWL-86.status: 全回药碗基线未尽药不能自动成为后场局部入口；需独立确认是否始终同碗未动。, terminal_object: 必须同时守住未尽药与冷两种末端义务；冷药请求未执行，但种子级状态/温度转换仍未知。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+              "detail": "entry_state: object.OBJ-MEDICINE-BOWL-86.temperature"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+              "detail": "entry_state: character.baoyu.knowledge.daiyu_death_exact_moment"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+              "detail": "preconditions: object.OBJ-MEDICINE-BOWL-86.status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+              "detail": "exit_state: object.OBJ-MEDICINE-BOWL-86.temperature"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+              "detail": "exit_state: character.baoyu.knowledge.daiyu_death_exact_moment"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+              "detail": "exit_state: object.OBJ-MEDICINE-BOWL-86.status"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/86-S6.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "87-S1",
+      "chapter": 87,
+      "order": 1,
+      "title": "婚议不是一次会议决定",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/87-S1.v1.json",
+        "sha256": "77914be46b9c865e47849bc15d59e5a92dc6f497eccc3753f949f65e8e829243"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+        "sha256": "bbef6f97dd3757588ac28d380ecc7f73f20f6e8fc48c2d3c06e262113101c091"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "TWO_MOURNING_OBLIGATIONS",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "HIGH",
+          "finding": "几个月缓冲容易被当作元春丧与黛亡后礼俗问题的万能解除。",
+          "rationale": "分开长期丧规常态化和黛亡后再数月缓冲，不把当前C开放窗改成制度性定日。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "required_beats/0",
+          "before": "先给出“又过了几个月”的缓冲与仍在的元春丧期背景，再通过不同小谈逐步形成婚议。",
+          "after": "黛亡后再过数月的情感/礼俗缓冲，与元春丧规从急骤转常例的背景分别交代；“又过了几个月”不等于全部丧制自动解除。婚议通过多次内宅小谈形成，而非一次会议宣布许可。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "mourning_obligations: 两种丧的缓冲已分别要求，但精确日期、丧规可行办理与许可程序仍缺依据；不造法定期限或一纸豁免。"
+        }
+      ],
+      "unresolved": [
+        "timing: 几个月是卡规定的当前实现缓冲，起止日期和丧期礼制办理尚无世界事件叶值；不声明KNOWN精确时间。",
+        "state_model: 婚议的各次小谈、许可与仆役知情范围没有注册知识事实；不得发明marriage_approved等事实ID。",
+        "objects: 内宅筹备纸、布与礼务清单无独立对象记录。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "mourning_obligations: 两种丧的缓冲已分别要求，但精确日期、丧规可行办理与许可程序仍缺依据；不造法定期限或一纸豁免。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "exit_state",
+          "equals": "character.wangfuren.location",
+          "reason": "多次小谈的地点与收束场位未有局部移动记录；不能由内宅身份锁定同一场所。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "timing: 几个月是卡规定的当前实现缓冲，起止日期和丧期礼制办理尚无世界事件叶值；不声明KNOWN精确时间。, state_model: 婚议的各次小谈、许可与仆役知情范围没有注册知识事实；不得发明marriage_approved等事实ID。, objects: 内宅筹备纸、布与礼务清单无独立对象记录。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, mourning_obligations: 两种丧的缓冲已分别要求，但精确日期、丧规可行办理与许可程序仍缺依据；不造法定期限或一纸豁免。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "exit_state: character.wangfuren.location"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "PENDING",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "entry_state: character.jiamu.household_role; declared='senior_matriarch', actual='senior_matriarch'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "entry_state: character.fengjie.body_state; declared='chronic_old_illness', actual='chronic_old_illness'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "entry_state: character.wangfuren.location; declared='S02', actual='s02'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "preconditions: character.jiamu.life_state; declared='ACTIVE', actual='active'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "exit_state: character.wangfuren.location; actual='s02'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "requires supported explicit entry/exit targets and bound events; empty data is not replay success"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "draft/unresolved contract cannot receive an aggregate replay PASS"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "87-S2",
+      "chapter": 87,
+      "order": 2,
+      "title": "各人动机不同",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/87-S2.v1.json",
+        "sha256": "53b685d94ba4ac219c4cdf3c41d46719c8613e2bcebadff58d6cf5da57773352"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+        "sha256": "6e60f9d0ab08495ed2b1b4a3262941c6ef0e78282e3538d73ae96abb926e9357"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "MOTIVES_IN_SUCCESSIVE_TASKS",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "不同动机被泛泛声明后，四人的台词仍可能只重复统一认可，且每次小谈不产生后续差事。",
+          "rationale": "把差异落实为分工与未完成筹备问题；不替来源补造内心动机事实。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/87-S1.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/87-S1.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "让动机通过各自承接或推让的小差事显出；具体心理缘由只作待写的当前实现，不冒充原稿或已知世界事实。",
+          "after": "四方差异通过小谈所承接/推让的实际问题显出：贾母的名义认可、王夫人与薛姨妈的组织分工、凤姐病中能承接的家务不要互换成同一口令；每次小谈至少留下一个筹备问题供下一次处理，不虚构四套已知内心独白。"
+        },
+        {
+          "field": "required_beats/3",
+          "operation": "ADD",
+          "after": "谈规模时把丧期限制与连续支出分别落实，不以“为宝玉好”一句盖掉物资来源、实际主持或凤姐的身体负担。"
+        }
+      ],
+      "unresolved": [
+        "motives: 卡只要求各人动机有别，没有四套已经证明的内心事实；具体微动机仍待独立编辑。",
+        "knowledge: 婚议内外获知的精细范围没有事实注册，当前知识库不能证明小谈后谁知道什么。",
+        "entry_checkpoint: 87-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.fengjie.body_state: 病中参与受章节基线支持，但此谈话入口的具体身体能力没有局部检查点。",
+        "preconditions.character.jiamu.household_role: 上一种子没有认可或谈话出口的可执行效果，不能把名义最高权威直接当此场审批状态。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.fengjie.body_state",
+          "reason": "病中参与受章节基线支持，但此谈话入口的具体身体能力没有局部检查点。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.jiamu.household_role",
+          "reason": "上一种子没有认可或谈话出口的可执行效果，不能把名义最高权威直接当此场审批状态。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.fengjie.body_state",
+          "reason": "短谈后的身体负担没有种子级效果；既不能宣告痊愈，也不能注入后来败后恶化。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+              "detail": "motives: 卡只要求各人动机有别，没有四套已经证明的内心事实；具体微动机仍待独立编辑。, knowledge: 婚议内外获知的精细范围没有事实注册，当前知识库不能证明小谈后谁知道什么。, entry_checkpoint: 87-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.fengjie.body_state: 病中参与受章节基线支持，但此谈话入口的具体身体能力没有局部检查点。, preconditions.character.jiamu.household_role: 上一种子没有认可或谈话出口的可执行效果，不能把名义最高权威直接当此场审批状态。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+              "detail": "entry_state: character.fengjie.body_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+              "detail": "preconditions: character.jiamu.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+              "detail": "exit_state: character.fengjie.body_state"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "87-S3",
+      "chapter": 87,
+      "order": 3,
+      "title": "婚礼为什么缩小",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/87-S3.v1.json",
+        "sha256": "52f480c3eced6eca6706c99c16320ce2d135b52c19e40457aea46385d0265d4f"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+        "sha256": "818c8f6af76957874ddcf6229877b0db0ef6cb191f18fb535704325ef51f980e"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "VISIBLE_MOURNING_AND_SUPPLY",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "HIGH",
+          "finding": "低调婚礼目标有了，但名义认可、丧期办理与物资链仍可被一次宣告跳过。",
+          "rationale": "要求可见衣饰/席面/规模限制和筹备调配链，保留法制未知，不挪用其他回对象。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/87-S2.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "礼仪缩写但宝玉宝钗确实成夫妇；贾母名义认可与王夫人、薛姨妈实际主办均有可见差事。",
+          "after": "礼仪可缩写但宝玉宝钗确实成夫妇；把丧规对衣饰/席面/公开规模的约束与贾母名义认可、王夫人/薛姨妈实际操办分别写见。名义认可不等于丧制万能豁免，具体礼法规程不得伪造。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "通过布、被褥、衣饰、席面如何调配解释规模为何缩小，钱物来源不可凭空出现。",
+          "after": "婚用布、被褥、衣饰、席面至少沿筹备—调配—使用的现实链交代压缩及来源；E0资源尚在，缩礼不是查抄后全府赤贫，婚用物也不是89迁居铺盖组或探春远行箱笼。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "ritual: 缩礼已落实为可见规模与主办分层义务；丧規的具体可行程序仍待有依据的编辑核定，未证明完成。"
+        }
+      ],
+      "unresolved": [
+        "participants: 媒/礼务、裁缝、针线房及厨房经手者没有实体ID；不能伪造wedding_officiant等记录。",
+        "objects: 本回婚用布、被褥、妆奁没有对象ID；不得误用89迁居铺盖组或82探春箱笼替代。",
+        "events: W87-GOLD-JADE-MARRIAGE没有场级仪礼路径与供应链，只作未绑定的章节节点。",
+        "entry_checkpoint: 87-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.baoyu.marital_status: W87只给成婚终态，没有87-S2到婚礼入口的场级婚姻检查点。",
+        "entry_state.character.baochai.marital_status: 婚礼种子不是实际登记事件；不能把既定结婚目标当入口事实。",
+        "preconditions.character.baoyu.location: 礼务、衣饰与席面所在的局部场所没有世界移动记录。",
+        "ritual: 缩礼已落实为可见规模与主办分层义务；丧規的具体可行程序仍待有依据的编辑核定，未证明完成。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.baoyu.marital_status",
+          "reason": "W87只给成婚终态，没有87-S2到婚礼入口的场级婚姻检查点。"
+        },
+        {
+          "field": "entry_state",
+          "equals": "character.baochai.marital_status",
+          "reason": "婚礼种子不是实际登记事件；不能把既定结婚目标当入口事实。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.baoyu.location",
+          "reason": "礼务、衣饰与席面所在的局部场所没有世界移动记录。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baoyu.marital_status",
+          "reason": "W87-GOLD-JADE-MARRIAGE是全回粗粒度成婚节点，尚未独立证明本种子的执行出口。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baochai.marital_status",
+          "reason": "要求确实成夫妇是写作约束，不能据此自证此场出口为MARRIED_BAOYU。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+              "detail": "participants: 媒/礼务、裁缝、针线房及厨房经手者没有实体ID；不能伪造wedding_officiant等记录。, objects: 本回婚用布、被褥、妆奁没有对象ID；不得误用89迁居铺盖组或82探春箱笼替代。, events: W87-GOLD-JADE-MARRIAGE没有场级仪礼路径与供应链，只作未绑定的章节节点。, entry_checkpoint: 87-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.baoyu.marital_status: W87只给成婚终态，没有87-S2到婚礼入口的场级婚姻检查点。, entry_state.character.baochai.marital_status: 婚礼种子不是实际登记事件；不能把既定结婚目标当入口事实。, preconditions.character.baoyu.location: 礼务、衣饰与席面所在的局部场所没有世界移动记录。, ritual: 缩礼已落实为可见规模与主办分层义务；丧規的具体可行程序仍待有依据的编辑核定，未证明完成。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+              "detail": "entry_state: character.baoyu.marital_status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+              "detail": "entry_state: character.baochai.marital_status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+              "detail": "preconditions: character.baoyu.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+              "detail": "exit_state: character.baoyu.marital_status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+              "detail": "exit_state: character.baochai.marital_status"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "87-S4",
+      "chapter": 87,
+      "order": 4,
+      "title": "房间不是“新房”，而是重新分配旧生活",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/87-S4.v1.json",
+        "sha256": "0feedcd448eac8818d301fef38b91e42c321f7dd56ea0ad6a8de067faeb6c493"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/87-S4.v2.json",
+        "sha256": "7db7b40dd1f9edc603255926c430ab90399f7caec8a30204f809aadb82fb1c44"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "SHARED_ROOM_WITHOUT_ERASURE",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "空间重排仍可能靠清旧物完成，匿名素笺也容易被跨回强认诗稿。",
+          "rationale": "要求真实腾挪而非抹除，保留匿名性与夫妻共享空间；不创造对象身份链。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/87-S3.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/87-S3.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "不是新造一间无旧痕的新房：书案与妆奁争位置，布被旧书在原房实际腾挪。",
+          "after": "以腾挪旧物的实际过程分配书案、妆奁、布被与书册的位置；旧房是共享的夫妻生活空间，不新造无旧痕的豪华新房，也不靠清走旧纸才能让宝钗入住。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "旧帖只露旧生活痕迹，不全棋具只一笔；87旧素笺保持匿名，宝钗不清也不追问旧纸。",
+          "after": "旧帖只露旧生活痕迹，不全棋具只一笔；旧素笺保持匿名，宝钗不清也不追问。匿名旧纸不被自动认作86的G01、85的A01或《续庄子》，腾地方不成为遗稿检索。"
+        }
+      ],
+      "unresolved": [
+        "objects: 书案、妆奁、旧帖、匿名素笺与不全棋具均无对象注册ID，不能使用玉或迁居包袱假充。",
+        "placement: 卡规定宝玉无目的走园/潇湘馆外景反照，但五个种子没有单独园外场；其与房内重排/第一餐的衔接须独立编辑，不能硬化VW2-05回次。",
+        "entry_checkpoint: 87-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.baochai.household_role: W87妻位终态不能代替重新分房这一后场的局部入口。",
+        "preconditions.character.baoyu.marital_status: 相邻种子婚礼出口未回放，不能将成婚目标自动继承到此场。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.baochai.household_role",
+          "reason": "W87妻位终态不能代替重新分房这一后场的局部入口。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.baoyu.marital_status",
+          "reason": "相邻种子婚礼出口未回放，不能将成婚目标自动继承到此场。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baochai.household_role",
+          "reason": "房内空间重排没有独立世界效果；不因叙事写妻位就注入已执行wife状态。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/87-S4.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S4.v2.json",
+              "detail": "objects: 书案、妆奁、旧帖、匿名素笺与不全棋具均无对象注册ID，不能使用玉或迁居包袱假充。, placement: 卡规定宝玉无目的走园/潇湘馆外景反照，但五个种子没有单独园外场；其与房内重排/第一餐的衔接须独立编辑，不能硬化VW2-05回次。, entry_checkpoint: 87-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.baochai.household_role: W87妻位终态不能代替重新分房这一后场的局部入口。, preconditions.character.baoyu.marital_status: 相邻种子婚礼出口未回放，不能将成婚目标自动继承到此场。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S4.v2.json",
+              "detail": "entry_state: character.baochai.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S4.v2.json",
+              "detail": "preconditions: character.baoyu.marital_status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S4.v2.json",
+              "detail": "exit_state: character.baochai.household_role"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S4.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S4.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S4.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "87-S5",
+      "chapter": 87,
+      "order": 5,
+      "title": "婚后第一顿饭",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/87-S5.v1.json",
+        "sha256": "b81b84e0ee8c7f7d796c814994b7a44fbeabb8af662cd483bea0d8c5f7d995e4"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/87-S5.v2.json",
+        "sha256": "dda61567c0da10198cdd7b0dc3fc4a9724495798e6cf29219bcd0cfeba639a89"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "OPTIONALIZED_MANDATORY_GARDEN_BRIDGE",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "v1用“若接”使卡的无目的走园、潇湘館外与返回第一餐可全部被删。",
+          "rationale": "在既有S5内部选定餐前过渡为当前C义务，并承认看屋婆子与移动检查点欠缺；不新增场ID。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/87-S4.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/87-S4.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "若接宝玉园中返回，只守潇湘馆外“不进去”、看屋婆子和扫叶入筐的痕迹空间，不进屋取遗物。",
+          "after": "作为本回当前C章法的明确餐前过渡，保留宝玉无目的走园、潇湘馆外“不进去”、看屋婆子扫竹叶入筐，再返回普通第一餐；这不是可随意省略的“若接”接口，不另造种子，也不把B03/VW2-05弱相容提升为原稿固定回次。"
+        },
+        {
+          "field": "participants_status",
+          "before": "KNOWN",
+          "after": "PENDING"
+        },
+        {
+          "field": "function",
+          "before": "在婚后第一顿普通饭和翻书/收针线声中同时落夫妻现实与未能抹去的旧情，不让婚议回变钗黛裁判。",
+          "after": "以潇湘馆外痕迹空间—返回—婚后第一餐的明确过渡接起旧伤与真实夫妻生活，末端仍只留翻书/收针线声，不作钗黛裁判。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "required_transition: 本次将园外返回选为87-S5餐前明确编辑过渡；看屋婆子无ID，园外到餐桌的移动/时点未绑定，故participants_status改PENDING，不声称已经出场。"
+        }
+      ],
+      "unresolved": [
+        "objects: 饭食、针线、旧纸与书册无对象ID；第一餐的供应量不锁死。",
+        "participants: 若采用返回前的园外接口，看屋婆子没有实体ID；她不被虚构列入本餐参与者。",
+        "placement: 本合同只允许与第一餐相接的园外过渡，B03/VW2-05仍非已核验种子时序或原回次事实。",
+        "entry_checkpoint: 87-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.baoyu.marital_status: 后场局部入口没有独立回放；世界章节成婚并不证明第一餐的确切起点。",
+        "preconditions.character.baochai.household_role: 房内整理的上一场未有状态事件，妻位的此时执行范围仍待核定。",
+        "required_transition: 本次将园外返回选为87-S5餐前明确编辑过渡；看屋婆子无ID，园外到餐桌的移动/时点未绑定，故participants_status改PENDING，不声称已经出场。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.baoyu.marital_status",
+          "reason": "后场局部入口没有独立回放；世界章节成婚并不证明第一餐的确切起点。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.baochai.household_role",
+          "reason": "房内整理的上一场未有状态事件，妻位的此时执行范围仍待核定。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baochai.household_role",
+          "reason": "一餐和针线差事没有可执行角色更新；不能以普通饭自证wife运行程度。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/87-S5.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S5.v2.json",
+              "detail": "objects: 饭食、针线、旧纸与书册无对象ID；第一餐的供应量不锁死。, participants: 若采用返回前的园外接口，看屋婆子没有实体ID；她不被虚构列入本餐参与者。, placement: 本合同只允许与第一餐相接的园外过渡，B03/VW2-05仍非已核验种子时序或原回次事实。, entry_checkpoint: 87-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.baoyu.marital_status: 后场局部入口没有独立回放；世界章节成婚并不证明第一餐的确切起点。, preconditions.character.baochai.household_role: 房内整理的上一场未有状态事件，妻位的此时执行范围仍待核定。, required_transition: 本次将园外返回选为87-S5餐前明确编辑过渡；看屋婆子无ID，园外到餐桌的移动/时点未绑定，故participants_status改PENDING，不声称已经出场。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S5.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S5.v2.json",
+              "detail": "entry_state: character.baoyu.marital_status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S5.v2.json",
+              "detail": "preconditions: character.baochai.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S5.v2.json",
+              "detail": "exit_state: character.baochai.household_role"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S5.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S5.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/87-S5.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "88-S1",
+      "chapter": 88,
+      "order": 1,
+      "title": "婚事不能只从怡红院内部决定",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/88-S1.v1.json",
+        "sha256": "063c64540b5aa6638dbe0a6d714ca72aae4e16f13ec11be838e6ae8c8374d930"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+        "sha256": "2d50f5c490d9f451099756776fee250379186a6ee619706e46d0dc9c618ffe64"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "MARRIAGE_NEGOTIATION_NOT_COMPLETION",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "婚事形成、出阁成礼与嫁后桥三种边界在同一目标句中，容易以许可替代完成。",
+          "rationale": "将本场限于外部婚事形成，并把嫁后桥标为真实未覆盖义务；不伪造第六种子。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "required_beats/2",
+          "before": "成礼与离位必须真实经过；“好歹留着麝月”只属于出嫁后的短返府谢恩，不能在此婚前谈事中先说。",
+          "after": "本场形成花/蒋侧婚事并衔接府内许可，不以谈定婚事冒充已经成礼；后续必须真实经过出阁与成礼。出嫁后的短返谢恩和“好歹留着麝月”仍是缺88-S3b种子的章级未覆盖义务，不由本婚前场代演。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "MISSING_SEED_88-S3b: 卡的成礼后短返谢恩/硬引语义务不在五个实有种子中；本场仅婚事形成，不能宣告缺口已被引用文字补齐。"
+        }
+      ],
+      "unresolved": [
+        "participants: 花家人、蒋家婚嫁跑腿没有实体记录；蒋玉菡有ID不证明所有洽谈都由他亲自完成。",
+        "objects: 嫁妆、随身衣物及职业物件没有对象ID，具体金额和物目未锁。",
+        "bridge: 新卡要求88-S3b成礼后短返谢恩，现有五种子无该ID；不能创建第六种子或提前回灌硬引语。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "MISSING_SEED_88-S3b: 卡的成礼后短返谢恩/硬引语义务不在五个实有种子中；本场仅婚事形成，不能宣告缺口已被引用文字补齐。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "exit_state",
+          "equals": "character.xiren.marital_status",
+          "reason": "W88-XIREN-EXITS把出嫁与迎春死亡等多线合并，不能给花蒋侧谈定时的具体婚姻出口。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "participants: 花家人、蒋家婚嫁跑腿没有实体记录；蒋玉菡有ID不证明所有洽谈都由他亲自完成。, objects: 嫁妆、随身衣物及职业物件没有对象ID，具体金额和物目未锁。, bridge: 新卡要求88-S3b成礼后短返谢恩，现有五种子无该ID；不能创建第六种子或提前回灌硬引语。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, MISSING_SEED_88-S3b: 卡的成礼后短返谢恩/硬引语义务不在五个实有种子中；本场仅婚事形成，不能宣告缺口已被引用文字补齐。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "exit_state: character.xiren.marital_status"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "PENDING",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "entry_state: character.xiren.marital_status; declared='UNMARRIED', actual='unmarried'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "entry_state: character.xiren.household_role; declared='baoyu_attendant', actual='baoyu_attendant'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "entry_state: character.jiang_yuhan.household_role; declared='performer', actual='performer'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "preconditions: character.xiren.location; declared='S02', actual='s02'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "exit_state: character.xiren.marital_status; actual='unmarried'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "requires supported explicit entry/exit targets and bound events; empty data is not replay success"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "draft/unresolved contract cannot receive an aggregate replay PASS"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "88-S2",
+      "chapter": 88,
+      "order": 2,
+      "title": "袭人不是只交钥匙，也要处理“哪些东西属于自己”",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/88-S2.v1.json",
+        "sha256": "e4bf7faf847246eb710a4816283d11d83fce1a58eb402479247bc4e279126191"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/88-S2.v2.json",
+        "sha256": "0d5abb7b3ffe4eaf4073eaed4f82445b8ae85ac73195e8ee42ca403334c6ff5f"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "PROPERTY_VERSUS_ROLE_HANDOFF",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "物权、药盒留用与劳动代任容易被压成感情信物，进而把婚前交接当嫁后完成。",
+          "rationale": "分开可换药、留盒、经手钥匙与私人随身物，保护无对象ID处的未知，不冒用黛玉药碗。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/88-S1.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/88-S1.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "药盒给麝月并保留“药陈了可换，盒子别丢”；钥匙和日常差事一起转交，不只作情感信物。",
+          "after": "药盒给麝月并保留“药陈了可换，盒子别丢”；先分清药可换、盒留用、钥匙经手和日常差事接任的各自用途。私人随身物才随袭人收走，房内公用物不作赠嫁财产；交接不等于袭人已婚或麝月已完成全部代任。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "MISSING_SEED_88-S3b: 婚前物权/职责交接与嫁后“好歹留着麝月”严格分开；不借本场药盒台词声称硬引语已落位。"
+        }
+      ],
+      "unresolved": [
+        "objects: 药盒与钥匙没有注册ID；OBJ-MEDICINE-BOWL-86是黛玉药碗，不能拿来替袭人的药盒。",
+        "state_model: 物权区分与职责交接缺少对象/角色原子事件，不虚构key_handover。",
+        "bridge: 婚后短返府谢恩尚缺独立种子，硬引语必须保持未放置状态。",
+        "entry_checkpoint: 88-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.xiren.household_role: 前场花蒋侧谈定并无离位效果；当前局部职责入口尚未核定。",
+        "preconditions.character.sheyue.household_role: 留下代任是全回目标，未有钥匙交接前的场级职责检查点。",
+        "MISSING_SEED_88-S3b: 婚前物权/职责交接与嫁后“好歹留着麝月”严格分开；不借本场药盒台词声称硬引语已落位。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.xiren.household_role",
+          "reason": "前场花蒋侧谈定并无离位效果；当前局部职责入口尚未核定。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.sheyue.household_role",
+          "reason": "留下代任是全回目标，未有钥匙交接前的场级职责检查点。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.sheyue.household_role",
+          "reason": "药盒钥匙交接没有注册角色更新；W88全回remaining_attendant不能由此声明自证。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/88-S2.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S2.v2.json",
+              "detail": "objects: 药盒与钥匙没有注册ID；OBJ-MEDICINE-BOWL-86是黛玉药碗，不能拿来替袭人的药盒。, state_model: 物权区分与职责交接缺少对象/角色原子事件，不虚构key_handover。, bridge: 婚后短返府谢恩尚缺独立种子，硬引语必须保持未放置状态。, entry_checkpoint: 88-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.xiren.household_role: 前场花蒋侧谈定并无离位效果；当前局部职责入口尚未核定。, preconditions.character.sheyue.household_role: 留下代任是全回目标，未有钥匙交接前的场级职责检查点。, MISSING_SEED_88-S3b: 婚前物权/职责交接与嫁后“好歹留着麝月”严格分开；不借本场药盒台词声称硬引语已落位。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S2.v2.json",
+              "detail": "entry_state: character.xiren.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S2.v2.json",
+              "detail": "preconditions: character.sheyue.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S2.v2.json",
+              "detail": "exit_state: character.sheyue.household_role"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S2.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S2.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S2.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "88-S3",
+      "chapter": 88,
+      "order": 3,
+      "title": "出门前最后一个日常动作",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/88-S3.v1.json",
+        "sha256": "3019adc8f5c8efda4f90e193444cf81587281206f595d30987de02538f9e623f"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+        "sha256": "68753fe60514ea7c0fb053499e218760a271de1e0cdf084d5d0d3a97ae66b18e"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "MISSING_POST_MARRIAGE_BRIDGE",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "HIGH",
+          "finding": "章卡有88-S3b而五种子没有；前门离位不能承担嫁后硬引语，单靠未放置提示仍不足以表明覆盖失败。",
+          "rationale": "把桥标成未覆盖的章级依赖与禁止隐藏执行；必须保持缺口公开，不发明场或提前引用。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/88-S2.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/88-S2.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/2",
+          "before": "此婚前离门动作结束后仍需成礼；卡要求的嫁后短返谢恩保持独立待放置接口，不把它压进婚前同一动作。",
+          "after": "本场只完成婚前最后任务/离门边界，不冒充成礼及嫁后返府。卡要求随后成礼，再有极短返府谢恩并说“好歹留着麝月”，但88-S3b无绑定种子，作为必须补核的章级依赖明确保留，绝不塞进本场出门前动作。"
+        },
+        {
+          "field": "forbidden_beats/3",
+          "operation": "ADD",
+          "after": "用本场出门等同结婚完成，或把缺88-S3b桥写成已经执行的隐藏场、直接绑定W88合并终态来掩盖缺口。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "MISSING_SEED_88-S3b: 缺失的是成礼后极短返府谢恩及硬引语的可绑定场，不是缺一句可以提前补入的台词；本批不创建该ID/事件/合同。"
+        }
+      ],
+      "unresolved": [
+        "bridge: 88-S3b不在不可变种子列表；成礼后返府谢恩与硬引语的作者放置尚缺，不能造88-S3b合同来填数。",
+        "objects: 最后衣扣/药盒/钥匙均无对象ID，不能用无关登记物代名。",
+        "events: W88-XIREN-EXITS同时涵盖嫁出、麝月留下及迎春死亡，不能映射成本场单一离门。",
+        "entry_checkpoint: 88-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.xiren.location: 钥匙交接后的出门前场位没有局部移动记录。",
+        "preconditions.character.xiren.marital_status: 婚前出门与之后成礼须区分；W88合并事件不提供本种子的礼前检查点。",
+        "MISSING_SEED_88-S3b: 缺失的是成礼后极短返府谢恩及硬引语的可绑定场，不是缺一句可以提前补入的台词；本批不创建该ID/事件/合同。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.xiren.location",
+          "reason": "钥匙交接后的出门前场位没有局部移动记录。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.xiren.marital_status",
+          "reason": "婚前出门与之后成礼须区分；W88合并事件不提供本种子的礼前检查点。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.xiren.location",
+          "reason": "出门路径和与成礼的边界未有单独场级移动；不能据W88直接跳至嫁后住所。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.xiren.marital_status",
+          "reason": "此种子标题为出门前动作，不足以证明已经完成婚礼。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+              "detail": "bridge: 88-S3b不在不可变种子列表；成礼后返府谢恩与硬引语的作者放置尚缺，不能造88-S3b合同来填数。, objects: 最后衣扣/药盒/钥匙均无对象ID，不能用无关登记物代名。, events: W88-XIREN-EXITS同时涵盖嫁出、麝月留下及迎春死亡，不能映射成本场单一离门。, entry_checkpoint: 88-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.xiren.location: 钥匙交接后的出门前场位没有局部移动记录。, preconditions.character.xiren.marital_status: 婚前出门与之后成礼须区分；W88合并事件不提供本种子的礼前检查点。, MISSING_SEED_88-S3b: 缺失的是成礼后极短返府谢恩及硬引语的可绑定场，不是缺一句可以提前补入的台词；本批不创建该ID/事件/合同。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+              "detail": "entry_state: character.xiren.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+              "detail": "preconditions: character.xiren.marital_status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+              "detail": "exit_state: character.xiren.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+              "detail": "exit_state: character.xiren.marital_status"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "88-S4",
+      "chapter": 88,
+      "order": 4,
+      "title": "消息必须从孙家那边“有成本地”传来",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/88-S4.v1.json",
+        "sha256": "98a6377ebcdf2ed9c032c9465e2040a4c73c67f3f19a88f71e5711e12a4a5491"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+        "sha256": "96cd27b34e2ba30c65169c29ca9790841ad26f80b30bc7261472d7987ff4a799"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "NEWS_SOURCE_NOT_OMNISCIENCE",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "成本式传信若不分接力环节，死讯容易无成本直达，且听到结果被误作全案/后事范围知情。",
+          "rationale": "分开来源、经手、接收和消息范围；保持未注册知识事实为空，不借孙家线填88-S3b。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/88-S3.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "孙家来人把死讯送入娘家再到内宅，显出跑腿的时间、手续或现实麻烦，不让消息无成本瞬达。",
+          "after": "孙家来人—娘家经手—内宅接收至少分出来源、接力与接收三个环节，时间/跑腿麻烦是传信成本；接收者只拿到传来的死亡结果，不自动知道死亡确切时刻、完整过程或可取遗物范围。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "MISSING_SEED_88-S3b: entry_from只承接S3来源列表的声明顺序，不证明其间成礼/短返谢恩已执行；孙家消息线不能代替袭人嫁后桥。"
+        }
+      ],
+      "unresolved": [
+        "participants: 孙家来人和中间传信经手者无ID；yingchun仅作为场外生命状态对象引用，不列入出场participants。",
+        "knowledge: 知识库没有迎春死讯/后事范围事实ID；不能编造yingchun_death_news。",
+        "timing: 孙家传信成本的具体形式、迟到时长与告知范围未定；W88不能填补。",
+        "entry_checkpoint: 88-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.yingchun.life_state: 迎春是场外消息对象，不是出场演员；W88合并终态不能定死讯到达时的局部检查点。",
+        "preconditions.character.wangfuren.location: 孙家到门、再入内宅的经手路径尚无局部位置记录。",
+        "MISSING_SEED_88-S3b: entry_from只承接S3来源列表的声明顺序，不证明其间成礼/短返谢恩已执行；孙家消息线不能代替袭人嫁后桥。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.yingchun.life_state",
+          "reason": "迎春是场外消息对象，不是出场演员；W88合并终态不能定死讯到达时的局部检查点。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.wangfuren.location",
+          "reason": "孙家到门、再入内宅的经手路径尚无局部位置记录。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.yingchun.life_state",
+          "reason": "传来死讯是要求写出的结果，但听见消息不等于注册生命事件已在本种子回放。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+              "detail": "participants: 孙家来人和中间传信经手者无ID；yingchun仅作为场外生命状态对象引用，不列入出场participants。, knowledge: 知识库没有迎春死讯/后事范围事实ID；不能编造yingchun_death_news。, timing: 孙家传信成本的具体形式、迟到时长与告知范围未定；W88不能填补。, entry_checkpoint: 88-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.yingchun.life_state: 迎春是场外消息对象，不是出场演员；W88合并终态不能定死讯到达时的局部检查点。, preconditions.character.wangfuren.location: 孙家到门、再入内宅的经手路径尚无局部位置记录。, MISSING_SEED_88-S3b: entry_from只承接S3来源列表的声明顺序，不证明其间成礼/短返谢恩已执行；孙家消息线不能代替袭人嫁后桥。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+              "detail": "entry_state: character.yingchun.life_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+              "detail": "preconditions: character.wangfuren.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+              "detail": "exit_state: character.yingchun.life_state"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "88-S5",
+      "chapter": 88,
+      "order": 5,
+      "title": "娘家想“做点什么”，却发现权力有限",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/88-S5.v1.json",
+        "sha256": "58e1ca93bffe742cee05df0012a8e6480d8e8e84c983b81dbe07a2aa153573a0"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/88-S5.v2.json",
+        "sha256": "5994b71dae713ae0ba258df709c62a58d1fe8421579e6dcf56a16928c1f4f415"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "FUNERAL_REQUEST_NOT_CONTROL_TRANSFER",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "娘家有限权力可停留在抽象无力感，或把提出后事要求当已收尸/取遗物。",
+          "rationale": "要求可见请求与受阻环节，维持孙家控制和麝月继续房务的区别；不伪造办理结果。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/88-S4.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "娘家试图做一点实际后事，才碰到孙家掌握尸身与遗物的权力边界；有限反应不是突然无情也不是万能收尸。",
+          "after": "娘家先提出一项实际后事请求或询问，再由可见的回话/办不了的环节碰到孙家掌握尸身、遗物的边界；不直接宣布已收尸或已取物。具体请求项目、答复与可办范围仍待有依据的作者选择。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "MISSING_SEED_88-S3b: 本场麝月继续劳动只能兑现留下的生活位置，不兑现袭人嫁后短返谢恩或硬引语；章级桥仍未覆盖。"
+        }
+      ],
+      "unresolved": [
+        "objects: 钥匙、盆、遗物/尸身料理物没有注册ID；不能以凤姐后事束代迎春遗物。",
+        "authority: 孙家具体后事流程与娘家可办项目尚未有执行记录，不锁死为法律制度说明。",
+        "bridge: 出嫁后短返府“好歹留着麝月”尚缺88-S3b种子；本场不自行假定该接口已经执行。",
+        "entry_checkpoint: 88-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.yingchun.life_state: 上一种子消息的出口未建立独立生命/认知检查点。",
+        "preconditions.character.sheyue.household_role: 接任已成全回目标，但本地钥匙/家務劳动边界没有可执行角色入口。",
+        "MISSING_SEED_88-S3b: 本场麝月继续劳动只能兑现留下的生活位置，不兑现袭人嫁后短返谢恩或硬引语；章级桥仍未覆盖。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.yingchun.life_state",
+          "reason": "上一种子消息的出口未建立独立生命/认知检查点。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.sheyue.household_role",
+          "reason": "接任已成全回目标，但本地钥匙/家務劳动边界没有可执行角色入口。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.sheyue.household_role",
+          "reason": "系钥匙与盆沿碰门框是待写的日常执行，不足以自证W88角色效果。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/88-S5.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S5.v2.json",
+              "detail": "objects: 钥匙、盆、遗物/尸身料理物没有注册ID；不能以凤姐后事束代迎春遗物。, authority: 孙家具体后事流程与娘家可办项目尚未有执行记录，不锁死为法律制度说明。, bridge: 出嫁后短返府“好歹留着麝月”尚缺88-S3b种子；本场不自行假定该接口已经执行。, entry_checkpoint: 88-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.yingchun.life_state: 上一种子消息的出口未建立独立生命/认知检查点。, preconditions.character.sheyue.household_role: 接任已成全回目标，但本地钥匙/家務劳动边界没有可执行角色入口。, MISSING_SEED_88-S3b: 本场麝月继续劳动只能兑现留下的生活位置，不兑现袭人嫁后短返谢恩或硬引语；章级桥仍未覆盖。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S5.v2.json",
+              "detail": "entry_state: character.yingchun.life_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S5.v2.json",
+              "detail": "preconditions: character.sheyue.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S5.v2.json",
+              "detail": "exit_state: character.sheyue.household_role"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S5.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S5.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/88-S5.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "89-S1",
+      "chapter": 89,
+      "order": 1,
+      "title": "先封“流动”",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/89-S1.v1.json",
+        "sha256": "28c4c480af8d56a56b39c0b053ba066cb72072148e4e7bf352897a05a2a2862a"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+        "sha256": "aca8e1441fe9698e1f3296be3453acb4f26c0105709f83114fb531420df7c9e2"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "STAGED_NEWS_AND_UNKNOWN_SCOPE",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "先封流动易被内宅同场同步知情抢先，获知消息也可能被当获知完整范围。",
+          "rationale": "把接力拆成门上/管事/内宅并新增范围UNKNOWN目标，保持控门与刑责相分离。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "required_beats/1",
+          "before": "消息按门上先知、管事、内宅的路径传入，报信和控制门各有经手人，官差也有自己的当差麻烦。",
+          "after": "先写门上见到控门，再经管事传入内宅；宝钗/王夫人/贾琏是分段接力候选，不要求三人同时在门房。官面一句话可在各房形成不同理解，不让内宅同步知道完整处置范围。"
+        },
+        {
+          "field": "exit_state/character.baochai.knowledge.official_confiscation_exact_scope",
+          "operation": "ADD_UNKNOWN",
+          "reason": "首次传入门控消息不提供官面完整范围；事实本身仍为CURRENT_SCENE_UNKNOWN，不能由知道消息推出知道范围。"
+        }
+      ],
+      "unresolved": [
+        "participants: 门房老苍头、差役、书办与传门信者无ID；所列内宅/管事演员是当前拟用接力，不声称全员同场。",
+        "knowledge: 两个官面事实可实名引用，但宝钗的消息获得需旧场与此种子对齐；scope仍开放。",
+        "events: W89-COLLAPSE-AND-RELOCATION合并控制资产和全体迁居，不能用它替代先封流动。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "exit_state",
+          "equals": "character.baochai.knowledge.official_confiscation_message",
+          "reason": "K89-OFFICIAL-MESSAGE-HEARD属于旧场ch89_confiscation_message，门上到内宅的确切种子边界没有独立对应。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baochai.knowledge.official_confiscation_exact_scope",
+          "reason": "首次传入门控消息不提供官面完整范围；事实本身仍为CURRENT_SCENE_UNKNOWN，不能由知道消息推出知道范围。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "participants: 门房老苍头、差役、书办与传门信者无ID；所列内宅/管事演员是当前拟用接力，不声称全员同场。, knowledge: 两个官面事实可实名引用，但宝钗的消息获得需旧场与此种子对齐；scope仍开放。, events: W89-COLLAPSE-AND-RELOCATION合并控制资产和全体迁居，不能用它替代先封流动。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "exit_state: character.baochai.knowledge.official_confiscation_message"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "exit_state: character.baochai.knowledge.official_confiscation_exact_scope"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "PENDING",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_KNOWLEDGE_CHECKPOINT_UNBOUND",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "knowledge requires an explicit registered source scene"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "entry_state: character.baochai.location; declared='S02', actual='s02'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "entry_state: character.baoyu.legal_status; declared='FREE', actual='free'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "preconditions: character.baoyu.legal_status; declared='FREE', actual='free'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "exit_state: character.baochai.knowledge.official_confiscation_message; actual=None"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "exit_state: character.baochai.knowledge.official_confiscation_exact_scope; actual=None"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "requires supported explicit entry/exit targets and bound events; empty data is not replay success"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "draft/unresolved contract cannot receive an aggregate replay PASS"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "89-S2",
+      "chapter": 89,
+      "order": 2,
+      "title": "再点“人”",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/89-S2.v1.json",
+        "sha256": "ebb9cd4b3cc328b68009989850638dfcd01c567c287f71f9f9a9f49f593127eb"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+        "sha256": "e694f0990a9b3191aed77fb2b85a20d564bd3eddac7d3883f9c85719b4848eb6"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "ROSTER_IS_NOT_DETENTION",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "点人程序仍可能仅靠总括旁白，或把限流动直接升级为刑事羁押。",
+          "rationale": "要求一个可见名册应答/候着接口并将三种权力效果分开；不编造人数或法律条款。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/89-S1.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/89-S1.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "书办以名册点人，差役管住移动；贾琏/管事与内宅各在程序中接应，不把点人写成总括旁白。",
+          "after": "书办以名册点在场人，差役约束他们此刻的移动；至少显出一次被点名后的应答/候着或经手确认，管事再接内宅。登记在场、暂限流动和刑事拘押是三回事，不套91回羁押结果。"
+        }
+      ],
+      "unresolved": [
+        "participants: 点名书办、控门差役及名册里的未注册人员没有实体ID。",
+        "objects: 名册无对象注册；不能捏造roster或法律文件ID。",
+        "legal: 名册具体人数、谁被要求候着及可走范围未有原子事件；保持与男丁刑责分离。",
+        "entry_checkpoint: 89-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.baoyu.legal_status: 封门种子没有局部刑事状态效果；不得从邻接或抄没推断羁押。",
+        "preconditions.character.jialian.location: 被点名时的具体在场与门内移动没有局部记录。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.baoyu.legal_status",
+          "reason": "封门种子没有局部刑事状态效果；不得从邻接或抄没推断羁押。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.jialian.location",
+          "reason": "被点名时的具体在场与门内移动没有局部记录。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baoyu.legal_status",
+          "reason": "点人不是注册拘禁事件，合法身份的场级结果须独立核定。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+              "detail": "participants: 点名书办、控门差役及名册里的未注册人员没有实体ID。, objects: 名册无对象注册；不能捏造roster或法律文件ID。, legal: 名册具体人数、谁被要求候着及可走范围未有原子事件；保持与男丁刑责分离。, entry_checkpoint: 89-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.baoyu.legal_status: 封门种子没有局部刑事状态效果；不得从邻接或抄没推断羁押。, preconditions.character.jialian.location: 被点名时的具体在场与门内移动没有局部记录。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+              "detail": "entry_state: character.baoyu.legal_status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+              "detail": "preconditions: character.jialian.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+              "detail": "exit_state: character.baoyu.legal_status"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "89-S3",
+      "chapter": 89,
+      "order": 3,
+      "title": "再点“物”",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/89-S3.v1.json",
+        "sha256": "e17791fe9b7aab48d5ff1b6e02a05bdaa58d75a41b2eff3156616b0ef91c4380"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+        "sha256": "9fada651bc7f26422f4e7e0b1aab659047dac55599f1510a617f1dd920cab3bd"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "INVENTORY_PERMISSION_AND_MEDICINE",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "点验—许可—搬运虽被区分，药包优先这一老病者持续供给义务未落实。",
+          "rationale": "将有限可带日用物与药包优先接入本场点验，不补造药包ID或已批准状态。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/89-S2.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/3",
+          "operation": "ADD",
+          "after": "点验时区分账上列入、当下使用和获准带走三种范围；药包应在有限可带日用物中优先考虑，铺盖登记不等于搬运许可，也不等于已经到了借院。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "medicine_priority: 药包优先与点验/准带边界已加为义务，药包、封识和具体许可无注册对象/事件，不能用已死黛玉药碗替代。"
+        }
+      ],
+      "unresolved": [
+        "objects: 仅衣被物流组有真实ID；账簿、房契、封识、衣箱、画匣及书册没有注册，不能用凤姐后事束替此账簿。",
+        "participants: 书办、差役和点物搬运人没有实体记录，不能只靠房内女眷完成官面程序。",
+        "permissions: 哪些衣被准带、点验项与放行量未有执行记录，具体箱数/物目不锁。",
+        "entry_checkpoint: 89-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location: 全回前基线在旧府，不等于封门点人之后本种子的局部对象检查点。",
+        "preconditions.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status: 哪些衣被已经准取没有种子级程序记录，不能用IN_OLD_HOUSE自证可自由搬走。",
+        "medicine_priority: 药包优先与点验/准带边界已加为义务，药包、封识和具体许可无注册对象/事件，不能用已死黛玉药碗替代。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location",
+          "reason": "全回前基线在旧府，不等于封门点人之后本种子的局部对象检查点。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status",
+          "reason": "哪些衣被已经准取没有种子级程序记录，不能用IN_OLD_HOUSE自证可自由搬走。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status",
+          "reason": "点物结束不等于OT89-01搬至借院；登记、放行与搬运尚需区分。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+              "detail": "objects: 仅衣被物流组有真实ID；账簿、房契、封识、衣箱、画匣及书册没有注册，不能用凤姐后事束替此账簿。, participants: 书办、差役和点物搬运人没有实体记录，不能只靠房内女眷完成官面程序。, permissions: 哪些衣被准带、点验项与放行量未有执行记录，具体箱数/物目不锁。, entry_checkpoint: 89-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location: 全回前基线在旧府，不等于封门点人之后本种子的局部对象检查点。, preconditions.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status: 哪些衣被已经准取没有种子级程序记录，不能用IN_OLD_HOUSE自证可自由搬走。, medicine_priority: 药包优先与点验/准带边界已加为义务，药包、封识和具体许可无注册对象/事件，不能用已死黛玉药碗替代。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+              "detail": "entry_state: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+              "detail": "preconditions: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+              "detail": "exit_state: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "89-S4",
+      "chapter": 89,
+      "order": 4,
+      "title": "账与物对不上",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/89-S4.v1.json",
+        "sha256": "2c7897322341fd22d81cb423fea8abdf09efcd970f71644cdb95394df7c398c3"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+        "sha256": "850feac3f68ed25ad8f308e749c856fd482447c90f5b40d429da3aa2eee8be7d"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "UNRESOLVED_DISCREPANCY_MECHANISM",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "账物不符可能仅一句旁白，现金尚有也容易被当作可自由付钱或封控自动免债。",
+          "rationale": "要求具体核对和待查动作，保留数字/责任未知，区分现金存在、支配权和清偿。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/89-S3.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/89-S3.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "书办要对账，实际物目与账项出现不能即时对齐的摩擦；账与物不符的数量或原因不凭空定罪。",
+          "after": "至少呈现一次账项与实物不能即时对应的核对动作，以及书办/实际经手人如何追问或候查；具体账数、遗失原因与责任未有依据时保持未决，不由差额跳成已证罪名。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "债主/讨账者关心能否拿钱，管事与旧仆各带自己的经手难处；现金尚有而控制权断裂须区别。",
+          "after": "债主/讨账者要拿钱，管事/旧仆有经手难处；现金存在、可动用权和债务清偿分别处理，封控不等于债务消失，也不假定凤姐仍能调出旧府现银补平账物差额。"
+        }
+      ],
+      "unresolved": [
+        "participants: 对账书办、债主/讨账者及实际经手旧仆未注册。",
+        "objects: 账簿与实物清单没有对象ID；不挪用OBJ-FENGJIE-LEGACY-BUNDLE的后事功能。",
+        "mechanism: 不符的具体数额、起因与讨账人的债权细目未有数据，不能宣告已知犯罪或法律结果。",
+        "entry_checkpoint: 89-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.fengjie.household_role: 旧管事角色基线不能证明封控后此场实际调账权限。",
+        "preconditions.character.jialian.legal_status: 对账争执与法律判断不同，尚无局部刑责记录可作前提。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.fengjie.household_role",
+          "reason": "旧管事角色基线不能证明封控后此场实际调账权限。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.jialian.legal_status",
+          "reason": "对账争执与法律判断不同，尚无局部刑责记录可作前提。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.fengjie.household_role",
+          "reason": "账物错位没有已注册权力转移效果，不凭场内争论断言她已经完全失权。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+              "detail": "participants: 对账书办、债主/讨账者及实际经手旧仆未注册。, objects: 账簿与实物清单没有对象ID；不挪用OBJ-FENGJIE-LEGACY-BUNDLE的后事功能。, mechanism: 不符的具体数额、起因与讨账人的债权细目未有数据，不能宣告已知犯罪或法律结果。, entry_checkpoint: 89-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.fengjie.household_role: 旧管事角色基线不能证明封控后此场实际调账权限。, preconditions.character.jialian.legal_status: 对账争执与法律判断不同，尚无局部刑责记录可作前提。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+              "detail": "entry_state: character.fengjie.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+              "detail": "preconditions: character.jialian.legal_status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+              "detail": "exit_state: character.fengjie.household_role"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "89-S5",
+      "chapter": 89,
+      "order": 5,
+      "title": "仆役开始分流",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/89-S5.v1.json",
+        "sha256": "66aeb8d598169aa2c688df808947c49689fd15dd8b51bc16e05f2fe980faa4f8"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+        "sha256": "c2186b267d8a1a128b48016d916697e2b6183a99e98f476eb403256d796410f0"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "WAGE_DECISIONS_AND_TRANSPORT_COST",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "忠奸二分的禁令在，但欠薪留任可被读成免费劳动，贾芸也可能万能跑腿。",
+          "rationale": "保留未清工资压力并要求可见车脚/搬运约束，分别给去留者利益而不虚构金额。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/89-S4.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/89-S4.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "一个仆人走，一个因欠薪留；分流各有自身生活理由，不让全体旧仆统一忠义或统一背叛。",
+          "after": "一个仆人走、一个因欠薪留下；两人的去留都经过具体工钱/生计考虑，留下不等于无偿忠仆，走也不等于背叛。欠薪尚未清偿的压力不能随分流被写没。"
+        },
+        {
+          "field": "required_beats/2",
+          "before": "贾芸为实际迁居门路和搬运奔走；这有自身现实动机，不标成“芸哥仗义探庵”的W2兑现。",
+          "after": "贾芸接实际迁居门路，雇车/搬运的等待、费用或经手麻烦至少留一项可见约束；不是一个贾芸包办所有劳动，不标成“芸哥仗义探庵”的W2兑现。"
+        }
+      ],
+      "unresolved": [
+        "participants: 两个作不同选择的仆人、车脚和搬运者没有实体ID；sheyue不能同时替代全部欠薪者。",
+        "money: 工钱数额、债权优先级与可动现金未有原子状态，不创造工资账户字段。",
+        "knowledge: 迁居需要与完整处置范围有真实事实记录，但获得/怀疑的种子边界未对齐。",
+        "entry_checkpoint: 89-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.baochai.knowledge.household_relocation_required: 旧场入口的suspects与后续knows不能自动映射仆役分流场。",
+        "preconditions.character.jia_yun.location: 贾芸经手迁居的往返无种子级移动记录，亲族跑腿身份不是即时在场证据。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.baochai.knowledge.household_relocation_required",
+          "reason": "旧场入口的suspects与后续knows不能自动映射仆役分流场。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.jia_yun.location",
+          "reason": "贾芸经手迁居的往返无种子级移动记录，亲族跑腿身份不是即时在场证据。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baochai.knowledge.household_relocation_required",
+          "reason": "K89-HOUSEHOLD-SEES-RELOCATION-NEED的取得时点未划入本种子，不能自行变为knows。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+              "detail": "participants: 两个作不同选择的仆人、车脚和搬运者没有实体ID；sheyue不能同时替代全部欠薪者。, money: 工钱数额、债权优先级与可动现金未有原子状态，不创造工资账户字段。, knowledge: 迁居需要与完整处置范围有真实事实记录，但获得/怀疑的种子边界未对齐。, entry_checkpoint: 89-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.baochai.knowledge.household_relocation_required: 旧场入口的suspects与后续knows不能自动映射仆役分流场。, preconditions.character.jia_yun.location: 贾芸经手迁居的往返无种子级移动记录，亲族跑腿身份不是即时在场证据。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+              "detail": "entry_state: character.baochai.knowledge.household_relocation_required"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+              "detail": "preconditions: character.jia_yun.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+              "detail": "exit_state: character.baochai.knowledge.household_relocation_required"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "89-S6",
+      "chapter": 89,
+      "order": 6,
+      "title": "迁居是第二场灾难",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/89-S6.v1.json",
+        "sha256": "70689155baee621408d35bbca8be0da250c3ee26a3020af35b843706f3cfb38b"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+        "sha256": "703967d31a2e651f8a5ed90b420f861d5b2c71911829fc40b9eec8517604324c"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "SHARED_HOUSING_OBLIGATIONS",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "HIGH",
+          "finding": "共井共灶和水桶容易成为一次笑料，借住后的床位、照护、饮食及与同住者的取用义务未真正咬合。",
+          "rationale": "把许可—搬运—接收—重分生活接口接起，要求共享取用/通行冲突；不声明已分配床位或持有状态。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/89-S5.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/0",
+          "before": "可带物极少，贾芸与搬运者实际从旧府运衣被进借院；老人病者有体力成本，物件不瞬移。",
+          "after": "从受控旧府准带边界接实际装载、搬运、到借院接收；铺盖组随人走，药包优先，老病者迁移与车脚等候有体力/时间成本。不能因OT89终态就跳过这一段，也不把贾芸当整个物流群。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "借院重新分床位，共井共灶、错拿衣物和车脚等候各有现实麻烦，笑料不取消外部控产的威压。",
+          "after": "进借院先重分床位/铺盖及日用物，再落实共井共灶的取水、做饭与通行冲突；借住不是取得独有井灶或自由恢复旧府供给，错拿衣物来自人员/物件挤入同一空间的实际重新分配。"
+        },
+        {
+          "field": "required_beats/4",
+          "operation": "ADD",
+          "after": "水桶归属、谁正要取水/使用灶和谁需要腾地方，要在同住者已有生活约束中发生；末问“谁家的水桶还在井边？”是未解决的共享使用小问题，不用万能分房/独井新灶在末句前解除压力。"
+        },
+        {
+          "field": "exit_state/object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.holder",
+          "operation": "ADD_UNKNOWN",
+          "reason": "到借院接收/再分配为明确义务，但OT89-01的jia_yun_and_household只是章节粗层持有组，不能当此场分床位后的具体持有检查点。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "shared_housing: 共井共灶/床位使用已有明确编辑义务，但借住许可、同住者身份、取用安排与床位分配没有场级记录；不造邻人ID或私有井灶。"
+        }
+      ],
+      "unresolved": [
+        "participants: 车脚、搬运者及借院共井共灶邻人未注册；不可把jia_yun替成整个物流群。",
+        "objects: 衣箱、薄书、水桶、井灶与具体床位没有对象ID；仅铺盖组与随行通灵玉可实名引用。",
+        "events: W89-COLLAPSE-AND-RELOCATION与OT89-00/OT89-01均是真实章节事件，但未验证为89-S6的场级有序路径，暂不绑定。",
+        "knowledge: 宝钗知道迁居需要的旧场更新不说明借院已到或完整官面范围已知。",
+        "entry_checkpoint: 89-S6为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location: 点物/放行之后本场起运点未建立局部检查点，基线旧府不能替代许可状态。",
+        "entry_state.character.baoyu.location: W89含府到借院的全回迁居，不是此种子的起运时间。",
+        "preconditions.object.OBJ-TONGLING-JADE.holder: OT89-00支持玉随宝玉的章节连续性，但此场起运前的局部持有检查点未核定。",
+        "shared_housing: 共井共灶/床位使用已有明确编辑义务，但借住许可、同住者身份、取用安排与床位分配没有场级记录；不造邻人ID或私有井灶。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location",
+          "reason": "点物/放行之后本场起运点未建立局部检查点，基线旧府不能替代许可状态。"
+        },
+        {
+          "field": "entry_state",
+          "equals": "character.baoyu.location",
+          "reason": "W89含府到借院的全回迁居，不是此种子的起运时间。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "object.OBJ-TONGLING-JADE.holder",
+          "reason": "OT89-00支持玉随宝玉的章节连续性，但此场起运前的局部持有检查点未核定。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location",
+          "reason": "OT89-01提供借院终态，未独立证明此种子如何执行完整搬运。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baoyu.location",
+          "reason": "本场要求进借院但不能因此自证已回放S06；W89仍是粗粒度全回节点。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.holder",
+          "reason": "到借院接收/再分配为明确义务，但OT89-01的jia_yun_and_household只是章节粗层持有组，不能当此场分床位后的具体持有检查点。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "participants: 车脚、搬运者及借院共井共灶邻人未注册；不可把jia_yun替成整个物流群。, objects: 衣箱、薄书、水桶、井灶与具体床位没有对象ID；仅铺盖组与随行通灵玉可实名引用。, events: W89-COLLAPSE-AND-RELOCATION与OT89-00/OT89-01均是真实章节事件，但未验证为89-S6的场级有序路径，暂不绑定。, knowledge: 宝钗知道迁居需要的旧场更新不说明借院已到或完整官面范围已知。, entry_checkpoint: 89-S6为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location: 点物/放行之后本场起运点未建立局部检查点，基线旧府不能替代许可状态。, entry_state.character.baoyu.location: W89含府到借院的全回迁居，不是此种子的起运时间。, preconditions.object.OBJ-TONGLING-JADE.holder: OT89-00支持玉随宝玉的章节连续性，但此场起运前的局部持有检查点未核定。, shared_housing: 共井共灶/床位使用已有明确编辑义务，但借住许可、同住者身份、取用安排与床位分配没有场级记录；不造邻人ID或私有井灶。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "entry_state: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "entry_state: character.baoyu.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "preconditions: object.OBJ-TONGLING-JADE.holder"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "exit_state: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "exit_state: character.baoyu.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "exit_state: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.holder"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/89-S6.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "90-S1",
+      "chapter": 90,
+      "order": 1,
+      "title": "凤姐第一次发现“吩咐了也未必有人做”",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/90-S1.v1.json",
+        "sha256": "5a00ffe9d91f7c66b161d3c82e7bb6f94c52d628e6f675f668e3011c047554b9"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+        "sha256": "1a630560f604cbcf8bc6708af0cdf68036e78f5135a8a3710a6a402d292d674b"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "ORDER_FEEDBACK_AND_CROWDED_CARE",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "吩咐落空可只成抽象失权句，破窗修补与挤在一室的护理劳动仍未落实。",
+          "rationale": "要求反馈后一次缩小/改做的决断，并接身体照料与实物拥挤；不把安排当执行效果。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "required_beats/0",
+          "before": "凤姐仍发吩咐，却发现旧府体系不能再如前调动；平儿的跑单与回话使有限执行能力可见。",
+          "after": "凤姐发出的吩咐要碰到具体缺人/取用受限的反馈，平儿跑单再回来，迫使她在米、铺盖、冬物中缩小或改做一项实际安排；吩咐不等于执行，知旧办法回不来仍不能停止家务。"
+        },
+        {
+          "field": "required_beats/3",
+          "operation": "ADD",
+          "after": "共享借院的小屋里药炉、痰盒、热水壶与米铺盖同挤，破窗补歪等现实修补只能由少数人承担；身体照料、做饭和取物的劳动不能因凤姐尚有名义身份就自动恢复。"
+        }
+      ],
+      "unresolved": [
+        "objects: 只绑定已迁借院的铺盖组；药炉、痰盒、热水壶、米升与本场药无对象记录，不借用黛玉药碗。",
+        "authority: 具体哪一项吩咐落空、谁不能执行及取物名目办理未有原子事件，需作者现实选择。",
+        "events: W90-MANAGEMENT-DECLINE不能替代此场局部身体/权力变化。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "exit_state",
+          "equals": "character.fengjie.body_state",
+          "reason": "W90-MANAGEMENT-DECLINE只给全回劳作下恶化，不能独立划入第一次吩咐落空的场级出口。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "objects: 只绑定已迁借院的铺盖组；药炉、痰盒、热水壶、米升与本场药无对象记录，不借用黛玉药碗。, authority: 具体哪一项吩咐落空、谁不能执行及取物名目办理未有原子事件，需作者现实选择。, events: W90-MANAGEMENT-DECLINE不能替代此场局部身体/权力变化。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "exit_state: character.fengjie.body_state"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "PENDING",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "entry_state: character.fengjie.location; declared='S06', actual='s06'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "entry_state: character.fengjie.body_state; declared='chronic_old_illness', actual='chronic_old_illness'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "entry_state: character.ping_er.location; declared='S06', actual='s06'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "entry_state: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location; declared='S06', actual='s06'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "preconditions: character.fengjie.life_state; declared='ACTIVE', actual='active'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "preconditions: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status; declared='MOVED_TO_BORROWED_HOUSE', actual='moved_to_borrowed_house'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "exit_state: character.fengjie.body_state; actual='chronic_old_illness'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "requires supported explicit entry/exit targets and bound events; empty data is not replay success"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "draft/unresolved contract cannot receive an aggregate replay PASS"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "90-S2",
+      "chapter": 90,
+      "order": 2,
+      "title": "宝钗第一次承担“小户经济”",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/90-S2.v1.json",
+        "sha256": "b4d2312755eb9d192b5b290087b20515fb0a60127a709ccc5209cdd7577309ae"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+        "sha256": "8af5c6c27fa27ebe5b3a2c27e91f23ed5d2b9a8781e7afb8bfa7358b33faf665"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "COST_PERSISTS_AFTER_ASSENT",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "承认道理仍可能被写成成功悔改；必需的病妇接收者未登记而演员集合标KNOWN。",
+          "rationale": "保持送衣成本和他人补缺，不给改过终态；完整接收链未齐时改PENDING，不虚构病妇ID。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/90-S1.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "下午宝玉反受冷而披宝钗披风，宝钗第二次指出“你周全一个，总有人补这个缺”；他认道理但不承诺改变。",
+          "after": "下午宝玉反受冷才由宝钗披风补这一缺口，第二次含讽“你周全一个，总有人补这个缺”落在实际补缺劳动上；宝玉承认道理但不撤销已付出的赠衣成本、不承诺以后改，也不让一句承认变成成功受箴。"
+        },
+        {
+          "field": "participants_status",
+          "before": "KNOWN",
+          "after": "PENDING"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "recipient: 病妇是必需赠衣接收者但无实体ID，本场完整参与链仅部分可绑定，participants_status由KNOWN改PENDING；送达/披风经手仍未知。"
+        }
+      ],
+      "unresolved": [
+        "objects: 青布夹衣、宝钗披风、空钉、补衣用具未注册；OBJ-PAWNABLE-JACKET-95不能未经证据视作同衣。",
+        "participants: 病妇没有实体ID，她是赠衣接收者而非可造registry人物。",
+        "body: 受冷程度、送衣路径和披风的实际转交时点无原子事件，不创造身体诊断或衣物转移ID。",
+        "entry_checkpoint: 90-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.baochai.household_role: S1未提供宝钗接管小户的局部角色入口，章节wife状态不等于本场管理执行。",
+        "preconditions.character.baoyu.body_state: 送衣前具体御寒能力及身体状态没有场级数据，不能提前设定受寒结果。",
+        "recipient: 病妇是必需赠衣接收者但无实体ID，本场完整参与链仅部分可绑定，participants_status由KNOWN改PENDING；送达/披风经手仍未知。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.baochai.household_role",
+          "reason": "S1未提供宝钗接管小户的局部角色入口，章节wife状态不等于本场管理执行。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "character.baoyu.body_state",
+          "reason": "送衣前具体御寒能力及身体状态没有场级数据，不能提前设定受寒结果。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baoyu.body_state",
+          "reason": "下午受冷披风是待写身体动作，没有种子级受寒/恢复事件。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baochai.household_role",
+          "reason": "W90角色升级是全回粗粒度目标，不能由两句讽谏自证出口。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+              "detail": "objects: 青布夹衣、宝钗披风、空钉、补衣用具未注册；OBJ-PAWNABLE-JACKET-95不能未经证据视作同衣。, participants: 病妇没有实体ID，她是赠衣接收者而非可造registry人物。, body: 受冷程度、送衣路径和披风的实际转交时点无原子事件，不创造身体诊断或衣物转移ID。, entry_checkpoint: 90-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.baochai.household_role: S1未提供宝钗接管小户的局部角色入口，章节wife状态不等于本场管理执行。, preconditions.character.baoyu.body_state: 送衣前具体御寒能力及身体状态没有场级数据，不能提前设定受寒结果。, recipient: 病妇是必需赠衣接收者但无实体ID，本场完整参与链仅部分可绑定，participants_status由KNOWN改PENDING；送达/披风经手仍未知。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+              "detail": "entry_state: character.baochai.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+              "detail": "preconditions: character.baoyu.body_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+              "detail": "exit_state: character.baoyu.body_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+              "detail": "exit_state: character.baochai.household_role"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "90-S3",
+      "chapter": 90,
+      "order": 3,
+      "title": "两种管理逻辑正面交错一次",
+      "input_contract": {
+        "path": "data/planning/contracts/agent-v1/90-S3.v1.json",
+        "sha256": "d6573f7f6bf9957d93920e283d6533085a71c3624d387442814c67672be46adb"
+      },
+      "output_contract": {
+        "path": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+        "sha256": "e10b91adcc9845df5a00159a002e6fb6db9f456e8abd6afd68471b7a97e6c43f"
+      },
+      "editorial_status": "EDITED_WITH_PENDING_EVIDENCE",
+      "failures_or_risks": [
+        {
+          "code": "REQUEST_NOT_APPROVAL_OR_DELIVERY",
+          "kind": "EDITORIAL_COVERAGE_GAP_OR_DRIFT_RISK",
+          "severity": "MEDIUM",
+          "finding": "平儿送名目单易被当成功获准并补入物资，管理交错也可能成为资源恢复结论。",
+          "rationale": "把申请、许可、取回分开，保留章末未办结状态与硬回目，禁止把贾琏无力变失踪。",
+          "resolution": "MITIGATED_BY_EDITED_OBLIGATION_NOT_PROVEN_EXECUTED"
+        }
+      ],
+      "precise_changes": [
+        {
+          "field": "entry_from",
+          "before": "data/planning/contracts/agent-v1/90-S2.v1.json",
+          "after": "data/planning/contracts/agent-edited-v1/90-S2.v2.json",
+          "reason": "本批前驱引用跟随明确v2选择；仅来源列表顺序，不提供局部状态继承。"
+        },
+        {
+          "field": "required_beats/1",
+          "before": "凤姐明知旧办法回不来仍作实际決断，平儿跑单；取物名目要接到受控旧府取物，不能假装自由取用。",
+          "after": "凤姐承认旧府办法不可复仍对米/铺盖/冬物作取舍，宝钗的小户计算与之只交错一次；平儿把取物名目送去受控旧府办理。送单、获准、实际取到是三个边界，不把送出去写成已补入物资。"
+        },
+        {
+          "field": "required_beats/2",
+          "before": "风掀名目纸，平儿压住纸角并送出办理；在这个未能恢复旧势的实务动作收束。",
+          "after": "风掀名目纸，平儿压住纸角再送出办理，以尚未得到许可/实物的实务动作收束；纸单不能神奇抹平借院共享与护理劳动的持续缺口。"
+        },
+        {
+          "field": "forbidden_beats/3",
+          "operation": "ADD",
+          "after": "贾琏无力托底被写成已经失踪，或把凤姐/宝钗的算账配合写成恢复旧府调度权的成功方案。"
+        },
+        {
+          "field": "unresolved",
+          "operation": "ADD",
+          "after": "retrieval_boundaries: 送单—获准—取回三个边界已明示，但许可、经手者、取物结果仍无注册事实；不预演91冬衣包或宣布已恢复供给。"
+        }
+      ],
+      "unresolved": [
+        "objects: 取物名目纸、纸角、米升和具体配给量没有对象ID；铺盖组只能支持其已在借院的粗层物流。",
+        "procedures: 旧府取物准许、经手人、单上物目与办理结果未有记录；不将送出纸单声明为已获批准。",
+        "events: W90-MANAGEMENT-DECLINE把角色/身体/全府权力并置为全回节点，本场只作待写交错，不强制绑定。",
+        "entry_checkpoint: 90-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.baochai.household_role: 两次讽谏后的管理职责没有场级出口，不能从邻接推入此场。",
+        "entry_state.character.fengjie.body_state: 第一次病中调度与此交错场之间没有局部身体检查点。",
+        "preconditions.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status: 已在借院的章节对象终态不证明此场可支配铺盖的具体量与分配许可。",
+        "retrieval_boundaries: 送单—获准—取回三个边界已明示，但许可、经手者、取物结果仍无注册事实；不预演91冬衣包或宣布已恢复供给。"
+      ],
+      "pending_state_conditions": [
+        {
+          "field": "entry_state",
+          "equals": "character.baochai.household_role",
+          "reason": "两次讽谏后的管理职责没有场级出口，不能从邻接推入此场。"
+        },
+        {
+          "field": "entry_state",
+          "equals": "character.fengjie.body_state",
+          "reason": "第一次病中调度与此交错场之间没有局部身体检查点。"
+        },
+        {
+          "field": "preconditions",
+          "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status",
+          "reason": "已在借院的章节对象终态不证明此场可支配铺盖的具体量与分配许可。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.baochai.household_role",
+          "reason": "管理交错不等于W90角色更新已经在此场执行。"
+        },
+        {
+          "field": "exit_state",
+          "equals": "character.fengjie.body_state",
+          "reason": "风掀纸角与送出名目单没有身体效果，不能以全回恶化自动作此场终态。"
+        }
+      ],
+      "deterministic_failures": [],
+      "validation": {
+        "schema_errors": [],
+        "beat_reference_errors": []
+      },
+      "diagnostics": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+              "detail": "objects: 取物名目纸、纸角、米升和具体配给量没有对象ID；铺盖组只能支持其已在借院的粗层物流。, procedures: 旧府取物准许、经手人、单上物目与办理结果未有记录；不将送出纸单声明为已获批准。, events: W90-MANAGEMENT-DECLINE把角色/身体/全府权力并置为全回节点，本场只作待写交错，不强制绑定。, entry_checkpoint: 90-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。, event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。, exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。, entry_state.character.baochai.household_role: 两次讽谏后的管理职责没有场级出口，不能从邻接推入此场。, entry_state.character.fengjie.body_state: 第一次病中调度与此交错场之间没有局部身体检查点。, preconditions.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status: 已在借院的章节对象终态不证明此场可支配铺盖的具体量与分配许可。, retrieval_boundaries: 送单—获准—取回三个边界已明示，但许可、经手者、取物结果仍无注册事实；不预演91冬衣包或宣布已恢复供给。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+              "detail": "entry_state: character.baochai.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+              "detail": "entry_state: character.fengjie.body_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+              "detail": "preconditions: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+              "detail": "exit_state: character.baochai.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+              "detail": "exit_state: character.fengjie.body_state"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v1/90-S3.v2.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,741 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch99.json",
+      "sha256": "9e11795fad6fd7cb7b76d31f28a82405a81dd3ce071c14da4aa56a247d493a8e"
+    },
+    "seed": {
+      "path": "data/planning/scenes/99-S2.json",
+      "sha256": "65166cf1a04b886352c8ab51c033e2b2c8b1d0eaef0238d3e5cb6eae3d6005d8"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 99,
+  "chapter_plan_ref": "data/planning/chapters/ch99.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+  "entry_state": [
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "前驱数日退出只有声明顺序，实际离门起点、时间和携带物未登记。"
+    }
+  ],
+  "event_refs": [
+    "W99-BAOYU-LEAVES"
+  ],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W99仅把宝玉置S13的当前C终点，没有本场出门经过各地的场级检查点。"
+    },
+    {
+      "equals": "object.OBJ-TONGLING-JADE.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT99-01主动标EARTHLY_ROUTE_OPEN_AFTER_SA_SHOU；不论章节终点还是本场局部都不补物理去向。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "99-S2-F1",
+      "description": "不得主动设计弃玉仪式或决定玉给谁；尘世路线保持开放，玉不是出家触发器。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/18/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a6ce3fd52e22ae817b258724f181347f1942fb50df05e4a5805645bc93ab0b51",
+          "value": {
+            "id": "99-S2",
+            "title": "宝玉说“走”以后，宝钗只问现实问题"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                48516,
+                48652
+              ],
+              "lines": [
+                1211,
+                1213
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4d940c20ce2ccf5876d98ce58189804461e7f2d293c380db4e44f12f0f34c38b"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR43；P09：撒手时宝钗为妻、麝月为婢状态已成立；O10负责99/100分工。禁止玉归即出家。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                50486,
+                50630
+              ],
+              "lines": [
+                1246,
+                1248
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e046fdccc95aec8e61e37820cec4ad06726b3039d65d6e04b111032a006a80a9"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n98→99普通日缓冲；无玉触发；“没有，只说我平安”；两人份晚饭；旧衣针仍别在边上。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                50630,
+                50755
+              ],
+              "lines": [
+                1249,
+                1251
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fd1078f64f822afe747f39e993129b7585a2f583727d800a9b1b5cc4c5615d87"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n人生论文、佛理总结、精神胜利叙述、“终于看破宝钗黛玉”、玉触发、神谕。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "99-S2-F2",
+      "description": "不得写诀别信、诀别诗、佛偈、人生总结或“终于看破”的精神胜利旁白。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/18/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a6ce3fd52e22ae817b258724f181347f1942fb50df05e4a5805645bc93ab0b51",
+          "value": {
+            "id": "99-S2",
+            "title": "宝玉说“走”以后，宝钗只问现实问题"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                49677,
+                49820
+              ],
+              "lines": [
+                1231,
+                1233
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "298b7827a42b8060950276d7070057dfce17bf759e43d4b6b8c904cac0ef652b"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG07“无字”强锁：无诀别信、诗、偈。作者层也无诗无偈。98《续庄子》不得成为99因果。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                50630,
+                50755
+              ],
+              "lines": [
+                1249,
+                1251
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fd1078f64f822afe747f39e993129b7585a2f583727d800a9b1b5cc4c5615d87"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n人生论文、佛理总结、精神胜利叙述、“终于看破宝钗黛玉”、玉触发、神谕。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                51005,
+                51066
+              ],
+              "lines": [
+                1259,
+                1260
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "35e3b2995685a7dde440b3c9b306ce406f1bba844d2d00fd7e3d8c7497163af9"
+            },
+            "name": "回末诗",
+            "number": 17,
+            "text": "**17｜回末诗** **人物无字，作者也无诗偈。**\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "99-S2",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [
+    "OT99-01"
+  ],
+  "order": 2,
+  "participants": [
+    "baoyu",
+    "baochai",
+    "sheyue"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.baochai.marital_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "妻的关系在章入口有实际依据，但本场半知、听见走或不回的时点不由婚姻标签自动推出。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/0",
+        "ref": "data/objects/m4.json#/objects/0",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "7039eac261456c40f732f1322b22ca25814dd97df2c70ae82c537009bf332c47",
+        "value": {
+          "baseline": {
+            "frame_status": "IN_HUMAN_WORLD",
+            "holder": "baoyu",
+            "location": "S02",
+            "status": "WITH_BAOYU"
+          },
+          "continuity_rules": [
+            "第98回误取—发现—送还属于当前C实现，不证明原稿绝对回次",
+            "第99回不得强制写成主动弃玉仪式",
+            "第100回石归本质是外框身份终态，不要求尘世物流闭合"
+          ],
+          "evidence_status": "MIXED_HARD_IDENTITY_CURRENT_C_PLACEMENT",
+          "id": "OBJ-TONGLING-JADE",
+          "identity_status": "LOCKED_TONGLING_OBJECT_BUT_EARTHLY_ROUTE_OPEN",
+          "kind": "jade",
+          "name": "通灵玉（当前C运行对象）",
+          "source_refs": [
+            "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+            "R01",
+            "R16",
+            "R18",
+            "R43"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "99-S2-R1",
+      "description": "宝玉表达走或不回时不作理论解释；宝钗只问住哪里、回来不回来等实际问题，麝月落在饭、袜、鞋，三人语气不能互换。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/18/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a6ce3fd52e22ae817b258724f181347f1942fb50df05e4a5805645bc93ab0b51",
+          "value": {
+            "id": "99-S2",
+            "title": "宝玉说“走”以后，宝钗只问现实问题"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                48652,
+                48956
+              ],
+              "lines": [
+                1214,
+                1216
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7c92a7d5f1c171bf75a44f529b3f1d661fc1f621512427d510a8e977c1f3bbb4"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n“日子照旧过几日”；还借书、对食物兴趣下降、逐项退出选择；宝钗问实际问题；麝月问饭袜鞋；错误目击；寺中搬柴挑水；宝玉说“没有，只说我平安”；结尾“够咱们两个吃的就是了”、未补完旧衣。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                49116,
+                49328
+              ],
+              "lines": [
+                1220,
+                1222
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                49328,
+                49589
+              ],
+              "lines": [
+                1223,
+                1227
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "96075b9c8dbef14eb73cac9ac5c10637f7aa892b98fa873c74d1bf3b6f5caa69"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n宝玉、宝钗、麝月、贾芸；书摊、车脚、渡口、小店、普通僧人作为寻找网络。\n\n**D2边界｜** 贾芸寻到宝玉可以保留，但男性寺院不等于“庵”；证据版不得声称99兑现“仗义探庵”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                50286,
+                50486
+              ],
+              "lines": [
+                1243,
+                1245
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "45be16f8f315473e9aa2adca0b0cb6f7fc16ba27d9b735dca95be68933ca61a2"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：寻人也花脚费，家里仍买米付租。物：还书、少带衣/钱、旧鞋留下。信：宝玉最早知道→宝钗半知→麝月后知→外界全是模糊目击。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "99-S2-R2",
+      "description": "离门体现不再接续角色而非无情；少带衣钱、旧鞋留下仅为义务，件数和携物身份未锁。W99-BAOYU-LEAVES已将宝玉置S13，是含寺居的章级终点，不能把出门一刻写成瞬间到寺；留出未知交通与入住接口。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/18/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a6ce3fd52e22ae817b258724f181347f1942fb50df05e4a5805645bc93ab0b51",
+          "value": {
+            "id": "99-S2",
+            "title": "宝玉说“走”以后，宝钗只问现实问题"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                49917,
+                50167
+              ],
+              "lines": [
+                1237,
+                1239
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "df442582d663b0e260423cbe8216b6a1f5cd2e046979778ce3d3ccc2f0ef343f"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n41核心：“情尽未尽”。宝玉不是无情，而是“不想再接”世俗角色。可加一次极短早/晚课：跟诵不熟，小和尚指页，散课马上搬水/看锅。严禁高僧点化、黛玉/警幻托梦。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                50286,
+                50486
+              ],
+              "lines": [
+                1243,
+                1245
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "45be16f8f315473e9aa2adca0b0cb6f7fc16ba27d9b735dca95be68933ca61a2"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：寻人也花脚费，家里仍买米付租。物：还书、少带衣/钱、旧鞋留下。信：宝玉最早知道→宝钗半知→麝月后知→外界全是模糊目击。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                51066,
+                51376
+              ],
+              "lines": [
+                1261,
+                1264
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/18",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/18",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+            "value": {
+              "chapter": 99,
+              "money_state": "最低生活可维持",
+              "food_medicine": "早饭简单、旧衣缝补",
+              "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+              "object_interface": "借书包、旧棉衣、未补完旧衣",
+              "boundary": "宝玉不是因当日断粮出家",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/9",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+            "value": {
+              "chapter": 99,
+              "targets": [
+                "baoyu"
+              ],
+              "kind": "EARLY_INTENT",
+              "fact": "baoyu_departure_intent",
+              "note": "宝玉最早知道自己要走，其他人分层后知",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "99-S2-R3",
+      "description": "妻/婢关系已成立而退出仍伤人；按本次所选源链99-S2之后接99-S3寻找社会后果，再99-S4家务，99-S5仍为源列表第5个可选寺庙接口。前驱声明不证明旅程、同步或知情事件，家中旧衣终末与第5接口放置的矛盾继续待核。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/18/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a6ce3fd52e22ae817b258724f181347f1942fb50df05e4a5805645bc93ab0b51",
+          "value": {
+            "id": "99-S2",
+            "title": "宝玉说“走”以后，宝钗只问现实问题"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                48516,
+                48652
+              ],
+              "lines": [
+                1211,
+                1213
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4d940c20ce2ccf5876d98ce58189804461e7f2d293c380db4e44f12f0f34c38b"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR43；P09：撒手时宝钗为妻、麝月为婢状态已成立；O10负责99/100分工。禁止玉归即出家。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                49116,
+                49328
+              ],
+              "lines": [
+                1220,
+                1222
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                50286,
+                50486
+              ],
+              "lines": [
+                1243,
+                1245
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "45be16f8f315473e9aa2adca0b0cb6f7fc16ba27d9b735dca95be68933ca61a2"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：寻人也花脚费，家里仍买米付租。物：还书、少带衣/钱、旧鞋留下。信：宝玉最早知道→宝钗半知→麝月后知→外界全是模糊目击。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                51066,
+                51376
+              ],
+              "lines": [
+                1261,
+                1264
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/18",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/18",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+            "value": {
+              "chapter": 99,
+              "money_state": "最低生活可维持",
+              "food_medicine": "早饭简单、旧衣缝补",
+              "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+              "object_interface": "借书包、旧棉衣、未补完旧衣",
+              "boundary": "宝玉不是因当日断粮出家",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/9",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+            "value": {
+              "chapter": 99,
+              "targets": [
+                "baoyu"
+              ],
+              "kind": "EARLY_INTENT",
+              "fact": "baoyu_departure_intent",
+              "note": "宝玉最早知道自己要走，其他人分层后知",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [
+    "OBJ-TONGLING-JADE"
+  ],
+  "revision": "v3",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+    "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+    "departure_handoff: 告知宝钗与真正离门的先后、带衣钱选择、路径和时间均未映射为局部事件。",
+    "jade_route: OT99-01只退出可知范围；不以UNKNOWN字符串当已知去处。",
+    "household_knowledge: 麝月何时获知、不回如何被理解尚无注册知识事件。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+    "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+    "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+    "departure_terminal_scope: W99将宝玉设S13且角色monk_left_household；只是章末关联，不证明离门当刻已经到寺或剃发，旅程与入住缺口不补。",
+    "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+  ],
+  "function": "把宝玉说走与宝钗现实追问、麝月饭鞋照料分开，留下实际离家接口和被退出关系的伤害，不给精神胜利结论。",
+  "notes": "EDITOR96-100的99章v3实质性编辑纠正：此前v2把未获批准的替代叙事编排写入entry_from，实际完整计划检查产生两条SCENE_CHAIN_MISMATCH。本v3恢复所选合同链99-S1→99-S2→99-S3→99-S4→99-S5，entry_from绑定新v3源列表前驱，seed.order及packet/seed/card/world绑定不变；不改检查器、不覆盖v1或v2。AGENT_EDITED仅为编辑阶段，不是格式-only、不代表语义/合格同行/人工验证；authority_effect=NONE，evidence_effect=NONE。所选前驱通过声明一致性检查不等于场级状态已执行，后场entry_checkpoint仍UNKNOWN，不注入前场exit。participants_status=PENDING：注册人物仅为候选，未注册目击者与僧人保持未决。KNOWN条件仅限第98章粗入口，不投射到局部动作；96—100无v03获取事件，不造知识fact、actor或event ID。章卡旧衣终末保护与源列表99-S5在99-S4之后的篇章冲突仍PENDING。备选叙事99-S1→99-S2→99-S5（可选）→99-S3→99-S4仅为未选定、未经核准的pending proposal；不得当作所选合同前驱或已定末镜，若以后采用须上游显式编排授权及重新检查。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+}

@@ -1,0 +1,761 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch87.json",
+      "sha256": "f58985724470b3c84ce01dad4223c06926a8b152676b986b89ad5350de3352e8"
+    },
+    "seed": {
+      "path": "data/planning/scenes/87-S3.json",
+      "sha256": "f1b6a6ec3c209e01d2c2194199fe26eaaa1e822f4d5df84a2a6bf0d9dae018e8"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 87,
+  "chapter_plan_ref": "data/planning/chapters/ch87.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/87-S2.v2.json",
+  "entry_state": [
+    {
+      "equals": "character.baoyu.marital_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W87只给成婚终态，没有87-S2到婚礼入口的场级婚姻检查点。"
+    },
+    {
+      "equals": "character.baochai.marital_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "婚礼种子不是实际登记事件；不能把既定结婚目标当入口事实。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.baoyu.marital_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W87-GOLD-JADE-MARRIAGE是全回粗粒度成婚节点，尚未独立证明本种子的执行出口。"
+    },
+    {
+      "equals": "character.baochai.marital_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "要求确实成夫妇是写作约束，不能据此自证此场出口为MARRIED_BAOYU。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "以掉包骗婚成立夫妻、宝玉大闹，或把黛亡当婚礼立即举行的许可。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "96441c75680d2f438cd716da3e1296266565a45f9862616a1ab19fa92e2eb85e",
+          "value": {
+            "id": "87-S3",
+            "title": "婚礼为什么缩小"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18204,
+            18409
+          ],
+          "lines": [
+            465,
+            467
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "89a63f4a56592b0557e013d34eb829eac06d1f5cc80a369da960d09f3c280e98"
+        },
+        {
+          "byte_range": [
+            19887,
+            20042
+          ],
+          "lines": [
+            498,
+            500
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5c7f2161f09bd80af5764caf51bac9e0a66adcb16202bcd5ff1ed870a2d68d58"
+        },
+        {
+          "byte_range": [
+            20042,
+            20176
+          ],
+          "lines": [
+            501,
+            503
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "138b518e0d0b59cf358ceb18bf22d7554a3fcd17488730d93becb7033be04bb8"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "新建豪华婚房与盛宴，或由仙人解释前缘来解决实际丧期/组织/财物问题。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "96441c75680d2f438cd716da3e1296266565a45f9862616a1ab19fa92e2eb85e",
+          "value": {
+            "id": "87-S3",
+            "title": "婚礼为什么缩小"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18204,
+            18409
+          ],
+          "lines": [
+            465,
+            467
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "89a63f4a56592b0557e013d34eb829eac06d1f5cc80a369da960d09f3c280e98"
+        },
+        {
+          "byte_range": [
+            18572,
+            18717
+          ],
+          "lines": [
+            471,
+            473
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "33a62592ccb0ff34be1ea1249612e49e0244699f3f380c94ac59c1a781c51f4d"
+        },
+        {
+          "byte_range": [
+            19519,
+            19617
+          ],
+          "lines": [
+            489,
+            491
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e3f9667772df039387b485c2ae230efab86cb86361296d65109c2e10ebe26b31"
+        },
+        {
+          "byte_range": [
+            19713,
+            19887
+          ],
+          "lines": [
+            495,
+            497
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5bf1197c0432ea2351b08eca8a9ee908c0ce11405e491e8e4b399746f020a66c"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "96441c75680d2f438cd716da3e1296266565a45f9862616a1ab19fa92e2eb85e",
+          "value": {
+            "id": "87-S3",
+            "title": "婚礼为什么缩小"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            20516,
+            20544
+          ],
+          "lines": [
+            510,
+            510
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            20544,
+            20571
+          ],
+          "lines": [
+            511,
+            512
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4ce526aecba789d8fb664d11031ea1dcfb21bf96efab2e4510b2cee0f78d282d"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "87-S3",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 3,
+  "participants": [
+    "baoyu",
+    "baochai",
+    "jiamu",
+    "wangfuren",
+    "xue_yima",
+    "fengjie",
+    "xiren",
+    "sheyue"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "礼务、衣饰与席面所在的局部场所没有世界移动记录。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/24",
+        "ref": "data/world/m3_core.json#/characters/24",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "2cf082751e433eb468cd874dc43d7de79d779f4bd3f374e53e348c7abedeb0d8",
+        "value": {
+          "baseline": {
+            "body_state": "elderly",
+            "household_role": "senior_matriarch",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "WIDOWED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "jiamu",
+          "name": "贾母"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/25",
+        "ref": "data/world/m3_core.json#/characters/25",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "a65f17f6bbf2cfddd4d5c2094fd86646d034352e611faed657faf9db1383095e",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "senior_household_woman",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "wangfuren",
+          "name": "王夫人"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/26",
+        "ref": "data/world/m3_core.json#/characters/26",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "26f65be472892755beebd1cf953ca0f7c7b048431c54ce82d5eff8da83bd880b",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_matriarch",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "WIDOWED"
+          },
+          "groups": [
+            "xue_household",
+            "human"
+          ],
+          "id": "xue_yima",
+          "name": "薛姨妈"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/7",
+        "ref": "data/world/m3_core.json#/characters/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bca44063796cdc27c5e8076a896ecdbedfbe135109b5461cd9af292e5d0fbaa0",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_old_illness",
+            "household_role": "household_manager",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED_JIALIAN"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "fengjie",
+          "name": "王熙凤"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/5",
+        "ref": "data/world/m3_core.json#/characters/5",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "b64f1c0390f062cb8366790030ca19afb986e82e378a7b725e3f89a737af3e53",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "xiren",
+          "name": "花袭人"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "description": "礼仪可缩写但宝玉宝钗确实成夫妇；把丧规对衣饰/席面/公开规模的约束与贾母名义认可、王夫人/薛姨妈实际操办分别写见。名义认可不等于丧制万能豁免，具体礼法规程不得伪造。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "96441c75680d2f438cd716da3e1296266565a45f9862616a1ab19fa92e2eb85e",
+          "value": {
+            "id": "87-S3",
+            "title": "婚礼为什么缩小"
+          }
+        },
+        {
+          "path": "data/reconstruction/m2.json",
+          "pointer": "/timeline/6",
+          "ref": "data/reconstruction/m2.json#/timeline/6",
+          "sha256": "345b9572314ef414c1b4b4892126a57a89b335bdb0a756fa9d2e89a909d6939f",
+          "text_sha256": "49df171b70026a2d0c9ebafabcaf1fc97ec8ec9d96878a8bfa20fbf9d63c365f",
+          "value": {
+            "chapter": 87,
+            "epistemic": "RUN_LOCK_NOT_ORIGINAL_DATING",
+            "lock_level": "H03 + RUN-CURRENT(C)",
+            "required_relation": "黛亡后再过数月；丧规由急骤转常例；金玉婚不得尸骨未寒即办",
+            "source_line": 78,
+            "source_ref": "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+            "time_window": "T+约10—16个月开放窗"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18204,
+            18409
+          ],
+          "lines": [
+            465,
+            467
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "89a63f4a56592b0557e013d34eb829eac06d1f5cc80a369da960d09f3c280e98"
+        },
+        {
+          "byte_range": [
+            18572,
+            18717
+          ],
+          "lines": [
+            471,
+            473
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "33a62592ccb0ff34be1ea1249612e49e0244699f3f380c94ac59c1a781c51f4d"
+        },
+        {
+          "byte_range": [
+            18717,
+            18881
+          ],
+          "lines": [
+            474,
+            476
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "a03b403ff96a64bbdf8cb75d1fe4fbe548d0e330f8c3f2cd8597031493676ba9"
+        },
+        {
+          "byte_range": [
+            18881,
+            19006
+          ],
+          "lines": [
+            477,
+            479
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "a856e99554271521412a41c08dd9f4c5356ba4b17dfc0f9545f7f7256fd68d37"
+        },
+        {
+          "byte_range": [
+            19713,
+            19887
+          ],
+          "lines": [
+            495,
+            497
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5bf1197c0432ea2351b08eca8a9ee908c0ce11405e491e8e4b399746f020a66c"
+        },
+        {
+          "byte_range": [
+            20571,
+            20907
+          ],
+          "lines": [
+            513,
+            516
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "701a1a0240887652ca12872467bbc7636dc2ef1e4f3146fca9811dc604dad297"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "婚用布、被褥、衣饰、席面至少沿筹备—调配—使用的现实链交代压缩及来源；E0资源尚在，缩礼不是查抄后全府赤贫，婚用物也不是89迁居铺盖组或探春远行箱笼。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "96441c75680d2f438cd716da3e1296266565a45f9862616a1ab19fa92e2eb85e",
+          "value": {
+            "id": "87-S3",
+            "title": "婚礼为什么缩小"
+          }
+        },
+        {
+          "ref": "data/world/m3_resources.json#/resource_flows/6",
+          "path": "data/world/m3_resources.json",
+          "pointer": "/resource_flows/6",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+          "text_sha256": "beb2d54f6f3e23cbbb2dfec006149bb58fd6de62d307fbe249ad82a90b5f821d",
+          "value": {
+            "boundary": "不写大排场",
+            "chapter": 87,
+            "epistemic": "REFERENCE_RESOURCE_FLOW",
+            "food_medicine": "衣被、饭食、房内布置仍正常",
+            "labor": "袭人麝月承担婚后重整",
+            "money_state": "尚可办低调婚事",
+            "object_interface": "黛玉遗物/宝钗新物对照",
+            "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18572,
+            18717
+          ],
+          "lines": [
+            471,
+            473
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "33a62592ccb0ff34be1ea1249612e49e0244699f3f380c94ac59c1a781c51f4d"
+        },
+        {
+          "byte_range": [
+            19617,
+            19713
+          ],
+          "lines": [
+            492,
+            494
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "0b7e7af26c486b29e5c3056b2785eed905bc239dac34eba00c390f38923c1d38"
+        },
+        {
+          "byte_range": [
+            19713,
+            19887
+          ],
+          "lines": [
+            495,
+            497
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "5bf1197c0432ea2351b08eca8a9ee908c0ce11405e491e8e4b399746f020a66c"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "裁缝、针线房、厨房及媒/礼务只露必要工序，袭人麝月仍在日常劳动中，不做婚俗博览。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/6/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/6/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "96441c75680d2f438cd716da3e1296266565a45f9862616a1ab19fa92e2eb85e",
+          "value": {
+            "id": "87-S3",
+            "title": "婚礼为什么缩小"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            18881,
+            19006
+          ],
+          "lines": [
+            477,
+            479
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "a856e99554271521412a41c08dd9f4c5356ba4b17dfc0f9545f7f7256fd68d37"
+        },
+        {
+          "byte_range": [
+            19617,
+            19713
+          ],
+          "lines": [
+            492,
+            494
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "0b7e7af26c486b29e5c3056b2785eed905bc239dac34eba00c390f38923c1d38"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "participants: 媒/礼务、裁缝、针线房及厨房经手者没有实体ID；不能伪造wedding_officiant等记录。",
+    "objects: 本回婚用布、被褥、妆奁没有对象ID；不得误用89迁居铺盖组或82探春箱笼替代。",
+    "events: W87-GOLD-JADE-MARRIAGE没有场级仪礼路径与供应链，只作未绑定的章节节点。",
+    "entry_checkpoint: 87-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+    "entry_state.character.baoyu.marital_status: W87只给成婚终态，没有87-S2到婚礼入口的场级婚姻检查点。",
+    "entry_state.character.baochai.marital_status: 婚礼种子不是实际登记事件；不能把既定结婚目标当入口事实。",
+    "preconditions.character.baoyu.location: 礼务、衣饰与席面所在的局部场所没有世界移动记录。",
+    "ritual: 缩礼已落实为可见规模与主办分层义务；丧規的具体可行程序仍待有依据的编辑核定，未证明完成。"
+  ],
+  "function": "以丧期与有限筹备解释缩小的婚礼，真正建立夫妻生活而非骗局，同时保留名义主婚与实际组织的区别。",
+  "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/87-S3.v1.json，sha256=52f480c3eced6eca6706c99c16320ce2d135b52c19e40457aea46385d0265d4f。本场精确改动：要求可见衣饰/席面/规模限制和筹备调配链，保留法制未知，不挪用其他回对象。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+}

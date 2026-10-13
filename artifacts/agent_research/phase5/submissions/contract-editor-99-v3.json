@@ -1,0 +1,3206 @@
+{
+  "schema_version": 1,
+  "kind": "AGENT_CONTRACT_EDITOR_SUBSTANTIVE_ADDENDUM",
+  "editor_id": "EDITOR96-100",
+  "status": "AGENT_EDITED",
+  "stage": "EDITOR_ONLY_NOT_SEMANTIC_VERIFIED",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "scope": {
+    "chapters": [
+      99
+    ],
+    "scene_ids": [
+      "99-S1",
+      "99-S2",
+      "99-S3",
+      "99-S4",
+      "99-S5"
+    ],
+    "new_contract_count": 5,
+    "directory": "data/planning/contracts/agent-edited-v2",
+    "other_80_scene_selection": "Coordinator responsibility; neither copied, read, changed nor certified by this addendum. This directory supplies only five ch99 v3 replacements."
+  },
+  "change_type": "SUBSTANTIVE_CHAIN_AND_OBLIGATION_CORRECTION_NOT_FORMAT_ONLY",
+  "prior_submission": {
+    "path": "artifacts/agent_research/phase5/submissions/contract-editor-96-100.json",
+    "sha256": "08e4d840487a571f9c867cdbbc97123bc78789214edc20442c7fc995af714093"
+  },
+  "packet": {
+    "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+    "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+  },
+  "cause": {
+    "prior_limit": "The prior zero-FAIL report reflected individual inspect_contract/reference diagnostics, not the selected-plan predecessor checker. It did not establish the full 85-scene selection zero-FAIL.",
+    "actual_reproduced_before_failures": [
+      {
+        "status": "FAIL",
+        "code": "SCENE_CHAIN_MISMATCH",
+        "ref": "data/planning/scenes/99-S3.json",
+        "detail": "expected data/planning/scenes/99-S2.json, declared data/planning/contracts/agent-edited-v1/99-S5.v2.json"
+      },
+      {
+        "status": "FAIL",
+        "code": "SCENE_CHAIN_MISMATCH",
+        "ref": "data/planning/scenes/99-S5.json",
+        "detail": "expected data/planning/scenes/99-S4.json, declared data/planning/contracts/agent-edited-v1/99-S2.v2.json"
+      }
+    ],
+    "checker_unchanged": true,
+    "correction": "New v3 source-order predecessor chain S1→S2→S3→S4→S5; no v1/v2 or prior submission overwrite."
+  },
+  "selected_chain": [
+    "99-S1",
+    "99-S2",
+    "99-S3",
+    "99-S4",
+    "99-S5"
+  ],
+  "alternate_narrative_proposal": {
+    "status": "PENDING_NOT_SELECTED",
+    "sequence": [
+      "99-S1",
+      "99-S2",
+      "99-S5 (optional)",
+      "99-S3",
+      "99-S4"
+    ],
+    "not_executable_predecessor": true,
+    "authorization": "Would require explicit upstream narrative placement decision and renewed consistency checking; no such decision claimed."
+  },
+  "terminal_placement": {
+    "status": "PENDING_UNRESOLVED",
+    "issue": "Source list S5 after S4 conflicts with chapter-card home meal/unfinished garment terminal placement. Restoring checker consistency does not resolve the prose-placement issue.",
+    "garment_identity": "Chapter-99 unfinished garment remains unregistered and distinct from the already pawned chapter-95 jacket."
+  },
+  "preservation": {
+    "original_v1_count": 5,
+    "original_v2_count": 5,
+    "prior_submission_unchanged": true,
+    "packet_unchanged": true,
+    "method": "Compared current original v1/v2 hashes against unchanged own prior submission rows; compared prior submission hash against delivered value. All v3 input bindings unchanged. New revisions created only with write_contract -> write_new xb."
+  },
+  "verification": {
+    "checker": "rcwh.planning.checking.check_selected",
+    "invocation_scope": "chapters=[99], contracts_directory=data/planning/contracts/agent-edited-v2",
+    "before_status": "FAIL",
+    "before_fail_count": 2,
+    "after_status": "PENDING",
+    "after_fail_count": 0,
+    "grounding_fail_count": 0,
+    "after_check_counts": {
+      "PENDING": 47,
+      "PASS": 13,
+      "NOT_CHECKED": 9
+    },
+    "all_85_selected_plan_run": false,
+    "scope_limit": "Actual checker run covers five chapter-99 selected overlays only. Coordinator must run final mixed 85-scene selection after selection assembly.",
+    "declared_compatibility": {
+      "status": "PENDING",
+      "scope": "DECLARATION_CONSISTENCY_ONLY"
+    },
+    "deterministic_world_state_replay": {
+      "status": "PENDING",
+      "scope": "SELECTED_OVERLAYS_ONLY_NOT_WHOLE_PLAN"
+    },
+    "prose_supported_semantic_replay": {
+      "status": "NOT_CHECKED"
+    },
+    "semantic_verified_replay": "NOT_CHECKED",
+    "qualified_peer_review": false,
+    "human_review": false,
+    "aggregate_pass_claimed": false,
+    "checker_softened": false,
+    "actual_selected_plan_result": {
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE",
+      "kind": "PLANNING_DECLARATION_CONSISTENCY",
+      "status": "PENDING",
+      "chapters": [
+        99
+      ],
+      "checks": [
+        {
+          "status": "PENDING",
+          "code": "CHAPTER_BOUNDARY_UNDECLARED",
+          "ref": "ch99",
+          "detail": "previous exit/entry absent or outside selection"
+        },
+        {
+          "status": "PENDING",
+          "code": "DRAFT_PLAN_UNRESOLVED",
+          "ref": "data/planning/chapters/ch99.json",
+          "detail": "entry_ref, exit_ref, threads, open_refs, scene_chronology, existing_contract_placement"
+        },
+        {
+          "status": "PASS",
+          "code": "CONTRACT_BINDINGS_DECLARED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "byte/reference consistency only; not semantic support"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "no justified participant set"
+        },
+        {
+          "status": "NOT_CHECKED",
+          "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "requires supported explicit entry/exit targets and bound events; empty data is not replay success"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "draft/unresolved contract cannot receive an aggregate replay PASS"
+        },
+        {
+          "status": "PASS",
+          "code": "CONTRACT_REPLAY_STATE_MATCH",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "entry_state: character.baochai.marital_status; declared='MARRIED_BAOYU', actual='married_baoyu'"
+        },
+        {
+          "status": "PASS",
+          "code": "CONTRACT_REPLAY_STATE_MATCH",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "entry_state: character.baoyu.location; declared='S09', actual='s09'"
+        },
+        {
+          "status": "PASS",
+          "code": "CONTRACT_REPLAY_STATE_MATCH",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "entry_state: character.sheyue.household_role; declared='remaining_baoyu_baochai_attendant', actual='remaining_baoyu_baochai_attendant'"
+        },
+        {
+          "status": "PASS",
+          "code": "CONTRACT_REPLAY_STATE_MATCH",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "entry_state: object.OBJ-TONGLING-JADE.status; declared='RETURNED', actual='returned'"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "exit_state: character.baoyu.household_role; actual='jia_son'"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "preconditions: character.baoyu.household_role; actual='jia_son'"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "exit_state: character.baoyu.household_role"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "preconditions: character.baoyu.household_role"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_UNRESOLVED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, ordinary_days: 数日具体长度、还哪些借书、退出事务次序与各人后知时刻未登记。, books_unregistered: 归还借书、袜鞋及日用文纸没有对象ID；不拿通灵玉代替文化退出动作。, knowledge_registry_gap: baoyu_departure_intent只有M3规则，不能把半知/后知编码为未注册事实状态。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+        },
+        {
+          "status": "PASS",
+          "code": "CONTRACT_BINDINGS_DECLARED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+          "detail": "byte/reference consistency only; not semantic support"
+        },
+        {
+          "status": "NOT_CHECKED",
+          "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+          "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+          "detail": "no justified participant set"
+        },
+        {
+          "status": "NOT_CHECKED",
+          "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+          "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+          "detail": "entry_state: character.baoyu.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+          "detail": "exit_state: character.baoyu.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+          "detail": "exit_state: object.OBJ-TONGLING-JADE.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+          "detail": "preconditions: character.baochai.marital_status"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_UNRESOLVED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+          "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, departure_handoff: 告知宝钗与真正离门的先后、带衣钱选择、路径和时间均未映射为局部事件。, jade_route: OT99-01只退出可知范围；不以UNKNOWN字符串当已知去处。, household_knowledge: 麝月何时获知、不回如何被理解尚无注册知识事件。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, departure_terminal_scope: W99将宝玉设S13且角色monk_left_household；只是章末关联，不证明离门当刻已经到寺或剃发，旅程与入住缺口不补。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+        },
+        {
+          "status": "PASS",
+          "code": "CONTRACT_BINDINGS_DECLARED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+          "detail": "byte/reference consistency only; not semantic support"
+        },
+        {
+          "status": "NOT_CHECKED",
+          "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+          "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+          "detail": "no justified participant set"
+        },
+        {
+          "status": "NOT_CHECKED",
+          "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+          "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+          "detail": "entry_state: character.jia_yun.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+          "detail": "exit_state: character.baoyu.household_role"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+          "detail": "exit_state: character.jia_yun.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+          "detail": "preconditions: character.baoyu.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_UNRESOLVED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+          "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, search_network: 书摊、车脚、渡口、小店经手人与普通僧人均未注册；路线、费用、目击版本未定。, message_return: 贾芸见到、拒回、转话与家中获知的局部次序没有事件。, D2_boundary: 寺院寻人保留而探庵证据接口不得自动兑现。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, household_offstage: 宝钗麝月属于询问/接报家中接口，不要求随贾芸城内/寺院寻人；远端获取时刻仍无事件。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+        },
+        {
+          "status": "PASS",
+          "code": "CONTRACT_BINDINGS_DECLARED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+          "detail": "byte/reference consistency only; not semantic support"
+        },
+        {
+          "status": "NOT_CHECKED",
+          "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+          "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+          "detail": "no justified participant set"
+        },
+        {
+          "status": "NOT_CHECKED",
+          "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+          "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+          "detail": "entry_state: character.baochai.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+          "detail": "exit_state: object.OBJ-RICE-JAR-95.quantity_state"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+          "detail": "preconditions: object.OBJ-RICE-JAR-95.quantity_state"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_UNRESOLVED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+          "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, meal_measure: 两人份米实际数量、局部余粮、买米租支出未登记，96对象终点不能外推。, old_garment_unregistered: 未补完旧衣与针无对象ID，不与第95回已典旧夹袄自动并为同物。, placement_tension: 未解决。所选合同源链S4→S5与章卡最终家中旧衣保护存在张力；不以v2前插方案宣称解决，具体删留、切回或重新编排尚未核准。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, terminal_garment_identity: 99未补完旧衣只是未注册日用品；95夹袄已在当铺，不能自动变成家中终末同一件衣。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+        },
+        {
+          "status": "PASS",
+          "code": "CONTRACT_BINDINGS_DECLARED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+          "detail": "byte/reference consistency only; not semantic support"
+        },
+        {
+          "status": "NOT_CHECKED",
+          "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+          "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+          "detail": "no justified participant set"
+        },
+        {
+          "status": "NOT_CHECKED",
+          "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+          "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+          "detail": "entry_state: character.baoyu.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+          "detail": "exit_state: character.baoyu.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_STATE_UNKNOWN",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+          "detail": "preconditions: character.baoyu.household_role"
+        },
+        {
+          "status": "PENDING",
+          "code": "CONTRACT_UNRESOLVED",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+          "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, optional_scene: 微课是否采用、早晚课选择与终末放置未定；所选源前驱为S4，不将前插备选提案当已选编排。, minor_actors: 小和尚与普通僧人无注册身份；不新增姓名、法号。, religious_props_unregistered: 指页经册、水桶、柴和锅均未注册，课诵内容不自行造经文。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+        },
+        {
+          "status": "PENDING",
+          "code": "SCENE_CHAIN_UNDECLARED",
+          "ref": "data/planning/scenes/99-S1.json",
+          "detail": "no explicit predecessor binding"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNBOUND",
+          "ref": "data/planning/scenes/99-S2.json",
+          "detail": "no common explicit state targets"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNKNOWN",
+          "ref": "data/planning/scenes/99-S2.json",
+          "detail": "character.baoyu.household_role"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNKNOWN",
+          "ref": "data/planning/scenes/99-S2.json",
+          "detail": "character.baoyu.location"
+        },
+        {
+          "status": "PASS",
+          "code": "SCENE_CHAIN_DECLARED",
+          "ref": "data/planning/scenes/99-S2.json",
+          "detail": "declaration consistency only"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNBOUND",
+          "ref": "data/planning/scenes/99-S3.json",
+          "detail": "no common explicit state targets"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNKNOWN",
+          "ref": "data/planning/scenes/99-S3.json",
+          "detail": "character.baoyu.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNKNOWN",
+          "ref": "data/planning/scenes/99-S3.json",
+          "detail": "character.jia_yun.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNKNOWN",
+          "ref": "data/planning/scenes/99-S3.json",
+          "detail": "object.OBJ-TONGLING-JADE.location"
+        },
+        {
+          "status": "PASS",
+          "code": "SCENE_CHAIN_DECLARED",
+          "ref": "data/planning/scenes/99-S3.json",
+          "detail": "declaration consistency only"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNBOUND",
+          "ref": "data/planning/scenes/99-S4.json",
+          "detail": "no common explicit state targets"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNKNOWN",
+          "ref": "data/planning/scenes/99-S4.json",
+          "detail": "character.baochai.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNKNOWN",
+          "ref": "data/planning/scenes/99-S4.json",
+          "detail": "character.baoyu.household_role"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNKNOWN",
+          "ref": "data/planning/scenes/99-S4.json",
+          "detail": "character.jia_yun.location"
+        },
+        {
+          "status": "PASS",
+          "code": "SCENE_CHAIN_DECLARED",
+          "ref": "data/planning/scenes/99-S4.json",
+          "detail": "declaration consistency only"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNBOUND",
+          "ref": "data/planning/scenes/99-S5.json",
+          "detail": "no common explicit state targets"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNKNOWN",
+          "ref": "data/planning/scenes/99-S5.json",
+          "detail": "character.baoyu.location"
+        },
+        {
+          "status": "PENDING",
+          "code": "EXIT_ENTRY_STATE_UNKNOWN",
+          "ref": "data/planning/scenes/99-S5.json",
+          "detail": "object.OBJ-RICE-JAR-95.quantity_state"
+        },
+        {
+          "status": "PASS",
+          "code": "SCENE_CHAIN_DECLARED",
+          "ref": "data/planning/scenes/99-S5.json",
+          "detail": "declaration consistency only"
+        }
+      ],
+      "semantic_verified_replay": "NOT_CHECKED",
+      "automatic_repair": false,
+      "contracts_directory": "data/planning/contracts/agent-edited-v2",
+      "agent_contracts": [
+        {
+          "authority_effect": "NONE",
+          "evidence_effect": "NONE",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+          "declared_compatibility": {
+            "status": "PENDING",
+            "checks": [
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_UNRESOLVED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, ordinary_days: 数日具体长度、还哪些借书、退出事务次序与各人后知时刻未登记。, books_unregistered: 归还借书、袜鞋及日用文纸没有对象ID；不拿通灵玉代替文化退出动作。, knowledge_registry_gap: baoyu_departure_intent只有M3规则，不能把半知/后知编码为未注册事实状态。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "no justified participant set"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "preconditions: character.baoyu.household_role"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "exit_state: character.baoyu.household_role"
+              },
+              {
+                "status": "PASS",
+                "code": "CONTRACT_BINDINGS_DECLARED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "byte/reference consistency only; not semantic support"
+              }
+            ]
+          },
+          "deterministic_world_state_replay": {
+            "status": "PENDING",
+            "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+            "checks": [
+              {
+                "status": "PASS",
+                "code": "CONTRACT_REPLAY_STATE_MATCH",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "entry_state: character.baoyu.location; declared='S09', actual='s09'"
+              },
+              {
+                "status": "PASS",
+                "code": "CONTRACT_REPLAY_STATE_MATCH",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "entry_state: character.baochai.marital_status; declared='MARRIED_BAOYU', actual='married_baoyu'"
+              },
+              {
+                "status": "PASS",
+                "code": "CONTRACT_REPLAY_STATE_MATCH",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "entry_state: character.sheyue.household_role; declared='remaining_baoyu_baochai_attendant', actual='remaining_baoyu_baochai_attendant'"
+              },
+              {
+                "status": "PASS",
+                "code": "CONTRACT_REPLAY_STATE_MATCH",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "entry_state: object.OBJ-TONGLING-JADE.status; declared='RETURNED', actual='returned'"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "preconditions: character.baoyu.household_role; actual='jia_son'"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "exit_state: character.baoyu.household_role; actual='jia_son'"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "requires supported explicit entry/exit targets and bound events; empty data is not replay success"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "draft/unresolved contract cannot receive an aggregate replay PASS"
+              }
+            ]
+          },
+          "prose_supported_semantic_replay": {
+            "status": "NOT_CHECKED",
+            "checks": [
+              {
+                "status": "NOT_CHECKED",
+                "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+                "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+              }
+            ]
+          }
+        },
+        {
+          "authority_effect": "NONE",
+          "evidence_effect": "NONE",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+          "declared_compatibility": {
+            "status": "PENDING",
+            "checks": [
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_UNRESOLVED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+                "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, departure_handoff: 告知宝钗与真正离门的先后、带衣钱选择、路径和时间均未映射为局部事件。, jade_route: OT99-01只退出可知范围；不以UNKNOWN字符串当已知去处。, household_knowledge: 麝月何时获知、不回如何被理解尚无注册知识事件。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, departure_terminal_scope: W99将宝玉设S13且角色monk_left_household；只是章末关联，不证明离门当刻已经到寺或剃发，旅程与入住缺口不补。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+                "detail": "no justified participant set"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+                "detail": "entry_state: character.baoyu.location"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+                "detail": "preconditions: character.baochai.marital_status"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+                "detail": "exit_state: character.baoyu.location"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+                "detail": "exit_state: object.OBJ-TONGLING-JADE.location"
+              },
+              {
+                "status": "PASS",
+                "code": "CONTRACT_BINDINGS_DECLARED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+                "detail": "byte/reference consistency only; not semantic support"
+              }
+            ]
+          },
+          "deterministic_world_state_replay": {
+            "status": "NOT_CHECKED",
+            "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+            "checks": [
+              {
+                "status": "NOT_CHECKED",
+                "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+                "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+              }
+            ]
+          },
+          "prose_supported_semantic_replay": {
+            "status": "NOT_CHECKED",
+            "checks": [
+              {
+                "status": "NOT_CHECKED",
+                "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+                "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+              }
+            ]
+          }
+        },
+        {
+          "authority_effect": "NONE",
+          "evidence_effect": "NONE",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+          "declared_compatibility": {
+            "status": "PENDING",
+            "checks": [
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_UNRESOLVED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+                "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, search_network: 书摊、车脚、渡口、小店经手人与普通僧人均未注册；路线、费用、目击版本未定。, message_return: 贾芸见到、拒回、转话与家中获知的局部次序没有事件。, D2_boundary: 寺院寻人保留而探庵证据接口不得自动兑现。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, household_offstage: 宝钗麝月属于询问/接报家中接口，不要求随贾芸城内/寺院寻人；远端获取时刻仍无事件。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+                "detail": "no justified participant set"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+                "detail": "entry_state: character.jia_yun.location"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+                "detail": "preconditions: character.baoyu.location"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+                "detail": "exit_state: character.jia_yun.location"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+                "detail": "exit_state: character.baoyu.household_role"
+              },
+              {
+                "status": "PASS",
+                "code": "CONTRACT_BINDINGS_DECLARED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+                "detail": "byte/reference consistency only; not semantic support"
+              }
+            ]
+          },
+          "deterministic_world_state_replay": {
+            "status": "NOT_CHECKED",
+            "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+            "checks": [
+              {
+                "status": "NOT_CHECKED",
+                "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+                "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+              }
+            ]
+          },
+          "prose_supported_semantic_replay": {
+            "status": "NOT_CHECKED",
+            "checks": [
+              {
+                "status": "NOT_CHECKED",
+                "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+                "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+              }
+            ]
+          }
+        },
+        {
+          "authority_effect": "NONE",
+          "evidence_effect": "NONE",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+          "declared_compatibility": {
+            "status": "PENDING",
+            "checks": [
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_UNRESOLVED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+                "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, meal_measure: 两人份米实际数量、局部余粮、买米租支出未登记，96对象终点不能外推。, old_garment_unregistered: 未补完旧衣与针无对象ID，不与第95回已典旧夹袄自动并为同物。, placement_tension: 未解决。所选合同源链S4→S5与章卡最终家中旧衣保护存在张力；不以v2前插方案宣称解决，具体删留、切回或重新编排尚未核准。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, terminal_garment_identity: 99未补完旧衣只是未注册日用品；95夹袄已在当铺，不能自动变成家中终末同一件衣。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+                "detail": "no justified participant set"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+                "detail": "entry_state: character.baochai.location"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+                "detail": "preconditions: object.OBJ-RICE-JAR-95.quantity_state"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+                "detail": "exit_state: object.OBJ-RICE-JAR-95.quantity_state"
+              },
+              {
+                "status": "PASS",
+                "code": "CONTRACT_BINDINGS_DECLARED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+                "detail": "byte/reference consistency only; not semantic support"
+              }
+            ]
+          },
+          "deterministic_world_state_replay": {
+            "status": "NOT_CHECKED",
+            "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+            "checks": [
+              {
+                "status": "NOT_CHECKED",
+                "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+                "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+              }
+            ]
+          },
+          "prose_supported_semantic_replay": {
+            "status": "NOT_CHECKED",
+            "checks": [
+              {
+                "status": "NOT_CHECKED",
+                "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+                "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+              }
+            ]
+          }
+        },
+        {
+          "authority_effect": "NONE",
+          "evidence_effect": "NONE",
+          "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+          "declared_compatibility": {
+            "status": "PENDING",
+            "checks": [
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_UNRESOLVED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+                "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, optional_scene: 微课是否采用、早晚课选择与终末放置未定；所选源前驱为S4，不将前插备选提案当已选编排。, minor_actors: 小和尚与普通僧人无注册身份；不新增姓名、法号。, religious_props_unregistered: 指页经册、水桶、柴和锅均未注册，课诵内容不自行造经文。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+                "detail": "no justified participant set"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+                "detail": "entry_state: character.baoyu.location"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+                "detail": "preconditions: character.baoyu.household_role"
+              },
+              {
+                "status": "PENDING",
+                "code": "CONTRACT_STATE_UNKNOWN",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+                "detail": "exit_state: character.baoyu.location"
+              },
+              {
+                "status": "PASS",
+                "code": "CONTRACT_BINDINGS_DECLARED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+                "detail": "byte/reference consistency only; not semantic support"
+              }
+            ]
+          },
+          "deterministic_world_state_replay": {
+            "status": "NOT_CHECKED",
+            "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+            "checks": [
+              {
+                "status": "NOT_CHECKED",
+                "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+                "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+              }
+            ]
+          },
+          "prose_supported_semantic_replay": {
+            "status": "NOT_CHECKED",
+            "checks": [
+              {
+                "status": "NOT_CHECKED",
+                "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+                "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+                "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+              }
+            ]
+          }
+        }
+      ],
+      "declared_compatibility": {
+        "status": "PENDING",
+        "scope": "DECLARATION_CONSISTENCY_ONLY"
+      },
+      "deterministic_world_state_replay": {
+        "status": "PENDING",
+        "scope": "SELECTED_OVERLAYS_ONLY_NOT_WHOLE_PLAN"
+      },
+      "prose_supported_semantic_replay": {
+        "status": "NOT_CHECKED"
+      }
+    }
+  },
+  "scenes": [
+    {
+      "scene_id": "99-S1",
+      "before": {
+        "path": "data/planning/contracts/agent-edited-v1/99-S1.v2.json",
+        "sha256": "9dfd5cd41a496dc523b69addc569cd58de8dd7871a97f786d50f026510f56fbd"
+      },
+      "after": {
+        "path": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+        "sha256": "ba468baf596b8e561f402966c44dead20cb44359512da59e9e590a836997db43"
+      },
+      "original_v1": {
+        "path": "data/planning/contracts/agent-v1/99-S1.v1.json",
+        "sha256": "97f0266eb2c95f25c8d9c93d436893da54e213e7e6d7a7d63084fa65573fdf4d"
+      },
+      "packet": {
+        "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+        "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+      },
+      "source_bindings": {
+        "chapter_plan": {
+          "path": "data/planning/chapters/ch99.json",
+          "sha256": "9e11795fad6fd7cb7b76d31f28a82405a81dd3ce071c14da4aa56a247d493a8e"
+        },
+        "seed": {
+          "path": "data/planning/scenes/99-S1.json",
+          "sha256": "92a213abc26fee423a2d9eb0d0be3257383db37d859c3aab859dde0e7293dd5c"
+        },
+        "source_packet": {
+          "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+          "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+        },
+        "world": {
+          "inputs": [
+            {
+              "path": "data/project/scope.json",
+              "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+            },
+            {
+              "path": "data/world/m3_core.json",
+              "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+            },
+            {
+              "path": "data/world/m3_locations.json",
+              "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+            },
+            {
+              "path": "data/world/m3_presence.json",
+              "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+            },
+            {
+              "path": "data/world/m3_body.json",
+              "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+            },
+            {
+              "path": "data/world/m3_resources.json",
+              "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+            },
+            {
+              "path": "data/world/m3_knowledge.json",
+              "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+            },
+            {
+              "path": "data/objects/m4.json",
+              "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+            },
+            {
+              "path": "data/knowledge/v03_slice2.json",
+              "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+            },
+            {
+              "path": "data/objects/medicine_bowl.yaml",
+              "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+            }
+          ],
+          "status": "BOUND"
+        }
+      },
+      "bindings_preserved": true,
+      "seed_identity_order_preserved": true,
+      "changed_fields": {
+        "revision": {
+          "before": "v2",
+          "after": "v3"
+        },
+        "unresolved": {
+          "before": [
+            "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+            "declared_sequence_only: seed.order保留源列表索引；entry_from采用v2编辑候选编排（99-S5前插、99-S4终末），不证明历史順序或可执行局部检查点，实际正文放置仍未核验。",
+            "ordinary_days: 数日具体长度、还哪些借书、退出事务次序与各人后知时刻未登记。",
+            "books_unregistered: 归还借书、袜鞋及日用文纸没有对象ID；不拿通灵玉代替文化退出动作。",
+            "knowledge_registry_gap: baoyu_departure_intent只有M3规则，不能把半知/后知编码为未注册事实状态。",
+            "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+            "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+            "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+            "edited_playback_sequence: 候选演出99-S1→99-S2→99-S5（可选）→99-S3→99-S4；seed.order不变，仅entry_from和义务变更，局部时间与状态事件未核。"
+          ],
+          "after": [
+            "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+            "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+            "ordinary_days: 数日具体长度、还哪些借书、退出事务次序与各人后知时刻未登记。",
+            "books_unregistered: 归还借书、袜鞋及日用文纸没有对象ID；不拿通灵玉代替文化退出动作。",
+            "knowledge_registry_gap: baoyu_departure_intent只有M3规则，不能把半知/后知编码为未注册事实状态。",
+            "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+            "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+            "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+            "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+            "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+          ]
+        },
+        "notes": {
+          "before": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。",
+          "after": "EDITOR96-100的99章v3实质性编辑纠正：此前v2把未获批准的替代叙事编排写入entry_from，实际完整计划检查产生两条SCENE_CHAIN_MISMATCH。本v3恢复所选合同链99-S1→99-S2→99-S3→99-S4→99-S5，entry_from绑定新v3源列表前驱，seed.order及packet/seed/card/world绑定不变；不改检查器、不覆盖v1或v2。AGENT_EDITED仅为编辑阶段，不是格式-only、不代表语义/合格同行/人工验证；authority_effect=NONE，evidence_effect=NONE。所选前驱通过声明一致性检查不等于场级状态已执行，后场entry_checkpoint仍UNKNOWN，不注入前场exit。participants_status=PENDING：注册人物仅为候选，未注册目击者与僧人保持未决。KNOWN条件仅限第98章粗入口，不投射到局部动作；96—100无v03获取事件，不造知识fact、actor或event ID。章卡旧衣终末保护与源列表99-S5在99-S4之后的篇章冲突仍PENDING。备选叙事99-S1→99-S2→99-S5（可选）→99-S3→99-S4仅为未选定、未经核准的pending proposal；不得当作所选合同前驱或已定末镜，若以后采用须上游显式编排授权及重新检查。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+        }
+      },
+      "beat_changes": [],
+      "rationale": "Restore immutable-source-order selected predecessor references in new v3 revisions. Withdraw v2 selected-playback claims; alternate temple-before-search narrative remains an unselected pending proposal. Preserve substantive cast, information and garment identity constraints without manufacturing local state.",
+      "issues_remaining": [
+        "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+        "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+        "ordinary_days: 数日具体长度、还哪些借书、退出事务次序与各人后知时刻未登记。",
+        "books_unregistered: 归还借书、袜鞋及日用文纸没有对象ID；不拿通灵玉代替文化退出动作。",
+        "knowledge_registry_gap: baoyu_departure_intent只有M3规则，不能把半知/后知编码为未注册事实状态。",
+        "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+        "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+        "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+        "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+        "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+      ],
+      "actual_contract_inspection": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, ordinary_days: 数日具体长度、还哪些借书、退出事务次序与各人后知时刻未登记。, books_unregistered: 归还借书、袜鞋及日用文纸没有对象ID；不拿通灵玉代替文化退出动作。, knowledge_registry_gap: baoyu_departure_intent只有M3规则，不能把半知/后知编码为未注册事实状态。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "preconditions: character.baoyu.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "exit_state: character.baoyu.household_role"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "PENDING",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "entry_state: character.baoyu.location; declared='S09', actual='s09'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "entry_state: character.baochai.marital_status; declared='MARRIED_BAOYU', actual='married_baoyu'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "entry_state: character.sheyue.household_role; declared='remaining_baoyu_baochai_attendant', actual='remaining_baoyu_baochai_attendant'"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_REPLAY_STATE_MATCH",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "entry_state: object.OBJ-TONGLING-JADE.status; declared='RETURNED', actual='returned'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "preconditions: character.baoyu.household_role; actual='jia_son'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "exit_state: character.baoyu.household_role; actual='jia_son'"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "requires supported explicit entry/exit targets and bound events; empty data is not replay success"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "draft/unresolved contract cannot receive an aggregate replay PASS"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S1.v3.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "99-S2",
+      "before": {
+        "path": "data/planning/contracts/agent-edited-v1/99-S2.v2.json",
+        "sha256": "f5c79ff1efd2b37f749ee9f76237c879d2e7da5408a3fd1e4f092d1e38c51dc2"
+      },
+      "after": {
+        "path": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+        "sha256": "9d46670b8ff932768dd2b4f5889cbff34b029705b61742939d4daf77f99c00de"
+      },
+      "original_v1": {
+        "path": "data/planning/contracts/agent-v1/99-S2.v1.json",
+        "sha256": "83214ab3dd2d481cae651d7806ada157ab87cf61791d0d6cec3ae462f2c859bd"
+      },
+      "packet": {
+        "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+        "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+      },
+      "source_bindings": {
+        "chapter_plan": {
+          "path": "data/planning/chapters/ch99.json",
+          "sha256": "9e11795fad6fd7cb7b76d31f28a82405a81dd3ce071c14da4aa56a247d493a8e"
+        },
+        "seed": {
+          "path": "data/planning/scenes/99-S2.json",
+          "sha256": "65166cf1a04b886352c8ab51c033e2b2c8b1d0eaef0238d3e5cb6eae3d6005d8"
+        },
+        "source_packet": {
+          "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+          "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+        },
+        "world": {
+          "inputs": [
+            {
+              "path": "data/project/scope.json",
+              "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+            },
+            {
+              "path": "data/world/m3_core.json",
+              "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+            },
+            {
+              "path": "data/world/m3_locations.json",
+              "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+            },
+            {
+              "path": "data/world/m3_presence.json",
+              "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+            },
+            {
+              "path": "data/world/m3_body.json",
+              "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+            },
+            {
+              "path": "data/world/m3_resources.json",
+              "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+            },
+            {
+              "path": "data/world/m3_knowledge.json",
+              "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+            },
+            {
+              "path": "data/objects/m4.json",
+              "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+            },
+            {
+              "path": "data/knowledge/v03_slice2.json",
+              "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+            },
+            {
+              "path": "data/objects/medicine_bowl.yaml",
+              "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+            }
+          ],
+          "status": "BOUND"
+        }
+      },
+      "bindings_preserved": true,
+      "seed_identity_order_preserved": true,
+      "changed_fields": {
+        "entry_from": {
+          "before": "data/planning/contracts/agent-edited-v1/99-S1.v2.json",
+          "after": "data/planning/contracts/agent-edited-v2/99-S1.v3.json"
+        },
+        "revision": {
+          "before": "v2",
+          "after": "v3"
+        },
+        "unresolved": {
+          "before": [
+            "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+            "declared_sequence_only: seed.order保留源列表索引；entry_from采用v2编辑候选编排（99-S5前插、99-S4终末），不证明历史順序或可执行局部检查点，实际正文放置仍未核验。",
+            "departure_handoff: 告知宝钗与真正离门的先后、带衣钱选择、路径和时间均未映射为局部事件。",
+            "jade_route: OT99-01只退出可知范围；不以UNKNOWN字符串当已知去处。",
+            "household_knowledge: 麝月何时获知、不回如何被理解尚无注册知识事件。",
+            "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+            "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+            "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+            "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+            "edited_playback_sequence: 候选演出99-S1→99-S2→99-S5（可选）→99-S3→99-S4；seed.order不变，仅entry_from和义务变更，局部时间与状态事件未核。",
+            "departure_terminal_scope: W99将宝玉设S13且角色monk_left_household；只是章末关联，不证明离门当刻已经到寺或剃发，旅程与入住缺口不补。"
+          ],
+          "after": [
+            "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+            "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+            "departure_handoff: 告知宝钗与真正离门的先后、带衣钱选择、路径和时间均未映射为局部事件。",
+            "jade_route: OT99-01只退出可知范围；不以UNKNOWN字符串当已知去处。",
+            "household_knowledge: 麝月何时获知、不回如何被理解尚无注册知识事件。",
+            "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+            "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+            "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+            "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+            "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+            "departure_terminal_scope: W99将宝玉设S13且角色monk_left_household；只是章末关联，不证明离门当刻已经到寺或剃发，旅程与入住缺口不补。",
+            "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+          ]
+        },
+        "notes": {
+          "before": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。",
+          "after": "EDITOR96-100的99章v3实质性编辑纠正：此前v2把未获批准的替代叙事编排写入entry_from，实际完整计划检查产生两条SCENE_CHAIN_MISMATCH。本v3恢复所选合同链99-S1→99-S2→99-S3→99-S4→99-S5，entry_from绑定新v3源列表前驱，seed.order及packet/seed/card/world绑定不变；不改检查器、不覆盖v1或v2。AGENT_EDITED仅为编辑阶段，不是格式-only、不代表语义/合格同行/人工验证；authority_effect=NONE，evidence_effect=NONE。所选前驱通过声明一致性检查不等于场级状态已执行，后场entry_checkpoint仍UNKNOWN，不注入前场exit。participants_status=PENDING：注册人物仅为候选，未注册目击者与僧人保持未决。KNOWN条件仅限第98章粗入口，不投射到局部动作；96—100无v03获取事件，不造知识fact、actor或event ID。章卡旧衣终末保护与源列表99-S5在99-S4之后的篇章冲突仍PENDING。备选叙事99-S1→99-S2→99-S5（可选）→99-S3→99-S4仅为未选定、未经核准的pending proposal；不得当作所选合同前驱或已定末镜，若以后采用须上游显式编排授权及重新检查。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+        }
+      },
+      "beat_changes": [
+        {
+          "field": "required_beats",
+          "id": "99-S2-R3",
+          "before": {
+            "id": "99-S2-R3",
+            "description": "妻/婢关系已成立而退出仍伤人。v2编排在离门后先放可选99-S5寺中劳动/微课片段，再99-S3寻人见到与转话，最后99-S4两人饭和旧衣；这是待实现编辑次序，不改seed.order、不证明旅程、同步或知情事件。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+            "grounding": {
+              "seed": {
+                "path": "data/prewrite/v06.json",
+                "pointer": "/omitted_scene_plans/18/candidate_scenes/1",
+                "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/1",
+                "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+                "text_sha256": "a6ce3fd52e22ae817b258724f181347f1942fb50df05e4a5805645bc93ab0b51",
+                "value": {
+                  "id": "99-S2",
+                  "title": "宝玉说“走”以后，宝钗只问现实问题"
+                }
+              },
+              "chapter_card_fields": [
+                {
+                  "citation": {
+                    "byte_range": [
+                      48516,
+                      48652
+                    ],
+                    "lines": [
+                      1211,
+                      1213
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "4d940c20ce2ccf5876d98ce58189804461e7f2d293c380db4e44f12f0f34c38b"
+                  },
+                  "name": "硬节点",
+                  "number": 1,
+                  "text": "**1｜硬节点**  \nR43；P09：撒手时宝钗为妻、麝月为婢状态已成立；O10负责99/100分工。禁止玉归即出家。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      49116,
+                      49328
+                    ],
+                    "lines": [
+                      1220,
+                      1222
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+                  },
+                  "name": "缺失情节",
+                  "number": 4,
+                  "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      50286,
+                      50486
+                    ],
+                    "lines": [
+                      1243,
+                      1245
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "45be16f8f315473e9aa2adca0b0cb6f7fc16ba27d9b735dca95be68933ca61a2"
+                  },
+                  "name": "四链",
+                  "number": 11,
+                  "text": "**11｜四链**  \nE4：寻人也花脚费，家里仍买米付租。物：还书、少带衣/钱、旧鞋留下。信：宝玉最早知道→宝钗半知→麝月后知→外界全是模糊目击。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      51066,
+                      51376
+                    ],
+                    "lines": [
+                      1261,
+                      1264
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+                  },
+                  "name": "章法 / 风险",
+                  "number": 18,
+                  "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+                }
+              ],
+              "world_basis": [
+                {
+                  "ref": "data/world/m3_resources.json#/resource_flows/18",
+                  "path": "data/world/m3_resources.json",
+                  "pointer": "/resource_flows/18",
+                  "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+                  "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+                  "value": {
+                    "chapter": 99,
+                    "money_state": "最低生活可维持",
+                    "food_medicine": "早饭简单、旧衣缝补",
+                    "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+                    "object_interface": "借书包、旧棉衣、未补完旧衣",
+                    "boundary": "宝玉不是因当日断粮出家",
+                    "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                    "epistemic": "REFERENCE_RESOURCE_FLOW"
+                  }
+                },
+                {
+                  "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+                  "path": "data/world/m3_knowledge.json",
+                  "pointer": "/knowledge_rules/9",
+                  "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+                  "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+                  "value": {
+                    "chapter": 99,
+                    "targets": [
+                      "baoyu"
+                    ],
+                    "kind": "EARLY_INTENT",
+                    "fact": "baoyu_departure_intent",
+                    "note": "宝玉最早知道自己要走，其他人分层后知",
+                    "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                    "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+                  }
+                }
+              ]
+            }
+          },
+          "after": {
+            "id": "99-S2-R3",
+            "description": "妻/婢关系已成立而退出仍伤人；按本次所选源链99-S2之后接99-S3寻找社会后果，再99-S4家务，99-S5仍为源列表第5个可选寺庙接口。前驱声明不证明旅程、同步或知情事件，家中旧衣终末与第5接口放置的矛盾继续待核。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+            "grounding": {
+              "seed": {
+                "path": "data/prewrite/v06.json",
+                "pointer": "/omitted_scene_plans/18/candidate_scenes/1",
+                "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/1",
+                "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+                "text_sha256": "a6ce3fd52e22ae817b258724f181347f1942fb50df05e4a5805645bc93ab0b51",
+                "value": {
+                  "id": "99-S2",
+                  "title": "宝玉说“走”以后，宝钗只问现实问题"
+                }
+              },
+              "chapter_card_fields": [
+                {
+                  "citation": {
+                    "byte_range": [
+                      48516,
+                      48652
+                    ],
+                    "lines": [
+                      1211,
+                      1213
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "4d940c20ce2ccf5876d98ce58189804461e7f2d293c380db4e44f12f0f34c38b"
+                  },
+                  "name": "硬节点",
+                  "number": 1,
+                  "text": "**1｜硬节点**  \nR43；P09：撒手时宝钗为妻、麝月为婢状态已成立；O10负责99/100分工。禁止玉归即出家。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      49116,
+                      49328
+                    ],
+                    "lines": [
+                      1220,
+                      1222
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+                  },
+                  "name": "缺失情节",
+                  "number": 4,
+                  "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      50286,
+                      50486
+                    ],
+                    "lines": [
+                      1243,
+                      1245
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "45be16f8f315473e9aa2adca0b0cb6f7fc16ba27d9b735dca95be68933ca61a2"
+                  },
+                  "name": "四链",
+                  "number": 11,
+                  "text": "**11｜四链**  \nE4：寻人也花脚费，家里仍买米付租。物：还书、少带衣/钱、旧鞋留下。信：宝玉最早知道→宝钗半知→麝月后知→外界全是模糊目击。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      51066,
+                      51376
+                    ],
+                    "lines": [
+                      1261,
+                      1264
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+                  },
+                  "name": "章法 / 风险",
+                  "number": 18,
+                  "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+                }
+              ],
+              "world_basis": [
+                {
+                  "ref": "data/world/m3_resources.json#/resource_flows/18",
+                  "path": "data/world/m3_resources.json",
+                  "pointer": "/resource_flows/18",
+                  "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+                  "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+                  "value": {
+                    "chapter": 99,
+                    "money_state": "最低生活可维持",
+                    "food_medicine": "早饭简单、旧衣缝补",
+                    "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+                    "object_interface": "借书包、旧棉衣、未补完旧衣",
+                    "boundary": "宝玉不是因当日断粮出家",
+                    "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                    "epistemic": "REFERENCE_RESOURCE_FLOW"
+                  }
+                },
+                {
+                  "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+                  "path": "data/world/m3_knowledge.json",
+                  "pointer": "/knowledge_rules/9",
+                  "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+                  "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+                  "value": {
+                    "chapter": 99,
+                    "targets": [
+                      "baoyu"
+                    ],
+                    "kind": "EARLY_INTENT",
+                    "fact": "baoyu_departure_intent",
+                    "note": "宝玉最早知道自己要走，其他人分层后知",
+                    "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                    "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "rationale": "Restore immutable-source-order selected predecessor references in new v3 revisions. Withdraw v2 selected-playback claims; alternate temple-before-search narrative remains an unselected pending proposal. Preserve substantive cast, information and garment identity constraints without manufacturing local state.",
+      "issues_remaining": [
+        "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+        "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+        "departure_handoff: 告知宝钗与真正离门的先后、带衣钱选择、路径和时间均未映射为局部事件。",
+        "jade_route: OT99-01只退出可知范围；不以UNKNOWN字符串当已知去处。",
+        "household_knowledge: 麝月何时获知、不回如何被理解尚无注册知识事件。",
+        "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+        "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+        "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+        "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+        "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+        "departure_terminal_scope: W99将宝玉设S13且角色monk_left_household；只是章末关联，不证明离门当刻已经到寺或剃发，旅程与入住缺口不补。",
+        "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+      ],
+      "actual_contract_inspection": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+              "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, departure_handoff: 告知宝钗与真正离门的先后、带衣钱选择、路径和时间均未映射为局部事件。, jade_route: OT99-01只退出可知范围；不以UNKNOWN字符串当已知去处。, household_knowledge: 麝月何时获知、不回如何被理解尚无注册知识事件。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, departure_terminal_scope: W99将宝玉设S13且角色monk_left_household；只是章末关联，不证明离门当刻已经到寺或剃发，旅程与入住缺口不补。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+              "detail": "entry_state: character.baoyu.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+              "detail": "preconditions: character.baochai.marital_status"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+              "detail": "exit_state: character.baoyu.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+              "detail": "exit_state: object.OBJ-TONGLING-JADE.location"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S2.v3.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "99-S3",
+      "before": {
+        "path": "data/planning/contracts/agent-edited-v1/99-S3.v2.json",
+        "sha256": "b0781d4c54b8237d181de2862e688eec8e00acdd128442380b1b74312d2ef1db"
+      },
+      "after": {
+        "path": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+        "sha256": "505eb6aa90f729999baa8a990fcc5edd0bf6ebd9d587a0fb58ab234be45d3ada"
+      },
+      "original_v1": {
+        "path": "data/planning/contracts/agent-v1/99-S3.v1.json",
+        "sha256": "914df5a2f176c16d3bf4c5ea09b6d38cd1c3c36a391fe37fb0497ba6083ea5e5"
+      },
+      "packet": {
+        "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+        "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+      },
+      "source_bindings": {
+        "chapter_plan": {
+          "path": "data/planning/chapters/ch99.json",
+          "sha256": "9e11795fad6fd7cb7b76d31f28a82405a81dd3ce071c14da4aa56a247d493a8e"
+        },
+        "seed": {
+          "path": "data/planning/scenes/99-S3.json",
+          "sha256": "6e9cff0e5796d0927022aafcb7b6f80fcf7a117551d3732af39aa73580ff6d34"
+        },
+        "source_packet": {
+          "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+          "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+        },
+        "world": {
+          "inputs": [
+            {
+              "path": "data/project/scope.json",
+              "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+            },
+            {
+              "path": "data/world/m3_core.json",
+              "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+            },
+            {
+              "path": "data/world/m3_locations.json",
+              "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+            },
+            {
+              "path": "data/world/m3_presence.json",
+              "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+            },
+            {
+              "path": "data/world/m3_body.json",
+              "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+            },
+            {
+              "path": "data/world/m3_resources.json",
+              "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+            },
+            {
+              "path": "data/world/m3_knowledge.json",
+              "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+            },
+            {
+              "path": "data/objects/m4.json",
+              "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+            },
+            {
+              "path": "data/knowledge/v03_slice2.json",
+              "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+            },
+            {
+              "path": "data/objects/medicine_bowl.yaml",
+              "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+            }
+          ],
+          "status": "BOUND"
+        }
+      },
+      "bindings_preserved": true,
+      "seed_identity_order_preserved": true,
+      "changed_fields": {
+        "entry_from": {
+          "before": "data/planning/contracts/agent-edited-v1/99-S5.v2.json",
+          "after": "data/planning/contracts/agent-edited-v2/99-S2.v3.json"
+        },
+        "revision": {
+          "before": "v2",
+          "after": "v3"
+        },
+        "unresolved": {
+          "before": [
+            "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+            "declared_sequence_only: seed.order保留源列表索引；entry_from采用v2编辑候选编排（99-S5前插、99-S4终末），不证明历史順序或可执行局部检查点，实际正文放置仍未核验。",
+            "search_network: 书摊、车脚、渡口、小店经手人与普通僧人均未注册；路线、费用、目击版本未定。",
+            "message_return: 贾芸见到、拒回、转话与家中获知的局部次序没有事件。",
+            "D2_boundary: 寺院寻人保留而探庵证据接口不得自动兑现。",
+            "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+            "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+            "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+            "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+            "edited_playback_sequence: 候选演出99-S1→99-S2→99-S5（可选）→99-S3→99-S4；seed.order不变，仅entry_from和义务变更，局部时间与状态事件未核。",
+            "household_offstage: 宝钗麝月属于询问/接报家中接口，不要求随贾芸城内/寺院寻人；远端获取时刻仍无事件。"
+          ],
+          "after": [
+            "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+            "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+            "search_network: 书摊、车脚、渡口、小店经手人与普通僧人均未注册；路线、费用、目击版本未定。",
+            "message_return: 贾芸见到、拒回、转话与家中获知的局部次序没有事件。",
+            "D2_boundary: 寺院寻人保留而探庵证据接口不得自动兑现。",
+            "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+            "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+            "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+            "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+            "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+            "household_offstage: 宝钗麝月属于询问/接报家中接口，不要求随贾芸城内/寺院寻人；远端获取时刻仍无事件。",
+            "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+          ]
+        },
+        "notes": {
+          "before": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。",
+          "after": "EDITOR96-100的99章v3实质性编辑纠正：此前v2把未获批准的替代叙事编排写入entry_from，实际完整计划检查产生两条SCENE_CHAIN_MISMATCH。本v3恢复所选合同链99-S1→99-S2→99-S3→99-S4→99-S5，entry_from绑定新v3源列表前驱，seed.order及packet/seed/card/world绑定不变；不改检查器、不覆盖v1或v2。AGENT_EDITED仅为编辑阶段，不是格式-only、不代表语义/合格同行/人工验证；authority_effect=NONE，evidence_effect=NONE。所选前驱通过声明一致性检查不等于场级状态已执行，后场entry_checkpoint仍UNKNOWN，不注入前场exit。participants_status=PENDING：注册人物仅为候选，未注册目击者与僧人保持未决。KNOWN条件仅限第98章粗入口，不投射到局部动作；96—100无v03获取事件，不造知识fact、actor或event ID。章卡旧衣终末保护与源列表99-S5在99-S4之后的篇章冲突仍PENDING。备选叙事99-S1→99-S2→99-S5（可选）→99-S3→99-S4仅为未选定、未经核准的pending proposal；不得当作所选合同前驱或已定末镜，若以后采用须上游显式编排授权及重新检查。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+        }
+      },
+      "beat_changes": [
+        {
+          "field": "required_beats",
+          "id": "99-S3-R2",
+          "before": {
+            "id": "99-S3-R2",
+            "description": "在前插99-S5的寺中日常之后，贾芸找到劳动中的宝玉，区分此前误认与此次见真人；拒回及“没有，只说我平安”保留。见到—听到—返家转话—家中获知必须有可追问先后，缺少场级知识事件仍PENDING，不造精确地址或长篇交代。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+            "grounding": {
+              "seed": {
+                "path": "data/prewrite/v06.json",
+                "pointer": "/omitted_scene_plans/18/candidate_scenes/2",
+                "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/2",
+                "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+                "text_sha256": "abb05a76ce466a10204cf2d2f3ff2b165b748862e44ef72d5e07d1cd4d94df6e",
+                "value": {
+                  "id": "99-S3",
+                  "title": "出门不是终点，寻找才是社会后果"
+                }
+              },
+              "chapter_card_fields": [
+                {
+                  "citation": {
+                    "byte_range": [
+                      48652,
+                      48956
+                    ],
+                    "lines": [
+                      1214,
+                      1216
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "7c92a7d5f1c171bf75a44f529b3f1d661fc1f621512427d510a8e977c1f3bbb4"
+                  },
+                  "name": "最强处 / P-Lock",
+                  "number": 2,
+                  "text": "**2｜最强处 / P-Lock**  \n“日子照旧过几日”；还借书、对食物兴趣下降、逐项退出选择；宝钗问实际问题；麝月问饭袜鞋；错误目击；寺中搬柴挑水；宝玉说“没有，只说我平安”；结尾“够咱们两个吃的就是了”、未补完旧衣。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      49116,
+                      49328
+                    ],
+                    "lines": [
+                      1220,
+                      1222
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+                  },
+                  "name": "缺失情节",
+                  "number": 4,
+                  "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      50486,
+                      50630
+                    ],
+                    "lines": [
+                      1246,
+                      1248
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "e046fdccc95aec8e61e37820cec4ad06726b3039d65d6e04b111032a006a80a9"
+                  },
+                  "name": "必须保留",
+                  "number": 12,
+                  "text": "**12｜必须保留**  \n98→99普通日缓冲；无玉触发；“没有，只说我平安”；两人份晚饭；旧衣针仍别在边上。\n\n"
+                }
+              ],
+              "world_basis": [
+                {
+                  "ref": "data/world/m3_resources.json#/resource_flows/18",
+                  "path": "data/world/m3_resources.json",
+                  "pointer": "/resource_flows/18",
+                  "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+                  "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+                  "value": {
+                    "chapter": 99,
+                    "money_state": "最低生活可维持",
+                    "food_medicine": "早饭简单、旧衣缝补",
+                    "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+                    "object_interface": "借书包、旧棉衣、未补完旧衣",
+                    "boundary": "宝玉不是因当日断粮出家",
+                    "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                    "epistemic": "REFERENCE_RESOURCE_FLOW"
+                  }
+                },
+                {
+                  "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+                  "path": "data/world/m3_knowledge.json",
+                  "pointer": "/knowledge_rules/9",
+                  "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+                  "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+                  "value": {
+                    "chapter": 99,
+                    "targets": [
+                      "baoyu"
+                    ],
+                    "kind": "EARLY_INTENT",
+                    "fact": "baoyu_departure_intent",
+                    "note": "宝玉最早知道自己要走，其他人分层后知",
+                    "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                    "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+                  }
+                }
+              ]
+            }
+          },
+          "after": {
+            "id": "99-S3-R2",
+            "description": "宝玉寺中劳动是寻到时的日常背景，不以先执行99-S5微课为条件；贾芸找到宝玉，区分此前误认与此次见真人，拒回及“没有，只说我平安”保留。见到—听到—返家转话—家中获知必须有可追问先后，缺少场级知识事件仍PENDING，不造精确地址或长篇交代。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+            "grounding": {
+              "seed": {
+                "path": "data/prewrite/v06.json",
+                "pointer": "/omitted_scene_plans/18/candidate_scenes/2",
+                "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/2",
+                "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+                "text_sha256": "abb05a76ce466a10204cf2d2f3ff2b165b748862e44ef72d5e07d1cd4d94df6e",
+                "value": {
+                  "id": "99-S3",
+                  "title": "出门不是终点，寻找才是社会后果"
+                }
+              },
+              "chapter_card_fields": [
+                {
+                  "citation": {
+                    "byte_range": [
+                      48652,
+                      48956
+                    ],
+                    "lines": [
+                      1214,
+                      1216
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "7c92a7d5f1c171bf75a44f529b3f1d661fc1f621512427d510a8e977c1f3bbb4"
+                  },
+                  "name": "最强处 / P-Lock",
+                  "number": 2,
+                  "text": "**2｜最强处 / P-Lock**  \n“日子照旧过几日”；还借书、对食物兴趣下降、逐项退出选择；宝钗问实际问题；麝月问饭袜鞋；错误目击；寺中搬柴挑水；宝玉说“没有，只说我平安”；结尾“够咱们两个吃的就是了”、未补完旧衣。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      49116,
+                      49328
+                    ],
+                    "lines": [
+                      1220,
+                      1222
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+                  },
+                  "name": "缺失情节",
+                  "number": 4,
+                  "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      50486,
+                      50630
+                    ],
+                    "lines": [
+                      1246,
+                      1248
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "e046fdccc95aec8e61e37820cec4ad06726b3039d65d6e04b111032a006a80a9"
+                  },
+                  "name": "必须保留",
+                  "number": 12,
+                  "text": "**12｜必须保留**  \n98→99普通日缓冲；无玉触发；“没有，只说我平安”；两人份晚饭；旧衣针仍别在边上。\n\n"
+                }
+              ],
+              "world_basis": [
+                {
+                  "ref": "data/world/m3_resources.json#/resource_flows/18",
+                  "path": "data/world/m3_resources.json",
+                  "pointer": "/resource_flows/18",
+                  "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+                  "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+                  "value": {
+                    "chapter": 99,
+                    "money_state": "最低生活可维持",
+                    "food_medicine": "早饭简单、旧衣缝补",
+                    "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+                    "object_interface": "借书包、旧棉衣、未补完旧衣",
+                    "boundary": "宝玉不是因当日断粮出家",
+                    "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                    "epistemic": "REFERENCE_RESOURCE_FLOW"
+                  }
+                },
+                {
+                  "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+                  "path": "data/world/m3_knowledge.json",
+                  "pointer": "/knowledge_rules/9",
+                  "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+                  "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+                  "value": {
+                    "chapter": 99,
+                    "targets": [
+                      "baoyu"
+                    ],
+                    "kind": "EARLY_INTENT",
+                    "fact": "baoyu_departure_intent",
+                    "note": "宝玉最早知道自己要走，其他人分层后知",
+                    "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                    "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "rationale": "Restore immutable-source-order selected predecessor references in new v3 revisions. Withdraw v2 selected-playback claims; alternate temple-before-search narrative remains an unselected pending proposal. Preserve substantive cast, information and garment identity constraints without manufacturing local state.",
+      "issues_remaining": [
+        "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+        "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+        "search_network: 书摊、车脚、渡口、小店经手人与普通僧人均未注册；路线、费用、目击版本未定。",
+        "message_return: 贾芸见到、拒回、转话与家中获知的局部次序没有事件。",
+        "D2_boundary: 寺院寻人保留而探庵证据接口不得自动兑现。",
+        "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+        "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+        "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+        "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+        "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+        "household_offstage: 宝钗麝月属于询问/接报家中接口，不要求随贾芸城内/寺院寻人；远端获取时刻仍无事件。",
+        "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+      ],
+      "actual_contract_inspection": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+              "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, search_network: 书摊、车脚、渡口、小店经手人与普通僧人均未注册；路线、费用、目击版本未定。, message_return: 贾芸见到、拒回、转话与家中获知的局部次序没有事件。, D2_boundary: 寺院寻人保留而探庵证据接口不得自动兑现。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, household_offstage: 宝钗麝月属于询问/接报家中接口，不要求随贾芸城内/寺院寻人；远端获取时刻仍无事件。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+              "detail": "entry_state: character.jia_yun.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+              "detail": "preconditions: character.baoyu.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+              "detail": "exit_state: character.jia_yun.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+              "detail": "exit_state: character.baoyu.household_role"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S3.v3.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "99-S4",
+      "before": {
+        "path": "data/planning/contracts/agent-edited-v1/99-S4.v2.json",
+        "sha256": "37cbe4b5fd8def9246839339e0494050f968c5801dc86adb1c8094f966706b55"
+      },
+      "after": {
+        "path": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+        "sha256": "4d3f758ec307aef8bbd9059a7f51d881f02c27f67e4b6915c27697166ad5f7e6"
+      },
+      "original_v1": {
+        "path": "data/planning/contracts/agent-v1/99-S4.v1.json",
+        "sha256": "e5c6e681c3ebe73e1ce9e13d05def8207922dc26fe687e286b8228b508ecc8c2"
+      },
+      "packet": {
+        "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+        "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+      },
+      "source_bindings": {
+        "chapter_plan": {
+          "path": "data/planning/chapters/ch99.json",
+          "sha256": "9e11795fad6fd7cb7b76d31f28a82405a81dd3ce071c14da4aa56a247d493a8e"
+        },
+        "seed": {
+          "path": "data/planning/scenes/99-S4.json",
+          "sha256": "dd53d01b1c048109c707d4dc9c6199f7a4f2c687cfd428370f17b1df3744829a"
+        },
+        "source_packet": {
+          "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+          "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+        },
+        "world": {
+          "inputs": [
+            {
+              "path": "data/project/scope.json",
+              "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+            },
+            {
+              "path": "data/world/m3_core.json",
+              "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+            },
+            {
+              "path": "data/world/m3_locations.json",
+              "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+            },
+            {
+              "path": "data/world/m3_presence.json",
+              "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+            },
+            {
+              "path": "data/world/m3_body.json",
+              "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+            },
+            {
+              "path": "data/world/m3_resources.json",
+              "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+            },
+            {
+              "path": "data/world/m3_knowledge.json",
+              "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+            },
+            {
+              "path": "data/objects/m4.json",
+              "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+            },
+            {
+              "path": "data/knowledge/v03_slice2.json",
+              "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+            },
+            {
+              "path": "data/objects/medicine_bowl.yaml",
+              "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+            }
+          ],
+          "status": "BOUND"
+        }
+      },
+      "bindings_preserved": true,
+      "seed_identity_order_preserved": true,
+      "changed_fields": {
+        "entry_from": {
+          "before": "data/planning/contracts/agent-edited-v1/99-S3.v2.json",
+          "after": "data/planning/contracts/agent-edited-v2/99-S3.v3.json"
+        },
+        "revision": {
+          "before": "v2",
+          "after": "v3"
+        },
+        "unresolved": {
+          "before": [
+            "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+            "declared_sequence_only: seed.order保留源列表索引；entry_from采用v2编辑候选编排（99-S5前插、99-S4终末），不证明历史順序或可执行局部检查点，实际正文放置仍未核验。",
+            "meal_measure: 两人份米实际数量、局部余粮、买米租支出未登记，96对象终点不能外推。",
+            "old_garment_unregistered: 未补完旧衣与针无对象ID，不与第95回已典旧夹袄自动并为同物。",
+            "placement_tension: v2已选择旧衣为最终末镜，并前插可选99-S5；源order=4/5与演出次序分层。真实篇章落点及连续场级时序仍待正文核验，不宣称历史编排已证。",
+            "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+            "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+            "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+            "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+            "edited_playback_sequence: 候选演出99-S1→99-S2→99-S5（可选）→99-S3→99-S4；seed.order不变，仅entry_from和义务变更，局部时间与状态事件未核。",
+            "terminal_garment_identity: 99未补完旧衣只是未注册日用品；95夹袄已在当铺，不能自动变成家中终末同一件衣。"
+          ],
+          "after": [
+            "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+            "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+            "meal_measure: 两人份米实际数量、局部余粮、买米租支出未登记，96对象终点不能外推。",
+            "old_garment_unregistered: 未补完旧衣与针无对象ID，不与第95回已典旧夹袄自动并为同物。",
+            "placement_tension: 未解决。所选合同源链S4→S5与章卡最终家中旧衣保护存在张力；不以v2前插方案宣称解决，具体删留、切回或重新编排尚未核准。",
+            "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+            "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+            "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+            "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+            "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+            "terminal_garment_identity: 99未补完旧衣只是未注册日用品；95夹袄已在当铺，不能自动变成家中终末同一件衣。",
+            "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+          ]
+        },
+        "notes": {
+          "before": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。",
+          "after": "EDITOR96-100的99章v3实质性编辑纠正：此前v2把未获批准的替代叙事编排写入entry_from，实际完整计划检查产生两条SCENE_CHAIN_MISMATCH。本v3恢复所选合同链99-S1→99-S2→99-S3→99-S4→99-S5，entry_from绑定新v3源列表前驱，seed.order及packet/seed/card/world绑定不变；不改检查器、不覆盖v1或v2。AGENT_EDITED仅为编辑阶段，不是格式-only、不代表语义/合格同行/人工验证；authority_effect=NONE，evidence_effect=NONE。所选前驱通过声明一致性检查不等于场级状态已执行，后场entry_checkpoint仍UNKNOWN，不注入前场exit。participants_status=PENDING：注册人物仅为候选，未注册目击者与僧人保持未决。KNOWN条件仅限第98章粗入口，不投射到局部动作；96—100无v03获取事件，不造知识fact、actor或event ID。章卡旧衣终末保护与源列表99-S5在99-S4之后的篇章冲突仍PENDING。备选叙事99-S1→99-S2→99-S5（可选）→99-S3→99-S4仅为未选定、未经核准的pending proposal；不得当作所选合同前驱或已定末镜，若以后采用须上游显式编排授权及重新检查。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+        }
+      },
+      "beat_changes": [
+        {
+          "field": "required_beats",
+          "id": "99-S4-R2",
+          "before": {
+            "id": "99-S4-R2",
+            "description": "最终镜头留未补完旧衣、针仍别在边上，手边停顿与下顿饭相接。本旧衣未注册，不等同95已典夹袄、100李纨旧衣，不补归还、赎衣或新对象ID；不让终末动作变成精神胜利旁白。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+            "grounding": {
+              "seed": {
+                "path": "data/prewrite/v06.json",
+                "pointer": "/omitted_scene_plans/18/candidate_scenes/3",
+                "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/3",
+                "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+                "text_sha256": "79f335026a0d60dfe68e8ba560a395c555d6d3f50f0592a93df9dc2e14f118c2",
+                "value": {
+                  "id": "99-S4",
+                  "title": "家里必须继续吃饭"
+                }
+              },
+              "chapter_card_fields": [
+                {
+                  "citation": {
+                    "byte_range": [
+                      48652,
+                      48956
+                    ],
+                    "lines": [
+                      1214,
+                      1216
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "7c92a7d5f1c171bf75a44f529b3f1d661fc1f621512427d510a8e977c1f3bbb4"
+                  },
+                  "name": "最强处 / P-Lock",
+                  "number": 2,
+                  "text": "**2｜最强处 / P-Lock**  \n“日子照旧过几日”；还借书、对食物兴趣下降、逐项退出选择；宝钗问实际问题；麝月问饭袜鞋；错误目击；寺中搬柴挑水；宝玉说“没有，只说我平安”；结尾“够咱们两个吃的就是了”、未补完旧衣。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      50486,
+                      50630
+                    ],
+                    "lines": [
+                      1246,
+                      1248
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "e046fdccc95aec8e61e37820cec4ad06726b3039d65d6e04b111032a006a80a9"
+                  },
+                  "name": "必须保留",
+                  "number": 12,
+                  "text": "**12｜必须保留**  \n98→99普通日缓冲；无玉触发；“没有，只说我平安”；两人份晚饭；旧衣针仍别在边上。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      51066,
+                      51376
+                    ],
+                    "lines": [
+                      1261,
+                      1264
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+                  },
+                  "name": "章法 / 风险",
+                  "number": 18,
+                  "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+                }
+              ],
+              "world_basis": [
+                {
+                  "ref": "data/world/m3_resources.json#/resource_flows/18",
+                  "path": "data/world/m3_resources.json",
+                  "pointer": "/resource_flows/18",
+                  "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+                  "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+                  "value": {
+                    "chapter": 99,
+                    "money_state": "最低生活可维持",
+                    "food_medicine": "早饭简单、旧衣缝补",
+                    "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+                    "object_interface": "借书包、旧棉衣、未补完旧衣",
+                    "boundary": "宝玉不是因当日断粮出家",
+                    "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                    "epistemic": "REFERENCE_RESOURCE_FLOW"
+                  }
+                },
+                {
+                  "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+                  "path": "data/world/m3_knowledge.json",
+                  "pointer": "/knowledge_rules/9",
+                  "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+                  "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+                  "value": {
+                    "chapter": 99,
+                    "targets": [
+                      "baoyu"
+                    ],
+                    "kind": "EARLY_INTENT",
+                    "fact": "baoyu_departure_intent",
+                    "note": "宝玉最早知道自己要走，其他人分层后知",
+                    "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                    "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+                  }
+                }
+              ]
+            }
+          },
+          "after": {
+            "id": "99-S4-R2",
+            "description": "保留未补完旧衣、针仍别在边上，把手边停顿与下顿饭相接。本旧衣未注册，不等同95已典夹袄或100李纨旧衣，不补赎衣、归还或新对象ID。章卡要求旧衣终末，但此义务不证明本场在所选源链中已是最后演出场景，具体终末放置仍PENDING。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+            "grounding": {
+              "seed": {
+                "path": "data/prewrite/v06.json",
+                "pointer": "/omitted_scene_plans/18/candidate_scenes/3",
+                "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/3",
+                "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+                "text_sha256": "79f335026a0d60dfe68e8ba560a395c555d6d3f50f0592a93df9dc2e14f118c2",
+                "value": {
+                  "id": "99-S4",
+                  "title": "家里必须继续吃饭"
+                }
+              },
+              "chapter_card_fields": [
+                {
+                  "citation": {
+                    "byte_range": [
+                      48652,
+                      48956
+                    ],
+                    "lines": [
+                      1214,
+                      1216
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "7c92a7d5f1c171bf75a44f529b3f1d661fc1f621512427d510a8e977c1f3bbb4"
+                  },
+                  "name": "最强处 / P-Lock",
+                  "number": 2,
+                  "text": "**2｜最强处 / P-Lock**  \n“日子照旧过几日”；还借书、对食物兴趣下降、逐项退出选择；宝钗问实际问题；麝月问饭袜鞋；错误目击；寺中搬柴挑水；宝玉说“没有，只说我平安”；结尾“够咱们两个吃的就是了”、未补完旧衣。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      50486,
+                      50630
+                    ],
+                    "lines": [
+                      1246,
+                      1248
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "e046fdccc95aec8e61e37820cec4ad06726b3039d65d6e04b111032a006a80a9"
+                  },
+                  "name": "必须保留",
+                  "number": 12,
+                  "text": "**12｜必须保留**  \n98→99普通日缓冲；无玉触发；“没有，只说我平安”；两人份晚饭；旧衣针仍别在边上。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      51066,
+                      51376
+                    ],
+                    "lines": [
+                      1261,
+                      1264
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+                  },
+                  "name": "章法 / 风险",
+                  "number": 18,
+                  "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+                }
+              ],
+              "world_basis": [
+                {
+                  "ref": "data/world/m3_resources.json#/resource_flows/18",
+                  "path": "data/world/m3_resources.json",
+                  "pointer": "/resource_flows/18",
+                  "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+                  "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+                  "value": {
+                    "chapter": 99,
+                    "money_state": "最低生活可维持",
+                    "food_medicine": "早饭简单、旧衣缝补",
+                    "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+                    "object_interface": "借书包、旧棉衣、未补完旧衣",
+                    "boundary": "宝玉不是因当日断粮出家",
+                    "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                    "epistemic": "REFERENCE_RESOURCE_FLOW"
+                  }
+                },
+                {
+                  "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+                  "path": "data/world/m3_knowledge.json",
+                  "pointer": "/knowledge_rules/9",
+                  "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+                  "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+                  "value": {
+                    "chapter": 99,
+                    "targets": [
+                      "baoyu"
+                    ],
+                    "kind": "EARLY_INTENT",
+                    "fact": "baoyu_departure_intent",
+                    "note": "宝玉最早知道自己要走，其他人分层后知",
+                    "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                    "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+                  }
+                }
+              ]
+            }
+          }
+        },
+        {
+          "field": "required_beats",
+          "id": "99-S4-R3",
+          "before": {
+            "id": "99-S4-R3",
+            "description": "v2明确把本场作为99最终人间收束，排在99-S3转话之后；可选99-S5已前插到99-S2与99-S3之间，禁止在旧衣末镜后再追加寺院课诵。seed.order=4仍是源列表索引，不是末场排序；收到消息的具体时点未知，家中只知实际转达内容。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+            "grounding": {
+              "seed": {
+                "path": "data/prewrite/v06.json",
+                "pointer": "/omitted_scene_plans/18/candidate_scenes/3",
+                "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/3",
+                "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+                "text_sha256": "79f335026a0d60dfe68e8ba560a395c555d6d3f50f0592a93df9dc2e14f118c2",
+                "value": {
+                  "id": "99-S4",
+                  "title": "家里必须继续吃饭"
+                }
+              },
+              "chapter_card_fields": [
+                {
+                  "citation": {
+                    "byte_range": [
+                      49116,
+                      49328
+                    ],
+                    "lines": [
+                      1220,
+                      1222
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+                  },
+                  "name": "缺失情节",
+                  "number": 4,
+                  "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      50286,
+                      50486
+                    ],
+                    "lines": [
+                      1243,
+                      1245
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "45be16f8f315473e9aa2adca0b0cb6f7fc16ba27d9b735dca95be68933ca61a2"
+                  },
+                  "name": "四链",
+                  "number": 11,
+                  "text": "**11｜四链**  \nE4：寻人也花脚费，家里仍买米付租。物：还书、少带衣/钱、旧鞋留下。信：宝玉最早知道→宝钗半知→麝月后知→外界全是模糊目击。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      51066,
+                      51376
+                    ],
+                    "lines": [
+                      1261,
+                      1264
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+                  },
+                  "name": "章法 / 风险",
+                  "number": 18,
+                  "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+                }
+              ],
+              "world_basis": [
+                {
+                  "ref": "data/world/m3_resources.json#/resource_flows/18",
+                  "path": "data/world/m3_resources.json",
+                  "pointer": "/resource_flows/18",
+                  "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+                  "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+                  "value": {
+                    "chapter": 99,
+                    "money_state": "最低生活可维持",
+                    "food_medicine": "早饭简单、旧衣缝补",
+                    "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+                    "object_interface": "借书包、旧棉衣、未补完旧衣",
+                    "boundary": "宝玉不是因当日断粮出家",
+                    "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                    "epistemic": "REFERENCE_RESOURCE_FLOW"
+                  }
+                },
+                {
+                  "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+                  "path": "data/world/m3_knowledge.json",
+                  "pointer": "/knowledge_rules/9",
+                  "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+                  "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+                  "value": {
+                    "chapter": 99,
+                    "targets": [
+                      "baoyu"
+                    ],
+                    "kind": "EARLY_INTENT",
+                    "fact": "baoyu_departure_intent",
+                    "note": "宝玉最早知道自己要走，其他人分层后知",
+                    "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                    "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+                  }
+                }
+              ]
+            }
+          },
+          "after": {
+            "id": "99-S4-R3",
+            "description": "本次所选合同链按源列表，本场entry_from为99-S3.v3，后接99-S5.v3；不宣称可选微课已经前插，不把旧衣终末的保护义务当已解决编排。寻找消息到家与继续吃饭分别处理，具体收信时点未知，家中只知实际转达内容。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+            "grounding": {
+              "seed": {
+                "path": "data/prewrite/v06.json",
+                "pointer": "/omitted_scene_plans/18/candidate_scenes/3",
+                "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/3",
+                "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+                "text_sha256": "79f335026a0d60dfe68e8ba560a395c555d6d3f50f0592a93df9dc2e14f118c2",
+                "value": {
+                  "id": "99-S4",
+                  "title": "家里必须继续吃饭"
+                }
+              },
+              "chapter_card_fields": [
+                {
+                  "citation": {
+                    "byte_range": [
+                      49116,
+                      49328
+                    ],
+                    "lines": [
+                      1220,
+                      1222
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+                  },
+                  "name": "缺失情节",
+                  "number": 4,
+                  "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      50286,
+                      50486
+                    ],
+                    "lines": [
+                      1243,
+                      1245
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "45be16f8f315473e9aa2adca0b0cb6f7fc16ba27d9b735dca95be68933ca61a2"
+                  },
+                  "name": "四链",
+                  "number": 11,
+                  "text": "**11｜四链**  \nE4：寻人也花脚费，家里仍买米付租。物：还书、少带衣/钱、旧鞋留下。信：宝玉最早知道→宝钗半知→麝月后知→外界全是模糊目击。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      51066,
+                      51376
+                    ],
+                    "lines": [
+                      1261,
+                      1264
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+                  },
+                  "name": "章法 / 风险",
+                  "number": 18,
+                  "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+                }
+              ],
+              "world_basis": [
+                {
+                  "ref": "data/world/m3_resources.json#/resource_flows/18",
+                  "path": "data/world/m3_resources.json",
+                  "pointer": "/resource_flows/18",
+                  "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+                  "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+                  "value": {
+                    "chapter": 99,
+                    "money_state": "最低生活可维持",
+                    "food_medicine": "早饭简单、旧衣缝补",
+                    "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+                    "object_interface": "借书包、旧棉衣、未补完旧衣",
+                    "boundary": "宝玉不是因当日断粮出家",
+                    "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                    "epistemic": "REFERENCE_RESOURCE_FLOW"
+                  }
+                },
+                {
+                  "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+                  "path": "data/world/m3_knowledge.json",
+                  "pointer": "/knowledge_rules/9",
+                  "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+                  "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+                  "value": {
+                    "chapter": 99,
+                    "targets": [
+                      "baoyu"
+                    ],
+                    "kind": "EARLY_INTENT",
+                    "fact": "baoyu_departure_intent",
+                    "note": "宝玉最早知道自己要走，其他人分层后知",
+                    "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                    "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "rationale": "Restore immutable-source-order selected predecessor references in new v3 revisions. Withdraw v2 selected-playback claims; alternate temple-before-search narrative remains an unselected pending proposal. Preserve substantive cast, information and garment identity constraints without manufacturing local state.",
+      "issues_remaining": [
+        "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+        "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+        "meal_measure: 两人份米实际数量、局部余粮、买米租支出未登记，96对象终点不能外推。",
+        "old_garment_unregistered: 未补完旧衣与针无对象ID，不与第95回已典旧夹袄自动并为同物。",
+        "placement_tension: 未解决。所选合同源链S4→S5与章卡最终家中旧衣保护存在张力；不以v2前插方案宣称解决，具体删留、切回或重新编排尚未核准。",
+        "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+        "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+        "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+        "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+        "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+        "terminal_garment_identity: 99未补完旧衣只是未注册日用品；95夹袄已在当铺，不能自动变成家中终末同一件衣。",
+        "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+      ],
+      "actual_contract_inspection": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+              "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, meal_measure: 两人份米实际数量、局部余粮、买米租支出未登记，96对象终点不能外推。, old_garment_unregistered: 未补完旧衣与针无对象ID，不与第95回已典旧夹袄自动并为同物。, placement_tension: 未解决。所选合同源链S4→S5与章卡最终家中旧衣保护存在张力；不以v2前插方案宣称解决，具体删留、切回或重新编排尚未核准。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, terminal_garment_identity: 99未补完旧衣只是未注册日用品；95夹袄已在当铺，不能自动变成家中终末同一件衣。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+              "detail": "entry_state: character.baochai.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+              "detail": "preconditions: object.OBJ-RICE-JAR-95.quantity_state"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+              "detail": "exit_state: object.OBJ-RICE-JAR-95.quantity_state"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S4.v3.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "scene_id": "99-S5",
+      "before": {
+        "path": "data/planning/contracts/agent-edited-v1/99-S5.v2.json",
+        "sha256": "df6a753f96e7929d1f2026cd3c180f60576e6628bc12f9979472a0a1131fb652"
+      },
+      "after": {
+        "path": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+        "sha256": "cd6f624a4aaf5035a37fdcec71dfe436655128a59802debe656da215ddc406bd"
+      },
+      "original_v1": {
+        "path": "data/planning/contracts/agent-v1/99-S5.v1.json",
+        "sha256": "2387d2caac51c344b5a0409e990d45388c9217c9623063fcba3878f93b9b8466"
+      },
+      "packet": {
+        "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+        "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+      },
+      "source_bindings": {
+        "chapter_plan": {
+          "path": "data/planning/chapters/ch99.json",
+          "sha256": "9e11795fad6fd7cb7b76d31f28a82405a81dd3ce071c14da4aa56a247d493a8e"
+        },
+        "seed": {
+          "path": "data/planning/scenes/99-S5.json",
+          "sha256": "fe39fa915efcef9a90bb41b8661d22b8abd2fe5dfae1ee5460acdbb4e5d80847"
+        },
+        "source_packet": {
+          "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+          "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+        },
+        "world": {
+          "inputs": [
+            {
+              "path": "data/project/scope.json",
+              "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+            },
+            {
+              "path": "data/world/m3_core.json",
+              "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+            },
+            {
+              "path": "data/world/m3_locations.json",
+              "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+            },
+            {
+              "path": "data/world/m3_presence.json",
+              "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+            },
+            {
+              "path": "data/world/m3_body.json",
+              "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+            },
+            {
+              "path": "data/world/m3_resources.json",
+              "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+            },
+            {
+              "path": "data/world/m3_knowledge.json",
+              "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+            },
+            {
+              "path": "data/objects/m4.json",
+              "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+            },
+            {
+              "path": "data/knowledge/v03_slice2.json",
+              "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+            },
+            {
+              "path": "data/objects/medicine_bowl.yaml",
+              "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+            }
+          ],
+          "status": "BOUND"
+        }
+      },
+      "bindings_preserved": true,
+      "seed_identity_order_preserved": true,
+      "changed_fields": {
+        "entry_from": {
+          "before": "data/planning/contracts/agent-edited-v1/99-S2.v2.json",
+          "after": "data/planning/contracts/agent-edited-v2/99-S4.v3.json"
+        },
+        "revision": {
+          "before": "v2",
+          "after": "v3"
+        },
+        "unresolved": {
+          "before": [
+            "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+            "declared_sequence_only: seed.order保留源列表索引；entry_from采用v2编辑候选编排（99-S5前插、99-S4终末），不证明历史順序或可执行局部检查点，实际正文放置仍未核验。",
+            "optional_scene: 可选微课的编排位置已前插离家后/见到前；是否采用、早晚课选择和宗教日用细节仍未核。",
+            "minor_actors: 小和尚与普通僧人无注册身份；不新增姓名、法号。",
+            "religious_props_unregistered: 指页经册、水桶、柴和锅均未注册，课诵内容不自行造经文。",
+            "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+            "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+            "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+            "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+            "edited_playback_sequence: 候选演出99-S1→99-S2→99-S5（可选）→99-S3→99-S4；seed.order不变，仅entry_from和义务变更，局部时间与状态事件未核。"
+          ],
+          "after": [
+            "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+            "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+            "optional_scene: 微课是否采用、早晚课选择与终末放置未定；所选源前驱为S4，不将前插备选提案当已选编排。",
+            "minor_actors: 小和尚与普通僧人无注册身份；不新增姓名、法号。",
+            "religious_props_unregistered: 指页经册、水桶、柴和锅均未注册，课诵内容不自行造经文。",
+            "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+            "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+            "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+            "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+            "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+            "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+          ]
+        },
+        "notes": {
+          "before": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。",
+          "after": "EDITOR96-100的99章v3实质性编辑纠正：此前v2把未获批准的替代叙事编排写入entry_from，实际完整计划检查产生两条SCENE_CHAIN_MISMATCH。本v3恢复所选合同链99-S1→99-S2→99-S3→99-S4→99-S5，entry_from绑定新v3源列表前驱，seed.order及packet/seed/card/world绑定不变；不改检查器、不覆盖v1或v2。AGENT_EDITED仅为编辑阶段，不是格式-only、不代表语义/合格同行/人工验证；authority_effect=NONE，evidence_effect=NONE。所选前驱通过声明一致性检查不等于场级状态已执行，后场entry_checkpoint仍UNKNOWN，不注入前场exit。participants_status=PENDING：注册人物仅为候选，未注册目击者与僧人保持未决。KNOWN条件仅限第98章粗入口，不投射到局部动作；96—100无v03获取事件，不造知识fact、actor或event ID。章卡旧衣终末保护与源列表99-S5在99-S4之后的篇章冲突仍PENDING。备选叙事99-S1→99-S2→99-S5（可选）→99-S3→99-S4仅为未选定、未经核准的pending proposal；不得当作所选合同前驱或已定末镜，若以后采用须上游显式编排授权及重新检查。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+        }
+      },
+      "beat_changes": [
+        {
+          "field": "required_beats",
+          "id": "99-S5-R3",
+          "before": {
+            "id": "99-S5-R3",
+            "description": "本v2把可选微课前插99-S2离家以后、99-S3贾芸见到以前，entry_from声明99-S2；种子order=5保留索引而不充作最后演出次序。可删微课，但不得移到99-S4旧衣终末之后。编排选择不证明入住路径、早晚课时刻或局部检查点。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+            "grounding": {
+              "seed": {
+                "path": "data/prewrite/v06.json",
+                "pointer": "/omitted_scene_plans/18/candidate_scenes/4",
+                "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/4",
+                "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+                "text_sha256": "29c14604e55ed4f2471e6d93c0bf2e61d11e71ab36585fe20b06124ecf107849",
+                "value": {
+                  "id": "99-S5",
+                  "title": "若后续第41步要写寺庙生活"
+                }
+              },
+              "chapter_card_fields": [
+                {
+                  "citation": {
+                    "byte_range": [
+                      49116,
+                      49328
+                    ],
+                    "lines": [
+                      1220,
+                      1222
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+                  },
+                  "name": "缺失情节",
+                  "number": 4,
+                  "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      50755,
+                      50858
+                    ],
+                    "lines": [
+                      1252,
+                      1254
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "91e40f9542c12bb663c9fbbdb8d2c5c187fa541fbf7ab0c080efb523e856532a"
+                  },
+                  "name": "L3",
+                  "number": 14,
+                  "text": "**14｜L3**  \n结构本已强，正式重写只需把撤出阶段与寻找阶段更均衡，L2—3。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      51066,
+                      51376
+                    ],
+                    "lines": [
+                      1261,
+                      1264
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+                  },
+                  "name": "章法 / 风险",
+                  "number": 18,
+                  "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+                }
+              ],
+              "world_basis": [
+                {
+                  "ref": "data/world/m3_resources.json#/resource_flows/18",
+                  "path": "data/world/m3_resources.json",
+                  "pointer": "/resource_flows/18",
+                  "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+                  "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+                  "value": {
+                    "chapter": 99,
+                    "money_state": "最低生活可维持",
+                    "food_medicine": "早饭简单、旧衣缝补",
+                    "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+                    "object_interface": "借书包、旧棉衣、未补完旧衣",
+                    "boundary": "宝玉不是因当日断粮出家",
+                    "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                    "epistemic": "REFERENCE_RESOURCE_FLOW"
+                  }
+                },
+                {
+                  "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+                  "path": "data/world/m3_knowledge.json",
+                  "pointer": "/knowledge_rules/9",
+                  "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+                  "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+                  "value": {
+                    "chapter": 99,
+                    "targets": [
+                      "baoyu"
+                    ],
+                    "kind": "EARLY_INTENT",
+                    "fact": "baoyu_departure_intent",
+                    "note": "宝玉最早知道自己要走，其他人分层后知",
+                    "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                    "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+                  }
+                }
+              ]
+            }
+          },
+          "after": {
+            "id": "99-S5-R3",
+            "description": "本次所选前驱恢复99-S4.v3，order=5仍按源列表；微课是否采用、与家中旧衣终末如何协调尚未裁定。不得因保留源前驱就声称寺居历史上必晚于家务，亦不得声称微课已前插；局部状态、早晚课时刻和最终篇章放置继续UNKNOWN/PENDING。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+            "grounding": {
+              "seed": {
+                "path": "data/prewrite/v06.json",
+                "pointer": "/omitted_scene_plans/18/candidate_scenes/4",
+                "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/4",
+                "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+                "text_sha256": "29c14604e55ed4f2471e6d93c0bf2e61d11e71ab36585fe20b06124ecf107849",
+                "value": {
+                  "id": "99-S5",
+                  "title": "若后续第41步要写寺庙生活"
+                }
+              },
+              "chapter_card_fields": [
+                {
+                  "citation": {
+                    "byte_range": [
+                      49116,
+                      49328
+                    ],
+                    "lines": [
+                      1220,
+                      1222
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+                  },
+                  "name": "缺失情节",
+                  "number": 4,
+                  "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      50755,
+                      50858
+                    ],
+                    "lines": [
+                      1252,
+                      1254
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "91e40f9542c12bb663c9fbbdb8d2c5c187fa541fbf7ab0c080efb523e856532a"
+                  },
+                  "name": "L3",
+                  "number": 14,
+                  "text": "**14｜L3**  \n结构本已强，正式重写只需把撤出阶段与寻找阶段更均衡，L2—3。\n\n"
+                },
+                {
+                  "citation": {
+                    "byte_range": [
+                      51066,
+                      51376
+                    ],
+                    "lines": [
+                      1261,
+                      1264
+                    ],
+                    "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+                    "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+                    "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+                  },
+                  "name": "章法 / 风险",
+                  "number": 18,
+                  "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+                }
+              ],
+              "world_basis": [
+                {
+                  "ref": "data/world/m3_resources.json#/resource_flows/18",
+                  "path": "data/world/m3_resources.json",
+                  "pointer": "/resource_flows/18",
+                  "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+                  "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+                  "value": {
+                    "chapter": 99,
+                    "money_state": "最低生活可维持",
+                    "food_medicine": "早饭简单、旧衣缝补",
+                    "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+                    "object_interface": "借书包、旧棉衣、未补完旧衣",
+                    "boundary": "宝玉不是因当日断粮出家",
+                    "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                    "epistemic": "REFERENCE_RESOURCE_FLOW"
+                  }
+                },
+                {
+                  "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+                  "path": "data/world/m3_knowledge.json",
+                  "pointer": "/knowledge_rules/9",
+                  "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+                  "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+                  "value": {
+                    "chapter": 99,
+                    "targets": [
+                      "baoyu"
+                    ],
+                    "kind": "EARLY_INTENT",
+                    "fact": "baoyu_departure_intent",
+                    "note": "宝玉最早知道自己要走，其他人分层后知",
+                    "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                    "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+                  }
+                }
+              ]
+            }
+          }
+        }
+      ],
+      "rationale": "Restore immutable-source-order selected predecessor references in new v3 revisions. Withdraw v2 selected-playback claims; alternate temple-before-search narrative remains an unselected pending proposal. Preserve substantive cast, information and garment identity constraints without manufacturing local state.",
+      "issues_remaining": [
+        "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+        "declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。",
+        "optional_scene: 微课是否采用、早晚课选择与终末放置未定；所选源前驱为S4，不将前插备选提案当已选编排。",
+        "minor_actors: 小和尚与普通僧人无注册身份；不新增姓名、法号。",
+        "religious_props_unregistered: 指页经册、水桶、柴和锅均未注册，课诵内容不自行造经文。",
+        "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+        "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+        "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+        "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+        "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+        "v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+      ],
+      "actual_contract_inspection": {
+        "authority_effect": "NONE",
+        "evidence_effect": "NONE",
+        "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+        "declared_compatibility": {
+          "status": "PENDING",
+          "checks": [
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+              "detail": "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。, declared_sequence_only: 本次恢复所选源链S1→S2→S3→S4→S5；seed.order不变，entry_from指向新v3源前驱。此声明不证明历史时序或局部状态，正文放置仍未核。, optional_scene: 微课是否采用、早晚课选择与终末放置未定；所选源前驱为S4，不将前插备选提案当已选编排。, minor_actors: 小和尚与普通僧人无注册身份；不新增姓名、法号。, religious_props_unregistered: 指页经册、水桶、柴和锅均未注册，课诵内容不自行造经文。, local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。, knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。, event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。, local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。, alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。, v2_chain_failure_corrected: v2在S3/S5的entry_from违反源前驱检查；v3恢复S3←S2、S5←S4，其余源前驱随新v3路径更新。零FAIL仅为所选声明检查，不是semantic PASS。"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_PARTICIPANTS_UNRESOLVED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+              "detail": "no justified participant set"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+              "detail": "entry_state: character.baoyu.location"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+              "detail": "preconditions: character.baoyu.household_role"
+            },
+            {
+              "status": "PENDING",
+              "code": "CONTRACT_STATE_UNKNOWN",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+              "detail": "exit_state: character.baoyu.location"
+            },
+            {
+              "status": "PASS",
+              "code": "CONTRACT_BINDINGS_DECLARED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+              "detail": "byte/reference consistency only; not semantic support"
+            }
+          ]
+        },
+        "deterministic_world_state_replay": {
+          "status": "NOT_CHECKED",
+          "scope": "SUPPORTED_DECLARED_TARGETS_AND_REGISTERED_EVENT_PREFIXES_ONLY",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+              "detail": "only explicit first-scene chapter entry is supported; no local/predecessor state injected"
+            }
+          ]
+        },
+        "prose_supported_semantic_replay": {
+          "status": "NOT_CHECKED",
+          "checks": [
+            {
+              "status": "NOT_CHECKED",
+              "code": "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED",
+              "ref": "data/planning/contracts/agent-edited-v2/99-S5.v3.json",
+              "detail": "byte-bound prose, if supplied, is not semantic replay; no provider or human attestation inferred"
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

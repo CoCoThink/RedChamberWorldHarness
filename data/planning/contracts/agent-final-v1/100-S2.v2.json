@@ -1,0 +1,701 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch100.json",
+      "sha256": "04adbb27665d5901abb41e787328a3439267414ee9167fbeb1b6a3ae3c5998e1"
+    },
+    "seed": {
+      "path": "data/planning/scenes/100-S2.json",
+      "sha256": "e87add984a8df305c5237d38c8b78d26eb1f6a85996b40d1bacbbec9a560074b"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 100,
+  "chapter_plan_ref": "data/planning/chapters/ch100.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/100-S1.v2.json",
+  "entry_state": [
+    {
+      "equals": "character.jialan.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "前驱只是求仕回望，实授官讯何时到达和命令文本未登记；不以未来W100章级official_son作本地入口。"
+    }
+  ],
+  "event_refs": [
+    "W100-LATE-HUMAN"
+  ],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.jialan.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "章级实官身份有W100-LATE-HUMAN，厨房待客与礼务的本场退出未登记，不能自称实授流程已重放。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "100-S2-F1",
+      "description": "不得以公服或封荣推出贾府产业复归、家族中兴；不得将官讯写成立即有无限现金。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f1f3e95473cb504af24c54bce14023cf7956a32a8115f00fe36b32402a01ed6f",
+          "value": {
+            "id": "100-S2",
+            "title": "真正得官后，先发生家务而非荣耀"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                53686,
+                53830
+              ],
+              "lines": [
+                1299,
+                1301
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c367310a9832470e0ca41e164ecb87392344e36b2b3c3b1e86b9f337003e094a"
+            },
+            "name": "笑料/俗文化",
+            "number": 8,
+            "text": "**8｜笑料/俗文化**  \n报喜进门与厨房算饭、歪腿借桌、孩子误解“官=钱”必须保留，使晚荣不变礼制展览。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54290,
+                54556
+              ],
+              "lines": [
+                1308,
+                1310
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "68b39859b7c5092546607e5e946be9c069c0eb3774dfff0896d1d9aa929448f1"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE5：官位增加收入/礼数，不恢复旧宅旧产。李纨受封本身增加衣礼、回礼、待客成本。病亡又产生白布、棺木、吊客等开支。信息：官讯→亲友→贺客；病情→贾兰误判好转→逐渐退出。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                55370,
+                55918
+              ],
+              "lines": [
+                1326,
+                1329
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "64af51dbefdc142c1db5508ac3a3701da71b21898b37000c051f4c02d2552aa9"
+            },
+            "name": "最终章法 / 风险",
+            "number": 18,
+            "text": "**18｜最终章法 / 风险**  \n多年压缩 → 贾兰实授 → 晚荣的现实礼务 → 李纨数月衰退与日常移交 → 人间丧务收束 → “人间这些余事，到此按下” → 太虚感官回声 → 一轴情榜五层 → 宝黛硬评、少量G评 → 宝玉榜末“情不情” → “收罢” → 青埂峰切换 → 道人粗纸残墨抄录 → 漫漶留空 → 石在，字在。  \n**风险：**把100写成“答案发布会”、把贾兰写成家族中兴、把情榜写成数据库、把石归写成佛理结论。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "100-S2-F2",
+      "description": "不得扩成礼制展览或未经核验的诏敕、官品和年份；孩子误会不能变作者经济结论。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f1f3e95473cb504af24c54bce14023cf7956a32a8115f00fe36b32402a01ed6f",
+          "value": {
+            "id": "100-S2",
+            "title": "真正得官后，先发生家务而非荣耀"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                51546,
+                51998
+              ],
+              "lines": [
+                1272,
+                1280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0f8c98f59636ebca22e70494e23174aff057b666c1571cf5fb2d4a13e3e18b30"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR40\n\n**EVIDENCE-INTERFACES｜**\n- STRUCTURE：末回情榜；`警幻情榜`仅SOURCE-EXACT批语称谓；\n- V4：`宝玉情不情 / 黛玉情情`；\n- V5：末回五层`正、副、再副、三副、四副芳讳`；\n- NEG：`皆系漫拟`，下层猜名不得硬化。贾兰功名、R39李纨“因子得荣而终归虚幻”强约束；R08/R09/P11末回情榜；R01/P10石归。李纨具体病程、贾兰官品、年份开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                53686,
+                53830
+              ],
+              "lines": [
+                1299,
+                1301
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c367310a9832470e0ca41e164ecb87392344e36b2b3c3b1e86b9f337003e094a"
+            },
+            "name": "笑料/俗文化",
+            "number": 8,
+            "text": "**8｜笑料/俗文化**  \n报喜进门与厨房算饭、歪腿借桌、孩子误解“官=钱”必须保留，使晚荣不变礼制展览。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54110,
+                54290
+              ],
+              "lines": [
+                1305,
+                1307
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f5773c28f5384c276a35cd6229fe2c92adf00a6a8da9816acbb7214853cce581"
+            },
+            "name": "职业人物",
+            "number": 10,
+            "text": "**10｜职业人物**  \n报喜、医者、贺客、帮厨、丧务；道人抄写需要纸墨劳动。官礼/丁忧具体制度措辞在正式正文前再做一次历史校核。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "100-S2",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [
+    "OT100-02"
+  ],
+  "order": 2,
+  "participants": [
+    "jialan",
+    "liwan"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "object.OBJ-JIALAN-OFFICIAL-ROBE-100.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT100-02支持公服可用的章级当前C落点，但制作、领受、穿着顺序未有场级事件。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/21",
+        "ref": "data/world/m3_core.json#/characters/21",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "6fe4b5d3a561bb33d7992f53a27dbb86b3a79d0112945ff234a85df3289f8971",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "son_student",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "jialan",
+          "name": "贾兰"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/20",
+        "ref": "data/world/m3_core.json#/characters/20",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "7237c0dbc8553508a03f706fee4f293d0d3232ea10b6a7a377aa6677ea8550d4",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "widow_mother",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "WIDOWED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "liwan",
+          "name": "李纨"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/16",
+        "ref": "data/objects/m4.json#/objects/16",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "2d1a3ea4cc6b992ca1694cc14c0c2daa5d86da6bd59a930ea1992ada543ec804",
+        "value": {
+          "baseline": {
+            "holder": null,
+            "location": null,
+            "status": "UNOBSERVED"
+          },
+          "continuity_rules": [
+            "公服只表名位上升，不证明旧产业恢复"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-JIALAN-OFFICIAL-ROBE-100",
+          "identity_status": "C_WORLD_OBJECT",
+          "kind": "official_clothing",
+          "name": "贾兰公服",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "R40"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "100-S2-R1",
+      "description": "官讯入门先让厨房问“饭够不够”，借歪腿桌安排贺客，孩子误把做官等于有钱；礼数与破家具必须并存。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f1f3e95473cb504af24c54bce14023cf7956a32a8115f00fe36b32402a01ed6f",
+          "value": {
+            "id": "100-S2",
+            "title": "真正得官后，先发生家务而非荣耀"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                51998,
+                52269
+              ],
+              "lines": [
+                1281,
+                1283
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b34ed3ce60a291c1adf97cb95a1c0e40c328105d157eb98907b6ff38746ba2b6"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n多年真实时间；厨房听见官讯先问“饭够不够”；借桌腿歪；孩子以为做官便有钱；李纨冠帔压额、仍爱旧衣；贾珠旧书；空空道人粗纸残墨抄石、漫漶留空；结尾“石在，字在”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                52595,
+                52924
+              ],
+              "lines": [
+                1287,
+                1289
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0760ba1695c6c800ca9a97371ca156fa2050244ee9406a60e6c3aa165e8877bf"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n人间层：实授→贺客/礼务→李纨受封后疲倦→数月衰退→日常移交→死→简化但有礼的丧务。太虚层：旧册略现但不重读→另展一轴情榜→五层芳讳→少量评语→榜末宝玉“情不情”→警幻“收罢”→章回切换青埂峰→道人抄录。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                53686,
+                53830
+              ],
+              "lines": [
+                1299,
+                1301
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c367310a9832470e0ca41e164ecb87392344e36b2b3c3b1e86b9f337003e094a"
+            },
+            "name": "笑料/俗文化",
+            "number": 8,
+            "text": "**8｜笑料/俗文化**  \n报喜进门与厨房算饭、歪腿借桌、孩子误解“官=钱”必须保留，使晚荣不变礼制展览。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54556,
+                54732
+              ],
+              "lines": [
+                1311,
+                1313
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ad4f27831ba15d8b08b8b371c9b143048ebd399eb24dad718ca158515d19094d"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n真实多年；官礼与破家具并存；李纨旧衣；父亲旧书；“收罢”；道人不解释；石文漫漶留空；“石在，字在”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "100-S2-R2",
+      "description": "贾兰实授后公服只表名位，李纨冠帔压额、仍爱旧衣；公服对象不替代她冠帔，E5提高收入/礼数但不复旧产。OT100-02序20为对象章级可用，W100-LATE-HUMAN序30同时含官身和晚衰，是不同运行流的关联，不把公服发现当实授诏敕或晚衰已在本场执行。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f1f3e95473cb504af24c54bce14023cf7956a32a8115f00fe36b32402a01ed6f",
+          "value": {
+            "id": "100-S2",
+            "title": "真正得官后，先发生家务而非荣耀"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                51998,
+                52269
+              ],
+              "lines": [
+                1281,
+                1283
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b34ed3ce60a291c1adf97cb95a1c0e40c328105d157eb98907b6ff38746ba2b6"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n多年真实时间；厨房听见官讯先问“饭够不够”；借桌腿歪；孩子以为做官便有钱；李纨冠帔压额、仍爱旧衣；贾珠旧书；空空道人粗纸残墨抄石、漫漶留空；结尾“石在，字在”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                53157,
+                53275
+              ],
+              "lines": [
+                1293,
+                1295
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4cdcf848b7efa0507f776d8ab848c244e4da0cf72e461921d67cfbef23c6e3e7"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n少数旧物归置即可：贾珠旧书、账纸、冠帔、旧袄。不要大观园遗物总展。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54290,
+                54556
+              ],
+              "lines": [
+                1308,
+                1310
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "68b39859b7c5092546607e5e946be9c069c0eb3774dfff0896d1d9aa929448f1"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE5：官位增加收入/礼数，不恢复旧宅旧产。李纨受封本身增加衣礼、回礼、待客成本。病亡又产生白布、棺木、吊客等开支。信息：官讯→亲友→贺客；病情→贾兰误判好转→逐渐退出。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/19",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/19",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "d9a252c045d5267b91a26626cc03e19d22f927716dcc0ac85f4048c8b85e0e25",
+            "value": {
+              "chapter": 100,
+              "money_state": "贾兰官俸/功名带来名位，但旧产业不复",
+              "food_medicine": "受贺可办几桌茶饭；李纨病中有医药",
+              "labor": "贾兰在外任职/回家侍母；少量家人待客",
+              "object_interface": "公服、冠帔、旧箱柜",
+              "boundary": "不能写中兴",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/10",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/10",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "d2cfe3a886b2e2b37cd85529e47e50b3154e7ef593a0ea4b262619628e8b0d9f",
+            "value": {
+              "chapter": 100,
+              "targets": [
+                "human"
+              ],
+              "kind": "FORBIDDEN_KNOWLEDGE",
+              "fact": "outer_frame_emotion_register",
+              "note": "太虚/情榜层的信息绝不倒灌给人间人物",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "100-S2-R3",
+      "description": "报喜人、贺客、帮厨和孩子各办具体实务；官讯→亲友→贺客的传播义务不等于任何注册知识事件。宝钗麝月是否来帮忙未定，不强列同场。官礼、官品、年份与收入数额未核不得填出权威制度文本。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "f1f3e95473cb504af24c54bce14023cf7956a32a8115f00fe36b32402a01ed6f",
+          "value": {
+            "id": "100-S2",
+            "title": "真正得官后，先发生家务而非荣耀"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                51546,
+                51998
+              ],
+              "lines": [
+                1272,
+                1280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0f8c98f59636ebca22e70494e23174aff057b666c1571cf5fb2d4a13e3e18b30"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR40\n\n**EVIDENCE-INTERFACES｜**\n- STRUCTURE：末回情榜；`警幻情榜`仅SOURCE-EXACT批语称谓；\n- V4：`宝玉情不情 / 黛玉情情`；\n- V5：末回五层`正、副、再副、三副、四副芳讳`；\n- NEG：`皆系漫拟`，下层猜名不得硬化。贾兰功名、R39李纨“因子得荣而终归虚幻”强约束；R08/R09/P11末回情榜；R01/P10石归。李纨具体病程、贾兰官品、年份开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                52924,
+                53157
+              ],
+              "lines": [
+                1290,
+                1292
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1e8b7734f131ad20db05cc39a845f59add46a73d6815940cac08feb362ce4d5c"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n人间：贾兰、李纨、宝钗/麝月等残余人物、报喜人、贺客、帮厨、医者、丧务人。太虚：警幻只管理，不讲解。外框：空空道人是抄写劳动者，不是哲学解说员。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54110,
+                54290
+              ],
+              "lines": [
+                1305,
+                1307
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f5773c28f5384c276a35cd6229fe2c92adf00a6a8da9816acbb7214853cce581"
+            },
+            "name": "职业人物",
+            "number": 10,
+            "text": "**10｜职业人物**  \n报喜、医者、贺客、帮厨、丧务；道人抄写需要纸墨劳动。官礼/丁忧具体制度措辞在正式正文前再做一次历史校核。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54290,
+                54556
+              ],
+              "lines": [
+                1308,
+                1310
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "68b39859b7c5092546607e5e946be9c069c0eb3774dfff0896d1d9aa929448f1"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE5：官位增加收入/礼数，不恢复旧宅旧产。李纨受封本身增加衣礼、回礼、待客成本。病亡又产生白布、棺木、吊客等开支。信息：官讯→亲友→贺客；病情→贾兰误判好转→逐渐退出。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/19",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/19",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "d9a252c045d5267b91a26626cc03e19d22f927716dcc0ac85f4048c8b85e0e25",
+            "value": {
+              "chapter": 100,
+              "money_state": "贾兰官俸/功名带来名位，但旧产业不复",
+              "food_medicine": "受贺可办几桌茶饭；李纨病中有医药",
+              "labor": "贾兰在外任职/回家侍母；少量家人待客",
+              "object_interface": "公服、冠帔、旧箱柜",
+              "boundary": "不能写中兴",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/10",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/10",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "d2cfe3a886b2e2b37cd85529e47e50b3154e7ef593a0ea4b262619628e8b0d9f",
+            "value": {
+              "chapter": 100,
+              "targets": [
+                "human"
+              ],
+              "kind": "FORBIDDEN_KNOWLEDGE",
+              "fact": "outer_frame_emotion_register",
+              "note": "太虚/情榜层的信息绝不倒灌给人间人物",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [
+    "OBJ-JIALAN-OFFICIAL-ROBE-100"
+  ],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+    "declared_sequence_only: 依种子列表声明前驱；历史顺序、局部检查点与既有正文放置未核验。",
+    "official_mechanism: 实授/封荣制度措辞、年份、官品及官讯传播时刻仍C/H边界，需独立历史核验。",
+    "minor_actors: 报喜人、贺客、帮厨、孩子未注册，姓名人数不补。",
+    "objects_unregistered: 冠帔、旧袄和借桌无对象ID，不能由贾兰公服替代李纨衣礼对象。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+    "local_cast_pending: 人间残余候选与未注册报喜/医者/丧务角色到场未核；registry不证明localcast，太虚/青埂峰不使用人间候选充数。",
+    "residual_roster_not_required: 宝钗麝月不列本场必须到场，只保留章卡残余生活接口；具体采用与消息/空间接续仍PENDING。"
+  ],
+  "function": "贾兰实授后的第一个变化是厨房算饭、借桌待客和封荣衣礼成本；名位上升不等于复产。",
+  "notes": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+}

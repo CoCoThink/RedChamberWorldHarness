@@ -1,0 +1,767 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v2",
+  "id": "91-S1",
+  "chapter": 91,
+  "order": 1,
+  "chapter_plan_ref": "data/planning/chapters/ch91.json",
+  "status": "AGENT_EDITED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/91-S1.json",
+      "sha256": "2e448b80ed15bd248a291c70575ed297ec8fdd32de5bc04a9ab307797a62703e"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch91.json",
+      "sha256": "0f14584a05e775e71bcaab70f890741f99ae417f288b364a169cb00caab56830"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "CHAPTER_ENTRY:90",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 90
+  },
+  "participants": [
+    "fengjie",
+    "ping_er",
+    "sheyue"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [
+    "OBJ-WINTER-CLOTHES-BUNDLE"
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/7",
+        "ref": "data/world/m3_core.json#/characters/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bca44063796cdc27c5e8076a896ecdbedfbe135109b5461cd9af292e5d0fbaa0",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_old_illness",
+            "household_role": "household_manager",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED_JIALIAN"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "fengjie",
+          "name": "王熙凤"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/8",
+        "ref": "data/world/m3_core.json#/characters/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "18eb0f602b315bef39498961532a6d16a05dbd3cac2e572c07257b6fdf99a63d",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "fengjie_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "ping_er",
+          "name": "平儿"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/6",
+        "ref": "data/objects/m4.json#/objects/6",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "b924a929b1f5d41f717ca703a3392cc5a21ca41f088431a529348cc4c73fdcc6",
+        "value": {
+          "baseline": {
+            "holder": "jia_household",
+            "location": "S02",
+            "status": "IN_OLD_HOUSE"
+          },
+          "continuity_rules": [
+            "第91回只能按名目从受控旧府准取，不是自由搬家"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-WINTER-CLOTHES-BUNDLE",
+          "identity_status": "C_WORLD_OBJECT_GROUP",
+          "kind": "clothing_bundle",
+          "name": "准取冬衣靠褥包",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "entry_state": [
+    {
+      "equals": "character.fengjie.body_state",
+      "value": "old_illness_worsening_under_labor",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/7/effects/1",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/7/effects/1",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "a218a6df1738a344df90c9a5d1303cb29480ffaf3645ae55cabbe05d7be3fa97",
+          "value": {
+            "set": "characters.fengjie.body_state",
+            "value": "old_illness_worsening_under_labor"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.ping_er.location",
+      "value": "S06",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/6/effects/7",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/6/effects/7",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "3038a9caed444668592c2e16fbd5a7aca4e378cf2e5527ba6106535c6ea25a4e",
+          "value": {
+            "set": "characters.ping_er.location",
+            "value": "S06"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "object.OBJ-WINTER-CLOTHES-BUNDLE.status",
+      "value": "IN_OLD_HOUSE",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/objects/m4.json#/objects/6/baseline/status",
+          "path": "data/objects/m4.json",
+          "pointer": "/objects/6/baseline/status",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+          "text_sha256": "40f3de01fa0556eb00f190b56900d56ccac2d4c65bb661244bbd9787378d89a7",
+          "value": "IN_OLD_HOUSE"
+        }
+      ]
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "object.OBJ-WINTER-CLOTHES-BUNDLE.status",
+      "value": "IN_OLD_HOUSE",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/objects/m4.json#/objects/6/baseline/status",
+          "path": "data/objects/m4.json",
+          "pointer": "/objects/6/baseline/status",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+          "text_sha256": "40f3de01fa0556eb00f190b56900d56ccac2d4c65bb661244bbd9787378d89a7",
+          "value": "IN_OLD_HOUSE"
+        }
+      ]
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "character.ping_er.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "准取通知、到门和进入受控旧府的局部时点尚未注册；章前借住处位置不能替代本场出入记录。"
+    },
+    {
+      "equals": "object.OBJ-WINTER-CLOTHES-BUNDLE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "准取资格不等于已经领出；OT91-03只注册章级带回结果，不能提前当作本场领取完成。"
+    },
+    {
+      "equals": "character.fengjie.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "准取场内凤姐到门、获准入内和离开的局部路径未注册；短时亲往的资源说明不能证明完成出入。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "91-S1-R1",
+      "description": "通知先到，再由平儿核对冬衣靠褥的许可名目；看守负责准入，书办负责登记。通知、准入、登记、实际领出分开，不以旧主称谓或钥匙代替许可，也不由准取推出已领出。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "fd4913d64697a82aaf14289c29dd7ff604a0a2e9e7553d3f301033bc57815f10",
+          "value": {
+            "id": "91-S1",
+            "title": "“准取”不是想回就回"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29083,
+                29246
+              ],
+              "lines": [
+                717,
+                719
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "464493c8e77fcf3e01f53a96492dd235548be95f574e7651acdcdcbfe9e74ec1"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n准取不是自由回府；雪地、湿鞋、旧府物件重新认领；旧单从取物自然生出；麝月钥匙“今日没什么用”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29246,
+                29361
+              ],
+              "lines": [
+                720,
+                722
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c09af1619f9c59637d33a14642909c4ceba9d16cdebd6971e5413238b7a40a81"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n旧府文化物的“失主化”可加一两笔；准入规则与登记人再清楚一点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29361,
+                29489
+              ],
+              "lines": [
+                723,
+                725
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "6cc97a13cccbe3c1ca4ba6a3367927bf54834a3c460b0ed70af9841e0f1b3730"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n91-S1凭名目准取；S2物分可取/不可取/无人要；S3拾物先登记；S4旧单带到宝玉。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29910,
+                29960
+              ],
+              "lines": [
+                741,
+                743
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5cccc9256b3b4906dc6d4e10575ab5f420404f5e7754882c2735ffa822519aec"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n准取看守、登记书办。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29960,
+                30094
+              ],
+              "lines": [
+                744,
+                746
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0986195f3b5121029cd0cf22da526cf3e42027a12d567463e7d9095c12087c08"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE1：物权/使用权分离。信息：准取通知→进府→登记“玉样物一”→旧单→次日传问。\n\n"
+          }
+        ],
+        "world_records": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/10",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/10",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "8ba32ca39513c81b89e42d00708599660ac934ad8c18a289fc30f811786ee34f",
+            "value": {
+              "boundary": "取物不是自由搬家",
+              "chapter": 91,
+              "epistemic": "REFERENCE_RESOURCE_FLOW",
+              "food_medicine": "冬衣、靠褥等有许可才可取",
+              "labor": "平儿/守物人清点；凤姐短时亲往",
+              "money_state": "只能按名目取旧府物",
+              "object_interface": "雪中遗玉、旧箱/布包",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "91-S1-R2",
+      "description": "把旧府写成有看守和取物限制的财产现场；雪地与湿鞋落在实际来去中，病凤姐的劳作有身体成本。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "fd4913d64697a82aaf14289c29dd7ff604a0a2e9e7553d3f301033bc57815f10",
+          "value": {
+            "id": "91-S1",
+            "title": "“准取”不是想回就回"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29083,
+                29246
+              ],
+              "lines": [
+                717,
+                719
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "464493c8e77fcf3e01f53a96492dd235548be95f574e7651acdcdcbfe9e74ec1"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n准取不是自由回府；雪地、湿鞋、旧府物件重新认领；旧单从取物自然生出；麝月钥匙“今日没什么用”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30094,
+                30204
+              ],
+              "lines": [
+                747,
+                749
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bc579f52775a9e049e48a9ecabbbaedc96232b0563ed1ac0a68afb9cf4c11692"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“玉样物一”不定身份；残雪；旧府不是鬼宅而是受控制财产现场。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30456,
+                30669
+              ],
+              "lines": [
+                761,
+                764
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c65a248f72ffd8fbb07ad1ccfe7525f0af07c56b354539ebe051b2f7bb1b2fc6"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n准取通知 → 雪中回旧府 → 三类物件 → 凤姐拾物登记 → 旧单引宝玉 → 夜间传话 → 五更出门认单。  \n**风险：**玉线偷锁、文化物过多。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "91-S1-R3",
+      "description": "可取范围、经手接口和短时取物限制须在写作中落实；通知格式、准入期限和官役姓名没有依据时继续待定，不为流程完整先造登记事实。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "fd4913d64697a82aaf14289c29dd7ff604a0a2e9e7553d3f301033bc57815f10",
+          "value": {
+            "id": "91-S1",
+            "title": "“准取”不是想回就回"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29246,
+                29361
+              ],
+              "lines": [
+                720,
+                722
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c09af1619f9c59637d33a14642909c4ceba9d16cdebd6971e5413238b7a40a81"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n旧府文化物的“失主化”可加一两笔；准入规则与登记人再清楚一点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29361,
+                29489
+              ],
+              "lines": [
+                723,
+                725
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "6cc97a13cccbe3c1ca4ba6a3367927bf54834a3c460b0ed70af9841e0f1b3730"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n91-S1凭名目准取；S2物分可取/不可取/无人要；S3拾物先登记；S4旧单带到宝玉。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29910,
+                29960
+              ],
+              "lines": [
+                741,
+                743
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5cccc9256b3b4906dc6d4e10575ab5f420404f5e7754882c2735ffa822519aec"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n准取看守、登记书办。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29960,
+                30094
+              ],
+              "lines": [
+                744,
+                746
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0986195f3b5121029cd0cf22da526cf3e42027a12d567463e7d9095c12087c08"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE1：物权/使用权分离。信息：准取通知→进府→登记“玉样物一”→旧单→次日传问。\n\n"
+          }
+        ],
+        "world_records": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/10",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/10",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "8ba32ca39513c81b89e42d00708599660ac934ad8c18a289fc30f811786ee34f",
+            "value": {
+              "boundary": "取物不是自由搬家",
+              "chapter": 91,
+              "epistemic": "REFERENCE_RESOURCE_FLOW",
+              "food_medicine": "冬衣、靠褥等有许可才可取",
+              "labor": "平儿/守物人清点；凤姐短时亲往",
+              "money_state": "只能按名目取旧府物",
+              "object_interface": "雪中遗玉、旧箱/布包",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "91-S1-F1",
+      "description": "不得把准取改成自由回府、无手续搬家或重新恢复旧府所有权。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "fd4913d64697a82aaf14289c29dd7ff604a0a2e9e7553d3f301033bc57815f10",
+          "value": {
+            "id": "91-S1",
+            "title": "“准取”不是想回就回"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29083,
+                29246
+              ],
+              "lines": [
+                717,
+                719
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "464493c8e77fcf3e01f53a96492dd235548be95f574e7651acdcdcbfe9e74ec1"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n准取不是自由回府；雪地、湿鞋、旧府物件重新认领；旧单从取物自然生出；麝月钥匙“今日没什么用”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                29960,
+                30094
+              ],
+              "lines": [
+                744,
+                746
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0986195f3b5121029cd0cf22da526cf3e42027a12d567463e7d9095c12087c08"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE1：物权/使用权分离。信息：准取通知→进府→登记“玉样物一”→旧单→次日传问。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30094,
+                30204
+              ],
+              "lines": [
+                747,
+                749
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bc579f52775a9e049e48a9ecabbbaedc96232b0563ed1ac0a68afb9cf4c11692"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“玉样物一”不定身份；残雪；旧府不是鬼宅而是受控制财产现场。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "91-S1-F2",
+      "description": "不得借空府和残雪造鬼宅、引佛理或长篇怀旧；旧物的失主感由物件及手续承担。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/10/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/10/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "fd4913d64697a82aaf14289c29dd7ff604a0a2e9e7553d3f301033bc57815f10",
+          "value": {
+            "id": "91-S1",
+            "title": "“准取”不是想回就回"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                29821,
+                29910
+              ],
+              "lines": [
+                738,
+                740
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c4cfed8f8d149f8dd5702c7e908575cdfd5d3e7c0f0fee40574b71656453bc2d"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n低。旧府“无常感”让物件自己承担，不引佛理。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30094,
+                30204
+              ],
+              "lines": [
+                747,
+                749
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bc579f52775a9e049e48a9ecabbbaedc96232b0563ed1ac0a68afb9cf4c11692"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n“玉样物一”不定身份；残雪；旧府不是鬼宅而是受控制财产现场。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                30204,
+                30278
+              ],
+              "lines": [
+                750,
+                752
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b2c09c83e7b4ff4b595ce9ca5edae7da408488efbde64377cd495f3a0e519265"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n看到“玉”立即认定通灵玉；大段怀旧。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "participants: 看守、登记书办没有注册人物ID；只在义务中保留职业接口，不造身份。",
+    "implementation_gap: 准入名目、登记簿和通知没有对象ID，具体登记人、准入期限与所准取清单待落实。",
+    "exit_state: character.ping_er.location — 准取通知、到门和进入受控旧府的局部时点尚未注册；章前借住处位置不能替代本场出入记录。",
+    "exit_state: object.OBJ-WINTER-CLOTHES-BUNDLE.status — 准取资格不等于已经领出；OT91-03只注册章级带回结果，不能提前当作本场领取完成。",
+    "exit_state: character.fengjie.location — 准取场内凤姐到门、获准入内和离开的局部路径未注册；短时亲往的资源说明不能证明完成出入。",
+    "controlled_access: 准取资格、实际准入及领出分开核验；贾芸不强制在场，具体期限/许可清单/登记人仍PENDING。"
+  ],
+  "function": "把雪中回旧府落实为受控财产的短时准取手续；先交代名目、准入和经手登记，才接后场取物。",
+  "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+}

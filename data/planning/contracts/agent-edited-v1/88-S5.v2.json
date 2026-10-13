@@ -1,0 +1,589 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch88.json",
+      "sha256": "1e430cea49987663351ccb3eb0275b610fb9cc647f4f7aae9cb3068aeab26479"
+    },
+    "seed": {
+      "path": "data/planning/scenes/88-S5.json",
+      "sha256": "c24a7c3e0615ef78b56bbfa3b07ce22f9c7de8321e596d25d315c54f9162bf77"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 88,
+  "chapter_plan_ref": "data/planning/chapters/ch88.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/88-S4.v2.json",
+  "entry_state": [
+    {
+      "equals": "character.yingchun.life_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "上一种子消息的出口未建立独立生命/认知检查点。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.sheyue.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "系钥匙与盆沿碰门框是待写的日常执行，不足以自证W88角色效果。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "集体悼词、迎春遗诗/血书或烈女化，使娘家有限后事变成抒情总场。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "335f0c92690ba6d7e9490128eef26004c5a1ed66afb3c3f2801dc0efc09a18b8",
+          "value": {
+            "id": "88-S5",
+            "title": "娘家想“做点什么”，却发现权力有限"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            22262,
+            22360
+          ],
+          "lines": [
+            547,
+            549
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94449cc2d7d85e3d2f2e5e1c07526b41500b6897b0172b44de0a4d182c9dea4f"
+        },
+        {
+          "byte_range": [
+            22436,
+            22525
+          ],
+          "lines": [
+            553,
+            555
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "9b86f34b6742dfae929c43948ff738774766e212e4c5c54c27c810672932f8b8"
+        },
+        {
+          "byte_range": [
+            22895,
+            22972
+          ],
+          "lines": [
+            565,
+            567
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fce0ae558bf16630b75f7dd8b6c32397787c28d54c80b3f62195b16ae8dbdc3e"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "让嫁后袭人复位为主仆，或把麝月留任仅写成一句未落实劳动的劝告。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "335f0c92690ba6d7e9490128eef26004c5a1ed66afb3c3f2801dc0efc09a18b8",
+          "value": {
+            "id": "88-S5",
+            "title": "娘家想“做点什么”，却发现权力有限"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            21063,
+            21484
+          ],
+          "lines": [
+            524,
+            531
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44c59fa7e004c69a8e52835a55ef26316717ea46a45ec7ddf7729404f7f94661"
+        },
+        {
+          "byte_range": [
+            22761,
+            22895
+          ],
+          "lines": [
+            562,
+            564
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "f42dbecc678adfc1385c35c40470ab0bba809b9577a6928b5ff17b137b4613e3"
+        },
+        {
+          "byte_range": [
+            23233,
+            23623
+          ],
+          "lines": [
+            577,
+            580
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "7dea032f7b86c121946d5b3850a8ef4592401ff4ceb26cd14a82b8777cc445a6"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "335f0c92690ba6d7e9490128eef26004c5a1ed66afb3c3f2801dc0efc09a18b8",
+          "value": {
+            "id": "88-S5",
+            "title": "娘家想“做点什么”，却发现权力有限"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            23178,
+            23206
+          ],
+          "lines": [
+            574,
+            574
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            23206,
+            23233
+          ],
+          "lines": [
+            575,
+            576
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4ce526aecba789d8fb664d11031ea1dcfb21bf96efab2e4510b2cee0f78d282d"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "88-S5",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 5,
+  "participants": [
+    "wangfuren",
+    "baochai",
+    "sheyue"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "character.sheyue.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "接任已成全回目标，但本地钥匙/家務劳动边界没有可执行角色入口。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/25",
+        "ref": "data/world/m3_core.json#/characters/25",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "a65f17f6bbf2cfddd4d5c2094fd86646d034352e611faed657faf9db1383095e",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "senior_household_woman",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "wangfuren",
+          "name": "王夫人"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/18",
+        "ref": "data/world/m3_core.json#/characters/18",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "f1c66f594860f98a5b54779594c79d9333820437233b879ab1caf05b2b5b48ed",
+        "value": {
+          "baseline": {
+            "body_state": "under_marital_pressure",
+            "household_role": "married_daughter",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "OFFSTAGE_MARRIED_HOUSEHOLD",
+            "marital_status": "MARRIED_SUN"
+          },
+          "groups": [
+            "human"
+          ],
+          "id": "yingchun",
+          "name": "贾迎春"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "description": "娘家先提出一项实际后事请求或询问，再由可见的回话/办不了的环节碰到孙家掌握尸身、遗物的边界；不直接宣布已收尸或已取物。具体请求项目、答复与可办范围仍待有依据的作者选择。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "335f0c92690ba6d7e9490128eef26004c5a1ed66afb3c3f2801dc0efc09a18b8",
+          "value": {
+            "id": "88-S5",
+            "title": "娘家想“做点什么”，却发现权力有限"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            21674,
+            21826
+          ],
+          "lines": [
+            535,
+            537
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "6ec3971f4ab47d21b5e56b5121ef2434187a934d4cb1fedefa7f1637ec81f4f9"
+        },
+        {
+          "byte_range": [
+            21826,
+            22035
+          ],
+          "lines": [
+            538,
+            540
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fb5f093d0ec66ca9c5a460eedab0f67926bde0ad5692ca6a5994099d0f06ba37"
+        },
+        {
+          "byte_range": [
+            22614,
+            22761
+          ],
+          "lines": [
+            559,
+            561
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ab716736a05ead801e8dc836d4fc75d4441bea728ddc875ec53fc6e4cdee8329"
+        },
+        {
+          "byte_range": [
+            22972,
+            23094
+          ],
+          "lines": [
+            568,
+            570
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "3bf8f73f93f70619eb37d214393a2384502cbbd04d316137e50a952916893531"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "袭人有始有终离开与迎春娘家无权掌握后事不写成同一种悲情，王夫人和宝钗仍处理现实事。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "335f0c92690ba6d7e9490128eef26004c5a1ed66afb3c3f2801dc0efc09a18b8",
+          "value": {
+            "id": "88-S5",
+            "title": "娘家想“做点什么”，却发现权力有限"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            22035,
+            22174
+          ],
+          "lines": [
+            541,
+            543
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29f1ea5d322c90ee9bbfefe1cf20b6f392e3aacb699199c47a3eb6cb5bf794ef"
+        },
+        {
+          "byte_range": [
+            22972,
+            23094
+          ],
+          "lines": [
+            568,
+            570
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "3bf8f73f93f70619eb37d214393a2384502cbbd04d316137e50a952916893531"
+        },
+        {
+          "byte_range": [
+            23233,
+            23623
+          ],
+          "lines": [
+            577,
+            580
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "7dea032f7b86c121946d5b3850a8ef4592401ff4ceb26cd14a82b8777cc445a6"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "麝月系紧钥匙继续房务，盆沿碰门框的“当”声收束，落实留下的位置而非口号。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "335f0c92690ba6d7e9490128eef26004c5a1ed66afb3c3f2801dc0efc09a18b8",
+          "value": {
+            "id": "88-S5",
+            "title": "娘家想“做点什么”，却发现权力有限"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            21484,
+            21674
+          ],
+          "lines": [
+            532,
+            534
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "3876e1f3006da9d2edd983e0233efc2f99e5d8c5b1cff46cb2279a566b84aba2"
+        },
+        {
+          "byte_range": [
+            22761,
+            22895
+          ],
+          "lines": [
+            562,
+            564
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "f42dbecc678adfc1385c35c40470ab0bba809b9577a6928b5ff17b137b4613e3"
+        },
+        {
+          "byte_range": [
+            23233,
+            23623
+          ],
+          "lines": [
+            577,
+            580
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "7dea032f7b86c121946d5b3850a8ef4592401ff4ceb26cd14a82b8777cc445a6"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "objects: 钥匙、盆、遗物/尸身料理物没有注册ID；不能以凤姐后事束代迎春遗物。",
+    "authority: 孙家具体后事流程与娘家可办项目尚未有执行记录，不锁死为法律制度说明。",
+    "bridge: 出嫁后短返府“好歹留着麝月”尚缺88-S3b种子；本场不自行假定该接口已经执行。",
+    "entry_checkpoint: 88-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+    "entry_state.character.yingchun.life_state: 上一种子消息的出口未建立独立生命/认知检查点。",
+    "preconditions.character.sheyue.household_role: 接任已成全回目标，但本地钥匙/家務劳动边界没有可执行角色入口。",
+    "MISSING_SEED_88-S3b: 本场麝月继续劳动只能兑现留下的生活位置，不兑现袭人嫁后短返谢恩或硬引语；章级桥仍未覆盖。"
+  ],
+  "function": "把娘家想办迎春后事与无法掌握尸身遗物的有限权力对照出来，同时让麝月在钥匙与盆沿声中稳定代任。",
+  "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/88-S5.v1.json，sha256=58e1ca93bffe742cee05df0012a8e6480d8e8e84c983b81dbe07a2aa153573a0。本场精确改动：要求可见请求与受阻环节，维持孙家控制和麝月继续房务的区别；不伪造办理结果。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+}

@@ -1,0 +1,644 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch99.json",
+      "sha256": "9e11795fad6fd7cb7b76d31f28a82405a81dd3ce071c14da4aa56a247d493a8e"
+    },
+    "seed": {
+      "path": "data/planning/scenes/99-S5.json",
+      "sha256": "fe39fa915efcef9a90bb41b8661d22b8abd2fe5dfae1ee5460acdbb4e5d80847"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 99,
+  "chapter_plan_ref": "data/planning/chapters/ch99.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/99-S2.v2.json",
+  "entry_state": [
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W99粗状态S13支持当前C寺居，不证明本场早/晚课的本地入口；前驱家中饭事不传播其位置。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "跟诵后搬水、搬柴、看锅只有章卡动作接口，无寺院场级位置与时序事件。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "99-S5-F1",
+      "description": "不得高僧点化、教义总结、黛玉或警幻托梦；不得跟诵后宣布情已尽或终于圆满。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/18/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "29c14604e55ed4f2471e6d93c0bf2e61d11e71ab36585fe20b06124ecf107849",
+          "value": {
+            "id": "99-S5",
+            "title": "若后续第41步要写寺庙生活"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                49917,
+                50167
+              ],
+              "lines": [
+                1237,
+                1239
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "df442582d663b0e260423cbe8216b6a1f5cd2e046979778ce3d3ccc2f0ef343f"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n41核心：“情尽未尽”。宝玉不是无情，而是“不想再接”世俗角色。可加一次极短早/晚课：跟诵不熟，小和尚指页，散课马上搬水/看锅。严禁高僧点化、黛玉/警幻托梦。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                50630,
+                50755
+              ],
+              "lines": [
+                1249,
+                1251
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fd1078f64f822afe747f39e993129b7585a2f583727d800a9b1b5cc4c5615d87"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n人生论文、佛理总结、精神胜利叙述、“终于看破宝钗黛玉”、玉触发、神谕。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                51066,
+                51376
+              ],
+              "lines": [
+                1261,
+                1264
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "99-S5-F2",
+      "description": "不得题壁、辞世诗、佛偈或结尾作者韵文；不得把男性寺院说成探庵证据实现。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/18/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "29c14604e55ed4f2471e6d93c0bf2e61d11e71ab36585fe20b06124ecf107849",
+          "value": {
+            "id": "99-S5",
+            "title": "若后续第41步要写寺庙生活"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                49328,
+                49589
+              ],
+              "lines": [
+                1223,
+                1227
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "96075b9c8dbef14eb73cac9ac5c10637f7aa892b98fa873c74d1bf3b6f5caa69"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n宝玉、宝钗、麝月、贾芸；书摊、车脚、渡口、小店、普通僧人作为寻找网络。\n\n**D2边界｜** 贾芸寻到宝玉可以保留，但男性寺院不等于“庵”；证据版不得声称99兑现“仗义探庵”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                49589,
+                49677
+              ],
+              "lines": [
+                1228,
+                1230
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "2bbfee691163ee25837965949603a3dbe59f08023c59f175b0b96bd69824b568"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n归还书即文化退出接口；不焚书、不折笔、不题壁。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                49677,
+                49820
+              ],
+              "lines": [
+                1231,
+                1233
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "298b7827a42b8060950276d7070057dfce17bf759e43d4b6b8c904cac0ef652b"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nG07“无字”强锁：无诀别信、诗、偈。作者层也无诗无偈。98《续庄子》不得成为99因果。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                51005,
+                51066
+              ],
+              "lines": [
+                1259,
+                1260
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "35e3b2995685a7dde440b3c9b306ce406f1bba844d2d00fd7e3d8c7497163af9"
+            },
+            "name": "回末诗",
+            "number": 17,
+            "text": "**17｜回末诗** **人物无字，作者也无诗偈。**\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "99-S5",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 5,
+  "participants": [
+    "baoyu"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.baoyu.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "章级monk_left_household不登记课诵熟练度或值日分工；不得把身份标签当悟道条件。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "99-S5-R1",
+      "description": "仅在采用本可选接口时写一次极短早/晚课：宝玉跟诵不熟、小和尚指页，散课立刻搬水/看锅，不造经文或教义课堂。未采用时不额外制造必有微课事件；寺院普通搬柴挑水仍可作为99-S3见到真人的背景。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/18/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "29c14604e55ed4f2471e6d93c0bf2e61d11e71ab36585fe20b06124ecf107849",
+          "value": {
+            "id": "99-S5",
+            "title": "若后续第41步要写寺庙生活"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                48956,
+                49116
+              ],
+              "lines": [
+                1217,
+                1219
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7dca92258a5db5bf1bd3da205523b7cf21b270a3c639210c3b930e66e6fec418"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n“逐项不再接”还可再清楚；寺院宗教生活需比短工多一丝，但不能变悟道课堂；寻找过程可更社会化。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                49917,
+                50167
+              ],
+              "lines": [
+                1237,
+                1239
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "df442582d663b0e260423cbe8216b6a1f5cd2e046979778ce3d3ccc2f0ef343f"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n41核心：“情尽未尽”。宝玉不是无情，而是“不想再接”世俗角色。可加一次极短早/晚课：跟诵不熟，小和尚指页，散课马上搬水/看锅。严禁高僧点化、黛玉/警幻托梦。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                50167,
+                50286
+              ],
+              "lines": [
+                1240,
+                1242
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b6942baca7b676e4c928b3f6d7c8641db66190ac8595bef7e381ccb620b86941"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n寺院普通劳务；找人调动书摊、车脚、渡口、小店。每个人只给模糊线索。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/18",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/18",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+            "value": {
+              "chapter": 99,
+              "money_state": "最低生活可维持",
+              "food_medicine": "早饭简单、旧衣缝补",
+              "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+              "object_interface": "借书包、旧棉衣、未补完旧衣",
+              "boundary": "宝玉不是因当日断粮出家",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/9",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+            "value": {
+              "chapter": 99,
+              "targets": [
+                "baoyu"
+              ],
+              "kind": "EARLY_INTENT",
+              "fact": "baoyu_departure_intent",
+              "note": "宝玉最早知道自己要走，其他人分层后知",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "99-S5-R2",
+      "description": "保留寺里搬柴挑水的劳务，普通僧人按日常分工相处；不让这场取消贾芸拒回及家里两人晚饭的世俗余波。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/18/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "29c14604e55ed4f2471e6d93c0bf2e61d11e71ab36585fe20b06124ecf107849",
+          "value": {
+            "id": "99-S5",
+            "title": "若后续第41步要写寺庙生活"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                48652,
+                48956
+              ],
+              "lines": [
+                1214,
+                1216
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7c92a7d5f1c171bf75a44f529b3f1d661fc1f621512427d510a8e977c1f3bbb4"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n“日子照旧过几日”；还借书、对食物兴趣下降、逐项退出选择；宝钗问实际问题；麝月问饭袜鞋；错误目击；寺中搬柴挑水；宝玉说“没有，只说我平安”；结尾“够咱们两个吃的就是了”、未补完旧衣。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                49116,
+                49328
+              ],
+              "lines": [
+                1220,
+                1222
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                50486,
+                50630
+              ],
+              "lines": [
+                1246,
+                1248
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e046fdccc95aec8e61e37820cec4ad06726b3039d65d6e04b111032a006a80a9"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n98→99普通日缓冲；无玉触发；“没有，只说我平安”；两人份晚饭；旧衣针仍别在边上。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                51066,
+                51376
+              ],
+              "lines": [
+                1261,
+                1264
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "99-S5-R3",
+      "description": "本v2把可选微课前插99-S2离家以后、99-S3贾芸见到以前，entry_from声明99-S2；种子order=5保留索引而不充作最后演出次序。可删微课，但不得移到99-S4旧衣终末之后。编排选择不证明入住路径、早晚课时刻或局部检查点。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/18/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/18/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "29c14604e55ed4f2471e6d93c0bf2e61d11e71ab36585fe20b06124ecf107849",
+          "value": {
+            "id": "99-S5",
+            "title": "若后续第41步要写寺庙生活"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                49116,
+                49328
+              ],
+              "lines": [
+                1220,
+                1222
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cd6623a757204872bc08735cb9ba4d4a2a8f171337cf4c4936f8d7c5e3e78167"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                50755,
+                50858
+              ],
+              "lines": [
+                1252,
+                1254
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "91e40f9542c12bb663c9fbbdb8d2c5c187fa541fbf7ab0c080efb523e856532a"
+            },
+            "name": "L3",
+            "number": 14,
+            "text": "**14｜L3**  \n结构本已强，正式重写只需把撤出阶段与寻找阶段更均衡，L2—3。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                51066,
+                51376
+              ],
+              "lines": [
+                1261,
+                1264
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ba57fcbebfe8e59d7bd522b3e34ee67bdbea9a7bfd27d1a49832404d30fa1979"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/18",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/18",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "040f6cc85cfae02ff7487f12b156f061fedb0e81a2bdbaca458f4a9b07163fe7",
+            "value": {
+              "chapter": 99,
+              "money_state": "最低生活可维持",
+              "food_medicine": "早饭简单、旧衣缝补",
+              "labor": "宝钗/麝月维持家务；贾芸跑街寻找",
+              "object_interface": "借书包、旧棉衣、未补完旧衣",
+              "boundary": "宝玉不是因当日断粮出家",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/9",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/9",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "6d99d6651285137585bcc43111b3fea6962685d394f5c902f21e263a3affcb47",
+            "value": {
+              "chapter": 99,
+              "targets": [
+                "baoyu"
+              ],
+              "kind": "EARLY_INTENT",
+              "fact": "baoyu_departure_intent",
+              "note": "宝玉最早知道自己要走，其他人分层后知",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+    "declared_sequence_only: seed.order保留源列表索引；entry_from采用v2编辑候选编排（99-S5前插、99-S4终末），不证明历史順序或可执行局部检查点，实际正文放置仍未核验。",
+    "optional_scene: 可选微课的编排位置已前插离家后/见到前；是否采用、早晚课选择和宗教日用细节仍未核。",
+    "minor_actors: 小和尚与普通僧人无注册身份；不新增姓名、法号。",
+    "religious_props_unregistered: 指页经册、水桶、柴和锅均未注册，课诵内容不自行造经文。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+    "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+    "edited_playback_sequence: 候选演出99-S1→99-S2→99-S5（可选）→99-S3→99-S4；seed.order不变，仅entry_from和义务变更，局部时间与状态事件未核。"
+  ],
+  "function": "若选用寺庙微课，以不熟跟诵与立刻搬水看锅补普通宗教生活的一丝，不能将劳动变高僧课堂或人生答案。",
+  "notes": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+}

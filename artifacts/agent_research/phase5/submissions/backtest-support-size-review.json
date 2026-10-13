@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "kind": "BOUNDED_BACKTEST_SUPPORT_DESIGN_REVIEW",
+  "status": "DESIGN_ONLY_NOT_IMPLEMENTED",
+  "qualification": "RESEARCH_ONLY",
+  "authority_effect": "NONE",
+  "controlled_workflow_effect": "NOT_ESTIMABLE",
+  "scope": {
+    "owned_file": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/backtest-support-size-review.json",
+    "inspection": "Source code and schemas; frozen author packets selected for sizes, keys, numeric profile projection and equality checks only. No corpus prose, candidate prose or reader judgments displayed or analyzed.",
+    "unchanged": "Frozen configurations, preparations, author requests, feedback, drafts and coordinator audit products. No network, model calls, implementation, commits or delegation."
+  },
+  "evidence": {
+    "initial_harness_packet": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/backtest/session-v1/author-packets/e32233948b0aac2f3a505082d7047de4d32899a24525b93c082bb10f1838a193.json",
+      "sha256": "e32233948b0aac2f3a505082d7047de4d32899a24525b93c082bb10f1838a193",
+      "request_sha256": "5db0d4df87a2f6dd2a6b548edb94508f681fc2d45a22c9d969c937a4db107ffb",
+      "file_bytes": 4981662,
+      "request_canonical_bytes": 4980894,
+      "first_message_characters": 4501650,
+      "first_message_utf8_bytes": 4509076,
+      "workflow_support_canonical_bytes": 4505784,
+      "style_reference_canonical_bytes": 4505535
+    },
+    "paired_direct_initial": {
+      "file_bytes": 4447,
+      "request_canonical_bytes": 3680,
+      "first_message_characters": 2598,
+      "first_message_utf8_bytes": 3296
+    },
+    "shared": {
+      "initial_direct_harness_equal": true,
+      "shared_canonical_bytes": 2936,
+      "shared_information_sha256": "08cd62b24edd311c79ec099eec184c08571caa7f34553c6036434922e14e9347"
+    },
+    "reference": {
+      "manifest_sha256": "033395831d12b5809eb0c87a71fd2728367d1e191ccf1db94eda7259ef5057e3",
+      "included_chapters": "Exactly 1 through 78",
+      "excluded_chapters": [79, 80],
+      "layers": 2,
+      "records_per_layer": 337,
+      "feature_groups_per_layer": {"narrator_markers": 6, "address_forms": 9, "declared_words": 22},
+      "selected_bigrams_per_layer": 300,
+      "feature_chapter_rows": 52572,
+      "chapter_rows_canonical_bytes_sum": 4101280,
+      "segmentation_issue_count": 1985,
+      "segmentation_canonical_bytes": 214857,
+      "raw_exemplar_count": 0,
+      "author_human_audit_keys": ["authority_effect", "review_count", "scope", "status"]
+    },
+    "revision": {
+      "harness_first_message_identical_to_initial": true,
+      "harness_one_request_canonical_bytes": 5003988,
+      "harness_two_request_canonical_bytes": 5003003,
+      "consumption_disclosure": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/backtest/consumption-limitations.json",
+      "interpretation": "The author disclosed incomplete consumption of the large first message. Saved exact request custody is not proof of complete model exposure."
+    },
+    "byte_measurement": "UTF-8 JSON using repository canonical_bytes conventions: sorted keys, compact separators, ensure_ascii=false, trailing newline. No token estimate."
+  },
+  "cause": [
+    {
+      "source": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/evaluation/style_reference.py:173-191,233-244",
+      "finding": "Every named feature and selected bigram stores 78 chapter rows, each repeating chapter, denominator, count and rate. Two layers times 337 records times 78 produces 52,572 rows; these row arrays account for approximately 91% of the author reference bytes."
+    },
+    {
+      "source": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/backtest/study.py:61-95,104-107",
+      "finding": "_author_task embeds the full analytical reference_profile, not an author guidance projection. It only filters human_audit metadata. Exemplar prose is not the observed cause: the exemplar list is empty."
+    },
+    {
+      "source": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/evaluation/style_reference.py:280-331",
+      "finding": "The existing diagnostic comparison strips repeated chapter rows from candidate comparisons and uses aligned columns once in reference_layers. That helper is not used by _author_task and still retains per-chapter values, so it is not a bounded aggregate author contract."
+    },
+    {
+      "source": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/backtest/session.py:213-237",
+      "finding": "The preparation stores both task and serialized request; nested request strings add escaping overhead. Each revision retains the same oversized first message, then appends prior draft and feedback. These amplify rather than originate the size problem."
+    }
+  ],
+  "recommended_contract": {
+    "selection": "New explicitly opted-in study/preparation version; preserve existing v1 default and rendering exactly. Proposed support identifiers: backtest-statistical-support:v1 and style-reference-aggregate-support:v1, under the new protocol only.",
+    "support_byte_ceiling": 64000,
+    "ceiling_definition": "Serialized canonical workflow_support bytes, conservatively below both 64 KB and 64 KiB; validate before preparation or import and fail without truncation.",
+    "shared_information": "DIRECT and HARNESS retain byte-identical shared plan, entry state, entry facts, target length and budget, plus identical shared_information_sha256. DIRECT still has workflow_support=null. Compaction changes only HARNESS support.",
+    "reference_scope": "Keep exact included_chapters=1..78, excluded_chapters=[79,80], chapter_count=78 and existing feature selection scope. Derive only from the already holdout-filtered verified reference, never from candidate output or heldout measurements.",
+    "keep": [
+      "dataset_ref, manifest_sha256, feature_set and complete feature_policy, including exploratory/not-target-blind word-list qualification, denominator/scale, bigram selection rules and quotation limitations",
+      "readiness, provisional, human_audit_status, the existing four-field author human_audit allowlist, and whole-dataset/not-separately-audited subset caveats",
+      "Each layer's aggregate han_characters, defined_chapters and total_chapters; quantile_method once",
+      "All 37 named features and the same 300 selected bigrams per layer, with exact count, aggregate rate_per_10k_han and chapter-distribution q1, median, q3",
+      "segmentation method, status, unknown_han_characters, unknown_han_fraction, issue_count and issue_counts_by_code",
+      "verdict=null, authority_effect=NONE, evidence_effect=NONE and the advisory editing rule"
+    ],
+    "numeric_encoding": {
+      "statistic_columns": ["count", "rate_per_10k_han", "q1", "median", "q3"],
+      "rows": "Feature token maps to a five-value array under its existing feature group or top_han_bigrams map. Declare columns once; preserve exact numeric values, zeros and nulls without rounding. Shared chapter counts are layer-level because defined rates depend on that layer's denominator, not the feature.",
+      "guidance": "Descriptive aggregate and interquartile guidance, not a literary threshold or evidence of superiority. Minimum and maximum are explicitly omitted from this new author-support contract, not from diagnostics."
+    },
+    "exclude_from_author_support": [
+      "Every chapter_distribution.chapters array and aligned per-chapter count/rate/denominator columns",
+      "Segmentation issue locators, chapter-by-chapter details and segment IDs; retain aggregate issue counts and adverse status",
+      "Raw corpus exemplars, excerpts, target text, target hashes/locators, chapter titles, candidate prose and reader judgments"
+    ],
+    "no_hidden_audit": "Do not shrink by suppressing audit status or caveats. Leave full analytical profile, issue details and audit records available only through existing coordinator-side custody, unchanged. Author metadata filtering remains the existing safety boundary, not a new concealment policy. Shared factual task descriptions are unchanged; no raw source prose is added to support.",
+    "traceability": "Bind support schema/policy, source manifest, exact reference scope and compact-support digest into the new coordinator preparation/context. Keep full source closure and full-profile traceability coordinator-side; never hand authors an audit/path capable of retrieving heldout text."
+  },
+  "size_feasibility": {
+    "method": "In-memory numeric/metadata projection of the frozen HARNESS profile; no replacement request or support artifact generated and no author/model run.",
+    "naive_remove_chapter_rows_and_issue_details_support_bytes": 182402,
+    "finding": "Deleting row arrays alone is insufficient. Removing redundant record keys through a declared five-column aggregate encoding gives a bounded contract without pruning the selected vocabulary or rounding retained statistics.",
+    "projected_style_reference_canonical_bytes": 50138,
+    "projected_workflow_support_canonical_bytes": 50450,
+    "projected_first_message_utf8_bytes": 53742,
+    "projected_initial_request_canonical_bytes": 55750,
+    "projected_shared_unchanged": true,
+    "projected_reference_scope_unchanged": true,
+    "retained_numeric_records": 674,
+    "projected_revision_request_canonical_bytes": {"one": 78844, "two": 77859},
+    "limit_caveat": "The 64 KB limit is for support, not an entire revision containing prior prose and feedback. If whole-request <=64 KB is separately required, this exact projection does not meet it for revisions; define another explicit version/budget rather than silently truncating or altering frozen history."
+  },
+  "implementation_recommendation": [
+    "Add a pure aggregate-support projection helper in /mnt/d/Code/RedChamberWorldHarness/src/rcwh/evaluation/style_reference.py. Do not change reference_profile, compare_reference or the full coordinator analytical profile.",
+    "Version-dispatch in /mnt/d/Code/RedChamberWorldHarness/src/rcwh/backtest/study.py and /mnt/d/Code/RedChamberWorldHarness/src/rcwh/backtest/session.py from an explicitly selected new config/preparation; absent selection renders legacy full support. New statistical-support mode disallows exemplar retrieval. Validate compact schema, deterministic bytes and the support byte ceiling before saving.",
+    "Use new versioned schemas and a separately selected config; do not rewrite /mnt/d/Code/RedChamberWorldHarness/data/backtest/front80-79-80/holdout.json, frozen packets or schemas bound by existing preparations. Fail closed on unknown support versions and unsupported combinations.",
+    "Compatibility includes source closure: session._preparation recomputes exact preparation bytes, and session._sources scans data/backtest recursively plus schemas/backtest_*.schema.json. Adding new files in those scanned locations or editing bound v1 schemas can stale legacy preparations even when requests are unchanged. Isolate v2 config/schema locations outside legacy scans or introduce tested version-aware immutable closure without weakening dependency checks."
+  ],
+  "required_tests": [
+    {
+      "area": "Backward compatibility and stable request comparison",
+      "paths": ["/mnt/d/Code/RedChamberWorldHarness/tests/test_backtest.py", "/mnt/d/Code/RedChamberWorldHarness/tests/test_session_backtest.py"],
+      "assertions": "Legacy request bytes/hashes, preparation inputs and initial/revision packet regeneration remain identical without opt-in; actual frozen legacy preparation remains verifiable after adding v2 assets. New mode deterministically regenerates identical bytes/hashes. Version switching changes new support/context identity; forging support even with recomputed request hash fails exact comparison."
+    },
+    {
+      "area": "Shared-fact parity and byte bound",
+      "assertions": "DIRECT/HARNESS shared objects, shared_information_sha256, target length and resource ceilings match exactly; no task field is lost. Canonical UTF-8 support <=64,000 bytes on the actual frozen numerical profile and stress fixtures; overflow fails without truncation. Initial and revision prefixes use the same compact support; total revision size is reported separately."
+    },
+    {
+      "area": "Holdout exclusion and no raw prose",
+      "paths": ["/mnt/d/Code/RedChamberWorldHarness/tests/test_style_reference.py"],
+      "assertions": "Exact scope 1..78 excludes 79/80. Heldout-only sentinel words/bigrams never enter support; holdout changes do not affect reference numeric values or selections, while source-binding validation still detects changes. Reject heldout/any raw exemplar configuration in statistical-only mode. Recursively reject raw-text, excerpt, title, target-hash/locator, audit-note, issue-locator and per-chapter-detail fields."
+    },
+    {
+      "area": "Statistical equivalence and audit traceability",
+      "assertions": "Every retained count/rate/q1/median/q3 equals the full filtered profile, with the same 674 records and top-300 ordering/selection. Preserve zero/null and empty-layer semantics; no candidate-derived selection. Issue totals and code counts agree, adverse status/caveats survive, and full coordinator audit/profile remains unchanged. Validate support digest, schema/version, manifest/scope and source closure; changing any bound retained statistic or source fails lineage verification."
+    }
+  ],
+  "conclusion": "The concrete cause is full analytical chapter-distribution serialization inside author support, not an unmet need for more literary design. A new opt-in aggregate numerical schema can reduce this observed support to approximately 50 KB. Size feasibility alone establishes neither full consumption, resource parity nor a workflow effect; old observations and consumption disclosure remain unchanged."
+}

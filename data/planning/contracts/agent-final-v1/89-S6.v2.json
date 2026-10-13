@@ -1,0 +1,1061 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch89.json",
+      "sha256": "ad6cee1c1ac402ffd24afb1faea19b82eb1a6620ae8ca98f2547eb107d0bcfcf"
+    },
+    "seed": {
+      "path": "data/planning/scenes/89-S6.json",
+      "sha256": "2319483c3cf55084b8e9bde6c8792804c502505f2c5075abca501b5ca26ae45c"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 89,
+  "chapter_plan_ref": "data/planning/chapters/ch89.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/89-S5.v2.json",
+  "entry_state": [
+    {
+      "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "点物/放行之后本场起运点未建立局部检查点，基线旧府不能替代许可状态。"
+    },
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W89含府到借院的全回迁居，不是此种子的起运时间。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT89-01提供借院终态，未独立证明此种子如何执行完整搬运。"
+    },
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "本场要求进借院但不能因此自证已回放S06；W89仍是粗粒度全回节点。"
+    },
+    {
+      "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.holder",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "到借院接收/再分配为明确义务，但OT89-01的jia_yun_and_household只是章节粗层持有组，不能当此场分床位后的具体持有检查点。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "空降借院家具、物件瞬移、旧府自由搬家或权贵恢复资源。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "50167e91d24148a768ce8f9a8d14e1ded62d0a067f8c9bb83f266dfe62a6b5a3",
+          "value": {
+            "id": "89-S6",
+            "title": "迁居是第二场灾难"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24102,
+            24253
+          ],
+          "lines": [
+            594,
+            596
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ac6007c98a044dc28411d8cf6b697cd28bf108589dfdef4e27e9d10048e15cb2"
+        },
+        {
+          "byte_range": [
+            25242,
+            25460
+          ],
+          "lines": [
+            621,
+            623
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94c0575c7208193d80e426a36153389c086004736dc1647e4fa8a940e97d389b"
+        },
+        {
+          "byte_range": [
+            25672,
+            25779
+          ],
+          "lines": [
+            627,
+            629
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "d19c0f3d8108cb247e7d1056b399a022f07db43deda2c883507ad32b6eb40d89"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "当场揭带走的薄书为庄子、标成探庵W2兑现，或把通灵玉搬家升级为玉线硬证。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "50167e91d24148a768ce8f9a8d14e1ded62d0a067f8c9bb83f266dfe62a6b5a3",
+          "value": {
+            "id": "89-S6",
+            "title": "迁居是第二场灾难"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24387,
+            24736
+          ],
+          "lines": [
+            600,
+            605
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4d392c82f8ef9c3899bb2c28f17f44f10f34792ec9df64a72d9603902ff94773"
+        },
+        {
+          "byte_range": [
+            24736,
+            24831
+          ],
+          "lines": [
+            606,
+            608
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fce811e6ab359457c2e45895210d69a79de5b6b24408248f22fa8b90563c2baa"
+        },
+        {
+          "byte_range": [
+            25460,
+            25672
+          ],
+          "lines": [
+            624,
+            626
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "732277eb372452254f040fa8d30a6fe1186bb92a384c831aa3f5d0b506b7e949"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "水桶末句后续诗/评叹，或把共井争用写成无压力的纯滑稽场。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "50167e91d24148a768ce8f9a8d14e1ded62d0a067f8c9bb83f266dfe62a6b5a3",
+          "value": {
+            "id": "89-S6",
+            "title": "迁居是第二场灾难"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24892,
+            25013
+          ],
+          "lines": [
+            612,
+            614
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "f88b3769f625240d3538af3142ae6d8f87dcc378ed0411b5e2be27c19db1edf2"
+        },
+        {
+          "byte_range": [
+            25672,
+            25779
+          ],
+          "lines": [
+            627,
+            629
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "d19c0f3d8108cb247e7d1056b399a022f07db43deda2c883507ad32b6eb40d89"
+        },
+        {
+          "byte_range": [
+            26044,
+            26084
+          ],
+          "lines": [
+            637,
+            638
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44e50474767c8d9301ed3c5c77ae2942e439a0cef17b919c728501c816f9af53"
+        },
+        {
+          "byte_range": [
+            26084,
+            26438
+          ],
+          "lines": [
+            639,
+            642
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29a25382814bd3e8bee73e0b9772b840132042ec9fbd96dfb5c9fedd979585dd"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "50167e91d24148a768ce8f9a8d14e1ded62d0a067f8c9bb83f266dfe62a6b5a3",
+          "value": {
+            "id": "89-S6",
+            "title": "迁居是第二场灾难"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            26016,
+            26044
+          ],
+          "lines": [
+            636,
+            636
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            26044,
+            26084
+          ],
+          "lines": [
+            637,
+            638
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44e50474767c8d9301ed3c5c77ae2942e439a0cef17b919c728501c816f9af53"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "89-S6",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 6,
+  "participants": [
+    "jia_yun",
+    "baoyu",
+    "baochai",
+    "sheyue",
+    "fengjie",
+    "ping_er",
+    "jiamu",
+    "wangfuren"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "object.OBJ-TONGLING-JADE.holder",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT89-00支持玉随宝玉的章节连续性，但此场起运前的局部持有检查点未核定。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/10",
+        "ref": "data/world/m3_core.json#/characters/10",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "340eb8abc9247bbb71dbde20970aad2d26ba92195c40678d53b29fcd43b5c3c2",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "kin_runner",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_network",
+            "human"
+          ],
+          "id": "jia_yun",
+          "name": "贾芸"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/7",
+        "ref": "data/world/m3_core.json#/characters/7",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bca44063796cdc27c5e8076a896ecdbedfbe135109b5461cd9af292e5d0fbaa0",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_old_illness",
+            "household_role": "household_manager",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED_JIALIAN"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "fengjie",
+          "name": "王熙凤"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/8",
+        "ref": "data/world/m3_core.json#/characters/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "18eb0f602b315bef39498961532a6d16a05dbd3cac2e572c07257b6fdf99a63d",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "fengjie_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "ping_er",
+          "name": "平儿"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/24",
+        "ref": "data/world/m3_core.json#/characters/24",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "2cf082751e433eb468cd874dc43d7de79d779f4bd3f374e53e348c7abedeb0d8",
+        "value": {
+          "baseline": {
+            "body_state": "elderly",
+            "household_role": "senior_matriarch",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "WIDOWED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "jiamu",
+          "name": "贾母"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/25",
+        "ref": "data/world/m3_core.json#/characters/25",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "a65f17f6bbf2cfddd4d5c2094fd86646d034352e611faed657faf9db1383095e",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "senior_household_woman",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "wangfuren",
+          "name": "王夫人"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/5",
+        "ref": "data/objects/m4.json#/objects/5",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "ccec5081b501878b4d0e5edd7c0dc3d9c0a8a57baa680db06dd545a0df97a063",
+        "value": {
+          "baseline": {
+            "holder": "jia_household",
+            "location": "S02",
+            "status": "IN_OLD_HOUSE"
+          },
+          "continuity_rules": [
+            "抄没后通过搬运进入借住院落，不允许物件瞬移"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-HOUSEHOLD-BEDDING-BUNDLE",
+          "identity_status": "C_WORLD_OBJECT_GROUP",
+          "kind": "bedding_bundle",
+          "name": "事败迁居铺盖包",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb"
+          ]
+        }
+      },
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/0",
+        "ref": "data/objects/m4.json#/objects/0",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "7039eac261456c40f732f1322b22ca25814dd97df2c70ae82c537009bf332c47",
+        "value": {
+          "baseline": {
+            "frame_status": "IN_HUMAN_WORLD",
+            "holder": "baoyu",
+            "location": "S02",
+            "status": "WITH_BAOYU"
+          },
+          "continuity_rules": [
+            "第98回误取—发现—送还属于当前C实现，不证明原稿绝对回次",
+            "第99回不得强制写成主动弃玉仪式",
+            "第100回石归本质是外框身份终态，不要求尘世物流闭合"
+          ],
+          "evidence_status": "MIXED_HARD_IDENTITY_CURRENT_C_PLACEMENT",
+          "id": "OBJ-TONGLING-JADE",
+          "identity_status": "LOCKED_TONGLING_OBJECT_BUT_EARTHLY_ROUTE_OPEN",
+          "kind": "jade",
+          "name": "通灵玉（当前C运行对象）",
+          "source_refs": [
+            "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+            "R01",
+            "R16",
+            "R18",
+            "R43"
+          ]
+        }
+      }
+    ],
+    "knowledge": [
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/6",
+        "ref": "data/knowledge/v03_slice2.json#/facts/6",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "9337db7d990f6a5a48d5a02d7fd25ca481385c73ba9f34c4849bef584871cb29",
+        "value": {
+          "epistemic": "CURRENT_SCENE_INFERENCE",
+          "id": "household_relocation_required",
+          "label": "家中将不得不迁出/压缩居所"
+        }
+      },
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/5",
+        "ref": "data/knowledge/v03_slice2.json#/facts/5",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "ebaefa03e4a518e8d4f6c81524908abb048884b854fba24633e6658640a2e67d",
+        "value": {
+          "epistemic": "CURRENT_SCENE_UNKNOWN",
+          "id": "official_confiscation_exact_scope",
+          "label": "官面处置的完整法律范围与最终去向"
+        }
+      }
+    ]
+  },
+  "required_beats": [
+    {
+      "description": "从受控旧府准带边界接实际装载、搬运、到借院接收；铺盖组随人走，药包优先，老病者迁移与车脚等候有体力/时间成本。不能因OT89终态就跳过这一段，也不把贾芸当整个物流群。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "50167e91d24148a768ce8f9a8d14e1ded62d0a067f8c9bb83f266dfe62a6b5a3",
+          "value": {
+            "id": "89-S6",
+            "title": "迁居是第二场灾难"
+          }
+        },
+        {
+          "ref": "data/world/m3_resources.json#/resource_flows/8",
+          "path": "data/world/m3_resources.json",
+          "pointer": "/resource_flows/8",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+          "text_sha256": "2ebf1d8ce7b3cae6a2aad01d436e721a1aaa5c6de30ad00053e3f1adfd05b38c",
+          "value": {
+            "boundary": "不能一日归零",
+            "chapter": 89,
+            "epistemic": "REFERENCE_RESOURCE_FLOW",
+            "food_medicine": "饭菜减样但不断；药包优先带走",
+            "labor": "仆役散失；贾芸雇车；少数人搬运",
+            "money_state": "资产与空间受官面限制，现金流开始紧",
+            "object_interface": "箱笼、账册、铺盖、车钱",
+            "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50"
+          }
+        },
+        {
+          "ref": "data/world/m3_body.json#/body_matrix/8",
+          "path": "data/world/m3_body.json",
+          "pointer": "/body_matrix/8",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e",
+          "text_sha256": "d57b12d56bebb9f964d18e901ba1b1343f368ba0925556c0e805aa59fc1c901e",
+          "value": {
+            "body_focus": "老病者迁居的体力成本",
+            "chapter": 89,
+            "epistemic": "REFERENCE_BODY_LIFE",
+            "food_focus": "小灶、软饭、第一阶段紧缩",
+            "ritual_focus": "查抄中衣被/迁居秩序",
+            "source_ref": "asset:sha256:7e4ba5576d56cf953338ef9dfa98b9dea3da4be4a595fff241a5c26d4c7e23bf"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24102,
+            24253
+          ],
+          "lines": [
+            594,
+            596
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ac6007c98a044dc28411d8cf6b697cd28bf108589dfdef4e27e9d10048e15cb2"
+        },
+        {
+          "byte_range": [
+            24387,
+            24736
+          ],
+          "lines": [
+            600,
+            605
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4d392c82f8ef9c3899bb2c28f17f44f10f34792ec9df64a72d9603902ff94773"
+        },
+        {
+          "byte_range": [
+            25090,
+            25242
+          ],
+          "lines": [
+            618,
+            620
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "d325b978aa536dea18211626009f54c7c9e049d0eebc3e87bb65e584cce6af6a"
+        },
+        {
+          "byte_range": [
+            25242,
+            25460
+          ],
+          "lines": [
+            621,
+            623
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94c0575c7208193d80e426a36153389c086004736dc1647e4fa8a940e97d389b"
+        },
+        {
+          "byte_range": [
+            26084,
+            26438
+          ],
+          "lines": [
+            639,
+            642
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29a25382814bd3e8bee73e0b9772b840132042ec9fbd96dfb5c9fedd979585dd"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "进借院先重分床位/铺盖及日用物，再落实共井共灶的取水、做饭与通行冲突；借住不是取得独有井灶或自由恢复旧府供给，错拿衣物来自人员/物件挤入同一空间的实际重新分配。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "50167e91d24148a768ce8f9a8d14e1ded62d0a067f8c9bb83f266dfe62a6b5a3",
+          "value": {
+            "id": "89-S6",
+            "title": "迁居是第二场灾难"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            23894,
+            24102
+          ],
+          "lines": [
+            591,
+            593
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "897fe57decd0f317fec467b5902e081c6d17d03a02234bae2d5bdac8391cb46f"
+        },
+        {
+          "byte_range": [
+            24892,
+            25013
+          ],
+          "lines": [
+            612,
+            614
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "f88b3769f625240d3538af3142ae6d8f87dcc378ed0411b5e2be27c19db1edf2"
+        },
+        {
+          "byte_range": [
+            25460,
+            25672
+          ],
+          "lines": [
+            624,
+            626
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "732277eb372452254f040fa8d30a6fe1186bb92a384c831aa3f5d0b506b7e949"
+        },
+        {
+          "byte_range": [
+            26084,
+            26438
+          ],
+          "lines": [
+            639,
+            642
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29a25382814bd3e8bee73e0b9772b840132042ec9fbd96dfb5c9fedd979585dd"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "带出一本书只因“因为薄”，此处不揭书名；通灵玉仅作为随宝玉搬家的已有连续性，不增玉线戏。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "50167e91d24148a768ce8f9a8d14e1ded62d0a067f8c9bb83f266dfe62a6b5a3",
+          "value": {
+            "id": "89-S6",
+            "title": "迁居是第二场灾难"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24736,
+            24831
+          ],
+          "lines": [
+            606,
+            608
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fce811e6ab359457c2e45895210d69a79de5b6b24408248f22fa8b90563c2baa"
+        },
+        {
+          "byte_range": [
+            25460,
+            25672
+          ],
+          "lines": [
+            624,
+            626
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "732277eb372452254f040fa8d30a6fe1186bb92a384c831aa3f5d0b506b7e949"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "以“谁家的水桶还在井边？”收束生活再分配，不在水桶之后追加败家吟或作者总结。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "50167e91d24148a768ce8f9a8d14e1ded62d0a067f8c9bb83f266dfe62a6b5a3",
+          "value": {
+            "id": "89-S6",
+            "title": "迁居是第二场灾难"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            23894,
+            24102
+          ],
+          "lines": [
+            591,
+            593
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "897fe57decd0f317fec467b5902e081c6d17d03a02234bae2d5bdac8391cb46f"
+        },
+        {
+          "byte_range": [
+            25460,
+            25672
+          ],
+          "lines": [
+            624,
+            626
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "732277eb372452254f040fa8d30a6fe1186bb92a384c831aa3f5d0b506b7e949"
+        },
+        {
+          "byte_range": [
+            26044,
+            26084
+          ],
+          "lines": [
+            637,
+            638
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44e50474767c8d9301ed3c5c77ae2942e439a0cef17b919c728501c816f9af53"
+        },
+        {
+          "byte_range": [
+            26084,
+            26438
+          ],
+          "lines": [
+            639,
+            642
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29a25382814bd3e8bee73e0b9772b840132042ec9fbd96dfb5c9fedd979585dd"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "水桶归属、谁正要取水/使用灶和谁需要腾地方，要在同住者已有生活约束中发生；末问“谁家的水桶还在井边？”是未解决的共享使用小问题，不用万能分房/独井新灶在末句前解除压力。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/5",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/5",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "50167e91d24148a768ce8f9a8d14e1ded62d0a067f8c9bb83f266dfe62a6b5a3",
+          "value": {
+            "id": "89-S6",
+            "title": "迁居是第二场灾难"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            23894,
+            24102
+          ],
+          "lines": [
+            591,
+            593
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "897fe57decd0f317fec467b5902e081c6d17d03a02234bae2d5bdac8391cb46f"
+        },
+        {
+          "byte_range": [
+            24892,
+            25013
+          ],
+          "lines": [
+            612,
+            614
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "f88b3769f625240d3538af3142ae6d8f87dcc378ed0411b5e2be27c19db1edf2"
+        },
+        {
+          "byte_range": [
+            25460,
+            25672
+          ],
+          "lines": [
+            624,
+            626
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "732277eb372452254f040fa8d30a6fe1186bb92a384c831aa3f5d0b506b7e949"
+        },
+        {
+          "byte_range": [
+            26084,
+            26438
+          ],
+          "lines": [
+            639,
+            642
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29a25382814bd3e8bee73e0b9772b840132042ec9fbd96dfb5c9fedd979585dd"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [
+    "OBJ-HOUSEHOLD-BEDDING-BUNDLE",
+    "OBJ-TONGLING-JADE"
+  ],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "participants: 车脚、搬运者及借院共井共灶邻人未注册；不可把jia_yun替成整个物流群。",
+    "objects: 衣箱、薄书、水桶、井灶与具体床位没有对象ID；仅铺盖组与随行通灵玉可实名引用。",
+    "events: W89-COLLAPSE-AND-RELOCATION与OT89-00/OT89-01均是真实章节事件，但未验证为89-S6的场级有序路径，暂不绑定。",
+    "knowledge: 宝钗知道迁居需要的旧场更新不说明借院已到或完整官面范围已知。",
+    "entry_checkpoint: 89-S6为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+    "entry_state.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location: 点物/放行之后本场起运点未建立局部检查点，基线旧府不能替代许可状态。",
+    "entry_state.character.baoyu.location: W89含府到借院的全回迁居，不是此种子的起运时间。",
+    "preconditions.object.OBJ-TONGLING-JADE.holder: OT89-00支持玉随宝玉的章节连续性，但此场起运前的局部持有检查点未核定。",
+    "shared_housing: 共井共灶/床位使用已有明确编辑义务，但借住许可、同住者身份、取用安排与床位分配没有场级记录；不造邻人ID或私有井灶。"
+  ],
+  "function": "让从受控旧府到借院的搬运成为第二场生活灾难，床位共井共灶与错拿衣物最终落到一只水桶。",
+  "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/89-S6.v1.json，sha256=70689155baee621408d35bbca8be0da250c3ee26a3020af35b843706f3cfb38b。本场精确改动：把许可—搬运—接收—重分生活接口接起，要求共享取用/通行冲突；不声明已分配床位或持有状态。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+}

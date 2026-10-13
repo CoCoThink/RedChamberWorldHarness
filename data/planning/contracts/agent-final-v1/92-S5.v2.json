@@ -1,0 +1,1385 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v2",
+  "id": "92-S5",
+  "chapter": 92,
+  "order": 5,
+  "chapter_plan_ref": "data/planning/chapters/ch92.json",
+  "status": "AGENT_EDITED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/92-S5.json",
+      "sha256": "bb2b8f277a3ad7c631a96d1fc76106941aefadfd939f37809791248f5a8c58a6"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch92.json",
+      "sha256": "93a5fdbbff10ccb65cd601e344d3b46d15fa38172bb5b29b88caa6f980a2b797"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "data/planning/scenes/92-S4.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "participants": [
+    "qianxue",
+    "jia_yun",
+    "baoyu"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [
+    "OBJ-DETENTION-DELIVERY-PACKAGE"
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/12",
+        "ref": "data/world/m3_core.json#/characters/12",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "2b2bf320ea482ba403020293ad279e58c95e71f214226de2c9f5203562f29002",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "former_servant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "old_servant_network",
+            "human"
+          ],
+          "id": "qianxue",
+          "name": "茜雪"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/10",
+        "ref": "data/world/m3_core.json#/characters/10",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "340eb8abc9247bbb71dbde20970aad2d26ba92195c40678d53b29fcd43b5c3c2",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "kin_runner",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_network",
+            "human"
+          ],
+          "id": "jia_yun",
+          "name": "贾芸"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/7",
+        "ref": "data/objects/m4.json#/objects/7",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "78ddf46aa142f510e718d2c980bbc799c8b3b0501a3386fa21374e023e61522e",
+        "value": {
+          "baseline": {
+            "holder": null,
+            "location": null,
+            "status": "NOT_ASSEMBLED"
+          },
+          "continuity_rules": [
+            "由贾芸/小红规则链与茜雪实物链共同约束；不得变成重金打点万能包"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-DETENTION-DELIVERY-PACKAGE",
+          "identity_status": "C_WORLD_OBJECT_GROUP",
+          "kind": "delivery_package",
+          "name": "第92回监所送物包",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:7e4ba5576d56cf953338ef9dfa98b9dea3da4be4a595fff241a5c26d4c7e23bf",
+            "R30",
+            "R31",
+            "R32"
+          ]
+        }
+      }
+    ],
+    "knowledge": [
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/9",
+        "ref": "data/knowledge/v03_slice2.json#/facts/9",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "e019926dabf7cb54d516dad7f5634faddbc8e117bbe693365025c2edca8e4b22",
+        "value": {
+          "epistemic": "CURRENT_RULE_KNOWLEDGE",
+          "id": "detention_delivery_rules",
+          "label": "监外送入物品的可行规则"
+        }
+      },
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/11",
+        "ref": "data/knowledge/v03_slice2.json#/facts/11",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "28cc024e4caf763d54d122f95a6f66596b40a51c5fcaf04bc22b681a512d74d4",
+        "value": {
+          "epistemic": "CURRENT_IMPLEMENTATION_FACT",
+          "id": "qianxue_delivery_bundle",
+          "label": "茜雪实际准备/转交的御寒与日用物件"
+        }
+      },
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/8",
+        "ref": "data/knowledge/v03_slice2.json#/facts/8",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "376cd3c7003b671db97190fcf395e6087df19ad31f3c0254b4ec62835ce7b241",
+        "value": {
+          "epistemic": "CURRENT_SCENE_UNKNOWN",
+          "id": "baoyu_detention_whole_case",
+          "label": "宝玉羁押案全部案情与官面判断"
+        }
+      }
+    ]
+  },
+  "entry_state": [
+    {
+      "equals": "character.qianxue.knowledge.detention_delivery_rules",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "上场拟有规则转告，但种子前驱无可执行出口，不能假定茜雪已获知具体送物规则。"
+    },
+    {
+      "equals": "object.OBJ-DETENTION-DELIVERY-PACKAGE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT92-01为章内组装接口，局部入场是否已备齐没有检查点。"
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "character.qianxue.knowledge.qianxue_delivery_bundle",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "注册送物场ENTRY确记茜雪知实物包，但与92-S5场位未核定；不把她熟悉物件等同知道案情。"
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "object.OBJ-DETENTION-DELIVERY-PACKAGE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT92-01/02提供小额必需品组装与依规送入接口，具体本场物流经手与抵达尚未独立验证。"
+    },
+    {
+      "equals": "character.baoyu.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "送厚袜改善一个日常需要不等于寒冷睡食压力被消除，暂无本场身体效果事件。"
+    },
+    {
+      "equals": "object.OBJ-DETENTION-DELIVERY-PACKAGE.holder",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "OT92-02章级终态holder=baoyu，但本场发出/送入/实际收受的经手和等待未核定，不能直接填宝玉。"
+    },
+    {
+      "equals": "character.baoyu.knowledge.qianxue_delivery_bundle",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "准备者知包裹、已经发出或章级holder为宝玉，不证明本场宝玉实见并知来源/内容；无收受知识事件。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "92-S5-R1",
+      "description": "茜雪关切先落“他冷不冷”、厚袜和小额日用品，按实际转告的规则备齐/组装/交跑腿链；若向宝玉问冷暖须有许可传话或接触渠道，不自由会面。发出以后仍须等待查验、经手和实到宝玉手中。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "34057123ec8d9a75495895293c7078d6671429733f0635135bc2568a42bc4f16",
+          "value": {
+            "id": "92-S5",
+            "title": "茜雪只办“他冷不冷”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                31264,
+                31534
+              ],
+              "lines": [
+                780,
+                782
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "af0a58a3a34bbfed6c415bc3ee97a025838f0bad479a929041e0afe1efad5649"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n等候、冷茶、湿鞋泥、粗瓷碗、萝卜、毡、饭钱规则；宝玉先学“不能换碗”；小红先问规则；茜雪只管冷不冷、送袜；最后回窄巷；现有“正是”二句为81—100唯一作者韵化收束。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31700,
+                31908
+              ],
+              "lines": [
+                786,
+                788
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e9955259a25cacca5651767990721298088a9e0a8ab597e8a6de8d12f908d41"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n92-S1认单≠定罪；S2第一次留质家里不知多久；S3第一夜规则学习；S4小红办能不能送；S5茜雪办保暖；S6第二轮问讯使范围缩小；正常释放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31908,
+                32032
+              ],
+              "lines": [
+                789,
+                791
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "41a30df75a701738f517eb6131617c994db5502e03255ab72a22f17db29ed8de"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n狱卒、书办、同监、小红、茜雪、贾芸。每人各做一件，不组成“营救小队”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32693,
+                32881
+              ],
+              "lines": [
+                808,
+                810
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5142c870dc1c08deab17bed386e12efd04fd25facc0a6f149133cdf67cc9acf7"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：钱只能改善饭、跑腿、送物，不能买结案。物：厚袜、粗饭、毡、包裹。信：家里最初只知“留一留”，信息延迟是痛点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32881,
+                33000
+              ],
+              "lines": [
+                811,
+                813
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "8596aa8683a9192f0c6b028d9c727daa9e9a27f73ce19de3ecf82cab5c08c62b"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n萝卜、鞋袜、毡、碗受控；小红问规则；茜雪厚袜；狱神灯；不劫狱。\n\n"
+          }
+        ],
+        "world_records": [
+          {
+            "ref": "data/objects/m4.json#/transitions/9",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/9",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "9dd3c3c249d6e4c5a3cc1c224a720c4bd8478a6524adda5f2c2b808de5c9f4f9",
+            "value": {
+              "action": "ASSEMBLE",
+              "chapter": 92,
+              "epistemic": "C_WORLD",
+              "from": {
+                "holder": null,
+                "location": null,
+                "status": "NOT_ASSEMBLED"
+              },
+              "id": "OT92-01",
+              "movement": "DISCOVERY_FROM_UNKNOWN",
+              "note": "送物包在S06现地组装成形；酱菜/炒米/厚袜等小额实物链",
+              "object_id": "OBJ-DETENTION-DELIVERY-PACKAGE",
+              "sequence": 20,
+              "source_refs": [
+                "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                "R30",
+                "R31",
+                "R32"
+              ],
+              "to": {
+                "holder": "jia_yun_delivery_chain",
+                "location": "S06",
+                "status": "ASSEMBLED_SMALL_NECESSITIES"
+              }
+            }
+          },
+          {
+            "ref": "data/objects/m4.json#/transitions/10",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/10",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "2f986dfed21ec1461980ad79d854f8d748213c2693fac6b51da47d0312286116",
+            "value": {
+              "action": "MOVE",
+              "chapter": 92,
+              "epistemic": "C_WORLD",
+              "from": {
+                "holder": "jia_yun_delivery_chain",
+                "location": "S06",
+                "status": "ASSEMBLED_SMALL_NECESSITIES"
+              },
+              "id": "OT92-02",
+              "movement": "EXPLICIT",
+              "note": "按监所规则送入，不等于买通制度",
+              "object_id": "OBJ-DETENTION-DELIVERY-PACKAGE",
+              "sequence": 55,
+              "source_refs": [
+                "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                "asset:sha256:7e4ba5576d56cf953338ef9dfa98b9dea3da4be4a595fff241a5c26d4c7e23bf",
+                "R30",
+                "R31",
+                "R32"
+              ],
+              "to": {
+                "holder": "baoyu",
+                "location": "S07",
+                "status": "DELIVERED_UNDER_RULES"
+              }
+            }
+          },
+          {
+            "ref": "data/knowledge/v03_slice2.json#/scenes/2",
+            "path": "data/knowledge/v03_slice2.json",
+            "pointer": "/scenes/2",
+            "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+            "text_sha256": "8bfed31d7408d4b6f8700e22ad0396f884c7dcb7159fa0696622fa8c587f2cbd",
+            "value": {
+              "chapter": 92,
+              "entry": {
+                "baochai": {
+                  "believes": [],
+                  "does_not_know": [
+                    "baoyu_detention_whole_case",
+                    "detention_delivery_rules",
+                    "detention_delivery_contact"
+                  ],
+                  "knows": [
+                    "baoyu_detained"
+                  ],
+                  "suspects": []
+                },
+                "baoyu": {
+                  "believes": [],
+                  "does_not_know": [
+                    "detention_delivery_rules",
+                    "detention_delivery_contact"
+                  ],
+                  "knows": [
+                    "baoyu_detained"
+                  ],
+                  "suspects": []
+                },
+                "qianxue": {
+                  "believes": [],
+                  "does_not_know": [
+                    "baoyu_detention_whole_case",
+                    "detention_delivery_rules",
+                    "detention_delivery_contact"
+                  ],
+                  "knows": [
+                    "baoyu_detained",
+                    "qianxue_delivery_bundle"
+                  ],
+                  "suspects": []
+                },
+                "xiaohong": {
+                  "believes": [],
+                  "does_not_know": [
+                    "baoyu_detention_whole_case",
+                    "detention_delivery_rules",
+                    "detention_delivery_contact"
+                  ],
+                  "knows": [
+                    "baoyu_detained"
+                  ],
+                  "suspects": []
+                }
+              },
+              "events": [
+                {
+                  "id": "K92-XIAOHONG-ASKS-GATE-RULES",
+                  "sequence": 20,
+                  "updates": [
+                    {
+                      "add": {
+                        "knows": [
+                          "detention_delivery_rules",
+                          "detention_delivery_contact"
+                        ]
+                      },
+                      "character": "xiaohong",
+                      "remove": {
+                        "does_not_know": [
+                          "detention_delivery_rules",
+                          "detention_delivery_contact"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "K92-XIAOHONG-RELAYS-RULES",
+                  "sequence": 40,
+                  "updates": [
+                    {
+                      "add": {
+                        "knows": [
+                          "detention_delivery_rules"
+                        ]
+                      },
+                      "character": "baochai",
+                      "remove": {
+                        "does_not_know": [
+                          "detention_delivery_rules"
+                        ]
+                      }
+                    },
+                    {
+                      "add": {
+                        "knows": [
+                          "detention_delivery_rules"
+                        ]
+                      },
+                      "character": "qianxue",
+                      "remove": {
+                        "does_not_know": [
+                          "detention_delivery_rules"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "id": "ch92_delivery_gate",
+              "participants": [
+                "baochai",
+                "xiaohong",
+                "qianxue",
+                "baoyu"
+              ],
+              "sequence": 1,
+              "source_basis": [
+                "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                "asset:sha256:56727d17b5588cdecac3d0cf66b0030a6673ace47d532937d7988141e9cc41cd",
+                "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "92-S5-R2",
+      "description": "小红解决规则接口，茜雪解决实物保暖；各做一件，情分在袜子、粗饭和毡等小事中呈现。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "34057123ec8d9a75495895293c7078d6671429733f0635135bc2568a42bc4f16",
+          "value": {
+            "id": "92-S5",
+            "title": "茜雪只办“他冷不冷”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                31264,
+                31534
+              ],
+              "lines": [
+                780,
+                782
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "af0a58a3a34bbfed6c415bc3ee97a025838f0bad479a929041e0afe1efad5649"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n等候、冷茶、湿鞋泥、粗瓷碗、萝卜、毡、饭钱规则；宝玉先学“不能换碗”；小红先问规则；茜雪只管冷不冷、送袜；最后回窄巷；现有“正是”二句为81—100唯一作者韵化收束。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31908,
+                32032
+              ],
+              "lines": [
+                789,
+                791
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "41a30df75a701738f517eb6131617c994db5502e03255ab72a22f17db29ed8de"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n狱卒、书办、同监、小红、茜雪、贾芸。每人各做一件，不组成“营救小队”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32693,
+                32881
+              ],
+              "lines": [
+                808,
+                810
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5142c870dc1c08deab17bed386e12efd04fd25facc0a6f149133cdf67cc9acf7"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：钱只能改善饭、跑腿、送物，不能买结案。物：厚袜、粗饭、毡、包裹。信：家里最初只知“留一留”，信息延迟是痛点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33398,
+                33795
+              ],
+              "lines": [
+                826,
+                829
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fb8033734c34167c334c5c15e4ff3e09d2a92e4fc9451811424991f81a7d1565"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n传问等候 → 留质突然发生 → 第一夜规则 → 家中信息断裂 → 小红制度性帮助 → 茜雪旧情保暖 → 第二轮问讯 → 范围收窄 → 正常释放 → 饭香/窄门。  \n**压力测试问题：**是否既有法律可信度又仍是小说；小红帮助是否“大得力”但不传奇；宗教是否真实存在却完全不救案。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "92-S5-R3",
+      "description": "备好、交出、经准许送入、宝玉实际收到分别呈现；收到要有依据的交付/回话，尚待交付就明留等待，不用“送了”或送物单代替实收。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "34057123ec8d9a75495895293c7078d6671429733f0635135bc2568a42bc4f16",
+          "value": {
+            "id": "92-S5",
+            "title": "茜雪只办“他冷不冷”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                31264,
+                31534
+              ],
+              "lines": [
+                780,
+                782
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "af0a58a3a34bbfed6c415bc3ee97a025838f0bad479a929041e0afe1efad5649"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n等候、冷茶、湿鞋泥、粗瓷碗、萝卜、毡、饭钱规则；宝玉先学“不能换碗”；小红先问规则；茜雪只管冷不冷、送袜；最后回窄巷；现有“正是”二句为81—100唯一作者韵化收束。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31700,
+                31908
+              ],
+              "lines": [
+                786,
+                788
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e9955259a25cacca5651767990721298088a9e0a8ab597e8a6de8d12f908d41"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n92-S1认单≠定罪；S2第一次留质家里不知多久；S3第一夜规则学习；S4小红办能不能送；S5茜雪办保暖；S6第二轮问讯使范围缩小；正常释放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31908,
+                32032
+              ],
+              "lines": [
+                789,
+                791
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "41a30df75a701738f517eb6131617c994db5502e03255ab72a22f17db29ed8de"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n狱卒、书办、同监、小红、茜雪、贾芸。每人各做一件，不组成“营救小队”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32693,
+                32881
+              ],
+              "lines": [
+                808,
+                810
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5142c870dc1c08deab17bed386e12efd04fd25facc0a6f149133cdf67cc9acf7"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：钱只能改善饭、跑腿、送物，不能买结案。物：厚袜、粗饭、毡、包裹。信：家里最初只知“留一留”，信息延迟是痛点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32881,
+                33000
+              ],
+              "lines": [
+                811,
+                813
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "8596aa8683a9192f0c6b028d9c727daa9e9a27f73ce19de3ecf82cab5c08c62b"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n萝卜、鞋袜、毡、碗受控；小红问规则；茜雪厚袜；狱神灯；不劫狱。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33398,
+                33795
+              ],
+              "lines": [
+                826,
+                829
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fb8033734c34167c334c5c15e4ff3e09d2a92e4fc9451811424991f81a7d1565"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n传问等候 → 留质突然发生 → 第一夜规则 → 家中信息断裂 → 小红制度性帮助 → 茜雪旧情保暖 → 第二轮问讯 → 范围收窄 → 正常释放 → 饭香/窄门。  \n**压力测试问题：**是否既有法律可信度又仍是小说；小红帮助是否“大得力”但不传奇；宗教是否真实存在却完全不救案。\n\n"
+          }
+        ],
+        "world_records": [
+          {
+            "ref": "data/objects/m4.json#/transitions/9",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/9",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "9dd3c3c249d6e4c5a3cc1c224a720c4bd8478a6524adda5f2c2b808de5c9f4f9",
+            "value": {
+              "action": "ASSEMBLE",
+              "chapter": 92,
+              "epistemic": "C_WORLD",
+              "from": {
+                "holder": null,
+                "location": null,
+                "status": "NOT_ASSEMBLED"
+              },
+              "id": "OT92-01",
+              "movement": "DISCOVERY_FROM_UNKNOWN",
+              "note": "送物包在S06现地组装成形；酱菜/炒米/厚袜等小额实物链",
+              "object_id": "OBJ-DETENTION-DELIVERY-PACKAGE",
+              "sequence": 20,
+              "source_refs": [
+                "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                "R30",
+                "R31",
+                "R32"
+              ],
+              "to": {
+                "holder": "jia_yun_delivery_chain",
+                "location": "S06",
+                "status": "ASSEMBLED_SMALL_NECESSITIES"
+              }
+            }
+          },
+          {
+            "ref": "data/objects/m4.json#/transitions/10",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/10",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "2f986dfed21ec1461980ad79d854f8d748213c2693fac6b51da47d0312286116",
+            "value": {
+              "action": "MOVE",
+              "chapter": 92,
+              "epistemic": "C_WORLD",
+              "from": {
+                "holder": "jia_yun_delivery_chain",
+                "location": "S06",
+                "status": "ASSEMBLED_SMALL_NECESSITIES"
+              },
+              "id": "OT92-02",
+              "movement": "EXPLICIT",
+              "note": "按监所规则送入，不等于买通制度",
+              "object_id": "OBJ-DETENTION-DELIVERY-PACKAGE",
+              "sequence": 55,
+              "source_refs": [
+                "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                "asset:sha256:7e4ba5576d56cf953338ef9dfa98b9dea3da4be4a595fff241a5c26d4c7e23bf",
+                "R30",
+                "R31",
+                "R32"
+              ],
+              "to": {
+                "holder": "baoyu",
+                "location": "S07",
+                "status": "DELIVERED_UNDER_RULES"
+              }
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "92-S5-F1",
+      "description": "不得把送物包扩大为重金打点万能包或获释交换，不得让茜雪骤知全案、指挥翻案。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "34057123ec8d9a75495895293c7078d6671429733f0635135bc2568a42bc4f16",
+          "value": {
+            "id": "92-S5",
+            "title": "茜雪只办“他冷不冷”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                31908,
+                32032
+              ],
+              "lines": [
+                789,
+                791
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "41a30df75a701738f517eb6131617c994db5502e03255ab72a22f17db29ed8de"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n狱卒、书办、同监、小红、茜雪、贾芸。每人各做一件，不组成“营救小队”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32693,
+                32881
+              ],
+              "lines": [
+                808,
+                810
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5142c870dc1c08deab17bed386e12efd04fd25facc0a6f149133cdf67cc9acf7"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：钱只能改善饭、跑腿、送物，不能买结案。物：厚袜、粗饭、毡、包裹。信：家里最初只知“留一留”，信息延迟是痛点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33000,
+                33107
+              ],
+              "lines": [
+                814,
+                816
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "993cf13ed67f3f2e9aebcca285d5bf370934ee2e4425c9fd83a70b10d548b615"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n酷刑、屈打成招、大反派、权贵搭救、神迹翻案；“男丁连坐”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "92-S5-F2",
+      "description": "不得借厚袜和狱神灯导出神迹、劫狱或大团圆营救；仍保持真实羁押日常。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "34057123ec8d9a75495895293c7078d6671429733f0635135bc2568a42bc4f16",
+          "value": {
+            "id": "92-S5",
+            "title": "茜雪只办“他冷不冷”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                30851,
+                31264
+              ],
+              "lines": [
+                772,
+                779
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "747f3dded7f17758329dc18f6add30897c7b5175d8bbaafa7a3dc93209b1f75b"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR05\n\n**EVIDENCE-INTERFACES｜**\n- T2/DRAFT-LABEL：`狱神庙慰宝玉`；\n- V5：`茜雪至狱神庙方呈正文`、`红玉茜雪一大回文字`、`红玉后有宝玉大得力处`；\n- **W2已裁：`狱庙相逢` = OPEN-W2 / NO-ACTIVE-INSERTION。92明确不加巧姐/刘姥姥。**/R30/R31/R32；H01/H02；O02开放具体法律接口。必须是真实羁押/待质，不是地牢传奇。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32368,
+                32543
+              ],
+              "lines": [
+                802,
+                804
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "505e136dc042e1ca76f88589f7a3e758d90aa234abba76b692a1548d9583299d"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n41-P：狱神一盏灯、烟熏顶棚。若增，只加小役剪灯花/添油，老囚随手合掌而另一个人不理。绝不显灵、许愿获释。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32881,
+                33000
+              ],
+              "lines": [
+                811,
+                813
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "8596aa8683a9192f0c6b028d9c727daa9e9a27f73ce19de3ecf82cab5c08c62b"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n萝卜、鞋袜、毡、碗受控；小红问规则；茜雪厚袜；狱神灯；不劫狱。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33000,
+                33107
+              ],
+              "lines": [
+                814,
+                816
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "993cf13ed67f3f2e9aebcca285d5bf370934ee2e4425c9fd83a70b10d548b615"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n酷刑、屈打成招、大反派、权贵搭救、神迹翻案；“男丁连坐”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "92-S5-F3",
+      "description": "不得由已发出推定已送达/收到，也不由厚袜推定全身恢复、知全案或马上获释；茜雪备物不因此知小红全部经手门路。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/11/candidate_scenes/4",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/11/candidate_scenes/4",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "34057123ec8d9a75495895293c7078d6671429733f0635135bc2568a42bc4f16",
+          "value": {
+            "id": "92-S5",
+            "title": "茜雪只办“他冷不冷”"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                31534,
+                31700
+              ],
+              "lines": [
+                783,
+                785
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c04613526fd337f964446697d4e207ceaaadf2335cc01f8654cbb2c1d9c081bf"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n“为什么留质—问什么—范围如何变窄—为什么放”需要司法链更清楚；小红“大得力”必须具体而非万能。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                31908,
+                32032
+              ],
+              "lines": [
+                789,
+                791
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "41a30df75a701738f517eb6131617c994db5502e03255ab72a22f17db29ed8de"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n狱卒、书办、同监、小红、茜雪、贾芸。每人各做一件，不组成“营救小队”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                32693,
+                32881
+              ],
+              "lines": [
+                808,
+                810
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5142c870dc1c08deab17bed386e12efd04fd25facc0a6f149133cdf67cc9acf7"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：钱只能改善饭、跑腿、送物，不能买结案。物：厚袜、粗饭、毡、包裹。信：家里最初只知“留一留”，信息延迟是痛点。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                33398,
+                33795
+              ],
+              "lines": [
+                826,
+                829
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "fb8033734c34167c334c5c15e4ff3e09d2a92e4fc9451811424991f81a7d1565"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n传问等候 → 留质突然发生 → 第一夜规则 → 家中信息断裂 → 小红制度性帮助 → 茜雪旧情保暖 → 第二轮问讯 → 范围收窄 → 正常释放 → 饭香/窄门。  \n**压力测试问题：**是否既有法律可信度又仍是小说；小红帮助是否“大得力”但不传奇；宗教是否真实存在却完全不救案。\n\n"
+          }
+        ],
+        "world_records": [
+          {
+            "ref": "data/objects/m4.json#/transitions/10",
+            "path": "data/objects/m4.json",
+            "pointer": "/transitions/10",
+            "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+            "text_sha256": "2f986dfed21ec1461980ad79d854f8d748213c2693fac6b51da47d0312286116",
+            "value": {
+              "action": "MOVE",
+              "chapter": 92,
+              "epistemic": "C_WORLD",
+              "from": {
+                "holder": "jia_yun_delivery_chain",
+                "location": "S06",
+                "status": "ASSEMBLED_SMALL_NECESSITIES"
+              },
+              "id": "OT92-02",
+              "movement": "EXPLICIT",
+              "note": "按监所规则送入，不等于买通制度",
+              "object_id": "OBJ-DETENTION-DELIVERY-PACKAGE",
+              "sequence": 55,
+              "source_refs": [
+                "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+                "asset:sha256:7e4ba5576d56cf953338ef9dfa98b9dea3da4be4a595fff241a5c26d4c7e23bf",
+                "R30",
+                "R31",
+                "R32"
+              ],
+              "to": {
+                "holder": "baoyu",
+                "location": "S07",
+                "status": "DELIVERED_UNDER_RULES"
+              }
+            }
+          },
+          {
+            "ref": "data/knowledge/v03_slice2.json#/scenes/2",
+            "path": "data/knowledge/v03_slice2.json",
+            "pointer": "/scenes/2",
+            "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+            "text_sha256": "8bfed31d7408d4b6f8700e22ad0396f884c7dcb7159fa0696622fa8c587f2cbd",
+            "value": {
+              "chapter": 92,
+              "entry": {
+                "baochai": {
+                  "believes": [],
+                  "does_not_know": [
+                    "baoyu_detention_whole_case",
+                    "detention_delivery_rules",
+                    "detention_delivery_contact"
+                  ],
+                  "knows": [
+                    "baoyu_detained"
+                  ],
+                  "suspects": []
+                },
+                "baoyu": {
+                  "believes": [],
+                  "does_not_know": [
+                    "detention_delivery_rules",
+                    "detention_delivery_contact"
+                  ],
+                  "knows": [
+                    "baoyu_detained"
+                  ],
+                  "suspects": []
+                },
+                "qianxue": {
+                  "believes": [],
+                  "does_not_know": [
+                    "baoyu_detention_whole_case",
+                    "detention_delivery_rules",
+                    "detention_delivery_contact"
+                  ],
+                  "knows": [
+                    "baoyu_detained",
+                    "qianxue_delivery_bundle"
+                  ],
+                  "suspects": []
+                },
+                "xiaohong": {
+                  "believes": [],
+                  "does_not_know": [
+                    "baoyu_detention_whole_case",
+                    "detention_delivery_rules",
+                    "detention_delivery_contact"
+                  ],
+                  "knows": [
+                    "baoyu_detained"
+                  ],
+                  "suspects": []
+                }
+              },
+              "events": [
+                {
+                  "id": "K92-XIAOHONG-ASKS-GATE-RULES",
+                  "sequence": 20,
+                  "updates": [
+                    {
+                      "add": {
+                        "knows": [
+                          "detention_delivery_rules",
+                          "detention_delivery_contact"
+                        ]
+                      },
+                      "character": "xiaohong",
+                      "remove": {
+                        "does_not_know": [
+                          "detention_delivery_rules",
+                          "detention_delivery_contact"
+                        ]
+                      }
+                    }
+                  ]
+                },
+                {
+                  "id": "K92-XIAOHONG-RELAYS-RULES",
+                  "sequence": 40,
+                  "updates": [
+                    {
+                      "add": {
+                        "knows": [
+                          "detention_delivery_rules"
+                        ]
+                      },
+                      "character": "baochai",
+                      "remove": {
+                        "does_not_know": [
+                          "detention_delivery_rules"
+                        ]
+                      }
+                    },
+                    {
+                      "add": {
+                        "knows": [
+                          "detention_delivery_rules"
+                        ]
+                      },
+                      "character": "qianxue",
+                      "remove": {
+                        "does_not_know": [
+                          "detention_delivery_rules"
+                        ]
+                      }
+                    }
+                  ]
+                }
+              ],
+              "id": "ch92_delivery_gate",
+              "participants": [
+                "baochai",
+                "xiaohong",
+                "qianxue",
+                "baoyu"
+              ],
+              "sequence": 1,
+              "source_basis": [
+                "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+                "asset:sha256:56727d17b5588cdecac3d0cf66b0030a6673ace47d532937d7988141e9cc41cd",
+                "asset:sha256:3a6c54bfac7be45f913a8f43d4869efe87a618a4161738f1424c20668ca24d9a"
+              ]
+            }
+          },
+          {
+            "ref": "data/world/m3_core.json#/events/9",
+            "path": "data/world/m3_core.json",
+            "pointer": "/events/9",
+            "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+            "text_sha256": "ea337c84366180b9707ba0ee498c99c6d17c5a0b92b4adb2df1ff4b920973433",
+            "value": {
+              "chapter": 92,
+              "effects": [
+                {
+                  "set": "global.economy_stage",
+                  "value": "E2"
+                },
+                {
+                  "set": "global.resource_mode",
+                  "value": "SMALL_DELIVERIES_AND_SPATIAL_AID"
+                },
+                {
+                  "set": "characters.baoyu.legal_status",
+                  "value": "DETAINED_PENDING_INQUIRY"
+                },
+                {
+                  "set": "characters.baoyu.location",
+                  "value": "S07"
+                },
+                {
+                  "set": "characters.baoyu.body_state",
+                  "value": "detention_cold_sleep_food_hygiene_strain"
+                },
+                {
+                  "set": "characters.xiaohong.household_role",
+                  "value": "external_rule_navigator"
+                },
+                {
+                  "set": "characters.qianxue.household_role",
+                  "value": "old_servant_material_helper"
+                }
+              ],
+              "epistemic": "CURRENT_C_WORLD_WITH_HARD_DETENTION",
+              "id": "W92-DETENTION",
+              "sequence": 40,
+              "source_refs": [
+                "R05",
+                "R30",
+                "R31",
+                "R32"
+              ]
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [
+    "OT92-01",
+    "OT92-02"
+  ],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+    "participants: 接物狱卒及包裹查验人未有ID，不能写成人情网中的万能通关者。",
+    "implementation_gap: 厚袜、酱菜/炒米等只在送物包组内有注册接口；件数、饭钱、抵达时点和较后知识状态仍待核定。",
+    "entry_state: character.qianxue.knowledge.detention_delivery_rules — 上场拟有规则转告，但种子前驱无可执行出口，不能假定茜雪已获知具体送物规则。",
+    "entry_state: object.OBJ-DETENTION-DELIVERY-PACKAGE.status — OT92-01为章内组装接口，局部入场是否已备齐没有检查点。",
+    "preconditions: character.qianxue.knowledge.qianxue_delivery_bundle — 注册送物场ENTRY确记茜雪知实物包，但与92-S5场位未核定；不把她熟悉物件等同知道案情。",
+    "exit_state: object.OBJ-DETENTION-DELIVERY-PACKAGE.status — OT92-01/02提供小额必需品组装与依规送入接口，具体本场物流经手与抵达尚未独立验证。",
+    "exit_state: character.baoyu.body_state — 送厚袜改善一个日常需要不等于寒冷睡食压力被消除，暂无本场身体效果事件。",
+    "registered_event_placement: 已引用的世界/物件事件仅为义务涉及的现行章级接口，不证明这些事件在此种子场逐项执行；局部条件保持UNKNOWN。",
+    "knowledge_binding_scope: 事实ID或旧送物场记录不自动授权任何角色知情；种子场的实际获得、传话与未知范围须独立落实。",
+    "exit_state: object.OBJ-DETENTION-DELIVERY-PACKAGE.holder — OT92-02章级终态holder=baoyu，但本场发出/送入/实际收受的经手和等待未核定，不能直接填宝玉。",
+    "exit_state: character.baoyu.knowledge.qianxue_delivery_bundle — 准备者知包裹、已经发出或章级holder为宝玉，不证明本场宝玉实见并知来源/内容；无收受知识事件。",
+    "sent_vs_received: 发送、准入、交付、宝玉实收的场级证据缺失；原UNKNOWN保留，新holder/知识出口亦UNKNOWN。"
+  ],
+  "function": "把茜雪旧情落实为厚袜和日用物的准备、组装、依规转送，只解决冷不冷而不越权解决案子。",
+  "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+}

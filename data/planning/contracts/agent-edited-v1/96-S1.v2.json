@@ -1,0 +1,629 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch96.json",
+      "sha256": "a16c88eecea1bbe2a0281b4c0073985994e9663e7d921b76a3f099064d764086"
+    },
+    "seed": {
+      "path": "data/planning/scenes/96-S1.json",
+      "sha256": "167d7bb27ceba0bf29b6c043504ff120375d8f819b78e87f063815114fed548f"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 96,
+  "chapter_plan_ref": "data/planning/chapters/ch96.json",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 95
+  },
+  "entry_from": "CHAPTER_ENTRY:95",
+  "entry_state": [
+    {
+      "equals": "character.xiren.marital_status",
+      "value": "MARRIED_JIANG_YUHAN",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/5/effects/0",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/5/effects/0",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "e7b8a96bf37d6a8fa31f323c6f2819a52324184b6a58a6b270433e2aec71a812",
+          "value": {
+            "set": "characters.xiren.marital_status",
+            "value": "MARRIED_JIANG_YUHAN"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.xiren.household_role",
+      "value": "former_baoyu_attendant",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/5/effects/1",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/5/effects/1",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "8abcc32232d0a4798b1a843394a6c949b40dc30810492957fb366650f9d50e07",
+          "value": {
+            "set": "characters.xiren.household_role",
+            "value": "former_baoyu_attendant"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.jia_yun.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "贾芸身份有注册，但第95回运行状态位置为空；章卡允许转地址不证明本场在哪里相遇。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.xiren.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "本场应完成可执行的找门接口，但世界只有章级访客角色变更，没有袭人到门的局部地点事件。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "96-S1-F1",
+      "description": "不得凭一个地址桥补出大额援助、同住或袭人说“回来住”；供奉只锁照应关系，不锁恢复阶级。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "48b41e4dee216800a693992e026d89115caacc742446487f2cd92534fb60c1e6",
+          "value": {
+            "id": "96-S1",
+            "title": "袭人不是凭空知道地址"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                40868,
+                41151
+              ],
+              "lines": [
+                1023,
+                1029
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e1dfebff884225a9db0a5e67e733e67da9491c353b277cad34eae7ed88ccaf4"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR25/R26\n\n**V-INTERFACES｜**\n- V5：`后回与袭人供奉玉兄宝卿得同终始`；\n- “供奉”锁照应关系，不锁大额救济、同住或恢复阶级。：袭人蒋玉菡后期照应宝玉宝钗；O04贫寒相位开放。湘云/若兰仍O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42363,
+                42440
+              ],
+              "lines": [
+                1063,
+                1065
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e6d0a4027d4c68ee2beecefa02165d4a09996fa5ffab9bfa8fa27fb589c2340e"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n大笔银钱；蒋唱整折戏；湘云完整婚后诗。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S1-F2",
+      "description": "不得给花家旧人捏造已注册姓名、住址或历史传话事实，也不得把贾芸候选中介硬化为原稿确定情节。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "48b41e4dee216800a693992e026d89115caacc742446487f2cd92534fb60c1e6",
+          "value": {
+            "id": "96-S1",
+            "title": "袭人不是凭空知道地址"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41347,
+                41450
+              ],
+              "lines": [
+                1033,
+                1035
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5d7be63035e663b59f92a7a999e6de1ccd5453a75876ae5bac86b89480c58d3b"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n袭人如何知道地址、蒋为何同行、湘云信如何转递可补很轻。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41450,
+                41592
+              ],
+              "lines": [
+                1036,
+                1038
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5370e9ec10523670b884650f3380fdf4820b44af93d84c66b5697264cabf11dc"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n96-S1贾芸/花家旧人转地址；S2蒋正好有现实理由同行；S3宝钗分配援助；S4信件延迟路径。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41592,
+                41668
+              ],
+              "lines": [
+                1039,
+                1041
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "818b3da12b7774ef5e1223244715c6f8f88d6f436128e34f6832fd288f8870e1"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n袭人、蒋、贾芸、宝钗麝月宝玉；送信人。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "96-S1",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 1,
+  "participants": [
+    "xiren",
+    "jia_yun"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.xiren.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "获知地址与到门之间未登记地点、传话者和路程；不能把已婚离府状态当作到贫居状态。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/5",
+        "ref": "data/world/m3_core.json#/characters/5",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "b64f1c0390f062cb8366790030ca19afb986e82e378a7b725e3f89a737af3e53",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "xiren",
+          "name": "花袭人"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/10",
+        "ref": "data/world/m3_core.json#/characters/10",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "340eb8abc9247bbb71dbde20970aad2d26ba92195c40678d53b29fcd43b5c3c2",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "kin_runner",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_network",
+            "human"
+          ],
+          "id": "jia_yun",
+          "name": "贾芸"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "96-S1-R1",
+      "description": "贾芸/花家旧人仅为两条候选地址渠道；先选一条再交代谁把可追问住处线索交给袭人、转话先后和延时。贾芸身份已注册不证明在本场出镜；花家旧人仅用角色称谓，不填姓名地址。未选定之前不得把两个渠道同时写成确定事实。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "48b41e4dee216800a693992e026d89115caacc742446487f2cd92534fb60c1e6",
+          "value": {
+            "id": "96-S1",
+            "title": "袭人不是凭空知道地址"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                41347,
+                41450
+              ],
+              "lines": [
+                1033,
+                1035
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5d7be63035e663b59f92a7a999e6de1ccd5453a75876ae5bac86b89480c58d3b"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n袭人如何知道地址、蒋为何同行、湘云信如何转递可补很轻。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41450,
+                41592
+              ],
+              "lines": [
+                1036,
+                1038
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "5370e9ec10523670b884650f3380fdf4820b44af93d84c66b5697264cabf11dc"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n96-S1贾芸/花家旧人转地址；S2蒋正好有现实理由同行；S3宝钗分配援助；S4信件延迟路径。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41592,
+                41668
+              ],
+              "lines": [
+                1039,
+                1041
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "818b3da12b7774ef5e1223244715c6f8f88d6f436128e34f6832fd288f8870e1"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n袭人、蒋、贾芸、宝钗麝月宝玉；送信人。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/15",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/15",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "5fc4a72fc39fcc12e4293c5d4b80fbc1da8bfe02aec5e50c1bfe2661a8e0c397",
+            "value": {
+              "chapter": 96,
+              "money_state": "有限外援，不能逆转贫困",
+              "food_medicine": "一袋米、一筐炭、小包碎银；晚饭标准不变",
+              "labor": "蒋玉菡搬物/出钱，袭人问日用，麝月收放",
+              "object_interface": "米只倒一半、银收匣",
+              "boundary": "援助应被节制使用",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S1-R2",
+      "description": "袭人以嫁后故人而非返府婢女身份询问住处。本桥段完成的是地址可传递性，不是已经到门或入住；实际找路、敲门接口留给96-S2，不以chapter-1已婚/离府粗状态证明本场位置。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "48b41e4dee216800a693992e026d89115caacc742446487f2cd92534fb60c1e6",
+          "value": {
+            "id": "96-S1",
+            "title": "袭人不是凭空知道地址"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                40868,
+                41151
+              ],
+              "lines": [
+                1023,
+                1029
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4e1dfebff884225a9db0a5e67e733e67da9491c353b277cad34eae7ed88ccaf4"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR25/R26\n\n**V-INTERFACES｜**\n- V5：`后回与袭人供奉玉兄宝卿得同终始`；\n- “供奉”锁照应关系，不锁大额救济、同住或恢复阶级。：袭人蒋玉菡后期照应宝玉宝钗；O04贫寒相位开放。湘云/若兰仍O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                41151,
+                41347
+              ],
+              "lines": [
+                1030,
+                1032
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "dc3cd383fee0133c3409d89f7e4404e402549069d08f926d39dc26f1aadc4646"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n袭人敲门、蒋玉菡站门外不抢戏；戏业生计完整；援助物多钱少；湘云长信里婚后生活与“写两句揉掉”；新旧米同淘、仍两碗半。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42620,
+                42880
+              ],
+              "lines": [
+                1075,
+                1078
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "8832c9bcf625976cfbdd882062f9389a0bec721ddae393d26670e34ced117b8a"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n贫居春日 → 袭人到门 → 故人相见 → 蒋职业生活只露够用的一层 → 援助分配 → 湘云信到 → “两句揉掉” → 新旧米同锅。  \n**风险：**故人援助恢复阶级；文化展示过满。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/15",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/15",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "5fc4a72fc39fcc12e4293c5d4b80fbc1da8bfe02aec5e50c1bfe2661a8e0c397",
+            "value": {
+              "chapter": 96,
+              "money_state": "有限外援，不能逆转贫困",
+              "food_medicine": "一袋米、一筐炭、小包碎银；晚饭标准不变",
+              "labor": "蒋玉菡搬物/出钱，袭人问日用，麝月收放",
+              "object_interface": "米只倒一半、银收匣",
+              "boundary": "援助应被节制使用",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "96-S1-R3",
+      "description": "桥段保持L1—2的轻度：不给贾芸另添救济、名流联络或完整查访长篇，使贫居春日与故人到门仍是主体。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/15/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/15/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "48b41e4dee216800a693992e026d89115caacc742446487f2cd92534fb60c1e6",
+          "value": {
+            "id": "96-S1",
+            "title": "袭人不是凭空知道地址"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                42137,
+                42252
+              ],
+              "lines": [
+                1057,
+                1059
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c0716ef332ecc10314322c98da6de937bacc166a56c734f4e06e10aa51d7efe6"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE4：援助只能缓解；米、炭、一点碎银，不赎回阶级。信件有转递时间。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42440,
+                42471
+              ],
+              "lines": [
+                1066,
+                1068
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c6f2ac7e83d87120796bcdfad66b71be698dc35408a78deaca4ad009b60a7c42"
+            },
+            "name": "L3",
+            "number": 14,
+            "text": "**14｜L3**  \n无，L1—2。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                42620,
+                42880
+              ],
+              "lines": [
+                1075,
+                1078
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "8832c9bcf625976cfbdd882062f9389a0bec721ddae393d26670e34ced117b8a"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n贫居春日 → 袭人到门 → 故人相见 → 蒋职业生活只露够用的一层 → 援助分配 → 湘云信到 → “两句揉掉” → 新旧米同锅。  \n**风险：**故人援助恢复阶级；文化展示过满。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+    "declared_sequence_only: 依种子列表声明前驱；历史顺序、局部检查点与既有正文放置未核验。",
+    "address_chain: 贾芸或花家旧人二选一及地址文本、见面地、转话时间未定；后者没有注册身份。",
+    "minor_actors: 花家旧人如采用，仍是未注册角色，不新增identity。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+    "local_cast_pending: 已注册候选人物的同场范围与未注册经手人未核，participants_status=PENDING；不得从registry推出本场到场。"
+  ],
+  "function": "给袭人到贫居的行动补一段轻量、可传递的地址来路；旧关系只负责找门，不替家庭恢复旧主仆结构。",
+  "notes": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+}

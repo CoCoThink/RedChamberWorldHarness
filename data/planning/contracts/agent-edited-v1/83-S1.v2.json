@@ -1,0 +1,743 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch83.json",
+      "sha256": "3143dabccd8387dafecf57133b4eb0b50445ca958a00250d9599993efa1714db"
+    },
+    "seed": {
+      "path": "data/planning/scenes/83-S1.json",
+      "sha256": "f6b825e6e82103480849dda2934417cdbc6763694c7a834709dbd8030d2effdc"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-81-85.json",
+      "sha256": "64a339142412c537b6caf39c03642449db6d69e5da39d1f239037a1a34e05b35"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 83,
+  "chapter_plan_ref": "data/planning/chapters/ch83.json",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 82
+  },
+  "entry_from": "CHAPTER_ENTRY:82",
+  "entry_state": [
+    {
+      "equals": "character.wei_ruolan.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "若兰基线位置为null；没有本场邀请、入圃或到场的注册世界事件。"
+    },
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "章入口82不能提供本场射圃到场快照；社交过程尚需正文落实。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.wei_ruolan.location",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "射圃到场和社交缘由没有世界状态事件；OT83-01只处理佩物发现而非若兰入场。"
+    },
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "射圃交谈完成不自动生成宝玉位置，场地来源与接续仍待独立核对。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "83-S1-F1",
+      "description": "不得用神秘老人识麒麟、宿命召唤或预定婚缘来解释若兰恰好在场。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "268d33800efc8b5121e4c321f2cc509e572f0ce8fb574878e9ed6c70387c7481",
+          "value": {
+            "id": "83-S1",
+            "title": "若兰为什么恰好在场"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                9463,
+                9560
+              ],
+              "lines": [
+                244,
+                246
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "95592d01dcc7ca1d91dcbe30050eac122dbcd90f2c1393052d493d64bcc3de93"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n看圃老仆是好用的小人物；不得再添“神秘老人识麒麟”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9779,
+                9856
+              ],
+              "lines": [
+                256,
+                258
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "16bfbd866384572757d3b84f8a15bcecf2d4b5b06d3a8f5d98eb057e10502d50"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n麒麟是佩物与关系伏线，不写宿命灵物。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                10141,
+                10221
+              ],
+              "lines": [
+                268,
+                270
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0afd7a254f9529d6585e834ab912cde4c229fc4b1a8845c53da83cedc715d417"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n任何“此物后来必主婚姻吉凶”的作者提示。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "83-S1-F2",
+      "description": "不得军事化射圃、补作诗琴，或由在场一次判定若兰婚期、事故或生死答案。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "268d33800efc8b5121e4c321f2cc509e572f0ce8fb574878e9ed6c70387c7481",
+          "value": {
+            "id": "83-S1",
+            "title": "若兰为什么恰好在场"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                8961,
+                9088
+              ],
+              "lines": [
+                232,
+                234
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9f3170f6233f48fd860765ba61edc59268d026ab107b9e4882b22de1275b219a"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR34：卫若兰射圃佩金麒麟、与“白首双星”关联；婚期、事故、生死均O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9560,
+                9636
+              ],
+              "lines": [
+                247,
+                249
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3cde87953b8474a9793724c74117ad412f7b6bae423826e3d45b6eb6a1457fbb"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n射圃已充分，P-Lock；不军事化，不补琴诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9636,
+                9706
+              ],
+              "lines": [
+                250,
+                252
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9485b4d4b1388f990a35ba7a61c5908fe291336b3648197cab0ed665c145e4e8"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \n无A/B诗文接口。湘云此回不作诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                10388,
+                10606
+              ],
+              "lines": [
+                277,
+                280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "27b63f4928441d75752a6c7ae884d576de5c009322ec3e8d8c5e05859c01d4f1"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n射圃社交 → 若兰佩物偶露 → 宝玉回府 → 消息二次传播 → 湘云问旧麒麟 → 探春家书把视线拉开。  \n**风险：**把R34写成确定婚姻/死亡答案。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "83-S1",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 1,
+  "participants": [
+    "baoyu",
+    "wei_ruolan"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "object.OBJ-GOLDEN-QILIN-LARGE.holder",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "麒麟第80回基线是UNOBSERVED且holder为null；不能把后场OT83-01的发现结果倒灌到社交入口。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/15",
+        "ref": "data/world/m3_core.json#/characters/15",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "8f543e3b362a99323a2781ced88d21c169d3da64bb39e6813606809ac0b32a50",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "young_gentry",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "OPEN"
+          },
+          "groups": [
+            "human"
+          ],
+          "id": "wei_ruolan",
+          "name": "卫若兰"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/2",
+        "ref": "data/objects/m4.json#/objects/2",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "93be922ca93898d6acc2da99a0e07914e2615489122c302a28978619f0fa5528",
+        "value": {
+          "baseline": {
+            "holder": null,
+            "location": null,
+            "status": "UNOBSERVED"
+          },
+          "continuity_rules": [
+            "锁卫若兰射圃佩麒麟功能，不补造其此前取得路径"
+          ],
+          "evidence_status": "HARD_FUTURE_APPEARANCE_CURRENT_C_PLACEMENT",
+          "id": "OBJ-GOLDEN-QILIN-LARGE",
+          "identity_status": "DISTINCT_QILIN_OBJECT",
+          "kind": "ornament",
+          "name": "大金麒麟",
+          "source_refs": [
+            "R34",
+            "asset:sha256:30a6ecd37a4f3e846a72ef3cd445ba78db902fa788d45ee7cd3d73d86eb4df32"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "83-S1-R1",
+      "description": "在旧家射圃社交中给若兰来往及宝玉入场各留普通交接动作，须符合S03入场随相熟子弟的空间规则；不新增重要邀约人物，不让宝玉成为射圃主场中心。具体谁引、约期和场地资格继续待核，不从邀约要求倒造历史事件。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "268d33800efc8b5121e4c321f2cc509e572f0ce8fb574878e9ed6c70387c7481",
+          "value": {
+            "id": "83-S1",
+            "title": "若兰为什么恰好在场"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                9088,
+                9242
+              ],
+              "lines": [
+                235,
+                237
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1de270ace294fba609234a47a800adcb54a01cc1f6fec46ac986af44502cfdde"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n射圃规则、横风、找箭、老仆担心箭落菜地、输赢玩笑；金麒麟先只是佩物；消息经二手链到湘云。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9242,
+                9363
+              ],
+              "lines": [
+                238,
+                240
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "a212ceb5a8fd376c1dc844c243b601f4c8c012ac01399560d67787c9a6a7e533"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n若兰“为何自然在场”的社交入口与消息传递可略加一笔，现已基本成立。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9363,
+                9463
+              ],
+              "lines": [
+                241,
+                243
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "072f90fe1fd94d3362e61f85da67d218802623cc3f38fa41bb906cb2fc506cac"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n83-S1社交缘由；83-S2麒麟不立刻神化；83-S3消息经人转述。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9912,
+                10067
+              ],
+              "lines": [
+                262,
+                264
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1c93d5a0da95fa70c424cbccf3eaafb06841f58dbcc12c628425833e10692cfc"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱物：场地、弓箭、茶食属于旧家社交体系，不需要夸豪奢；信息：射圃目击→二手讲述→湘云发问。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                10388,
+                10606
+              ],
+              "lines": [
+                277,
+                280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "27b63f4928441d75752a6c7ae884d576de5c009322ec3e8d8c5e05859c01d4f1"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n射圃社交 → 若兰佩物偶露 → 宝玉回府 → 消息二次传播 → 湘云问旧麒麟 → 探春家书把视线拉开。  \n**风险：**把R34写成确定婚姻/死亡答案。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "83-S1-R2",
+      "description": "宝玉与若兰的接话回到射圃规矩、横风和找箭，宝玉从眼前物或轻问岔开输赢，不发表条理分明的军事、命数或人生论断。茶食与场地是日常旧家供用，不渲染豪奢或军事训练。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "268d33800efc8b5121e4c321f2cc509e572f0ce8fb574878e9ed6c70387c7481",
+          "value": {
+            "id": "83-S1",
+            "title": "若兰为什么恰好在场"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                9088,
+                9242
+              ],
+              "lines": [
+                235,
+                237
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1de270ace294fba609234a47a800adcb54a01cc1f6fec46ac986af44502cfdde"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n射圃规则、横风、找箭、老仆担心箭落菜地、输赢玩笑；金麒麟先只是佩物；消息经二手链到湘云。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9560,
+                9636
+              ],
+              "lines": [
+                247,
+                249
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3cde87953b8474a9793724c74117ad412f7b6bae423826e3d45b6eb6a1457fbb"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n射圃已充分，P-Lock；不军事化，不补琴诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9912,
+                10067
+              ],
+              "lines": [
+                262,
+                264
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1c93d5a0da95fa70c424cbccf3eaafb06841f58dbcc12c628425833e10692cfc"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱物：场地、弓箭、茶食属于旧家社交体系，不需要夸豪奢；信息：射圃目击→二手讲述→湘云发问。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "83-S1-R3",
+      "description": "老仆担心箭落菜地、输赢玩笑与宝玉不射便不输的轻口角承担自然在场感；老仆和马夫未登记，不赋神秘身份。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "268d33800efc8b5121e4c321f2cc509e572f0ce8fb574878e9ed6c70387c7481",
+          "value": {
+            "id": "83-S1",
+            "title": "若兰为什么恰好在场"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                9088,
+                9242
+              ],
+              "lines": [
+                235,
+                237
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1de270ace294fba609234a47a800adcb54a01cc1f6fec46ac986af44502cfdde"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n射圃规则、横风、找箭、老仆担心箭落菜地、输赢玩笑；金麒麟先只是佩物；消息经二手链到湘云。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9463,
+                9560
+              ],
+              "lines": [
+                244,
+                246
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "95592d01dcc7ca1d91dcbe30050eac122dbcd90f2c1393052d493d64bcc3de93"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n看圃老仆是好用的小人物；不得再添“神秘老人识麒麟”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9706,
+                9779
+              ],
+              "lines": [
+                253,
+                255
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "522be8bc8228f221a1d9b52151b0bed1dc0ca26c4da9babe55d25bae4c065553"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n箭落菜地、宝玉“不射便不输”等保护。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9856,
+                9912
+              ],
+              "lines": [
+                259,
+                261
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1c309b92a026f404aa9f555b4e83ca061a2808e03b755f443f59c2a44db1fcfd"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n老仆、马夫、送信人够用。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "83-S1-R4",
+      "description": "为后场佩物偶露预留普通身体活动，而非让本场以麒麟登场压过所有射圃动作；此前取得路径仍不编造。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/2/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/2/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "268d33800efc8b5121e4c321f2cc509e572f0ce8fb574878e9ed6c70387c7481",
+          "value": {
+            "id": "83-S1",
+            "title": "若兰为什么恰好在场"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                8961,
+                9088
+              ],
+              "lines": [
+                232,
+                234
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9f3170f6233f48fd860765ba61edc59268d026ab107b9e4882b22de1275b219a"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR34：卫若兰射圃佩金麒麟、与“白首双星”关联；婚期、事故、生死均O06开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                9779,
+                9856
+              ],
+              "lines": [
+                256,
+                258
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "16bfbd866384572757d3b84f8a15bcecf2d4b5b06d3a8f5d98eb057e10502d50"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n麒麟是佩物与关系伏线，不写宿命灵物。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                10388,
+                10606
+              ],
+              "lines": [
+                277,
+                280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "27b63f4928441d75752a6c7ae884d576de5c009322ec3e8d8c5e05859c01d4f1"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n射圃社交 → 若兰佩物偶露 → 宝玉回府 → 消息二次传播 → 湘云问旧麒麟 → 探春家书把视线拉开。  \n**风险：**把R34写成确定婚姻/死亡答案。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "model_peer_readings_pending: 已由81—85编辑核对实际v1、绑定章卡/种子及世界边界；编辑不计独立读者，模型同侪阅读尚待进行，正文语义未验。",
+    "declared_sequence_only: 依候选列表显式声明前驱；历史场景顺序和与既有正文的精确放置未核验。",
+    "chapter_entry_not_scene_snapshot: 首场chapter-1仅是显式章入口，未覆盖本场所有位置、医学、物态和知情条件。",
+    "unregistered_participants: 看圃老仆、马夫、邀约或传话经手未注册，不创设占位ID。",
+    "event_localization: 第83回没有世界事件登记；OT83-01的佩物发现属于后续83-S2要求，不作为本场入圃事件。",
+    "object_detail_gap: 麒麟注册记录只作本章边界参照，required_objects为空；弓箭、茶食和菜地物件无登记。",
+    "knowledge_registry_gap: 若兰来往缘由及在场信息没有注册事实或本章知识场景，不能把邀约写成已证史实。",
+    "access_and_relay_pending: S03相熟子弟引入、实际目击、回府及二手收讯均须正文逐项定位；注册身份和OT83-01不提供入场/回府/获知事件。"
+  ],
+  "function": "给若兰自然进入射圃旧家社交的简短缘由，把找箭、场地、输赢与人际来往先写实，不以麒麟神秘现身解释相遇。",
+  "notes": "81—85编辑从本场实际v1深拷贝新建v2，status=AGENT_EDITED只表示已作编辑，不表示语义支持、独立阅读、证据或权威；authority_effect=NONE、evidence_effect=NONE。原v1字节不变。本次逐项改动：83-S1-R1：在旧家射圃社交中给若兰来往及宝玉入场各留普通交接动作，须符合S03入场随相熟子弟的空间规则；不新增重要邀约人物，不让宝玉成为射圃主场中心。具体谁引、约期和场地资格继续待核，不从邀约要求倒造历史事件。；83-S1-R2：宝玉与若兰的接话回到射圃规矩、横风和找箭，宝玉从眼前物或轻问岔开输赢，不发表条理分明的军事、命数或人生论断。茶食与场地是日常旧家供用，不渲染豪奢或军事训练。。后场前驱如有只改指同一编辑选集v2，显式顺序仍非核实年代且不继承状态。参与者KNOWN只指已绑定注册主体子集，不证明现场同在或涵盖未注册接口；所有原状态值、UNKNOWN/PENDING、basis、知识绑定、事件关联及对象ID不变。编辑另核S03访问边界、83人物在场矩阵与已绑定宝玉声口约束；不引入新身份，消息不是物权交接或命物解释。模型同侪阅读与正文语义验证仍待进行，不声明任何语义PASS。"
+}
