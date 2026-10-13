@@ -114,7 +114,13 @@ def feedback_report(root: Path, draft_path: str, *, runner: ModelRunner | None =
         results = evaluate_scene_text(contract, text, knowledge_runtime=knowledge,
                                       semantic_reading=reading or {}, entry_state=entry,
                                       candidate_authors=draft["authors"], root=root)
-        checks.extend({**result.to_dict(), "scene": contract["id"], "qualification": "FEEDBACK_ONLY"} for result in results)
+        for result in results:
+            item = result.to_dict()
+            if runner is None and result.evaluator == "scene_semantics":
+                item = {"evaluator": "scene_semantics", "status": "PENDING",
+                        "findings": ["MODEL_SEMANTIC_FEEDBACK_NOT_REQUESTED"],
+                        "details": {"reading_requested": False, "semantic_coverage": False}}
+            checks.append({**item, "scene": contract["id"], "qualification": "FEEDBACK_ONLY"})
     reference = None
     if style_reference:
         reference = reference_profile(root, task.get("exemplar_dataset_ref") or draft_dataset(root, task),
