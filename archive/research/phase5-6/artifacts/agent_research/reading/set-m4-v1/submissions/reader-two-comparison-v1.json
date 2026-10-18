@@ -1,0 +1,146 @@
+{
+  "schema_version": 1,
+  "record_kind": "LOCAL_THREE_SUBJECT_LITERARY_COMPARISON",
+  "record_id": "reader-two-comparison-v1",
+  "frozen": true,
+  "packet": {
+    "path": "artifacts/agent_research/reading/set-m4-v1/public/packet.json",
+    "sha256": "fdd9f2189626e92f78d979cbb73635e165a971d732228f88685d258e40670c87"
+  },
+  "packet_id": "reading-342affaef84411bd86176fca",
+  "reviewer": {
+    "id": "reader:m4-two",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:reading-m4-two",
+    "model": {"label": "gpt-6.1-sol", "verification": "DECLARED_NOT_VERIFIED"},
+    "context_isolation": {"asserted": false, "verification": "NOT_PROVEN"}
+  },
+  "feedback_mode": "FEEDBACK_ONLY",
+  "authority_effect": "NONE",
+  "adoption_release_status": "NOT_ADOPTED_NOT_RELEASED",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "human_certification": false,
+  "provider_certification": false,
+  "completed_scope": "同context本人逆序完整读三组84–91，各组八回；本文件是文学维度比较，不给总赢家，不以连续性PASS等同文学领先。",
+  "reading_order_zero_based_subject_indices": [2, 1, 0],
+  "stage_bindings": [
+    {
+      "stage": 1,
+      "subject_index_zero_based": 2,
+      "subject_id": "read-12bf9f583ccbd9ca3465ba4f",
+      "subject_binding": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-12bf9f583ccbd9ca3465ba4f.txt", "sha256": "536d22dbc9efae09285b3ca9a01ad5a2e958fdd40daee6f9f81f1bebbae3a59c"},
+      "observation_binding": {"path": "artifacts/agent_research/reading/set-m4-v1/submissions/reader-two-subject-three-observations-v1.json", "sha256": "22680bcb74ebc6809e5e3e3fe34f1be26b2a262246178cdf99c7aae8f27feaea"},
+      "full_content_read_range": [1, 859],
+      "chapter_count": 8,
+      "quote_count": 58,
+      "local_verdict": "PASS",
+      "hard_failure_count": 0,
+      "suspicions": 2,
+      "frozen_original_view_preserved": true
+    },
+    {
+      "stage": 2,
+      "subject_index_zero_based": 1,
+      "subject_id": "read-41f4d5700535e40c8254bec7",
+      "subject_binding": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-41f4d5700535e40c8254bec7.txt", "sha256": "a739f57290193fc35d9c3537008f2d3d67a4fea1c12ad75c40921e40b18ed49f"},
+      "observation_binding": {"path": "artifacts/agent_research/reading/set-m4-v1/submissions/reader-two-subject-two-observations-v1.json", "sha256": "774884e69a9fc0035c2dfdd3f8a4da9ffc790680b52f98dd8d40e692a2435c11"},
+      "full_content_read_range": [1, 855],
+      "chapter_count": 8,
+      "quote_count": 85,
+      "local_verdict": "PASS",
+      "hard_failure_count": 0,
+      "suspicions": 2,
+      "frozen_original_view_preserved": true
+    },
+    {
+      "stage": 3,
+      "subject_index_zero_based": 0,
+      "subject_id": "read-0340e7c4723a6dcac2a5b602",
+      "subject_binding": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "sha256": "ccfd694d4ce3a1fc8197e0d428757fbe7faf35697cffbfe3989cd26eaf089c4e"},
+      "observation_binding": {"path": "artifacts/agent_research/reading/set-m4-v1/submissions/reader-two-subject-one-observations-v1.json", "sha256": "18d2e5f567a18568acdabf7ffbd498c864d7c7828700f42dd0c0bd29b9aeaf7f"},
+      "full_content_read_range": [1, 1146],
+      "chapter_count": 8,
+      "quote_count": 66,
+      "local_verdict": "FAIL",
+      "hard_failure_count": 1,
+      "suspicions": 2,
+      "frozen_original_view_preserved": true
+    }
+  ],
+  "evidence_reference_convention": "下列subject0/subject1/subject2均为packet零基索引，不是身份或版本先后。证据id在相应阶段绑定的chapter_observations.evidence中，含精确相对path、line_start/end、quote；这里不挪用一组事实去解释另一组。",
+  "dimensions": [
+    {
+      "dimension": "人物声口与反驳照管者的能力",
+      "subject0": {"evidence_ids": ["84-fruit", "84-chicken", "85-defense", "88-not-all-knowing", "90-human-not-cloth"], "assessment": "机锋最多且常合凤姐、黛玉、麝月位置：果子不懂丧、鸡已办完、人不能同时在两处。照护者可训错、可承认不是神眼。风险是审饭审米、东西长腿、扣错扣子等熟人笑法太频繁，人物逐渐互相会同样的俏皮收束。"},
+      "subject1": {"evidence_ids": ["84-interruption", "85-agency", "86-tomorrow", "88-not-mirror", "90-one-trip"], "assessment": "厨娘让先别审她、黛玉不要站规矩、麝月不领袭人的准确训语、平儿只剩一趟，反驳有情绪后效，不只是说笑后继续照做。人物能指出关心方式本身伤人，这一维度的冲突展开较足。"},
+      "subject2": {"evidence_ids": ["84-poetic", "85-reading", "85-water-humor", "89-wage", "90-hands"], "assessment": "瞧着冷、字看两遍如没看、壶开户头、我家药也在眼前等句有个体位置；但大量准确核对和不可混记的语法覆盖人物，声口分化较受统一审慎语言压窄。"},
+      "dimension_conclusion": "subject1在让人物拒绝正确管理话语上较展开，subject0的机锋密度高而重复风险也高，subject2的程序辨识度强而同语风险高；不是整组总排名。"
+    },
+    {
+      "dimension": "悲伤层次、迟到与日常未竟",
+      "subject0": {"evidence_ids": ["86-delay", "86-grandmother-grief", "86-script-archive", "86-cold-bowl", "87-door-before-marriage"], "assessment": "紫鹃延迟报长辈显示人性弱点，贾母到床前失控，稿夹抱怀与冷药可痛；死亡前较长笑谈与F1路线错位妨碍压力凝聚。旧门外之行发生婚前。"},
+      "subject1": {"evidence_ids": ["86-tomorrow", "86-unwritten", "86-sewing-memory", "86-bowl-circle", "88-wait-too-fast"], "assessment": "明日做什么、帘未缝、手仍拢着药盏圆和宝钗等回话说太快后的难堪，让照顾语言失效的时刻留住。雪雁已回床边同守，宝玉被明告之后仍要温药，不把否认死亡误判成未被通知。"},
+      "subject2": {"evidence_ids": ["84-grief", "86-no-last-word", "86-news-lag", "86-cold-bowl", "87-grief-outside"], "assessment": "母亲在宫门消息外、紫鹃身体劳动、宝玉只得病危旧信、婚后旧门无人应答有分层。药碗终局较多次重申未温未收，有封口过重风险。"},
+      "dimension_conclusion": "三组均有日常继续却对象失去的层次，不只一套哭法；subject1较多靠未竟动作与不正确安慰显痛，subject2较严谨区分知情时差，subject0的贾母在场与照护犹豫另有强度。"
+    },
+    {
+      "dimension": "婚姻知情、意愿表达与身体心理带宽",
+      "subject0": {"evidence_ids": ["87-baochai-informed", "87-baoyu-informed", "87-unfinished-assent", "87-shared-status", "87-limit-on-service"], "assessment": "双方被告知，宝玉我也未完、宝钗先收饭碗，家长权力和顺承不适仍可读；确有成礼共住。婚后多日常玩笑、物位与补袖，少进一步审问自己的婚姻愿望。"},
+      "subject1": {"evidence_ids": ["87-youth", "87-baochai-agency", "87-baoyu-informed", "87-shared-bed", "87-preference", "87-regret"], "assessment": "知情与没有说不成的顺承相分，薛姨妈护年轻女儿，宝钗不只会让人。共卧碰腕、镜中两人、酸笋口味、后悔不能只一句问，身体和心理较展开；没有强称完全自由合意。"},
+      "subject2": {"evidence_ids": ["87-baoyu-assent", "87-baochai-assent", "87-married", "87-room", "87-sleeve"], "assessment": "我愿意/我应下分别明示，成礼共住明确；可核查意愿表达更直接。新婚主要靠挪案、同饭、灯和旧袖口，情欲与犹疑维度偏薄。"},
+      "dimension_conclusion": "明示意愿这一文本指标subject2最直接，关系含蓄与身体心理展开subject1较足；subject0的未完句不应抹成欺瞒或直接自愿。不同指标不相抵为单一赢家。"
+    },
+    {
+      "dimension": "抄没、羁押前夜与外人权益",
+      "subject0": {"evidence_ids": ["89-medicine-allowed", "89-relocation", "89-old-orders-removed", "89-early-account-warning", "91-inquiry-timing", "91-final-departure"], "assessment": "药先看取、老人女眷迁出、厚衣另报，旧单先从架带核再有贾芸预告，正式听问有前置。借院摩擦多经指令与笑语暂解，债主和原住者主体冲突较短。末回五更出门而辰后听问，没有实际羁押。"},
+      "subject1": {"evidence_ids": ["89-name-not-arrest", "89-money-control", "89-pay-not-food", "89-host-voice", "91-comes-back-unknown", "91-departs"], "assessment": "受控现银不是空无，饭不能抵欠薪、贵人也等孩子一锅，原住者与旧仆反抗具体；宝钗调停有平儿不快等后果。五更已经出门，不答回程不等于已经入狱。"},
+      "subject2": {"evidence_ids": ["89-gate", "89-wage", "89-authorized", "91-notice", "91-no-result", "91-final"], "assessment": "门房凉粥、工钱者家药、车脚与借院资源，损失及劳动分配有层次；准迁人与物逐包放行有清楚节点。止于五更前准备，连实际出发都未写，不能报已羁押。"},
+      "dimension_conclusion": "外人不为贾家无条件服务，subject1与subject2的社会阻力较展开，subject0旧单因果前置较清楚。三组都没有展示到场后的羁押/放还，只能评前夜恐惧，不可给予羁押完成证书。"
+    },
+    {
+      "dimension": "赠衣伦理、补缺者和善意后果",
+      "subject0": {"evidence_ids": ["90-request-from-relative", "90-actual-use-prep", "90-cost-pricked-hand", "90-disagreement-remains"], "assessment": "周妈妈替产后病儿媳来求，补好再加剩线；宝玉知道补缺代价却说再来仍给，宝钗说原知道。双方不被论成一方全对，伦理不解决具有力度。"},
+      "subject1": {"evidence_ids": ["90-donation-cost", "90-cloth-stays", "90-no-repossess", "90-cape-use", "90-cloth-payoff"], "assessment": "包布也留病人，后续擦水另找布；宝玉先替宝钗挡没说过的收衣要求、宝钗要回自己需用的披风，劳动者不高兴与帮忙不被接纳都可见。"},
+      "subject2": {"evidence_ids": ["90-scarcity", "90-moral-cost", "90-delay"], "assessment": "衣给出可穿、宝玉受冷、麝月补衣延后、宝钗披风沾泥，善意确有劳动成本；道理表达较直接，感受反弹相对收束。"},
+      "dimension_conclusion": "三组均拒绝把善心当无成本。subject0保留再给的价值分歧，subject1扩展当下不快与物资留用后效，subject2明示资源和延误，允许各有长处而不设总赢家。"
+    },
+    {
+      "dimension": "跨回物件、时间与知情的具体状态",
+      "subject0": {"evidence_ids": ["85-doctor-change", "86-actual-writing", "86-script-archive", "89-thin-speaker", "91-key-usable", "91-key-claimed-object-not"], "assessment": "大夫实际改方，黛玉当日实际试字圈去；薄书由宝钗挑并说因为薄；钥匙在监看下实际开旧柜。玉留木盘，铜钥匙另已领。雪雁死讯接收路线存在F1确定矛盾，故总体局部连续性FAIL。"},
+      "subject1": {"evidence_ids": ["85-complete-at-end", "86-xueyan-back", "86-death-position", "90-cloth-stays", "91-handoff-pending", "91-departs"], "assessment": "题名稿已收齐，普通稿另置，雪雁死亡前回床；包布留病妇；玉样物已记但交回待接办；五更已经出门。未发现确证硬互斥，李纨到场口语仍有低置信疑点。"},
+      "subject2": {"evidence_ids": ["84-log", "85-draft", "86-no-last-word", "91-jade-handoff", "91-jade-unknown", "91-final"], "assessment": "初夜一次饮水一次理被；普通稿临终未落笔；玉连登记送后桌有人接但接者名未知；止前夜准备。未发现确证硬互斥，88回盆交出后似重起是同盆不明的疑点。"},
+      "dimension_conclusion": "FAIL/PASS是可证局部互斥门槛，不是抽象文学分数。三组相似物件有不同状态，不能以题材同名相互补证；原报告不回写为后来偏好。"
+    },
+    {
+      "dimension": "审核纠偏、障碍动作与章节节奏",
+      "subject0": {"evidence_ids": ["84-chicken", "88-key-recovery", "90-human-not-cloth", "91-caution"], "assessment": "较多靠戏谑说审、算账、东西走路，劝吃和管闲事反复；长段笑谈缓和流程感，却易每次先轻巧一笑再迅速恢复日常。"},
+      "subject1": {"evidence_ids": ["84-interruption", "88-wait-too-fast", "88-basin-once", "90-one-trip"], "assessment": "准确核对和湿冷卡顿仍密，但人物不总认同纠正者，情绪反作用让障碍不全是教学。91回扶人与搬衣逐步过长，仍有节拍器化风险。"},
+      "subject2": {"evidence_ids": ["84-log-limit", "85-log", "88-basin-a", "88-basin-b", "90-blanket", "91-notice-limit"], "assessment": "不是A是B、只说所见、不能混记等明示口径最突出，边界清楚也最易将小说人物变成执行核对规则者。微障碍有社会物理理由，但累计密度高。"},
+      "dimension_conclusion": "三组共有重复风险，重复机制不尽相同：subject0偏机锋回环，subject2偏审核自证，subject1虽有反作用仍多流程阻滞。不能因都写盆/药/纸就把具体艺术后果一概判同。"
+    }
+  ],
+  "verdict_summary_packet_order": [
+    {"subject_index_zero_based": 0, "subject_id": "read-0340e7c4723a6dcac2a5b602", "verdict": "FAIL", "basis": "F1雪雁同轮死亡消息接收位置与报信先后互斥；不是UNKNOWN失败，也不是整体文学淘汰。"},
+    {"subject_index_zero_based": 1, "subject_id": "read-41f4d5700535e40c8254bec7", "verdict": "PASS", "basis": "已读范围未发现确证硬互斥；保留两疑点与文学风险，不把阅读完成当质量通过。"},
+    {"subject_index_zero_based": 2, "subject_id": "read-12bf9f583ccbd9ca3465ba4f", "verdict": "PASS", "basis": "已读范围未发现确证硬互斥；保留两疑点与文学风险，不宣称更优或获准发布。"}
+  ],
+  "overall_winner": null,
+  "overall_ranking": "NOT_ASSIGNED",
+  "decision_limits": [
+    "各维度可以并存、平手或取舍，不将一处连续性FAIL换算成其余所有维度最低。",
+    "PASS仅局部连续性未证出硬冲突，非可靠性、人类资格、提供商或放行认证。",
+    "没有外部旧书义务、作者身份、版本谱系或读者映射推断。",
+    "三组都未展示实际羁押后的过程，不能把未写当FAIL或凭训练补全。"
+  ],
+  "memory_exposure_limitations": {
+    "task_not_permission_isolation": true,
+    "same_context_carryover": "阅读逆序2→1→0，前阶段记忆不可清除；报告如实留存，三阶段原始观点未回写。后组更易察觉共同模板，可能受顺序和熟悉效应影响，不声称统计独立或无先验盲测。",
+    "passive_exposure": "自动git状态/提交标题、环境模型工具与其他agent存在、packet三匿名id与coordinator字段均有被动暴露；未访问对应禁止资料。续发指令只限定任务和文件，无他人意见引导。",
+    "model_training_familiarity": "UNKNOWN",
+    "human_or_provider_verification": false,
+    "delegation": "NONE",
+    "repository_code_tests_registration": "NOT_RUN"
+  },
+  "validation_plan": "使用python -I标准库核三观察文件字节哈希与本比较绑定一致、证据id可解、packet/subject绑定一致、opinion严格schema结构及sample_checks空数组；不运行repo代码/测试/登记/导入，不改前两阶段文件。"
+}

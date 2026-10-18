@@ -1,0 +1,182 @@
+{
+  "schema_version": 1,
+  "kind": "SESSION_AUTHORED_RESEARCH_REVISION_DISCLOSURE",
+  "chapter": 92,
+  "revision": "v1",
+  "status": "FROZEN_LENGTH_FLOORS_MET_RESEARCH_CANDIDATE",
+  "frozen": true,
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "adoption": "NOT_ADOPTED",
+  "model_declaration": {
+    "environment_declared_model": "gpt-6.1-sol",
+    "qualification": "Invocation environment declaration only; not authenticated provider execution proof, model receipt or billing evidence.",
+    "same_author_context_as_ch91": true,
+    "new_author_session_started": false,
+    "delegated_agents": 0,
+    "provider_request_executed_by_author": false,
+    "prepared_budget_not_actual_usage": true
+  },
+  "bindings": {
+    "request": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch92.json",
+      "file_sha256": "f342b2b43fc1ce74dce9583870bcf7096a75ba670c9fc84b212670cad7d79f2b",
+      "declared_request_sha256": "db6a324d3c390c4bcf753f41a3460ff395c373babd5c019994bd3025bdc87e98",
+      "declared_prompt_sha256": "c4bfa9596ded9e236a327334a81ae380a7e38c2d78698125045344847c183e6e",
+      "prepared_previous_path": null,
+      "prepared_previous_ending": null,
+      "old_request_modified": false
+    },
+    "parent": {
+      "path": "data/writing/drafts/ch92/c04bd4b15094981154c8b69263c1a250a1babe0daba1dfb829859fb4527f9bc5.json",
+      "sha256": "c04bd4b15094981154c8b69263c1a250a1babe0daba1dfb829859fb4527f9bc5",
+      "actual_use": "Raw wrapper hash checked, wrapper not read as text. Original prose read completely from request.task.original (1871 decoded characters)."
+    },
+    "original_candidate": {
+      "path": "artifacts/candidates/ch92/673dd2ca15de449d73aa7f34c1b8f3b5f55bd0e5e97acee003f11722b47cc067.txt",
+      "declared_sha256": "673dd2ca15de449d73aa7f34c1b8f3b5f55bd0e5e97acee003f11722b47cc067",
+      "separate_file_opened": false,
+      "actual_consumption": "Full task.original, same text structurally verified against feedback.semantic_requests[0].text."
+    },
+    "candidate": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt",
+      "sha256": "2472cc0b1a0f0a48eef056e31266c12a52b89e43cf2a9289f1fe14426f3dbc37",
+      "title": "第九十二回 贾宝玉羁中候问讯 小红寻证茜雪送衣"
+    },
+    "notes": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch92-v1.txt",
+      "sha256": "6149032daff2e6c3a80fb413f181c0e4a405e3131bf40322714dd9999b0a605a",
+      "consumption": "Full physical file lines1–15 and complete task.editorial_notes."
+    },
+    "editor_report": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+      "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+      "consumption": "All chapter92 fields at chapters[1], separated into non-beat/non-quote fields, first15 beat findings plus all quotations, and remaining beat findings. Chapters93–100 not read."
+    },
+    "package": {
+      "path": "data/writing/packages/ch92-agent-research-v3.json",
+      "declared_sha256": "f81b7c647a846996a6eca415f25c780011c78a9532d8f2bb8cff209a39a2ffb7",
+      "consumption": "Complete embedded writing_task.package, not separate raw package-file reading."
+    }
+  },
+  "extra_context_not_bound_predecessor": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt",
+    "sha256": "751bca67b2e72bd13883a8ee2331baaf60878967b3c4f276b277e7cc2b11c602",
+    "status": "SESSION_AUTHORED_EXTRA_CONTEXT_NOT_SELECTED_BY_PREPARED_REQUEST",
+    "actual_context": "This same author had just composed and frozen the entire long ch91-v1, ending at fifth-watch departure. Its prose, household preparations and direct authorship context were already available before writing92. No clean-context or independent-author claim is made.",
+    "binding_limit": "The prepared92 request has previous_path=null and previous_ending=null. This disclosure exposes extra context without retroactively binding it, changing the old request, claiming harness import or promoting it to stable authority.",
+    "freeze_preserved": true,
+    "reader_feedback_limit": "Coordinator reported ch91 scarf-tuck/knot and second-cotton-coat recognition-chain issues and instructed no edits. Those reports/repair notes were not opened by this author. ch91-v1 and its disclosure remain untouched."
+  },
+  "length": {
+    "method": "Decoded Unicode codepoints, not bytes/tokens. Body excludes the first title line and following blank delimiter. Nonwhitespace counts characters for which str.isspace is false. Han counts U+3400–U+4DBF, U+4E00–U+9FFF, U+20000–U+323AF; no supplementary characters occur in authored prose.",
+    "all_characters": 10162,
+    "body_characters": 10137,
+    "all_characters_no_whitespace": 10030,
+    "body_characters_no_whitespace": 10009,
+    "all_han_characters": 8583,
+    "body_han_characters": 8562,
+    "utf8_bytes": 30222,
+    "requested_total_range": [10000, 11000],
+    "minimum_body_han": 7000,
+    "minimum_body_no_whitespace": 8126,
+    "total_range_met": true,
+    "both_body_floors_met": true,
+    "not_literary_acceptance": true
+  },
+  "actual_reading": {
+    "method": "Large JSON read through named fields using read-only isolated Python (-I), plus dedicated Read for notes. Standard-library imports only for parsing, equality, measurements and hashing; no repository-code import, adoption/import workflow, API call or script-generated prose. Novel directly composed with Write/Edit in staged natural paragraphs.",
+    "complete_content_consumed": [
+      "request.system in full; task.original in full; task.editorial_notes in full",
+      "task.feedback all metadata/inputs/checks/semantic_runs and semantic_requests[0]: full prompt, authors, contract and guards, original text via equality-verified task.original, all semantic entry knowledge/values/origins. Oversized combined outputs were recovered through later bounded calls",
+      "writing_task.package and complete chapter_plan, all18 card fields, nine source_records, protections and unresolved entries",
+      "All six selected agent_contracts: every required/forbidden description, all non-card recursive grounding records, references, entry/pre/exit states and unresolved limits. Repeated card-grounding texts consumed in full via chapter_plan and S1; later lists identify their already-read card numbers rather than reprinting duplicated citation metadata",
+      "Agent contracts routing/bindings and remaining metadata read in separate calls; repeated notes/kind/schema/revision/status/participant status/authority/evidence verified equal to fully read S1 values",
+      "writing_task.plan chapter plan and six contract values verified identical to corresponding consumed values; full plan_constraints_v1 read separately",
+      "All six selected sources.record objects including every actual excerpt and source limitation; corresponding verification_report.raw_excerpt values read for each; summary supplied verification status/findings read",
+      "All five supplied exemplars including their actual excerpt text; excerpts are not whole source chapters",
+      "writing_task.scenes[0].contract in full; its entry verified identical to fully consumed feedback semantic entry",
+      "writing_task guidance, input_readiness, operation_scope, target_characters, exemplar_dataset_ref and null previous_ending"
+    ],
+    "retained_from_actual_ch91_context": [
+      "writing_task.threads structurally verified identical to91: full header/rules/all27 recursive hints already actually read during91",
+      "writing_task.world structurally verified identical to91; actual consumption remains partial: full baseline, epistemic_rule, institutions, relations; relevant eleven actors and events86–93; body/presence/resource entries90–93, all economy stages, all locations, chapter92 knowledge rules and all longlines. Contract-specific Xiaohong/Qianxue references consumed during92"
+    ],
+    "not_read_or_not_fully_consumed": [
+      "Full top-level request.inputs manifest and entire duplicated request.messages[0].content serialization; underlying actual task fields used instead",
+      "Full sources.verification wrappers including extraction rebuild/toolchain/capture receipts, and all underlying PDFs/HTML/source carrier texts. Selected records and actual excerpts only; hash/status never treated as carrier-wide consumption",
+      "Remaining unrelated world records and m3_core.sources; no full-book or full front80 corpus rereading",
+      "Raw parent wrapper, separate old candidate file, author-run/provider receipts, raw package file, source packet full text, stable release and code",
+      "Separate original seed files and original card source files beyond embedded records; repeated grounding citation wrappers not claimed as newly independently read",
+      "Other generated predecessor candidates;92 previous_path remains null. Only separately disclosed same-session long91 context was available",
+      "ch91 reader report/repair-notes files and chapter93 new prose",
+      "New sources, H05 material or new historical research; none used"
+    ],
+    "truncation": [
+      "Two initial combined multi-contract dumps exceeded output limits and returned persisted previews. They were not counted as complete; subsequent per-contract bounded reads recovered all required/forbidden descriptions, recursive non-card grounding, references and unknowns",
+      "An initial combined feedback/semantic-entry dump exceeded output limits. All checks were reread in one bounded call and entry values/knowledge and origins in separate bounded calls",
+      "Other successful bounded outputs provided the consumed content; failed or truncated portions were not silently counted as full reading"
+    ],
+    "hash_is_not_consumption_proof": true,
+    "full_input_closure_reading_claimed": false,
+    "independent_historical_verification_claimed": false
+  },
+  "chapter_boundary": {
+    "selected_choice": "92 ends after narrowed questioning and communicated permission to return, but BEFORE actual property receipt, actual gate release or arrival home.93 must enact the single actual release/remaining receipt sequence, not a second release.",
+    "last_actual_position": "Baoyu remains inside, original public bowl still with him; guard explicitly has not received completed gate/receipt handling. Household hears only permission pending remaining handling, not that he has emerged.",
+    "limited_reason_for_no_further_retention": "Questioning separates own observation/handling from hearsay and unremembered matters. Remaining handlers/items are to be separately checked; permission is communicated without naming unknown law, offense, signer or all-case outcome. Further summons remains possible.",
+    "author_rhyme": {
+      "preserved_verbatim": "门里十日，只知饭冷灯昏；门外一程，才觉人间路窄。",
+      "identity": "Single existing author-level 正是 closure, not Baoyu’s insight, dialogue or new character poem",
+      "placement": "Retained at92 end as author-level cross-boundary anticipatory closure, following explicit statement that Baoyu has not crossed the prison gate. Food aroma/narrow household gate/narrow lane shown outside through waiting household/runners, not falsely attributed to Baoyu already walking home. Literal inside-to-outside walking awaits93; not claimed that all originally planned post-release scenery is enacted here.",
+      "duration": "十日 retained only in protected rhyme; actual detention duration remains unspecified, not fixed at ten days"
+    },
+    "world_events_unchanged": "No relocation/splitting/execution of W93 composite event; scene-level placement still pending and no runtime state altered."
+  },
+  "revision_boundaries": {
+    "enacted_groups": [
+      "Old-list call, cold-tea waiting, interrupted limited questioning and actual retention despite expected home meal",
+      "First-night cannot-change-bowl learning, mud/shoes, contested dry sleeping space, spilt food consequence, public felt, cold meals, name response and broken sleep",
+      "Delayed messenger relay to Baochai then Sheyue; Xiaohong rejected question, changed bounded question, obtained delivery condition and separately relayed rules to Baochai/Qianxue",
+      "Qianxue unpicks abrasive sock seam, re-stitches and prepares at borrowed courtyard; runner carries; outer inspection, waiting, distinct inner transfer and Baoyu actual receipt/trying socks",
+      "Further ordinary bodily waiting, later questioning narrowing without inventing memory, permission pending release/receipt and household lane awaiting only"
+    ],
+    "retained_speech": ["毡是公家的，谢我也没用", "写相识，不写旧日"],
+    "unknowns_preserved": [
+      "Exact offense, statutory ground, judicial identity, signature form, questioning particulars beyond bounded story actions, fee amounts, shift counts and detention duration",
+      "Unregistered clerk/guards/handlers remain occupational descriptions without entity IDs",
+      "Complete case and official final judgment unavailable to household/helpers and not supplied through delivery",
+      "Knowledge events and scene entry/exit/custody facts are not upgraded by prose",
+      "Actual release/receipt and93 scene correspondence remain unexecuted here",
+      "Snow-found object identity remains OPEN and does not drive detention/release"
+    ],
+    "functional_separation": "Xiaohong asks/relays permissible delivery route; Qianxue tends warmth and seam; Jia Yun carries/runs only; Baochai receives finite household news; guards/clerks retain distinct duties. No rescue team, bribe, patron, miracle, torture, automatic male kin liability or Qiaojie/Liulaolao prison meeting.",
+    "no_additional_poem": true,
+    "no_new_cultural_exhibit": true
+  },
+  "mechanical_observations": {
+    "body_paragraph_count": 64,
+    "exact_duplicate_body_paragraphs": 0,
+    "protected_rhyme_occurrences": 1,
+    "opening_and_closing_double_quote_counts": [89, 89],
+    "script_marker_hits": [],
+    "scope": "Narrow mechanical observations, not semantic/historical/literary PASS. No application, repository lint or semantic evaluator run."
+  },
+  "write_scope": {
+    "only_new_paths_for92": [
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt",
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1-disclosure.json"
+    ],
+    "old_files_modified": false,
+    "ch91_frozen_hash_verified_unchanged": true,
+    "delegation": false,
+    "commit_or_push": false,
+    "import_or_adoption": false,
+    "freeze_on_handback": true
+  }
+}

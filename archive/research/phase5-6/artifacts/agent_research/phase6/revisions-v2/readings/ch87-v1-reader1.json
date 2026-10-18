@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT",
+  "mode": "FEEDBACK_ONLY",
+  "chapter": 87,
+  "revision": "v1",
+  "reader": "reader1",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "qualification": "RESEARCH_ONLY",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "literary_acceptance": "NOT_GRANTED",
+  "automatic_adopt": false,
+  "adoption": "NOT_REQUESTED_NOT_PERFORMED",
+  "review_type": "ACTUAL_FULL_TEXT_LITERARY_READING_NOT_LINT",
+  "candidate": {
+    "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt",
+    "sha256": "86f74726ea7d3819dbc7251350d6ac46f22c14d9d3cff6751940e628edb3e401",
+    "utf8_bytes": 28684,
+    "unicode_characters": 9632,
+    "body_han_characters": 8138,
+    "line_count": 105,
+    "measurement_scope": "UTF-8原字节及Unicode码点；汉字排除标题，只计U+4E00—U+9FFF；不把数量当文学PASS。"
+  },
+  "actual_reading": {
+    "complete_candidate_read": true,
+    "method": "Read三段连续阅读全部可见正文，以只读python -I核对分段覆盖和字节哈希；不是检索命中、lint、作者自述替代实读。",
+    "segments": [
+      {"line_start": 1, "line_end": 36, "utf8_bytes": 9796, "unicode_characters": 3290, "truncated": false},
+      {"line_start": 37, "line_end": 72, "utf8_bytes": 10371, "unicode_characters": 3481, "truncated": false},
+      {"line_start": 73, "line_end": 105, "utf8_bytes": 8517, "unicode_characters": 2861, "truncated": false}
+    ],
+    "coverage": "1—105行，首尾完整，无缺口；数月缓冲、多次内宅小谈、各方得知、针线厨房筹备、成婚与新婚夜、次日腾挪、园外不进去、返回同食、夜间翻书收针线全读。",
+    "first_line_exact": "第八十七回 贾宝玉成婚谐金玉　薛宝钗随分理新家",
+    "last_sentence_exact": "书页从宝玉指下翻过去，针线笸箩里剪子轻轻一碰，随后是布带叠起、篮盖合拢的窸窣声。",
+    "disclosure": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1-disclosure.json",
+      "sha256": "a27b8d35b283475f611c882ccf330942f333e9f9debc4e090d39064ee12929e2",
+      "coverage": "全部170行；作者86上下文复用、阅读范围、制度未知、无旧纸身份升级及冻结等自述均读，不将其当正文已实现的证据。"
+    },
+    "editorial_notes": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editor-feedback/notes-ch87-v1.txt",
+      "sha256": "e4dbd7853b18dad9adce1a440f5ab109ec47e2dd161862f1fa61cb9551b40de4",
+      "coverage": "全部1—14行；数月、贾母许可、袭麝、匿名旧纸、旧帖棋具及整段园外返回重新核实，不继承短稿FAIL。"
+    },
+    "selected_contract_comparison": {
+      "container_path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch87.json",
+      "container_sha256": "445d53efb84088a79d5335a538bc7472bd9642a1366e17d91436ec67d61c008c",
+      "fully_read_substantive_fields": [
+        "task.writing_task.agent_contracts[0..4]：87-S1至87-S5.v2所有required_beats/forbidden_beats、function、notes、participants、required_objects、entry/preconditions/exit_state、unresolved；去掉重复grounding/source_records/references/bindings/basis/citations/provenance/source_bindings",
+        "task.writing_task.chapter_plan.card_fields全部18项number/name/text与protections指针",
+        "task.writing_task.package全部（含冻结选定合同路径和来源清单）",
+        "task.writing_task.plan['data/project/plan_constraints_v1.json']全部",
+        "task.writing_task.sources[2..5].record的id/text/notes及B03 tier，另看keys；婚姻主婚、居丧嫁娶、妃嫔丧礼、落叶寒烟四项摘录实质"
+      ],
+      "required_beat_count": 16,
+      "forbidden_beat_count": 15,
+      "standalone_contract_files_independently_read": false,
+      "source_originals_independently_read": false,
+      "qualification": "选定request内实质字段比较，不是所有bindings/原文件逐一实读，不是史书全文或礼制可行性的独立验证。"
+    },
+    "p_lock": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/implementation_alignment/m6.json",
+      "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1",
+      "pointer": "/chapter_protections/6",
+      "coverage": "仅本章完整保护对象：黛亡后数月、书架镜奁争地、旧素笺不动、婚礼不铺张、针线茶水；不盛大排场、不让长辈同声、不解释旧纸过满。"
+    },
+    "context_and_limits": {
+      "actual_chapters_fully_read_in_this_assignment": [82, 87],
+      "other_chapter_prose_read": false,
+      "other_exposure": "82正文及其disclosure/notes/所选合同同次完整读过；为字段口径曾读phase6/readings/ch86-v1-reader1.json第1—90行，只是他人的阅读记录与结论，不是86全文。不能因此声明实际读过86临终场或全书。",
+      "not_a_blind_comparison": true,
+      "whole_book_read": false,
+      "not_read": ["86实际正文和其他相邻候选全文", "phase5模板", "原2016字短稿全文/父登记正文", "所有world/threads原文件、完整request和绑定资产", "史书原书、影印与VW2-05底本", "全文v3十章编辑报告"],
+      "failed_or_truncated_reads_not_counted": "最初大request整文件Read超限失败后改窄字段分组；一次来源/保护组合输出36.4KB被截断，其完整来源输出不计已读，随后sources[2..5]的id/text/notes/tier另窄提取全部实读。两章保护对象在未截断预览内完整可见。正文、disclosure和notes全部未截断。"
+    }
+  },
+  "overall_assessment": {
+    "verdict": "REVISE_RECOMMENDED_NOT_ADOPTED",
+    "confirmed_contradiction_count": 0,
+    "summary": "数月缓冲与仍在执行的元春丧规分开，贾母亲口认可却不作万能豁免；多次婚议、王薛组织、凤姐病中有限参与、袭麝劳动及缩礼真婚都有可见落点。潇湘馆外‘不进去’与B03原字齐全，匿名旧纸未被认作遗稿，回到夫妻普通饭和针线声。最好的不是‘没有否定宝钗’的宣言，而是新婚夜让被、酸笋口味、扶住热汤这些双方都真实存在的动作。主要未决在丧期婚期制度可行程序；主要风格风险在复核式对白、双方知情回叙转场、过密小物腾挪和末段格言。未发现足以确立事实FAIL的物量、知情或时间硬矛盾。",
+    "length_is_literary_pass": false,
+    "lint_is_literary_pass": false,
+    "unknown_is_automatic_fail": false,
+    "scope_of_positive_results": "仅这份文本对当前写作要求的可见履行；不是人审、史实认证、原稿恢复、语义回放PASS或文学ADOPT。"
+  },
+  "evidence_quotes": [
+    {"id": "87-Q01", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 3, "line_end": 3, "quote": "自黛玉去后，又过了几个月。", "use": "86死亡节点后另有数月缓冲；非病前数月或即日婚。未实读86正文，不能验其精确接口。"},
+    {"id": "87-Q02", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 3, "line_end": 3, "quote": "元春的丧事早过了当初奔走传唤的忙乱，服用、往来仍各循着丧中的常例。", "use": "急骤转常例不是丧制解除。"},
+    {"id": "87-Q03", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 7, "line_end": 7, "quote": "贾母道：“宝玉也不是小孩子了。我看着他们长大，宝丫头的为人，我心里知道。你们若商量到一处，我是愿意的。”", "use": "贾母本人明确认可，不再只有婆子代述。"},
+    {"id": "87-Q04", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 9, "line_end": 9, "quote": "该守的照旧守着。我的话是我愿意，并没叫你们把什么都越过去。你先同老爷说，再同姨太太慢慢商量。", "use": "认可/主婚与礼制办理区分；同时有防越界式对白风险。"},
+    {"id": "87-Q05", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 13, "line_end": 13, "quote": "这一次并没有谈出日子。隔了些时候，王夫人又到薛姨妈处，屋内只有两人，茶添过一回，才说到成婚以后住的地方。", "use": "多次小谈及留下实际筹备问题，不是一会定案。"},
+    {"id": "87-Q06", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 15, "line_end": 15, "quote": "薛姨妈却没有跟着笑，低头将茶托旋了半转，道：“明白也是个年轻孩子。”", "use": "薛姨妈不把宝钗只当接家务的人；与王夫人关注有别。"},
+    {"id": "87-Q07", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 21, "line_end": 21, "quote": "王夫人道：“那倒不是用不起，只是这些时的丧务、药钱，各处都有，不能一头又搭起来。”", "use": "连续开支压缩，不宣告查抄后赤贫。"},
+    {"id": "87-Q08", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 21, "line_end": 21, "quote": "她说着又要坐高些，手撑在褥上，眉心忽然蹙住，底下的话便断了。", "use": "凤姐病中承接能力有动作边界。"},
+    {"id": "87-Q09", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 25, "line_end": 25, "quote": "底下人知道婚事，已经是针线房来取尺寸的时候。", "use": "内宅先议、仆役后知；同后文双方告知段存在回叙标志不足风险。"},
+    {"id": "87-Q10", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 29, "line_end": 29, "quote": "宝钗抬眼望她：“母亲，我也不是只会让人的。”", "use": "宝钗有自尊，不只顺应；略直白的自我申明另作风格判断。"},
+    {"id": "87-Q11", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 31, "line_end": 31, "quote": "宝玉看着窗下那张椅子，问：“是宝姐姐？”袭人道：“是。姨太太那里也商量了。”", "use": "宝玉事先知新娘身份，不是掉包或蒙骗。"},
+    {"id": "87-Q12", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 37, "line_end": 37, "quote": "针线房拿到的料，有从府里库中取的，也有薛家送来的，头一遭送样，裁缝将旧尺寸摊在几上，袭人隔着帘子回话，说二爷已拣定了一件，要照着改。", "use": "来源、经手、衣样链，不需无穷物资表。"},
+    {"id": "87-Q13", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 45, "line_end": 45, "quote": "日子在一回回往来之后方才定下。成婚那日，没有搭起接连几院的彩棚，原拟的戏也未办，来往只留必要的亲眷。", "use": "相对定日与缩礼实景，没有法定月份数或确定日历。"},
+    {"id": "87-Q14", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 49, "line_end": 49, "quote": "礼务的人引着行礼，宝玉听得分明，知道对面是宝钗。贾母受了他们的礼，眼睛湿了一阵，叫两人起身，不再留着众人说长话。", "use": "确实婚礼及贾母在场，不是假婚；礼务无实名制度链。"},
+    {"id": "87-Q15", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 57, "line_end": 57, "quote": "宝玉起身替她将窗闩扣好，回来时站在床边，等她先躺下。宝钗往里面让些，给他留出地方。", "use": "新婚共处真实，不靠作者声称夫妇替代。"},
+    {"id": "87-Q16", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 59, "line_end": 59, "quote": "莺儿捧着妆奁，要放窗下，麝月却已将宝玉的书案擦净，等着搬回原位。两个人各指着同一个地方，便都看袭人。", "use": "共享旧房真的争位置，不另造豪华无痕婚房。"},
+    {"id": "87-Q17", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 61, "line_end": 61, "quote": "宝钗看了看那几张素笺，只叫莺儿先将另一边的帘绳挽住，没有问上面是谁的字。", "use": "纸作者未知，宝钗不追问，不建立G01/A01身份链。"},
+    {"id": "87-Q18", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 65, "line_end": 65, "quote": "靠墙的木架里还塞着几页旧帖，一只棋罐斜靠在旁边，另一只早缺了，几颗散子夹在架缝。", "use": "旧帖及不全棋具一笔；非新棋艺表演。"},
+    {"id": "87-Q19", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 73, "line_end": 73, "quote": "宝玉出了院门，脚下虽走，并没选定要往谁那里去。", "use": "无目的走园，不是预先去潇湘馆检索遗物。"},
+    {"id": "87-Q20", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 75, "line_end": 75, "quote": "潇湘馆外有个看屋的婆子，正在将路旁积着的竹叶归拢。", "use": "馆外看屋婆子实体场面，非室内遗物搜寻。"},
+    {"id": "87-Q21", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 77, "line_end": 77, "quote": "“不进去。”宝玉说。", "use": "受保护原字‘不进去’完整。"},
+    {"id": "87-Q22", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 79, "line_end": 79, "quote": "风穿过竹丛，落叶萧萧，寒烟漠漠。", "use": "B03‘落叶萧萧，寒烟漠漠’原字保留；不由此证明原稿第87回。"},
+    {"id": "87-Q23", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 81, "line_end": 81, "quote": "他看着婆子将那一小堆竹叶都扫进筐，筐提起时，下面还压着两片，她又放下，拿扫帚拨进去。", "use": "扫叶入筐落实，与C01仅作章法接口，不冒充直接出处。"},
+    {"id": "87-Q24", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 85, "line_end": 85, "quote": "宝钗把靠外的凳子拉近一点，说：“坐罢，汤还热。”", "use": "83返回后接普通共餐，宝钗并非用旧伤取消的人。"},
+    {"id": "87-Q25", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 87, "line_end": 87, "quote": "这是成婚之后，两个人在自己房里同吃的第一顿普通饭。", "use": "第一餐限定自己房里普通饭，不含婚宴及次日请安外间饮食；也显作者卡点标识。"},
+    {"id": "87-Q26", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 89, "line_end": 89, "quote": "宝玉看着她，似觉这话新鲜，问：“你也有不爱吃的？”宝钗道：“难道样样都爱么？”", "use": "共食中宝钗有自己的口味，比替她申明人格更有关系分量。"},
+    {"id": "87-Q27", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 101, "line_end": 101, "quote": "“饭摆在这里，我便同你吃；你的书搁在这里，我也看见了。别只拿一句话问我。”", "use": "对‘后悔’的拒绝被单问裁定，同时有解释全回主题的危险。"},
+    {"id": "87-Q28", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 105, "line_end": 105, "quote": "书页从宝玉指下翻过去，针线笸箩里剪子轻轻一碰，随后是布带叠起、篮盖合拢的窸窣声。", "use": "终句为翻书/针线声，无新悼诗或作者格言收尾。"}
+  ],
+  "selected_contract_assessments": [
+    {"contract": "87-S1.v2", "required": [
+      {"ordinal": 1, "assessment": "VISIBLE_TEXT_SATISFIED_LEGAL_DETAILS_UNRESOLVED", "lines": [3, 25], "details": "黛亡后另几个月与元春丧事急骤转常例分别交代；5—11贾母处、13—15王薛、17贾政、19—23凤姐、25再几回，婚议不是一次宣布；不等于全部丧制解除。"},
+      {"ordinal": 2, "assessment": "VISIBLE_TEXT_SATISFIED_WITH_RECOUNTING_RISK", "lines": [5, 35], "details": "内宅先议，25仆役到取尺寸才知，31袭人再告宝玉；不是全员会议。27‘宝钗先’与25概述后再回叙的时间锚略含糊，不能把叙述先后直接认作知情矛盾。"},
+      {"ordinal": 3, "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [7, 45], "details": "贾母明确愿意，王夫人管家内、薛姨妈管女儿衣被，凤姐给有限经手方案，连到库存与连续开销。"}
+    ], "forbidden": [
+      {"ordinal": 1, "assessment": "NO_VIOLATION_OBSERVED_PROCEDURE_OPEN", "details": "无黛亡即婚，亦无元妃丧期一纸全免；但礼制可行程序仍是未证，不据此授历史PASS。"},
+      {"ordinal": 2, "assessment": "NO_VIOLATION_OBSERVED", "details": "宝玉31已知宝姐姐，49知对面宝钗，无掉包骗婚或大闹。"},
+      {"ordinal": 3, "assessment": "NO_VIOLATION_OBSERVED", "details": "无新增回前/回末/作者总结诗，105依生活声音结束。"}
+    ]},
+    {"contract": "87-S2.v2", "required": [
+      {"ordinal": 1, "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [7, 23], "details": "贾母名义认可、王夫人实际承接、薛姨妈护女与住处、凤姐病中划掉经手和让平儿接话，关注未互换。"},
+      {"ordinal": 2, "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [9, 25], "details": "首谈留下向老爷问礼与王薛续议，次谈留下丈量腾屋，17留下问妥回老太太，凤姐处留下针线厨房分工；无四套确定内心独白。"},
+      {"ordinal": 3, "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [19, 45], "details": "丧期禁闹与药/丧务持续支出并行；有库料、有薛家添送，不是全府赤贫。"},
+      {"ordinal": 4, "assessment": "VISIBLE_TEXT_SATISFIED_WITH_HISTORICAL_LIMIT", "lines": [21, 45], "details": "明说不是用不起；43丧中不宜闹落实不挂满廊下，45减棚戏席面；身体、来源和主持有动作。规则细目仍不能由自述问过而证明。"}
+    ], "forbidden": [
+      {"ordinal": 1, "assessment": "NO_VIOLATION_OBSERVED", "details": "未由四人统一裁判钗黛；薛姨妈‘明白也是年轻孩子’与王夫人想分家务形成真实差异。"},
+      {"ordinal": 2, "assessment": "NO_VIOLATION_OBSERVED", "details": "凤姐没退场，也没因贾母一句愿意取消资源及礼制问题。"},
+      {"ordinal": 3, "assessment": "NO_VIOLATION_OBSERVED", "details": "无新增诗，生活动作收束。"}
+    ]},
+    {"contract": "87-S3.v2", "required": [
+      {"ordinal": 1, "assessment": "VISIBLE_TEXT_SATISFIED_RITUAL_VALIDITY_UNVERIFIED", "lines": [37, 57], "details": "衣饰素净、席面减数、棚戏撤、亲眷少；王薛操办、贾母受礼；行礼后新房共处及同床让被，真夫妇不是空名。精确丧规可行礼路未给，不能宣称合法已验。"},
+      {"ordinal": 2, "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [21, 49], "details": "37府库/薛家料、裁旧衣样；41薛家被面送收边；45麝月认缝口接床被、47衣裳上身；39厨房核席留碗到45按改数送饭。未挪82箱笼或89铺盖组作证明。"},
+      {"ordinal": 3, "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [25, 49], "details": "媒/礼务只回话引礼，裁缝/针线房/厨房露经手；袭人麝月各跑差、理襟找带，没有婚俗百科。"}
+    ], "forbidden": [
+      {"ordinal": 1, "assessment": "NO_VIOLATION_OBSERVED", "details": "没有骗婚掉包、大闹、黛亡即时许可。"},
+      {"ordinal": 2, "assessment": "NO_VIOLATION_OBSERVED", "details": "旧房腾挪、少席不新豪房盛宴，无仙人解前缘。"},
+      {"ordinal": 3, "assessment": "NO_VIOLATION_OBSERVED", "details": "未加诗性总结替代生活声音。"}
+    ]},
+    {"contract": "87-S4.v2", "required": [
+      {"ordinal": 1, "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [59, 71], "details": "书案妆奁同争窗下导致柜门打不开，改斜放镜台；旧袍、新衣、针线和新被归位；旧房仍有旧生活，不清旧纸给新妻腾空。"},
+      {"ordinal": 2, "assessment": "VISIBLE_TEXT_SATISFIED_ANONYMITY_PRESERVED", "lines": [61, 65], "details": "素笺几张不读内容不问谁字，63仍放原处，95镇纸没动；65旧帖及缺一罐棋具只一笔，绝无G01/A01/续庄子身份确证或表演。"},
+      {"ordinal": 3, "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [59, 71], "details": "袭麝实际腾放衣物，宝玉迟疑、宝钗不追问与妆奁让暗处共存，无房间钗黛审判台。"}
+    ], "forbidden": [
+      {"ordinal": 1, "assessment": "NO_VIOLATION_OBSERVED", "details": "纸未清、馆未进、无翻遗物或发现续庄子。"},
+      {"ordinal": 2, "assessment": "NO_VIOLATION_OBSERVED", "details": "匿名未消除；棋具短写不扩成新文化节目。"},
+      {"ordinal": 3, "assessment": "NO_VIOLATION_OBSERVED", "details": "无回前回末总结诗。"}
+    ]},
+    {"contract": "87-S5.v2", "required": [
+      {"ordinal": 1, "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [83, 93], "details": "厨房等回话、留热汤、两副碗箸、让丫头去吃、笋丝口味与添饭均是普通共餐，不以盛宴或爱情裁判替代。"},
+      {"ordinal": 2, "assessment": "VISIBLE_TEXT_SATISFIED_B03_EXACT", "lines": [71, 85], "details": "饭前独自走园无预定目的，75馆外看屋婆子、77原字不进去、79 B03落叶萧萧寒烟漠漠、81扫叶入筐、83返回85入餐。没有把VW2-05升原第87回证据。"},
+      {"ordinal": 3, "assessment": "VISIBLE_TEXT_SATISFIED_WITH_THEME_EXPLANATION_RISK", "lines": [95, 105], "details": "纸仍在、宝钗不问、宝玉翻书宝钗收线；105声响结束，不等于宝玉已忘。101对白仍有对全回主题重申过满风险，非结尾声音缺失。"}
+    ], "forbidden": [
+      {"ordinal": 1, "assessment": "NO_VIOLATION_OBSERVED", "details": "园外旧伤没有取消宝钗共食共寝；无新悼诗/仙人解释。"},
+      {"ordinal": 2, "assessment": "NO_VIOLATION_OBSERVED", "details": "一直在馆外、无祭坛无遗物检索，文本不宣称原回次。"},
+      {"ordinal": 3, "assessment": "NO_VIOLATION_OBSERVED", "details": "终句仅翻书针线声，无作者总结诗。"}
+    ]}
+  ],
+  "time_knowledge_objects_and_institution_audit": {
+    "buffer_after86": "3明确自黛玉去后又过几个月，不是仅元春丧礼过几月；其后另多次婚议再定日。未读86实际正文，不声称已验病终至婚礼跨章精确时长。",
+    "knowledge_sequence": [
+      "5—11贾母、王夫人、薛姨妈初谈；贾母提‘前儿’表明还有未展开的前谈，非精确起点证明。",
+      "13—15王薛续谈屋子，17王向贾政报告，19—23王问凤姐，25概述内宅再谈及媒礼回话。",
+      "25说明仆役至针线取尺寸才知道，婆子‘冲一冲’被平儿纠正，不能当贾母正式许可。",
+      "27‘宝钗先从母亲那里知道’，29莺儿进来添收箱；31袭人得知后告宝玉，麝月入场获知；33宝玉仍向袭人确认是否已告诉宝钗。",
+      "37及以后进入实际送样/收边/饭席差事，49双方知身份行礼。"
+    ],
+    "knowledge_limit": "能确认内宅先议、仆役后知、宝玉婚前知身份；不能确认莺儿/麝月/针线房等每人的准确先后时刻。25是概述，27可回叙，‘先’亦可只相对于宝玉，所以尚不是确定矛盾。但若下一版要读者毫不费解，应给双方告知段相对取尺寸的时间锚。无注册知识事件，不能写成知识库已验。",
+    "marriage_and_mourning": {
+      "visible_organizing": "贾母愿意且受礼、王夫人同贾政说并管迎送席面、薛姨妈女方组织，凤姐病中给经手名单，平儿转接；礼务引礼。并非贾母一句全免。",
+      "selected_source_support": "request内婚姻主婚摘录只支持尊长/亲属主婚框架；居丧嫁娶摘录支持丧制实际约束；妃嫔丧礼摘录‘姻戚人等成服，皆大祭日除服，百日剃头。’不是宝玉宝钗婚期唯一算法。均只读所选文本及notes，未验原书。",
+      "candidate_invention_not_source_fact": "25称服用往来规模分别问过、45日子一回回往来后定下，是作者写出的安排；没有问谁、依据哪一条、何日、许可如何传递的充分内容，不能把这些叙述当合法程序已证明。",
+      "exact_deadline_or_waiver_fabricated": false,
+      "historical_ritual_validity_verified": false,
+      "open": "O01/O09、两重丧期起止、亲属类别、可行仪礼程序与婚期始终OPEN。未给确定日期故不判‘确实违法’；也不把不判违法反写成合法PASS。门上仍少量红绸可见，是否合具体服制未证，不能无据判硬错。"
+    },
+    "materials_chain": "21库料，37府库/薛家供应、衣样改素，41新被面待收边，45接回已收边被褥并按改数送饭，47上身，49行礼，51—57共处，59—71次日重排；有来路和使用而无精确料匹/席桌总量，不借E0证明无限资源。",
+    "quantity_audit": "案一、妆奁一、窗下位置一使柜门打不开有因果；旧纸‘一叠/几张’兼容，未提供张数；一现存棋罐、另一只缺失、散子若干而非齐套；柜里两件旧袍与33留下的另一件家常衣未必同组，不强相加或判增殖。85两副碗箸为夫妻，39/87/93备用碗另给服侍工序，不等于多出第三名同餐者。未见可确定的物量冲突。",
+    "minor_new_objects": "手炉眼镜、筹备纸、纸样、被面、衣带簪盒、垫桌木片、干布帕、汤盅笋丝、灯台剪子等均是本稿生活施工，未获得独立对象ID/原稿出处。桌腿垫片、带子线头的密度属文学取舍，不是数量历史真实性。",
+    "newlywed_time": "45婚日—57夜里—59第二日请安回来—71待传饭—73至83外出返家—85至93自己房内第一顿普通饭—95至105灯下书针。57宝玉跟着醒说明曾同睡；不是假婚。‘第一顿普通饭’限定房内，不能据婚宴/请安必有早餐的外部猜想判漏餐矛盾。",
+    "B03_and_old_paper": "77完整不进去；79完整落叶萧萧，寒烟漠漠；看屋婆子、扫叶入筐和返回接餐都在。B03是选定方案主证措辞接口；VW2-05弱相容，不能固定原稿第87回。61/63/95纸一直匿名未读，未证明作者、作品、时间，不能升为86 G01、85 A01或续庄子。"
+  },
+  "confirmed_contradictions": [],
+  "style_and_literary_risks": [
+    {"id": "87-STYLE-1", "priority": "MEDIUM", "lines": [9, 25], "issue": "贾母‘并没叫你们把什么都越过去’、王夫人‘不能拿老太太一句话便往下办’、25‘服用、往来和可办的规模也分别问过’连用，使角色时而像在主动回答制度审核。它守住未知边界，却未真的提供礼制可行性。", "suggestion": "下一授权版本若补制度，应靠有依据的有限回话；文学上可减少同一非万能许可的反复申明，不另造万能赦许。", "not_a_confirmed_fact_contradiction": true},
+    {"id": "87-STYLE-2", "priority": "MEDIUM", "lines": [25, 35], "issue": "先概述仆役至取尺寸才知，再写‘宝钗先’、袭人知道以后、麝月入场及旧样送针线，告知与筹备的叙述顺序需要读者自行回排。当前仅能确认大层级，不能顺手升级每人的先后已验证。", "suggestion": "如获新版授权，为双方告知增加一个短时间锚即可，不扩成全员会议或完整知情台账。", "not_a_confirmed_fact_contradiction": true},
+    {"id": "87-STYLE-3", "priority": "MEDIUM", "lines": [59, 71], "issue": "书案—妆奁—纸的主冲突够强，后接缺棋罐、垫桌脚、旧袍、新被、掸灰、洗手、找布、打结衣带多次小搬动，家具工序密度压过新妻入屋的局促。75—81扫叶也分几次装筐，意在停留却有细节拖时风险。", "suggestion": "优先保住争窗下与不动纸，不以继续新增小物补长度；扫叶保劳动而可少重复一次归拢。", "not_a_confirmed_fact_contradiction": true},
+    {"id": "87-STYLE-4", "priority": "MEDIUM", "lines": [87, 103], "issue": "87‘这是……第一顿普通饭’直接标识合同节点；101‘后悔也要过今日’后又解释饭和书，宝钗几乎亲口归纳全章如何容纳旧伤与婚姻。她此前不爱酸笋、让被、接袖口动作其实已更含蓄地做到了。", "suggestion": "保留宝钗拒绝被一个后悔问题定性的自主，不再层叠作者或对白论旨；105声音结尾已克制，应守住。", "not_a_confirmed_fact_contradiction": true},
+    {"id": "87-STYLE-5", "priority": "LOW", "lines": [47, 105], "issue": "袖口、杯盏、衣带、递布和让半步频繁对称回环，新婚互助渐显设计感；‘我也不是只会让人的’与‘后悔也要过今日’又使宝钗一日里说了数句现代清醒式自证。", "suggestion": "不据这两句断言角色失真；相较准则对白，保留89‘难道样样都爱么’的随口反问和15薛姨妈护女更有声口。", "not_a_confirmed_fact_contradiction": true}
+  ],
+  "voice_and_scene_findings": {
+    "jiamu": "眼镜与手炉的闲话后才问前儿所议，认可明确又不独占组织。9行防万能许可的措辞偏解释，不能把整段都评价成纯制度宣读。",
+    "wangfuren_and_xue_yima": "王夫人先想腾屋和以后可问家务，薛姨妈追问女儿是否只能说都好、明白也是年轻孩子，形成关注差异；不只是四人同一‘为宝玉好’。",
+    "fengjie": "‘问问我就折腾半日’、‘又不吃了它’有利口；眉心一蹙、纸角松落、让平儿接手使病不是标签，不把她写成痊愈全能。",
+    "xiren_and_sheyue": "送旧衣样、针线跑腿、接厨房到管事、找带子拌嘴可辨劳动；一方圆场、一方直话，不只报消息。",
+    "baoyu_and_baochai": "宝玉迟疑、书没翻、不目的走园与新婚夜压被、扶汤盅并存；宝钗不问纸却有吃酸口味、让灯也要自己看得见的意愿。真婚不等于完成遗忘，也未以悼黛取消她。",
+    "best_existing_actions_to_preserve": ["15薛姨妈旋茶托却不跟着笑", "21—23凤姐说话中断和交平儿", "33宝玉留下另一件衣裳还穿", "57扣窗闩与让被", "59—63书案妆奁争位而纸不动", "77原字不进去、79 B03", "89酸笋口味", "105书页和篮盖声"]
+  },
+  "unresolved_not_promoted": [
+    "礼制/婚期可行性与具体许可链未证，不能拿数月或家长愿意代替；未知不自动判FAIL。",
+    "86实际临终正文未读，不核验其医学时序、旧纸链、精确死亡日至婚日。",
+    "B03措辞在本候选出现不证明原稿回次；VW2-05仅弱相容，C01章法接口不当直接来源事实。",
+    "匿名旧纸、旧帖、棋具无独立身份注册，不把读者联想升为G01/A01/续庄子实物。",
+    "细部物量、房园路径、丫头婆子礼务人数与实体ID未证，未执行世界/知识回放。",
+    "真实共寝共餐是本稿叙事可见，不是已批准采用的正式角色状态更新或人审文学结论。"
+  ],
+  "write_boundary_and_freeze": {
+    "only_new_path_for_this_chapter": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/readings/ch87-v1-reader1.json",
+    "paired_authorized_new_path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/readings/ch82-v1-reader1.json",
+    "prose_or_disclosure_modified": false,
+    "other_repo_files_modified_by_this_review": false,
+    "delegated": false,
+    "committed": false,
+    "human_review_or_literary_adopt_granted": false,
+    "frozen_after_completion_report": true,
+    "further_rewrite_authorized": false
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PolicyReadingInventory",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "kind", "directory", "previous", "bundles", "authority_effect", "evidence_effect", "qualification", "scope"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "POLICY_READING_INVENTORY"},
+    "directory": {"const": "data/evaluation/policy_evidence"},
+    "previous": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/binding"}]},
+    "bundles": {
+      "type": "array", "items": {
+        "type": "object", "additionalProperties": false, "required": ["bundle", "members"],
+        "properties": {
+          "bundle": {"type": "string", "pattern": "^data/evaluation/policy_evidence/bundles/[a-f0-9]{64}$"},
+          "members": {"type": "array", "minItems": 3, "maxItems": 3, "items": {"$ref": "#/$defs/binding"}}
+        }
+      }
+    },
+    "authority_effect": {"const": "NONE"},
+    "evidence_effect": {"const": "NONE"},
+    "qualification": {"const": "MODEL"},
+    "scope": {"const": "EXACT_OBSERVED_REGISTRY_CHECKPOINT_NOT_AUTHENTICATED_GLOBAL_HISTORY"}
+  },
+  "$defs": {
+    "binding": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+    }
+  }
+}

@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "report_kind": "READ_SCOPE_COORDINATE_CORRECTION",
+  "language": "zh-CN",
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "reviewer_id": "phase6-pilot-reader2-v1",
+  "raw_observations": {
+    "path": "artifacts/agent_research/phase6/advancement/pilot-reader2-v1-observations.json",
+    "sha256": "65811fcf7a26827af54cc2f7d17b385a88ffe6d6a535fe6b938afac61c48153c"
+  },
+  "correction_scope": "只校正全文覆盖范围的EOF显示坐标，不修改已冻结raw observations、opinion、引文或文学判断。",
+  "verification_method": "收到协调者提供的splitlines计数后，仅运行sha256sum取得raw绑定哈希，并用wc -l机械统计六绑定txt的换行数；所得105、105、125、127、113、107与所提供物理行数一致。未重新Read稿件、未重新评审，未运行测试、import、build或catalog。",
+  "corrections": [
+    {
+      "subject_id": "text-4e3814b91a186ad4f38e",
+      "binding": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-comparison-v1/text-4e3814b91a186ad4f38e.txt",
+        "sha256": "ab680bb5a313e31b6fe572084123d4a1c624edacdfbed0b6bc3138a215630ea7"
+      },
+      "original_line_ranges": [[1, 106]],
+      "corrected_line_ranges": [[1, 105]],
+      "EOF_display_only": {"line_ranges": [[106, 106]], "explanation": "Read返回的额外EOF空显示行，不是正文物理行。"},
+      "complete": true
+    },
+    {
+      "subject_id": "text-96a0454e30698b523d48",
+      "binding": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-comparison-v1/text-96a0454e30698b523d48.txt",
+        "sha256": "24542b331d03561f4a1fc15ed1349ad10157274a3ede0fc89c8df0f54312cbc3"
+      },
+      "original_line_ranges": [[1, 106]],
+      "corrected_line_ranges": [[1, 105]],
+      "EOF_display_only": {"line_ranges": [[106, 106]], "explanation": "Read返回的额外EOF空显示行，不是正文物理行。"},
+      "complete": true
+    },
+    {
+      "subject_id": "text-c83fcfaa1a6d61aa5df2",
+      "binding": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-comparison-v1/text-c83fcfaa1a6d61aa5df2.txt",
+        "sha256": "3f25c4dccf29af78417578fa44f172a00bcb07741c7264849110b4d1a1ab925a"
+      },
+      "original_line_ranges": [[1, 126]],
+      "corrected_line_ranges": [[1, 125]],
+      "EOF_display_only": {"line_ranges": [[126, 126]], "explanation": "Read返回的额外EOF空显示行，不是正文物理行。"},
+      "complete": true
+    },
+    {
+      "subject_id": "text-3d948c07fc950149f8b1",
+      "binding": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-comparison-v1/text-3d948c07fc950149f8b1.txt",
+        "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438"
+      },
+      "original_line_ranges": [[1, 128]],
+      "corrected_line_ranges": [[1, 127]],
+      "EOF_display_only": {"line_ranges": [[128, 128]], "explanation": "Read返回的额外EOF空显示行，不是正文物理行。"},
+      "complete": true
+    },
+    {
+      "subject_id": "text-4d2eb635d84e07cf103a",
+      "binding": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-comparison-v1/text-4d2eb635d84e07cf103a.txt",
+        "sha256": "493de9a83fa7aa24601c023397f462790fc7b3676f94bf2c66dfca1376fe99a1"
+      },
+      "original_line_ranges": [[1, 114]],
+      "corrected_line_ranges": [[1, 113]],
+      "EOF_display_only": {"line_ranges": [[114, 114]], "explanation": "Read返回的额外EOF空显示行，不是正文物理行。"},
+      "complete": true
+    },
+    {
+      "subject_id": "text-68c3843047d27d72b5a3",
+      "binding": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-comparison-v1/text-68c3843047d27d72b5a3.txt",
+        "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460"
+      },
+      "original_line_ranges": [[1, 108]],
+      "corrected_line_ranges": [[1, 107]],
+      "EOF_display_only": {"line_ranges": [[108, 108]], "explanation": "Read返回的额外EOF空显示行，不是正文物理行。"},
+      "complete": true
+    }
+  ],
+  "aggregate_coordinate_correction": {
+    "original_displayed_line_count": 688,
+    "corrected_physical_line_count": 682,
+    "EOF_display_only_count": 6,
+    "read_call_count_unchanged": 18,
+    "original_final_read_chunks": [[101, 106], [101, 106], [101, 126], [101, 128], [101, 114], [101, 108]],
+    "corrected_final_read_chunks": [[101, 105], [101, 105], [101, 125], [101, 127], [101, 113], [101, 107]],
+    "explanation": "原Read工具确实返回了688个带编号显示行，其中六个为各文件最后的EOF空显示行。物理覆盖应记682行；前两段1–50、51–100及所有正文引文坐标均不变。此勘误不减少实际已读内容，不新增阅读，也不影响六全文complete声明。"
+  },
+  "actual_reading_reduced": false,
+  "literary_opinions_changed": false,
+  "verdicts_changed": false,
+  "frozen_files_modified": false,
+  "context_isolation": {"asserted": false, "verification": "NOT_PROVEN"},
+  "extra_exposure": "仅新增接收协调者关于splitlines物理行数和勘误格式的消息，未接收其他reader文学意见；本次机械命令只输出raw哈希与六文本行数，未输出稿件正文。此前自动git/environment暴露仍以raw observations所记为准。",
+  "freeze": "本坐标勘误文件新写完成即逻辑冻结，不再续写；原v1/raw/opinion继续保持冻结不变。"
+}

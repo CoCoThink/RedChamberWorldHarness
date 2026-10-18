@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "COMPLETED_RELEASE_EVALUATION_SUMMARY",
+  "authority_effect": "NONE",
+  "status": "FAIL",
+  "report": {"path": "artifacts/agent_research/phase6/revisions-v2/release-evaluation/report-v1.json", "sha256": "7e9ae937c6c00fefd9f2c760ff4b2893047ac64a3e647e036f4de5b87d16af3a"},
+  "execution_seconds": 861.527,
+  "snapshot_input_count": 4026,
+  "snapshot_input_drift": [],
+  "snapshot_removed": true,
+  "stable_snapshot_unchanged": true,
+  "build_called": false,
+  "output_text": null,
+  "all_twenty_pass_gates": ["BYTE_INTEGRITY", "FULL_CHAPTER_LENGTH", "PROSE_INTEGRITY", "AUTHOR_PROVENANCE"],
+  "all_twenty_pending_gates": ["CANDIDATE_PEERS", "COORDINATOR_DECISION", "CONTRACT_PEERS", "SOURCE_PEERS", "CORPUS_PEERS"],
+  "all_twenty_writing_package_gate": "FAIL",
+  "failure_details": [
+    {"chapter": 86, "protection": "Selected original long-v1 exact P-Lock FAIL retained; newer long-v2 was deliberately not substituted into this frozen request.", "input_failure": "Three UNRESOLVED_DEPENDENT_SOURCE_ASSET findings."},
+    {"chapters": [81,82,83,84,85,87,88,89,90,91,92,93,94,95,96,97,98,99,100], "input_failure": "corpus peer sample differs from selected exemplar", "diagnostic_status": "READ_ONLY_INVESTIGATION_PENDING", "not_inferred": "Do not yet claim actual corpus text mismatch or evaluator bug. Existing raw report remains unchanged."}
+  ],
+  "pending_count_in_actual_report": 119,
+  "limitation": "Input-peer exception is surfaced as WRITING_PACKAGE FAIL by the existing evaluator; CORPUS_PEERS stays PENDING where the operation aborted. This does not erase separately registered corpus-v2 model FAILs. Engineering tests and model reading do not confer literary, evidence or human qualification.",
+  "adoption": "NOT_GRANTED",
+  "stable_active_effect": "NONE"
+}

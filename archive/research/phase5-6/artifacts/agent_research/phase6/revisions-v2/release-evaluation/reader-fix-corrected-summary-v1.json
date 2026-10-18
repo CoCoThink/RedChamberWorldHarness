@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "CORRECTED_RELEASE_EVALUATION_SUMMARY",
+  "authority_effect": "NONE",
+  "status": "FAIL",
+  "baseline_report": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/release-evaluation/report-v1.json",
+    "sha256": "7e9ae937c6c00fefd9f2c760ff4b2893047ac64a3e647e036f4de5b87d16af3a"
+  },
+  "corrected_report": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/release-evaluation/report-v3.json",
+    "sha256": "43c8ccf9b34ab247c7b364d328522c3dbaf531b1b43174bcf8601570d03741d5"
+  },
+  "corrected_execution": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/release-evaluation/execution-v3.json",
+    "sha256": "658cb5c806e18466ed04d6c9ef296ea9acb515306af95c315160b08921676f9c"
+  },
+  "corrected_custody": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/release-evaluation/snapshot-custody-v3.json",
+    "sha256": "43381b05c2a62d4b64fbacee7f18b335e9aab37f4a52190fe14c04ec4876cc84"
+  },
+  "reader_fix": "CANONICAL_SAMPLE_CONTAINER_UNWRAP",
+  "packet_regenerated": false,
+  "packet_resent": false,
+  "build_called": false,
+  "stable_active_effect": "NONE",
+  "before_false_positive": "Nineteen non-86 chapters reported corpus peer sample differs from selected exemplar because wrapped segments JSON was read as one envelope record.",
+  "after": "All nineteen container false positives disappeared; their writing package gates PASS and corpus peer gates remain FAIL because original registered model review retains 31 FAIL sample findings/negative subject status.",
+  "remaining_blockers": [
+    "CH86 unresolved dependent source assets and exact protection policy failure in frozen v1 selection",
+    "Original corpus model FAIL remains",
+    "Candidate peers and coordinator decisions are PENDING",
+    "Source and contract semantic qualification remain PENDING"
+  ],
+  "qualification": {
+    "literary_acceptance": "NOT_GRANTED",
+    "human_qualification": false,
+    "source_qualification": false,
+    "adoption": "NOT_GRANTED"
+  },
+  "limitation": "Correcting a reader bug is not a corpus audit pass or literary/source qualification. Baseline report is retained; corrected report is a new derived evaluation."
+}

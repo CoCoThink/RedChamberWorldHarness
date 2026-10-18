@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "packet": {
+    "path": "artifacts/agent_research/reading/set-p8-v1/public/packet.json",
+    "sha256": "53d857bc30b6df44fa51c498256254676a29df309677baa6e1c2ee36f70a725f"
+  },
+  "reviewer": {
+    "id": "reader:p8-two",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "reading-p8-two",
+    "model": {
+      "label": "gpt-6.1-sol; environment self-declared local Linux/WSL2; not provider-verified or human-certified",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "results": [
+    {
+      "subject_id": "read-ac0031c62acffe18f0f7c9ce",
+      "subject_sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "verdict": "PENDING",
+      "notes": "subjects[0] 于原 context 第三阶段以7次连续有界Read完整覆盖92–97回1–633行。未发现同一主体同一排他状态下可确定互斥的两侧原文，硬FAIL 0；完整阅读本身不授予PASS。准回/领物/出门、孩子暂住、三处择屋、衣架赠留、典青夹袄与同器量米、赠米分储、信路、两庵均有可追踪接口。凤姐临终说怕、孩子明日也留、刘姥姥恩物已用但能腾炕有情感强度。湘云独膳原因未明不补死讯；盆所有权和媒人信息不全等仅列疑点。反复问清、否定误读、移盆让路和湿冷补衣使手续压过声口的文学风险尚未消除，故保留PENDING而非声称全项通过或确定失败。详见reader-two-subject-one-observations-v1.json及绑定三阶段的comparison。模型/环境仅会话自报，非provider或human认证；同repo任务边界不等权限隔离，三阶段同context保留前读记忆并有次序锚定风险；初始git元数据暴露已披露，训练熟悉未知，未读他人报告、身份、映射或source/notes，未委派、运行repo代码/测试或登记。sample_checks为空是packet未提供独立sample对象，不代表未全文阅读。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-c25e7c679cc1c53fb9e60dfb",
+      "subject_sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "verdict": "PENDING",
+      "notes": "subjects[1] 第二阶段以8次连续有界Read完整覆盖92–97回1–719行。保留已冻结阶段的PENDING，未因其他组或他人意见改判。确定硬FAIL 0；最强数量疑点为531/565袋里一半与571仍有大半，若严格同分母精确量则冲突，但约数量词与赠米总量指代未能排除，故不夸成确定FAIL。另有243十来日与289昨夜蓝布包的时间回指、567她叫麝月的代词疑点，均列双侧原文并保留排他条件不足。对话与群像、袭人与麝月私谈、蒋玉菡自身职业有生气；95搬屋略而节用小事长，二对一受教和机锋收尾偏密，97三线整块顺排。97若兰明确外出延归并寄短札，不是死亡。量生米同一小木碗接口明确，不套首组熟粥口径。未确定硬矛盾不等于自动文学PASS，暂维持PENDING。详见reader-two-subject-two-observations-v1.json。此为本地模型研究反馈，非独立人类或provider认证，非采纳非放行；三阶段同context且训练熟悉未知。sample_checks=[]不代替全文阅读记录。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-79dc845cf19f1795e236e82b",
+      "subject_sha256": "c64115b3ee31142253454e43be41a45a62bd4bf7ffc72d90f60797a4345b4636",
+      "verdict": "PENDING",
+      "notes": "subjects[2] 第一阶段以8次连续有界Read完整覆盖92–97回1–718行，报告冻结未改。保留原PENDING和确定硬FAIL 0：95的熟粥两碗半与96量米两碗半口径回指有疑点，但盛饭碗与量米碗未被证明同容量，不能报确定互斥；当票匣下外露到后回开匣所见有时距和方位歧义，不以省略收置动作判FAIL；湘云缺席未明不补死讯。准返还待放行、病亡补袖/湿布、巧姐临车分离、搬屋米炭劳动取舍、96工作期限与信、97两庵分别及三线交切皆有文本证据。类似小阻滞反复、防错旁白、照护者轮番教宝玉和三线日用伦理趋同，是未消除的文学风险，全文读毕仍不自动PASS。详见reader-two-subject-three-observations-v1.json；不为两组后读或任何外部旧书义务改阶段判断。模型环境自报非认证；最终总context不主张独立隔离，初始元数据和后续本人阅读记忆均如实披露，训练熟悉未知，未读他人材料或委派。sample_checks=[]因packet无独立sample对象，全文证据另有章行覆盖。",
+      "sample_checks": []
+    }
+  ],
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false
+}

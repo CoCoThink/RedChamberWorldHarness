@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "chapter": 81,
+  "revision": "v1",
+  "status": "FROZEN_SESSION_AUTHORED_RESEARCH_CANDIDATE",
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "literary_acceptance": "NOT_GRANTED",
+  "formal_eligibility": false,
+  "request": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch81.json",
+    "file_sha256": "6af912f413441897964bd34aae7038ae04829def24a777c6d3315a6f079162c2",
+    "declared_request_sha256": "db4fd803e6103ef918881002c0154153bb1d15fdaee5ad3139692ee1775785df",
+    "prompt_sha256": "18b2c80e7c8cd277e49be5665285beee85eb47853a4795cb83e95de51d4c6adc",
+    "hash_scope_note": "File-byte digest, embedded request digest, and embedded prompt digest have different scopes and are not interchangeable. Fresh integrity PASS was supplied by the coordinator; this session does not recast that as complete reading of every referenced file."
+  },
+  "parent": {
+    "path": "data/writing/drafts/ch81/f036aaf484829ce05bffcc2ea37ec5096c6b28c28b2e466f19da57093de10c2e.json",
+    "file_sha256": "f036aaf484829ce05bffcc2ea37ec5096c6b28c28b2e466f19da57093de10c2e",
+    "consumed_prose_pointer": "/task/original",
+    "prose_characters": 2369,
+    "prose_sha256": "ff226573da51a36f618324fff1746824efb6f207b35382e3836773d0e0f9b685",
+    "file_body_read_claim": "Parent JSON bytes were hashed; its full prose was read through task.original, not through a claimed full independent read of the parent JSON."
+  },
+  "candidate": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt",
+    "sha256": "a92799e04f61fdd2e99eb6eba99b38a7fa87ef2f5d137fc4eb1fdc681bccda0d",
+    "utf8_bytes": 28097,
+    "characters": 9441,
+    "body_characters": 9417,
+    "body_no_whitespace": 9305,
+    "body_han": 7747,
+    "lines": 113,
+    "paragraphs_including_title": 57,
+    "title": "第八十一回　薄命女沉疴香魂逝　蘅芜君收存旧诗稿",
+    "ending": "并没人再念一遍。",
+    "count_method": "UTF-8 decoded Unicode code points; body is everything after the first newline, excluding the title. No-whitespace count excludes str.isspace characters. Han count counts U+4E00 through U+9FFF in that body, excluding punctuation and whitespace.",
+    "requested_total_range": [9000, 10500],
+    "requested_body_han_minimum": 7000,
+    "length_thresholds_met": true,
+    "threshold_note": "Length is mechanical only and does not establish literary completion, independent review, or adoption."
+  },
+  "actual_consumption": {
+    "method": "Direct Read for notes and lint implementation; bounded exact JSON projections printed by isolated Python for request and ch81 editorial record. Values actually visible in untruncated projections, rather than file-hash inventories, supplied the writing context.",
+    "request_fields_read_in_full": [
+      "/request/system",
+      "/task/original",
+      "/task/feedback",
+      "/task/editorial_notes",
+      "/task/writing_task/package",
+      "/task/writing_task/chapter_plan",
+      "/task/writing_task/scenes",
+      "/task/writing_task/exemplars (all five complete objects including text)",
+      "/task/writing_task/sources (empty selected list)",
+      "/task/writing_task/guidance",
+      "/task/writing_task/input_readiness",
+      "/task/writing_task/previous_ending (null)",
+      "/task/writing_task/target_characters",
+      "/task/writing_task/plan/data~1project~1plan_constraints_v1.json",
+      "/context",
+      "/budget",
+      "/budget_limitation"
+    ],
+    "agent_contracts": {
+      "selected": ["81-S1.v2", "81-S2.v2", "81-S3.v2"],
+      "read_scope": "All required_beats and forbidden_beats descriptions, IDs, status and scope; all preconditions, entry/exit states, participants, references, notes, unresolved lists, function and binding metadata were read in exact segmented projections. All distinct chapter-card grounding text excerpts were read, along with all eighteen chapter-plan card fields and protection/source_records. Repeated citation metadata under every duplicate grounding branch was not independently re-read as a separate source document.",
+      "plan_duplicate_handling": "Equality checks established that the three contracts embedded in plan equal agent_contracts, and the chapter plan embedded in plan equals chapter_plan. Those identical payloads were context-reused rather than falsely claimed as separately read original files.",
+      "required_beats_consumed": ["81-S1-R1", "81-S1-R2", "81-S1-R3", "81-S1-R4", "81-S2-R1", "81-S2-R2", "81-S2-R3", "81-S2-R4", "81-S3-R1", "81-S3-R2", "81-S3-R3", "81-S3-R4"],
+      "forbidden_beats_consumed": ["81-S1-F1", "81-S1-F2", "81-S2-F1", "81-S2-F2", "81-S3-F1", "81-S3-F2"]
+    },
+    "nested_writing_task": "Recursive inspection found no further writing_task key inside task.writing_task. The single request message decodes equal to the top-level task, so its identical task content was reused, not counted as an additional independent read.",
+    "selected_source_excerpts": "Read every chapter_plan card_fields text and source_records value, the distinct contract grounding card excerpts, and the two selected body/resource source rows in the ch81 editorial record. task.writing_task.sources and package.sources are empty; no claim is made to reading the original source assets behind their citations.",
+    "exemplars": ["hlm80:chapter:27:p00087", "hlm80:chapter:24:p00030", "hlm80:chapter:74:p00079", "hlm80:chapter:61:p00016", "hlm80:chapter:52:p00006"],
+    "world_projections": [
+      "m3_body: body_matrix row for chapter 81",
+      "m3_core: full chapter-80 baseline, xiangling/baochai/xue_yima character rows, W81-XIANGLING-DEATH chapter-81 event",
+      "m3_presence: chapter-81 presence row",
+      "m3_resources: E0 row and chapter-81 resource_flow row",
+      "m3_knowledge: full knowledge_rules array, not full longlines",
+      "m3_locations: full locations array, including S01",
+      "threads: metadata/rules; relevant-hint exact projection for 香菱/G02 yielded no rows; broad hint output was truncated and is not claimed fully read"
+    ],
+    "notes": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch81-v1.txt",
+      "sha256": "c5a82a4100233a88768405e560c0bb38562bb07bf59dde6a6a7b01538e7fe054",
+      "read_entire_text": true,
+      "line_range_inclusive": [1, 13],
+      "read_before_first_prose_write": true
+    },
+    "full_editorial_ch81": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch81-90-v1.json",
+      "file_sha256": "fb1222a12fd4ef02d5071678f8def39d2d2fd276262f23f5dc7f43d09f983ad3",
+      "projection": "/chapters entry where chapter == 81",
+      "read_complete_ch81_record_by_segments": true,
+      "segments": ["actual_reading and custody fields", "revision_length_target", "verbatim_evidence", "all three selected_contracts with beat-by-beat assessment and unresolved boundaries", "original_chapter_plan with all eighteen fields and protection records", "selected_source_rows_actually_considered", "confirmed_local_issues", "substantive_expansion_units", "unresolved_not_to_invent", "editorial_notes", "not_claimed"],
+      "other_chapter_records_read": false,
+      "read_before_first_prose_write": true
+    }
+  },
+  "execution": {
+    "authorship": "Continuous novel prose manually composed in this session using Write once and Edit to append five substantive scene segments. No Python sentence generation, numeric templates, duplicate-paragraph padding, delegation, or other chapter writing.",
+    "declared_environment_model": "gpt-6.1-sol",
+    "model_identity_limitation": "This is an environment declaration only; no provider response metadata or billing/API proof was obtained.",
+    "context_reuse": "This session retained the supplied parent prose and all actual read projections. Repeated identical plan/contract payloads and task/message payloads were reused within that context. No claim of independent model contexts, independent authors, or independent review is made.",
+    "previous_path": null,
+    "previous_ending": null,
+    "adjacent_new_drafts_consumed": false,
+    "predecessor_endorsement": "NONE",
+    "phase5_prose_template_consumed": false,
+    "phase5_contract_packet_body_consumed": false,
+    "harness_candidate_import": false,
+    "project_runtime_import": false,
+    "lint_execution": "Read repository prose_integrity.py, executed that read function in an isolated namespace after omitting only its package-relative digest import and supplying equivalent hashlib.sha256 digest. Standard-library modules supported JSON projections, hashing, counts and lint; no project package was imported and no generation pipeline was run.",
+    "commits_or_adoption": "NONE",
+    "only_authored_paths": ["artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1-disclosure.json"]
+  },
+  "editorial_choices": {
+    "four_causal_units": ["病晨抢针线及家内换医争执、撤回伤人话与明确跑腿/费用决定", "能进甜羹的午后及袖口接话、照护期待抬高、普通晚饭落空", "同一慢病转重、白布与热食分歧、莺儿取得照护交接后取物、限定内宅传话", "床边确认死亡之后才开始第一轮授权/身体整理/守候/逐一报信，三张旧月诗最后入匣"],
+    "optional_unfinished_poem": "NOT_SELECTED: no supplied selected text established a particular pre-illness unfinished draft. Parent's ambiguous unfinished-paper episode was not carried forward; no extra paper, poem quotation, continuation, or deathbed new poem was invented.",
+    "protected_objects_and_words": "莺儿实际抢针线；淡青袖口始终未缝完；甜羹/银匙/换木勺及指定轻口角；等病好收袖口的接话；明确三张早年学诗旧月诗；宝钗亲手入匣；终句并没人再念一遍。",
+    "unknowns_preserved": "No new physician name, exact route, drug name, formula, drug/diagnosis price, new terminal disease, predicted death time, dream omen, new emergency or detailed burial rite. Domestic actions are research-candidate narration, not upgrades of contract UNKNOWN/PENDING states, historical evidence, object registry or knowledge registry.",
+    "ordinary_household_continues": "药饭、传话、食盒、守候者饭食、热水与洗碗在病中及死后继续；无全宅同步知情或全宅停摆。"
+  },
+  "mechanical_lint": {
+    "implementation_path": "src/rcwh/generation/prose_integrity.py",
+    "implementation_sha256": "68ebba3b1dd2bd160053da7a6a438cef52808ccbfb5145badf8e18904a6594b4",
+    "status": "PASS",
+    "scope": "REPEATED_PARAGRAPH_PADDING_LINT",
+    "candidate_sha256": "a92799e04f61fdd2e99eb6eba99b38a7fa87ef2f5d137fc4eb1fdc681bccda0d",
+    "paragraph_count": 57,
+    "repeated_characters": 0,
+    "repeated_character_fraction": 0.0,
+    "clusters": [],
+    "findings": [],
+    "script_signals": [],
+    "literary_quality_verified": false,
+    "authority_effect": "NONE"
+  },
+  "limitations": [
+    "Initial broad request/feedback/tree/threads projections exceeded tool output limits and were persisted by the tool outside the repo. Truncated previews were not treated as complete reading; required prose, system, feedback, notes, contract beats, chapter protections, selected excerpts, exemplars and entire ch81 editorial entry were subsequently read through bounded exact projections. Broad unselected world/thread remainder was not re-read in full.",
+    "The environment reported an interrupted stream/524 through the coordinator. Before writing resumed, the candidate path did not exist. Authorship then used six bounded file-writing calls. No earlier missing output is claimed as delivered prose.",
+    "No complete reading of hundreds of referenced files, corpus manifest, full corpus, cited source assets, full six-world payload, thread hints remainder, adjacent chapter drafts or phase5 prose is claimed. Byte hashing of parent and request establishes custody only, not semantic reading.",
+    "Request budget fields are preparation ceilings; actual provider token use, billing and request timing were not measured. This was session authorship, not a claim that the prepared provider API request was executed.",
+    "No independent literary review, semantic acceptance, chronology certification, continuity state replay, adoption or release was performed. Padding lint PASS and adequate length are not any of those decisions."
+  ],
+  "freeze": {
+    "candidate_frozen_on_handoff": true,
+    "further_edits_to_v1_authorized": false,
+    "note": "Preserve this candidate and disclosure unchanged after handoff; any later revision requires a new version and authorization."
+  }
+}

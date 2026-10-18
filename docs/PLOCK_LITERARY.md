@@ -25,6 +25,15 @@ A P-Lock protects a literary solution that survived review. It is **not evidence
 - replacement requires competition + six-field regression + P-Lock regression + blind read;
 - stability never promotes the detail upstream into Source / Claim / Decision truth.
 
+### Gate effect (ADR 0004)
+
+A P-Lock is an **ADVISORY regression signal**, never a hard gate. In agent
+policies and research releases a lost exact anchor yields `REPLACEMENT_CASE`
+with an ADVISORY finding (optionally carrying a `replacement_reason`); it does
+not FAIL the chapter. Only literal constraints backed by an eligible A-W1
+LOCKED decision block. The stable promotion path still requires the human
+`REPLACEMENT_ACCEPTED` check before replacing protected prose.
+
 Every P-Lock therefore has:
 
 `authority = LITERARY_PROTECTION_ONLY`

@@ -1,0 +1,289 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT_LITERARY_READING",
+  "chapter": 100,
+  "version": "ch100-v1-reader1",
+  "status": "FROZEN_FEEDBACK_ONLY",
+  "reviewer_type": "MODEL_SUBAGENT",
+  "usage": "FEEDBACK_ONLY",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "adoption": "NOT_ADOPTED",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "provider_proof": "NONE",
+  "overall_literary_status": "NOT_A_LITERARY_PASS_OR_FINAL_MANUSCRIPT",
+  "scope": {
+    "subject": "仅冻结第100回长修订v1的实际阅读，不评其他章长稿，不以旧短稿负面直接裁决本稿。",
+    "method": "正文由Read按1–40、41–80、81–113行分段完整实读，随后与完整disclosure、notes100、后十回编辑报告的完整chapter100条目、phase6-ch100-v1决定和五份新版合同实质对照。哈希及长度只是阅读后的绑定，不代替阅读。",
+    "context_isolation": "本次没有阅读其他reader报告、其他章长正文或phase5模板；不是人工盲审、全书连读或独立历史研究。看过WRITING_CHECKPOINT完整进度文字，含其他章工作进度摘要，不声称完全盲隔离。",
+    "only_output_path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/readings/ch100-v1-reader1.json",
+    "no_delegation": true,
+    "no_prose_disclosure_request_edit": true,
+    "no_commit_import_adopt_registry_or_release": true,
+    "freeze_policy": "此阅读记录冻结；任何后续纠正另版，不回写原正文、disclosure、request或旧短稿反馈。"
+  },
+  "inputs_actually_consumed": [
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt",
+      "sha256": "25c484ca93a7fd7f7e4e963fe9f5fc334726bc1e0db1bfa32a2b73c32d6da383",
+      "consumption": "ACTUALLY_READ_COMPLETE_SEGMENTED",
+      "line_ranges_inclusive": [[1, 40], [41, 80], [81, 113]],
+      "coverage_fraction": 1.0
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1-disclosure.json",
+      "sha256": "f15ec866814631f0ee8aed6d44348e14f86cf599ac418a199a44f37e1fcda827",
+      "consumption": "ACTUALLY_READ_COMPLETE_LINES_1_174",
+      "limitation": "其中作者自报的历史工具动作与来源消费按披露保留，不当本读者亲历或provider证明。"
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editor-feedback/notes-ch100-v1.txt",
+      "sha256": "19c06b6d1339eb02000ba1a97050f26283d8d221472607c993441e395072f627",
+      "consumption": "ACTUALLY_READ_COMPLETE_LINES_1_15"
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+      "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+      "pointer": "/chapters/9",
+      "consumption": "ACTUALLY_READ_COMPLETE_CH100_ENTRY_LINES_7633_8557",
+      "read_ranges_inclusive": [[7630, 7858], [7859, 8098], [8099, 8338], [8339, 8571]],
+      "limitation": "没有读该报告其他九章条目；末段全报告summary只是边缘上下文，不计其他章阅读。旧短稿引文只通过此编辑条目读到，未独立打开短稿。"
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/decisions/phase6-ch100-v1.json",
+      "sha256": "9105d1991a15205db9afeae5240254feeb0a9df0868d0857c4e29c7ccfcb8538",
+      "consumption": "ACTUALLY_READ_COMPLETE_LINES_1_356",
+      "execution_mode": "NARRATIVE_ONLY_NOT_EXECUTABLE"
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v2/100-S1.v3.json",
+      "sha256": "1862399465256ce42b2fb9455257551c3b8ad4b2c0b3915188b92f5d642281ca",
+      "consumption": "ACTUALLY_READ_COMPLETE_SUBSTANTIVE_SEMANTICS",
+      "required_beats": ["100-S1-R1", "100-S1-R2", "100-S1-R3"],
+      "forbidden_beats": ["100-S1-F1", "100-S1-F2"]
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v2/100-S2.v3.json",
+      "sha256": "a40c7186f721d7b867b73a783bd2a6e870d3bf384abccbbcf8362e1942ed336b",
+      "consumption": "ACTUALLY_READ_COMPLETE_SUBSTANTIVE_SEMANTICS",
+      "required_beats": ["100-S2-R1", "100-S2-R2", "100-S2-R3"],
+      "forbidden_beats": ["100-S2-F1", "100-S2-F2"]
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v2/100-S3.v3.json",
+      "sha256": "df015a71cb1722ee8d5cc818eabd9f73a6e350390fce72398a2c4411503c700d",
+      "consumption": "ACTUALLY_READ_COMPLETE_SUBSTANTIVE_SEMANTICS",
+      "required_beats": ["100-S3-R1", "100-S3-R2", "100-S3-R3"],
+      "forbidden_beats": ["100-S3-F1", "100-S3-F2"]
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v2/100-S4.v3.json",
+      "sha256": "2ab28b514ca4de77179b55642448473af930470bc9f8d74093c85a275dfdeb8d",
+      "consumption": "ACTUALLY_READ_COMPLETE_SUBSTANTIVE_SEMANTICS",
+      "required_beats": ["100-S4-R1", "100-S4-R2", "100-S4-R3"],
+      "forbidden_beats": ["100-S4-F1", "100-S4-F2"]
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v2/100-S5.v3.json",
+      "sha256": "c766d3d69bfe74e032735def4e5cd248498d51efe825337e4ff6d331076591da",
+      "consumption": "ACTUALLY_READ_COMPLETE_SUBSTANTIVE_SEMANTICS",
+      "required_beats": ["100-S5-R1", "100-S5-R2", "100-S5-R3", "100-S5-R4"],
+      "forbidden_beats": ["100-S5-F1", "100-S5-F2", "100-S5-F3"]
+    }
+  ],
+  "contract_reading_detail": {
+    "method": "Python -I仅抽取这五个明确路径的JSON；递归输出所有非路径/哈希元数据的唯一scalar，保留required/forbidden完整description、grounding章卡/world值、entry/exit/precondition理由、角色/对象/知识限制、unresolved/function/notes。跨五合同逐字相同值只输出一次。持久化工具输出共304行已由Read完整覆盖1–150、151–300、301–304；S1原文件另读1–240。",
+    "projection_artifact": "/home/guan/.claude/projects/-mnt-d-Code-RedChamberWorldHarness/b2420fb4-365f-480a-b436-9d4e19d24bec/tool-results/bnq9r0rho.txt",
+    "not_claimed": "不是逐行完整阅读五份原始JSON的全部绑定元数据；被引用源文件、旧source_packet、world/registry全库未打开，绝不以hash等同阅读。",
+    "extraction_correction": "第一次抽取代码漏调用walk，仅显示top keys，因此该次不计实质阅读；补正后成功递归并完整读完保存输出，没有把空输出冒充已读。"
+  },
+  "extra_context_and_unread": {
+    "actually_read_extra": ["/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/WRITING_CHECKPOINT.md（1–79行进度上下文，非本章证据）"],
+    "unsuccessful_read": "尝试Read revisions-v2/requests/ch100.json时因946.5KB超过单次上限返回大小错误，没有取得该request正文，不计已读；本任务所需决定/合同/notes均改由其明确原路径读取，未宣称完整request校验。",
+    "discovery_only": "只为定位明确输入列目录及有限深度文件名；曾列到phase5 contract文件名，未读其内容、未套用模板。没有全仓库内容扫描。",
+    "not_read_or_verified": ["完整prepared request及messages", "完整旧短稿原文件、parent draft语义", "其他章长稿或reader报告", "原始脂批影印页、PDF见证、来源提取全链", "真实官品、年月、封荣/丁忧法定程序与病历", "完整人间/外框registry、场级事件重放、全书石文完整性"],
+    "independence_limit": "一个模型子代理的局部反馈，不新增合格人工评者、不证明双独立panel、不把环境模型名称当provider证明。"
+  },
+  "full_chapter_coverage": {
+    "line_count": 113,
+    "title_line": 1,
+    "first_body_line": 3,
+    "last_body_line": 113,
+    "coverage_fraction": 1.0,
+    "unread_gap": false,
+    "first_body_quote_id": "Q01",
+    "last_body_quote_id": "Q32",
+    "segments": [
+      {"lines": [1, 16], "read": "COMPLETE", "content": "标题、童年衣袖、旧书读字、应试、成年未实授回望与待消息"},
+      {"lines": [17, 36], "read": "COMPLETE", "content": "真得实授、厨房加饭、歪腿借桌、茶具误调、孩子问肉、公服冠帔、实际进项与回礼"},
+      {"lines": [37, 74], "read": "COMPLETE", "content": "明确数月、有限医者、误判好转引发疲倦、钥匙与茶/旧书移交、花盆与旧衣小欲望、逐渐病卧"},
+      {"lines": [75, 98], "read": "COMPLETE", "content": "唤不应与死后照料、白布棺木、吊客茶饭、未知官中规矩、丧费器具归还、留下的人继续用饭"},
+      {"lines": [99, 104], "read": "COMPLETE", "content": "人间封口、不知何时太虚、旧册移入、单轴五层、两硬评、榜末宝玉、收罢"},
+      {"lines": [105, 113], "read": "COMPLETE", "content": "章回切峰、石已复本质、粗纸残墨比字留空、全部收纸收笔在硬终句前"}
+    ]
+  },
+  "mechanical_observation": {
+    "execution": "EXECUTED_READ_ONLY",
+    "file_characters": 10045,
+    "body_characters_including_newlines": 10021,
+    "utf8_bytes": 29909,
+    "outer_frame_characters_from_buzhi_to_eof": 756,
+    "line_count": 113,
+    "terminal_line_exact": "石在，字在。",
+    "terminal_followed_only_by_final_newline": true,
+    "body_han_characters": {"value": 8645, "basis": "AUTHOR_DISCLOSURE_ONLY_NOT_INDEPENDENTLY_RECOUNTED_BY_READER"},
+    "target_distinction": "notes建议8500–10000总字符；disclosure执行区间10000–11000。本稿10045比notes建议上端多45，是两层目标区间差异，非确定叙事矛盾，也不因满足执行区间而文学PASS。",
+    "input_json_parse": "EXECUTED_OK_FOR_DISCLOSURE_EDITOR_DECISION_AND_FIVE_CONTRACTS",
+    "prepared_request_integrity": "NOT_EXECUTED",
+    "prose_lint": "NOT_EXECUTED",
+    "project_tests": "NOT_EXECUTED",
+    "scene_semantic_replay": "NOT_EXECUTED",
+    "historical_source_verification": "NOT_EXECUTED",
+    "rule": "以上长度、字节、解析与终句检查不授予文学PASS、史料资格、采用或源证升级。"
+  },
+  "verbatim_quotes": [
+    {"id":"Q01","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":3,"line_end":3,"quote":"贾兰小时读书，衣袖总要挽起，写到末一行，肘下的纸便被压得卷了边。","use":"完整实读起点；年龄在衣袖和动作上有变化载体。"},
+    {"id":"Q02","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":5,"line_end":5,"quote":"又过几年，李纨见他坐在灯下，将那一小段读得流利，便把针线放在膝上听。","use":"真实多年与旧书辨字变化，不是只有时间标签。"},
+    {"id":"Q03","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":9,"line_end":9,"quote":"贾兰说还在等，未曾实授，外头的话不必先当真。","use":"成年首次回望尚未实授。"},
+    {"id":"Q04","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":17,"line_end":17,"quote":"又隔了一段时候，贾兰才真得了实授的消息。报喜人带着文书进门，说得急，院里先听见贺喜，灶房帮厨的婆子正端一盆米出来，忙回头问：“饭够不够？”","use":"与未实授阶段有间隔；先文书喜讯后公服；厨房关键原问兑现。"},
+    {"id":"Q05","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":19,"line_end":19,"quote":"那人接茶时又道几句贺话，她这回都应了，贾兰站在旁边，听见称呼换了，背不觉挺直。","use":"晚荣有真实吸引，贾兰不是只证明功名无用的工具。"},
+    {"id":"Q06","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":23,"line_end":23,"quote":"贾兰要将好看的几件摆到外头，李纨说那里放茶具，他便让人把茶具挪到厨房。帮厨的婆子抱着壶碗回来，直说灶间放不下，今日还要添饭，不能把里屋也搬进去。","use":"得意的摆礼决定实际增加别人劳动并造成后续找杯失礼。"},
+    {"id":"Q07","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":25,"line_end":25,"quote":"孩子在旁问他做了官是不是天天有肉吃，他听得一怔，笑道今日若饿，先去盛饭。孩子说今日有客，本来就有肉，问的是往后，他说待他先把这张桌照应住再答，孩子便蹲下帮着看那片瓦。","use":"孩子以吃肉呈现官等于有钱的具体误会，与歪腿桌同场，不是作者经济宣言。"},
+    {"id":"Q08","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":29,"line_end":29,"quote":"李纨起初只说还好，照见镜里颜色，眼光多停了一会儿，指着边上道这里是不是还该往上些。","use":"对冠帔有爱美与选择，不是只有符号化负重。"},
+    {"id":"Q09","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":29,"line_end":29,"quote":"说着抬手去摸，额角已被压出一道红痕，等真正停手，她才轻轻按了按。","use":"冠帔压额的实际身体后果。"},
+    {"id":"Q10","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":33,"line_end":33,"quote":"实授以后，家中也真有了从前等不得的进项。贾兰将所得的一部分交来，李纨先把拖着的修箱钱付了，又替灶房添几件好用的粗瓷，婆子端新碗时，特意将缺口的旧碗退到后头。","use":"收入有真实改善，但只到修箱添碗，不见旧宅旧产复归。"},
+    {"id":"Q11","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":37,"line_end":37,"quote":"如此又过数月。冠帔已收在箱中，遇着该用的时候才取出，李纨日常仍穿旧袄，天暖了换薄的，转凉再添。","use":"受荣后明确数月与普通季候起居，不是受荣当日即死。"},
+    {"id":"Q12","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":41,"line_end":41,"quote":"贾兰追问几时能好，他没有给准日子，仍叫留心饭量与精神。","use":"医者观察有限，无确切疗效保证或新病名。"},
+    {"id":"Q13","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":43,"line_end":43,"quote":"贾兰走进来，见她自己坐着做活，倒喜道比前几日好，往后便可仍理家中的事。她未及答，他已将外间一叠帖纸搬到桌上，说有几家回过又来，自己实在记不清，烦母亲看一回。","use":"误判来自所见一时精神，实际把工作交回。"},
+    {"id":"Q14","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":45,"line_end":45,"quote":"等进去，婆子正将靠垫放到她背后，她靠着，眼闭了一下，桌上那叠纸仍原样。","use":"误判造成体力后果，不停在告诫。"},
+    {"id":"Q15","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":47,"line_end":47,"quote":"他应着，将帖纸逐张拢回，回到外间先请等着的人坐，自己按来日写清，再问哪份已经送过。","use":"儿子接回劳动；同时是程序性重复风险的例子。"},
+    {"id":"Q16","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":49,"line_end":49,"quote":"她望着婆子将钥匙系妥，过一会儿叫她坐近，把柜中哪一包先用说了，婆子逐句记着，不再叫她起身。","use":"钥匙最终落在照料者，移交并不等同再要求母亲起身。"},
+    {"id":"Q17","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":57,"line_end":57,"quote":"贾兰问可是怕丢，她说并不怕，只是要看时手边有。","use":"旧书理由朴素，无新格言或档案伦理说教。"},
+    {"id":"Q18","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":67,"line_end":67,"quote":"回来时想同她说原来如此，她却已疲倦，只微微点头，闭目歇着。","use":"花盆小欲望和儿子坐处误解有疲倦后果；不只是整齐移交。"},
+    {"id":"Q19","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":75,"line_end":75,"quote":"又过些时候，婆子端水进屋，李纨唤不应了。贾兰赶到床边，先握她的手，叫了几声，自己听着屋内静下去，又把手指轻轻放回被旁。","use":"病卧后才到死亡，非封荣即报应。"},
+    {"id":"Q20","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":77,"line_end":77,"quote":"做丧务的人等他定夺，帮厨的婆子却来问灶里那锅饭怎么办，未吃的还有些，不能全倒了。他回头说留给做事的人，话说完，眼睛仍向里望，仿佛等着有人再叫他一声。","use":"贾兰主责与职业分工并存，悲伤打断待办，不是瞬间办全。"},
+    {"id":"Q21","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":81,"line_end":81,"quote":"他没有接这句话，只将能按时妥办的定下，让旁边人记清送到哪里、由谁接。","use":"棺木取舍按可办时间和接收分工，没有新造法定礼制。"},
+    {"id":"Q22","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":85,"line_end":85,"quote":"另有人问此后官中的事怎样办，他只道眼下先料理家中，旁的待问明白。","use":"不确认离任/丁忧期限/官品，不把未知法制补成事实。"},
+    {"id":"Q23","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":93,"line_end":93,"quote":"婆子拿着几张记费用的纸过来，有一处被水洇掉，她记得大概，却不肯只凭嘴说，便叫经手的人来对。","use":"丧费劳动实际存在；同时是家务会计核证过密风险。"},
+    {"id":"Q24","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":97,"line_end":97,"quote":"她端着出去，脚步到灶房停下，里头又问晚饭还照几个人做，贾兰坐在案边，听见这一句，抬头应了一声。","use":"最后人间声音仍是活人用饭，不列全人物终局。"},
+    {"id":"Q25","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":99,"line_end":99,"quote":"人间这些余事，到此按下。","use":"人间封口门槛。"},
+    {"id":"Q26","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":101,"line_end":101,"quote":"不知何日何时，太虚一境，旧香极淡。案后旧册略露一角，册上系带垂着。警幻将它向里移过，另取一轴素榜，双手展平。","use":"非凡人梦，旧册不重读，另取单轴。"},
+    {"id":"Q27","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":101,"line_end":101,"quote":"轴端滚到案边，她用指尖抵住，榜面便停在灯影之下，正、副、再副、三副、四副五层依次显出。","use":"一轴五层而非五册重开。"},
+    {"id":"Q28","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":103,"line_end":103,"quote":"正层中一处字迹分明，写着：林黛玉——情情。副层显出香菱之名，再副可见晴雯、袭人；三副、四副铺开处仍是素白，深折间的字影随榜面轻动，未曾全展。","use":"第一硬评原字、少数既许姓名、低层保留未全展，不补全表。"},
+    {"id":"Q29","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":103,"line_end":103,"quote":"警幻的手沿榜边移到末端，最后一行落在榜末：贾宝玉——情不情。轴旁余纸垂下，殿中只听见轻轻一响。警幻按住卷端，道：“收罢。”","use":"第二硬评原字、宝玉榜末、警幻只有管理话。"},
+    {"id":"Q30","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":105,"line_end":105,"quote":"且把太虚一境按下，另说青埂峰。那石劫终，已复还本质，仍在峰下。","use":"章回另切峰石，明确新C终态，不是卷轴造成运输。"},
+    {"id":"Q31","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":107,"line_end":107,"quote":"那字末一笔被磨去，他拿起纸，回到石前比看，换一边站，仍只有半边可辨，便在纸上留空，从下一个清楚的字接着抄。","use":"回石核辨和留空是实际抄写劳动，不补字释榜。"},
+    {"id":"Q32","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":113,"line_end":113,"quote":"石在，字在。","use":"完整实读终点；句号准确，之后无语句。"},
+    {"id":"Q33","path":"/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt","line_start":111,"line_end":111,"quote":"空空道人把纸依次理齐，留空处仍留着，旧折压回原痕，最上面那张以小石压稳。他洗去笔上残墨，将笔搁好，砚边浅水慢慢渗进沙里。","use":"整理纸墨、收笔都先于硬终句；可同时保留末框拿放动作偏多的节奏意见。"}
+  ],
+  "required_beat_review": [
+    {"id":"100-S1-R1","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[3,17],"quote_ids":["Q01","Q02","Q03","Q04"],"finding":"衣袖由挽到放不出、旧书从认大字到能读、应试后成年等消息承载多年；9行明确未实授，11–15行仍有等候日用，再到17行实授。没有把公服提前作求仕结果。"},
+    {"id":"100-S1-R2","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[3,15],"quote_ids":["Q01","Q02"],"finding":"旧衣旧书少数物，不强召宝钗麝月团圆，不从旧书批注新造确证文献。"},
+    {"id":"100-S1-R3","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[9,35],"quote_ids":["Q03","Q06","Q10"],"finding":"盼仕仍要回帖、修箱、留饭；后来进项能改善日用，并未预支旧产。"},
+    {"id":"100-S2-R1","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[17,25],"quote_ids":["Q04","Q07"],"finding":"厨房先问饭够不够、加米是真待客需求；歪腿桌真使茶荡与贾兰失措；孩子将官等于钱落为天天吃肉问题，功能兑现。"},
+    {"id":"100-S2-R2","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[17,35],"quote_ids":["Q04","Q05","Q08","Q09","Q10"],"finding":"实授文书和母子看文书在前，27行公服才出现；冠帔试戴兼有喜欢颜色和压额红痕；有进项、修箱和粗瓷，也有误裁回礼。名位有获得，不写中兴。"},
+    {"id":"100-S2-R3","assessment":"OBSERVED_LOCAL_NARRATIVE_WITH_COMPRESSION","lines":[17,35],"quote_ids":["Q04","Q06","Q07"],"finding":"报喜、消息出门后贺帖增、贺客、帮厨、孩子均有不同需求。具体亲友传播中间人未展开，但21行由消息传出到贺帖增长可辨，不是无人凭空知情的硬矛盾；不要求补未经核验演员或传令制度。"},
+    {"id":"100-S3-R1","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[37,74],"quote_ids":["Q11","Q18"],"finding":"明确数月，冠帔不常用；晒衣、粥饭、衣褶、茶、花盆、避风和旧袄把能做渐变少做。受荣非即死。"},
+    {"id":"100-S3-R2","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[43,73],"quote_ids":["Q13","Q14","Q15","Q16","Q17"],"finding":"看她拆针即误认好转，搬帖纸造成疲倦，再自行接回；钥匙、纸、书并非无摩擦全交齐，留书理由是手边想看。此是局部C叙事，不是已执行病历/物件事件。"},
+    {"id":"100-S3-R3","assessment":"OBSERVED_LOCAL_NARRATIVE_WITH_MINOR_UNDERSPECIFICATION","lines":[39,73],"quote_ids":["Q12","Q14"],"finding":"医者只观察饭量精神不给准日子，婆子热粥拿水、贾兰拌汤照料实际存在，无病名剂量疗效保证；药物有提及但药费不单列。不能因此宣称药费链已全部闭合，也不把未报每项价格定成硬失败。"},
+    {"id":"100-S4-R1","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[75,97],"quote_ids":["Q19","Q20","Q21","Q23"],"finding":"在长段衰退后死亡，白布样、取齐时间、棺木选择与钱、吊客茶饭和收尾器具各有待办，不只是丧务总述。"},
+    {"id":"100-S4-R2","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[75,97],"quote_ids":["Q20","Q21","Q22"],"finding":"贾兰定夺而由丧务人、看棺木者、随行记话者、帮厨等分工；死后李纨不再发话，不列其他人结局。官中事待问明，未生成法定丁忧状态。"},
+    {"id":"100-S4-R3","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[97,101],"quote_ids":["Q24","Q25","Q26"],"finding":"用饭声音结束人间后明确按下，再不知何时入太虚。无凡人接收榜评。"},
+    {"id":"100-S5-R1","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[99,105],"quote_ids":["Q25","Q26","Q27","Q30"],"finding":"人间、太虚、青埂峰三层用文体门槛分开；旧册只露角移入，另展一轴五层；没有五册重开或凡人梦。"},
+    {"id":"100-S5-R2","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[101,103],"quote_ids":["Q27","Q28","Q29"],"finding":"仅宝黛两条硬评逐字，宝玉榜末；香菱/晴雯/袭人是原许少数显示。没有补十二名、全表、层人数或额外情评。三四副素白且深折未全展是显示留白，不断言原榜无人。"},
+    {"id":"100-S5-R3","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[103,105],"quote_ids":["Q29","Q30"],"finding":"警幻说收罢并收卷，之后且把/另说切山，不连接为榜收导致石飞回；叙事名号不冒充注册演员。"},
+    {"id":"100-S5-R4","assessment":"OBSERVED_LOCAL_NARRATIVE","lines":[105,113],"quote_ids":["Q30","Q31","Q33","Q32"],"finding":"石已劫终复还本质是正文明确的授权C终态，非原文引语认证；粗纸垫平、残墨添水、回石比字、漫漶留空、风动压纸、接纸与收笔全部在硬末句之前。正文末字准确且其后无语句。"}
+  ],
+  "forbidden_beat_review": [
+    {"ids":["100-S1-F1","100-S1-F2"],"assessment":"NOT_OBSERVED_IN_COMPLETE_READ_TEXT","lines":[1,113],"finding":"未写数年一跳即中兴；未实授前无公服作证，无具体年份官品或榜知倒灌。"},
+    {"ids":["100-S2-F1","100-S2-F2"],"assessment":"NOT_OBSERVED_IN_COMPLETE_READ_TEXT","lines":[1,113],"finding":"无复产、无限现金、未经核验诏敕全文与官品制度展示；孩子吃肉误会是孩子声口。"},
+    {"ids":["100-S3-F1","100-S3-F2"],"assessment":"NOT_OBSERVED_IN_COMPLETE_READ_TEXT","lines":[1,113],"finding":"无得荣即死、神示奇病、一生立论、遗物总展或提前以情榜解释李纨。"},
+    {"ids":["100-S4-F1","100-S4-F2"],"assessment":"NOT_OBSERVED_IN_COMPLETE_READ_TEXT","lines":[1,113],"finding":"无死后复产、全人物命运发布、确定丁忧离任/官品新状态、凡人梦榜或转述榜评。"},
+    {"ids":["100-S5-F1","100-S5-F2","100-S5-F3"],"assessment":"NOT_OBSERVED_IN_COMPLETE_READ_TEXT","lines":[1,113],"finding":"无五册60人、全名单、其余新情评/总释/终诗；无凡人进入榜框，无榜收归石因果、玉石物流、飞石变玉、僧道运送、新角色ID、UNKNOWN升级。没有把榜中列名当活跃演员。"}
+  ],
+  "old_short_draft_issues_followup": [
+    {"old_issue":"STONE_TERMINUS","this_version":"LOCAL_OBLIGATION_NOW_OBSERVED","evidence":["Q30"],"limitation":"不删除旧短稿FAIL，不升级石文全书或运行终态资格。"},
+    {"old_issue":"HARD_TERMINAL_PUNCTUATION_AND_AFTERWORD","this_version":"LOCAL_OBLIGATION_NOW_OBSERVED","evidence":["Q33","Q32"],"limitation":"113行句号终止，只有文件换行；不是旧稿已经修好的追改声明。"},
+    {"old_issue":"UNSOURCED_RATINGS_AND_EXACT_PAIR","this_version":"LOCAL_OBLIGATION_NOW_OBSERVED","evidence":["Q28","Q29"],"limitation":"未见牵挂/不肯回头等新评；两硬评原字。只评新v1字面，不恢复原旧稿评语。"},
+    {"old_issue":"HUMAN_DURATION_AND_RICE_QUESTION","this_version":"LOCAL_OBLIGATION_NOW_OBSERVED","evidence":["Q01","Q02","Q03","Q04","Q11","Q13","Q14","Q20"],"limitation":"多年、尚待实授、阶段间隔、厨房原问、数月与病弱后果已具体化，但不因扩到万字就文学通过。"}
+  ],
+  "confirmed_new_contradictions": [],
+  "contradiction_assessment": {
+    "status": "NO_DEFINITE_NEW_LOCAL_CONTRADICTION_IDENTIFIED_IN_READ_SCOPE",
+    "not_global_pass": true,
+    "checks": [
+      "时序：3–15行从小时到多年成年，17行另隔一段实授，27行才公服，37行明确数月，75行才死亡，无提前实授/冠帔即死。",
+      "物件：49行钥匙曾由贾兰试锁后交回婆子；87行存柴门钥匙未说就是早先那串，不能凭都叫钥匙强判重复占有。83行明确歪腿桌是重新借来，95行再还，不是假定一直未归还。",
+      "照料：39行孩子已过玩碗年纪与25行问吃肉并不互斥，不能由未锁年龄造数月内突长硬矛盾。",
+      "死后：75行后李纨仅是遗体/旧物与回忆焦点，85行想起劝换旧袄是贾兰回想，不是死者复活发话。",
+      "框架：103行素白与深折字影未全展并非确定同一处既无字又有字；表现只见局部，不是补下层人名。105行明确复本质也不是尘世holder/location被证明。"
+    ],
+    "standard": "没有足够相互排斥的文本断言就不造硬FAIL；文学重复、来源UNKNOWN和未执行校验分别保留。"
+  },
+  "literary_risks_not_converted_to_hard_failures": [
+    {
+      "id":"L100-HOUSEHOLD-ACCOUNTING-DENSITY",
+      "assessment":"SUBSTANTIVE_LITERARY_CONCERN_NOT_LOCAL_CONTRADICTION",
+      "lines":[33,35,43,45,47,49,51,53,55,69,79,81,87,91,93],
+      "quote_ids":["Q10","Q15","Q16","Q21","Q23"],
+      "finding":"礼物谁送/先送、旧茶新茶、钥匙、哪张纸哪个箱、白布取齐、棺木接收、费用洇字对账相继出现。每件各能说明照料与责任，但总密度令母子晚荣和死亡常以家务会计核对推进，特别93行又一次核证费用可能把丧后余震压成验收收尾。",
+      "counterweight":"23行茶具误挪确由贾兰得意造成旁人多忙；43–47行错把母亲好转有体力后果；89行磕壶和饿饭让人情打断账务，不宜把所有家务一概当凑字。",
+      "feedback_only":"若未来另版，优先比较同功能问答是否已由前一场完成；保留能改变母子关系/使他人多忙的场，不是要求本轮改稿。"
+    },
+    {
+      "id":"L100-REPEATED-TAKE-PLACE-RETURN",
+      "assessment":"RHYTHM_RISK_NOT_OBJECT_CONTINUITY_FAIL",
+      "lines":[11,13,15,23,31,49,51,53,55,57,63,65,67,73,77,91,95,97,101,103,105,107,109,111],
+      "quote_ids":["Q16","Q17","Q18","Q33"],
+      "finding":"衣服拿换掖收、茶纸包取回再收、盆花多次挪转、旧袄叠开又叠，以及末框纸墨垫放收笔，反复构成拿起—误放/不妥—改位置—放好节拍。花盆有母亲具体观看欲望，末框有抄写摩擦，但相同动作句式累积会钝化场间速度。",
+      "not_a_demand":"末框756字符仍在短外框目标；不能为了批重复而要求删掉粗纸残墨、回石比字、漫漶留空等保护动作，也不能说末尾已长到数千字。"
+    },
+    {
+      "id":"L100-FRAME-CERTIFYING-NARRATION",
+      "assessment":"WATCH_ITEM_RESTRAINED_IN_THIS_TEXT",
+      "lines":[99,101,103,105,111,113],
+      "quote_ids":["Q25","Q27","Q28","Q29","Q30","Q32"],
+      "finding":"五层依次显出、一处字迹分明、最后一行落在榜末略有逐项点锚的认证感；103行最后一行与榜末语义重复。不过没有解释榜义、宣称全榜完整或把未知作者/史料可靠性写进旁白。105行明确劫终复还本质是本次有意授权的C终态，不能仅因明示而反定为违规认证。",
+      "limit":"属于细微声口/节拍关切，不是新增情评或框架知识违规。"
+    },
+    {
+      "id":"L100-NEW-APHORISM",
+      "assessment":"NOT_IDENTIFIED_AS_A_DEFINITE_PROBLEM",
+      "lines":[13,33,47,57,85,99,105,113],
+      "quote_ids":["Q17","Q22","Q25","Q30","Q32"],
+      "finding":"李纨别这头许一句、先把这一份送对等仍针对当下母子办事；留书因手边想看，没有升成不能改写从前的人式新格言。人间按下与末句是保护门槛/锁句，非本稿新造总结诗。全稿未见需要确定标成新哲理格言的句子，仍可在后续文学阅读比较家务纠偏口气是否过齐。"
+    }
+  ],
+  "unknowns_and_nonpromotion": {
+    "source_UNKNOWN_is_not_automatic_FAIL": true,
+    "retained": [
+      "贾兰具体官品、确年、收入数额、实授/封荣正式文书细节与法定丁忧/离任程序UNKNOWN；85行待问明白不等完成法制核验。",
+      "李纨具体病名、精确病历日期与治疗效果UNKNOWN；小说渐衰日用属当前C呈现，不是新医学源证。",
+      "警幻与空空道人作为章卡叙事名号可读，registry_id、完整localcast、外框场级入口出口仍UNKNOWN；participants=[]不表示没有演员。",
+      "正式总榜名、每层人数、下层完整名单及其余情评OPEN_LOCKED；不因只显少数名而要求补十二名或六十名。",
+      "尘世通灵玉holder/location/route仍UNKNOWN；石归只作外框身份终态，不添运送、飞石、变玉或榜收导致回归。",
+      "OT100-01是FRAME_STATE_CHANGE、movement=NONE；小说明示终态不等旧运行在新场已执行，更不更新对象/知识registry。",
+      "石文全书完整度、原始作者输入、源证真实性与全书文学采用均未认证。"
+    ],
+    "no_manual_authority_from_word_count_or_hash": true
+  },
+  "validation_and_tool_custody": {
+    "input_binding_and_terminal_check": "EXECUTED_OK using read-only Python -I on exact listed files",
+    "report_validation": "EXECUTED_OK: Python -I parsed report JSON; verified all 10 consumed-input hashes unchanged, 16 required beats and 11 forbidden beats represented, authority NONE and NOT_ADOPTED. Subsequently only these two validation-status strings were replaced using Edit; no second parser rerun claimed.",
+    "literal_quote_programmatic_check": "EXECUTED_OK: all 33 quotes matched exact declared original path and inclusive line range; minimum 10 exceeded. This validates literal location only, not literary judgment or sources.",
+    "safety_rule": "如校验工具因安全判定服务再受阻，立即停止该校验，不换语言、工具、代理或权限绕行；将实际未执行项记NOT_EXECUTED。Read体积上限不是已执行校验，也不伪造PASS。",
+    "new_repository_files_created_by_this_reader": ["/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/readings/ch100-v1-reader1.json"],
+    "source_edits": 0,
+    "delegated_agents": 0,
+    "git_commits": 0,
+    "imports": 0,
+    "adoptions": 0
+  },
+  "reader_conclusion": {
+    "narrow_result": "已完整实读冻结长v1。未检出确定新的局部物件/时序/知情矛盾；旧短稿的终态不明、硬终句失守、未据新评及多年/数月/厨房原问缺场，在本长v1都有可定位的叙事兑现。",
+    "remaining_concerns": "人间家务会计、物品核对和拿放改位节奏过密仍是实质文学关切；框架点锚旁白有轻微认证感但未变榜义说明；不虚构一个本稿没有的新格言问题。",
+    "not_claimed": "不是整体文学PASS、最终定稿、全史料合格、panel通过、研究发布或ADOPT。只冻结此份FEEDBACK_ONLY读报。"
+  }
+}

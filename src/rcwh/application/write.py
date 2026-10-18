@@ -81,7 +81,8 @@ def command(args) -> int:
             runner = None if is_dry(args) else runner_for(args, root)
             report = feedback_report(root, args.candidate, runner=runner, budget=budget_for(args),
                                      model=args.model, style_reference=args.style_reference,
-                                     exclude_chapters=args.exclude_chapters, fallbacks=args.fallbacks)
+                                     exclude_chapters=args.exclude_chapters, fallbacks=args.fallbacks,
+                                     audit_narrator=args.narrator_audit)
             payload = {"status": "PASS", "report": report, "authority_effect": "NONE"}
             if args.dry_run:
                 payload["mode"] = "DRY_RUN"
@@ -89,11 +90,13 @@ def command(args) -> int:
                 payload["feedback"] = store(root, "data/writing/feedback", report)
         else:
             draft, _ = load_draft(root, args.candidate)
-            rendered = revision_prompt(root, args.candidate, args.feedback, args.notes)
+            rendered = revision_prompt(root, args.candidate, args.feedback, args.notes,
+                                       revision_template=args.revision_template)
             budget = budget_for(args)
             if is_dry(args):
                 context = selection_context(root, parent_path=args.candidate,
-                                            feedback_path=args.feedback, notes_path=args.notes)
+                                            feedback_path=args.feedback, notes_path=args.notes,
+                                            revision_template=args.revision_template)
                 payload = preview(rendered, budget, args, root=root, context=context)
             else:
                 payload = generate(root, runner_for(args, root), rendered, budget, chapter=draft["chapter"],
@@ -120,10 +123,13 @@ def add_commands(sub) -> None:
     feedback.add_argument("candidate", help="Repository-relative immutable draft record, not bare prose")
     feedback.add_argument("--style-reference", action="store_true", help="Compute corpus distribution (may rebuild corpus)")
     feedback.add_argument("--exclude-chapters", nargs="*", type=int, default=[])
+    feedback.add_argument("--narrator-audit", action="store_true", help="Advisory lexical warnings, not a literary gate")
     revise = commands.add_parser("revise")
     revise.add_argument("candidate", help="Repository-relative immutable draft record")
     revise.add_argument("--feedback", required=True)
     revise.add_argument("--notes", help="Repository-relative editorial notes")
+    revise.add_argument("--revision-template", choices=["revise-v1", "revise-v2"], default="revise-v1",
+                        help="Explicit revision template; legacy v1 remains the default")
     imported = commands.add_parser("import-draft", help="Import session-authored research text; no provider execution claimed")
     imported.add_argument("text", help="Repository-relative UTF-8 prose; exact bytes are retained")
     imported.add_argument("--request", required=True, help="Repository-relative exact draft/revise dry-run JSON manifest")

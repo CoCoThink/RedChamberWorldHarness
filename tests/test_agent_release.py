@@ -31,7 +31,7 @@ def packet(root, name, subjects):
         "authority_effect": "NONE", "usage": "RESEARCH_ONLY"})
 
 
-def peers(root, binding, count=2, verdict="PASS", session_prefix="reader"):
+def peers(root, binding, count=2, verdict="PASS", session_prefix="reader", severity=None):
     document = json.loads((root / binding["path"]).read_bytes())
     refs = []
     for i in range(count):
@@ -45,6 +45,9 @@ def peers(root, binding, count=2, verdict="PASS", session_prefix="reader"):
                              {"sample_id": x["id"], "sha256": x["binding"]["sha256"], "verdict": verdict, "notes": "Synthetic sample opinion"}
                              for x in s.get("samples", [])]} for s in document["subjects"]],
             "authority_effect": "NONE", "usage": "RESEARCH_ONLY", "independent_human_admission": False}
+        if severity is not None:
+            for result in opinion["results"]:
+                result["severity"] = severity
         original = write(root, f"research/{binding['sha256']}-{session_prefix}-{i}.json", opinion)
         refs.append(register(root, root / original["path"], origin="synthetic test session"))
     return refs
@@ -227,17 +230,34 @@ def test_coordinator_neutral_tie_cannot_auto_select_from_scores(edition, monkeyp
     assert report["output"]["text"] is None
 
 
-def test_negative_review_prevails_over_positive_and_coordinator_adopt(edition, monkeypatch):
+def test_blocking_negative_review_prevails_over_positive_and_coordinator_adopt(edition, monkeypatch):
     e = edition
     positive_gates(e, monkeypatch)
     peers(e.root, e.packet, count=1, verdict="REJECT", session_prefix="dissent")
     decide(e)
     report = e.runtime.evaluate(e.request)
     assert report["status"] == "FAIL"
+    # An undeclared-severity rejection is BLOCKING: the coordinator may record
+    # a reasoned ruling, but cannot lift the failed peer gate.
     assert report["chapters"][0]["gates"]["CANDIDATE_PEERS"] == "FAIL"
-    assert report["chapters"][0]["gates"]["COORDINATOR_DECISION"] == "FAIL"
+    assert report["chapters"][0]["gates"]["COORDINATOR_DECISION"] == "PASS"
     with pytest.raises(AssetError, match="FAIL"):
         e.runtime.build(e.request, allow_pending=True)
+
+
+def test_advisory_dissent_overruled_by_coordinator_still_builds_research_edition(edition, monkeypatch):
+    """E.g. a plan-card detail differing from the prose: reported, not a gate."""
+    e = edition
+    positive_gates(e, monkeypatch)
+    peers(e.root, e.packet, count=1, verdict="FAIL", session_prefix="dissent", severity="ADVISORY")
+    decision = decide(e)
+    assert len(decision["rejected_opinions"]) == 1
+    report = e.runtime.build(e.request)
+    chapter = report["chapters"][0]
+    assert report["status"] == chapter["gates"]["CANDIDATE_PEERS"] == chapter["gates"]["COORDINATOR_DECISION"] == "PASS"
+    assert [a["severity"] for a in chapter["reviews"]["candidate"]["advisories"]] == ["ADVISORY"]
+    assert (e.root / report["output"]["text"]["path"]).is_file()
+    assert report["independent_human_admission"] is False and report["stable_active_effect"] == "NONE"
 
 
 def test_new_opinion_requires_new_bound_coordinator_decision(edition, monkeypatch):
@@ -368,8 +388,18 @@ def test_input_scope_source_corpus_and_contracts_are_separate_gates(edition, mon
         {"id": "contract", "scope": "CONTRACT", "binding": e.contract}])
     e.request["chapters"][0]["panel"]["packet"] = e.packet
     peers(e.root, e.packet)
-    monkeypatch.setattr("rcwh.workflow.admission.chapter_scope", lambda root, path: {
+    monkeypatch.setattr("rcwh.workflow.admission.chapter_scope", lambda root, path, **kwargs: {
         "chapter": 86, "paths": [e.package["path"], e.contract["path"]], "used_source_ids": ["source:needed"],
         "dataset_refs": ["synthetic-dataset"], "findings": ["CHAPTER_SCENE_SCOPE_MISSING"] if missing_contracts else []})
     gates, _ = e.runtime._inputs(e.request["chapters"][0])
     assert gates == {"WRITING_PACKAGE": "PASS", "CONTRACT_PEERS": "PENDING" if missing_contracts else "PASS", "SOURCE_PEERS": "PENDING", "CORPUS_PEERS": "PENDING"}
+
+
+def test_missing_review_packet_is_pending_input_not_failure(edition):
+    e = edition
+    (e.root / e.packet["path"]).unlink()
+    report = e.runtime.evaluate(e.request)
+    gates = report["chapters"][0]["gates"]
+    assert gates["CANDIDATE_PEERS"] == "PENDING"
+    assert report["status"] == "PENDING"
+    assert any("packet not found" in p for p in report["chapters"][0]["pending"])

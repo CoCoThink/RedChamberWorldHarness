@@ -1,0 +1,190 @@
+{
+  "schema_version": 1,
+  "report_kind": "ANONYMOUS_DIMENSIONAL_COMPARISON",
+  "report_id": "reader-two-comparison-v1",
+  "reader": "p8-two",
+  "opinion_reviewer_id": "reader:p8-two",
+  "session": "reading-p8-two",
+  "kind": "MODEL_SUBAGENT",
+  "review_mode": "FEEDBACK_ONLY",
+  "authority_effect": "NONE",
+  "adoption_status": "NOT_ADOPTED_NOT_RELEASED",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "artifacts/agent_research/reading/set-p8-v1/public/packet.json",
+    "sha256": "53d857bc30b6df44fa51c498256254676a29df309677baa6e1c2ee36f70a725f"
+  },
+  "packet_id": "reading-f5983310b2a4414d35febd1a",
+  "opinion": {
+    "path": "artifacts/agent_research/reading/set-p8-v1/submissions/reader-two-opinion-v1.json",
+    "sha256": "64e7aacb45237eb579b4862741b7937e8dbf8b4f0613b3bfaf83c09dc1f62379"
+  },
+  "stage_bindings": [
+    {
+      "stage": 1,
+      "subject_index": 2,
+      "subject_id": "read-79dc845cf19f1795e236e82b",
+      "subject_binding": {"path": "artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt", "sha256": "c64115b3ee31142253454e43be41a45a62bd4bf7ffc72d90f60797a4345b4636"},
+      "report": {"path": "artifacts/agent_research/reading/set-p8-v1/submissions/reader-two-subject-three-observations-v1.json", "sha256": "91043ea2512090f3eb5ddf2c99285e5d18fc74a0affb3fa1d39ddbfbaf4d1d7a"},
+      "actual_complete_read_range": [1, 718],
+      "frozen_verdict": "PENDING",
+      "current_verdict": "PENDING",
+      "hard_fail_count": 0,
+      "retained_findings": "准回待放行、病亡补袖与湿布、孩子临车分离、贫居劳动取舍有力度；量米口径/当票方位疑点不达确定互斥；小阻滞复现、防错旁白、照护者纠正宝玉及三线趋同风险保留。"
+    },
+    {
+      "stage": 2,
+      "subject_index": 1,
+      "subject_id": "read-c25e7c679cc1c53fb9e60dfb",
+      "subject_binding": {"path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt", "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c"},
+      "report": {"path": "artifacts/agent_research/reading/set-p8-v1/submissions/reader-two-subject-two-observations-v1.json", "sha256": "6250a053edc7b877776130a770f84a44b44482666feec526dd1e7f10d7c3f534"},
+      "actual_complete_read_range": [1, 719],
+      "frozen_verdict": "PENDING",
+      "current_verdict": "PENDING",
+      "hard_fail_count": 0,
+      "retained_findings": "对话群像及袭人麝月私谈活，95同器量米明确，97若兰明说外出延归；赠米一半/大半、包物昨夜回指、代词为疑点；节用训诫、95日用铺陈、97整块三线的风险保留。"
+    },
+    {
+      "stage": 3,
+      "subject_index": 0,
+      "subject_id": "read-ac0031c62acffe18f0f7c9ce",
+      "subject_binding": {"path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f"},
+      "report": {"path": "artifacts/agent_research/reading/set-p8-v1/submissions/reader-two-subject-one-observations-v1.json", "sha256": "fc12036c3e4b07c6f8cf33018029df4d3f1457148c3a614e7fcc2c5b7b335e9e"},
+      "actual_complete_read_range": [1, 633],
+      "frozen_verdict": "PENDING",
+      "current_verdict": "PENDING",
+      "hard_fail_count": 0,
+      "retained_findings": "凤姐我怕/平儿我在、孩子明日留饭、刘姥姥恩物已用仍可腾炕、典衣空位反差有情感强度；多处择房与同器量米清楚，湘云缺席未明不推死亡；程序边界密、库存说明和97日用同构风险保留。"
+    }
+  ],
+  "method_and_limits": {
+    "reading_order": [2, 1, 0],
+    "all_three_complete": true,
+    "total_actual_text_lines_read": 2070,
+    "prior_stages_edited": false,
+    "peer_reports_read": false,
+    "identity_inference_performed": false,
+    "model": {"label": "gpt-6.1-sol", "verification": "DECLARED_NOT_VERIFIED"},
+    "context_isolation": {"asserted": false, "verification": "NOT_PROVEN"},
+    "environment": "本地Linux/WSL2同一repo，非provider/human认证；同context顺序阅读，任务访问边界不是权限、记忆或操作系统隔离。",
+    "memory_limit": "前读记忆与次序锚定不能排除，当前比较有意使用三次本人全文阅读。各组人物物件不互套，所有本文件quote均绑定所在组path与行号；最终只读核验不是重新以hash或搜索代读。",
+    "additional_exposure": "初始自动注入分支、改动摘要与近期提交标题等元数据；已读packet全体匿名id/path/hash和获准schema；用户给定关注点会影响注意。未打开coordinator、原phase5/phase6、身份映射、作者、source/notes或他人报告。为精确绑定只读本人前两阶段报告hash与必要JSON字段，未改文件。",
+    "training_familiarity": "未知，无法认证训练未见相关旧书或相似文本，熟悉感不用于推身份或认定事实。",
+    "verification": "Python -I标准库只读JSON/hash/quote核验；无repo代码、测试、repo模块import、登记、委派或权限绕行。",
+    "interpretive_rule": "不以外部旧书义务或任务词表判断文学质量；未知、省笔、角色不可靠话不自动FAIL。确定互斥必须在同一排他条件下有双方原文，三组均未检出达到该标准的确定对。PENDING不等于已通过或已失败。"
+  },
+  "dimensions": [
+    {
+      "dimension": "问讯、准回与实际出门的节奏",
+      "evidence": [
+        {"subject_index": 2, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt", "line_start": 129, "line_end": 129, "quote": "宝玉尚未过监门，领物与放行还在后头。"},
+        {"subject_index": 1, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt", "line_start": 125, "line_end": 125, "quote": "外门开时，一股冷风直扑脸上。他站在门槛外"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 123, "line_end": 123, "quote": "小纸与原先所收的零碎还未到他手中，看守也没有开最后那道门。"}
+      ],
+      "comparison": "subjects[2]与[0]都把92结束放在准回后尚未过门，使等待跨回；[1]在92完成过门归巷，93承入家，章内起落更完整。[2]反复准回不等放行的压力较强，[0]又把领回小纸与炒米空纸区分，物件接口更细；[1]羁留查交接与瘦汉对话推进较多。三种门界安排各有节奏用途，不以必须同回出门作统一尺。",
+      "tradeoff": "跨回等待强化禁闭拖延，也较多解释；章内出监较利落，却让候办细节成为省笔，省笔本身不FAIL。"
+    },
+    {
+      "dimension": "凤姐病亡、照护与孩子如何理解",
+      "evidence": [
+        {"subject_index": 2, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt", "line_start": 206, "line_end": 206, "quote": "水全挤到盆中，布已经干了，她仍在拧。"},
+        {"subject_index": 1, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt", "line_start": 217, "line_end": 217, "quote": "像想把它再垫高一点，手伸到一半才停住。"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 207, "line_end": 207, "quote": "凤姐望着门帘，低低说：“我怕。”"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 251, "line_end": 251, "quote": "她又问：“明日也留？”"}
+      ],
+      "comparison": "[2]以孩子硬缝和死后拼白布相映，平儿动作失去用途才使悲伤到场，压迫连续；[1]保留凤姐病中机锋、记鞋与补人口，贾琏靠枕停手补出夫妻迟来的无用照顾，病程跨日较明；[0]临终直接怕而不求圆满遗言，留孩子一碗饭延到死后明日也留，把孩子误解与照护承诺连起来。",
+      "tradeoff": "[2]触感浓而后半换手寻布长；[1]声音活而仍管事的反复较多；[0]直言恐惧很有力，却与大量办事边界句共存。三组各自病亡确认明确，不把孩子误解判事实未死。"
+    },
+    {
+      "dimension": "说亲风险、暂住与平儿能否同行",
+      "evidence": [
+        {"subject_index": 2, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt", "line_start": 328, "line_end": 328, "quote": "话到了口边只剩“我不去”。"},
+        {"subject_index": 1, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt", "line_start": 291, "line_end": 291, "quote": "我先送你去，过一夜再回来。"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 313, "line_end": 313, "quote": "那时就吃了用了，才活到如今。"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 355, "line_end": 355, "quote": "孩子午饭喝了些汤，夜里怎样却未亲见。"}
+      ],
+      "comparison": "[2]有门外车等的当日逼迫，平儿不能同行，孩子入村后的夜醒和误认使保护也带失落；[1]王仁说定礼与先到舅家，平儿陪宿才走，刘家借筛换柴群像让安顿较温厚；[0]媒人数次家情不明，父亲与祖母明确未应，刘姥姥说恩物已用，另雇陪送妇人而不保证夜间情况，重点在可负担的救护与信息限度。",
+      "tradeoff": "[2]危机和分别更紧，[1]陪宿与回报较舒展，[0]人手限制最显但说亲盘问较缓。三组均只说暂住，未完成永久送养；不能用一组陪送方式裁另一组应当同做。"
+    },
+    {
+      "dimension": "搬屋空间与劳动成本",
+      "evidence": [
+        {"subject_index": 2, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt", "line_start": 420, "line_end": 420, "quote": "那便宜的房钱可替自己提水"},
+        {"subject_index": 1, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt", "line_start": 355, "line_end": 355, "quote": "住人尽够。"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 381, "line_end": 381, "quote": "等人家灶空，粥便凉一回，炭也多烧一回。"}
+      ],
+      "comparison": "[2]亮而贵与阴冷便宜两屋，后者门急关、取水远，价格让步落到麝月的身体劳动；[1]迁居近乎回首略写，后面四日记米炭衣灯细账，重心是住后节用；[0]三处把押钱、共灶、搭灶、水路与窗朽分开，独用灶成为麝月实际偏好，衣架赠留而非无限寄存。",
+      "tradeoff": "[2]场景冲突直接，[0]选择层次细，[1]较快进入居家对话但迁移的失所感较弱。看得多、交代得细未必自动更文学，三组都面临小空间让路反复的疲劳风险。"
+    },
+    {
+      "dimension": "钱米、量器和票据的可追踪程度",
+      "evidence": [
+        {"subject_index": 2, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt", "line_start": 476, "line_end": 476, "quote": "锅里煮好分出来才叫两碗半"},
+        {"subject_index": 2, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt", "line_start": 566, "line_end": 566, "quote": "麝月仍量了两碗半，倒进淘盆"},
+        {"subject_index": 1, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt", "line_start": 499, "line_end": 499, "quote": "“两碗半，明儿还是这个碗？”宝钗道：“还是那个。”"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 447, "line_end": 447, "quote": "水添得不同，米没添。"}
+      ],
+      "comparison": "[2]前解释熟粥两碗半，后量生米仍两碗半，回指有疑点但未证明盛饭与量米碗同容量；[1]与[0]同一小木碗量生米的接口更明确，[0]又把稠薄归水量。衣当出以后，三组都不让赠银自动等于赎衣。[2]票由盒/匣下外露至后回开匣有方位与时距疑点；[1]匣底与信暂放篮子已当场分清，但赠米袋内一半/大半较强疑点仍存；[0]票压盒下有反复拿取归位、赠米半袋尚未全倒，局部可追踪性较稳。",
+      "tradeoff": "物账清楚有助信任，不等于全篇质量排名。多次否定混放或误量也容易使小说像验收说明；[0]和[2]尤其有此负担，[1]虽量器明白仍不能因此忽略它自己的量词疑点。"
+    },
+    {
+      "dimension": "友人是否有不围着主角的生活",
+      "evidence": [
+        {"subject_index": 2, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt", "line_start": 592, "line_end": 592, "quote": "我倒忘了，不该叫你们等。"},
+        {"subject_index": 1, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt", "line_start": 537, "line_end": 537, "quote": "哪能天天想旧屋。"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 491, "line_end": 491, "quote": "他若迟，那边也迟。"}
+      ],
+      "comparison": "三组的蒋玉菡都有教习/演出和不稳定收钱，不只是送物人。[2]把宝玉赶写回信挤占客人工期写成一次承认；[1]袭人麝月私谈新家、旧钥匙、油膏，使离开旧主不等于忘情，私密空间较多；[0]身体习惯不再整领口、他家的人使宝玉收手，加上行头需试改，关系界限主要以动作显出。",
+      "tradeoff": "[1]解释和对话较多也有充分独立声口；[0]动作细但仍易落在分工校正；[2]互相玩笑舒展却宝玉受教中心较显。没有哪一项直接推成全组赢家。"
+    },
+    {
+      "dimension": "家常信、缺席原因与未知",
+      "evidence": [
+        {"subject_index": 2, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt", "line_start": 652, "line_end": 652, "quote": "他既不在，就问我。"},
+        {"subject_index": 1, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt", "line_start": 603, "line_end": 603, "quote": "月尽不归，又捎信说还要多留些时日。"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 597, "line_end": 597, "quote": "若兰方便便一同回来话。她的手在纸边停了停"}
+      ],
+      "comparison": "[1]明确外出延归，还有若兰本人短札，读者可知独膳非死讯；[2]与[0]未把缺席性质讲明，空箸和旧衣保留丧失感却不构成病亡事实。[2]信由书摊—贾芸—袭人转到，宝玉写回；[1]长信转贾芸，后湘云自发寄短笺，不借另一组给它补主角回信；[0]由另有营生的妇人依次送来与后来送回，宝钗主笔、宝玉添字，597读到的内容可接529–531。",
+      "tradeoff": "清楚原因减少情境悬空，不必然比留白有力；留白可能使失落更复杂，也可能使前信热闹到独膳的接口难定位。三组皆不得由外部旧书替若兰判死或规定必回。"
+    },
+    {
+      "dimension": "97三线两庵的组织与性情余绪",
+      "evidence": [
+        {"subject_index": 2, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt", "line_start": 626, "line_end": 626, "quote": "惜春住的却是别处尼庵。"},
+        {"subject_index": 1, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt", "line_start": 661, "line_end": 661, "quote": "仍按原句念下去，不快也不慢。"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 607, "line_end": 607, "quote": "她手仍扶着，壶稳才收回。"},
+        {"subject_index": 0, "path": "artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt", "line_start": 617, "line_end": 617, "quote": "谁同你说我件件想得明白？"}
+      ],
+      "comparison": "[2]与[0]密交切湘云、妙玉、惜春，水灰纸衣相互照面；[1]先完整湘云、再妙玉赴佛事与借盆、最后惜春探望，各段清楚而像三个相邻单元。[1]妙玉守经声速度，留下不肯全让的宗教/职业边界；[0]从私盏、借盆到扶公壶才松手，以共享劳动压出改变而不宣告灰衣更好；[2]借盆后次日仍摸涩闻盏，保留难改的洁意。三组惜春皆留梳并否认件件明白，不把剃发等于已经全悟。",
+      "tradeoff": "交切会产生回响也可能让三人同质化；分块保留不同事件弧也会弱彼此对照。两庵在三组均不可串为一处，画袋去留也各不同，不能用某组退袋判断另组在庵的袋凭空回来。"
+    }
+  ],
+  "disagreements_and_retained_uncertainty": {
+    "no_overall_winner": true,
+    "no_rank_order": true,
+    "no_peer_consensus_claim": true,
+    "between_stage_changes": "前两阶段文件和PENDING未改，最后一组亦PENDING；没有为凑三组差异而硬选PASS/FAIL。三组各自疑点的证据与互斥不足留在各自报告，当前比较不覆盖原判断。",
+    "internal_tensions": [
+      "物件和钱米追踪更清楚，可能同时更损含蓄；不将二者合并为单一优劣分。",
+      "说笑和群像可活化穷困，也可能使痛苦轻捷过关；本组读感允许两面并存。",
+      "孩子适应乡里可写慢也可陪宿而较安稳，不能以悲伤越强越好作为唯一标准。",
+      "湘云缺席明因与留白各有不同文学收益，未知不等于错误，也不自动等于高明。",
+      "同context次序效应及未知训练熟悉无法由本报告消除，不宣称独立人类复核。"
+    ],
+    "hard_fail_conclusion": "确定硬FAIL总计0。若后来出现明确排他的新文内证据，可另立新版本审查；本轮不把约数、方位省笔或未写缺席原因升格为FAIL。PENDING是保留文学和局部语义疑点的真实研究判断，不是故意避免分歧。"
+  },
+  "freeze_and_validation": {
+    "frozen": true,
+    "files_created_this_stage": [
+      "artifacts/agent_research/reading/set-p8-v1/submissions/reader-two-subject-one-observations-v1.json",
+      "artifacts/agent_research/reading/set-p8-v1/submissions/reader-two-opinion-v1.json",
+      "artifacts/agent_research/reading/set-p8-v1/submissions/reader-two-comparison-v1.json"
+    ],
+    "check_scope": "三份新JSON可解析，绑定packet、三个subject、三份本人阶段报告与opinion的hash，比较quote逐字落于对应组行范围；第三阶段1–633覆盖，每回至少3quote与五接口双侧；opinion按已读schema以标准库核允许键、常量、枚举、类型、三result、sample_checks=[]及reader/session声明，不用repo校验器或测试。前两份报告hash不变。",
+    "not_registered": true,
+    "not_adopted": true,
+    "not_released": true,
+    "handoff": "冻结这三份新文件并交回协调者；无总赢家，无身份推测，无后续自动行动。"
+  }
+}

@@ -1,0 +1,432 @@
+{
+  "schema_version": "1.0",
+  "review_id": "interface-review-v1",
+  "review_kind": "复用跨批实际阅读context的高优先相邻接口定向核查",
+  "classification": {
+    "source": "MODEL",
+    "second_full_book_reader": "NONE",
+    "disposition": "FEEDBACK_ONLY",
+    "specialized_policy_qualification": "NONE",
+    "qualification_note": "不是第二全书读者，不是专门policy资格认定，不是完整全书连续性通过证明。"
+  },
+  "custody": {
+    "output_path": "/tmp/rcwh-final-reading-b2420fb4/interface-review-v1.json",
+    "repository_root": "/mnt/d/Code/RedChamberWorldHarness",
+    "this_save_repository_writes": "NONE",
+    "source_text_edits": "NONE",
+    "previous_targeted_raw_edits": "NONE",
+    "only_new_file_in_this_save": "/tmp/rcwh-final-reading-b2420fb4/interface-review-v1.json",
+    "frozen_on_successful_write": true,
+    "freeze_meaning": "写成后不再改动，交协调者读核与复制；不表示设置文件权限或已经复制入仓库。",
+    "prohibited_operations_performed": "NONE",
+    "allowed_computation": "仅隔离模式Python标准库进行原始字节SHA-256及逐字引文核验，不执行项目代码或项目导入。"
+  },
+  "read_protocol": {
+    "batches": [
+      {"id": "A", "purpose": "原一次targeted复核", "note": "真实完整Read新99pilot、旧94、旧96；只读旧99的39–47与新95的85–89、119–123。原targeted raw已冻结，本报告不回写。"},
+      {"id": "B", "purpose": "接口只读准备", "note": "真实完整Read旧85、新86pilot、旧87，并补完整Read新95pilot；复用A中旧96全文。"},
+      {"id": "C", "purpose": "最终94/99接口只读补核", "note": "真实完整Read最终94、最终99、旧98、旧100；旧93仅121–135。95/96按指令复用，不重复Read。98哈希计算先暴露尚有末段，随后真实Read101–108才声明全文已读。"},
+      {"id": "D", "purpose": "本次外部保存", "note": "不重复全文Read，只以标准库复核九个全文及93限定片段哈希；哈希一致，故将旧96及其他跨批阅读绑定到当前所列字节。哈希不是审读替代。"}
+    ],
+    "hash_algorithm": "SHA-256",
+    "hash_bytes": "全文为完整原始文件字节；摘读为指定闭区间行原始字节拼接，保留原换行。",
+    "line_number_note": "引文与实际范围沿Read显示行号。Read末尾常另展示空行，故EOF显示行号可比bytes.splitlines()物理行数多一。",
+    "range_semantics": "requested_ranges记录调用请求；actual_displayed_ranges记录工具真正返回且本context实际读到的范围；read_complete只依据真实Read覆盖与EOF，不依赖哈希。",
+    "not_a_single_sitting": true,
+    "cross_batch_limit": "本报告结合A/B/C批阅读context，不是重新一次通读九章，更不是盲比较或第二全书阅读。未重新审读所有已读章；D仅核字节未变。"
+  },
+  "bindings": [
+    {
+      "id": "ch85_old",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt",
+      "version_role": "旧v1正文",
+      "batch": "B",
+      "read_scope": "FULL",
+      "requested_ranges": [[1, 50], [51, 150]],
+      "actual_displayed_ranges": [[1, 50], [51, 100]],
+      "read_complete": true,
+      "physical_lines": 99,
+      "eof_display_line": 100,
+      "bytes": 26916,
+      "sha256": "af416178de6ad084e646e4bdc861d095dffa2a076bf83e5cda11c76de01b4e25",
+      "hash_rechecked_in_batch_D": true
+    },
+    {
+      "id": "ch86_pilot",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch86-pilot-v1.txt",
+      "version_role": "新pilot正文，非final替代名",
+      "batch": "B",
+      "read_scope": "FULL",
+      "requested_ranges": [[1, 50], [51, 150]],
+      "actual_displayed_ranges": [[1, 50], [51, 108]],
+      "read_complete": true,
+      "physical_lines": 107,
+      "eof_display_line": 108,
+      "bytes": 24401,
+      "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460",
+      "hash_rechecked_in_batch_D": true
+    },
+    {
+      "id": "ch87_old",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt",
+      "version_role": "旧v1正文",
+      "batch": "B",
+      "read_scope": "FULL",
+      "requested_ranges": [[1, 50], [51, 150]],
+      "actual_displayed_ranges": [[1, 50], [51, 106]],
+      "read_complete": true,
+      "physical_lines": 105,
+      "eof_display_line": 106,
+      "bytes": 28684,
+      "sha256": "86f74726ea7d3819dbc7251350d6ac46f22c14d9d3cff6751940e628edb3e401",
+      "hash_rechecked_in_batch_D": true
+    },
+    {
+      "id": "ch94_final",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt",
+      "version_role": "已冻结最终94正文",
+      "batch": "C",
+      "read_scope": "FULL",
+      "requested_ranges": [[1, 50], [51, 100], [101, 150]],
+      "actual_displayed_ranges": [[1, 50], [51, 100], [101, 120]],
+      "read_complete": true,
+      "physical_lines": 119,
+      "eof_display_line": 120,
+      "bytes": 28273,
+      "sha256": "d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f",
+      "matches_coordinator_supplied_sha256": true,
+      "hash_rechecked_in_batch_D": true
+    },
+    {
+      "id": "ch95_pilot",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt",
+      "version_role": "新pilot正文",
+      "batch": "B",
+      "read_scope": "FULL",
+      "requested_ranges": [[1, 50], [51, 100], [101, 150]],
+      "actual_displayed_ranges": [[1, 50], [51, 100], [101, 128]],
+      "read_complete": true,
+      "prior_batch_A_excerpt_ranges": [[85, 89], [119, 123]],
+      "prior_excerpt_not_misrepresented_as_full": true,
+      "physical_lines": 127,
+      "eof_display_line": 128,
+      "bytes": 27612,
+      "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438",
+      "hash_rechecked_in_batch_D": true
+    },
+    {
+      "id": "ch96_old",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+      "version_role": "旧v1正文，保留生米原数",
+      "batch": "A",
+      "read_scope": "FULL",
+      "requested_ranges": [[1, 2000]],
+      "request_note": "首次Read未显式给offset/limit，按工具默认最多2000行。",
+      "actual_displayed_ranges": [[1, 98]],
+      "read_complete": true,
+      "reused_without_repeated_Read_in_B_C_D": true,
+      "physical_lines": 97,
+      "eof_display_line": 98,
+      "bytes": 27856,
+      "sha256": "a3b5b31e5e95d6ac659eedd2fc1f35db455bab55489a9c91c41a45565f9f6b7e",
+      "hash_rechecked_in_batch_D": true,
+      "current_binding_note": "D复核哈希与A一致，当前字节绑定成立；不是D重新审读了96。"
+    },
+    {
+      "id": "ch98_old",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt",
+      "version_role": "旧v1正文",
+      "batch": "C",
+      "read_scope": "FULL",
+      "requested_ranges": [[1, 50], [51, 100], [101, 150]],
+      "actual_displayed_ranges": [[1, 50], [51, 100], [101, 108]],
+      "read_complete": true,
+      "read_order_limit": "C中先读至100，随后算哈希发现共107物理行，再真实Read101起至EOF，补完后才声明完整。",
+      "physical_lines": 107,
+      "eof_display_line": 108,
+      "bytes": 30050,
+      "sha256": "badea6a60cc2c65a08a03a0494cc5afdb8e336ca78184d510cc96e90e5e52588",
+      "hash_rechecked_in_batch_D": true
+    },
+    {
+      "id": "ch99_final",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt",
+      "version_role": "已冻结最终99正文",
+      "batch": "C",
+      "read_scope": "FULL",
+      "requested_ranges": [[1, 50], [51, 100], [101, 150]],
+      "actual_displayed_ranges": [[1, 50], [51, 100], [101, 106]],
+      "read_complete": true,
+      "physical_lines": 105,
+      "eof_display_line": 106,
+      "bytes": 27666,
+      "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036",
+      "matches_coordinator_supplied_sha256": true,
+      "hash_rechecked_in_batch_D": true
+    },
+    {
+      "id": "ch100_old",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt",
+      "version_role": "旧v1正文",
+      "batch": "C",
+      "read_scope": "FULL",
+      "requested_ranges": [[1, 50], [51, 100], [101, 150]],
+      "actual_displayed_ranges": [[1, 50], [51, 100], [101, 114]],
+      "read_complete": true,
+      "physical_lines": 113,
+      "eof_display_line": 114,
+      "bytes": 29909,
+      "sha256": "25c484ca93a7fd7f7e4e963fe9f5fc334726bc1e0db1bfa32a2b73c32d6da383",
+      "hash_rechecked_in_batch_D": true
+    }
+  ],
+  "excerpt_binding": {
+    "id": "ch93_tail_only",
+    "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt",
+    "batch": "C",
+    "read_scope": "EXCERPT_ONLY",
+    "requested_ranges": [[121, 135]],
+    "actual_displayed_ranges": [[121, 135]],
+    "read_complete_for_excerpt": true,
+    "whole_chapter_read": false,
+    "whole_file_hash_claim": false,
+    "excerpt_lines": 15,
+    "excerpt_bytes": 3228,
+    "excerpt_sha256": "b136ffdd52aa6926e6c112a81caea025c5493be2ceef4650c81f804a497cd2f6",
+    "hash_rechecked_in_batch_D": true
+  },
+  "historical_reads_not_final_bindings": [
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch99-pilot-v1.txt",
+      "batch": "A",
+      "scope": "FULL",
+      "actual_displayed_ranges": [[1, 106]],
+      "physical_lines": 105,
+      "historical_sha256": "ab680bb5a313e31b6fe572084123d4a1c624edacdfbed0b6bc3138a215630ea7",
+      "rechecked_in_D": false,
+      "note": "用于原targeted反馈，不能替代最终99绑定。"
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "batch": "A",
+      "scope": "FULL",
+      "actual_displayed_ranges": [[1, 120]],
+      "physical_lines": 119,
+      "historical_sha256": "0fe24fd08773b9b9fe670146b40d25e4f489a7607252c50826b5ca834fe1dddb",
+      "rechecked_in_D": false,
+      "note": "不能替代最终94绑定。"
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt",
+      "batch": "A",
+      "scope": "EXCERPT_ONLY",
+      "actual_displayed_ranges": [[39, 47]],
+      "whole_chapter_read": false,
+      "historical_excerpt_sha256": "6fbc5e0df5d86de0e120214bdb8640fb3ac94d1b00f11d930e35a41b9166af23",
+      "rechecked_in_D": false
+    },
+    {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt",
+      "batch": "A",
+      "scope": "EXCERPT_ONLY_AT_THAT_TIME",
+      "actual_displayed_ranges": [[85, 89], [119, 123]],
+      "historical_excerpt_sha256": [
+        "1ad2b72a2bdc251c4dd7bced929c80dcc94d46240e4d1eceec95e36e16dd5b3f",
+        "c2c77cd55fab5ee20dd56138eb349e4f776fe7a58325e30c68040899d87a82ca"
+      ],
+      "note": "B才补足全文，见正式binding。"
+    }
+  ],
+  "unread_scope": [
+    "93旧v1除121–135外未读，不能声称全93已核。",
+    "旧99-v1除39–47外未读。",
+    "未读第97回正文；99:97是99章第97行，不是第97回。",
+    "除上述正文、限定摘读外，没有阅读其他章、其他意见、映射、报告或旧package。",
+    "未读任何未列出的86/94/95/99其他版本，不将pilot与final混作同一绑定。",
+    "本次D未重复Read任何全文；仅复用已实际完整Read的context并复核哈希。"
+  ],
+  "interfaces": [
+    {
+      "id": "I85_86_PAPER_SEPARATION",
+      "question": "85题名旧页与普通未成稿能否分开承接86取笺，且不冒认同一张原纸？",
+      "positive_evidence": [
+        {"id": "P85_TITLE", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt", "line_start": 79, "line_end": 79, "quote": "这一回，紫鹃把同组旧页收拢，题名页仍朝上，素纸两边折过来，留着题名可见的一面，再平放进小匣。"},
+        {"id": "P85_DRAFT", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt", "line_start": 81, "line_end": 81, "quote": "收拢好的题名纸包安在小匣内，几上的草稿仍未成"},
+        {"id": "P85_END", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt", "line_start": 99, "line_end": 99, "quote": "小匣里那包题名旧页已经收齐，几边普通草稿仍等着明日"},
+        {"id": "P86_EXPOSED", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch86-pilot-v1.txt", "line_start": 33, "line_end": 33, "quote": "稿夹压着一角旧笺，紫鹃伸手只将露在外面的一张抽出来，并没翻稿夹。"},
+        {"id": "P86_UNFINISHED", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch86-pilot-v1.txt", "line_start": 33, "line_end": 33, "quote": "笺上原有两行：“小院苔痕留宿雨 / 隔帘花影 □ 新晴”。后行空着一字"},
+        {"id": "P86_NO_COMPLETION", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch86-pilot-v1.txt", "line_start": 37, "line_end": 37, "quote": "那张笺还平铺着，黛玉的眼光停在空字旁，嘴唇微启，终究没说出字来。"}
+      ],
+      "counter_evidence": [
+        {"id": "P85_POSITION", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt", "line_start": 69, "line_end": 69, "quote": "草稿便在那只几上另占一角，同旧匣隔着一条折好的帕子。"},
+        {"id": "P86_POSITION", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch86-pilot-v1.txt", "line_start": 33, "line_end": 33, "quote": "黛玉摇头：“案上，露着的。”"}
+      ],
+      "judgment": "85两类纸的隔离是明示事实；86露在外面、仍缺字的单笺与普通未成稿的类别及未完成状态可接，不是打开题名包取页。85未给草稿诗句、86未指称85，且几/案及压纸方式有轻微差别，故不能声称逐字核成唯一同纸；也不把位置差别升级为硬冲突。",
+      "residual_uncertainty": "题名旧页包在86未续写交接；这只是未更新，不能据此认定失落、毁损或与临终笺合并。",
+      "must_not_infer": ["普通未成笺就是《十独吟》同组旧页之一", "未写的搬纸、拆包、转交或焚毁动作", "86填成了缺字或完成终稿"],
+      "action": "FEEDBACK_ONLY，正文修订NONE"
+    },
+    {
+      "id": "I85_86_87_ILLNESS_AND_MARRIAGE_PHASE",
+      "question": "渐沉病程至临终、死后数月至婚姻相位能否承接，家庭缩礼是否可当正式服制合法证明？",
+      "positive_evidence": [
+        {"id": "ILL85_BOWL", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt", "line_start": 87, "line_end": 87, "quote": "如今端同一只寻常粥碗，黛玉常要她在下面托着，端起没多久就说重。"},
+        {"id": "ILL85_NOT_ONE_VISIT", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt", "line_start": 91, "line_end": 91, "quote": "不是一回说话的事，先前坐着还要起身，如今有时连移个枕也嫌累。"},
+        {"id": "ILL86_GRADUAL", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch86-pilot-v1.txt", "line_start": 19, "line_end": 19, "quote": "贵妃丧后，黛玉的病一层层沉了下去。中间也有能坐起来的日子"},
+        {"id": "ILL86_URGENT", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch86-pilot-v1.txt", "line_start": 25, "line_end": 25, "quote": "别只说原来病着。今日连米汤也难咽，照这个说。"},
+        {"id": "ILL86_DEATH", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch86-pilot-v1.txt", "line_start": 63, "line_end": 63, "quote": "黛玉已经死了，李纨的脚步这时才到了廊下，宝玉还在赶来的路上。"},
+        {"id": "MAR87_MONTHS", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 3, "line_end": 3, "quote": "自黛玉去后，又过了几个月。"},
+        {"id": "MAR87_NO_DAY_YET", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 13, "line_end": 13, "quote": "这一次并没有谈出日子。隔了些时候"},
+        {"id": "MAR87_WEDDING", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 45, "line_end": 45, "quote": "日子在一回回往来之后方才定下。成婚那日，没有搭起接连几院的彩棚，原拟的戏也未办，来往只留必要的亲眷。"}
+      ],
+      "counter_evidence": [
+        {"id": "MAR87_MOURNING_CONTINUES", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 3, "line_end": 3, "quote": "服用、往来仍各循着丧中的常例。"},
+        {"id": "MAR87_REQUIRE_INQUIRY", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 9, "line_end": 9, "quote": "还有娘娘的丧中各样事，外头该问的须问明白，家里也不宜闹起来。"},
+        {"id": "MAR87_ASKED_NOT_RULE", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt", "line_start": 25, "line_end": 25, "quote": "服用、往来和可办的规模也分别问过；有的事答了，有的又搁下，另等一回。"}
+      ],
+      "judgment": "85日常照料及偶尔精神较好不构成疾病逆转；其末段日渐无力可接86难咽、急转、死亡。86死亡与87婚事间明写数月，并有多轮商议，不能压为临终同夜婚礼。87既保留丧中限制，也写询问及缩礼；这些证明文本中的家庭安排与相位，不提供具体服期规则、正式权威答复或合法性证明。",
+      "counterargument_retained": "若审查正式礼制服期是否允许该婚事，单凭数月和缩礼仍不足；本次不判定正式服制资格，也不以此反推文本必违法。",
+      "must_not_infer": ["一度能端碗等于85已康复", "某一次探访导致临终", "家庭减彩棚、不办戏足以证明正式服制合法", "未写明的豁免、许可及法定服期"],
+      "action": "FEEDBACK_ONLY，礼制资格判定NONE"
+    },
+    {
+      "id": "I93_TAIL_94_ENTRY_AND_DAY_COUNT",
+      "question": "93末段白事至94入口与刘家日序是否承接，车脚返城支线是否已定日？",
+      "positive_evidence": [
+        {"id": "DAY93_TAIL", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt", "line_start": 135, "line_end": 135, "quote": "平儿把衣角从门边抽出，扶着门框跨过去，走到灯下接住婆子递来的那一端白布。"},
+        {"id": "DAY94_ENTRY", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt", "line_start": 3, "line_end": 3, "quote": "却说凤姐的后事尚有零星未了，借院里才腾开一张桌子，又被待还的器具占去半边。"},
+        {"id": "DAY94_FIRST_NIGHT", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt", "line_start": 79, "line_end": 79, "quote": "这一夜巧姐靠着姥姥睡"},
+        {"id": "DAY94_MORNING", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt", "line_start": 83, "line_end": 83, "quote": "天亮后，姥姥先下地忙水。"},
+        {"id": "DAY94_NOON_BEFORE", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt", "line_start": 89, "line_end": 89, "quote": "午前姥姥要去院里收拾"},
+        {"id": "DAY94_LOCAL_FIXED", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt", "line_start": 113, "line_end": 113, "quote": "刘家那头，这日将晚，邻妇来取线"},
+        {"id": "DAY94_PAPER_LIMIT", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt", "line_start": 109, "line_end": 109, "quote": "纸上字少，只记到达和已安歇"}
+      ],
+      "counter_evidence": [
+        {"id": "DAY94_RETURN_WARNING", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt", "line_start": 75, "line_end": 75, "quote": "说回城先卸车，未必直去"},
+        {"id": "DAY94_RETURN_BRANCH", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt", "line_start": 107, "line_end": 107, "quote": "且说那车脚回城，先卸去旁人的物件，又转到一处交还借来的绳。姥姥的小纸压在他衣内，直等他摸钱，才想起来。"},
+        {"id": "DAY94_NIGHT_NOT_KNOWN", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt", "line_start": 109, "line_end": 109, "quote": "忽想起自己并不知晚间睡得怎样"}
+      ],
+      "judgment": "93末白事与照料交错的状态可接94尚有零星后事；不补两章相隔具体天数。最终94将113计日改为‘这日将晚’，已实际撤去首夜次晨之后再称‘第一日’的局部歧义；不增加确切第二日等新计数。",
+      "residual_uncertainty": "107的‘且说’没有定回城交纸日次；可为送达日回叙，也可能有递纸延迟，均未明写。109不知晚间睡得怎样不证明首夜已过或未过。刘家主线消歧不等于车脚支线同步日期已澄清。",
+      "counterargument_retained": "先呈刘家次晨再切返城容易诱导同步顺读；最终修词未消除这项叙述定位不足，但仅据并置不足判定不可能的硬时间矛盾。",
+      "must_not_infer": ["车脚必于次日才返城", "车脚必当日已交纸", "新增车脚过夜或滞留原因", "回话已证明巧姐首夜睡得好", "93全文已核"],
+      "action": "FEEDBACK_ONLY，日期补写NONE"
+    },
+    {
+      "id": "I95_96_PAWN_TICKET",
+      "question": "95当票交回、收匣底能否接96匣底见票而暂不赎？",
+      "positive_evidence": [
+        {"id": "TICKET95_SEPARATE", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt", "line_start": 61, "line_end": 61, "quote": "他把钱和票分别收妥"},
+        {"id": "TICKET95_HANDOVER", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt", "line_start": 67, "line_end": 67, "quote": "宝玉把钱同票拿给宝钗"},
+        {"id": "TICKET95_BOX", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt", "line_start": 103, "line_end": 103, "quote": "将当铺带回的票沿折痕叠好，同几张零碎纸票一道，收进旧针线匣底。"},
+        {"id": "TICKET96_BOTTOM", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt", "line_start": 45, "line_end": 45, "quote": "宝钗开匣，底下压着旧夹袄的当票"},
+        {"id": "TICKET96_NOT_REDEEMED", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt", "line_start": 45, "line_end": 45, "quote": "眼下先不赎。"}
+      ],
+      "counter_evidence": [
+        {"id": "TICKET96_BOX_LOCATION", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt", "line_start": 45, "line_end": 45, "quote": "眼光跟着那银包到了柜前。宝钗开匣"}
+      ],
+      "judgment": "当出→钱票分别收→交宝钗→票入旧针线匣底→96匣底仍有当票且暂不赎，有正面物件状态承接。95不是仅说将来收票。",
+      "residual_uncertainty": "96不再命名旧针线匣，仅说柜前开匣。可以兼容但不能宣称同一匣身份由双重命名锁死，也不能补出搬匣、换匣动作。",
+      "must_not_infer": ["青夹袄已经赎回", "银包必用于赎衣", "未写的匣子搬运或更换"],
+      "action": "FEEDBACK_ONLY，正文修订NONE"
+    },
+    {
+      "id": "I95_96_RAW_RICE_AND_COOKED_PORRIDGE",
+      "question": "保留96两碗半生米设定时，95两碗半熟粥应如何限定义务？",
+      "declared_author_constraint": "保留96原有下锅量米两碗半，不改旧package；这来自题目约束，不冒充独立审读结论。",
+      "positive_evidence": [
+        {"id": "RICE95_SERVINGS", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt", "line_start": 49, "line_end": 49, "quote": "粥煮好，两碗盛满，另一只到半处，锅里先留着午后能温的。"},
+        {"id": "RICE95_COOKED", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt", "line_start": 87, "line_end": 87, "quote": "煮好了分出来，是两碗半熟粥。我下锅量米，不是照着这几只吃饭碗摆一排。"},
+        {"id": "RICE95_OTHER_MEASURE", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt", "line_start": 121, "line_end": 121, "quote": "盛粥是这只，下锅我另量。"},
+        {"id": "RICE96_RAW", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt", "line_start": 53, "line_end": 53, "quote": "宝钗将平日量米的碗递给麝月。麝月仍量了两碗半，倒进淘盆，叫宝玉端水。"},
+        {"id": "RICE96_MIXED", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt", "line_start": 53, "line_end": 53, "quote": "新米和旧米分着颜色，一边白亮，一边微黄。"}
+      ],
+      "counter_evidence": [
+        {"id": "RICE95_NEXT_DAY_PLAN", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt", "line_start": 121, "line_end": 121, "quote": "麝月问明日可仍照今日煮，宝钗说两碗半熟粥，早上稀些，中午留着温。"},
+        {"id": "RICE96_CARRYOVER", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt", "line_start": 51, "line_end": 51, "quote": "听麝月问仍旧量两碗半么"},
+        {"id": "RICE95_WINTER", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt", "line_start": 3, "line_end": 3, "quote": "已是家败后第二个冬天。"},
+        {"id": "RICE96_SPRING", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt", "line_start": 3, "line_end": 3, "quote": "春寒虽已退了些"}
+      ],
+      "judgment": "95数字明指分出的熟粥，49还另留午后温粥，不能说整锅总产出仅两碗半。95未给出生米投入数；96量米倒淘盆明确是生米，且新旧米混合，不可把全部两碗半称为新米。相同数字不是同一种量，不足推出数值硬矛盾，也不足证明投入产出已闭合。",
+      "counterargument_retained": "95翌日照做计划及96‘仍旧/仍’仍有沿用暗示。季节推进使96未必等于95所说翌日，但不能凭此补出改变口粮的具体日期、原因或数量。",
+      "narrow_feedback_only": "如作者仅要撤去96同口径承接暗示，可建议51去‘仍旧’并53去‘仍’，不改量米动作和原数；只去其中一处不完整。该窄修不构成米粥换算或整体份量核合。此报告未实施。",
+      "deferred": "若要求证明完全同一输入输出方案，先需作者明确比较口径；当前不作更强闭合判断。",
+      "must_not_infer": ["米粥换算或膨胀比例", "量器容量", "人均份量或新数量", "客人、新米、季节自动解释了份量改变", "95熟粥数就是96生米数"],
+      "action": "FEEDBACK_ONLY，换算NONE，数量改写NONE"
+    },
+    {
+      "id": "I98_99_BOOK_JADE_PAPER_CUSTODY",
+      "question": "98客册暂留、误包玉归还与抄字纸能否分别接99归还而不串物？",
+      "positive_evidence": [
+        {"id": "CUST98_BOOK_SOURCE", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 25, "line_end": 25, "quote": "甄宝玉带的旧册从书摊借来，夹着一张借阅条"},
+        {"id": "CUST98_BOOK_STAYS", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 61, "line_end": 61, "quote": "客人的虫蛀册包仍放在桌外侧。"},
+        {"id": "CUST98_JADE_RETURN", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 79, "line_end": 79, "quote": "他揭开帕角，玉还裹在其中，旧绦贴着帕边"},
+        {"id": "CUST98_JADE_WORN", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 87, "line_end": 87, "quote": "自己将新绦系好，把玉收回身前，衣襟压住结头"},
+        {"id": "CUST98_BOOK_END", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 107, "line_end": 107, "quote": "客册包仍留在干处，借阅条夹在里头"},
+        {"id": "CUST99_BOOK_OPEN", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 3, "line_end": 3, "quote": "桌外侧的客册包还留着，宝玉将要问的字另抄在一张纸上，候甄宝玉按约来取。"},
+        {"id": "CUST99_RETURN", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 3, "line_end": 3, "quote": "把抄纸交给他，自己将册子照原样包好，连借阅条一并递还。"},
+        {"id": "CUST99_STALL_OTHER", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 21, "line_end": 21, "quote": "最后一册送回时，摊主翻过册首，取下旧借阅条，照自己的记簿勾清。"}
+      ],
+      "counter_evidence": [
+        {"id": "CUST98_DIFFERENT_PAPERS", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 35, "line_end": 35, "quote": "前头还不知是谁，这里是林妹妹的字。"},
+        {"id": "CUST98_FOUR_LINES", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 33, "line_end": 33, "quote": "隔在自己续文旁边的，正是黛玉写的四句。他此前竟未曾读到"},
+        {"id": "CUST98_RICE_COPY", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 99, "line_end": 99, "quote": "只将纸转正，把数目抄到另一小片上，交给麝月，原纸仍推还给他。"}
+      ],
+      "judgment": "客册与夹附借阅条在98暂留桌外侧，99按约交甄宝玉，状态正面承接。家内包误取及玉归还另有独立实物链，98结末玉已系新绦收回身前，不与客册归还混合。99后续书摊归还可属其他借册，不能把所有书条强并为同一本遭重复归还。",
+      "paper_judgment": "98自己的续文、黛玉四句、未知异手、抄字纸与米数纸有文本区分；99交出去的是另抄疑字纸，不是已证明的黛玉原笔。不得认作85题名旧页包或86临终未成笺的转移。",
+      "residual_uncertainty": "99没有写甄宝玉取回客册后最终送还书摊；未写的末端行为不补。玉在人间的实物链本次只能核至98收回身前，99不提供后续玉的去处。",
+      "must_not_infer": ["所有借阅条是同一张", "99另抄纸等于黛玉原纸", "98四句与85/86纸稿已同一化", "甄宝玉取回后已送回书摊", "玉随归还客册又被带走"],
+      "action": "FEEDBACK_ONLY，物件路径补写NONE"
+    },
+    {
+      "id": "I99_HEARING_ACTUALLY_CLARIFIED",
+      "question": "最终99是否实际澄清33–35已闻与97否认听见的问题？",
+      "positive_evidence": [
+        {"id": "HEAR99_PRIVATE_NIGHT", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 25, "line_end": 25, "quote": "宝玉等她提盆走开，才低声说自己想出去。"},
+        {"id": "HEAR99_DIRECT", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 33, "line_end": 33, "quote": "你别赶了。我这次不回来住。"},
+        {"id": "HEAR99_REACTION", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 33, "line_end": 33, "quote": "麝月将针捏在指头上，手停在半空，先看他，又朝宝钗那里看。"},
+        {"id": "HEAR99_NEW97", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 97, "line_end": 97, "quote": "临走才告诉我，我一时哪里当得真？还想着替他收拾袜子，缝好鞋再走。"},
+        {"id": "HEAR99_DOOR", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 41, "line_end": 41, "quote": "他自己拉开门闩。巷里正有人为菜价争执，隔壁又来借秤，见门开了，便朝里问。"}
+      ],
+      "counter_evidence": [
+        {"id": "HEAR99_SUBSTANTIVE_RESPONSE", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 35, "line_end": 35, "quote": "“你要住哪里？”她问。宝玉道先出去。宝钗在窗下说昨夜问过，还没答。"},
+        {"id": "HEAR99_BAOCHAI", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 97, "line_end": 97, "quote": "宝钗低头看着盆中，道她自己听见了，也没有留住。"}
+      ],
+      "judgment": "已实际澄清字面听觉冲突：97现在明确承认临走被告知，而非否认听见，争点是太迟、一时难以当真。33停针与35问住处证明确有听闻，不必删除或抹平。",
+      "counterargument_retained": "35的实质追问说明并非毫无反应；97仍是受伤后的主观回述，不能由‘不当真’反推当时完全没理解或毫不相信。但这是接受程度与事后归因的张力，不再是已闻却后文否认获告知的事实冲突。",
+      "door_judgment": "最终99完整范围内未重现旧99摘读所见门已推大再拉闩的同一局部跳变；41先开闩，再借秤者见门开进屋、宝玉让过后出门。",
+      "must_not_infer": ["麝月当时完全没反应", "97是客观证明她从未听见", "必须依赖反话才能救最终97", "一次听见等于当时已经接受永久离居"],
+      "action": "FEEDBACK_ONLY，已澄清处无需另造修补"
+    },
+    {
+      "id": "I99_100_FRAME_SEPARATION",
+      "question": "99寺中及寒家结局如何接100人间多年、太虚情榜、青埂峰还本质，是否须补玉至石运输？",
+      "positive_evidence": [
+        {"id": "FRAME99_TEMPLE", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 63, "line_end": 63, "quote": "自己要留在这里。"},
+        {"id": "FRAME99_HOUSEHOLD_END", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt", "line_start": 105, "line_end": 105, "quote": "宝钗把自己的碗向灯下挪近些，两只碗并着，热气一点点薄下去。"},
+        {"id": "FRAME100_YEARS", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt", "line_start": 9, "line_end": 9, "quote": "这样过了多年，贾兰已是个成人"},
+        {"id": "FRAME100_STOP_HUMAN", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt", "line_start": 99, "line_end": 99, "quote": "人间这些余事，到此按下。"},
+        {"id": "FRAME100_TIMELESS", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt", "line_start": 101, "line_end": 101, "quote": "不知何日何时，太虚一境"},
+        {"id": "FRAME100_MOUNTAIN_SWITCH", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt", "line_start": 105, "line_end": 105, "quote": "且把太虚一境按下，另说青埂峰。那石劫终，已复还本质，仍在峰下。"},
+        {"id": "FRAME100_END", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt", "line_start": 113, "line_end": 113, "quote": "石在，字在。"}
+      ],
+      "counter_evidence": [
+        {"id": "FRAME100_BOARD", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt", "line_start": 103, "line_end": 103, "quote": "林黛玉——情情。"},
+        {"id": "FRAME100_BOARD_END", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt", "line_start": 103, "line_end": 103, "quote": "贾宝玉——情不情。"},
+        {"id": "FRAME100_COPY_GAPS", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt", "line_start": 107, "line_end": 107, "quote": "那字末一笔被磨去，他拿起纸，回到石前比看，换一边站，仍只有半边可辨，便在纸上留空"}
+      ],
+      "judgment": "99仍在人间寺中与两人寒家生活层；100人间段以多年成长、实授、李纨辞世等长时段展开，随后明示按下人间、无定时太虚、再另说青埂峰。可按框架/神话还本质理解，不需把它误当99翌日同一实景接续。",
+      "counterargument_retained": "100‘已复还本质’确实给了石的终态，但未给从98身前玉、99寺中宝玉到峰下石的物理转运程序。叙述层转换支持不强索物流，不等于物流链已获得证据。若专问人间实物连续运输，答案是未写，不能宣告已核闭合。",
+      "carrier_boundary": "太虚榜、石面字、空空道人抄纸、98客册及黛玉纸稿不因共同出现纸/字便同物；本次不建立任何未经明示的载体同一关系。",
+      "must_not_infer": ["某人从宝玉身前取玉", "僧道接玉并运山", "玉变石的实景动作、路线或时间", "宝玉在99末已死亡或化石", "情榜就是人间客册或黛玉旧稿", "框架终态证明人间物流已闭合"],
+      "action": "FEEDBACK_ONLY，实物运输补写NONE"
+    }
+  ],
+  "overall_judgment": {
+    "scope_limited_result": "所列相邻接口大体有实文承接；须保留94返城支线日次未定、95/96数量不作换算、纸稿同一性与框架物流未获明示等边界。",
+    "actual_final_repairs": ["94:113已改为‘这日将晚’，本地主线计数消歧。", "99:97已承认临走获告知，33–35到97的字面听觉冲突已澄清。"],
+    "not_certified": ["全书连续性", "第二全书读者资格", "专门policy资格", "正式服制合法性", "米粥投入产出闭合", "玉至石人间物流链"],
+    "repository_write_status": "本次保存零写入仓库；仅外部新JSON，旧targeted raw保持冻结。",
+    "final_action": "交付外部JSON后冻结，待协调者读核与复制。"
+  }
+}

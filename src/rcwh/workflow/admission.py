@@ -17,7 +17,7 @@ from ..graph import ProvenanceGraph
 from ..io import load_data
 from ..mechanism_adapters import HistoricalAdapterRuntime
 
-def chapter_scope(root: Path, package_path: str) -> dict:
+def chapter_scope(root: Path, package_path: str, *, plan_contracts: bool = False) -> dict:
     package = load_data(repository_path(root, package_path))
     graph = ProvenanceGraph.from_repo(root)
     chapter = package["chapter"]
@@ -35,7 +35,52 @@ def chapter_scope(root: Path, package_path: str) -> dict:
             validate(root, contract, "scene_contract")
             contracts.append(contract)
             paths.add(path.relative_to(root).as_posix())
-    if not contracts:
+    advisory_paths, advisory_reports = [], []
+    if plan_contracts:
+        from ..planning.contracts import inspect_contract
+        selected_plan = {ref["path"]: ref for ref in package.get("plan", [])}
+        if len(selected_plan) != len(package.get("plan", [])):
+            raise AssetError("DUPLICATE_AGENT_PLAN_INPUT")
+        advisory_ids = set()
+        for ref in package.get("plan", []):
+            path = repository_path(root, ref["path"])
+            contract = load_data(path)
+            if contract.get("kind") != "AGENT_SCENE_CONTRACT":
+                continue
+            if not ref["path"].startswith("data/planning/contracts/"):
+                raise AssetError("AGENT_CONTRACT_OUTSIDE_DECLARED_DIRECTORY")
+            if digest(path.read_bytes()) != ref["sha256"]:
+                raise AssetError("STALE_AGENT_PLAN_CONTRACT: " + ref["path"])
+            validate(root, contract, "agent_scene_contract")
+            if contract["chapter"] != chapter:
+                raise AssetError("AGENT_PLAN_CONTRACT_CHAPTER_MISMATCH: " + ref["path"])
+            if contract["status"] != "AGENT_EDITED":
+                raise AssetError("AGENT_PLAN_CONTRACT_NOT_EDITED: " + ref["path"])
+            if contract["id"] in advisory_ids:
+                raise AssetError("DUPLICATE_AGENT_PLAN_CONTRACT_ID: " + contract["id"])
+            advisory_ids.add(contract["id"])
+            plan_binding = contract["bindings"]["chapter_plan"]
+            if selected_plan.get(contract["chapter_plan_ref"]) != plan_binding:
+                raise AssetError("AGENT_CONTRACT_PLAN_NOT_SELECTED: " + ref["path"])
+            chapter_plan = load_data(repository_path(root, contract["chapter_plan_ref"]))
+            if chapter_plan.get("chapter") != chapter:
+                raise AssetError("AGENT_CONTRACT_PLAN_CHAPTER_MISMATCH: " + ref["path"])
+            selected_seeds = {s["ref"] for s in chapter_plan.get("scenes", [])}
+            if contract["bindings"]["seed"]["path"] not in selected_seeds:
+                raise AssetError("AGENT_CONTRACT_SEED_NOT_SELECTED: " + ref["path"])
+            seed = load_data(repository_path(root, contract["bindings"]["seed"]["path"]))
+            if seed.get("chapter_plan_ref") != contract["chapter_plan_ref"]:
+                raise AssetError("AGENT_CONTRACT_SEED_PLAN_MISMATCH: " + ref["path"])
+            report = inspect_contract(root, contract, ref["path"],
+                                      seed_ref=contract["bindings"]["seed"]["path"],
+                                      plan_ref=contract["chapter_plan_ref"])
+            if report["declared_compatibility"]["status"] == "FAIL":
+                failures = [c["code"] for c in report["declared_compatibility"]["checks"] if c["status"] == "FAIL"]
+                raise AssetError("INVALID_AGENT_PLAN_CONTRACT: " + ref["path"] + ": " + ", ".join(failures))
+            advisory_paths.append(ref["path"])
+            advisory_reports.append(report)
+            paths.add(ref["path"])
+    if not contracts and not advisory_paths:
         findings.append("CHAPTER_SCENE_SCOPE_MISSING")
 
     def source(ref):
@@ -116,11 +161,15 @@ def chapter_scope(root: Path, package_path: str) -> dict:
         used.update(s["id"] for s in graph.trace(implementation["id"])["sources"])
     missing = used - declared
     findings.extend(f"PACKAGE_SOURCE_SCOPE_MISMATCH: {ref}" for ref in sorted(missing))
-    return {"chapter": chapter, "package_path": package_path,
-            "used_source_ids": sorted(used), "declared_source_ids": sorted(declared),
-            "dependent_source_ids": sorted(used - declared),
-            "dataset_refs": [exemplars["dataset_ref"]], "paths": sorted(paths),
-            "findings": sorted(set(findings)), "authority_effect": "NONE"}
+    result = {"chapter": chapter, "package_path": package_path,
+              "used_source_ids": sorted(used), "declared_source_ids": sorted(declared),
+              "dependent_source_ids": sorted(used - declared),
+              "dataset_refs": [exemplars["dataset_ref"]], "paths": sorted(paths),
+              "findings": sorted(set(findings)), "authority_effect": "NONE"}
+    if plan_contracts:
+        result["advisory_contract_paths"] = sorted(advisory_paths)
+        result["advisory_contract_reports"] = advisory_reports
+    return result
 
 
 class ChapterAdmission:

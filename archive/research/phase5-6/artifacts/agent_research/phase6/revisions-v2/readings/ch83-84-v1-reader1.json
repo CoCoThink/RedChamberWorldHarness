@@ -1,0 +1,264 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT",
+  "mode": "FEEDBACK_ONLY",
+  "reader_id": "reader1",
+  "chapters": [83, 84],
+  "revision": "v1",
+  "status": "FROZEN_READING_REPORT",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "formal_eligibility": false,
+  "literary_acceptance": "NOT_GRANTED",
+  "adoption": "NOT_ADOPTED",
+  "decision_scope": "局部文本审读意见，不改注册状态、不执行重放、不充当历史送达或清代礼制证明。",
+  "execution": {
+    "delegation": false,
+    "commits": false,
+    "prose_or_input_edits": false,
+    "only_created_path": "artifacts/agent_research/phase6/revisions-v2/readings/ch83-84-v1-reader1.json",
+    "repository_scan": false,
+    "phase5_template_read": false,
+    "method": "直接Read冻结正文的连续分段、两份完整disclosure和两份完整notes；用python -I标准库对指定请求作精确JSON投影，逐项阅读所选合同的全部非grounding实质与去重后的grounding文本及引用值。哈希和等值检查仅作绑定，不替代实读。只列指定目录以定位文件，未递归搜索仓库。",
+    "instruction_check": "检查工作目录祖先及目标目录链上的CLAUDE.md，未发现文件。",
+    "truncation_disclosure": "首次直接Read两个单行请求均因大小拒绝；首次合并合同投影输出过大并持久化，仅预览未算全读。随后分别完整打印83非grounding合同与去重grounding、84非grounding合同、84去重grounding及两章references；这些有界输出均实际读完。未把早先截断输出记作完整阅读。",
+    "not_read": [
+      "第82回正文1–92行及其余正文，未读三章全文",
+      "第82回disclosure除指定候选计数、editorial_choices、limitations、freeze投影以外的内容",
+      "请求的其余大载荷全文、original短稿全文、exemplars全文或世界全库",
+      "所引用原始书籍、phase5合同包及phase5正文模板",
+      "第85回及后续正文、其他读者报告"
+    ]
+  },
+  "actual_reading": {
+    "full_chapters": [
+      {
+        "chapter": 83,
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt",
+        "sha256": "b219396269ed1f5b1781e7d8e0fedc636c06f21e0fe1e76134c3eeec4948daa8",
+        "line_count": 105,
+        "unicode_characters": 9470,
+        "utf8_bytes": 28200,
+        "segments_read_in_order": [[1, 36], [37, 70], [71, 105]],
+        "complete_start_to_end": true,
+        "coverage": [
+          {"lines": [1, 15], "read": "回目、宝玉随相熟子弟实际入圃、老仆拦人、若兰送还弓套与衬布、输赢争执、菜畦规则、宝玉接弓。"},
+          {"lines": [16, 35], "read": "先放弓才看箭、鞋泥、横风试射、葱苗与认赔、大金麒麟在擦手理衣时偶露、找箭打断疑问、若兰继续射。"},
+          {"lines": [36, 49], "read": "再一轮输赢、垫凳洒茶、茶食缺碟、糕点、收弓散场、宝玉先回府换衣并纠正赔菜传话。"},
+          {"lines": [50, 69], "read": "食盒和脚费迟滞、仆人与小厮不同差事、婆子转述入内、湘云避人追问真实目击、小厮承认新旧只是猜测。"},
+          {"lines": [70, 89], "read": "湘云与宝玉接话、旧物记忆分歧、开匣又收、当前收信通知后插入后来船上封交及府门交接回叙、王夫人实际拆信。"},
+          {"lines": [90, 105], "read": "念问安与船中生活、信不等于已经抵达、补记吃粥、外头转入带信人口述、脚费茶饭、送贾母与收书看花、结尾转到家常。"}
+        ],
+        "first_line_quote": "第八十三回　若兰射圃佩金麒麟　湘云闻讯问旧麒麟",
+        "last_line_tail_quote": "晚茶换过，廊下人来收空杯，湘云回头让了一让桌边，那封信仍摆在贾母手旁，已不再折着了。"
+      },
+      {
+        "chapter": 84,
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt",
+        "sha256": "84bd37ba482d4e69d2c3f236092394e5e02df0ec7878c3e3c03e35497f5c4bf4",
+        "line_count": 101,
+        "unicode_characters": 9130,
+        "utf8_bytes": 27188,
+        "segments_read_in_order": [[1, 35], [36, 69], [70, 101]],
+        "complete_start_to_end": true,
+        "coverage": [
+          {"lines": [1, 15], "read": "回目、午后饭单与门房阻滞、原传讯人湿袖、另一丫头独立泼水、偏厅接到死讯而服制不详、平儿奉命转王夫人。"},
+          {"lines": [16, 29], "read": "王夫人原未得讯、亲问平儿是否在场、追问无答、母亲悲痛、凤姐接话、素衣先取柜中、贾母接讯、平儿再去厨房针线房。"},
+          {"lines": [30, 49], "read": "线盒误封、家内暂行服色、饭单误划导致迟饭、厨娘要先送饭、追回责任、凤姐纠正宫令误称、宝玉从母亲得讯再往贾母。"},
+          {"lines": [50, 69], "read": "潇湘馆饭药未停、扇子瞧着冷、先只有宫门来人的模糊信息、平儿遣媳妇送确讯、紫鹃主动缓声告黛玉、宝玉晚到不抢说。"},
+          {"lines": [70, 85], "read": "晚粥、夜里未睡前脚步、睡着之后用水和换枕两次醒来、紫鹃亲守、次晨才记夜醒二次、翌日送饭针线常务和王夫人悲痛延续。"},
+          {"lines": [86, 101], "read": "数日后家内差事渐成常例、邻府传闻不能当宫令、正式服制仍候明话、喜活旧单暂压不另排日期、领料支出仍可承受、按日分纸、扇子重收、末尾初夜记录与今夜照护分开。"}
+        ],
+        "first_line_quote": "第八十四回　宫门传讣元妃梦断　潇湘闻耗病骨添愁",
+        "last_line_tail_quote": "竹风在窗外吹了一阵，值夜的丫头轻轻进门，紫鹃把纸交给她看，只交代今夜若有事叫自己，随后仍坐回帘边。"
+      }
+    ],
+    "disclosures_read_complete": [
+      {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1-disclosure.json", "sha256": "2d8fafc74708546a9b46df3312b1bc4501f5a8a28be3a7e6c2381dbbbfde20df", "lines": [1, 172]},
+      {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1-disclosure.json", "sha256": "7d6d95398d725fdfb28c8e06afa7c2996b31b17c5678c3fcd2ce3ce16819fd57", "lines": [1, 175]}
+    ],
+    "notes_read_complete": [
+      {"path": "artifacts/agent_research/phase6/editor-feedback/notes-ch83-v1.txt", "sha256": "43fd69234d2e2b0aa6cca844bc270ffca04f7e43c7e64e8ee48e36ffc352c3b9", "lines": [1, 13]},
+      {"path": "artifacts/agent_research/phase6/editor-feedback/notes-ch84-v1.txt", "sha256": "0dc5c43f9ae2da8aa29491dd27f327a2639d8b76d82063dbba87669001f04c49", "lines": [1, 13]}
+    ],
+    "selected_contracts": [
+      {
+        "path": "artifacts/agent_research/phase6/revisions-v2/requests/ch83.json",
+        "sha256": "437a38c850a8b6a0fb12a8f4ae26feec9ef60c4315595f58ac924b4531aaf3ab",
+        "pointer": "/task/writing_task/agent_contracts",
+        "ids": ["83-S1.v2", "83-S2.v2", "83-S3.v2"],
+        "required_descriptions_read": 12,
+        "forbidden_descriptions_read": 6,
+        "substance_read": "所有description、scope、status、function、notes、participants、preconditions、entry/exit、unresolved、对象与人物引用值；去重grounding章卡文本及种子值。重复citation不充独立阅读。",
+        "editorial_request_contract_equality_checked": "与disclosure指定editorial-requests-v1/ch83.json中所选合同逐值相等。等值检查未被宣称为该请求全文实读。"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/revisions-v2/requests/ch84.json",
+        "sha256": "b90407e8c4f017e0459af41a1e6c0635c9ac9e79c3e0b3f0ab16fb8bf341b7d1",
+        "pointer": "/task/writing_task/agent_contracts",
+        "ids": ["84-S1.v2", "84-S2.v2", "84-S3.v2", "84-S4.v2"],
+        "required_descriptions_read": 16,
+        "forbidden_descriptions_read": 8,
+        "substance_read": "所有description、scope、status、function、notes、participants、preconditions、entry/exit、unresolved、对象/知识/人物引用值；去重grounding章卡文本及种子值。重复citation不充独立阅读。",
+        "editorial_request_contract_equality_checked": "与disclosure指定editorial-requests-v1/ch84.json中所选合同逐值相等。等值检查未被宣称为该请求全文实读。"
+      }
+    ],
+    "chapter82_extra_local_exposure": {
+      "classification": "PARTIAL_BOUNDARY_READING_ONLY",
+      "prose_path": "artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt",
+      "actual_lines_read": [93, 107],
+      "total_lines": 107,
+      "full_chapter_read": false,
+      "three_full_chapters_continuously_read": false,
+      "disclosure_path": "artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1-disclosure.json",
+      "disclosure_scope": ["/candidate", "/editorial_choices", "/limitations", "/freeze", "top-level key names and total-line measurement"],
+      "boundary_quotes": [
+        {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line": 99, "quote": "所以得写明是在船上写的，等人捎，不能写已经托了。"},
+        {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line": 101, "quote": "等真要交出去，再封。"},
+        {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line": 107, "quote": "那封第一日上船后起笔的家书，隔了一夜，已有了日期，也有了今晨的一句话，等着下一回有人来问可有信带。"},
+        {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1-disclosure.json", "pointer": "/editorial_choices/letter_delivery_limit", "quote": "NO_HANDOFF_OR_ARRIVAL_CLAIM."}
+      ],
+      "finding": "82末信仍未封、夹册、候人，未交未达；83不能把82改说成已经交寄。这里只核这一断点，不评价82整章。"
+    }
+  },
+  "chapter_reviews": [
+    {
+      "chapter": 83,
+      "verdict": "NO_CONFIRMED_LOCAL_FAIL_IN_READ_SCOPE; STYLE_AND_INFORMATION_INTERFACE_RISKS_REMAIN",
+      "overall_literary_pass": "NOT_GRANTED",
+      "confirmed_local_failures": [],
+      "confirmed_failure_note": "未在已读范围查见足够确定、可排除合理文本解释的局部硬性违约。不为凑FAIL条目把C级待核接口、未注册状态或压缩叙述自动判错；也不因零确定FAIL授予整章PASS。",
+      "exact_evidence": [
+        {"id": "83-E01", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 3, "quote": "他正望着篱笆里一畦新绿出神，听见叫，才跟着进去。", "assessment": "宝玉随熟人实际进入，非邀约一句带过。"},
+        {"id": "83-E02", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 7, "quote": "他将弓套递过去，说里面的衬布松了些，自己没有动，叫看收弓的人得空理一理。", "assessment": "若兰普通来往动作，非神秘出现；弓套既往借用只是C场面，不证明历史邀约。"},
+        {"id": "83-E03", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 9, "quote": "我若不射，便不输，何苦替你们添个赢头？", "assessment": "宝玉轻口角，没转成命理论文。"},
+        {"id": "83-E04", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 13, "quote": "不值什么，也得有人浇，有人锄。诸位踩一脚回来，菜苗可站不起来。", "assessment": "老仆顾虑有劳动和生计支撑。"},
+        {"id": "83-E05", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 29, "quote": "宝玉站在他侧前，先看见卷起的一角衣料，接着看清金饰的头角与足，竟是一枚大金麒麟，垂在带边，贴着衣裳轻轻动了两下。", "assessment": "观察站位与露出动作可见，明确大金麒麟，没有小巧替代。"},
+        {"id": "83-E06", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 31, "quote": "它只跟着我走，箭是我射的。", "assessment": "不再说家里留下，不给前主、赠受、借佩或取得路径。"},
+        {"id": "83-E07", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 35, "quote": "若兰应了，把帕子交给小厮，仍去拿弓。", "assessment": "佩物没吞掉射圃持续活动。"},
+        {"id": "83-E08", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 49, "quote": "宝玉回到府中，先往里头回过了话，才进自己屋里换衣。", "assessment": "回府在二手链之前。"},
+        {"id": "83-E09", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 57, "quote": "顺路也得先说。我家里还等我，你在这里听公子们说话，倒忘了我。", "assessment": "脚费、缺碟和不同差事确有耽误，不只罗列物件。"},
+        {"id": "83-E10", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 65, "quote": "他说站得不远，只是马上又找箭去了，没拿在手里。", "assessment": "湘云询问现场小厮，非自己亲见。"},
+        {"id": "83-E11", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 67, "quote": "那你连旧也未必看得清。", "assessment": "旧貌猜测被限制，不升级取得史。"},
+        {"id": "83-E12", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 77, "quote": "湘云翻开，将压着的帕子挪开，见到旧麒麟，拿在指间停了一停。", "assessment": "旧物有拿出收起动作，未断材质或过去归属。现处仍属C级安置。"},
+        {"id": "83-E13", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 81, "quote": "这信原不是探春初写那一日便交出去的。", "assessment": "显式回叙标识，承认82尚未交的断点。"},
+        {"id": "83-E14", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 81, "quote": "她没有改作交信这一日，只另外折了外纸，亲手封妥，交给婆子道：", "assessment": "后来取册中原信、包封、探春交婆子实际演出；写信日期与交寄日分开。"},
+        {"id": "83-E15", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 83, "quote": "婆子这才将信递到那人手里，看他另用布裹好，放在自己贴身的行囊内。", "assessment": "婆子交匿名带者并收存实际演出，不只承诺可靠。"},
+        {"id": "83-E16", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 85, "quote": "带信的人到了贾府门前，从行囊里取出那一包，亲交门上管事，说是三姑娘船上带回的。", "assessment": "有到门取出与亲交，不省成已达结论；途中细节仍空。"},
+        {"id": "83-E17", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 85, "quote": "婆子应声接好，用袖子护着往里走。", "assessment": "门上到内宅有经手动作。"},
+        {"id": "83-E18", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 87, "quote": "说着将外纸拆开，看见探春的字，手就在纸边按住了。", "assessment": "王夫人亲收拆，地点在府中，不是射圃见证。"},
+        {"id": "83-E19", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 91, "quote": "宝玉说信里没有这一句，她便叫仍往下念，不可自己替信添话。", "assessment": "短夹袄问题没被作者直接补进信文，人物听信范围受限。"},
+        {"id": "83-E20", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 95, "quote": "婆子正得了外头传进的话，便说是跟船婆子当面给的，船家引见，信封着交来；", "assessment": "家人问托带后口信经外头传入，不自动知道回叙全景。"},
+        {"id": "83-E21", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 97, "quote": "婆子又说带信人不曾细说，外头只回这一封是等到顺路才捎，不是日日都能递。", "assessment": "承认热食等细节未知，不造成随时可靠邮路。"},
+        {"id": "83-E22", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "line": 105, "quote": "话于是从船上的姜粥说到留下的箱笼，又说到谁去看花，谁收书。", "assessment": "尾部确已读到；姜粥进入全屋话头的接口不够明示，见单列风险而非硬判信息倒灌。"}
+      ],
+      "required_and_forbidden_assessment": [
+        {"contracts": ["83-S1-R1", "83-S1-R2", "83-S1-R3", "83-S1-R4"], "result": "LOCALLY_ENACTED_AS_CANDIDATE", "evidence": ["83-E01", "83-E02", "83-E03", "83-E04", "83-E05"], "limit": "相熟子弟不具名，普通交接不是已证历史邀约或局部状态重放。"},
+        {"contracts": ["83-S2-R1", "83-S2-R2", "83-S2-R3", "83-S2-R4"], "result": "LOCALLY_ENACTED_WITH_PROVENANCE_OPEN", "evidence": ["83-E05", "83-E06", "83-E07", "83-E08"], "limit": "大金麒麟功能与普通观察落实；无家传答语，无另造前主，不替注册UNKNOWN生成出口。"},
+        {"contracts": ["83-S3-R1", "83-S3-R2", "83-S3-R3", "83-S3-R4"], "result": "LOCALLY_ENACTED_WITH_RELAY_RISK", "evidence": ["83-E08", "83-E09", "83-E10", "83-E11", "83-E12", "83-E13", "83-E15", "83-E18", "83-E20", "83-E22"], "limit": "消息而非物权抵湘云；探春仅短暂回叙船上，没回府；姜粥细节的入信/转述接口欠明示。"},
+        {"contracts": ["83-S1-F1", "83-S1-F2", "83-S2-F1", "83-S2-F2", "83-S3-F1", "83-S3-F2"], "result": "NO_CONFIRMED_PROHIBITED_DRIFT", "limit": "完整文本未见神秘老人、军事化、诗、发光托梦、确定婚期事故生死，未把大金麒麟递交湘云；这只是本次阅读结论，不改合同PENDING。"}
+      ],
+      "letter_chain_and_knowledge_audit": {
+        "level": "C_NARRATIVE_CONSTRUCTION_ONLY",
+        "chronology": [
+          {"step": "82末", "where": "82正文99、101、107行及其disclosure边界", "finding": "未封、夹册、待带，不是假装已交。"},
+          {"step": "83当前触发", "where": "83正文79行", "finding": "先收到太太已收着的通知；后文回叙解释此前交寄，不要求当前人物此时已知船上细节。"},
+          {"step": "后来船遇", "where": "83正文81行", "finding": "后来而非初写日；船家报有肯带者，婆子先问再请探春。没有精确日、地点、路线或已注册可靠身份。"},
+          {"step": "抽信封交", "where": "83正文81–83行", "finding": "探春抽原信、保留原日期、外包封妥、交婆子；婆子问门上找谁、拒许回信后交匿名带者，带者包裹收囊；婆子回来告已交，探春触空页。"},
+          {"step": "行旅到府门", "where": "83正文85行", "finding": "其间候船行路非一日；只作叙事时距，无伪造具体史实路线。匿名带者实际取包交管事。"},
+          {"step": "门到内宅", "where": "83正文85–87行", "finding": "管事接信留人、内宅婆子亲接护送、王夫人拆外纸识字；剪子动作的具体用途略松散，但不能因此否定已演出的拆读。"},
+          {"step": "现时听信和问带", "where": "83正文89–99行", "finding": "王夫人先看后令宝玉念；95行婆子正得外头回话才讲当面交信；97行不知热食、不许日日能递；99行不许哪日再来。"}
+        ],
+        "date_wording": "81行把“待书今晨能吃粥的话”作为旧信内容指称；紧接“不改作交信这一日”，95行又在念信时复现今晨。可读作书信内的今晨，未构成确定日期倒灌；如再修宜加“信中”使回叙指示语更稳。",
+        "knowledge_boundaries_preserved": [
+          "射圃29行宝玉目击，53–67行小厮/仆人/婆子形成多层转述，湘云追到亲见者；她从未被写作在射圃。",
+          "王夫人89行从湘云说射箭赔菜才看宝玉，不具射圃现场见证权。",
+          "湘云95–97行问跟船照护和热食是一般问候，不说婆子腰酸等未交代船上隐情。",
+          "没有用带者答应去门上就宣称史实可靠；正文补有实际到门，而可靠性仍只是本C候选内部安排。"
+        ],
+        "unresolved": ["匿名带者实际身份与可核历史路径", "出发/交寄/到门精确日期与时长", "旧麒麟来源、材质、前史", "姜粥这一额外细节经何句信文或口信入屋"],
+        "historical_delivery_proof": "NONE"
+      },
+      "style_and_nonconfirmed_risks": [
+        {"id": "83-RISK-1", "classification": "INFORMATION_INTERFACE_RISK_NOT_CONFIRMED_FAIL", "lines": [91, 105], "detail": "91–95行实际摘念的是衣物书匣、石榴和今晨吃粥，97行又明说带者不曾细说热食；105行全屋却从船上姜粥谈起。未展示姜字进入这屋的句子。宝玉念信不是逐字全文且95行有“念完”，故不能排除未引出的信文有姜粥，不足硬判倒灌；但当前知情落点比其他细节松。", "feedback": "如另获新版本授权，可在读信或第二次念信处补一小句实际原信内容，或把尾句限为粥，不必制造带者全知。"},
+        {"id": "83-RISK-2", "classification": "STYLE_RISK", "lines": [3, 47], "detail": "入圃、争箭、扶菜、找箭、垫凳、食盒近半章持续展开，劳动不是空填，但大金麒麟29行才露、露后又数轮琐事，冲突趋向同一种输赢/担责，射圃段有拖长感。", "feedback": "保留老仆护菜和若兰让箭等最能生人的动作，若再修优先压缩同功能争输赢，不删能构成情态的动作。"},
+        {"id": "83-RISK-3", "classification": "STYLE_RISK", "lines": [51, 69], "detail": "缺碟、问脚费、弓套不同差事几次回转，确有阻力也有接口过密之感；好几个无名人都以说明责任和来源说话，读者容易丢失谁正在回谁。", "feedback": "不必增姓名或补金额；减少一次复述，靠身体动作和地点提示分清仆人、小厮、婆子。"},
+        {"id": "83-RISK-4", "classification": "STYLE_RISK", "lines": [81, 99], "detail": "完整交寄桥已经补足，却将约束逐步逐句解释：不应回信、不改日期、不细知、不日日递。角色谨慎有由，累积后有读者检查清单进入小说的痕迹；探春仍是低频回叙，并非越界召回。", "feedback": "若另修可少留解释句，让封信、空页、收囊和候脚费自行承担边界，不以此建议改动冻结v1。"}
+      ],
+      "mechanical_boundary": "9470总字符只是实测体量。disclosure中8035正文汉字和lint PASS是作者机械记录，本阅读未以长度或重复率替代声口、节奏、关系和知情审查。"
+    },
+    {
+      "chapter": 84,
+      "verdict": "NO_CONFIRMED_LOCAL_FAIL_IN_READ_SCOPE; FORMAL_ORDER_OPEN_AND_STYLE_RISKS_REMAIN",
+      "overall_literary_pass": "NOT_GRANTED",
+      "confirmed_local_failures": [],
+      "confirmed_failure_note": "未查见可确证的局部硬性违约；正式宫令未交代是文本主动保留的未知，不自动判缺令FAIL，也不能冒称服制已全落实。零确定FAIL不是文学验收或H03后续婚期的验证。",
+      "exact_evidence": [
+        {"id": "84-E01", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 3, "quote": "门房听见宫门二字，先挡住跟着看的人，却不知道该领他去见哪一位，回头向管事使眼色。", "assessment": "门房确有领向阻力，不是一到门全府知道。"},
+        {"id": "84-E02", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 5, "quote": "来人停下，袖上沾着的水顺着腕边落了一滴，滴到门内砖上。", "assessment": "原传讯人湿袖保留，未断雨天或宫内原因。"},
+        {"id": "84-E03", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 9, "quote": "一个小丫头从旁边跑过，袖角碰着端水的托盘，水泼在自己袖上，她顾不得擦，先要往里叫。", "assessment": "第二次水有独立起因，不混成原传讯者。"},
+        {"id": "84-E04", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 11, "quote": "她又问服色行走的规矩可有一同交代，他摇头，说不是自己能补的话。", "assessment": "死讯与服制分离。"},
+        {"id": "84-E05", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 13, "quote": "凤姐低声将来人那句复了一遍，让她亲去，说是自己在偏厅接到，旁的细情还未得，不要让太太听几个不同的话头。", "assessment": "凤姐到平儿到王夫人的经手和未知范围明示。"},
+        {"id": "84-E06", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 17, "quote": "门上有宫门传来的讣信，二奶奶在偏厅亲接的。元妃娘娘薨了。", "assessment": "王夫人确有接话，不靠先验全知。讣信可指讯息，未凭空展示一份已验正式讣帖。"},
+        {"id": "84-E07", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 19, "quote": "平儿说在偏厅同凤姐听见来人回，并非路上听说。", "assessment": "王夫人追问得到了平儿见闻层级的确认，非宫情细节。"},
+        {"id": "84-E08", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 25, "quote": "先换眼前的，细的不要忙裁。等正式传来，免得这会儿乱做，回头又得拆。", "assessment": "现成素衣不冒称宫中完整正式服制。"},
+        {"id": "84-E09", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 33, "quote": "今儿这话是太太、奶奶叫家里先这样办，不是叫你替宫里定样子。", "assessment": "家内暂行指令来源落实。"},
+        {"id": "84-E10", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 37, "quote": "先别审她，我这里还分着呢，到底送不送？再等，粥就全凉了。", "assessment": "厨娘要先解劳动冲突，非拿死讯作笑料。"},
+        {"id": "84-E11", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 39, "quote": "远也得送，别把人的饭糟践了。", "assessment": "照护供用未断，走动禁限不封饭药路。"},
+        {"id": "84-E12", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 45, "quote": "方才是我管家里，叫你们别趁乱放人进来，并没叫你替宫里传令。", "assessment": "门上安排也不伪装宫令。"},
+        {"id": "84-E13", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 55, "quote": "紫鹃问谁传来的，媳妇说宫门来人由凤姐在偏厅接，平儿亲往太太处回过，自己是奉平儿的话来，并不知道宫里别的情形。", "assessment": "平儿遣媳妇到紫鹃的层级实际出现，非宝玉直接夺走传讯。"},
+        {"id": "84-E14", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 59, "quote": "紫鹃忙说老太太、太太都在屋里，随即压低声音，将元妃薨逝的那句说给她听。", "assessment": "紫鹃主动说明，在同日较晚，非等数日才告诉黛玉。"},
+        {"id": "84-E15", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 65, "quote": "她说醒着，已经将方才来讯慢慢告诉姑娘了，叫他进去只坐一会儿，不必再从头说。", "assessment": "宝玉天未全黑后到，紫鹃告讯在前。"},
+        {"id": "84-E16", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 75, "quote": "夜深后，黛玉醒来要水。", "assessment": "已经入睡后的第一回实际夜醒。"},
+        {"id": "84-E17", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 77, "quote": "隔了些时候，黛玉又醒，翻身时把帕子压到肩下，自己抽不出，低低叫紫鹃。", "assessment": "第二回夜醒后紫鹃换枕，不是预写未来。"},
+        {"id": "84-E18", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 79, "quote": "她在纸头注明昨日下午接讯之后的起居，先写夜醒二次，又在旁边添明两回都是自己守着，一回用水，一回换枕。", "assessment": "次晨后记，何夜何人均明示；73行睡前被脚步惊动不是额外一次已睡后夜醒。"},
+        {"id": "84-E19", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 79, "quote": "白日晚饭用了半碗，服药的事也另记在日间处，不同这夜混着。", "assessment": "日夜记录分离，没有未来观察。"},
+        {"id": "84-E20", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 87, "quote": "过了数日，家里办差的人渐渐知道该往哪里问，门上不再一听有人来便几路往里跑。", "assessment": "先同日晚告讯再隔夜再数日常例，时序桥已写。"},
+        {"id": "84-E21", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 89, "quote": "宫中正式服制的条目，府里还在候可照办的交代；谁在什么时辰亲接、应服到何时，来回问的人并没有带进一套明白话。", "assessment": "明确正式宫令仍待，不把数日家内安排变成法定履行完成。"},
+        {"id": "84-E22", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 89, "quote": "那张纸便又压回别单下面，没有换上一个新日子。", "assessment": "喜活暂停日期未重排，没造合法婚期。"},
+        {"id": "84-E23", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 91, "quote": "钱仍从家里支，不许一件衣裳让几个人各买一遍。", "assessment": "钱物有人经手、仍可支，不写骤贫查抄。"},
+        {"id": "84-E24", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "line": 101, "quote": "最上头仍看得见初闻丧讯后那一夜的“夜醒二次”。", "assessment": "末尾回指初夜而非今夜既成记录，今夜有事另叫紫鹃，文本首尾完整。"}
+      ],
+      "required_and_forbidden_assessment": [
+        {"contracts": ["84-S1-R1", "84-S1-R2", "84-S1-R3", "84-S1-R4"], "result": "LOCALLY_ENACTED_AS_CANDIDATE", "evidence": ["84-E01", "84-E02", "84-E03", "84-E04", "84-E05"], "limit": "口头讣讯到偏厅有动作，不证明宫门原始来源已独立认证。"},
+        {"contracts": ["84-S2-R1", "84-S2-R2", "84-S2-R3", "84-S2-R4"], "result": "MESSAGE_RELAY_ENACTED; FORMAL_ORDER_OPEN", "evidence": ["84-E04", "84-E06", "84-E07", "84-E08", "84-E09", "84-E21"], "limit": "死讯逐层接话与追问无答已落实；未完成正式服制指令交接，不以家内素衣替代。"},
+        {"contracts": ["84-S3-R1", "84-S3-R2", "84-S3-R3", "84-S3-R4"], "result": "HOUSEHOLD_RULE_EXECUTION_AND_DAYS_BRIDGE_ENACTED", "evidence": ["84-E09", "84-E10", "84-E11", "84-E12", "84-E20", "84-E21", "84-E22", "84-E23"], "limit": "只认可家内暂行的传令、纠错、供给和常例；不能据此给正式禁乐期限、丧服条目或E0注册状态通过。"},
+        {"contracts": ["84-S4-R1", "84-S4-R2", "84-S4-R3", "84-S4-R4"], "result": "SAME_DAY_LATE_MESSAGE_AND_OBSERVED_NIGHT_ENACTED", "evidence": ["84-E13", "84-E14", "84-E15", "84-E16", "84-E17", "84-E18", "84-E19", "84-E24"], "limit": "相对晚于其他房接话，不声称所有个体都已知；病人长期承压而非86末夜。后续婚期未读未验。"},
+        {"contracts": ["84-S1-F1", "84-S1-F2", "84-S2-F1", "84-S2-F2", "84-S3-F1", "84-S3-F2", "84-S4-F1", "84-S4-F2"], "result": "NO_CONFIRMED_PROHIBITED_DRIFT", "limit": "完整文本未见具体死因日期、宫廷内幕、托梦、挽诗祭辞、立刻查抄、全府同步悲痛、新急症或86药碗死亡物态；不将未触犯禁项自动换成文学PASS。"}
+      ],
+      "relay_time_and_authority_audit": {
+        "message_chain": [
+          {"lines": [3, 11], "finding": "午后宫门来话者到外门，门房/管事先问领给谁，凤姐平儿在偏厅才接到薨逝一句。"},
+          {"lines": [13, 23], "finding": "凤姐嘱平儿亲转；王夫人原未得讯，平儿当面转句并说明亲听，凤姐稍后到而非处处同时在场。"},
+          {"lines": [25, 45], "finding": "王夫人同凤姐到贾母；平儿分去针线房厨房。误封和误停日饭显示各房接话/执行不同步。"},
+          {"lines": [47, 49], "finding": "宝玉经母亲得讯后去贾母。不是凭章级世界事件已知。"},
+          {"lines": [51, 61], "finding": "送饭丫头先只知宫门来人；紫鹃服药后才从平儿遣来的媳妇得确讯，再压低声告黛玉，知识分层可见。"},
+          {"lines": [65, 79], "finding": "天未全黑宝玉到，已告讯；随后晚饭、真正夜晚两次醒、天明记录，不把纸当未来读数。"},
+          {"lines": [81, 101], "finding": "翌日事务先续，再过数日形成常例；最后把今日起居纸另叠，初夜读数没有冒充今日夜醒。"}
+        ],
+        "household_vs_palace": "13行先停家内宴席、25行现成素衣、33/45行明确太太奶奶家内管束，87行拒邻府传闻、89行继续候正式来源。没有把未知宫令自动补全。",
+        "formal_order_status": "OPEN_NOT_VERIFIED_NOT_AUTOMATIC_FAIL",
+        "H03_boundary": "89行做喜活旧单暂收且不换新日子，形成丧中不得按原日催办的现实缓冲；数日仅是常例形成时间，不是法定服丧期届满或可婚批准。本报告未读后续章，不能宣布H03全程满足。",
+        "medical_boundary": "51、63、71、75、77、99行是怕冷、乏力、少食、睡眠中断及照护，没有新定急症；器皿无OBJ-MEDICINE-BOWL-86身份断言。",
+        "not_claimed": ["宫令确切交付人时", "真实讣帖格式", "精确服丧/禁乐期限", "死亡原因和精确日期", "依法可婚之日", "状态引擎局部重放通过"]
+      },
+      "style_and_nonconfirmed_risks": [
+        {"id": "84-RISK-1", "classification": "STYLE_RISK", "lines": [11, 89], "detail": "11、23、25、29、33、45、61、69、83、87、89行多次说明未知、等正式、不要替人定规矩。每一次有局部用途，但累积密度像审证话语，凤姐、平儿、紫鹃间的个体声口被同一套谨慎语法拉平。", "feedback": "如另修优先保留33/45行最有权责力度的接话，其他可让停剪、退料、收纸、候门等动作承担，不必反复解释。"},
+        {"id": "84-RISK-2", "classification": "STYLE_RISK", "lines": [79, 101], "detail": "先写两次夜醒再写观察者、白日另栏、按日夹纸、末尾回指初夜，逻辑清楚但解释性很强。紫鹃说“你见的你告诉我，不用照我这句说”有照护动机，仍略有现代记录协议口吻。", "feedback": "可把分栏和归日的解释压到动作中；保留两次实际夜醒及次晨落纸，不能为省笔重新预写。"},
+        {"id": "84-RISK-3", "classification": "STYLE_RISK", "lines": [85, 99], "detail": "数日桥提供了丧常例，也复用温饭、素衣、问吃饭、手扶碗、扇子瞧着冷等轻动作。王夫人不撤饭和贾母“别一问就忙”各有情绪，末段仍可能显得同色低声过密。", "feedback": "适当保留不同人不一致的反应，少重复已完成的制度说明，不靠提高悲痛声量或加祭文解决节奏。"},
+        {"id": "84-RISK-4", "classification": "MINOR_STAGING_RISK_NOT_CONFIRMED_FAIL", "lines": [55, 65], "detail": "媳妇57行已离竹径，59–63行有黛玉一段接话和“过了一会儿”，65行宝玉又遇“刚出去的媳妇”。相对停留仍可以是短时，不足判场景矛盾；刚字让外头等候时长略紧。", "feedback": "如另修可去刚字或补短暂停步，不要因此改成消息延后数日。"}
+      ],
+      "mechanical_boundary": "9130总字符为实测体量。disclosure的7808正文汉字、长度门槛和lint PASS只作机械背景；本报告没有将其用作文学通过条件。"
+    }
+  ],
+  "final_limits": [
+    "本报告冻结的是一次实际阅读意见，非冻结稿的ADOPT、出版或历史真实性背书。",
+    "两章确定局部FAIL分别列空；信息接口和风格风险另外列出，不借谨慎措辞暗中声称确定错误。",
+    "83信封到门的动作在本C候选内部成立，不因此把匿名带者、递信路线或旧物位置注册为历史事实。",
+    "84正式宫令仍OPEN；数日常例与喜活暂停不生成精确法定婚期。",
+    "82只读结尾93–107行和disclosure限定投影，没有三章全文连读；也未验证82前文所有信中文字或83末姜粥细节原始来源。",
+    "冻结正文、disclosure、notes、所选输入和既有报告均未修改；若建议被采用须另获授权产生新版本，不回写v1。"
+  ]
+}

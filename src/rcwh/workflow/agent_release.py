@@ -1,7 +1,11 @@
 """Agent-reviewed research editions, isolated from stable publication/admission.
 
-A PASS is local byte-bound model review, not a human or evidence qualification.
-No scores, declared gate labels, or coordinator decisions can erase a rejection.
+Gates follow the evidence floor (rcwh.findings): only integrity failures and
+violations of evidence-layer hard locks FAIL. Author preferences, P-Lock
+anchors and plan-card details are advisories; checks that are not implemented
+are INFO. PENDING means a required input or reviewer is actually missing.
+A PASS is local byte-bound MODEL review, never a human/evidence qualification
+and never stable/ACTIVE adoption, which stays the owner's decision.
 The manifest is the commit marker; pending staging contains no adopted prose.
 """
 from __future__ import annotations
@@ -21,16 +25,14 @@ from ..contracts import coverage_errors, project_chapters, record_sha256, unique
 from ..evaluation.style_reference import CHAPTER_HEADING, _chapter_number
 from ..io import load_data
 from ..promotion import load_promotion_policy, policy_supported
+from ..findings import combine as _status
 from ..schema import validate_instance
-from .agent_panel import AgentPanel
+from .agent_panel import AgentPanel, _check_sample, _sample_records
 
 
 DIRECTORY = "releases/agent"
-
-
-def _status(values) -> str:
-    values = list(values)
-    return "FAIL" if "FAIL" in values else "PASS" if values and all(v == "PASS" for v in values) else "PENDING"
+# Unresolved dependent references are missing inputs, not integrity failures.
+_MISSING_INPUT_PREFIXES = ("UNRESOLVED_DEPENDENT_", "UNRESOLVED_HISTORICAL_ADAPTER", "CHAPTER_SCENE_SCOPE_MISSING")
 
 
 def _split(text: str, scope: tuple[int, ...]) -> tuple[str, dict[int, str]]:
@@ -102,8 +104,14 @@ class AgentRelease:
                              and not p.relative_to(self.root).as_posix().startswith(DIRECTORY + "/"))
         return {p.relative_to(self.root).as_posix(): digest(p.read_bytes()) for p in paths if p.is_file()}
 
+    def _packet_summary(self, packet: dict) -> dict:
+        # An absent packet is a missing review input (PENDING), not a failure.
+        if not repository_path(self.root, packet["path"]).is_file():
+            raise FileNotFoundError(f"agent review packet not found: {packet['path']}")
+        return AgentPanel(self.root).summary(packet=packet)
+
     def _subject(self, ref: dict, scope: str, binding: dict | None = None) -> tuple[str, dict]:
-        report = AgentPanel(self.root).summary(packet=ref["packet"])
+        report = self._packet_summary(ref["packet"])
         if report["record_integrity_status"] != "PASS" or report.get("findings"):
             return "FAIL", report
         matches = [s for panel in report["panels"] for s in panel["subjects"] if s["id"] == ref["subject_id"]]
@@ -113,6 +121,8 @@ class AgentRelease:
         if binding is not None and subject["binding"] != binding:
             raise AssetError(f"agent release panel candidate binding mismatch: {ref['subject_id']}")
         state = subject["status"]
+        if state == "FAIL" and not subject.get("findings"):
+            raise AssetError(f"panel subject failed without a recorded finding: {ref['subject_id']}")
         if state == "PASS" and subject["distinct_reviewer_count"] < 2:
             state = "PENDING"
         return state, subject
@@ -169,9 +179,10 @@ class AgentRelease:
             raise AssetError("coordinator rejected opinions are duplicate or unbound")
         negative = {key for key, o in opinions.items() if o["verdict"] in {"FAIL", "REJECT"}}
         if not negative <= set(rejected_ids):
-            return "PENDING"
-        # Record dissent explicitly; a rationale cannot override a failed review.
-        if negative or decision["outcome"] == "REJECT":
+            return "PENDING"  # Every dissent needs an explicit, reasoned ruling.
+        # Overruled dissent stays recorded in the decision. A BLOCKING negative
+        # still fails the CANDIDATE_PEERS gate; the coordinator cannot lift it.
+        if decision["outcome"] == "REJECT":
             return "FAIL"
         return "PASS" if decision["outcome"] == "ADOPT" else "PENDING"
 
@@ -192,32 +203,58 @@ class AgentRelease:
         from .admission import chapter_scope
         from ..corpus.dataset import CorpusRepository
 
-        scope = chapter_scope(self.root, row["writing_package"]["path"])
+        scope = chapter_scope(self.root, row["writing_package"]["path"], plan_contracts=True)
         if scope["chapter"] != row["chapter"]:
             raise AssetError("agent release writing package chapter mismatch")
         missing_contracts = "CHAPTER_SCENE_SCOPE_MISSING" in scope["findings"]
-        failures = [finding for finding in scope["findings"] if finding != "CHAPTER_SCENE_SCOPE_MISSING"]
+        missing_inputs = [f for f in scope["findings"] if f.startswith(_MISSING_INPUT_PREFIXES)]
+        failures = [f for f in scope["findings"] if f not in missing_inputs]
         if failures:
             raise AssetError("; ".join(failures))
+        reports["missing_inputs"] = missing_inputs
         package = load_data(repository_path(self.root, row["writing_package"]["path"]))
         exemplar_binding = package["exemplar_set"]
         self._bound(exemplar_binding)
         exemplars = load_data(repository_path(self.root, exemplar_binding["path"]))
         reports["input_scope"] = scope
-        gates["WRITING_PACKAGE"] = "PASS"
+        gates["WRITING_PACKAGE"] = "PENDING" if [f for f in missing_inputs if f != "CHAPTER_SCENE_SCOPE_MISSING"] else "PASS"
+        if "research_source_sets" in package:
+            from ..literary_inputs import LiteraryInputs
+            checked = LiteraryInputs(self.catalog).package(row["writing_package"]["path"])
+            if checked["status"] != "PASS":
+                raise AssetError("supplemental writing input integrity failed")
+            # Byte-checked research context; its proposed claims are not
+            # evidence and are reported, not held as an unreachable gate.
+            reports["supplemental_source_sets"] = checked["supplemental_source_sets"]
 
         # The candidate's reviewers must also see the exact package and contracts.
-        packet_report = AgentPanel(self.root).summary(packet=row["panel"]["packet"])
-        if packet_report["record_integrity_status"] != "PASS" or packet_report.get("findings"):
+        try:
+            packet_report = self._packet_summary(row["panel"]["packet"])
+        except FileNotFoundError as exc:
+            # Only the peer gates wait on the packet; package/source/corpus
+            # checks below still run and report their own state.
+            packet_report = None
+            reports["contract_peer_pending"] = str(exc)
+        integrity_failed = packet_report is not None and (
+            packet_report["record_integrity_status"] != "PASS" or packet_report.get("findings"))
+        if integrity_failed:
             gates["CONTRACT_PEERS"] = "FAIL"
-        else:
+            reports["contract_peer_findings"] = packet_report.get("findings", [])
+        elif packet_report is not None:
             subjects = [s for p in packet_report["panels"] for s in p["subjects"]]
             check_peer_sessions(subjects)
             requirements = [("PACKAGE", row["writing_package"])]
             for path in scope["paths"]:
-                if path.startswith("data/scenes/"):
+                if path.startswith("data/scenes/") or path in scope.get("advisory_contract_paths", []):
                     requirements.append(("CONTRACT", {"path": path, "sha256": digest(repository_path(self.root, path).read_bytes())}))
             states = ["PENDING"] if missing_contracts else []
+            # A contract that contradicts itself or the replayed world fails.
+            # Unchecked/unimplemented tiers (e.g. prose semantic replay) are
+            # INFO: reported in the contract reports, never a holding gate.
+            for report in scope.get("advisory_contract_reports", []):
+                tiers = (report["declared_compatibility"]["status"],
+                         report["deterministic_world_state_replay"]["status"])
+                states.append("FAIL" if "FAIL" in tiers else "PASS")
             for kind, binding in requirements:
                 matching = [s for s in subjects if s["scope"] == kind and s["binding"] == binding]
                 states.append(_status(s["status"] for s in matching))
@@ -267,9 +304,16 @@ class AgentRelease:
                         sample = product_samples.get(segment["segment_id"])
                         if sample is None:
                             state = _status([state, "PENDING"]); continue
-                        raw = self._bound(sample["binding"])
-                        records = [json.loads(line) for line in raw.splitlines() if line.strip()] if sample["binding"]["path"].endswith(".jsonl") else [json.loads(raw)]
-                        actual = next((r for r in records if r.get("segment_id") == segment["segment_id"]), None)
+                        try:
+                            records = _sample_records(self.root, sample["binding"])
+                            if records is None:
+                                raise ValueError("corpus peer sample carrier has no records")
+                            _check_sample(records, segment["segment_id"])
+                        except (KeyError, OSError, TypeError, ValueError) as exc:
+                            raise AssetError("corpus peer sample differs from selected exemplar") from exc
+                        actual = next((record for record in records
+                                       if isinstance(record, dict)
+                                       and segment["segment_id"] in (record.get("segment_id"), record.get("id"))), None)
                         if actual is None or actual.get("text_sha256") != segment["text_sha256"]:
                             raise AssetError("corpus peer sample differs from selected exemplar")
                         state = _status([state, coverage.get(segment["segment_id"], {}).get("status", "PENDING")])
@@ -283,6 +327,24 @@ class AgentRelease:
     def _policy(self, row: dict, changed: set[int], book: str, chapter: str) -> str:
         if "policy" not in row:
             return "PENDING"
+        agent_path = f"data/promotion/policies/agent/ch{row['chapter']}.v1.json"
+        if row["policy"]["path"] == agent_path:
+            from ..agent_policies import evaluate_agent_policy
+            policy = json.loads(self._bound(row["policy"]))
+            checked = evaluate_agent_policy(self.root, policy, row["chapter"], chapter)
+            if checked["status"] == "FAIL":
+                return "FAIL"
+            if row["plock_ref"] != (policy["plock"]["ref"] or "NONE"):
+                raise AssetError("agent release P-Lock differs from declared chapter protection")
+            if policy["plock"]["required"]:
+                from ..literary_eval import evaluate_literary_candidate
+                evaluated = evaluate_literary_candidate(self.root, row["plock_ref"], chapter,
+                                                       candidate_name=f"agent-ch{row['chapter']}")
+                # A P-Lock protects literary work already written; a lost anchor
+                # is a replaceable REPLACEMENT_CASE advisory, never evidence.
+                if evaluated["machine_status"] == "INFRASTRUCTURE_BLOCKED":
+                    return "PENDING"
+            return checked["status"]
         expected_path = f"data/promotion/policies/ch{row['chapter']}.json"
         if row["policy"]["path"] != expected_path:
             raise AssetError("agent release policy must be the declared chapter policy")
@@ -366,20 +428,26 @@ class AgentRelease:
                     result = operation()
                     if name == "CANDIDATE_PEERS":
                         report["gates"][name], report["reviews"]["candidate"] = result
+                        if result[0] == "FAIL":
+                            report["findings"].extend(f"CANDIDATE_PEERS: {f}" for f in result[1].get("findings", []))
                     elif name == "AUTHOR_PROVENANCE":
                         report["gates"][name], report["reviews"]["authors"] = result
                     elif name == "INPUT_PEERS":
                         input_gates, input_reports = result
                         report["gates"].update(input_gates); report["reviews"].update(input_reports)
+                        report["findings"].extend(f"CONTRACT_PEERS: {f}" for f in input_reports.get("contract_peer_findings", []))
+                        report["pending"].extend(f"WRITING_PACKAGE: {f}" for f in input_reports.get("missing_inputs", []))
+                        if "contract_peer_pending" in input_reports:
+                            report["pending"].append(f"CONTRACT_PEERS: {input_reports['contract_peer_pending']}")
                     else:
                         report["gates"][name] = result
                 except (KeyError, OSError, UnicodeError, TypeError, ValueError) as exc:
-                    if name == "INPUT_PEERS":
-                        report["gates"]["WRITING_PACKAGE"] = "FAIL"
-                    else:
-                        report["gates"][name] = "FAIL"
-                    report["findings"].append(str(exc))
-            report["pending"] = [name for name, status in report["gates"].items() if status == "PENDING"]
+                    # Integrity/binding violations block; an absent file or key
+                    # is a missing input that leaves the gate PENDING.
+                    state = "PENDING" if isinstance(exc, (KeyError, FileNotFoundError)) else "FAIL"
+                    report["gates"]["WRITING_PACKAGE" if name == "INPUT_PEERS" else name] = state
+                    (report["findings"] if state == "FAIL" else report["pending"]).append(f"{name}: {exc}")
+            report["pending"] += [name for name, status in report["gates"].items() if status == "PENDING"]
             report["status"] = _status(report["gates"].values())
             report["provenance"] = {"PASS": "RESEARCH_AGENT_REVIEWED", "PENDING": "RESEARCH_AGENT_PENDING", "FAIL": "RESEARCH_AGENT_FAILED"}[report["status"]]
         for ch in scope:
@@ -404,12 +472,18 @@ class AgentRelease:
         self._validate(manifest, "manifest")
         return manifest, book
 
+    def _evaluate_scoped(self, request: dict | str | Path) -> tuple[dict, bytes]:
+        # All chapters bind the same corpus: verify its rebuild once per pass.
+        from ..corpus.dataset import rebuild_scope
+        with rebuild_scope():
+            return self._evaluate(request)
+
     def evaluate(self, request: dict | str | Path) -> dict:
-        return self._evaluate(request)[0]
+        return self._evaluate_scoped(request)[0]
 
     def build(self, request: dict | str | Path, *, allow_pending: bool = False) -> dict:
         snapshot = self._stable_snapshot()
-        manifest, book = self._evaluate(request)
+        manifest, book = self._evaluate_scoped(request)
         if manifest["status"] == "FAIL" or (manifest["status"] == "PENDING" and not allow_pending):
             raise AssetError(f"agent release {manifest['status']}; only explicit pending staging is allowed")
         base = repository_path(self.root, DIRECTORY)
@@ -424,7 +498,7 @@ class AgentRelease:
                 write_durable(stage / "book.md", book)
             write_durable(stage / "manifest.json", canonical_bytes(manifest))
             # Recompute all bindings and reviews just before publishing a marker.
-            latest, latest_book = self._evaluate(request)
+            latest, latest_book = self._evaluate_scoped(request)  # Fresh scope: genuine re-verification.
             if latest != manifest or latest_book != book or self._stable_snapshot() != snapshot:
                 raise AssetError("agent release inputs or stable storage changed while staging")
             target.mkdir()  # Exclusive reservation; never replace even an empty edition.

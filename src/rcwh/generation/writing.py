@@ -74,7 +74,7 @@ def generate(root: Path, runner: ModelRunner, rendered: dict, budget: Budget, *,
 def feedback_report(root: Path, draft_path: str, *, runner: ModelRunner | None = None,
                     budget: Budget | None = None, model: str = DEFAULT_MODEL,
                     style_reference: bool = False, exclude_chapters: list[int] | None = None,
-                    fallbacks: bool = False) -> dict:
+                    fallbacks: bool = False, audit_narrator: bool = False) -> dict:
     draft, text = load_draft(root, draft_path)
     task = draft["task"]
     # Revision tasks carry their original frozen writing task, never re-infer it.
@@ -124,6 +124,9 @@ def feedback_report(root: Path, draft_path: str, *, runner: ModelRunner | None =
     from .prose_integrity import prose_integrity
     checks.append({"evaluator": "prose_integrity", "qualification": "FEEDBACK_ONLY",
                    **prose_integrity(text)})
+    if audit_narrator:
+        from .narrator_audit import narrator_audit
+        checks.append({"evaluator": "narrator_audit", **narrator_audit(text)})
     reference = None
     if style_reference:
         reference = reference_profile(root, task.get("exemplar_dataset_ref") or draft_dataset(root, task),
@@ -143,7 +146,10 @@ def draft_dataset(root: Path, task: dict) -> str:
     return json.loads(bound_bytes(root, ref))["dataset_ref"]
 
 
-def revision_prompt(root: Path, draft_path: str, feedback_path: str, notes_path: str | None = None) -> dict:
+def revision_prompt(root: Path, draft_path: str, feedback_path: str, notes_path: str | None = None, *,
+                    revision_template: str = "revise-v1") -> dict:
+    if revision_template not in {"revise-v1", "revise-v2"}:
+        raise ValueError("unknown revision template")
     draft, text = load_draft(root, draft_path)
     feedback_binding = binding(root, feedback_path)
     feedback = json.loads(bound_bytes(root, feedback_binding))
@@ -162,7 +168,7 @@ def revision_prompt(root: Path, draft_path: str, feedback_path: str, notes_path:
         notes = bound_bytes(root, ref).decode("utf-8")
         inputs.append(ref)
     data = {"writing_task": draft["task"], "original": text, "feedback": feedback, "editorial_notes": notes}
-    return PromptRenderer(root).render("revise-v1", data, inputs)
+    return PromptRenderer(root).render(revision_template, data, inputs)
 
 
 def diff_report(root: Path, left: str, right: str, *, context: int = 2) -> dict:

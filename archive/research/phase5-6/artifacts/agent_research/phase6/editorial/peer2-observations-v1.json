@@ -1,0 +1,170 @@
+{
+  "schema_version": 1,
+  "kind": "PHASE6_B_EDITORIAL_PEER_OBSERVATIONS",
+  "reviewer_id": "phase6-editorial-peer2",
+  "reviewer_kind": "MODEL_SUBAGENT",
+  "session_id": "phase6-editorial-peer2-20261014",
+  "model": {"label": "gpt-6.1-sol", "verification": "DECLARED_NOT_VERIFIED"},
+  "context_isolation": {"asserted": true, "verification": "NOT_PROVEN", "limit": "未读peer1，未接收peer1结论；模型标签、隔离和独立性为声明而非技术证明。"},
+  "packet": {"path": "artifacts/agent_research/phase6/editorial/peer-packet-v1.json", "sha256": "ed58183dffe8f9aab5a2c443031e59c8c2be0dc02161b1ea0a96b36190f30769"},
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "review_scope": {
+    "question": "三项尚未实施的拟编辑选择，是否可作为不破锁、不提升证据的条件性C提案；不是当前工程兼容、文学择优、正式采用或独立人类准入审查。",
+    "verdict_rule": "PASS只表示所读证据支持这一明确有前提的安全提案；未支持的执行、注册、授权、历史事实保持PENDING/UNKNOWN；确实破锁才FAIL。完整读完或hash相符本身不是PASS理由。",
+    "conditional_not_executed": true,
+    "sample_checks": [],
+    "no_sample_manifest": "packet只有三个PLAN subjects，未提供样本；没有虚构sample_id、样本通过或样本全文阅读。"
+  },
+  "binding_verification": {
+    "packet_hash_matches": true,
+    "subjects": [
+      {"subject_id": "editorial-ch98", "path": "artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json", "packet_sha256": "68cd5da580cb3406f75f277c6999fbcd8d9721f30a3d4c341bfc5ab4f0eaa82f", "actual_sha256": "68cd5da580cb3406f75f277c6999fbcd8d9721f30a3d4c341bfc5ab4f0eaa82f", "match": true},
+      {"subject_id": "editorial-ch99", "path": "artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json", "packet_sha256": "12292f1f79a8c32cabcefb7eee2766fecd710a3959ec25b5362b17debeaf5f86", "actual_sha256": "12292f1f79a8c32cabcefb7eee2766fecd710a3959ec25b5362b17debeaf5f86", "match": true},
+      {"subject_id": "editorial-ch100", "path": "artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json", "packet_sha256": "afe6bd84ed2ceddc9966f4850114b621c96ed07e7f43c43231b979eba68a7020", "actual_sha256": "afe6bd84ed2ceddc9966f4850114b621c96ed07e7f43c43231b979eba68a7020", "match": true}
+    ],
+    "effect": "仅字节绑定核对，不是语义或执行通过。"
+  },
+  "actual_reading": {
+    "complete_files": [
+      "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/peer-packet-v1.json",
+      "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+      "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+      "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+      "/mnt/d/Code/RedChamberWorldHarness/schemas/agent_review.schema.json",
+      "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md",
+      "/mnt/d/Code/RedChamberWorldHarness/sources/project/2b5f2bcae5ce0269/玉线物流表_v0.2.md",
+      "/mnt/d/Code/RedChamberWorldHarness/sources/project/626917a3603d0069/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md",
+      "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/98-S3.v2.json",
+      "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S4.v3.json",
+      "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S5.v3.json",
+      "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/100-S5.v2.json",
+      "/mnt/d/Code/RedChamberWorldHarness/data/planning/scenes/99-S5.json",
+      "/mnt/d/Code/RedChamberWorldHarness/data/planning/chapters/ch99.json",
+      "/mnt/d/Code/RedChamberWorldHarness/data/world/m3_core.json"
+    ],
+    "bounded_reading": [
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md", "lines": [1141, 1337], "scope": "98/99/100三张章卡全文；末尾另读跨回总锁开头，不称整份二十回卡全文。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md", "line_ranges": [[155, 214], [221, 249], [439, 464], [473, 537]], "scope": "R43、R01、玉线硬节点、O03/O07/O10实际段；不称母本全文。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/4e1dd2a2d7669011/4e1dd2a2d7__81—100_被压缩形成过程与社会过程补完总表_v1.7_当前版.md", "lines": [1107, 1172], "scope": "99实际源列表及可选S5原文；不是全表。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/data/prewrite/v06.json", "pointers": ["/omitted_scene_plans/18"], "scope": "该JSON节点原值与scene source_record对照；未阅读其余预写数据。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/data/objects/m4.json", "lines": [896, 1089], "scope": "98误取/发现/信使运输、99 scope break、100 frame state实际事件；未读对象文件其余部分。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S1.v3.json", "pointers": ["/id", "/order", "/entry_from", "/required_beats/*/description", "/forbidden_beats/*/description", "/unresolved"], "scope": "逐项实际值读取；首次带grounding的大输出被截断，不据未送达内容宣称全文件阅读。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S2.v3.json", "pointers": ["/id", "/order", "/entry_from", "/required_beats/*/description", "/forbidden_beats/*/description", "/unresolved"], "scope": "同上，义务与源前驱实际值，不称全部嵌套grounding全文。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S3.v3.json", "pointers": ["/id", "/order", "/entry_from", "/required_beats/*/description", "/forbidden_beats/*/description", "/unresolved"], "scope": "见真人/劳动/转话义务与前驱，不称全合同全文。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/chapters/ch98.json", "pointers": ["/chapter", "/title", "/source", "/scenes", "/order_basis"], "scope": "章卡绑定边界与源列表，不称全文件阅读。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/chapters/ch100.json", "pointers": ["/chapter", "/title", "/source", "/scenes", "/order_basis"], "scope": "同上。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/planning/checking.py", "line_ranges": [[58, 94], [149, 173]], "scope": "只读当前源前驱一致性判断及字节相同移位副本例外；未运行计划检查、不改代码。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch98-revision1.txt", "lines": [45, 73], "scope": "误取—拆包—差人—收到及家务尾实际段落；前44行未读。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt", "lines": [55, 71], "scope": "转话—费用—两人饭—针线/旧衣尾全文；另用限定词搜索读到了3/5/9/19/21/27/29/31/33/35/37/39/41/43/45/47/49/51/53等匹配行，不称全章逐行阅读。"},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch100-revision1.txt", "lines": [47, 73], "scope": "人间病亡收束与全部太虚/青埂峰尾实际段落；前46行未读。"}
+    ],
+    "protection_version_note": "保护表分段合计已阅读全文，包括历史候选锁、FINAL同步386—404及正式放行409—425。不会把375的尚未写回历史状态当当前状态，也不因同步写PASS而认定本次新草案已采用；稳定基线本体未读。",
+    "explicitly_unread": [
+      "phase6 peer1意见、observations和注册材料：未读，未搜索其内容。",
+      "前80底本、原脂批直接见证、第1/18/21回全文、四句原字：未本轮直接核读，母本/章卡/物流表仍是项目上游约束引用，不伪造新直接史料证据。",
+      "稳定ACTIVE纯读基线与phase5二十回全文、98/99/100 revision1全文：本轮均未完整重读；只声明上列实际段落/匹配行。",
+      "草案引用的TAIL_READING_RESULTS、phase5反馈JSON、late-reader-2 observations：未直接打开；其草案转引不列入本次独立核实源引文。",
+      "其余98-S1/S2、100-S1/S2/S3/S4合同及旧v1/v2备份全文、world其他层、知识registry、全量catalog、来源直接见证和历史制度原典：未完整核读。"
+    ]
+  },
+  "evidence": [
+    {"id": "E01", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md", "lines": [1183, 1183], "quote": "E4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。", "kind": "EXACT_FULL_LINE_PROJECT_CARD"},
+    {"id": "E02", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md", "lines": [491, 491], "quote": "R18只锁“甄宝玉送玉”。", "kind": "EXACT_FULL_LINE_PROJECT_MOTHER"},
+    {"id": "E03", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md", "lines": [497, 500], "quote": "备选：\n\n- 本人出场而二宝错身；\n- 可信中间人转交。", "kind": "EXACT_CONTIGUOUS_PROJECT_MOTHER"},
+    {"id": "E04", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md", "lines": [28, 28], "quote": "不得把现实会面写成源证必然。", "kind": "EXACT_SUBSTRING_OL020"},
+    {"id": "E05", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md", "lines": [29, 29], "quote": "不得把“同一通灵玉+误包”写成唯一原稿解。", "kind": "EXACT_SUBSTRING_OL021"},
+    {"id": "E06", "path": "/mnt/d/Code/RedChamberWorldHarness/data/objects/m4.json", "pointer": "/transitions/24/to/holder", "quote": "zhen_messenger", "kind": "EXACT_JSON_STRING", "companion_pointer": "/transitions/25/from/holder", "companion_quote": "zhen_messenger"},
+    {"id": "E07", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/98-S3.v2.json", "pointer": "/required_beats/1/description", "quote": "甄家先发现、贾家起初未知；送还责任与亲自搬运分开：章卡信息链说甄家发现后“亲送”，实际OT98-04把holder设为zhen_messenger，OT98-05也从该信使交回baoyu。两者是尚未解决的实现冲突，不得把“承担责任/委托”自动写成满足亲送；未协调前，不选定亲送或代理，不新增信使identity、陪送或二次交通事件。", "kind": "EXACT_JSON_STRING"},
+    {"id": "E08", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch98-revision1.txt", "lines": [59, 59], "quote": "交给来人，自己留在屋内。", "kind": "EXACT_SUBSTRING_RESEARCH_PROSE"},
+    {"id": "E09", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/2b5f2bcae5ce0269/玉线物流表_v0.2.md", "lines": [51, 51], "quote": "> → 甄宝玉亲自送还。", "kind": "EXACT_FULL_LINE_CURRENT_C_SOURCE"},
+    {"id": "E10", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/4e1dd2a2d7669011/4e1dd2a2d7__81—100_被压缩形成过程与社会过程补完总表_v1.7_当前版.md", "lines": [1156, 1160], "quote": "### 99-S5｜若后续第41步要写寺庙生活\n第35步只预留：\n> 某处寺院曾见一个青衣青年问路/搬柴之类不确定消息。\n\n不能现在锁具体寺名、师父、剃度仪式。", "kind": "EXACT_CONTIGUOUS_SOURCE_LIST"},
+    {"id": "E11", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/scenes/99-S5.json", "pointer": "/order_basis", "quote": "SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY", "kind": "EXACT_JSON_STRING", "companion_pointer": "/order", "companion_value": 5},
+    {"id": "E12", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md", "lines": [1238, 1238], "quote": "可加一次极短早/晚课：跟诵不熟，小和尚指页，散课马上搬水/看锅。", "kind": "EXACT_SUBSTRING_CARD_PERMISSION"},
+    {"id": "E13", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md", "lines": [1262, 1262], "quote": "数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  ", "kind": "EXACT_FULL_LINE_INCLUDING_TRAILING_SPACES"},
+    {"id": "E14", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S5.v3.json", "pointer": "/required_beats/0/description", "quote": "仅在采用本可选接口时写一次极短早/晚课：宝玉跟诵不熟、小和尚指页，散课立刻搬水/看锅，不造经文或教义课堂。未采用时不额外制造必有微课事件；寺院普通搬柴挑水仍可作为99-S3见到真人的背景。", "kind": "EXACT_JSON_STRING"},
+    {"id": "E15", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S5.v3.json", "pointer": "/unresolved/9", "quote": "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。", "kind": "EXACT_JSON_STRING_POINTER_CONFIRMED"},
+    {"id": "E16", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S5.v3.json", "pointer": "/entry_from", "quote": "data/planning/contracts/agent-edited-v2/99-S4.v3.json", "kind": "EXACT_JSON_STRING"},
+    {"id": "E17", "path": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/planning/checking.py", "lines": [90, 92], "quote": "                    add(\"FAIL\", \"SCENE_CHAIN_MISMATCH\", item[\"ref\"], f\"expected {expected}, declared {actual}\")\n                else:\n                    add(\"PASS\", \"SCENE_CHAIN_DECLARED\", item[\"ref\"], \"declaration consistency only\")", "kind": "EXACT_CONTIGUOUS_CODE_NOT_EXECUTION_RESULT"},
+    {"id": "E18", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md", "lines": [1232, 1232], "quote": "G07“无字”强锁：无诀别信、诗、偈。作者层也无诗无偈。98《续庄子》不得成为99因果。", "kind": "EXACT_FULL_LINE"},
+    {"id": "E19", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt", "lines": [71, 71], "quote": "袖口未补完，仍留在桌角；两人把眼前这顿饭吃了。", "kind": "EXACT_SUBSTRING_RESEARCH_PROSE"},
+    {"id": "E20", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md", "lines": [189, 191], "quote": "开放的是尘世路径，不是终点。", "kind": "EXACT_FULL_LINE_191_CONTEXT_R01_189"},
+    {"id": "E21", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md", "lines": [531, 531], "quote": "R01石归本质只锁终态，不锁是否在末回正面重演青埂峰。", "kind": "EXACT_SUBSTRING"},
+    {"id": "E22", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md", "lines": [1291, 1291], "quote": "太虚：警幻只管理，不讲解。外框：空空道人是抄写劳动者，不是哲学解说员。", "kind": "EXACT_SUBSTRING_ROLE_NAMES"},
+    {"id": "E23", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md", "lines": [1303, 1303], "quote": "情榜与石归用章回切换，不写“榜收即石飞回”。", "kind": "EXACT_SUBSTRING"},
+    {"id": "E24", "path": "/mnt/d/Code/RedChamberWorldHarness/data/objects/m4.json", "pointer": "/transitions/28/note", "quote": "只改变外框身份终态，不伪造尘世物理交通", "kind": "EXACT_JSON_STRING", "companion_pointer": "/transitions/28/movement", "companion_quote": "NONE"},
+    {"id": "E25", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/100-S5.v2.json", "pointer": "/required_beats/3/description", "quote": "空空道人是抄写劳动者而非解释者：粗纸残墨，漫漶留空、不补字、不新增情评。空空道人同样未注册，保留角色义务不假造identity；沿章卡中压尾边界止于“石在，字在”。OT100-01只改frame_status，holder/location仍UNKNOWN，不能拿记录工作修补尘世运输或论证佛理。", "kind": "EXACT_JSON_STRING"},
+    {"id": "E26", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/100-S5.v2.json", "pointer": "/exit_state/0/reason", "quote": "OT100-01有硬终态外框记录，但本場局部检查点未知，收卷—青埂峰—抄写门槛尚未执行；不可用草案声明自证终态。", "kind": "EXACT_JSON_STRING", "companion_pointer": "/participants_status", "companion_quote": "UNKNOWN"},
+    {"id": "E27", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/626917a3603d0069/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md", "lines": [377, 377], "quote": "- 空空道人只承担“看石—誊录”的记录者功能，不二次解释情榜。", "kind": "EXACT_FULL_LINE_PROTECTION", "version_context": "已读386—425的FINAL/放行同步；非新草案本轮PASS证据。"},
+    {"id": "E28", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md", "lines": [33, 33], "quote": "不得补全五册60人；不得锁每层十二；不得自行生成绝大多数情评。", "kind": "EXACT_SUBSTRING_OL025"},
+    {"id": "E29", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json", "pointer": "/proposed_narrative_interface/possible_c_wording_not_source_quote", "quote": "且把太虚一境按下，另说青埂峰。那石劫终，已复还本质，仍在峰下。", "kind": "EXACT_JSON_STRING_NEW_C_PROPOSAL_NOT_SOURCE_QUOTE"},
+    {"id": "E30", "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/2b5f2bcae5ce0269/玉线物流表_v0.2.md", "lines": [68, 68], "quote": "石复本质由外框完成，不要求解释物理玉的交通路线。", "kind": "EXACT_FULL_LINE_PROJECT_LOGISTICS"}
+  ],
+  "observations": [
+    {
+      "id": "O98-1",
+      "subject_id": "editorial-ch98",
+      "judgment": "PASS",
+      "scope": "可撤销本人载体C选择的安全边界",
+      "evidence_refs": ["E01", "E02", "E03", "E04", "E05", "E09"],
+      "reason": "章卡当前施工写亲送，物流U3P明写亲自送还；母本同时允许可信中间人转交，说明R18没有唯一搬运者硬锁。草案本人携同一误取包可响应章卡，不须将R18变成亲送的直接源证。一次错取和无额外钱赠保留，二宝照面/同玉/误包仍C。未发现这个条件性选择本身违反OPEN或P-Lock。",
+      "not_an_adoption": "没有并排盲比，也未读完整稳定文学基线；不裁定本人方案比代理方案文学上更好。"
+    },
+    {
+      "id": "O98-2",
+      "subject_id": "editorial-ch98",
+      "judgment": "PENDING",
+      "scope": "新物流输入、运行兼容与正文实现",
+      "evidence_refs": ["E06", "E07", "E08"],
+      "reason": "现有OT98-04/05和实际正文返包载体是信使，不能支持本人返程。本人承担责任不等于本人持包；若实施本人路线必须有授权独立版本物流和新版合同/新正文绑定，或只作明示非执行叙事。草案已准确申明这些前提及BLOCKED，不据其将来的新输入认定现在兼容。",
+      "fail_threshold": "若以后沿用旧OT/hash认证本人路线、把信使亲交算甄宝玉亲送或将C同玉身份升成源证，则为确实违反对应约束；当前草案没有这样断言。"
+    },
+    {
+      "id": "O99-1",
+      "subject_id": "editorial-ch99",
+      "judgment": "PASS",
+      "scope": "未实施前插提案不是源链史料禁令所禁止",
+      "evidence_refs": ["E10", "E11", "E12", "E13", "E15", "E16", "E17", "E18"],
+      "reason": "源总表是形成过程和未来接口的列表，S5带若/预留而非寺居必晚于家务的硬时间约束；章卡最终章法明确微课在见真人以前、家中后收。这支持S1/S2之后、S3之前的短课诵作为C编排备选。当前源前驱检查仍会拒绝直接执行新链，这是当前工程声明规则，不应被误称为上游史料绝对禁止前插。草案把新编排/授权与不动seed/旧v3分开，仍保留旧衣终末、不造新诗或悟道解释，不倒灌读者所见为家中/贾芸已知。",
+      "engineering_status": "PENDING：无新版前驱规范/授权，不把安全意见作检查器改动许可；未执行完整计划检查，也未重现旧v2失败。"
+    },
+    {
+      "id": "O99-2",
+      "subject_id": "editorial-ch99",
+      "judgment": "PASS",
+      "scope": "不采用S5是更保守的合法备选，不是唯一合法文学选择",
+      "evidence_refs": ["E10", "E14", "E19"],
+      "reason": "旧S5-R1明许不采用且寺中劳务可留S3。省去新增匿名小和尚/指页段、编排授权和新前驱的成本，最容易保持S4两人饭/旧衣末镜，因此更保守。草案准确列此备选而未史料性排除它；短课诵不属于必须兑现的硬事件。更保守不自动等于应采用，也不使已明示授权前提的前插C提案FAIL。",
+      "implementation_status": "PENDING：即使删去实际演出的S5也需显式不执行可选接口，保留源文件；不能说五场均已实现或不改任何声明即可工程通过。"
+    },
+    {
+      "id": "O100-1",
+      "subject_id": "editorial-ch100",
+      "judgment": "PASS",
+      "scope": "拟正文终态义务与实际运输分开",
+      "evidence_refs": ["E20", "E21", "E23", "E24", "E29", "E30"],
+      "reason": "R01要求石劫终复本质/青埂峰终态，不要求在末回展示变石或连续运输。草案短句直接写终态，可在未来正文中完成石归的叙事义务，同时不说明谁送、何时、玉如何变石。收榜后章回切换不构成因果物流；OT100-01确实只有frame_status变化，movement=NONE，尘世holder/location未知。仅见石文/誊录不足以声称已明确展示归来过程，但其缺过程不能反推必须补运输，草案没有作这种错误推论。",
+      "implementation_status": "PENDING：E29是未来C措辞备选，不是已存在实际正文或原稿引文；不得凭它宣称旧合同局部exit已知、正文已完成或场级已执行。"
+    },
+    {
+      "id": "O100-2",
+      "subject_id": "editorial-ch100",
+      "judgment": "PASS",
+      "scope": "叙事名号、空注册列表与完整localcast分开",
+      "evidence_refs": ["E22", "E25", "E26", "E27", "E28"],
+      "reason": "章卡可支持警幻管理和空空道人记录的叙事名号，旧合同已经保留未注册角色义务。已全文读所选m3_core，characters名单无这两个名字/ID；叙事使用名号不等于补registry。草案registry_id=null、UNKNOWN并明确participants=[]不是无演员，不以贾兰/宝钗/麝月填外框演员、不把榜列名当同场角色。五层、宝黛两评与余名单/人数/榜名/媒介OPEN仍保留，中压尾、漫漶留空和石在字在未被解释尾覆盖。",
+      "implementation_status": "PENDING/UNKNOWN：完整外框localcast、运行identity和局部检查点都未证明；未来如果需要可执行演员绑定，另需授权版本registry，当前安全意见不生成ID。"
+    }
+  ],
+  "pending_and_unverified": [
+    {"subject_id": "editorial-ch98", "status": "PENDING", "item": "本人运输的新版本运行输入、局部包布局/knowledge事件、新正文和合同byte绑定。"},
+    {"subject_id": "editorial-ch99", "status": "PENDING", "item": "前插的显式编排授权/版本规范和重新检查；此草案仅提出选择，不是已实现。"},
+    {"subject_id": "editorial-ch100", "status": "PENDING", "item": "新终态句实际正文实现与新合同binding；未注册演员运行身份及局部exit仍UNKNOWN。"},
+    {"subject_id": "all", "status": "UNVERIFIED", "item": "模型身份、隔离、直接脂批/底本、全书源证、完整物流前史、历史制度与文学采用没有本轮认证。"}
+  ],
+  "hard_lock_violations_found_in_proposals": [],
+  "conclusion": "三subject对明确条件性编辑选择的安全兼容性PASS；不是读完即通过。98新输入与99编排授权均缺实施证据，100终态文字亦未实现，它们在相应执行层保持PENDING。没有将这些未完成前提当已经满足，也没有因为当前运行检查缺口就虚判尚未实施且明确有前提的提案破锁FAIL。",
+  "operations": {"delegated": false, "read_peer1": false, "registered": false, "committed": false, "changed_old_data_or_code": false, "created_only": ["artifacts/agent_research/phase6/editorial/peer2-opinion-v1.json", "artifacts/agent_research/phase6/editorial/peer2-observations-v1.json"]}
+}

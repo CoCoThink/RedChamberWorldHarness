@@ -1,0 +1,509 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT",
+  "mode": "FEEDBACK_ONLY",
+  "authority_effect": "NONE",
+  "disposition": "NOT_ADOPTED_NOT_RELEASED",
+  "chapter": 86,
+  "revision": "v2",
+  "report_path": "artifacts/agent_research/phase6/revisions-v2/readings/ch86-v2-reader2-v1.json",
+  "reader_identity": {
+    "reader_id": "ch86-v2-reader2-v1",
+    "identity": "新模型局部追读者；本次独立阅读当前指定包，不是原reader，不是全书读者",
+    "model_as_provided_by_environment": "gpt-6.1-sol",
+    "execution_claim": "本会话直接Read并作判断，未再委派；不是provider执行证明",
+    "independent_scope": "与披露中的协调者修复判断分开给出本次局部阅读意见；不据此证明平台身份独立性或新增合格独立读者人数",
+    "whole_book_reader": false,
+    "original_reader_impersonated": false,
+    "human_qualification": false,
+    "provider_proof": "NONE",
+    "formal_eligibility": false,
+    "human_acceptance": "NOT_GRANTED"
+  },
+  "scope": {
+    "full_text_coverage": true,
+    "coverage_statement": "实际完整阅读ch86-v2第1至113物理行，含标题、正文及全部空行，正文无跳读；另完整阅读指定disclosure、修复说明、原政策诊断；旧v1只作109至113行末段对照。Read显示的额外EOF空行不作为正文。",
+    "allowed_materials_only": true,
+    "not_read": [
+      "其他匿名读报及其他读者反馈",
+      "原作者source与其底层写作包",
+      "全书其他章",
+      "旧ch86-v1第1至108行的文学正文",
+      "disclosure或诊断引用的其他request、policy、plock、draft、feedback文件"
+    ],
+    "actions": [
+      "直接Read指定文件与旧稿指定末段",
+      "首个诊断路径不存在后，仅按精确文件名find定位同一指定诊断；未作内容扫读",
+      "python -I标准库仅作指定输入JSON解析、字节哈希、行数及最终报告引文和绑定核验"
+    ],
+    "prohibited_actions_not_taken": [
+      "未委派",
+      "未改稿",
+      "未运行项目测试或项目代码",
+      "未导入候选到项目登记系统",
+      "未登记、改选集或修改原报告",
+      "未ADOPT、未发布、未改权限或绕权限"
+    ],
+    "only_new_file": "artifacts/agent_research/phase6/revisions-v2/readings/ch86-v2-reader2-v1.json"
+  },
+  "actual_read_ranges_and_hashes": [
+    {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "read_tool_request": "Read，无offset/limit，完整返回",
+      "line_start": 1,
+      "line_end": 113,
+      "read_display_trailing_empty_line": 114,
+      "coverage": "FULL",
+      "sha256": "493de9a83fa7aa24601c023397f462790fc7b3676f94bf2c66dfca1376fe99a1",
+      "bytes": 30308,
+      "physical_lines": 113
+    },
+    {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2-disclosure.json",
+      "read_tool_request": "Read，无offset/limit，完整返回",
+      "line_start": 1,
+      "line_end": 1,
+      "coverage": "FULL",
+      "sha256": "a5f4b0fd154defa34c9eff617a90fd3facbac796f1d44afe144738c3f7046f05",
+      "bytes": 2949,
+      "physical_lines": 1
+    },
+    {
+      "path": "artifacts/agent_research/phase6/revisions-v2/readings/ch86-v1-plock-repair-notes-v1.txt",
+      "read_tool_request": "Read，无offset/limit，完整返回",
+      "line_start": 1,
+      "line_end": 14,
+      "coverage": "FULL",
+      "sha256": "21f439aae819882d50eb26c3691f777ee27b90c3bde23942af44c0d38b0c9165",
+      "bytes": 2470,
+      "physical_lines": 14
+    },
+    {
+      "path": "artifacts/agent_research/phase6/revisions-v2/ch86-policy-gate-diagnostic-v1.json",
+      "read_tool_request": "Read，无offset/limit，完整返回",
+      "line_start": 1,
+      "line_end": 1,
+      "coverage": "FULL",
+      "sha256": "e00d45981d120f7f1c6b0649e47e746d02d5541fafe417427754580dbee8dd97",
+      "bytes": 6135,
+      "physical_lines": 1
+    },
+    {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt",
+      "read_tool_request": "Read offset=109 limit=5",
+      "line_start": 109,
+      "line_end": 113,
+      "coverage": "SUFFIX_ONLY",
+      "hash_scope": "仅109至113行原始字节，含每行LF；不冒称实际核算完整旧稿哈希",
+      "range_sha256": "377a0d958870c41c14fbdc163ff98115f214cb87739fa34449ead731b387be25",
+      "range_bytes": 1598,
+      "full_file_sha256_claimed_by_diagnostic_not_independently_rehashed": "8351a6680a36e7899a583927a57c86a10121b6321e512b0f7b4cd457d24e5721"
+    }
+  ],
+  "bindings": {
+    "candidate_actual_sha256_matches_disclosure": true,
+    "repair_notes_actual_sha256_matches_disclosure": true,
+    "diagnostic_target": "ch86-v1，不是ch86-v2；旧FAIL不可改写为本轮PASS",
+    "disclosure_parent": {
+      "path_as_declared_only": "data/writing/drafts/ch86/57752b02180c06310110fde48464ed506442c794e5adafff2d9477b8cfd347c7.json",
+      "sha256_as_declared_only": "57752b02180c06310110fde48464ed506442c794e5adafff2d9477b8cfd347c7",
+      "independently_opened": false
+    },
+    "three_replacements": "披露的三处替换均落在实际对照的旧111、113行；按三条old/new逐项唯一替换可核对新109至113行。未读旧前段，不声称已对整篇做v1/v2字节差异审计。",
+    "unopened_references": "披露所列request、feedback、parent和诊断所列policy/plock均只视为文内引用，不以引用冒充已读。"
+  },
+  "verdict_axes": {
+    "exact_literal_restoration": "两条指定完整锚点均逐字恢复且各出现一次；这是局部字面事实，不是项目政策重跑结果。",
+    "local_semantics": "当前章内药盏—余药—熄炉—温药请求—接回原处—冷透的链条成立；死亡先于宝玉到场，温药无人执行，终末无解释尾声。说话前移产生承接负担，但未查到确定的新情节矛盾。",
+    "literary_quality": "有真实照料细节与未竟日常的哀伤，末段仍能成立；对话前移、话语归属迟置、转述链过长和均匀动作节奏存在具体风险。不给整章文学PASS。",
+    "human_and_provider_qualification": "无human资格、无provider执行证明、无全书资格、无source/corpus/合同语义认证；不作ADOPT或发布。"
+  },
+  "exact_anchor_checks": [
+    {
+      "mode": "P1_DIALOGUE",
+      "text": "药不是还没吃么？再温一温。今儿早起她还说药苦。",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 111,
+      "line_end": 111,
+      "literal_occurrences": 1,
+      "literal_result": "EXACT_RESTORED",
+      "natural_context": "宝玉已获明确死讯，却仍端起剩药，向紫鹃问药并要求再温；他并非预知死亡后说教，而是退回惯常照料话语。完整句在一次引号内由宝玉说出，没有靠分散短句拼接。",
+      "semantic_limit": "‘今儿早起她还说药苦’为新增的回忆断言，本章早起段未写出这句话，也未说明宝玉当时在场；可能来自开篇前经历或他人转述，故是未落实前提而非已证矛盾。"
+    },
+    {
+      "mode": "P1_TERMINAL",
+      "text": "那盏药早已冷透，再没有人去温。",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 113,
+      "line_end": 113,
+      "literal_occurrences": 1,
+      "literal_result": "EXACT_RESTORED_AT_TEXT_END",
+      "natural_context": "先写雪雁看向无火的炉，手收回；再写紫鹃接盏搁回原处，不往炉边走。冷药是未执行动作后的实体结局，不是孤立贴上的象征口号。",
+      "terminal_result": "完整终句后只有文件行终止符，无解释性尾声；炉先前已收，温药不发生。"
+    }
+  ],
+  "three_replacement_context_review": {
+    "replacement_1_full_dialogue_forward": {
+      "old_location": "v1:111，原先问‘药还没吃么？’，温药请求在同段动作后另说",
+      "new_location": "v2:111，问药、温药、早起药苦合为首个完整引语",
+      "finding": "说话人仍是宝玉，先端药再问紫鹃，目光随后回床，动作次序可通。温药请求提前，使随后众人动作都处于请求之后；这是一种更长的无回应，不是重复发令。",
+      "risk_refs": ["R1", "R2", "R3"]
+    },
+    "replacement_2_remove_second_request": {
+      "finding": "删除‘宝玉道：再温一温罢’避免同一请求重复；但保留的‘声音还是……说完便候着’已与实际引语隔开紫鹃、宝玉、雪雁、王夫人、李纨的动作，归属比旧稿迟。没有其他插话，因此仍可回指宝玉，不构成确定说话人错乱。",
+      "risk_refs": ["R1", "R2"]
+    },
+    "replacement_3_terminal": {
+      "finding": "以完整原终句替代药汁留痕长句，冷透/无人去温与前面的熄炉、接盏搁回共同成立；叙述更直接，失去旧稿白瓷内壁浅痕的视觉停留，是取舍而非自动文学提升。",
+      "risk_refs": ["R7"]
+    },
+    "hearing_this_sentence_after_forward_move": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 111,
+      "line_end": 113,
+      "answer": "仍可承接，不能仅以regex下结论。第111行末‘声音还是……说完便候着’把叙述重新收回宝玉的发话，第113行‘听见这句’可指整次发话，动作上尤其接‘再温一温’：雪雁看炉、见无火、手回膝，紫鹃只把盏搁回。最近实际引语的尾句却是‘今儿早起她还说药苦’，且中间已有多人动作，因此读者须逆向取回温药请求。‘本已……抬起’可作与前段擦帕并行或继后的补叙，不是已证手位矛盾，但比旧稿紧贴温药一句的衔接更涩。",
+      "classification": "COHERENT_WITH_REFERENTIAL_AND_TIMING_RISK_NOT_DEFINITE_FAIL"
+    }
+  },
+  "confirmed_failures": [
+    {
+      "id": "F1",
+      "scope": "原长v1历史政策诊断",
+      "status": "FAIL_RETAINED_NO_WAIVER",
+      "anchor": "药不是还没吃么？再温一温。今儿早起她还说药苦。",
+      "diagnostic_anchor_id": "data/plocks/r4_literary.yaml#/literary_locks/0/exact_anchors/0",
+      "evidence_refs": ["E23", "E25"],
+      "finding": "原诊断明确preserved=false；旧111行实际仅有近义问药和另说温药，没有完整锚点。本轮不回写旧FAIL。"
+    },
+    {
+      "id": "F2",
+      "scope": "原长v1历史政策诊断",
+      "status": "FAIL_RETAINED_NO_WAIVER",
+      "anchor": "那盏药早已冷透，再没有人去温。",
+      "diagnostic_anchor_id": "data/plocks/r4_literary.yaml#/literary_locks/0/exact_anchors/1",
+      "evidence_refs": ["E24", "E25"],
+      "finding": "原诊断明确preserved=false；旧113行冷药长句不能替代完整原终句。本轮不回写旧FAIL。"
+    }
+  ],
+  "current_v2_definite_content_failures": [],
+  "current_v2_definite_failure_statement": "在本次允许材料内未确认新的硬性情节矛盾或两锚点损失；空列表不等于整章文学合格、项目政策PASS或资格通过。",
+  "uncertainties_and_literary_risks": [
+    {
+      "id": "R1",
+      "severity": "MODERATE_LITERARY_RISK",
+      "new_or_inherited": "由本次完整对话前移放大",
+      "evidence_refs": ["E18", "E19", "E20", "E23"],
+      "finding": "‘听见这句’仍有语义承接，但温药请求与雪雁看炉隔了多人动作，且引语尾句已变成药苦；情绪与反应同步性弱于旧版紧接‘再温一温罢’。",
+      "not_a_confirmed_fail_because": "期间没有别人的新发话，段末又以‘声音……说完便候着’回收宝玉声音；视线转炉与温药请求之间有明确因果。"
+    },
+    {
+      "id": "R2",
+      "severity": "LOW_TO_MODERATE_LITERARY_RISK",
+      "new_or_inherited": "本次删去临近‘宝玉道’后产生",
+      "evidence_refs": ["E18", "E19", "E23"],
+      "finding": "‘声音还是平日……声音’在李纨扶王夫人之后迟置，需回找宝玉；‘说完便候着’与其间已经发生的动作形成时间回收，略有拼缝感。",
+      "not_a_confirmed_fail_because": "说话人仍唯一可辨；可读作先呈现众人的静默反应，再补写宝玉等候的声音状态。"
+    },
+    {
+      "id": "R3",
+      "severity": "UNRESOLVED_LOCAL_PREMISE",
+      "new_or_inherited": "本次恢复完整原句新增的章内断言",
+      "evidence_refs": ["E1", "E4", "E18"],
+      "finding": "‘今儿早起她还说药苦’在本章早起场面没有被直接写出，宝玉也未在该段出场；它需要章外先前经历或转述才能落实。恢复字面不自动提供这份经历。",
+      "not_a_confirmed_fail_because": "开篇没有覆盖整段清晨全部时刻，未排除开篇前接触或传话；不能因本章未展示就判定宝玉造假或时间矛盾。"
+    },
+    {
+      "id": "R4",
+      "severity": "MODERATE_PACING_RISK",
+      "new_or_inherited": "非这三替换可归因的新问题",
+      "evidence_refs": ["E8", "E9", "E10", "E15", "E16"],
+      "finding": "报医、报李纨、找宝玉、逐级传话、再报死讯、料理外间占较多篇幅，具象化迟到的组织阻力，却也容易把死亡与宝玉到场的时间拉得像为结尾布置。李纨晚于雪雁往返、王夫人又先于宝玉抵达，路线距离均未量明，读感需承受较多延迟。",
+      "not_a_confirmed_fail_because": "文本给出了找人层级、宝玉未立即返回及行路恍惚，并未给出可据以证伪的时间或空间尺度。"
+    },
+    {
+      "id": "R5",
+      "severity": "MODERATE_STYLE_RISK",
+      "new_or_inherited": "全章局部阅读观察，非新增替换专属",
+      "evidence_refs": ["E2", "E3", "E12", "E13", "E16", "E17"],
+      "finding": "抬手、收手、衣袖、眼光、挪开、放回的克制动作有效维持照料实感，但相似短暂停顿贯穿较均匀的段落，容易削弱临终、死后与到场三阶段的节奏差异。",
+      "not_a_confirmed_fail_because": "不少动作确有身体负担和关系含义，不可把重复词或原诊断段长提示直接当作文学失败。"
+    },
+    {
+      "id": "R6",
+      "severity": "LOW_SPATIAL_CLARITY_RISK",
+      "new_or_inherited": "旧109行已有，非新矛盾",
+      "evidence_refs": ["E17", "E22"],
+      "finding": "‘盏旁那只小碗……匙子搭得斜了些’之后‘将那只匙子拨正，好让盏空出来’，匙子究竟搭在小碗还是药盏上略含混；前文可容许它横在药盏边，但空间关系不够清晰。",
+      "not_a_confirmed_fail_because": "没有明写匙子只能在小碗内，也不妨碍随后端起药盏；旧稿同句已存在。"
+    },
+    {
+      "id": "R7",
+      "severity": "LITERARY_TRADEOFF_NOT_FAILURE",
+      "new_or_inherited": "末句替换的取舍",
+      "evidence_refs": ["E21", "E24"],
+      "finding": "完整终句把未执行温药直接钉定，旧稿药汁留痕的白瓷视觉则消失；字面保护达成不等于新结尾一定更含蓄或更好。当前前置的手势足以承托直陈，尚不显成另加解释。"
+    }
+  ],
+  "full_read_other_observations": [
+    {
+      "topic": "日常生命意愿",
+      "evidence_refs": ["E1", "E2", "E3", "E14"],
+      "finding": "米汤、案头纸、明日搬几与缝帘等要求，使黛玉仍有挑剔、安排和幽默；死后帘角未缝及米汤不盛形成未竟日常，不靠临终宣言制造完成感。"
+    },
+    {
+      "topic": "未竟书写",
+      "evidence_refs": ["E5", "E6", "E7"],
+      "finding": "诗笺已有两行而后行空字未补；伸手取笔却握不住、腕落下、纸留近处待明日，写的是改旧笺的未遂动作，没有生成完整绝命诗。诊断中的unfinished-writing词面INCOMPLETE不推翻这段实际语义；本次也不据此修改原诊断。"
+    },
+    {
+      "topic": "照料分工与死亡顺序",
+      "evidence_refs": ["E8", "E9", "E11", "E12", "E13"],
+      "finding": "紫鹃留床、雪雁报讯、小丫头补位，李纨接料理；黛玉死时宝玉仍在路上，王夫人后面明告死讯。请求未温不是因众人不知死亡，而是宝玉在知讯后仍落回日常病程。"
+    },
+    {
+      "topic": "没有被窄修复引入的强因果解释",
+      "evidence_refs": ["E4", "E10", "E11", "E15"],
+      "finding": "病势逐层下沉、药难咽与请医迟滞并存，没有把死亡单归断药、婚礼或某人恶意；没有复活、临终绝唱或终末议论尾声。仅作当前全文观察，不跨章证明世界设定。"
+    },
+    {
+      "topic": "李纨用语的可读范围",
+      "evidence_refs": ["E12", "E16"],
+      "finding": "她后说‘我们进来时，已不好了’比实际到时已亡轻，是面向宝玉的委婉表达；接着紫鹃明说‘后来，没等到你’，不足以判为李纨自相矛盾或稿件把死亡时间改写。"
+    }
+  ],
+  "evidence": [
+    {
+      "id": "E1",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 5,
+      "line_end": 5,
+      "quote": "黛玉道：“我只问谁盛的，你倒替她回了这一长篇。”",
+      "use": "早起性格与生活话语，未直接出现药苦回忆"
+    },
+    {
+      "id": "E2",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 9,
+      "line_end": 9,
+      "quote": "黛玉看着她：“案头还要放纸。”",
+      "use": "身体照料之外仍保留安排与书写意愿"
+    },
+    {
+      "id": "E3",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 11,
+      "line_end": 11,
+      "quote": "黛玉道：“窗下那块帘角也缝一缝。别叫我躺着，只看见它破着。”",
+      "use": "未竟日常的前置"
+    },
+    {
+      "id": "E4",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 19,
+      "line_end": 19,
+      "quote": "药汁咽到一半，她的眉头就拧起来，紫鹃把盏放回几上，叫雪雁递水。",
+      "use": "药盏实体链及早起难咽，不等同明说药苦"
+    },
+    {
+      "id": "E5",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 29,
+      "line_end": 29,
+      "quote": "纸上原有两行：“小院苔痕留宿雨 / 隔帘花影 □ 新晴”。后行的空字仍在原处，黛玉的指尖落在它旁边，停了一停。",
+      "use": "旧笺身份与不补空字"
+    },
+    {
+      "id": "E6",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 31,
+      "line_end": 31,
+      "quote": "那手原是天天拿笔的，拇指合过去，指节却没能扣住笔管。",
+      "use": "病体先行、书写未遂"
+    },
+    {
+      "id": "E7",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 35,
+      "line_end": 35,
+      "quote": "黛玉仍看着：“不要收得太深，明日还要找。”",
+      "use": "未完成而非临终绝唱"
+    },
+    {
+      "id": "E8",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 47,
+      "line_end": 47,
+      "quote": "你去报大奶奶，请她快来。再叫人去找宝二爷，说姑娘病势转坏，叫他来。",
+      "use": "分工与两条报讯路线"
+    },
+    {
+      "id": "E9",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 51,
+      "line_end": 51,
+      "quote": "李纨叫自己的丫头另往王夫人处回话，自己只带一人出门，又向雪雁道：“这里不必等我，你快去。”",
+      "use": "李纨出发及后续到达时序的阅读依据"
+    },
+    {
+      "id": "E10",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 57,
+      "line_end": 57,
+      "quote": "那一番话终于到了宝玉耳边时，雪雁已转回园内。",
+      "use": "多层传话导致来迟，不是温药引起死亡"
+    },
+    {
+      "id": "E11",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 65,
+      "line_end": 65,
+      "quote": "黛玉已经死了，帘外还响着李纨走近的脚步，宝玉尚在赶来的路上。",
+      "use": "明示死亡与到场先后"
+    },
+    {
+      "id": "E12",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 67,
+      "line_end": 67,
+      "quote": "紫鹃说：“大奶奶，姑娘去了。”",
+      "use": "李纨实际到场已亡"
+    },
+    {
+      "id": "E13",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 81,
+      "line_end": 81,
+      "quote": "她把炉口收好，再拨平灰，直到缝里最后一点红也看不见，才将火箸放下。",
+      "use": "炉确实先熄，结尾没有再点火"
+    },
+    {
+      "id": "E14",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 95,
+      "line_end": 95,
+      "quote": "李纨朝窗下看，帘角果然开着一道小口，针线还没送进来。",
+      "use": "缝帘未竟的回响"
+    },
+    {
+      "id": "E15",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 103,
+      "line_end": 103,
+      "quote": "王夫人道：“林姑娘去了。”她说得慢，握着他的手越发用力。",
+      "use": "宝玉已被明告，后面仍说温药"
+    },
+    {
+      "id": "E16",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 105,
+      "line_end": 105,
+      "quote": "李纨将水盆往旁边移，给宝玉让出一点地方，又轻声道：“我们进来时，已不好了。紫鹃一直在这里。”",
+      "use": "委婉报讯、动作节奏及时间读感"
+    },
+    {
+      "id": "E17",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 109,
+      "line_end": 109,
+      "quote": "盏旁那只小碗也还在，匙子搭得斜了些，早起用的茶盘移出了炉边，药吊子放在垫砖上。宝玉走到几前，手扶着盏沿，将那只匙子拨正，好让盏空出来。",
+      "use": "同一实体链与匙子空间小风险"
+    },
+    {
+      "id": "E18",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 111,
+      "line_end": 111,
+      "quote": "他抬眼看紫鹃，问：“药不是还没吃么？再温一温。今儿早起她还说药苦。”",
+      "use": "完整对话准确落点、说话人与目光"
+    },
+    {
+      "id": "E19",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 111,
+      "line_end": 111,
+      "quote": "雪雁擦着掌里的帕子，擦了许久，帕子越擦越湿；王夫人向前迈了一步，李纨轻轻扶住她的臂。声音还是平日进门来催一口药的声音，说完便候着。",
+      "use": "语声归属迟置及反应距离，非只查regex"
+    },
+    {
+      "id": "E20",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 113,
+      "line_end": 113,
+      "quote": "雪雁的手本已从膝上抬起，听见这句，眼光先向炉边去。药吊子安安稳稳停在垫砖上，炉口收着，灰里已经没有火。她抬起的手蜷了一下，回到膝上。",
+      "use": "承接温药请求的具体动作与回指风险"
+    },
+    {
+      "id": "E21",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 113,
+      "line_end": 113,
+      "quote": "紫鹃托住药盏的底，将它从宝玉手里接下，没有往炉旁走，只搁在几上原来的地方。",
+      "use": "温药无人执行，并非仅结尾口头声称"
+    },
+    {
+      "id": "E22",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt",
+      "line_start": 109,
+      "line_end": 109,
+      "quote": "宝玉走到几前，手扶着盏沿，将那只匙子拨正，好让盏空出来。",
+      "use": "匙子关系是旧稿继承，不归因新替换"
+    },
+    {
+      "id": "E23",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt",
+      "line_start": 111,
+      "line_end": 111,
+      "quote": "宝玉道：“再温一温罢。”声音还是平日进门来催一口药的声音，说完便候着。",
+      "use": "旧温药请求与下一段的原先紧邻关系"
+    },
+    {
+      "id": "E24",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt",
+      "line_start": 113,
+      "line_end": 113,
+      "quote": "几上那盏未尽的药，冷透了，暗褐色的药汁贴着白瓷内壁，留着一圈浅痕。",
+      "use": "旧终句语义近似但不是完整原锚点"
+    },
+    {
+      "id": "E25",
+      "path": "artifacts/agent_research/phase6/revisions-v2/ch86-policy-gate-diagnostic-v1.json",
+      "line_start": 1,
+      "line_end": 1,
+      "quote": "\"protected_anchor_results\":[{\"mode\":\"P1_DIALOGUE\",\"preserved\":false,\"text\":\"药不是还没吃么？再温一温。今儿早起她还说药苦。\"},{\"mode\":\"P1_TERMINAL\",\"preserved\":false,\"text\":\"那盏药早已冷透，再没有人去温。\"}]",
+      "use": "保留原v1两项精确anchor FAIL"
+    },
+    {
+      "id": "E26",
+      "path": "artifacts/agent_research/phase6/revisions-v2/readings/ch86-v1-plock-repair-notes-v1.txt",
+      "line_start": 6,
+      "line_end": 6,
+      "quote": "第一句为P1_DIALOGUE，第二句为P1_TERMINAL。终句不得再接解释性尾声；不把近义句、分散短句、冷药场景存在或读者认为场景成立算作精确锚点保存。",
+      "use": "字面、语义与终末边界分离"
+    },
+    {
+      "id": "E27",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2-disclosure.json",
+      "line_start": 1,
+      "line_end": 1,
+      "quote": "\"literary_acceptance\":\"NOT_GRANTED\"",
+      "use": "披露未授文学接受，不能因修复自升资格"
+    },
+    {
+      "id": "E28",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2.txt",
+      "line_start": 113,
+      "line_end": 113,
+      "quote": "那盏药早已冷透，再没有人去温。",
+      "use": "完整终句准确位置；其后无正文"
+    }
+  ],
+  "validation_contract": {
+    "purpose": "只校验本反馈JSON、精确引文行号、指定输入哈希与披露绑定；不执行项目测试、政策gate、import或登记",
+    "quote_rule": "每条evidence.quote必须逐字存在于所列相对路径line_start至line_end原文内；至少12条，本报告28条",
+    "hash_rule": "4份完整已读输入核SHA256；旧稿只核109至113行字节范围哈希，不升级旧前段阅读覆盖",
+    "replacement_rule": "只在实际读过的旧109至113行应用披露三替换核对新末段；不据此宣称全旧稿前段已审计",
+    "terminal_rule": "指定锚点各一次，P1_TERMINAL为正文去除末尾空白后的终点",
+    "freeze": "输出后仅只读核验；不改原稿、原诊断、原报告、原选集，不ADOPT、不发布"
+  },
+  "final_assessment": "本次新模型局部全文追读确认两句精确P-Lock恢复在111与113行，结尾无解释尾声且无人执行温药；同章物质链和来迟误读成立。完整对话前移后‘听见这句’仍可承接温药意图，却比旧版增加回指距离、反应时间及语声归属的拼缝感，早起药苦的回忆前提亦未在章内落实；这些是疑点/文学风险，不冒充已证矛盾。全文有照料实感和未竟日常，也有传话冗长与均匀手势节奏的压力。不授整章文学PASS，不替代人类资格，不抹去原v1两个anchor FAIL。冻结为MODEL_SUBAGENT、FEEDBACK_ONLY、authority_effect NONE、NOT_ADOPTED_NOT_RELEASED。"
+}

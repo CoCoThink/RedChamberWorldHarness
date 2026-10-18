@@ -149,6 +149,20 @@
         "RESEARCH",
         "BACKTEST"
       ]
+    },
+    "research_source_sets": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+        "properties": {
+          "path": {"type": "string", "minLength": 1},
+          "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}
+        }
+      }
     }
-  }
+  },
+  "allOf": [{
+    "if": {"required": ["research_source_sets"]},
+    "then": {"required": ["operation_scope"], "properties": {"operation_scope": {"const": "RESEARCH"}}}
+  }]
 }

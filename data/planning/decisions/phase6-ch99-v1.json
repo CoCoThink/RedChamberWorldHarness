@@ -1,0 +1,278 @@
+{
+  "schema_version": 1,
+  "kind": "PHASE6_B_EDITORIAL_DECISION",
+  "id": "phase6-ch99-v1",
+  "chapter": 99,
+  "revision": "v1",
+  "domain": "NARRATIVE_RECONSTRUCTION",
+  "status": "CURRENT",
+  "constraint": "MUST",
+  "reversible": true,
+  "statement": "选择一次极短非原创诗课诵，叙事顺序S1→S2→S5→S3→S4，家中两人饭和未补完旧衣为末镜；源索引不重排。",
+  "based_on": [
+    "artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+    "artifacts/agent_research/phase6/editorial/peer1-opinion-v1.json",
+    "artifacts/agent_research/phase6/editorial/peer2-opinion-v1.json"
+  ],
+  "reasoning": [
+    "章卡允许一次短课诵，能使寺院生活比短工多一丝；旧衣必须终末，不能让寺居的宗教动作取代被留下者的生活伤害。现有v3明确只恢复源链，前插是未选定备选，本草案只将它提出为待同行批准的C编排，不宣布v2被追认或旧v3已兼容。",
+    "本次用户已授权agent编辑，仅落实新版非执行叙事输入；同行研究意见不提供用户授权，也不升级源证或消除旧稿负面。"
+  ],
+  "implementation_refs": [
+    "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+    "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+    "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+    "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+    "data/planning/contracts/agent-final-v2/99-S5.v4.json"
+  ],
+  "project_refs": [
+    "data/planning/contracts/agent-final-v1/99-S1.v3.json",
+    "data/planning/contracts/agent-final-v1/99-S2.v3.json",
+    "data/planning/contracts/agent-final-v1/99-S3.v3.json",
+    "data/planning/contracts/agent-final-v1/99-S4.v3.json",
+    "data/planning/contracts/agent-final-v1/99-S5.v3.json"
+  ],
+  "notes": "NARRATIVE_ONLY_NOT_EXECUTABLE；CURRENT仅为此次可撤销editorC选择，不是史料LOCKED、正式采用、正文完成或发布。",
+  "execution_mode": "NARRATIVE_ONLY_NOT_EXECUTABLE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "usage": "RESEARCH_ONLY_NOT_ADOPTED_NOT_RELEASED",
+  "authorization": {
+    "basis": "EXPLICIT_USER_AGENT_EDIT_AUTHORIZATION_APPROVAL_B",
+    "scope": "仅新增3 decisions、13新版合同与本报告；不改旧文件、不委派、不提交",
+    "lane": "editorC",
+    "source_chain_reorder_authorized": false,
+    "runtime_execution_authorized": false
+  },
+  "editorial_selection": {
+    "selected_option": "INCLUDE_TINY_RECITATION_BEFORE_SEARCH_SCENE_TERMINAL_S4",
+    "epistemic_tier": "C_CREATIVE_PLACEMENT_NOT_HISTORICAL_CHRONOLOGY",
+    "ruling": "选择一次极短非原创诗课诵，叙事顺序S1→S2→S5→S3→S4，家中两人饭和未补完旧衣为末镜；源索引不重排。",
+    "why": "章卡允许一次短课诵，能使寺院生活比短工多一丝；旧衣必须终末，不能让寺居的宗教动作取代被留下者的生活伤害。现有v3明确只恢复源链，前插是未选定备选，本草案只将它提出为待同行批准的C编排，不宣布v2被追认或旧v3已兼容。",
+    "micro_scene_limit": "只描写跟不上、有人指页、散课就去搬水或看锅；不引经文、不加法号、不指定早课还是晚课、不加授戒仪式、不写点化解释。",
+    "selection_status": "EDITOR_C_AUTHORIZED_NARRATIVE_OBLIGATIONS_ONLY"
+  },
+  "input_bindings": [
+    {
+      "path": "artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+      "sha256": "12292f1f79a8c32cabcefb7eee2766fecd710a3959ec25b5362b17debeaf5f86"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editorial/peer1-opinion-v1.json",
+      "sha256": "336d0e0cc4b867479ee652c17cf2d72c92b4d85adb7290e6ef70553bd0ade445"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editorial/peer2-opinion-v1.json",
+      "sha256": "f78f5d3150841c4cc6fe42413ee56049c61fd3ef39af268ef5fe5294856f0e45"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editorial/peer-packet-v1.json",
+      "sha256": "ed58183dffe8f9aab5a2c443031e59c8c2be0dc02161b1ea0a96b36190f30769"
+    }
+  ],
+  "panel_facts": {
+    "status": "PENDING",
+    "record_integrity_status": "PASS",
+    "minimum_reviewers": 2,
+    "subjects": [
+      {
+        "id": "editorial-ch98",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      },
+      {
+        "id": "editorial-ch99",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      },
+      {
+        "id": "editorial-ch100",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      }
+    ],
+    "peer1_context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    },
+    "peer2_context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "effect": "未改变panel、原始同行声明或注册记录；意见不是编辑授权、独立人工认可或执行证明。"
+  },
+  "source_index": [
+    {
+      "source_index": 1,
+      "scene_id": "99-S1",
+      "seed": {
+        "path": "data/planning/scenes/99-S1.json",
+        "sha256": "92a213abc26fee423a2d9eb0d0be3257383db37d859c3aab859dde0e7293dd5c"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/99-S1.v4.json"
+    },
+    {
+      "source_index": 2,
+      "scene_id": "99-S2",
+      "seed": {
+        "path": "data/planning/scenes/99-S2.json",
+        "sha256": "65166cf1a04b886352c8ab51c033e2b2c8b1d0eaef0238d3e5cb6eae3d6005d8"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/99-S2.v4.json"
+    },
+    {
+      "source_index": 3,
+      "scene_id": "99-S3",
+      "seed": {
+        "path": "data/planning/scenes/99-S3.json",
+        "sha256": "6e9cff0e5796d0927022aafcb7b6f80fcf7a117551d3732af39aa73580ff6d34"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/99-S3.v4.json"
+    },
+    {
+      "source_index": 4,
+      "scene_id": "99-S4",
+      "seed": {
+        "path": "data/planning/scenes/99-S4.json",
+        "sha256": "dd53d01b1c048109c707d4dc9c6199f7a4f2c687cfd428370f17b1df3744829a"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/99-S4.v4.json"
+    },
+    {
+      "source_index": 5,
+      "scene_id": "99-S5",
+      "seed": {
+        "path": "data/planning/scenes/99-S5.json",
+        "sha256": "fe39fa915efcef9a90bb41b8661d22b8abd2fe5dfae1ee5460acdbb4e5d80847"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/99-S5.v4.json"
+    }
+  ],
+  "narrative_sequence": [
+    "99-S1",
+    "99-S2",
+    "99-S5",
+    "99-S3",
+    "99-S4"
+  ],
+  "narrative_index": [
+    {
+      "narrative_index": 1,
+      "scene_id": "99-S1",
+      "source_index": 1
+    },
+    {
+      "narrative_index": 2,
+      "scene_id": "99-S2",
+      "source_index": 2
+    },
+    {
+      "narrative_index": 3,
+      "scene_id": "99-S5",
+      "source_index": 5
+    },
+    {
+      "narrative_index": 4,
+      "scene_id": "99-S3",
+      "source_index": 3
+    },
+    {
+      "narrative_index": 5,
+      "scene_id": "99-S4",
+      "source_index": 4
+    }
+  ],
+  "narrative_sequence_status": "EDITOR_C_AUTHORIZED_OBLIGATIONS_NOT_PERFORMED",
+  "index_semantics": {
+    "source_index": "immutable seed/order and chapter_plan source-list index, not actual chronology",
+    "entry_from": "new selected predecessor in source order ONLY; no state/knowledge injected",
+    "narrative_index": "independent editorC presentation order ONLY; not runtime or original-source chronology",
+    "source_index_equals_narrative_index_assumption": false,
+    "existing_checker_support": "inspect/check_selected仅检查原source-index前驱、字节及声明；未读取或执行decision的独立narrative_sequence。"
+  },
+  "proposed_narrative_interface": {
+    "source_index_preserved": [
+      "99-S1",
+      "99-S2",
+      "99-S3",
+      "99-S4",
+      "99-S5"
+    ],
+    "proposed_narrative_sequence": [
+      "99-S1",
+      "99-S2",
+      "99-S5",
+      "99-S3",
+      "99-S4"
+    ],
+    "narrative_sequence_status": "EDITOR_C_AUTHORIZED_NARRATIVE_ONLY_NOT_EXECUTABLE",
+    "sequence": [
+      "98玉归之后照旧数日：饭、抄字、小事，随后还书、少食、不接事务；退出并非当天断粮或病倒。",
+      "宝玉明确不回来过日子；宝钗问住处/是否再回来，麝月问饭袜鞋，知情先后不同。离门不等于瞬间到寺。",
+      "经过未锁的交通与寺居间隔，另切一小段寺院日常：跟诵不熟，匿名小和尚指页，散课做事。不指定这是首次到寺、正式受戒或确切早晚时辰。",
+      "回贾芸寻找线：模糊目击、脚费、误认、到寺见真人及拒回；此前课诵不是贾芸知情证据，宝钗麝月也不能因读者见寺段就已知去处。",
+      "贾芸照实转话，只带所见所闻，保留‘没有，只说我平安’；不替宝玉许下归期。",
+      "家中继续买米付租、两人晚饭、未补完旧衣。章末不再切寺，不完成袖口，不把吃饭写成伤害已经消失。"
+    ],
+    "needle_interface": "保留revision1已澄清的动作：旧针眼被断线堵住→另取新针→线入新针眼未拉齐→为顾火把这根新针别在衣边。章末针和半拉齐线可回指，不凭笼统‘穿到一半’混淆穿针与缝衣。旧衣只作未注册日用品，不自动等同95已典夹袄或100李纨旧袄。",
+    "terminal_requirement": "S4最后实际演出的家务段必须留两只碗、针仍在衣边及未补完袖口；不要求以某一个固定字句证明原稿章末。"
+  },
+  "must_remain_unknown": [
+    {
+      "field": "temple_name_first_route_admission_ordination_date",
+      "status": "OPEN_LOCKED",
+      "value": null,
+      "reason": "OL-023及既有合同未定寺院、路径或仪式；贾芸寻访路径不等于宝玉第一程。"
+    },
+    {
+      "field": "micro_recitation_exact_time_scripture_novice_identity",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "只选择叙事动作，不核定早晚、经文、法号或注册ID。"
+    },
+    {
+      "field": "scene_entry_exit_and_knowledge_events",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "前插段只改变提议叙事次序，不证明宝钗麝月或贾芸得知该场。"
+    },
+    {
+      "field": "old_garment_object_identity_and_rice_quantity",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "针衣未注册，不与95/100混同；饭量动作不生成持续库存数。"
+    },
+    {
+      "field": "jade_earthly_holder_location_after_departure",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "OT99-01明确退出可知范围；不设计弃玉或指派保管。"
+    },
+    {
+      "field": "source_original_chapter_and_temple_scene_order",
+      "status": "OPEN_LOCKED",
+      "value": null,
+      "reason": "工作编号、源列表和新编排都不是原稿定位证据。"
+    }
+  ],
+  "frozen_inputs": {
+    "old_runs": "FROZEN_UNCHANGED_NOT_REPLAYED_FOR_NEW_NARRATIVE",
+    "world_objects_events_registry": "FROZEN_UNCHANGED",
+    "source_packet_seed_chapter_plan_bindings": "PRESERVED",
+    "human_events_created": false,
+    "actor_registry_created": false,
+    "prose_created_or_bound": false
+  },
+  "remaining_execution_status": "PENDING",
+  "historical_and_literary_admission": "NOT_CLAIMED",
+  "explicit_authorization_limit": "S1 S2 S5 S3 S4仅授权editorC演出义务；不是source链重排，绝不改seed.order或把entry_from改成叙事前驱。未来正文尚未演出；旧v2失败不获追认。",
+  "unresolved": [
+    "新版剧情尚无新正文、局部事件、知识事件或语义重放；旧run不证明本轮义务执行。",
+    "真实editorial panel仍PENDING；peer1 asserted=false保持原样，不宣称满足双合格独立同行或独立人工认可。",
+    "未建立人间新事件/身份registry，继续PENDING；原OPEN_LOCKED与UNKNOWN不提升。",
+    "保留全部旧source_packet和运行依赖；较窄新提案不supersede旧cashflow断言，不宣称全部v3包source mismatch闭合。"
+  ]
+}

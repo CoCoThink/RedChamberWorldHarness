@@ -1,0 +1,463 @@
+{
+  "record_type": "independent_two_queries_verification",
+  "record_version": "v1",
+  "scope": "仅指定ch94-v1、ch95-v1、ch96-v1正文中的两项局部连续性疑点；不是全书二读，不是对三章全部事实的审校。",
+  "authority": {
+    "actor_type": "MODEL_SUBAGENT",
+    "feedback_mode": "FEEDBACK_ONLY",
+    "authority_effect": "NONE",
+    "adoption_release_status": "NOT_ADOPTED_NOT_RELEASED",
+    "human_independent_certification": false,
+    "provider_independent_certification": false,
+    "separate_reader_declaration": "本执行线程作为区别于原reader及其他agent的局部复核者自行阅读并判断，未读取原reader报告或他人核验结论。此为任务角色及本线程操作声明，不是对真实身份、模型差异、提供方差异、进程隔离或human/provider独立性的认证。",
+    "model_label": {
+      "environment_self_report_only": "gpt-6.1-sol",
+      "independently_verified": false,
+      "note": "仅记录环境自报，不据标签声称独立提供方或优于原reader。"
+    }
+  },
+  "repository_root": "/mnt/d/Code/RedChamberWorldHarness",
+  "selection": {
+    "source": "任务明确指定的三个v1路径",
+    "selection_file_read": false,
+    "selection_file_note": "未额外读取selection；因此只确认对指定路径版本的判读，不声称独立核过selection清单。"
+  },
+  "reading_record": {
+    "method": "实际使用Read逐文件完整阅读，未以关键词摘录、哈希脚本或模型原书记忆替代正文阅读。",
+    "sources": [
+      {
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+        "sha256": "0fe24fd08773b9b9fe670146b40d25e4f489a7607252c50826b5ca834fe1dddb",
+        "bytes": 28276,
+        "physical_line_count": 119,
+        "read_calls": [{"offset": 1, "limit": 160, "returned_line_start": 1, "returned_line_end_including_terminal_empty_display": 120}],
+        "actual_physical_read_ranges": [{"line_start": 1, "line_end": 119}],
+        "complete_body_read": true,
+        "interruption_note": "本章完整Read后发生任务中断；恢复时从尚未完成的95、96章继续，未把中断或协调消息当作已完成核验。"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+        "sha256": "3f25c4dccf29af78417578fa44f172a00bcb07741c7264849110b4d1a1ab925a",
+        "bytes": 29431,
+        "physical_line_count": 125,
+        "read_calls": [{"offset": 1, "limit": 180, "returned_line_start": 1, "returned_line_end_including_terminal_empty_display": 126}],
+        "actual_physical_read_ranges": [{"line_start": 1, "line_end": 125}],
+        "complete_body_read": true
+      },
+      {
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+        "sha256": "a3b5b31e5e95d6ac659eedd2fc1f35db455bab55489a9c91c41a45565f9f6b7e",
+        "bytes": 27856,
+        "physical_line_count": 97,
+        "read_calls": [{"offset": 1, "limit": 180, "returned_line_start": 1, "returned_line_end_including_terminal_empty_display": 98}],
+        "actual_physical_read_ranges": [{"line_start": 1, "line_end": 97}],
+        "complete_body_read": true
+      }
+    ],
+    "line_number_note": "UTF-8文本按splitlines计物理行；三文件均以换行结尾。Read另显示一个末尾空行，故返回末行分别为120、126、98，真实物理末行分别为119、125、97。所有引文坐标均落在真实物理行内。",
+    "hash_method": "获准执行python3 -I，仅使用标准库pathlib、hashlib、json读取指定三章字节及检查目标路径是否存在。未导入仓库模块。"
+  },
+  "exposure_and_limits": {
+    "prior_reader_reports_read": false,
+    "other_agents_findings_read": false,
+    "other_chapters_read": false,
+    "other_repo_content_read": [],
+    "extra_exposure": [
+      "任务提示本身已经点名94章首夜、次晨、午前与第一日将晚，以及95熟粥两碗半与96量米两碗半的疑点；这是定向复核，非盲发现。提示同时提供可考虑的反向解释，故不声称对问题设定盲法。",
+      "会话自动附带分支、脏工作区快照、近期提交标题及环境信息；未打开其中的正文、旧报告或其他文件作为证据。",
+      "中断后的协调消息提及并发误启并停止，并重申原任务；没有提供reader结论或正文外核验结果，本记录不据其认定他人工作完成。",
+      "只读标准库脚本输出了三章大小、物理行数、字节哈希及本记录路径不存在的信息；这些仅用于范围与完整性核验，不代替阅读。"
+    ],
+    "same_repository_not_permission_isolation": "本线程在同一仓库及共享工作区中执行，角色区分不构成操作系统、仓库、文件或权限隔离。未申请扩大权限，未以其他agent或命令绕过拒绝；此线程已执行操作中未出现权限拒绝。哈希固定的是本次读取并复核的字节快照，不锁住其他线程今后的修改。",
+    "not_used_as_evidence": [
+      "原书训练记忆及指定三章以外情节",
+      "原reader报告、旧核验报告、其他agent意见",
+      "现代营养估算、容积数、米粥换算系数、默认器皿容量",
+      "未明示的跨季配额不变或同一个碗的假定"
+    ],
+    "object_non_merge_rule": "不把旧府未寻得的小包、平儿当下从衣堆取出的换洗衣、身上小衣、留城的散扣、96章蒋玉菡身穿衣边与待送补的行头合并成一个物件链。95章丢失的普通小碗、盛饭小木碗、96章平日量米的碗也不在无证据时合并；这里的不合并并非反向断定它们必然不同。",
+    "no_actions_beyond_request": "未委派、未改正文或旧报告或inputs、未运行项目测试、未导入项目、未登记、未提交、未发布；唯一新增文件为本JSON。"
+  },
+  "evidence_convention": {
+    "paths": "以下均为相对repository_root的精确路径。",
+    "quote_mode": "各quote均为所标单行中的逐字连续子串，无省略号拼接；未引用整行并不代表未阅读其余上下文。",
+    "claims": "命题的两端使用evidence中可定位的证据ID，不把推断伪装成原文。"
+  },
+  "evidence": [
+    {
+      "id": "94-arrive",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 69,
+      "line_end": 69,
+      "quote": "到村口，先有狗叫。巧姐把脚往褥里收，姥姥说别蹬，衣要踢下去，自己先下车，叫板儿过来搬包。"
+    },
+    {
+      "id": "94-receipt",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 75,
+      "line_end": 75,
+      "quote": "她怕只捎一句记不牢，托邻家识字的将已到和先安歇的话写在小纸上，自己看不明白，听念一遍才交车脚。"
+    },
+    {
+      "id": "94-arrival-supper",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 77,
+      "line_end": 77,
+      "quote": "傍晚饭端来，粗碗沉，巧姐两手捧着，碗沿比从前厚，低头去喝差些磕着牙。"
+    },
+    {
+      "id": "94-first-night",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 79,
+      "line_end": 79,
+      "quote": "这一夜巧姐靠着姥姥睡，褥子铺平，边上却有一处往里卷。"
+    },
+    {
+      "id": "94-night-to-dawn",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 81,
+      "line_end": 81,
+      "quote": "两个人折腾一阵才睡定，外头鸡叫时，她却觉得只闭了一会儿眼。"
+    },
+    {
+      "id": "94-next-morning",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 83,
+      "line_end": 83,
+      "quote": "天亮后，姥姥先下地忙水。巧姐坐起来，鞋不在脚边，原来板儿昨晚怕鸡啄，帮她踢到凳下，她够了半天才够到一只。"
+    },
+    {
+      "id": "94-before-noon",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 89,
+      "line_end": 89,
+      "quote": "午前姥姥要去院里收拾，不能一直陪她，便把小凳搬到门口，叫她坐在看得见的地方。"
+    },
+    {
+      "id": "94-line-teaching",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 97,
+      "line_end": 97,
+      "quote": "巧姐想帮她将散线绕起，刚绕两圈，手指一滑，又成一团。邻妇没耐性一味陪她，指一截说先理这个，别弄旁的，自己转过去做该做的活。"
+    },
+    {
+      "id": "94-basket",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 99,
+      "line_end": 99,
+      "quote": "邻妇看见，说线怕挂，别放那里，从旁边腾出个浅篮，叫她把这一束先放进去。"
+    },
+    {
+      "id": "94-wet-shoes",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 103,
+      "line_end": 103,
+      "quote": "她手里几件事纠在一起，一时竟不肯放，直到姥姥将碗接实，才伸出空手扶篮。邻妇见鞋湿了一点，说垫子刚缝稳，别又脱来脱去，放到日头下晾着，走时慢些。"
+    },
+    {
+      "id": "94-afternoon",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 105,
+      "line_end": 105,
+      "quote": "日头挪过去，亮处也跟着移，巧姐坐在凳上，脚尖一边晒着，一边仍在阴里。"
+    },
+    {
+      "id": "94-city-cut",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 107,
+      "line_end": 107,
+      "quote": "且说那车脚回城，先卸去旁人的物件，又转到一处交还借来的绳。姥姥的小纸压在他衣内，直等他摸钱，才想起来。"
+    },
+    {
+      "id": "94-city-knowledge",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 109,
+      "line_end": 109,
+      "quote": "平儿道笑了便好，嘴角想动，忽想起自己并不知晚间睡得怎样，又将纸折起，没有笑出来。"
+    },
+    {
+      "id": "94-first-day-evening",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 113,
+      "line_end": 113,
+      "quote": "刘家那头，第一日将晚，邻妇来取线，巧姐忙将篮捧给她，以为自己惹下错。那人看了看，说分开这一小截就算帮忙，余下自己带回去，明儿有闲再让她擎。"
+    },
+    {
+      "id": "94-late-shoe-state",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 117,
+      "line_end": 117,
+      "quote": "姥姥替她将湿鞋搁到一边，问线放哪里，她说自己拿，姥姥不许带进被里，怕缠着手，便找了个干净的小筐，放在她看得见的炕边。"
+    },
+    {
+      "id": "94-later-night",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+      "line_start": 119,
+      "line_end": 119,
+      "quote": "夜里再听狗叫，她仍醒着。姥姥已困，呼吸沉下来，巧姐翻身不敢太大，脚边褥子又卷起，她伸手去压，压平一头，另一头还翘着。"
+    },
+    {
+      "id": "95-season",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+      "line_start": 3,
+      "line_end": 3,
+      "quote": "却说又过了春夏，寒风再起，已是家败后第二个冬天。"
+    },
+    {
+      "id": "95-lost-bowl",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+      "line_start": 47,
+      "line_end": 47,
+      "quote": "麝月收拾碗时，在篮里摸来摸去，少的是平日淘菜暂盛水的一只普通小碗。"
+    },
+    {
+      "id": "95-rice-input",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+      "line_start": 59,
+      "line_end": 59,
+      "quote": "她忙叫住，让只取包角那把米，她自己过去量。他退到一旁，眼看她从瓮里舀出，停一停又倒回一点，问这样够么，她答先煮起来再说。"
+    },
+    {
+      "id": "95-cooked-output",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+      "line_start": 61,
+      "line_end": 61,
+      "quote": "粥成时，两碗盛满，另一只只到半处。小木碗是从衣包边取出来的，麝月怕沾灰，拿水涮过才盛。"
+    },
+    {
+      "id": "95-redistribution",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+      "line_start": 63,
+      "line_end": 63,
+      "quote": "宝钗将那只满的拨一部分过去，宝玉要推回，她说自己待会儿还要出门，吃太满走路不舒服，叫他别来回挪，沿上全是粥。"
+    },
+    {
+      "id": "95-three-eaters",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+      "line_start": 63,
+      "line_end": 63,
+      "quote": "三人坐得挤，宝玉一抬肘便碰着宝钗，忙缩身，自己的碗又往边上去，麝月将碗拉回，说先坐正再吃。"
+    },
+    {
+      "id": "95-add-new-rice",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+      "line_start": 79,
+      "line_end": 79,
+      "quote": "麝月看见他只带米，脸上先松些，听说炭未买，立刻又问在哪边。宝钗接米，倒入小瓮，剩下包纸上的碎粒，麝月用手指抿下来，也让落进去。"
+    },
+    {
+      "id": "95-explicit-unit-distinction",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+      "line_start": 89,
+      "line_end": 89,
+      "quote": "她量米仍留明日那份，添水时宝玉问两碗半是不是每个人都不满，她抬头望他，道锅里煮好分出来才叫两碗半，米不是拿吃饭的碗这么一排便数。宝钗怕他又不敢问，拿小木碗指给他看，说这是盛饭用的，多少看麝月下锅的米。"
+    },
+    {
+      "id": "95-next-day-question",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+      "line_start": 113,
+      "line_end": 113,
+      "quote": "宝玉问明日可还有两碗半，她道有米，水也得先提，别光问碗。"
+    },
+    {
+      "id": "96-season",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+      "line_start": 3,
+      "line_end": 3,
+      "quote": "春寒虽已退了些，背阴墙下却还湿着。"
+    },
+    {
+      "id": "96-donation",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+      "line_start": 49,
+      "line_end": 49,
+      "quote": "麝月腾出灶旁一块地方，宝钗叫她先将米袋拿来，只把一半倒进瓮里，另一半扎好，垫高放着，免得贴墙受潮。米落下时，旧米里的黄粒渐渐被新米盖住，麝月手才松，宝钗便说够了。"
+    },
+    {
+      "id": "96-still-two-and-half",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+      "line_start": 51,
+      "line_end": 51,
+      "quote": "宝玉挪了盆，回到米瓮旁边，听麝月问仍旧量两碗半么，便往门内看了看。袭人听见了，先道：“不算我们。他还要赶着送东西，留在这里也坐不稳。”"
+    },
+    {
+      "id": "96-raw-input",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+      "line_start": 53,
+      "line_end": 53,
+      "quote": "宝钗将平日量米的碗递给麝月。麝月仍量了两碗半，倒进淘盆，叫宝玉端水。"
+    },
+    {
+      "id": "96-wash-and-cook",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+      "line_start": 53,
+      "line_end": 53,
+      "quote": "麝月叫他扶紧盆底，自己拦着米，二人将淘米水倒到另一只盆里，留待洗碗。宝钗添上煮饭的水，锅盖落定，灶里才渐渐有了细响。"
+    },
+    {
+      "id": "96-served-without-total",
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+      "line_start": 93,
+      "line_end": 93,
+      "quote": "麝月把饭端到桌边，见宝玉还等着宝钗看信，先将他的碗放在空处。"
+    }
+  ],
+  "queries": [
+    {
+      "query_id": "Q1_CH94_TIME_ORDER",
+      "status": "AMBIGUOUS",
+      "local_conclusion": "首夜、次晨、午前及之后活动的相对次序清楚；第一日将晚的计日起点没有同样明确。若第一日专指到村那一历日，则有一日标签倒置；若指到村后首个整日，则全链可顺读。正文不足以排除后一解释，故不能独立确认互斥FAIL，也不作无瑕疵认证。",
+      "propositions": [
+        {
+          "proposition": "到村傍晚后的这一夜已经过去，才有天亮后、午前；这部分不是尚未发生的预叙。",
+          "endpoint_a_evidence_ids": ["94-arrive", "94-arrival-supper", "94-first-night"],
+          "endpoint_b_evidence_ids": ["94-night-to-dawn", "94-next-morning", "94-before-noon"],
+          "judgment": "SUPPORTED",
+          "reason": "昨晚踢鞋是次晨寻找鞋的回指，鸡叫与天亮连接首夜和次晨；正文没有把83至105行标为未来假想。"
+        },
+        {
+          "proposition": "113行的第一日将晚必定与77行到村傍晚同日，因而和次晨、午前确切互斥。",
+          "endpoint_a_evidence_ids": ["94-arrival-supper", "94-first-night", "94-next-morning", "94-before-noon"],
+          "endpoint_b_evidence_ids": ["94-first-day-evening", "94-later-night"],
+          "judgment": "NOT_ESTABLISHED",
+          "reason": "第一日没有明确加上到村当日或到村第一个历日的限定。按首个整日计日即可保留已写出的相对先后。把第一日理解为到村日很自然，故有歧义；自然不等于唯一。"
+        },
+        {
+          "proposition": "107行且说及113行刘家那头足以独自证明113行是在回叙到村日。",
+          "endpoint_a_evidence_ids": ["94-city-cut", "94-city-knowledge"],
+          "endpoint_b_evidence_ids": ["94-line-teaching", "94-basket", "94-wet-shoes", "94-first-day-evening", "94-late-shoe-state"],
+          "judgment": "NOT_ESTABLISHED",
+          "reason": "107行明确换到车脚与平儿线，不保证与村中上一段同时。113行只是返回刘家地点，没有写再回到昨日。取线、捧篮和117行湿鞋又接续97至105行的状态，削弱把113至119行整个搬回到村日的解释。"
+        }
+      ],
+      "relative_timeline": [
+        {"time_label": "D0，到村日；D0为本记录分析符号，不是原文日期", "events": "进村、进屋、交回话小纸、到村傍晚吃饭", "evidence_ids": ["94-arrive", "94-receipt", "94-arrival-supper"]},
+        {"time_label": "N0，D0之后首夜", "events": "靠姥姥睡、半夜辨错人、睡定后闻鸡叫", "evidence_ids": ["94-first-night", "94-night-to-dawn"]},
+        {"time_label": "D1，首夜之后天亮至午前", "events": "找昨晚被踢入凳下的鞋、缝垫、午前坐门口", "evidence_ids": ["94-next-morning", "94-before-noon"]},
+        {"time_label": "D1，随后日间", "events": "理线、借浅篮、吃饭、扶篮洒水湿鞋、随日光晒鞋", "evidence_ids": ["94-line-teaching", "94-basket", "94-wet-shoes", "94-afternoon"]},
+        {"time_label": "城市插段；不强制定为D0或D1某时刻", "events": "车脚回城卸物还绳后交纸，平儿只能得知到达，仍不知晚间睡况", "evidence_ids": ["94-city-cut", "94-city-knowledge"]},
+        {"time_label": "村中将晚；按顺序接续可为D1傍晚，但原文称第一日", "events": "邻妇取已理过的线，巧姐交篮；随后换衣、湿鞋放旁、短线移小筐", "evidence_ids": ["94-first-day-evening", "94-late-shoe-state"]},
+        {"time_label": "N1，按连续接续读为D1之后第二夜", "events": "再听狗叫，仍对卷褥与未解短线留意", "evidence_ids": ["94-later-night"]}
+      ],
+      "alternative_explanations": [
+        {
+          "name": "到村后的首个整日",
+          "status": "VIABLE_NOT_PROVEN_AUTHOR_INTENT",
+          "account": "到村只写到傍晚安顿，过一夜后才展开完整白日的穿鞋、擎线、吃饭和晒鞋；第一日可指这一首个完整生活日，113行接D1傍晚，119行接N1。",
+          "support_evidence_ids": ["94-arrival-supper", "94-next-morning", "94-before-noon", "94-basket", "94-first-day-evening", "94-later-night"],
+          "counterevidence_or_cost": "原文没有写第一个整日或次日，因此要给第一日补出语境中的计日起点，仍有读者误读成本。"
+        },
+        {
+          "name": "第一日就是到村当日",
+          "status": "VIABLE_READING_WITH_LABEL_CONFLICT",
+          "account": "若把第一日固定为D0，113行在已经叙完D1活动后又标D0将晚，且取线和湿鞋承接D1活动，形成局部日期标签冲突。",
+          "support_evidence_ids": ["94-arrive", "94-arrival-supper", "94-first-day-evening"],
+          "counterevidence_or_cost": "固定为D0并非正文唯一容许的语义；不能先固定再把所得冲突升级成无条件FAIL。"
+        },
+        {
+          "name": "纯回叙消解",
+          "status": "WEAK_AS_COMPLETE_EXPLANATION",
+          "account": "107行城市线可以回到车脚返城的较早时间；平儿不知晚间睡况也可能是尚未到夜里，或仅仅未收到夜里消息。但这些不能证明刘家返回段也回到D0。",
+          "support_evidence_ids": ["94-city-cut", "94-city-knowledge"],
+          "counterevidence_or_cost": "若把113至119行回溯到D0，就须另解释尚未在D0发生的理线、浅篮、湿鞋等状态为何先已存在；不能只凭且说和那头抹掉整条状态依赖。把整段D1活动说成预叙也缺乏明示。"
+        }
+      ],
+      "uncertainty": "可确证的是相对时间跨过了一夜；不可确证的是第一日使用历日计数还是首个整日计数。未取得作者意图说明，不把待说明当待强制修稿。",
+      "confirmed_fail": false,
+      "repair_decision": "NOT_PREDETERMINED_NO_TEXT_CHANGE",
+      "pending_items": "如需消除歧义，所需的是明确第一日计日起点；这不是本次完成两项判读的前置阻碍。"
+    },
+    {
+      "query_id": "Q2_CH95_CH96_TWO_AND_HALF",
+      "status": "AMBIGUOUS",
+      "local_conclusion": "95章的两碗半明确是熟粥分出后的叙述，96章的两碗半明确是量入淘盆的未煮米；这是计量对象的转换，不能谎称两处都在数熟粥。可是相同数字和仍旧、仍，并不足以证明同一量器、同一配额跨季不变、或96章最后仍只产两碗半熟食。因缺乏这些桥接约束，量词承接有疑而FAIL未坐实。",
+      "propositions": [
+        {
+          "proposition": "95章两碗半是当餐熟粥盛出状况，不是明定两碗半生米。",
+          "endpoint_a_evidence_ids": ["95-rice-input", "95-cooked-output"],
+          "endpoint_b_evidence_ids": ["95-redistribution", "95-explicit-unit-distinction", "95-next-day-question"],
+          "judgment": "SUPPORTED",
+          "reason": "59行米量没有数字，61行以粥成时引出两满一半；89行进一步明确锅里煮好分出来才叫两碗半。63行是熟粥再分配，不是新加一份米，也不是每人各两碗半。"
+        },
+        {
+          "proposition": "96章量两碗半是在淘洗、下锅以前量米，不是已煮熟的粥。",
+          "endpoint_a_evidence_ids": ["96-still-two-and-half", "96-raw-input"],
+          "endpoint_b_evidence_ids": ["96-wash-and-cook", "96-served-without-total"],
+          "judgment": "SUPPORTED",
+          "reason": "平日量米的碗、倒进淘盆、淘米水及随后另添煮饭水构成顺序；最终饭端桌时未给出总碗数，不能把先前量米数移作熟食产出数。"
+        },
+        {
+          "proposition": "95章盛饭小木碗和96章量米碗是同一器，因此可以把数字直接等同成同一容量。",
+          "endpoint_a_evidence_ids": ["95-cooked-output", "95-explicit-unit-distinction", "95-lost-bowl"],
+          "endpoint_b_evidence_ids": ["96-raw-input"],
+          "judgment": "NOT_ESTABLISHED",
+          "reason": "95指出小木碗是盛饭用的；96只说平日量米的碗，没有叫小木碗、没有追认同一器物。95丢失的又是暂盛水的普通小碗，不能因都叫碗就混入。不同用途不逻辑必然推出不同器，但同一器也不能默认。两只满碗与半碗的器型容量是否相等同样无明示，不宜把分碗描写硬化成精确统一体积。"
+        },
+        {
+          "proposition": "仍旧、仍足以保证96沿用95章同一个定量制度和完全不变的三人份额。",
+          "endpoint_a_evidence_ids": ["95-season", "95-three-eaters", "95-next-day-question"],
+          "endpoint_b_evidence_ids": ["96-season", "96-donation", "96-still-two-and-half", "96-raw-input"],
+          "judgment": "NOT_ESTABLISHED",
+          "reason": "95在冬天，96开篇为春寒退些，没有声称95那一餐与96是同一天或同一批米；95明日的问话不能无证据跨到春季。96在当日添新米后问是否仍旧量，可指当下已形成的量米习惯，不必专指95那一次成粥碗数。人数仍以家中三人为中心，客人明确不算，但同人数不保证不同季节米量、饭粥种类、量器和产出恒定。"
+        },
+        {
+          "proposition": "只凭两处两碗半即可确认米粥数量发生不可能的守恒冲突。",
+          "endpoint_a_evidence_ids": ["95-cooked-output", "95-explicit-unit-distinction"],
+          "endpoint_b_evidence_ids": ["96-raw-input", "96-wash-and-cook", "96-served-without-total"],
+          "judgment": "NOT_ESTABLISHED",
+          "reason": "一端是先前熟食分配，另一端是后时生米投入；没有共同器皿尺度、同批投入产出关系和后时成食总量。即使另有证据同器，也还缺跨时配额及产出不变约束，不能靠现代营养或容量换算补齐。"
+        }
+      ],
+      "measurement_state_reconstruction": [
+        {"stage": "95搬来头一顿，旧院留米下锅", "material_state": "未煮米", "quantity": "从瓮舀出又倒回一点；无数值米量", "vessel": "米瓮；量米用器在本段未指定为某只碗", "evidence_ids": ["95-rice-input"]},
+        {"stage": "95粥成及盛出", "material_state": "熟粥", "quantity": "两碗满，另一只半；是分配描写而非生米量", "vessel": "其中有从衣包取出的小木碗；未明示所有碗同规格", "evidence_ids": ["95-cooked-output"]},
+        {"stage": "95当餐分配调整", "material_state": "已经盛出的熟粥", "quantity": "宝玉把半碗挪近，宝钗从满碗拨给他一部分；不是各人都半碗，也没有新煮一份", "vessel": "饭碗之间转拨", "evidence_ids": ["95-cooked-output", "95-redistribution", "95-three-eaters"]},
+        {"stage": "95晚饭前后", "material_state": "另一次量米及煮粥，之前已购米补瓮", "quantity": "留明日那份；解释两碗半是锅里煮好分出，并非以饭碗排数米", "vessel": "小木碗被指认为盛饭用；此处没有另给生米碗数", "evidence_ids": ["95-add-new-rice", "95-explicit-unit-distinction", "95-next-day-question"]},
+        {"stage": "96春季当日新米补入", "material_state": "旧米与新米，均未煮", "quantity": "来客米袋的一半入瓮、另一半扎好；无可与95直接等量的容量值", "vessel": "米袋与米瓮", "evidence_ids": ["96-season", "96-donation"]},
+        {"stage": "96问量并排除来客", "material_state": "拟下锅米", "quantity": "问仍旧量两碗半；袭人明确不算二位来客", "vessel": "尚待递来量米碗", "evidence_ids": ["96-still-two-and-half"]},
+        {"stage": "96实际量米、淘洗及煮制", "material_state": "从生米量取到淘洗再下锅", "quantity": "用平日量米的碗量两碗半；随后加水煮", "vessel": "量米碗到淘盆；淘米水倒另一盆，锅中另加煮饭水", "evidence_ids": ["96-raw-input", "96-wash-and-cook"]},
+        {"stage": "96成食端桌", "material_state": "熟饭；不强认与95同稠薄的粥", "quantity": "没有熟食总碗数、余量或各人精确定额", "vessel": "饭碗", "evidence_ids": ["96-served-without-total"]}
+      ],
+      "alternative_explanations": [
+        {
+          "name": "两种计量用途可并存",
+          "status": "VIABLE_NOT_PROVEN",
+          "account": "95以饭碗形容熟粥分配，96以平日量米器量原料；量米器可以不同于饭碗，且正文没有给大小关系。相同数字不自动等同实物量。",
+          "counterevidence_or_cost": "96没有明写另一个或专用量米小器，故不能倒过来认证器皿必然不同；仍、仍旧又会唤起前章数字，承接依然可能让读者困惑。"
+        },
+        {
+          "name": "跨季生活状态或煮食习惯已变",
+          "status": "VIABLE_NOT_PROVEN",
+          "account": "冬日搬家首餐和春日来客探访之间有时间与物资变化；96新米已入瓮。仍旧可以指春日当下平常量法，而不是追溯95熟粥定额。即便同一器，也未要求两时投入或熟食产出相等。",
+          "counterevidence_or_cost": "来客送米本身不能证明当餐配额上调，尤其仍旧暗示不因来客临时加量。季节差只说明恒定不能默认，不证明具体哪一天改过、改了多少；不据此虚构中间事件。"
+        },
+        {
+          "name": "相同数字的叙述口径滑移",
+          "status": "PLAUSIBLE_EDITORIAL_CONCERN_NOT_CONFIRMED_FAIL",
+          "account": "95专门强调不是拿饭碗数米，96紧接使用仍旧量两碗半，读者可能自然把前章熟粥数误当这章米数的既定前提；这可能是措辞承接不清。",
+          "counterevidence_or_cost": "若要从措辞疑点升级为事实不可能，仍需同器同量纲、跨时恒定或同批投入产出等明确桥梁。目前没有这些约束，不能造碗容量、膨胀系数或营养需求完成推导。"
+        }
+      ],
+      "uncertainty": "对象不同是明确事实；器皿同一性、每只碗的共同尺度、跨季量米配额、96成食总量均未被正文锁定。这里的AMBIGUOUS指跨回口径承接仍有疑义，不表示已经发现物理数量冲突。",
+      "confirmed_fail": false,
+      "repair_decision": "NOT_PREDETERMINED_NO_TEXT_CHANGE",
+      "pending_items": "只有进一步明确量米碗身份及跨回仍旧所指，才可消除口径疑义；无需也不应以现代容量或营养估算代替。当前局部复核已经可交付，不因缺乏作者说明而将已读事实整体标PENDING。"
+    }
+  ],
+  "summary": {
+    "query_statuses": {"Q1_CH94_TIME_ORDER": "AMBIGUOUS", "Q2_CH95_CH96_TWO_AND_HALF": "AMBIGUOUS"},
+    "confirmed_fail_count": 0,
+    "no_defect_certification": false,
+    "pending_whole_review": false,
+    "result": "两项均存在可具体描述的歧义，但指定三章完整上下文不足以坐实无条件连续性FAIL。反向解释未被证明为作者本意；未预定修或不修，也未改稿。",
+    "scope_warning": "仅完成这两项局部独立核验，不能用本记录证明全书二读、其他连续性无误、旧结论采纳或任何发布权限。"
+  },
+  "freeze_and_validation_protocol": {
+    "sole_output_path": "artifacts/agent_research/phase6/revisions-v2/continuity/independent-two-queries-verification-v1.json",
+    "release_state": "NOT_ADOPTED_NOT_RELEASED",
+    "freeze_rule": "写入后只读校验JSON语法、每条引文的精确位置和三章SHA-256；成功后不再改本文件并交回，输出文件SHA-256由最终交回消息提供以避免自引用哈希。校验失败则如实说明，不绕行权限拒绝。",
+    "permitted_validation_only": "python3 -I；仅标准库json、hashlib、pathlib；不运行项目测试，不导入项目，不写其他文件。",
+    "checks": ["JSON能解析", "三章当前字节SHA-256与完整读取快照一致", "证据路径仅来自三章", "全部quote在指定line_start至line_end范围逐字出现", "各命题两端证据ID存在", "输出为所指定的唯一新增路径"],
+    "limits": "校验通过只能保证本文件结构、引用及检查时快照一致，不把模型判断升级为human/provider独立认证，也不保证交回后共享仓库不变。"
+  }
+}

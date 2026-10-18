@@ -426,9 +426,13 @@ def test_scoped_panel_does_not_fail_for_unrelated_valid_negative_but_inspects_it
     scoped = panel.summary(repo, packet=first)
     assert scoped["status"] == "PASS" and len(scoped["records"]) == 3
     assert scoped["panels"][0]["packet"] == first and len(scoped["panels"]) == 1
-    # Integrity is not scoped away.
+    # A broken record of another packet is surfaced store-wide (and fails
+    # `rcwh validate`), but is not imputed to an unrelated packet.
     (repo / other["raw_output"]["path"]).write_bytes(b"changed")
-    assert panel.summary(repo, packet=first)["status"] == "FAIL"
+    scoped = panel.summary(repo, packet=first)
+    assert scoped["status"] == "PASS" and scoped["store_integrity_status"] == "FAIL"
+    assert scoped["store_findings"] and panel.summary(repo)["status"] == "FAIL"
+    assert panel.summary(repo, packet=second)["status"] == "FAIL"
 
 
 def test_reissued_packet_cannot_hide_same_byte_negative_opinion(repo):
@@ -533,3 +537,41 @@ def test_cli_failure_is_truthful_not_claimed_registration(repo, capsys):
     result = json.loads(capsys.readouterr().out)
     assert result["status"] == "FAIL" and result["independent_human_admission"] is False
     assert "registered" not in result
+
+
+def test_non_blocking_negative_counts_as_review_and_stays_advisory(repo):
+    binding, packet = make_packet(repo, ("CANDIDATE",))
+    receive(repo, opinion(binding, packet, 1))
+    soft = opinion(binding, packet, 2, "FAIL")
+    soft["results"][0]["severity"] = "ADVISORY"
+    receive(repo, soft)
+    subject = panel.summary(repo, packet=binding)["panels"][0]["subjects"][0]
+    assert subject["status"] == "PASS" and subject["distinct_reviewer_count"] == 2
+    assert [a["severity"] for a in subject["advisories"]] == ["ADVISORY"]
+    hard = opinion(binding, packet, 3, "FAIL")  # No severity declared means BLOCKING.
+    receive(repo, hard)
+    assert panel.summary(repo, packet=binding)["panels"][0]["subjects"][0]["status"] == "FAIL"
+
+
+def test_reviewer_supersedes_own_record_but_history_is_kept(repo):
+    binding, packet = make_packet(repo, ("CANDIDATE",))
+    receive(repo, opinion(binding, packet, 1))
+    old = receive(repo, opinion(binding, packet, 2, "FAIL"))
+    assert panel.summary(repo, packet=binding)["status"] == "FAIL"
+    revised = opinion(binding, packet, 2)
+    revised["supersedes"] = [old["record"]]
+    receive(repo, revised)
+    subject = panel.summary(repo, packet=binding)["panels"][0]["subjects"][0]
+    assert subject["status"] == "PASS"
+    assert [o["record"] for o in subject["superseded_opinions"]] == [old["record"]]
+
+
+def test_reviewer_cannot_supersede_another_reviewers_negative(repo):
+    binding, packet = make_packet(repo, ("CANDIDATE",))
+    receive(repo, opinion(binding, packet, 1))
+    other = receive(repo, opinion(binding, packet, 2, "FAIL"))
+    forged = opinion(binding, packet, 3)
+    forged["supersedes"] = [other["record"]]
+    with pytest.raises(ValueError, match="their own"):
+        receive(repo, forged)
+    assert panel.summary(repo, packet=binding)["panels"][0]["subjects"][0]["status"] == "FAIL"

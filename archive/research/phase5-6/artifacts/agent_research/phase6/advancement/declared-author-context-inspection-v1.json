@@ -1,0 +1,1306 @@
+{
+  "authority_effect": "NONE",
+  "coordinator_narrow_disclosures": [
+    {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch86-v2-disclosure.json",
+      "sha256": "a5f4b0fd154defa34c9eff617a90fd3facbac796f1d44afe144738c3f7046f05"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2-disclosure.json",
+      "sha256": "3bfa1d9e016703d42a7f988b2db6fbb11a145dfa9025b854f542cb70bc4527d2"
+    }
+  ],
+  "identity_eligibility": "PENDING_INCOMPLETE_MAPPING",
+  "kind": "DECLARED_AUTHOR_CONTEXT_INSPECTION",
+  "limitations": [
+    "Local group keys label explicit disclosures; not authenticated runtime context IDs.",
+    "Selected ancestry includes short-parent authors not assigned to long-v1 groups.",
+    "Coordinator narrow contributions remain separately disclosed;86v2not selected.",
+    "No provider verification, full fresh renderer/import or positive independence count."
+  ],
+  "long_v1_groups": [
+    {
+      "actual_declared_value": true,
+      "basis": "EXPLICIT_EXISTING_DISCLOSURE_NOT_PROVIDER_CONTEXT_ATTESTATION",
+      "chapters": [
+        81,
+        82,
+        83,
+        84,
+        85
+      ],
+      "disclosure": {
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1-disclosure.json",
+        "sha256": "92b735c0743170671a7b1b26ee004c87f4d91ab2c2b0c83f0ac6bd5a17da7a65"
+      },
+      "local_group_key": "disclosed-long-v1-81-85",
+      "pointer": "/extra_context_exposure/same_session_as_chapters_81_through_84"
+    },
+    {
+      "actual_declared_value": true,
+      "basis": "EXPLICIT_EXISTING_DISCLOSURE_NOT_PROVIDER_CONTEXT_ATTESTATION",
+      "chapters": [
+        86,
+        87,
+        88,
+        89,
+        90
+      ],
+      "disclosure": {
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1-disclosure.json",
+        "sha256": "1a97019695b2394283c86c40211a33d0268387775c9bf056fafdf36386bd3581"
+      },
+      "local_group_key": "disclosed-long-v1-86-90",
+      "pointer": "/additional_author_context/same_continuing_context_as_ch86_through_ch89"
+    },
+    {
+      "actual_declared_value": true,
+      "basis": "EXPLICIT_EXISTING_DISCLOSURE_NOT_PROVIDER_CONTEXT_ATTESTATION",
+      "chapters": [
+        91,
+        92,
+        93,
+        94,
+        95
+      ],
+      "disclosure": {
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1-disclosure.json",
+        "sha256": "c802dea20615b3b68c2e23d0b3136dcbdd8ed21ecf546a86322d501f37342ff4"
+      },
+      "local_group_key": "disclosed-long-v1-91-95",
+      "pointer": "/model_declaration/same_author_context_as91_to94"
+    },
+    {
+      "actual_declared_value": "Same author session wrote complete revisions96–99; actual additional context exposure, not selected prepared previous_path or independent-author separation.",
+      "basis": "EXPLICIT_EXISTING_DISCLOSURE_NOT_PROVIDER_CONTEXT_ATTESTATION",
+      "chapters": [
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "disclosure": {
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1-disclosure.json",
+        "sha256": "f15ec866814631f0ee8aed6d44348e14f86cf599ac418a199a44f37e1fcda827"
+      },
+      "local_group_key": "disclosed-long-v1-96-100",
+      "pointer": "/actual_consumption/adjacent_author_context/reason"
+    }
+  ],
+  "qualification": "MODEL",
+  "schema_version": 1,
+  "selected_lineages": [
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch81-context1",
+              "run": {
+                "path": "artifacts/author-runs/af66dc64af039403cc91e230d1cabe840c8a5d9d32a6cb8971c68cfffd5a075f.json",
+                "sha256": "af66dc64af039403cc91e230d1cabe840c8a5d9d32a6cb8971c68cfffd5a075f"
+              },
+              "source_id": "session-author:af66dc64af039403cc91e230d1cabe840c8a5d9d32a6cb8971c68cfffd5a075f"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch81/a92799e04f61fdd2e99eb6eba99b38a7fa87ef2f5d137fc4eb1fdc681bccda0d.txt",
+            "sha256": "a92799e04f61fdd2e99eb6eba99b38a7fa87ef2f5d137fc4eb1fdc681bccda0d"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch81/c376af1f46d7173fa975c8b10b0f5219175db820ead1d7ef6c407248d2f9dd2a.json",
+            "sha256": "c376af1f46d7173fa975c8b10b0f5219175db820ead1d7ef6c407248d2f9dd2a"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/af66dc64af039403cc91e230d1cabe840c8a5d9d32a6cb8971c68cfffd5a075f.json",
+            "sha256": "af66dc64af039403cc91e230d1cabe840c8a5d9d32a6cb8971c68cfffd5a075f"
+          },
+          "session_id": "phase6-reviser-ch81-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch81",
+              "run": {
+                "path": "artifacts/author-runs/1089ae5e370eaa7c4d5dfadc28038f831448c85ead4f1e153afddc268d45722a.json",
+                "sha256": "1089ae5e370eaa7c4d5dfadc28038f831448c85ead4f1e153afddc268d45722a"
+              },
+              "source_id": "session-author:1089ae5e370eaa7c4d5dfadc28038f831448c85ead4f1e153afddc268d45722a"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch81/ff226573da51a36f618324fff1746824efb6f207b35382e3836773d0e0f9b685.txt",
+            "sha256": "ff226573da51a36f618324fff1746824efb6f207b35382e3836773d0e0f9b685"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch81/f036aaf484829ce05bffcc2ea37ec5096c6b28c28b2e466f19da57093de10c2e.json",
+            "sha256": "f036aaf484829ce05bffcc2ea37ec5096c6b28c28b2e466f19da57093de10c2e"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/1089ae5e370eaa7c4d5dfadc28038f831448c85ead4f1e153afddc268d45722a.json",
+            "sha256": "1089ae5e370eaa7c4d5dfadc28038f831448c85ead4f1e153afddc268d45722a"
+          },
+          "session_id": "phase6-v3-author-ch81"
+        }
+      ],
+      "chapter": 81
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch82-context1",
+              "run": {
+                "path": "artifacts/author-runs/1fdcf440c35e2026b1f255030f9abbb3465de443daff33adfdeb7af85a9abce7.json",
+                "sha256": "1fdcf440c35e2026b1f255030f9abbb3465de443daff33adfdeb7af85a9abce7"
+              },
+              "source_id": "session-author:1fdcf440c35e2026b1f255030f9abbb3465de443daff33adfdeb7af85a9abce7"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch82/edc6d81e46a9e25717109198a8f50d8ef51b487c85550238826d151e5a75da81.txt",
+            "sha256": "edc6d81e46a9e25717109198a8f50d8ef51b487c85550238826d151e5a75da81"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch82/4399ed415aa3656c541e9b8fa01dd3b7567f8a03abca83bae6d05d5a4c0515da.json",
+            "sha256": "4399ed415aa3656c541e9b8fa01dd3b7567f8a03abca83bae6d05d5a4c0515da"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/1fdcf440c35e2026b1f255030f9abbb3465de443daff33adfdeb7af85a9abce7.json",
+            "sha256": "1fdcf440c35e2026b1f255030f9abbb3465de443daff33adfdeb7af85a9abce7"
+          },
+          "session_id": "phase6-reviser-ch82-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch82",
+              "run": {
+                "path": "artifacts/author-runs/51b232c44ed0cbc05dda82e50adeb47cc55171aec4ed0c9dd52abd02f90fa1f4.json",
+                "sha256": "51b232c44ed0cbc05dda82e50adeb47cc55171aec4ed0c9dd52abd02f90fa1f4"
+              },
+              "source_id": "session-author:51b232c44ed0cbc05dda82e50adeb47cc55171aec4ed0c9dd52abd02f90fa1f4"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch82/8a67eaf41530d96e7bc5aa10735ff7b104390069815e0a5ee1004e63ae6a114d.txt",
+            "sha256": "8a67eaf41530d96e7bc5aa10735ff7b104390069815e0a5ee1004e63ae6a114d"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch82/f71c921d60546451ccbf8967e189f40ca8e3078ffe2d1b8ed92b4770dc1572ab.json",
+            "sha256": "f71c921d60546451ccbf8967e189f40ca8e3078ffe2d1b8ed92b4770dc1572ab"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/51b232c44ed0cbc05dda82e50adeb47cc55171aec4ed0c9dd52abd02f90fa1f4.json",
+            "sha256": "51b232c44ed0cbc05dda82e50adeb47cc55171aec4ed0c9dd52abd02f90fa1f4"
+          },
+          "session_id": "phase6-v3-author-ch82"
+        }
+      ],
+      "chapter": 82
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch83-context1",
+              "run": {
+                "path": "artifacts/author-runs/e53a3ad767131bea03a6babf98ec11c972522142f7c994efcd5b233c7ddc97d0.json",
+                "sha256": "e53a3ad767131bea03a6babf98ec11c972522142f7c994efcd5b233c7ddc97d0"
+              },
+              "source_id": "session-author:e53a3ad767131bea03a6babf98ec11c972522142f7c994efcd5b233c7ddc97d0"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch83/b219396269ed1f5b1781e7d8e0fedc636c06f21e0fe1e76134c3eeec4948daa8.txt",
+            "sha256": "b219396269ed1f5b1781e7d8e0fedc636c06f21e0fe1e76134c3eeec4948daa8"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch83/8543fc600e4d9120a6c5e477360c8eb45f3616ed8d6b63d0940c293c5faeb406.json",
+            "sha256": "8543fc600e4d9120a6c5e477360c8eb45f3616ed8d6b63d0940c293c5faeb406"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/e53a3ad767131bea03a6babf98ec11c972522142f7c994efcd5b233c7ddc97d0.json",
+            "sha256": "e53a3ad767131bea03a6babf98ec11c972522142f7c994efcd5b233c7ddc97d0"
+          },
+          "session_id": "phase6-reviser-ch83-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch83",
+              "run": {
+                "path": "artifacts/author-runs/0f84ad19ac0c4cec846702aee81c87a56590df9db270d46c16c3f28600f5d58e.json",
+                "sha256": "0f84ad19ac0c4cec846702aee81c87a56590df9db270d46c16c3f28600f5d58e"
+              },
+              "source_id": "session-author:0f84ad19ac0c4cec846702aee81c87a56590df9db270d46c16c3f28600f5d58e"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch83/43359c4937c64dbca09fca98d23d7ab09fdb0f6cf172f25181506b3ff7d0d304.txt",
+            "sha256": "43359c4937c64dbca09fca98d23d7ab09fdb0f6cf172f25181506b3ff7d0d304"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch83/73ebf7286c2e3236d8cf6d539bfa4e8715c268b6be05e680c8d6c814d1ad5328.json",
+            "sha256": "73ebf7286c2e3236d8cf6d539bfa4e8715c268b6be05e680c8d6c814d1ad5328"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/0f84ad19ac0c4cec846702aee81c87a56590df9db270d46c16c3f28600f5d58e.json",
+            "sha256": "0f84ad19ac0c4cec846702aee81c87a56590df9db270d46c16c3f28600f5d58e"
+          },
+          "session_id": "phase6-v3-author-ch83"
+        }
+      ],
+      "chapter": 83
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch84-context1",
+              "run": {
+                "path": "artifacts/author-runs/0a45d424d16790a1e2c0282b2e7288925a34f5627b9b49d262f7adc0a6d773bd.json",
+                "sha256": "0a45d424d16790a1e2c0282b2e7288925a34f5627b9b49d262f7adc0a6d773bd"
+              },
+              "source_id": "session-author:0a45d424d16790a1e2c0282b2e7288925a34f5627b9b49d262f7adc0a6d773bd"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch84/84bd37ba482d4e69d2c3f236092394e5e02df0ec7878c3e3c03e35497f5c4bf4.txt",
+            "sha256": "84bd37ba482d4e69d2c3f236092394e5e02df0ec7878c3e3c03e35497f5c4bf4"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch84/8bcd26c7f3bffa8a1162dcb27087f6c47dcb528a7b6727c3a83713c79c3b92ee.json",
+            "sha256": "8bcd26c7f3bffa8a1162dcb27087f6c47dcb528a7b6727c3a83713c79c3b92ee"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/0a45d424d16790a1e2c0282b2e7288925a34f5627b9b49d262f7adc0a6d773bd.json",
+            "sha256": "0a45d424d16790a1e2c0282b2e7288925a34f5627b9b49d262f7adc0a6d773bd"
+          },
+          "session_id": "phase6-reviser-ch84-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch84",
+              "run": {
+                "path": "artifacts/author-runs/51ed942473f77bf56223da5e4577e101a373ab0f138a33f3de163a8985ab3af2.json",
+                "sha256": "51ed942473f77bf56223da5e4577e101a373ab0f138a33f3de163a8985ab3af2"
+              },
+              "source_id": "session-author:51ed942473f77bf56223da5e4577e101a373ab0f138a33f3de163a8985ab3af2"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch84/d1591afbe382544d472473e1e4e133b3102993e56bcd3fe2744c1b82e4167bbe.txt",
+            "sha256": "d1591afbe382544d472473e1e4e133b3102993e56bcd3fe2744c1b82e4167bbe"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch84/8587a50060e203e0b95f8ea63449735590873258907741c38225d8c1dbb65bc4.json",
+            "sha256": "8587a50060e203e0b95f8ea63449735590873258907741c38225d8c1dbb65bc4"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/51ed942473f77bf56223da5e4577e101a373ab0f138a33f3de163a8985ab3af2.json",
+            "sha256": "51ed942473f77bf56223da5e4577e101a373ab0f138a33f3de163a8985ab3af2"
+          },
+          "session_id": "phase6-v3-author-ch84"
+        }
+      ],
+      "chapter": 84
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch85-context1",
+              "run": {
+                "path": "artifacts/author-runs/63d8c6185c126a520530b1f74916a5b8f28f70167f47abc25c58b3ba14a2c152.json",
+                "sha256": "63d8c6185c126a520530b1f74916a5b8f28f70167f47abc25c58b3ba14a2c152"
+              },
+              "source_id": "session-author:63d8c6185c126a520530b1f74916a5b8f28f70167f47abc25c58b3ba14a2c152"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch85/af416178de6ad084e646e4bdc861d095dffa2a076bf83e5cda11c76de01b4e25.txt",
+            "sha256": "af416178de6ad084e646e4bdc861d095dffa2a076bf83e5cda11c76de01b4e25"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch85/4f8390ae40ea03f0c8ffcca876e49b10b82bc419f0bd14697bee5d76ab0f6d11.json",
+            "sha256": "4f8390ae40ea03f0c8ffcca876e49b10b82bc419f0bd14697bee5d76ab0f6d11"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/63d8c6185c126a520530b1f74916a5b8f28f70167f47abc25c58b3ba14a2c152.json",
+            "sha256": "63d8c6185c126a520530b1f74916a5b8f28f70167f47abc25c58b3ba14a2c152"
+          },
+          "session_id": "phase6-reviser-ch85-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch85",
+              "run": {
+                "path": "artifacts/author-runs/bfd67e0991706d4e8ef2393271f47d1f71ac9813fc67bc289d1e14779e62b683.json",
+                "sha256": "bfd67e0991706d4e8ef2393271f47d1f71ac9813fc67bc289d1e14779e62b683"
+              },
+              "source_id": "session-author:bfd67e0991706d4e8ef2393271f47d1f71ac9813fc67bc289d1e14779e62b683"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch85/75e70db886e3aedb33a7068a8197d26f81dfb77844552a5526516115c589a1b5.txt",
+            "sha256": "75e70db886e3aedb33a7068a8197d26f81dfb77844552a5526516115c589a1b5"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch85/8f8f7645a6e4abd9bae2a21ddb0cdf407dc829310f863f6c6291d1adae7d1805.json",
+            "sha256": "8f8f7645a6e4abd9bae2a21ddb0cdf407dc829310f863f6c6291d1adae7d1805"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/bfd67e0991706d4e8ef2393271f47d1f71ac9813fc67bc289d1e14779e62b683.json",
+            "sha256": "bfd67e0991706d4e8ef2393271f47d1f71ac9813fc67bc289d1e14779e62b683"
+          },
+          "session_id": "phase6-v3-author-ch85"
+        }
+      ],
+      "chapter": 85
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch86-context1",
+              "run": {
+                "path": "artifacts/author-runs/af1970d2b6857bfa5d64f4a8367a29795cee8904012a1c31280d3d21cf9a7edb.json",
+                "sha256": "af1970d2b6857bfa5d64f4a8367a29795cee8904012a1c31280d3d21cf9a7edb"
+              },
+              "source_id": "session-author:af1970d2b6857bfa5d64f4a8367a29795cee8904012a1c31280d3d21cf9a7edb"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch86/8351a6680a36e7899a583927a57c86a10121b6321e512b0f7b4cd457d24e5721.txt",
+            "sha256": "8351a6680a36e7899a583927a57c86a10121b6321e512b0f7b4cd457d24e5721"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch86/57752b02180c06310110fde48464ed506442c794e5adafff2d9477b8cfd347c7.json",
+            "sha256": "57752b02180c06310110fde48464ed506442c794e5adafff2d9477b8cfd347c7"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/af1970d2b6857bfa5d64f4a8367a29795cee8904012a1c31280d3d21cf9a7edb.json",
+            "sha256": "af1970d2b6857bfa5d64f4a8367a29795cee8904012a1c31280d3d21cf9a7edb"
+          },
+          "session_id": "phase6-reviser-ch86-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch86",
+              "run": {
+                "path": "artifacts/author-runs/7f23d5932c438afd7afbbef7222813efdbbccc80164e6113d84c3b045b751e2f.json",
+                "sha256": "7f23d5932c438afd7afbbef7222813efdbbccc80164e6113d84c3b045b751e2f"
+              },
+              "source_id": "session-author:7f23d5932c438afd7afbbef7222813efdbbccc80164e6113d84c3b045b751e2f"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch86/94673cc9a5e1e4497b71bf7bafd8e296332a5f981182151083a86d0e7bedf1b9.txt",
+            "sha256": "94673cc9a5e1e4497b71bf7bafd8e296332a5f981182151083a86d0e7bedf1b9"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch86/22e3b6baf13505a080e8545310e5109e64db9fa1c6e079622e775c4bda393815.json",
+            "sha256": "22e3b6baf13505a080e8545310e5109e64db9fa1c6e079622e775c4bda393815"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/7f23d5932c438afd7afbbef7222813efdbbccc80164e6113d84c3b045b751e2f.json",
+            "sha256": "7f23d5932c438afd7afbbef7222813efdbbccc80164e6113d84c3b045b751e2f"
+          },
+          "session_id": "phase6-v3-author-ch86"
+        }
+      ],
+      "chapter": 86
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch87-context1",
+              "run": {
+                "path": "artifacts/author-runs/edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf.json",
+                "sha256": "edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf"
+              },
+              "source_id": "session-author:edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch87/86f74726ea7d3819dbc7251350d6ac46f22c14d9d3cff6751940e628edb3e401.txt",
+            "sha256": "86f74726ea7d3819dbc7251350d6ac46f22c14d9d3cff6751940e628edb3e401"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch87/32e048cb203385b4eca16641d57ff5306558bce7eb81a4b958527713b60ebdcd.json",
+            "sha256": "32e048cb203385b4eca16641d57ff5306558bce7eb81a4b958527713b60ebdcd"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf.json",
+            "sha256": "edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf"
+          },
+          "session_id": "phase6-reviser-ch87-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch87",
+              "run": {
+                "path": "artifacts/author-runs/74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163.json",
+                "sha256": "74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163"
+              },
+              "source_id": "session-author:74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch87/941e8d1e205e06ec3755867e0135b5d1c6b90d08e9b0aaac2abb6d84dc9c606f.txt",
+            "sha256": "941e8d1e205e06ec3755867e0135b5d1c6b90d08e9b0aaac2abb6d84dc9c606f"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch87/d793f1bf4929452425628407c82c30b65de5b0a3719439497279efc5b16fe2ca.json",
+            "sha256": "d793f1bf4929452425628407c82c30b65de5b0a3719439497279efc5b16fe2ca"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163.json",
+            "sha256": "74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163"
+          },
+          "session_id": "phase6-v3-author-ch87"
+        }
+      ],
+      "chapter": 87
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch88-context1",
+              "run": {
+                "path": "artifacts/author-runs/da671be4d95faf184a78eba72bb27c43c4ee6e8a2c7cfc4837d21d6f4ae0c4d2.json",
+                "sha256": "da671be4d95faf184a78eba72bb27c43c4ee6e8a2c7cfc4837d21d6f4ae0c4d2"
+              },
+              "source_id": "session-author:da671be4d95faf184a78eba72bb27c43c4ee6e8a2c7cfc4837d21d6f4ae0c4d2"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch88/16a578156216378fcc0902e116b55784007a1301929f5ed53bd866665e054f2b.txt",
+            "sha256": "16a578156216378fcc0902e116b55784007a1301929f5ed53bd866665e054f2b"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch88/26fbba5fab32b48f3a75130ba30be45e26387a1aa74b83e506312e1b7ac1afc2.json",
+            "sha256": "26fbba5fab32b48f3a75130ba30be45e26387a1aa74b83e506312e1b7ac1afc2"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/da671be4d95faf184a78eba72bb27c43c4ee6e8a2c7cfc4837d21d6f4ae0c4d2.json",
+            "sha256": "da671be4d95faf184a78eba72bb27c43c4ee6e8a2c7cfc4837d21d6f4ae0c4d2"
+          },
+          "session_id": "phase6-reviser-ch88-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch88",
+              "run": {
+                "path": "artifacts/author-runs/8fa4fc9435e743ad419bcecbd1181bc12fa3434ef06672fd65fa9f149138fa70.json",
+                "sha256": "8fa4fc9435e743ad419bcecbd1181bc12fa3434ef06672fd65fa9f149138fa70"
+              },
+              "source_id": "session-author:8fa4fc9435e743ad419bcecbd1181bc12fa3434ef06672fd65fa9f149138fa70"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch88/3a79b67288463181df2334dc3e3cc724b4c60ec288b8269f900d3dec7bf6ffaf.txt",
+            "sha256": "3a79b67288463181df2334dc3e3cc724b4c60ec288b8269f900d3dec7bf6ffaf"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch88/ea92ede0e309a60ba83b31d275fa91b74f0edb2e2e67b52f5512863679f48d30.json",
+            "sha256": "ea92ede0e309a60ba83b31d275fa91b74f0edb2e2e67b52f5512863679f48d30"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/8fa4fc9435e743ad419bcecbd1181bc12fa3434ef06672fd65fa9f149138fa70.json",
+            "sha256": "8fa4fc9435e743ad419bcecbd1181bc12fa3434ef06672fd65fa9f149138fa70"
+          },
+          "session_id": "phase6-v3-author-ch88"
+        }
+      ],
+      "chapter": 88
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch89-context1",
+              "run": {
+                "path": "artifacts/author-runs/5c57edabb57a831b7eb8ee2aa4372eaad2f51f14d67615bee76070006e292bd9.json",
+                "sha256": "5c57edabb57a831b7eb8ee2aa4372eaad2f51f14d67615bee76070006e292bd9"
+              },
+              "source_id": "session-author:5c57edabb57a831b7eb8ee2aa4372eaad2f51f14d67615bee76070006e292bd9"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch89/98b90821bf2f23f91bf2745747623aae61c781a30213dfe6089eee963a826d4a.txt",
+            "sha256": "98b90821bf2f23f91bf2745747623aae61c781a30213dfe6089eee963a826d4a"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch89/3b086d190adb375688b42bb498859d79de180bcb82e725313bf4279a7756a031.json",
+            "sha256": "3b086d190adb375688b42bb498859d79de180bcb82e725313bf4279a7756a031"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/5c57edabb57a831b7eb8ee2aa4372eaad2f51f14d67615bee76070006e292bd9.json",
+            "sha256": "5c57edabb57a831b7eb8ee2aa4372eaad2f51f14d67615bee76070006e292bd9"
+          },
+          "session_id": "phase6-reviser-ch89-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch89",
+              "run": {
+                "path": "artifacts/author-runs/04ac6893e361f339218043380f9d8efb9e27353e8e1844867584cd9df392eab9.json",
+                "sha256": "04ac6893e361f339218043380f9d8efb9e27353e8e1844867584cd9df392eab9"
+              },
+              "source_id": "session-author:04ac6893e361f339218043380f9d8efb9e27353e8e1844867584cd9df392eab9"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch89/6ace6b0019529baf3152daa12b5939e9feea5c5487902e9d91032e43dc0be800.txt",
+            "sha256": "6ace6b0019529baf3152daa12b5939e9feea5c5487902e9d91032e43dc0be800"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch89/28c25f631ab278bb4e0a7d4fab077ba41165d6325b537db3e8b5d52db751cd7e.json",
+            "sha256": "28c25f631ab278bb4e0a7d4fab077ba41165d6325b537db3e8b5d52db751cd7e"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/04ac6893e361f339218043380f9d8efb9e27353e8e1844867584cd9df392eab9.json",
+            "sha256": "04ac6893e361f339218043380f9d8efb9e27353e8e1844867584cd9df392eab9"
+          },
+          "session_id": "phase6-v3-author-ch89"
+        }
+      ],
+      "chapter": 89
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch90-context1",
+              "run": {
+                "path": "artifacts/author-runs/18704b3cb2d5852a304bb4acbc0fa84fd33429c48e313bbe2b0dbf7f26c506e1.json",
+                "sha256": "18704b3cb2d5852a304bb4acbc0fa84fd33429c48e313bbe2b0dbf7f26c506e1"
+              },
+              "source_id": "session-author:18704b3cb2d5852a304bb4acbc0fa84fd33429c48e313bbe2b0dbf7f26c506e1"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch90/ddc1647302b7efcc145fc2839bbadc05eec62afe24c55db9a72e7951df92d71e.txt",
+            "sha256": "ddc1647302b7efcc145fc2839bbadc05eec62afe24c55db9a72e7951df92d71e"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch90/2350d4f7a90fe17004c4c35181f6dfd9936f32f05482021f08a724066ea8d74b.json",
+            "sha256": "2350d4f7a90fe17004c4c35181f6dfd9936f32f05482021f08a724066ea8d74b"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/18704b3cb2d5852a304bb4acbc0fa84fd33429c48e313bbe2b0dbf7f26c506e1.json",
+            "sha256": "18704b3cb2d5852a304bb4acbc0fa84fd33429c48e313bbe2b0dbf7f26c506e1"
+          },
+          "session_id": "phase6-reviser-ch90-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch90",
+              "run": {
+                "path": "artifacts/author-runs/5d634741ad1567d67bab70d8e7b599afc6da5f51de6983d4aa7c1de49cea5e0b.json",
+                "sha256": "5d634741ad1567d67bab70d8e7b599afc6da5f51de6983d4aa7c1de49cea5e0b"
+              },
+              "source_id": "session-author:5d634741ad1567d67bab70d8e7b599afc6da5f51de6983d4aa7c1de49cea5e0b"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch90/3cd676a5a19c21a8783abab3565b582155aed86cd7b1d9a0e43cd1a8c5aeafdf.txt",
+            "sha256": "3cd676a5a19c21a8783abab3565b582155aed86cd7b1d9a0e43cd1a8c5aeafdf"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch90/e65b2729e16e717e332dc6cd6429c688ba8b430352c137d4a9079ede99a5be2d.json",
+            "sha256": "e65b2729e16e717e332dc6cd6429c688ba8b430352c137d4a9079ede99a5be2d"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/5d634741ad1567d67bab70d8e7b599afc6da5f51de6983d4aa7c1de49cea5e0b.json",
+            "sha256": "5d634741ad1567d67bab70d8e7b599afc6da5f51de6983d4aa7c1de49cea5e0b"
+          },
+          "session_id": "phase6-v3-author-ch90"
+        }
+      ],
+      "chapter": 90
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-main-narrow-reviser-ch91",
+              "run": {
+                "path": "artifacts/author-runs/90e9bf3d922cb14a89651e7edb9be34ebff5e3824a00de842b5e96a1f5e9d9e4.json",
+                "sha256": "90e9bf3d922cb14a89651e7edb9be34ebff5e3824a00de842b5e96a1f5e9d9e4"
+              },
+              "source_id": "session-author:90e9bf3d922cb14a89651e7edb9be34ebff5e3824a00de842b5e96a1f5e9d9e4"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch91/0bf1f11f7a53f2112ac8eeaa21d166cf26737b7e29415de9f2624e808d22a6a1.txt",
+            "sha256": "0bf1f11f7a53f2112ac8eeaa21d166cf26737b7e29415de9f2624e808d22a6a1"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch91/d5ea23de7ffdfeaddb15a6171b615b9514cc2c719a76c9b5c0cd08dae7a28424.json",
+            "sha256": "d5ea23de7ffdfeaddb15a6171b615b9514cc2c719a76c9b5c0cd08dae7a28424"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/90e9bf3d922cb14a89651e7edb9be34ebff5e3824a00de842b5e96a1f5e9d9e4.json",
+            "sha256": "90e9bf3d922cb14a89651e7edb9be34ebff5e3824a00de842b5e96a1f5e9d9e4"
+          },
+          "session_id": "phase6-main-narrow-reviser-ch91"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch91-context1",
+              "run": {
+                "path": "artifacts/author-runs/dcc344e480c0f55ed8c34b5276ebeebafe00b7c3f6a618adfa9ad05d37bf636a.json",
+                "sha256": "dcc344e480c0f55ed8c34b5276ebeebafe00b7c3f6a618adfa9ad05d37bf636a"
+              },
+              "source_id": "session-author:dcc344e480c0f55ed8c34b5276ebeebafe00b7c3f6a618adfa9ad05d37bf636a"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch91/751bca67b2e72bd13883a8ee2331baaf60878967b3c4f276b277e7cc2b11c602.txt",
+            "sha256": "751bca67b2e72bd13883a8ee2331baaf60878967b3c4f276b277e7cc2b11c602"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch91/8413390031f7c018b1b71ea0f64cf3aa77690182706950806adbb2e91704418e.json",
+            "sha256": "8413390031f7c018b1b71ea0f64cf3aa77690182706950806adbb2e91704418e"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/dcc344e480c0f55ed8c34b5276ebeebafe00b7c3f6a618adfa9ad05d37bf636a.json",
+            "sha256": "dcc344e480c0f55ed8c34b5276ebeebafe00b7c3f6a618adfa9ad05d37bf636a"
+          },
+          "session_id": "phase6-reviser-ch91-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch91",
+              "run": {
+                "path": "artifacts/author-runs/8f379ece5d892b9872ad54bdbcd91160e4a12157195522bbbe31d1e87a7852a2.json",
+                "sha256": "8f379ece5d892b9872ad54bdbcd91160e4a12157195522bbbe31d1e87a7852a2"
+              },
+              "source_id": "session-author:8f379ece5d892b9872ad54bdbcd91160e4a12157195522bbbe31d1e87a7852a2"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch91/60e27e546020f91f6dc3315db67e4e4c15e7139eab77f8f500b2b0792705f35a.txt",
+            "sha256": "60e27e546020f91f6dc3315db67e4e4c15e7139eab77f8f500b2b0792705f35a"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch91/d0a5da91879ad3957ac4e43405b2cd270d97645937fbbbe9791f976e8670cee1.json",
+            "sha256": "d0a5da91879ad3957ac4e43405b2cd270d97645937fbbbe9791f976e8670cee1"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/8f379ece5d892b9872ad54bdbcd91160e4a12157195522bbbe31d1e87a7852a2.json",
+            "sha256": "8f379ece5d892b9872ad54bdbcd91160e4a12157195522bbbe31d1e87a7852a2"
+          },
+          "session_id": "phase6-v3-author-ch91"
+        }
+      ],
+      "chapter": 91
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch92-context1",
+              "run": {
+                "path": "artifacts/author-runs/64fbc99d21d1606fb046575dfb68eb0801a9102d7c8878896bc61c20dd0ee4e6.json",
+                "sha256": "64fbc99d21d1606fb046575dfb68eb0801a9102d7c8878896bc61c20dd0ee4e6"
+              },
+              "source_id": "session-author:64fbc99d21d1606fb046575dfb68eb0801a9102d7c8878896bc61c20dd0ee4e6"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch92/2472cc0b1a0f0a48eef056e31266c12a52b89e43cf2a9289f1fe14426f3dbc37.txt",
+            "sha256": "2472cc0b1a0f0a48eef056e31266c12a52b89e43cf2a9289f1fe14426f3dbc37"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch92/cba12889fbadfde0b9f6a8178d216f1eb1b436e4adf07f25a493bde3c411760b.json",
+            "sha256": "cba12889fbadfde0b9f6a8178d216f1eb1b436e4adf07f25a493bde3c411760b"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/64fbc99d21d1606fb046575dfb68eb0801a9102d7c8878896bc61c20dd0ee4e6.json",
+            "sha256": "64fbc99d21d1606fb046575dfb68eb0801a9102d7c8878896bc61c20dd0ee4e6"
+          },
+          "session_id": "phase6-reviser-ch92-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch92",
+              "run": {
+                "path": "artifacts/author-runs/864ddc47f5d404c6161e51f51a36756b375d8347c4a636a977c7194c9574342a.json",
+                "sha256": "864ddc47f5d404c6161e51f51a36756b375d8347c4a636a977c7194c9574342a"
+              },
+              "source_id": "session-author:864ddc47f5d404c6161e51f51a36756b375d8347c4a636a977c7194c9574342a"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch92/673dd2ca15de449d73aa7f34c1b8f3b5f55bd0e5e97acee003f11722b47cc067.txt",
+            "sha256": "673dd2ca15de449d73aa7f34c1b8f3b5f55bd0e5e97acee003f11722b47cc067"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch92/c04bd4b15094981154c8b69263c1a250a1babe0daba1dfb829859fb4527f9bc5.json",
+            "sha256": "c04bd4b15094981154c8b69263c1a250a1babe0daba1dfb829859fb4527f9bc5"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/864ddc47f5d404c6161e51f51a36756b375d8347c4a636a977c7194c9574342a.json",
+            "sha256": "864ddc47f5d404c6161e51f51a36756b375d8347c4a636a977c7194c9574342a"
+          },
+          "session_id": "phase6-v3-author-ch92"
+        }
+      ],
+      "chapter": 92
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch93-context1",
+              "run": {
+                "path": "artifacts/author-runs/9f413bb4edf14b74dff0d229beaff30ca7dc652833ffea07a6b35d8d7f74146d.json",
+                "sha256": "9f413bb4edf14b74dff0d229beaff30ca7dc652833ffea07a6b35d8d7f74146d"
+              },
+              "source_id": "session-author:9f413bb4edf14b74dff0d229beaff30ca7dc652833ffea07a6b35d8d7f74146d"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch93/89a7130d0455e9b260336c974ee860f78675cdb46cba892490d36e5f08ccc3ec.txt",
+            "sha256": "89a7130d0455e9b260336c974ee860f78675cdb46cba892490d36e5f08ccc3ec"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch93/a50c2db8341fa5de025a152145625dd7691f54ec8c8d50a8811a9b4768ff0231.json",
+            "sha256": "a50c2db8341fa5de025a152145625dd7691f54ec8c8d50a8811a9b4768ff0231"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/9f413bb4edf14b74dff0d229beaff30ca7dc652833ffea07a6b35d8d7f74146d.json",
+            "sha256": "9f413bb4edf14b74dff0d229beaff30ca7dc652833ffea07a6b35d8d7f74146d"
+          },
+          "session_id": "phase6-reviser-ch93-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch93",
+              "run": {
+                "path": "artifacts/author-runs/7d2e67245fe594d3631e0eb37aee58cff3927169c244953c100bf648ce1d0793.json",
+                "sha256": "7d2e67245fe594d3631e0eb37aee58cff3927169c244953c100bf648ce1d0793"
+              },
+              "source_id": "session-author:7d2e67245fe594d3631e0eb37aee58cff3927169c244953c100bf648ce1d0793"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch93/e70d8b22da17b96126ccaf3048a4c4f90da1556889f2508080c2f979698cb677.txt",
+            "sha256": "e70d8b22da17b96126ccaf3048a4c4f90da1556889f2508080c2f979698cb677"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch93/eab45ed1214dbd973a0a2ee6bbc6d87f49283145e85d480e87dcb137c2cf63b1.json",
+            "sha256": "eab45ed1214dbd973a0a2ee6bbc6d87f49283145e85d480e87dcb137c2cf63b1"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/7d2e67245fe594d3631e0eb37aee58cff3927169c244953c100bf648ce1d0793.json",
+            "sha256": "7d2e67245fe594d3631e0eb37aee58cff3927169c244953c100bf648ce1d0793"
+          },
+          "session_id": "phase6-v3-author-ch93"
+        }
+      ],
+      "chapter": 93
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch94-context1",
+              "run": {
+                "path": "artifacts/author-runs/39ff8556c31880a0e92d48a357f08ebcba10aa3c44dc146c3953f617a5520170.json",
+                "sha256": "39ff8556c31880a0e92d48a357f08ebcba10aa3c44dc146c3953f617a5520170"
+              },
+              "source_id": "session-author:39ff8556c31880a0e92d48a357f08ebcba10aa3c44dc146c3953f617a5520170"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch94/0fe24fd08773b9b9fe670146b40d25e4f489a7607252c50826b5ca834fe1dddb.txt",
+            "sha256": "0fe24fd08773b9b9fe670146b40d25e4f489a7607252c50826b5ca834fe1dddb"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch94/0319383465c7ff43fe7f71dad8eadd1074c738811e6f828efad14cdbe664d511.json",
+            "sha256": "0319383465c7ff43fe7f71dad8eadd1074c738811e6f828efad14cdbe664d511"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/39ff8556c31880a0e92d48a357f08ebcba10aa3c44dc146c3953f617a5520170.json",
+            "sha256": "39ff8556c31880a0e92d48a357f08ebcba10aa3c44dc146c3953f617a5520170"
+          },
+          "session_id": "phase6-reviser-ch94-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch94",
+              "run": {
+                "path": "artifacts/author-runs/db843bc8c49729ecc866da5de2b312c97a5ba30bb60d0c4b25ad2e7f7c55dc68.json",
+                "sha256": "db843bc8c49729ecc866da5de2b312c97a5ba30bb60d0c4b25ad2e7f7c55dc68"
+              },
+              "source_id": "session-author:db843bc8c49729ecc866da5de2b312c97a5ba30bb60d0c4b25ad2e7f7c55dc68"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch94/f04a600234b634d8603fda236edc7df7c0c87eb157ab788c54beedf3b1b0caf8.txt",
+            "sha256": "f04a600234b634d8603fda236edc7df7c0c87eb157ab788c54beedf3b1b0caf8"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch94/edfbc89a3678f4b0445033315be651e623bc79fbf8d47a05c838dd6d1cde3aa8.json",
+            "sha256": "edfbc89a3678f4b0445033315be651e623bc79fbf8d47a05c838dd6d1cde3aa8"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/db843bc8c49729ecc866da5de2b312c97a5ba30bb60d0c4b25ad2e7f7c55dc68.json",
+            "sha256": "db843bc8c49729ecc866da5de2b312c97a5ba30bb60d0c4b25ad2e7f7c55dc68"
+          },
+          "session_id": "phase6-v3-author-ch94"
+        }
+      ],
+      "chapter": 94
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch95-context1",
+              "run": {
+                "path": "artifacts/author-runs/5fc1ce5a2b42da73a84e81829cd1957891d422931b8e48491abb4c9e873e7670.json",
+                "sha256": "5fc1ce5a2b42da73a84e81829cd1957891d422931b8e48491abb4c9e873e7670"
+              },
+              "source_id": "session-author:5fc1ce5a2b42da73a84e81829cd1957891d422931b8e48491abb4c9e873e7670"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch95/3f25c4dccf29af78417578fa44f172a00bcb07741c7264849110b4d1a1ab925a.txt",
+            "sha256": "3f25c4dccf29af78417578fa44f172a00bcb07741c7264849110b4d1a1ab925a"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch95/728fb44699eeff1aef07e4489f90644c805c1a72b2b16fe48724aed73935144b.json",
+            "sha256": "728fb44699eeff1aef07e4489f90644c805c1a72b2b16fe48724aed73935144b"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/5fc1ce5a2b42da73a84e81829cd1957891d422931b8e48491abb4c9e873e7670.json",
+            "sha256": "5fc1ce5a2b42da73a84e81829cd1957891d422931b8e48491abb4c9e873e7670"
+          },
+          "session_id": "phase6-reviser-ch95-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch95",
+              "run": {
+                "path": "artifacts/author-runs/4d16f4bd25670b204c5d1f75f9de0f40c318ddbd3703f6c7f0965094f3279186.json",
+                "sha256": "4d16f4bd25670b204c5d1f75f9de0f40c318ddbd3703f6c7f0965094f3279186"
+              },
+              "source_id": "session-author:4d16f4bd25670b204c5d1f75f9de0f40c318ddbd3703f6c7f0965094f3279186"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch95/3ff523c861e676ad1d6e290e6443cacf48f978ae037617ba2591fc828704af41.txt",
+            "sha256": "3ff523c861e676ad1d6e290e6443cacf48f978ae037617ba2591fc828704af41"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch95/ceff5567e0cd095bca932affccff4ef5cb370046689487920660b68cdfa9e770.json",
+            "sha256": "ceff5567e0cd095bca932affccff4ef5cb370046689487920660b68cdfa9e770"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/4d16f4bd25670b204c5d1f75f9de0f40c318ddbd3703f6c7f0965094f3279186.json",
+            "sha256": "4d16f4bd25670b204c5d1f75f9de0f40c318ddbd3703f6c7f0965094f3279186"
+          },
+          "session_id": "phase6-v3-author-ch95"
+        }
+      ],
+      "chapter": 95
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch96-context1",
+              "run": {
+                "path": "artifacts/author-runs/9d030b8a90400b84778761be0b69ba641b3cff050bdeade9ceb6793ed5386c8a.json",
+                "sha256": "9d030b8a90400b84778761be0b69ba641b3cff050bdeade9ceb6793ed5386c8a"
+              },
+              "source_id": "session-author:9d030b8a90400b84778761be0b69ba641b3cff050bdeade9ceb6793ed5386c8a"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch96/a3b5b31e5e95d6ac659eedd2fc1f35db455bab55489a9c91c41a45565f9f6b7e.txt",
+            "sha256": "a3b5b31e5e95d6ac659eedd2fc1f35db455bab55489a9c91c41a45565f9f6b7e"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch96/84cf715be7c6b4689ccc863bcbd443fd64dd6c92b20394c86ba9112dc0cfbbb2.json",
+            "sha256": "84cf715be7c6b4689ccc863bcbd443fd64dd6c92b20394c86ba9112dc0cfbbb2"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/9d030b8a90400b84778761be0b69ba641b3cff050bdeade9ceb6793ed5386c8a.json",
+            "sha256": "9d030b8a90400b84778761be0b69ba641b3cff050bdeade9ceb6793ed5386c8a"
+          },
+          "session_id": "phase6-reviser-ch96-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch96",
+              "run": {
+                "path": "artifacts/author-runs/8fa9aec0248f4b41431d8bf22d527136483ad740e64937574724a7440a24e78e.json",
+                "sha256": "8fa9aec0248f4b41431d8bf22d527136483ad740e64937574724a7440a24e78e"
+              },
+              "source_id": "session-author:8fa9aec0248f4b41431d8bf22d527136483ad740e64937574724a7440a24e78e"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch96/9ce234b5158a4284171ed34ad39215ed82222f77564d780456aa768755de0b2c.txt",
+            "sha256": "9ce234b5158a4284171ed34ad39215ed82222f77564d780456aa768755de0b2c"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch96/42cf67a5f65c26a3136ee01f35c59a918074ac35ac3d9fb69f85a25927293368.json",
+            "sha256": "42cf67a5f65c26a3136ee01f35c59a918074ac35ac3d9fb69f85a25927293368"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/8fa9aec0248f4b41431d8bf22d527136483ad740e64937574724a7440a24e78e.json",
+            "sha256": "8fa9aec0248f4b41431d8bf22d527136483ad740e64937574724a7440a24e78e"
+          },
+          "session_id": "phase6-v3-author-ch96"
+        }
+      ],
+      "chapter": 96
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch97-context1",
+              "run": {
+                "path": "artifacts/author-runs/dff5c5d225c0f8d2e12a0e34e57c697b64423384c4461bff08f87e45f7767886.json",
+                "sha256": "dff5c5d225c0f8d2e12a0e34e57c697b64423384c4461bff08f87e45f7767886"
+              },
+              "source_id": "session-author:dff5c5d225c0f8d2e12a0e34e57c697b64423384c4461bff08f87e45f7767886"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch97/26ddbcee34a91b22a9ad6288c9ec162b526b20de1286352677699bead3d9b3c3.txt",
+            "sha256": "26ddbcee34a91b22a9ad6288c9ec162b526b20de1286352677699bead3d9b3c3"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch97/961fe1e4de7d9a8e4c6157bfcc10ded69b140dfe26305f131fcaa3455b57fa6e.json",
+            "sha256": "961fe1e4de7d9a8e4c6157bfcc10ded69b140dfe26305f131fcaa3455b57fa6e"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/dff5c5d225c0f8d2e12a0e34e57c697b64423384c4461bff08f87e45f7767886.json",
+            "sha256": "dff5c5d225c0f8d2e12a0e34e57c697b64423384c4461bff08f87e45f7767886"
+          },
+          "session_id": "phase6-reviser-ch97-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch97",
+              "run": {
+                "path": "artifacts/author-runs/c9ac49024d9380b9b33bac4af55cf48860505ba896ca27cfcf5ecefd6e6f74ec.json",
+                "sha256": "c9ac49024d9380b9b33bac4af55cf48860505ba896ca27cfcf5ecefd6e6f74ec"
+              },
+              "source_id": "session-author:c9ac49024d9380b9b33bac4af55cf48860505ba896ca27cfcf5ecefd6e6f74ec"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch97/6788b3baf09c152671eff63510d3b1c50775c600eb9b4d819c573be6432532cc.txt",
+            "sha256": "6788b3baf09c152671eff63510d3b1c50775c600eb9b4d819c573be6432532cc"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch97/e869e3c6c6d774353f2a3042348da9a7135bf96f78741f748ee176254a08d5b3.json",
+            "sha256": "e869e3c6c6d774353f2a3042348da9a7135bf96f78741f748ee176254a08d5b3"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/c9ac49024d9380b9b33bac4af55cf48860505ba896ca27cfcf5ecefd6e6f74ec.json",
+            "sha256": "c9ac49024d9380b9b33bac4af55cf48860505ba896ca27cfcf5ecefd6e6f74ec"
+          },
+          "session_id": "phase6-v3-author-ch97"
+        }
+      ],
+      "chapter": 97
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch98-context1",
+              "run": {
+                "path": "artifacts/author-runs/64c3b3b94554338d4f9d2df523a60bdb3fb848145df95c2fa1d34a6cb1166284.json",
+                "sha256": "64c3b3b94554338d4f9d2df523a60bdb3fb848145df95c2fa1d34a6cb1166284"
+              },
+              "source_id": "session-author:64c3b3b94554338d4f9d2df523a60bdb3fb848145df95c2fa1d34a6cb1166284"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch98/badea6a60cc2c65a08a03a0494cc5afdb8e336ca78184d510cc96e90e5e52588.txt",
+            "sha256": "badea6a60cc2c65a08a03a0494cc5afdb8e336ca78184d510cc96e90e5e52588"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch98/cfcb559d8e832c1a5e0bfb9994531f8c42003af523305805bea6a1ba4598074b.json",
+            "sha256": "cfcb559d8e832c1a5e0bfb9994531f8c42003af523305805bea6a1ba4598074b"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/64c3b3b94554338d4f9d2df523a60bdb3fb848145df95c2fa1d34a6cb1166284.json",
+            "sha256": "64c3b3b94554338d4f9d2df523a60bdb3fb848145df95c2fa1d34a6cb1166284"
+          },
+          "session_id": "phase6-reviser-ch98-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch98",
+              "run": {
+                "path": "artifacts/author-runs/d2dc80089c223d0b4bbe810537a63cefd191bd7d6185fc59c6dd8923504b3031.json",
+                "sha256": "d2dc80089c223d0b4bbe810537a63cefd191bd7d6185fc59c6dd8923504b3031"
+              },
+              "source_id": "session-author:d2dc80089c223d0b4bbe810537a63cefd191bd7d6185fc59c6dd8923504b3031"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch98/181147e38d0eddc3f03b08232e4f9f3d60461f9e6de0ae5faa4c7323cbc3c66f.txt",
+            "sha256": "181147e38d0eddc3f03b08232e4f9f3d60461f9e6de0ae5faa4c7323cbc3c66f"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch98/05f8966d240ba60ab2ab8a3cf5e9af538d19221565c68952c9e8123a53d9dda6.json",
+            "sha256": "05f8966d240ba60ab2ab8a3cf5e9af538d19221565c68952c9e8123a53d9dda6"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/d2dc80089c223d0b4bbe810537a63cefd191bd7d6185fc59c6dd8923504b3031.json",
+            "sha256": "d2dc80089c223d0b4bbe810537a63cefd191bd7d6185fc59c6dd8923504b3031"
+          },
+          "session_id": "phase6-v3-author-ch98"
+        }
+      ],
+      "chapter": 98
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch99-context1",
+              "run": {
+                "path": "artifacts/author-runs/8ea7167641cbff68f96ca8bd25fd03f5ae89c905f090b890f0de70a170afc4c5.json",
+                "sha256": "8ea7167641cbff68f96ca8bd25fd03f5ae89c905f090b890f0de70a170afc4c5"
+              },
+              "source_id": "session-author:8ea7167641cbff68f96ca8bd25fd03f5ae89c905f090b890f0de70a170afc4c5"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch99/24542b331d03561f4a1fc15ed1349ad10157274a3ede0fc89c8df0f54312cbc3.txt",
+            "sha256": "24542b331d03561f4a1fc15ed1349ad10157274a3ede0fc89c8df0f54312cbc3"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch99/2bb8346e7978503a5cef698c4fb83fec9316d397bed5263ab269c30985dd7267.json",
+            "sha256": "2bb8346e7978503a5cef698c4fb83fec9316d397bed5263ab269c30985dd7267"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/8ea7167641cbff68f96ca8bd25fd03f5ae89c905f090b890f0de70a170afc4c5.json",
+            "sha256": "8ea7167641cbff68f96ca8bd25fd03f5ae89c905f090b890f0de70a170afc4c5"
+          },
+          "session_id": "phase6-reviser-ch99-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch99",
+              "run": {
+                "path": "artifacts/author-runs/dc379134748de6bb0f9b2653a24f56a6e2dca1a0acf623e13d543e088e6970d5.json",
+                "sha256": "dc379134748de6bb0f9b2653a24f56a6e2dca1a0acf623e13d543e088e6970d5"
+              },
+              "source_id": "session-author:dc379134748de6bb0f9b2653a24f56a6e2dca1a0acf623e13d543e088e6970d5"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch99/dc59bcee779bd8be7a48f8329ae17b1e2641c0ec11c8884d064f86ecf1787a22.txt",
+            "sha256": "dc59bcee779bd8be7a48f8329ae17b1e2641c0ec11c8884d064f86ecf1787a22"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch99/20d4e9356f94b6acf46a28b0318625009c89f4e8cf80839bea95c111b9cbfc4c.json",
+            "sha256": "20d4e9356f94b6acf46a28b0318625009c89f4e8cf80839bea95c111b9cbfc4c"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/dc379134748de6bb0f9b2653a24f56a6e2dca1a0acf623e13d543e088e6970d5.json",
+            "sha256": "dc379134748de6bb0f9b2653a24f56a6e2dca1a0acf623e13d543e088e6970d5"
+          },
+          "session_id": "phase6-v3-author-ch99"
+        }
+      ],
+      "chapter": 99
+    },
+    {
+      "chain": [
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-reviser-ch100-context1",
+              "run": {
+                "path": "artifacts/author-runs/9ba7677ac35f0b5f89be420c4a7d4873b3fecaadeef2802f7e394500da4fbe70.json",
+                "sha256": "9ba7677ac35f0b5f89be420c4a7d4873b3fecaadeef2802f7e394500da4fbe70"
+              },
+              "source_id": "session-author:9ba7677ac35f0b5f89be420c4a7d4873b3fecaadeef2802f7e394500da4fbe70"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch100/25c484ca93a7fd7f7e4e963fe9f5fc334726bc1e0db1bfa32a2b73c32d6da383.txt",
+            "sha256": "25c484ca93a7fd7f7e4e963fe9f5fc334726bc1e0db1bfa32a2b73c32d6da383"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch100/b6b5d7d8814625ecb89a588b4ffe912802e2ef1834aca4b00f8743cfe729edbe.json",
+            "sha256": "b6b5d7d8814625ecb89a588b4ffe912802e2ef1834aca4b00f8743cfe729edbe"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/9ba7677ac35f0b5f89be420c4a7d4873b3fecaadeef2802f7e394500da4fbe70.json",
+            "sha256": "9ba7677ac35f0b5f89be420c4a7d4873b3fecaadeef2802f7e394500da4fbe70"
+          },
+          "session_id": "phase6-reviser-ch100-context1"
+        },
+        {
+          "authors": [
+            {
+              "kind": "MODEL",
+              "principal_id": "session:phase6-v3-author-ch100",
+              "run": {
+                "path": "artifacts/author-runs/284af7122c5db37013c8c5556245f96cf73d918bb0f3287fee8cd7b7080d170e.json",
+                "sha256": "284af7122c5db37013c8c5556245f96cf73d918bb0f3287fee8cd7b7080d170e"
+              },
+              "source_id": "session-author:284af7122c5db37013c8c5556245f96cf73d918bb0f3287fee8cd7b7080d170e"
+            }
+          ],
+          "candidate": {
+            "path": "artifacts/candidates/ch100/c29028efb516030e9b332a8d1eded830dd0e423c2556fbdb9ad15554fd5fd680.txt",
+            "sha256": "c29028efb516030e9b332a8d1eded830dd0e423c2556fbdb9ad15554fd5fd680"
+          },
+          "draft": {
+            "path": "data/writing/drafts/ch100/9107546f650a7675a098a8161bde1a1aec3715c291ed22c50a99bded50373dba.json",
+            "sha256": "9107546f650a7675a098a8161bde1a1aec3715c291ed22c50a99bded50373dba"
+          },
+          "full_fresh_verification": "NOT_PERFORMED_BY_THIS_INSPECTOR",
+          "run": {
+            "path": "artifacts/author-runs/284af7122c5db37013c8c5556245f96cf73d918bb0f3287fee8cd7b7080d170e.json",
+            "sha256": "284af7122c5db37013c8c5556245f96cf73d918bb0f3287fee8cd7b7080d170e"
+          },
+          "session_id": "phase6-v3-author-ch100"
+        }
+      ],
+      "chapter": 100
+    }
+  ],
+  "selection": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/release-evaluation/request-v1.json",
+    "sha256": "9a2da8de544bbaa1e83e2984dc7db4cb142fc4423892a12673284c22bf66f47b"
+  }
+}

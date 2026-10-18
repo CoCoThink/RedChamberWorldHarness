@@ -57,6 +57,8 @@ class LiteraryInputs:
         if production:
             from .workflow.admission import ChapterAdmission
             spec = load_data(repository_path(self.root, relative))
+            if "research_source_sets" in spec:
+                raise AssetError("RESEARCH_SOURCE_SETS_NOT_PRODUCTION_INPUTS")
             admission = ChapterAdmission(self.catalog).summary(
                 spec["chapter"], relative, require_tracked=require_tracked)
             result = dict(admission["writing_inputs"])
@@ -90,6 +92,24 @@ class LiteraryInputs:
                 raise AssetError("STALE_WRITING_SOURCE")
             source_rows.append(repository.source_report(source, locators=True))
         paths.update(p.relative_to(self.root).as_posix() for p in (self.root / "data/provenance/sources").glob("*.yaml"))
+        supplemental = []
+        if "research_source_sets" in spec:
+            from .provenance.research_inputs import ResearchSourceInputs
+            if len({item["path"] for item in spec["research_source_sets"]}) != len(spec["research_source_sets"]):
+                raise AssetError("DUPLICATE_RESEARCH_SOURCE_SET")
+            source_ids, claim_ids = set(), set()
+            for selected in spec["research_source_sets"]:
+                report = ResearchSourceInputs(self.catalog).report(selected, chapter=spec["chapter"],
+                                                                    mode=spec["operation_scope"])
+                if report["integrity_status"] != "PASS":
+                    raise AssetError("INVALID_RESEARCH_SOURCE_SET: " + "; ".join(report["findings"]))
+                for kind, seen in (("sources", source_ids), ("claims", claim_ids)):
+                    for row in report["records"][kind]:
+                        if row["id"] in seen:
+                            raise AssetError("DUPLICATE_SUPPLEMENTAL_RECORD: " + row["id"])
+                        seen.add(row["id"])
+                supplemental.append(report)
+                paths.update(report["paths"])
         if require_tracked:
             tracked = set(subprocess.check_output(["git", "ls-files", "-z"], cwd=self.root).decode().split("\0"))
             findings.extend(f"UNTRACKED_WRITING_INPUT: {p}" for p in sorted(paths-tracked))
@@ -97,11 +117,15 @@ class LiteraryInputs:
         if examples["readiness"] != "VERIFIED":
             blockers.append("CORPUS_HUMAN_LAYER_AUDIT_FAILED" if examples["human_audit"]["status"] == "FAIL" else "CORPUS_HUMAN_LAYER_AUDIT_PENDING")
         if any(row["status"] != "PASS" for row in source_rows): blockers.append("WRITING_SOURCE_LOCATOR_UNVERIFIED")
+        if supplemental:
+            blockers.append("SUPPLEMENTAL_RESEARCH_EVIDENCE_PENDING")
         result = {"status": "FAIL" if findings else "PASS",
                   "scope": "FROZEN_RESEARCH_WRITING_INPUTS",
                   "package": spec, "input_sha256": digest(canonical_bytes(spec)), "exemplars": examples,
                   "sources": source_rows, "findings": sorted(set(findings)), "production_blockers": blockers,
                   "authority_effect": "NONE"}
+        if supplemental:
+            result["supplemental_source_sets"] = supplemental
         return result
 
     def index_map(self, dataset_ref: str, collection_ref: str) -> dict:

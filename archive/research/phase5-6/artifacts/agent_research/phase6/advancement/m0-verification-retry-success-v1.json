@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "kind": "ENGINEERING_VERIFICATION_RETRY_RESULT",
+  "authority_effect": "NONE",
+  "status": "PASS",
+  "authorization_context": "User requested retry and exited auto mode; original checkpoint tool executed directly in the main session.",
+  "checkpoint": 20,
+  "python": "3.12.13",
+  "pytest": {"passed": 1690, "skipped": 1, "seconds": 161.45, "exit_code": 0},
+  "validate": {"status": "PASS", "exit_code": 0},
+  "snapshot_input_files": 4131,
+  "snapshot_changed_during_check": [],
+  "protected_files": 325,
+  "protected_changed": [],
+  "snapshot_removed": true,
+  "records": [
+    {"path": "artifacts/agent_research/phase6/verification/engineering-checkpoint-20/result.json", "sha256": "71a4f9d25eed3f58330eaa9617d60fb8699b4155f6ccafffca78012e2f2be333"},
+    {"path": "artifacts/agent_research/phase6/verification/engineering-checkpoint-20/pytest.log", "sha256": "b8ab1c0da063281511656e379350c08e073c6d6ab7db37f099d133709a543054"},
+    {"path": "artifacts/agent_research/phase6/verification/engineering-checkpoint-20/validate.json", "sha256": "44ca24764896b56c10a97a0f8df84d4bc1d46ff34ec0f87c0c8d1fb5de75f98b"},
+    {"path": "artifacts/agent_research/phase6/verification/engineering-checkpoint-20/snapshot-inputs.json", "sha256": "40e8213e04bc9f9666348abce87a68d8a3101849a044aa46f5432cdc732d9efc"}
+  ],
+  "prior_denials": "Both original NOT_EXECUTED permission-denial records retained unchanged; this successful run does not retroactively execute them.",
+  "retained_helper_executed": false,
+  "limitation": "Engineering verification only. No source, semantic, literary or release qualification is granted. This appended result and later edits are not retroactively covered by checkpoint20."
+}

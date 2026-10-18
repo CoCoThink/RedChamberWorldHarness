@@ -1,0 +1,279 @@
+{
+  "schema_version": 1,
+  "kind": "PHASE6_B_EDITORIAL_DECISION",
+  "id": "phase6-ch98-v1",
+  "chapter": 98,
+  "revision": "v1",
+  "domain": "NARRATIVE_RECONSTRUCTION",
+  "status": "CURRENT",
+  "constraint": "MUST",
+  "reversible": true,
+  "statement": "选择甄宝玉本人持同一误取包返程并当面交付的C叙事义务，不用旧信使链认证本人运输。",
+  "based_on": [
+    "artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+    "artifacts/agent_research/phase6/editorial/peer1-opinion-v1.json",
+    "artifacts/agent_research/phase6/editorial/peer2-opinion-v1.json"
+  ],
+  "reasoning": [
+    "章卡四链与玉线物流表当前主案均写亲送；选择本人载体可保留这一施工方向，并让访客承担指包不清与未验包的责任。但R18只锁送玉事件，不锁搬运者，故该选择可撤销，不解除OL-020/021。",
+    "本次用户已授权agent编辑，仅落实新版非执行叙事输入；同行研究意见不提供用户授权，也不升级源证或消除旧稿负面。"
+  ],
+  "implementation_refs": [
+    "data/planning/contracts/agent-final-v2/98-S1.v3.json",
+    "data/planning/contracts/agent-final-v2/98-S2.v3.json",
+    "data/planning/contracts/agent-final-v2/98-S3.v3.json"
+  ],
+  "project_refs": [
+    "data/planning/contracts/agent-final-v1/98-S1.v2.json",
+    "data/planning/contracts/agent-final-v1/98-S2.v2.json",
+    "data/planning/contracts/agent-final-v1/98-S3.v2.json"
+  ],
+  "notes": "NARRATIVE_ONLY_NOT_EXECUTABLE；CURRENT仅为此次可撤销editorC选择，不是史料LOCKED、正式采用、正文完成或发布。",
+  "execution_mode": "NARRATIVE_ONLY_NOT_EXECUTABLE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "usage": "RESEARCH_ONLY_NOT_ADOPTED_NOT_RELEASED",
+  "authorization": {
+    "basis": "EXPLICIT_USER_AGENT_EDIT_AUTHORIZATION_APPROVAL_B",
+    "scope": "仅新增3 decisions、13新版合同与本报告；不改旧文件、不委派、不提交",
+    "lane": "editorC",
+    "source_chain_reorder_authorized": false,
+    "runtime_execution_authorized": false
+  },
+  "editorial_selection": {
+    "issue": "甄宝玉亲送与差人返包的载体冲突",
+    "selected_option": "PERSONAL_CARRIER_C",
+    "epistemic_tier": "C_CREATIVE_CHOICE_NOT_NEW_SOURCE_EVIDENCE",
+    "ruling": "选择甄宝玉本人持同一误取包返程并当面交付的C叙事义务，不用旧信使链认证本人运输。",
+    "why": "章卡四链与玉线物流表当前主案均写亲送；选择本人载体可保留这一施工方向，并让访客承担指包不清与未验包的责任。但R18只锁送玉事件，不锁搬运者，故该选择可撤销，不解除OL-020/021。",
+    "current_input_conflict_stays_open": "现有OT98-04.to.holder及OT98-05.from.holder都是zhen_messenger；phase5 revision1明确甄宝玉留屋差人。本轮不改这些事实记录，不宣布兼容或完成重放。",
+    "selection_status": "EDITOR_C_AUTHORIZED_NARRATIVE_OBLIGATIONS_ONLY"
+  },
+  "input_bindings": [
+    {
+      "path": "artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+      "sha256": "68cd5da580cb3406f75f277c6999fbcd8d9721f30a3d4c341bfc5ab4f0eaa82f"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editorial/peer1-opinion-v1.json",
+      "sha256": "336d0e0cc4b867479ee652c17cf2d72c92b4d85adb7290e6ef70553bd0ade445"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editorial/peer2-opinion-v1.json",
+      "sha256": "f78f5d3150841c4cc6fe42413ee56049c61fd3ef39af268ef5fe5294856f0e45"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editorial/peer-packet-v1.json",
+      "sha256": "ed58183dffe8f9aab5a2c443031e59c8c2be0dc02161b1ea0a96b36190f30769"
+    }
+  ],
+  "panel_facts": {
+    "status": "PENDING",
+    "record_integrity_status": "PASS",
+    "minimum_reviewers": 2,
+    "subjects": [
+      {
+        "id": "editorial-ch98",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      },
+      {
+        "id": "editorial-ch99",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      },
+      {
+        "id": "editorial-ch100",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      }
+    ],
+    "peer1_context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    },
+    "peer2_context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "effect": "未改变panel、原始同行声明或注册记录；意见不是编辑授权、独立人工认可或执行证明。"
+  },
+  "source_index": [
+    {
+      "source_index": 1,
+      "scene_id": "98-S1",
+      "seed": {
+        "path": "data/planning/scenes/98-S1.json",
+        "sha256": "4c61d4a6b318afde35931f28daef402c561099ca65e565eb5abef33ad632bfbb"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/98-S1.v3.json"
+    },
+    {
+      "source_index": 2,
+      "scene_id": "98-S2",
+      "seed": {
+        "path": "data/planning/scenes/98-S2.json",
+        "sha256": "981aaed1da15b27bba837bacdf76a568b281fa92e9dd676be98ab5aed77e9d94"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/98-S2.v3.json"
+    },
+    {
+      "source_index": 3,
+      "scene_id": "98-S3",
+      "seed": {
+        "path": "data/planning/scenes/98-S3.json",
+        "sha256": "5380fea749faeea1389fb1588e63ed65d6871716e439397a1125bd9134b29f2f"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/98-S3.v3.json"
+    }
+  ],
+  "narrative_sequence": [
+    "98-S1",
+    "98-S2",
+    "98-S3"
+  ],
+  "narrative_index": [
+    {
+      "narrative_index": 1,
+      "scene_id": "98-S1",
+      "source_index": 1
+    },
+    {
+      "narrative_index": 2,
+      "scene_id": "98-S2",
+      "source_index": 2
+    },
+    {
+      "narrative_index": 3,
+      "scene_id": "98-S3",
+      "source_index": 3
+    }
+  ],
+  "narrative_sequence_status": "EDITOR_C_AUTHORIZED_OBLIGATIONS_NOT_PERFORMED",
+  "index_semantics": {
+    "source_index": "immutable seed/order and chapter_plan source-list index, not actual chronology",
+    "entry_from": "new selected predecessor in source order ONLY; no state/knowledge injected",
+    "narrative_index": "independent editorC presentation order ONLY; not runtime or original-source chronology",
+    "source_index_equals_narrative_index_assumption": false,
+    "existing_checker_support": "inspect/check_selected仅检查原source-index前驱、字节及声明；未读取或执行decision的独立narrative_sequence。"
+  },
+  "proposed_narrative_interface": {
+    "sequence": [
+      "贾芸提前送帖、带路；二宝照面、校书与异手迟见仍是当前C方案。",
+      "玉因换绦暂置旧帕；家中零册/玉帕包与客人虫蛀册包相邻，但两个包不等于两次误取。",
+      "甄方小厮只拿错一包；客人的原包留桌上。不可写拿两包而后又无动作地留下一包。",
+      "甄家先拆见错册与玉帕；甄宝玉承认指包不清、未验包，重新包妥。",
+      "甄宝玉亲自持这同一误取包循已知来路返家交付；不另造掉包、巧遇或注册运输角色。",
+      "宝玉开包验册、帕、玉，麝月处理绦子；无额外钱赠。客册不靠未展示的交换自动已送回，可仍留至99开头按约取还。",
+      "回到抄字、接饭碗和普通家务；不因玉归或庄子旧文触发99。"
+    ],
+    "wording_limits": [
+      "无钱赠指没有额外馈赠，不写包内没有钱物来否定已见玉。",
+      "亲送不要求重演长篇相晤；交付后的离开与饭事留可见动作。",
+      "收件验物只证明所选正文局部物链，不证明史料同玉身份、91雪玉身份或全史保管连续。"
+    ]
+  },
+  "must_remain_unknown": [
+    {
+      "field": "source.same_jade_identity_and_snow_jade_merge",
+      "status": "OPEN_LOCKED",
+      "value": null,
+      "reason": "O03/OL-021及91雪玉身份仍开放；C连续物包不能升级源证。"
+    },
+    {
+      "field": "source.face_to_face_and_original_chapter_number",
+      "status": "OPEN_LOCKED",
+      "value": null,
+      "reason": "OL-020/028不因亲送选择解除。"
+    },
+    {
+      "field": "contract.scene_local_checkpoints_and_knowledge_events",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "没有新绑定正文和场级事件；旧章级节点不能自证局部入口/退出。"
+    },
+    {
+      "field": "minor_actor_registry_identity",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "小厮未注册；选择本人载体不让zhen_messenger成为真名。"
+    },
+    {
+      "field": "prior_jade_custody_full_history",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "LATE和97→98协调阅读未证明全部保管前史。"
+    },
+    {
+      "field": "four_lines_front80_exact_bytes",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "本轮未阅读全文第21回直接底本；不据记忆补原四句。"
+    }
+  ],
+  "frozen_inputs": {
+    "old_runs": "FROZEN_UNCHANGED_NOT_REPLAYED_FOR_NEW_NARRATIVE",
+    "world_objects_events_registry": "FROZEN_UNCHANGED",
+    "source_packet_seed_chapter_plan_bindings": "PRESERVED",
+    "human_events_created": false,
+    "actor_registry_created": false,
+    "prose_created_or_bound": false
+  },
+  "remaining_execution_status": "PENDING",
+  "historical_and_literary_admission": "NOT_CLAIMED",
+  "legacy_conflict_verbatim": [
+    {
+      "path": "data/planning/contracts/agent-final-v1/98-S3.v2.json",
+      "pointer": "/required_beats/1/description",
+      "quote": "甄家先发现、贾家起初未知；送还责任与亲自搬运分开：章卡信息链说甄家发现后“亲送”，实际OT98-04把holder设为zhen_messenger，OT98-05也从该信使交回baoyu。两者是尚未解决的实现冲突，不得把“承担责任/委托”自动写成满足亲送；未协调前，不选定亲送或代理，不新增信使identity、陪送或二次交通事件。",
+      "sha256": "d2ff2a0fdb7609bb8bc4e7161c19e55a7ba519eef150e3965827d9225a8db992"
+    },
+    {
+      "path": "data/planning/contracts/agent-final-v1/98-S3.v2.json",
+      "pointer": "/unresolved/2",
+      "quote": "carrier_conflict: 未解决。章卡11“亲送”与OT98-04.to.holder=zhen_messenger／OT98-05.from.holder=zhen_messenger冲突；送还责任不等于本人搬运，保持PENDING，不改输入、不造演员/事件。",
+      "sha256": "d2ff2a0fdb7609bb8bc4e7161c19e55a7ba519eef150e3965827d9225a8db992"
+    },
+    {
+      "path": "data/objects/m4.json",
+      "pointer": "/transitions/24/to/holder",
+      "quote": "\"holder\": \"zhen_messenger\"",
+      "value": "zhen_messenger",
+      "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+    },
+    {
+      "path": "data/objects/m4.json",
+      "pointer": "/transitions/25/from/holder",
+      "quote": "\"holder\": \"zhen_messenger\"",
+      "value": "zhen_messenger",
+      "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+    }
+  ],
+  "legacy_transport_conflict": "OT98-04/05仍为信使运输；新本人义务与其不相容。旧绑定hash只固定冲突比较输入，不作本人运输执行依据。",
+  "new_contract_support_reference_policy": {
+    "removed_object_transition_refs": [
+      "OT98-04",
+      "OT98-05"
+    ],
+    "removed_support_records": [
+      "data/objects/m4.json#/transitions/24",
+      "data/objects/m4.json#/transitions/25"
+    ],
+    "compatible_earlier_context_refs": [
+      "OT98-01",
+      "OT98-02",
+      "OT98-03"
+    ],
+    "remaining_new_personal_transport_event_refs": [],
+    "execution": "PENDING_NO_PERSONAL_TRANSPORT_EVENT_CREATED"
+  },
+  "unresolved": [
+    "新版剧情尚无新正文、局部事件、知识事件或语义重放；旧run不证明本轮义务执行。",
+    "真实editorial panel仍PENDING；peer1 asserted=false保持原样，不宣称满足双合格独立同行或独立人工认可。",
+    "未建立人间新事件/身份registry，继续PENDING；原OPEN_LOCKED与UNKNOWN不提升。",
+    "保留全部旧source_packet和运行依赖；较窄新提案不supersede旧cashflow断言，不宣称全部v3包source mismatch闭合。"
+  ]
+}

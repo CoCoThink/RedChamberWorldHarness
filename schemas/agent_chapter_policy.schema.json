@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AgentChapterPolicy",
+  "description": "Byte-bound MODEL projection of frozen rules. Status and review references are declarations, never policy or chapter-safety qualification.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "chapter", "status", "qualification", "authority_effect", "inputs", "anchors", "forbidden", "semantic_obligations", "plock", "review_refs"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "minLength": 1},
+    "chapter": {"type": "integer", "minimum": 1},
+    "status": {"enum": ["DRAFT_GENERATED", "UNKNOWN", "PENDING", "PASS", "FAIL"]},
+    "qualification": {"const": "MODEL"},
+    "authority_effect": {"const": "NONE"},
+    "inputs": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/binding"}},
+    "anchors": {
+      "type": "array", "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "mode", "texts", "basis"],
+        "properties": {
+          "id": {"$ref": "#/$defs/label"},
+          "mode": {"enum": ["CONTAINS", "HEADING_EXACT", "HEADING_CONTAINS"]},
+          "texts": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/label"}},
+          "basis": {"$ref": "#/$defs/bases"}
+        }
+      }
+    },
+    "forbidden": {
+      "type": "array", "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "mode", "rule", "basis"],
+        "properties": {
+          "id": {"$ref": "#/$defs/label"}, "mode": {"const": "SEMANTIC"},
+          "rule": {}, "basis": {"$ref": "#/$defs/bases"}
+        }
+      }
+    },
+    "semantic_obligations": {
+      "type": "array", "minItems": 1, "uniqueItems": true,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "kind", "rule", "status", "basis"],
+        "properties": {
+          "id": {"$ref": "#/$defs/label"}, "kind": {"$ref": "#/$defs/label"},
+          "rule": {}, "status": {"const": "PENDING"}, "basis": {"$ref": "#/$defs/bases"}
+        }
+      }
+    },
+    "plock": {
+      "type": "object", "additionalProperties": false,
+      "required": ["required", "ref", "basis"],
+      "properties": {
+        "required": {"type": "boolean"}, "ref": {"type": ["string", "null"], "minLength": 1},
+        "basis": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/basis"}}
+      },
+      "allOf": [
+        {"if": {"properties": {"required": {"const": true}}}, "then": {"properties": {"ref": {"type": "string", "minLength": 1}, "basis": {"minItems": 1}}}, "else": {"properties": {"ref": {"type": "null"}, "basis": {"maxItems": 0}}}}
+      ]
+    },
+    "review_refs": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/binding"}}
+  },
+  "allOf": [
+    {"if": {"properties": {"chapter": {"enum": [86, 89, 92, 97, 100]}}}, "then": {"properties": {"plock": {"properties": {"required": {"const": true}}}}}}
+  ],
+  "$defs": {
+    "label": {"type": "string", "minLength": 1},
+    "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "binding": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"$ref": "#/$defs/label"}, "sha256": {"$ref": "#/$defs/sha256"}}
+    },
+    "basis": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256", "pointer", "chapter"],
+      "properties": {
+        "path": {"$ref": "#/$defs/label"}, "sha256": {"$ref": "#/$defs/sha256"},
+        "pointer": {"type": "string", "pattern": "^(?:/(?:[^~/]|~[01])*)*$"},
+        "chapter": {"type": "integer", "minimum": 1}
+      }
+    },
+    "bases": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/basis"}}
+  }
+}

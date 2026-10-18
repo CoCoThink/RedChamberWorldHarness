@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "kind": "SESSION_AUTHORED_LITERARY_REVISION_DISCLOSURE",
+  "chapter": 98,
+  "version": "v1",
+  "status": "FROZEN_V1_LENGTH_TARGET_MET",
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "literary_acceptance": "NOT_CLAIMED",
+  "request": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch98.json",
+    "file_sha256": "4a1553899383884e53deb4f2c7e0f4b039645c865b76979c6ced23792e1942cd",
+    "embedded_request_sha256": "8131fb22f37090506d96a6e8440b59b118b49e6e112560795bf4fff3ad1e1660",
+    "prompt_sha256": "4bb3f89a10c663fd282441004dd8a4e4ff281699853d199fe4f35a6eeb3ec555",
+    "integrity_limitation": "Actual request byte hash computed; complete prepared-request integrity validator not rerun. Declared PASS, bound hashes and selected aliases are not full-file consumption or literary validation."
+  },
+  "parent": {
+    "path": "data/writing/drafts/ch98/05f8966d240ba60ab2ab8a3cf5e9af538d19221565c68952c9e8123a53d9dda6.json",
+    "sha256": "05f8966d240ba60ab2ab8a3cf5e9af538d19221565c68952c9e8123a53d9dda6",
+    "current_byte_hash_matches": true,
+    "consumption": "Parent JSON byte-hashed only; complete 2028-character parent prose actually read from task.original."
+  },
+  "original": {
+    "pointer": "/task/original",
+    "characters": 2028,
+    "sha256": "181147e38d0eddc3f03b08232e4f9f3d60461f9e6de0ae5faa4c7323cbc3c66f",
+    "consumption": "ACTUALLY_READ_COMPLETE_SHORT_PARENT",
+    "retained_unchanged": true,
+    "full_chapter_claim": false
+  },
+  "candidate": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt",
+    "sha256": "badea6a60cc2c65a08a03a0494cc5afdb8e336ca78184d510cc96e90e5e52588",
+    "characters": 10088,
+    "body_characters": 10065,
+    "body_han_characters": 8684,
+    "body_nonwhitespace_characters": 9960,
+    "utf8_bytes": 30050,
+    "body_paragraphs": 53,
+    "exact_duplicate_body_paragraphs": 0,
+    "reviewVerdict_present": false,
+    "counting_method": "Unicode code points via JavaScript spread; body excludes first title line and following blank line. Han uses Script=Han; nonwhitespace removes JavaScript Unicode whitespace. UTF-8 bytes include final newline.",
+    "thresholds": {
+      "total_characters_min": 10000,
+      "total_characters_max": 11000,
+      "body_han_min": 7000,
+      "body_nonwhitespace_min": 7270,
+      "all_met": true
+    },
+    "frozen": true,
+    "freeze_policy": "No further changes to v1 after disclosure; later adjacent readings cannot be backdated into consumption.",
+    "length_pass_is_not_literary_acceptance": true
+  },
+  "selected_decision": {
+    "path": "data/planning/decisions/phase6-ch98-v1.json",
+    "sha256": "850e993895101a0e759983e9427a76db624d5e9ca7f5f4ab8e4fa9d3b24155d4",
+    "read_status": "ACTUALLY_READ_COMPLETE_LINES1_279",
+    "selected_contracts": [
+      "data/planning/contracts/agent-final-v2/98-S1.v3.json",
+      "data/planning/contracts/agent-final-v2/98-S2.v3.json",
+      "data/planning/contracts/agent-final-v2/98-S3.v3.json"
+    ],
+    "selection": "PERSONAL_CARRIER_C",
+    "execution_mode": "NARRATIVE_ONLY_NOT_EXECUTABLE",
+    "legacy_conflict_retained": "OT98-04.to.holder=zhen_messenger and OT98-05.from.holder=zhen_messenger remain frozen and incompatible with the selected personal-carrier fiction. No old run, support hash or chapter-level state was represented as replaying this new personal route."
+  },
+  "actual_consumption": {
+    "complete_request_fields_actually_read": [
+      "/request/system",
+      "/task/original",
+      "/task/feedback",
+      "/task/editorial_notes",
+      "/task/writing_task/package",
+      "/task/writing_task/scenes",
+      "/task/writing_task/plan/data~1project~1plan_constraints_v1.json"
+    ],
+    "recursive_semantic_projection": {
+      "scope": "/task/writing_task/chapter_plan, agent_contracts/0..2 and sources/0..1",
+      "required_beats_read": 9,
+      "forbidden_beats_read": 6,
+      "method": "All unique strings emitted recursively, with repeated strings emitted once and most hash/path/ref metadata excluded. Included source texts, chapter card fields, protection/source-record semantic values, all required/forbidden descriptions and embedded groundings, notes, unresolved restrictions, precondition/entry/exit reasons, knowledge limits and object/character semantic values.",
+      "alias_check": "Three plan agent-final-v2 entries mechanically equal to agent_contracts; not claimed as separate independent readings.",
+      "limitation": "Not every numeric/boolean/citation metadata field was separately consumed. Referenced source/registry/phase5 packet files were not read merely because the semantic projection mentions them."
+    },
+    "source_card": {
+      "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+      "lines_inclusive": [1142, 1205],
+      "read_status": "ACTUALLY_READ_COMPLETE_CH98_CARD_ONLY"
+    },
+    "bound_source_texts_actually_read": [
+      "src:jiazxu:ch8:mistaken-theft: ‘塞玉’一段，又为‘误窃’一回伏线。晴雯茜雪二婢，又为后文先作一引。",
+      "src:jimao:ch18:zhen-baoyu-sends-jade: 第三出《仙缘》；己夹《邯郸梦》中。伏甄宝玉送玉。"
+    ],
+    "source_verification_limitation": "Read supplied records/excerpt text and selected verification labels; did not independently rebuild extraction, read PDF carriers, or certify source identity or history.",
+    "exemplar_segments_read_complete_as_supplied": [
+      "hlm80:chapter:27:p00087",
+      "hlm80:chapter:24:p00030",
+      "hlm80:chapter:74:p00079",
+      "hlm80:chapter:61:p00016",
+      "hlm80:chapter:52:p00006"
+    ],
+    "exemplar_limitation": "All five supplied texts/selection reasons read again, not full chapters or full corpus. Same excerpts were also exposed during chapters96/97.",
+    "editor_feedback": [
+      {
+        "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch98-v1.txt",
+        "sha256": "426175d97db0bb8a11339ab9e69d50ff4efca417519e9e7d75e263be2af66065",
+        "scope": "ACTUALLY_READ_COMPLETE_LINES1_16; also complete embedded editorial_notes"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+        "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+        "pointer": "/chapters/7",
+        "scope": "ACTUALLY_READ_COMPLETE_CH98_ENTRY including all reviews, quotes, direction/terminal-holder failures, expansion scenes, editorC selection and unknowns; not the whole ten-chapter report"
+      }
+    ],
+    "additional_exact_poem_lookup": {
+      "path": "corpus/front80/v2-candidate/segments.jsonl",
+      "file_sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+      "actually_read_selected_segment_ids": [
+        "hlm80:chapter:21:p00155",
+        "hlm80:chapter:21:p00157",
+        "hlm80:chapter:21:p00166",
+        "hlm80:chapter:21:p00200",
+        "hlm80:chapter:21:p00343"
+      ],
+      "scope": "Read only chapter21 records matching 庄子/续庄/无端 and related lookup strings; p00200 supplies the old four-line poem and immediate Daiyu-writing context. File was mechanically scanned/hashed, not wholly read.",
+      "main_text_segment_sha256": "72c040f60a0a34c32599067de7ac1d312a4f328f2b3746a0daaec8137b2b1303",
+      "limitation": "Candidate-corpus typography classification and record hash do not verify direct edition bytes. No direct chapter21 PDF/base witness read, no complete chapter21 read. Revised chapter explicitly recognizes Daiyu’s four lines but does not quote them in full; exact-base-byte obligation remains unresolved rather than filled from memory."
+    },
+    "world_scope": "Read embedded chapter98 body/core event/presence/resources and early-Zhen-knowledge rule. Selected contract object values preserve OPEN snow-object comparison and upstream custody gap. Other world content not fully consumed for chapter98; no object, transport or knowledge registry execution performed.",
+    "truncation_and_recovery": [
+      "Initial system/original/notes and metadata field extraction delivered fully; did not read whole request or messages duplicate rendering.",
+      "Full feedback and package extraction delivered; source/plan keys only inspected for routing before semantic extraction.",
+      "Large recursive chapter_plan/contracts/sources/exemplar output persisted, then completely read in ranges covering lines1–357. Semantic exclusions and deduplication are explicit above.",
+      "Large late-chapter editor98 entry persisted, then completely read in ranges covering lines1–848.",
+      "No unconsumed persisted-output preview was treated as full reading."
+    ],
+    "author_context_reuse": {
+      "prepared_previous_path": null,
+      "prepared_previous_ending": null,
+      "additional_unbound_full_prose_exposure": [
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+          "sha256": "a3b5b31e5e95d6ac659eedd2fc1f35db455bab55489a9c91c41a45565f9f6b7e"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt",
+          "sha256": "26ddbcee34a91b22a9ad6288c9ec162b526b20de1286352677699bead3d9b3c3"
+        }
+      ],
+      "reason": "Same session authored both earlier complete revisions. This is additional actual context exposure, not prepared previous_path binding or independent-author separation.",
+      "prior_revisions_unchanged_hashes_checked": true,
+      "later_unfinished_ch99_100_prose_read": false,
+      "no_retroactive_previous_binding": true
+    },
+    "unread_not_claimed": [
+      "Complete request.messages rendering and every hash-bound input",
+      "Phase5 prose/templates and full contract source packet",
+      "Full world/object/knowledge/provenance registries outside selected embedded records",
+      "Full sources/PDFs/corpus behind hashes and five exemplars",
+      "Parent JSON semantics outside complete task.original",
+      "Full ten-chapter report beyond actual chapter96–98 entries",
+      "Later chapter99/100 new prose"
+    ]
+  },
+  "authorship_execution": {
+    "method": "Direct natural-paragraph Chinese prose via Write and Edit. Substantive session-authored insertions/appends and one short pre-freeze expansion of waiting on the return route; no scripts produced sentences or repeated-text padding. Node used read-only for extraction, aliases, hashes and metrics.",
+    "enacted_local_fiction": [
+      "Jia Yun brings advance calling card and next-day road introduction; minimum tea/table/bucket preparation disrupts actual housework",
+      "Old copy text comparison and minor binding labor create disagreement; Jia Baoyu first identifies Daiyu’s adjacent four-line hand without a new poem or philosophical conclusion",
+      "Household miscellaneous-book/jade-handkerchief bundle established beside visitor’s worm-eaten-book bundle; jade temporarily wrapped only because tassel replacement interrupted",
+      "Zhen’s servant picks up household bundle once, never both; visitor’s own book bundle remains on table by agreement",
+      "Zhen first opens wrong bundle at his lodging, acknowledges unclear instruction/unexamined pickup, repacks same contents and personally carries same bundle back alone",
+      "Jia Baoyu opens returned bundle once to see book/handkerchief/jade; Sheyue resumes tassel work and returns jade for Jia Baoyu to secure on himself; Zhen leaves empty-handed",
+      "Visitor’s original book bundle stays for agreed later pickup, no offstage automatic exchange; bucket returns to storing firewood, copying resumes and Baoyu receives ordinary rice bowl"
+    ],
+    "source_status_limits": "This is C narrative construction, not R18 proof, registered local-holder state, historical same-jade identification, original chapter dating or full custody continuity. Snow-found object not placed in scene or merged. Old zhen_messenger conflict not rewritten or replayed. No extra money gift, second swap/coincidence, Jia Yun jade chase, terminal Zhen ownership, poem completion or jade/old-Zhuangzi-triggered chapter99 awakening.",
+    "environment_model_claim": "Invocation environment states gpt-6.1-sol; environment metadata is not independently verified provider identity, response proof, billing or token accounting. provider_proof NONE.",
+    "delegated_agents_started": 0,
+    "provider_call_executed": false,
+    "import_adopt_commit_executed": false,
+    "only_repo_files_added_for_ch98": [
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt",
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1-disclosure.json"
+    ],
+    "independent_review": "NONE. Author self-check and thresholds are not qualified peer review, literary acceptance or UNKNOWN-to-KNOWN promotion."
+  }
+}

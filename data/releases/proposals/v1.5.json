@@ -1,0 +1,1520 @@
+{
+  "proposal_format_version": 1,
+  "kind": "STABLE_TEXT_EDIT_PROPOSAL_NOT_RELEASE_MANIFEST_NOT_BUILD",
+  "id": "proposal:stable:v1.5",
+  "status": "PROPOSAL_NOT_ACTIVATED",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "requires_user_approval": true,
+  "may_be_rejected": true,
+  "activation_authorized": false,
+  "automatic_adoption_authorized": false,
+  "baseline": {
+    "asset": "asset:release:stable:v1.4:readable",
+    "path": "releases/stable/v1.4/readable/baseline.md",
+    "sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+    "bytes": 545334,
+    "selected_by": {
+      "path": "data/project/current.json",
+      "sha256": "fc269b4ba5b557eda0413e604dc08319efdf84519a26f15471bc8599d40722b9",
+      "bytes": 542
+    },
+    "release_manifest": {
+      "path": "releases/stable/v1.4/manifest.json",
+      "sha256": "cef24c61c5e57aea73901bcd66cd2eeec0bc0810d9e4fb17844d6dd92d9018c9",
+      "bytes": 2210
+    },
+    "catalog_asset_entry": {
+      "path": "data/catalog/assets/42.yaml",
+      "sha256": "649c9369f746af420d31859343e4f68fac10797c81e28699b4dbc48a887f2449",
+      "bytes": 2321
+    },
+    "text_scope": "Entire selected stable readable bytes: 20 chapters, 81–100. No added front80 text.",
+    "baseline_release_status": "IMPORTED_BASELINE",
+    "baseline_evidence_closure": "NOT_VERIFIED"
+  },
+  "initial_target_absence": {
+    "checked_before_any_write": true,
+    "paths": [
+      "data/releases/proposals/v1.5.json",
+      "releases/proposals/v1.5/book.md",
+      "artifacts/agent_research/phase6/stable-proposal/"
+    ],
+    "method": "read-only shell test -e of all three targets before creating assemble.py; all three absent"
+  },
+  "phase5_reading_summaries": [
+    {
+      "path": "artifacts/agent_research/phase5/EARLY_READING_RESULTS.md",
+      "sha256": "b4468ad314d213129dcecb35d2bd3f1b03608c9772d26e3d19a45209c438d135",
+      "bytes": 2037
+    },
+    {
+      "path": "artifacts/agent_research/phase5/LATE_READING_RESULTS.md",
+      "sha256": "62cfe7d1120f88d55974d76c44c99dbe1fecfb3aa54734ce794c27ec9a88abaa",
+      "bytes": 2591
+    },
+    {
+      "path": "artifacts/agent_research/phase5/TAIL_READING_RESULTS.md",
+      "sha256": "1b16a152a8f9ccd55525947c3c2925a3cbe8525d0123569ee7707e3a8f64fd55",
+      "bytes": 2709
+    }
+  ],
+  "issues": [
+    {
+      "id": "proposal-ch83-date",
+      "chapter": 83,
+      "status": "PROPOSED",
+      "reason": "保留“隔了几日”的场景间隔；只把宝玉指向射圃相见的“今日”改为“那日”，不额外断定恰为前两天，不改麒麟身份/转交链。",
+      "reader_opinions": [
+        {
+          "original_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-early-reader-2.json",
+            "sha256": "497e1013f27d84755196aca5fbc9620ff8fe92535ed67e3f6008c591d0219881",
+            "bytes": 5487
+          },
+          "original_result_pointer": "/results/0",
+          "original_verdict": "FAIL",
+          "original_notes": "Scope: bounded literary research on the supplied complete chapters 81–83, not source authenticity, admission, or an overall ranking. I actually read every paragraph of this token file, including its opening and final paragraphs; its bytes match the packet binding. PASS for intelligible local action and sustained characterization: Xiangling's wish to mend and remember poetry, Baochai's practical care, Tanchun's brisk departures, and the archery party's teasing all work as enacted scenes. Character voices and scene momentum are my dimension-specific preferences here, not an overall winner. Grief is a comparative TIE: this sequence preserves the dying woman's living poetic agency especially well, while the other token offers a different strength in anticipatory and bodily grief. FAIL specifically for chapter 83's internally stated day continuity: the narrator advances to Xiangyun's visit with ‘谁知隔了几日，湘云果然过来。’, but Baoyu then places the already narrated archery encounter on that same visiting day with ‘我今日在他身上见了一个，像得很。’ This is a repairable temporal wording lapse; it is not a claim that the whole plot is unusable. PENDING for the letter's separate initial-writing and next-morning addition dates: the sequence establishes their order but supplies only an undifferentiated date-completion statement. PENDING for offstage dispatch/courier custody and the physical route by which the narrator-identified old qilin reached Ruolan; neither route may be invented from a household-origin answer. Repeated corrective jokes sometimes flatten different speakers into the same repartee pattern. UNVERIFIED for archival truth, historical/medical plausibility, continuity outside these chapters, model identity, and independently proven context isolation. Exact token-bound evidence and the dimensional comparison are in the separate observations file. sample_checks is empty because this packet binds whole subjects and provides no distinct sample IDs; it does not denote excerpt-only reading.",
+          "reviewer": {
+            "id": "agent:fullbook-early-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "session:fullbook-early-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "authority_effect": "NONE",
+          "independent_human_admission": false
+        }
+      ],
+      "reader_evidence": [
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-early-reader-2-observations.json",
+            "sha256": "f467674a24cfc3c94b2f9d25ca004453ea3f1bf8d63d774f063e273ee17c7e5f",
+            "bytes": 43880
+          },
+          "json_pointer": "/dimensions/6/token_observations/0/evidence/0",
+          "reviewer": {
+            "id": "agent:fullbook-early-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "session:fullbook-early-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/packet.json",
+            "sha256": "7a7123ef1887e5ae737e8dd2d29533e12d4a65a253a5ac77304abc997c084e8c",
+            "bytes": 720
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+            "sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+            "bytes": 68230
+          },
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "chapter": 83,
+          "subject_physical_line": 325,
+          "quote": "谁知隔了几日，湘云果然过来。她一进门便先问：“你们谁前日说我坏话？我才到老太太那里，就听见一个婆子笑，说宝兄弟如今在外头替我认人。”",
+          "quote_sha256": "338c3bf821dda17d7076e620a8f71cae968c8aebbf336219e3500d23aa1d0944",
+          "baseline_location": {
+            "chapter": 83,
+            "original_span": "谁知隔了几日，湘云果然过来。她一进门便先问：“你们谁前日说我坏话？我才到老太太那里，就听见一个婆子笑，说宝兄弟如今在外头替我认人。”",
+            "original_span_sha256": "338c3bf821dda17d7076e620a8f71cae968c8aebbf336219e3500d23aa1d0944",
+            "baseline_byte_start": 61249,
+            "baseline_byte_end_exclusive": 61447,
+            "chapter_byte_start": 14890,
+            "chapter_byte_end_exclusive": 15088,
+            "baseline_physical_line": 327,
+            "chapter_physical_line": 93,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 81,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 82,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 83,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        },
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-early-reader-2-observations.json",
+            "sha256": "f467674a24cfc3c94b2f9d25ca004453ea3f1bf8d63d774f063e273ee17c7e5f",
+            "bytes": 43880
+          },
+          "json_pointer": "/dimensions/6/token_observations/0/evidence/1",
+          "reviewer": {
+            "id": "agent:fullbook-early-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "session:fullbook-early-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/packet.json",
+            "sha256": "7a7123ef1887e5ae737e8dd2d29533e12d4a65a253a5ac77304abc997c084e8c",
+            "bytes": 720
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-early-anonymous-v1/public/read-6b307b189ab945c93f3a279d.txt",
+            "sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+            "bytes": 68230
+          },
+          "subject_id": "read-6b307b189ab945c93f3a279d",
+          "chapter": 83,
+          "subject_physical_line": 345,
+          "quote": "宝玉这才道：“还有那枚金麒麟。”湘云手里那块果子停了一下：“什么麒麟？”“就是我从前丢过，你替我拾回来的那个金麒麟。我今日在他身上见了一个，像得很。”",
+          "quote_sha256": "81462b09a8f9eb24dd018e76cedbfacbcc2d8a8944252e685ccc42ee57d69439",
+          "baseline_location": {
+            "chapter": 83,
+            "original_span": "宝玉这才道：“还有那枚金麒麟。”湘云手里那块果子停了一下：“什么麒麟？”“就是我从前丢过，你替我拾回来的那个金麒麟。我今日在他身上见了一个，像得很。”",
+            "original_span_sha256": "81462b09a8f9eb24dd018e76cedbfacbcc2d8a8944252e685ccc42ee57d69439",
+            "baseline_byte_start": 63570,
+            "baseline_byte_end_exclusive": 63795,
+            "chapter_byte_start": 17211,
+            "chapter_byte_end_exclusive": 17436,
+            "baseline_physical_line": 347,
+            "chapter_physical_line": 113,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 81,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 82,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 83,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        }
+      ],
+      "applied_patch_ids": [
+        "proposal-ch83-date-patch"
+      ]
+    },
+    {
+      "id": "proposal-ch92-snack-count",
+      "chapter": 92,
+      "status": "PENDING",
+      "reason": "第91回明确只装一块，另一块给贾母；第92回开头也一块，吃后却剩另一块，稍后搜袖只剩空油纸，夜间又回忆“麝月那两块点心”。改开头一为两违背91→92接口；只修吃后句仍遗留回忆数量。不能证明“两块”是否包含留给贾母的那块，也不能凭空补取物/补吃。保守保持整回原bytes，两段候选修改均未施用，原局部FAIL继续保留，待用户决定。",
+      "reader_opinions": [
+        {
+          "original_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-1.json",
+            "sha256": "0c780b3bcaf580ada20d1697ec967b95e1c79176870b7e0fe6d4d448cd62992c",
+            "bytes": 2830
+          },
+          "original_result_pointer": "/results/0",
+          "original_verdict": "PASS",
+          "original_notes": "PASS仅指本次实际完整阅读与文件绑定核验：92–97回全部正文、标题、空行和收尾，物理行1–719；12个不截段的有界完整阅读摘录，每个少于6000汉字，另实际重读五组相邻回边界。不是文本质量全局通过、来源相容、采用、作者身份或模型历史认证。点检中92回袖内点心数量/给物者叙述不一致、96回信文与引述多出一个‘最’字，分别保留局部FAIL；缺少完整入视许可/物件来路等只记PENDING或UNVERIFIED，不将省略当成矛盾。详细逐回引文、差异、分维偏好和限制见同目录fullbook-late-reader-1-observations.json；无总分、总胜者或晋升意见。sample_checks为空，因为对象是完整六回连续文本，并非抽样包。",
+          "reviewer": {
+            "id": "agent:fullbook-late-reader-1",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-late-reader-1:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "authority_effect": "NONE",
+          "independent_human_admission": false,
+          "preserved_same_reader_revision": {
+            "report": {
+              "path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-1-verdict-v2.json",
+              "sha256": "a8d12215d5b0dda167bf261db0f7a9e15c46222df095537cd8f7fe969d3aabfb",
+              "bytes": 3683
+            },
+            "result_pointer": "/results/0",
+            "verdict": "FAIL",
+            "notes": "同一reviewer/session/packet的v2裁决校正，不新增读者；原fullbook-late-reader-1.json保留，原SHA256=0c780b3bcaf580ada20d1697ec967b95e1c79176870b7e0fe6d4d448cd62992c。原subject PASS仅指读取完成，不应掩盖已核实的局部文字FAIL。现subject FAIL仅依据此绑定文本中的两项可复查不一致，非来源/采用/作者资格判定。文件artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt，SHA256=e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c：(1)92回物理行3原文‘袖里揣着宝钗留下的一块干点心’，行7原文‘想了一想，只吃了一块，另一块仍包好’，中间未增另一块，一块吃一块却剩另一块是数量矛盾。行27随后说两块不使开篇一块自动变两块；给物者不同可能有制作/转交分工，不另硬判。(2)96回物理行579信文原文‘可见天下会强嘴的原不只宝哥哥一个’，行587标为宝钗念到的直引原文‘天下最会强嘴的原不只宝哥哥一个’，多出‘最’，是小范围直引不一致，未夸大为重大剧情失败。全部引文已在原物理行逐字复验，完整段落及逐回分维观察保留在fullbook-late-reader-1-observations.json。阅读覆盖仍PASS：92–97回1–719行全读，12个完整有界摘录并重读五组回界。未写出的入视手续、钉毡前事等维持UNVERIFIED，明确没找着的证人后半截维持PENDING，不混成这两项FAIL。sample_checks=[]，整序列非抽样。",
+            "not_an_additional_reader": true
+          }
+        },
+        {
+          "original_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-2.json",
+            "sha256": "78af5260db3944714a18118a9e52eb690308566d971824acc375d99d5d17ba1a",
+            "bytes": 2384
+          },
+          "original_result_pointer": "/results/0",
+          "original_verdict": "FAIL",
+          "original_notes": "Scope is this anonymous packet’s chapters 92–97 only. Full-reading coverage PASS: every physical line 1–719 consumed through bounded, untruncated excerpts. Visible consistency FAIL is limited to chapter 92 one snack becoming two and chapter 96 a literal letter self-quotation adding 最; neither is a global literary, source, adoption, custody-history, or release judgment. Local dimensional preferences, exact quotes, actual adjacency checks and PENDING/UNVERIFIED gaps are in fullbook-late-reader-2-observations.json. No sample checks: this was full-sequence reading, not sampling.",
+          "reviewer": {
+            "id": "agent:fullbook-late-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-late-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "authority_effect": "NONE",
+          "independent_human_admission": false
+        }
+      ],
+      "reader_evidence": [
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-2-observations.json",
+            "sha256": "d8b706c92ebd2c25c3481e8493600e2af8cad9e090a97eff4caf9e4bff1005cd",
+            "bytes": 105820
+          },
+          "json_pointer": "/exact_quote_evidence/0",
+          "reviewer": {
+            "id": "agent:fullbook-late-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-late-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/packet.json",
+            "sha256": "d0a2e8633a81c133226f74fbd32e2e48e5f6dbf507b7cb5902967dc57266a828",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+            "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+            "bytes": 166841
+          },
+          "subject_id": "read-78587806869ace36fc3d4afa",
+          "chapter": 92,
+          "subject_physical_line": 3,
+          "quote": "袖里揣着宝钗留下的一块干点心",
+          "quote_sha256": "626fc2f82b2d3fa701a88f271feaf0adc2f46668053ea6854da11c73a2f7f41e",
+          "baseline_location": {
+            "chapter": 92,
+            "original_span": "袖里揣着宝钗留下的一块干点心",
+            "original_span_sha256": "626fc2f82b2d3fa701a88f271feaf0adc2f46668053ea6854da11c73a2f7f41e",
+            "baseline_byte_start": 291566,
+            "baseline_byte_end_exclusive": 291608,
+            "chapter_byte_start": 244,
+            "chapter_byte_end_exclusive": 286,
+            "baseline_physical_line": 1547,
+            "chapter_physical_line": 3,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 93,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 94,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 95,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 96,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 97,
+                "baseline_trailing_LF_count": 2,
+                "reader_trailing_LF_count": 1,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        },
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-2-observations.json",
+            "sha256": "d8b706c92ebd2c25c3481e8493600e2af8cad9e090a97eff4caf9e4bff1005cd",
+            "bytes": 105820
+          },
+          "json_pointer": "/exact_quote_evidence/1",
+          "reviewer": {
+            "id": "agent:fullbook-late-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-late-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/packet.json",
+            "sha256": "d0a2e8633a81c133226f74fbd32e2e48e5f6dbf507b7cb5902967dc57266a828",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+            "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+            "bytes": 166841
+          },
+          "subject_id": "read-78587806869ace36fc3d4afa",
+          "chapter": 92,
+          "subject_physical_line": 7,
+          "quote": "想了一想，只吃了一块，另一块仍包好。",
+          "quote_sha256": "b1bf7b2cb71eee48a67b7fc056c4e8c0ac5902f0a10121c22d521f6adc0ad24f",
+          "baseline_location": {
+            "chapter": 92,
+            "original_span": "想了一想，只吃了一块，另一块仍包好。",
+            "original_span_sha256": "b1bf7b2cb71eee48a67b7fc056c4e8c0ac5902f0a10121c22d521f6adc0ad24f",
+            "baseline_byte_start": 293100,
+            "baseline_byte_end_exclusive": 293154,
+            "chapter_byte_start": 1778,
+            "chapter_byte_end_exclusive": 1832,
+            "baseline_physical_line": 1551,
+            "chapter_physical_line": 7,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 93,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 94,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 95,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 96,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 97,
+                "baseline_trailing_LF_count": 2,
+                "reader_trailing_LF_count": 1,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        }
+      ],
+      "pending_alternatives": [
+        {
+          "chapter": 92,
+          "original_span": "想了一想，只吃了一块，另一块仍包好。",
+          "original_span_sha256": "b1bf7b2cb71eee48a67b7fc056c4e8c0ac5902f0a10121c22d521f6adc0ad24f",
+          "baseline_byte_start": 293100,
+          "baseline_byte_end_exclusive": 293154,
+          "chapter_byte_start": 1778,
+          "chapter_byte_end_exclusive": 1832,
+          "baseline_physical_line": 1551,
+          "chapter_physical_line": 7,
+          "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+          "original_occurrences_in_chapter": 1,
+          "original_occurrences_in_baseline": 1,
+          "suggested_text": "想了一想，吃了那块点心，油纸仍叠好。",
+          "applied": false,
+          "limitation": "可与搜袖时空油纸一致，但单独施用仍遗留夜间两块回忆。"
+        },
+        {
+          "chapter": 92,
+          "original_span": "又想麝月那两块点心，自己竟真一块也没带回来。",
+          "original_span_sha256": "79dcb5e21069f6448d45a80c9d5241347017e3c61c000c07214b433c1863409a",
+          "baseline_byte_start": 298019,
+          "baseline_byte_end_exclusive": 298085,
+          "chapter_byte_start": 6697,
+          "chapter_byte_end_exclusive": 6763,
+          "baseline_physical_line": 1571,
+          "chapter_physical_line": 27,
+          "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+          "original_occurrences_in_chapter": 1,
+          "original_occurrences_in_baseline": 1,
+          "suggested_text": "又想麝月那块点心，自己竟真没带回来。",
+          "applied": false,
+          "limitation": "需要判定这句回忆只计宝玉带走的那块，而不计第91回另一块留贾母；现不将该解释认证为事实。"
+        }
+      ],
+      "additional_baseline_context": [
+        {
+          "chapter": 91,
+          "original_span": "宝钗在灯下理那两块干点心，用一小张油纸包好，又停了停，只放了一块进去。麝月看见，问：“怎么少一块？”宝钗道：“另一块留给老太太明早吃。宝玉不过出去半日，一块够了。”",
+          "original_span_sha256": "df35d4d920e76a7ca1ca4eadd199d6636713fe50defa5ed4c1f19865167fa5e2",
+          "baseline_byte_start": 288647,
+          "baseline_byte_end_exclusive": 288893,
+          "chapter_byte_start": 21634,
+          "chapter_byte_end_exclusive": 21880,
+          "baseline_physical_line": 1528,
+          "chapter_physical_line": 107,
+          "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+          "original_occurrences_in_chapter": 1,
+          "original_occurrences_in_baseline": 1
+        },
+        {
+          "chapter": 92,
+          "original_span": "宝玉身上原没有什么，只摸出那张包点心的油纸。那人展开看了一眼，笑道：“吃完了还留这个作什么？”",
+          "original_span_sha256": "82e3540d62e850987c43f358040ed3e12db1399992dbff9a2ce42290b16a976f",
+          "baseline_byte_start": 295441,
+          "baseline_byte_end_exclusive": 295582,
+          "chapter_byte_start": 4119,
+          "chapter_byte_end_exclusive": 4260,
+          "baseline_physical_line": 1561,
+          "chapter_physical_line": 17,
+          "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+          "original_occurrences_in_chapter": 1,
+          "original_occurrences_in_baseline": 1
+        }
+      ],
+      "actual_reading_scope": "第91回末段1515–1544行、第92回全回1545–1678行及92→93接口1679–1681行实际读取；非全书文学重评。",
+      "applied_patch_ids": []
+    },
+    {
+      "id": "proposal-ch96-self-quotation",
+      "chapter": 96,
+      "status": "PROPOSED",
+      "reason": "信文已有“天下会强嘴”，仅删叙述标作宝钗念到的自引里多出的“最”；不反改信文本、不改人物评价或诗文。",
+      "reader_opinions": [
+        {
+          "original_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-1.json",
+            "sha256": "0c780b3bcaf580ada20d1697ec967b95e1c79176870b7e0fe6d4d448cd62992c",
+            "bytes": 2830
+          },
+          "original_result_pointer": "/results/0",
+          "original_verdict": "PASS",
+          "original_notes": "PASS仅指本次实际完整阅读与文件绑定核验：92–97回全部正文、标题、空行和收尾，物理行1–719；12个不截段的有界完整阅读摘录，每个少于6000汉字，另实际重读五组相邻回边界。不是文本质量全局通过、来源相容、采用、作者身份或模型历史认证。点检中92回袖内点心数量/给物者叙述不一致、96回信文与引述多出一个‘最’字，分别保留局部FAIL；缺少完整入视许可/物件来路等只记PENDING或UNVERIFIED，不将省略当成矛盾。详细逐回引文、差异、分维偏好和限制见同目录fullbook-late-reader-1-observations.json；无总分、总胜者或晋升意见。sample_checks为空，因为对象是完整六回连续文本，并非抽样包。",
+          "reviewer": {
+            "id": "agent:fullbook-late-reader-1",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-late-reader-1:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "authority_effect": "NONE",
+          "independent_human_admission": false,
+          "preserved_same_reader_revision": {
+            "report": {
+              "path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-1-verdict-v2.json",
+              "sha256": "a8d12215d5b0dda167bf261db0f7a9e15c46222df095537cd8f7fe969d3aabfb",
+              "bytes": 3683
+            },
+            "result_pointer": "/results/0",
+            "verdict": "FAIL",
+            "notes": "同一reviewer/session/packet的v2裁决校正，不新增读者；原fullbook-late-reader-1.json保留，原SHA256=0c780b3bcaf580ada20d1697ec967b95e1c79176870b7e0fe6d4d448cd62992c。原subject PASS仅指读取完成，不应掩盖已核实的局部文字FAIL。现subject FAIL仅依据此绑定文本中的两项可复查不一致，非来源/采用/作者资格判定。文件artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt，SHA256=e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c：(1)92回物理行3原文‘袖里揣着宝钗留下的一块干点心’，行7原文‘想了一想，只吃了一块，另一块仍包好’，中间未增另一块，一块吃一块却剩另一块是数量矛盾。行27随后说两块不使开篇一块自动变两块；给物者不同可能有制作/转交分工，不另硬判。(2)96回物理行579信文原文‘可见天下会强嘴的原不只宝哥哥一个’，行587标为宝钗念到的直引原文‘天下最会强嘴的原不只宝哥哥一个’，多出‘最’，是小范围直引不一致，未夸大为重大剧情失败。全部引文已在原物理行逐字复验，完整段落及逐回分维观察保留在fullbook-late-reader-1-observations.json。阅读覆盖仍PASS：92–97回1–719行全读，12个完整有界摘录并重读五组回界。未写出的入视手续、钉毡前事等维持UNVERIFIED，明确没找着的证人后半截维持PENDING，不混成这两项FAIL。sample_checks=[]，整序列非抽样。",
+            "not_an_additional_reader": true
+          }
+        },
+        {
+          "original_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-2.json",
+            "sha256": "78af5260db3944714a18118a9e52eb690308566d971824acc375d99d5d17ba1a",
+            "bytes": 2384
+          },
+          "original_result_pointer": "/results/0",
+          "original_verdict": "FAIL",
+          "original_notes": "Scope is this anonymous packet’s chapters 92–97 only. Full-reading coverage PASS: every physical line 1–719 consumed through bounded, untruncated excerpts. Visible consistency FAIL is limited to chapter 92 one snack becoming two and chapter 96 a literal letter self-quotation adding 最; neither is a global literary, source, adoption, custody-history, or release judgment. Local dimensional preferences, exact quotes, actual adjacency checks and PENDING/UNVERIFIED gaps are in fullbook-late-reader-2-observations.json. No sample checks: this was full-sequence reading, not sampling.",
+          "reviewer": {
+            "id": "agent:fullbook-late-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-late-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "authority_effect": "NONE",
+          "independent_human_admission": false
+        }
+      ],
+      "reader_evidence": [
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-2-observations.json",
+            "sha256": "d8b706c92ebd2c25c3481e8493600e2af8cad9e090a97eff4caf9e4bff1005cd",
+            "bytes": 105820
+          },
+          "json_pointer": "/exact_quote_evidence/20",
+          "reviewer": {
+            "id": "agent:fullbook-late-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-late-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/packet.json",
+            "sha256": "d0a2e8633a81c133226f74fbd32e2e48e5f6dbf507b7cb5902967dc57266a828",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+            "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+            "bytes": 166841
+          },
+          "subject_id": "read-78587806869ace36fc3d4afa",
+          "chapter": 96,
+          "subject_physical_line": 579,
+          "quote": "可见天下会强嘴的原不只宝哥哥一个。",
+          "quote_sha256": "d173dd3378ec0a79ca2495040c55ba20e8f971e0e821e6ebfa2f757bfab738da",
+          "baseline_location": {
+            "chapter": 96,
+            "original_span": "可见天下会强嘴的原不只宝哥哥一个。",
+            "original_span_sha256": "d173dd3378ec0a79ca2495040c55ba20e8f971e0e821e6ebfa2f757bfab738da",
+            "baseline_byte_start": 426055,
+            "baseline_byte_end_exclusive": 426106,
+            "chapter_byte_start": 19271,
+            "chapter_byte_end_exclusive": 19322,
+            "baseline_physical_line": 2126,
+            "chapter_physical_line": 79,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 93,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 94,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 95,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 96,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 97,
+                "baseline_trailing_LF_count": 2,
+                "reader_trailing_LF_count": 1,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        },
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-late-reader-2-observations.json",
+            "sha256": "d8b706c92ebd2c25c3481e8493600e2af8cad9e090a97eff4caf9e4bff1005cd",
+            "bytes": 105820
+          },
+          "json_pointer": "/exact_quote_evidence/21",
+          "reviewer": {
+            "id": "agent:fullbook-late-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-late-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/packet.json",
+            "sha256": "d0a2e8633a81c133226f74fbd32e2e48e5f6dbf507b7cb5902967dc57266a828",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-late-anonymous-v1/public/read-78587806869ace36fc3d4afa.txt",
+            "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+            "bytes": 166841
+          },
+          "subject_id": "read-78587806869ace36fc3d4afa",
+          "chapter": 96,
+          "subject_physical_line": 587,
+          "quote": "宝钗念到“天下最会强嘴的原不只宝哥哥一个”",
+          "quote_sha256": "1d82918d0f1630406d9ff9f535f131ddaf4743973c8852f164bf837b52bf5fcd",
+          "baseline_location": {
+            "chapter": 96,
+            "original_span": "宝钗念到“天下最会强嘴的原不只宝哥哥一个”",
+            "original_span_sha256": "1d82918d0f1630406d9ff9f535f131ddaf4743973c8852f164bf837b52bf5fcd",
+            "baseline_byte_start": 427467,
+            "baseline_byte_end_exclusive": 427530,
+            "chapter_byte_start": 20683,
+            "chapter_byte_end_exclusive": 20746,
+            "baseline_physical_line": 2134,
+            "chapter_physical_line": 87,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 93,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 94,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 95,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 96,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 97,
+                "baseline_trailing_LF_count": 2,
+                "reader_trailing_LF_count": 1,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        }
+      ],
+      "applied_patch_ids": [
+        "proposal-ch96-self-quotation-patch"
+      ]
+    },
+    {
+      "id": "proposal-ch98-parcel-location",
+      "chapter": 98,
+      "status": "PROPOSED",
+      "reason": "删除“同自己的书札包一起”，保留原指代“桌角有一个小布包”及顺手拿起。前段旧帕包裹玉并放桌角、离去后青灰书札包仍在桌角，次晨拆出五封书札两张题签，后亲返旧帕包玉并取回书札；原文本已足以识别两包，不将小布包额外改名成玉包，也不补隐形放回/交接。此最小删除只取消明确“两包同时拿起”的冲突，不认证全回物件或台词毫无瑕疵。",
+      "reader_opinions": [
+        {
+          "original_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-tail-reader-1.json",
+            "sha256": "45d67b1bd6fccdc375756fe79b507feb7652c50d50e4e046a58ae5eb3305a7f0",
+            "bytes": 2730
+          },
+          "original_result_pointer": "/results/0",
+          "original_verdict": "FAIL",
+          "original_notes": "Reading coverage PASS: fully read physical lines 1-414, all three chapters 98-100, unsampled, with byte hash verified. Subject FAIL is confined to an actual on-page chapter-98 material custody inconsistency: line 68 lifts the mistaken jade bundle together with the servant's own letter bundle, but line 76 leaves the letter bundle on the host table, line 78 discovers its letters there, and line 98 returns the yesterday-left letter bundle. No intervening putting-down/exchange is narrated. This is not a FAIL for Baoyu's unshown first travel days, unnamed temple, exact death month or unseen source constraints. Detailed comparative dimensions and exact checked quotations are in the companion observations. Not an overall winner, numeric total, adoption recommendation or independent admission evidence.",
+          "reviewer": {
+            "id": "fullbook-tail-reader-1",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-tail-reader-1:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "authority_effect": "NONE",
+          "independent_human_admission": false
+        },
+        {
+          "original_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-tail-reader-2.json",
+            "sha256": "11deb4656272e53f0689c1415a54f8b3931dfcc5212e9c011a80dde0c4bf35c1",
+            "bytes": 6487
+          },
+          "original_result_pointer": "/results/0",
+          "original_verdict": "FAIL",
+          "original_notes": "FAIL for the verified chapter-98 parcel-location contradiction at physical lines 68/76/78 (observations q04-q06). All 414 lines and all three chapters were actually read in bounded outputs, but reading coverage does not excuse or downgrade this contradiction. Other local strengths and limits are recorded dimension by dimension; no global ranking, provenance claim, promotion, or human adoption follows.",
+          "reviewer": {
+            "id": "agent:fullbook-tail-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-tail-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "authority_effect": "NONE",
+          "independent_human_admission": false,
+          "preserved_same_reader_revision": {
+            "report": {
+              "path": "artifacts/agent_research/phase5/submissions/fullbook-tail-reader-2-format-v2.json",
+              "sha256": "302608e3cc73ab478edd713daab0f58378bba2844714dd3bb34ceed45d4c647e",
+              "bytes": 6711
+            },
+            "result_pointer": "/results/0",
+            "verdict": "FAIL",
+            "notes": "FAIL for the verified chapter-98 parcel-location contradiction at physical lines 68/76/78 (observations q04-q06). All 414 lines and all three chapters were actually read in bounded outputs, but reading coverage does not excuse or downgrade this contradiction. Other local strengths and limits are recorded dimension by dimension; no global ranking, provenance claim, promotion, or human adoption follows.\n\nFORMAT-ONLY DIAGNOSTIC ADDENDUM: The public packet declares no samples. The original sample_checks entries below are retained as diagnostic JSON only, not as declared packet samples, new findings, or new reviewer identities. The subject verdict and original notes above are unchanged. ORIGINAL_SAMPLE_CHECKS_JSON=[{\"sample_id\":\"read-ebb4df28f7a34edb1404ade9\",\"sha256\":\"7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8\",\"verdict\":\"PASS\",\"notes\":\"Exact public packet subject binding and complete physical-line consumption checked; this sample PASS establishes bytes/read coverage only, not prose coherence, provenance, global quality, identity, historical accuracy, or human adoption.\"},{\"sample_id\":\"read-ebb4df28f7a34edb1404ade9:chapter-98:physical-lines-1-123\",\"sha256\":\"af0f40c06770901f21991998c83ae703e7666190833eea9326b813d5603609cd\",\"verdict\":\"FAIL\",\"notes\":\"FAIL: physical line 68 says the servant takes the small jade bundle together with his own letters bundle (q04), but line 76 leaves that same grey-blue letters bundle on the table (q05), and line 78 opens it there with five letters and two slips (q06). No intervening return or putting it back is narrated. This is a definite local parcel-location contradiction, not a coverage failure.\"},{\"sample_id\":\"read-ebb4df28f7a34edb1404ade9:chapter-99:physical-lines-124-279\",\"sha256\":\"816bfd9675dd53708167462af4ed3c5346542792981cdfa7f40b95c560e9d82a\",\"verdict\":\"PASS\",\"notes\":\"PASS limited to complete chapter reading and no additional definite local contradiction identified in this span. Borrowed book and rice-count paper remain at home, departure creates search and domestic costs, temple meals are distinguished from eyewitness proof (q12-q16). Prior chapter parcel FAIL is not repaired by this sample.\"},{\"sample_id\":\"read-ebb4df28f7a34edb1404ade9:chapter-100:physical-lines-280-414\",\"sha256\":\"99a86508d2b8d34421b35839e617eb643466c3ad31d6c81a3c21bbbe7e35fb46\",\"verdict\":\"PASS\",\"notes\":\"PASS limited to complete chapter reading and no definite local contradiction identified. Years precede an actual appointment; illness lasts months; mourning and named supernatural frames are separate (q17-q25). The claim that the stone text is complete is a narrated claim, not my verification of unread chapters.\"}]",
+            "not_an_additional_reader": true
+          }
+        }
+      ],
+      "reader_evidence": [
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-tail-reader-1-observations.json",
+            "sha256": "a3bb16858d46a6949b74b24da8806dfc1694470b61a98c1381133196d25b9361",
+            "bytes": 71108
+          },
+          "json_pointer": "/quote_ledger/2",
+          "reviewer": {
+            "id": "fullbook-tail-reader-1",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-tail-reader-1:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+            "sha256": "e15dfd5c85cbe9d3108fb22796a1392664efaef43c7020a6a041c25c423230ff",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+            "sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+            "bytes": 87164
+          },
+          "subject_id": "read-ebb4df28f7a34edb1404ade9",
+          "chapter": 98,
+          "subject_physical_line": 68,
+          "quote": "见桌角有一个小布包，顺手同自己的书札包一起拿起，因大小相近、颜色又都旧，并没有拆看。",
+          "quote_sha256": "faaa429371c3348dfe0bea546b5d45eea6e05ae1f7ad5703d485356cfdab182f",
+          "baseline_location": {
+            "chapter": 98,
+            "original_span": "见桌角有一个小布包，顺手同自己的书札包一起拿起，因大小相近、颜色又都旧，并没有拆看。",
+            "original_span_sha256": "faaa429371c3348dfe0bea546b5d45eea6e05ae1f7ad5703d485356cfdab182f",
+            "baseline_byte_start": 473099,
+            "baseline_byte_end_exclusive": 473225,
+            "chapter_byte_start": 14931,
+            "chapter_byte_end_exclusive": 15057,
+            "baseline_physical_line": 2336,
+            "chapter_physical_line": 68,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 98,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 99,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        },
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-tail-reader-1-observations.json",
+            "sha256": "a3bb16858d46a6949b74b24da8806dfc1694470b61a98c1381133196d25b9361",
+            "bytes": 71108
+          },
+          "json_pointer": "/quote_ledger/3",
+          "reviewer": {
+            "id": "fullbook-tail-reader-1",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-tail-reader-1:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+            "sha256": "e15dfd5c85cbe9d3108fb22796a1392664efaef43c7020a6a041c25c423230ff",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+            "sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+            "bytes": 87164
+          },
+          "subject_id": "read-ebb4df28f7a34edb1404ade9",
+          "chapter": 98,
+          "subject_physical_line": 76,
+          "quote": "桌角那只留下的青灰布包，谁也没有去动。",
+          "quote_sha256": "ab167c496fb2aba02f4dd4602874450a4876be35e1c42b25e2aa8e68bfc2e3e8",
+          "baseline_location": {
+            "chapter": 98,
+            "original_span": "桌角那只留下的青灰布包，谁也没有去动。",
+            "original_span_sha256": "ab167c496fb2aba02f4dd4602874450a4876be35e1c42b25e2aa8e68bfc2e3e8",
+            "baseline_byte_start": 475048,
+            "baseline_byte_end_exclusive": 475105,
+            "chapter_byte_start": 16880,
+            "chapter_byte_end_exclusive": 16937,
+            "baseline_physical_line": 2344,
+            "chapter_physical_line": 76,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 98,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 99,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        },
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-tail-reader-1-observations.json",
+            "sha256": "a3bb16858d46a6949b74b24da8806dfc1694470b61a98c1381133196d25b9361",
+            "bytes": 71108
+          },
+          "json_pointer": "/quote_ledger/4",
+          "reviewer": {
+            "id": "fullbook-tail-reader-1",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-tail-reader-1:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+            "sha256": "e15dfd5c85cbe9d3108fb22796a1392664efaef43c7020a6a041c25c423230ff",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+            "sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+            "bytes": 87164
+          },
+          "subject_id": "read-ebb4df28f7a34edb1404ade9",
+          "chapter": 98,
+          "subject_physical_line": 78,
+          "quote": "她拆开一看，里头不是玉，却是五封折好的书札，外加两张题签。",
+          "quote_sha256": "58da84eaa02191300eb61a577c513d159f9a6915427c44eaaebd6e5bdde2d0af",
+          "baseline_location": {
+            "chapter": 98,
+            "original_span": "她拆开一看，里头不是玉，却是五封折好的书札，外加两张题签。",
+            "original_span_sha256": "58da84eaa02191300eb61a577c513d159f9a6915427c44eaaebd6e5bdde2d0af",
+            "baseline_byte_start": 475323,
+            "baseline_byte_end_exclusive": 475410,
+            "chapter_byte_start": 17155,
+            "chapter_byte_end_exclusive": 17242,
+            "baseline_physical_line": 2346,
+            "chapter_physical_line": 78,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 98,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 99,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        },
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-tail-reader-1-observations.json",
+            "sha256": "a3bb16858d46a6949b74b24da8806dfc1694470b61a98c1381133196d25b9361",
+            "bytes": 71108
+          },
+          "json_pointer": "/quote_ledger/6",
+          "reviewer": {
+            "id": "fullbook-tail-reader-1",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-tail-reader-1:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+            "sha256": "e15dfd5c85cbe9d3108fb22796a1392664efaef43c7020a6a041c25c423230ff",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+            "sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+            "bytes": 87164
+          },
+          "subject_id": "read-ebb4df28f7a34edb1404ade9",
+          "chapter": 98,
+          "subject_physical_line": 98,
+          "quote": "麝月已经把昨日留下的书札包从木盒里拿出来，交给甄家小厮，道：“你也看看，少不少。可别出了门又回来。”",
+          "quote_sha256": "71e4257be887675b218146cc2872b8c1cbedac3be91dd27454fcddab23689cd7",
+          "baseline_location": {
+            "chapter": 98,
+            "original_span": "麝月已经把昨日留下的书札包从木盒里拿出来，交给甄家小厮，道：“你也看看，少不少。可别出了门又回来。”",
+            "original_span_sha256": "71e4257be887675b218146cc2872b8c1cbedac3be91dd27454fcddab23689cd7",
+            "baseline_byte_start": 480248,
+            "baseline_byte_end_exclusive": 480398,
+            "chapter_byte_start": 22080,
+            "chapter_byte_end_exclusive": 22230,
+            "baseline_physical_line": 2366,
+            "chapter_physical_line": 98,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 98,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 99,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        },
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-tail-reader-2-observations.json",
+            "sha256": "93807382cb79cfb8e91b7dc8b814d36660680bc9790298cdef180d3db6238e63",
+            "bytes": 62749
+          },
+          "json_pointer": "/quotes/3",
+          "reviewer": {
+            "id": "agent:fullbook-tail-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-tail-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+            "sha256": "e15dfd5c85cbe9d3108fb22796a1392664efaef43c7020a6a041c25c423230ff",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+            "sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+            "bytes": 87164
+          },
+          "subject_id": "read-ebb4df28f7a34edb1404ade9",
+          "chapter": 98,
+          "subject_physical_line": 68,
+          "quote": "见桌角有一个小布包，顺手同自己的书札包一起拿起，因大小相近、颜色又都旧，并没有拆看。",
+          "quote_sha256": "faaa429371c3348dfe0bea546b5d45eea6e05ae1f7ad5703d485356cfdab182f",
+          "baseline_location": {
+            "chapter": 98,
+            "original_span": "见桌角有一个小布包，顺手同自己的书札包一起拿起，因大小相近、颜色又都旧，并没有拆看。",
+            "original_span_sha256": "faaa429371c3348dfe0bea546b5d45eea6e05ae1f7ad5703d485356cfdab182f",
+            "baseline_byte_start": 473099,
+            "baseline_byte_end_exclusive": 473225,
+            "chapter_byte_start": 14931,
+            "chapter_byte_end_exclusive": 15057,
+            "baseline_physical_line": 2336,
+            "chapter_physical_line": 68,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 98,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 99,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        },
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-tail-reader-2-observations.json",
+            "sha256": "93807382cb79cfb8e91b7dc8b814d36660680bc9790298cdef180d3db6238e63",
+            "bytes": 62749
+          },
+          "json_pointer": "/quotes/4",
+          "reviewer": {
+            "id": "agent:fullbook-tail-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-tail-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+            "sha256": "e15dfd5c85cbe9d3108fb22796a1392664efaef43c7020a6a041c25c423230ff",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+            "sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+            "bytes": 87164
+          },
+          "subject_id": "read-ebb4df28f7a34edb1404ade9",
+          "chapter": 98,
+          "subject_physical_line": 76,
+          "quote": "桌角那只留下的青灰布包，谁也没有去动。",
+          "quote_sha256": "ab167c496fb2aba02f4dd4602874450a4876be35e1c42b25e2aa8e68bfc2e3e8",
+          "baseline_location": {
+            "chapter": 98,
+            "original_span": "桌角那只留下的青灰布包，谁也没有去动。",
+            "original_span_sha256": "ab167c496fb2aba02f4dd4602874450a4876be35e1c42b25e2aa8e68bfc2e3e8",
+            "baseline_byte_start": 475048,
+            "baseline_byte_end_exclusive": 475105,
+            "chapter_byte_start": 16880,
+            "chapter_byte_end_exclusive": 16937,
+            "baseline_physical_line": 2344,
+            "chapter_physical_line": 76,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 98,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 99,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        },
+        {
+          "observation_report": {
+            "path": "artifacts/agent_research/phase5/submissions/fullbook-tail-reader-2-observations.json",
+            "sha256": "93807382cb79cfb8e91b7dc8b814d36660680bc9790298cdef180d3db6238e63",
+            "bytes": 62749
+          },
+          "json_pointer": "/quotes/5",
+          "reviewer": {
+            "id": "agent:fullbook-tail-reader-2",
+            "kind": "MODEL_SUBAGENT",
+            "session_id": "fullbook-tail-reader-2:phase5",
+            "model": {
+              "label": "session-default",
+              "verification": "DECLARED_NOT_VERIFIED"
+            },
+            "context_isolation": {
+              "asserted": true,
+              "verification": "NOT_PROVEN"
+            }
+          },
+          "packet": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/packet.json",
+            "sha256": "e15dfd5c85cbe9d3108fb22796a1392664efaef43c7020a6a041c25c423230ff",
+            "bytes": 718
+          },
+          "subject": {
+            "path": "artifacts/agent_research/phase5/fullbook-tail-anonymous-v1/public/read-ebb4df28f7a34edb1404ade9.txt",
+            "sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+            "bytes": 87164
+          },
+          "subject_id": "read-ebb4df28f7a34edb1404ade9",
+          "chapter": 98,
+          "subject_physical_line": 78,
+          "quote": "她拆开一看，里头不是玉，却是五封折好的书札，外加两张题签。",
+          "quote_sha256": "58da84eaa02191300eb61a577c513d159f9a6915427c44eaaebd6e5bdde2d0af",
+          "baseline_location": {
+            "chapter": 98,
+            "original_span": "她拆开一看，里头不是玉，却是五封折好的书札，外加两张题签。",
+            "original_span_sha256": "58da84eaa02191300eb61a577c513d159f9a6915427c44eaaebd6e5bdde2d0af",
+            "baseline_byte_start": 475323,
+            "baseline_byte_end_exclusive": 475410,
+            "chapter_byte_start": 17155,
+            "chapter_byte_end_exclusive": 17242,
+            "baseline_physical_line": 2346,
+            "chapter_physical_line": 78,
+            "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+            "original_occurrences_in_chapter": 1,
+            "original_occurrences_in_baseline": 1
+          },
+          "mechanical_checks": {
+            "subject_hash_matches_report_and_packet": true,
+            "all_subject_heading_and_body_bytes_equal_selected_stable": true,
+            "subject_whole_bytes_equal_baseline_slice": false,
+            "anonymous_export_separator_differences": [
+              {
+                "chapter": 98,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              },
+              {
+                "chapter": 99,
+                "baseline_trailing_LF_count": 3,
+                "reader_trailing_LF_count": 2,
+                "only_difference": "one trailing separator LF omitted by anonymous export"
+              }
+            ],
+            "quote_exact_at_reported_subject_line": true
+          }
+        }
+      ],
+      "additional_baseline_context": [
+        {
+          "chapter": 98,
+          "original_span": "麝月把通灵玉取下来，找一块洗过多次的旧帕包好，搁在桌角",
+          "original_span_sha256": "8a98bb3e7e92ffe93e023e8e06eb15e7f7335bc4a34633280f6eb11facd61481",
+          "baseline_byte_start": 462621,
+          "baseline_byte_end_exclusive": 462702,
+          "chapter_byte_start": 4453,
+          "chapter_byte_end_exclusive": 4534,
+          "baseline_physical_line": 2289,
+          "chapter_physical_line": 21,
+          "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+          "original_occurrences_in_chapter": 1,
+          "original_occurrences_in_baseline": 1
+        },
+        {
+          "chapter": 98,
+          "original_span": "几封书札另用一块青灰布包着；旧帕包的通灵玉仍压在桌角薄书下。",
+          "original_span_sha256": "3d2ce3c0655c16c9f9a8ad532ed49db9823bfe4014de4ff83c0a154c0c2bd505",
+          "baseline_byte_start": 472934,
+          "baseline_byte_end_exclusive": 473024,
+          "chapter_byte_start": 14766,
+          "chapter_byte_end_exclusive": 14856,
+          "baseline_physical_line": 2336,
+          "chapter_physical_line": 68,
+          "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+          "original_occurrences_in_chapter": 1,
+          "original_occurrences_in_baseline": 1
+        }
+      ],
+      "applied_patch_ids": [
+        "proposal-ch98-parcel-location-patch"
+      ]
+    }
+  ],
+  "applied_patches": [
+    {
+      "chapter": 83,
+      "original_span": "我今日在他身上见了一个，像得很。",
+      "original_span_sha256": "bf8eddead8a596b98f6e6fdf9b38bd63cd84c40b12c2b2279b792132897ccc8d",
+      "baseline_byte_start": 63744,
+      "baseline_byte_end_exclusive": 63792,
+      "chapter_byte_start": 17385,
+      "chapter_byte_end_exclusive": 17433,
+      "baseline_physical_line": 347,
+      "chapter_physical_line": 113,
+      "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+      "original_occurrences_in_chapter": 1,
+      "original_occurrences_in_baseline": 1,
+      "id": "proposal-ch83-date-patch",
+      "issue_id": "proposal-ch83-date",
+      "suggested_text": "我那日在他身上见了一个，像得很。",
+      "suggested_text_sha256": "2ec3449ca28ef624ccef2432662032d9010e53dde132be03707e7cb5b7ee3c11",
+      "status": "PROPOSED_IN_OUTPUT_NOT_ACTIVATED",
+      "proposed_occurrences_in_baseline_chapter": 0,
+      "output_byte_start": 63744,
+      "output_byte_end_exclusive": 63792,
+      "suggested_occurrences_in_output_chapter": 1,
+      "suggested_occurrences_in_entire_output": 1
+    },
+    {
+      "chapter": 96,
+      "original_span": "宝钗念到“天下最会强嘴的原不只宝哥哥一个”",
+      "original_span_sha256": "1d82918d0f1630406d9ff9f535f131ddaf4743973c8852f164bf837b52bf5fcd",
+      "baseline_byte_start": 427467,
+      "baseline_byte_end_exclusive": 427530,
+      "chapter_byte_start": 20683,
+      "chapter_byte_end_exclusive": 20746,
+      "baseline_physical_line": 2134,
+      "chapter_physical_line": 87,
+      "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+      "original_occurrences_in_chapter": 1,
+      "original_occurrences_in_baseline": 1,
+      "id": "proposal-ch96-self-quotation-patch",
+      "issue_id": "proposal-ch96-self-quotation",
+      "suggested_text": "宝钗念到“天下会强嘴的原不只宝哥哥一个”",
+      "suggested_text_sha256": "0bb8a67826e5ff6f7eeb6def61bdc96adc35e3c86cde14db5bc150905921ca35",
+      "status": "PROPOSED_IN_OUTPUT_NOT_ACTIVATED",
+      "proposed_occurrences_in_baseline_chapter": 0,
+      "output_byte_start": 427467,
+      "output_byte_end_exclusive": 427527,
+      "suggested_occurrences_in_output_chapter": 1,
+      "suggested_occurrences_in_entire_output": 1
+    },
+    {
+      "chapter": 98,
+      "original_span": "见桌角有一个小布包，顺手同自己的书札包一起拿起",
+      "original_span_sha256": "24babe93e51f4ee0331feef05b42107b02dd9a9fbaeb65b3dfbe54a70999b282",
+      "baseline_byte_start": 473099,
+      "baseline_byte_end_exclusive": 473168,
+      "chapter_byte_start": 14931,
+      "chapter_byte_end_exclusive": 15000,
+      "baseline_physical_line": 2336,
+      "chapter_physical_line": 68,
+      "offset_convention": "zero-based UTF-8 byte offsets; end exclusive",
+      "original_occurrences_in_chapter": 1,
+      "original_occurrences_in_baseline": 1,
+      "id": "proposal-ch98-parcel-location-patch",
+      "issue_id": "proposal-ch98-parcel-location",
+      "suggested_text": "见桌角有一个小布包，顺手拿起",
+      "suggested_text_sha256": "742abf469840a2cdc154fd0482ca8fc455828a9ae8562ea62ba8a38b7b806ebc",
+      "status": "PROPOSED_IN_OUTPUT_NOT_ACTIVATED",
+      "proposed_occurrences_in_baseline_chapter": 0,
+      "output_byte_start": 473096,
+      "output_byte_end_exclusive": 473138,
+      "suggested_occurrences_in_output_chapter": 1,
+      "suggested_occurrences_in_entire_output": 1
+    }
+  ],
+  "counts": {
+    "reported_problem_groups": 4,
+    "proposed_problem_groups_in_output": 3,
+    "pending_problem_groups": 1,
+    "actual_disjoint_patch_spans": 3
+  },
+  "output": {
+    "path": "releases/proposals/v1.5/book.md",
+    "sha256": "53ebb324b6e495ed4001da8bc444623a0cb33bf6ece98424181daeaa9f8d2abd",
+    "bytes": 545304
+  },
+  "mechanical_coverage": {
+    "path": "artifacts/agent_research/phase6/stable-proposal/coverage.json",
+    "sha256": "6651e0d6e1a3bc62bd2372f7f68350df3daf2bc962f2b1457bc7fb899c5d704a",
+    "bytes": 1417655
+  },
+  "protected_before": {
+    "path": "artifacts/agent_research/phase6/stable-proposal/protected-before.json",
+    "sha256": "f57c31f18873c0f91cf17e72fa04c591d2c4d5eb4dbce1fbaa2a5dd8bd1feb6f",
+    "bytes": 793
+  },
+  "protected_after": {
+    "path": "artifacts/agent_research/phase6/stable-proposal/protected-after.json",
+    "sha256": "f57c31f18873c0f91cf17e72fa04c591d2c4d5eb4dbce1fbaa2a5dd8bd1feb6f",
+    "bytes": 793
+  },
+  "limits": [
+    "原EARLY/LATE/TAIL基线FAIL及原报告/更正意见全部保留，不因提案修改撤销。",
+    "第92回PENDING且整回不变，原数量FAIL仍在提案正文，不得声称四处均已修复。",
+    "机械bytes核验不等于来源PASS、文学PASS、全书一致、独立真人评审、采用或激活。",
+    "不变更current、stable v1.4、release登记、catalog或build；该JSON仅为自有proposal格式。",
+    "未检查/修复四个问题之外的字句、来源合同、文学取舍、日期词或角色回忆；一律不外推通过。"
+  ]
+}

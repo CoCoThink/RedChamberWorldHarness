@@ -1,0 +1,99 @@
+{
+  "kind": "ACTUAL_PROPOSAL_MECHANICAL_VERIFICATION",
+  "status": "PROPOSAL_NOT_ACTIVATED",
+  "authority": "NONE",
+  "requires_user_approval": true,
+  "baseline": {
+    "path": "releases/stable/v1.4/readable/baseline.md",
+    "sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+    "bytes": 545334
+  },
+  "output": {
+    "path": "releases/proposals/v1.5/book.md",
+    "sha256": "53ebb324b6e495ed4001da8bc444623a0cb33bf6ece98424181daeaa9f8d2abd",
+    "bytes": 545304
+  },
+  "manifest": {
+    "path": "data/releases/proposals/v1.5.json",
+    "sha256": "10c25d074873d4007a770644d0c5d7cde5e5c920ec0a098103bb404f4ec3c43f",
+    "bytes": 80870
+  },
+  "counts": {
+    "reported_problem_groups": 4,
+    "proposed_problem_groups_in_output": 3,
+    "pending_problem_groups": 1,
+    "actual_disjoint_patch_spans": 3
+  },
+  "pending": [
+    "proposal-ch92-snack-count"
+  ],
+  "checks": {
+    "baseline_hash_equals_current_selected_release_and_catalog": true,
+    "only_three_exact_chapter_bounded_patch_spans_applied": true,
+    "three_spans_correspond_to_three_of_four_reported_problem_groups": true,
+    "pending_chapter92_entire_bytes_unchanged": true,
+    "original_and_suggested_spans_each_unique_in_their_chapter_and_file": true,
+    "all_nonpatch_bytes_exact_copy": true,
+    "inverse_patch_reconstruction_equals_entire_baseline": true,
+    "all_20_chapters_all_19_interfaces_and_all_paragraph_runs_covered": true,
+    "all_headings_and_all_whitespace_byte_runs_identical": true,
+    "protected_current_and_stable_release_hashes_and_path_sets_unchanged": true,
+    "reader_report_hashes_packet_hashes_subject_hashes_exact_quote_lines_verified": true,
+    "reader_subject_heading_and_body_bytes_equal_baseline_with_disclosed_separator_LF_differences": true,
+    "git_status_increment_within_write_allowlist": true
+  },
+  "protected_file_count": 4,
+  "chapter_count": 20,
+  "paragraph_run_count": 2661,
+  "reader_evidence_records_verified": 13,
+  "actual_applied_patch_ids": [
+    "proposal-ch83-date-patch",
+    "proposal-ch96-self-quotation-patch",
+    "proposal-ch98-parcel-location-patch"
+  ],
+  "git_status_added_lines_before_report_file": [
+    "?? artifacts/agent_research/phase6/stable-proposal/coverage.json",
+    "?? artifacts/agent_research/phase6/stable-proposal/protected-after.json",
+    "?? data/releases/proposals/v1.5.json",
+    "?? releases/proposals/v1.5/book.md"
+  ],
+  "not_claimed": [
+    "FOUR_PATCHES_APPLIED",
+    "CHAPTER92_FIXED",
+    "SOURCE_PASS",
+    "LITERARY_PASS",
+    "WHOLE_NOVEL_CONSISTENCY_PASS",
+    "RELEASE_OR_BUILD_PASS",
+    "ACTIVATION",
+    "AUTOMATIC_ADOPTION"
+  ],
+  "original_negative_verdicts": "EARLY baseline FAIL; LATE corrected reader1 baseline FAIL and reader2 baseline FAIL; TAIL both baseline FAIL. Original reader1 LATE reading-only PASS and reader2 TAIL original format issues are preserved and bound, not hidden.",
+  "commands": [
+    "python -I artifacts/agent_research/phase6/stable-proposal/assemble.py"
+  ],
+  "reading_vs_mechanics": "Read summaries and exact reader quotes; actually read complete chapter92 and 91→92 interface, plus affected context. Full bytes/paragraph/chapter coverage is mechanical, not a claim of a new full-book literary read.",
+  "final_second_verification": {
+    "all_manifest_and_report_file_hash_bindings_recomputed": true,
+    "binding_records_checked": 63,
+    "only_changed_physical_lines": [
+      347,
+      2134,
+      2336
+    ],
+    "proposal_owned_new_files": [
+      "?? artifacts/agent_research/phase6/stable-proposal/assemble.py",
+      "?? artifacts/agent_research/phase6/stable-proposal/coverage.json",
+      "?? artifacts/agent_research/phase6/stable-proposal/protected-after.json",
+      "?? artifacts/agent_research/phase6/stable-proposal/protected-before.json",
+      "?? artifacts/agent_research/phase6/stable-proposal/report.json",
+      "?? data/releases/proposals/v1.5.json",
+      "?? releases/proposals/v1.5/book.md"
+    ],
+    "all_owned_changes_within_allowlist": true,
+    "output_hash_recomputed": "53ebb324b6e495ed4001da8bc444623a0cb33bf6ece98424181daeaa9f8d2abd",
+    "baseline_hash_recomputed": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320",
+    "chapter98_container_check": "原2289旧帕包裹玉搁桌角，2336书札青灰包与旧帕玉包并列，删除共同拿起后只拿原指代小布包；2344青灰包留桌、2346五封书札两题签、2362返回旧帕玉包、2366领回书札均原字节保留。没有显式重命名玉包或补交换。",
+    "remaining_chapter98_limit": "2360小厮角色话仍说桌上有两个、顺手拿了；这是保留的角色叙述，不将本提案认证为全章无含混或全链来源通过。",
+    "preflight_observation": "首次运行发现匿名阅读包与baseline章末分隔LF差异，assert停在输出前；随后改为逐章body字节等同并逐一披露少1个分隔LF，baseline/proposal绝未按匿名包归一化。"
+  }
+}

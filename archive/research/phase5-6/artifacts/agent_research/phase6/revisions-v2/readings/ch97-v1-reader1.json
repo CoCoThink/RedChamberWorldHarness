@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "kind": "FROZEN_REVISION_CLOSE_READING",
+  "chapter": 97,
+  "version": "v1",
+  "reader_id": "ch97-v1-reader1",
+  "reviewer_kind": "MODEL_SUBAGENT",
+  "mode": "FEEDBACK_ONLY",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "source_qualification": false,
+  "literary_acceptance": "NOT_CLAIMED",
+  "adoption": "NO_AUTOMATIC_ADOPT",
+  "status": "COMPLETE_LOCAL_READING_WITH_REMAINING_EDITORIAL_CONCERNS",
+  "verdict_scope": "本次模型实读只判断冻结候选的局部叙事与所选四合同义务，不是史料有效性、合格同行、人工验收、全书连贯性或世界状态执行。没有用UNKNOWN自动判FAIL，也没有用9999字符自动判PASS。",
+  "candidate": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt",
+    "sha256": "26ddbcee34a91b22a9ad6288c9ec162b526b20de1286352677699bead3d9b3c3",
+    "unicode_characters": 9999,
+    "utf8_bytes": 29783,
+    "physical_lines": 107,
+    "body_paragraphs": 53,
+    "metrics_role": "身份与长度观察，不作文学通过票；正文其余细分长度数字仅在disclosure中读到，未全部独立重算。"
+  },
+  "actual_reading_coverage": {
+    "candidate_status": "ACTUALLY_READ_COMPLETE_FROZEN_TEXT",
+    "candidate_read_calls": [
+      {"requested_lines": [1, 55], "consumed_content_lines": [1, 55]},
+      {"requested_lines": [56, 110], "consumed_content_lines": [56, 107], "terminal_blank_display_line": 108}
+    ],
+    "character_offsets": {"start_inclusive": 0, "end_exclusive": 9999},
+    "utf8_byte_offsets": {"start_inclusive": 0, "end_exclusive": 29783},
+    "coverage_fraction": 1.0,
+    "first_body_quote_ref": "Q01",
+    "last_body_quote_ref": "Q29",
+    "disclosure": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1-disclosure.json",
+      "sha256": "e329bf23a04206e1b9fa3b525dcc7ff235a4c172f6408964d309038d501e9304",
+      "status": "ACTUALLY_READ_COMPLETE",
+      "read_ranges": [[1, 100], [101, 162]],
+      "assessment": "披露自限于session-authored、无provider proof/资格/采用，且承认作者已接触96新版。读者未把作者自检或冻结长度达标当成独立文学验收。"
+    },
+    "notes": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch97-v1.txt",
+      "sha256": "bccdb4db95292898639b79d82be321f1fec00f84ae79b04824cb804cb820c8cb",
+      "status": "ACTUALLY_READ_COMPLETE",
+      "lines_inclusive": [1, 15]
+    },
+    "late_ten_editor_ch97": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+      "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+      "json_pointer": "/chapters/6",
+      "status": "ACTUALLY_READ_COMPLETE_CH97_ENTRY_ONLY",
+      "method": "逐段输出并实读该条目的完整ensure_ascii=false、indent=2 JSON渲染，共760行；渲染行号不是原文件行号。",
+      "rendered_read_ranges": [[1, 190], [191, 380], [381, 570], [571, 760]],
+      "scope_limit": "包括旧稿问题、20项beat审查、引文、五组扩写建议和UNKNOWN；未读其余九回，不将旧候选引文当作新v1引文。"
+    },
+    "selected_request": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch97.json",
+      "sha256": "dd0ccbce753b6ddbfbb656f88aa7e9d08194bcfeddd9d52595610e96abe204da",
+      "status": "SELECTED_EMBEDDED_FIELDS_ACTUALLY_READ_NOT_WHOLE_REQUEST",
+      "json_pointers": [
+        "/task/writing_task/chapter_plan/card_fields",
+        "/task/writing_task/chapter_plan/protections",
+        "/task/writing_task/chapter_plan/unresolved",
+        "/task/writing_task/chapter_plan/source_records/3",
+        "/task/writing_task/agent_contracts/0",
+        "/task/writing_task/agent_contracts/1",
+        "/task/writing_task/agent_contracts/2",
+        "/task/writing_task/agent_contracts/3",
+        "/task/writing_task/plan/data~1project~1plan_constraints_v1.json"
+      ],
+      "contract_consumption": "四份合同各自的function、12个required及8个forbidden的description和grounding语义、knowledge_binding、entry/exit/precondition、unresolved，均用每份合同独立去重的递归语义投影实读；并非逐字读完全部合同元数据。重复相同字符串只输出一次，citation/hash/path/byte-range等重复元数据有意省略。四个knowledge_binding原值另查均为null。",
+      "aliases": "四份plan合同条目与agent_contracts对应值机械比较均相等，不计作额外四次独立实读。",
+      "truncation_handling": "初次输出S1连同grounding原JSON过大而被截断，未计完整阅读；随后对S1及卡字段、S2、S3、S4分别输出无截断的语义投影并完整实读。未创建repo内临时提取文件。",
+      "scope_limit": "未读全request/messages、所有引用文件或整个世界/知识/物件注册表；未声称重跑完整请求完整性验证。"
+    },
+    "source_card": {
+      "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+      "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+      "lines_inclusive": [1081, 1141],
+      "status": "ACTUALLY_READ_COMPLETE_CH97_CARD_ONLY"
+    },
+    "not_read_not_claimed": [
+      "独立全文阅读ch96新版及ch98—100新版；因此不裁定实际相邻全文的信件时序",
+      "旧1978字符父稿全文：本次只读到editor97条目内的选引，不冒称完整父稿阅读",
+      "全书、完整前80回语料、完整phase5包或phase5读稿模板",
+      "全部史料来源、全量注册事件与地方/身体/知识检查点"
+    ]
+  },
+  "quotation_convention": "下列Q01—Q29均为冻结candidate path的逐字子串，line_start/line_end为该文件1-based原行号；引用长度不是阅读覆盖长度。",
+  "verbatim_quotes": [
+    {"id":"Q01","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":3,"line_end":3,"quote":"湘云将箸摆在桌上，才发现摆了两副。靠自己的一副齐着碗沿，另一副还朝着对面的坐处。"},
+    {"id":"Q02","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":7,"line_end":7,"quote":"她将桌角那副箸放回笼里，笼口窄，插下去又露出一截，只得拔起来换个空处。"},
+    {"id":"Q03","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":11,"line_end":11,"quote":"她道：“这是洗茶具的，别拿去。”妇人说洗净了便还，妙玉只将盆往里挪，袖口扫过桌边，遮住半边盆沿。"},
+    {"id":"Q04","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":15,"line_end":15,"quote":"惜春住的却是别处尼庵。后院几块砖高低不平，她从厨房提菜回来，早已知道在哪一块落脚"},
+    {"id":"Q05","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":23,"line_end":23,"quote":"衣内的金麒麟碰着布，隔着一层仍硬硬地顶着，她将它取下，用软布裹好，放回衣箱里。"},
+    {"id":"Q06","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":29,"line_end":29,"quote":"小徒隔门说锅里的水要先给厨房涮碗，再留洗手的一份，若等另烧便要迟。"},
+    {"id":"Q07","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":35,"line_end":35,"quote":"她把剪子退出来，道：“谁同你说我件件想得明白？”"},
+    {"id":"Q08","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":39,"line_end":39,"quote":"里头是宝玉写的家常，问她屋瓦修过没有，近来买米价钱怎样，另说窗纸正待补，住处仍照旧。"},
+    {"id":"Q09","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":41,"line_end":41,"quote":"说要换三片瓦，工钱得另算。邻妇插话问是不是还要等她家男人回来再定，湘云道：“他既不在，就问我。要等到什么时候，床才能搬回来？”"},
+    {"id":"Q10","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":47,"line_end":47,"quote":"妙玉手指停在纸边，道：“从前也有数。”小徒笑道：“从前你哪里这样一张张看着用？”老尼正将油壶收起，闻言回过身道：“只是不用你看着数罢了。”"},
+    {"id":"Q11","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":49,"line_end":49,"quote":"碗底水痕浸湿粗纸的一边。她将笔搁下，拿纸向亮处看，湿边还没浸到上头那张，便把垫纸抽出晾着。"},
+    {"id":"Q12","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":51,"line_end":51,"quote":"惜春将一小片纸夹在缺处，道：“空的先空着。”"},
+    {"id":"Q13","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":57,"line_end":57,"quote":"惜春把剪子朝亮处转了转，道：“别挡着纸。”宝玉连忙让开，原有的话搁了一搁，才问她好。"},
+    {"id":"Q14","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":61,"line_end":61,"quote":"惜春先让他把伞挟好：“伞带了，别白拿。”"},
+    {"id":"Q15","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":65,"line_end":65,"quote":"小徒赶紧将钵往里抱，才离开案脚，钵底便沁出一道水，原有的裂纹已经透了。"},
+    {"id":"Q16","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":69,"line_end":69,"quote":"妙玉偏过脸去，才道：“我去拿。只许盛这个，别搁在灶边。”"},
+    {"id":"Q17","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":71,"line_end":71,"quote":"她拿笔续抄，写了几个字，又听外头轻轻磕了一声，笔画顿在那里，末了只好另蘸墨将那笔收住。"},
+    {"id":"Q18","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":73,"line_end":73,"quote":"老尼点数时，特意将边上沾水那张抽开晾着，叫小徒不能卷紧，免得墨粘。"},
+    {"id":"Q19","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":77,"line_end":77,"quote":"湘云叫他坐一坐，自己把预先分开的包取来。那人接过，又说挪瓦时顺手压过旁边松处"},
+    {"id":"Q20","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":79,"line_end":79,"quote":"房东随后来问，湘云将换瓦和工钱说了，拿出另外包着的房钱。"},
+    {"id":"Q21","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":87,"line_end":87,"quote":"他望着那包被退回去的旧衣已不在，手往椅背摸了一下，椅背空着，只有她挂的一件灰衣。"},
+    {"id":"Q22","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":89,"line_end":89,"quote":"宝玉带伞出了门，小尼望望纸筐，说今日还剩许多未裁，惜春已经坐回案前，叫把剪子拿来。"},
+    {"id":"Q23","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":91,"line_end":91,"quote":"白瓷盆才由妇人亲自送还。盆内洗得净，外壁也揩过"},
+    {"id":"Q24","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":95,"line_end":95,"quote":"她将那副取出来，拿干布擦过，另包好收入橱里，留在桌上的仍是一副。"},
+    {"id":"Q25","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":99,"line_end":99,"quote":"次日，妙玉将架上的白瓷盆翻过来，盆沿碰着木板，发出一声轻响。她先摸盆底，昨晚那点涩意仿佛还在，又换一个指头去试。"},
+    {"id":"Q26","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":99,"line_end":99,"quote":"拿布在那一处多擦一下，才点头。水落进盆里，一圈圈向白壁漾开，她提起茶盏放下去"},
+    {"id":"Q27","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":103,"line_end":103,"quote":"惜春是在宝玉走后接着裁纸的。小尼取来的剪子沾了一线菜汁，她在水中涮过，擦干，剪口却比先前钝了些"},
+    {"id":"Q28","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":105,"line_end":105,"quote":"师父叫看灯油够不够，二人抬灯到亮处，油在底下晃，惜春把灯壶放回，先将露在外头的灯芯拨短些。灯焰低了一截"},
+    {"id":"Q29","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt","line_start":107,"line_end":107,"quote":"手按着纸角，剪子张开，门外忽又问干布在哪里，她没有抬头，只说在窗边，等那人走过，才沿着手下压住的折痕慢慢剪去。"}
+  ],
+  "protected_exact_phrases": [
+    {"text":"从前也有数。","observed_occurrences":1,"line":47,"quote_ref":"Q10","semantic_position":"小徒抱怨如今连纸也要数，妙玉不是宣布悟道，而是维护过去也有秩序的自尊；下一问才引出谁承担计数。","assessment":"EXACT_AND_CONTEXTUALLY_FUNCTIONAL"},
+    {"text":"只是不用你看着数罢了。","observed_occurrences":1,"line":47,"quote_ref":"Q10","semantic_position":"老尼正在收油壶，回应小徒的从前不用逐张看；后接送纸添油有人办理，点破原先由他人承担劳动。不是游离的合规贴句。","assessment":"EXACT_AND_CONTEXTUALLY_FUNCTIONAL_WITH_EXPLANATION_DENSITY_CONCERN"},
+    {"text":"谁同你说我件件想得明白？","observed_occurrences":1,"line":35,"quote_ref":"Q07","semantic_position":"同住者以退衣推断她已放下一切，梳子却还压着线；惜春剪尖勾布、退剪后反问，又立即处理剪子借用。反问拒绝全悟，不被旁白升格成人生答案。","assessment":"EXACT_AND_CONTEXTUALLY_FUNCTIONAL"}
+  ],
+  "required_beat_review": [
+    {"id":"97-S1-R1","selected_pointer":"/task/writing_task/agent_contracts/0/required_beats/0","assessment":"LOCALLY_DEMONSTRATED","evidence":["Q01","Q02","Q05","Q24"],"finding":"两副起摆、两根并拢属于另一副；早饭收笼、晚饭另包入橱的两次收置并不制造第三副。旧衣不合身和麒麟收箱有动作；没有补若兰死因、抛弃或终局。"},
+    {"id":"97-S1-R2","selected_pointer":"/task/writing_task/agent_contracts/0/required_beats/1","assessment":"LOCALLY_DEMONSTRATED","evidence":["Q09","Q19","Q20"],"finding":"仆妇持续做饭改衣搭手而非消失；湘云选择先补床头，工钱包由瓦匠实际接过，房钱另包拿出，不误说房租已明确交讫。三片瓦仅处理一处，另一处不肯担保，留有房东边界。未标具体金额/住所/注册身份。"},
+    {"id":"97-S1-R3","selected_pointer":"/task/writing_task/agent_contracts/0/required_beats/2","assessment":"LOCALLY_DEMONSTRATED","evidence":["Q01","Q05","Q08","Q24"],"finding":"饭3—7、衣21—25、信39—43与另两线交叉；95门声立即还原为木杖倒下，没有托梦或跨线信息。"},
+    {"id":"97-S2-R1","selected_pointer":"/task/writing_task/agent_contracts/1/required_beats/0","assessment":"LOCALLY_DEMONSTRATED","evidence":["Q03","Q06","Q15","Q16","Q23","Q25","Q26"],"finding":"专洗茶具白瓷盆拒借→粗钵旧裂透水→临时盛香灰再议→不快地移茶具交盆→洗净归还→次日摸擦后自用，链条完整且是同一盆。共食、热水先供厨房、香火米油与抄经派活形成依附，未作医学诊断或神洁结论。"},
+    {"id":"97-S2-R2","selected_pointer":"/task/writing_task/agent_contracts/1/required_beats/1","assessment":"LOCALLY_DEMONSTRATED_WITH_PROP_CONTINUITY_QUERY","evidence":["Q06","Q10","Q11","Q18"],"finding":"小徒要收碗取水、妇人要搬案收灰、老尼要交抄页，各有交差压力且无新姓名。灰衣27—31和经卷45—49具体展开；沾水纸身份在49与73之间有待澄清，详见I01。"},
+    {"id":"97-S2-R3","selected_pointer":"/task/writing_task/agent_contracts/1/required_beats/2","assessment":"LOCALLY_DEMONSTRATED","evidence":["Q03","Q06","Q10","Q15","Q25"],"finding":"粥9—13、灰衣27—31、经卷45—49均切回妙玉独立寄居小庵；65再明说她的庵。惜春没有进入，宝玉没有到此。洁欲反复发作，次日洗后仍闻盏，不被道理消除。"},
+    {"id":"97-S3-R1","selected_pointer":"/task/writing_task/agent_contracts/2/required_beats/0","assessment":"LOCALLY_DEMONSTRATED","evidence":["Q04","Q12","Q13"],"finding":"15—19先写熟悉砖路、份饭碗位、择菜留老梗和经簿；33—37退衣；51废纸翻背记待对页、53—55裁纸，均先于57宝玉到场。居住时长不补日期。"},
+    {"id":"97-S3-R2","selected_pointer":"/task/writing_task/agent_contracts/2/required_beats/1","assessment":"LOCALLY_DEMONSTRATED","evidence":["Q07","Q12","Q29"],"finding":"旧画袋旧笔留作残物/压纸或占地方，不发展终极画；梳子说忘扔却反复移置未扔，空字要求另本核对而不猜，尾声仍未对完。重复移物的密度是文学问题，不抹掉保护动作。"},
+    {"id":"97-S3-R3","selected_pointer":"/task/writing_task/agent_contracts/2/required_beats/2","assessment":"LOCALLY_DEMONSTRATED_WITH_FOCALIZATION_QUERY","evidence":["Q13","Q14","Q21","Q22","Q27","Q28"],"finding":"挡光、伞、灯壶帮忙仅在惜春庵；离开后继续黄纸和短灯芯。105不报局部耗油数，也不把S11注册油交给妙玉。87旧衣观看的句法/视角锚点仍松，详见I02；不是已确认获取另两线全景消息。"},
+    {"id":"97-S4-R1","selected_pointer":"/task/writing_task/agent_contracts/3/required_beats/0","assessment":"LOCALLY_DEMONSTRATED","evidence":["Q01","Q03","Q04","Q05","Q06","Q07","Q08","Q10","Q12"],"finding":"前三组三线顺序为饭→衣→纸，之后盆借还穿插探惜春及修瓦，最后分别回动作。没有第四次联合场景，也没有三整块写完后补总判。"},
+    {"id":"97-S4-R2","selected_pointer":"/task/writing_task/agent_contracts/3/required_beats/1","assessment":"LOCALLY_DEMONSTRATED_WITH_STYLISTIC_REPETITION_CONCERN","evidence":["Q19","Q20","Q23","Q25","Q28","Q29"],"finding":"湘云有仆妇与房工钱，妙玉被共食/香火/厨房牵制，惜春守份饭纸油分工，经济不同。尾声次日妙玉与追叙访后惜春非共同一刻；物件障碍和打断句式趋同仍需减量，见I03。"},
+    {"id":"97-S4-R3","selected_pointer":"/task/writing_task/agent_contracts/3/required_beats/2","assessment":"LOCALLY_DEMONSTRATED_NO_REGISTRY_TRANSITION","evidence":["Q04","Q08","Q13","Q22","Q25"],"finding":"宝玉仅探惜春；写给湘云的家常可让他知道屋瓦待修，却不是并置后获知三线全景。未见妙玉与惜春互通消息，亦没有新造事实ID/取得事件；localcast与局部checkpoint依旧未获执行资格。"}
+  ],
+  "forbidden_beat_review": [
+    {"id":"97-S1-F1","assessment":"NOT_OBSERVED_IN_COMPLETE_CANDIDATE","finding":"若兰缺席未定死亡、军务或婚姻终局；95错听只一瞬且有木杖实因，无望夫诗或托梦。"},
+    {"id":"97-S1-F2","assessment":"NOT_OBSERVED_IN_COMPLETE_CANDIDATE","finding":"房钱工钱份饭由动作承担；23麒麟既有衣内触感→软布收箱，83再收置，未补取得路径、馈赠或射圃物流。"},
+    {"id":"97-S2-F1","assessment":"NOT_OBSERVED_IN_COMPLETE_CANDIDATE","finding":"未见终于悟、新偈、高僧字、名茶器；99—101用盆仍摸擦闻盏，未以脏污证神洁或觉悟。"},
+    {"id":"97-S2-F2","assessment":"NOT_OBSERVED_IN_COMPLETE_CANDIDATE","finding":"未见瓜州具体传奇或贾芸无动机探庵。"},
+    {"id":"97-S3-F1","assessment":"NOT_OBSERVED_IN_COMPLETE_CANDIDATE","finding":"反问拒绝件件想明白；终极残图、偈或画跋均未见，末行仍裁偏纸。"},
+    {"id":"97-S3-F2","assessment":"NOT_OBSERVED_IN_COMPLETE_CANDIDATE","finding":"无贾芸；15别处尼庵与65妙玉寄居庵明分，不再把宝玉写到妙玉厨房。洁净/看破终极命题未同一化；操作性移物句法趋同另作文学风险，不混同地理FAIL。"},
+    {"id":"97-S4-F1","assessment":"NOT_OBSERVED_IN_COMPLETE_CANDIDATE","finding":"未见三人都看破或三段人生判词。末段是惜春独自裁纸，不是三人同悟的作者总结。"},
+    {"id":"97-S4-F2","assessment":"NOT_OBSERVED_IN_COMPLETE_CANDIDATE","finding":"未见同地会合、跨线全景消息互通、湘卫/瓜州终局或文化名物追加。此结论只限这份候选，不是全球来源PASS。"}
+  ],
+  "remaining_issues": [
+    {
+      "id":"I01",
+      "category":"PROP_IDENTITY_CONTINUITY",
+      "severity":"MEDIUM_EDITORIAL_QUERY",
+      "certainty":"TEXTUAL_DISCONTINUITY_CONFIRMED_IDENTITY_CONFLICT_NOT_CONCLUSIVE",
+      "lines":[49,73],
+      "quote_refs":["Q11","Q18"],
+      "finding":"49明确受湿的是下垫粗纸，上头那张尚未浸湿，且垫纸已经抽出晾；73老尼点数抄成页时却抽出边上沾水那张，并叮嘱别卷紧免墨粘。中间未交代成稿另受水，读者容易把原先仅作垫纸的一张误认成待交的抄页。",
+      "impact":"纸在本线承担精洁/资源/交付三重约束，其身份比泛泛又一次沾水重要；目前有把重复物件重新当成事件的缝隙。",
+      "bounded_suggestion":"后续版本只需标明老尼碰的是另晾的垫纸，或明确哪张成稿后来受湿；本读稿不改冻结正文。",
+      "not_claimed":"没有据此宣判史料失败、合同全FAIL或确定两张纸必为同一张。"
+    },
+    {
+      "id":"I02",
+      "category":"SENTENCE_AND_FOCALIZATION_ANCHOR",
+      "severity":"LOW_TO_MEDIUM",
+      "certainty":"AWKWARD_SENTENCE_CONFIRMED_KNOWLEDGE_BREACH_UNPROVEN",
+      "lines":[33,37,57,87],
+      "quote_refs":["Q21"],
+      "finding":"87“他望着那包被退回去的旧衣已不在”把望着的对象与已不在的判断挤进一个宾语。退衣已在宝玉到场前办完，本次访问又未交代他曾见那包衣或由谁得知退回，因此那包及其缺席从何进入他的观看也略悬空。",
+      "impact":"句法和视角跳一步，使退衣效果像由旁白替宝玉预知。",
+      "bounded_suggestion":"后续版本可只写他看见椅背空处和灰衣，或补清他在本线实际知道的根据；不需要让他知道妙玉/湘云，也不要为修句新造前史。",
+      "not_claimed":"这不是已证实的跨庵知识获取事件：宝玉可能有未展开的既往认识，但本回没有给足锚点。"
+    },
+    {
+      "id":"I03",
+      "category":"REPETITIVE_OBJECT_OBSTRUCTION_AND_CORRECTION_RHYTHM",
+      "severity":"MEDIUM_LITERARY_CONCERN",
+      "certainty":"READER_JUDGMENT_WITH_MULTIPLE_TEXT_ANCHORS",
+      "lines":[19,35,47,53,57,61,63,85,87,89,99,105,107],
+      "quote_refs":["Q07","Q10","Q13","Q14","Q21","Q26","Q29"],
+      "finding":"新增长度有真实分工和等待，但后半过密复用物件占位→挪开/压住→被打断→原话不再说的节拍。宝玉57原话搁住、61画纸话住口、63住惯未追问、87落发话不好再接，连续四次使他几乎只有被日务截停一种功能。惜春19画袋挡凳、53梳子压纸、85纸让水杯、89筐与空篮互挪、105梳子和画袋又占地方、107再问干布，几处增加的是同型阻碍而非新的关系代价。",
+      "impact":"三套经济虽已区分，身体和对话节奏仍有同口纠偏的余波；惜春的冷断被过度训练成每次都精确阻止他人抒情，宝玉的笨拙也变得可预测。",
+      "bounded_suggestion":"后续可保留挡光/伞和一次未出口问话，压缩其余同型中断；保留梳子未扔的首尾，但不必每次回线都再挪一件挡路物。应保住盆跨日回用的必要重复，不能把它与无新增后果的移物一并删掉。",
+      "not_claimed":"不是逐字重复段落、机械灌水的证明，也不是三人已同悟或合场的硬违规。"
+    },
+    {
+      "id":"I04",
+      "category":"EXPOSITORY_DIALOGUE_DENSITY",
+      "severity":"LOW_LITERARY_CONCERN",
+      "certainty":"READER_JUDGMENT",
+      "lines":[47],
+      "quote_refs":["Q10"],
+      "finding":"两句保护原字有前问后答和油壶动作，位置有效；其后老尼又解释送纸添油原有人做、东西不会自己长出，几乎把原话已含的劳动账再讲一遍。比旧稿作者总判收敛很多，仍是本回最像主题代言的一处。",
+      "bounded_suggestion":"若另修版本，可优先削后续释义，不动两句原字，也不抽掉老尼此刻要收案/交页的实际目的。",
+      "not_claimed":"不把一处解释性对白等同全回旁白训诫或保护句语义失败。"
+    }
+  ],
+  "time_quantity_knowledge_audit": {
+    "confirmed_new_hard_conflicts": [],
+    "time": [
+      "9早起、73晚些、93天暗、99次日是妙玉线的局部时间；不将剪辑相邻视为三处同一钟点。",
+      "103明写惜春是在宝玉走后，105今晚、107夜深是回接访后劳动；99先写妙玉次日再追叙惜春不必构成倒错。但这个回接让读者短暂重定时间，属于可读性成本，非已确认时序FAIL。",
+      "75旧衣刚放床上不是25椅背必须一直不动的逻辑否定，中间可发生未展开移置，不据此造硬矛盾。",
+      "本次未实读96全文，不借disclosure的邻章接触说明确认96回信已寄达或97这封信的具体跨回送达时间。"
+    ],
+    "quantity_and_objects": [
+      "两副→桌角两根并起→那副回笼→晚间另一副包收，数量术语已清；95那副仍露笼不与7相冲。",
+      "41/43三片先补床头、75三片上房、77结工钱、79另议墙外，未扩大成全屋已修好。97墙边仍旧潮痕亦非新漏水确证。",
+      "盆11专用、65裂钵、67再借、69送盆、91归还、93倒扣、99翻盆装水自用，持有与功能递进可追。",
+      "105灯油只有目视油在底下晃与短芯，没有数值余量。61/63灯壶用于提送、105灯壶与灯称呼略省，不足单独断言同一器物转换错误；主要可核疑点仍是I01湿纸身份。"
+    ],
+    "knowledge_and_space": [
+      "15明确惜春在别处尼庵，65明确妙玉盆仍在她寄居庵；两地未被同一个厨房/井或探访串接。",
+      "39宝玉信问瓦和米价只给予湘云家常，不能据此推全景互知；57—89宝玉所见止于惜春日常。",
+      "小徒/老尼与小尼/师父分属不同线，无新姓名与注册ID；文本不等于这些地方劳务演员localcast已KNOWN。",
+      "I02是惜春线内的焦点锚定不足，未升级为已确认三线互不知情失守。"
+    ],
+    "unknowns_preserved": [
+      "湘云住址、若兰缺席原因/持续时间/婚姻终局、麒麟的实际取得与保管链均未由本次读稿确证。",
+      "妙玉庵务依附形成过程、瓜州接口、S10/S11场级入口出口和身体知识检查点继续UNKNOWN。",
+      "惜春住了多久、宝玉访庵路线时刻、S11灯油局部耗量未获事件证明。",
+      "12个required的叙事呈现判断不改合同PENDING，也不新增世界/物件/知识状态事件。"
+    ]
+  },
+  "reader_synthesis": {
+    "specific_repairs_observed": "旧editor97的两庵合场、P-Lock两句缺字、白盆泛化、两副箸数量混乱与仆妇尺度消失，在本次实际全文中均已看到相应修复。三个独立生活机制成立，三句原字各一且均在实际口角/手活中，不只是搜索命中。",
+    "narrator_and_voice": "没有发现三人都悟/饭衣纸把她们分开的旁白总判；湘云急而会失手，妙玉拒借后仍介意触感，惜春短语并不自证觉悟。老尼47解释稍满、宝玉连续被截话和重复移物则仍显编排手，不能因旧硬错修掉便称文学通过。",
+    "next_editorial_focus": "优先核清49→73湿纸身份，修87旧衣观看句的句法与视角，再减量同型移物/截话；无需添加死亡、麒麟物流、共同庵场、神洁结论或任何新注册史实。",
+    "overall_literary_status": "LOCAL_OBLIGATIONS_SUBSTANTIALLY_ENACTED_REMAINING_CONCERNS_NOT_ACCEPTANCE"
+  },
+  "execution_boundary": {
+    "only_file_added": "artifacts/agent_research/phase6/revisions-v2/readings/ch97-v1-reader1.json",
+    "candidate_modified": false,
+    "disclosure_modified": false,
+    "request_modified": false,
+    "code_modified": false,
+    "delegated_agents_started": 0,
+    "commit_executed": false,
+    "adopt_import_or_publish_executed": false,
+    "no_human_or_source_credential_claim": true,
+    "no_automatic_state_or_authority_upgrade": true
+  }
+}

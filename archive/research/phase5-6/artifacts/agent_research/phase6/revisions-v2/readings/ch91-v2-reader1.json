@@ -1,0 +1,158 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT_CHAPTER_NARROW_REPAIR_FOLLOWUP",
+  "chapter": 91,
+  "revision": "v2",
+  "reader": "reader1",
+  "reviewer_kind": "MODEL_SUBAGENT",
+  "review_relationship": "SAME_READER_FOLLOWUP_NOT_ADDITIONAL_INDEPENDENT_REVIEWER",
+  "mode": "FEEDBACK_ONLY",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "status": "COMPLETE_V2_READ_TWO_LOCAL_REPAIRS_OBSERVED_NO_NEW_CONFIRMED_LOCAL_FAILURE",
+  "adoption": "NOT_ADOPTED",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "literary_acceptance": "NOT_GRANTED",
+  "model_identity": {
+    "declared_model": "gpt-6.1-sol",
+    "verification_status": "DECLARED_NOT_VERIFIED",
+    "provider_proof": "NONE",
+    "basis": "Invocation environment declaration only."
+  },
+  "isolation": {
+    "same_subagent_and_prior_context": true,
+    "independent_additional_reviewer": false,
+    "independent_blind_review_claimed": false,
+    "physical_process_or_worktree_isolation_verified": false,
+    "exposure": "同一reader延续原v1阅读上下文，已知原两FAIL、原风格风险及协调者三处修订说明；不是新增独立读者，也不以亲自复读冒称盲审。",
+    "further_delegation": false,
+    "other_chapters_read": false,
+    "repository_wide_scan": false
+  },
+  "input_bindings": {
+    "v2": {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt", "sha256": "0bf1f11f7a53f2112ac8eeaa21d166cf26737b7e29415de9f2624e808d22a6a1"},
+    "v2_disclosure": {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2-disclosure.json", "sha256": "3bfa1d9e016703d42a7f988b2db6fbb11a145dfa9025b854f542cb70bc4527d2"},
+    "v1": {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "sha256": "751bca67b2e72bd13883a8ee2331baaf60878967b3c4f276b277e7cc2b11c602"},
+    "v1_disclosure": {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1-disclosure.json", "sha256": "3ebe06f93131ae5758b56bdb5d30002c163e4ae660a9399524cb1fcb27230ac0"},
+    "original_reader_report": {"path": "artifacts/agent_research/phase6/revisions-v2/readings/ch91-v1-reader1.json", "sha256": "5b64ad9f45fbc97049e38b475667ea728ba6dbe0ba91c9274fe2b78c860d5661", "negative_findings_retained": true, "overwritten_or_retracted": false}
+  },
+  "actual_reading": {
+    "v2": "Full direct segmented Read, offset1 limit60 and offset61 limit70, not a diff-only reading; all prose seen through final119th line.",
+    "v2_disclosure": "Full physical compact JSON line1 read directly, including all three original/replacement spans, metadata, counts, parent and pending claims.",
+    "v1_and_v1_disclosure": "Previously actually read complete in this same reader's initial assignment, with full first/last coverage recorded in original report; unchanged hashes rechecked in follow-up. No claim of an additional fresh full v1 reading during follow-up.",
+    "original_report": "Re-read complete current report with bounded Read offsets1 and126, covering all243 physical lines and every original quote/finding.",
+    "mechanical_comparison": "Read-only isolated Python (-I) verified each disclosure original span occurs once; applying exactly the three declared substitutions to frozen v1 reproduces v2 byte-for-byte after UTF-8 decoding. Differing physical lines are only45,71,83.",
+    "not_read_this_followup": "narrow-repair request content, registered parent wrapper, official feedback object, world/object/knowledge stores, source PDFs, other chapters and other readers were not opened. Their IDs and coordinator claims are disclosure metadata, not independently verified registration/provider facts.",
+    "selected_contract_scope": "沿用同一reader此前实际读过的四份91-S1至S4操作条款及限制；本轮完整复读小说检回归，未重新完整读取递归grounding或全部底层源包。",
+    "failed_or_truncated_output_counted_as_full_reading": false
+  },
+  "reading_coverage": {
+    "status": "ACTUALLY_READ_COMPLETE_V2",
+    "start_line": 1,
+    "end_line": 119,
+    "body_start_line": 3,
+    "body_end_line": 119,
+    "start_character_offset": 0,
+    "end_character_offset_exclusive": 10172,
+    "body_start_character_offset": 25,
+    "last_prose_start_character_offset": 10071,
+    "last_prose_end_character_offset_exclusive": 10171,
+    "start_utf8_byte_offset": 0,
+    "end_utf8_byte_offset_exclusive": 30274,
+    "coverage_fraction": 1.0,
+    "first_body_quote_ref": "Q01",
+    "last_body_quote_ref": "Q12",
+    "note": "物理119行最后有换行；Read显示的末端空行提示不算新小说段落。"
+  },
+  "length_observation": {
+    "all_characters": 10172,
+    "body_characters": 10147,
+    "body_nonwhitespace_characters": 10030,
+    "body_han_characters": 8436,
+    "character_increase_from_v1": 117,
+    "minimum_body_han_7000_met": true,
+    "minimum_body_6432_met": true,
+    "editorial_notes_suggested_total_range": [8500, 10000],
+    "over_notes_upper_bound_characters": 172,
+    "interpretation": "底线仍满足，建议范围上界超172字符。保留v1报告关于9000–10500与notes范围不同的披露范围提醒；v2仅列实测counts，没有再次声称9000–10500即本轮统一授权区间。超建议范围不在此冒充语义FAIL，字数或重复段落lint PASS亦不构成文学PASS。"
+  },
+  "summary": {
+    "assessment": "TWO_SPECIFIC_LOCAL_DEFECTS_REPAIRED_WITH_LIMITATIONS_NO_OVERALL_PASS",
+    "finding": "v2确实补了第二件棉衣的当场认领、按许可登记及两件门口核出，并将回院围巾处理改为抽出掖住的巾尾。没有观察到这三处替换引入新的确定局部矛盾或削弱原S1—S4边界。原v1两FAIL对原稿继续成立，不被新版修复追溯洗掉；本次只认局部修复，不授整体ADOPT或全书资格。",
+    "v1_confirmed_failures_preserved": 2,
+    "v2_original_defects_still_confirmed": 0,
+    "new_confirmed_local_failures": [],
+    "absence_of_confirmed_failure_is_not_global_pass": true
+  },
+  "defect_followup": [
+    {
+      "original_id": "FAIL-01-SECOND-COAT-MISSING-RECEIPT",
+      "v1_status": "FAIL_RETAINED_FOR_V1",
+      "v2_assessment": "REPAIRED_LOCAL_TEXT_OBLIGATION",
+      "evidence_refs": ["Q02", "Q03", "Q04", "Q05", "Q06"],
+      "v2_lines": [45, 71, 91, 113],
+      "finding": "45行短袖棉衣从后架取下，麝月翻右襟认自缝斜线并捏棉絮，平儿说明仍要穿，书办按准取冬衣名目登记后与青灰袄并放。71行明确两件棉衣、青灰在上、短袖翻右襟，看守依书办所记逐件看过，随后核毡并准领出。91行再试尺寸/肘弯、113行称今日取回因此已有前接，不再是凭空出现的第二件物。",
+      "obligations": ["91-S2-R1: 按许可名目收领并有经手动作", "91-S4-R1: 冬衣带回小院再认"],
+      "regression_check": "45行只是认身份及用途，未提前试定合身，91行发现袖短肘紧仍有意义；认得自缝线不等于现穿舒适。被拦先披袄的寒冷/照护冲突仍在。没有追加人数、期限、官役ID或虚构历史确证。",
+      "limits": "75行仍说先把‘袄’送车而不逐件报第二衣，79行仍有衣包；已有45登记、71双件核出与91到达后，常规包内同运可合理省略，不再把每一步没报第二衣都升级FAIL。但这不是已注册物流检查点或史料制度鉴定。"
+    },
+    {
+      "original_id": "FAIL-02-SCARF-KNOT-CONTINUITY",
+      "v1_status": "FAIL_RETAINED_FOR_V1",
+      "v2_assessment": "REPAIRED_LOCAL_PHYSICAL_CONTINUITY",
+      "evidence_refs": ["Q07", "Q08", "Q09"],
+      "v2_lines": [19, 83],
+      "finding": "19行依旧最终只在颈侧掖住；83行变为巾尾卡在衣领底下，宝钗托衣领，平儿将掖紧的一截慢慢抽出，不再有突然出现的围巾结。",
+      "regression_check": "保留病人一拽便咳、平儿手抖、宝钗帮忙的身体/人际成本，没有用一句‘其实未打结’式审核旁白解释。‘先解围巾’的日常动词不专指解结，后续具体抽/掖动作已明确，不构成新矛盾。",
+      "limits": "只证明本章两处写出的物态已一致，不证明疾病/穿衣习俗之历史医学真实性。"
+    }
+  ],
+  "preserved_obligations_and_open_boundaries": [
+    {"scope": "S1受控准取", "assessment": "OBSERVED_LOCAL_NO_NEW_WEAKENING", "lines": "5–9,29–35,45,71", "finding": "通知、看守准入、书办登记和门口核领仍分开，旧称谓和钥匙不替代许可；新增衣依相同边界，而非顺手自由搬家。"},
+    {"scope": "S2三类物与回院生活", "assessment": "OBSERVED_LOCAL_NO_NEW_WEAKENING", "lines": "47–55,85–93", "finding": "不可取空匣、暂无人认旧枕仍未随拿；仅两类文化笔触；烤鞋在小院，旧衣试穿仍有尺寸后果。"},
+    {"scope": "S3雪物拾取→登记→待交回", "assessment": "UNCHANGED_PENDING_NOT_COMPLETED_HANDOFF", "lines": "57–69,103", "evidence_refs": ["Q10"], "finding": "凤姐隔纸拾起、书办记玉样物一、干纸转移与催接办仍分开；最终收受者未指派，交回仍待办，不因棉衣核领修好就推雪物也已交付。身份保持OPEN，未鉴定通灵玉。完整交回收讫仍未认证，notes允许停待办，不据此另造FAIL。"},
+    {"scope": "S4旧单、夜传、五更", "assessment": "UNCHANGED_NO_PREMATURE_DETENTION_OR_RELEASE", "lines": "95–119", "evidence_refs": ["Q11", "Q12"], "finding": "平儿自记小纸不是原旧单；官面夜话另到家中，宝钗与宝玉只听有限认单，贾芸仍跑腿。王夫人怕被留是问话不是已羁押；五更实走仍未写定罪/释放。未读92/93，不能授跨章连续性资格。"},
+    {"scope": "人物声口", "assessment": "NO_NEW_COLLAPSE_INTO_SINGLE_AUDIT_ANSWER", "lines": "39,43,45,73,83,89–91,99–115", "finding": "新增衣用手摸与认线而非一轮法律定义，围巾用两人实际托抽而非解释；凤姐护体面、平儿顾人和衣、麝月嫌冷与排揎、宝玉追人追旧物等差别未被删。仍有合规边界问答偏多的旧风险。"}
+  ],
+  "style_risks_retained_not_new_confirmed_failures": [
+    {"id": "RISK-01-REPEATED-HANDOFF-DISCLAIMER", "lines": "65,67,69,103", "status": "UNCHANGED_RETAINED", "finding": "拾起非领走、尚待接办、交回待办、回家再说待处理仍多次为同一边界保险。待办需明确，但不代表四次同功能复核都必要。"},
+    {"id": "RISK-02-OLD-LIST-NOT-ORIGINAL-REFRAIN", "lines": "95–109", "status": "UNCHANGED_RETAINED", "finding": "小纸不是原单、再问原单、纸无玉样字、拿副单再被纠正，审核式否定辨纸仍反复；听者差异可以支持部分重复，不能一概判事实错。"},
+    {"id": "RISK-03-EMPTY-HANDS-LOOP", "lines": "41,53,59–61,65,71,73–81", "status": "RETAINED_WITH_MINOR_ADDITIONAL_CHECKING", "finding": "搬物/腾手/病人晃的循环仍偏长；71行新增逐件看过后紧接原有看守对照名目，核验语略重，属小幅节奏成本，不是凭这句话确认新FAIL。"}
+  ],
+  "disclosure_comparison": {
+    "v1": "SESSION_AUTHORED_RESEARCH_REVISION_DISCLOSURE；较完整说明原长稿阅读范围、模型自报、篇幅与开放边界。",
+    "v2": "COORDINATOR_NARROW_REPAIR_DISCLOSURE明确作者在MAIN_COORDINATOR_CONTEXT_NOT_AN_INDEPENDENT_READER，列三处精确替换、原v1及报告绑定、独立复核待办，不宣称新独立作者或全套资料又读一遍。",
+    "verified_in_this_review": ["v2 candidate hash", "unchanged v1 and prior reader report hashes", "three exact replacements reproduce v2 and only physical lines45/71/83 differ", "v2 counts characters10172/body_han8436/body_nonwhitespace10030"],
+    "not_verified": ["原v1官方研究登记及其parent draft的实际内容/语义", "反馈对象和narrow-repair request全部内容及执行历史", "作者实际消费声明对应的所有调用", "provider身份/API执行凭据"],
+    "metadata_limit": "v2 disclosure尚列research_registration=PENDING、independent_recheck=PENDING，不能在本报告中擅改这些文件或当成已具整体资格；本报告是实际发生的同reader复核记录，但是否正式登记仍由其自身流程决定。prose_integrity.PASS明确仅重复段落padding lint，不是文学认可。"
+  },
+  "verbatim_quotes": [
+    {"id": "Q01", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt", "line_start": 3, "line_end": 3, "character_offset_start": 25, "character_offset_end_exclusive": 171, "quote": "却说腊尽天寒，小院屋檐的雪已消了一半，雪水顺着瓦沟滴下来，到阶前又冻成薄冰。凤姐坐在炕沿，手里拈着一件夹袄的袖口。那袄是借住时带来的，袖里棉絮结了块，才穿上片刻，胳膊便冷。平儿拿针想替她挑松，她却把手缩了回去，说道：“等你拆开，今儿又穿什么？”平儿只好将针插在衣襟上，另拿一方帕子垫在她腕下。"},
+    {"id": "Q02", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 45, "line_end": 45, "quote": "书办问这袄如今谁用，平儿说明凤姐仍要穿。他看过许可名目，记了，才将袄放到另一边，叫守物的人接着寻靠褥。"},
+    {"id": "Q03", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt", "line_start": 45, "line_end": 45, "quote": "后架又取下一件短袖棉衣，麝月翻起右襟，认出自己缝的斜线，伸手将棉絮捏了捏。平儿道：“这件她还穿。”书办照准取的冬衣名目记下，叫同青灰袄放在一处，才接着寻靠褥。"},
+    {"id": "Q04", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 71, "line_end": 71, "quote": "门房这边尚要看所领的衣物。平儿将袄和靠褥解开，麝月抱着毡在旁等。"},
+    {"id": "Q05", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt", "line_start": 71, "line_end": 71, "quote": "门房这边尚要看所领的衣物。平儿将两件棉衣和靠褥解开，青灰袄搁在上头，短袖的一件翻出右襟。看守按书办所记，一件件看过，麝月抱着毡在旁等。"},
+    {"id": "Q06", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt", "line_start": 91, "line_end": 91, "quote": "其余一件旧棉衣认来给麝月穿。她伸手说不用，宝钗把袖子朝她递去，道：“你试过再推。不是叫你抱着。”麝月套上一边，手便从短了一截的袖口露出；另一边棉絮打皱，肘弯伸不直。"},
+    {"id": "Q07", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt", "line_start": 19, "line_end": 19, "quote": "麝月把巾尾绕到背后，刚要打结，凤姐便道：“不是捆包袱。”两人拆了重绕，终于只在颈侧掖住。"},
+    {"id": "Q08", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 83, "line_end": 83, "quote": "她手抖得厉害，解了两回没解开，宝钗过来扶住巾尾，她才将结松了。"},
+    {"id": "Q09", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt", "line_start": 83, "line_end": 83, "quote": "她手抖得厉害，抽了两回，巾尾仍卡在衣领底下。宝钗过来托住衣领，她才将掖紧的那一截慢慢抽出。"},
+    {"id": "Q10", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt", "line_start": 69, "line_end": 69, "quote": "书办回来道：“只说已记，交回的事还待接着办。”平儿应了，把副单收好，没有再伸手。"},
+    {"id": "Q11", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt", "line_start": 105, "line_end": 105, "quote": "李纨先听了，叫宝玉到门内候着；宝钗从屋里出来时，只听见说是认旧单，明早须去，旁的留待当面问。"},
+    {"id": "Q12", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt", "line_start": 119, "line_end": 119, "character_offset_start": 10071, "character_offset_end_exclusive": 10171, "quote": "院门刚开，风把灯吹偏了一下。贾芸在外头低声说路上有冰，宝玉提起衣摆，迈过门槛，鞋尖却碰着昨日留下的脚凳。他弯腰将凳挪到墙边，才随人走出去。麝月站在门内看了一会，宝钗叫她回来，把还热着的半碗粥收进灶旁。"}
+  ],
+  "write_scope": {
+    "only_new_path": "artifacts/agent_research/phase6/revisions-v2/readings/ch91-v2-reader1.json",
+    "old_report_or_any_manuscript_modified": false,
+    "disclosure_request_code_modified": false,
+    "committed_or_pushed": false,
+    "adopted_or_imported": false
+  },
+  "limitations": [
+    "没有确定新局部FAIL，不等于小说全部义务已获得史料/文学PASS；雪物收讫与场级事实仍未核定。",
+    "source UNKNOWN不自动FAIL，局部小说动作也不能把原UNKNOWN升级KNOWN。",
+    "同reader追读只算同一意见的版本复核，绝不增加独立reviewer数量。",
+    "原v1报告、负面证据和风格风险保留；本次仅新增该报告，无整体ADOPT或全书资格结论。"
+  ]
+}

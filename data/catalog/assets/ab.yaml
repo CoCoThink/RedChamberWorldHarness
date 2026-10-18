@@ -1,5 +1,20 @@
 schema_version: 1
 assets:
+- id: asset:sha256:96040b8d2a49888ecee10cfc5653c3a49d4879a3931facd712697e6332924f1e
+  path: corpus/front80/v2-candidate/chapters/ch42.json
+  sha256: 96040b8d2a49888ecee10cfc5653c3a49d4879a3931facd712697e6332924f1e
+  bytes: 24337
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:378efea7ab7ce743bb9f4b9f1445f72dee182f11a04beaa74b8a52ac83b2ce94:19706e492929ba71f5d2ef220c6578af723a78af225ca7164292f2b70606970e
+  derived_from: &id001
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
 - id: asset:sha256:aa31ecdd567380d24299b4146faba615b37d2aa7d9287d99d7917667735a3c4c
   path: archive/imports/handover-20261008/07_PACKAGE_MANIFESTS/CONTENT_MANIFEST_SHA256.csv
   sha256: aa31ecdd567380d24299b4146faba615b37d2aa7d9287d99d7917667735a3c4c
@@ -9,3 +24,13 @@ assets:
   immutable: true
   origin_refs:
   - origin:handover-20261008:76cf57a80b715dcbbc1b694f
+- id: asset:sha256:c896128e112d9ca7de432cfabda240b8d8ce9403b13d2869216336d2616b2330
+  path: corpus/front80/v2-candidate/chapters/ch18.json
+  sha256: c896128e112d9ca7de432cfabda240b8d8ce9403b13d2869216336d2616b2330
+  bytes: 30032
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:378efea7ab7ce743bb9f4b9f1445f72dee182f11a04beaa74b8a52ac83b2ce94:24c4b588291530b2d5ff50f701c408f7c7c814f9758bd0387d706aa9b6988269
+  derived_from: *id001

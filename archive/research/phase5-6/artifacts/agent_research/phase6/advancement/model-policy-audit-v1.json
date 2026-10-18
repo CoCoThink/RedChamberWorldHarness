@@ -1,0 +1,3317 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_POLICY_AUDIT",
+  "audit_id": "phase6-model-policy-audit-v1",
+  "qualification": "MODEL",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "independent_human": false,
+  "isolation": "NOT_PROVEN",
+  "status": "PENDING",
+  "overall": "NO_OVERALL_PASS",
+  "release_wiring": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "read_scope": {
+    "allowed_only": [
+      "final-packet-v1.json",
+      "final-selection-v1.json",
+      "final candidate files for chapters 86,94,95,99 (exact bindings)",
+      "package descriptors and selected contracts for chapters 86,94,95,99",
+      "data/promotion/policies/agent/ch{86,94,95,99}.v1.json",
+      "src/rcwh/evaluation/policy_evidence.py API/schema",
+      "schemas/policy_evidence_reading.schema.json"
+    ],
+    "excluded": [
+      "source",
+      "corpus",
+      "opinions",
+      "mappings",
+      "human review lane"
+    ],
+    "bindings": {
+      "packet": {
+        "path": "artifacts/agent_research/phase6/advancement/final-packet-v1.json",
+        "sha256": "36a828c84c72c0ef282f7cd0812f8108e03f4d05d75b891ef2cf4bc8d0bd6112"
+      },
+      "selection": {
+        "path": "artifacts/agent_research/phase6/advancement/final-selection-v1.json",
+        "sha256": "2f0eb67e1d55a44612a1452ac9e741b353b33f7e91d793c6f7a04d305a24534a"
+      }
+    }
+  },
+  "input_bindings": [
+    {
+      "chapter": 86,
+      "bindings": {
+        "candidate": {
+          "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+          "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460"
+        },
+        "package": {
+          "path": "data/writing/packages/ch86-agent-research-v3.json",
+          "sha256": "55d4018f6f3564e1370f37f57302c8bf22df73bd3fbc73b601b57b2b9082cbe5"
+        },
+        "policy": {
+          "path": "data/promotion/policies/agent/ch86.v1.json",
+          "sha256": "e746bdac73c2c27116dcaec8b03cbf1c42120d90fe3122504bc70336f0673543"
+        },
+        "contracts": [
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S1.v2.json",
+            "sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S2.v2.json",
+            "sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S3.v2.json",
+            "sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S4.v2.json",
+            "sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S5.v2.json",
+            "sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S6.v2.json",
+            "sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522"
+          }
+        ]
+      },
+      "candidate_line_count": 107,
+      "policy_counts": {
+        "semantic_obligations": 17,
+        "forbidden": 4,
+        "anchors": 2,
+        "plock_required": true,
+        "plock_feature_count": 4
+      },
+      "coverage": {
+        "SUPPORTED": 1,
+        "VIOLATED": 0,
+        "UNKNOWN": 9,
+        "CONTEXT_ONLY": 7
+      },
+      "selected_obligations": [
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_plans/5",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_plans/5",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch86.medicine-chain",
+            "ch86.body-before-symbol"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/5",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/5",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch86.medicine-chain",
+            "ch86.body-before-symbol"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/5/forbidden_drift",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/5/forbidden_drift",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/6",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/6",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch86.medicine-chain",
+            "ch86.body-before-symbol"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/9",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/9",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch86.medicine-chain",
+            "ch86.body-before-symbol"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/0",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/0",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/1",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/1",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/2",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/2",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/3",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/3",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/4",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/4",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/plocks/r4_literary.yaml#/literary_locks/0",
+          "kind": "PLOCK_REVIEW",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/plocks/r4_literary.yaml",
+              "pointer": "/literary_locks/0",
+              "sha256": "77f7af5716b33648dcf60d4f6a1902629384b890b90d9ae7e6fd0572a27b9e66"
+            }
+          ],
+          "observation_ids": [
+            "ch86.medicine-chain",
+            "ch86.late-mundane",
+            "ch86.unfinished",
+            "ch86.body-before-symbol"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/plocks/r4_literary.yaml#/literary_locks/0/exact_anchors/1",
+          "kind": "TERMINAL_PLACEMENT",
+          "finding": "SUPPORTED",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/plocks/r4_literary.yaml",
+              "pointer": "/literary_locks/0/exact_anchors/1",
+              "sha256": "77f7af5716b33648dcf60d4f6a1902629384b890b90d9ae7e6fd0572a27b9e66"
+            }
+          ],
+          "observation_ids": [
+            "ch86.terminal"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/plocks/r4_literary.yaml#/literary_locks/0/forbidden_drift/0",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/plocks/r4_literary.yaml",
+              "pointer": "/literary_locks/0/forbidden_drift/0",
+              "sha256": "77f7af5716b33648dcf60d4f6a1902629384b890b90d9ae7e6fd0572a27b9e66"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/plocks/r4_literary.yaml#/literary_locks/0/forbidden_drift/1",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/plocks/r4_literary.yaml",
+              "pointer": "/literary_locks/0/forbidden_drift/1",
+              "sha256": "77f7af5716b33648dcf60d4f6a1902629384b890b90d9ae7e6fd0572a27b9e66"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/plocks/r4_literary.yaml#/literary_locks/0/forbidden_drift/2",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/plocks/r4_literary.yaml",
+              "pointer": "/literary_locks/0/forbidden_drift/2",
+              "sha256": "77f7af5716b33648dcf60d4f6a1902629384b890b90d9ae7e6fd0572a27b9e66"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/decisions/r4_core_completion.yaml#/decisions/0",
+          "kind": "DECISION_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/provenance/decisions/r4_core_completion.yaml",
+              "pointer": "/decisions/0",
+              "sha256": "88724681d2cd77f291d3579ee70410fb65f34e94b32a57f118dfa2da7e7dba87"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/promotion/policies/ch86.json#",
+          "kind": "LEGACY_BOOK_SCOPE_NOT_PROJECTED",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/promotion/policies/ch86.json",
+              "pointer": "",
+              "sha256": "0d830d081c16eb35cfbdaf1b68b40e8afdf2c444f44c1549eebd57f0a35c45b7"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        }
+      ],
+      "contract_obligation_counts": {
+        "contracts": 6,
+        "required_beats": 21,
+        "forbidden_beats": 19,
+        "required_objects": 4,
+        "references": 18,
+        "event_refs": 0,
+        "object_transition_refs": 0
+      },
+      "contracts": [
+        {
+          "id": "86-S1",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S1.v2.json",
+            "sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 4,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "86-S2",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S2.v2.json",
+            "sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "86-S3",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S3.v2.json",
+            "sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 4,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "86-S4",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S4.v2.json",
+            "sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 4,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "86-S5",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S5.v2.json",
+            "sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 4,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "86-S6",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S6.v2.json",
+            "sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        }
+      ]
+    },
+    {
+      "chapter": 94,
+      "bindings": {
+        "candidate": {
+          "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+          "sha256": "d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f"
+        },
+        "package": {
+          "path": "data/writing/packages/ch94-agent-research-v3.json",
+          "sha256": "3ff9a9c7358f76a1e569cc59b9bd7aa0a04689120480c4c3409215b449bc1b43"
+        },
+        "policy": {
+          "path": "data/promotion/policies/agent/ch94.v1.json",
+          "sha256": "daa30745da22bf73e4425e17295295273302a2d2d4e73ebb7e1265c091a51ed2"
+        },
+        "contracts": [
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S1.v2.json",
+            "sha256": "4fa4ed03e86fbe52f81505bde1eeecb91d20cee85950b9342fcea82e0169374d"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S2.v2.json",
+            "sha256": "68534b52619a4b6b43bad0b2a5ac280754bd48c1fbc62ef00a7eb8e0ad57ca33"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S3.v2.json",
+            "sha256": "c4430ef30c52351e52f73feb528c1696246630784ed800bbba31c58880de585f"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S4.v2.json",
+            "sha256": "c7ef3052728db805b330923719a2af2f1f6c8a2e2b8b886946001337fdc49b51"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S5.v2.json",
+            "sha256": "b84feed75fd2651686ac7f979ff8ac5797fd9b8878c0ad1337c03ec757b6da7c"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S6.v2.json",
+            "sha256": "378a7a4db4eb8deee05f4d338148e42c8c77a7b38fefb60a155b44d4bb9c8f16"
+          }
+        ]
+      },
+      "candidate_line_count": 119,
+      "policy_counts": {
+        "semantic_obligations": 11,
+        "forbidden": 1,
+        "anchors": 0,
+        "plock_required": false,
+        "plock_feature_count": 0
+      },
+      "coverage": {
+        "SUPPORTED": 0,
+        "VIOLATED": 0,
+        "UNKNOWN": 6,
+        "CONTEXT_ONLY": 5
+      },
+      "selected_obligations": [
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_plans/13",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_plans/13",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.kinship-check",
+            "ch94.child-perspective"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/13",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/13",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.kinship-check",
+            "ch94.child-perspective"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/13/forbidden_drift",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/13/forbidden_drift",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.child-perspective",
+            "ch94.not-powerful"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/15",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/15",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.kinship-check",
+            "ch94.child-perspective"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/23",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/23",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.kinship-check",
+            "ch94.child-perspective"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/24",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/24",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.kinship-check",
+            "ch94.child-perspective"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/0",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/0",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/1",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/1",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/2",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/2",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/3",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/3",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/4",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/4",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        }
+      ],
+      "contract_obligation_counts": {
+        "contracts": 6,
+        "required_beats": 18,
+        "forbidden_beats": 17,
+        "required_objects": 2,
+        "references": 18,
+        "event_refs": 1,
+        "object_transition_refs": 1
+      },
+      "contracts": [
+        {
+          "id": "94-S1",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S1.v2.json",
+            "sha256": "4fa4ed03e86fbe52f81505bde1eeecb91d20cee85950b9342fcea82e0169374d"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "94-S2",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S2.v2.json",
+            "sha256": "68534b52619a4b6b43bad0b2a5ac280754bd48c1fbc62ef00a7eb8e0ad57ca33"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 2,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "94-S3",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S3.v2.json",
+            "sha256": "c4430ef30c52351e52f73feb528c1696246630784ed800bbba31c58880de585f"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "94-S4",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S4.v2.json",
+            "sha256": "c7ef3052728db805b330923719a2af2f1f6c8a2e2b8b886946001337fdc49b51"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 2,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "94-S5",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S5.v2.json",
+            "sha256": "b84feed75fd2651686ac7f979ff8ac5797fd9b8878c0ad1337c03ec757b6da7c"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 1,
+          "object_transition_refs": 1
+        },
+        {
+          "id": "94-S6",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S6.v2.json",
+            "sha256": "378a7a4db4eb8deee05f4d338148e42c8c77a7b38fefb60a155b44d4bb9c8f16"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 4,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        }
+      ]
+    },
+    {
+      "chapter": 95,
+      "bindings": {
+        "candidate": {
+          "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+          "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438"
+        },
+        "package": {
+          "path": "data/writing/packages/ch95-agent-research-v3.json",
+          "sha256": "e35ad39628e4698e47f2a6259484874aa3fb140ea64f871f60dfe69cce298cc4"
+        },
+        "policy": {
+          "path": "data/promotion/policies/agent/ch95.v1.json",
+          "sha256": "ab7e0f61070c06186dc710175212b9d74dcf56edbbb7820bbb5b2561c0db45c9"
+        },
+        "contracts": [
+          {
+            "path": "data/planning/contracts/agent-final-v1/95-S1.v2.json",
+            "sha256": "4e115d3505f932d9c567639bc9fd698e30398262d7071a7e1acf1c31e4187ab3"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/95-S2.v2.json",
+            "sha256": "ffd1144613a890396be457cee64d05c5fb469a3bd1608f25f73d87d1b83b4de6"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/95-S3.v2.json",
+            "sha256": "b397d24aa0098ceef31ab29868911c1aa43f0f57beaeed23320e68c1ad559374"
+          }
+        ]
+      },
+      "candidate_line_count": 127,
+      "policy_counts": {
+        "semantic_obligations": 14,
+        "forbidden": 1,
+        "anchors": 0,
+        "plock_required": false,
+        "plock_feature_count": 0
+      },
+      "coverage": {
+        "SUPPORTED": 0,
+        "VIOLATED": 0,
+        "UNKNOWN": 5,
+        "CONTEXT_ONLY": 9
+      },
+      "selected_obligations": [
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_plans/14",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_plans/14",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch95.two-winters",
+            "ch95.quantity"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/14",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/14",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch95.two-winters",
+            "ch95.quantity"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/14/forbidden_drift",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/14/forbidden_drift",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch95.two-winters",
+            "ch95.not-upgrade",
+            "ch95.quantity"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/15",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/15",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch95.two-winters",
+            "ch95.quantity"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/25",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/25",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch95.two-winters",
+            "ch95.quantity"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/0",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/0",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/1",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/1",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/2",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/2",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/3",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/3",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/4",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/4",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/axes/title_axis.yaml#/title_axes/7",
+          "kind": "TITLE_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/provenance/axes/title_axis.yaml",
+              "pointer": "/title_axes/7",
+              "sha256": "b103414a7cdf773a117be5d002062932fc16f666c663e6eab815f795ee6d59e6"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/axes/title_axis.yaml#/title_axes/11",
+          "kind": "TITLE_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/provenance/axes/title_axis.yaml",
+              "pointer": "/title_axes/11",
+              "sha256": "b103414a7cdf773a117be5d002062932fc16f666c663e6eab815f795ee6d59e6"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/decisions/r4_title_axis.yaml#/decisions/11",
+          "kind": "DECISION_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/provenance/decisions/r4_title_axis.yaml",
+              "pointer": "/decisions/11",
+              "sha256": "6e608405c1dad25504bf35e4744a7392abcf87ac8ccff1b0d1b1561a33f17a8e"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/decisions/r4_title_axis.yaml#/decisions/12",
+          "kind": "DECISION_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/provenance/decisions/r4_title_axis.yaml",
+              "pointer": "/decisions/12",
+              "sha256": "6e608405c1dad25504bf35e4744a7392abcf87ac8ccff1b0d1b1561a33f17a8e"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        }
+      ],
+      "contract_obligation_counts": {
+        "contracts": 3,
+        "required_beats": 10,
+        "forbidden_beats": 10,
+        "required_objects": 6,
+        "references": 9,
+        "event_refs": 1,
+        "object_transition_refs": 4
+      },
+      "contracts": [
+        {
+          "id": "95-S1",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/95-S1.v2.json",
+            "sha256": "4e115d3505f932d9c567639bc9fd698e30398262d7071a7e1acf1c31e4187ab3"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 2,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "95-S2",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/95-S2.v2.json",
+            "sha256": "ffd1144613a890396be457cee64d05c5fb469a3bd1608f25f73d87d1b83b4de6"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "95-S3",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/95-S3.v2.json",
+            "sha256": "b397d24aa0098ceef31ab29868911c1aa43f0f57beaeed23320e68c1ad559374"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 5,
+          "forbidden_beats": 4,
+          "required_objects": 6,
+          "references": 3,
+          "event_refs": 1,
+          "object_transition_refs": 4
+        }
+      ]
+    },
+    {
+      "chapter": 99,
+      "bindings": {
+        "candidate": {
+          "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+          "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036"
+        },
+        "package": {
+          "path": "data/writing/packages/ch99-agent-research-v3.json",
+          "sha256": "67d6b9b4502ab198ea3b411a9583242cc477c889a423c9fb051761d76f960154"
+        },
+        "policy": {
+          "path": "data/promotion/policies/agent/ch99.v1.json",
+          "sha256": "9add465c9bf65deeb5de3484e4485ec1dba6c9daa4fcd0b47640c54e0a511e40"
+        },
+        "contracts": [
+          {
+            "path": "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+            "sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+            "sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+            "sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+            "sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v2/99-S5.v4.json",
+            "sha256": "20f76cdc3e741937bee015f01dad1c5cee7ab8b2810ab96f54ede6cb00f9dbad"
+          }
+        ]
+      },
+      "candidate_line_count": 105,
+      "policy_counts": {
+        "semantic_obligations": 13,
+        "forbidden": 1,
+        "anchors": 0,
+        "plock_required": false,
+        "plock_feature_count": 0
+      },
+      "coverage": {
+        "SUPPORTED": 0,
+        "VIOLATED": 0,
+        "UNKNOWN": 4,
+        "CONTEXT_ONLY": 9
+      },
+      "selected_obligations": [
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_plans/18",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_plans/18",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch99.ordinary-days",
+            "ch99.exit"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/18",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/18",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch99.ordinary-days",
+            "ch99.exit"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/18/forbidden_drift",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/18/forbidden_drift",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch99.no-jade",
+            "ch99.exit",
+            "ch99.ordinary-days"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/34",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/34",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch99.ordinary-days",
+            "ch99.exit"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/0",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/0",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/1",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/1",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/2",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/2",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/3",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/3",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/4",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/4",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/axes/title_axis.yaml#/title_axes/3",
+          "kind": "TITLE_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/provenance/axes/title_axis.yaml",
+              "pointer": "/title_axes/3",
+              "sha256": "b103414a7cdf773a117be5d002062932fc16f666c663e6eab815f795ee6d59e6"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/axes/title_axis.yaml#/title_axes/13",
+          "kind": "TITLE_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/provenance/axes/title_axis.yaml",
+              "pointer": "/title_axes/13",
+              "sha256": "b103414a7cdf773a117be5d002062932fc16f666c663e6eab815f795ee6d59e6"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/decisions/canary.yaml#/decisions/2",
+          "kind": "DECISION_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/provenance/decisions/canary.yaml",
+              "pointer": "/decisions/2",
+              "sha256": "5fa0ec32de08035c63ab99d1066d406356b727f4dde9adf407133fc42718c921"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/decisions/canary.yaml#/decisions/1",
+          "kind": "DECISION_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/provenance/decisions/canary.yaml",
+              "pointer": "/decisions/1",
+              "sha256": "5fa0ec32de08035c63ab99d1066d406356b727f4dde9adf407133fc42718c921"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        }
+      ],
+      "contract_obligation_counts": {
+        "contracts": 5,
+        "required_beats": 15,
+        "forbidden_beats": 11,
+        "required_objects": 4,
+        "references": 15,
+        "event_refs": 1,
+        "object_transition_refs": 1
+      },
+      "contracts": [
+        {
+          "id": "99-S1",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+            "sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 2,
+          "required_objects": 2,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "99-S2",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+            "sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 2,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 1,
+          "object_transition_refs": 1
+        },
+        {
+          "id": "99-S3",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+            "sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 2,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "99-S4",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+            "sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "99-S5",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v2/99-S5.v4.json",
+            "sha256": "20f76cdc3e741937bee015f01dad1c5cee7ab8b2810ab96f54ede6cb00f9dbad"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 2,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        }
+      ]
+    }
+  ],
+  "mandatory_lock_set": {
+    "count": 5,
+    "definition": "One explicit ch86 PLOCK review plus one subject-level forbidden-drift lock for each of ch86/ch94/ch95/ch99; all semantic status remains pending.",
+    "locks": [
+      {
+        "id": "ch86:PLOCK:cold-medicine",
+        "finding": "UNKNOWN",
+        "evidence_ids": [
+          "ch86.medicine-chain",
+          "ch86.late-mundane",
+          "ch86.unfinished",
+          "ch86.body-before-symbol"
+        ],
+        "note": "Final pilot exact anchors are present; PLOCK semantics remain pending."
+      },
+      {
+        "id": "ch86:forbidden-drift",
+        "finding": "UNKNOWN",
+        "evidence_ids": [
+          "ch86.no-mystical"
+        ]
+      },
+      {
+        "id": "ch94:forbidden-drift",
+        "finding": "UNKNOWN",
+        "evidence_ids": [
+          "ch94.child-perspective",
+          "ch94.not-powerful"
+        ]
+      },
+      {
+        "id": "ch95:forbidden-drift",
+        "finding": "UNKNOWN",
+        "evidence_ids": [
+          "ch95.two-winters",
+          "ch95.not-upgrade",
+          "ch95.quantity"
+        ]
+      },
+      {
+        "id": "ch99:forbidden-drift",
+        "finding": "UNKNOWN",
+        "evidence_ids": [
+          "ch99.no-jade",
+          "ch99.exit",
+          "ch99.ordinary-days"
+        ]
+      }
+    ]
+  },
+  "evidence_quotes": [
+    {
+      "id": "ch86.medicine-chain",
+      "chapter": 86,
+      "file": {
+        "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+        "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460"
+      },
+      "line_range": [
+        9,
+        9
+      ],
+      "quote": "紫鹃没有叫她。雪雁蹲到小炉旁，药吊子嘴上附着些干药汁，炉里还有红炭。",
+      "role": "PLOCK medicine-stove chain"
+    },
+    {
+      "id": "ch86.body-before-symbol",
+      "chapter": 86,
+      "file": {
+        "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+        "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460"
+      },
+      "line_range": [
+        21,
+        21
+      ],
+      "quote": "药早已煎得。紫鹃试了盏沿，热意透到指上，又晾了一会儿，才端到床前。",
+      "role": "PLOCK body-before-symbol"
+    },
+    {
+      "id": "ch86.late-mundane",
+      "chapter": 86,
+      "file": {
+        "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+        "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460"
+      },
+      "line_range": [
+        103,
+        103
+      ],
+      "quote": "他抬眼问她：“药不是还没吃么？再温一温。今儿早起她还说药苦。”",
+      "role": "mandatory exact anchor"
+    },
+    {
+      "id": "ch86.terminal",
+      "chapter": 86,
+      "file": {
+        "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+        "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460"
+      },
+      "line_range": [
+        107,
+        107
+      ],
+      "quote": "那盏药早已冷透，再没有人去温。",
+      "role": "mandatory exact terminal anchor"
+    },
+    {
+      "id": "ch86.unfinished",
+      "chapter": 86,
+      "file": {
+        "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+        "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460"
+      },
+      "line_range": [
+        35,
+        39
+      ],
+      "quote": "“笔。”黛玉说。雪雁忙拿来，见墨色旧了，问要不要另磨。",
+      "role": "PLOCK unfinished-writing"
+    },
+    {
+      "id": "ch86.no-mystical",
+      "chapter": 86,
+      "file": {
+        "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+        "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460"
+      },
+      "line_range": [
+        91,
+        93
+      ],
+      "quote": "宝玉想起雪雁平日来回话，常将姑娘一句不吃说得很重，心里便一忽儿觉得该快走，一忽儿又想到了总要先让她静着，别都挤在床边。",
+      "role": "counterevidence to mystical preknowledge"
+    },
+    {
+      "id": "ch94.kinship-check",
+      "chapter": 94,
+      "file": {
+        "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+        "sha256": "d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f"
+      },
+      "line_range": [
+        15,
+        15
+      ],
+      "quote": "人没问明白，礼倒先算清了。",
+      "role": "hard-boundary / Wang Ren"
+    },
+    {
+      "id": "ch94.child-perspective",
+      "chapter": 94,
+      "file": {
+        "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+        "sha256": "d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f"
+      },
+      "line_range": [
+        35,
+        35
+      ],
+      "quote": "巧姐把脚缩起来，不肯让她系，过了一会又问乡下有没有鸡。",
+      "role": "anti-adultification observation"
+    },
+    {
+      "id": "ch94.local-rescue",
+      "chapter": 94,
+      "file": {
+        "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+        "sha256": "d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f"
+      },
+      "line_range": [
+        39,
+        41
+      ],
+      "quote": "刘姥姥念一声佛，又把篮子里的布掀开，道：“我家炕窄倒窄，腾一头出来能睡。",
+      "role": "刘姥姥 local material rescue"
+    },
+    {
+      "id": "ch94.not-powerful",
+      "chapter": 94,
+      "file": {
+        "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+        "sha256": "d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f"
+      },
+      "line_range": [
+        47,
+        49
+      ],
+      "quote": "那妇人说有活便不能，没活可帮看，针线倒能借。姥姥只认这一点，回来同平儿说准了炕和饭、自己暂能在家的安排。",
+      "role": "counterevidence to omnipotent rescue"
+    },
+    {
+      "id": "ch94.fiber-life",
+      "chapter": 94,
+      "file": {
+        "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+        "sha256": "d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f"
+      },
+      "line_range": [
+        79,
+        79
+      ],
+      "quote": "窗外狗叫一阵，鸡在近处扑翅，她睁着眼，见屋角纺车影子斜在墙上，轻轻晃",
+      "role": "required child material detail"
+    },
+    {
+      "id": "ch95.two-winters",
+      "chapter": 95,
+      "file": {
+        "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+        "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438"
+      },
+      "line_range": [
+        3,
+        5
+      ],
+      "quote": "却说春夏过去，寒风又起，已是家败后第二个冬天。",
+      "role": "poverty continuity"
+    },
+    {
+      "id": "ch95.quantity",
+      "chapter": 95,
+      "file": {
+        "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+        "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438"
+      },
+      "line_range": [
+        49,
+        49
+      ],
+      "quote": "宝玉望着问：“怎么只有两碗半？”",
+      "role": "quantity observation; unresolved 95/96"
+    },
+    {
+      "id": "ch95.pawn-ticket",
+      "chapter": 95,
+      "file": {
+        "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+        "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438"
+      },
+      "line_range": [
+        59,
+        61
+      ],
+      "quote": "钱推出来，票写好，对方将赎取的规矩讲给他听",
+      "role": "pawn ticket continuity"
+    },
+    {
+      "id": "ch95.not-upgrade",
+      "chapter": 95,
+      "file": {
+        "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+        "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438"
+      },
+      "line_range": [
+        67,
+        71
+      ],
+      "quote": "那就又让我守着潮炭熬。灯点得亮，灶眼不会自己红。",
+      "role": "no one-shot external upgrade"
+    },
+    {
+      "id": "ch95.felt",
+      "chapter": 95,
+      "file": {
+        "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+        "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438"
+      },
+      "line_range": [
+        99,
+        101
+      ],
+      "quote": "旧毡拖来，说纸烂了只能慢慢弄，夜里先顾人睡的这边。",
+      "role": "破毡 material continuity"
+    },
+    {
+      "id": "ch95.neighbor",
+      "chapter": 95,
+      "file": {
+        "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+        "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438"
+      },
+      "line_range": [
+        81,
+        83
+      ],
+      "quote": "邻妇便将叶递给她们，说自家择多了，嫩的还能煮，不要放到明日黄了。",
+      "role": "neighbor aid bounded"
+    },
+    {
+      "id": "ch99.ordinary-days",
+      "chapter": 99,
+      "file": {
+        "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+        "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036"
+      },
+      "line_range": [
+        3,
+        3
+      ],
+      "quote": "日子照旧过了几日。",
+      "role": "ordinary-day buffer"
+    },
+    {
+      "id": "ch99.exit",
+      "chapter": 99,
+      "file": {
+        "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+        "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036"
+      },
+      "line_range": [
+        25,
+        27
+      ],
+      "quote": "“我不回来过日子了。”宝钗没有立刻说话。",
+      "role": "逐项 exit / no farewell"
+    },
+    {
+      "id": "ch99.meal",
+      "chapter": 99,
+      "file": {
+        "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+        "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036"
+      },
+      "line_range": [
+        29,
+        29
+      ],
+      "quote": "那一顿仍是三个人围桌，麝月将他碗里少盛的饭压平，又添一小匙。",
+      "role": "two-person meal continuity context"
+    },
+    {
+      "id": "ch99.temple-work",
+      "chapter": 99,
+      "file": {
+        "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+        "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036"
+      },
+      "line_range": [
+        43,
+        43
+      ],
+      "quote": "散课后，经册收了，小和尚叫他去看锅。他应着，将灶旁半桶水提进厨房，添过水，便守在那里搅动",
+      "role": "寺中搬柴/日常 labor"
+    },
+    {
+      "id": "ch99.no-jade",
+      "chapter": 99,
+      "file": {
+        "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+        "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036"
+      },
+      "line_range": [
+        25,
+        27
+      ],
+      "quote": "门外晾绳上的衣裳滴着水，落在石边，声音比方才细了。",
+      "role": "counterevidence to jade-trigger claim"
+    },
+    {
+      "id": "ch99.unfinished",
+      "chapter": 99,
+      "file": {
+        "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+        "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036"
+      },
+      "line_range": [
+        99,
+        105
+      ],
+      "quote": "宝钗说这里不多，她便不伸手，只坐在旁边看了一会儿。",
+      "role": "unfinished garment / ordinary work"
+    },
+    {
+      "id": "ch99.two-meal-late",
+      "chapter": 99,
+      "file": {
+        "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+        "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036"
+      },
+      "line_range": [
+        95,
+        105
+      ],
+      "quote": "够咱们两个吃的就是了。",
+      "role": "two-person late meal"
+    }
+  ],
+  "chapters": [
+    {
+      "chapter": 86,
+      "bindings": {
+        "candidate": {
+          "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+          "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460"
+        },
+        "package": {
+          "path": "data/writing/packages/ch86-agent-research-v3.json",
+          "sha256": "55d4018f6f3564e1370f37f57302c8bf22df73bd3fbc73b601b57b2b9082cbe5"
+        },
+        "policy": {
+          "path": "data/promotion/policies/agent/ch86.v1.json",
+          "sha256": "e746bdac73c2c27116dcaec8b03cbf1c42120d90fe3122504bc70336f0673543"
+        },
+        "contracts": [
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S1.v2.json",
+            "sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S2.v2.json",
+            "sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S3.v2.json",
+            "sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S4.v2.json",
+            "sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S5.v2.json",
+            "sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/86-S6.v2.json",
+            "sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522"
+          }
+        ]
+      },
+      "candidate_line_count": 107,
+      "policy_counts": {
+        "semantic_obligations": 17,
+        "forbidden": 4,
+        "anchors": 2,
+        "plock_required": true,
+        "plock_feature_count": 4
+      },
+      "coverage": {
+        "SUPPORTED": 1,
+        "VIOLATED": 0,
+        "UNKNOWN": 9,
+        "CONTEXT_ONLY": 7
+      },
+      "selected_obligations": [
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_plans/5",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_plans/5",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch86.medicine-chain",
+            "ch86.body-before-symbol"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/5",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/5",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch86.medicine-chain",
+            "ch86.body-before-symbol"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/5/forbidden_drift",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/5/forbidden_drift",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/6",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/6",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch86.medicine-chain",
+            "ch86.body-before-symbol"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/9",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/9",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch86.medicine-chain",
+            "ch86.body-before-symbol"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/0",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/0",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/1",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/1",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/2",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/2",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/3",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/3",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/4",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/4",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/plocks/r4_literary.yaml#/literary_locks/0",
+          "kind": "PLOCK_REVIEW",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/plocks/r4_literary.yaml",
+              "pointer": "/literary_locks/0",
+              "sha256": "77f7af5716b33648dcf60d4f6a1902629384b890b90d9ae7e6fd0572a27b9e66"
+            }
+          ],
+          "observation_ids": [
+            "ch86.medicine-chain",
+            "ch86.late-mundane",
+            "ch86.unfinished",
+            "ch86.body-before-symbol"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/plocks/r4_literary.yaml#/literary_locks/0/exact_anchors/1",
+          "kind": "TERMINAL_PLACEMENT",
+          "finding": "SUPPORTED",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/plocks/r4_literary.yaml",
+              "pointer": "/literary_locks/0/exact_anchors/1",
+              "sha256": "77f7af5716b33648dcf60d4f6a1902629384b890b90d9ae7e6fd0572a27b9e66"
+            }
+          ],
+          "observation_ids": [
+            "ch86.terminal"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/plocks/r4_literary.yaml#/literary_locks/0/forbidden_drift/0",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/plocks/r4_literary.yaml",
+              "pointer": "/literary_locks/0/forbidden_drift/0",
+              "sha256": "77f7af5716b33648dcf60d4f6a1902629384b890b90d9ae7e6fd0572a27b9e66"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/plocks/r4_literary.yaml#/literary_locks/0/forbidden_drift/1",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/plocks/r4_literary.yaml",
+              "pointer": "/literary_locks/0/forbidden_drift/1",
+              "sha256": "77f7af5716b33648dcf60d4f6a1902629384b890b90d9ae7e6fd0572a27b9e66"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/plocks/r4_literary.yaml#/literary_locks/0/forbidden_drift/2",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/plocks/r4_literary.yaml",
+              "pointer": "/literary_locks/0/forbidden_drift/2",
+              "sha256": "77f7af5716b33648dcf60d4f6a1902629384b890b90d9ae7e6fd0572a27b9e66"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/decisions/r4_core_completion.yaml#/decisions/0",
+          "kind": "DECISION_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/provenance/decisions/r4_core_completion.yaml",
+              "pointer": "/decisions/0",
+              "sha256": "88724681d2cd77f291d3579ee70410fb65f34e94b32a57f118dfa2da7e7dba87"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/promotion/policies/ch86.json#",
+          "kind": "LEGACY_BOOK_SCOPE_NOT_PROJECTED",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 86,
+              "path": "data/promotion/policies/ch86.json",
+              "pointer": "",
+              "sha256": "0d830d081c16eb35cfbdaf1b68b40e8afdf2c444f44c1549eebd57f0a35c45b7"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        }
+      ],
+      "contract_obligation_counts": {
+        "contracts": 6,
+        "required_beats": 21,
+        "forbidden_beats": 19,
+        "required_objects": 4,
+        "references": 18,
+        "event_refs": 0,
+        "object_transition_refs": 0
+      },
+      "contracts": [
+        {
+          "id": "86-S1",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S1.v2.json",
+            "sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 4,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "86-S2",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S2.v2.json",
+            "sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "86-S3",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S3.v2.json",
+            "sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 4,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "86-S4",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S4.v2.json",
+            "sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 4,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "86-S5",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S5.v2.json",
+            "sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 4,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "86-S6",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/86-S6.v2.json",
+            "sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        }
+      ]
+    },
+    {
+      "chapter": 94,
+      "bindings": {
+        "candidate": {
+          "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+          "sha256": "d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f"
+        },
+        "package": {
+          "path": "data/writing/packages/ch94-agent-research-v3.json",
+          "sha256": "3ff9a9c7358f76a1e569cc59b9bd7aa0a04689120480c4c3409215b449bc1b43"
+        },
+        "policy": {
+          "path": "data/promotion/policies/agent/ch94.v1.json",
+          "sha256": "daa30745da22bf73e4425e17295295273302a2d2d4e73ebb7e1265c091a51ed2"
+        },
+        "contracts": [
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S1.v2.json",
+            "sha256": "4fa4ed03e86fbe52f81505bde1eeecb91d20cee85950b9342fcea82e0169374d"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S2.v2.json",
+            "sha256": "68534b52619a4b6b43bad0b2a5ac280754bd48c1fbc62ef00a7eb8e0ad57ca33"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S3.v2.json",
+            "sha256": "c4430ef30c52351e52f73feb528c1696246630784ed800bbba31c58880de585f"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S4.v2.json",
+            "sha256": "c7ef3052728db805b330923719a2af2f1f6c8a2e2b8b886946001337fdc49b51"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S5.v2.json",
+            "sha256": "b84feed75fd2651686ac7f979ff8ac5797fd9b8878c0ad1337c03ec757b6da7c"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/94-S6.v2.json",
+            "sha256": "378a7a4db4eb8deee05f4d338148e42c8c77a7b38fefb60a155b44d4bb9c8f16"
+          }
+        ]
+      },
+      "candidate_line_count": 119,
+      "policy_counts": {
+        "semantic_obligations": 11,
+        "forbidden": 1,
+        "anchors": 0,
+        "plock_required": false,
+        "plock_feature_count": 0
+      },
+      "coverage": {
+        "SUPPORTED": 0,
+        "VIOLATED": 0,
+        "UNKNOWN": 6,
+        "CONTEXT_ONLY": 5
+      },
+      "selected_obligations": [
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_plans/13",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_plans/13",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.kinship-check",
+            "ch94.child-perspective"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/13",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/13",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.kinship-check",
+            "ch94.child-perspective"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/13/forbidden_drift",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/13/forbidden_drift",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.child-perspective",
+            "ch94.not-powerful"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/15",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/15",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.kinship-check",
+            "ch94.child-perspective"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/23",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/23",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.kinship-check",
+            "ch94.child-perspective"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/24",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/24",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch94.kinship-check",
+            "ch94.child-perspective"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/0",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/0",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/1",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/1",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/2",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/2",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/3",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/3",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/4",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 94,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/4",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        }
+      ],
+      "contract_obligation_counts": {
+        "contracts": 6,
+        "required_beats": 18,
+        "forbidden_beats": 17,
+        "required_objects": 2,
+        "references": 18,
+        "event_refs": 1,
+        "object_transition_refs": 1
+      },
+      "contracts": [
+        {
+          "id": "94-S1",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S1.v2.json",
+            "sha256": "4fa4ed03e86fbe52f81505bde1eeecb91d20cee85950b9342fcea82e0169374d"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "94-S2",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S2.v2.json",
+            "sha256": "68534b52619a4b6b43bad0b2a5ac280754bd48c1fbc62ef00a7eb8e0ad57ca33"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 2,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "94-S3",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S3.v2.json",
+            "sha256": "c4430ef30c52351e52f73feb528c1696246630784ed800bbba31c58880de585f"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "94-S4",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S4.v2.json",
+            "sha256": "c7ef3052728db805b330923719a2af2f1f6c8a2e2b8b886946001337fdc49b51"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 2,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "94-S5",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S5.v2.json",
+            "sha256": "b84feed75fd2651686ac7f979ff8ac5797fd9b8878c0ad1337c03ec757b6da7c"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 1,
+          "object_transition_refs": 1
+        },
+        {
+          "id": "94-S6",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/94-S6.v2.json",
+            "sha256": "378a7a4db4eb8deee05f4d338148e42c8c77a7b38fefb60a155b44d4bb9c8f16"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 4,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        }
+      ]
+    },
+    {
+      "chapter": 95,
+      "bindings": {
+        "candidate": {
+          "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+          "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438"
+        },
+        "package": {
+          "path": "data/writing/packages/ch95-agent-research-v3.json",
+          "sha256": "e35ad39628e4698e47f2a6259484874aa3fb140ea64f871f60dfe69cce298cc4"
+        },
+        "policy": {
+          "path": "data/promotion/policies/agent/ch95.v1.json",
+          "sha256": "ab7e0f61070c06186dc710175212b9d74dcf56edbbb7820bbb5b2561c0db45c9"
+        },
+        "contracts": [
+          {
+            "path": "data/planning/contracts/agent-final-v1/95-S1.v2.json",
+            "sha256": "4e115d3505f932d9c567639bc9fd698e30398262d7071a7e1acf1c31e4187ab3"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/95-S2.v2.json",
+            "sha256": "ffd1144613a890396be457cee64d05c5fb469a3bd1608f25f73d87d1b83b4de6"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v1/95-S3.v2.json",
+            "sha256": "b397d24aa0098ceef31ab29868911c1aa43f0f57beaeed23320e68c1ad559374"
+          }
+        ]
+      },
+      "candidate_line_count": 127,
+      "policy_counts": {
+        "semantic_obligations": 14,
+        "forbidden": 1,
+        "anchors": 0,
+        "plock_required": false,
+        "plock_feature_count": 0
+      },
+      "coverage": {
+        "SUPPORTED": 0,
+        "VIOLATED": 0,
+        "UNKNOWN": 5,
+        "CONTEXT_ONLY": 9
+      },
+      "selected_obligations": [
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_plans/14",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_plans/14",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch95.two-winters",
+            "ch95.quantity"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/14",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/14",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch95.two-winters",
+            "ch95.quantity"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/14/forbidden_drift",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/14/forbidden_drift",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch95.two-winters",
+            "ch95.not-upgrade",
+            "ch95.quantity"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/15",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/15",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch95.two-winters",
+            "ch95.quantity"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/25",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/25",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch95.two-winters",
+            "ch95.quantity"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/0",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/0",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/1",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/1",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/2",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/2",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/3",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/3",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/4",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/4",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/axes/title_axis.yaml#/title_axes/7",
+          "kind": "TITLE_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/provenance/axes/title_axis.yaml",
+              "pointer": "/title_axes/7",
+              "sha256": "b103414a7cdf773a117be5d002062932fc16f666c663e6eab815f795ee6d59e6"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/axes/title_axis.yaml#/title_axes/11",
+          "kind": "TITLE_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/provenance/axes/title_axis.yaml",
+              "pointer": "/title_axes/11",
+              "sha256": "b103414a7cdf773a117be5d002062932fc16f666c663e6eab815f795ee6d59e6"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/decisions/r4_title_axis.yaml#/decisions/11",
+          "kind": "DECISION_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/provenance/decisions/r4_title_axis.yaml",
+              "pointer": "/decisions/11",
+              "sha256": "6e608405c1dad25504bf35e4744a7392abcf87ac8ccff1b0d1b1561a33f17a8e"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/decisions/r4_title_axis.yaml#/decisions/12",
+          "kind": "DECISION_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 95,
+              "path": "data/provenance/decisions/r4_title_axis.yaml",
+              "pointer": "/decisions/12",
+              "sha256": "6e608405c1dad25504bf35e4744a7392abcf87ac8ccff1b0d1b1561a33f17a8e"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        }
+      ],
+      "contract_obligation_counts": {
+        "contracts": 3,
+        "required_beats": 10,
+        "forbidden_beats": 10,
+        "required_objects": 6,
+        "references": 9,
+        "event_refs": 1,
+        "object_transition_refs": 4
+      },
+      "contracts": [
+        {
+          "id": "95-S1",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/95-S1.v2.json",
+            "sha256": "4e115d3505f932d9c567639bc9fd698e30398262d7071a7e1acf1c31e4187ab3"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 2,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "95-S2",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/95-S2.v2.json",
+            "sha256": "ffd1144613a890396be457cee64d05c5fb469a3bd1608f25f73d87d1b83b4de6"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "95-S3",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v1/95-S3.v2.json",
+            "sha256": "b397d24aa0098ceef31ab29868911c1aa43f0f57beaeed23320e68c1ad559374"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 5,
+          "forbidden_beats": 4,
+          "required_objects": 6,
+          "references": 3,
+          "event_refs": 1,
+          "object_transition_refs": 4
+        }
+      ]
+    },
+    {
+      "chapter": 99,
+      "bindings": {
+        "candidate": {
+          "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+          "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036"
+        },
+        "package": {
+          "path": "data/writing/packages/ch99-agent-research-v3.json",
+          "sha256": "67d6b9b4502ab198ea3b411a9583242cc477c889a423c9fb051761d76f960154"
+        },
+        "policy": {
+          "path": "data/promotion/policies/agent/ch99.v1.json",
+          "sha256": "9add465c9bf65deeb5de3484e4485ec1dba6c9daa4fcd0b47640c54e0a511e40"
+        },
+        "contracts": [
+          {
+            "path": "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+            "sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+            "sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+            "sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+            "sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05"
+          },
+          {
+            "path": "data/planning/contracts/agent-final-v2/99-S5.v4.json",
+            "sha256": "20f76cdc3e741937bee015f01dad1c5cee7ab8b2810ab96f54ede6cb00f9dbad"
+          }
+        ]
+      },
+      "candidate_line_count": 105,
+      "policy_counts": {
+        "semantic_obligations": 13,
+        "forbidden": 1,
+        "anchors": 0,
+        "plock_required": false,
+        "plock_feature_count": 0
+      },
+      "coverage": {
+        "SUPPORTED": 0,
+        "VIOLATED": 0,
+        "UNKNOWN": 4,
+        "CONTEXT_ONLY": 9
+      },
+      "selected_obligations": [
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_plans/18",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_plans/18",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch99.ordinary-days",
+            "ch99.exit"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/18",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/18",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch99.ordinary-days",
+            "ch99.exit"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/chapter_protections/18/forbidden_drift",
+          "kind": "FORBIDDEN_DRIFT",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/chapter_protections/18/forbidden_drift",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch99.no-jade",
+            "ch99.exit",
+            "ch99.ordinary-days"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/implementation_facts/34",
+          "kind": "CURRENT_IMPLEMENTATION",
+          "finding": "UNKNOWN",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/implementation_facts/34",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [
+            "ch99.ordinary-days",
+            "ch99.exit"
+          ],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/0",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/0",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/1",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/1",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/2",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/2",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/3",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/3",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/implementation_alignment/m6.json#/cross_chapter_protections/4",
+          "kind": "CROSS_CHAPTER_CONTEXT",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/implementation_alignment/m6.json",
+              "pointer": "/cross_chapter_protections/4",
+              "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/axes/title_axis.yaml#/title_axes/3",
+          "kind": "TITLE_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/provenance/axes/title_axis.yaml",
+              "pointer": "/title_axes/3",
+              "sha256": "b103414a7cdf773a117be5d002062932fc16f666c663e6eab815f795ee6d59e6"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/axes/title_axis.yaml#/title_axes/13",
+          "kind": "TITLE_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/provenance/axes/title_axis.yaml",
+              "pointer": "/title_axes/13",
+              "sha256": "b103414a7cdf773a117be5d002062932fc16f666c663e6eab815f795ee6d59e6"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/decisions/canary.yaml#/decisions/2",
+          "kind": "DECISION_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/provenance/decisions/canary.yaml",
+              "pointer": "/decisions/2",
+              "sha256": "5fa0ec32de08035c63ab99d1066d406356b727f4dde9adf407133fc42718c921"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        },
+        {
+          "id": "data/provenance/decisions/canary.yaml#/decisions/1",
+          "kind": "DECISION_BOUNDARY",
+          "finding": "CONTEXT_ONLY",
+          "basis": [
+            {
+              "chapter": 99,
+              "path": "data/provenance/decisions/canary.yaml",
+              "pointer": "/decisions/1",
+              "sha256": "5fa0ec32de08035c63ab99d1066d406356b727f4dde9adf407133fc42718c921"
+            }
+          ],
+          "observation_ids": [],
+          "note": "Model-only observation; exact candidate text does not establish semantic entailment."
+        }
+      ],
+      "contract_obligation_counts": {
+        "contracts": 5,
+        "required_beats": 15,
+        "forbidden_beats": 11,
+        "required_objects": 4,
+        "references": 15,
+        "event_refs": 1,
+        "object_transition_refs": 1
+      },
+      "contracts": [
+        {
+          "id": "99-S1",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+            "sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 2,
+          "required_objects": 2,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "99-S2",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+            "sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 2,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 1,
+          "object_transition_refs": 1
+        },
+        {
+          "id": "99-S3",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+            "sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 2,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "99-S4",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+            "sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 3,
+          "required_objects": 1,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        },
+        {
+          "id": "99-S5",
+          "binding": {
+            "path": "data/planning/contracts/agent-final-v2/99-S5.v4.json",
+            "sha256": "20f76cdc3e741937bee015f01dad1c5cee7ab8b2810ab96f54ede6cb00f9dbad"
+          },
+          "status": "AGENT_EDITED",
+          "required_beats": 3,
+          "forbidden_beats": 2,
+          "required_objects": 0,
+          "references": 3,
+          "event_refs": 0,
+          "object_transition_refs": 0
+        }
+      ]
+    }
+  ],
+  "known_negatives": [
+    "Historical ch86 original long-v1 exact-anchor absence is retained as a historical negative and is not re-evaluated from this final candidate.",
+    "Final ch86 pilot exact anchors are present, but their semantic interpretation remains UNKNOWN/PENDING.",
+    "95/96 quantity remains UNKNOWN; the ch95 quantity observation is not a resolution.",
+    "The ch95 contract mismatch is a separate unresolved issue and is not collapsed into policy evidence.",
+    "Exact quotes and line ranges are integrity-bound observations only; they do not prove entailment, literary adequacy, author eligibility, isolation, or release readiness."
+  ],
+  "limitations": [
+    "No human/provider claim and no independent human admission.",
+    "No source/corpus/opinion/mapping reads and no human review lane.",
+    "No overall PASS, no release authorization, no catalog/API/build/test/import wiring.",
+    "MODEL/NONE/PENDING only."
+  ]
+}

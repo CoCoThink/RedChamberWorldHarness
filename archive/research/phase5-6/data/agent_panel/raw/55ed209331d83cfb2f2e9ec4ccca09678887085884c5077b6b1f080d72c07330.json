@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "packet": {
+    "path": "artifacts/agent_research/reading/set-p8-v1/public/packet.json",
+    "sha256": "53d857bc30b6df44fa51c498256254676a29df309677baa6e1c2ee36f70a725f"
+  },
+  "reviewer": {
+    "id": "reader:p8-one",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "reading-p8-one",
+    "model": {
+      "label": "gpt-6.1-sol",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "results": [
+    {
+      "subject_id": "read-ac0031c62acffe18f0f7c9ce",
+      "subject_sha256": "70a6cad2d0d4387a8776c59e19a156cbb413a9a756a9bc30d3dec35678ea8c0f",
+      "verdict": "PASS",
+      "notes": "FEEDBACK_ONLY / NOT_ADOPTED_NOT_RELEASED。仅指完整实读本组92–97回633物理行后，未发现可用两侧原句坐实的局部硬矛盾，不是整体文学合格证或无错证明。packet subjects[0]精确正文路径为artifacts/agent_research/reading/set-p8-v1/public/read-ac0031c62acffe18f0f7c9ce.txt，实测sha256与subject_sha256一致。证据在同目录submissions/reader-one-subject-one-observations-v1.json：51条精确引文、14双侧接口，80项quote核验。羁押准回与实际出门、凤姐死亡与孩子临住交接、典衣当票钱米和回信延迟均可跟踪；失碗并非本组确定事件，不强制补场；湘云独膳原因未明，不自动FAIL。文学上临终与照护有力，但审计式限制知情、量米移盆留布等同构动作过密。与另两组无总赢家结论。MODEL_SUBAGENT非独立人类，同repo非权限隔离，模型预训练污染无法证无；额外上下文、顺序和记忆局限详见冻结阶段报告及comparison。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-c25e7c679cc1c53fb9e60dfb",
+      "subject_sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+      "verdict": "FAIL",
+      "notes": "FEEDBACK_ONLY / NOT_ADOPTED_NOT_RELEASED。完整实读92–97回719物理行。packet subjects[1]精确正文路径为artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt，实测sha256与subject_sha256一致。冻结第二阶段报告reader-one-subject-two-observations-v1.json含49条引文、13双侧接口和78项quote核验。确定局部FAIL F01：77行宝玉已穿那双粗厚袜并看见脚跟赶补针脚，79行过两日宝钗入视，91行又过两日茜雪来见，95行茜雪却说同一袜跟“脚跟那里还是昨夜赶着补的”。没有返补或新替换袜，99行叫以后坏了带出来再补不能修复此前排他时序。仅此确定FAIL，不能被声口活、关系冲撞有力或三方整体不明冲掉。蓝布包“昨夜”、援米一半/大半及分装重复另列疑点，不升级为硬FAIL。此判定不等于文学全盘否定：围巾施舍与过冬冲突、袭人新旧分寸和妙玉出门佛事有力；95回动作笑料与物事复点过长。无总赢家，不作独立人类资格或采用放行证据。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-79dc845cf19f1795e236e82b",
+      "subject_sha256": "c64115b3ee31142253454e43be41a45a62bd4bf7ffc72d90f60797a4345b4636",
+      "verdict": "PASS",
+      "notes": "FEEDBACK_ONLY / NOT_ADOPTED_NOT_RELEASED。仅指完整实读92–97回718物理行后，未找到排他确定的局部硬矛盾，不是无瑕证明。packet subjects[2]精确正文路径为artifacts/agent_research/reading/set-p8-v1/public/read-79dc845cf19f1795e236e82b.txt，实测sha256与subject_sha256一致。冻结第三阶段报告reader-one-subject-three-observations-v1.json含47条引文、13双侧接口及74项quote核验。准回与实际跨监门分开；凤姐死亡明说、硬缝改好再移交孩子；失碗明确是普通盛水碗而非小木碗，现包衣褥与留城散扣不混；钱米当票回信分别交代；两庵明说分处。94回先写一夜、天亮后又“第一日将晚”、当票跨季从外压转匣底、小木碗用途口径等列疑点/省略，不凭潜在过渡自动FAIL。文学上王仁媒人与车脚的实压、麝月对低租劳动代价及失碗的委屈、凤姐改袖缝有力；微动作阻塞密度与审计式旁白风险显著。湘云缺席原因未定、落发过程省笔不按旧书或他组强补。顺序/疲劳/记忆/预训练与非权限隔离局限详见comparison，无总赢家。",
+      "sample_checks": []
+    }
+  ],
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false
+}

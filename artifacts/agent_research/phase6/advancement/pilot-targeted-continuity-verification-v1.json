@@ -1,0 +1,318 @@
+{
+  "schema_version": "1.0",
+  "verification_id": "pilot-targeted-continuity-verification-v1",
+  "review_kind": "一次定向连续性复核；非盲比较，非第二全书读者",
+  "classification": {
+    "judgment_source": "MODEL",
+    "independent_full_book_reader": "NONE",
+    "disposition": "FEEDBACK_ONLY",
+    "policy_qualification_claim": "NONE"
+  },
+  "constraints": {
+    "source_texts_modified": false,
+    "old_package_modified": false,
+    "other_opinions_or_mappings_read": false,
+    "delegation_skills_api_tests_build_import_catalog_operations": "NONE",
+    "execution_note": "仅以标准库读取准读范围计算SHA-256；未运行项目代码。",
+    "only_created_file": "artifacts/agent_research/phase6/advancement/pilot-targeted-continuity-verification-v1.json",
+    "frozen_on_write": true,
+    "freeze_meaning": "本次交付写成后不再修改；不是只读权限设置、提交或后续流程资格认定。"
+  },
+  "read_scope": {
+    "root": "/mnt/d/Code/RedChamberWorldHarness",
+    "method": "下列三个全文各进行一次真实完整Read；另外三个限定片段各进行一次真实Read。没有把哈希读取等同于额外的全文审读。",
+    "hash_algorithm": "SHA-256",
+    "hash_encoding": "原始文件字节；片段为指定闭区间行的原始字节按原顺序拼接，保留原换行；片段哈希不是整文件哈希。",
+    "full_reads": [
+      {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch99-pilot-v1.txt",
+        "scope": "FULL",
+        "read_complete": true,
+        "physical_lines_by_splitlines": 105,
+        "read_tool_display_end_line": 106,
+        "byte_count": 27651,
+        "sha256": "ab680bb5a313e31b6fe572084123d4a1c624edacdfbed0b6bc3138a215630ea7"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+        "scope": "FULL",
+        "read_complete": true,
+        "physical_lines_by_splitlines": 119,
+        "read_tool_display_end_line": 120,
+        "byte_count": 28276,
+        "sha256": "0fe24fd08773b9b9fe670146b40d25e4f489a7607252c50826b5ca834fe1dddb"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+        "scope": "FULL",
+        "read_complete": true,
+        "physical_lines_by_splitlines": 97,
+        "read_tool_display_end_line": 98,
+        "byte_count": 27856,
+        "sha256": "a3b5b31e5e95d6ac659eedd2fc1f35db455bab55489a9c91c41a45565f9f6b7e"
+      }
+    ],
+    "excerpt_reads": [
+      {
+        "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt",
+        "scope": "EXCERPT_ONLY",
+        "lines_inclusive": [39, 47],
+        "read_complete_for_declared_excerpt": true,
+        "whole_file_read_claim": false,
+        "byte_count": 3210,
+        "excerpt_sha256": "6fbc5e0df5d86de0e120214bdb8640fb3ac94d1b00f11d930e35a41b9166af23"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt",
+        "scope": "EXCERPT_ONLY",
+        "lines_inclusive": [85, 89],
+        "read_complete_for_declared_excerpt": true,
+        "whole_file_read_claim": false,
+        "byte_count": 1403,
+        "excerpt_sha256": "1ad2b72a2bdc251c4dd7bced929c80dcc94d46240e4d1eceec95e36e16dd5b3f"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt",
+        "scope": "EXCERPT_ONLY",
+        "lines_inclusive": [119, 123],
+        "read_complete_for_declared_excerpt": true,
+        "whole_file_read_claim": false,
+        "byte_count": 1121,
+        "excerpt_sha256": "c2c77cd55fab5ee20dd56138eb349e4f776fe7a58325e30c68040899d87a82ca"
+      }
+    ],
+    "line_count_note": "Read末尾另展示一个空行行号；内容行引用沿用Read行号，原始物理行数另由bytes.splitlines()记录。",
+    "unread_limits": [
+      "未读旧99的39–47行之外内容。",
+      "未读新95的85–89、119–123行之外内容。",
+      "未读第97回；本报告中的99:97指新99第97行，不是第97回。",
+      "未读其他章、意见、映射、旧package或其元数据；不声称全书连续性已核实。"
+    ]
+  },
+  "findings": [
+    {
+      "id": "CH99_HEARING_AND_TIME_LAYERS",
+      "evidence": [
+        {
+          "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch99-pilot-v1.txt",
+          "line": 25,
+          "quote": "宝玉等她提盆走开，才低声说自己想出去。",
+          "significance": "前夜谈话有刻意避开麝月的明确动作。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch99-pilot-v1.txt",
+          "line": 25,
+          "quote": "我不回来过日子了。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch99-pilot-v1.txt",
+          "line": 33,
+          "quote": "他抬眼看她，终于道：“你别赶了。我这次不回来住。”麝月将针捏在指头上，手停在半空，先看他，又朝宝钗那里看。",
+          "significance": "临门不是只有读者知道：直接对话和停针反应把信息送到麝月面前。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch99-pilot-v1.txt",
+          "line": 35,
+          "quote": "“你要住哪里？”她问。宝玉道先出去。宝钗在窗下说昨夜问过，还没答。",
+          "significance": "同时标出昨夜与临门两个时间层，也显示麝月对离居消息的实质回应。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch99-pilot-v1.txt",
+          "line": 97,
+          "quote": "麝月忽然道那日若早知道，就该拦住门。宝钗说他那时也已说了。麝月道：“对你说了，我哪里听见？我还在那里找袜子，想着替他缝鞋。”宝钗低头看着盆中，道她自己听见了，也没有留住。"
+        }
+      ],
+      "argument_for_coherent_reading": [
+        "前夜25行明确等麝月走开才低声说，35行又由宝钗说昨夜问过。97行的‘对你说了’可以指宝钗较早得到的不回过日子消息，‘若早知道’可以强调本来应当更早知道、而非否认临门终于听见。前夜不知、临门才知，是有实文支点的读法。",
+        "麝月临门仍接粥、关心袜鞋，后来寻问能否劝回、关心有饭吃。97行置于减为两人下米的时刻，可读作受伤中的反驳：不是冷静重述自己的听觉记录，而是抗拒‘已经告诉过你，便算交代了’。这不是无根据的情感猜测，但仍属人物话语解释。",
+        "宝钗后句‘她自己听见了，也没有留住’可把争论从谁较早知道，转向即便听见也不能留住，并不必然是叙述者判定麝月从未获告知。"
+      ],
+      "argument_against_coherent_reading": [
+        "33行向麝月直说‘不回来住’，且有停针、看向宝钗；35行麝月随即问住处。不能把她解释为没有听到这次临门告知。",
+        "97行没有把‘我哪里听见’限定为昨夜；其前文是‘那日’‘拦住门’‘他那时也已说了’，默认指向离门节点。‘找袜子，想着替他缝鞋’又紧贴31–35行临门家务，令纯粹前夜指代不稳。",
+        "‘若早知道’容许较早/较晚的区分，却不足以自动改写紧随其后的‘我哪里听见’。宝钗也没有明说‘我是指昨夜’，更没有点破反话。把两种解释叠加成唯一答案，会抹去文本仍在制造的事实记录张力。"
+      ],
+      "judgment": "可以作前夜未闻、临门才闻以及受伤反话的通读，但只能判为有根据而未封口的解释空间；不能认定完全无连续性问题。若97行被当作临门未获告知的字面事实，便与33–35行相冲突。不是已经证明的不可调和硬矛盾，也不是可用慈善解释宣布消失的张力。",
+      "narrow_repair_advice": {
+        "allowed_as_feedback": [
+          "优先保留33–35行已明确发生的告知与反应；若作者希望97行是事实性追述，可仅在97行限定‘昨夜/早些’的听闻范围，但不得把找袜缝鞋也自动挪到前夜。",
+          "若作者要保留受伤反话，可仅把97行争执焦点改为‘临走才说，已来不及’，而不再字面否认临门听见；这属于选择并收窄人物话意，须由作者确认。",
+          "若作者明确愿意保留有棱角的不可靠人物反驳，也可以不改；反馈应保留此处张力记录，不能标成事实连续性已无歧义。"
+        ],
+        "not_allowed_without_new_author_decision": [
+          "删除或淡化33–35行，使麝月变成始终未获告知。",
+          "补出前夜麝月另在找袜缝鞋、隔墙听漏、失忆或只当玩笑等未写事件。",
+          "把97行解释强行提升为已证实的叙述事实，或以纯情绪解释注销反方。"
+        ],
+        "implementation": "NONE"
+      }
+    },
+    {
+      "id": "OLD_CH99_DOOR_STATE_COUNTERCLAIM",
+      "original_counterclaim_status": "用户指定的原始反方声明；先核实，不作为既定事实照录。",
+      "original_counterclaim": "旧99第43行门已推开，第45行又拉闩。",
+      "evidence": [
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt",
+          "line": 43,
+          "quote": "麝月拿秤出去，回来时把门扇推得大些，侧身让出能走的地方。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt",
+          "line": 45,
+          "quote": "宝玉将鞋垫收好，自己拉开门闩。门外有人问隔壁借秤，又有人为菜价争执，挤在门旁，他让了一让，才跨出去。"
+        }
+      ],
+      "argument_for_counterclaim": "43行不仅说门开，而且说推得更大、侧身让出通路；此前麝月已经拿秤出去又回来。45行‘拉开门闩’通常预设门又关拢且已上闩。相邻动作没有交代这个状态变化，按连续场面的默认读法，门状态确实突跳。不能说开门与拉闩本来毫无关系。",
+      "argument_against_strict_mutual_exclusion": "43行不是宣称门一直开着到宝玉出门；45行另有取鞋垫、塞包、移盆、收鞋垫等动作间隙。期间存在省略关门再上闩的逻辑可能。因此两句不是在同一时刻对同一门状态作形式上互斥的断言。所需关门上闩却未写，且与43行刚让出通路的动作方向相逆，不能把这种可能冒充已发生事实。",
+      "judgment": "反方准确抓到原文局部衔接缺口；更精确的分类是‘默认连续动作下的门态跳变／缺少关门上闩的过渡’，不是逻辑上绝不可能并存的互斥事实。既非无问题，也未强到必须认定不可修复硬矛盾。",
+      "pilot_local_observation": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch99-pilot-v1.txt",
+        "line": 41,
+        "quote": "他自己拉开门闩。巷里正有人为菜价争执，隔壁又来借秤，见门开了，便朝里问。",
+        "judgment": "新99在该局部先拉闩开门，再让借秤者进来、自己出去，未重现旧43→45的同一门态跳变。此观察只据准读文本，不外推旧章其余部分。"
+      },
+      "narrow_repair_advice": {
+        "allowed_as_feedback": "若日后另获授权处理旧正文，可优先删去或改写45行再次拉闩的动作，保留门已打开的状态；当前任务不改旧稿。",
+        "not_allowed": "以补写某人关门上闩当作无事实增量的文字清理；那是新增动作。",
+        "implementation": "NONE"
+      }
+    },
+    {
+      "id": "CH94_DAY_LABEL",
+      "evidence": [
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+          "line": 77,
+          "quote": "傍晚饭端来，粗碗沉，巧姐两手捧着，碗沿比从前厚，低头去喝差些磕着牙。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+          "line": 79,
+          "quote": "这一夜巧姐靠着姥姥睡，褥子铺平，边上却有一处往里卷。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+          "line": 83,
+          "quote": "天亮后，姥姥先下地忙水。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+          "line": 89,
+          "quote": "午前姥姥要去院里收拾，不能一直陪她，便把小凳搬到门口，叫她坐在看得见的地方。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+          "line": 113,
+          "quote": "刘家那头，第一日将晚，邻妇来取线，巧姐忙将篮捧给她，以为自己惹下错。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt",
+          "line": 119,
+          "quote": "夜里再听狗叫，她仍醒着。"
+        }
+      ],
+      "argument_for_narrow_repair": "到村傍晚、首夜、天亮、午前、饭后及日头挪移已形成先后。113行回到刘家并承接同一邻妇与线篮，‘第一日’若从到村日计便与已经过夜不合。删除计日，只保留‘这日将晚’，不添加新日程、时间跨度或场外事件。它把局部日序交还已经写出的叙事链。",
+      "counterargument": "‘第一日’也可能意指第一整个白日；107–111行又切回城里，113行可能被作者当成回到某一日的提示。但原文没有给出‘完整白日’这个计日起点。替换会撤去原有计日主张，不能说语义完全未动；它只是比补‘第二日’或指定回叙更少承诺。",
+      "judgment": "可建议仅将113行‘第一日将晚’改为‘这日将晚’。属于撤去歧义计数、保留当地将晚场景的窄修，不是新增世界事实；仍需如实说明删掉了计日断言，而非等义标点修正。",
+      "narrow_repair_advice": {
+        "allowed_as_feedback": {
+          "line": 113,
+          "old": "刘家那头，第一日将晚，",
+          "proposed": "刘家那头，这日将晚，"
+        },
+        "not_allowed_without_author_decision": [
+          "改成‘第二日将晚’或添加确切相隔日数。",
+          "补出回叙说明、重新安排行车回话日期，借此重建完整日历。"
+        ],
+        "implementation": "NONE"
+      }
+    },
+    {
+      "id": "CH95_CH96_RICE_AND_PORRIDGE",
+      "declared_author_constraint": "本题明确保留96原有下锅量米‘两碗半’，不改旧package。这里把该约束作为作者选择，不把它伪装为经全文比较得出的事实。",
+      "evidence": [
+        {
+          "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt",
+          "line": 87,
+          "quote": "“煮好了分出来，是两碗半熟粥。我下锅量米，不是照着这几只吃饭碗摆一排。”"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/advancement/pilot-authored-v1/ch95-pilot-v1.txt",
+          "line": 121,
+          "quote": "麝月问明日可仍照今日煮，宝钗说两碗半熟粥，早上稀些，中午留着温。宝玉指那只小木碗，问还用这个么，麝月道：“盛粥是这只，下锅我另量。你别一早拿去装浆。”"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+          "line": 49,
+          "quote": "米落下时，旧米里的黄粒渐渐被新米盖住，麝月手才松，宝钗便说够了。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+          "line": 51,
+          "quote": "宝玉挪了盆，回到米瓮旁边，听麝月问仍旧量两碗半么，便往门内看了看。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+          "line": 53,
+          "quote": "宝钗将平日量米的碗递给麝月。麝月仍量了两碗半，倒进淘盆，叫宝玉端水。他端来时，新米和旧米分着颜色，一边白亮，一边微黄。"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+          "line": 91,
+          "quote": "“你问她吃起来怎样便是，别把咱们这里的话当方子送去。我也不过今日这样淘了一回。”"
+        }
+      ],
+      "semantic_boundary": {
+        "ch95": "两碗半明指煮好分出的熟粥；下锅生米另量，但准读片段没有给出生米数。121行还表达了明日照今日的打算；不是仅87行的一次口误说明。",
+        "ch96": "量米碗、淘盆、加水煮饭的动作明指下锅生米两碗半。该对象本身并不含糊。原文还明确淘盆中有新旧米，不能把题面‘新米仍两碗半’扩张成两碗半全是新米。",
+        "not_established": "95未给出生米数，96也未给出最终熟饭数量；未获两章量器容量是否一致、产出对应关系或明确同一餐次的证据。不能把相同数字当成相同物料量，也不能证明两种数量在现实烹煮上已经兼容。"
+      },
+      "argument_for_removing_carryover_only": [
+        "两章的数量指向不同：95是熟粥产出，96是生米投入。字面并未同时宣称同一种物料既是某量又不是某量，因此现有准读证据不足以推出数值硬矛盾。",
+        "作者既已明确保留96下锅生米两碗半，不必为辨识96的对象而暂缓：对象已经由53行淘米动作定实。可把窄修目标严格限成撤去51行‘仍旧’和53行‘仍’造成的跨章同口径承接暗示，而不是重算任何物料。",
+        "‘平日量米的碗’说的是量器日常用途，并未给出95的生米数；在只去数量承接词的方案中，不必借机改掉这件量器的设定。"
+      ],
+      "argument_against_claiming_full_resolution": [
+        "96的‘仍旧/仍’也可能只承接其自身既有用米习惯，不必唯一指向95；称之为已证实的跨章承接错误过强。删除是减少承接承诺，不是发现了唯一错字。",
+        "95的121行仍有‘明日可仍照今日煮’的计划。准读范围不能确定96这餐与该计划的精确关系，也没有实际产出数量；删96两个承接词不能凭空证明95计划的执行或取消。",
+        "若作者真正要求的是同一日常口粮方案、同一组量器与投入产出闭合，则缺少输入定义；此时必须暂缓‘整体已解决’的结论。不能以日子不同、来了新米或客人未留饭等现有细节自行推导改变份量的原因。"
+      ],
+      "judgment": "在题目已明确保留96生米两碗半、不动旧package的条件下，可以提出只去96两个数量承接词的窄修；无需再把96的生米对象说成未明。它能解决的是读者被‘仍’引向同口径沿用的额外暗示，不能宣告米粥数量连续性整体已经解决。若‘解决’意指投入产出或95翌日计划已一一核合，则必须暂缓该更强结论，而非创造换算。",
+      "narrow_repair_advice": {
+        "allowed_as_feedback_under_declared_author_constraint": [
+          {
+            "line": 51,
+            "old": "听麝月问仍旧量两碗半么",
+            "proposed": "听麝月问量两碗半么",
+            "purpose": "只撤去数量沿用的明示词；保留问句、量米行为和原数。"
+          },
+          {
+            "line": 53,
+            "old": "麝月仍量了两碗半，倒进淘盆",
+            "proposed": "麝月量了两碗半，倒进淘盆",
+            "purpose": "与51行同时撤去数量承接词，保留两碗半生米和淘米动作。"
+          }
+        ],
+        "insufficient": "只删53行一个‘仍’，却留下51行‘仍旧量两碗半’，不能完成这个有限的去承接目标。",
+        "defer_if_requested": "如需确认两章属于完全同一输入输出方案，须先由作者明确比较口径或接受不作数值闭合；本次不追读、不补设定。",
+        "not_allowed": [
+          "把95两碗半熟粥解释成两碗半生米。",
+          "把96两碗半生米解释成两碗半熟粥，或仅凭同数宣称相等。",
+          "增添米粥换算、量器容量、膨胀比例、每人份量或任何新数量。",
+          "增添因新米、客人或日次而改变口粮的场外解释。",
+          "为配合新95重写96的生米原数、改动旧package或宣称其冻结资格已经通过。"
+        ],
+        "implementation": "NONE"
+      }
+    }
+  ],
+  "summary": {
+    "ch99": "前夜/临门分层及受伤反话可通读，但97行临门指向与33–35行明确听闻间仍有实文张力；不据此强判硬矛盾，也不清零问题。",
+    "old_ch99_door": "原始反方有文本依据；更准确是门态过渡省略所致的默认衔接缺口，不是逻辑绝对互斥。新99准读局部未重现同一缺口。",
+    "ch94": "可仅撤去‘第一日’计数，建议‘这日将晚’，不新增日序事实。",
+    "ch96": "保留两碗半生米可仅去51‘仍旧’与53‘仍’以撤去承接暗示；不能把这项窄修写成投入产出或跨章份量已核合。更强闭合判断暂缓。",
+    "authority": "MODEL / NONE / FEEDBACK_ONLY；仅定向反馈，不是policy资格、通行证或第二全书审读。",
+    "final_action": "只新建本JSON，正文与旧package均未改；写完冻结。"
+  }
+}

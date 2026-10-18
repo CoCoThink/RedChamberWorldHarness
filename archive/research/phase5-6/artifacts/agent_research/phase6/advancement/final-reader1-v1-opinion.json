@@ -1,0 +1,222 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "packet": {
+    "path": "artifacts/agent_research/phase6/advancement/final-packet-v1.json",
+    "sha256": "36a828c84c72c0ef282f7cd0812f8108e03f4d05d75b891ef2cf4bc8d0bd6112"
+  },
+  "reviewer": {
+    "id": "phase6-pilot-reader1-v1",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "phase6-pilot-reader1-context1",
+    "model": {
+      "label": "session model environment label unverified",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "results": [
+    {
+      "subject_id": "chapter-86",
+      "subject_sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460",
+      "verdict": "UNVERIFIED",
+      "notes": "单回普通病晨至死亡、死后料理、迟到与冷药收束完整；大部分显式合同叙事要求有可见支持。 负面/边界：早起闻药苦的知识来源未在本回正面出现；医疗延误能否造成影响不做反事实认证。 判定范围：全文已读但无资格/全书/历史/运行认证。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "package-86",
+      "subject_sha256": "55d4018f6f3564e1370f37f57302c8bf22df73bd3fbc73b601b57b2b9082cbe5",
+      "verdict": "UNVERIFIED",
+      "notes": "完整读取PACKAGE描述符，hash匹配，plan所选合同逐份实核；该回candidate全文和合同语义投影已读。未读其world/章卡/史料/资产/exemplar/源集完整闭包，包内声明不证明世界执行或文学资格。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-86-S1",
+      "subject_sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：明日安排与长期逐层病沉、米汤药水齐备有正文支持，不是断药钱骤死。 反证/未决：病晨资源齐备不证明若医者及时到场也不能影响结果；合同医疗反事实未外部核实。 世界执行、来源真实性及资格仍未验证；证据ID 86-MORNING,86-MEDICAL。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-86-S2",
+      "subject_sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：跑腿带回被别事绊住的反馈，药与照料继续；请医和病危报宝玉分两链。 反证/未决：医者地点、时刻未锁；正文普通延误不能升级为世界事件执行或证明无人主观责任。 世界执行、来源真实性及资格仍未验证；证据ID 86-MEDICAL,86-MESSAGE。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-86-S3",
+      "subject_sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：G01空字未补；只抽露出的笺不翻稿，握笔失败未变成绝命诗。 反证/未决：85回A01与全书旧作未在本轮读取，不能认证跨章任务完全分离。 世界执行、来源真实性及资格仍未验证；证据ID 86-G01,86-PEN。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-86-S4",
+      "subject_sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：死后第一轮身体与水衣料理可见，病危和死讯分次报告，无轮流长篇遗言。 反证/未决：料理与报信交错，不把合同source顺序当严格计时；地方礼俗真实性未查核。 世界执行、来源真实性及资格仍未验证；证据ID 86-DEATH,86-DEATH-RELAY。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-86-S5",
+      "subject_sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：病势转坏经雪雁外传，黛玉先死，宝玉到场后由王夫人紫鹃告知。 反证/未决：到场前无精确死时知识；注册获取事件、行程精确映射仍UNKNOWN。 世界执行、来源真实性及资格仍未验证；证据ID 86-MESSAGE,86-DEATH,86-ARRIVAL。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-86-S6",
+      "subject_sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：请求再温未执行，大半盏药仍在，冷药实物收束且不追加诗或复活。 反证/未决：早起闻药苦的场外来源未在回内展示；药碗实名ID及场级温度事件未验证。 世界执行、来源真实性及资格仍未验证；证据ID 86-REQUEST,86-COLD。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "chapter-94",
+      "subject_sha256": "d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f",
+      "verdict": "UNVERIFIED",
+      "notes": "暂缓风险与真正安置分开，收信和发信分开；散扣城中、缝扣随衣，没有两地同时持散扣。 负面/边界：注册旧包S02→S06缺桥仍未解决；53现场另包不能证明原OBJ同一身份。107回城支线日期与113这日接续仍不直接。 判定范围：全文已读但无资格/全书/历史/运行认证。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "package-94",
+      "subject_sha256": "3ff9a9c7358f76a1e569cc59b9bd7aa0a04689120480c4c3409215b449bc1b43",
+      "verdict": "UNVERIFIED",
+      "notes": "完整读取PACKAGE描述符，hash匹配，plan所选合同逐份实核；该回candidate全文和合同语义投影已读。未读其world/章卡/史料/资产/exemplar/源集完整闭包，包内声明不证明世界执行或文学资格。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-94-S1",
+      "subject_sha256": "4fa4ed03e86fbe52f81505bde1eeecb91d20cee85950b9342fcea82e0169374d",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：说亲信息含糊、礼钱车脚先谈；没有先写卖成或犯罪组织，巧姐只期待出门。 反证/未决：王仁媒人实体ID、礼钱事实及婚书无注册核验，有限风险不推已成交。 世界执行、来源真实性及资格仍未验证；证据ID 94-RISK,94-HALT。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-94-S2",
+      "subject_sha256": "68534b52619a4b6b43bad0b2a5ac280754bd48c1fbc62ef00a7eb8e0ad57ca33",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：谁领谁接和车是否今日互相抵牾，27行经平儿转报贾母贾琏，非全员同步知情。 反证/未决：只证明正文问答来源与转告，不能认证底层knowledge事件存在。 世界执行、来源真实性及资格仍未验证；证据ID 94-RISK,94-HALT。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-94-S3",
+      "subject_sha256": "c4430ef30c52351e52f73feb528c1696246630784ed800bbba31c58880de585f",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：贾琏明确孩子今日不去，脚钱另谈，暂缓由具体经手落实。 反证/未决：不是司法裁罪或法律解除，风险识别也不等于已到乡居安全。 世界执行、来源真实性及资格仍未验证；证据ID 94-HALT。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-94-S4",
+      "subject_sha256": "c7ef3052728db805b330923719a2af2f1f6c8a2e2b8b886946001337fdc49b51",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：先回家核炕饭与看护，再接孩子；邻妇只在无活时搭手，不有大银神救。 反证/未决：口头接纳不证明正式法律监护；农村劳动制度及空间均未外证。 世界执行、来源真实性及资格仍未验证；证据ID 94-CAPACITY,94-NEIGHBOR。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-94-S5",
+      "subject_sha256": "b84feed75fd2651686ac7f979ff8ac5797fd9b8878c0ad1337c03ec757b6da7c",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：当前衣堆取衣现包，旧府小包不知在何处；衣被筹办、陪到车边及实到均有叙事经手。 反证/未决：旧府注册包S02到借院S06缺桥未闭合：现场新干布包不证明是同一OBJ-QIAOJIE-BUNDLE，更不重写OT94.from。 世界执行、来源真实性及资格仍未验证；证据ID 94-NEW-BUNDLE,94-BUTTON-CITY,94-RETURN。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-94-S6",
+      "subject_sha256": "378a7a4db4eb8deee05f4d338148e42c8c77a7b38fefb60a155b44d4bb9c8f16",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：鞋饭鸡狗线筐的学习有成本，短曲不定词，误叫平儿没有把平儿移到乡下；到达回讯不冒称全程近况。 反证/未决：107回城支线与113这日接回哪个日期仍歧义；正文跨抵达夜及翌日，不以function第一日强压成一天。 世界执行、来源真实性及资格仍未验证；证据ID 94-LOCAL-DAY,94-SONG,94-RETURN,94-UNKNOWN-NIGHT,94-OPEN-END。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "chapter-95",
+      "subject_sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438",
+      "verdict": "FAIL",
+      "notes": "通知、看房、付款、弃架、实搬、典衣、米炭灯油竞争和漏风一夜有连续场景，未把贫困写断炊或修行。 负面/边界：硬负面：合同要保留当票压针线盒；正文103行当票收进旧针线匣底，是具体存放动作不同，不能凭文学偏好或hash/导入PASS抹去。即使把合同习语宽解为盒压票，匣底收存仍不等同压在盒下的可见动作。 判定范围：仅对95-S3-R2当票/针线盒具体动作的一致性失败，不等于文学否决或整章全面失败。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "package-95",
+      "subject_sha256": "e35ad39628e4698e47f2a6259484874aa3fb140ea64f871f60dfe69cce298cc4",
+      "verdict": "UNVERIFIED",
+      "notes": "完整读取PACKAGE描述符，hash匹配，plan所选合同逐份实核；该回candidate全文和合同语义投影已读。未读其world/章卡/史料/资产/exemplar/源集完整闭包，包内声明不证明世界执行或文学资格。95-S3-R2当票存放动作与选中正文103行不一致，未因package可读或导入声明而抹去。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-95-S1",
+      "subject_sha256": "4e115d3505f932d9c567639bc9fd698e30398262d7071a7e1acf1c31e4187ab3",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：房东通知不能续住，现金和米量推动找房；明确家败后第二冬，不再查抄或断炊。 反证/未决：第一冬前文未读，第二冬仅是本回明示，不认证全书确切纪年。 世界执行、来源真实性及资格仍未验证；证据ID 95-WINTER,95-LABOR。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-95-S2",
+      "subject_sha256": "ffd1144613a890396be457cee64d05c5fb469a3bd1608f25f73d87d1b83b4de6",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：两处比较价格、光线、灶水距离漏风；贾芸只带看，代管收款，麝月参与第二看。 反证/未决：没有精确租金与历史约据，候选地点与实际住所的registry映射未执行。 世界执行、来源真实性及资格仍未验证；证据ID 95-HOUSING,95-CONSENT。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-95-S3",
+      "subject_sha256": "b397d24aa0098ceef31ab29868911c1aa43f0f57beaeed23320e68c1ad559374",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：架商议留原院、铺盖锅衣实搬，借留瓮筐、旧米炭进入日用；典衣换有限米炭现金，两碗半明确熟粥，仍有明日。 反证/未决：硬负面：95-S3-R2明要当票压针线盒，选中正文103行却将当票收进旧针线匣底，物件动作/位置不同，不得称该具体义务完全兑现。铺盖注册移动及小包是否实名通灵玉仍未核。 世界执行、来源真实性及资格仍未验证；证据ID 95-MOVE,95-ARRIVAL,95-PAWN,95-COOKED,95-TICKET-BOX,CONTRACT-95-S3-R2。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "chapter-99",
+      "subject_sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036",
+      "verdict": "UNVERIFIED",
+      "notes": "97明确临走才告诉且未当真，与33—35已听到相容；寺中极短场前插，最终两碗饭及未补完旧衣，不再切寺；线已穿新针但未拉齐。 负面/边界：还想着的时间回指仍轻微含糊；55已晚后走寺返城85又晚，行旅时长压缩歧义仍在；13概括性纠错和家务微障碍密度未因修一句自动消失。 判定范围：全文已读但无资格/全书/历史/运行认证。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "package-99",
+      "subject_sha256": "67d6b9b4502ab198ea3b411a9583242cc477c889a423c9fb051761d76f960154",
+      "verdict": "UNVERIFIED",
+      "notes": "完整读取PACKAGE描述符，hash匹配，plan所选合同逐份实核；该回candidate全文和合同语义投影已读。未读其world/章卡/史料/资产/exemplar/源集完整闭包，包内声明不证明世界执行或文学资格。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-99-S1",
+      "subject_sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：普通数日、还书、少食和逐项不接未来差事渐进；先告妻、婢临走才知，不全员同步悟透。 反证/未决：98玉归及文化接口前文未读，不能由入口RETURNED标签证明本回退出的精神因果。 世界执行、来源真实性及资格仍未验证；证据ID 99-PRIOR-DISCLOSURE,99-HEARD。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-99-S2",
+      "subject_sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：去处与回不回的现实追问、饭袜鞋照料各有声口；97现承认临走被告知，未字面否认33—35。 反证/未决：还想着可回指告知前照料或持续预期，轻微时间语用歧义保留；未决定玉的尘世去处。 世界执行、来源真实性及资格仍未验证；证据ID 99-PRIOR-DISCLOSURE,99-HEARD,99-QUESTION,99-REPAIR。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-99-S3",
+      "subject_sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：模糊目击、误认、伤脚花费、见真人拒回、家中再听转话逐层呈现，不继承读者先见寺的知识。 反证/未决：55天已往晚到寻寺会面返城85窗外晚了，时长压缩仍歧义；并未完成探庵证据或注册knowledge事件。 世界执行、来源真实性及资格仍未验证；证据ID 99-EVENING,99-REFUSAL,99-REPORT,99-LATE-HOME。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-99-S4",
+      "subject_sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：晚饭按两人量，新针已穿未拉齐即顾火，衣未补完；末镜两碗饭不再切寺，不被写成经济恢复。 反证/未决：未注册旧衣不能同95典青夹袄或100旧衣；局部米余量和执行事件未证。 世界执行、来源真实性及资格仍未验证；证据ID 99-MEASURE,99-THREADED,99-ENDING。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-99-S5",
+      "subject_sha256": "20f76cdc3e741937bee015f01dad1c5cee7ab8b2810ab96f54ede6cb00f9dbad",
+      "verdict": "PENDING",
+      "notes": "指定语义投影完整阅读，非整份grounding。正文支持：离门隔些时日后仅一次极短课诵不熟、指页与看锅，再写寻找家中末镜，符合S1→S2→S5→S3→S4叙事分轨。 反证/未决：仅观察文本排列，不证明检查器执行新轨；寺名、准入首程、仪式与僧人身份未知。 世界执行、来源真实性及资格仍未验证；证据ID 99-TEMPLE,99-ENDING。",
+      "sample_checks": []
+    }
+  ],
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false
+}

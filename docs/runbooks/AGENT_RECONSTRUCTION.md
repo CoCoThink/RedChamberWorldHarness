@@ -17,13 +17,24 @@
 - `MODEL_SUBAGENT` 永远不是 `INDEPENDENT_HUMAN`。真人 schema、selection、稳定版 ACTIVE 不接受 agent 结果。
 - 评审者 session ID 与模型名是声明，字节保管可检验，模型身份、上下文隔离、人与人意义上的独立性不可验证。
 - 两路线共用事实、范例、入口和输出目标；仅指导及反馈流程不同。不能用信息不对称宣称 Harness 因果效果。
-- 负面意见不被另一个 packet 或新 ID 隐藏；修订后的新字节须重新审查，旧意见保留。
+- 负面意见不被另一个 packet 或新 ID 隐藏；修订后的新字节须重新审查，旧意见保留。读者可用 `supersedes` 取代**自己**的旧记录，旧记录仍留在历史中。
 - `AGENT_EDITED` 是发生过模型编辑的流程状态，不等于文本正确、场景重放通过或真人验收。
 - 声明兼容、已有事件的确定性状态投影、正文支持的语义判断分列。未知事件和场景内入口留 `PENDING/NOT_CHECKED`，不会以直接复制声明来制造 PASS。
 - 会话稿使用 `SESSION_AUTHORED_NOT_PROVIDER_VERIFIED`，没有伪造的 API 响应、request ID、usage 或支付预算。
 - 报告中的全局 `agent_panel` 仅是研究意见展示，不计入真人准入；逐包研究发布另核对其实际依赖和稿件。
 - 缺合同、政策、来源核对、语料核对或足够阅读时只产生待验收材料，不能标成 `agent-reviewed` 成稿。
 - `releases/stable/v1.4` 不动；研究版目标固定为 `releases/agent/`，不改 stable ACTIVE。
+
+## 门控严重度（ADR 0004）
+
+研究版发布按 `src/rcwh/findings.py` 的证据地板判定：
+
+- **BLOCKING → FAIL**：字节/结构/非目标章完整性；违反 lock-eligible、全部 A-W1 支撑的 LOCKED MUST/MUST_NOT 决策（例如 A-W1 字面约束锚点丢失）；读者声明为 BLOCKING（或未声明严重度）的负面意见。
+- **WARNING / ADVISORY → 报告不阻断**：B 级与历史可行性约束；规划卡导出的合同 beat、P-Lock 锚点（`REPLACEMENT_CASE`）、作者首选。读者对这类问题给 FAIL 时应写 `"severity": "ADVISORY"`；协调者在决定中对每条异议给出理由后可 ADOPT。
+- **INFO**：未实现的检查（正文语义回放、policy 专项语义阅读），不是 PENDING。
+- **PENDING** 只表示确实缺输入（未解析的依赖来源、缺合同范围、缺决定）或不足两位读者。
+
+研究版 PASS 只写入 `releases/agent/`，标注 MODEL 审阅、`independent_human_admission=false`；stable/ACTIVE 仍由所有者裁决。
 
 ## 明确选择合同版本
 

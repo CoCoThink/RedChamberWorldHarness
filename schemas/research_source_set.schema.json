@@ -1,0 +1,46 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Explicit supplementary research source set",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "id", "kind", "chapters", "qualification", "authority_effect", "source_bindings", "claim_bindings", "reading_refs"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "id": {"type": "string", "minLength": 1},
+    "kind": {"const": "RESEARCH_SOURCE_SET"},
+    "chapters": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1}},
+    "qualification": {"const": "MODEL"},
+    "authority_effect": {"const": "NONE"},
+    "source_bindings": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"$ref": "#/$defs/binding"}},
+    "claim_bindings": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/binding"}},
+    "reading_refs": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/binding"}},
+    "asset_bindings": {"type": "array", "uniqueItems": true, "items": {
+      "type": "object", "additionalProperties": false, "required": ["asset_ref", "path", "sha256"],
+      "properties": {"asset_ref": {"type": "string", "pattern": "^asset:"}, "path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha"}}
+    }},
+    "status": {"enum": ["PASS", "PENDING", "FAIL"]},
+    "limitations": {"type": "array", "items": {"type": "string", "minLength": 1}}
+  },
+  "$defs": {
+    "sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "binding": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"$ref": "#/$defs/sha"}}
+    },
+    "facsimile_binding": {
+      "type": "object", "additionalProperties": false,
+      "required": ["binding_status", "image_asset_ref", "image_sha256", "pdf_asset_ref", "pdf_sha256", "physical_page", "printed_page", "image_xref", "independent_historical_witness_count"],
+      "properties": {
+        "binding_status": {"const": "MODEL_READING_PENDING"},
+        "image_asset_ref": {"type": "string", "pattern": "^asset:"},
+        "image_sha256": {"$ref": "#/$defs/sha"},
+        "pdf_asset_ref": {"type": "string", "pattern": "^asset:"},
+        "pdf_sha256": {"$ref": "#/$defs/sha"},
+        "physical_page": {"type": "integer", "minimum": 1},
+        "printed_page": {"type": ["integer", "string"]},
+        "image_xref": {"type": "integer", "minimum": 1},
+        "independent_historical_witness_count": {"const": 1}
+      }
+    }
+  }
+}

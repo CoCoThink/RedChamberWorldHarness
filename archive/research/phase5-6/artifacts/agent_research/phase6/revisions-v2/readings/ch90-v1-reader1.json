@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT",
+  "reviewer_role": "MODEL_SUBAGENT",
+  "disposition": "FEEDBACK_ONLY",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "chapter": 90,
+  "revision": "v1",
+  "reader": "reader1",
+  "status": "FROZEN_READING_REPORT",
+  "execution_status": "COMPLETED_SCOPED_READING",
+  "qualification": "RESEARCH_ONLY",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "human_review_claimed": false,
+  "historical_certification_claimed": false,
+  "provider_identity_verified": false,
+  "literary_acceptance": "NOT_GRANTED",
+  "overall_assessment": "核心叙事修补已在本回实际动作中出现：送达病妇的回报、送前第一讽、受冷披风后的第二讽、未撤赠未许改过、两管法一次连续正面交错、有限劳动迫使删项、旧府收单未许可未取物，均有正文依据。仍须分别保留局部物流省笔与文学风险：灶边米袋的搬运缺一环；第二讽时麝月补衣已付劳动但尚未完工；后半反复摆壶、挪米、压纸、核缺容易将世情磨成逐项纠偏。不是篇幅或机械校验驱动的整章PASS。",
+  "reading_custody": {
+    "candidate": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt",
+      "sha256": "ddc1647302b7efcc145fc2839bbadc05eec62afe24c55db9a72e7951df92d71e",
+      "hash_matches_disclosure": true,
+      "method": "Read工具三次分段直接显示正文，逐段实读，不以关键词命中、哈希或作者摘要代读。",
+      "segments_line_inclusive": [[1, 35], [36, 70], [71, 105]],
+      "segments_return_order": [[1, 35], [71, 105], [36, 70]],
+      "all_lines_read": true,
+      "first_to_last_coverage": true,
+      "line_count": 105,
+      "first_line_exact": "第九十回 薛宝钗借词含讽谏　王熙凤知命强英雄",
+      "first_body_line_opening_exact": "平儿回到借院，先把手在门边擦了擦，才进凤姐屋里。",
+      "last_line_ending_exact": "那人只收纸往里去，平儿退到门侧，手里空着，站下等回话。",
+      "segment_content": [
+        {"lines": [1, 35], "read": "回目；平儿空手返、旧府不准取；凤姐药/米/被/壶拥挤、缩冬物；补歪窗；麝月补衣、空钉；宝玉赠衣、第一讽、孩子送衣并报病妇已穿。"},
+        {"lines": [36, 70], "read": "等灶耽误针线、宝玉午后受冷；宝钗披风、第二讽；麝月补完换衣、归还披风；赠布额外缺口；旧仆待工钱；米升缺角与病房再挪物；晾湿衣失败后勉强挂起。"},
+        {"lines": [71, 105], "read": "宝钗取披风访凤姐；一次连续正面交错、平儿只再一趟、宝钗撤下自己的单、凤姐减整套冬物；护理/热水仍挤；赠衣不召回；风掀压纸、旧府交单、空手候问。"}
+      ]
+    },
+    "disclosure": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1-disclosure.json",
+      "sha256": "1a97019695b2394283c86c40211a33d0268387775c9bf056fafdf36386bd3581",
+      "method": "Read完整显示1–169，实际文件splitlines为168，末尾空显示行不计内容。",
+      "read_complete": true,
+      "qualification_preserved": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED；冻结研究候选，author声明不是独立审读或史料认证。"
+    },
+    "notes90": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editor-feedback/notes-ch90-v1.txt",
+      "sha256": "63630dacf6da0c13b40f3270150ab6d041d3ad8e01658f86bd41e64b88d2c6fc",
+      "lines_read": [1, 13],
+      "read_complete": true
+    },
+    "first_ten_editor90": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editor-feedback/v3-ch81-90-v1.json",
+      "sha256": "fb1222a12fd4ef02d5071678f8def39d2d2fd276262f23f5dc7f43d09f983ad3",
+      "pointer": "/chapters/9",
+      "method": "Python -I标准库JSON只读精确投影；分次显示editor90非重复实质字段、全部三合同逐beat旧评语、18项章卡及原保护。",
+      "substance_read_complete": true,
+      "read_scope": ["实际旧稿阅读与长度/请求/作者资格元数据", "六条旧稿引文", "三合同全部required/forbidden描述与原评语、unresolved", "全部18项章卡与原保护", "身体/资源两行", "三项局部问题", "四个扩写单元", "未决、notes与not_claimed"],
+      "not_read": ["其他九回正文和编辑条目", "重复basis/bindings/source_records/citation目标文件"],
+      "old_assessment_not_current_verdict": true
+    },
+    "selected_contracts": [
+      {
+        "id": "90-S1",
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/90-S1.v2.json",
+        "sha256": "1a630560f604cbcf8bc6708af0cdf68036e78f5135a8a3710a6a402d292d674b",
+        "required_count": 4,
+        "forbidden_count": 3,
+        "all_required_forbidden_substance_read": true
+      },
+      {
+        "id": "90-S2",
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/90-S2.v2.json",
+        "sha256": "8af5c6c27fa27ebe5b3a2c27e91f23ed5d2b9a8781e7afb8bfa7358b33faf665",
+        "required_count": 3,
+        "forbidden_count": 3,
+        "all_required_forbidden_substance_read": true
+      },
+      {
+        "id": "90-S3",
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/90-S3.v2.json",
+        "sha256": "e10b91adcc9845df5a00159a002e6fb6db9f456e8abd6afd68471b7a97e6c43f",
+        "required_count": 3,
+        "forbidden_count": 4,
+        "all_required_forbidden_substance_read": true
+      }
+    ],
+    "contract_method": "先从editorial请求嵌入合同读function、participants、objects、全部required/forbidden、entry/exit/preconditions、notes和unresolved；再从editor90定位实际agent-final-v1三原路径，独立只读投影其function、participants、required_objects、全部required_beats、全部forbidden_beats和unresolved。没有读取phase5模板或来源包。"
+  },
+  "tool_execution_disclosure": {
+    "initial_whole_request_reads": [
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/requests/ch90.json", "status": "NOT_EXECUTED_AS_FULL_READ", "tool_result": "594.7KB exceeds 256KB Read limit", "whole_file_content_claimed_read": false},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch90.json", "status": "NOT_EXECUTED_AS_FULL_READ", "tool_result": "602.1KB exceeds 256KB Read limit", "whole_file_content_claimed_read": false}
+    ],
+    "coordinator_clarification_applied": "256KB为体积限制，不是安全拒绝；明确授权原路径分段实读和Python -I标准库精确JSON投影。此前因误认大小限制写入同一目标的临时NOT_EXECUTED内容已被本次实际阅读报告整体取代，没有第二份报告。",
+    "oversized_editor_output": "两次早期JSON投影输出43.1KB/29.7KB被工具折叠；未把预览当全文。随后重新限定字段分次显示editor90、合同与章卡，已消费全部所需实质。工具自动保存的输出不是本次另行编写的报告。",
+    "security_denial_encountered": false,
+    "delegated": false,
+    "language_switch_to_bypass_security": false,
+    "full_request_messages_read": "NOT_EXECUTED",
+    "source_facsimile_or_historical_certification": "NOT_EXECUTED",
+    "repository_wide_scan": false,
+    "discovery_scope": "仅phase6目标目录内寻找90文件/notes/editor文件名与浅层CLAUDE.md路径；未读其他章内容。"
+  },
+  "evidence": [
+    {"id": "E01", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 3, "line_end": 3, "quote": "早晨带出去的还是这一张，纸边被袖口蹭毛了些，里头所开冬物一件也没跟着来。", "use": "开头跑单确已返而无物，不是泛写调度失效。"},
+    {"id": "E02", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 5, "line_end": 5, "quote": "平儿说见着了，忙着应别的话，自己将这事告诉他，他说还得等准许，不能先取。", "use": "贾琏在场信息经平儿转述；无力托底而非失踪。"},
+    {"id": "E03", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 7, "line_end": 7, "quote": "药盏搁在一个小几上，小几另一头压着米袋，口上套一只木升，下面则塞着未铺开的被卷。", "use": "病与米被同挤的空间证据，随后痰盒、热壶、药炉造成不可转身。"},
+    {"id": "E04", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 13, "line_end": 13, "quote": "顶着奶奶，总比顶着壶强。方才若倒了，这屋里铺的盖的都得跟着洗。", "use": "平儿互损中有劳动后果，非抽象规训。"},
+    {"id": "E05", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 15, "line_end": 15, "quote": "将原来想取的几样冬物先压下，只留眼前换洗与一件夜里可用的厚物。", "use": "第一次缩项，不等于新物到手。"},
+    {"id": "E06", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 27, "line_end": 27, "quote": "从前你拿出去，屋里总另有一件。如今给出去真少一件。", "use": "第一讽在送衣前，指向当下实际缺口。"},
+    {"id": "E07", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 29, "line_end": 29, "quote": "将青布夹衣折起，又看一看袖里是否平整，交到孩子手上。", "use": "宝玉仍决赠，不只口头慈善。"},
+    {"id": "E08", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 31, "line_end": 31, "quote": "宝钗从箱边取出一块包袱布，将衣轻轻裹上，自己打了个活结，告诉孩子送到就回一句，不必让病人特意来谢。", "use": "宝钗实际支持赠衣与回报链，并非阻断善意的吝啬人。"},
+    {"id": "E09", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 35, "line_end": 35, "quote": "孩子回来，先说夹衣已交给病妇，那边打开穿了，肩上才遮得住。", "use": "病妇实际收穿通过孩子回报成立；读者未直接见病妇现场。"},
+    {"id": "E10", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 39, "line_end": 39, "quote": "拖到午后，麝月才端饭回来，见他立在廊下，肩头缩着，便叫进去吃。", "use": "受冷明确在午后，麝月等灶耽误针线与饭。"},
+    {"id": "E11", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 43, "line_end": 43, "quote": "宝钗让她坐着把袖口收妥，自己展了披风，给宝玉披上。", "use": "披风已披、麝月劳动在进行，第二讽并非凭空讲成本。"},
+    {"id": "E12", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 45, "line_end": 45, "quote": "早晨送衣的时候，你说自己这件尽够。眼下你周全一个，总有人补这个缺。", "use": "第二讽在43披风之后，既有动作又有不满。"},
+    {"id": "E13", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 45, "line_end": 45, "quote": "他却只将披风往膝上掩好，又说那边的妇人实在冷，不能再将送出的拿回来。宝钗抬眼道：“谁让你拿回来？你倒先将我没说的话挡上了。”", "use": "未撤赠、未许改过，宝玉并未一经讽谏就道德升级；对话也非单向正确答案。"},
+    {"id": "E14", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 49, "line_end": 49, "quote": "你真怕她白做，就这会儿穿上。披风我还要用。", "use": "麝月完成补衣后宝玉犹想拖延，宝钗索回自用披风，双方均有不便与私心。"},
+    {"id": "E15", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 55, "line_end": 55, "quote": "那人道自己也要回去找工钱，原想同她合一趟，怕过去了又只让在外头等。", "use": "工钱只是旧仆求领，未写已领、未生出家内可用现金。"},
+    {"id": "E16", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 57, "line_end": 57, "quote": "将米袋挪到脚边，见袋底略有潮意，便叫小丫头先垫一块干板，自己拿木升出去。", "use": "米袋似仍留病室，下一实质段灶边米袋来源有省笔。"},
+    {"id": "E17", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 59, "line_end": 59, "quote": "原住妇人在灶边候着，见她只带升不带米，脸上先有些急", "use": "明确只带升后却能蹲下舀米，须区别共有灶旁另袋与病室袋，非可自动补足经手。"},
+    {"id": "E18", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 75, "line_end": 75, "quote": "见过和自己担着，不是一回事。", "use": "凤姐以阅历/身份刺宝钗；不是双方直接搭成合作口号。"},
+    {"id": "E19", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 79, "line_end": 79, "quote": "平儿不笑，说：“奶奶就是不喝药，我也只有这一趟。”", "use": "有限劳动不是以病人作借口；直接迫使两管法减项。"},
+    {"id": "E20", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 81, "line_end": 81, "quote": "只将自己带来的一小张折起，放回袖中，道先紧着病人夜里盖的，自己那几件今日不添。", "use": "宝钗放弃本次自己的项目，非凭协调创造额外劳动。"},
+    {"id": "E21", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 83, "line_end": 83, "quote": "米的去问，夜里用的被褥也问。其余整套冬物，先别忙在这一回里。", "use": "凤姐第二轮裁减与宝钗退项处在同一次连续交错，保留询问非领回。"},
+    {"id": "E22", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 99, "line_end": 99, "quote": "宝玉立刻说不必，已给她的，自己用就是。", "use": "尾部追认不召回赠衣，病妇洗衣不须送还。"},
+    {"id": "E23", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 103, "line_end": 103, "quote": "自己抬手将纸压在墙上，指尖从折痕慢慢抹过去，待纸伏住，才折进袖里。", "use": "风掀后平儿自己压纸再送，未借旁人凭空解决。"},
+    {"id": "E24", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt", "line_start": 105, "line_end": 105, "quote": "那人只收纸往里去，平儿退到门侧，手里空着，站下等回话。", "use": "完整末行边界：已交中间人，未给许可，未得实物。"}
+  ],
+  "core_action_assessments": [
+    {
+      "topic": "赠衣的实际送受与知情",
+      "assessment": "TEXT_SUPPORTED_WITH_REPORTED_RECIPIENT",
+      "evidence": ["E06", "E07", "E08", "E09", "E22"],
+      "detail": "21–23麝月知衣在铺盖、孩子是病妇需求的传话者，宝玉先听孩子；25宝钗进入后重新听说明，不凭空知道病妇病况。27第一讽尚未交出；29交孩子；31宝钗包装嘱送到回报；33已送出；35孩子报告已交、病妇穿上，并问留包布。53再捎谢，99问洗衣归还。病妇在小说中以可信传话链成为实际收衣者，不要求新增其现场或实体ID。病妇身份、路程和病名仍未明，不据此判FAIL。"
+    },
+    {
+      "topic": "第二讽与补缺先后",
+      "assessment": "TEXT_SUPPORTED_WITH_COMPLETION_DISTINCTION",
+      "evidence": ["E10", "E11", "E12", "E13", "E14"],
+      "detail": "37等灶使麝月针线停顿，39拖到午后宝玉冷，41衣仍差一处，43披风已披且麝月继续收袖口，45第二讽。须精确说第二讽发生在受冷、披风和已经投入的补衣劳动之后，而不是在补衣完工换穿之后：47仍压线，49才补完换穿并归还披风。所选合同要求落在实际补缺劳动，不要求全补完才说，因此不判硬违约；若把用户‘麝月补缺之后’读为完工后，则这里仅部分满足，应保留顺序差异，不隐去49的实际位置。"
+    },
+    {
+      "topic": "不撤赠、不承诺改过与非圣化",
+      "assessment": "TEXT_SUPPORTED",
+      "evidence": ["E13", "E14", "E22"],
+      "detail": "45承认知道并维护赠衣，47‘是我说快了’承认的是抢先替宝钗安罪名，不是许诺不再赠人。49还想多披一阵，51帮绕线反添返工，69举衣冲动被问住；99仍关心病妇热饭。95自己转正袖口与71端碗只构成局部体贴，不能升级为成功受箴。宝钗包衣、留布、披风救冷，却索回披风自用并有火气，不是吝啬也不是圣贤式全然承担。"
+    },
+    {
+      "topic": "一次正面交错的范围与原因",
+      "assessment": "TEXT_SUPPORTED",
+      "evidence": ["E18", "E19", "E20", "E21"],
+      "detail": "唯一两人同场正面论取物管理是73–87连续访病：宝钗为自家日用求搭单，凤姐欲一并开列；79平儿一趟的劳动上限切断继续加项；81宝钗收自己的纸；83凤姐留米/夜被询问，冬物延期；85离席动作、87问明早米只是同一场收尾。此前为两条并置线，之后无二次会面。83/85扶袋是眼前身体援手，不等于两种管法已经合成、旧府权限恢复。明早米仍未定。"
+    },
+    {
+      "topic": "开头失效与尾部候问",
+      "assessment": "TEXT_SUPPORTED",
+      "evidence": ["E01", "E02", "E03", "E05", "E23", "E24"],
+      "detail": "开头无冬物、纸未被接收；尾声接话人收纸这一小进展不等于批准。热水尚在等待、护理无人可多分、灶仍共享，平儿必须在不放心时离开。最后‘只收纸’和空手候问没有自动取到、没有预演后回冬衣入户。"
+    }
+  ],
+  "contract_assessments": [
+    {
+      "id": "90-S1",
+      "required": [
+        {"ordinal": 1, "obligation": "吩咐遇具体缺人/取用受限，平儿跑返，迫使米/被/冬物缩改", "assessment": "OBSERVED", "evidence": ["E01", "E02", "E05"], "lines": [3, 19]},
+        {"ordinal": 2, "obligation": "病房药炉痰盒热壶与米铺盖同挤，身体经济不分离", "assessment": "OBSERVED", "evidence": ["E03", "E04"], "lines": [7, 17]},
+        {"ordinal": 3, "obligation": "知旧办法不可复仍现实取舍，不悟道停办", "assessment": "OBSERVED", "evidence": ["E05", "E21"], "lines": [15, 15]},
+        {"ordinal": 4, "obligation": "共享借院补歪窗等修补受少数劳动限制，不恢复名义身份的自动调度", "assessment": "OBSERVED", "evidence": ["E03", "E04"], "lines": [9, 19], "detail": "补窗人先修别家灶，孩子还要看锅；纸补歪、仍冷，不以凤姐不满意就重置劳力。"}
+      ],
+      "forbidden": [
+        {"ordinal": 1, "prohibition": "悟道命该如此、病后彻底不管、恢复万能权", "assessment": "NOT_OBSERVED_IN_FULL_READING", "evidence": ["E02", "E05", "E21", "E24"]},
+        {"ordinal": 2, "prohibition": "改硬回目、加诗琴画或教训式情理长论", "assessment": "NOT_OBSERVED_AS_EXPLICIT_FORM", "detail": "1行整副回目仍在，全文无新增诗琴画；仍有下列纠偏语言的文学风险，不因此称绝无说教。"},
+        {"ordinal": 3, "prohibition": "新增回前/回末/作者总结诗，替代生活动作收束", "assessment": "NOT_OBSERVED_IN_FULL_READING", "evidence": ["E23", "E24"]}
+      ]
+    },
+    {
+      "id": "90-S2",
+      "required": [
+        {"ordinal": 1, "obligation": "送青布夹衣前第一讽指实际缺口", "assessment": "OBSERVED", "evidence": ["E06", "E07", "E09"]},
+        {"ordinal": 2, "obligation": "午后受冷、披风与实际劳动后第二讽；承认但不撤赠不许改过", "assessment": "OBSERVED_WITH_TIMING_QUALIFICATION", "evidence": ["E10", "E11", "E12", "E13", "E14", "E22"], "detail": "劳动先发生，但完工换穿在第二讽之后；不把‘已劳动’写成‘已完工’。"},
+        {"ordinal": 3, "obligation": "麝月补衣、空钉落实小户缺口，不用长论/功名说教代替", "assessment": "OBSERVED", "lines": [21, 69], "detail": "21/27/33/69空钉递回，补衣经等待灶火、针脚与换穿完成；重复物象风险另列。"}
+      ],
+      "forbidden": [
+        {"ordinal": 1, "prohibition": "成功改过、宝钗吝啬、宝玉慈善圣人", "assessment": "NOT_OBSERVED_AS_CHARACTER_OUTCOME", "evidence": ["E08", "E13", "E14", "E22"]},
+        {"ordinal": 2, "prohibition": "借词写成词牌，95夹袄ID硬认本回衣/披风", "assessment": "NOT_OBSERVED_IN_FULL_READING", "detail": "正文没有词牌或95对象ID；披风与赠衣、待补衣分开，未授任何注册同一性。"},
+        {"ordinal": 3, "prohibition": "新增回前/末/总结诗", "assessment": "NOT_OBSERVED_IN_FULL_READING", "evidence": ["E24"]}
+      ]
+    },
+    {
+      "id": "90-S3",
+      "required": [
+        {"ordinal": 1, "obligation": "两管法正面仅一次，米被取物受限，不作道德优劣裁判", "assessment": "OBSERVED", "lines": [73, 87], "evidence": ["E18", "E19", "E20", "E21"]},
+        {"ordinal": 2, "obligation": "凤姐仍取舍，平儿送受控旧府；送/准/取三界分开", "assessment": "OBSERVED", "evidence": ["E21", "E24"]},
+        {"ordinal": 3, "obligation": "风掀压角再送，以未获准未取实物收束且劳动缺口仍存", "assessment": "OBSERVED", "evidence": ["E23", "E24"], "detail": "103压纸与105交单之间仍有共享热水、麝月借火和孩子叫壶，不以纸单消掉缺口。"}
+      ],
+      "forbidden": [
+        {"ordinal": 1, "prohibition": "合成资源恢复成功、宝玉突然改过、凤姐悟道撤退", "assessment": "NOT_OBSERVED_IN_FULL_READING", "evidence": ["E13", "E19", "E20", "E21", "E24"]},
+        {"ordinal": 2, "prohibition": "改硬回目、加诗琴画或长篇情理判词", "assessment": "NOT_OBSERVED_AS_EXPLICIT_FORM", "detail": "文学层面的审核式口吻风险另列，不与形式禁项混成一次性无瑕宣判。"},
+        {"ordinal": 3, "prohibition": "新增回前/末/总结诗", "assessment": "NOT_OBSERVED_IN_FULL_READING", "evidence": ["E24"]},
+        {"ordinal": 4, "prohibition": "贾琏无力写成失踪，算账合作恢复旧府调度权", "assessment": "NOT_OBSERVED_IN_FULL_READING", "evidence": ["E02", "E21", "E24"], "detail": "65仍忙外头未得准话、91尚无回报，与5已见过相容。"}
+      ],
+      "participant_boundary": "合同列麝月为参与人；她在交错场73–87不入凤姐屋，而在前后家务线与105借火出现。合同没有另列四人必须同屋的required，故作为参与范围提示，不凭名单自动制造硬冲突。"
+    }
+  ],
+  "continuity_audit": {
+    "definite_hard_contradictions_found": [],
+    "localized_gaps_and_ambiguities": [
+      {
+        "id": "C01",
+        "domain": "米袋位置/搬运/知情",
+        "severity": "LOCAL_CONTINUITY_GAP",
+        "evidence": ["E16", "E17"],
+        "lines": [57, 61],
+        "finding": "57病室米袋挪脚边垫板，平儿只拿升出去；59灶边妇人先因她‘只带升不带米’着急，继而指‘这边的’袋、平儿蹲下舀且立即送进去。若舀病室原袋，缺搬袋或折返；若灶边另有自家米袋，缺辨明归属。可由省略解释，不是必定凭空多米，但当前读者不能唯一复原收送链。61又回病室，不应自动代补搬运。",
+        "not_inferred": "不据此判全章FAIL，也不编造孩子替搬米袋的未写动作。"
+      },
+      {
+        "id": "C02",
+        "domain": "第二讽的劳动完成时间",
+        "severity": "INTERPRETIVE_TIMING_BOUNDARY",
+        "evidence": ["E11", "E12", "E14"],
+        "finding": "43披风已补、麝月在补；45讽；49补完换穿。不是自相矛盾，但不得概述为麝月全部补完以后才讽。"
+      },
+      {
+        "id": "C03",
+        "domain": "衣物指称",
+        "severity": "LOW_REFERENT_AMBIGUITY",
+        "lines": [95, 97],
+        "finding": "95宝钗解披风放身旁，97‘宝钗外头那一件’又压衣包下，没有明确是披风还是外衣；可作另一件外衣读，不足确认披风瞬移。晾衣、补衣、赠衣、披风已多物交叠，尾部代词增加追踪负担。"
+      }
+    ],
+    "money": {
+      "evidence": ["E15"],
+      "assessment": "NO_UNEARNED_PAYMENT_OR_CASH_RESTORATION_OBSERVED",
+      "detail": "55与101旧仆等工钱、去旧处讨；他没有收款，也未替平儿垫钱。家内主要计算物资、米与劳动，未写现银具体数、支付药工或取物费用。编辑所引资源行‘开始精算现银和旧物’中的现银面向较弱；所选三合同无指定金额付款required，故为经济层次偏窄提示而非现金矛盾。不能凭未写金额认资金已恢复。"
+    },
+    "clothes_and_receipts": {
+      "assessment": "CHAIN_LARGELY_LEGIBLE",
+      "detail": "青布夹衣在21铺盖上；麝月另补破袖衣，不是同一件赠物。29宝玉交孩子、31宝钗包衣、33已出、35病妇穿；包布由宝钗允留、53说明原拟包厚物、97擦水另取布，前后相容。披风43从宝钗包袱上取给宝玉、49–51归宝钗身旁、71宝钗取披访凤姐、75解带坐、85系带离、95解下，未将已赠夹衣又穿回。"
+    },
+    "people_and_knowledge": {
+      "assessment": "NO_OMNISCIENT_CHARACTER_JUMP_IDENTIFIED",
+      "detail": "25宝钗进入后听孩子说病妇；35/53/99有关病妇收穿、谢意、洗衣疑问均由孩子带来，人物知情有渠道。5/65/91贾琏消息来自平儿、不等于叙述者断言失踪。55‘早晨说可捎话’的旧仆此前未正面出现，是补叙一段关系，不是必定重复人物或新身份ID。"
+    },
+    "time": {
+      "assessment": "BROAD_DAY_SEQUENCE_COHERENT",
+      "detail": "3早晨跑返，21–35赠衣，37午间等饭、39明确拖午后，43原拟午后探病披风先救冷，55平儿午后找人，67晚用衣，71以后访病和晚间送单，105最后一锅水。45称早晨送衣与此前未定钟点不冲突。没有路程耗时精确证据，不给精确时刻认证。"
+    },
+    "old_house_permissions": {
+      "assessment": "REQUEST_PERMISSION_RETRIEVAL_DISTINGUISHED",
+      "detail": "3第一次连纸未收，5须准，55旧仆也可能白等，75/81只求问，83只问米被，105中间人收纸。没有许可结果、钥匙到手或实物入院。是否同一经手者、为何下午可收而上午不收未细交代，属于程序未决，不自动定为矛盾或认证历史手续。"
+    }
+  },
+  "literary_assessment_separate_registers": {
+    "世情机锋": [
+      {"lines": [11, 13], "evidence": ["E04"], "assessment": "STRONG_LOCAL_EFFECT", "detail": "凤姐把缺人听成别人顶她，平儿把‘顶奶奶’转成‘顶着壶’，身份怨气与洗被劳动同落一句，既互损又相护。"},
+      {"lines": [43, 49], "evidence": ["E11", "E13", "E14"], "assessment": "MIXED_MOTIVES_VISIBLE", "detail": "宝钗先披后讽，宝玉先替她挡了她没说的责备，再想拖着不换；‘披风我还要用’比全知说理更有家内细刺。索披风不是撤赠。"},
+      {"lines": [75, 87], "evidence": ["E18", "E19", "E20", "E21"], "assessment": "STATUS_FRICTION_NOT_COOPERATIVE_TRIUMPH", "detail": "凤姐拿阅历压宝钗又想保住能办事的脸，宝钗有自己的搭单企图，平儿不肯用病人作无限跑腿理由。宝钗收纸、凤姐不领她好话，87凤姐先移眼，留下关系的不齐。"},
+      {"lines": [93, 93], "assessment": "STRONG_LOCAL_EFFECT", "detail": "平儿‘嫌也住着’和少洗一次就少嫌一句，把不能离开的依附、恼意与照料写在日常动作内，不必由叙述者解释忠心。"}
+    ],
+    "审核式纠偏": [
+      {"severity": "MODERATE_LITERARY_RISK", "lines": [55, 87], "detail": "‘名字在纸上，又不是门上的钥匙’、‘纸写上，米就能进锅’、‘同门也未必同人管’、‘谁能这一时都拿准’连续拆分名目/执行/许可。各句本可带机锋，累加后容易像在逐条反驳编辑问题，人物承担了边界说明员的部分功能。此项是审美风险，不是合同事实违规。"},
+      {"severity": "MODERATE_LITERARY_RISK", "lines": [45, 53], "detail": "第二讽已有披风与冷汤的情绪承载，随后收紧衣、索披风、空壶、绕线返工、包布用途再补一遍成本，容易从含讽转为一连串‘善意也要付代价’的示范题。49生活针刺仍有效，不建议把所有后果都等价当新场面贡献。"},
+      {"severity": "LOW_TO_MODERATE_LITERARY_RISK", "lines": [95, 99], "detail": "自己理袖口、三人挪盆、另取布拭水、洗衣不归还、明日问热饭，逐个关闭前文隐患，尾段略显逐项回填；好处是赠衣仍不撤，风险是人物每个小动作都像在展示读懂反馈。"}
+    ],
+    "反复核物与节奏": [
+      {"severity": "MODERATE_LITERARY_RISK", "lines": [57, 65], "detail": "米袋潮、米升缺、旧升未准、药炉米袋分开、床尾铺被留角，一组实物障碍已经饱满；其后73–85又扶袋量米漏粒，89–93再安药盏痰盒挪袋，101–105又安壶压纸。每次可解释但推进不等量，后半有原地调摆的迟滞。"},
+      {"severity": "MODERATE_LITERARY_RISK", "lines": [89, 105], "detail": "送单前照护和热水的拖延使平儿‘不得不走’成立，也使结尾未办结有重量；但药盏/空壶/孩子站候反复，真正远赴旧府只剩末段。生活密度与延宕不宜只按新增字数奖赏。"},
+      {"severity": "LOW_LITERARY_RISK", "lines": [21, 69], "detail": "空钉21、27、33、69回返能作缺口母题；69明确‘仍没多出衣服’稍偏为读者核结论。重复母题不等于机械填字，亦不能仅因无重复段落就证明文学节奏成功。"}
+    ],
+    "overall_literary_balance": "相较旧评所记缺场，本回已不靠长篇账目辩论和共同领米口号顶替小说。最有力处仍是人的误会、自尊、烦与护同时露出；最薄处是几乎每一件物都被追踪到一个纠偏后果，容易压低含蓄与余味。两类意见分列，不把连续性稳妥等同文学完成。"
+  },
+  "unknown_and_qualification_policy": {
+    "unknown_is_automatic_failure": false,
+    "length_is_automatic_success": false,
+    "registry_unknowns_preserved": ["病妇无实体ID", "青布夹衣/披风未注册身份", "具体准许人与手续", "米/被/冬物数量与实际可领范围", "疾病诊断与精确体温", "场级entry/exit UNKNOWN及PENDING参与链"],
+    "policy": "小说中实施的动作只支持本回文本判断，不填注册事件、不改合同UNKNOWN，不以缺ID抹杀已经写出的送达，也不把文本送达升为史证或提供商证明。披风与95夹袄不作同物认定。",
+    "historical_sources_directly_read": "NOT_EXECUTED",
+    "length_checks_independently_recomputed": "NOT_EXECUTED",
+    "length_metadata_use": "仅消费disclosure及editor90所报数字，不给文学通行证。"
+  },
+  "write_boundary": {
+    "only_report_path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/readings/ch90-v1-reader1.json",
+    "single_frozen_report": true,
+    "manuscript_modified": false,
+    "input_modified": false,
+    "other_report_created": false,
+    "delegated": false,
+    "committed": false,
+    "harness_imported": false,
+    "next_chapter_started": false
+  }
+}

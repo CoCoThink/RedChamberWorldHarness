@@ -15,7 +15,7 @@
       "spans": {"type": "array", "minItems": 1, "items": {"type": "object", "additionalProperties": false, "required": ["unit_ref", "start", "end"], "properties": {"unit_ref": {"type": "string", "minLength": 1}, "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 1}}}}
     }},
     "classification": {"type": "object", "additionalProperties": false, "required": ["method", "reasons", "styles", "human_review"], "properties": {
-      "method": {"const": "DECLARED_PDF_TYPOGRAPHY_V1"}, "reasons": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
+      "method": {"enum": ["DECLARED_PDF_TYPOGRAPHY_V1", "DECLARED_PDF_TYPOGRAPHY_V2"]}, "reasons": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string"}},
       "styles": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "object", "required": ["font", "size", "color"], "additionalProperties": false, "properties": {"font": {"type": "string"}, "size": {"type": "number"}, "color": {"type": "integer"}}}},
       "human_review": {"const": "PENDING"}
     }}

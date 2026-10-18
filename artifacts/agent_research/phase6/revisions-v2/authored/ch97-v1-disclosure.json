@@ -1,0 +1,162 @@
+{
+  "schema_version": 1,
+  "kind": "SESSION_AUTHORED_LITERARY_REVISION_DISCLOSURE",
+  "chapter": 97,
+  "version": "v1",
+  "status": "FROZEN_V1_LENGTH_TARGET_MET",
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "literary_acceptance": "NOT_CLAIMED",
+  "request": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch97.json",
+    "file_sha256": "dd0ccbce753b6ddbfbb656f88aa7e9d08194bcfeddd9d52595610e96abe204da",
+    "embedded_request_sha256": "3ebe7cf771bf20fcc0b4f6d1f9b62b35e971b2d3e6c26c6dd2563439b4536a57",
+    "prompt_sha256": "d981fe353d1ff81854bcee50d1cd10aeb218b251974fca8ff3510999cb559f2f",
+    "declared_status": "PASS",
+    "integrity_limitation": "Computed actual request-file hash and selected byte hashes; did not independently rerun the complete integrity validator or read all bound files. Prepared PASS is not a literary verdict."
+  },
+  "parent": {
+    "path": "data/writing/drafts/ch97/e869e3c6c6d774353f2a3042348da9a7135bf96f78741f748ee176254a08d5b3.json",
+    "sha256": "e869e3c6c6d774353f2a3042348da9a7135bf96f78741f748ee176254a08d5b3",
+    "current_byte_hash_matches": true,
+    "consumption": "Parent JSON independently byte-hashed, not separately read semantically. Complete parent prose actually read from task.original."
+  },
+  "original": {
+    "pointer": "/task/original",
+    "characters": 1978,
+    "sha256": "6788b3baf09c152671eff63510d3b1c50775c600eb9b4d819c573be6432532cc",
+    "consumption": "ACTUALLY_READ_COMPLETE_SHORT_PARENT",
+    "retained_unchanged": true,
+    "full_chapter_claim": false
+  },
+  "candidate": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt",
+    "sha256": "26ddbcee34a91b22a9ad6288c9ec162b526b20de1286352677699bead3d9b3c3",
+    "characters": 9999,
+    "body_characters": 9974,
+    "body_han_characters": 8560,
+    "body_nonwhitespace_characters": 9869,
+    "utf8_bytes": 29783,
+    "body_paragraphs": 53,
+    "exact_duplicate_body_paragraphs": 0,
+    "quotation_marks_open": 45,
+    "quotation_marks_close": 45,
+    "reviewVerdict_present": false,
+    "counting_method": "Unicode code points using JavaScript spread; body begins after title and following blank line; Han uses Unicode Script=Han; body nonwhitespace removes JavaScript Unicode whitespace; UTF-8 bytes include final newline.",
+    "thresholds": {
+      "total_characters_min": 9500,
+      "total_characters_max": 11000,
+      "body_han_min": 7000,
+      "body_nonwhitespace_min": 7354,
+      "all_met": true
+    },
+    "frozen": true,
+    "freeze_policy": "Do not modify v1 after disclosure; later actual adjacent readings cannot be backdated into this record.",
+    "mechanical_result_not_literary_acceptance": true
+  },
+  "actual_consumption": {
+    "complete_fields_actually_read": [
+      "/request/system",
+      "/task/original",
+      "/task/feedback",
+      "/task/editorial_notes",
+      "/task/writing_task/package",
+      "/task/writing_task/scenes",
+      "/task/writing_task/exemplars",
+      "/task/writing_task/plan/data~1project~1plan_constraints_v1.json"
+    ],
+    "selected_chapter_plan_and_contracts": {
+      "scope": "/task/writing_task/chapter_plan and agent_contracts/0..3 recursively projected to unique semantic strings, excluding repeated strings and most citation/path/hash metadata",
+      "required_descriptions_read": 12,
+      "forbidden_descriptions_read": 8,
+      "included": "All unique chapter-card field texts, embedded source-record semantic values, contract required/forbidden descriptions and groundings, protections, entry/exit/precondition reasons, knowledge limits, function, unresolved restrictions and referenced object/character semantic values.",
+      "plan_aliases": "All four plan entries mechanically checked equal to agent_contracts; not counted as four independent extra readings.",
+      "limitation": "Full numeric/boolean/citation metadata were not all emitted by the semantic projection. Reading these selected embedded semantic fields is not reading complete referenced files, phase5 packet, corpus or all request.messages."
+    },
+    "source_excerpt": {
+      "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+      "lines_inclusive": [1081, 1141],
+      "consumption": "ACTUALLY_READ_COMPLETE_CH97_SOURCE_CARD_ONLY",
+      "limitation": "Other embedded excerpts read within selected plan/contract projection; full referenced source documents not thereby consumed."
+    },
+    "five_exemplar_segments_read_complete_as_supplied": [
+      "hlm80:chapter:27:p00087",
+      "hlm80:chapter:24:p00030",
+      "hlm80:chapter:74:p00079",
+      "hlm80:chapter:61:p00016",
+      "hlm80:chapter:52:p00006"
+    ],
+    "exemplar_limitation": "Read complete supplied excerpt texts and selection reasons, not full source chapters/PDF/corpus; excerpt endings remain source-selection boundaries. The same five excerpts had also been read for chapter96 in this reused author context.",
+    "editor_feedback": [
+      {
+        "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch97-v1.txt",
+        "sha256": "bccdb4db95292898639b79d82be321f1fec00f84ae79b04824cb804cb820c8cb",
+        "scope": "ACTUALLY_READ_COMPLETE, lines1–15; complete embedded editorial_notes also read"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+        "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+        "pointer": "/chapters/6",
+        "chapter": 97,
+        "scope": "ACTUALLY_READ_COMPLETE_CH97_ENTRY including all beat reviews, exact quotes, protected wording failures, two-nunnery merger finding, five expansion groups, targets and unknowns. Full ten-chapter report not read."
+      }
+    ],
+    "world_thread_selected_scope": "Read embedded chapter97 records for body/core event/presence/resource flow, S10 and S11 location definitions, mutual-nonknowledge rule, selected L07/L08 longlines, golden-qilin protection and weak Guazhou commentary interface. General global constraints were emitted and read. Other world/thread content was not fully consumed for this chapter; earlier chapter96 knowledge/protection readings remain prior context, not a new full-file reading.",
+    "output_truncation": [
+      "Initial field extraction of system/original/editorial_notes and request metadata delivered in full, without whole-request Read claim.",
+      "Feedback and package extraction delivered in full.",
+      "Large recursive plan/contracts/exemplars projection was persisted, then read completely in ranges covering lines1–319. Deduplication intentionally emitted identical text once; hash/path/citation metadata were selectively excluded, not silently read.",
+      "Large editor chapter97 extraction was persisted, then read completely in ranges covering lines1–760. No other chapter entries were inferred consumed."
+    ],
+    "adjacent_context_exposure": {
+      "prepared_previous_path": null,
+      "prepared_previous_ending": null,
+      "chapter96_new_revision_fulltext_exposed": true,
+      "chapter96_path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+      "chapter96_frozen_sha256": "a3b5b31e5e95d6ac659eedd2fc1f35db455bab55489a9c91c41a45565f9f6b7e",
+      "reason": "Same author conversation wrote all of chapter96 before continuing chapter97; this is additional unbound contextual exposure, not a selected prepared previous_path and not independent-author separation.",
+      "chapter96_modified_during_ch97": false,
+      "later_unfinished_chapter_prose_read": false,
+      "no_retroactive_binding": true
+    },
+    "unread_not_claimed": [
+      "Complete request.messages duplicate rendering and every hash-bound input",
+      "Full phase5 contract packet or any phase5 prose template",
+      "Full world/object/knowledge registries beyond consumed selected embedded records",
+      "Full source files behind citations, full corpus/PDF or provenance assets",
+      "Parent JSON semantic content outside complete task.original prose",
+      "Chapters98–100 revision prose and other later unfinished prose",
+      "Complete late-ten-chapter report beyond actual chapter96 and chapter97 entries"
+    ]
+  },
+  "authorship_execution": {
+    "method": "Direct session-authored Chinese natural paragraphs through one Write and five substantive Edit appends; no script-generated sentences or repeated-text padding. Read-only Node extraction, hashes, alias comparisons and Unicode metrics only.",
+    "composition": "Five intercut groups: three separate meals; separate clothing work; letter/excerpt-copying/paper labor; white-basin borrowing consequences intercut with Baoyu visiting only Xichun; separate returning actions including next-day basin reuse and Xichun paper/lamp work.",
+    "protected_exact_phrases": [
+      {"text": "从前也有数。", "occurrences": 1},
+      {"text": "只是不用你看着数罢了。", "occurrences": 1},
+      {"text": "谁同你说我件件想得明白？", "occurrences": 1}
+    ],
+    "selected_obligations_enacted_not_verified_state_events": [
+      "Two pairs of chopsticks initially set, one pair withdrawn; Xiangyun still has a servant while personally deciding and paying roof labor and room obligations",
+      "Miaoyu white porcelain tea-washing basin refused, rough vessel cracked, temporary ash borrowing reluctantly negotiated, cleaned basin returned, used again next day with persisting tactile resistance",
+      "S10 Miaoyu and S11 Xichun remain separate unnamed nunneries, with independent labor and resource systems; Baoyu visits only Xichun",
+      "Xichun already habituated before visit; clothes returned, comb retained, missing characters left unguessed, paper reversed/cut and lamp wick shortened after Baoyu departure"
+    ],
+    "construction_limits": "Letter delivery and all incidental actions are current research fiction, not historical evidence or a registered fact/event execution. No exact courier route or named new actor, military mission, Ruolan death, marriage-end verdict, qilin acquisition history, Guazhou encounter, new poem/gatha, terminal painting or collective enlightenment asserted. Adjacent chapter96 unfinished reply may contextually precede this fictional later letter receipt, but prepared request previous_path remains null and delivery is not promoted to verified history.",
+    "environment_model_claim": "Invocation environment says gpt-6.1-sol. This is environment metadata, not independently verified provider identity, provider response proof, token accounting or billing evidence; provider_proof remains NONE.",
+    "delegated_agents_started": 0,
+    "provider_call_executed": false,
+    "import_adopt_commit_executed": false,
+    "only_repo_files_added_for_ch97": [
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt",
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1-disclosure.json"
+    ],
+    "independent_review": "NONE. Author self-check and mechanical thresholds do not certify complete literary quality, qualified peer acceptance, historical facts or UNKNOWN-to-KNOWN transitions."
+  }
+}

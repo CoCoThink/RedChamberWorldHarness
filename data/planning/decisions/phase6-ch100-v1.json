@@ -1,0 +1,356 @@
+{
+  "schema_version": 1,
+  "kind": "PHASE6_B_EDITORIAL_DECISION",
+  "id": "phase6-ch100-v1",
+  "chapter": 100,
+  "revision": "v1",
+  "domain": "NARRATIVE_RECONSTRUCTION",
+  "status": "CURRENT",
+  "constraint": "MUST",
+  "reversible": true,
+  "statement": "选择明确石劫终复还本质的C终态呈现；警幻/空空道人只为叙事名号，运行身份UNKNOWN，不添运输。",
+  "based_on": [
+    "artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+    "artifacts/agent_research/phase6/editorial/peer1-opinion-v1.json",
+    "artifacts/agent_research/phase6/editorial/peer2-opinion-v1.json"
+  ],
+  "reasoning": [
+    "R01锁终点不锁尘世路线。phase5短稿只展示发现石文和抄写，未展示复本质或归来；补一句明确终态可兑现标题功能而不牺牲中压尾。章卡已指名警幻/空空道人，但合同明确未注册；叙事名号可确定，运行身份与完整localcast仍UNKNOWN，两种状态不能混为一谈。",
+    "本次用户已授权agent编辑，仅落实新版非执行叙事输入；同行研究意见不提供用户授权，也不升级源证或消除旧稿负面。"
+  ],
+  "implementation_refs": [
+    "data/planning/contracts/agent-final-v2/100-S1.v3.json",
+    "data/planning/contracts/agent-final-v2/100-S2.v3.json",
+    "data/planning/contracts/agent-final-v2/100-S3.v3.json",
+    "data/planning/contracts/agent-final-v2/100-S4.v3.json",
+    "data/planning/contracts/agent-final-v2/100-S5.v3.json"
+  ],
+  "project_refs": [
+    "data/planning/contracts/agent-final-v1/100-S1.v2.json",
+    "data/planning/contracts/agent-final-v1/100-S2.v2.json",
+    "data/planning/contracts/agent-final-v1/100-S3.v2.json",
+    "data/planning/contracts/agent-final-v1/100-S4.v2.json",
+    "data/planning/contracts/agent-final-v1/100-S5.v2.json"
+  ],
+  "notes": "NARRATIVE_ONLY_NOT_EXECUTABLE；CURRENT仅为此次可撤销editorC选择，不是史料LOCKED、正式采用、正文完成或发布。",
+  "execution_mode": "NARRATIVE_ONLY_NOT_EXECUTABLE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "usage": "RESEARCH_ONLY_NOT_ADOPTED_NOT_RELEASED",
+  "authorization": {
+    "basis": "EXPLICIT_USER_AGENT_EDIT_AUTHORIZATION_APPROVAL_B",
+    "scope": "仅新增3 decisions、13新版合同与本报告；不改旧文件、不委派、不提交",
+    "lane": "editorC",
+    "source_chain_reorder_authorized": false,
+    "runtime_execution_authorized": false
+  },
+  "editorial_selection": {
+    "stone_selected_option": "EXPLICIT_HARD_TERMINAL_STATE_NO_ROUTE",
+    "actor_selected_option": "NAMED_NARRATIVE_ROLES_REGISTRY_UNKNOWN",
+    "epistemic_tier": "R01_HARD_TERMINUS_WITH_C_PRESENTATION_AND_UNKNOWN_RUNTIME_IDENTITY",
+    "ruling": "选择明确石劫终复还本质的C终态呈现；警幻/空空道人只为叙事名号，运行身份UNKNOWN，不添运输。",
+    "why": "R01锁终点不锁尘世路线。phase5短稿只展示发现石文和抄写，未展示复本质或归来；补一句明确终态可兑现标题功能而不牺牲中压尾。章卡已指名警幻/空空道人，但合同明确未注册；叙事名号可确定，运行身份与完整localcast仍UNKNOWN，两种状态不能混为一谈。",
+    "current_inputs_limit": "OT100-01仅FRAME_STATE_CHANGE、movement=NONE，尘世holder/location不改变；未来文字不能被本轮草案当作OT已在场级执行。",
+    "selection_status": "EDITOR_C_AUTHORIZED_NARRATIVE_OBLIGATIONS_ONLY"
+  },
+  "input_bindings": [
+    {
+      "path": "artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+      "sha256": "afe6bd84ed2ceddc9966f4850114b621c96ed07e7f43c43231b979eba68a7020"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editorial/peer1-opinion-v1.json",
+      "sha256": "336d0e0cc4b867479ee652c17cf2d72c92b4d85adb7290e6ef70553bd0ade445"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editorial/peer2-opinion-v1.json",
+      "sha256": "f78f5d3150841c4cc6fe42413ee56049c61fd3ef39af268ef5fe5294856f0e45"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editorial/peer-packet-v1.json",
+      "sha256": "ed58183dffe8f9aab5a2c443031e59c8c2be0dc02161b1ea0a96b36190f30769"
+    }
+  ],
+  "panel_facts": {
+    "status": "PENDING",
+    "record_integrity_status": "PASS",
+    "minimum_reviewers": 2,
+    "subjects": [
+      {
+        "id": "editorial-ch98",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      },
+      {
+        "id": "editorial-ch99",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      },
+      {
+        "id": "editorial-ch100",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      }
+    ],
+    "peer1_context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    },
+    "peer2_context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "effect": "未改变panel、原始同行声明或注册记录；意见不是编辑授权、独立人工认可或执行证明。"
+  },
+  "source_index": [
+    {
+      "source_index": 1,
+      "scene_id": "100-S1",
+      "seed": {
+        "path": "data/planning/scenes/100-S1.json",
+        "sha256": "13fe13e8bc028cd3378d353ac0f4e08a8dbf234f8b043be44fe3672482a6e69b"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/100-S1.v3.json"
+    },
+    {
+      "source_index": 2,
+      "scene_id": "100-S2",
+      "seed": {
+        "path": "data/planning/scenes/100-S2.json",
+        "sha256": "e87add984a8df305c5237d38c8b78d26eb1f6a85996b40d1bacbbec9a560074b"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/100-S2.v3.json"
+    },
+    {
+      "source_index": 3,
+      "scene_id": "100-S3",
+      "seed": {
+        "path": "data/planning/scenes/100-S3.json",
+        "sha256": "18d5b74671ee19815a750b3f94466f1d5e410fb41e0b5fcc87462e8f2baf50ba"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/100-S3.v3.json"
+    },
+    {
+      "source_index": 4,
+      "scene_id": "100-S4",
+      "seed": {
+        "path": "data/planning/scenes/100-S4.json",
+        "sha256": "ae5ce3239bb8c35d56ed408bef5bcc6a22c18a186de24008ea88e4a604b4f03b"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/100-S4.v3.json"
+    },
+    {
+      "source_index": 5,
+      "scene_id": "100-S5",
+      "seed": {
+        "path": "data/planning/scenes/100-S5.json",
+        "sha256": "f03af0ef513a8388e4a4043a9ecf99af801b21a23a7977cfedc34e4c5868d484"
+      },
+      "selected_new_contract": "data/planning/contracts/agent-final-v2/100-S5.v3.json"
+    }
+  ],
+  "narrative_sequence": [
+    "100-S1",
+    "100-S2",
+    "100-S3",
+    "100-S4",
+    "100-S5"
+  ],
+  "narrative_index": [
+    {
+      "narrative_index": 1,
+      "scene_id": "100-S1",
+      "source_index": 1
+    },
+    {
+      "narrative_index": 2,
+      "scene_id": "100-S2",
+      "source_index": 2
+    },
+    {
+      "narrative_index": 3,
+      "scene_id": "100-S3",
+      "source_index": 3
+    },
+    {
+      "narrative_index": 4,
+      "scene_id": "100-S4",
+      "source_index": 4
+    },
+    {
+      "narrative_index": 5,
+      "scene_id": "100-S5",
+      "source_index": 5
+    }
+  ],
+  "narrative_sequence_status": "EDITOR_C_AUTHORIZED_OBLIGATIONS_NOT_PERFORMED",
+  "index_semantics": {
+    "source_index": "immutable seed/order and chapter_plan source-list index, not actual chronology",
+    "entry_from": "new selected predecessor in source order ONLY; no state/knowledge injected",
+    "narrative_index": "independent editorC presentation order ONLY; not runtime or original-source chronology",
+    "source_index_equals_narrative_index_assumption": false,
+    "existing_checker_support": "inspect/check_selected仅检查原source-index前驱、字节及声明；未读取或执行decision的独立narrative_sequence。"
+  },
+  "proposed_narrative_interface": {
+    "human_scope": "保持S1真实多年求仕、S2实授礼务和破家具、S3受荣后数月普通衰退及日常移交、S4死后有礼而简丧务；不恢复旧产。具体年份/官品/病名/丁忧制度不补。宝钗麝月可为人间残余生活候选，不强迫全员同场。",
+    "frame_sequence": [
+      "‘人间这些余事，到此按下’：人间先封口。",
+      "‘不知何日何时’另起太虚；警幻展一轴素榜，不经凡人梦进入。",
+      "保留五层、宝黛两评原字；当前正层十二名及少量下层显示只作C-format，三副四副留白不等于原榜无人物。",
+      "宝玉榜末‘情不情’，警幻只说‘收罢’；不逐人解释。",
+      "章回切换青埂峰，明确石已劫终复还本质的终态；不说明何时、谁送、玉如何变石。",
+      "空空道人取粗纸残墨抄录，漫漶处留空；止于‘石在，字在。’"
+    ],
+    "possible_c_wording_not_source_quote": "且把太虚一境按下，另说青埂峰。那石劫终，已复还本质，仍在峰下。",
+    "wording_status": "AUTHORIZED_C_WORDING_OPTION_NOT_ORIGINAL_NOT_PERFORMED_NOT_ADOPTED",
+    "wording_limit": "此句只是一个明确终态的C呈现备选，不作为原稿或新脂批引文；不暗指此前太虚卷轴造成归石，不称已证明整部石文完整。",
+    "role_identity_split": [
+      {
+        "segment": "太虚",
+        "narrative_role_name": "警幻",
+        "role_name_basis": "chapter-card field 5 / 100-S5-R3",
+        "registry_id": null,
+        "registry_status": "UNKNOWN",
+        "localcast_completeness": "UNKNOWN",
+        "allowed_action": "开榜、收卷、收罢",
+        "forbidden_action": "逐人解释、向凡人传递终极答案"
+      },
+      {
+        "segment": "青埂峰外框",
+        "narrative_role_name": "空空道人",
+        "role_name_basis": "chapter-card field 5 / 100-S5-R4 / G-P100-04",
+        "registry_id": null,
+        "registry_status": "UNKNOWN",
+        "localcast_completeness": "UNKNOWN",
+        "allowed_action": "看石、粗纸残墨誊录、漫漶留空",
+        "forbidden_action": "替字、替情榜解说、修补尘世玉物流"
+      },
+      {
+        "segment": "情榜字面",
+        "narrative_role_name": "榜中姓名",
+        "registry_id": null,
+        "registry_status": "NOT_AN_ACTIVE_CAST_ASSERTION",
+        "allowed_action": "仅显示名字/硬评",
+        "forbidden_action": "以列名宣称宝黛等现实到场"
+      }
+    ]
+  },
+  "must_remain_unknown": [
+    {
+      "field": "earthly_jade.holder_and_location_and_route",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "外框归石不补尘世交通；山景不写入尘世对象location。"
+    },
+    {
+      "field": "jinghuan.registry_id_and_kongkong.registry_id",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "章卡可指叙事名号，所选registry未注册；不生成ID。"
+    },
+    {
+      "field": "frame_complete_localcast_and_scene_checkpoint",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "participants=[]是无可绑定注册列表，不是空演员集合；完整名单、场级事件、局部入口退出未核。"
+    },
+    {
+      "field": "original_final_chapter_title_rosters_counts_and_most_ratings",
+      "status": "OPEN_LOCKED",
+      "value": null,
+      "reason": "OL-024/025/026/028；五层硬结构不能推出五册60人。"
+    },
+    {
+      "field": "liwan.death_date_diagnosis_and_jialan.rank_mourning_rules",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "OL-027及C/H历史机制限度；本轮未作一手制度校核。"
+    },
+    {
+      "field": "stone_text_wholebook_completeness",
+      "status": "UNKNOWN",
+      "value": null,
+      "reason": "抄录、漫漶留空及一处明示终态不认证全书源证、全榜或历史作者输入。"
+    }
+  ],
+  "frozen_inputs": {
+    "old_runs": "FROZEN_UNCHANGED_NOT_REPLAYED_FOR_NEW_NARRATIVE",
+    "world_objects_events_registry": "FROZEN_UNCHANGED",
+    "source_packet_seed_chapter_plan_bindings": "PRESERVED",
+    "human_events_created": false,
+    "actor_registry_created": false,
+    "prose_created_or_bound": false
+  },
+  "remaining_execution_status": "PENDING",
+  "historical_and_literary_admission": "NOT_CLAIMED",
+  "actor_identity_split": [
+    {
+      "segment": "太虚",
+      "narrative_role_name": "警幻",
+      "role_name_basis": "chapter-card field 5 / 100-S5-R3",
+      "registry_id": null,
+      "registry_status": "UNKNOWN",
+      "localcast_completeness": "UNKNOWN",
+      "allowed_action": "开榜、收卷、收罢",
+      "forbidden_action": "逐人解释、向凡人传递终极答案"
+    },
+    {
+      "segment": "青埂峰外框",
+      "narrative_role_name": "空空道人",
+      "role_name_basis": "chapter-card field 5 / 100-S5-R4 / G-P100-04",
+      "registry_id": null,
+      "registry_status": "UNKNOWN",
+      "localcast_completeness": "UNKNOWN",
+      "allowed_action": "看石、粗纸残墨誊录、漫漶留空",
+      "forbidden_action": "替字、替情榜解说、修补尘世玉物流"
+    },
+    {
+      "segment": "情榜字面",
+      "narrative_role_name": "榜中姓名",
+      "registry_id": null,
+      "registry_status": "NOT_AN_ACTIVE_CAST_ASSERTION",
+      "allowed_action": "仅显示名字/硬评",
+      "forbidden_action": "以列名宣称宝黛等现实到场"
+    }
+  ],
+  "terminal_state_limit": {
+    "OT100-01": {
+      "id": "OT100-01",
+      "chapter": 100,
+      "sequence": 90,
+      "object_id": "OBJ-TONGLING-JADE",
+      "action": "FRAME_STATE_CHANGE",
+      "from": {
+        "holder": "UNKNOWN",
+        "location": "UNKNOWN",
+        "status": "EARTHLY_ROUTE_OPEN_AFTER_SA_SHOU",
+        "frame_status": "IN_HUMAN_WORLD"
+      },
+      "to": {
+        "holder": "UNKNOWN",
+        "location": "UNKNOWN",
+        "status": "EARTHLY_ROUTE_OPEN_AFTER_SA_SHOU",
+        "frame_status": "RETURNED_TO_ESSENCE_QINGGENG_FRAME"
+      },
+      "source_refs": [
+        "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d",
+        "R01"
+      ],
+      "epistemic": "HARD_TERMINAL_FRAME",
+      "note": "只改变外框身份终态，不伪造尘世物理交通",
+      "movement": "NONE"
+    },
+    "local_exit_state": "UNCHANGED_UNKNOWN_NULL",
+    "transport_added": false,
+    "participants_empty_means": "NO_BINDABLE_REGISTERED_FRAME_ACTORS_NOT_NO_NARRATIVE_ACTORS"
+  },
+  "unresolved": [
+    "新版剧情尚无新正文、局部事件、知识事件或语义重放；旧run不证明本轮义务执行。",
+    "真实editorial panel仍PENDING；peer1 asserted=false保持原样，不宣称满足双合格独立同行或独立人工认可。",
+    "未建立人间新事件/身份registry，继续PENDING；原OPEN_LOCKED与UNKNOWN不提升。",
+    "保留全部旧source_packet和运行依赖；较窄新提案不supersede旧cashflow断言，不宣称全部v3包source mismatch闭合。"
+  ]
+}

@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT",
+  "mode": "FEEDBACK_ONLY",
+  "authority_effect": "NONE",
+  "status": "NOT_ADOPTED_NOT_RELEASED",
+  "reading_experiment": "phase6全书连续阅读D",
+  "reader": {
+    "reader_id": "reader1",
+    "segment": 2,
+    "environment_reported_model_label": "gpt-6.1-sol",
+    "identity_basis": "沿用同一读者原context；仅环境自报标签，不认证provider、human独立性或新增独立身份。",
+    "delegated": false,
+    "actual_continuous_model_reading": "81–90按回次顺序实读；第一段81–85已冻结，本轮续读86–90，不把首段或本段计为另一独立读者。",
+    "cross_segment_memory_limits": "保有首段原context及自己的交接记忆，本轮仅回读85正文87–99行边界；没有重读81–84全部，不能声称十章每一事实都经本轮再次核验。第一段疑点继续保留，未以他人材料求解。"
+  },
+  "selection": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/continuity-reading-selection-v1.json",
+    "sha256": "6f3355d85563f8226429afb25e9ab7ec65914fa889a7fbe9d7b623114c7a0829",
+    "selection_effect": "READING_ONLY_NOT_ADOPT",
+    "reread_before_segment": true,
+    "rule": "本轮86–90均所选长v1；91未来仍须用v2，未读其正文。"
+  },
+  "prior_report": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/continuity/reader1-ch81-85-v1.json",
+    "sha256": "0468753bfbc3c3c7d222d4809c6cc898529b6a9acefb383c7ae4aa0103606cde",
+    "frozen_unchanged": true,
+    "retained_unresolved_questions": ["83湘云知道短夹袄细节的来路未展示", "83末众人谈船上姜粥的信息来路未展示", "83赔菜只证交代被接，实际清偿未证", "84–85具体日数、正式服制传齐情况未知"],
+    "resolution_statement": "本轮没有把前三项解决；87提供死后几个月及礼务问答过程，但仍不足以认证正式服制条目与婚礼准办规则，第四项仅得到后续相对时间，不夸已解决。"
+  },
+  "method": {
+    "primary_reading": "依次使用Read逐章分段阅读全文86–90，每章首末及中间各行均实际读到；不用grep、hash、摘要或他人结论代读。",
+    "not_read": ["其他读者报告", "notes", "source", "原phase5", "disclosure正文", "91–100正文", "整个大request"],
+    "line_convention": "精确相对path；1-based inclusive行号；quote为对应行区间内逐字连续片段。实际行数以标准库splitlines计，Read显示的末尾空白不加进正文覆盖。",
+    "standard_library_read_only_checks": "使用Python -I标准库读取selection、候选与本报告作JSON、哈希、行数及quote包含关系校验，不执行项目代码。",
+    "repo_lint_tests_import_release_registration": "NOT_EXECUTED",
+    "permission_denials": [],
+    "permission_bypass_or_escalation": false,
+    "only_new_output": "artifacts/agent_research/phase6/revisions-v2/continuity/reader1-ch86-90-v1.json",
+    "no_prose_input_or_old_report_edits": true
+  },
+  "actual_coverage": [
+    {"chapter":86,"revision":"v1","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","sha256":"8351a6680a36e7899a583927a57c86a10121b6321e512b0f7b4cd457d24e5721","selection_hash_match":true,"line_start":1,"line_end":113,"complete":true,"read_requests":[{"offset":1,"limit":90},{"offset":91,"limit":90}]},
+    {"chapter":87,"revision":"v1","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","sha256":"86f74726ea7d3819dbc7251350d6ac46f22c14d9d3cff6751940e628edb3e401","selection_hash_match":true,"line_start":1,"line_end":105,"complete":true,"read_requests":[{"offset":1,"limit":90},{"offset":91,"limit":90}]},
+    {"chapter":88,"revision":"v1","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","sha256":"16a578156216378fcc0902e116b55784007a1301929f5ed53bd866665e054f2b","selection_hash_match":true,"line_start":1,"line_end":101,"complete":true,"read_requests":[{"offset":1,"limit":85},{"offset":86,"limit":85}]},
+    {"chapter":89,"revision":"v1","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","sha256":"98b90821bf2f23f91bf2745747623aae61c781a30213dfe6089eee963a826d4a","selection_hash_match":true,"line_start":1,"line_end":105,"complete":true,"read_requests":[{"offset":1,"limit":85},{"offset":86,"limit":85}]},
+    {"chapter":90,"revision":"v1","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","sha256":"ddc1647302b7efcc145fc2839bbadc05eec62afe24c55db9a72e7951df92d71e","selection_hash_match":true,"line_start":1,"line_end":105,"complete":true,"read_requests":[{"offset":1,"limit":85},{"offset":86,"limit":85}]}
+  ],
+  "boundary_reread": {"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt","line_start":87,"line_end":99,"read_request":{"offset":87,"limit":15},"purpose":"核对尚生存、递旧签、题名旧页与普通未成稿分置及夜间轮班；不重算为新增独立阅读。"},
+  "chapter_observations": [
+    {
+      "chapter":86,
+      "scope_judgment":"病势从米汤难咽、握笔不住至气息不续有递进；病危传话与实际死讯分开，宝玉先动身后获知已死。具体与85隔多少日仍不确定。",
+      "observations": [
+        {"id":"86-O1","classification":"OBSERVATION","observation":"开篇尚有意识、能嫌催、能安排明日；既有好转日又不能持久，承接85而非开章已死。医者未至，药仍送到；不能据此自行判死因或责任。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":13,"line_end":13,"quote":"中间也曾有过精神稍好的日子，坐起来说些闲话，自己挑了书要看；不多时，书还没翻过几页，又得放下。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":25,"line_end":25,"quote":"姑娘今日连米汤也难咽，比先前又弱了。"}]},
+        {"id":"86-O2","classification":"OBSERVATION","observation":"临终试笔没有写成新字；这张旧笺后行仍空一字，和稿夹分开拿，不能说诗已完成。不能仅凭外置未成就认证必为85普通未成稿的同一张。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":29,"line_end":29,"quote":"后行的空字仍在原处，黛玉的指尖落在它旁边，停了一停。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":33,"line_end":33,"quote":"见她指尖渐渐松了，便将笔接回，搁在床边的小碟上。"}]},
+        {"id":"86-O3","classification":"OBSERVATION","observation":"紫鹃让认得路的雪雁报李纨与找宝玉，小丫头留床边递物；袭人再传前面，接话者找跟班，宝玉确实听到病势转坏才动身。迟到不是文字中凭空缺席。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":53,"line_end":53,"quote":"说病势转坏，别只说林姑娘找他。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":59,"line_end":59,"quote":"宝玉不待他说完，已经走过去。"}]},
+        {"id":"86-O4","classification":"OBSERVATION","observation":"死亡的叙述断点在李纨脚步已近、宝玉仍赶路之时；王夫人收到第二层死讯后才来，宝玉抵达又被明确告知。李纨后称‘我们进来时已不好’是宽泛话，不覆盖叙述者的明确先后。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":65,"line_end":65,"quote":"黛玉已经死了，帘外还响着李纨走近的脚步，宝玉尚在赶来的路上。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":103,"line_end":103,"quote":"王夫人道：“林姑娘去了。”"}]},
+        {"id":"86-O5","classification":"OBSERVATION","observation":"米汤停供、水继续送、药炉收火，转为死后照料；宝玉要求温药是震恸中的旧习，不是叙述认证黛玉仍能服药。未完旧笺到晚间仍在床头，未被自动焚毁或收归宝玉。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":81,"line_end":81,"quote":"黛玉床头的那张笺仍露着一角"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":113,"line_end":113,"quote":"紫鹃托住药盏的底，将它从宝玉手里接下，没有往炉旁走，只搁在几上原来的地方。"}]}
+      ]
+    },
+    {
+      "chapter":87,
+      "scope_judgment":"黛玉死后数月起议，问长辈、双方、礼务、住处后定日成婚；宝玉知道对象是宝钗，不见调包叙事。婚丧礼例只见过程不见具体条文。",
+      "observations": [
+        {"id":"87-O1","classification":"OBSERVATION","observation":"不是86死亡当日即婚；丧中日常仍持续，几个月不等于已经脱丧。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":3,"line_end":3,"quote":"自黛玉去后，又过了几个月。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":3,"line_end":3,"quote":"服用、往来仍各循着丧中的常例。"}]},
+        {"id":"87-O2","classification":"OBSERVATION","observation":"贾母愿意并非立即婚令；两家、贾政、礼务多回商量才定日期。简化棚戏与亲眷规模有明文，但不能据此认证所有制度条件。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":25,"line_end":25,"quote":"媒与礼务的回话各送到王夫人、薛姨妈跟前，服用、往来和可办的规模也分别问过"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":45,"line_end":45,"quote":"日子在一回回往来之后方才定下。"}]},
+        {"id":"87-O3","classification":"OBSERVATION","observation":"袭人先告知，婚礼宝玉知道对面是谁；宝钗亦有母亲私下相告及自己的话，不是无知情的新娘。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":31,"line_end":31,"quote":"宝玉看着窗下那张椅子，问：“是宝姐姐？”袭人道：“是。姨太太那里也商量了。”"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":49,"line_end":49,"quote":"宝玉听得分明，知道对面是宝钗。"}]},
+        {"id":"87-O4","classification":"OBSERVATION","observation":"妆奁与书案争同一位置，妆奁斜置而旧素笺不动；只说明宝玉护纸，不能越过文本认纸为黛玉诗稿、83家书或81三张月诗。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":61,"line_end":61,"quote":"宝钗看了看那几张素笺，只叫莺儿先将另一边的帘绳挽住，没有问上面是谁的字。"}]},
+        {"id":"87-O5","classification":"OBSERVATION","observation":"婚后次日宝玉独走潇湘馆门外不进，回屋吃第一顿普通饭；共同挪灯和后悔问答不宣称旧伤已消，也不把宝钗写成全然顺从。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":77,"line_end":77,"quote":"“不进去。”宝玉说。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":101,"line_end":101,"quote":"饭摆在这里，我便同你吃；你的书搁在这里，我也看见了。别只拿一句话问我。"}]}
+      ]
+    },
+    {
+      "chapter":88,
+      "scope_judgment":"袭人出嫁有公私物和差事交接，先成礼再短返谢恩；迎春病讯、死讯、娘家试图进入又被挡分层，死亡现场不在读者所见中。",
+      "observations": [
+        {"id":"88-O1","classification":"OBSERVATION","observation":"王夫人明确允嫁，公用针线与自己的零碎分开，宝玉想连房内匣子送出被宝钗止住；不是任意带走全部公物。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":5,"line_end":5,"quote":"王夫人叫她把自己的拿好，房里公用的交给宝钗"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":23,"line_end":23,"quote":"袭人把房内公用的针线匣留在原处，自己的零碎装进小包。"}]},
+        {"id":"88-O2","classification":"OBSERVATION","observation":"钥匙归麝月，药盒下移到够得着的格，送饭等差事并未随袭人走而消失；柜门待修到章末仍未修，不是一次交接便立即全能。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":21,"line_end":21,"quote":"袭人拿过一根绳，把钥匙归到一处，交还她手上"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":97,"line_end":97,"quote":"柜门仍有些偏，麝月用肩头一顶，钥匙转进去，才想起外头答应修的人还没来。"}]},
+        {"id":"88-O3","classification":"OBSERVATION","observation":"袭人到蒋家后行礼，再短返府谢恩与嘱留麝月；没有再开柜查房，不能说她仍按旧职长期服务。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":47,"line_end":47,"quote":"蒋玉菡同她依次拜过，起身后让她先坐。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":51,"line_end":51,"quote":"成礼之后，袭人才短返府中谢恩。"}]},
+        {"id":"88-O4","classification":"OBSERVATION","observation":"迎春先报病重，后来不同孙家仆妇报死；两名使者均不提供床边见闻，不认证最后话语、死因或确切死亡时刻。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":63,"line_end":63,"quote":"至于用药、诊看，自己并不在跟前。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":73,"line_end":73,"quote":"仆妇道没有进里屋，只在外头听差。"}]},
+        {"id":"88-O5","classification":"OBSERVATION","observation":"娘家想派熟识妇人及衣物，对方拒绝当日入内；妇人一同返，预备物未送出。宝玉起初只知死讯，宝钗回房才补告去问及未准两层。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":85,"line_end":85,"quote":"媳妇道也没给个准，自己没把东西留下，便回来了。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":93,"line_end":93,"quote":"宝玉已经知道死讯，却不知道方才问后事的回话"}]}
+      ]
+    },
+    {
+      "chapter":89,
+      "scope_judgment":"封控、点名、点物、争取眼前日用、有限迁出及借院挤住有连续动作；不把答名候问等同拘押，不把现银受控等同无钱。",
+      "observations": [
+        {"id":"89-O1","classification":"OBSERVATION","observation":"宝玉到前面应名仍候，获准后才回房取物；贾琏留应问，头拨未走，迁出不等于所有人或所有物都已撤空。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":17,"line_end":17,"quote":"回去的人只带这一句，不再另添“押”字。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":63,"line_end":63,"quote":"贾琏仍要留着应问，没有随头一拨走"}]},
+        {"id":"89-O2","classification":"OBSERVATION","observation":"日用药包与被褥先候问，实际经手认明后上回才准取眼下所需，其余封留；不由宝钗说需要就自动放行。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":53,"line_end":53,"quote":"又往上回过，才让取出眼下所需的衣被、药包，余下的仍须封留。"}]},
+        {"id":"89-O3","classification":"OBSERVATION","observation":"平儿取不到旧现银，但王夫人另有随身小包可付眼前车脚，两者不互斥；车程价与旧欠薪不混抵，欠债未结。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":41,"line_end":41,"quote":"平儿说不是箱里空了，是不能动"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":77,"line_end":77,"quote":"自己将一个小包递给宝钗，嘱她只取眼前可用的，不要都散了。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":79,"line_end":79,"quote":"宝钗将眼下这一程付出"}]},
+        {"id":"89-O4","classification":"OBSERVATION","observation":"借院一开始就明说几间、无新增床具、共井灶；原住者东西和粮器仍在，借住者无权拿被与碗。老人、凤姐、旧仆都需争取落坐落铺，不虚构额外空房。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":51,"line_end":51,"quote":"那边回话说可让几间，却不添床具，井灶原是共用，搬来前要知道。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":73,"line_end":73,"quote":"宝钗道方才混在一起，看错了，叫她先拿回，自己的另铺。"}]},
+        {"id":"89-O5","classification":"OBSERVATION","observation":"宝玉带薄书与换洗，通灵玉仍在颈下；没有认证旧纸与所有私物都随身。药先排在原住人一锅之后，水另问桶主借，宝玉想帮忙却先忘壶，能力未突然转换。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":61,"line_end":61,"quote":"旧日带着的玉仍在颈下"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":85,"line_end":85,"quote":"药炉却在这一锅之后先上了火。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":91,"line_end":91,"quote":"宝玉两手空着，才想起自己连壶也没拿"}]}
+      ]
+    },
+    {
+      "chapter":90,
+      "scope_judgment":"仍在共用井灶的借院，旧府取物尚受控，资源约束落到衣物、布、水、米、照护工时；尾声只收名目纸，未获准取物。",
+      "observations": [
+        {"id":"90-O1","classification":"OBSERVATION","observation":"平儿早晨取冬物空返，下午缩单再去；贾琏仍须等准许，90末经手人收纸不等于准办。没有旧权力一声令下便恢复供应。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":5,"line_end":5,"quote":"他说还得等准许，不能先取。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":105,"line_end":105,"quote":"那人只收纸往里去，平儿退到门侧，手里空着，站下等回话。"}]},
+        {"id":"90-O2","classification":"OBSERVATION","observation":"孩子有原住家看锅任务、修窗人先修别家灶、借壶须还，均延续借住不是独占资源；平儿无法一人兼顾跑腿与照护。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":11,"line_end":11,"quote":"孩子说午间还要替那边看锅，若走开了，饭煳了又得挨骂。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":79,"line_end":79,"quote":"奶奶就是不喝药，我也只有这一趟。"}]},
+        {"id":"90-O3","classification":"OBSERVATION","observation":"宝玉送青布夹衣给病妇，包袱布也留在对方处；自己挨冷，宝钗暂借披风、麝月补衣补齐后收回披风。送出的不索回，也不是无代价施予。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":35,"line_end":35,"quote":"先说夹衣已交给病妇，那边打开穿了，肩上才遮得住。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":49,"line_end":49,"quote":"麝月给他穿好补过的那件"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":71,"line_end":71,"quote":"宝钗接过时，领边还留着宝玉方才拢过的折痕，她将那一处抚平，披上才走。"}]},
+        {"id":"90-O4","classification":"OBSERVATION","observation":"米按两家分开、灶轮用；缺口木升是借来本已坏，原升仍在旧府未准取。眼前米袋不说明全府有无限供应，也未交代米从何获得。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":57,"line_end":57,"quote":"还有原住的人，各用各的米，锅却不能各起一口"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":61,"line_end":61,"quote":"平儿说还在旧府的用物里，没准取出，这只是借用。"}]},
+        {"id":"90-O5","classification":"OBSERVATION","observation":"宝钗不把善意当成可自动实施的计划，凤姐减为眼前米与夜被；明早米、热水到位仍不确定。尾声平儿实际离院并在受控旧府门外候传，后读须承认照护由孩子暂接而热水交接尚乱。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":83,"line_end":83,"quote":"米的去问，夜里用的被褥也问。其余整套冬物，先别忙在这一回里。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":87,"line_end":87,"quote":"宝钗说今夜先有，明早还须看灶上怎么分。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":105,"line_end":105,"quote":"平儿扶着门框看一眼，仍没有折回去。"}]}
+      ]
+    }
+  ],
+  "cross_boundary_observations": [
+    {
+      "id":"B85-86","classification":"STATE_CONTINUITY_DURATION_OPEN","interface":"85黛玉尚生存渐乏 → 86临终与宝玉赶路",
+      "observation":"85末有轻咳、用水与未成稿，86开篇仍能言、后因咽水难与握笔不住渐坏，再报病危、赶路、死亡、抵达；不是85已死后86复生。日历间隔不定，86床头未完笺也未明确题为85同张，不强行合并。",
+      "left_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt","line_start":91,"line_end":91,"quote":"如今有时连移个枕也嫌累。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt","line_start":99,"line_end":99,"quote":"几边普通草稿仍等着明日"}],
+      "right_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":3,"line_end":3,"quote":"黛玉嫌她挪得多，轻轻蹙眉道：“我又没说要躺。”"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":65,"line_end":65,"quote":"黛玉已经死了，帘外还响着李纨走近的脚步，宝玉尚在赶来的路上。"}]
+    },
+    {
+      "id":"B86-87","classification":"EXPLICIT_TIME_GAP_WITH_RULES_UNKNOWN","interface":"86死讯抵达 → 87死后数月议婚成婚",
+      "observation":"宝玉明确听过死讯，87数月后仍有丧中规矩；议婚到成婚又经多回往还，不能压成死亡当夜婚礼。只有礼务询问过程和从简结果，不能代造服制准许。86遗笺未交到87宝玉案上，勿把素笺身份补齐。",
+      "left_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":103,"line_end":103,"quote":"王夫人道：“林姑娘去了。”"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":105,"line_end":105,"quote":"报信出去的时候，姑娘还在。后来，没等到你。"}],
+      "right_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":3,"line_end":3,"quote":"自黛玉去后，又过了几个月。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":45,"line_end":45,"quote":"日子在一回回往来之后方才定下。"}]
+    },
+    {
+      "id":"B87-88","classification":"DOMESTIC_ROLE_HANDOFF","interface":"87宝钗成妻、袭人仍在 → 88袭人成礼后短返",
+      "observation":"87已成夫妇，袭人仍理水衣；88由王夫人允其离职出嫁，交麝月钥匙公物，返府是婚后短谢而非婚前偷返或恢复旧职。88允婚起始日期与87相距多久没写，不补确日。",
+      "left_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":51,"line_end":51,"quote":"两人已经成了夫妇，仍隔着那半步说话"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":97,"line_end":97,"quote":"袭人已交过去，只留平日穿的那件在外层。"}],
+      "right_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":5,"line_end":5,"quote":"只是这里人手要交代，别走了才叫人找。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":51,"line_end":51,"quote":"袭人没去开柜，也没有再查房里的事，随来接的人离开。"}]
+    },
+    {
+      "id":"B88-89","classification":"ROLE_CONTINUITY_EVENT_GAP_OPEN","interface":"88迎春死讯、麝月接差 → 89抄没迁出",
+      "observation":"麝月作为屋里接差者、宝钗已婚主事继续；袭人未无故回来。迎春后事被挡的线没有在89得到结局，不能把抄没当其因果或证明她尚生存。88末的盆撞门和89另起门房无明确日历锚点。",
+      "left_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":93,"line_end":93,"quote":"宝钗将去问与未许进去的两层话说了。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":101,"line_end":101,"quote":"麝月端着盆侧身过门，盆沿撞着门框，当的一声。"}],
+      "right_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":11,"line_end":11,"quote":"自己先叫麝月别把已经取出的东西来回搬。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":65,"line_end":65,"quote":"宝玉在车边回望，眼光掠过那把扫帚，没有说话，随宝钗一起往外走。"}]
+    },
+    {
+      "id":"B89-90","classification":"EXPLICIT_RESOURCE_CONTINUITY","interface":"89有限准带、共用借院 → 90旧物未准取与同院分配",
+      "observation":"89准带眼下日用不等于此后取冬物自由；89先说明共井灶，90继续排锅、还借壶、分各家米。旧欠薪者跟到借院又要与平儿同去旧府；一顿饭未冲销工钱。89未逐件列出衣裳米，90可见数件衣和少量米不直接矛盾，但具体来源、数量仍未查明。",
+      "left_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":53,"line_end":53,"quote":"余下的仍须封留。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":79,"line_end":79,"quote":"他道饭是饭，钱还是钱。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":105,"line_end":105,"quote":"原住的人也还得烧洗碗的水"}],
+      "right_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":3,"line_end":3,"quote":"里头所开冬物一件也没跟着来。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":57,"line_end":57,"quote":"各用各的米，锅却不能各起一口"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":101,"line_end":101,"quote":"到了门上各说各的事，别为等自己误了他。"}]
+    }
+  ],
+  "confirmed_failures": [],
+  "failure_scope_statement": "本轮86–90及所核85→86接口，尚未找到两处明确互斥且排除省略可能的文本，故可证FAIL为零。这不是全书完成、文学采用或历史PASS；未知仍列未知。",
+  "uncertainties": [
+    {
+      "id":"U2-1","classification":"OBJECT_IDENTITY_AND_CUSTODY_UNKNOWN_NOT_FAIL",
+      "question":"85普通未成稿、86空字旧笺、87宝玉所护素笺之间是否同物？《十独吟》匣到死后和抄没后的去向如何？",
+      "observation":"可见的相似是未完及外置，但85未给诗句，86未回称85那张，87甚至不问谁字；无交接即不能自动连成一条传承。89带薄书也未说就是同组旧页。未叙诗稿转移或失落不自动FAIL。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt","line_start":99,"line_end":99,"quote":"小匣里那包题名旧页已经收齐，几边普通草稿仍等着明日"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":29,"line_end":29,"quote":"紫鹃不翻稿夹，只把那张露在外面的笺拿起"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":61,"line_end":61,"quote":"没有问上面是谁的字。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":61,"line_end":61,"quote":"他从桌角拿起一本薄书，夹到衣包里。"}],
+      "resolution_needed":"后文若有明确题名、物貌与交接才判同物；不以旁证文档补桥。"
+    },
+    {
+      "id":"U2-2","classification":"FORMAL_MARRIAGE_RULES_UNSPECIFIED_NOT_FAIL",
+      "question":"丧中成婚的具体准办条件是什么？",
+      "observation":"87反复说问礼例、服用往来和规模，又确实丧中成婚，只能确认叙述有询问过程，不能判具体制度已合规或必违规。首段服制疑点尚未被一组明确条文收束。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":9,"line_end":9,"quote":"还有娘娘的丧中各样事，外头该问的须问明白"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":25,"line_end":25,"quote":"服用、往来和可办的规模也分别问过"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":43,"line_end":43,"quote":"丧中本不宜闹"}],
+      "resolution_needed":"保留文本未明范围；不自行引入外部服制或默认喜事冲丧。"
+    },
+    {
+      "id":"U2-3","classification":"TIME_AND_LODGING_SCOPE_OPEN_NOT_FAIL",
+      "question":"89迁出到90隔多久，借院共用者分别有哪些人？",
+      "observation":"90有早晨、昨日、午后与晚间的相对顺序，但没说一定为迁来翌日；新出病妇与代看锅孩子没有与89特定人物明确同一化。可以知道院落共用，不能补全所有住人身份或房间总数。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":69,"line_end":69,"quote":"借院里的人让出了可住的屋，并没有搬走自己的全副家当。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":13,"line_end":13,"quote":"问昨日为何不将这床给外头歇的人"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":23,"line_end":23,"quote":"是帮原住人家取东西时看见的"}],
+      "resolution_needed":"后读保持共用约束，不抢认病妇为迎春、紫鹃或其他既有人物。"
+    },
+    {
+      "id":"U2-4","classification":"SUPPLY_ORIGIN_AND_QUANTITY_UNKNOWN_NOT_FAIL",
+      "question":"90自用米袋、木升及尚有衣物由何处来，剩多少钱？",
+      "observation":"89准带日用衣被但非穷尽清单，王夫人有小包付车脚；90有米袋与借木升，但没有米的购买、分领、总量或现金余额。不能说抄后凭空无限有粮，也不能因省略取得过程判凭空造粮。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":53,"line_end":53,"quote":"才让取出眼下所需的衣被、药包"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":7,"line_end":7,"quote":"小几另一头压着米袋，口上套一只木升"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":87,"line_end":87,"quote":"今夜先有，明早还须看灶上怎么分。"}],
+      "resolution_needed":"只把眼前少量可用作为实证，不据名目单当已取到，不推现金总量。"
+    },
+    {
+      "id":"U2-5","classification":"DEATH_REPORT_LIMIT_NOT_FAIL",
+      "question":"迎春死因与死时经过、孙家后来是否允娘家料理？",
+      "observation":"88只能确定孙家报丧到府及拒当日进入；89–90没有让本读者实际见到迎春临终或后来后事。不能把回目‘薄命’自动展开为已核实的加害情节。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":71,"line_end":71,"quote":"究竟断气时在不在跟前，她摇头。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":85,"line_end":85,"quote":"今日不能带人进去，收拾的事家里自有安排。"}],
+      "resolution_needed":"保留知情边界，不补终场，不把未解决当成已解决。"
+    }
+  ],
+  "literary_risks": [
+    {
+      "id":"L2-1","classification":"LITERARY_RISK_NOT_CONTINUITY_FAIL",
+      "risk":"86临终与81香菱终场在米汤或羹、袖口、帕水、请医未能救、移灯、停炉或撤药等上高度同构。同context记忆下会感到死亡被类似照护手续包裹；区别是86的未完明日与宝玉迟到较有独特痛点，此评价不是两人死法同一的事实判断。",
+      "memory_basis":"81同context完整实读记忆，本轮未重读81；下面只引本轮86具体句，不冒称本轮重新核验81。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":71,"line_end":71,"quote":"姑娘的薄衫在箱里。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":79,"line_end":79,"quote":"水留下。米汤不盛了。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch86-v1.txt","line_start":113,"line_end":113,"quote":"几上那盏未尽的药，冷透了"}]
+    },
+    {
+      "id":"L2-2","classification":"LITERARY_RISK_NOT_CONTINUITY_FAIL",
+      "risk":"87婚后与88出嫁都用衣箱腾位、钥匙、门槛、小包和普通饭表现新关系；细节有力，但88前半篇幅加上89迁居再续物品物流，三章连续可能变成相近的‘搬家—安置—交差’节拍，婚嫁的不同身份压力被动作同质化。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch87-v1.txt","line_start":59,"line_end":59,"quote":"两个人各指着同一个地方，便都看袭人。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":49,"line_end":49,"quote":"两人将箱子往旁边挪，留了一条能走的路，方才各坐下吃些饭。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":69,"line_end":69,"quote":"自己的衣包先搁在脚边，门后过不去，又挪到另一头。"}]
+    },
+    {
+      "id":"L2-3","classification":"LITERARY_RISK_NOT_CONTINUITY_FAIL",
+      "risk":"同一纠偏声口继续扩散：‘饭钱分开’‘名字不是钥匙’‘不能两处都有’等把约束讲成可移用的警句。宝钗、平儿、袭人、麝月都清醒善核验，连续读时各自机锋和阶序位置容易趋近；90宝钗要求收回披风及凤姐发怒稍保留了摩擦。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt","line_start":39,"line_end":39,"quote":"饭总有人管，管得好不好是另一回事。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":79,"line_end":79,"quote":"饭是饭，钱还是钱。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":11,"line_end":11,"quote":"她一个人，不能两处都有。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":55,"line_end":55,"quote":"名字在纸上，又不是门上的钥匙。"}]
+    },
+    {
+      "id":"L2-4","classification":"LITERARY_RISK_NOT_CONTINUITY_FAIL",
+      "risk":"89把抄没压迫表现为候查、准带、封留，90把讽谏落实为谁来补施舍后的缺口，因果并非空谈；但排队、等话、挪壶、手满、门碰、再去一趟反复出现，可能让宏观灾变与私密冲突都维持同一种低振幅。90整日多个段落围一件夹衣也有寓言化风险，不能以资源正确自动抵销文学单调。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt","line_start":31,"line_end":31,"quote":"记了用在何处，不是就许你带走。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":27,"line_end":27,"quote":"如今给出去真少一件。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":45,"line_end":45,"quote":"眼下你周全一个，总有人补这个缺。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":105,"line_end":105,"quote":"手里空着，站下等回话。"}]
+    }
+  ],
+  "handoff_state_at_90_end": {
+    "basis":"仅以下述已带证据观察为基础；不替下一段制造事件或补桥。",
+    "daiyu_and_papers":"86已死，宝玉已知；未完成笺仍空字，至86死后还在床头。85《十独吟》匣、普通稿与86旧笺是否同物、后续收存交接未知；87宝玉护素笺身份未知，89仅确认薄书随身。",
+    "marriages":"宝玉宝钗87明知彼此成婚；袭人88与蒋玉菡成礼，婚后短返谢恩并嘱留麝月后离开，未恢复旧差。",
+    "yingchun":"88孙家报丧，娘家试派人被拒当日入内；之后后事未明，不声称已亲验死因。",
+    "residence":"89受控旧府有限准带，首拨迁入借院；贾琏当时留应问。90仍共井灶、互借器皿并辨各家米与被褥，不能把原住人资源并作贾家所有。",
+    "money_and_rice":"89车脚仅当程由王夫人小包出；旧债、欠薪未付清，不能把留饭算抵薪。90有眼前米，来源总量与现金余额未知；今夜可支，明早未定。",
+    "clothes_and_cloth":"90青布夹衣已给病妇，包衣布亦留其处；宝玉改穿麝月补好的衣，袖补仍硬。宝钗披风临借后收回并穿去凤姐处再回；另湿布已拭水展开待干。",
+    "fengjie_and_pinger":"凤姐仍病弱能发话，药已勉强喝些；平儿傍晚将缩减名目送到受控旧府，尾句在门外等回话，未获物或准取承诺。照护交孩子，热水到位交接尚混乱。",
+    "unpaid_servant":"旧仆仍追欠薪，同平儿到旧府，各问各事，平儿不代认或代结工资。",
+    "earlier_open_threads":"探春到达、回信、元妃死因与正式服制、麒麟来源等未在本段解决；83短夹袄/姜粥来路与赔菜实结疑点继续保留。"
+  },
+  "unread_remainder": {
+    "complete_remaining_chapters":[91,92,93,94,95,96,97,98,99,100],
+    "body_read_status":"ALL_NOT_READ",
+    "future_91_revision":"v2",
+    "next_segment_requires_coordinator_message":true,
+    "pending_actual_reading_questions":["平儿候传能否获准取物及回来前照护资源", "欠薪旧仆的债不被饭或车脚抹平", "宝玉衣物、宝钗披风、赠病妇夹衣与留用布的后续位置", "借院钱米水灶与原住者边界", "死后诗稿及不同旧纸身份与交接", "探春信路和麒麟信息何时明文推进", "婚后人物关系能否摆脱反复物流纠偏的单一节拍"],
+    "no_self_start":true
+  },
+  "verification_contract": {
+    "candidate_selection_and_prior_report_hash_check":"EXECUTED_SUCCESS_BEFORE_REPORT_WRITE",
+    "json_quote_and_hash_check":"写入后用一次Python -I标准库只读核JSON解析、证据路径行号quote、selection和五章哈希、冻结首段哈希；具体执行结果在交接消息记录，不追填修改本报告。",
+    "no_adoption_or_historical_pass_claim":true,
+    "freeze_policy":"完成只读校验后冻结本报告，不再改；首段始终冻结不改。调用拒绝如实记NOT_EXECUTED且不绕过。"
+  }
+}

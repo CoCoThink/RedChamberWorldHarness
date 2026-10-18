@@ -2,6 +2,8 @@
 from __future__ import annotations
 
 from collections import Counter
+from contextlib import contextmanager
+from contextvars import ContextVar
 import json
 from pathlib import Path
 import re
@@ -15,6 +17,26 @@ from ..graph import ProvenanceGraph
 from .extraction import ExtractionRepository, canonical_bytes, code_digest, toolchain_diff, validate
 from .inputs import CorpusInputs
 from .layers import classify, pdf_runs
+
+
+# Within one evaluation scope, a verified rebuild is reused only for identical
+# freshly re-hashed inputs (manifest, build config incl. its bound input config,
+# every dependency asset) and identical corpus code. Outside a scope every
+# load(rebuild=True) recompiles from the original carriers, as before.
+_REBUILD_CACHE: ContextVar[dict | None] = ContextVar("corpus_rebuild_cache", default=None)
+
+
+@contextmanager
+def rebuild_scope():
+    """Share verified corpus rebuilds across one evaluation; never persisted."""
+    if _REBUILD_CACHE.get() is not None:
+        yield
+        return
+    token = _REBUILD_CACHE.set({})
+    try:
+        yield
+    finally:
+        _REBUILD_CACHE.reset(token)
 
 
 def records_bytes(dataset_ref: str, kind: str, records: list[dict]) -> bytes:
@@ -45,6 +67,13 @@ class CorpusRepository:
             raise AssetError("STALE_CORPUS_INPUT_CONFIG")
         if config["layer_policy"]["main_size_range"][0] > config["layer_policy"]["main_size_range"][1]:
             raise AssetError("INVALID_CORPUS_SIZE_RANGE")
+        for pattern in config["layer_policy"].get("page_furniture", {}).get("page_number_patterns", []):
+            try:
+                compiled = re.compile(pattern)
+            except re.error as exc:
+                raise AssetError("INVALID_PAGE_FURNITURE_PATTERN") from exc
+            if compiled.fullmatch(""):
+                raise AssetError("EMPTY_PAGE_FURNITURE_PATTERN")
         return config
 
     def compile(self, relative: str) -> tuple[dict, dict[str, bytes]]:
@@ -59,6 +88,8 @@ class CorpusRepository:
         _, units = ExtractionRepository(self.catalog).load(fixed["pdf"]["extraction_ref"], rebuild=False)
         _, epub = ExtractionRepository(self.catalog).load(fixed["epub"]["extraction_ref"], rebuild=False)
         policy = config["layer_policy"]
+        schema_version = config["schema_version"]
+        method = "DECLARED_PDF_TYPOGRAPHY_V2" if schema_version == 2 else "DECLARED_PDF_TYPOGRAPHY_V1"
         evidence = []
         for ref in policy["evidence_units"]:
             if ref not in units:
@@ -102,7 +133,7 @@ class CorpusRepository:
                         raise AssetError("OVERLAPPING_CORPUS_SCOPE")
                     claimed.setdefault(ref, []).append((span["start"], span["end"]))
                     if ref not in page_cache:
-                        page_cache[ref] = pdf_runs(document, page, units[ref]["text"])
+                        page_cache[ref] = pdf_runs(document, page, units[ref]["text"], include_line_context=schema_version == 2)
                     black_annotation = False
                     for run in page_cache[ref]:
                         start, end = max(span["start"], run["start"]), min(span["end"], run["end"])
@@ -118,7 +149,13 @@ class CorpusRepository:
                             active_variant = any((page, left) >= (int(v["unit_ref"].rsplit(":", 1)[1]), v["offset"]) for v in variants)
                             text = units[ref]["text"][left:right]
                             piece = {**run, "text": text}
-                            kind, reason = classify(piece, policy, variant=active_variant, appendix=chapter is None, black_annotation=black_annotation)
+                            line = run.get("line")
+                            line_in_scope = bool(line and span["start"] <= line["start"] and line["end"] <= span["end"] and
+                                                 (chapter is None or any((page, line["start"]) >=
+                                                  (int(v["unit_ref"].rsplit(":", 1)[1]), v["offset"]) for v in variants)))
+                            kind, reason = classify(piece, policy, variant=active_variant, appendix=chapter is None,
+                                                    black_annotation=black_annotation, schema_version=schema_version,
+                                                    line_in_scope=line_in_scope)
                             if kind == "ZHIPI" and reason == "WITNESS_LABEL_GLYPH" and run["style"]["color"] == policy["main_color"]:
                                 black_annotation = True
                             elif kind == "MAIN_TEXT":
@@ -127,12 +164,15 @@ class CorpusRepository:
                             item = {"kind": kind, "text": text, "span": {"unit_ref": ref, "start": left, "end": right},
                                     "style": run["style"], "reason": reason}
                             new_witness = kind == "ZHIPI" and reason == "WITNESS_LABEL_GLYPH"
-                            if chunks and chunks[-1]["kind"] == kind and not new_witness:
+                            furniture_line = (ref, line["start"]) if reason in {
+                                "DECLARED_PAGE_NUMBER_LINE_IN_EDGE_STRIP", "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"} else None
+                            if chunks and chunks[-1]["kind"] == kind and not new_witness and chunks[-1].get("furniture_line") == furniture_line:
                                 chunks[-1]["text"] += text; chunks[-1]["spans"].append(item["span"])
                                 if item["style"] not in chunks[-1]["styles"]: chunks[-1]["styles"].append(item["style"])
                                 if reason not in chunks[-1]["reasons"]: chunks[-1]["reasons"].append(reason)
                             else:
-                                chunks.append({"kind": kind, "text": text, "spans": [item["span"]], "styles": [item["style"]], "reasons": [reason]})
+                                chunks.append({"kind": kind, "text": text, "spans": [item["span"]], "styles": [item["style"]], "reasons": [reason],
+                                               "furniture_line": furniture_line})
                 scope_reports.append({"chapter": chapter, "section_ref": section, "spans": spans,
                                       "characters": sum(s["end"] - s["start"] for s in spans)})
                 for index, chunk in enumerate(chunks, 1):
@@ -146,7 +186,7 @@ class CorpusRepository:
                                "kind": chunk["kind"], "text": chunk["text"], "text_sha256": digest(chunk["text"].encode()),
                                "asset_ref": fixed["pdf"]["asset_ref"],
                                "locator": {"extraction_ref": fixed["pdf"]["extraction_ref"], "spans": compact, "transforms": []},
-                               "classification": {"method": "DECLARED_PDF_TYPOGRAPHY_V1", "reasons": sorted(chunk["reasons"]),
+                               "classification": {"method": method, "reasons": sorted(chunk["reasons"]),
                                                   "styles": sorted(chunk["styles"], key=lambda s: (s["font"], s["size"], s["color"])), "human_review": "PENDING"}}
                     validate(self.root, segment, "corpus_segment")
                     segments.append(segment)
@@ -321,7 +361,16 @@ class CorpusRepository:
                 raise AssetError("CORPUS_PRODUCT_BINDING_MISMATCH")
             products[name] = product.path.read_bytes()
         if rebuild:
-            expected_manifest, expected_products = self.compile(manifest["build_config"]["path"])
+            cache = _REBUILD_CACHE.get()
+            key = (str(self.root), dataset_ref, asset.sha256, manifest["build_config"]["sha256"],
+                   tuple((d["asset_ref"], d["sha256"]) for d in manifest["dependencies"]),
+                   code_digest("dataset.py", "layers.py", "inputs.py", "extraction.py", "adapters.py"))
+            if cache is not None and key in cache:
+                expected_manifest, expected_products = cache[key]
+            else:
+                expected_manifest, expected_products = self.compile(manifest["build_config"]["path"])
+                if cache is not None:
+                    cache[key] = (expected_manifest, expected_products)
             def content(document):
                 return {**document, "builder": {key: value for key, value in document["builder"].items() if key != "code_sha256"}}
             if content(expected_manifest) != content(manifest) or expected_products != products:

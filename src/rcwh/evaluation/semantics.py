@@ -108,6 +108,29 @@ def run_extractor(request: dict, command: list[str], producer: dict, schema: dic
     return trace
 
 
+def beat_severity(beat: dict, graph: Any | None = None) -> str:
+    """Grade a beat by its basis: only a cited evidence-layer hard lock blocks.
+
+    Card-, seed- or plan-derived beats (and beats with no cited basis) are
+    author preferences: reported, replaceable, never a gate on their own.
+    """
+    from ..findings import ADVISORY, SEVERITIES, severity_for_decision, strongest
+    declared = beat.get("severity")
+    if declared in SEVERITIES:
+        return declared
+    decisions = list(beat.get("decision_refs", []))
+    if decisions and graph is not None:
+        return strongest(severity_for_decision(graph, ref) for ref in decisions)
+    return ADVISORY
+
+
+def _contract_graph(root: Path | None, contract: dict) -> Any | None:
+    if root is None or not any(b.get("decision_refs") for b in contract.get("required_beats", []) + contract.get("forbidden_beats", [])):
+        return None
+    from ..graph import ProvenanceGraph
+    return ProvenanceGraph.from_repo(root)
+
+
 def check_reading(request: dict, reading: dict | None, schema: dict, knowledge_runtime: Any | None = None, root: Path | None = None) -> dict:
     validate_request(request)
     contract, text = request["contract"], request["text"]
@@ -239,17 +262,30 @@ def check_reading(request: dict, reading: dict | None, schema: dict, knowledge_r
         return report
     actual = [e for e in events if e["scope"] == "ACTUAL"]
     present = {beat for event in actual for beat in event["beats"]}
+    from ..findings import BLOCKING
+    graph = _contract_graph(root, contract)
+    severities = {b["id"]: beat_severity(b, graph) for b in contract.get("required_beats", []) + contract.get("forbidden_beats", [])}
+    report["advisories"] = []
+
+    def unmet(beat: str, message: str) -> str:
+        # Non-blocking beats stay visible as replaceable advisories, not FAILs.
+        if severities[beat] == BLOCKING:
+            report["findings"].append(message)
+            return "FAIL"
+        report["advisories"].append({"id": beat, "severity": severities[beat], "message": message, "replaceable": True})
+        return "ADVISORY_UNMET"
+
     for beat in sorted(required):
         status = "PASS" if beat in present else "FAIL" if beat in examined and beat not in reading["unresolved"] else "PENDING"
-        report["checks"].append({"id": beat, "status": status})
         if status == "FAIL":
-            report["findings"].append(f"required narrative event absent: {beat}")
+            status = unmet(beat, f"required narrative event absent: {beat}")
+        report["checks"].append({"id": beat, "status": status, "severity": severities[beat]})
     violations = {beat: [e["id"] for e in actual if beat in e["violations"]] for beat in forbidden}
     for beat in sorted(forbidden):
         status = "FAIL" if violations[beat] else "PASS" if beat in examined and beat not in reading["unresolved"] else "PENDING"
-        report["checks"].append({"id": beat, "status": status, "events": violations[beat]})
         if status == "FAIL":
-            report["findings"].append(f"forbidden actual event: {beat}")
+            status = unmet(beat, f"forbidden actual event: {beat}")
+        report["checks"].append({"id": beat, "status": status, "events": violations[beat], "severity": severities[beat]})
     final = {}
     for event in actual:
         for effect in event["effects"]:

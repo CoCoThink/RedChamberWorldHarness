@@ -1,0 +1,4283 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "map": {
+      "path": "artifacts/agent_research/phase6/corpus/dataset-map-v1-to-v2.json",
+      "sha256": "9f678d145b8394d55803950da9e20da87685c6c326ca2bf4a31c58e2eb38e8a2"
+    },
+    "new_segments": {
+      "path": "corpus/front80/v2-candidate/segments.jsonl",
+      "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2"
+    },
+    "observations": {
+      "path": "artifacts/agent_research/phase6/corpus/reader2-observations-v1.json",
+      "sha256": "6a73534f1b9561a75f56becc71959ca7ba9585a809577c4780792880b43f6e90"
+    },
+    "old_segments": {
+      "path": "corpus/front80/v1-candidate/segments.jsonl",
+      "sha256": "bf2d6d7e988e798444aad9ef62de54fba970edd9df72f5be4c94ccaf18f770a6"
+    },
+    "opinion": {
+      "path": "artifacts/agent_research/phase6/corpus/reader2-opinion-v1.json",
+      "sha256": "a2f098bcb7089f076cdafa79da4bc1bf3632fed7e0041a72f227c83938b1b679"
+    },
+    "samples": {
+      "path": "artifacts/agent_research/phase6/corpus/review-samples-v1.json",
+      "sha256": "cfa4819f8dd6dd7c92dc1c06c3c8c5f6c61e47b0af99e0b316e659652d15b532"
+    }
+  },
+  "checked": 102,
+  "corpus_product_changed": false,
+  "evidence_effect": "NONE",
+  "kind": "CORPUS_OBSERVATION_CORRECTION_CROSSWALK",
+  "limitations": [
+    "Corrects observation metadata only, not the reader's verdict or semantic truth.",
+    "No new extraction/rebuild, classification, review acceptance or release result."
+  ],
+  "literary_or_human_admission": false,
+  "method": "Same extraction/unit/overlapping Unicode spans; verify stored map, never equal p-number guessing.",
+  "mismatch_groups": {
+    "EDITORIAL -> APPENDIX": 20,
+    "EDITORIAL -> VARIANT": 4,
+    "None -> APPENDIX": 21,
+    "None -> VARIANT": 4
+  },
+  "mismatches": 49,
+  "negative_samples_with_mapping_error": 8,
+  "original_fail_retained": true,
+  "original_opinion_changed": false,
+  "qualification": "MODEL",
+  "rows": [
+    {
+      "actual_old_kinds": [
+        "MAIN_TEXT"
+      ],
+      "claimed_old_kind": "MAIN_TEXT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 816,
+            "start": 604,
+            "unit_ref": "pdf:page:391"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "e265fb64265bbbb0d3fa137c25c58831bf5e92d515e6100334691d63f68fd0ff",
+      "observation_pointer": "/observations/0/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "MAIN_TEXT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 816,
+                "start": 604,
+                "unit_ref": "pdf:page:391"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:27:p00087",
+          "text_sha256": "e265fb64265bbbb0d3fa137c25c58831bf5e92d515e6100334691d63f68fd0ff"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:27:p00087"
+    },
+    {
+      "actual_old_kinds": [
+        "MAIN_TEXT"
+      ],
+      "claimed_old_kind": "MAIN_TEXT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 694,
+            "start": 581,
+            "unit_ref": "pdf:page:342"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "20a8c6b617670916d6309ba50c81b7cc109fff935723e48cb9ea4e34aab245cd",
+      "observation_pointer": "/observations/1/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "MAIN_TEXT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 694,
+                "start": 581,
+                "unit_ref": "pdf:page:342"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:24:p00030",
+          "text_sha256": "20a8c6b617670916d6309ba50c81b7cc109fff935723e48cb9ea4e34aab245cd"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:24:p00030"
+    },
+    {
+      "actual_old_kinds": [
+        "MAIN_TEXT"
+      ],
+      "claimed_old_kind": "MAIN_TEXT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 493,
+            "start": 63,
+            "unit_ref": "pdf:page:1013"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "139d8b797c42c19fd3ff5e9d961f882631751c60bfaeebe490d77a9da83e392d",
+      "observation_pointer": "/observations/2/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "MAIN_TEXT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 493,
+                "start": 63,
+                "unit_ref": "pdf:page:1013"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:74:p00079",
+          "text_sha256": "139d8b797c42c19fd3ff5e9d961f882631751c60bfaeebe490d77a9da83e392d"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:74:p00079"
+    },
+    {
+      "actual_old_kinds": [
+        "MAIN_TEXT"
+      ],
+      "claimed_old_kind": "MAIN_TEXT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 790,
+            "start": 45,
+            "unit_ref": "pdf:page:818"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "beb789e68a1132572a8171ab7bfe4fff222800607a1d46abdcc02dcbd8c3b798",
+      "observation_pointer": "/observations/3/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "MAIN_TEXT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 790,
+                "start": 45,
+                "unit_ref": "pdf:page:818"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:61:p00016",
+          "text_sha256": "beb789e68a1132572a8171ab7bfe4fff222800607a1d46abdcc02dcbd8c3b798"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:61:p00016"
+    },
+    {
+      "actual_old_kinds": [
+        "MAIN_TEXT"
+      ],
+      "claimed_old_kind": "MAIN_TEXT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 351,
+            "start": 37,
+            "unit_ref": "pdf:page:699"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "a5efafb8f8a94e9441a77bd4376c866c3f6516142e9bd4d44059f6884823489b",
+      "observation_pointer": "/observations/4/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "MAIN_TEXT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 351,
+                "start": 37,
+                "unit_ref": "pdf:page:699"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:52:p00006",
+          "text_sha256": "a5efafb8f8a94e9441a77bd4376c866c3f6516142e9bd4d44059f6884823489b"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:52:p00006"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "VARIANT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:917"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/5/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:917"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00040",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:chapter:67:p00040"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "VARIANT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 33,
+            "unit_ref": "pdf:page:917"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "d5ef26658db000e0d661d54add309ff14305b055198b7376f386812bad2a0f6d",
+      "observation_pointer": "/observations/6/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 931,
+                "start": 33,
+                "unit_ref": "pdf:page:917"
+              },
+              {
+                "end": 25,
+                "start": 0,
+                "unit_ref": "pdf:page:918"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00042",
+          "text_sha256": "8ed8a823e2dc4b3928098f8ae86fe904b3f6b43e3b5223b3210f5c01d95323a9"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00042"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 45,
+            "start": 41,
+            "unit_ref": "pdf:page:918"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "3eeb04d111d9f8a0fa434289466516fd226a17cc2a612970e08bbbe13d14e317",
+      "observation_pointer": "/observations/7/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 920,
+                "start": 41,
+                "unit_ref": "pdf:page:918"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00044",
+          "text_sha256": "106047800d30b646944ae568aee0bb71b30f8b6329c9bd35fa107ac559a3805b"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00045"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "VARIANT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:919"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/8/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:919"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00046",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:chapter:67:p00048"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "VARIANT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 33,
+            "unit_ref": "pdf:page:919"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "4e40df1e1d2f312e8d43e67370cae22b1c761c7fea214011b11349df71f7fd62",
+      "observation_pointer": "/observations/9/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 933,
+                "start": 33,
+                "unit_ref": "pdf:page:919"
+              },
+              {
+                "end": 25,
+                "start": 0,
+                "unit_ref": "pdf:page:920"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00048",
+          "text_sha256": "bd5150ae79924b0169d233356540811c0e26bbcc12113f0c10339a6efb362d3b"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00050"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 45,
+            "start": 41,
+            "unit_ref": "pdf:page:920"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "edd15e147bc65df67f5162a896b6cccf3a8b7257c76af69a39faa06c64c20b0a",
+      "observation_pointer": "/observations/10/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 936,
+                "start": 41,
+                "unit_ref": "pdf:page:920"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00050",
+          "text_sha256": "91297056c56d684a4621708355671488bcc75047c82c2b1f405da0f41b8ef6e8"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00053"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "VARIANT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:921"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/11/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:921"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00052",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:chapter:67:p00056"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "VARIANT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 33,
+            "unit_ref": "pdf:page:921"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "5316da5272c7e30d2abdb6a3f937bbc03d4117ce51c5c1fdd807b1b1b3b53b06",
+      "observation_pointer": "/observations/12/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 923,
+                "start": 33,
+                "unit_ref": "pdf:page:921"
+              },
+              {
+                "end": 25,
+                "start": 0,
+                "unit_ref": "pdf:page:922"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00054",
+          "text_sha256": "617762c87a6b0e3146e126fd54bd313f81978972a1c17b2d07479a852dbca8b2"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00058"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 45,
+            "start": 41,
+            "unit_ref": "pdf:page:922"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "4c05a11264c74a65b7e1aceff1e6de4cdc7467178976f6f9a97ab536a3d478c4",
+      "observation_pointer": "/observations/13/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 899,
+                "start": 41,
+                "unit_ref": "pdf:page:922"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00056",
+          "text_sha256": "060f0062607030e6741822f384c38c0bf8810a33bf2f4b2b790c22a2d44e41d5"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00061"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "VARIANT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:923"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/14/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:923"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00058",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:chapter:67:p00064"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "VARIANT",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 33,
+            "unit_ref": "pdf:page:923"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "8cf73f9092973d569ec1ee503c47b72f886fd96f0dd68d693ec47eba43d91713",
+      "observation_pointer": "/observations/15/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 906,
+                "start": 33,
+                "unit_ref": "pdf:page:923"
+              },
+              {
+                "end": 25,
+                "start": 0,
+                "unit_ref": "pdf:page:924"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00060",
+          "text_sha256": "557a7fec772bcff3775a709b6c2b03aee911d8cb97e72dac7cfb294091b326f6"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00066"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 45,
+            "start": 41,
+            "unit_ref": "pdf:page:924"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "ff7d819f4052ab692d86a80a3ceb4dbbd92117d1a92585a8aae6205e5d0c5e27",
+      "observation_pointer": "/observations/16/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 962,
+                "start": 41,
+                "unit_ref": "pdf:page:924"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00062",
+          "text_sha256": "b548e5059cbb824a6a9583391a0bac07db7c0bcd52599e8037d7f557d24c59ce"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00069"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:925"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/17/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:925"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00064",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:chapter:67:p00072"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 33,
+            "unit_ref": "pdf:page:925"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "75cbc212419376c042a467d4ce316f92d931f32863d05ee2dc9a18ee6df8a5ec",
+      "observation_pointer": "/observations/18/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 909,
+                "start": 33,
+                "unit_ref": "pdf:page:925"
+              },
+              {
+                "end": 25,
+                "start": 0,
+                "unit_ref": "pdf:page:926"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00066",
+          "text_sha256": "31842791c4b29a75289027ed706dccd9624f331cff637b276d68f0b7de4096f1"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00074"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 45,
+            "start": 41,
+            "unit_ref": "pdf:page:926"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "5dac334cf325e506d4304baaf990f2b52e7e4f5c21388e3f1bcad89b9aa830c8",
+      "observation_pointer": "/observations/19/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 860,
+                "start": 41,
+                "unit_ref": "pdf:page:926"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00068",
+          "text_sha256": "a1a43ed2f3db8f77bce352823c146d6a39a846b8313b1c7ea9b3aa51d4dc7463"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00077"
+    },
+    {
+      "actual_old_kinds": [
+        "VARIANT"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 22,
+            "start": 18,
+            "unit_ref": "pdf:page:927"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "1ec71794be7b95e84365384b9f13da60ac3269a0cb74bb3d4ed24e9aabf266d9",
+      "observation_pointer": "/observations/20/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "VARIANT",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 26,
+                "start": 18,
+                "unit_ref": "pdf:page:927"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:chapter:67:p00070",
+          "text_sha256": "ab4cbb5a03f89fe664c160cfacb3af0f6025f93653938ceb6ce695accf4a0dad"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:chapter:67:p00080"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 23,
+            "start": 18,
+            "unit_ref": "pdf:page:1109"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "687133ed2b14abce400afc6c9bc3415a2260e7d366fac69176d91653bd9fb20a",
+      "observation_pointer": "/observations/21/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 467,
+                "start": 18,
+                "unit_ref": "pdf:page:1109"
+              },
+              {
+                "end": 19,
+                "start": 0,
+                "unit_ref": "pdf:page:1110"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00002",
+          "text_sha256": "44e079b7652b78c8bd255edc5994ce5d70f91033dbae83783ac0de90eaffcfef"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00002"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 40,
+            "start": 35,
+            "unit_ref": "pdf:page:1110"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "79fa817e4886298bd43eb459b76caf02e6354c2d77f7a6df3d566b889ce4399e",
+      "observation_pointer": "/observations/22/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 690,
+                "start": 35,
+                "unit_ref": "pdf:page:1110"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00004",
+          "text_sha256": "bd993a9bd707e0d4490d775b2268639138d55c01cf617b579e09fbe07c6c769c"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00005"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1111"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/23/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1111"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00006",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00008"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1111"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "95cf7b03e761efa51e09bfeb087e907a1159cf487240d90aedac3a2685945538",
+      "observation_pointer": "/observations/24/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 729,
+                "start": 33,
+                "unit_ref": "pdf:page:1111"
+              },
+              {
+                "end": 19,
+                "start": 0,
+                "unit_ref": "pdf:page:1112"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00008",
+          "text_sha256": "807b4f3713e413785524acb255cd1b3b0930572592a314093f2f2c49bb77b2a9"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00010"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 40,
+            "start": 35,
+            "unit_ref": "pdf:page:1112"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "63ec4a5391e90da34af5379188488b6e8a354f3280d7081a5b9b5f56f979dc03",
+      "observation_pointer": "/observations/25/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 711,
+                "start": 35,
+                "unit_ref": "pdf:page:1112"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00010",
+          "text_sha256": "0497b21eec870dfea36fe8bc8cf29200cc41a7d3e8e47bd9694d4da981a8378d"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00013"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1113"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/26/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1113"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00012",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00016"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1113"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "f8967f8440a04782f9d0ffef14622b48bf1c9704451ba4e800d93bff0c10f45a",
+      "observation_pointer": "/observations/27/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 726,
+                "start": 33,
+                "unit_ref": "pdf:page:1113"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00014",
+          "text_sha256": "02110f3e7dbca3167a56539100297ccdf7f7d5520045e96ae8e58541aabb6578"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00018"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 23,
+            "start": 18,
+            "unit_ref": "pdf:page:1114"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "70091c2a7e3892b4e1131c5825d51086bd3876a38eb0599ed36babeed53b24c1",
+      "observation_pointer": "/observations/28/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 563,
+                "start": 18,
+                "unit_ref": "pdf:page:1114"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00016",
+          "text_sha256": "73c2bb43fb78d2159a10e8e6e71b2aa0be008dc710c9d43761e247311d228836"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00021"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1115"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/29/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1115"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00018",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00024"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1115"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "c0542377d1a966fc15f93e1dca3648ba3790a56c4f9fc9e72972e2e64207988d",
+      "observation_pointer": "/observations/30/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 754,
+                "start": 33,
+                "unit_ref": "pdf:page:1115"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1116"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00020",
+          "text_sha256": "e10d89e2b8f9770f8518f18c7b24f3d07305174bb850dcc0734ba9619ceefe24"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00026"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1116"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "112f7330a06ca7fec0deb1ca31779d0b628e3dbef2a22c452f831c6ec1cb9b75",
+      "observation_pointer": "/observations/31/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 698,
+                "start": 37,
+                "unit_ref": "pdf:page:1116"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00022",
+          "text_sha256": "e51971486b1af37a31e97a18a30571ee9c3d00c1d170c28010421006ec0e244a"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00029"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1117"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/32/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1117"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00024",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00032"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1117"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "e66be280b759d43795b83dba9637c014123fd9b0a3421cc027e9db2af5785266",
+      "observation_pointer": "/observations/33/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 698,
+                "start": 33,
+                "unit_ref": "pdf:page:1117"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1118"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00026",
+          "text_sha256": "7ce333383b73ba2a675efe00f6461a208e58df8ba2eeb75896bcd36df50d5fb4"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00034"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1118"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "8a86a2b84b1881ef5f3dd9d1014b1e2b6bdbbba9504da317b81b92fc9eca0528",
+      "observation_pointer": "/observations/34/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 714,
+                "start": 37,
+                "unit_ref": "pdf:page:1118"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00028",
+          "text_sha256": "d52537bc8ea1e57378e5729773957624503f2ccea9572c026888a039b2df4be2"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00037"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1119"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/35/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1119"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00030",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00040"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1119"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "42f6b4cb74127e8eb821f2a6f9fa157ea58cf0e591e572c1b17b46231d5bf0b6",
+      "observation_pointer": "/observations/36/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 617,
+                "start": 33,
+                "unit_ref": "pdf:page:1119"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1120"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00032",
+          "text_sha256": "42fd9b3bcb23ea39b6bd58839757ea0f8b99e46235d554ff8c215efdb9a4ada9"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00042"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1120"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "5e0891c26871e04b9e74e1bc8a3326250fc9461e440d5ea35e9122ea032023c7",
+      "observation_pointer": "/observations/37/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 680,
+                "start": 37,
+                "unit_ref": "pdf:page:1120"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00034",
+          "text_sha256": "e2d906de13eeabe8a7db516afc4c781f211d33b86f146b049b5bee028e64698b"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00045"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1121"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/38/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1121"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00036",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00048"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1121"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "81d05477a3dfd252c71b0b4b76c2d4613cdd14ee0f2fafead5be1a2f8544efe0",
+      "observation_pointer": "/observations/39/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 637,
+                "start": 33,
+                "unit_ref": "pdf:page:1121"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1122"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00038",
+          "text_sha256": "a1209bbe9d6ac94bbab1e29b16c75fa93ed584ea54778fcaeb6af85db47b41d0"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00050"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1122"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "49ca5d81054fdd20572294b9350b605d05e0df91da09a46fb8bde7fd6c1c172d",
+      "observation_pointer": "/observations/40/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 675,
+                "start": 37,
+                "unit_ref": "pdf:page:1122"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00040",
+          "text_sha256": "d37253a4e32bc16ee85d6b6a029439f4c181c6262b79dec02f1c1ae2931d4bdf"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00053"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1123"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/41/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1123"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00042",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00056"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1123"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "ecd1615caad81581f1d366871943a3a64a206b5de9f82207cb0257be88ffff7d",
+      "observation_pointer": "/observations/42/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 618,
+                "start": 33,
+                "unit_ref": "pdf:page:1123"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1124"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00044",
+          "text_sha256": "08a8590438cc2934a93bac76b3d56210026c8c7d0ea0159653949e382f4c67ce"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00058"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1124"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "a80464ffead72ed0822d444a88790c2f6a443e0024e51bd290d3658694525371",
+      "observation_pointer": "/observations/43/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 701,
+                "start": 37,
+                "unit_ref": "pdf:page:1124"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00046",
+          "text_sha256": "ac871d4fe45ad0d3e1503287b4a9477127c70c9d177eb5b74d219939bdfb7380"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00061"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1125"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/44/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1125"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00048",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00064"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1125"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "b8cd951d60e638d3f9f06d9a727710ea11c1b4ff30c24818f299d5a97b1ab283",
+      "observation_pointer": "/observations/45/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 670,
+                "start": 33,
+                "unit_ref": "pdf:page:1125"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1126"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00050",
+          "text_sha256": "d743342bfc83c6520560d7dfa0f8d547e75c54bc2cbccbacf838e01a9b9140bd"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00066"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1126"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "20c9b3392d78d0e3a76ca143ba7c50689785e41c40bf778811e64d7983c2a549",
+      "observation_pointer": "/observations/46/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 74,
+                "start": 37,
+                "unit_ref": "pdf:page:1126"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00052",
+          "text_sha256": "f484f83f56f22f2595cbf8f67ff3aef3abbbbd530c2177c8b1d2621bd6c71c76"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00069"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 23,
+            "start": 18,
+            "unit_ref": "pdf:page:1127"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "818eb7b923dab3c80152cabf673b0815b3d2d638df886420e68874fa647be285",
+      "observation_pointer": "/observations/47/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 543,
+                "start": 18,
+                "unit_ref": "pdf:page:1127"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1128"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00054",
+          "text_sha256": "cb23c32229f1d2bda4d110831905b4e25219badd6435c9fc3c6f17d0f20bad06"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00072"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1128"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "ec702be12ab72de43ea520ef3b7e4f7b3ed3b8f4db3aca7222634e7f0bead5ad",
+      "observation_pointer": "/observations/48/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 617,
+                "start": 37,
+                "unit_ref": "pdf:page:1128"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00056",
+          "text_sha256": "6b7631154fbb4ad2ec28b6515c139e34e031ae4edf3cb699c6c18b0f180ac795"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00075"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1129"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/49/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1129"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00058",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00078"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1129"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "fc5c9a9d258ab0b6273d49ba2f23903e9182664673227a659743f4ab3bb084fd",
+      "observation_pointer": "/observations/50/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 604,
+                "start": 33,
+                "unit_ref": "pdf:page:1129"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1130"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00060",
+          "text_sha256": "b1101679b73daf3827854d9ec93cbadf01f71a747c92c4891f63915f423ac9c5"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00080"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1130"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "055c2058cac3ade4ee78016492789d9c732b3cdac5169b00cce28e05f021125e",
+      "observation_pointer": "/observations/51/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 633,
+                "start": 37,
+                "unit_ref": "pdf:page:1130"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00062",
+          "text_sha256": "4834dc577f2c932f6cfbc743146f5b767428aaca10c1f552d0a12f3de976bfad"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00083"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1131"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/52/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1131"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00064",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00086"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1131"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "218284ea6ada7d90e7a7f6258c4c71fddc75c3ff348e0b00e18b55ddf815f17a",
+      "observation_pointer": "/observations/53/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 587,
+                "start": 33,
+                "unit_ref": "pdf:page:1131"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1132"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00066",
+          "text_sha256": "23867b38b90906d1d8a48734cddfe135e77d27061c6d7756d5b8699d9488ef6f"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00088"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1132"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "843126b20bc49dfead498543b3089a287c3a1f1d9e5eaf784e4b9dc5635a1282",
+      "observation_pointer": "/observations/54/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 564,
+                "start": 37,
+                "unit_ref": "pdf:page:1132"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00068",
+          "text_sha256": "75a48ade3e18c273e6b37a6f28dfe819c97de8796bdcdfcb5019d03219ef622d"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00091"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1133"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/55/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1133"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00070",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00094"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1133"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "6f0a19634323e434716670a844779f92b1626070938a05f83b67f52f6977e8de",
+      "observation_pointer": "/observations/56/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 645,
+                "start": 33,
+                "unit_ref": "pdf:page:1133"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1134"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00072",
+          "text_sha256": "bcbebc0c18ffac45b5723c36cd141cf792e1ee164a838595cfd7db5ae5f164ef"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00096"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1134"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "0ed8ee124d83c6d9daf1fc266d11c0452b363b363bbf68f756e3c861fa6da897",
+      "observation_pointer": "/observations/57/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 659,
+                "start": 37,
+                "unit_ref": "pdf:page:1134"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00074",
+          "text_sha256": "f09dcb7c91bb9e2f19e2d0887e2ed9ab0656c4c646a2d1838c03f9c906980c49"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00099"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1135"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/58/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1135"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00076",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00102"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1135"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "1bdce42a88b06a2ffad1ce3046cfb8f1eb155a0f15412bce938cabe8e8e1bc23",
+      "observation_pointer": "/observations/59/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 571,
+                "start": 33,
+                "unit_ref": "pdf:page:1135"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1136"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00078",
+          "text_sha256": "9104516ba3ccc37bd44ada1d0e44e5b9e273c83b7402d52e14e336b816f55f27"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00104"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1136"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "69a079069a8d59a48bce67aeb8b4da269f16e5404e3aa58a8b2397be1fc91dcb",
+      "observation_pointer": "/observations/60/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 583,
+                "start": 37,
+                "unit_ref": "pdf:page:1136"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00080",
+          "text_sha256": "b1fb5985c3d358842914274ef13bb8c5e696aecef6dafd6314a32c5def32b03e"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00107"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1137"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/61/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1137"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00082",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00110"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1137"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "42635d20d19fb190ca592839df5f96804a63451557c227c54218f57390f54764",
+      "observation_pointer": "/observations/62/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 701,
+                "start": 33,
+                "unit_ref": "pdf:page:1137"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1138"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00084",
+          "text_sha256": "1202c232ccfd0b2265bb7a428ddfa519dd04e1629801d603baec74fb15875851"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00112"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1138"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "fd707ad307fa44ad71d4818e5198e00e195011e1bf99328b21d5cfcf6385402d",
+      "observation_pointer": "/observations/63/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 627,
+                "start": 37,
+                "unit_ref": "pdf:page:1138"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00086",
+          "text_sha256": "a21683b02dea51af137a475f911a2117918edc9aa9b43e64a98e7c391af6f077"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00115"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1139"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/64/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1139"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00088",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00118"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1139"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "c97e645eef34c29864630c1a42b147679e5db447adc443b1e8699c29f50ec8ce",
+      "observation_pointer": "/observations/65/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 598,
+                "start": 33,
+                "unit_ref": "pdf:page:1139"
+              },
+              {
+                "end": 21,
+                "start": 0,
+                "unit_ref": "pdf:page:1140"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00090",
+          "text_sha256": "a31a6deb2629fed879a36f11f98f74f067ef8bb910e3cd49a34b0e19e7e15ca1"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00120"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 42,
+            "start": 37,
+            "unit_ref": "pdf:page:1140"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "e45e1155f6e1e416dcc57e9438bcb284b6cb5e5d181291b3bd6c8568e2570b36",
+      "observation_pointer": "/observations/66/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 670,
+                "start": 37,
+                "unit_ref": "pdf:page:1140"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00092",
+          "text_sha256": "c6dbae1feb821f896396b272885b2bf5791686d820b61fb6a907d4ac237147a0"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00123"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1141"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/67/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1141"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00094",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00126"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1141"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "9ebb26b43da83711e15eb9c29f1f0cfb92e0e526c79d53079c08f9eb98cbf7bd",
+      "observation_pointer": "/observations/68/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 190,
+                "start": 33,
+                "unit_ref": "pdf:page:1141"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00096",
+          "text_sha256": "d869df1177eb782bb0c32cbf29143d3f878bdbcf23035c52ca37bc700c96c361"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00128"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 23,
+            "start": 18,
+            "unit_ref": "pdf:page:1142"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "65f1cadc0a74273b128e481a2e92983a53f182368c3931f127256ad35550f9ee",
+      "observation_pointer": "/observations/69/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 564,
+                "start": 18,
+                "unit_ref": "pdf:page:1142"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00098",
+          "text_sha256": "c65540796c28c026d1f2797289eb7f26c0037a6700618a341b3baf330d03276c"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00131"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1143"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/70/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1143"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00100",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00134"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1143"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "6afdfc370c2120b3059d7150f8ea0f814dbd5fe9edb8aef7c7666af06c80b077",
+      "observation_pointer": "/observations/71/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 649,
+                "start": 33,
+                "unit_ref": "pdf:page:1143"
+              },
+              {
+                "end": 16,
+                "start": 0,
+                "unit_ref": "pdf:page:1144"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00102",
+          "text_sha256": "56f3a00160162ce3d6a36fb8af08f055029d2752cc50de186a8b74da5b5253c6"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00136"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 32,
+            "unit_ref": "pdf:page:1144"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "cb18e60f0f95e7509670cc9606fb30e3d7ad7eefc8c4bec7147abcfa0d88c482",
+      "observation_pointer": "/observations/72/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 645,
+                "start": 32,
+                "unit_ref": "pdf:page:1144"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00104",
+          "text_sha256": "0da84c09e5b59bf225f60cadbd2a0681bdf850a5a4115503adfbbb15f67f3f83"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00139"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1145"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/73/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1145"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00106",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00142"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1145"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "0c621b4c59bc3eff37c8e52e5fefee2671348c8d86ef9765800a6c28eb55a18b",
+      "observation_pointer": "/observations/74/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 666,
+                "start": 33,
+                "unit_ref": "pdf:page:1145"
+              },
+              {
+                "end": 16,
+                "start": 0,
+                "unit_ref": "pdf:page:1146"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00108",
+          "text_sha256": "0ba891ef90e4514ea5471cb092b0a8b1620add5869a6943a95bda67e9ad1ceaf"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00144"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 32,
+            "unit_ref": "pdf:page:1146"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "508b1abfd9f24c2e908201899dc2e1988d98fea50d97a2a31a2a83ac5ead0afc",
+      "observation_pointer": "/observations/75/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 728,
+                "start": 32,
+                "unit_ref": "pdf:page:1146"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00110",
+          "text_sha256": "f74b99d984f031ec126b912962ca934f3b1804f9131a231452daea917114fdd1"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00147"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1147"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/76/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1147"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00112",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00150"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1147"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "8f22f0d371257be21e810e3add19f95cc60fd6225b3f302de6010c09c0d0bfc4",
+      "observation_pointer": "/observations/77/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 783,
+                "start": 33,
+                "unit_ref": "pdf:page:1147"
+              },
+              {
+                "end": 16,
+                "start": 0,
+                "unit_ref": "pdf:page:1148"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00114",
+          "text_sha256": "265e417d5f8909823ecc99ca18b0d36753d50b9ad6d839c9f3e82ffb1f193eee"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00152"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "EDITORIAL",
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 32,
+            "unit_ref": "pdf:page:1148"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "ba6f6ed0f5447e031222edb92999dfd16b4429d4a00419b300bbcdc843714ce8",
+      "observation_pointer": "/observations/78/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 565,
+                "start": 32,
+                "unit_ref": "pdf:page:1148"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00116",
+          "text_sha256": "a8a22385ad3f89cdf62b004af282405b3f223f644a552d1cc62af0551d312941"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00155"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1149"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/79/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1149"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00118",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00158"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": "APPENDIX",
+      "matches": true,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1149"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "0c4f4dac4bc42aaf7247cc01332281d0a9a3e68d63618d35e34931e5bc97950b",
+      "observation_pointer": "/observations/80/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 701,
+                "start": 33,
+                "unit_ref": "pdf:page:1149"
+              },
+              {
+                "end": 16,
+                "start": 0,
+                "unit_ref": "pdf:page:1150"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00120",
+          "text_sha256": "7f6cf2ad43da1f85e75941a61582a4b999147a40493bb077fadca8ee8287b44b"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00160"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 32,
+            "unit_ref": "pdf:page:1150"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "07ad018d85136358c8255c7aa7ae663538f69433ca7f3f0ab28d402a4accffa4",
+      "observation_pointer": "/observations/81/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 660,
+                "start": 32,
+                "unit_ref": "pdf:page:1150"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00122",
+          "text_sha256": "f9e5421c02686400ae54e88284d6e2cd3908efba593b22e2016b02234d17f803"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00163"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1151"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/82/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1151"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00124",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00166"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1151"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "566147c78d7bfadb53e712b040f09f7a9b1efba0d64b0c13628d03073e2a8e3f",
+      "observation_pointer": "/observations/83/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 656,
+                "start": 33,
+                "unit_ref": "pdf:page:1151"
+              },
+              {
+                "end": 16,
+                "start": 0,
+                "unit_ref": "pdf:page:1152"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00126",
+          "text_sha256": "f0283482613d10326881108fb1183938708efb3f03ce0f6d09ef938968376bd7"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00168"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 32,
+            "unit_ref": "pdf:page:1152"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "91843bcf8cd5c2023d2a83c7d8c05d7756ef033f536c0ffd21383910471736e3",
+      "observation_pointer": "/observations/84/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 715,
+                "start": 32,
+                "unit_ref": "pdf:page:1152"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00128",
+          "text_sha256": "02f9b9c86b90edba0bf413f33255b2849dc87dfeb6b7e7a21598920ee167d5f9"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00171"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1153"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/85/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1153"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00130",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00174"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1153"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "6039c8d3bc61cc2e92dbc4fb99ee48208d9d20e1cfd8d9c3335dd1e3c2b5db26",
+      "observation_pointer": "/observations/86/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 659,
+                "start": 33,
+                "unit_ref": "pdf:page:1153"
+              },
+              {
+                "end": 16,
+                "start": 0,
+                "unit_ref": "pdf:page:1154"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00132",
+          "text_sha256": "e6ac8858f1c091ea7da955c52d69aef9aec5716f31e634949669c8dcbc9c1a6a"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00176"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 32,
+            "unit_ref": "pdf:page:1154"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "1ff882848f253153be006122bd675336c9604e63ea49d6165a7665f1461bf6dc",
+      "observation_pointer": "/observations/87/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 685,
+                "start": 32,
+                "unit_ref": "pdf:page:1154"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00134",
+          "text_sha256": "cc64b4e74294c25943414711e5a673a2bd2d39ae19c427631d49a22e565b2560"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00179"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1155"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/88/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1155"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00136",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00182"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1155"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "debe502788bcbbb80f3fdc5f26a65f3f8a15e6a60dbc827c5029cddd42b9b88e",
+      "observation_pointer": "/observations/89/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 653,
+                "start": 33,
+                "unit_ref": "pdf:page:1155"
+              },
+              {
+                "end": 16,
+                "start": 0,
+                "unit_ref": "pdf:page:1156"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00138",
+          "text_sha256": "367128c1a66040b424ad903ed00e822285d8305ea153c5e0fea4cb4709bb7d1c"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00184"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 32,
+            "unit_ref": "pdf:page:1156"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "d49944d4d6e6ab7cb72aae3f06fd8a4737d09168248e9eacec319c2afe203dc2",
+      "observation_pointer": "/observations/90/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 647,
+                "start": 32,
+                "unit_ref": "pdf:page:1156"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00140",
+          "text_sha256": "e7b9d00464ed30cf1f8063a5e000541d6df2c8c6b6a87fb3fa132cdeb0631caf"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00187"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1157"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/91/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1157"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00142",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00190"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1157"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "e1b4fa83e6914e07055dda217a7c2d223438ef5478cb966fd3a7893d29887e32",
+      "observation_pointer": "/observations/92/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 674,
+                "start": 33,
+                "unit_ref": "pdf:page:1157"
+              },
+              {
+                "end": 16,
+                "start": 0,
+                "unit_ref": "pdf:page:1158"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00144",
+          "text_sha256": "60ec79b9411feab1978ddfdab9b41d19aa2bb3301dd45c0d82db87a1b44fc74f"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00192"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 32,
+            "unit_ref": "pdf:page:1158"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "b77a5362dacf487d2f45beea8d2b33d320703eb218c56c7036396599e8b1eb71",
+      "observation_pointer": "/observations/93/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 726,
+                "start": 32,
+                "unit_ref": "pdf:page:1158"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00146",
+          "text_sha256": "7c61f399e143cfc6c762b108e13da3aa9f0173fc8068f783258d327e293da21b"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00195"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1159"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/94/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1159"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00148",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00198"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1159"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "2b7f13306363b97bc2969af0a03418f887e2cd93d84d8f3ecbf02d2207997e12",
+      "observation_pointer": "/observations/95/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 654,
+                "start": 33,
+                "unit_ref": "pdf:page:1159"
+              },
+              {
+                "end": 16,
+                "start": 0,
+                "unit_ref": "pdf:page:1160"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00150",
+          "text_sha256": "d6d34d185e5c91f9e8ffc8b85717606887395a1e0d8522ecab6ec066568117b0"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00200"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 32,
+            "unit_ref": "pdf:page:1160"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "24c0a7e8d77416f25ecfb884212df70404ca52865f03c2b69fd901034a8d0ee7",
+      "observation_pointer": "/observations/96/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 704,
+                "start": 32,
+                "unit_ref": "pdf:page:1160"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00152",
+          "text_sha256": "64b29ef77272abcc8284d7c3f8e7d7c37c7088bec9def528459d7304066a331c"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00203"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1161"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/97/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1161"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00154",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00206"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1161"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "4af17ac1f0338a7edc5c275899123a6daa8de1288879faf955d995960629fa92",
+      "observation_pointer": "/observations/98/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 651,
+                "start": 33,
+                "unit_ref": "pdf:page:1161"
+              },
+              {
+                "end": 16,
+                "start": 0,
+                "unit_ref": "pdf:page:1162"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00156",
+          "text_sha256": "b4c971e028d477c34993ed802c25cab3ec52094b8994db98e4dab1cdc16188c2"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00208"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 37,
+            "start": 32,
+            "unit_ref": "pdf:page:1162"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "5d1ddf589d2db3aacc881bb6262519612883e1e86c87005509171225a47583d3",
+      "observation_pointer": "/observations/99/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 748,
+                "start": 32,
+                "unit_ref": "pdf:page:1162"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00158",
+          "text_sha256": "14a75036e64c4cc5215db4779678e70ff54c63ff252a4ea5c968a8701c8bcc60"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00211"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 13,
+            "start": 3,
+            "unit_ref": "pdf:page:1163"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observation_pointer": "/observations/100/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 13,
+                "start": 3,
+                "unit_ref": "pdf:page:1163"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00160",
+          "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25"
+        }
+      ],
+      "original_sample_verdict": "FAIL",
+      "sample_id": "hlm80:appendix:all:p00214"
+    },
+    {
+      "actual_old_kinds": [
+        "APPENDIX"
+      ],
+      "claimed_old_kind": null,
+      "matches": false,
+      "new_locator": {
+        "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+        "spans": [
+          {
+            "end": 38,
+            "start": 33,
+            "unit_ref": "pdf:page:1163"
+          }
+        ],
+        "transforms": []
+      },
+      "new_text_sha256": "9843dd42ed5f99643e579dae429662242df8bffa9d2c720cf6cef79f5a078737",
+      "observation_pointer": "/observations/101/evidence/old_kind",
+      "old_segments": [
+        {
+          "kind": "APPENDIX",
+          "locator": {
+            "extraction_ref": "asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+            "spans": [
+              {
+                "end": 216,
+                "start": 33,
+                "unit_ref": "pdf:page:1163"
+              }
+            ],
+            "transforms": []
+          },
+          "segment_id": "hlm80:appendix:all:p00162",
+          "text_sha256": "d28c1d18ba97e008de7693d8d86703c844c350ecac3e2d9ae093e2b3a6944451"
+        }
+      ],
+      "original_sample_verdict": "PASS",
+      "sample_id": "hlm80:appendix:all:p00216"
+    }
+  ],
+  "schema_version": 1
+}

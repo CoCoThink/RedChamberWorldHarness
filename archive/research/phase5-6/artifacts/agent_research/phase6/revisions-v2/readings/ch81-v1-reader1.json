@@ -1,0 +1,250 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT_CHAPTER_REVISION_READING",
+  "chapter": 81,
+  "revision": "v1",
+  "reader": "reader1",
+  "reviewer_kind": "MODEL_SUBAGENT",
+  "mode": "FEEDBACK_ONLY",
+  "status": "ACTUALLY_READ_COMPLETE_CHAPTER_LIMITED_LOCAL_OBSERVATIONS",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "adoption": "NOT_ADOPTED",
+  "automatic_PASS": false,
+  "automatic_ADOPT": false,
+  "literary_acceptance": "NOT_GRANTED",
+  "source_qualification": "NOT_GRANTED",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "model_identity": {
+    "declared_model": "gpt-6.1-sol",
+    "verification_status": "DECLARED_NOT_VERIFIED",
+    "provider_proof": "NONE",
+    "basis": "Invocation environment declaration only; no provider receipt, billing proof or authenticated model attestation."
+  },
+  "isolation_and_execution": {
+    "direct_reading_by_this_subagent": true,
+    "further_delegation": false,
+    "independent_blind_review_claimed": false,
+    "worktree_or_process_isolation_verified": false,
+    "context_exposure": "看见会话任务及作者disclosure，不能声称独立人类盲审或与作者完全隔离。作者自述不是本次阅读的验证收据。",
+    "other_chapter_prose_read": false,
+    "whole_repository_scan": false,
+    "source_pdf_or_whole_book_read": false,
+    "scope_deviation_disclosed": "开始时为看既有JSON结构读取了readings/ch91-v1-reader1.json整份报告，其中包括该报告的引文；未打开91正文，未对91作新评判，该报告不作为81的证据。其余定位限制在phase6目录和明确81合同路径。",
+    "only_new_output": "artifacts/agent_research/phase6/revisions-v2/readings/ch81-v1-reader1.json",
+    "authored_disclosure_requests_code_modified": false,
+    "commit_or_push": false,
+    "runtime_adoption_or_state_updates": false
+  },
+  "inputs": {
+    "candidate": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt",
+      "sha256": "a92799e04f61fdd2e99eb6eba99b38a7fa87ef2f5d137fc4eb1fdc681bccda0d"
+    },
+    "disclosure": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1-disclosure.json",
+      "sha256": "e07603062109c13b93cfa34a700d48706a29da1b10df580f944461ba1b330341",
+      "actual_reading": "Successful direct Read covers physical lines1–154 in full, including authorship, selected inputs, editorial choices, limitations and freeze."
+    },
+    "editorial_notes": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch81-v1.txt",
+      "sha256": "c5a82a4100233a88768405e560c0bb38562bb07bf59dde6a6a7b01538e7fe054",
+      "actual_reading": "Full lines1–13."
+    },
+    "editor_report": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch81-90-v1.json",
+      "sha256": "fb1222a12fd4ef02d5071678f8def39d2d2fd276262f23f5dc7f43d09f983ad3",
+      "actual_reading": "Only /chapters/0, chapter==81: all fields read in three bounded exact JSON projections, namely all fields except selected_contracts/original_chapter_plan, then entire original_chapter_plan, then entire selected_contracts. No other chapter record or report-wide literary summary used."
+    },
+    "selected_contracts": [
+      {"path": "data/planning/contracts/agent-final-v1/81-S1.v2.json", "sha256": "69a661188a11669b716a9c4f301f9fc1048c82c17aff1a728d1a9d52e5c0684f"},
+      {"path": "data/planning/contracts/agent-final-v1/81-S2.v2.json", "sha256": "671efeff98dff5cfe22e9fb12fdc05cae44ff4ce416cde9d35dd2c927947228b"},
+      {"path": "data/planning/contracts/agent-final-v1/81-S3.v2.json", "sha256": "16cc416444f2c9f1dbd28a0188700671dc466dbe27aceb3918d9197937a1beb2"}
+    ],
+    "contract_reading_scope": "三份实际文件全部12条required及6条forbidden的ID/description/status/scope逐条完整投影阅读；并读function、notes、unresolved、participants、required_objects、entry_state、preconditions、exit_state。未逐字读完各beat递归grounding/引用载体，不声称读过其指向的源包。所有beat状态仍PENDING、scope仍AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT，不因正文实现而改注册状态。",
+    "request_limited_reading": "editorial-requests-v1/ch81.json只用于字段定位、target_characters=9000、task.editorial_notes与notes全文相等检查、三份agent_contracts与所选实际文件逐值相等检查。未全文阅读request或重新阅读旧短稿；旧稿问题来自明确所读81编辑记录及其引文。普通requests/ch81.json未成功阅读。"
+  },
+  "reading_coverage": {
+    "read_status": "ACTUALLY_READ_COMPLETE_FROZEN_CHAPTER",
+    "method": "成功的直接Read已给出全部小说；又以offset1 limit60及offset61 limit60确认首尾两段完整输出，覆盖回目和每段正文。孤立Python(-I)只作字段投影、hash、计数及定位，不代替小说阅读。",
+    "start_line": 1,
+    "end_line": 113,
+    "body_start_line": 3,
+    "body_end_line": 113,
+    "start_character_offset": 0,
+    "end_character_offset_exclusive": 9441,
+    "body_first_prose_character_offset": 25,
+    "last_prose_start_character_offset": 9335,
+    "last_prose_end_character_offset_exclusive": 9440,
+    "start_utf8_byte_offset": 0,
+    "end_utf8_byte_offset_exclusive": 28097,
+    "coverage_fraction": 1.0,
+    "first_body_quote_ref": "Q01",
+    "last_body_quote_ref": "Q24",
+    "truncated_output_counted_as_read": false,
+    "failed_or_oversize_output_handling": "最初并行Read的正文/disclosure两项曾因工具大小提示失败，不计覆盖；后续成功Read实际呈现全量，并再分段复读。两份大request的Read失败不计阅读。首个合同投影61KB被截断，不计完整读取，所需字段随后独立完整输出；81编辑记录另分三次完整读取。工具显示末尾114/155空标记不当成新增物理文本行。",
+    "not_claimed": "未读80、82或其他章连续正文，不宣称全书时序、全源考据或状态重放已核验。"
+  },
+  "length_observation": {
+    "method": "UTF-8 decoded Unicode codepoints; body is everything after title's first newline; Han is U+4E00–U+9FFF, matching disclosure method.",
+    "all_characters": 9441,
+    "utf8_bytes": 28097,
+    "body_characters": 9417,
+    "body_han_characters": 7747,
+    "paragraphs_including_title": 57,
+    "notes_proposed_total_range": [8500, 10000],
+    "notes_body_han_minimum": 7000,
+    "notes_reported_floor": 5911,
+    "length_thresholds_observed_met": true,
+    "literary_pass_inferred": false,
+    "disclosure_range_note": "disclosure称requested_total_range为9000–10500，所读notes/editor记录为8500–10000；有限request检查仅见target_characters=9000，不证明10500上界来源。本稿9441在两个范围内，此口径差异不是小说FAIL。"
+  },
+  "overall_assessment": {
+    "status": "SUBSTANTIAL_LOCAL_REPAIRS_OBSERVED_NO_CONFIRMED_FAIL_IN_THIS_READING",
+    "answer": "旧稿三项确定缺口已能在本稿找到具体动作，不是只加长度：莺儿真的抢针线；死亡在身体整理前明确确认并分头接力传信；宝钗亲手收三张早年旧月诗，未另加未成稿或诗句。仍存在报信仆妇复指、早上时间回指和同功能劝食/收话的清晰度与节奏风险。未达到足以认定硬性输入冲突的确定FAIL门槛；这不等于文学PASS、合同全部历史闭合或无须再读。",
+    "confirmed_local_fail_count": 0,
+    "global_history_or_source_status": "NOT_ADJUDICATED",
+    "whole_book_qualification": "NOT_ASSESSED_NOT_CLAIMED",
+    "source_unknown_policy": "医者、费用、莺儿身份接口、物件及知情注册UNKNOWN/PENDING不自动FAIL，也不由小说动作升级KNOWN。只判断已写文本与选定写作义务的局部关系。",
+    "length_policy": "7747正文汉字不是文学完成证据，披露中的padding lint PASS也不证明无重复场面。"
+  },
+  "confirmed_local_failures": [],
+  "old_problem_recheck": [
+    {"issue": "莺儿抢针线被报药信替代", "assessment": "OBSERVED_REPAIR", "evidence_refs": ["Q01", "Q02", "Q03"], "finding": "穿线遇阻、劈手抢、针插针包、宝钗允许香菱指点折边连成一场。病人的主动受到限制但未被全夺，不是合同关键词孤立点名。"},
+    {"issue": "换医/支出/跑腿只有概述", "assessment": "OBSERVED_REPAIR_WITH_LIMITED_MEDICAL_SCOPE", "evidence_refs": ["Q04", "Q05"], "finding": "姨妈授权，宝钗坚持旧药不停并送原方；送药仆妇接具体往返话，诊药由薛家日用支。未给名医、人名、准确药价或新方，不能因没写方药细节判FAIL。"},
+    {"issue": "甜羹短暂松快未有普通晚饭后果", "assessment": "OBSERVED_REPAIR", "evidence_refs": ["Q06", "Q07", "Q08", "Q09", "Q10"], "finding": "银匙说嘴/换木勺提高姨妈与莺儿期待，香菱想暂缓下一碗却没抢得话；晚间只尝即停，催食伤人，明确是有饭而不想吃，不是断粮或治愈。"},
+    {"issue": "白布准备及照护交接不足", "assessment": "OBSERVED_REPAIR", "evidence_refs": ["Q11", "Q12", "Q13", "Q14"], "finding": "同一慢病在翻身与喂汤动作中转重；白布/热食争执令香菱误会照护者要走；宝钗接水、帕与枕的位置后莺儿才出去取现成白布，姨妈验看且承接可能支出，没有虚写购成寿衣。"},
+    {"issue": "死亡及死后第一轮接手被跳过", "assessment": "OBSERVED_REPAIR", "evidence_refs": ["Q15", "Q16", "Q17", "Q18", "Q19"], "finding": "灯下观察无息/无胸起落，再明确他去了、香菱已死，然后整理身体。姨妈授权，宝钗实际料理，莺儿守或唤帮手；媳妇收到死讯才进入。不是白布取出即默认为死亡。"},
+    {"issue": "消息用全宅都知道包办", "assessment": "INDIVIDUAL_RELAYS_OBSERVED_NOT_ALL_RECIPIENTS_CLOSED", "evidence_refs": ["Q13", "Q18", "Q19", "Q20", "Q23"], "finding": "病危先是当值媳妇到姨妈跟前、厨房留水饭；死亡后莺儿→媳妇，姨妈→王夫人方向仆妇，媳妇→往大爷处传话者，最后王夫人方向回来回话。薛蟠本人是否已收到并未演到，不能记成全员已知；仆妇两次差遣有复指风险，另列RISK-01。"},
+    {"issue": "三张旧月诗数量及可选未成稿身份不明", "assessment": "OBSERVED_REPAIR_OPTIONAL_DRAFT_NOT_ADDED", "evidence_refs": ["Q21", "Q22", "Q24"], "finding": "正文明确早年学诗三张旧月诗：一张归次序、另两张收拢，宝钗亲手夹好入匣。素纸与匣内旧布是护纸材料，不是第四张有文本的诗稿；不选可选未成稿符合合同，不能反判缺失。无人引诵诗句、写新诗或死后重读。"}
+  ],
+  "object_chronology_and_knowledge_recheck": {
+    "new_object_count": "未见诗稿由三增四或凭空新增已购寿衣/棺木。小木勺在33行明写更换，43行晚饭另用碗是明确换器；素纸、旧布、包袱、食盒、盆等属叙事家务材料，未冒充已注册对象或带精确价格交易。",
+    "needle_and_sleeve": "5行针收入针包，25行针包塞笸箩底，53行宝钗答针收了，79行仍针在针包。莺儿53行担心扎着是人物误虑，不是作者声明袖口仍藏针。99行线头挂住使未完成折边松开，111行只折回、不动针，113行仍未收完；已有袖口本来可有部分针脚，不必推成先前从未缝过。未确认物态冲突。",
+    "time": "第一病日早起→午间甜羹→大夫→掌灯晚饭失望→夜间照护→天将亮；55行往后药饭明确跳过若干次饭药，再落到后来一日下午→向晚复诊→点灯→死亡→首轮后事和晚饭→收稿。未增第二次急症。99行早上回指折边有时间歧义，另列RISK-02；本次不把叙述先后当历史日期认证。",
+    "death_boundary": "83–85行一次确认死亡，87行声明香菱已死后才料理；之后她仅是身体/旧物指向，无继续发言作诗。无精确时刻、医者断死、咳血奇观、托梦返乡或诗成命尽。",
+    "news_boundary": "69行病重些还在用药不是正式死讯。89/91/97/109行分别给出不同接话/回话阶段，未由旁白全宅同步得知。大爷方向只有候差者应下，最终本人收受OPEN；王夫人方向是仆妇回来转述，不是本章切入王夫人现场的直接见证。",
+    "money_and_medicine": "23行日用诊药、71行备物钱家里出、95行后事需用先回再支；均未给金额或声称已完成购棺。77/81行药仍送，死亡不是无钱断医。医学命名、换方效果及具体身体诊断仍不裁定。"
+  },
+  "review_issues_not_confirmed_failures": [
+    {
+      "id": "RISK-01-TWO-ERRANDS-ONE-REFERENT",
+      "assessment": "LOCAL_LOGISTICS_CLARITY_RISK_NOT_CONFIRMED_FAIL",
+      "evidence_refs": ["Q19", "Q20", "Q23"],
+      "lines": [91, 95, 109],
+      "input_to_tension": "91行门外候差的仆妇受命去王夫人处；95行又叫仆妇问经手后事的人；109行去王夫人处报信的仆妇此时才回来。",
+      "finding": "连续仆妇称谓容易让读者理解成同一个人尚未回院又被再次叫住，双线跑腿经手区别不够清楚。",
+      "why_not_confirmed_fail": "91行只写授命应下、未写立即出门；95行可在她出发前加派，或另有仆妇。场内确有其他仆役，既未限定只有一名，也没有明确同一个人同时在两地。因此不足断言实际时序不可能，不以未注册ID直接判FAIL。",
+      "feedback_only": "若另版调整，只需厘清该仆妇是临出门加领一项、途中兼问还是另一经手人，不必添名字或扩成审核传话场。当前冻结稿不改。"
+    },
+    {
+      "id": "RISK-02-MORNING-DEICTIC",
+      "assessment": "TIME_REFERENCE_AMBIGUITY_NOT_CONFIRMED_FAIL",
+      "evidence_refs": ["Q03", "Q11", "Q21"],
+      "lines": [7, 53, 55, 99],
+      "input_to_tension": "7行香菱说这边要往里折些发生在第一病晨；53行已过一夜，55行又有往后药饭；99行死后莺儿仍说早上他说这里要折进去。",
+      "finding": "若早上指本日，缺本日重提的场面；若指开篇那晨，缺那天早上的指代限定。读者容易以为本章只过同一天，抵消55行的病程跨度。",
+      "why_not_confirmed_fail": "未写这是唯一一次折边指点，晚近一晨可能重说；引语也是莺儿悲恸回忆，不能由省略强推绝对日期冲突。因此保留为较具体的时序清晰度问题，不编造一次未写的重说当既成事实，也不确认FAIL。",
+      "feedback_only": "另版可统一这句的时间回指；不必新增第二场危机或用日历旁白补足。本次不改原文。"
+    },
+    {
+      "id": "RISK-03-CORRECTION-AND-HANDOFF-REFRAIN",
+      "assessment": "CRAFT_PACING_RISK_NOT_FACTUAL_FAIL",
+      "evidence_refs": ["Q05", "Q08", "Q10", "Q12", "Q14", "Q19", "Q20"],
+      "lines": "21–25,37–51,59–75,89–109",
+      "finding": "冲突→说重了→退一步→叫人吃饭/留饭的结构出现三轮；告诉自己、回来回太太、先别叫多人等指令也在死前死后反复。51/65/75/109的换人各有实际任务，但97行接信后再问棺木并收食盒、109行再回信与吃饭，使最后收匣周边流程稍满。不能凭逐字重复为零声称场面不反复。",
+      "distinction": "第一轮是换医权责，第二轮是照护期待伤人，第三轮是提前备物对病人的离弃感，死亡后又是新消息和新料理责任，因果并不完全相同；不据同构形式判整章灌水。",
+      "feedback_only": "另版优先压缩同一接话边界的重复说明，保留伤人后的沉默或具体手被占住的动作；不要删掉所有交接而退回旧稿的有人料理。"
+    }
+  ],
+  "voice_and_audit_commentary": {
+    "assessment": "不是全员始终给正确答案，但宝钗连续纠偏仍有可压的训导感。",
+    "character_observations": [
+      {"character": "香菱", "lines": "5–9,19–21,27–41,47,61–65", "finding": "关心线头、饭时候、莺儿会不会被怪及照护者是否走，比抽象诗命有自己的生活欲望；我知道有我这会子不想让吃不下与断供分开，也让她能拒绝。没有第二黛玉式诗才临终展览。"},
+      {"character": "莺儿", "lines": "5,25,29,45,51,63,85,105", "finding": "不耐烦、护短、催食后悔、离不开又怕被拴住、悲恸中忘小匣位置都有不体面的失手；我又没刮你的肉不是作者新增临终包袱，发生在第一病日晚饭并立刻伤人，不是点灯死亡场的笑料。"},
+      {"character": "薛姨妈", "lines": "17,25,37,47,59,73,93,95", "finding": "急着换医、替女儿安排饭、被白布话刺痛、忘守候者要吃、死后仍要自己作主；她不是只签授权的正确答案，也不是没有钱的苦主。"},
+      {"character": "宝钗", "lines": "7,15,25,33,37,41,49,59,65,73,95,111", "finding": "有允许病人指点折边与收回自己伸向针包之手的克制，也会当面拦话、只喝茶却说吃过、说硬而道歉，并非绝对无误。但多数饮食/照护决定由她给最合宜回应，33/37/41/49连续纠偏容易把她写成照护准则发言人。"}
+    ],
+    "narrator": "未见起居五栏、显式审核术语或作者解释袖口/诗稿象征的长段旁白。87行香菱已死是必要事实边界，不是把注册状态当史实背书；113行无人再念收束物与家务，没有作者挽诗。审核感主要残留在人际传话过于齐全、纠偏与收话过于及时，而非直露审计旁白。",
+    "literary_verdict": "只给本章限定观察；声口分化和必要场面增厚可见，节奏与克制是否足够仍需审读，不颁文学PASS。"
+  },
+  "contract_recheck": [
+    {
+      "contract": "81-S1",
+      "required": [
+        {"id": "81-S1-R1", "assessment": "OBSERVED_LOCAL", "lines": "9–23,31", "finding": "粥少、问旧药照抓、旧方不停及药苦说嘴由饮食引出，不只谈命。"},
+        {"id": "81-S1-R2", "assessment": "OBSERVED_LOCAL_NOT_MEDICAL_CERTIFICATION", "lines": "13–27,39–41", "finding": "姨妈作主、宝钗坚持问明改方、仆妇跑腿、薛家日用支，无准确人名价方。"},
+        {"id": "81-S1-R3", "assessment": "OBSERVED_LOCAL", "lines": "3–7,25", "finding": "抢针线本身发生，医者只履行普通问诊工序。"},
+        {"id": "81-S1-R4", "assessment": "OBSERVED_LOCAL", "lines": "27–51", "finding": "袖口/匙/羹在喂食活动里，午后能吃导致晚间期待失望，并非康复。"}
+      ],
+      "forbidden": [
+        {"id": "81-S1-F1", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ", "finding": "同一旧慢病转重，未增第二急病/咳血/绝症。"},
+        {"id": "81-S1-F2", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ", "finding": "无口占绝命诗、名医断死或第二黛玉式终局。"}
+      ]
+    },
+    {
+      "contract": "81-S2",
+      "required": [
+        {"id": "81-S2-R1", "assessment": "OBSERVED_LOCAL", "lines": "53–59", "finding": "渐少进食、翻身无力和实际喂汤后才提出备物。"},
+        {"id": "81-S2-R2", "assessment": "OBSERVED_LOCAL_EXISTING_CLOTH_NOT_COMPLETED_PURCHASE", "lines": "59–71", "finding": "已有白布先取验看，交接照护后由莺儿取回；需添先回姨妈、钱由家出，不断药。"},
+        {"id": "81-S2-R3", "assessment": "OBSERVED_LOCAL_KNOWLEDGE_REGISTRY_OPEN", "lines": "67–69", "finding": "内宅当值媳妇被叫到姨妈前、厨房留水饭；没有各房同步死讯。"},
+        {"id": "81-S2-R4", "assessment": "OBSERVED_LOCAL", "lines": "75–85,103,111–113", "finding": "物件家务继续；79行袖口未完且无针，死亡另有83–85行明确观察，不由白布代替。"}
+      ],
+      "forbidden": [
+        {"id": "81-S2-F1", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ", "finding": "无预知死时、提前正式死讯或大规模丧礼。"},
+        {"id": "81-S2-F2", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ", "finding": "死亡场无新笑料、梦归、悟道、绝命诗或诗成命尽总结。"}
+      ]
+    },
+    {
+      "contract": "81-S3",
+      "required": [
+        {"id": "81-S3-R1", "assessment": "DEATH_BEFORE_HANDLING_AND_RELAYS_OBSERVED_WITH_CLARITY_RISK", "lines": "83–97,109", "finding": "只一次死亡确认，随后授权/料理/守与报信分开；仆妇复指风险见RISK-01，不记全员收到。"},
+        {"id": "81-S3-R2", "assessment": "NECESSARY_HANDLING_OBSERVED_PURCHASE_NOT_CLAIMED", "lines": "87–97", "finding": "身体整理、取布、问棺与需用先回再支，未作行业或丧礼展示。"},
+        {"id": "81-S3-R3", "assessment": "THREE_OLD_POEMS_BOXED_OPTIONAL_UNFINISHED_DRAFT_NOT_SELECTED", "lines": "99–107,111–113", "finding": "三张早年旧月诗明确收匣；未完袖口仍未完；无第四诗稿/诗句/朗读。"},
+        {"id": "81-S3-R4", "assessment": "OBSERVED_LOCAL_WITH_PACING_RISK", "lines": "91–113", "finding": "报信、饭水和归置继续，收匣以后无追悼重读；末句无人再念，非挽诗。"}
+      ],
+      "forbidden": [
+        {"id": "81-S3-F1", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ", "finding": "死亡之后不再让香菱发言/作诗，不由章级事件推出全宅知情或精确死法时刻。"},
+        {"id": "81-S3-F2", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ", "finding": "家务饮食仍运转，旧稿未成临终神作、无人重读，也无作者诗命判词。"}
+      ]
+    }
+  ],
+  "verbatim_quotes": [
+    {"id": "Q01", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 3, "line_end": 3, "character_offset_start": 25, "character_offset_end_exclusive": 204, "quote": "却说香菱自前番病后，药虽日日吃着，人却没有添些精神。这日早起，莺儿端了白粥进来，先将窗下的针线笸箩移开，才去扶她。香菱手已经伸出被外，摸着了笸箩沿儿，道：“这是谁的袖子？昨日还没有这样长的线头。”莺儿道：“姑娘拿过来的。你别管，粥冷了。”香菱却将那淡青袖口拉到膝上，低头寻针。寻着了，又把线捻了捻，往针鼻里送。线头抵住针鼻，折在指尖，她把身子往亮处挪了一挪。"},
+    {"id": "Q02", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 5, "line_end": 5, "quote": "莺儿放下碗，劈手把针线抢了过去。香菱的指头还捏着，半晌才松开，道：“不过穿根线，你也来夺。叫外头人看见，还当我抢你的活计。”莺儿将针插在针包上"},
+    {"id": "Q03", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 7, "line_end": 7, "quote": "香菱伸手按了按那处，道：“这边要往里折些。你就这样缝，翻过来露线。”宝钗依她指的折了，道：“是这样么？”"},
+    {"id": "Q04", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 23, "line_end": 23, "quote": "薛姨妈出了里间，把送药的仆妇叫到外头，交代她带话出去，请那位大夫来；诊金药钱仍从薛家的日用里支，有什么话先回来回自己，不许在病人跟前争说。"},
+    {"id": "Q05", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 25, "line_end": 25, "quote": "宝钗道：“我先拦那一句，也不该当着他。”姨妈低头抹了抹手里的帕子，又问：“你早上吃了不曾？”宝钗说吃过了。莺儿隔帘道：“姑娘只喝了茶。”"},
+    {"id": "Q06", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 31, "line_end": 31, "quote": "银匙送到唇边，香菱舌尖沾了沾，便皱眉道：“这银匙比药还苦。”莺儿道：“匙子怎么会苦？”香菱望着她，说：“你煎久了。”莺儿啐道：“我煎的是药，不是匙子。”"},
+    {"id": "Q07", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 35, "line_end": 35, "quote": "宝钗将袖口从她腕上接下来，道：“等你病好，叫你替我收。”香菱道：“那我先不替你收。省得病好了你又赖我。”"},
+    {"id": "Q08", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 37, "line_end": 37, "quote": "又叫莺儿去告诉厨房，晚间还留这样一碗。香菱想说什么，姨妈已转身出去嘱咐了。她张了张嘴，望向宝钗。宝钗道：“先留着，到了晚间再说。”"},
+    {"id": "Q09", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 43, "line_end": 43, "quote": "莺儿将碗搁下，还在榻前等，等到羹面结了一层薄皮，便拿勺背拨开，又送来。香菱把脸转向枕里，道：“别刮了，那声音听着心里难受。”"},
+    {"id": "Q10", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 47, "line_end": 47, "quote": "香菱在枕上轻声道：“太太，别叫他们忙了。”姨妈说不忙，外头厨房还没有收。香菱把手里的帕子松开，道：“我知道有。我这会子不想。”姨妈听了这话，脸上的笑慢慢收住"},
+    {"id": "Q11", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 55, "line_end": 55, "quote": "往后药饭如常送着，碗里留下的却一回比一回多。到了这一日下午，香菱要翻身，手撑着褥子，只撑起肩头便放下了。"},
+    {"id": "Q12", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 65, "line_end": 65, "quote": "莺儿便指着枕边说水不可倒满，帕子要用软的那条；又将香菱肩下的小枕往外抽些，说这样才不硌。宝钗一一接过手，莺儿还俯身问香菱：“是这样么？”她微微点头。"},
+    {"id": "Q13", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 69, "line_end": 69, "quote": "媳妇本问要不要先去各处说一声，莺儿忙拉住她，道：“太太还等着你呢，你先进去。”媳妇进来，姨妈只叫她传厨房别撤温水，药饭仍送到外间；旁人若问，回来告诉自己。"},
+    {"id": "Q14", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 71, "line_end": 71, "quote": "莺儿抱了包袱回来，先在外间把白布给姨妈看。姨妈摸了摸，叫搁在柜旁，钥匙仍由自己收着。莺儿问可还要什么，姨妈摇头，道：“先这样，缺什么再说，钱仍是咱们家出。”"},
+    {"id": "Q15", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 83, "line_end": 83, "quote": "宝钗没有答，换了手，再试过，随后轻轻唤她。香菱的头仍侧在枕上，唇边没有气息，胸前也再没有起落。"},
+    {"id": "Q16", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 85, "line_end": 85, "quote": "宝钗将手从香菱鼻下收回，低声道：“妈妈，他去了。”莺儿忽然把帕子按在嘴上，肩膀往下一塌，半跪在榻边。"},
+    {"id": "Q17", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 87, "line_end": 87, "quote": "香菱已死，薛姨妈仍坐在榻沿，宝钗请她到旁边些，才好整理。姨妈起先不肯，见莺儿端水来，自己挡着了路，才挪到杌子上，说：“你替他收拾，我在这里。”"},
+    {"id": "Q18", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 89, "line_end": 89, "quote": "莺儿出去，见媳妇还在外间收拾碗盘，开口却没能出声。媳妇抬头问何事，她才说：“香菱没了，太太叫你进去。”那媳妇手里的碟子放歪了，扶正以后，才跟她进来。"},
+    {"id": "Q19", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 91, "line_end": 91, "quote": "她叫住门外候差的仆妇，道：“到我姐姐王太太那里，亲口回说香菱没了，我和姑娘都在料理，先请他知道。不用你各房走，回过便回来。”仆妇听明白，低声应了。"},
+    {"id": "Q20", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 95, "line_end": 95, "quote": "薛姨妈缓过些气来，又叫仆妇去问家里经手后事的人，棺木等物如何预备，有什么所需，先回自己，再从薛家支取。"},
+    {"id": "Q21", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 99, "line_end": 99, "quote": "线头挂住指甲，抽了一下，折边散开了些。她怔怔望着，道：“早上他说这里要折进去。”"},
+    {"id": "Q22", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 105, "line_end": 105, "quote": "底下几张纸叠得不齐，宝钗用手压住，轻轻揭开，是香菱早年学诗时留下的那三张旧月诗。莺儿指着卷起的纸角道：“这张原在底下，别弄反了。”宝钗将它放回原来的次序，另两张也收拢，拿素纸护着边角。"},
+    {"id": "Q23", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 109, "line_end": 109, "quote": "去王夫人处报信的仆妇此时回来，在帘外回说已经亲口回到太太跟前，太太听了，叫姨太太保重，料理上有什么需用，再使人去说。"},
+    {"id": "Q24", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 113, "line_end": 113, "character_offset_start": 9335, "character_offset_end_exclusive": 9440, "quote": "外头吃过饭的人换了里头的人，水又送来，空碗仍往厨房收去。柜门关着，那三张旧月诗已经夹在匣内，淡青袖口的边还未收完。莺儿待姨妈歇下，又回来坐到榻前。灯芯剪过了，屋里少了一阵噼啪声。那些字留在纸上，并没人再念一遍。"},
+    {"id": "Q25", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 107, "line_end": 107, "quote": "宝钗摸了摸，说干净，仍用这个，便亲手把三张诗稿夹好，平放进去。"},
+    {"id": "Q26", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "line_start": 97, "line_end": 97, "quote": "媳妇出门，将死讯交给候着的人，说是太太叫往大爷那边报，听对方应下，才转身回来。"}
+  ],
+  "limitations": [
+    "本次只是一名模型子代理对81冻结候选的完整阅读反馈；未给人类通过、独立盲审、来源升级、正式资格、采用或发布。",
+    "无确定FAIL不表示无问题；三条风险均列明文本输入、张力与不能下硬结论的原因，不以可能的未写行动替作者自证。",
+    "医学与费用UNKNOWN、未注册人/物/知识接口及章级死亡定位仍保持OPEN，不据此补造医方、价格、路程、时刻、收信成功或历史证明。",
+    "合同全部required/forbidden正文已实际读，递归grounding及其源文件未全读；81编辑记录全部已读，前十回中其他九回记录未读。",
+    "未据长度或作者lint推出文学PASS；换人、劝食、收话和回话的功能重复仍需文学判断。",
+    "原稿和disclosure冻结，本文不直接修订任何稿件；后续若需实改必须获授权另版，不自动ADOPT或改source/human状态。"
+  ]
+}

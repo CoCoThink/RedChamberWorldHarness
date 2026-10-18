@@ -57,11 +57,12 @@
         "previous_path": {"$ref": "#/$defs/optionalPath"},
         "parent_path": {"$ref": "#/$defs/optionalPath"},
         "feedback_path": {"$ref": "#/$defs/optionalPath"},
-        "notes_path": {"$ref": "#/$defs/optionalPath"}
+        "notes_path": {"$ref": "#/$defs/optionalPath"},
+        "revision_template": {"const": "revise-v2"}
       },
       "allOf": [{
         "if": {"properties": {"operation": {"const": "draft"}}},
-        "then": {"properties": {"characters": {"type": "integer", "minimum": 1}, "parent_path": {"type": "null"}, "feedback_path": {"type": "null"}, "notes_path": {"type": "null"}}},
+        "then": {"properties": {"characters": {"type": "integer", "minimum": 1}, "parent_path": {"type": "null"}, "feedback_path": {"type": "null"}, "notes_path": {"type": "null"}}, "not": {"required": ["revision_template"]}},
         "else": {"properties": {"characters": {"type": "null"}, "plan_path": {"type": "null"}, "previous_path": {"type": "null"}, "parent_path": {"type": "string", "minLength": 1}, "feedback_path": {"type": "string", "minLength": 1}}}
       }],
       "additionalProperties": false

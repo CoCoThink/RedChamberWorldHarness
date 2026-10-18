@@ -1,0 +1,826 @@
+{
+  "schema_version": 1,
+  "kind": "CH86_THREE_CARRIER_ORIGIN_AUDIT",
+  "qualification": "MODEL/FEEDBACK_ONLY",
+  "authority_effect": "NONE",
+  "scope": "Read-only carrier/origin/text audit; this JSON is the sole newly written file.",
+  "restrictions_observed": {
+    "originals_changed": false,
+    "catalog_or_registry_changed": false,
+    "sources_registered": false,
+    "old_provenance_graph_changed": false,
+    "waiver_created": false,
+    "full_evaluation_executed": false,
+    "delegation_used": false,
+    "network_used": false,
+    "project_content_uploaded": false
+  },
+  "overall_conclusion": "All three target carriers exist and match declared hashes, but none is currently a closed qualified provenance source. These are project reference/research documents, not original historical evidence. The named novel text upstream exists; its existence and candidate excerpt hashes do not confer source qualification on the project summaries.",
+  "assets": [
+    {
+      "asset_ref": "asset:sha256:3735d2b2d82d70aac061f2cf7f5ccee84370064d6935364aa587402dccb7ff96",
+      "carrier": {
+        "path": "sources/project/3735d2b2d82d70aa/前八十回_生活物质与家务索引_v1.0.md",
+        "sha256": "3735d2b2d82d70aac061f2cf7f5ccee84370064d6935364aa587402dccb7ff96"
+      },
+      "carrier_bytes": 4583,
+      "carrier_sha256_matches": true,
+      "complete_read": {
+        "scope": "ENTIRE_UTF8_CARRIER",
+        "lines": [
+          1,
+          55
+        ],
+        "text_reviewed_in_prior_read_only_audit": true,
+        "all_bytes_rechecked_for_this_report": true
+      },
+      "catalog": {
+        "path": "data/catalog/assets/43.yaml",
+        "sha256": "0f821aeb7cead372605e3a01d9e977809e8b5b36adbdd1d246dfc11284379d4e",
+        "lines": [
+          3,
+          12
+        ]
+      },
+      "catalog_kind": "PROJECT_REFERENCE",
+      "source_type_observation": {
+        "registered_matching_source_found": false,
+        "SECONDARY_RESEARCH_assignment_made": false,
+        "HISTORICAL_PRIMARY_qualification": false,
+        "explanation": "Catalog kind is not provenance source type. This report does not assign or register any source type."
+      },
+      "origins": [
+        {
+          "record": {
+            "path": "data/catalog/origins/aa.jsonl",
+            "sha256": "b8bfac50fdb39d435ada92fd03076d1120949cafa9be3bd43ccbfe945dbfad6a",
+            "lines": [
+              1,
+              1
+            ]
+          },
+          "origin": {
+            "asset_ref": "asset:sha256:3735d2b2d82d70aac061f2cf7f5ccee84370064d6935364aa587402dccb7ff96",
+            "batch_id": "handover-20261008",
+            "disposition": "RETAINED",
+            "id": "origin:handover-20261008:274d70adfc2fe1f925920900",
+            "origin_container": "红楼梦探佚_截至第32步_v5.0启动前_精简过程文档体系_v2.0(3).zip",
+            "origin_type": "V5_PRE32_BASELINE",
+            "original_path": "03_前80文学语料基础_v4_供第33步升级/前八十回_生活物质与家务索引_v1.0.md",
+            "sha256": "3735d2b2d82d70aac061f2cf7f5ccee84370064d6935364aa587402dccb7ff96"
+          }
+        },
+        {
+          "record": {
+            "path": "data/catalog/origins/b3.jsonl",
+            "sha256": "1469922011d87f9cb766708e175fe4bc66c0db9119294bfd77564fbdc6656da6",
+            "lines": [
+              3,
+              3
+            ]
+          },
+          "origin": {
+            "asset_ref": "asset:sha256:3735d2b2d82d70aac061f2cf7f5ccee84370064d6935364aa587402dccb7ff96",
+            "batch_id": "handover-20261008",
+            "disposition": "DEDUPLICATED",
+            "id": "origin:handover-20261008:65533c2e174475d86c221f21",
+            "origin_container": "RCWH_SelfContained_Handover_v4.0_20261007(1).zip",
+            "origin_type": "POST_M8_SOURCE_ARCHIVE",
+            "original_path": "03_VALID_HISTORY/LITERARY_ECOLOGY/REFERENCE/3735d2b2d8__前八十回_生活物质与家务索引_v1.0.md",
+            "sha256": "3735d2b2d82d70aac061f2cf7f5ccee84370064d6935364aa587402dccb7ff96"
+          }
+        }
+      ],
+      "import_corroboration": [
+        {
+          "path": "archive/imports/handover-20261008/07_PACKAGE_MANIFESTS/SOURCE_ORIGIN_INDEX.csv",
+          "sha256": "aa6d5574583f1873386cc29afe27af4aeba473f21ed4935dd2edd1422210d97e",
+          "lines": [
+            408,
+            408
+          ]
+        },
+        {
+          "path": "archive/imports/handover-20261008/07_PACKAGE_MANIFESTS/CONTENT_MANIFEST_SHA256.csv",
+          "sha256": "aa31ecdd567380d24299b4146faba615b37d2aa7d9287d99d7917667735a3c4c",
+          "lines": [
+            411,
+            411
+          ]
+        }
+      ],
+      "earlier_mapping_observations": [
+        {
+          "path": "archive/imports/handover-20261008/06_LEGACY_INVENTORY_AND_MAPPINGS/00_SELF_CONTAINED_PATH_MAP_v3.0.csv",
+          "sha256": "fbdeec837684a87cd23be145ff4614a90ec5bf465ca31c90777b3b576aff2829",
+          "lines": [
+            43,
+            43
+          ]
+        },
+        {
+          "path": "archive/imports/handover-20261008/06_LEGACY_INVENTORY_AND_MAPPINGS/01_旧成果_to_Harness节点_完整迁移总表_v2.0.csv",
+          "sha256": "974774f4af57bd4ae4fd7dd454d88afc82aae7475e2363de6d5bede4c1f32f26",
+          "lines": [
+            81,
+            81
+          ]
+        }
+      ],
+      "earlier_archive_limit": "Earlier ZIP member names are import-map assertions; original ZIP members were not independently opened in this audit.",
+      "substance": "第19步项目文学工具；关键词粗检、回次高密度参考与后20创作规则。不是逐字正文或原始史证。",
+      "relevant_content_ranges": [
+        {
+          "lines": [
+            3,
+            4
+          ],
+          "role": "方法及非严格统计声明"
+        },
+        {
+          "lines": [
+            8,
+            23
+          ],
+          "role": "物质类别、回次与转用建议"
+        },
+        {
+          "lines": [
+            25,
+            55
+          ],
+          "role": "项目写作规则与自评"
+        }
+      ],
+      "citation_gaps": [
+        "未明确实际正文版本；不得仅由另两份总谱反向认定此索引版本。",
+        "没有逐字摘录、准确页段/偏移、外部书目或抽取绑定。",
+        "第86回药诊/灯烛/丧仪施工建议不等于曹稿事实；末尾PASS为项目自评。"
+      ],
+      "closure": {
+        "qualified_source_closed": false,
+        "status": "NOT_CLOSED",
+        "reason": "Carrier custody alone does not establish source qualification or registered exact excerpt/locator verification."
+      },
+      "next_minimum_executable_evidence_need": "先限定CH86使用的单个命题并确认本索引实际输入版本；取得该版本对应回次逐字原文、稳定locator及carrier/抽取/摘录hash。第51回火盆煎药只是候选，不是已证实的索引编制输入。"
+    },
+    {
+      "asset_ref": "asset:sha256:98d9c0a13e692043b440941fe50cdcb719ab9cb4f1623f061f894cb6d6a3155c",
+      "carrier": {
+        "path": "research/literary_ecology/98d9c0a13e692043/98d9c0a13e__前80_医学身体疾病书写总谱_v1.0.md",
+        "sha256": "98d9c0a13e692043b440941fe50cdcb719ab9cb4f1623f061f894cb6d6a3155c"
+      },
+      "carrier_bytes": 32714,
+      "carrier_sha256_matches": true,
+      "complete_read": {
+        "scope": "ENTIRE_UTF8_CARRIER",
+        "lines": [
+          1,
+          597
+        ],
+        "text_reviewed_in_prior_read_only_audit": true,
+        "all_bytes_rechecked_for_this_report": true
+      },
+      "catalog": {
+        "path": "data/catalog/assets/00.yaml",
+        "sha256": "9a6cb6c827938cfc6e1d5b49dd853039f16f4cf7e22d54f95cc7b3b62e18754c",
+        "lines": [
+          18,
+          26
+        ]
+      },
+      "catalog_kind": "PROJECT_RESEARCH",
+      "source_type_observation": {
+        "registered_matching_source_found": false,
+        "SECONDARY_RESEARCH_assignment_made": false,
+        "HISTORICAL_PRIMARY_qualification": false,
+        "explanation": "Catalog kind is not provenance source type. This report does not assign or register any source type."
+      },
+      "origins": [
+        {
+          "record": {
+            "path": "data/catalog/origins/b5.jsonl",
+            "sha256": "04ad30fbcd4996d630195196f8c86ba42c3e3e094584ce93b885f2edd2cf0ddd",
+            "lines": [
+              2,
+              2
+            ]
+          },
+          "origin": {
+            "asset_ref": "asset:sha256:98d9c0a13e692043b440941fe50cdcb719ab9cb4f1623f061f894cb6d6a3155c",
+            "batch_id": "handover-20261008",
+            "disposition": "RETAINED",
+            "id": "origin:handover-20261008:1dee7e8f06c9194054b495e1",
+            "origin_container": "RCWH_SelfContained_Handover_v4.0_20261007(1).zip",
+            "origin_type": "POST_M8_SOURCE_ARCHIVE",
+            "original_path": "03_VALID_HISTORY/LITERARY_ECOLOGY/REFERENCE/98d9c0a13e__前80_医学身体疾病书写总谱_v1.0.md",
+            "sha256": "98d9c0a13e692043b440941fe50cdcb719ab9cb4f1623f061f894cb6d6a3155c"
+          }
+        }
+      ],
+      "import_corroboration": [
+        {
+          "path": "archive/imports/handover-20261008/07_PACKAGE_MANIFESTS/SOURCE_ORIGIN_INDEX.csv",
+          "sha256": "aa6d5574583f1873386cc29afe27af4aeba473f21ed4935dd2edd1422210d97e",
+          "lines": [
+            655,
+            655
+          ]
+        },
+        {
+          "path": "archive/imports/handover-20261008/07_PACKAGE_MANIFESTS/CONTENT_MANIFEST_SHA256.csv",
+          "sha256": "aa31ecdd567380d24299b4146faba615b37d2aa7d9287d99d7917667735a3c4c",
+          "lines": [
+            658,
+            658
+          ]
+        }
+      ],
+      "earlier_mapping_observations": [
+        {
+          "path": "archive/imports/handover-20261008/06_LEGACY_INVENTORY_AND_MAPPINGS/00_SELF_CONTAINED_PATH_MAP_v3.0.csv",
+          "sha256": "fbdeec837684a87cd23be145ff4614a90ec5bf465ca31c90777b3b576aff2829",
+          "lines": [
+            24,
+            24
+          ]
+        },
+        {
+          "path": "archive/imports/handover-20261008/06_LEGACY_INVENTORY_AND_MAPPINGS/01_旧成果_to_Harness节点_完整迁移总表_v2.0.csv",
+          "sha256": "974774f4af57bd4ae4fd7dd454d88afc82aae7475e2363de6d5bede4c1f32f26",
+          "lines": [
+            62,
+            62
+          ]
+        }
+      ],
+      "earlier_archive_limit": "Earlier ZIP member names are import-map assertions; original ZIP members were not independently opened in this audit.",
+      "substance": "第33-D项目研究总谱；声明以汇校本v3.1416为基础，整理逐回病史与照护链，混合文学分析和后20生成要求。不是医籍、医案或医学史证。",
+      "relevant_content_ranges": [
+        {
+          "lines": [
+            3,
+            6
+          ],
+          "role": "版本与笼统上游33-A/B/C声明"
+        },
+        {
+          "lines": [
+            140,
+            223
+          ],
+          "role": "八十回研究整理"
+        },
+        {
+          "lines": [
+            227,
+            412
+          ],
+          "role": "病史与医疗生态归纳"
+        },
+        {
+          "lines": [
+            446,
+            459
+          ],
+          "role": "85—86创作接口"
+        },
+        {
+          "lines": [
+            548,
+            570
+          ],
+          "role": "回次及约页码锚点"
+        }
+      ],
+      "citation_gaps": [
+        "上游33-A/B/C没有精确资产/段落对应。",
+        "短引与约页码没有绑定逐字摘录、抽取hash或正式locator核验记录。",
+        "引述的是小说叙事/人物医药观念，不是清代医籍直接证据。",
+        "第85—86病史延续和照护施工建议不证明具体诊断、药方、剂量或死亡夜医生时辰。"
+      ],
+      "closure": {
+        "qualified_source_closed": false,
+        "status": "NOT_CLOSED",
+        "reason": "Carrier custody alone does not establish source qualification or registered exact excerpt/locator verification."
+      },
+      "next_minimum_executable_evidence_need": "优先限定medical实际依赖的照护命题，核51回器具/火盆煎药、56回取药监派或58回黛玉照护的NOVEL_TEXT原文并形成精确字节链；如主张清代诊疗制度或特定医方，另需真正对应原始医籍/医案，不能以项目归纳替代。"
+    },
+    {
+      "asset_ref": "asset:sha256:e9b9b54f25c6c2419433b9b3da040e936d0f4d1bad4945817c5cad1643161f97",
+      "carrier": {
+        "path": "research/literary_ecology/e9b9b54f25c6c241/e9b9b54f25__前80_世情百业礼俗经济总谱_v1.0.md",
+        "sha256": "e9b9b54f25c6c2419433b9b3da040e936d0f4d1bad4945817c5cad1643161f97"
+      },
+      "carrier_bytes": 29873,
+      "carrier_sha256_matches": true,
+      "complete_read": {
+        "scope": "ENTIRE_UTF8_CARRIER",
+        "lines": [
+          1,
+          648
+        ],
+        "text_reviewed_in_prior_read_only_audit": true,
+        "all_bytes_rechecked_for_this_report": true
+      },
+      "catalog": {
+        "path": "data/catalog/assets/0c.yaml",
+        "sha256": "5e5fec75852a60a4c9e236bfa80daceefd2e4070301d65da95e28abfab342893",
+        "lines": [
+          18,
+          26
+        ]
+      },
+      "catalog_kind": "PROJECT_RESEARCH",
+      "source_type_observation": {
+        "registered_matching_source_found": false,
+        "SECONDARY_RESEARCH_assignment_made": false,
+        "HISTORICAL_PRIMARY_qualification": false,
+        "explanation": "Catalog kind is not provenance source type. This report does not assign or register any source type."
+      },
+      "origins": [
+        {
+          "record": {
+            "path": "data/catalog/origins/42.jsonl",
+            "sha256": "137018eaebade72ff4bba4b2e3f1169d29e139b4fc03661d77c01a2511dd8f6e",
+            "lines": [
+              2,
+              2
+            ]
+          },
+          "origin": {
+            "asset_ref": "asset:sha256:e9b9b54f25c6c2419433b9b3da040e936d0f4d1bad4945817c5cad1643161f97",
+            "batch_id": "handover-20261008",
+            "disposition": "RETAINED",
+            "id": "origin:handover-20261008:90f5a867ff18b4bf3774c148",
+            "origin_container": "RCWH_SelfContained_Handover_v4.0_20261007(1).zip",
+            "origin_type": "POST_M8_SOURCE_ARCHIVE",
+            "original_path": "03_VALID_HISTORY/LITERARY_ECOLOGY/REFERENCE/e9b9b54f25__前80_世情百业礼俗经济总谱_v1.0.md",
+            "sha256": "e9b9b54f25c6c2419433b9b3da040e936d0f4d1bad4945817c5cad1643161f97"
+          }
+        }
+      ],
+      "import_corroboration": [
+        {
+          "path": "archive/imports/handover-20261008/07_PACKAGE_MANIFESTS/SOURCE_ORIGIN_INDEX.csv",
+          "sha256": "aa6d5574583f1873386cc29afe27af4aeba473f21ed4935dd2edd1422210d97e",
+          "lines": [
+            665,
+            665
+          ]
+        },
+        {
+          "path": "archive/imports/handover-20261008/07_PACKAGE_MANIFESTS/CONTENT_MANIFEST_SHA256.csv",
+          "sha256": "aa31ecdd567380d24299b4146faba615b37d2aa7d9287d99d7917667735a3c4c",
+          "lines": [
+            668,
+            668
+          ]
+        }
+      ],
+      "earlier_mapping_observations": [
+        {
+          "path": "archive/imports/handover-20261008/06_LEGACY_INVENTORY_AND_MAPPINGS/00_SELF_CONTAINED_PATH_MAP_v3.0.csv",
+          "sha256": "fbdeec837684a87cd23be145ff4614a90ec5bf465ca31c90777b3b576aff2829",
+          "lines": [
+            22,
+            22
+          ]
+        },
+        {
+          "path": "archive/imports/handover-20261008/06_LEGACY_INVENTORY_AND_MAPPINGS/01_旧成果_to_Harness节点_完整迁移总表_v2.0.csv",
+          "sha256": "974774f4af57bd4ae4fd7dd454d88afc82aae7475e2363de6d5bede4c1f32f26",
+          "lines": [
+            60,
+            60
+          ]
+        }
+      ],
+      "earlier_archive_limit": "Earlier ZIP member names are import-map assertions; original ZIP members were not independently opened in this audit.",
+      "substance": "第33-F项目研究总谱；以汇校本v3.1416为基础，整理逐回家务/经济/礼俗及九套社会系统，给后20施工建议。现代项目归纳不是清代原始制度文献。",
+      "relevant_content_ranges": [
+        {
+          "lines": [
+            3,
+            6
+          ],
+          "role": "版本及笼统33-A至E上游声明"
+        },
+        {
+          "lines": [
+            167,
+            250
+          ],
+          "role": "逐回研究整理"
+        },
+        {
+          "lines": [
+            254,
+            398
+          ],
+          "role": "九套社会运行系统归纳"
+        },
+        {
+          "lines": [
+            402,
+            571
+          ],
+          "role": "后20施工接口与冻结规则"
+        },
+        {
+          "lines": [
+            575,
+            591
+          ],
+          "role": "回次及约页码锚点"
+        }
+      ],
+      "citation_gaps": [
+        "未给清代档案、律例、制度文书的实际引文；不得套入既有某历史source。",
+        "回次/约页码锚点无精确摘录与正式核验绑定。",
+        "女性行政机关、执行链等是研究分类，VALID_HISTORY包目录名不赋予史证资格。",
+        "不能证明CH86具体饭药炭水数量、价格、库存或执行人。"
+      ],
+      "closure": {
+        "qualified_source_closed": false,
+        "status": "NOT_CLOSED",
+        "reason": "Carrier custody alone does not establish source qualification or registered exact excerpt/locator verification."
+      },
+      "next_minimum_executable_evidence_need": "将household_economy依赖缩为实际使用的一条文本命题，优先核56回取药监派或45回食养/供应原文；若需历史制度命题另找对应原件，不以H05当票/租赁证据覆盖全部家务生活。"
+    }
+  ],
+  "dependency_observation": {
+    "scene": {
+      "path": "data/scenes/ch86_last_night.yaml",
+      "sha256": "30fab56f00c242eeeabccfb0a216864b1eb4d4d5eda9d833d32b114527a780fa",
+      "lines": [
+        54,
+        72
+      ]
+    },
+    "adapters": {
+      "path": "data/mechanism_adapters/v04.json",
+      "sha256": "9289bf540c3fbf7ba01bb38110ac9a2974ed08366e257e2a442dc3259bd29250",
+      "lines": [
+        8,
+        61
+      ]
+    },
+    "admission_logic": {
+      "path": "src/rcwh/workflow/admission.py",
+      "sha256": "5d58ac01b117f64b9084024505d8cd7c7c74bc3df89540acc98bd76da32f4d25",
+      "lines": [
+        99,
+        114
+      ]
+    },
+    "source_schema": {
+      "path": "schemas/source.schema.json",
+      "sha256": "57103b9b3af59680ed912948843af577e0ffb2d264444b4da628809cab367d06",
+      "lines": [
+        5,
+        86
+      ]
+    },
+    "source_verification_rules": {
+      "path": "src/rcwh/provenance/repository.py",
+      "sha256": "36aac392795ef1835fd6d79166a177e2e5d31f0e4ae9dfd1ed473a454acf7f60",
+      "lines": [
+        113,
+        139
+      ]
+    },
+    "chain": "CH86 -> medical/household_economy adapter source_refs -> these three catalog assets -> no matching explicitly registered graph source",
+    "graph_observation": {
+      "method": "Standard-library byte search of every data/provenance/sources/*.yaml for each full target hash; this absence entails absence of each exact asset ref in those source files. No graph evaluator was run.",
+      "source_files": [
+        {
+          "path": "data/provenance/sources/canary.yaml",
+          "sha256": "b7758143561ec761d37e2ad3ad46df7fe13e9309bb27441ddad2ca21916478d6"
+        },
+        {
+          "path": "data/provenance/sources/r4_core_completion.yaml",
+          "sha256": "1c7f64032532a2f16987a7a11c1e417c8c6b47f9c1b933a31e555b18fee02af4"
+        },
+        {
+          "path": "data/provenance/sources/r4_historical.yaml",
+          "sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820"
+        },
+        {
+          "path": "data/provenance/sources/r4_literal_core.yaml",
+          "sha256": "2feefc72a88ed220b3f2f841e76e66af9048261fb70926610a2e9e2043630a57"
+        },
+        {
+          "path": "data/provenance/sources/r4_title_axis.yaml",
+          "sha256": "49cb643821b8c4ea75cc6979ba4fcd5209d62f7808d816179e81b1f92772dfd2"
+        },
+        {
+          "path": "data/provenance/sources/r4_w2.yaml",
+          "sha256": "e54b1ae71e7c229e3f9c9bbc08180300ef60d00d83e20c9c197a199a5dbd0a95"
+        }
+      ],
+      "matching_source_count": 0,
+      "derived_from_is_qualification": false
+    }
+  },
+  "named_novel_upstream": {
+    "carrier": {
+      "path": "sources/primary/hongloumeng/zhihui/v3.1416/original.pdf",
+      "sha256": "37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7"
+    },
+    "classification": "Novel textual witness container; not a medical or administrative historical primary source merely because it is an old novel.",
+    "catalog": {
+      "path": "data/catalog/assets/db.yaml",
+      "sha256": "779379d4a2efe85e4add7cc1041d12e9930aae20f21ec9d27fb7cd5a9c87ed6e",
+      "lines": [
+        3,
+        12
+      ]
+    },
+    "direct_origin": {
+      "path": "data/catalog/origins/00.jsonl",
+      "sha256": "3ec2ba6db9b9b468107dcf4a93fd52bad33bdd56eef68ff242a636a244d34d80",
+      "lines": [
+        2,
+        2
+      ]
+    },
+    "duplicate_origin": {
+      "path": "data/catalog/origins/bd.jsonl",
+      "sha256": "f71111c5f196b11eea2e1493b6901837ef3d2eab602fae1dd15134f1a7f84903",
+      "lines": [
+        3,
+        3
+      ]
+    },
+    "extraction_manifest": {
+      "path": "corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/manifest.json",
+      "sha256": "1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+      "lines": [
+        1,
+        1
+      ]
+    },
+    "extraction_units": {
+      "path": "corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/units.jsonl",
+      "sha256": "b9278b790bc2fd8a7e90ec8ca86295a60105b0defe0843fc39cdc598e6826353"
+    },
+    "candidate_excerpt_observations": [
+      {
+        "role": "FUTURE_EVIDENCE_CANDIDATE_AND_READ_ONLY_HASH_OBSERVATION_ONLY",
+        "units_file": {
+          "path": "corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/units.jsonl",
+          "sha256": "b9278b790bc2fd8a7e90ec8ca86295a60105b0defe0843fc39cdc598e6826353",
+          "lines": [
+            695,
+            695
+          ]
+        },
+        "unit_ref": "pdf:page:695",
+        "unit_text_sha256": "f13c4dca5ac0284be17718d8f267286d5512f12ad4108a512e66fda4ca6eb0c8",
+        "start": 786,
+        "end": 794,
+        "coordinate_system": "ZERO_BASED_PYTHON_UNICODE_CHARACTER_HALF_OPEN_WITH_RAW_NEWLINES",
+        "raw_excerpt": "就命在火盆上煎。",
+        "raw_excerpt_sha256": "d2e3fcff537c8e685094d4961b1be5865435ec7f42ceee1bffd844dacf79f25c",
+        "registered_source": false,
+        "formal_locator_verification": false
+      },
+      {
+        "role": "FUTURE_EVIDENCE_CANDIDATE_AND_READ_ONLY_HASH_OBSERVATION_ONLY",
+        "units_file": {
+          "path": "corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/units.jsonl",
+          "sha256": "b9278b790bc2fd8a7e90ec8ca86295a60105b0defe0843fc39cdc598e6826353",
+          "lines": [
+            757,
+            757
+          ]
+        },
+        "unit_ref": "pdf:page:757",
+        "unit_text_sha256": "aff6667cbcdee5eae7d01cb57911e15abfaba7f05276ff0b8486ccb53efe20d5",
+        "start": 428,
+        "end": 443,
+        "coordinate_system": "ZERO_BASED_PYTHON_UNICODE_CHARACTER_HALF_OPEN_WITH_RAW_NEWLINES",
+        "raw_excerpt": "一\n面遣人送出去取药，监派调服",
+        "raw_excerpt_sha256": "1abbfe5781aedae7bb4f24953373008664f6e5ede7e0ee0593819a955dd2c0e8",
+        "registered_source": false,
+        "formal_locator_verification": false
+      },
+      {
+        "role": "FUTURE_EVIDENCE_CANDIDATE_AND_READ_ONLY_HASH_OBSERVATION_ONLY",
+        "units_file": {
+          "path": "corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/units.jsonl",
+          "sha256": "b9278b790bc2fd8a7e90ec8ca86295a60105b0defe0843fc39cdc598e6826353",
+          "lines": [
+            784,
+            784
+          ]
+        },
+        "unit_ref": "pdf:page:784",
+        "unit_text_sha256": "dac2063a795ff395955933db8edfee671148c6b5e90022f0eef16e1793936621",
+        "start": 65,
+        "end": 77,
+        "coordinate_system": "ZERO_BASED_PYTHON_UNICODE_CHARACTER_HALF_OPEN_WITH_RAW_NEWLINES",
+        "raw_excerpt": "一应药饵饮食十\n分经心。",
+        "raw_excerpt_sha256": "2d4773ff4328d13bf69e80168a027b1c11ada3104cc87963c319b92f94049440",
+        "registered_source": false,
+        "formal_locator_verification": false
+      },
+      {
+        "role": "FUTURE_EVIDENCE_CANDIDATE_AND_READ_ONLY_HASH_OBSERVATION_ONLY",
+        "units_file": {
+          "path": "corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/units.jsonl",
+          "sha256": "b9278b790bc2fd8a7e90ec8ca86295a60105b0defe0843fc39cdc598e6826353",
+          "lines": [
+            617,
+            617
+          ]
+        },
+        "unit_ref": "pdf:page:617",
+        "unit_text_sha256": "4334f695e38d4d5ba6f930e0bc0b9a8876c52db4de10006cebc09716585fab65",
+        "start": 257,
+        "end": 269,
+        "coordinate_system": "ZERO_BASED_PYTHON_UNICODE_CHARACTER_HALF_OPEN_WITH_RAW_NEWLINES",
+        "raw_excerpt": "每日早\n起拿上等燕窝一两",
+        "raw_excerpt_sha256": "8b76fb3ccc2164623f06a991979882fb51d9908f5deaaf719c02ca08078d8078",
+        "registered_source": false,
+        "formal_locator_verification": false
+      }
+    ],
+    "qualification_limit": "The four excerpts are future evidence candidates/hash observations, not new source registrations or formal locator verification results. Novel care practices cannot establish CH86 exact diagnosis/prescription/death time/staff allocation or mandatory wording."
+  },
+  "citation_page_ambiguity": {
+    "medical_summary_lines": [
+      548,
+      570
+    ],
+    "not_formally_verified": true,
+    "observations": [
+      "51回约p.683–695可覆盖PDF物理694/695（印刷683/684），58回p.773却是印刷页、物理784；未声明统一页码体系。",
+      "45回燕窝食养语句找到于PDF物理617、印刷606，不在医学总谱约p.610–616范围内。不得把约页码机械标为VERIFIED。"
+    ]
+  },
+  "future_evidence_boundary": "Any later authorized evidence work must select actual adapter-dependent propositions, identify true witness, retain exact raw quotation/locator/carrier/extraction/excerpt hashes, and obtain genuine verification. Do not force existing historical sources, treat derived_from as qualification, or present model/project research inference as original wording.",
+  "reference_byte_bindings": [
+    {
+      "path": "sources/project/3735d2b2d82d70aa/前八十回_生活物质与家务索引_v1.0.md",
+      "sha256": "3735d2b2d82d70aac061f2cf7f5ccee84370064d6935364aa587402dccb7ff96",
+      "bytes": 4583
+    },
+    {
+      "path": "data/catalog/origins/aa.jsonl",
+      "sha256": "b8bfac50fdb39d435ada92fd03076d1120949cafa9be3bd43ccbfe945dbfad6a",
+      "bytes": 1630
+    },
+    {
+      "path": "data/catalog/origins/b3.jsonl",
+      "sha256": "1469922011d87f9cb766708e175fe4bc66c0db9119294bfd77564fbdc6656da6",
+      "bytes": 3863
+    },
+    {
+      "path": "data/catalog/assets/43.yaml",
+      "sha256": "0f821aeb7cead372605e3a01d9e977809e8b5b36adbdd1d246dfc11284379d4e",
+      "bytes": 1751
+    },
+    {
+      "path": "archive/imports/handover-20261008/07_PACKAGE_MANIFESTS/SOURCE_ORIGIN_INDEX.csv",
+      "sha256": "aa6d5574583f1873386cc29afe27af4aeba473f21ed4935dd2edd1422210d97e",
+      "bytes": 316758
+    },
+    {
+      "path": "archive/imports/handover-20261008/07_PACKAGE_MANIFESTS/CONTENT_MANIFEST_SHA256.csv",
+      "sha256": "aa31ecdd567380d24299b4146faba615b37d2aa7d9287d99d7917667735a3c4c",
+      "bytes": 157599
+    },
+    {
+      "path": "archive/imports/handover-20261008/06_LEGACY_INVENTORY_AND_MAPPINGS/00_SELF_CONTAINED_PATH_MAP_v3.0.csv",
+      "sha256": "fbdeec837684a87cd23be145ff4614a90ec5bf465ca31c90777b3b576aff2829",
+      "bytes": 383672
+    },
+    {
+      "path": "archive/imports/handover-20261008/06_LEGACY_INVENTORY_AND_MAPPINGS/01_旧成果_to_Harness节点_完整迁移总表_v2.0.csv",
+      "sha256": "974774f4af57bd4ae4fd7dd454d88afc82aae7475e2363de6d5bede4c1f32f26",
+      "bytes": 636277
+    },
+    {
+      "path": "research/literary_ecology/98d9c0a13e692043/98d9c0a13e__前80_医学身体疾病书写总谱_v1.0.md",
+      "sha256": "98d9c0a13e692043b440941fe50cdcb719ab9cb4f1623f061f894cb6d6a3155c",
+      "bytes": 32714
+    },
+    {
+      "path": "data/catalog/origins/b5.jsonl",
+      "sha256": "04ad30fbcd4996d630195196f8c86ba42c3e3e094584ce93b885f2edd2cf0ddd",
+      "bytes": 2193
+    },
+    {
+      "path": "data/catalog/assets/00.yaml",
+      "sha256": "9a6cb6c827938cfc6e1d5b49dd853039f16f4cf7e22d54f95cc7b3b62e18754c",
+      "bytes": 2654
+    },
+    {
+      "path": "research/literary_ecology/e9b9b54f25c6c241/e9b9b54f25__前80_世情百业礼俗经济总谱_v1.0.md",
+      "sha256": "e9b9b54f25c6c2419433b9b3da040e936d0f4d1bad4945817c5cad1643161f97",
+      "bytes": 29873
+    },
+    {
+      "path": "data/catalog/origins/42.jsonl",
+      "sha256": "137018eaebade72ff4bba4b2e3f1169d29e139b4fc03661d77c01a2511dd8f6e",
+      "bytes": 1150
+    },
+    {
+      "path": "data/catalog/assets/0c.yaml",
+      "sha256": "5e5fec75852a60a4c9e236bfa80daceefd2e4070301d65da95e28abfab342893",
+      "bytes": 1260
+    },
+    {
+      "path": "archive/imports/handover-20261008/07_PACKAGE_MANIFESTS/DEDUP_MAP.csv",
+      "sha256": "235b77e76a09eb4343165dc94dda19510aa5d7e93ad9fceedb6419c2d694168a",
+      "bytes": 49171
+    },
+    {
+      "path": "data/provenance/sources/canary.yaml",
+      "sha256": "b7758143561ec761d37e2ad3ad46df7fe13e9309bb27441ddad2ca21916478d6",
+      "bytes": 9543
+    },
+    {
+      "path": "data/provenance/sources/r4_core_completion.yaml",
+      "sha256": "1c7f64032532a2f16987a7a11c1e417c8c6b47f9c1b933a31e555b18fee02af4",
+      "bytes": 3242
+    },
+    {
+      "path": "data/provenance/sources/r4_historical.yaml",
+      "sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820",
+      "bytes": 28772
+    },
+    {
+      "path": "data/provenance/sources/r4_literal_core.yaml",
+      "sha256": "2feefc72a88ed220b3f2f841e76e66af9048261fb70926610a2e9e2043630a57",
+      "bytes": 3119
+    },
+    {
+      "path": "data/provenance/sources/r4_title_axis.yaml",
+      "sha256": "49cb643821b8c4ea75cc6979ba4fcd5209d62f7808d816179e81b1f92772dfd2",
+      "bytes": 6809
+    },
+    {
+      "path": "data/provenance/sources/r4_w2.yaml",
+      "sha256": "e54b1ae71e7c229e3f9c9bbc08180300ef60d00d83e20c9c197a199a5dbd0a95",
+      "bytes": 11069
+    },
+    {
+      "path": "corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/units.jsonl",
+      "sha256": "b9278b790bc2fd8a7e90ec8ca86295a60105b0defe0843fc39cdc598e6826353",
+      "bytes": 2804941
+    },
+    {
+      "path": "data/scenes/ch86_last_night.yaml",
+      "sha256": "30fab56f00c242eeeabccfb0a216864b1eb4d4d5eda9d833d32b114527a780fa",
+      "bytes": 3118
+    },
+    {
+      "path": "data/mechanism_adapters/v04.json",
+      "sha256": "9289bf540c3fbf7ba01bb38110ac9a2974ed08366e257e2a442dc3259bd29250",
+      "bytes": 7355
+    },
+    {
+      "path": "src/rcwh/workflow/admission.py",
+      "sha256": "5d58ac01b117f64b9084024505d8cd7c7c74bc3df89540acc98bd76da32f4d25",
+      "bytes": 15245
+    },
+    {
+      "path": "schemas/source.schema.json",
+      "sha256": "57103b9b3af59680ed912948843af577e0ffb2d264444b4da628809cab367d06",
+      "bytes": 3124
+    },
+    {
+      "path": "src/rcwh/provenance/repository.py",
+      "sha256": "36aac392795ef1835fd6d79166a177e2e5d31f0e4ae9dfd1ed473a454acf7f60",
+      "bytes": 11786
+    },
+    {
+      "path": "sources/primary/hongloumeng/zhihui/v3.1416/original.pdf",
+      "sha256": "37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7",
+      "bytes": 7554963
+    },
+    {
+      "path": "data/catalog/assets/db.yaml",
+      "sha256": "779379d4a2efe85e4add7cc1041d12e9930aae20f21ec9d27fb7cd5a9c87ed6e",
+      "bytes": 1239
+    },
+    {
+      "path": "data/catalog/origins/00.jsonl",
+      "sha256": "3ec2ba6db9b9b468107dcf4a93fd52bad33bdd56eef68ff242a636a244d34d80",
+      "bytes": 2136
+    },
+    {
+      "path": "data/catalog/origins/bd.jsonl",
+      "sha256": "f71111c5f196b11eea2e1493b6901837ef3d2eab602fae1dd15134f1a7f84903",
+      "bytes": 1581
+    },
+    {
+      "path": "corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/manifest.json",
+      "sha256": "1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900",
+      "bytes": 18401
+    }
+  ]
+}

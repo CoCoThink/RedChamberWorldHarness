@@ -1,0 +1,1058 @@
+{
+  "schema_version": 1,
+  "kind": "PHASE6_B_EDITORIAL_IMPLEMENTATION_REPORT",
+  "revision": "v1",
+  "status": "NARRATIVE_INPUTS_CREATED_RUNTIME_PENDING",
+  "execution_mode": "NARRATIVE_ONLY_NOT_EXECUTABLE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "usage": "RESEARCH_ONLY_NOT_ADOPTED_NOT_RELEASED",
+  "authorization": "EXPLICIT_USER_AGENT_EDIT_AUTHORIZATION_APPROVAL_B",
+  "panel_before_edit": {
+    "status": "PENDING",
+    "record_integrity_status": "PASS",
+    "minimum_reviewers": 2,
+    "subjects": [
+      {
+        "id": "editorial-ch98",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      },
+      {
+        "id": "editorial-ch99",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      },
+      {
+        "id": "editorial-ch100",
+        "status": "PENDING",
+        "review_count": 2,
+        "distinct_reviewer_count": 1
+      }
+    ],
+    "peer1_context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    },
+    "peer2_context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "effect": "未改变panel、原始同行声明或注册记录；意见不是编辑授权、独立人工认可或执行证明。"
+  },
+  "decisions": [
+    {
+      "path": "data/planning/decisions/phase6-ch98-v1.json",
+      "sha256": "850e993895101a0e759983e9427a76db624d5e9ca7f5f4ab8e4fa9d3b24155d4"
+    },
+    {
+      "path": "data/planning/decisions/phase6-ch99-v1.json",
+      "sha256": "e9f09fb42347ddf186a7854c5071639b59d33ed3273467d37cf5d7d1a7fe6a7c"
+    },
+    {
+      "path": "data/planning/decisions/phase6-ch100-v1.json",
+      "sha256": "9105d1991a15205db9afeae5240254feeb0a9df0868d0857c4e29c7ccfcb8538"
+    }
+  ],
+  "new_contracts": [
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/98-S1.v3.json",
+        "sha256": "8a02f53471517badfd967fc306eb65ee33da0ef297320580633d1746998cf0db"
+      },
+      "scene_id": "98-S1",
+      "revision": "v3",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/98-S1.v2.json",
+        "sha256": "8a1ee0b70392fa1f9654ddad20dd9d9a46b81bf344924c61ea9d71fb5ef65af3"
+      },
+      "changed_fields": [
+        "required_beats",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 1,
+      "narrative_index": 1,
+      "entry_from_source_predecessor": "CHAPTER_ENTRY:97"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/98-S2.v3.json",
+        "sha256": "e2f5b3e49203963a75832f634d11120e5d2edb49433efcaee3bfe89a743fc3a1"
+      },
+      "scene_id": "98-S2",
+      "revision": "v3",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/98-S2.v2.json",
+        "sha256": "50f3e06884293e1458090510f4ec98a7e845614c0c1e460b91938fe4c9acfe50"
+      },
+      "changed_fields": [
+        "entry_from",
+        "required_beats",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 2,
+      "narrative_index": 2,
+      "entry_from_source_predecessor": "data/planning/contracts/agent-final-v2/98-S1.v3.json"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/98-S3.v3.json",
+        "sha256": "63cbcf201b6e1fde1a82db59905933c1991aa1f3bda980ef017dda19038c1388"
+      },
+      "scene_id": "98-S3",
+      "revision": "v3",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/98-S3.v2.json",
+        "sha256": "d2ff2a0fdb7609bb8bc4e7161c19e55a7ba519eef150e3965827d9225a8db992"
+      },
+      "changed_fields": [
+        "entry_from",
+        "forbidden_beats",
+        "object_transition_refs",
+        "required_beats",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 3,
+      "narrative_index": 3,
+      "entry_from_source_predecessor": "data/planning/contracts/agent-final-v2/98-S2.v3.json"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+        "sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507"
+      },
+      "scene_id": "99-S1",
+      "revision": "v4",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/99-S1.v3.json",
+        "sha256": "ba468baf596b8e561f402966c44dead20cb44359512da59e9e590a836997db43"
+      },
+      "changed_fields": [
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 1,
+      "narrative_index": 1,
+      "entry_from_source_predecessor": "CHAPTER_ENTRY:98"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+        "sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1"
+      },
+      "scene_id": "99-S2",
+      "revision": "v4",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/99-S2.v3.json",
+        "sha256": "9d46670b8ff932768dd2b4f5889cbff34b029705b61742939d4daf77f99c00de"
+      },
+      "changed_fields": [
+        "entry_from",
+        "required_beats",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 2,
+      "narrative_index": 2,
+      "entry_from_source_predecessor": "data/planning/contracts/agent-final-v2/99-S1.v4.json"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+        "sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc"
+      },
+      "scene_id": "99-S3",
+      "revision": "v4",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/99-S3.v3.json",
+        "sha256": "505eb6aa90f729999baa8a990fcc5edd0bf6ebd9d587a0fb58ab234be45d3ada"
+      },
+      "changed_fields": [
+        "entry_from",
+        "required_beats",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 3,
+      "narrative_index": 4,
+      "entry_from_source_predecessor": "data/planning/contracts/agent-final-v2/99-S2.v4.json"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+        "sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05"
+      },
+      "scene_id": "99-S4",
+      "revision": "v4",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/99-S4.v3.json",
+        "sha256": "4d3f758ec307aef8bbd9059a7f51d881f02c27f67e4b6915c27697166ad5f7e6"
+      },
+      "changed_fields": [
+        "entry_from",
+        "forbidden_beats",
+        "required_beats",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 4,
+      "narrative_index": 5,
+      "entry_from_source_predecessor": "data/planning/contracts/agent-final-v2/99-S3.v4.json"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S5.v4.json",
+        "sha256": "20f76cdc3e741937bee015f01dad1c5cee7ab8b2810ab96f54ede6cb00f9dbad"
+      },
+      "scene_id": "99-S5",
+      "revision": "v4",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/99-S5.v3.json",
+        "sha256": "cd6f624a4aaf5035a37fdcec71dfe436655128a59802debe656da215ddc406bd"
+      },
+      "changed_fields": [
+        "entry_from",
+        "required_beats",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 5,
+      "narrative_index": 3,
+      "entry_from_source_predecessor": "data/planning/contracts/agent-final-v2/99-S4.v4.json"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/100-S1.v3.json",
+        "sha256": "1862399465256ce42b2fb9455257551c3b8ad4b2c0b3915188b92f5d642281ca"
+      },
+      "scene_id": "100-S1",
+      "revision": "v3",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/100-S1.v2.json",
+        "sha256": "d80f953022642660a9a0f956a83300d26bdfc9cf9b08b69bb02490238bd890b0"
+      },
+      "changed_fields": [
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 1,
+      "narrative_index": 1,
+      "entry_from_source_predecessor": "CHAPTER_ENTRY:99"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/100-S2.v3.json",
+        "sha256": "a40c7186f721d7b867b73a783bd2a6e870d3bf384abccbbcf8362e1942ed336b"
+      },
+      "scene_id": "100-S2",
+      "revision": "v3",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/100-S2.v2.json",
+        "sha256": "d3768659aafb0d424575ea93da87881bcd01ba7a2f693f27890696fb7a6be5bc"
+      },
+      "changed_fields": [
+        "entry_from",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 2,
+      "narrative_index": 2,
+      "entry_from_source_predecessor": "data/planning/contracts/agent-final-v2/100-S1.v3.json"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/100-S3.v3.json",
+        "sha256": "df015a71cb1722ee8d5cc818eabd9f73a6e350390fce72398a2c4411503c700d"
+      },
+      "scene_id": "100-S3",
+      "revision": "v3",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/100-S3.v2.json",
+        "sha256": "b757432a4bd715a92404cfe585066f83ab129dc2d6c4912f211b42854c08c800"
+      },
+      "changed_fields": [
+        "entry_from",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 3,
+      "narrative_index": 3,
+      "entry_from_source_predecessor": "data/planning/contracts/agent-final-v2/100-S2.v3.json"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/100-S4.v3.json",
+        "sha256": "2ab28b514ca4de77179b55642448473af930470bc9f8d74093c85a275dfdeb8d"
+      },
+      "scene_id": "100-S4",
+      "revision": "v3",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/100-S4.v2.json",
+        "sha256": "dc5eaa98b70786dbe6f65e5cc1d40092ee369e05436b406f8899a0b756d75a0f"
+      },
+      "changed_fields": [
+        "entry_from",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 4,
+      "narrative_index": 4,
+      "entry_from_source_predecessor": "data/planning/contracts/agent-final-v2/100-S3.v3.json"
+    },
+    {
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/100-S5.v3.json",
+        "sha256": "c766d3d69bfe74e032735def4e5cd248498d51efe825337e4ff6d331076591da"
+      },
+      "scene_id": "100-S5",
+      "revision": "v3",
+      "previous": {
+        "path": "data/planning/contracts/agent-final-v1/100-S5.v2.json",
+        "sha256": "f421a34ba4aceca429603631b9510bf4f4e077fb81a7eb85daaae08dd5540faa"
+      },
+      "changed_fields": [
+        "entry_from",
+        "forbidden_beats",
+        "required_beats",
+        "revision",
+        "unresolved",
+        "notes"
+      ],
+      "source_index": 5,
+      "narrative_index": 5,
+      "entry_from_source_predecessor": "data/planning/contracts/agent-final-v2/100-S4.v3.json"
+    }
+  ],
+  "versions": {
+    "98": "v2→v3 (3 contracts)",
+    "99": "v3→v4 (5 contracts)",
+    "100": "v2→v3 (5 contracts)"
+  },
+  "checker_source_inspection": {
+    "inspect_contract": "src/rcwh/planning/contracts.py:121-145 verifies schema, immutable binding bytes, seed id/chapter/order; planning decisions cannot become state basis (156-159).",
+    "check_selected": "src/rcwh/planning/checking.py:55-98 verifies source list/order/selected predecessor only; no narrative_sequence execution.",
+    "binding_strategy": "所有原bindings保持完全一致；新decision路径及实际sha256仅写notes及新增叙事义务grounding，决策不是状态或史料支持。"
+  },
+  "checks": {
+    "decision_schema": {
+      "checked": 3,
+      "FAIL": 0
+    },
+    "contract_schema": {
+      "checked": 13,
+      "FAIL": 0
+    },
+    "contract_inspect_declared_compatibility": {
+      "checked": 13,
+      "FAIL": 0,
+      "reports": [
+        {
+          "ref": "data/planning/contracts/agent-final-v2/98-S1.v3.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 5,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "PENDING",
+              "counts": {
+                "PASS": 1,
+                "PENDING": 5
+              },
+              "codes": [
+                "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+                "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+                "CONTRACT_REPLAY_STATE_MATCH",
+                "CONTRACT_REPLAY_STATE_UNKNOWN"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/98-S2.v3.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 5,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/98-S3.v3.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 5,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 4,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "PENDING",
+              "counts": {
+                "PASS": 4,
+                "PENDING": 4
+              },
+              "codes": [
+                "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+                "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+                "CONTRACT_REPLAY_STATE_MATCH",
+                "CONTRACT_REPLAY_STATE_UNKNOWN"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 6,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 6,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 5,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/99-S5.v4.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 5,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/100-S1.v3.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 5,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "PENDING",
+              "counts": {
+                "PASS": 2,
+                "PENDING": 5
+              },
+              "codes": [
+                "CONTRACT_REPLAY_COVERAGE_INCOMPLETE",
+                "CONTRACT_REPLAY_DRAFT_INCOMPLETE",
+                "CONTRACT_REPLAY_STATE_MATCH",
+                "CONTRACT_REPLAY_STATE_UNKNOWN"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/100-S2.v3.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 5,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/100-S3.v3.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 5,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/100-S4.v3.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 5,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        },
+        {
+          "ref": "data/planning/contracts/agent-final-v2/100-S5.v3.json",
+          "tiers": {
+            "declared_compatibility": {
+              "status": "PENDING",
+              "counts": {
+                "PENDING": 6,
+                "PASS": 1
+              },
+              "codes": [
+                "CONTRACT_BINDINGS_DECLARED",
+                "CONTRACT_PARTICIPANTS_UNRESOLVED",
+                "CONTRACT_STATE_UNDECLARED",
+                "CONTRACT_STATE_UNKNOWN",
+                "CONTRACT_UNRESOLVED"
+              ]
+            },
+            "deterministic_world_state_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_ENTRY_CHECKPOINT_UNSUPPORTED"
+              ]
+            },
+            "prose_supported_semantic_replay": {
+              "status": "NOT_CHECKED",
+              "counts": {
+                "NOT_CHECKED": 1
+              },
+              "codes": [
+                "CONTRACT_PROSE_SEMANTICS_NOT_CHECKED"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "selected_plan_check": {
+      "status": "PENDING",
+      "counts": {
+        "PENDING": 124,
+        "PASS": 30,
+        "NOT_CHECKED": 23
+      },
+      "failures": [],
+      "scope": "98/99/100 selected source-order overlays only, NOT independent narrative execution"
+    },
+    "invariants": {
+      "source_index_seed_order_preserved": true,
+      "source_order_new_predecessors_valid": true,
+      "bindings_preserved": true,
+      "entry_precondition_exit_states_preserved": true,
+      "UNKNOWN_to_KNOWN_changes": 0,
+      "participants_registry_changed": false,
+      "knowledge_events_added": 0,
+      "human_events_added": 0,
+      "OT98_04_05_support_refs_removed": true,
+      "OT100_01_no_transport_added": true,
+      "decision_note_hashes_verified": true,
+      "protected_preexisting_bytes_unchanged": true,
+      "protected_file_count": 135
+    },
+    "narrative_obligation_audit": {
+      "98_address_bridge_matches_decision": true,
+      "98_one_mistake_two_containers_personal_carrier": true,
+      "99_no_remaining_front_insert_ban_in_current_obligations": true,
+      "99_source_order_unchanged_narrative_order_separate": true,
+      "100_terminal_explicit_without_transport_or_registered_actor_invention": true,
+      "all_state_and_binding_fields_equal_old": true
+    }
+  },
+  "frozen_input_digest": {
+    "algorithm": "sha256(sorted path + original sha256 JSON)",
+    "sha256": "a92972fef368d4eb9bb7bcc4bffa02ca45c78c067d0f0ab6f66152b3b4d6fc1a",
+    "paths": [
+      "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+      "artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+      "artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+      "artifacts/agent_research/phase6/editorial/editorial-synthesis-v1.json",
+      "artifacts/agent_research/phase6/editorial/peer-packet-v1.json",
+      "artifacts/agent_research/phase6/editorial/peer1-observations-v1.json",
+      "artifacts/agent_research/phase6/editorial/peer1-opinion-v1.json",
+      "artifacts/agent_research/phase6/editorial/peer2-observations-v1.json",
+      "artifacts/agent_research/phase6/editorial/peer2-opinion-v1.json",
+      "artifacts/agent_research/phase6/verification/baseline-ch89-scope.json",
+      "artifacts/agent_research/phase6/verification/baseline-protected-originals.json",
+      "artifacts/agent_research/phase6/verification/engineering-checkpoint-01/pytest.log",
+      "artifacts/agent_research/phase6/verification/engineering-checkpoint-01/result.json",
+      "artifacts/agent_research/phase6/verification/engineering-checkpoint-01/validate-stderr.log",
+      "artifacts/agent_research/phase6/verification/engineering-checkpoint-01/validate.json",
+      "data/agent_panel/raw/0c780b3bcaf580ada20d1697ec967b95e1c79176870b7e0fe6d4d448cd62992c.json",
+      "data/agent_panel/raw/12171d0bab69f2f9ff7da1bf058605bef0397b4f7c83ac002965b1e750f1c361.json",
+      "data/agent_panel/raw/1d4fb85f361ae26cb36820c73d35b1af364ca5d572ae4e392f7a6ae0708777c3.json",
+      "data/agent_panel/raw/253ec2b15a00ac7c5ba0810a44f08feb34fdd77bb93e993209a4dbad3f5e99a2.json",
+      "data/agent_panel/raw/2aee89643d56ea32e2928f93441331fd04c24c54e4391ea348e930aa5b4b6b62.json",
+      "data/agent_panel/raw/302608e3cc73ab478edd713daab0f58378bba2844714dd3bb34ceed45d4c647e.json",
+      "data/agent_panel/raw/336d0e0cc4b867479ee652c17cf2d72c92b4d85adb7290e6ef70553bd0ade445.json",
+      "data/agent_panel/raw/3eac0a7a6e023c4ea5035279935f8abfbb6f3b7b50d90604b03f236a30536a64.json",
+      "data/agent_panel/raw/43124f2c42d1011272b882973589ff0fb491830ec29167bec91cc832b5820d56.json",
+      "data/agent_panel/raw/45d67b1bd6fccdc375756fe79b507feb7652c50d50e4e046a58ae5eb3305a7f0.json",
+      "data/agent_panel/raw/497e1013f27d84755196aca5fbc9620ff8fe92535ed67e3f6008c591d0219881.json",
+      "data/agent_panel/raw/5384ee7ceafaee8ac539d783794dd73635a3060fcc7d456f1b629ab002b007dc.json",
+      "data/agent_panel/raw/78af5260db3944714a18118a9e52eb690308566d971824acc375d99d5d17ba1a.json",
+      "data/agent_panel/raw/8b412287e7efb39e964ebf97f4d3fffba9d60865cd5e37ac023cbb08a77eade9.json",
+      "data/agent_panel/raw/8d3dac7f135312ac04a47ec017b38e3aaafdd0011eb186596604f9ec818ade8b.json",
+      "data/agent_panel/raw/a8d12215d5b0dda167bf261db0f7a9e15c46222df095537cd8f7fe969d3aabfb.json",
+      "data/agent_panel/raw/bde07fec59670f84bb7fe3cd7efb560ea8c38c8ef59cd8c7d6576b54c60319f3.json",
+      "data/agent_panel/raw/c4d95397e6be3ef63b0b028c666e0450891557532e578f3f74079e5262b3fec9.json",
+      "data/agent_panel/raw/c70e5915d5985212277640c75bfbd6e4d4766edb0719918166c5eeb455af5a2a.json",
+      "data/agent_panel/raw/e71d20439e4a036e09da83c4ac84cd07612fcf0e1b08f57e1d056f3ccb885be2.json",
+      "data/agent_panel/raw/ee5e9aa71efbe36e54bd7f5e4ef8e39497289f563e2d97b464384425796ecf20.json",
+      "data/agent_panel/raw/f78f5d3150841c4cc6fe42413ee56049c61fd3ef39af268ef5fe5294856f0e45.json",
+      "data/agent_panel/receipts/2691c335b38e35df0a1f3fae1e4707e2c1e9692a53b91dd0bbc2c61037a5886d.json",
+      "data/agent_panel/receipts/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+      "data/agent_panel/receipts/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+      "data/agent_panel/receipts/83d77b9674832b28cf065b5f8b64fd1917f186640b202759b753779d043a94c8.json",
+      "data/agent_panel/receipts/8bb9669b39800fa36b661fb6f45792ce0cc0ba952f3da694e80e6e5d8a8e2170.json",
+      "data/agent_panel/receipts/8ce3ed3e668b389ff6dc0f5c2a37842ec5dd0d046c98577d494b1ea4001267b7.json",
+      "data/agent_panel/receipts/8d4198e4bf700de522c695976263a82a5552df033c6d9c1910e173b271dcb08e.json",
+      "data/agent_panel/receipts/8fbecffee42821f184a4d4dc67c6124fd610151ab0bad04fd449b9a1437b68da.json",
+      "data/agent_panel/receipts/9033e6fb21924ed8da9ae0b7555a2e9efb27ef47bf649cd1cd7c94f5f8c80f9a.json",
+      "data/agent_panel/receipts/a55161e6e768014784cfdfc15be56e15716b671cd90b682406cdf28de129e438.json",
+      "data/agent_panel/receipts/b6863ee65a95b49d33db4fb9eac3016d59c48335053dfaecc15f2eb35f4cbef3.json",
+      "data/agent_panel/receipts/b913671669ce0af4a5a13ad9a88a22c86d6abfe10ab07f1fc1d71aa952bb8807.json",
+      "data/agent_panel/receipts/bcf10faf27141011dbce7b84205a0dfb0d77006d419457f2d3f7616c62ffdcae.json",
+      "data/agent_panel/receipts/cbcfcb511ed2684c79959ce183ad01bba5dc6efa442aca6d294a2850ee5f3750.json",
+      "data/agent_panel/receipts/d52508ab52275ba7a4f8d6431f2b28da35054f0b9eda5014ca1a7b4969cc676b.json",
+      "data/agent_panel/receipts/e0b89ae8d0acb1969592f1f63cdb0bf72f12529643a1b2ad606f7e8a37ee593b.json",
+      "data/agent_panel/receipts/e48ddc0fa2894a77c79888035de0adb7564452b21fe945cf6f96df129c688c5a.json",
+      "data/agent_panel/receipts/e945dd4e6bfc4353a6ee7371cc4238ca001da9b1c275a1d0fb278f7b54dcb27e.json",
+      "data/agent_panel/receipts/ee94660398134f19f6aa7a5d25f28f4f7041dc9f3f1ddc22707197243772834e.json",
+      "data/agent_panel/receipts/f0266eecd22827b7efff7b7f67b162a9d354e8fa7dd08dbc660d8101d46537c1.json",
+      "data/agent_panel/receipts/f0e2f957192c33c9c6e2131332b08f8e0c9751f2c8b6ea91aa4fa10a56e9c489.json",
+      "data/agent_panel/receipts/f497d2a86a4d0ba8b6bdc0b0f824a94f48bf5bfb04e44211f318858ed545fd90.json",
+      "data/agent_panel/records/2691c335b38e35df0a1f3fae1e4707e2c1e9692a53b91dd0bbc2c61037a5886d.json",
+      "data/agent_panel/records/27584b18d0d08e35aab2701cf124d82eae399dec66358937890092fdbe4999b0.json",
+      "data/agent_panel/records/6d4423e4ec180c486edafcb51b2c2405a7a309ee3bdd97c4162297059f095873.json",
+      "data/agent_panel/records/83d77b9674832b28cf065b5f8b64fd1917f186640b202759b753779d043a94c8.json",
+      "data/agent_panel/records/8bb9669b39800fa36b661fb6f45792ce0cc0ba952f3da694e80e6e5d8a8e2170.json",
+      "data/agent_panel/records/8ce3ed3e668b389ff6dc0f5c2a37842ec5dd0d046c98577d494b1ea4001267b7.json",
+      "data/agent_panel/records/8d4198e4bf700de522c695976263a82a5552df033c6d9c1910e173b271dcb08e.json",
+      "data/agent_panel/records/8fbecffee42821f184a4d4dc67c6124fd610151ab0bad04fd449b9a1437b68da.json",
+      "data/agent_panel/records/9033e6fb21924ed8da9ae0b7555a2e9efb27ef47bf649cd1cd7c94f5f8c80f9a.json",
+      "data/agent_panel/records/a55161e6e768014784cfdfc15be56e15716b671cd90b682406cdf28de129e438.json",
+      "data/agent_panel/records/b6863ee65a95b49d33db4fb9eac3016d59c48335053dfaecc15f2eb35f4cbef3.json",
+      "data/agent_panel/records/b913671669ce0af4a5a13ad9a88a22c86d6abfe10ab07f1fc1d71aa952bb8807.json",
+      "data/agent_panel/records/bcf10faf27141011dbce7b84205a0dfb0d77006d419457f2d3f7616c62ffdcae.json",
+      "data/agent_panel/records/cbcfcb511ed2684c79959ce183ad01bba5dc6efa442aca6d294a2850ee5f3750.json",
+      "data/agent_panel/records/d52508ab52275ba7a4f8d6431f2b28da35054f0b9eda5014ca1a7b4969cc676b.json",
+      "data/agent_panel/records/e0b89ae8d0acb1969592f1f63cdb0bf72f12529643a1b2ad606f7e8a37ee593b.json",
+      "data/agent_panel/records/e48ddc0fa2894a77c79888035de0adb7564452b21fe945cf6f96df129c688c5a.json",
+      "data/agent_panel/records/e945dd4e6bfc4353a6ee7371cc4238ca001da9b1c275a1d0fb278f7b54dcb27e.json",
+      "data/agent_panel/records/ee94660398134f19f6aa7a5d25f28f4f7041dc9f3f1ddc22707197243772834e.json",
+      "data/agent_panel/records/f0266eecd22827b7efff7b7f67b162a9d354e8fa7dd08dbc660d8101d46537c1.json",
+      "data/agent_panel/records/f0e2f957192c33c9c6e2131332b08f8e0c9751f2c8b6ea91aa4fa10a56e9c489.json",
+      "data/agent_panel/records/f497d2a86a4d0ba8b6bdc0b0f824a94f48bf5bfb04e44211f318858ed545fd90.json",
+      "data/knowledge/v03_slice1.json",
+      "data/knowledge/v03_slice2.json",
+      "data/objects/m4.json",
+      "data/objects/medicine_bowl.yaml",
+      "data/planning/chapters/ch100.json",
+      "data/planning/chapters/ch98.json",
+      "data/planning/chapters/ch99.json",
+      "data/planning/contracts/agent-final-v1/100-S1.v2.json",
+      "data/planning/contracts/agent-final-v1/100-S2.v2.json",
+      "data/planning/contracts/agent-final-v1/100-S3.v2.json",
+      "data/planning/contracts/agent-final-v1/100-S4.v2.json",
+      "data/planning/contracts/agent-final-v1/100-S5.v2.json",
+      "data/planning/contracts/agent-final-v1/98-S1.v2.json",
+      "data/planning/contracts/agent-final-v1/98-S2.v2.json",
+      "data/planning/contracts/agent-final-v1/98-S3.v2.json",
+      "data/planning/contracts/agent-final-v1/99-S1.v3.json",
+      "data/planning/contracts/agent-final-v1/99-S2.v3.json",
+      "data/planning/contracts/agent-final-v1/99-S3.v3.json",
+      "data/planning/contracts/agent-final-v1/99-S4.v3.json",
+      "data/planning/contracts/agent-final-v1/99-S5.v3.json",
+      "data/planning/scenes/100-S1.json",
+      "data/planning/scenes/100-S2.json",
+      "data/planning/scenes/100-S3.json",
+      "data/planning/scenes/100-S4.json",
+      "data/planning/scenes/100-S5.json",
+      "data/planning/scenes/98-S1.json",
+      "data/planning/scenes/98-S2.json",
+      "data/planning/scenes/98-S3.json",
+      "data/planning/scenes/99-S1.json",
+      "data/planning/scenes/99-S2.json",
+      "data/planning/scenes/99-S3.json",
+      "data/planning/scenes/99-S4.json",
+      "data/planning/scenes/99-S5.json",
+      "data/project/capability.json",
+      "data/project/closure_roots.json",
+      "data/project/current.json",
+      "data/project/delivery.json",
+      "data/project/implementation.json",
+      "data/project/layout_changes.json",
+      "data/project/plan_constraints_v1.json",
+      "data/project/rights_inventory.json",
+      "data/project/scope.json",
+      "data/project/source_gap_baseline.json",
+      "data/world/m3_body.json",
+      "data/world/m3_core.json",
+      "data/world/m3_knowledge.json",
+      "data/world/m3_locations.json",
+      "data/world/m3_presence.json",
+      "data/world/m3_resources.json",
+      "schemas/agent_scene_contract.schema.json",
+      "schemas/decision.schema.json",
+      "src/rcwh/planning/checking.py",
+      "src/rcwh/planning/contracts.py"
+    ]
+  },
+  "real_limits": [
+    "当前公开检查器仍只检查source-index前驱，未读取或执行S1 S2 S5 S3 S4新叙事轨；declaration FAIL=0不是新剧情已执行。",
+    "98旧OT98-04/05仍为信使运输，decision原字保留冲突；新合同剔除其本人支持引用，未建立本人运输事件，旧run/world/objects不能证明本人运输。",
+    "99前插仅editorC未来义务，source链S1 S2 S3 S4 S5不改；entry_from不注入地点、知识或前场状态。",
+    "100石复本质终态为未实现C呈现，不增加人间交通；警幻/空空道人registry_id=null，participants=[]/UNKNOWN不等于无演员。",
+    "未建立人间新事件/身份registry仍PENDING；无新正文、语义重放、双合格独立同行或独立人工认可，无正式采用/发布。",
+    "旧cashflow依赖及source packet全部保留；新提案较窄，不supersede旧断言，不宣称所有v3包source mismatch闭合。"
+  ],
+  "operations": {
+    "delegated": false,
+    "committed": false,
+    "modified_old_files": false,
+    "new_file_count": 17,
+    "created": [
+      "data/planning/decisions/phase6-ch98-v1.json",
+      "data/planning/decisions/phase6-ch99-v1.json",
+      "data/planning/decisions/phase6-ch100-v1.json",
+      "data/planning/contracts/agent-final-v2/98-S1.v3.json",
+      "data/planning/contracts/agent-final-v2/98-S2.v3.json",
+      "data/planning/contracts/agent-final-v2/98-S3.v3.json",
+      "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+      "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+      "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+      "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+      "data/planning/contracts/agent-final-v2/99-S5.v4.json",
+      "data/planning/contracts/agent-final-v2/100-S1.v3.json",
+      "data/planning/contracts/agent-final-v2/100-S2.v3.json",
+      "data/planning/contracts/agent-final-v2/100-S3.v3.json",
+      "data/planning/contracts/agent-final-v2/100-S4.v3.json",
+      "data/planning/contracts/agent-final-v2/100-S5.v3.json",
+      "artifacts/agent_research/phase6/editorial/implementation-report-v1.json"
+    ],
+    "new_data_world_knowledge_objects_project_files": 0
+  }
+}

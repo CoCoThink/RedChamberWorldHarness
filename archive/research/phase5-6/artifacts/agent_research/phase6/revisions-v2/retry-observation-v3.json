@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "kind": "REVISION_AUTHOR_RETRY_OBSERVATION",
+  "authority_effect": "NONE",
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "observed_at_utc": "2026-10-16T15:25:32Z",
+  "authorization": "User explicitly requested retry after the three API502 failure events.",
+  "retry_method": "Resume each original agent context after more than the reported 60-second backoff; inspect partial files first; do not create extra independent identities.",
+  "events": [
+    {
+      "chapter": 89,
+      "error_timestamp_utc": "2026-10-16T15:13:48Z",
+      "error": "API_ERROR_502",
+      "state_before_retry": "PARTIAL_TEXT_PRESENT_DISCLOSURE_ABSENT",
+      "text_path": "artifacts/agent_research/phase6/revisions-v2/authored/ch89-v1.txt",
+      "observed_characters": 10254,
+      "observed_utf8_bytes": 30550,
+      "observed_sha256": "61692276554a30a1dd1b1ff4a9c4f766e358a9dbd935b630cdf8046d3c5ed872",
+      "state_after_retry_dispatch": "ORIGINAL_AUTHOR_RESUMED_NOT_YET_FROZEN"
+    },
+    {
+      "chapter": 95,
+      "error_timestamp_utc": "2026-10-16T15:15:00Z",
+      "error": "API_ERROR_502",
+      "state_before_retry": "PARTIAL_TEXT_PRESENT_DISCLOSURE_ABSENT",
+      "text_path": "artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt",
+      "observed_characters": 9895,
+      "observed_utf8_bytes": 29431,
+      "observed_sha256": "3f25c4dccf29af78417578fa44f172a00bcb07741c7264849110b4d1a1ab925a",
+      "state_after_retry_dispatch": "ORIGINAL_AUTHOR_RESUMED_NOT_YET_FROZEN"
+    },
+    {
+      "chapters": [88, 99],
+      "error_timestamp_utc": "2026-10-16T15:13:29Z",
+      "error": "API_ERROR_502",
+      "state_before_retry": "READER_REPORT_ABSENT",
+      "report_path": "artifacts/agent_research/phase6/revisions-v2/readings/ch88-99-v1-reader1.json",
+      "state_after_retry_dispatch": "ORIGINAL_READER_RESUMED_NO_COMPLETED_OPINION_INFERRED"
+    }
+  ],
+  "successful_check_after_retry": {
+    "targeted_pytest_passed": 34,
+    "duration_seconds": 5.98,
+    "git_diff_check": "PASS",
+    "scope": "Existing frozen long revisions, retained actual reading evidence, narrow repair and registered revision tests. Not a full final suite."
+  },
+  "limitations": [
+    "Partial text length does not prove completion or literary acceptance.",
+    "A resumed agent has not supplied a result until an actual hand-back and file checks occur.",
+    "Gateway metadata does not authenticate provider model, consumption, usage or cost.",
+    "Previous errors and missing checks remain preserved rather than rewritten as success."
+  ]
+}

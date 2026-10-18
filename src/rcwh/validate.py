@@ -71,6 +71,21 @@ def validate_required_document(root: Path, relative_path: str, schema_name: str)
         return [f"{relative_path}: {exc}"]
 
 
+ARCHIVE = "archive/research/"
+_LIVE_BINDING_ROOTS = ("data", "artifacts", "schemas")
+
+
+def archive_reference_errors(root: Path) -> list[str]:
+    """Archived research records are read-only history: live data cannot bind them."""
+    errors = []
+    for base in _LIVE_BINDING_ROOTS:
+        for path in sorted((root / base).rglob("*")):
+            if path.suffix in {".json", ".jsonl", ".yaml", ".yml"} and path.is_file():
+                if ARCHIVE.encode() in path.read_bytes():
+                    errors.append(f"{path.relative_to(root).as_posix()}: live record binds archived research ({ARCHIVE})")
+    return errors
+
+
 def validate_required_documents(root: Path) -> list[str]:
     errors = []
     for path, schema in REQUIRED_DOCUMENTS:
@@ -89,11 +104,13 @@ def validate_required_documents(root: Path) -> list[str]:
         ("data/agent_panel/records/*.json", "agent_review"),
         ("data/planning/contracts/*/*.json", "agent_scene_contract"),
         ("data/promotion/policies/*.json", "promotion_policy"),
+        ("data/promotion/policies/agent/*.json", "agent_chapter_policy"),
     )
     for pattern, schema in research_patterns:
         for path in sorted(root.glob(pattern)):
             errors.extend(validate_required_document(root, path.relative_to(root).as_posix(),
                                                      f"{schema}.schema.json"))
+    errors.extend(archive_reference_errors(root))
     if (root / "data/agent_panel").exists():
         from .workflow.agent_panel import AgentPanel
         panel = AgentPanel(root).summary()

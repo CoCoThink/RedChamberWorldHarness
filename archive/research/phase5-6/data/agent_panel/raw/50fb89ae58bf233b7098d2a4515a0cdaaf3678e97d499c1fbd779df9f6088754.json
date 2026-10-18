@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "packet": {
+    "path": "artifacts/agent_research/reading/set-k7-v1/public/packet.json",
+    "sha256": "228c7ff021ee8c022b799a2b9da72fa93dba503428aeb858e82507369c55ef54"
+  },
+  "reviewer": {
+    "id": "reader:k7-one",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:reading-k7-one",
+    "model": {
+      "label": "gpt-6.1-sol (environment declaration; not independently verified)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "results": [
+    {
+      "subject_id": "read-bc2de607ba9a89417a59f2a0",
+      "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+      "verdict": "PASS",
+      "notes": "仅就本次匿名81–83回全文局部一致性及文学可用性审查而言PASS：未发现可由两侧精确引文锁定的硬矛盾，非仅表示读完。两张原信、初写日期与次晨旁注跨回相接；大金麒麟始终佩系，眼熟未被等同于身份确认。照料与失落有可触细节，声口温厚而区分度稍弱，装箱、核账、食匣与帕子反复挤占转折，属于文学风险而非硬FAIL。未明寄递物流与历史UNKNOWN均不据以否决；不作原著真伪判定或外部历史合规认证。context_isolation.asserted仅断言本任务实际遵守限定阅读范围、不委派、不读身份资料；同repo无技术权限隔离，NOT_PROVEN，预载环境及预训练熟悉等见observations。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-a50044cfb9d00954ccc935b7",
+      "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+      "verdict": "FAIL",
+      "notes": "确认局部硬FAIL B-TIME-01：正文第325行叙述‘谁知隔了几日，湘云果然过来。’；第365行仍在该来访晚间，第367行却叙述‘第二日清早’宝玉‘先把昨日射圃的事丢在一边’，将相隔几日的射圃变为来访当日。两侧及晚间桥接的精确引文见observations。此FAIL限于明写时距自相冲突，不抹去群像对白、杏脯未食、赵姨娘放袖等文学优点。信末次晨补记整体可接；第287行叙述确认旧麒麟，人物随后只说像，并不自动构成物件转移矛盾；来历与史实不足列UNKNOWN。坏弦应急、现代俏皮密集属疑点或文学风险，非另造硬FAIL。不作原著真伪判定。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-7764f395f666c95e1b25ae3a",
+      "subject_sha256": "a64f5a96de991b0a6df767951fd8cca0d1a1389ee4aee4f686563ec548925274",
+      "verdict": "PASS",
+      "notes": "仅就本次匿名81–83回全文局部一致性及文学可用性审查而言PASS：未发现可由两侧精确引文锁定的硬矛盾，非仅表示读完。身体动作、照料中的误伤与歉意、晕船反过来改变主仆关系构成场面；初日写信、次日日期与补句、后来封寄的顺序可接，射圃当日收信不等于当日写寄。若兰大麒麟与湘云所收旧物未被证成同一件，不凭外部记忆认定物件分身。寄递、脚费和碟子占幅偏多，母女自我解释偏显、送别亲族面缩窄，是文学风险；史实及未述来历列UNKNOWN，不自动FAIL。不作原著真伪判定。隔离仅为本任务限定阅读的自陈，无同repo权限隔离证明。",
+      "sample_checks": []
+    }
+  ],
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false
+}

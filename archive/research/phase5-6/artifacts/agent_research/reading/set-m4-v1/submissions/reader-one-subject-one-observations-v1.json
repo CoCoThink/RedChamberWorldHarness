@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "report_kind": "STAGED_READER_OBSERVATIONS",
+  "stage": "SUBJECTS_0_ONLY_CHAPTERS_84_91",
+  "status": "FROZEN_STAGE_ONE_AWAITING_SUBJECT_TWO_IN_SAME_CONTEXT",
+  "reader": {
+    "id": "reader:m4-one",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:reading-m4-one",
+    "model": {
+      "label": "gpt-6.1-sol",
+      "verification": "DECLARED_NOT_VERIFIED",
+      "basis": "仅本会话环境自报；没有 provider 或 human 认证，不据此声称独立模型来源。"
+    },
+    "context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN",
+      "method": "按指令自限读取，不是权限、文件系统或进程隔离。未委派。",
+      "pretraining_limit": "无法排除预训练中对红楼人物与旧情节的熟悉，也不能证明认知盲法；本报告不以旧书情节、礼制细节或版本身份为本组必然义务。"
+    }
+  },
+  "authority": "FEEDBACK_ONLY",
+  "authority_effect": "NONE",
+  "adoption_status": "NOT_ADOPTED_NOT_RELEASED",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "is_final_opinion": false,
+  "is_three_way_comparison": false,
+  "packet": {
+    "path": "artifacts/agent_research/reading/set-m4-v1/public/packet.json",
+    "sha256": "fdd9f2189626e92f78d979cbb73635e165a971d732228f88685d258e40670c87"
+  },
+  "packet_id": "reading-342affaef84411bd86176fca",
+  "packet_exact_binding_basis": "Read 实读 packet 后，以 python -I 标准库 hashlib 对原始字节计算 SHA-256；不是对解析重排后的 JSON 计算。",
+  "subject": {
+    "packet_index": 0,
+    "id": "read-0340e7c4723a6dcac2a5b602",
+    "scope": "CANDIDATE",
+    "binding": {
+      "path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt",
+      "sha256": "ccfd694d4ce3a1fc8197e0d428757fbe7faf35697cffbfe3989cd26eaf089c4e"
+    },
+    "computed_sha256": "ccfd694d4ce3a1fc8197e0d428757fbe7faf35697cffbfe3989cd26eaf089c4e",
+    "binding_matches": true
+  },
+  "scope_and_exposure": {
+    "allowed_reads": [
+      "artifacts/agent_research/reading/set-m4-v1/public/packet.json",
+      "schemas/agent_review.schema.json",
+      "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt"
+    ],
+    "extra_file_exposure": [],
+    "ambient_context_exposure": [
+      "调用方消息自动附带工作区路径、分支名、部分 dirty git 状态及近期提交标题；这些可能提示工作背景，因此不能声称完全无背景暴露。未按这些信息打开文件，也未用其识别匿名主体。",
+      "packet 本身包含 subjects[1]/[2] 的匿名 id/path/sha 及一个 coordinator_session_id 字段；只读到这些 packet 元数据，未打开后两份正文或任何 coordinator 文件。",
+      "会话环境自报模型标签、日期与工具说明，以及其他活动 agent 的名称；没有读取其输出或发送询问。"
+    ],
+    "not_read": [
+      "subjects[1] 正文",
+      "subjects[2] 正文",
+      "coordinator 文件或输出",
+      "phase5/phase6 原件、notes、source、旧评审、其他读者输出、身份映射"
+    ],
+    "identity_inference_performed": false,
+    "delegation_performed": false,
+    "repository_code_tests_registration_or_import_executed": false,
+    "schema_use": "schema 已 Read；其 opinion/record 是最终意见或登记格式。本文件故意使用阶段观察格式，不伪装成 AGENT_REVIEW_OPINION，不登记，不声称符合其 oneOf。"
+  },
+  "reading_record": {
+    "method": "逐段 Read 连续正文后作观察；没有以搜索、哈希、标题扫描或摘要替代实读。标准库核验在完整 Read 后进行。",
+    "support_reads": [
+      {"path": "artifacts/agent_research/reading/set-m4-v1/public/packet.json", "requested": "default bounded Read", "content_lines": [1, 1]},
+      {"path": "schemas/agent_review.schema.json", "requested": "default bounded Read", "content_lines": [1, 74]}
+    ],
+    "text_read_calls": [
+      {"offset": 1, "limit": 100, "covered_content_lines": [1, 100]},
+      {"offset": 101, "limit": 100, "covered_content_lines": [101, 200]},
+      {"offset": 201, "limit": 100, "covered_content_lines": [201, 300]},
+      {"offset": 301, "limit": 100, "covered_content_lines": [301, 400]},
+      {"offset": 401, "limit": 100, "covered_content_lines": [401, 500]},
+      {"offset": 501, "limit": 100, "covered_content_lines": [501, 600]},
+      {"offset": 601, "limit": 100, "covered_content_lines": [601, 700]},
+      {"offset": 701, "limit": 100, "covered_content_lines": [701, 800]},
+      {"offset": 801, "limit": 100, "covered_content_lines": [801, 900]},
+      {"offset": 901, "limit": 100, "covered_content_lines": [901, 1000]},
+      {"offset": 1001, "limit": 100, "covered_content_lines": [1001, 1100]},
+      {"offset": 1101, "limit": 100, "covered_content_lines": [1101, 1146]}
+    ],
+    "actual_text_line_count": 1146,
+    "read_display_note": "最后 Read 显示一个编号 1147 的空尾项；字节解码 splitlines 核得实际内容行 1–1146，末句在 1146。未把显示空尾项当作额外正文。",
+    "chapter_ranges": [
+      {"chapter": 84, "all_lines_including_header_and_separator": [1, 141], "narrative_lines": [3, 140], "fully_read": true},
+      {"chapter": 85, "all_lines_including_header_and_separator": [142, 267], "narrative_lines": [144, 266], "fully_read": true},
+      {"chapter": 86, "all_lines_including_header_and_separator": [268, 421], "narrative_lines": [270, 420], "fully_read": true},
+      {"chapter": 87, "all_lines_including_header_and_separator": [422, 559], "narrative_lines": [424, 558], "fully_read": true},
+      {"chapter": 88, "all_lines_including_header_and_separator": [560, 703], "narrative_lines": [562, 702], "fully_read": true},
+      {"chapter": 89, "all_lines_including_header_and_separator": [704, 877], "narrative_lines": [706, 876], "fully_read": true},
+      {"chapter": 90, "all_lines_including_header_and_separator": [878, 1025], "narrative_lines": [880, 1024], "fully_read": true},
+      {"chapter": 91, "all_lines_including_header_and_separator": [1026, 1146], "narrative_lines": [1028, 1146], "fully_read": true}
+    ],
+    "complete_coverage": true,
+    "gaps": [],
+    "tool_refusal_encountered": false,
+    "refusal_workaround_performed": false
+  },
+  "provisional_local_verdict": {
+    "verdict": "PENDING",
+    "summary": "第一组八回已完整实读；存在一处高置信的雪雁死讯往返时序互斥。其余主干病程、明告婚事、封府受控取物、借院钱米与问单准备多数能够接续，但有时间省笔、锁具指称、空间容量及人物声口趋同风险。仅此局部观察，不是最终 opinion，不发全包 PASS，也不作三组优劣排序。",
+    "confirmed_mutual_exclusion_ids": ["M1-86-SNOW-ROUNDTRIP"],
+    "unresolved_question_ids": ["Q1-MOURNING", "Q2-RX-DAYS", "Q3-LOCKS", "Q4-COURTYARD", "Q5-DOCTOR-KNOWLEDGE", "Q6-PAPER-HANDOFF"],
+    "literary_risk_ids": ["L1-VOICE", "L2-REPETITION", "L3-AUDIT-CORRECTION", "L4-RELATIONSHIP", "L5-ILLNESS-CADENCE"],
+    "not_decided": ["第二、三组的任何判断", "三方最终比较", "九十一回之后的羁押事实与衣物命运", "玉样物的身份或后续用途", "任何采用、发布、登记或认证资格"]
+  },
+  "chapter_observations": [
+    {
+      "chapter": 84,
+      "local_assessment": "讣告从外门到主房再到园内，官方不确定性与日用继续并存。黛玉此时旧病未愈，不是听耗后即刻进入临终。饭单、小纸和素衣的出入有人经手，受控物件有生活质地。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 13, "line_end": 13, "quote": "宫里只传了话，叫府里候着后头吩咐。老爷、东府那边都到前头去了。旁的话我也不知道。", "observation": "贾琏明确限定自己的知情，不应将家中随后安排读成已获完整旨意。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 51, "line_end": 51, "quote": "她留下的是她的东西，别趁乱拿来混。谁短了什么，记名字。", "observation": "探春遗留衣物被明确排除于公中混发，既给亲属缺席，也给物权界线落笔。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 95, "line_end": 95, "quote": "却说潇湘馆中，消息并不是由正经传话的人先说出来的。", "observation": "前段主张慢慢传话，实际却由送饭丫头漏出；这属于命令与执行落差，不是作者自相矛盾。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 111, "line_end": 111, "quote": "你一见我咳便问重不重，难道我不咳那几日，你就以为我好了？", "observation": "病者拒绝把有无一声咳当作痊愈判断，病程有先在性。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 138, "line_end": 138, "quote": "昨夜只记了“二口”两个字，她想了想，又在旁边添了“夜醒二次”。", "observation": "服药量和夜醒记录从本回起有具体数目；后续反复记账有物件与护理来源。"}
+      ]
+    },
+    {
+      "chapter": 85,
+      "local_assessment": "逐日波动、食量、活动代价及照护者争执较细；不是简单用一场突发替代沉痼。但翻书、试衣、说笑之后即乏的相似循环使病情段落有模式化风险，且新方第二日的计数未完全钉牢。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 158, "line_end": 158, "quote": "大处不必动，只减去一样，再添一样缓和的。夜里若睡不实，也不要见醒就催药催水，反扰了神。", "observation": "方子有微调而非奇效，护理强度也受质疑；不作医学真实性认证。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 172, "line_end": 172, "quote": "她这一躺，竟睡了一个多时辰。醒来以后脸色反比早起淡了许多，连水也只喝了两口。", "observation": "明确书读之后的耗竭与晨间好转不同，支撑后回不能把短暂清醒作康复。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 240, "line_end": 240, "quote": "这一夜她睡得也比前几日实。第三日晨起，连紫鹃也觉得脸上略有一点血色。", "observation": "这是本回逐日计数的第三日。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 252, "line_end": 252, "quote": "今儿才照新方吃第二日。大夫说过，有起有落。若今夜还这样，明儿一早就去。", "observation": "是否取药翌日才开新方未写明，先记时间疑点，不直接判互斥。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 254, "line_end": 254, "quote": "雪雁低声道：“我只是怕。”紫鹃手上正叠衣裳，听见也停了一停，随后道：“怕也先做事。”", "observation": "照护行为背后有恐惧和迟疑，而非全员无情地执行护理清单。"}
+      ]
+    },
+    {
+      "chapter": 86,
+      "local_assessment": "晨间交谈、午后气短、黄昏不能进食、夜间迟报与死亡的主链能成立，宝玉离开及再来均有明文。最明确缺口在雪雁回报死讯的两地定位，不在必须出现何种旧书临终名场面。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 316, "line_end": 316, "quote": "二爷，老太太那边才打发人来找，说早饭也没过去吃，问你在那里。叫你这会子就过去呢。", "observation": "宝玉被叫离现场是明示，不应另添被调往别处的旧情节。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 370, "line_end": 370, "quote": "大夫仍没来，只叫一个小学徒带话，说前一处病人绊住了脚，若过得来便来；若太晚，先照旧方服着。", "observation": "延医明确造成照护者的不安；后文麝月答‘都去了’不能据此当作医生已到的叙述事实。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 382, "line_end": 382, "quote": "先回老太太、太太，说姑娘今夜很不好，请人来瞧。再打发人告诉宝二爷。别在路上哭，也别逢人就嚷，快去快回。", "observation": "差遣的先后对象及快去快回俱明，形成可检验的往返约束。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 390, "line_end": 390, "quote": "这一声才出口，外头恰好一阵脚步急响。雪雁先冲进来，后面跟着两个婆子、小丫头。", "observation": "死亡刚被紫鹃发现，雪雁已返回床前。随后本行才有人转身去回老太太。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 394, "line_end": 394, "quote": "雪雁哭道：“我才回到那边，正说着，便有人来报。”", "observation": "与前述返回床前及报死者出发次序冲突，详见 M1。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 418, "line_end": 418, "quote": "紫鹃接过，也不翻看，只把那薄薄的诗稿夹重新塞好，抱在怀里坐了一刻，才起身收进黛玉素日放诗稿的小匣中，却没有上锁。", "observation": "诗稿由雪雁夹书、李纨递交、紫鹃收匣，既有知情与经手，也未强设焚稿义务。"}
+      ]
+    },
+    {
+      "chapter": 87,
+      "local_assessment": "黛玉死后数月才议婚，双方本人获告，并非同日死亡成婚或骗婚。具体服满节点没有落定，不能从未写满期日自动判违规；不过挂灯设席使省略的礼制与情感缓冲时间更值得明确。新婚主要借空间与日常差使表现，克制也有过度家务化风险。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 434, "line_end": 434, "quote": "娘娘那里还在服中，林姑娘也才过去几个月，日子总要往后放。", "observation": "叙述明确承认在服中且婚期后放，不能抹去这个防仓促的条件。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 456, "line_end": 456, "quote": "宝玉脸上的笑意一下收住，低头看着膝上的衣纹，半日才道：“听见了。”停了一停，又问：“宝姐姐知道么？”", "observation": "被动应承而非主动欢喜，且关切对方是否知情。不能把‘知道’等同完全自由同意或热恋。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 474, "line_end": 474, "quote": "又过了些日子，两边果然择定日期。因前头接连有丧事，贾母、王夫人都不许张扬，只把该行的礼照着行了。", "observation": "有缓办过渡，无精确月日；未写服满不等于写了服中婚礼，疑点仍在。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 484, "line_end": 484, "quote": "外头虽也挂灯设席，比起往年府中办喜事却省俭许多。", "observation": "不是完全无喜庆标志的手续，因此时间含混带来的礼制阅读风险并非全无依据。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 516, "line_end": 516, "quote": "你那几匣旧纸，谁也不动，你自己认得最好。", "observation": "宝钗不追问旧纸内容，承认新关系中仍有她不占据的部分；后续查纸让私人边界转成外部控制。"}
+      ]
+    },
+    {
+      "chapter": 88,
+      "local_assessment": "袭人求亲、家人来领、成礼、回府谢赏分开写，回府有目的与限时，不是仍原职自由进出。物件交接有辨别公私和手上习惯的余波。后半以迎春病死的有限来报为限，不据旧故事替此组认证死因。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 576, "line_end": 576, "quote": "你心里若另有难处，只管说。", "observation": "王夫人至少口头允许说难处，但袭人自称太太的人及忧心差使仍显示权力不对称；不是现代自由婚姻认证。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 612, "line_end": 612, "quote": "这个衣柜一把，这个小匣一把。西边那个锁早坏了，不用钥匙也能开，回头叫人修。", "observation": "钥匙与坏锁被具体提出，是后续开柜卡锁必须核对的指称来源，不能只凭出现钥匙便假定所有柜锁同一把。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 628, "line_end": 628, "quote": "只是以后我不是这里当差的人了，那里能想来就来。", "observation": "明确婚嫁改变出入资格；后文回府须有缘由。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 652, "line_end": 652, "quote": "又过数日，袭人因王夫人先前有赏，仍进来磕头谢恩。王夫人只问了几句家常，便叫她去看看旧日姊妹，不必久坐。", "observation": "回府有谢赏及长辈许可；不能因前文说不能想来就来便判这次回来矛盾。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 678, "line_end": 678, "quote": "来人只说迎春前些时便病着，近日忽然沉重，昨日夜里没了；至于病从何起、前后如何，他不过是奉命来报，并说不清楚。", "observation": "迎春死因知情链停在来报者所知，文本留下疑问而非保证不存在家暴或任何其他可能。"}
+      ]
+    },
+    {
+      "chapter": 89,
+      "local_assessment": "从门禁到点柜，再到报急用、外部雇车、移出、共井小灶的顺序清楚，贾芸在外跑腿不需硬闯门禁。核心衣物被申报权而非钥匙实物控制；钱米来源只交代近处买米、车脚先付半数，后续需持续受限。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 710, "line_end": 710, "quote": "先把门看住，车轿箱笼一概不要出去。", "observation": "先封出入与物资流动，不是全体瞬时入狱；后续获准迁内眷有独立步骤。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 770, "line_end": 770, "quote": "守门人不敢放他进，只隔着门缝告诉他，里头恐怕要移出几房人来，府里的车却不能随意用。", "observation": "贾芸获知人数需求的渠道在门外，解决门闭仍能雇车的接口。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 784, "line_end": 784, "quote": "随身穿用衣物、当夜铺盖、日常药物等，可逐件报明后取。箱柜大件、账册文书仍留原处等候点看。", "observation": "许可限定物类及报明程序，不可把日后有钥匙解释成可自行开柜。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 794, "line_end": 794, "quote": "先记着。今日人多，等这边点完再说。若赶不及，明日按名目回来取。", "observation": "差役提出明日取物仍附条件；次日无准话不能直接视为确定允诺被叙述推翻。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 830, "line_end": 830, "quote": "原来原府厨房不能照旧送，临时只叫人在附近买了些米和菜，由借住院的小灶熬粥。", "observation": "饭源从府库切换临时购买，非凭空继续荣府供应。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 862, "line_end": 862, "quote": "他们问的是账，知道的就说知道，不知道的说不知道。别自己先替纸上添话。", "observation": "旧单带出宝玉名字是预告而非定罪；但类似训诫在下一回、再下一回反复，具审核式纠偏风险。"}
+      ]
+    },
+    {
+      "chapter": 90,
+      "local_assessment": "赠旧夹衣的代价落实为宝玉借穿宝钗披风，宝钗并未阻止施助却要求看见补缺者，有真实关系张力。人数、米升、布片、铺位形成灾后劳动场景；也因每一物件都被补充登记纠偏，动作与对话累积显得过密。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 900, "line_end": 900, "quote": "从前你说一声给人，回头自然又有。如今这一件给出去，便真少这一件了。", "observation": "给衣不是抽象美德，短缺与替补劳动正面进入夫妻关系。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 944, "line_end": 944, "quote": "凤姐问：“老太太那边用药的钱留了没有？”“留了。”“太太呢？”“也留了。”“车脚？”“先给一半。”", "observation": "钱的优先用途明确，车脚半付与前回接上；总现银未写并不自动证明付不起或无限有钱。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 980, "line_end": 980, "quote": "今日添就添了。晚上把人数重新点一遍，明早按实数下米。谁出去办事在外头吃，先说一声；谁临时回来，也先告诉灶上。别叫锅替你们猜。", "observation": "人数变动有重新点数，不需把此前多一口当算术硬错；但这种风趣纠偏句式分配过广。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1008, "line_end": 1008, "quote": "只够两日。平儿说旧府若准取东西，米未必在准取名目里，冬衣倒可报。", "observation": "取冬衣并不解决米问题，本轮终点前尚未出现无条件粮食恢复。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1012, "line_end": 1012, "quote": "我不是说不该给。只是如今给出去一件，眼前便真少一件。你只记得那边冷，替你补这个缺的人，也该记得。", "observation": "宝钗保留自我立场，宝玉随后仍说再来一回还是会给，不是双方被一句劝谏完全消除分歧。"}
+      ]
+    },
+    {
+      "chapter": 91,
+      "local_assessment": "取物按前单、当面核验、再锁柜；拾玉交失物盘而非据为己有。申后预警再正式传唤，次晨带衣食赴问。终点仅是出门，羁押与衣物是否被收缴尚未发生，不能提前补写或判其缺失。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1032, "line_end": 1032, "quote": "今日午前可照前次所报名目进去取一回，每房只许一两个认得东西的人跟着，拿什么须当面点清，当日即出；单上没有的，便看见也不许动。", "observation": "先前等待终获一次许可，时间和人数受限。不能因今日能取倒推此前本可任意进出。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1052, "line_end": 1052, "quote": "她照名目翻出那件青灰厚夹袍，见右襟下果然有一点旧墨，便笑了一下，道：“总算没认错。”", "observation": "厚衣用可辨识墨迹认领，有前回口述来源，非恰好找到任一厚衣。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1062, "line_end": 1062, "quote": "穿堂拾的，交给他们记着。谁丢的，叫谁按来历认。", "observation": "玉样物属拾得未认领物；没有指定它是某个预训练已知物件，也无义务由凤姐立刻认出。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1102, "line_end": 1102, "quote": "园中旧年收领单有待辨认之处，明日辰后叫贾宝玉本人到前边听问。", "observation": "正式传唤内容限于听问，不能据此认证无羁押风险；亦不能断言已被羁押。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1104, "line_end": 1104, "quote": "这个小的不敢说。问清自然有话。", "observation": "来人拒保问完即回，家中厚衣、袜、围领手套与点心的准备因此不是无故预知入狱。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1142, "line_end": 1142, "quote": "宝钗把油纸包塞进他袖里，又把手套给他。", "observation": "出门时衣食携带实际发生；厚袍已穿、袜已备、围领已递，但其到场后处置不在本段。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1146, "line_end": 1146, "quote": "来人催了一声，宝玉答应着跟上。小院门在身后合了", "observation": "八回实际终点是跟来人离开借院，不是已经听问、获释、定罪或送入牢狱。"}
+      ]
+    }
+  ],
+  "cross_chapter_interfaces": [
+    {
+      "from": 84, "to": 85, "assessment": "CONTINUOUS",
+      "left": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 138, "line_end": 138, "quote": "昨夜只记了“二口”两个字，她想了想，又在旁边添了“夜醒二次”。"},
+      "right": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 144, "line_end": 144, "quote": "紫鹃自那夜起，果然拿一张小纸，记黛玉几时睡、几时醒、饭吃几口、药用了多少。"},
+      "reason": "明确回指同一护理起点；几日间隔容许记录改变繁简。"
+    },
+    {
+      "from": 85, "to": 86, "assessment": "CONTINUOUS_WITH_DAY_COUNT_QUESTION",
+      "left": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 266, "line_end": 266, "quote": "这一夜，黛玉后来又醒了两次，一次要水，一次只问了声什么时辰。到五更后才沉沉睡去。"},
+      "right": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 270, "line_end": 270, "quote": "话说黛玉这几日病势有起有落，前一日还曾多吃几口粥，又把床边旧集翻了两页。"},
+      "reason": "回首概括病势，并未明确宣称紧接前回五更就是临终日；可有省日。前一日的粥与旧集不据此认作硬冲突；本回内部雪雁往返则另见 M1。"
+    },
+    {
+      "from": 86, "to": 87, "assessment": "TIME_ELAPSE_EXPLICIT",
+      "left": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 420, "line_end": 420, "quote": "那盏药早已冷透，再没有人去温。"},
+      "right": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 424, "line_end": 424, "quote": "宝玉头一个月几乎不肯往园中别处去，后来贾母见他终日闷坐，常打发鸳鸯来叫他过去吃饭"},
+      "reason": "死别后的月余恢复才接数月后的议婚，不存在八十六回死、八十七回同夜婚的字面接口。服丧完期仍见 Q1。"
+    },
+    {
+      "from": 87, "to": 88, "assessment": "CONTINUOUS_ROLE_HANDOVER",
+      "left": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 538, "line_end": 538, "quote": "袭人仍掌着宝玉惯常衣食，只是有些事不必等她开口，宝钗见着便顺手料理"},
+      "right": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 562, "line_end": 562, "quote": "却说宝钗过门以后，袭人仍管宝玉贴身衣服茶饭，麝月仍是嘴里抱怨，手上不歇。"},
+      "reason": "未在新婚时瞬间换掉旧侍女，袭人退出需要独立商议及钥匙交接。"
+    },
+    {
+      "from": 88, "to": 89, "assessment": "CONTINUOUS_WITH_MOVABLE_STORAGE",
+      "left": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 700, "line_end": 700, "quote": "说着自己先把那只旧药盒推回第二层，合上柜门。"},
+      "right": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 738, "line_end": 738, "quote": "药盒就在抽屉里，不开柜子倒能拿。只是二爷那件厚夹袍在最里头。"},
+      "reason": "中间‘又过了一阵’，药盒从柜层挪到抽屉不是同时两处，正常移动可省略，不自动 FAIL；厚袍在柜内为受控提取埋点。"
+    },
+    {
+      "from": 89, "to": 90, "assessment": "CONTINUOUS_SCARCITY",
+      "left": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 874, "line_end": 874, "quote": "其中一件青布夹衣袖口已经磨白，麝月道：“这个明儿得补一补，再不补就真破了。”"},
+      "right": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 882, "line_end": 882, "quote": "这日清早，麝月从炕角拖出昨夜拆开的衣包，道：“昨儿说这件要补，趁天还亮，我先弄了。"},
+      "reason": "同件磨袖衣被提出、补好、赠人、宝玉改披披风，代价与补缺者有连贯动作链。"
+    },
+    {
+      "from": 90, "to": 91, "assessment": "CONTINUOUS_PERMISSION_AND_CLOTHING",
+      "left": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1010, "line_end": 1010, "quote": "青灰面，袖里补过一块，右襟下有一点墨。那是你前年写字自己蹭的。"},
+      "right": {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1052, "line_end": 1052, "quote": "她照名目翻出那件青灰厚夹袍，见右襟下果然有一点旧墨"},
+      "reason": "衣物识别特征前后吻合。九十回说不许自行取，九十一回新获当日受监看许可，不是允许与禁止同时互斥。"
+    }
+  ],
+  "confirmed_mutual_exclusions": [
+    {
+      "id": "M1-86-SNOW-ROUNDTRIP",
+      "severity": "LOCAL_CONTINUITY_DEFECT",
+      "confidence": "HIGH",
+      "claim": "八十六回雪雁报病与接死讯的往返位置相斥。她已在紫鹃发现死亡之际冲回床前，随后床前才派人去报死；但她转眼对李纨说自己在上房正报病时有人来报。后一个来报在相邻语境中是死讯，不是另一次不相关口信。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 388, "line_end": 388, "quote": "过了一会才伏在床沿，哑着嗓子叫了一声：“姑娘！”"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 390, "line_end": 390, "quote": "雪雁一见紫鹃的样子，脚下一软，扶住门框。婆子忙上前看了一眼，便说：“快回老太太！”一人转身又跑了出去。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 392, "line_end": 392, "quote": "忙问：“老太太、太太都知道了？”"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 394, "line_end": 394, "quote": "雪雁哭道：“我才回到那边，正说着，便有人来报。”"}
+      ],
+      "alternatives_considered": [
+        "若‘来报’仅指另外的重病口信，理论上可避开，但文本既无该口信来源，也紧接‘老太太、太太都知道了？’的死讯询问，属额外补造。",
+        "若雪雁在390后又往返一趟，文本未写，且394的‘我才回到那边，正说着’描述她首次报病时接报，不是后来回报死亡。",
+        "无可靠标记提示雪雁故意撒谎或记忆错乱；不将人称错位替作者消解。"
+      ],
+      "scope_limit": "这是局部跑动次序缺陷，不推导黛玉不该此时死亡，不推导整组故事全盘失败或身份优劣。"
+    }
+  ],
+  "unresolved_questions": [
+    {
+      "id": "Q1-MOURNING", "confidence": "MEDIUM", "classification": "UNDERSPECIFIED_TIME_NOT_PROVEN_BREACH",
+      "question": "议婚明确仍在元妃服中，婚礼只以‘又过了些日子’跳转。服丧何时满足婚礼条件没有明确里程碑。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 426, "line_end": 426, "quote": "素服虽未全改，家里办事已有了常例。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 434, "line_end": 434, "quote": "日子总要往后放。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 474, "line_end": 474, "quote": "又过了些日子，两边果然择定日期。"}
+      ],
+      "limit": "不预设本书必须执行哪一朝代多少月的外来丧制，也不把黛玉之死自动视为宝玉有同等级法定服期；仅指出文本自己承认的待礼数条件在婚礼处缺明示收束。"
+    },
+    {
+      "id": "Q2-RX-DAYS", "confidence": "MEDIUM", "classification": "DAY_COUNT_AMBIGUITY",
+      "question": "八十五回首日换方、第三日晨起与午后新方第二日之间有一天差；药是否翌日才配齐开服未明。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 160, "line_end": 160, "quote": "紫鹃将新方折好，压在那张小纸底下，又把旧方收起。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 240, "line_end": 240, "quote": "第三日晨起，连紫鹃也觉得脸上略有一点血色。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 252, "line_end": 252, "quote": "今儿才照新方吃第二日。"}
+      ],
+      "limit": "处方时点不等于新药首服时点，因此不列确定互斥。"
+    },
+    {
+      "id": "Q3-LOCKS", "confidence": "MEDIUM", "classification": "OBJECT_REFERENT_AMBIGUITY",
+      "question": "八十八回东衣柜找衣之后，宝钗称柜锁坏；袭人所说西边锁早坏，九十一回又在西柜使用钥匙卡锁。可为不同柜或不同时点修坏，但指称不够牢。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 612, "line_end": 612, "quote": "西边那个锁早坏了，不用钥匙也能开，回头叫人修。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 662, "line_end": 662, "quote": "先别锁死，明早叫人看看那个锁。袭人昨日还说坏了。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1050, "line_end": 1050, "quote": "忙随守物人去西柜。她掏钥匙时手指冻得不灵，转了两下，锁又卡住"}
+      ],
+      "limit": "没有明说始终同锁、从未修理；坏锁仍可卡住也并非物理不可能，不作硬错。"
+    },
+    {
+      "id": "Q4-COURTYARD", "confidence": "MEDIUM", "classification": "SPACE_LOAD_AMBIGUITY",
+      "question": "初到时正三间加东窄屋、后借小屋几乎分完；九十回又有东小屋两家、西堆箱房两年轻媳妇等安置。院落究竟还借有旁屋或‘东/西屋’与先前为同屋异称，未交代清楚。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 820, "line_end": 820, "quote": "地方不大，正屋三间，靠东有一间窄屋，院角搭着个小灶房"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 926, "line_end": 926, "quote": "东边小屋原住两家，昨晚又添了李大娘母女三个，地下铺不下了。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 928, "line_end": 928, "quote": "东西已经挪出一半，还空得下一床铺。只是门鼻子坏了，窗也漏。"}
+      ],
+      "limit": "叙述没有按完整建筑平面穷举，后借侧屋也可能，故保留容量/指称疑点，不断言屋子凭空确定增生。"
+    },
+    {
+      "id": "Q5-DOCTOR-KNOWLEDGE", "confidence": "LOW_TO_MEDIUM", "classification": "UNRELIABLE_RELAY_OR_MISSING_ARRIVAL",
+      "question": "八十六回大夫未至，宝玉来路问大夫与贾母时麝月却总答都去了；没有后续证实大夫到场。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 370, "line_end": 370, "quote": "大夫仍没来"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 402, "line_end": 402, "quote": "一路还问：“大夫到了没有？老太太过去了没有？”麝月跟在后头，只答“都去了”。"}
+      ],
+      "limit": "人物转述可能含混、误信或笼统安慰，不应把它无条件升格为全知叙述，故不列确定互斥。"
+    },
+    {
+      "id": "Q6-PAPER-HANDOFF", "confidence": "LOW", "classification": "OMITTED_HANDOFF",
+      "question": "正式传话折纸先交管事看过，后来宝钗夜里拿着看；中间由谁留存转交未写。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1104, "line_end": 1104, "quote": "说完把那张折纸交给管事看过，便告辞。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1140, "line_end": 1140, "quote": "宝钗却还坐了一会儿，将那张传话折纸看了一遍。"}
+      ],
+      "limit": "没有写小吏拿走，管事转给家眷可为普通省笔；只因本文频繁精记物件而记录该空白，不自动 FAIL。"
+    }
+  ],
+  "literary_risks": [
+    {
+      "id": "L1-VOICE", "severity": "MODERATE", "classification": "VOICE_CONVERGENCE",
+      "assessment": "不止凤姐、黛玉机锋，宝钗、麝月、平儿、李纨乃至跑腿人也频繁用‘物件像人’和‘先吃饭/别审/别乱’的同型俏皮纠偏。场面易读，但说话人的身份差异变薄。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 109, "line_end": 109, "quote": "那鸡倒比咱们省心，它横竖已经办完了。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 982, "line_end": 982, "quote": "你看，屋子一挤，裤子也认亲戚去了。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 980, "line_end": 980, "quote": "别叫锅替你们猜。"}
+      ],
+      "counterweight": "黛玉对不许说好、宝钗对补缺劳动、袭人收回替扣扣子的手，仍有不同的心理重心，不宜说全无声口区别。"
+    },
+    {
+      "id": "L2-REPETITION", "severity": "MODERATE_TO_HIGH", "classification": "ACTION_PILING_AND_MOTIF_SATURATION",
+      "assessment": "钥匙、坏锁、衣服找不着、杯盆碰响、劝吃饭、名目纸、误混物件几乎回回出现。物质衰落被写实化，但同一功能的调度太密，重大死亡与抄没有时被相同的笑闹—纠偏—收东西节拍包围。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 494, "line_end": 494, "quote": "今日人人都说吉利，我偏替盆叫一声。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 696, "line_end": 696, "quote": "好险。若真丢了，袭人明儿在家里也能打喷嚏。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1090, "line_end": 1090, "quote": "今儿倒好，东西从旧府搬回来，还得在这个小院里再点一遭。"}
+      ],
+      "counterweight": "钥匙由家内权力到被官府限制、厚衣由随手可取到需报准，这些重复确有结构变义，不应因重复一概删除。"
+    },
+    {
+      "id": "L3-AUDIT-CORRECTION", "severity": "MODERATE_TO_HIGH", "classification": "REVIEWER_LIKE_EXPLICIT_CORRECTION",
+      "assessment": "‘知道就说知道’与‘不替纸添字’在多人嘴中连番出现，公私衣物、取物名目、失物认领也被现场逐条演示。因官府查问而有动机，但人物像不断替潜在审查者预答漏洞，消耗含混与戏剧张力。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 862, "line_end": 862, "quote": "知道的就说知道，不知道的说不知道。别自己先替纸上添话。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1112, "line_end": 1112, "quote": "认得的认，不认得的别装认。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1116, "line_end": 1116, "quote": "那就别先替纸上添字。叫他明日去，记得多少说多少。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1122, "line_end": 1122, "quote": "不知道的事别先问成真的。"}
+      ],
+      "counterweight": "这是风格/场面节制判断，不是这些人物不许谨慎说话，也不是可据此推断版本的证据。"
+    },
+    {
+      "id": "L4-RELATIONSHIP", "severity": "MODERATE", "classification": "RELATIONSHIP_CONFLICT_UNDERDRAMATIZED",
+      "assessment": "宝玉失黛、宝钗新婚、袭人另嫁都主要转成找衣收柜与饭碗安排，含蓄有效但关系裂隙很快由笑话托住。袭人和宝玉旧有亲密的余波只可从此组收手、问物等动作读出，不强加预训练里应爆发何种冲突。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 492, "line_end": 492, "quote": "我难道不是跟着他们走？"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 642, "line_end": 642, "quote": "袭人本要伸手，手抬到一半，又收了回来。"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1012, "line_end": 1012, "quote": "只是早上若再来一回，我想……还是会给她。"}
+      ],
+      "counterweight": "新婚双方‘跟着走’、告别收回的手、夫妻在赠衣问题上没有彻底一致，恰是本组仍有力度的关系瞬间，不能只按是否大哭大闹评分。"
+    },
+    {
+      "id": "L5-ILLNESS-CADENCE", "severity": "MODERATE", "classification": "ILLNESS_SCENE_PATTERNING",
+      "assessment": "黛玉病里仍有尖利幽默，照护者的害怕与不许说好形成真实情感；但多次说笑—咳—端水—改劝休息，凤姐后段又接过类似说笑—咳—喝药节拍，慢性病消耗可能被形式重复遮蔽。",
+      "evidence": [
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 198, "line_end": 198, "quote": "黛玉也笑了两声，忽然咳嗽起来。起初只是轻咳，后来一阵接一阵"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 330, "line_end": 330, "quote": "只这一笑，忽又咳起来。宝钗忙住了话"},
+        {"path": "artifacts/agent_research/reading/set-m4-v1/public/read-0340e7c4723a6dcac2a5b602.txt", "line_start": 1094, "line_end": 1094, "quote": "自己先笑了一声，笑完便咳。平儿赶紧端水"}
+      ],
+      "counterweight": "凤姐雪中取物后精神更差与劳累有因果；人物说‘没喘’是逞强台词，不能与叙述喘乏简单判互斥。"
+    }
+  ],
+  "focused_chains": {
+    "illness_death_and_travel": "84旧病与记录起点 → 85几次好转/劳累退步 → 86晨见宝玉、被贾母叫离、午后宝钗来、黄昏不能进食、请医未至、夜间迟报、紫鹃确认死亡、家人陆续到、宝玉来迟。主链具动机；雪雁往返 M1 独立构成局部错误。",
+    "marriage_and_mourning": "黛玉死后头一个月沉默，几个月后议婚；王夫人明确承认仍在元妃服中并缓办；双方获告后又过些日子择期。不能认定同日婚死；确切服满节点未给。",
+    "wedding_return_to_house": "袭人先准放归花家，另成礼，婚后数日因谢赏回贾府并获准看姐妹；不是继续任职或无条件自由出入。第656行‘再说…走后头一夜’是回叙，不误判成回府谢赏之后又变回刚走首夜。",
+    "confiscation_to_borrowed_courtyard": "外门禁车箱 → 内院稳住与不烧藏账册 → 书办点柜编号并核纸 → 贾芸在门外找车 → 午后获准老人病人与内眷暂移及急用物 → 未时后分批移出 → 借院自行烧水、临购米菜、小灶分饭。未写全案罪名不等于程序链本身不成立。",
+    "controlled_objects": "探春衣物不混发；袭人公私物件分离；诗稿经雪雁/李纨/紫鹃收匣；钥匙移交麝月但开柜权后来受官面名目控制；青布夹衣被补后赠人，厚袍仍待准取，取回以墨点识别；玉样物拾得交书办盘点未领，归属不明。",
+    "money_rice_information": "车脚先付一半、余款尚欠；贾琏留老人太太药钱、其余现银分内外；原府厨房停供，借院近购米菜，按出入人数重算、坏米升借换；90末米只够两日、旧府准取冬衣不保证可取米，91尚未交代后续粮源，作为开放约束而非即刻无粮的矛盾。旧单经书办核看、门上风声由贾芸转告、正式小吏传本人赴问；不可把传闻当定案。",
+    "summons_custody_and_clothing": "91仅出现次日辰后赴问的正式口信、小吏不保立即返家、五更起身备衣食后跟来人离院。取回厚袍已经晾过、领口补过、围领手套与干点心准备并携带；衣物保障是否足够羁押、入院后有无检查收缴或长期拘留，均未在本轮正文发生。早于辰后出门不必然等于辰前被讯，路程/候问可省略。"
+  },
+  "validation": {
+    "method": "只使用 python -I 标准库 json/hashlib/pathlib 核 JSON、原始字节 SHA、所有引文在指定相对 path 行段内的逐字包含、章界与 Read 覆盖；不运行仓库代码、不加载第三方库、不 import 仓库、不登记。",
+    "json_syntax": "VALID_STANDARD_LIBRARY_CHECKED",
+    "packet_and_subject_binding": "MATCHED_RAW_BYTES_AFTER_WRITE",
+    "quotes_and_ranges": "94_EXACT_QUOTE_SUBSTRINGS_VERIFIED_IN_STATED_LINE_RANGES",
+    "chapter_minimum_three_exact_citations": "VERIFIED_COUNTS_84_TO_91_ARE_5_5_6_5_5_6_5_7",
+    "full_read_coverage": "VERIFIED_GAPLESS_1_1146_EIGHT_CHAPTERS_SEVEN_ADJACENT_INTERFACES",
+    "schema_conformance_claim": "NONE_STAGE_OBSERVATIONS_NOT_FINAL_OPINION"
+  },
+  "handoff": {
+    "frozen_stage": "本文件只冻结第一组84–91观察；后续读第二组须在同context继续，不能把本轮当三组已完成。",
+    "next_action": "等待协调继续下达第二组实读任务；本轮不打开其正文，不产生最终三方意见。"
+  }
+}

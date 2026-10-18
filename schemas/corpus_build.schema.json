@@ -3,7 +3,7 @@
   "type": "object", "additionalProperties": false,
   "required": ["schema_version", "dataset_ref", "scope", "inputs", "chapters", "appendices", "layer_policy", "variant_starts"],
   "properties": {
-    "schema_version": {"const": 1},
+    "schema_version": {"enum": [1, 2]},
     "dataset_ref": {"type": "string", "pattern": "^corpus:front80:[a-zA-Z0-9:_-]+$"},
     "scope": {"enum": ["PILOT", "FRONT80_CANDIDATE"]},
     "inputs": {"$ref": "#/$defs/file"},
@@ -20,11 +20,25 @@
         "main_fonts": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
         "main_size_range": {"type": "array", "minItems": 2, "maxItems": 2, "items": {"type": "number", "exclusiveMinimum": 0}},
         "watermark_fonts": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
-        "witness_labels": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}}
+        "witness_labels": {"type": "object", "minProperties": 1, "additionalProperties": {"type": "string", "minLength": 1}},
+        "page_furniture": {
+          "type": "object", "additionalProperties": false,
+          "required": ["top_band_fraction", "bottom_band_fraction", "page_number_patterns", "running_headers"],
+          "properties": {
+            "top_band_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 0.2},
+            "bottom_band_fraction": {"type": "number", "exclusiveMinimum": 0, "maximum": 0.2},
+            "page_number_patterns": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1}},
+            "running_headers": {"type": "array", "uniqueItems": true, "items": {"type": "string", "minLength": 1, "pattern": "^\\S(?:[^\\r\\n]*\\S)?$"}}
+          }
+        }
       }
     },
     "variant_starts": {"type": "array", "items": {"type": "object", "additionalProperties": false, "required": ["chapter", "unit_ref", "offset", "expected_prefix"], "properties": {"chapter": {"type": "integer", "minimum": 1, "maximum": 80}, "unit_ref": {"type": "string", "pattern": "^pdf:page:[1-9][0-9]*$"}, "offset": {"type": "integer", "minimum": 0}, "expected_prefix": {"type": "string", "minLength": 1}}}}
   },
+  "allOf": [{
+    "if": {"properties": {"schema_version": {"const": 1}}},
+    "then": {"properties": {"layer_policy": {"not": {"required": ["page_furniture"]}}}}
+  }],
   "$defs": {
     "file": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {"path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}}
   }

@@ -146,3 +146,39 @@ def test_corpus_cli_dataset_commands(corpus_repo,monkeypatch,capsys):
     assert run('corpus','show',DATASET,query['segments'][0]['segment_id'])[0]==0
     assert run('corpus','verify',DATASET,'--rebuild')[0]==0
     assert run('corpus','show',DATASET,'missing')[0]==1
+
+
+def test_rebuild_scope_compiles_once_for_identical_inputs_and_rechecks_changes(corpus_repo, monkeypatch):
+    from rcwh.corpus.dataset import rebuild_scope
+    root, config, _ = corpus_repo
+    CorpusRepository(AssetCatalog.from_repo(root)).build(BUILD, 'corpus/front80/test-v1')
+    calls = []
+    original = CorpusRepository.compile
+    def counted(self, relative):
+        calls.append(relative)
+        return original(self, relative)
+    monkeypatch.setattr(CorpusRepository, 'compile', counted)
+    # Outside a scope, every verification recompiles from the original carriers.
+    for _ in range(2):
+        CorpusRepository(AssetCatalog.from_repo(root)).load(DATASET)
+    assert len(calls) == 2
+    with rebuild_scope():
+        for _ in range(3):
+            CorpusRepository(AssetCatalog.from_repo(root)).load(DATASET)
+        assert len(calls) == 3
+        # A tampered product is still caught: cached rebuild is compared to
+        # the freshly re-hashed registered products on every load.
+        catalog = AssetCatalog.from_repo(root)
+        binding = CorpusRepository(catalog).registry()[DATASET]
+        manifest = json.loads(catalog.resolve(binding['manifest_ref']).path.read_bytes())
+        product = catalog.resolve(manifest['products']['segments.jsonl']['asset_ref']).path
+        saved = product.read_bytes()
+        product.write_bytes(b'forged')
+        with pytest.raises(AssetError, match='byte mismatch'):
+            CorpusRepository(AssetCatalog.from_repo(root)).load(DATASET)
+        product.write_bytes(saved)
+        # A changed build config cannot hit the cache either.
+        config['layer_policy']['main_color'] = 1
+        (root / BUILD).write_bytes(canonical_bytes(config))
+        with pytest.raises(AssetError, match='STALE_CORPUS_BUILD_CONFIG'):
+            CorpusRepository(AssetCatalog.from_repo(root)).load(DATASET)

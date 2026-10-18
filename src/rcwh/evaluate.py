@@ -11,6 +11,8 @@ class EvaluationResult:
     status: str
     findings: list[str]
     details: Any | None = None
+    # Optional evidence-floor severity (rcwh.findings); a soft FAIL only warns.
+    severity: str | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return asdict(self)
@@ -114,11 +116,20 @@ def evaluate_scene_text(
     return results
 
 
+def _effective_status(result: EvaluationResult) -> str:
+    from .findings import BLOCKING
+    if result.status == "FAIL" and result.severity not in (None, BLOCKING):
+        return "WARN"
+    return result.status
+
+
 def overall_status(results: list[EvaluationResult]) -> str:
-    if any(r.status == "FAIL" for r in results):
+    statuses = [_effective_status(r) for r in results]
+    if "FAIL" in statuses:
         return "FAIL"
-    if any(r.status == "PENDING" for r in results):
+    if "PENDING" in statuses:
         return "PENDING"
-    if any(r.status == "WARN" for r in results):
+    if "WARN" in statuses:
         return "WARN"
     return "PASS"
+

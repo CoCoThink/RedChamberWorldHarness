@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "packet": {
+    "path": "artifacts/agent_research/reading/set-k7-v1/public/packet.json",
+    "sha256": "228c7ff021ee8c022b799a2b9da72fa93dba503428aeb858e82507369c55ef54"
+  },
+  "reviewer": {
+    "id": "reader:k7-two",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:reading-k7-two",
+    "model": {
+      "label": "gpt-6.1-sol (environment-declared; no provider telemetry inspected)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "results": [
+    {
+      "subject_id": "read-bc2de607ba9a89417a59f2a0",
+      "subject_sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+      "verdict": "PASS",
+      "notes": "限于本绑定八十一至八十三回的局部文本可成立性：病程、后事、家书原信两张及次晨旁注、麒麟只见未解的认知边界能相互接续，未发现可用两侧精确引文坐实的硬矛盾。PASS不是仅指读完，也不是历史、原著真伪、身份或入选资格认可。文学上动作细密，母女与下人形成照护网络；但物件交接、茶饭与停顿反复过密，较削弱人物声口差异及送别的推进。详见配套observations；物流未明不自动失败。全文实际第三个读完。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-a50044cfb9d00954ccc935b7",
+      "subject_sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+      "verdict": "FAIL",
+      "notes": "局部确定时序FAIL：本绑定第325行叙述‘谁知隔了几日，湘云果然过来’，并由湘云问‘你们谁前日说我坏话’；第345行宝玉回答同次射圃麒麟所见却说‘我今日在他身上见了一个，像得很’，没有另一次射圃的叙述或回忆转场，当前对话日期不合。双方精确引文及限度见observations。此FAIL是窄的局部一致性失败，不否定亲族送别、薛蟠杏脯及湘云追问的文学长处，不是原著真伪判断。麒麟转手来历未知另列疑点，不作为FAIL；针已拔后又拔的省略也不确认为硬矛盾。全文实际第二个读完。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-7764f395f666c95e1b25ae3a",
+      "subject_sha256": "a64f5a96de991b0a6df767951fd8cca0d1a1389ee4aee4f686563ec548925274",
+      "verdict": "PASS",
+      "notes": "限于本绑定八十一至八十三回的局部文本可成立性：病人由想吃到不能吃、船上隔夜续信和后来交寄、射圃目击到转述均给出可跟踪而有限的依据，未发现双侧引文可坐实的硬矛盾；麒麟相似并未升级为同一物确认。PASS不是仅表示读完，外部历史UNKNOWN不在此判定范围，无身份、真伪或资格效力。照护中的冲突与互相体谅最有场面张力；长船舱段重复端水、移包、劝饭，寄信条件解释也偏多。全文实际第一个读完。",
+      "sample_checks": []
+    }
+  ],
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false
+}

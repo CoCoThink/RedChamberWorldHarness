@@ -1,0 +1,154 @@
+{
+  "schema_version": 1,
+  "chapter": 96,
+  "version": "v1",
+  "kind": "SESSION_AUTHORED_LITERARY_REVISION_DISCLOSURE",
+  "status": "FROZEN_V1_LENGTH_TARGET_MET",
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "literary_acceptance": "NOT_CLAIMED",
+  "request": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch96.json",
+    "file_sha256": "9e0090c532e3efbdddcdccbf8e49bd21adae4801b44dec04f7281d60e464848a",
+    "embedded_request_sha256": "e0f4311d78d8b9d24ae3cda1296dbedcf7c318458d2aa0e3368794bd23c0873b",
+    "prompt_sha256": "573b0e747b13282c1ed71a2824c7bc19798873937c47df26b255ca4f4c2ee95c",
+    "declared_status": "PASS",
+    "integrity_limitation": "User supplied fresh integrity PASS. This session computed the request file byte hash and selected input hashes; it did not independently rerun the complete prepared-request integrity validator or consume every hash-bound input."
+  },
+  "parent": {
+    "path": "data/writing/drafts/ch96/42cf67a5f65c26a3136ee01f35c59a918074ac35ac3d9fb69f85a25927293368.json",
+    "sha256": "42cf67a5f65c26a3136ee01f35c59a918074ac35ac3d9fb69f85a25927293368",
+    "current_file_hash_matches": true,
+    "consumption": "Parent JSON was byte-hashed, not separately semantically read. The complete 2346-character parent prose was actually read from task.original."
+  },
+  "original": {
+    "request_pointer": "/task/original",
+    "characters": 2346,
+    "sha256": "9ce234b5158a4284171ed34ad39215ed82222f77564d780456aa768755de0b2c",
+    "read_status": "ACTUALLY_READ_COMPLETE_SHORT_PARENT",
+    "retained_unchanged": true,
+    "full_chapter_claim_for_parent": false
+  },
+  "candidate": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+    "sha256": "a3b5b31e5e95d6ac659eedd2fc1f35db455bab55489a9c91c41a45565f9f6b7e",
+    "characters": 9350,
+    "body_characters": 9325,
+    "body_han_characters": 7827,
+    "body_nonwhitespace_characters": 9230,
+    "utf8_bytes": 27856,
+    "body_paragraphs": 48,
+    "exact_duplicate_body_paragraphs": 0,
+    "reviewVerdict_present": false,
+    "counting_method": "Unicode code points via JavaScript Array.from/spread. Body excludes the first title line and one following blank-line newline. Han uses Unicode Script=Han. Nonwhitespace removes Unicode JavaScript whitespace. UTF-8 bytes include the final newline.",
+    "thresholds": {
+      "total_characters_min": 9000,
+      "total_characters_max": 10500,
+      "body_han_min": 7000,
+      "body_nonwhitespace_min": 6252,
+      "all_met": true
+    },
+    "length_result_is_not_literary_verdict": true,
+    "frozen": true,
+    "freeze_policy": "No further modification of this v1 text after disclosure; subsequent actual adjacent-chapter readings must not be backdated into this consumption record."
+  },
+  "actual_consumption": {
+    "complete_request_fields_actually_read": [
+      "/request/system",
+      "/task/original",
+      "/task/feedback",
+      "/task/editorial_notes",
+      "/task/writing_task/package",
+      "/task/writing_task/chapter_plan",
+      "/task/writing_task/scenes",
+      "/task/writing_task/exemplars",
+      "/task/writing_task/guidance",
+      "/task/writing_task/previous_ending",
+      "/task/writing_task/sources",
+      "/task/writing_task/target_characters",
+      "/task/writing_task/plan/data~1project~1plan_constraints_v1.json"
+    ],
+    "selected_contract_semantic_consumption": {
+      "scope": "/task/writing_task/agent_contracts/0..3; aliases under /task/writing_task/plan were mechanically checked equal, not counted as independent readings",
+      "required_beats_read": 12,
+      "forbidden_beats_read": 8,
+      "method": "Recursive unique-string projection of all four selected contracts, including every required/forbidden description, embedded chapter-card source excerpt, world-basis semantic value, protection, knowledge limit, precondition, entry/exit reason and unresolved restriction. Identical strings were emitted once. Citation/path/hash metadata were not all reread as prose.",
+      "source_packet_not_read": "The phase5 contract-packet path is a binding only; no phase5 prose template or packet was opened."
+    },
+    "source_excerpt_actually_read": {
+      "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+      "lines_inclusive": [1016, 1080],
+      "scope": "Complete chapter96 card including opening relationship-boundary note; not the complete source document. Additional source-record values and excerpts embedded in chapter_plan/contracts were read; their full referenced files were not thereby consumed."
+    },
+    "exemplars_actually_read": [
+      "hlm80:chapter:27:p00087",
+      "hlm80:chapter:24:p00030",
+      "hlm80:chapter:74:p00079",
+      "hlm80:chapter:61:p00016",
+      "hlm80:chapter:52:p00006"
+    ],
+    "exemplar_limitation": "Read the five complete supplied segment texts and selection reasons, not their whole source chapters, corpus, PDFs, or extraction files. Their source excerpts end where supplied; no missing continuation was inferred as read.",
+    "feedback_files": [
+      {
+        "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch96-v1.txt",
+        "sha256": "15a3808482dcfa6f83ec2f699f7c17acc0909da3d38cbf5ef43f097eb25a0933",
+        "scope": "ACTUALLY_READ_COMPLETE, lines 1–14; also read complete embedded editorial_notes"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+        "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+        "pointer": "/chapters/5",
+        "chapter": 96,
+        "scope": "ACTUALLY_READ_COMPLETE_CH96_ENTRY, including all beat reviews, exact quotes, issues, four expansion scenes, targets, custody metadata and unknowns; did not read the complete ten-chapter report or other chapter entries"
+      }
+    ],
+    "world_and_thread_scope": "Read embedded world chapter95/96 records for body, core events, presence and resource flows; marriage relation definitions; complete embedded m3_knowledge rules and longlines; recursively extracted all thread protection/locked/forbidden/rule values and selected poetic/commentary/open-interface records. Other world content was inspected by key/size, not fully consumed. No full world-state replay or object/knowledge event execution was performed.",
+    "truncation_and_recovery": [
+      "Initial whole-request Read was refused for size and delivered no full-request reading. Switched to field extraction; never claimed the entire roughly 291k-token request was consumed.",
+      "Large extracted system/original/feedback/notes output was persisted; its complete substantive contents were subsequently read in line ranges 1–728.",
+      "Large selected package/chapter_plan/scenes/exemplars output was persisted; relevant complete fields and key/size tail were read in ranges 34–1152. The initial file listing was only discovery.",
+      "A full first-contract-plus-constraints output was persisted but not completely line-read. Its relevant contract semantics were recovered through the later deduplicated recursive projection; global constraints were emitted and read separately in full.",
+      "A two-contract cleaned dump was only partly line-read (through line260); the complete unique semantic material from all four contracts was subsequently emitted and read without truncation. No claim of full citation-metadata consumption is made.",
+      "The extracted late-chapter editor-report chapter96 entry was persisted and completely line-read, lines315–1070; only top-level keys/field sizes and chapter-key listings outside that entry were inspected."
+    ],
+    "unread_and_not_claimed": [
+      "Full /request/messages rendering and unrelated request/world/thread data not specified above",
+      "Every file in inputs, bindings, source packet, asset registry, corpus, provenance, source YAML, object registry and project configuration solely because its hash is bound",
+      "Phase5 chapter prose or prose templates",
+      "Predecessor new revision chapter95 and all later adjacent revision prose",
+      "Other chapter editorial entries in the ten-chapter report",
+      "Separately opened full parent draft JSON semantics"
+    ],
+    "previous_context": {
+      "request_context_previous_path": null,
+      "writing_task_previous_ending": null,
+      "predecessor_new_prose_consumed": false,
+      "later_adjacent_prose_consumed": false,
+      "limitation": "Continuity derives only from actually consumed selected plans, parent prose and constraints; no unselected previous_path was silently substituted."
+    }
+  },
+  "authorship_and_execution": {
+    "method": "Session-authored natural-paragraph Chinese prose written directly through Write, then five substantive Edit appends. No scripts generated sentences, repeated passages, or padding. Read-only Node commands extracted inputs, hashed bytes, checked selected aliases and measured text.",
+    "scenes": [
+      "贫居春日家务、贾芸单一地址渠道、袭人先敲门及蒋在门外略候",
+      "淡茶松子、互揭短、便宜油膏实际使用、教唱嗓子与送补行头的独立行程",
+      "少量碎银先压匣、当票暂不赎、半袋补米与收炭、新旧米一次同淘仍量两碗半",
+      "书摊延迟—贾芸交袭人—袭人转交—宝玉拆读、湘云婚后家常和自述写两句揉掉、客人因自身工作离开、回信留在家中与春菜买半把"
+    ],
+    "construction_boundary": "Selected address route, incidental labor, professional timing, letter routing and practical letter content are current research fiction, not recovered historical facts. No military deployment, death, resolved qilin origin, full new poem, authenticated income schedule, restored rank, cohabiting aid or sent/delivered reply is asserted. No exact money amount or supplementary object identity was registered.",
+    "fixed_wording": "Working chapter title retained verbatim; protected phrase 写两句揉掉 appears consistently in the letter and its immediate rereading. No protected historical quotation was rewritten into a new quotation.",
+    "delegated_agents_started_by_this_author": 0,
+    "provider_call": false,
+    "import_or_adopt_or_commit": false,
+    "allowed_repo_writes_only": [
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1-disclosure.json"
+    ],
+    "independent_review": "NONE; mechanical thresholds and author self-reading are not qualified peer review, provider verification, literary acceptance or UNKNOWN-to-KNOWN promotion."
+  }
+}

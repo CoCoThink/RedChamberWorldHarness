@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "kind": "REVISION_AUTHOR_RETRY_OBSERVATION",
+  "authority_effect": "NONE",
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "continuation_date_user_declared": "2026-10-16",
+  "previous_observation": "artifacts/agent_research/phase6/revisions-v2/retry-observation-v1.json",
+  "events": [
+    {
+      "chapter": 91,
+      "state": "FROZEN_CANDIDATE_PRESENT_IMPORT_AND_INDEPENDENT_READING_PENDING",
+      "candidate_sha256": "751bca67b2e72bd13883a8ee2331baaf60878967b3c4f276b277e7cc2b11c602",
+      "actual_characters": 10055,
+      "body_han_characters": 8334,
+      "retry_context": "Original author context resumed after prior 524; no additional independent author credit."
+    },
+    {
+      "chapter": 86,
+      "state": "PARTIAL_PROSE_PRESENT_NOT_FROZEN",
+      "latest_failure": "API_ERROR_400",
+      "error_request_id": "202610140726248541616028268d9d6gG1lhbTt",
+      "action": "Original author resumed; read existing partial prose before continuing. No disclosure file observed at resumption."
+    },
+    {
+      "chapter": 81,
+      "state": "ORIGINAL_AUTHOR_CONTEXT_RESUMED",
+      "latest_failure": "API_ERROR_524",
+      "action": "Continue original request with bounded natural-prose writes; no frozen candidate observed at resumption."
+    },
+    {
+      "chapter": 96,
+      "state": "DEFERRED_PENDING_RETRY",
+      "latest_failure": "API_ERROR_524",
+      "action": "No candidate or completed disclosure inferred from prior reading-progress text."
+    }
+  ],
+  "limitations": [
+    "These are coordinator observations of files and returned task events, not provider model attestations or token/cost measurements.",
+    "Partial prose is not a completed chapter; complete-length prose is not literary acceptance.",
+    "The prepared model parameter and the author's declared environment model remain distinct."
+  ]
+}

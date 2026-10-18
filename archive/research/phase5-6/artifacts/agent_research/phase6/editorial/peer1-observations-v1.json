@@ -1,0 +1,2168 @@
+{
+  "schema_version": 1,
+  "kind": "PHASE6_B_EDITORIAL_PEER_OBSERVATIONS",
+  "packet": {
+    "path": "artifacts/agent_research/phase6/editorial/peer-packet-v1.json",
+    "sha256": "ed58183dffe8f9aab5a2c443031e59c8c2be0dc02161b1ea0a96b36190f30769"
+  },
+  "reviewer": {
+    "id": "phase6-editorial-peer1",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "phase6-editorial-peer1-20261014-b2420fb4-365f-480a-b436-9d4e19d24bec",
+    "model": {
+      "label": "gpt-6.1-sol",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "role": "独立同行模型读者1，不是编辑/真人；不采用、不登记、不放行。",
+  "independence_declaration": {
+    "judgment": "独立按实际段落判断，非复述编辑或协调结论。",
+    "isolation": "上下文/进程隔离未证明，不声称完全盲读；看到明确章号和模型工作环境，训练熟悉不能当本轮源阅读。",
+    "model_label": "环境声明gpt-6.1-sol，未验证型号/提供者真实性。",
+    "session_uniqueness": "本次报告使用唯一session_id，不伪造额外同行、样本或已完成登记。"
+  },
+  "scope": "三subject均PLAN；PASS仅支持草案可选方向与其未隐瞒的版本化前提，不认证旧输入相容、文本执行、史料、作者身份、全文采用或发布。OPEN_LOCKED本身不是错误，运行冲突/输入不足仍明确PENDING。",
+  "exact_bindings": {
+    "packet": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/peer-packet-v1.json",
+      "sha256": "ed58183dffe8f9aab5a2c443031e59c8c2be0dc02161b1ea0a96b36190f30769"
+    },
+    "subjects": [
+      {
+        "subject_id": "editorial-ch98",
+        "scope": "PLAN",
+        "binding": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "sha256": "68cd5da580cb3406f75f277c6999fbcd8d9721f30a3d4c341bfc5ab4f0eaa82f"
+        },
+        "matches_packet": true
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "scope": "PLAN",
+        "binding": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "sha256": "12292f1f79a8c32cabcefb7eee2766fecd710a3959ec25b5362b17debeaf5f86"
+        },
+        "matches_packet": true
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "scope": "PLAN",
+        "binding": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "sha256": "afe6bd84ed2ceddc9966f4850114b621c96ed07e7f43c43231b979eba68a7020"
+        },
+        "matches_packet": true
+      }
+    ],
+    "opinion": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/peer1-opinion-v1.json",
+      "sha256": "336d0e0cc4b867479ee652c17cf2d72c92b4d85adb7290e6ef70553bd0ade445"
+    }
+  },
+  "actual_read_coverage": [
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/peer-packet-v1.json",
+        "sha256": "ed58183dffe8f9aab5a2c443031e59c8c2be0dc02161b1ea0a96b36190f30769"
+      },
+      "read_kind": "FULL_FILE",
+      "actual_coverage": "完整packet，含全部subject、scope、binding、authority与usage。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+        "sha256": "68cd5da580cb3406f75f277c6999fbcd8d9721f30a3d4c341bfc5ab4f0eaa82f"
+      },
+      "read_kind": "FULL_FILE",
+      "actual_coverage": "完整草案所有字段，包括options、verbatim_evidence、must_remain_unknown、new_contract_changes_required及blockers。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+        "sha256": "12292f1f79a8c32cabcefb7eee2766fecd710a3959ec25b5362b17debeaf5f86"
+      },
+      "read_kind": "FULL_FILE",
+      "actual_coverage": "完整草案所有字段，包括options、verbatim_evidence、must_remain_unknown、new_contract_changes_required及blockers。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+        "sha256": "afe6bd84ed2ceddc9966f4850114b621c96ed07e7f43c43231b979eba68a7020"
+      },
+      "read_kind": "FULL_FILE",
+      "actual_coverage": "完整草案所有字段，包括options、verbatim_evidence、must_remain_unknown、new_contract_changes_required及blockers。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/schemas/agent_review.schema.json",
+        "sha256": "7ad66b6c5f6a20d5fba59d5fbe273c5f448a88b738bf83636adbe087d594df72"
+      },
+      "read_kind": "FULL_FILE",
+      "actual_coverage": "完整review schema并使用Draft202012Validator验证opinion。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch98-revision1.txt",
+        "sha256": "84f58b839fb5f2ca856c60a5c52da6c13585ff031e22e4812e68ce29d65eb774"
+      },
+      "read_kind": "FULL_FILE",
+      "actual_coverage": {
+        "lines": [
+          1,
+          79
+        ],
+        "note": "实际完整阅读现有研究正文，不是未来本人/微课/终态新版正文。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt",
+        "sha256": "17257cf8ba8acc27d07f3a67b01416668d0885d0c6a694875ad5d932edeafb58"
+      },
+      "read_kind": "FULL_FILE",
+      "actual_coverage": {
+        "lines": [
+          1,
+          71
+        ],
+        "note": "实际完整阅读现有研究正文，不是未来本人/微课/终态新版正文。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch100-revision1.txt",
+        "sha256": "95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3"
+      },
+      "read_kind": "FULL_FILE",
+      "actual_coverage": {
+        "lines": [
+          1,
+          73
+        ],
+        "note": "实际完整阅读现有研究正文，不是未来本人/微课/终态新版正文。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "lines": [
+          [
+            1124,
+            1348
+          ],
+          [
+            1347,
+            1380
+          ]
+        ],
+        "chapter_coverage": "98、99、100完整章卡与跨回锁；未读全书其他章卡。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/626917a3603d0069/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md",
+        "sha256": "626917a3603d00697ccb86e6be8d1bb5b40911ffad700436ea836cd8e6336261"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "lines": [
+          [
+            1,
+            110
+          ],
+          [
+            303,
+            425
+          ]
+        ],
+        "note": "读逐回98—100 P-Lock、证据优先级、100候选锁及后续FINAL/ACTIVE同步，不能用早期尚未合并句遮掉后续状态。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md",
+        "sha256": "94328cfc12eac812304990578745dd74b1aad710c8a00759299ce78a585c3f4f"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "lines": "FULL_FILE_1_43"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md",
+        "sha256": "c1946d9ff097372aa0583eec627a5f37ec77ec3b076fa2229c23f7f441bb7eb0"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "lines": [
+          [
+            141,
+            200
+          ],
+          [
+            465,
+            546
+          ]
+        ],
+        "note": "相关R43、R01、O07/O10上下文，不是母本全文。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/2b5f2bcae5ce0269/玉线物流表_v0.2.md",
+        "sha256": "2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "lines": "FULL_FILE_1_106"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/objects/m4.json",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "lines": [
+          [
+            859,
+            1087
+          ]
+        ],
+        "note": "实际98—100对象事件上下文，不宣称全m4重放。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/TAIL_READING_RESULTS.md",
+        "sha256": "1b16a152a8f9ccd55525947c3c2925a3cbe8525d0123569ee7707e3a8f64fd55"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "lines": "FULL_FILE_1_21"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "pointers": [
+          "/chapters/*/notes/*/issue",
+          "/chapters/*/notes/*/retain"
+        ],
+        "note": "读全部15条issue/retain及三个chapter键，不宣称整个1024行全文阅读。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-late-reader-2-observations.json",
+        "sha256": "d8b706c92ebd2c25c3481e8493600e2af8cad9e090a97eff4caf9e4bff1005cd"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "pointers": [
+          "/pending_and_unverified/1/notes"
+        ],
+        "note": "仅草案引用段，不宣称整个LATE报告或89—97正文重读。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/world/m3_core.json",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "pointers": [
+          "/characters"
+        ],
+        "note": "完整人物ID/姓名清单及记录，非所有事件/关系重放。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/chapters/ch99.json",
+        "sha256": "9e11795fad6fd7cb7b76d31f28a82405a81dd3ce071c14da4aa56a247d493a8e"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "pointers": [
+          "/source_records",
+          "/scenes",
+          "/entry_ref"
+        ],
+        "note": "定位冻结源列表，非整章计划审计。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/prewrite/v06.json",
+        "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "pointers": [
+          "/omitted_scene_plans/18"
+        ],
+        "note": "读99原始候选顺序，非全v06审计。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/planning/checking.py",
+        "sha256": "e785ae9a9cfc4ed40b249c9d4b0f3ddc635deb82a3218df2e0322781524b1f63"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "lines": [
+          [
+            48,
+            102
+          ]
+        ],
+        "note": "只读source-order/predecessor声明校验边界，不运行修改或验证未来合同。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/tests/test_agent_contracts.py",
+        "sha256": "ea682b365fe42bd593200dceff0606cb1b2331c13fc3ce1f6b0e1aabbdf116e7"
+      },
+      "read_kind": "PARTIAL_OR_FULL_AS_EXPLICIT",
+      "actual_coverage": {
+        "lines": [
+          [
+            146,
+            175
+          ]
+        ],
+        "note": "只读前驱别名字节一致性测试，不运行测试。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/98-S3.v2.json",
+        "sha256": "d2ff2a0fdb7609bb8bc4e7161c19e55a7ba519eef150e3965827d9225a8db992"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "pointers": [
+          "/entry_from",
+          "/participants",
+          "/participants_status",
+          "/object_transition_refs",
+          "/order",
+          "/required_beats/*/id",
+          "/required_beats/*/description",
+          "/forbidden_beats/*/id",
+          "/forbidden_beats/*/description",
+          "/unresolved",
+          "/entry_checkpoint",
+          "/exit_state"
+        ],
+        "note": "这些字段逐项阅读，不宣称所有内嵌reference/world_basis全文或场级执行。",
+        "also_read": "world输入binding及references/knowledge_binding相关投影；重复超长内嵌依据未全文读。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S1.v3.json",
+        "sha256": "ba468baf596b8e561f402966c44dead20cb44359512da59e9e590a836997db43"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "pointers": [
+          "/entry_from",
+          "/participants",
+          "/participants_status",
+          "/object_transition_refs",
+          "/order",
+          "/required_beats/*/id",
+          "/required_beats/*/description",
+          "/forbidden_beats/*/id",
+          "/forbidden_beats/*/description",
+          "/unresolved",
+          "/entry_checkpoint",
+          "/exit_state"
+        ],
+        "note": "这些字段逐项阅读，不宣称所有内嵌reference/world_basis全文或场级执行。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S2.v3.json",
+        "sha256": "9d46670b8ff932768dd2b4f5889cbff34b029705b61742939d4daf77f99c00de"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "pointers": [
+          "/entry_from",
+          "/participants",
+          "/participants_status",
+          "/object_transition_refs",
+          "/order",
+          "/required_beats/*/id",
+          "/required_beats/*/description",
+          "/forbidden_beats/*/id",
+          "/forbidden_beats/*/description",
+          "/unresolved",
+          "/entry_checkpoint",
+          "/exit_state"
+        ],
+        "note": "这些字段逐项阅读，不宣称所有内嵌reference/world_basis全文或场级执行。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S3.v3.json",
+        "sha256": "505eb6aa90f729999baa8a990fcc5edd0bf6ebd9d587a0fb58ab234be45d3ada"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "pointers": [
+          "/entry_from",
+          "/participants",
+          "/participants_status",
+          "/object_transition_refs",
+          "/order",
+          "/required_beats/*/id",
+          "/required_beats/*/description",
+          "/forbidden_beats/*/id",
+          "/forbidden_beats/*/description",
+          "/unresolved",
+          "/entry_checkpoint",
+          "/exit_state"
+        ],
+        "note": "这些字段逐项阅读，不宣称所有内嵌reference/world_basis全文或场级执行。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S4.v3.json",
+        "sha256": "4d3f758ec307aef8bbd9059a7f51d881f02c27f67e4b6915c27697166ad5f7e6"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "pointers": [
+          "/entry_from",
+          "/participants",
+          "/participants_status",
+          "/object_transition_refs",
+          "/order",
+          "/required_beats/*/id",
+          "/required_beats/*/description",
+          "/forbidden_beats/*/id",
+          "/forbidden_beats/*/description",
+          "/unresolved",
+          "/entry_checkpoint",
+          "/exit_state"
+        ],
+        "note": "这些字段逐项阅读，不宣称所有内嵌reference/world_basis全文或场级执行。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S5.v3.json",
+        "sha256": "cd6f624a4aaf5035a37fdcec71dfe436655128a59802debe656da215ddc406bd"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "pointers": [
+          "/entry_from",
+          "/participants",
+          "/participants_status",
+          "/object_transition_refs",
+          "/order",
+          "/required_beats/*/id",
+          "/required_beats/*/description",
+          "/forbidden_beats/*/id",
+          "/forbidden_beats/*/description",
+          "/unresolved",
+          "/entry_checkpoint",
+          "/exit_state"
+        ],
+        "note": "这些字段逐项阅读，不宣称所有内嵌reference/world_basis全文或场级执行。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/100-S5.v2.json",
+        "sha256": "f421a34ba4aceca429603631b9510bf4f4e077fb81a7eb85daaae08dd5540faa"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "pointers": [
+          "/entry_from",
+          "/participants",
+          "/participants_status",
+          "/object_transition_refs",
+          "/order",
+          "/required_beats/*/id",
+          "/required_beats/*/description",
+          "/forbidden_beats/*/id",
+          "/forbidden_beats/*/description",
+          "/unresolved",
+          "/entry_checkpoint",
+          "/exit_state"
+        ],
+        "note": "这些字段逐项阅读，不宣称所有内嵌reference/world_basis全文或场级执行。",
+        "also_read": "world输入binding及references/knowledge_binding相关投影；重复超长内嵌依据未全文读。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/scenes/99-S1.json",
+        "sha256": "92a213abc26fee423a2d9eb0d0be3257383db37d859c3aab859dde0e7293dd5c"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "actual_fields": [
+          "order",
+          "source_record"
+        ],
+        "note": "逐个查看原seed.order与source_record定位/值；首种子额外见骨架字段，其他未以未读存档输出冒称全文。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/scenes/99-S2.json",
+        "sha256": "65166cf1a04b886352c8ab51c033e2b2c8b1d0eaef0238d3e5cb6eae3d6005d8"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "actual_fields": [
+          "order",
+          "source_record"
+        ],
+        "note": "逐个查看原seed.order与source_record定位/值；首种子额外见骨架字段，其他未以未读存档输出冒称全文。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/scenes/99-S3.json",
+        "sha256": "6e9cff0e5796d0927022aafcb7b6f80fcf7a117551d3732af39aa73580ff6d34"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "actual_fields": [
+          "order",
+          "source_record"
+        ],
+        "note": "逐个查看原seed.order与source_record定位/值；首种子额外见骨架字段，其他未以未读存档输出冒称全文。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/scenes/99-S4.json",
+        "sha256": "dd53d01b1c048109c707d4dc9c6199f7a4f2c687cfd428370f17b1df3744829a"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "actual_fields": [
+          "order",
+          "source_record"
+        ],
+        "note": "逐个查看原seed.order与source_record定位/值；首种子额外见骨架字段，其他未以未读存档输出冒称全文。"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/scenes/99-S5.json",
+        "sha256": "fe39fa915efcef9a90bb41b8661d22b8abd2fe5dfae1ee5460acdbb4e5d80847"
+      },
+      "read_kind": "FIELD_PROJECTION",
+      "actual_coverage": {
+        "actual_fields": [
+          "order",
+          "source_record"
+        ],
+        "note": "逐个查看原seed.order与source_record定位/值；首种子额外见骨架字段，其他未以未读存档输出冒称全文。"
+      }
+    }
+  ],
+  "citation_verification": {
+    "verified_count": 33,
+    "unmatched_count": 0,
+    "method": "实际文件UTF-8文本；逐字substring落在声明line范围或精确JSON pointer，不用训练记忆补引文；保存完整实际引用段。",
+    "citations": [
+      {
+        "subject_id": "editorial-ch98",
+        "draft_evidence_id": "E98-01",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/0"
+        },
+        "draft_quote": "E4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+        },
+        "lines": [
+          1183,
+          1183
+        ],
+        "verbatim": "E4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。"
+      },
+      {
+        "subject_id": "editorial-ch98",
+        "draft_evidence_id": "E98-02",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/1"
+        },
+        "draft_quote": "不得把现实会面写成源证必然。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md",
+          "sha256": "94328cfc12eac812304990578745dd74b1aad710c8a00759299ce78a585c3f4f"
+        },
+        "lines": [
+          28,
+          29
+        ],
+        "verbatim": "| OL-020 | 98 | 甄贾二宝现实相见是C实现 | “甄宝玉送玉”为强事件方向；不推出二宝必须现实面对面。 | 第98甄贾二宝现实相见。 | 不得把现实会面写成源证必然。 | 出现直接“二宝相见/不相见”见证。 |\n| OL-021 | 98 | 所送之玉是否同一通灵玉开放；误包机制为C | 甄宝玉有“送玉”事件；所送是否同一通灵玉、如何到甄家均未锁。 | 第98小厮误包同一通灵玉，甄宝玉送回。 | 不得把“同一通灵玉+误包”写成唯一原稿解。 | 出现玉物流、误窃或送玉对象的直接见证。 |"
+      },
+      {
+        "subject_id": "editorial-ch98",
+        "draft_evidence_id": "E98-03",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/2"
+        },
+        "draft_quote": "甄家先发现、贾家起初未知；送还责任与亲自搬运分开：章卡信息链说甄家发现后“亲送”，实际OT98-04把holder设为zhen_messenger，OT98-05也从该信使交回baoyu。两者是尚未解决的实现冲突，不得把“承担责任/委托”自动写成满足亲送；未协调前，不选定亲送或代理，不新增信使identity、陪送或二次交通事件。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/98-S3.v2.json",
+          "sha256": "d2ff2a0fdb7609bb8bc4e7161c19e55a7ba519eef150e3965827d9225a8db992"
+        },
+        "pointer": "/required_beats/1/description",
+        "verbatim": "甄家先发现、贾家起初未知；送还责任与亲自搬运分开：章卡信息链说甄家发现后“亲送”，实际OT98-04把holder设为zhen_messenger，OT98-05也从该信使交回baoyu。两者是尚未解决的实现冲突，不得把“承担责任/委托”自动写成满足亲送；未协调前，不选定亲送或代理，不新增信使identity、陪送或二次交通事件。"
+      },
+      {
+        "subject_id": "editorial-ch98",
+        "draft_evidence_id": "E98-04",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/3"
+        },
+        "draft_quote": "\"holder\": \"zhen_messenger\"",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        "lines": [
+          957,
+          1006
+        ],
+        "verbatim": "      \"id\": \"OT98-04\",\n      \"chapter\": 98,\n      \"sequence\": 70,\n      \"object_id\": \"OBJ-TONGLING-JADE\",\n      \"action\": \"MOVE\",\n      \"from\": {\n        \"holder\": \"zhen_baoyu\",\n        \"location\": \"ZHEN_OFFSTAGE\",\n        \"status\": \"MISTAKE_DISCOVERED\",\n        \"frame_status\": \"IN_HUMAN_WORLD\"\n      },\n      \"to\": {\n        \"holder\": \"zhen_messenger\",\n        \"location\": \"IN_TRANSIT\",\n        \"status\": \"RETURN_TRANSIT\",\n        \"frame_status\": \"IN_HUMAN_WORLD\"\n      },\n      \"source_refs\": [\n        \"asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d\",\n        \"R18\"\n      ],\n      \"epistemic\": \"CURRENT_C\",\n      \"note\": \"甄宝玉送还的运输阶段\",\n      \"movement\": \"EXPLICIT\"\n    },\n    {\n      \"id\": \"OT98-05\",\n      \"chapter\": 98,\n      \"sequence\": 90,\n      \"object_id\": \"OBJ-TONGLING-JADE\",\n      \"action\": \"MOVE\",\n      \"from\": {\n        \"holder\": \"zhen_messenger\",\n        \"location\": \"IN_TRANSIT\",\n        \"status\": \"RETURN_TRANSIT\",\n        \"frame_status\": \"IN_HUMAN_WORLD\"\n      },\n      \"to\": {\n        \"holder\": \"baoyu\",\n        \"location\": \"S09\",\n        \"status\": \"RETURNED\",\n        \"frame_status\": \"IN_HUMAN_WORLD\"\n      },\n      \"source_refs\": [\n        \"asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d\",\n        \"R18\"\n      ],\n      \"epistemic\": \"CURRENT_C\",\n      \"note\": \"送还完成；不把91拾玉并入此链\",\n      \"movement\": \"EXPLICIT\""
+      },
+      {
+        "subject_id": "editorial-ch98",
+        "draft_evidence_id": "E98-05",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/4"
+        },
+        "draft_quote": "交给来人，自己留在屋内。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch98-revision1.txt",
+          "sha256": "84f58b839fb5f2ca856c60a5c52da6c13585ff031e22e4812e68ce29d65eb774"
+        },
+        "lines": [
+          59,
+          59
+        ],
+        "verbatim": "札放在外层，他叫一个送信的人立即送还，嘱到门先说甄家退还误取的书包，须亲交屋里收件的人，不能放下就走。来人问只带这一包，还是等旁的，他说只有这个，没有钱物，到了回话。小厮想一同去，他叫留下理抄页。厚纸的折缝不易合，小厮还要用手压，甄宝玉接过，照旧折好，交给来人，自己留在屋内。"
+      },
+      {
+        "subject_id": "editorial-ch98",
+        "draft_evidence_id": "E98-06",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/5"
+        },
+        "draft_quote": "运输接口确实未解决：本稿明确由送信人返包，甄宝玉留在甄家；“须亲交屋里收件的人”只是信使当面交付，不是章卡四链的甄宝玉“亲送”。这不是把委托解释成亲送就能抹去的差别，也不是未注册角色本身构成文学失败。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+          "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+        },
+        "pointer": "/chapters/0/notes/4/issue",
+        "verbatim": "运输接口确实未解决：本稿明确由送信人返包，甄宝玉留在甄家；“须亲交屋里收件的人”只是信使当面交付，不是章卡四链的甄宝玉“亲送”。这不是把委托解释成亲送就能抹去的差别，也不是未注册角色本身构成文学失败。"
+      },
+      {
+        "subject_id": "editorial-ch98",
+        "draft_evidence_id": "E98-07",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/6"
+        },
+        "draft_quote": "R18只锁“甄宝玉送玉”。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md",
+          "sha256": "c1946d9ff097372aa0583eec627a5f37ec77ec3b076fa2229c23f7f441bb7eb0"
+        },
+        "lines": [
+          489,
+          502
+        ],
+        "verbatim": "## O07 甄贾二宝是否现实照面\n\nR18只锁“甄宝玉送玉”。\n\n作者首选：\n\n> 甄宝玉本人出场，真假二宝现实照面。\n\n备选：\n\n- 本人出场而二宝错身；\n- 可信中间人转交。\n\n真假互照必须靠人物与行动完成，禁止长篇哲理辩论。"
+      },
+      {
+        "subject_id": "editorial-ch98",
+        "draft_evidence_id": "E98-08",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/7"
+        },
+        "draft_quote": "→ 甄宝玉亲自送还。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/2b5f2bcae5ce0269/玉线物流表_v0.2.md",
+          "sha256": "2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d"
+        },
+        "lines": [
+          47,
+          51
+        ],
+        "verbatim": "### 98 / R16 + R18\n当前仍首选把两条合并：\n> 通灵玉因“塞玉/包藏”式生活动作被甄方错认包裹而误取  \n> → 发现  \n> → 甄宝玉亲自送还。"
+      },
+      {
+        "subject_id": "editorial-ch98",
+        "draft_evidence_id": "E98-09",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/8"
+        },
+        "draft_quote": "中间没有放下或交换。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/TAIL_READING_RESULTS.md",
+          "sha256": "1b16a152a8f9ccd55525947c3c2925a3cbe8525d0123569ee7707e3a8f64fd55"
+        },
+        "lines": [
+          7,
+          7
+        ],
+        "verbatim": "两位分别指出基线第98回明确的包位置不一致：第68行仆人把玉包**同自己的书札包一起拿起**；第76行书札包却仍留在主人桌角；第78行在当地拆出五封书札、两张题签，后又交还“昨日留下”的包。中间没有放下或交换。这个局部FAIL保留在两位subject verdict，不因全篇读完、稳定基线身份或另一稿可读就删除；本轮不改stable正文。"
+      },
+      {
+        "subject_id": "editorial-ch98",
+        "draft_evidence_id": "E98-10",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch98-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/9"
+        },
+        "draft_quote": "第九十五回贴身玉可见，此前六回没有其所有历史交接。未读更早篇章，不以识得红楼梦补链；出现玉不是单凭遗漏路线即可 FAIL。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-late-reader-2-observations.json",
+          "sha256": "d8b706c92ebd2c25c3481e8493600e2af8cad9e090a97eff4caf9e4bff1005cd"
+        },
+        "pointer": "/pending_and_unverified/1/notes",
+        "verbatim": "第九十五回贴身玉可见，此前六回没有其所有历史交接。未读更早篇章，不以识得红楼梦补链；出现玉不是单凭遗漏路线即可 FAIL。"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-01",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/0"
+        },
+        "draft_quote": "可加一次极短早/晚课：跟诵不熟，小和尚指页，散课马上搬水/看锅。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+        },
+        "lines": [
+          1238,
+          1238
+        ],
+        "verbatim": "41核心：“情尽未尽”。宝玉不是无情，而是“不想再接”世俗角色。可加一次极短早/晚课：跟诵不熟，小和尚指页，散课马上搬水/看锅。严禁高僧点化、黛玉/警幻托梦。"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-02",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/1"
+        },
+        "draft_quote": "G07“无字”强锁：无诀别信、诗、偈。作者层也无诗无偈。98《续庄子》不得成为99因果。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+        },
+        "lines": [
+          1232,
+          1232
+        ],
+        "verbatim": "G07“无字”强锁：无诀别信、诗、偈。作者层也无诗无偈。98《续庄子》不得成为99因果。"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-03",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/2"
+        },
+        "draft_quote": "结尾“够咱们两个吃的就是了”、未补完旧衣。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+        },
+        "lines": [
+          1215,
+          1215
+        ],
+        "verbatim": "“日子照旧过几日”；还借书、对食物兴趣下降、逐项退出选择；宝钗问实际问题；麝月问饭袜鞋；错误目击；寺中搬柴挑水；宝玉说“没有，只说我平安”；结尾“够咱们两个吃的就是了”、未补完旧衣。"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-04",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/3"
+        },
+        "draft_quote": "仅在采用本可选接口时写一次极短早/晚课：宝玉跟诵不熟、小和尚指页，散课立刻搬水/看锅，不造经文或教义课堂。未采用时不额外制造必有微课事件；寺院普通搬柴挑水仍可作为99-S3见到真人的背景。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S5.v3.json",
+          "sha256": "cd6f624a4aaf5035a37fdcec71dfe436655128a59802debe656da215ddc406bd"
+        },
+        "pointer": "/required_beats/0/description",
+        "verbatim": "仅在采用本可选接口时写一次极短早/晚课：宝玉跟诵不熟、小和尚指页，散课立刻搬水/看锅，不造经文或教义课堂。未采用时不额外制造必有微课事件；寺院普通搬柴挑水仍可作为99-S3见到真人的背景。"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-05",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/4"
+        },
+        "draft_quote": "本次所选合同链按源列表，本场entry_from为99-S3.v3，后接99-S5.v3；不宣称可选微课已经前插，不把旧衣终末的保护义务当已解决编排。寻找消息到家与继续吃饭分别处理，具体收信时点未知，家中只知实际转达内容。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S4.v3.json",
+          "sha256": "4d3f758ec307aef8bbd9059a7f51d881f02c27f67e4b6915c27697166ad5f7e6"
+        },
+        "pointer": "/required_beats/2/description",
+        "verbatim": "本次所选合同链按源列表，本场entry_from为99-S3.v3，后接99-S5.v3；不宣称可选微课已经前插，不把旧衣终末的保护义务当已解决编排。寻找消息到家与继续吃饭分别处理，具体收信时点未知，家中只知实际转达内容。"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-06",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/5"
+        },
+        "draft_quote": "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S5.v3.json",
+          "sha256": "cd6f624a4aaf5035a37fdcec71dfe436655128a59802debe656da215ddc406bd"
+        },
+        "pointer": "/unresolved/9",
+        "verbatim": "alternative_narrative_proposal_pending: S1→S2→S5（可选）→S3→S4仅未选定提案；不进入当前entry_from，不宣称已采用。旧衣终末与源S5在S4之后的矛盾需上游显式编排授权后再核。"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-07",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/6"
+        },
+        "draft_quote": "线头送进新针眼，还未拉齐，她听见灶里火响，将这根针别回衣边，手又放下。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt",
+          "sha256": "17257cf8ba8acc27d07f3a67b01416668d0885d0c6a694875ad5d932edeafb58"
+        },
+        "lines": [
+          69,
+          69
+        ],
+        "verbatim": "水下锅后，麝月坐在小凳上等火，拿起昨夜没补完的旧衣。衣边的线仍长，她将线头往旧针眼里送，才发现针孔被断线塞住，便另取一根针。线头送进新针眼，还未拉齐，她听见灶里火响，将这根针别回衣边，手又放下。宝钗说先顾火，线慢慢理。麝月道：“这衣裳到底给谁补？”宝钗说补好了仍是衣裳，眼下却不必赶着。她没有将衣退还，也没有说再也用不上，只把歪了的一处抚平。外头有人叫门，问一件寻常的小事，两个人仍须有人起身去答。"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-08",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/7"
+        },
+        "draft_quote": "袖口未补完，仍留在桌角；两人把眼前这顿饭吃了。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch99-revision1.txt",
+          "sha256": "17257cf8ba8acc27d07f3a67b01416668d0885d0c6a694875ad5d932edeafb58"
+        },
+        "lines": [
+          71,
+          71
+        ],
+        "verbatim": "饭熟了，麝月将碗摆好，只摆了两只。她盛完自己的，仍先去看看门闩，回来坐下，问剩下的饭放在哪里。宝钗道：“锅里，明早热过。”麝月把饭勺搁回去，拿起碗，吃了几口，又瞥一眼那件旧衣。针还别在边上，方才穿了一半的线松着。宝钗将衣往离汤远的一边挪，袖口未补完，仍留在桌角；两人把眼前这顿饭吃了。"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-09",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/8"
+        },
+        "draft_quote": "保留“这衣裳到底给谁补”、尚未补完的袖口、针留在衣边、两只碗及眼前一顿饭；旧衣不自动等同95已典夹袄或100李纨旧袄。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+          "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+        },
+        "pointer": "/chapters/1/notes/3/retain",
+        "verbatim": "保留“这衣裳到底给谁补”、尚未补完的袖口、针留在衣边、两只碗及眼前一顿饭；旧衣不自动等同95已典夹袄或100李纨旧袄。"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-10",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/9"
+        },
+        "draft_quote": "不得锁第99、具体寺院、路径；不得把T2写成原标题。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md",
+          "sha256": "94328cfc12eac812304990578745dd74b1aad710c8a00759299ce78a585c3f4f"
+        },
+        "lines": [
+          31,
+          31
+        ],
+        "verbatim": "| OL-023 | 99 | ‘悬崖撒手’与弃而为僧方向硬；第99、具体寺院/路径是C | “悬崖撒手”与宝玉最终弃世为僧方向强；作为T2不等于正式原标题。 | 第99离家、剃发、拒返。 | 不得锁第99、具体寺院、路径；不得把T2写成原标题。 | 出现明确回次/寺院/路径见证。 |"
+      },
+      {
+        "subject_id": "editorial-ch99",
+        "draft_evidence_id": "E99-11",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch99-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/10"
+        },
+        "draft_quote": "宝玉的最终出家不是发生在所有世俗关系都已经自然消失以后。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md",
+          "sha256": "c1946d9ff097372aa0583eec627a5f37ec77ec3b076fa2229c23f7f441bb7eb0"
+        },
+        "lines": [
+          169,
+          175
+        ],
+        "verbatim": "- 后文有“悬崖撒手”一回；\n- 宝玉最终“弃而为僧”；\n- 撒手相位中已有“宝钗之妻、麝月之婢”。\n\n因此最低限度可以确定（R43）：\n\n> 宝玉的最终出家不是发生在所有世俗关系都已经自然消失以后。"
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-01",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/0"
+        },
+        "draft_quote": "开放的是尘世路径，不是终点。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md",
+          "sha256": "c1946d9ff097372aa0583eec627a5f37ec77ec3b076fa2229c23f7f441bb7eb0"
+        },
+        "lines": [
+          189,
+          191
+        ],
+        "verbatim": "> **R01｜A-W1：通灵玉所对应之石的终极本体状态是“劫终复还本质，归于青埂峰外框”。**\n\n开放的是尘世路径，不是终点。"
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-02",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/1"
+        },
+        "draft_quote": "R01石归本质只锁终态，不锁是否在末回正面重演青埂峰。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md",
+          "sha256": "c1946d9ff097372aa0583eec627a5f37ec77ec3b076fa2229c23f7f441bb7eb0"
+        },
+        "lines": [
+          531,
+          531
+        ],
+        "verbatim": "若场次容量或章法失败，可改为100回前段撒手、后段情榜；R01石归本质只锁终态，不锁是否在末回正面重演青埂峰。"
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-03",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/2"
+        },
+        "draft_quote": "太虚：警幻只管理，不讲解。外框：空空道人是抄写劳动者，不是哲学解说员。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+        },
+        "lines": [
+          1291,
+          1291
+        ],
+        "verbatim": "人间：贾兰、李纨、宝钗/麝月等残余人物、报喜人、贺客、帮厨、医者、丧务人。太虚：警幻只管理，不讲解。外框：空空道人是抄写劳动者，不是哲学解说员。"
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-04",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/3"
+        },
+        "draft_quote": "情榜与石归用章回切换，不写“榜收即石飞回”。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+        },
+        "lines": [
+          1303,
+          1303
+        ],
+        "verbatim": "太虚不是凡人做梦；保留“不知何日何时”。可有极轻旧香/卷轴声，不重播《红楼梦》曲。情榜不解释；删除榜首“情有所钟……”总释。情榜与石归用章回切换，不写“榜收即石飞回”。"
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-05",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/4"
+        },
+        "draft_quote": "空空道人是抄写劳动者而非解释者：粗纸残墨，漫漶留空、不补字、不新增情评。空空道人同样未注册，保留角色义务不假造identity；沿章卡中压尾边界止于“石在，字在”。OT100-01只改frame_status，holder/location仍UNKNOWN，不能拿记录工作修补尘世运输或论证佛理。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/100-S5.v2.json",
+          "sha256": "f421a34ba4aceca429603631b9510bf4f4e077fb81a7eb85daaae08dd5540faa"
+        },
+        "pointer": "/required_beats/3/description",
+        "verbatim": "空空道人是抄写劳动者而非解释者：粗纸残墨，漫漶留空、不补字、不新增情评。空空道人同样未注册，保留角色义务不假造identity；沿章卡中压尾边界止于“石在，字在”。OT100-01只改frame_status，holder/location仍UNKNOWN，不能拿记录工作修补尘世运输或论证佛理。"
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-06",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/5"
+        },
+        "draft_quote": "\"frame_status\": \"RETURNED_TO_ESSENCE_QINGGENG_FRAME\"",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        "lines": [
+          1059,
+          1082
+        ],
+        "verbatim": "      \"id\": \"OT100-01\",\n      \"chapter\": 100,\n      \"sequence\": 90,\n      \"object_id\": \"OBJ-TONGLING-JADE\",\n      \"action\": \"FRAME_STATE_CHANGE\",\n      \"from\": {\n        \"holder\": \"UNKNOWN\",\n        \"location\": \"UNKNOWN\",\n        \"status\": \"EARTHLY_ROUTE_OPEN_AFTER_SA_SHOU\",\n        \"frame_status\": \"IN_HUMAN_WORLD\"\n      },\n      \"to\": {\n        \"holder\": \"UNKNOWN\",\n        \"location\": \"UNKNOWN\",\n        \"status\": \"EARTHLY_ROUTE_OPEN_AFTER_SA_SHOU\",\n        \"frame_status\": \"RETURNED_TO_ESSENCE_QINGGENG_FRAME\"\n      },\n      \"source_refs\": [\n        \"asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d\",\n        \"R01\"\n      ],\n      \"epistemic\": \"HARD_TERMINAL_FRAME\",\n      \"note\": \"只改变外框身份终态，不伪造尘世物理交通\",\n      \"movement\": \"NONE\""
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-07",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/6"
+        },
+        "draft_quote": "只改变外框身份终态，不伪造尘世物理交通",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        "lines": [
+          1081,
+          1081
+        ],
+        "verbatim": "      \"note\": \"只改变外框身份终态，不伪造尘世物理交通\","
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-08",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/7"
+        },
+        "draft_quote": "空空道人行到石前，见石上仍有字，便取粗纸，研些残墨，就着可辨处抄录。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch100-revision1.txt",
+          "sha256": "95a30c77d1552c7def4731d8f2832e475457502c40d3dc4234a5fe4e23a7f4f3"
+        },
+        "lines": [
+          71,
+          71
+        ],
+        "verbatim": "且把太虚一境按下，另说青埂峰下。空空道人行到石前，见石上仍有字，便取粗纸，研些残墨，就着可辨处抄录。纸面涩，笔头有一处岔开，他以指理顺，换了行再写；遇漫漶处，看过仍不可辨，便留空，不另添字。抄到末了，将纸平着晾干，收笔收砚，石前少了那一片身影。"
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-09",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/8"
+        },
+        "draft_quote": "短稿的末框架写石与抄录，不显示石如何归来；它没有补人间玉→石的连续运输链。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/TAIL_READING_RESULTS.md",
+          "sha256": "1b16a152a8f9ccd55525947c3c2925a3cbe8525d0123569ee7707e3a8f64fd55"
+        },
+        "lines": [
+          17,
+          17
+        ],
+        "verbatim": "短稿的末框架写石与抄录，不显示石如何归来；它没有补人间玉→石的连续运输链。三副／四副留白不是已经认证的原榜样貌。具体官制、服丧制度、寺院准入、死亡年月、角色身份和全书完整性仍未核，匿名读者不凭未见来源卡宣布相容。"
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-10",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/9"
+        },
+        "draft_quote": "空空道人只承担“看石—誊录”的记录者功能，不二次解释情榜。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/626917a3603d0069/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md",
+          "sha256": "626917a3603d00697ccb86e6be8d1bb5b40911ffad700436ea836cd8e6336261"
+        },
+        "lines": [
+          376,
+          378
+        ],
+        "verbatim": "- 人间余事先于太虚；情榜保持最小硬锚。\n- 空空道人只承担“看石—誊录”的记录者功能，不二次解释情榜。\n- `石在，字在。`继续为终篇P1基准。"
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-11",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/10"
+        },
+        "draft_quote": "不得补全五册60人；不得锁每层十二；不得自行生成绝大多数情评。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md",
+          "sha256": "94328cfc12eac812304990578745dd74b1aad710c8a00759299ce78a585c3f4f"
+        },
+        "lines": [
+          32,
+          35
+        ],
+        "verbatim": "| OL-024 | 100 | 情榜正式总名开放 | 末回有情榜，五层结构及若干硬评可锁；正式总榜名开放。 | 一轴素榜，无总题。 | 不得把“警幻情榜”四字写成小说正式榜额硬名。 | 出现小说正文榜首原字的直接见证。 |\n| OL-025 | 100 | 三副四副名单、是否每层十二、绝大多数情评开放 | 正、副、再副、三副、四副五层；黛玉情情、宝玉情不情硬。 | 正层十二名；副层仅显香菱；再副显晴雯/袭人；三副四副留白。 | 不得补全五册60人；不得锁每层十二；不得自行生成绝大多数情评。 | 出现可复核完整榜单/层级人数/更多原评。 |\n| OL-026 | 100 | 一轴素榜为当前C-format | 末回情榜结构硬；具体呈现媒介与版式未锁。 | 一轴素榜。 | 不得把“一轴素榜”反写成原稿版式证据。 | 出现榜式/册式/轴式直接见证。 |\n| OL-027 | 100 | 贾兰功名、李纨终局集中第100为C-placement | 贾兰功名、李纨终局方向可承重；是否集中同回、具体年份开放。 | 第100先写贾兰得官、李纨受封病逝，再入情榜。 | 不得把“同在第100、相隔若干年”写成原稿固定。 | 出现更强时序/回次见证。 |"
+      },
+      {
+        "subject_id": "editorial-ch100",
+        "draft_evidence_id": "E100-12",
+        "draft_locator": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editorial/ch100-editorial-draft-v1.json",
+          "pointer": "/verbatim_evidence/11"
+        },
+        "draft_quote": "保留人间余事先按下、“不知何日何时”、旧册不逐册重开、一轴五层、三副四副未见字迹、宝黛两评原字、“收罢”、另说青埂峰、粗纸残墨漫漶留空及“石在，字在”。不以榜收造成石飞回，不加新评或终篇诗。",
+        "result": "EXACT_SUBSTRING_AT_DECLARED_LOCATOR",
+        "scope_note": "验证项目文件实际字节，不代表直接历史见证真实性或来源升级。",
+        "source": {
+          "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+          "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+        },
+        "pointer": "/chapters/2/notes/4/retain",
+        "verbatim": "保留人间余事先按下、“不知何日何时”、旧册不逐册重开、一轴五层、三副四副未见字迹、宝黛两评原字、“收罢”、另说青埂峰、粗纸残墨漫漶留空及“石在，字在”。不以榜收造成石飞回，不加新评或终篇诗。"
+      }
+    ]
+  },
+  "additional_exact_evidence": [
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "lines": [
+        1147,
+        1153
+      ],
+      "verbatim": "**1｜硬节点**  \nR18\n\n**EVIDENCE-INTERFACES｜**\n- T3/EVENT：`甄宝玉送玉`；\n- V1-FRAG：`误窃`来自更早“塞玉”伏线；\n- 当前“通灵玉误带—送还”只是一种C案，标题不得把它伪装成R。“甄宝玉送玉”；O03玉同一性、O07二宝是否现实照面原本开放；当前现实相见与单次误包为C级工作主案。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "lines": [
+        1182,
+        1189
+      ],
+      "verbatim": "**11｜四链**  \nE4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。\n\n**12｜必须保留**  \n数茶、木桶、米数纸、虫蛀旧书、单一包裹误拿、无钱赠。\n\n**13｜应删**  \n第二次巧合；甄贾哲学论战；宝钗专门见证黛玉四句；“原来这是遗言”。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "lines": [
+        1200,
+        1202
+      ],
+      "verbatim": "**18｜章法 / 风险**  \n拜帖 → 旧书相会 → 异手/《续庄子》迟见 → 回到校书 → 包裹误拿 → 通灵玉归 → 继续抄字/吃饭。  \n**风险：**让C级“亲见”伪装硬证；把98变成通往99的“悟道机关”。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "lines": [
+        1211,
+        1226
+      ],
+      "verbatim": "**1｜硬节点**  \nR43；P09：撒手时宝钗为妻、麝月为婢状态已成立；O10负责99/100分工。禁止玉归即出家。\n\n**2｜最强处 / P-Lock**  \n“日子照旧过几日”；还借书、对食物兴趣下降、逐项退出选择；宝钗问实际问题；麝月问饭袜鞋；错误目击；寺中搬柴挑水；宝玉说“没有，只说我平安”；结尾“够咱们两个吃的就是了”、未补完旧衣。\n\n**3｜最薄处**  \n“逐项不再接”还可再清楚；寺院宗教生活需比短工多一丝，但不能变悟道课堂；寻找过程可更社会化。\n\n**4｜缺失情节**  \n普通日缓冲 → 还书/减少参与 → 告诉宝钗“不回”或实际离开 → 城市多版本误认 → 贾芸找到寺院 → 宝玉拒回 → 家中重新量两个人的饭。\n\n**5｜人物**  \n宝玉、宝钗、麝月、贾芸；书摊、车脚、渡口、小店、普通僧人作为寻找网络。\n\n**D2边界｜** 贾芸寻到宝玉可以保留，但男性寺院不等于“庵”；证据版不得声称99兑现“仗义探庵”。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "lines": [
+        1231,
+        1247
+      ],
+      "verbatim": "**7｜诗文身份**  \nG07“无字”强锁：无诀别信、诗、偈。作者层也无诗无偈。98《续庄子》不得成为99因果。\n\n**8｜笑料**  \n找错人、日常米饭、旧鞋等允许轻冷笔；不消解离家伤害。\n\n**9｜宗教/梦**  \n41核心：“情尽未尽”。宝玉不是无情，而是“不想再接”世俗角色。可加一次极短早/晚课：跟诵不熟，小和尚指页，散课马上搬水/看锅。严禁高僧点化、黛玉/警幻托梦。\n\n**10｜职业**  \n寺院普通劳务；找人调动书摊、车脚、渡口、小店。每个人只给模糊线索。\n\n**11｜四链**  \nE4：寻人也花脚费，家里仍买米付租。物：还书、少带衣/钱、旧鞋留下。信：宝玉最早知道→宝钗半知→麝月后知→外界全是模糊目击。\n\n**12｜必须保留**  \n98→99普通日缓冲；无玉触发；“没有，只说我平安”；两人份晚饭；旧衣针仍别在边上。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "lines": [
+        1258,
+        1263
+      ],
+      "verbatim": "**16｜回前诗** 无。  \n**17｜回末诗** **人物无字，作者也无诗偈。**\n\n**18｜章法 / 风险**  \n数日照旧 → 逐项还/退/不接 → 离家 → 发现缺席 → 城市误认 → 寺中真实劳动/微课诵 → 贾芸见到 → 宝玉不回 → 宝钗麝月调整饭量。  \n**风险：**把出家写成圆满，或反过来单纯写成懦弱；必须三种阅读并存。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "lines": [
+        1275,
+        1291
+      ],
+      "verbatim": "**EVIDENCE-INTERFACES｜**\n- STRUCTURE：末回情榜；`警幻情榜`仅SOURCE-EXACT批语称谓；\n- V4：`宝玉情不情 / 黛玉情情`；\n- V5：末回五层`正、副、再副、三副、四副芳讳`；\n- NEG：`皆系漫拟`，下层猜名不得硬化。贾兰功名、R39李纨“因子得荣而终归虚幻”强约束；R08/R09/P11末回情榜；R01/P10石归。李纨具体病程、贾兰官品、年份开放。\n\n**2｜最强处 / P-Lock**  \n多年真实时间；厨房听见官讯先问“饭够不够”；借桌腿歪；孩子以为做官便有钱；李纨冠帔压额、仍爱旧衣；贾珠旧书；空空道人粗纸残墨抄石、漫漶留空；结尾“石在，字在”。\n\n**3｜当前正文最薄处**  \n当前情榜已压到“一轴素榜+最小硬锚”；R4-G真正遗留曾在情榜收卷后的石/道人尾段过长，Phase 4已裁定采用100-B中压尾。李纨数月普通老衰、贾兰丁忧等历史机制已完成R4-E可行性复核，但具体年份与制度细节仍属C/H边界。\n\n**4｜缺失情节**  \n人间层：实授→贺客/礼务→李纨受封后疲倦→数月衰退→日常移交→死→简化但有礼的丧务。太虚层：旧册略现但不重读→另展一轴情榜→五层芳讳→少量评语→榜末宝玉“情不情”→警幻“收罢”→章回切换青埂峰→道人抄录。\n\n**5｜人物**  \n人间：贾兰、李纨、宝钗/麝月等残余人物、报喜人、贺客、帮厨、医者、丧务人。太虚：警幻只管理，不讲解。外框：空空道人是抄写劳动者，不是哲学解说员。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "lines": [
+        1296,
+        1318
+      ],
+      "verbatim": "**7｜诗文身份**  \nA02为批语中的情榜/五层结构证据；A03“林黛玉——情情”“贾宝玉——情不情”原样硬锁。当前正文正层十二名为C-format；副层仅显香菱、再副显晴雯袭人；三副四副留白。正式总榜名、下层全名单、每层人数与绝大多数情评均已进入OPEN-LOCK，禁止恢复五册60人完成态。G16终篇韵文继续关闭。\n\n**8｜笑料/俗文化**  \n报喜进门与厨房算饭、歪腿借桌、孩子误解“官=钱”必须保留，使晚荣不变礼制展览。\n\n**9｜宗教/梦/哲学**  \n太虚不是凡人做梦；保留“不知何日何时”。可有极轻旧香/卷轴声，不重播《红楼梦》曲。情榜不解释；删除榜首“情有所钟……”总释。情榜与石归用章回切换，不写“榜收即石飞回”。\n\n**10｜职业人物**  \n报喜、医者、贺客、帮厨、丧务；道人抄写需要纸墨劳动。官礼/丁忧具体制度措辞在正式正文前再做一次历史校核。\n\n**11｜四链**  \nE5：官位增加收入/礼数，不恢复旧宅旧产。李纨受封本身增加衣礼、回礼、待客成本。病亡又产生白布、棺木、吊客等开支。信息：官讯→亲友→贺客；病情→贾兰误判好转→逐渐退出。\n\n**12｜必须保留**  \n真实多年；官礼与破家具并存；李纨旧衣；父亲旧书；“收罢”；道人不解释；石文漫漶留空；“石在，字在”。\n\n**13｜禁止重新引入**  \n五册逐本重开；下层名单的确定口吻；未经源证支持的新情评；事迹摘要式评语；榜首哲学总释；终篇总结诗。以上均受OPEN-LOCK与P-Lock共同约束。\n\n**14｜L3**  \n本回必须L3，且必须最后正式定稿。情榜下层名单现为OPEN-LOCK；除非出现新上游证据，不以“微调”名义补全或锁定。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "lines": [
+        1323,
+        1328
+      ],
+      "verbatim": "**16｜回前诗** 无。  \n**17｜回末诗** 无；“石在，字在”终局锁。\n\n**18｜最终章法 / 风险**  \n多年压缩 → 贾兰实授 → 晚荣的现实礼务 → 李纨数月衰退与日常移交 → 人间丧务收束 → “人间这些余事，到此按下” → 太虚感官回声 → 一轴情榜五层 → 宝黛硬评、少量G评 → 宝玉榜末“情不情” → “收罢” → 青埂峰切换 → 道人粗纸残墨抄录 → 漫漶留空 → 石在，字在。  \n**风险：**把100写成“答案发布会”、把贾兰写成家族中兴、把情榜写成数据库、把石归写成佛理结论。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+        "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c"
+      },
+      "lines": [
+        1347,
+        1351
+      ],
+      "verbatim": "12. **96→97湘云**：长信婚后尚有活气 → 97短札/缺席成为家务事实；不锁若兰死亡。\n13. **89→98《庄子》旧册**：89“因为薄”带出，98才按工作主案触发，不在中间反复提醒。\n14. **98→99普通生活缓冲**：玉归与《续庄子》迟见都不得直接触发出家。\n15. **99→100**：99完成“人退出世俗角色”；100先完成多年后人间余波，再切外框；不把99寺院直接写到100太虚。\n16. **100情榜→石归**：并列终局，不做机械因果。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/626917a3603d0069/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md",
+        "sha256": "626917a3603d00697ccb86e6be8d1bb5b40911ffad700436ea836cd8e6336261"
+      },
+      "lines": [
+        3,
+        12
+      ],
+      "verbatim": "> 工程阶段：**R4-H v2.0 FINAL PASS；稳定ACTIVE v4.1；43-0 RESUMED**\n> 正文基线：`第32-A_红楼梦八十回后文学复原_纯读版_v1.3_R4C位置修复基线.md`  \n> 正文SHA256：`bd15b087dc6ac701a83312007d1cc77453f22f1ffe7791dc77d787c9fc532664`  \n> 使用方法：每次改一回正文前后，都必须回查本表；压力试写不得覆盖基线。  \n> 原则：**V-Lock > R/P/H > O边界 > P-Lock > C/G方案。**\n\n> **R4-G治理说明：** v2.1中“V0/V1/V2…”为旧期保护标签，只作为历史索引保留；  \n> 当前证据身份一律以`R4_证据角色审计矩阵_v1.6_R4F_PASS.md`的\n> Witness / Role / Modality / Literal Target / Placement / T轴为准。  \n> 特别是：`警幻情榜`不得因旧V2标签被理解为正式小说榜名；`狱神庙慰宝玉`仍为T2稿名/稿件称呼；`凤姐扫雪拾玉`等仍为T3事件。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/626917a3603d0069/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md",
+        "sha256": "626917a3603d00697ccb86e6be8d1bb5b40911ffad700436ea836cd8e6336261"
+      },
+      "lines": [
+        17,
+        28
+      ],
+      "verbatim": "# 0. V-Lock优先级（P0新增）\n\nP-Lock只保护**已经写好的小说性**，绝不能保护一处源证据错误。\n\n优先级：\n> **V-Lock > R/P/H > P-Lock > C/G文学方案**\n\n因此：\n- 第90旧标题即使曾被KEEP，也必须让位于V0；\n- 第88“有始终出阁”不是可保护句，必须让位于V1“花袭人有始有终”；\n- 91/95/98的生活场景可以保护，但其标题过度具体化不受P-Lock保护；\n- 92狱神庙正文生活细节P1保护，与“狱神庙慰宝玉”V1题名保护并行，二者不能混同。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/626917a3603d0069/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md",
+        "sha256": "626917a3603d00697ccb86e6be8d1bb5b40911ffad700436ea836cd8e6336261"
+      },
+      "lines": [
+        86,
+        88
+      ],
+      "verbatim": "| 98 | **P1** | 贫居待客仍先数茶叶；木桶坐完还要装柴；甄贾先从书、旧钞、缺页、题签自然交往；通灵玉误取只靠一个桌角布包错拿 | 校书、题跋、文人交游 | **不得叠加第二、第三个巧合；甄宝玉不送钱；不许两人展开真假哲学论战** |\n| 99 | **P1** | 日子先“照旧过几日”；宝玉从归还借书、减少饮食与接口逐步退出；宝钗问现实，麝月问饭鞋；邻人/贾芸会认错线索；寺里仍要搬柴 | 佛门日常、俗世余波、留字/梦多案 | **不许玉归触发撒手；不许宝玉长篇解释人生；不许全世界停下来见证他的出家** |\n| 100 | P1/P3 | 多年真实流逝；贾兰得官后厨房先问饭够不够；贺客借歪腿方桌；孩子把做官理解成发财；李纨受封后仍收旧衣；人间层先完成才入太虚 | 李纨病亡、太虚空间、情榜、终篇韵文 | 不得写“家族中兴”；警幻不得逐人讲解结局；现有“石在，字在”作为**终篇基准案**，新诗不明显胜出则保留 |"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/626917a3603d0069/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md",
+        "sha256": "626917a3603d00697ccb86e6be8d1bb5b40911ffad700436ea836cd8e6336261"
+      },
+      "lines": [
+        329,
+        334
+      ],
+      "verbatim": "## 第100\n禁止恢复：\n- **禁止恢复**五册60人完成态；\n- 大量生成情评；\n- **禁止出现**“五册至此俱毕”式完成口吻；\n- 榜首说明性哲学总释。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/626917a3603d0069/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md",
+        "sha256": "626917a3603d00697ccb86e6be8d1bb5b40911ffad700436ea836cd8e6336261"
+      },
+      "lines": [
+        374,
+        381
+      ],
+      "verbatim": "## G-P100-04｜末回记录者锁\n- 当前R4-G候选：100-B；尚未写回主正文。\n- 人间余事先于太虚；情榜保持最小硬锚。\n- 空空道人只承担“看石—誊录”的记录者功能，不二次解释情榜。\n- `石在，字在。`继续为终篇P1基准。\n- 不得补全五册60人，不得生成大量新情评。\n\n> 当前结论：以上均为**R4-G候选锁**。R4-G v2.0最终PASS须等待候选正文合并与R4-F regression；本文件不得被引用为R4已经结束。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/626917a3603d0069/81—100_保护锁与不可破坏细节表_v2.5_稳定ACTIVE.md",
+        "sha256": "626917a3603d00697ccb86e6be8d1bb5b40911ffad700436ea836cd8e6336261"
+      },
+      "lines": [
+        386,
+        425
+      ],
+      "verbatim": "# R4-G v2.0 FINAL同步\n\n候选正文：\n`第32-A_红楼梦八十回后文学复原_纯读版_v1.4_R4G候选回归版.md`\n\nSHA256：\n`4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320`\n\n最终文学审计：\n- P-Lock：PASS\n- 解释过度：PASS\n- 机制/人物比例：PASS\n- 诗文边界：PASS\n- 人物终局差异：PASS\n- 第100：PASS\n- WATCH：0\n- CONDITIONAL：0\n\n本文件已经R4-H v2.0放行，作为稳定ACTIVE v4.1的当前保护锁。\n\n\n---\n\n# R4-H v2.0正式放行同步\n\n稳定正文：\n`第32-A_红楼梦八十回后文学复原_纯读版_v1.4_稳定ACTIVE基线.md`\n\nSHA256：\n`4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320`\n\n状态：\n- R4-A—H：PASS\n- OPEN-LOCK：28/28\n- WATCH：0\n- CONDITIONAL：0\n- A类阻断：0\n- 43-0：RESUMED\n\n后续43-0试写不得直接覆盖稳定正文；只有竞争、回归、盲读全部通过后，才能升新正文版本。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md",
+        "sha256": "c1946d9ff097372aa0583eec627a5f37ec77ec3b076fa2229c23f7f441bb7eb0"
+      },
+      "lines": [
+        179,
+        191
+      ],
+      "verbatim": "## 2.4 石头 / 通灵玉终极状态\n\n第一回外框明确：\n\n> 顽石幻形成玉入世，待“劫终之日”复还本质，以了此案。\n\n石头后来又在青埂峰上以刻满故事的石体出现。\n\n因此：\n\n> **R01｜A-W1：通灵玉所对应之石的终极本体状态是“劫终复还本质，归于青埂峰外框”。**\n\n开放的是尘世路径，不是终点。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md",
+        "sha256": "c1946d9ff097372aa0583eec627a5f37ec77ec3b076fa2229c23f7f441bb7eb0"
+      },
+      "lines": [
+        489,
+        502
+      ],
+      "verbatim": "## O07 甄贾二宝是否现实照面\n\nR18只锁“甄宝玉送玉”。\n\n作者首选：\n\n> 甄宝玉本人出场，真假二宝现实照面。\n\n备选：\n\n- 本人出场而二宝错身；\n- 可信中间人转交。\n\n真假互照必须靠人物与行动完成，禁止长篇哲理辩论。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md",
+        "sha256": "c1946d9ff097372aa0583eec627a5f37ec77ec3b076fa2229c23f7f441bb7eb0"
+      },
+      "lines": [
+        524,
+        531
+      ],
+      "verbatim": "## O10 第99—100回分工\n\n作者首选：\n\n- 99：悬崖撒手；\n- 100：警幻情榜并外框收束。\n\n若场次容量或章法失败，可改为100回前段撒手、后段情榜；R01石归本质只锁终态，不锁是否在末回正面重演青埂峰。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md",
+        "sha256": "94328cfc12eac812304990578745dd74b1aad710c8a00759299ce78a585c3f4f"
+      },
+      "lines": [
+        4,
+        5
+      ],
+      "verbatim": "> 本表把R4中所有合法开放接口从“未解决问题”转为“已审定的不确定性”。\n> **OPEN不是PENDING。** 当前C实现可用，但不得反向成为证据。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md",
+        "sha256": "94328cfc12eac812304990578745dd74b1aad710c8a00759299ce78a585c3f4f"
+      },
+      "lines": [
+        28,
+        36
+      ],
+      "verbatim": "| OL-020 | 98 | 甄贾二宝现实相见是C实现 | “甄宝玉送玉”为强事件方向；不推出二宝必须现实面对面。 | 第98甄贾二宝现实相见。 | 不得把现实会面写成源证必然。 | 出现直接“二宝相见/不相见”见证。 |\n| OL-021 | 98 | 所送之玉是否同一通灵玉开放；误包机制为C | 甄宝玉有“送玉”事件；所送是否同一通灵玉、如何到甄家均未锁。 | 第98小厮误包同一通灵玉，甄宝玉送回。 | 不得把“同一通灵玉+误包”写成唯一原稿解。 | 出现玉物流、误窃或送玉对象的直接见证。 |\n| OL-022 | 98 | 《续庄子》后文余步的具体实现开放 | 前80《庄子》文字存在“后文余步”类开放接口；具体如何兑现未锁。 | 98以旧《庄子》书/校读形成回声。 | 不得把“后文余步”硬等同当前具体四句或宝玉必亲读。 | 发现更直接的后文文本/人物/场景见证。 |\n| OL-023 | 99 | ‘悬崖撒手’与弃而为僧方向硬；第99、具体寺院/路径是C | “悬崖撒手”与宝玉最终弃世为僧方向强；作为T2不等于正式原标题。 | 第99离家、剃发、拒返。 | 不得锁第99、具体寺院、路径；不得把T2写成原标题。 | 出现明确回次/寺院/路径见证。 |\n| OL-024 | 100 | 情榜正式总名开放 | 末回有情榜，五层结构及若干硬评可锁；正式总榜名开放。 | 一轴素榜，无总题。 | 不得把“警幻情榜”四字写成小说正式榜额硬名。 | 出现小说正文榜首原字的直接见证。 |\n| OL-025 | 100 | 三副四副名单、是否每层十二、绝大多数情评开放 | 正、副、再副、三副、四副五层；黛玉情情、宝玉情不情硬。 | 正层十二名；副层仅显香菱；再副显晴雯/袭人；三副四副留白。 | 不得补全五册60人；不得锁每层十二；不得自行生成绝大多数情评。 | 出现可复核完整榜单/层级人数/更多原评。 |\n| OL-026 | 100 | 一轴素榜为当前C-format | 末回情榜结构硬；具体呈现媒介与版式未锁。 | 一轴素榜。 | 不得把“一轴素榜”反写成原稿版式证据。 | 出现榜式/册式/轴式直接见证。 |\n| OL-027 | 100 | 贾兰功名、李纨终局集中第100为C-placement | 贾兰功名、李纨终局方向可承重；是否集中同回、具体年份开放。 | 第100先写贾兰得官、李纨受封病逝，再入情榜。 | 不得把“同在第100、相隔若干年”写成原稿固定。 | 出现更强时序/回次见证。 |\n| OL-028 | 全局 | 所有81—100当前PC回次安置不是源证回次 | PC只代表工作安置；T0/T1/T2/T3与回次必须分离。 | 81—100现有PC排程。 | 不得从“正文已这样写”反推原回次；不得把TG工作回目当原回目。 | 任何新证据改变Placement，或发现活动文档把PC升硬。 |"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md",
+        "sha256": "94328cfc12eac812304990578745dd74b1aad710c8a00759299ce78a585c3f4f"
+      },
+      "lines": [
+        38,
+        43
+      ],
+      "verbatim": "## Phase 5结论\n\n- OPEN接口：**28项**\n- 已全部转为：**OPEN-LOCKED**\n- 未因冻结而修改正文。\n- 任何后续解除冻结，都必须由上游新证据或明确边界冲突触发。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/objects/m4.json",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+      },
+      "lines": [
+        1009,
+        1032
+      ],
+      "verbatim": "      \"id\": \"OT99-01\",\n      \"chapter\": 99,\n      \"sequence\": 75,\n      \"object_id\": \"OBJ-TONGLING-JADE\",\n      \"action\": \"SCOPE_BREAK\",\n      \"from\": {\n        \"holder\": \"baoyu\",\n        \"location\": \"S09\",\n        \"status\": \"RETURNED\",\n        \"frame_status\": \"IN_HUMAN_WORLD\"\n      },\n      \"to\": {\n        \"holder\": \"UNKNOWN\",\n        \"location\": \"UNKNOWN\",\n        \"status\": \"EARTHLY_ROUTE_OPEN_AFTER_SA_SHOU\",\n        \"frame_status\": \"IN_HUMAN_WORLD\"\n      },\n      \"source_refs\": [\n        \"asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d\",\n        \"R43\"\n      ],\n      \"epistemic\": \"OPEN_BOUNDARY\",\n      \"note\": \"宝玉撒手时不设计弃玉仪式，物理路线退出可知范围\",\n      \"movement\": \"OPEN_BOUNDARY\""
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/98-S3.v2.json",
+        "sha256": "d2ff2a0fdb7609bb8bc4e7161c19e55a7ba519eef150e3965827d9225a8db992"
+      },
+      "pointer": "/forbidden_beats/1/description",
+      "verbatim": "不得把甄家先知扩成两家同步全知；不得把T3“甄宝玉送玉”扩为现实照面、同玉或亲自搬运细节硬证。严禁将zhen_messenger这个holder标签当已注册人名，也不得把代理运输与章卡亲送宣称已兼容。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/98-S3.v2.json",
+        "sha256": "d2ff2a0fdb7609bb8bc4e7161c19e55a7ba519eef150e3965827d9225a8db992"
+      },
+      "pointer": "/unresolved/2",
+      "verbatim": "carrier_conflict: 未解决。章卡11“亲送”与OT98-04.to.holder=zhen_messenger／OT98-05.from.holder=zhen_messenger冲突；送还责任不等于本人搬运，保持PENDING，不改输入、不造演员/事件。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/98-S3.v2.json",
+        "sha256": "d2ff2a0fdb7609bb8bc4e7161c19e55a7ba519eef150e3965827d9225a8db992"
+      },
+      "pointer": "/entry_from",
+      "verbatim": "data/planning/contracts/agent-edited-v1/98-S2.v2.json"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/98-S3.v2.json",
+        "sha256": "d2ff2a0fdb7609bb8bc4e7161c19e55a7ba519eef150e3965827d9225a8db992"
+      },
+      "pointer": "/exit_state",
+      "verbatim": [
+        {
+          "equals": "object.OBJ-TONGLING-JADE.status",
+          "value": null,
+          "status": "UNKNOWN",
+          "basis": [],
+          "reason": "OT98-02—05给出当前C误取、发现、运输及归还章级链；本地未知检查点不支持场级归还重放。"
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S5.v3.json",
+        "sha256": "cd6f624a4aaf5035a37fdcec71dfe436655128a59802debe656da215ddc406bd"
+      },
+      "pointer": "/required_beats/2/description",
+      "verbatim": "本次所选前驱恢复99-S4.v3，order=5仍按源列表；微课是否采用、与家中旧衣终末如何协调尚未裁定。不得因保留源前驱就声称寺居历史上必晚于家务，亦不得声称微课已前插；局部状态、早晚课时刻和最终篇章放置继续UNKNOWN/PENDING。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S5.v3.json",
+        "sha256": "cd6f624a4aaf5035a37fdcec71dfe436655128a59802debe656da215ddc406bd"
+      },
+      "pointer": "/entry_from",
+      "verbatim": "data/planning/contracts/agent-edited-v2/99-S4.v3.json"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S5.v3.json",
+        "sha256": "cd6f624a4aaf5035a37fdcec71dfe436655128a59802debe656da215ddc406bd"
+      },
+      "pointer": "/order",
+      "verbatim": 5
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S3.v3.json",
+        "sha256": "505eb6aa90f729999baa8a990fcc5edd0bf6ebd9d587a0fb58ab234be45d3ada"
+      },
+      "pointer": "/required_beats/1/description",
+      "verbatim": "宝玉寺中劳动是寻到时的日常背景，不以先执行99-S5微课为条件；贾芸找到宝玉，区分此前误认与此次见真人，拒回及“没有，只说我平安”保留。见到—听到—返家转话—家中获知必须有可追问先后，缺少场级知识事件仍PENDING，不造精确地址或长篇交代。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S3.v3.json",
+        "sha256": "505eb6aa90f729999baa8a990fcc5edd0bf6ebd9d587a0fb58ab234be45d3ada"
+      },
+      "pointer": "/entry_from",
+      "verbatim": "data/planning/contracts/agent-edited-v2/99-S2.v3.json"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S4.v3.json",
+        "sha256": "4d3f758ec307aef8bbd9059a7f51d881f02c27f67e4b6915c27697166ad5f7e6"
+      },
+      "pointer": "/required_beats/1/description",
+      "verbatim": "保留未补完旧衣、针仍别在边上，把手边停顿与下顿饭相接。本旧衣未注册，不等同95已典夹袄或100李纨旧衣，不补赎衣、归还或新对象ID。章卡要求旧衣终末，但此义务不证明本场在所选源链中已是最后演出场景，具体终末放置仍PENDING。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S4.v3.json",
+        "sha256": "4d3f758ec307aef8bbd9059a7f51d881f02c27f67e4b6915c27697166ad5f7e6"
+      },
+      "pointer": "/unresolved/4",
+      "verbatim": "placement_tension: 未解决。所选合同源链S4→S5与章卡最终家中旧衣保护存在张力；不以v2前插方案宣称解决，具体删留、切回或重新编排尚未核准。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/99-S4.v3.json",
+        "sha256": "4d3f758ec307aef8bbd9059a7f51d881f02c27f67e4b6915c27697166ad5f7e6"
+      },
+      "pointer": "/entry_from",
+      "verbatim": "data/planning/contracts/agent-edited-v2/99-S3.v3.json"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/100-S5.v2.json",
+        "sha256": "f421a34ba4aceca429603631b9510bf4f4e077fb81a7eb85daaae08dd5540faa"
+      },
+      "pointer": "/required_beats/2/description",
+      "verbatim": "警幻只履行开榜/收卷管理，以“收罢”止，不逐人解释、不提供命运原理；警幻不在所选人物registry，不造ID，完整frame演员集合UNKNOWN。收卷后只章回切换青埂峰，非榜收导致石飞回的空间因果。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/100-S5.v2.json",
+        "sha256": "f421a34ba4aceca429603631b9510bf4f4e077fb81a7eb85daaae08dd5540faa"
+      },
+      "pointer": "/participants",
+      "verbatim": []
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/100-S5.v2.json",
+        "sha256": "f421a34ba4aceca429603631b9510bf4f4e077fb81a7eb85daaae08dd5540faa"
+      },
+      "pointer": "/participants_status",
+      "verbatim": "UNKNOWN"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/100-S5.v2.json",
+        "sha256": "f421a34ba4aceca429603631b9510bf4f4e077fb81a7eb85daaae08dd5540faa"
+      },
+      "pointer": "/exit_state",
+      "verbatim": [
+        {
+          "equals": "object.OBJ-TONGLING-JADE.frame_status",
+          "value": null,
+          "status": "UNKNOWN",
+          "basis": [],
+          "reason": "OT100-01有硬终态外框记录，但本場局部检查点未知，收卷—青埂峰—抄写门槛尚未执行；不可用草案声明自证终态。"
+        },
+        {
+          "equals": "object.OBJ-TONGLING-JADE.location",
+          "value": null,
+          "status": "UNKNOWN",
+          "basis": [],
+          "reason": "即使章级外框归本质，尘世路线仍未定；不得把UNKNOWN字符串当石飞回的位置事实。"
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/chapters/ch99.json",
+        "sha256": "9e11795fad6fd7cb7b76d31f28a82405a81dd3ce071c14da4aa56a247d493a8e"
+      },
+      "pointer": "/scenes",
+      "verbatim": [
+        {
+          "id": "99-S1",
+          "order": 1,
+          "ref": "data/planning/scenes/99-S1.json"
+        },
+        {
+          "id": "99-S2",
+          "order": 2,
+          "ref": "data/planning/scenes/99-S2.json"
+        },
+        {
+          "id": "99-S3",
+          "order": 3,
+          "ref": "data/planning/scenes/99-S3.json"
+        },
+        {
+          "id": "99-S4",
+          "order": 4,
+          "ref": "data/planning/scenes/99-S4.json"
+        },
+        {
+          "id": "99-S5",
+          "order": 5,
+          "ref": "data/planning/scenes/99-S5.json"
+        }
+      ]
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/data/prewrite/v06.json",
+        "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff"
+      },
+      "pointer": "/omitted_scene_plans/18",
+      "verbatim": {
+        "chapter": 99,
+        "action": "重点重构",
+        "intensity": "高",
+        "core_process": "几日退出生活接口→明说离去→出门→寻找→社会余波",
+        "handoff": "41、37",
+        "candidate_scenes": [
+          {
+            "id": "99-S1",
+            "title": "退出顺序保留，但再明确“不是所有人都看懂”"
+          },
+          {
+            "id": "99-S2",
+            "title": "宝玉说“走”以后，宝钗只问现实问题"
+          },
+          {
+            "id": "99-S3",
+            "title": "出门不是终点，寻找才是社会后果"
+          },
+          {
+            "id": "99-S4",
+            "title": "家里必须继续吃饭"
+          },
+          {
+            "id": "99-S5",
+            "title": "若后续第41步要写寺庙生活"
+          }
+        ],
+        "source_ref": "asset:sha256:4e1dd2a2d7669011ece72f8d7a5b93903b235042aadd528f0178f6544901dc7b"
+      }
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/src/rcwh/planning/checking.py",
+        "sha256": "e785ae9a9cfc4ed40b249c9d4b0f3ddc635deb82a3218df2e0322781524b1f63"
+      },
+      "lines": [
+        55,
+        92
+      ],
+      "verbatim": "            previous = None\n            for index, item in enumerate(plan[\"scenes\"], 1):\n                if item[\"order\"] != index:\n                    add(\"FAIL\", \"SCENE_ORDER_MISMATCH\", item[\"ref\"], \"list order must match declared consecutive order\")\n                scene = load_data(repository_path(root, item[\"ref\"]))\n                if scene.get(\"id\") != item[\"id\"] or scene.get(\"chapter\") != chapter or scene.get(\"order\", index) != index:\n                    add(\"FAIL\", \"SCENE_BINDING_MISMATCH\", item[\"ref\"], \"id/chapter/order differs from plan declaration\")\n                if scene.get(\"chapter_plan_ref\", ref) != ref:\n                    add(\"FAIL\", \"CHAPTER_PLAN_LINK_MISMATCH\", item[\"ref\"], ref)\n                if scene.get(\"source_record\"):\n                    for error in verify_record(root, scene[\"source_record\"]):\n                        add(\"FAIL\", error, item[\"ref\"], \"scene source changed\")\n                overlay_ref = None\n                if overlays is not None:\n                    selected_overlay = overlays.get(item[\"ref\"])\n                    if selected_overlay is None:\n                        add(\"PENDING\", \"AGENT_CONTRACT_MISSING\", item[\"ref\"], \"no explicit selected overlay; skeleton not promoted\")\n                    else:\n                        from .contracts import inspect_contract\n                        overlay_ref, scene = selected_overlay\n                        used_seeds.add(item[\"ref\"])\n                        overlay_refs[item[\"ref\"]] = overlay_ref\n                        report = inspect_contract(root, scene, overlay_ref, seed_ref=item[\"ref\"], plan_ref=ref)\n                        contract_reports.append(report)\n                        for tier in (\"declared_compatibility\", \"deterministic_world_state_replay\", \"prose_supported_semantic_replay\"):\n                            for finding in report[tier][\"checks\"]:\n                                add(**finding)\n                effective_scenes[item[\"ref\"]] = scene\n                expected = previous[0][\"ref\"] if previous else plan[\"entry_ref\"]\n                actual = scene.get(\"entry_from\")\n                if not actual or actual == \"UNKNOWN\" or not expected:\n                    add(\"PENDING\", \"SCENE_CHAIN_UNDECLARED\", item[\"ref\"], \"no explicit predecessor binding\")\n                elif (actual not in {expected, previous[1][\"id\"] if previous else expected,\n                                    overlay_refs.get(expected, expected)}\n                      and not _identical_selected_predecessor(root, actual, overlay_refs.get(expected))):\n                    add(\"FAIL\", \"SCENE_CHAIN_MISMATCH\", item[\"ref\"], f\"expected {expected}, declared {actual}\")\n                else:\n                    add(\"PASS\", \"SCENE_CHAIN_DECLARED\", item[\"ref\"], \"declaration consistency only\")"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/tests/test_agent_contracts.py",
+        "sha256": "ea682b365fe42bd593200dceff0606cb1b2331c13fc3ce1f6b0e1aabbdf116e7"
+      },
+      "lines": [
+        155,
+        172
+      ],
+      "verbatim": "    # Prepare both again after the immutable chapter plan is finalized.\n    (root / first).unlink()\n    first = write_contract(root, draft_contract(root, SEED, PACKET), directory=SELECTION)\n    second = draft_contract(root, second_seed, PACKET)\n    second[\"entry_from\"] = first\n    second_ref = write_contract(root, second, directory=SELECTION)\n    relocated = \"data/planning/contracts/relocated\"\n    for ref in (first, second_ref):\n        target = root / relocated / Path(ref).name\n        target.parent.mkdir(parents=True, exist_ok=True)\n        shutil.copyfile(root / ref, target)\n    report = check_plans(root, [81], contracts_directory=relocated)\n    assert not any(c[\"code\"] == \"SCENE_CHAIN_MISMATCH\" for c in report[\"checks\"])\n    original = load_data(root / first)\n    original[\"notes\"] = \"same identity is insufficient when predecessor bytes differ\"\n    store(root, first, original)\n    report = check_plans(root, [81], contracts_directory=relocated)\n    assert any(c[\"code\"] == \"SCENE_CHAIN_MISMATCH\" for c in report[\"checks\"])"
+    }
+  ],
+  "selected_registry_check": {
+    "source": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/world/m3_core.json",
+      "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+    },
+    "pointer": "/characters",
+    "coverage": "ALL_29_CHARACTER_ID_AND_NAME_FIELDS",
+    "observed_count": 29,
+    "ids_and_names": [
+      {
+        "id": "baoyu",
+        "name": "贾宝玉"
+      },
+      {
+        "id": "baochai",
+        "name": "薛宝钗"
+      },
+      {
+        "id": "daiyu",
+        "name": "林黛玉"
+      },
+      {
+        "id": "xiangling",
+        "name": "香菱"
+      },
+      {
+        "id": "tanchun",
+        "name": "贾探春"
+      },
+      {
+        "id": "xiren",
+        "name": "花袭人"
+      },
+      {
+        "id": "sheyue",
+        "name": "麝月"
+      },
+      {
+        "id": "fengjie",
+        "name": "王熙凤"
+      },
+      {
+        "id": "ping_er",
+        "name": "平儿"
+      },
+      {
+        "id": "qiaojie",
+        "name": "巧姐"
+      },
+      {
+        "id": "jia_yun",
+        "name": "贾芸"
+      },
+      {
+        "id": "xiaohong",
+        "name": "小红"
+      },
+      {
+        "id": "qianxue",
+        "name": "茜雪"
+      },
+      {
+        "id": "liulaolao",
+        "name": "刘姥姥"
+      },
+      {
+        "id": "xiangyun",
+        "name": "史湘云"
+      },
+      {
+        "id": "wei_ruolan",
+        "name": "卫若兰"
+      },
+      {
+        "id": "miaoyu",
+        "name": "妙玉"
+      },
+      {
+        "id": "xichun",
+        "name": "贾惜春"
+      },
+      {
+        "id": "yingchun",
+        "name": "贾迎春"
+      },
+      {
+        "id": "yuanchun",
+        "name": "贾元春"
+      },
+      {
+        "id": "liwan",
+        "name": "李纨"
+      },
+      {
+        "id": "jialan",
+        "name": "贾兰"
+      },
+      {
+        "id": "jiang_yuhan",
+        "name": "蒋玉菡"
+      },
+      {
+        "id": "zhen_baoyu",
+        "name": "甄宝玉"
+      },
+      {
+        "id": "jiamu",
+        "name": "贾母"
+      },
+      {
+        "id": "wangfuren",
+        "name": "王夫人"
+      },
+      {
+        "id": "xue_yima",
+        "name": "薛姨妈"
+      },
+      {
+        "id": "jialian",
+        "name": "贾琏"
+      },
+      {
+        "id": "zijuan",
+        "name": "紫鹃"
+      }
+    ],
+    "named_roles_missing": [
+      "警幻",
+      "空空道人"
+    ],
+    "transport_holder_not_registered": "zhen_messenger",
+    "known_registered_candidate": {
+      "id": "zhen_baoyu",
+      "pointer": "/characters/23"
+    },
+    "conclusion": "检索全部所选人物ID/姓名，确无警幻/空空道人/zhen_messenger；只证明所选输入不注册这些角色，不证明整个仓库或史料没有他们，不认证localcast。"
+  },
+  "independent_subject_judgments": [
+    {
+      "subject_id": "editorial-ch98",
+      "plan_verdict": "PASS",
+      "reasoning": "我支持个人运输C方案而非代理，是因当前章卡亲送与已知来路足以容纳短交付；责任并不能证明运输，亲交收件人亦不能证明本人。一个误取包、客包留桌与后取还可避免基线两包运动矛盾。母本给代理备选，个人运输不是史料必然。",
+      "current_input_compatibility": "PENDING_CONFLICT_NOT_RESOLVED",
+      "negative_findings": [
+        "旧98-S3-R2未协调前不得选定载体，旧m4明确信使，本PLAN不能当旧合同执行通过。",
+        "新载体若进入可执行链必须获授权新版world/object输入及合同/正文hash；仅新文字或替标签不能替代。",
+        "局部本人交付与两个容器的新内容映射未执行，zhen_baoyu注册只证明候选存在。",
+        "旧稿“没有钱物”仍可含混；本方案须写无额外馈赠，不能否定帕内已见玉。",
+        "基线两包位置FAIL、此前玉保管缺桥、直接四句未核及先前文学负面均保留。"
+      ],
+      "future_requirements": [
+        "保持OL-020/021/022/028与91雪玉不强并。",
+        "不造第二巧合、陪送、再交换或额外救济；不因玉归/庄子触发99。",
+        "重绑实际正文和新版场义务；UNKNOWN检查点、知识和localcast不直接改KNOWN。"
+      ]
+    },
+    {
+      "subject_id": "editorial-ch99",
+      "plan_verdict": "PASS",
+      "reasoning": "章卡1262的施工序列已允许微课在见真人前，短跟不上/指页/散课干活既可保留宗教生活又不宣布出家圆满，S4末镜家庭两人饭/未补袖口功能受保护。前插是文学编排不是历史相位，源S1—S5不可被重新编号或当作已相容执行链。",
+      "current_input_compatibility": "PENDING_SOURCE_PREDECESSOR_CONFLICT",
+      "conservative_alternative": "删可选S5合法且成本最低；99-S5-R1有明文，revision1当前无微课而有搬柴挑水。若新版编排不成立，退回删S5且明确不执行，不伪称五场全实现。",
+      "negative_findings": [
+        "仅改entry_from以S3←S5、S5←S2执行，将对当前按source-order的校验形成失配；本人意见不解除此输入阻断。",
+        "前插使读者早见寺居，可能减少贾芸搜寻悬念与原不知何往的压力；不能声称微课必胜删除，须未来文字比较。",
+        "S3含搜寻/返话的叙事复合，新正文必须保持见真人→听拒回→返家→后知，不因新前驱注入人物知识或瞬间到寺。",
+        "旧衣/针不是95已典夹袄或100李纨旧袄；revision1第69行澄清新针，旧反馈针线难复演不因此从历史报告消失。"
+      ],
+      "future_requirements": [
+        "独立新版叙事编排/前驱规范或明确非执行声明，并重绑新批次；不追认v2的旧SCENE_CHAIN_MISMATCH。",
+        "不以微咏名义造诗、佛偈、经文、法号/仪式/点化。",
+        "最后实际演出S4，旧衣仍未补，两只碗、针留衣边，不在后面再切寺；米租与离家伤害继续。"
+      ]
+    },
+    {
+      "subject_id": "editorial-ch100",
+      "plan_verdict": "PASS",
+      "reasoning": "R01终点硬、路线开与O10不必正演归来可以兼容：以短终态句更明确兑现本项目石归功能，是正当C叙述而非jade运输。旧短稿已经见石抄录，不显示复本质过程并不等于确定违背R01；不把新增句变成历史原文。",
+      "current_input_compatibility": "PENDING_LOCAL_EXECUTION_AND_ROLE_BINDINGS",
+      "negative_findings": [
+        "OT100-01只变frame_status，movement=NONE且尘世holder/location未变；终态句不执行旧exit checkpoint。",
+        "警幻/空空道人确无所选registry ID；名号有章卡依据、[]不是无演员，完整localcast与可执行身份UNKNOWN。",
+        "未来若需执行身份必须另行授权新版registry，不用人间人物充外框、不造ID。",
+        "当前12名/有限下层显示与三副四副留白皆为C-format，不认证原榜人数、缺文或完整石文。",
+        "官制、丧制、年代、一手脂批/第1回、全书完整性未在本轮证明；先前晚荣声口重复、病程认识论认证、丧失迟认重复与目录感负面保留。"
+      ],
+      "future_requirements": [
+        "人间先收、非凡人梦、收罢后切峰，终态与情榜并列而非机械因果。",
+        "短句不延长中压尾，不解释佛理，道人只看石抄写、残墨漫漶留空，石在字在仍止。",
+        "新版100-S5单列终态义务并绑定实际正文，不填尘世jade位置，不补新评/总榜名/全名单/终篇诗。"
+      ]
+    }
+  ],
+  "retained_upstream_negative_feedback": [
+    {
+      "chapter": 98,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/0/notes/0",
+      "issue_verbatim": "可选时间指示修正：拜帖约定明日来，叙述已进入“次日一早”并吃过早饭，紧接着又用“次日贾芸”，字面上将约定的来访推到第三日。这是正文自身的时间提示冲突，不是来源UNKNOWN。",
+      "retain_verbatim": "保留贾芸先问能否接待、宝钗安排饭时和贾芸实际领路；这些已经使会面不靠偶然找门。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 98,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/0/notes/1",
+      "issue_verbatim": "坏椅子的预备写得可信，但“摇验—想钉—再劝停—客到再告诫”在真正相晤前占了多轮同功能停顿。风险是把麝月的声口缩成不断纠正宝玉，而非这几处动作本身有错。",
+      "retain_verbatim": "保留木桶坐客后装柴、座布折叠、提水不混用客座桶和无钱赠；不要删成抽象的“家贫待客”。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 98,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/0/notes/2",
+      "issue_verbatim": "校书段有几处由叙述者替人物认证“不推年代、不谈真幻、不传播异手”，读者已能从问缺叶、让出纸、回到对书看见这些限度；连用否定说明会使人物像在完成编辑审计。",
+      "retain_verbatim": "保留续庄文字先被看见、异手随后露出、短促反应后回校书和红绳叫卖。原四句未核实，不重构、不改写、不写答诗；此C级亲见不变成黛玉遗言或99出家的原因。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 98,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/0/notes/3",
+      "issue_verbatim": "单次误取的物信链已可追踪，但路上未拆未换、纸仍是哪张、册帕仍是哪件连续由全知旁白背书，末尾认绦头的触觉反而不如这些保证醒目。可读的物理连续性不等于来源层同玉身份已获认证。",
+      "retain_verbatim": "保留两只相邻包与一次错取的区别、旧帕裹玉、错册暴露错误、甄家先发现而贾家后知，以及收到后换绦、抄字、吃饭；不加第二次掉包。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 98,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/0/notes/4",
+      "issue_verbatim": "运输接口确实未解决：本稿明确由送信人返包，甄宝玉留在甄家；“须亲交屋里收件的人”只是信使当面交付，不是章卡四链的甄宝玉“亲送”。这不是把委托解释成亲送就能抹去的差别，也不是未注册角色本身构成文学失败。",
+      "retain_verbatim": "保留甄宝玉承认自己指包不清的责任、来人不替小厮编经过、验收回札及无钱物。当前选择沿messenger流，但card亲送与OT信使路线继续UNRESOLVED。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 99,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/1/notes/0",
+      "issue_verbatim": "寺中劝回有清楚的伦理压力，但贾芸连用“回一趟—回去看一眼—问回来住”三轮近义请求，使他的探访略像问答清单。最有力量的是他已走湿的鞋和宝玉仍只答平安，而不是劝词必须更多。",
+      "retain_verbatim": "保留宝钗的住处与日用追问、麝月的饭袜鞋、宝玉对日常尚有照顾却拒续关系的差别；保留“没有，只说我平安”及他不肯回去住，不能替他添加回归期限。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 99,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/1/notes/1",
+      "issue_verbatim": "城市寻找用了不同普通行当，线索也真实地互相抵牾；但每处线索后几乎都跟一段“不敢据此认定”的叙述裁决，社会声口有被同一种核验节拍抹平的风险。认不准的人不必人人都像证据讲解员。",
+      "retain_verbatim": "保留书摊、车脚、小店、渡口各有不同限度、脚费只够自己走和天晚折返；实际找到宝玉的男性寺院不等于庵，不能据此兑现另探庵证据接口。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 99,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/1/notes/2",
+      "issue_verbatim": "寻访的寒湿与寺中初学劳动已有人身质感，但到寺时“鞋已湿”主要靠对话回补，宝玉磨肩与换手又集中在见面后的说明。这里不是现有时间或身体矛盾；只是可让一个疲劳动作先于说明，更容易看见两人的不适不相同。",
+      "retain_verbatim": "保留出门、数日寻找、终于见到已剃发真人的间隔，不写瞬间到寺。饭有人做、肩会磨疼、粗柴分两回搬应继续并存，不把寺居写成完成的超脱。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 99,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/1/notes/3",
+      "issue_verbatim": "旧衣末段的手势略难复演：“穿到一半”才发觉旧线堵针孔，取另一根又放手，结尾却是针别在边上且“方才穿了一半的线松着”。并非已证实的硬矛盾，但读者难分是在穿针还是缝到一半、最终是哪一根针。",
+      "retain_verbatim": "保留“这衣裳到底给谁补”、尚未补完的袖口、针留在衣边、两只碗及眼前一顿饭；旧衣不自动等同95已典夹袄或100李纨旧袄。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 99,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/1/notes/4",
+      "issue_verbatim": "买米、付租、拾两粒米、拣菜、再量米都重要，不过后段多次由宝钗将麝月的迟疑立即解释正确，容易让两人饭后的生活只剩算清账与纠正。麝月加自己想吃的酸菜，是难得不依附宝玉也不宣称伤痛结束的一笔。",
+      "retain_verbatim": "保留付租不随少一人而减、麝月愿吃的酸味、宝钗“够咱们两个吃的就是了”及未完旧衣；不同的普通资源不是宝玉走后的圆满补偿。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 100,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/2/notes/0",
+      "issue_verbatim": "多年确已在正文中过去，不是只挂一句“数年后”：衣边、书线、窗纸与针眼都变化了。可选的精修在于求仕回望到实授的最后一段仍多用候话、问人、再候的概括，阶段感还能由现有生活动作更鲜明地承担，而非补官制细节。",
+      "retain_verbatim": "保留求仕未实授与真实官身有别、许多冬夏的普通成本、父亲旧书仍拿去读；现有“官身已经有了”是叙事中的实授，不等于考证过任何具体政府事实。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 100,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/2/notes/1",
+      "issue_verbatim": "厨房妇人、孩子和歪桌使晚荣有活气，但“官不在锅里”“碟不写官”相邻反复同一机锋，帮厨的声口渐像98、99麝月日用笑话的延长。不同家庭可以同样要吃饭，不必用同一种胜句说尽。",
+      "retain_verbatim": "保留“饭够不够”、借桌腿不齐、贾兰削薄木片再交还、礼衣压额与旧衣顺手；名位带来收入来路与礼务成本，不恢复旧宅旧产。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 100,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/2/notes/2",
+      "issue_verbatim": "数月衰退写得普通而有波动，医生和照料人也无神方；但多次说明“这一回不能替以后答”“这一碗不等于明日”“不敢定往后”，使人身变化又被逐段作了认识论认证。限制可以留在照料的犹疑，不必每次由叙述者总结。",
+      "retain_verbatim": "保留受荣后过数月才死、略多吃的一天后又吃不下、药饭不能由一人同时守、添人添药也添钱，以及李纨交接账纸不是一生总结。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 100,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/2/notes/3",
+      "issue_verbatim": "水杯和误问母亲粥饭已经把丧失落在身体习惯上；中间“想说等母亲醒了，又明知不能说”先替贾兰阐明了类似的迟认，会稍减弱晚间那句无意出口的冲击。不是悲伤重复本身不许写，而是三处可以各有不同任务。",
+      "retain_verbatim": "保留有礼而简的丧务、白布棺木吊客的现实支出、宝钗不逼立即吃完及麝月须回另一处灶；报母丧后等交接回话，不补丁忧年份、官品或制度定论。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    },
+    {
+      "chapter": 100,
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+        "sha256": "0781927c1e5829ea572901ff509034468b0ae50e275d601caf564158b1c14e5c"
+      },
+      "pointer": "/chapters/2/notes/4",
+      "issue_verbatim": "情榜的克制方向应留，但五层、正层十二名、两处下层显示和黛玉硬评挤在一个长段里，读感短暂接近目录。问题是呈现呼吸，不是UNKNOWN必须被解释，也不是要求补全名单。",
+      "retain_verbatim": "保留人间余事先按下、“不知何日何时”、旧册不逐册重开、一轴五层、三副四副未见字迹、宝黛两评原字、“收罢”、另说青埂峰、粗纸残墨漫漶留空及“石在，字在”。不以榜收造成石飞回，不加新评或终篇诗。",
+      "disposition": "RETAINED_UPSTREAM_NEGATIVE_NOT_ERASED_BY_PLAN_PASS",
+      "independent_scope": "该反馈涉及先前草案；我完整读当前revision1，不把先前句子自动当当前仍在，也不以新PLAN通过撤销历史意见。只有98本人/代理、99终止/源链、100终态/身份是本轮裁定重点，其他文学诊断未作新盲比胜负。"
+    }
+  ],
+  "retained_cross_report_negatives": [
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/TAIL_READING_RESULTS.md",
+        "sha256": "1b16a152a8f9ccd55525947c3c2925a3cbe8525d0123569ee7707e3a8f64fd55"
+      },
+      "lines": [
+        7,
+        19
+      ],
+      "notes": "已完整读该总结，保留基线ch98两包位置局部FAIL、panel整体FAIL、短稿长稿无总体胜者、低于80%长度门槛及NOT_ADOPTED_NOT_RELEASED；未把其报告阅读等同原基线全文独立重读。"
+    },
+    {
+      "source": {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-late-reader-2-observations.json",
+        "sha256": "d8b706c92ebd2c25c3481e8493600e2af8cad9e090a97eff4caf9e4bff1005cd"
+      },
+      "pointer": "/pending_and_unverified/1/notes",
+      "notes": "实际查该引文；此前玉保管缺桥与未读更早篇章限制不由98新C亲送补成历史已知；未重新裁定LATE全部subject。"
+    }
+  ],
+  "limitations": [
+    "未完整重读稳定基线全98—100或89—97/前80；本次完整读的是packet、三草案和三个phase5 revision1研究章，源长文件仅所列范围。",
+    "未直读第1/18/21回全部原底本或原脂批影像；母本/章卡/台账仅项目上游约束，不是本次新直接见证；未作新史料真实性校核。",
+    "现有合同只读明确列出的相关字段，不宣称所有内嵌world_basis/reference全文；没有执行世界状态/场级知识重放，没有运行合同checker或应用测试。",
+    "代码边界仅局部静态阅读；没证明新叙事授权规范已经存在或可被当前checker接受；旧载体/source-chain/身份缺口不因PLAN PASS消失。",
+    "无未来新正文，无法确认个人运输、微课前插、终态句实际强于其他方案，也未独立做旧案/新案文学盲比。",
+    "上游15条issue/retain全保留，涉及先前草案的原句不能未经定位就当revision1仍存；本PLAN不抹去旧报告负面。",
+    "不创建sample IDs，所有opinion sample_checks=[]；观察引文定位不是packet样本或新增历史证据。"
+  ],
+  "validation": {
+    "opinion_schema": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/schemas/agent_review.schema.json",
+      "sha256": "7ad66b6c5f6a20d5fba59d5fbe273c5f448a88b738bf83636adbe087d594df72"
+    },
+    "method": "jsonschema.Draft202012Validator",
+    "result": "PASS",
+    "packet_and_subject_exact_sha256_match": true,
+    "sample_checks_all_empty": true,
+    "citation_quotes_match_actual_declared_locators": true
+  },
+  "actions": {
+    "new_files_only": [
+      "artifacts/agent_research/phase6/editorial/peer1-opinion-v1.json",
+      "artifacts/agent_research/phase6/editorial/peer1-observations-v1.json"
+    ],
+    "old_text_contract_decision_code_edits": false,
+    "delegation": false,
+    "registration": false,
+    "commit": false,
+    "publication": false
+  }
+}

@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT_CHAPTER_REVISION_READING",
+  "chapter": 91,
+  "revision": "v1",
+  "reader": "reader1",
+  "reviewer_kind": "MODEL_SUBAGENT",
+  "mode": "FEEDBACK_ONLY",
+  "status": "ACTUALLY_READ_COMPLETE_CHAPTER_LOCAL_REPAIRS_REQUIRED",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "adoption": "NOT_ADOPTED",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "model_identity": {
+    "declared_model": "gpt-6.1-sol",
+    "verification_status": "DECLARED_NOT_VERIFIED",
+    "basis": "Invocation environment declaration only, not a provider receipt or authenticated model verification.",
+    "provider_proof": "NONE"
+  },
+  "isolation_and_execution": {
+    "direct_reading_by_this_subagent": true,
+    "further_delegation": false,
+    "independent_blind_review_claimed": false,
+    "worktree_or_process_isolation_verified": false,
+    "context_exposure": "本次reader是已启动的模型子代理；看见当前会话指令、环境声明与输入中作者自述，不能声称与作者/协调者全隔离，也不能把reader1名称当作独立人类盲审。未读取其他reader报告。",
+    "other_chapters_read": false,
+    "whole_repository_scan": false,
+    "source_pdf_or_whole_book_read": false,
+    "only_new_output": "artifacts/agent_research/phase6/revisions-v2/readings/ch91-v1-reader1.json",
+    "authored_disclosure_requests_code_modified": false,
+    "commit_or_push": false,
+    "runtime_adoption_or_state_updates": false
+  },
+  "inputs": {
+    "candidate": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt",
+      "sha256": "751bca67b2e72bd13883a8ee2331baaf60878967b3c4f276b277e7cc2b11c602"
+    },
+    "disclosure": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1-disclosure.json",
+      "sha256": "3ebe06f93131ae5758b56bdb5d30002c163e4ae660a9399524cb1fcb27230ac0",
+      "actual_reading": "Full physical JSON, lines 1–166; author assertions are claims to compare, not verification receipts."
+    },
+    "editorial_notes": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch91-v1.txt",
+      "sha256": "2d3cb1198a45ce89c06816dbc330dc391586d23c8fa1dad2ee7e5b35d07aa223",
+      "actual_reading": "Full lines 1–16."
+    },
+    "editor_report": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+      "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+      "actual_reading": "All fields of chapters[0], chapter91, in three bounded JSON outputs: remaining fields, contract_beat_review, verbatim_quotes. Other chapters and summary not read."
+    },
+    "selected_contracts": [
+      {"path": "data/planning/contracts/agent-final-v1/91-S1.v2.json", "sha256": "095c1f81bcbe363bf2b97e517d75b16dbb7ab48748a5bf699eb8466a67eadfe1"},
+      {"path": "data/planning/contracts/agent-final-v1/91-S2.v2.json", "sha256": "d31230a15b39621185e9ddc9ef39993727203b4e069a9929f7bea17073d8d975"},
+      {"path": "data/planning/contracts/agent-final-v1/91-S3.v2.json", "sha256": "4f6f778960742fd473471e13828dddc2abfd739216e2c6bd732d99c65642b597"},
+      {"path": "data/planning/contracts/agent-final-v1/91-S4.v2.json", "sha256": "e14b6d4f773e7f1c939f3754a08739f1ddd5d2f35c1ee854a8cb8c275e1c5270"}
+    ],
+    "contract_reading_scope": "四份实际合同均以具名字段完整读其全部required/forbidden条款正文、适用status/scope、function、participants、required_objects、entry/pre/exit、event/object/knowledge接口、notes及unresolved；S3另用Read读1–280行。与所选editorial request中四份嵌入合同的完整结构逐值比较，均相同。未逐字读完各条grounding的全部递归载体，也未打开这些引用指向的全书/源包；不把结构相同或hash当作全载体阅读。",
+    "request_limited_reading": "仅对指定editorial-requests-v1/ch91.json作字段定位、完整task.original旧短稿2072字符、task.editorial_notes、budget/target及所选合同一致性对照。初试Read该大request与普通requests/ch91.json均被大小限制拒绝，不计作阅读；未重试普通request或读取其其余内容。"
+  },
+  "reading_coverage": {
+    "read_status": "ACTUALLY_READ_COMPLETE_FROZEN_CHAPTER",
+    "method": "Dedicated segmented Read: offset1 limit100 then offset101 limit70; complete successful outputs cover title and every prose paragraph through last line119. The tool's displayed terminal empty marker is not counted as an additional physical prose line. Subsequent isolated Python (-I) operations measured hashes/counts/selected offsets only, not substitutes for reading.",
+    "start_line": 1,
+    "end_line": 119,
+    "body_start_line": 3,
+    "body_end_line": 119,
+    "start_character_offset": 0,
+    "end_character_offset_exclusive": 10055,
+    "body_start_character_offset": 25,
+    "last_prose_start_character_offset": 9954,
+    "last_prose_end_character_offset_exclusive": 10054,
+    "start_utf8_byte_offset": 0,
+    "end_utf8_byte_offset_exclusive": 29923,
+    "coverage_fraction": 1.0,
+    "first_body_quote_ref": "Q01",
+    "last_body_quote_ref": "Q22",
+    "truncated_output_counted_as_read": false,
+    "failed_read_disclosure": "两次大request的Read失败不计入覆盖；冻结正文与disclosure的成功Read未截断。初次机械last_body选择了倒数第二行而得到空行，未据此认定终点；后以逐行offset确认末段在119行、9954–10054。",
+    "not_claimed": "没有阅读90、92或其他章正文，没有全书连续性或历史资格结论。"
+  },
+  "length_observation": {
+    "method": "UTF-8 decode Unicode codepoints; body excludes title and first blank delimiter; Han ranges U+3400–4DBF, U+4E00–9FFF, U+20000–323AF.",
+    "all_characters": 10055,
+    "body_characters": 10030,
+    "body_nonwhitespace_characters": 9913,
+    "body_han_characters": 8334,
+    "minimum_body_han_7000_met": true,
+    "minimum_body_6432_met": true,
+    "editorial_notes_total_range": [8500, 10000],
+    "over_notes_upper_bound_characters": 55,
+    "disclosure_declared_total_range": [9000, 10500],
+    "target_scope_note": "篇幅底线确实达到，不能再把它称2072字符短稿；但disclosure所列9000–10500不是所读notes的8500–10000。本次读到request.target_characters=9000，未见10500上界的独立根据。55字符的建议范围超出与范围声明差异记为轻微目标/披露问题，不冒充小说语义FAIL。",
+    "literary_pass_inferred": false
+  },
+  "overall_assessment": {
+    "status": "SUBSTANTIALLY_REPAIRED_BUT_NOT_LOCAL_PASS",
+    "answer": "不是只用长度遮盖旧稿：三类旧物、鞋先烤、旧衣实际试穿、宝钗接话、凤姐亲拾并先登记、旧单与正式夜传分开、五更实走均已写出。仍有两处可复核的新局部缺陷：麝月第二件棉衣的获准领出链没有演出；出发时围巾明确只掖不打结，回院却解出一个结。待交回不等于已交付，本文对此守住边界，不能反过来因收受者UNKNOWN判FAIL。",
+    "confirmed_local_fail_count": 2,
+    "global_history_or_source_status": "NOT_ADJUDICATED",
+    "whole_book_qualification": "NOT_ASSESSED_NOT_CLAIMED",
+    "source_unknown_policy": "源、实体和检查点UNKNOWN既不是自动FAIL，也不能由本文的小说动作变KNOWN。",
+    "length_policy": "达到字数底线不自动PASS。"
+  },
+  "old_problem_recheck": [
+    {"issue": "短稿只有约2072字符，身体/搬运成本多为概括", "assessment": "SUBSTANTIALLY_REPAIRED", "evidence_refs": ["Q01", "Q02", "Q08", "Q13"], "finding": "围巾、鞋垫、喂粥、站不住、分批运衣、上车抱腰等动作制造时间与不同人的手被占用；不是仅增加登记次数。仍须压缩部分同功能受阻。"},
+    {"issue": "精确日落期限、两名随行、官式印记与额外小厮接口", "assessment": "REPAIRED_IN_READ_TEXT", "evidence_refs": ["Q03", "Q04"], "finding": "本稿通知只给日用范围，门前要候书办，旧称谓说到一半被实际物目打断；没有再写日落期限/两名硬数或那名跟来小厮。不能据此证明真实朝代制度。"},
+    {"issue": "缺当下无人认领普通旧物第三类", "assessment": "REPAIRED_IN_READ_TEXT", "evidence_refs": ["Q05", "Q06"], "finding": "青灰袄可领、空画轴匣不可取、磨穿旧枕无人认却须待认，第三类不再借雪物兼任。"},
+    {"issue": "湿鞋先烤、冬衣回院再认缺", "assessment": "SUBSTANTIALLY_REPAIRED_WITH_NEW_LOGISTICS_GAP", "evidence_refs": ["Q14", "Q15", "Q16"], "finding": "回院才烤鞋，凤姐试袄显瘦、麝月试衣袖短肘紧均落实；但麝月这件棉衣在旧府未被单独认取/核出，见FAIL-01。先烤是先开始烤，不要求鞋全干后才碰衣。"},
+    {"issue": "旧稿拾物不是凤姐实际亲拾；登记与交回混", "assessment": "PICKUP_AND_PENDING_CHAIN_REPAIRED_NOT_COMPLETED_HANDOFF", "evidence_refs": ["Q09", "Q10", "Q11", "Q12"], "finding": "凤姐隔纸拈起，书办登记外观/经手，干纸转移与待接办分开。只演到待交回，符合notes允许的边界；没有已收受证明。"},
+    {"issue": "副单/原单/旧批混为一纸、宝钗接话缺", "assessment": "SUBSTANTIALLY_REPAIRED", "evidence_refs": ["Q17", "Q18", "Q19", "Q20"], "finding": "领物副单、平儿自记小纸、旧府原旧单与官面夜传分开；宝钗在小院接有限消息，宝玉所见不是原单。原旧单之物仍无ID与案由结论。"},
+    {"issue": "末尾作者替物证作悬念旁白、五更只起身", "assessment": "REPAIRED_IN_READ_TEXT", "evidence_refs": ["Q21", "Q22"], "finding": "结尾实际跨门、移凳、离开，没有青白物是谁的作者设问，也没有提前发生羁押/释放。"}
+  ],
+  "confirmed_local_failures": [
+    {
+      "id": "FAIL-01-SECOND-COAT-MISSING-RECEIPT",
+      "assessment": "FAIL",
+      "severity": "MEDIUM_LOCAL",
+      "category": "CONTROLLED_GOODS_LOGISTICS_OMISSION",
+      "evidence_refs": ["Q07", "Q08", "Q13", "Q16"],
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt",
+      "line_references": [45, 53, 71, 75, 91, 113],
+      "contract_refs": ["data/planning/contracts/agent-final-v1/91-S2.v2.json#/required_beats/0", "data/planning/contracts/agent-final-v1/91-S4.v2.json#/required_beats/0"],
+      "finding": "受控取物现场仅实际认出凤姐的一件青灰袄，53行抱的是衣与靠褥，71行解开核的是袄和靠褥另加毡，75行分批搬的仍是袄与靠褥。91行突然出现‘其余一件旧棉衣认来给麝月穿’，113行又确认是‘今日取回’。这不是普通旧衣背景，而是本回新领回、给另一个人的第二件棉衣；其识别、许可登记、门口核出均未出现在已展开的受控链中。旧稿要求按名目有经手动作，本稿只修好第一件却在回院另添第二件。",
+      "why_confirmed": "全章完整阅读所见的具体认取与核出枚举不含这件物，而后文明确把它作为此次领回实物来试穿；可复核的是新增物的交代断口。",
+      "limitations": "开头冬衣是复数类别，‘衣包’也可能装不止一件，91行‘认来’可视为概括补叙；所以不宣称棉衣物理上不可能在包里，不宣称偷拿、越权已成事实，更不是所有冬衣链全败。FAIL只针对本回承诺展开的逐件受控取舍未给这件新增衣一条可追踪经手。",
+      "repair_scope_feedback_only": "若作者另作新版，可在现有认衣/核出环节补一个与麝月实际需要相联的短动作，或不另增第二件领回物；不应再铺一整轮审核问答。本次不改正文。"
+    },
+    {
+      "id": "FAIL-02-SCARF-KNOT-CONTINUITY",
+      "assessment": "FAIL",
+      "severity": "LOW_LOCAL",
+      "category": "PHYSICAL_STATE_CONTINUITY",
+      "evidence_refs": ["Q02", "Q14"],
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt",
+      "line_references": [19, 83],
+      "finding": "19行打结被凤姐阻止，‘两人拆了重绕，终于只在颈侧掖住’，明确将最后状态落在掖而非结；83行却是‘解了两回没解开’并由宝钗扶住后‘将结松了’。两处都是同次往返、同条围巾，途中没有再次打结。为增加回院照护动作而把此前刻意建立的松掖状态改成有结，形成小道具状态不连续。",
+      "why_confirmed": "前场不是略写系法，而是专门写阻止打结并选了‘只掖’的替代；后场又明确出现‘结’，不是单纯衣领压住难抽。",
+      "limitations": "现实中围巾可能途中被补系或掖得打绞，正文未写；故不推成医学/历史不可能，也不扩大到人物整体失真。局部FAIL仅是已写明的前后物态缺少转换。",
+      "repair_scope_feedback_only": "另版只需统一掖/结的动作状态，不必加解释性旁白。本次不改正文。"
+    }
+  ],
+  "snow_object_chain": {
+    "assessment": "OBSERVED_DISCOVERY_PICKUP_REGISTRATION_AND_PENDING_HANDLING_ONLY",
+    "evidence_refs": ["Q09", "Q10", "Q11", "Q12", "Q19"],
+    "stages": [
+      {"stage": "discovery", "lines": "57–59", "observed": "凤姐脚扫残雪发现一点青白；平儿想用簪但未落下；监督人员阻止混入包。"},
+      {"stage": "pickup", "lines": "61", "observed": "凤姐借纸、旁人扶肘与肩，自己隔纸拈起并放在示意干处。"},
+      {"stage": "registration", "lines": "63–65", "observed": "书办写玉样物一，问所见位置与谁碰过；凤姐核对拾起不等于领走。"},
+      {"stage": "pending_processing", "lines": "67–69", "observed": "守物者拿干纸，凤姐抽开湿纸、物落干纸并松手；书办催接办且明确交回还待办。"},
+      {"stage": "completed_recipient_delivery", "lines": null, "observed": false, "status": "NOT_ESTABLISHED"}
+    ],
+    "recipient": "UNSPECIFIED_NOT_ASSIGNED",
+    "holder_after_departure": "NOT_ADJUDICATED",
+    "identity": "OPEN_NOT_IDENTIFIED_AS_TONGLING_JADE",
+    "boundary": "纸包换干纸/凤姐松手只是可见物理动作，不是指定书办或守物者成为最终收受者，更不是向宝玉完成交付。干纸折了一边也不是封存收据。",
+    "strict_contract_completion": "S3要求的完整交回收讫仍不能标完成；notes明确允许新版停在待交回，这一未完成项不单独列确定FAIL。",
+    "minor_clarity_risk": "61行物已搁干处，67行凤姐又抽湿纸松手，中间可理解她仍在整理外纸；动作焦点略回摆，但不是足以确定的前后矛盾。"
+  },
+  "night_notice_and_chronology": {
+    "assessment": "LOCAL_SEQUENCE_OBSERVED_NO_PREMATURE_DETENTION_OR_RELEASE",
+    "evidence_refs": ["Q17", "Q18", "Q19", "Q20", "Q21", "Q22"],
+    "sequence": "出门核物时旧单引名→回院平儿自记话到家中→宝玉只看自记小纸→天黑另有官面传话人→李纨和宝钗接到有限认单通知→宝玉直接追问→夜间预备衣鞋→五更实走。",
+    "baochai": "有接纸、同去、家中听夜话、补衣与送粥动作，不是法律裁判。",
+    "jia_yun": "见官面来人退开、问送路与次晨到门口，只作亲属跑腿，不是官役签发者。",
+    "wangfuren_question": "107行‘是不是要把宝玉留在那里’是忧虑性问话；李纨只说回时辰没说，不是已羁押的事实。",
+    "baoyu_knowledge": "不知道具体哪件物，也没亲见旧单原件；‘我明日去认就是了’是应对，不是定罪或判后释放。",
+    "unresolved": "问项、旧单对象ID、正式法律接口与场级知识检查点仍OPEN/UNKNOWN；未读取92/93正文验证后续。"
+  },
+  "voice_repetition_and_audit_commentary": {
+    "voice_assessment": "主要人物尚非同一个审核正确答案。",
+    "voice_evidence": [
+      {"character": "凤姐", "lines": "13,29,39,43,83,89", "finding": "护认物本领与病中体面，认错要赔的刻薄、称谓咽回、拒绝被扶抱与不许缝死衣襟是她自己的不便，不只是权限讲解。"},
+      {"character": "平儿", "lines": "7,41,53,75,83", "finding": "追问毡与靠褥是怕取不回，想终止认衣是怕病人撑不住；她要同时带回衣与人，实际与凤姐争而非只复述制度。"},
+      {"character": "麝月", "lines": "39,43,73,75,89,91", "finding": "‘冷是错的’、没缝在袖里、鞋替人唱、衣服认缩手人均带自己的身体怨气；她不肯独跑第二趟，也没有变成无欲望书办。"},
+      {"character": "宝玉", "lines": "99–103,109,115", "finding": "先追旧院的人、匣中旧物及凤姐袖里白布，问话被家务打断，不像法律顾问。"}
+    ],
+    "review_issues_not_confirmed_failures": [
+      {
+        "id": "RISK-01-REPEATED-HANDOFF-DISCLAIMER",
+        "lines": "65,67,69,103",
+        "evidence_refs": ["Q10", "Q11", "Q12", "Q19"],
+        "finding": "‘拾起没领走’→‘尚待接办’→‘交回还待办’→向宝玉再说‘仍待处理’，四次都在替同一开放边界保险。67行换纸和等候有动作新增，103行换了听话人也有必要；最可压的是69行已记/待办的再说明，不应简单删掉所有待办语导致假交付。",
+        "assessment": "EDITORIAL_REDUNDANCY_RISK_NOT_CONFIRMED_CONTRACT_FAIL"
+      },
+      {
+        "id": "RISK-02-OLD-LIST-NOT-ORIGINAL-REFRAIN",
+        "lines": "95–109",
+        "evidence_refs": ["Q17", "Q18", "Q19", "Q20"],
+        "finding": "97行确认小纸非原单，101行宝玉再问原单是否这张，103行叙述又说纸无玉样物四字，109行再拿副单被纠正。每次听者/纸不同，边界本来应清楚；连续多次把‘不是那个’作为问答主轴，局部显得向读者报送审核合格答案。可保留家里听到何事与宝玉关心何人的差异，压掉同义复核。",
+        "assessment": "CRAFT_RISK_NOT_FACTUAL_FAIL"
+      },
+      {
+        "id": "RISK-03-EMPTY-HANDS-LOOP",
+        "lines": "41,53,59–61,65,71,73–77,81",
+        "evidence_refs": ["Q08", "Q13"],
+        "finding": "多次抱物→腾不出手→病人晃→再调人手，确实让旧稿略掉的劳动发生；但71至81行离门、挪车、下车再演同功能困难，情节在体力渐耗以外推进较少。不是逐字重复，也不能用零重复段落证明不冗长。",
+        "assessment": "PACING_RISK_NOT_CONFIRMED_FAIL"
+      }
+    ],
+    "authorial_commentary": "没有再出现纸慢慢有重量、物证不回答之类回末作者解释。69/97/103等处的正确边界主要转移进人物问答，审核感尚残留，不能据此把整回声口判同质化。"
+  },
+  "contract_recheck": [
+    {"contract": "91-S1", "required": [{"id": "91-S1-R1", "assessment": "OBSERVED_LOCAL", "lines": "5–9,29–35,45,71"}, {"id": "91-S1-R2", "assessment": "OBSERVED_LOCAL", "lines": "13–27,41,53,73–81"}, {"id": "91-S1-R3", "assessment": "OBSERVED_LOCAL_NO_HISTORICAL_CERTIFICATION", "lines": "7,29–35,53"}], "forbidden": [{"id": "91-S1-F1", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ"}, {"id": "91-S1-F2", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ"}]},
+    {"contract": "91-S2", "required": [{"id": "91-S2-R1", "assessment": "THREE_CLASSES_OBSERVED_SECOND_COAT_CHAIN_FAIL", "lines": "43–53,71,91", "finding_ref": "FAIL-01-SECOND-COAT-MISSING-RECEIPT"}, {"id": "91-S2-R2", "assessment": "OBSERVED_LOCAL", "lines": "21,73,81–93"}, {"id": "91-S2-R3", "assessment": "OBSERVED_LOCAL", "lines": "47,55"}], "forbidden": [{"id": "91-S2-F1", "assessment": "NO_EXPLICIT_FREE_TAKING_OR_KEY_RESTORED_POWER"}, {"id": "91-S2-F2", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ"}, {"id": "91-S2-F3", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ", "lines": "49"}]},
+    {"contract": "91-S3", "required": [{"id": "91-S3-R1", "assessment": "PICKUP_REGISTRATION_OBSERVED_HANDOFF_PENDING_NOT_COMPLETED", "lines": "57–69"}, {"id": "91-S3-R2", "assessment": "OBSERVED_LOCAL_TRANSFER_PREPARATION_ONLY", "lines": "61–69"}], "forbidden": [{"id": "91-S3-F1", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ"}, {"id": "91-S3-F2", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ"}, {"id": "91-S3-F3", "assessment": "NO_COLLAPSED_IDENTITY_OR_COMPLETED_RECIPIENT_CLAIM"}]},
+    {"contract": "91-S4", "required": [{"id": "91-S4-R1", "assessment": "RETURN_RECOGNITION_AND_OLD_LIST_OBSERVED_WITH_SECOND_COAT_GAP", "lines": "81–103", "finding_ref": "FAIL-01-SECOND-COAT-MISSING-RECEIPT"}, {"id": "91-S4-R2", "assessment": "OBSERVED_LOCAL", "lines": "105–119"}, {"id": "91-S4-R3", "assessment": "OBSERVED_LOCAL_NO_FORMAL_STATE_UPGRADE", "lines": "95–109"}], "forbidden": [{"id": "91-S4-F1", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ"}, {"id": "91-S4-F2", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ"}]}
+  ],
+  "verbatim_quotes": [
+    {"id": "Q01", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 3, "line_end": 3, "character_offset_start": 25, "character_offset_end_exclusive": 171, "quote": "却说腊尽天寒，小院屋檐的雪已消了一半，雪水顺着瓦沟滴下来，到阶前又冻成薄冰。凤姐坐在炕沿，手里拈着一件夹袄的袖口。那袄是借住时带来的，袖里棉絮结了块，才穿上片刻，胳膊便冷。平儿拿针想替她挑松，她却把手缩了回去，说道：“等你拆开，今儿又穿什么？”平儿只好将针插在衣襟上，另拿一方帕子垫在她腕下。"},
+    {"id": "Q02", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 19, "line_end": 19, "quote": "麝月把巾尾绕到背后，刚要打结，凤姐便道：“不是捆包袱。”两人拆了重绕，终于只在颈侧掖住。"},
+    {"id": "Q03", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 7, "line_end": 7, "quote": "答话的已经转身，又停下来道：“认清楚了再说，莫自己开柜。”"},
+    {"id": "Q04", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 29, "line_end": 29, "quote": "凤姐开口道：“我们琏二……”看守将目光移到纸上，又问：“衣在哪里？”凤姐顿了一顿，把旧称呼咽回去，道：“东厢后架，青灰袄。”"},
+    {"id": "Q05", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 47, "line_end": 47, "quote": "书办翻了翻手边的册子，说这匣还在所存之物里，不能取。麝月道：“我不取里面的东西，是空的。”书办用笔杆指着匣身：“空的也是这只匣。”"},
+    {"id": "Q06", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 49, "line_end": 49, "quote": "麝月想了想，道：“拆了补鞋底倒好。”平儿忙道：“咱们不认得，别顺口应了。”守物的人看向书办，书办说先放旁边，仍待人认，不能混在准取的里面。"},
+    {"id": "Q07", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 45, "line_end": 45, "quote": "书办问这袄如今谁用，平儿说明凤姐仍要穿。他看过许可名目，记了，才将袄放到另一边，叫守物的人接着寻靠褥。"},
+    {"id": "Q08", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 53, "line_end": 53, "quote": "平儿要她把湿角朝外，自己抱住衣和靠褥，一时腾不出手扶凤姐。凤姐站直身子，叫她先包，平儿看着她，没动。守物的人说内里还有别处要收，不能一直在这里翻。"},
+    {"id": "Q09", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 61, "line_end": 61, "quote": "凤姐慢慢屈膝，膝弯酸得几乎跪下，好容易隔纸拈起那小物。纸角刚合，她的手就抖了，平儿连忙让出一边肩来，凤姐借力起身，将纸搁到书办示意的干处，掌心仍沾了一点雪水。"},
+    {"id": "Q10", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 65, "line_end": 65, "quote": "凤姐视线有些模糊，向亮处挪了挪，忽然问道：“那一行写我拿走了？”书办道：“写你拾起，没写领走。”"},
+    {"id": "Q11", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 67, "line_end": 67, "quote": "平儿问交给谁，书办未给出名字，只说这边尚待接办，叫她们别混在冬衣里。凤姐道：“我也没要它。既拾出来，别再丢进雪里。”她把包在外层的湿纸抽开一点，推向待接的那边，待看清那物稳稳落在干纸中，方才松手。书办去催接办，她们仍只能在廊下候着。"},
+    {"id": "Q12", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 69, "line_end": 69, "quote": "书办回来道：“只说已记，交回的事还待接着办。”平儿应了，把副单收好，没有再伸手。凤姐回头看了一眼，干纸已折起一边，余下的一边还张着；"},
+    {"id": "Q13", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 71, "line_end": 71, "quote": "门房这边尚要看所领的衣物。平儿将袄和靠褥解开，麝月抱着毡在旁等。看守对照书办记下的名目，问毡角如何湿了，麝月道：“从架上抽出来，碰着雪。”"},
+    {"id": "Q14", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 83, "line_end": 83, "quote": "巾尾压在衣领下，拽一下，凤姐便咳一声，平儿只得慢慢抽。她手抖得厉害，解了两回没解开，宝钗过来扶住巾尾，她才将结松了。"},
+    {"id": "Q15", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 85, "line_end": 85, "quote": "麝月坐在门侧，脚上的鞋湿得发硬。宝钗将炭盆挪近，却不让她贴着火烤，先找干布包住脚，又叫她脱鞋。"},
+    {"id": "Q16", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 91, "line_end": 91, "quote": "其余一件旧棉衣认来给麝月穿。她伸手说不用，宝钗把袖子朝她递去，道：“你试过再推。不是叫你抱着。”麝月套上一边，手便从短了一截的袖口露出；另一边棉絮打皱，肘弯伸不直。"},
+    {"id": "Q17", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 95, "line_end": 95, "quote": "她将小纸展开，原来出门核物时，书办对旧物单子翻检，翻到有宝玉名字的一处，问起人是否仍在借住的小院。平儿说在，书办便让她告诉宝玉，旧单还要他认。"},
+    {"id": "Q18", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 97, "line_end": 97, "quote": "宝钗看着小纸，上面的字是平儿所记，问原来的单子可带出。平儿道：“没有，仍留在那边。这张只记要带的话。”"},
+    {"id": "Q19", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 103, "line_end": 103, "quote": "平儿提了一句残雪里拾起的小物，宝玉问在何处拾的，她说廊外扫出的雪边，写的是“玉样物一”，仍待那边接着处理。宝玉低头看手中的纸，这上面只有旧单问话，并没有那四个字，遂将纸还给平儿，道：“我明日去认就是了。”"},
+    {"id": "Q20", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 105, "line_end": 105, "quote": "李纨先听了，叫宝玉到门内候着；宝钗从屋里出来时，只听见说是认旧单，明早须去，旁的留待当面问。她问今日带来的话算不算已经告知，那人说自己此来就是再传认单，不替书办答旧物的事。"},
+    {"id": "Q21", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 117, "line_end": 117, "quote": "到五更，屋里灯焰已经很小。宝钗将半碗热粥推到宝玉面前，叫他吃些再走，他只吃了两匙，门外就有脚步声。"},
+    {"id": "Q22", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt", "line_start": 119, "line_end": 119, "character_offset_start": 9954, "character_offset_end_exclusive": 10054, "quote": "院门刚开，风把灯吹偏了一下。贾芸在外头低声说路上有冰，宝玉提起衣摆，迈过门槛，鞋尖却碰着昨日留下的脚凳。他弯腰将凳挪到墙边，才随人走出去。麝月站在门内看了一会，宝钗叫她回来，把还热着的半碗粥收进灶旁。"}
+  ],
+  "limitations": [
+    "这是本章冻结文本与所选编辑义务的模型阅读，不是历史考据裁决，也不是人类/独立盲审接受。",
+    "全部小说已实际分段读完，但所选合同递归grounding载体、全书、源PDF与其他章正文未读，不宣称这些已闭合。",
+    "确定FAIL各限于新增棉衣经手交代、围巾前后物态；不把待交回、人物忧惧、未注册官役或source UNKNOWN当作额外FAIL。",
+    "即使这两处局部问题修好，也不能由本次阅读宣称全书资格或文学终审PASS。"
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "chapter": 85,
+  "revision": "v1",
+  "status": "FROZEN_SESSION_AUTHORED_RESEARCH_CANDIDATE",
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "literary_acceptance": "NOT_GRANTED",
+  "formal_eligibility": false,
+  "request": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch85.json",
+    "file_sha256": "ec8c3fc3495f59b392804fd9199662816d51a5c95b11d549d9710573d45de921",
+    "declared_request_sha256": "b2082e34ba2340beb4aac585e3031cc3266cc686fa052844573ef5e0b959d89c",
+    "prompt_sha256": "60f1ad016c13904534007fb4da804dbe0573a82747399a590d40a16020d983cf",
+    "hash_scope_note": "File-byte digest, embedded request digest and prompt digest are distinct scopes. Hashing is not semantic consumption of every referenced source file."
+  },
+  "parent": {
+    "path": "data/writing/drafts/ch85/8f8f7645a6e4abd9bae2a21ddb0cdf407dc829310f863f6c6291d1adae7d1805.json",
+    "file_sha256": "8f8f7645a6e4abd9bae2a21ddb0cdf407dc829310f863f6c6291d1adae7d1805",
+    "prose_pointer_consumed": "/task/original",
+    "prose_characters": 1981,
+    "prose_sha256": "75e70db886e3aedb33a7068a8197d26f81dfb77844552a5526516115c589a1b5",
+    "read_scope": "Full parent prose read in task.original projection. Parent JSON bytes hashed, without a claim of separately reading its complete metadata."
+  },
+  "candidate": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt",
+    "sha256": "af416178de6ad084e646e4bdc861d095dffa2a076bf83e5cda11c76de01b4e25",
+    "characters": 9038,
+    "body_characters": 9014,
+    "body_no_whitespace": 8916,
+    "body_han": 7722,
+    "utf8_bytes": 26916,
+    "lines": 99,
+    "paragraphs_including_title": 50,
+    "title": "第八十五回　丧仪渐歇深闺愈静　沉痼日侵弱质难支",
+    "count_method": "Unicode code points after UTF-8 decoding; body excludes title line and first newline. No-whitespace excludes str.isspace characters. Body Han counts U+4E00 through U+9FFF only.",
+    "requested_total_range": [9000, 10500],
+    "requested_body_han_minimum": 7000,
+    "requested_body_no_whitespace_minimum": 6584,
+    "length_thresholds_met": true,
+    "length_is_literary_acceptance": false
+  },
+  "actual_consumption": {
+    "method": "Direct Read of chapter-85 notes and initial authored segment; isolated Python exact bounded JSON projections for selected request, source excerpt and chapter-85 literary-editor report entry. Large initial combined package/plan/sources/scenes output truncated and was replaced by separate complete projections before writing.",
+    "request_fields_read_in_full": [
+      "/request/system",
+      "/task/original",
+      "/task/feedback",
+      "/task/editorial_notes",
+      "/task/writing_task/package",
+      "/task/writing_task/chapter_plan with eighteen card fields, source_records, protections and unresolved",
+      "/task/writing_task/scenes, all three skeletons",
+      "/task/writing_task/sources, entire selected record and embedded verification metadata",
+      "/task/writing_task/exemplars, all five complete objects and selected texts",
+      "/task/writing_task/plan/data~1project~1plan_constraints_v1.json",
+      "/task/writing_task/guidance",
+      "/task/writing_task/previous_ending, null",
+      "/task/writing_task/target_characters",
+      "/task/writing_task/input_readiness",
+      "/task/writing_task/operation_scope",
+      "/task/writing_task/exemplar_dataset_ref",
+      "/context",
+      "/budget"
+    ],
+    "agent_contracts": {
+      "selected": ["85-S1.v2", "85-S2.v2", "85-S3.v2"],
+      "scope": "Read every non-grounding field of all three selected contracts, including all required/forbidden descriptions, IDs, status/scope, bindings/references, states/preconditions, participants, function, notes and unresolved. All distinct grounding text excerpts separately printed and read. Repeated citation metadata under each duplicate grounding branch was not separately recounted as original source reading.",
+      "required_beats": ["85-S1-R1", "85-S1-R2", "85-S1-R3", "85-S1-R4", "85-S2-R1", "85-S2-R2", "85-S2-R3", "85-S2-R4", "85-S3-R1", "85-S3-R2", "85-S3-R3", "85-S3-R4"],
+      "forbidden_beats": ["85-S1-F1", "85-S1-F2", "85-S2-F1", "85-S2-F2", "85-S3-F1", "85-S3-F2"],
+      "plan_duplicate_handling": "Exact equality checks established chapter_plan and all three agent_contracts equal their plan copies. Those identical values were context-reused, not claimed separately independently read original files.",
+      "state_limit": "All UNKNOWN/PENDING, missing observation provenance, null knowledge bindings, A01 implementation gaps and absent local events remain unpromoted. Candidate prose does not register a fifth clinical measure, historical medical facts or object transitions."
+    },
+    "recursive_payload": "No additional writing_task key found recursively inside task.writing_task; single request JSON message decodes equal to top-level task, so identical content reused.",
+    "source_excerpts": {
+      "selected_source_ref": "src:qixu:ch64:ten-solitary-chants",
+      "record_sha256": "929f1a07f4ba4a1517235cfe8fb987da7eecef0b4881aebd23a706fbd0cf53a0",
+      "exact_excerpt": "戚夹《五美吟》与后《十独吟》对照。",
+      "actual_reading": "Read complete embedded selected source record, notes and verification metadata, including the exact excerpt above. Read all chapter card/source_records and distinct contract grounding text, plus editor's two body/resource source rows.",
+      "not_read_or_rerun": "Did not open the whole original PDF, original extraction manifest or run source rebuild; embedded verifier PASS is preexisting input metadata, not a fresh verification performed by this author.",
+      "supported_limit": "Only title/interface and comparison are available; no author, number of poems, poetic form, subjects, complete text or exact chapter placement is established by this source. Chapter-85 placement remains C-main."
+    },
+    "exemplars": ["hlm80:chapter:27:p00087", "hlm80:chapter:24:p00030", "hlm80:chapter:74:p00079", "hlm80:chapter:61:p00016", "hlm80:chapter:52:p00006"],
+    "world_and_thread_projections": [
+      "m3_body: chapter-85 body_matrix row",
+      "m3_core: baoyu/baochai/daiyu/zijuan character baseline rows; no chapter-85 event row returned",
+      "m3_locations: S02 row",
+      "m3_presence: chapter-85 row",
+      "m3_resources: E0 and chapter-85 resource_flow row",
+      "threads metadata/rules; exact 十独吟/A01/G01 projection returned full m5:C03 comparison hint"
+    ],
+    "notes": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch85-v1.txt",
+      "sha256": "f187a0872dba769c6ce884092d0078ffcaae5b4da582ddd14f994180c5d1ed1d",
+      "read_entire_text": true,
+      "line_range_inclusive": [1, 13],
+      "read_before_first_prose_write": true
+    },
+    "editorial_report": {
+      "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch81-90-v1.json",
+      "file_sha256": "fb1222a12fd4ef02d5071678f8def39d2d2fd276262f23f5dc7f43d09f983ad3",
+      "projection": "/chapters entry with chapter == 85",
+      "read_complete_entry_by_segments": true,
+      "segments": ["all outer fields, actual-reading evidence, selected source rows and expansion/unknown issues", "all three selected_contracts with beat assessments and preserved unresolved", "full original_chapter_plan including eighteen fields and protections"],
+      "read_before_first_prose_write": true,
+      "chapter_86_or_later_entries_read": false
+    },
+    "output_and_edit_limits": "Initial combined package/plan/sources/scenes projection exceeded display limit; subsequent bounded calls read those complete fields before writing. One append Edit failed because the anchor assumed a closing quotation mark not present in the narrative sentence. Exact file ending was then read, anchor corrected and the manual prose appended once; failed call changed no bytes. No failed output was counted as delivered text."
+  },
+  "extra_context_exposure": {
+    "same_session_as_chapters_81_through_84": true,
+    "earlier_long_candidates_authored_and_read": [
+      {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt", "unchanged_sha256": "a92799e04f61fdd2e99eb6eba99b38a7fa87ef2f5d137fc4eb1fdc681bccda0d"},
+      {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "unchanged_sha256": "edc6d81e46a9e25717109198a8f50d8ef51b487c85550238826d151e5a75da81"},
+      {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch83-v1.txt", "unchanged_sha256": "b219396269ed1f5b1781e7d8e0fedc636c06f21e0fe1e76134c3eeec4948daa8"},
+      {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch84-v1.txt", "unchanged_sha256": "84bd37ba482d4e69d2c3f236092394e5e02df0ec7878c3e3c03e35497f5c4bf4"}
+    ],
+    "prepared_previous_path": null,
+    "prepared_previous_ending": null,
+    "classification": "EXTRA_CONTEXT_NOT_PREPARED_BOUND_PREDECESSOR",
+    "continuous_request_rebinding": false,
+    "predecessor_endorsement": "NONE",
+    "independent_chapter_author_context": false,
+    "prior_candidates_rewritten": false,
+    "note": "Author retains actual 81–84 prose and discussions. That is disclosed context exposure, not retrospectively bound predecessor input or independent author/provider proof. Chapter 85's selected illness/paper obligations, not phase5 prose, govern this candidate."
+  },
+  "editorial_choices": {
+    "five_causal_scene_units": ["夜守分工到翌晨实际观察落纸，雪雁困倦与黛玉嫌闷的取舍", "半碗温粥后想看旧集、第一次取出题名旧纸并因眼酸咳嗽停理，隔日旧纸修正好转期待", "宝玉抱旧集等待，黛玉决定听哪段闲话，紫鹃以当下疲乏限制进入和时长", "宝钗听明热水缺口后亲往厨房争取留水/旧壶，接话送达后紫鹃才调整夜守", "数日分段合拢同题名旧页入匣完成容器，普通未成小诗另留手边；更长日常推移见耐力下降，结尾继续真实夜守"],
+    "A01_title_container": {
+      "execution": "First day title page extracted from old collection with scattered associated material; fatigue interrupts, interim partial bundle protected without claiming completion. Later day Baochai and Zijuan physically release remaining pages from old book, join the material behind the legible 十独吟 title page, fold protective paper leaving title identifiable, fit the bundle in the box and close it unlocked. Completed act is consolidation/storage of extant title-associated papers only.",
+      "not_claimed": "No authored completion of a recovered original work, no assigned author/poem count/form/subject or full poem text. No attribution to Daiyu or Baochai; no 十首 reading, last work, deathbed literary sprint or source authentication."
+    },
+    "G01_ordinary_unfinished_draft": {
+      "choice": "A separate ordinary small-poem draft on a loose sheet with open ending and revisions is explicitly present, set apart on the small table rather than bundled with title-associated old papers. Daiyu wishes to reconsider a word and return to it after looking at an old collection. No actual poem line is composed or quoted, and no final pen-stop is performed in chapter 85.",
+      "scope": "New C-level implementation of the selected permitted G01 interface, not a recovered historical text, new registered object, proof of handwriting/authorship of A01 or a verdict on authenticity. No disease-before-date claim or exact poem form/title is added."
+    },
+    "observation_boundary": "Opening night visibly divided between Zijuan and Xueyan; following dawn entries distinguish observer and interval, including a gap during water-fetching. Sleep/waking/food/medicine and practical water work are recorded only as enacted candidate acts, not an independently sourced complete five-column clinical system. No fifth diagnostic column or precise medical prognosis is manufactured; final half-night remains blank until observed.",
+    "care_execution": "Baochai hears Zijuan, personally negotiates with kitchen's existing worker, waits through a kettle search, confirms actual delivery person, returns old kettle and instructions; evening hot water is actually delivered to Xueyan and tested by Zijuan, who then shifts rest. A later delivery clash gets an actual revised handoff rather than a standing invented staffing post. Baochai does not announce manager/wife/replacement status.",
+    "removed_parent_unbound_actions": "No Ying'er cross-household boiling medicine, no unverified chenpi use/recipe, no unsupported fixed drug price or acute diagnosis. Existing long illness and E0 supply continue; no poverty/withheld medicine plot.",
+    "voices_preserved": ["药罐子不会问明日看哪一册旧集。", "两个时辰分了三段。", "守门便是守门，别替他加功。", "明日理。", "雪雁药铺账/柴火笑话、窗纱、热水、旧集、紫鹃判断与夜守"],
+    "longer_time": "The later section explicitly moves through mourning routines, thickening bamboo and accumulated daily sheets beyond the few manuscript-sorting days. Current illness continues to erode ordinary endurance; no exact month count, legal mourning end, new terminal disease or chapter-86 last-night event is declared."
+  },
+  "execution": {
+    "authorship": "One Write plus five successful substantive append Edit calls of manually composed prose, with one failed append attempt corrected by exact anchor read. No scripted sentence generation, numeric templates or repeated paragraph padding.",
+    "declared_environment_model": "gpt-6.1-sol",
+    "model_declaration_is_provider_proof": false,
+    "delegation": false,
+    "commits": false,
+    "candidate_import": false,
+    "project_package_import": false,
+    "provider_api_execution_claim": false,
+    "provider_billing_token_measurement": false,
+    "lint_method": "Same-session previously read repository prose_integrity.py source executed in isolated namespace with only relative digest import omitted and equivalent hashlib.sha256 supplied. No project package import or generation pipeline invocation.",
+    "only_created_paths_this_chapter": ["artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1.txt", "artifacts/agent_research/phase6/revisions-v2/authored/ch85-v1-disclosure.json"],
+    "chapter_86_or_phase5_prose_template_read": false
+  },
+  "mechanical_lint": {
+    "implementation_path": "src/rcwh/generation/prose_integrity.py",
+    "implementation_sha256": "68ebba3b1dd2bd160053da7a6a438cef52808ccbfb5145badf8e18904a6594b4",
+    "status": "PASS",
+    "scope": "REPEATED_PARAGRAPH_PADDING_LINT",
+    "candidate_sha256": "af416178de6ad084e646e4bdc861d095dffa2a076bf83e5cda11c76de01b4e25",
+    "paragraph_count": 50,
+    "repeated_characters": 0,
+    "repeated_character_fraction": 0.0,
+    "clusters": [],
+    "findings": [],
+    "script_signals": [],
+    "literary_quality_verified": false,
+    "authority_effect": "NONE"
+  },
+  "limitations": [
+    "No complete reading of all referenced files, original PDF/extraction carriers, full corpus/manifest, all world/thread content, complete parent JSON metadata, later candidate prose or phase5 templates. Actual excerpts, input metadata and hashes have different scopes.",
+    "A01 container and G01 separate draft are research narration only; author/count/form/original text/authenticity and required implementation facts remain open. No record/source/code was updated to manufacture authority.",
+    "No independent literary or medical review, semantic PASS, state replay, provider identity proof, ADOPT or publication. Length thresholds and repeated-padding lint PASS do not establish literature acceptance.",
+    "Prepared request ceilings of 8192 output tokens, one request and 120-second timeout were read as metadata, not claimed measured execution limits for this multi-call session authorship."
+  ],
+  "freeze": {
+    "candidate_frozen_on_handoff": true,
+    "further_edits_to_v1_authorized": false,
+    "note": "Preserve chapter-85 candidate/disclosure unchanged after handoff; any later change requires separately authorized new version. Earlier chapters 81–84 remain frozen."
+  }
+}

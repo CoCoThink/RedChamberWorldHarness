@@ -1,0 +1,313 @@
+{
+  "schema_version": 1,
+  "kind": "FROZEN_SEGMENTED_LITERARY_READING",
+  "id": "ch88-99-v1-reader1",
+  "reviewer_role": "MODEL_SUBAGENT",
+  "reader_identity": "reader1",
+  "disposition": "FEEDBACK_ONLY",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "adoption": "NOT_ADOPTED",
+  "automatic_PASS": false,
+  "automatic_ADOPT": false,
+  "literary_acceptance": "NOT_GRANTED",
+  "qualification": "MODEL_RESEARCH_READING_NOT_HUMAN_REVIEW_OR_HISTORICAL_CERTIFICATION",
+  "status": "FROZEN_REPORT_ONLY",
+  "language": "zh-CN",
+  "method_policy": {
+    "actual_method": "同一reader1上下文直接分段Read冻结88、99全文，随后按章逐项核对；没有委派。精确引用来自本次可见完整段落，不把搜索命中、字节哈希或作者自述当作实读。",
+    "not_blind": "已读作者disclosures、对应编辑反馈及合同，再作核对；这不是盲比，也不是独立于这些提示的阅读。",
+    "two_chapter_context": "同一读者实际接触88与99两章全文，可能形成跨两章的声口比较；不是两个隔离读者，也不称全书已读。",
+    "prior_retry": "协调者说明此前工具失败且报告未落盘；本报告以本次实际返回的完整分段内容为准，不把此前失败、预览或截断当覆盖。未另起读者身份。",
+    "unknown_policy": "合同UNKNOWN/PENDING及未注册对象是边界，不自动判正文FAIL；只有能指出文本冲突、明确禁写或确实缺写才判确定问题。",
+    "length_policy": "长度仅作容量和冻结身份背景，不是文学PASS；本次未因达字数授予接受。",
+    "scope_of_negative_findings": "未观察到只针对已完整实读的这两份冻结正文及选定义务，不保证全部史实、全部合同系统或全书一致性。"
+  },
+  "actual_reading_scope": {
+    "complete_prose": [
+      {
+        "chapter": 88,
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt",
+        "sha256": "16a578156216378fcc0902e116b55784007a1301929f5ed53bd866665e054f2b",
+        "line_range_inclusive": [1, 101],
+        "segments_inclusive": [[1, 35], [36, 69], [70, 101]],
+        "coverage_fraction": 1,
+        "read_entire_text": true,
+        "first_line_exact": "第八十八回 花袭人有始有终　贾迎春薄命赴黄粱",
+        "first_body_anchor": "花家来问袭人出门的日子，先在外头等了一回，等王夫人房里的丫头传进话，才到廊下坐着。",
+        "last_line_exact": "水盆搁得低，麝月弯腰端起时，腰间钥匙滑到前头，磕在盆侧。她将盆放回，解开绳结，往腰里系紧，拉了一下，才重新端起。小丫头提着壶走在前面，帘子只掀开一半，她叫孩子先放壶，回头将帘子挑高些。孩子应着，手却忙着摆正壶底，慢了一步。麝月端着盆侧身过门，盆沿撞着门框，当的一声。"
+      },
+      {
+        "chapter": 99,
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt",
+        "sha256": "24542b331d03561f4a1fc15ed1349ad10157274a3ede0fc89c8df0f54312cbc3",
+        "line_range_inclusive": [1, 105],
+        "segments_inclusive": [[1, 35], [36, 70], [71, 105]],
+        "coverage_fraction": 1,
+        "read_entire_text": true,
+        "first_line_exact": "第九十九回　贾宝玉悬崖撒手去　宝钗麝月共守寒家",
+        "first_body_anchor": "日子照旧过了几日。桌外侧留下的客册包仍在，宝玉隔日便把要问的字抄出，等甄宝玉按约来取。",
+        "last_line_exact": "麝月伸手去端，手背擦着椅背上的衣褶，旧衣滑下一点，她顺手拉住，搭回原处。那根新针还别在衣边，穿进去的线没有拉齐，长的一头垂在未补完的袖口旁。她把手收回，捧住自己的碗，饭热得掌心发潮，便放下，拿箸夹了一口菜。宝钗将另一只碗往里挪些，避开桌缝，两只碗并在灯下，饭上腾起的热气渐渐薄了。"
+      }
+    ],
+    "adjacent_boundary_only": {
+      "chapter": 98,
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt",
+      "sha256": "badea6a60cc2c65a08a03a0494cc5afdb8e336ca78184d510cc96e90e5e52588",
+      "line_range_inclusive": [93, 107],
+      "read_entire_chapter": false,
+      "purpose": "只查末尾客册包、夹入借阅条、家内零册及饭桌边界能否接99开头。没有读取98全文，不据此认证98玉归、异手文字或整回因果。",
+      "boundary_quotes": [
+        {"line_start": 95, "line_end": 95, "quote": "便把客册包移到桌外侧的干处，上头不压茶杯，留待下回来取。"},
+        {"line_start": 107, "line_end": 107, "quote": "客册包仍留在干处，借阅条夹在里头；"}
+      ]
+    },
+    "complete_disclosures": [
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1-disclosure.json", "sha256": "b42392ef58de035a53022280bff4d9f17127d7cbcb52caeea3a5ba85b52a0aa0", "line_range_inclusive": [1, 162]},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1-disclosure.json", "sha256": "fff1b1b8d75149d4177846b8ad9d0ca457e969e4d66dea7f3537cfeb53875059", "line_range_inclusive": [1, 196]}
+    ],
+    "complete_notes": [
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editor-feedback/notes-ch88-v1.txt", "sha256": "e6a1ea362acc65a56b6cfdf881e7f50001f080f85ee3505ec9ac5bcd53178cda", "line_range_inclusive": [1, 14]},
+      {"path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editor-feedback/notes-ch99-v1.txt", "sha256": "0169a68db4aa24fe0d29792a95845613ae6ca0515dbb6fa632751cb18d1f6aa2", "line_range_inclusive": [1, 17]}
+    ],
+    "editor_chapter_projections": [
+      {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editor-feedback/v3-ch81-90-v1.json",
+        "sha256": "fb1222a12fd4ef02d5071678f8def39d2d2fd276262f23f5dc7f43d09f983ad3",
+        "pointer": "/chapters/7",
+        "chapter": 88,
+        "read_scope": "完整读取该章literary_decision、revision_length_target、verbatim_evidence、confirmed_local_issues、substantive_expansion_units、unresolved_not_to_invent、editorial_notes、not_claimed；另完整读五个selected_contracts全部required/forbidden的assessment。",
+        "not_read_as_complete": "整份十章editor报告、该章重复provenance/bindings/source_records未逐项全文读；首次大投影预览不算完整。"
+      },
+      {
+        "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+        "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+        "pointer": "/chapters/8",
+        "chapter": 99,
+        "read_scope": "完整读取该章contract_beat_review、verbatim_quotes、confirmed_issues、revision_prompt_editorial_notes、revision_target、expansion_scenes、remaining_unknowns、qualification、overall_literary_status、editorC_selection、narrative_index、source_index_unchanged。",
+        "not_read_as_complete": "整份十章editor报告、该章其余重复绑定/作者custody元数据不称全文读取；首次大投影预览不算完整。"
+      }
+    ],
+    "request_projection": {
+      "paths": [
+        "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch88.json",
+        "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch99.json"
+      ],
+      "file_sha256": ["96158a4edbc71bfca90aa2a71ac4d028cdfdea45b409e325a15b414dd381e147", "ba82d25311beff9cf42a96ddce853f1fe73af3018e7b3c38ad5de3a43052ae6d"],
+      "actually_read": "两章task.writing_task.agent_contracts五份的function、每条required_beats/forbidden_beats.description、notes与unresolved；chapter_plan全部18项card_fields文本及protections/unresolved；99 grounding去重语义投影。88 required无独立beat ID，以下用数组ordinal定位。",
+      "full_requests_read": false,
+      "size_recovery": "直接Read大request返回体积限制，未计为已读；改作有界字段投影。合同description投影落工具持久输出后实际Read覆盖其1–440行；编辑文学投影实际Read覆盖1–869行。其他未补读的大输出不算完成阅读。",
+      "referenced_protections": "实际读取data/implementation_alignment/m6.json的chapter_protections[7]与[18]两项，非该文件全文。99该旧项allowed_additions含留字/梦多案，不据此覆盖本次更窄的无字/无梦禁写。",
+      "bound_file_equality": "read-only Node逐份比较选中合同与request内嵌值，十份isDeepStrictEqual均true；首次JSON.stringify比较false源于键序，已以深值比较澄清，不报内容失配。仅是内容等值检查，不是运行执行。",
+      "not_claimed": "没有读完request.messages、全部inputs、全部世界/对象/知识注册、所有来源记录或原PDF；文件哈希不是内容实读。"
+    },
+    "ch99_decision": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/decisions/phase6-ch99-v1.json",
+      "sha256": "e9f09fb42347ddf186a7854c5071639b59d33ed3273467d37cf5d7d1a7fe6a7c",
+      "segments_inclusive": [[1, 140], [141, 278]],
+      "read_entire_file": true,
+      "execution_mode": "NARRATIVE_ONLY_NOT_EXECUTABLE",
+      "narrative_sequence": ["99-S1", "99-S2", "99-S5", "99-S3", "99-S4"],
+      "source_index_preserved": ["99-S1", "99-S2", "99-S3", "99-S4", "99-S5"],
+      "interpretation": "本次只判断新研究正文是否在文字上实现此C编排；不修改source_index/entry_from，不把decision未来义务或旧run当新执行，也不把它的PENDING误判为当前正文必然缺场。"
+    }
+  },
+  "chapters": [
+    {
+      "chapter": 88,
+      "candidate_path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt",
+      "verdict": "MAJOR_REQUESTED_PROSE_REPAIRS_OBSERVED_WITH_OPEN_BINDING_AND_STYLE_RESERVATIONS",
+      "summary": "婚前分物与劳动交接、真实离府入蒋家成礼、嫁后极短返府的保护句及回应、麝月继续劳动、迎春病讯死讯的有限接力及娘家请求受阻均已可见。不能沿用短稿缺场结论，也不能以可见新正文宣称缺88-S3b已绑或任何运行通过。文学上最强的是袭人对自己箱物的主张和麝月接任后的摩擦；弱处是流程问答重复较多，婚后回访直接报账式过桥。",
+      "selected_contracts": [
+        {"scene_id": "88-S1", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/88-S1.v2.json", "sha256": "2d50f5c490d9f451099756776fee250379186a6ee619706e46d0dc9c618ffe64"},
+        {"scene_id": "88-S2", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/88-S2.v2.json", "sha256": "0d5abb7b3ffe4eaf4073eaed4f82445b8ae85ac73195e8ee42ca403334c6ff5f"},
+        {"scene_id": "88-S3", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/88-S3.v2.json", "sha256": "68753fe60514ea7c0fb053499e218760a271de1e0cdf084d5d0d3a97ae66b18e"},
+        {"scene_id": "88-S4", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/88-S4.v2.json", "sha256": "96cd27b34e2ba30c65169c29ca9790841ad26f80b30bc7261472d7987ff4a799"},
+        {"scene_id": "88-S5", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/88-S5.v2.json", "sha256": "5994b71dae713ae0ba258df709c62a58d1fe8421579e6dcf56a16928c1f4f415"}
+      ],
+      "evidence": [
+        {"id": "88-Q01", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 3, "line_end": 3, "quote": "花家来问袭人出门的日子，先在外头等了一回，等王夫人房里的丫头传进话，才到廊下坐着。", "use": "正文首段、外部婚嫁经手及等待。"},
+        {"id": "88-Q02", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 9, "line_end": 9, "quote": "花家的人说床上用的由自己这边办，缺的日用到那边再添，话没说完，跑腿的又问抬送的人谁来找。", "use": "花蒋两侧分担，不把府内许可当婚礼。"},
+        {"id": "88-Q03", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 15, "line_end": 15, "quote": "家里只问我几时走，那边只说已经齐了。我也得有句话说罢。", "use": "袭人主动要求新居空间知情，不纯作被搬运物。"},
+        {"id": "88-Q04", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 17, "line_end": 17, "quote": "见她自己的箱子才空了个底，宝玉换季的衣裳却已分好", "use": "先理别人再收自己。"},
+        {"id": "88-Q05", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 19, "line_end": 19, "quote": "方才那把就是。门有些偏，往上托一托。", "use": "卡锁有具体操作，不是钥匙抒情象征。"},
+        {"id": "88-Q06", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 23, "line_end": 23, "quote": "正因为服侍久，才不能把公私混在一处。", "use": "公用剪匣留下，自己的小包入箱。"},
+        {"id": "88-Q07", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 27, "line_end": 27, "quote": "麝月这才把盒盖好，袭人按住盖上翘起的一角，说：“药陈了可换，盒子别丢。”", "use": "药盒给麝月及保护原句。"},
+        {"id": "88-Q08", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 37, "line_end": 37, "quote": "袭人的手往前伸了些，指尖已近衣襟，忽然停下。", "use": "最后扣衣动作停止；随后麝月接扣。"},
+        {"id": "88-Q09", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 41, "line_end": 41, "quote": "袭人再没有停，随花家来接的人往外走。", "use": "真实离府，不以婚事谈定代出阁。"},
+        {"id": "88-Q10", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 47, "line_end": 47, "quote": "行礼时有人引着，花家送来的人在一旁照应，蒋玉菡同她依次拜过，起身后让她先坐。", "use": "实际蒋家成礼，不是隐藏场一句带过。"},
+        {"id": "88-Q11", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 47, "line_end": 47, "quote": "取出来一看，手里只剩开自己箱的那一把", "use": "公用钥匙已交，自己箱钥匙仍在；不据此推算全屋钥匙总数。"},
+        {"id": "88-Q12", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 51, "line_end": 51, "quote": "成礼之后，袭人才短返府中谢恩。", "use": "保护句placement的明确先后。"},
+        {"id": "88-Q13", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 51, "line_end": 51, "quote": "临去向他道：“好歹留着麝月。”宝玉看看麝月，答：“依你说的，留着她。”", "use": "硬引语有接收者回应，不是婚前抢说。"},
+        {"id": "88-Q14", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 55, "line_end": 55, "quote": "明日再有这事，先告诉她。她拿不准，再来问我，别你们各问一头。", "use": "宝钗重新分派房内劳动；也有纠偏同声口风险。"},
+        {"id": "88-Q15", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 63, "line_end": 63, "quote": "只说家里叫来回病重，至于用药、诊看，自己并不在跟前。", "use": "病讯内容上限，不自动知道病因药情。"},
+        {"id": "88-Q16", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 73, "line_end": 73, "quote": "仆妇道没有进里屋，只在外头听差。", "use": "死亡结果接报与死亡现场所见分开。"},
+        {"id": "88-Q17", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 81, "line_end": 81, "quote": "娘家想派个素来服侍过的妇人过去，看看可有收拾穿用之处，若需要衣物，就带去。", "use": "后事请求明确发出，不把病中送物当后事控制。"},
+        {"id": "88-Q18", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 85, "line_end": 85, "quote": "今日不能带人进去，收拾的事家里自有安排。", "use": "传话碰回孙家控制边界，未获入内。"},
+        {"id": "88-Q19", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 93, "line_end": 93, "quote": "宝玉已经知道死讯，却不知道方才问后事的回话", "use": "死亡消息不等于自动知后事答复。"},
+        {"id": "88-Q20", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch88-v1.txt", "line_start": 101, "line_end": 101, "quote": "麝月端着盆侧身过门，盆沿撞着门框，当的一声。", "use": "实际末镜落在留下者劳动，不是无人粥或作者挽诗。"}
+      ],
+      "required_beat_review": [
+        {"scene_id": "88-S1", "required_ordinals": [1, 2, 3], "assessment": "OBSERVED_IN_PROSE_WITH_BINDING_OPEN", "lines": [[3, 15], [41, 51]], "finding": "花家等候、蒋侧跑腿催交差、衣被分担及王夫人放行分别成场；蒋家职业物仅行头/长包袱边角。真实离府、入蒋家拜礼和婚后相处先于短返。S3b仍未绑，不因这些正文而消除。"},
+        {"scene_id": "88-S2", "required_ordinals": [1, 2, 3], "assessment": "OBSERVED_IN_PROSE", "lines": [[17, 33]], "finding": "先理宝玉衣物；公用剪子/针匣与私包分开；药盒交麝月并说原句；卡锁、钥匙绳、宝钗修柜及饭差管理均落实。没有把药盒误认86药碗。"},
+        {"scene_id": "88-S3", "required_ordinals": [1, 2, 3], "assessment": "OBSERVED_IN_PROSE_WITH_BINDING_OPEN", "lines": [[35, 51]], "finding": "袭人停手不扣、麝月替扣，宝钗催勿误外头；离门不等于成礼，成礼另见47，婚后短返51。只就章级文字判断可见，不冒称现有五种子已覆盖S3b。"},
+        {"scene_id": "88-S4", "required_ordinals": [1, 2, 3], "assessment": "OBSERVED_IN_PROSE", "lines": [[59, 79]], "finding": "病讯先经媳妇/麝月送入、孙家来人仅回病重；死亡另由孙家仆妇到门—经手媳妇—内宅王夫人/宝钗接收。等候、脚痛及提盒压痕具体。仆妇没进里屋，不给死因、精确断气时刻或遗言。厨房差事没有消失。"},
+        {"scene_id": "88-S5", "required_ordinals": [1, 2, 3], "assessment": "OBSERVED_IN_PROSE", "lines": [[81, 101]], "finding": "明确提出派熟悉妇人收拾穿用的请求，跑腿返报今天不得带人进，东西没留下；候派妇人也回来了。袭人新生活可自主安排、迎春娘家不能入内，两种女子离场不同。麝月继续汤水衣物、系紧钥匙，以盆当声收。"}
+      ],
+      "forbidden_beat_review": [
+        {"scene_id": "88-S1", "forbidden_ordinals": [1, 2, 3], "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "finding": "未见婚前硬引语、府内许可冒充成礼、短札代婚礼、戏曲展演或新诗；51只在47成礼后。"},
+        {"scene_id": "88-S2", "forbidden_ordinals": [1, 2, 3], "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "finding": "婚前交接未说留麝月；药盒是使用和劳务物，不改成长札纪念物；公用物没有全作嫁妆。"},
+        {"scene_id": "88-S3", "forbidden_ordinals": [1, 2, 3, 4], "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT_BINDING_NOT_CERTIFIED", "finding": "离门与婚礼分写；短返不再开柜管事，不复职；没有宣称隐藏运行、W88单事件自动认证桥或新增种子。可见正文过桥不等于绑定已补。"},
+        {"scene_id": "88-S4", "forbidden_ordinals": [1, 2, 3], "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "finding": "无密使绝命信、遗诗托梦、虐待现场；传信有等待成本。未将孙家尸身遗物控制交给贾府。"},
+        {"scene_id": "88-S5", "forbidden_ordinals": [1, 2, 3], "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "finding": "无集体悼词、烈女化、袭人复位；留下由反复真实劳动体现；实际末行为盆声，不是新增诗文。"}
+      ],
+      "determinate_text_defect_audit": {
+        "object_count": {"status": "NO_CONFIRMED_FAIL", "finding": "公用钥匙交麝月，47自己箱钥匙一把不与公用串相混；19换把试锁未锁定全屋钥匙总数，不能据此制造件数冲突。自己的小包暂出箱/后入箱/出门随身并无两件互斥声明。药盒与公用针匣留用，未作礼物移走。"},
+        "chronology": {"status": "NO_CONFIRMED_FAIL", "finding": "3–33婚前接洽分物；35–41最后任务/离府；43–49到蒋家且拜礼、礼后相处；51明确成礼之后短返并再离开；53以后麝月持续当差。病讯59先于死讯69，未给出不相容日时。"},
+        "knowledge": {"status": "NO_CONFIRMED_FAIL", "finding": "63病使不知诊药；71/73丧使不知断气时/未进里屋；65宝钗问消息来源；85/87孙家门上答复未升级为看见尸身；93宝玉已知死讯而尚不知后事答复，随后才由宝钗说明。具体场级知识事件仍未登记，不能等同小说人物无从听到。"},
+        "confirmed_text_FAILs": [],
+        "limitation": "没有为满足查错而把未知费用、礼数、匿名跑腿或未注册对象判FAIL。未见确定冲突不等于文学接受或系统核验通过。"
+      },
+      "binding_and_execution_gap": {
+        "id": "MISSING_SEED_88-S3b",
+        "status": "CONFIRMED_OPEN_BINDING_GAP_NOT_A_NEW_PROSE_OMISSION",
+        "evidence": "选中88-S1/S2/S3/S4/S5的unresolved均明示缺桥，disclosure 118–125同样保留；本次十份合同深值比对未改变此输入。",
+        "finding": "现有五种子仍没有可绑定88-S3b；正文47/51可见成礼与嫁后返府，并不建立种子、原子事件或执行记录。不能据此称选中合同运行完整、桥已绑定或W88已重放通过。",
+        "not_equated_to": "不是自动UNKNOWN→FAIL，也不是把新正文已写场面又说成完全没写。",
+        "action_in_this_task": "仅披露，不创建/修改种子、合同、稿件、request或代码。"
+      },
+      "literary_reservations_not_determinate_FAIL": [
+        {"id": "88-L1", "lines": [[7, 15], [53, 67]], "assessment": "REDUNDANCY_RISK", "finding": "婚嫁经手、取箱、放箱、再捎一句及家务多头回问把成本写实了，但多个段落都以问清—没说定—再找人收束，推进节拍近似。尤其53–67连续回房/厨房/太太，劳动压力与叙事周转有时混在一起；不是靠字数长就都必要。"},
+        {"id": "88-L2", "lines": [[21, 31], [55, 55], [83, 93]], "assessment": "CORRECTIVE_COMMON_VOICE_RISK", "finding": "袭人劝说不便要讲、宝钗纠正各问一头及先等回话，常以清楚划分职责/信息边界的口吻收场。其现实性成立，但女性人物有时共同承担编辑纠偏功能，犀利程度趋同。83写宝钗听出自己一句先等回话太平，稍微拆开了这种全能正确。"},
+        {"id": "88-L3", "lines": [[45, 51]], "assessment": "BRIDGE_COMPRESSION_RISK", "finding": "蒋家初处中袭人说用着才知道、别压衣被，保留新生活的主动性；51却直接以成礼之后/短返府中概括，再一口气交代谢恩、保护句、回应、退出。作为极短返府符合选择，但文字接缝过于显露任务确认。不是位置错误，也不是实际成礼缺写。"},
+        {"id": "88-L4", "lines": [[69, 89]], "assessment": "PROCEDURAL_WEIGHT_RISK", "finding": "死讯来源与孙家门限已讲清，85–89又逐人确认未进、派去者回了、东西暂留，可靠但稍重。迎春自身不出场是必要边界，不宜因求浓烈再增遗言；可保留73帕落和87倒要等他的短刺，而非再添核实段。"}
+      ],
+      "strengths": [
+        "15袭人要求知道自己的箱子落在哪里，49拒绝蒋玉菡今日件件问，婚嫁不只是被府里清退。",
+        "19卡锁、31麝月恼、55觉得被说不中用、67差事认错，把劳动接任写成会出错的实践，不止忠婢口号。",
+        "81后事请求碰85门外答复，91仍备而不散，娘家关切与实际无权并存，没有拿法律讲义替代。",
+        "末101盆沿之声保持动作摩擦，不以集体哭泣或作者总结消解两线差别。"
+      ],
+      "length_context_only": {"source": "author disclosure, not independently remeasured in this reading", "reported_total_characters": 9516, "reported_body_han_characters": 8126, "literary_PASS_inferred": false},
+      "review_disposition": "保留冻结候选供后续选择；本报告不给ADOPT或整章PASS。优先问题是流程冗繁及声口分化；88-S3b绑定缺口另列不代修。"
+    },
+    {
+      "chapter": 99,
+      "candidate_path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt",
+      "verdict": "SELECTED_NARRATIVE_SEQUENCE_AND_TERMINAL_REPAIRS_OBSERVED_WITH_STYLE_RESERVATIONS",
+      "summary": "98只读末尾可确认留桌客册包未带走，99开头由甄宝玉按约取还；普通几日与逐项不接后，宝玉先向宝钗、后向麝月明确不回来住，再实际离门。唯一微课在未知间隔后、贾芸寻见前；寻找确有错人和脚费，真人拒回、成立前问后的保护句、返家口头转话都在。末镜确实停在家中两碗与针线未补袖口，不再切寺，无离家后玉去处。文字仍有反复延宕、机锋过密及家庭动作按清单核准的痕迹，不授予文学通过。",
+      "selected_contracts": [
+        {"scene_id": "99-S1", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v2/99-S1.v4.json", "sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507"},
+        {"scene_id": "99-S2", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v2/99-S2.v4.json", "sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1"},
+        {"scene_id": "99-S3", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v2/99-S3.v4.json", "sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc"},
+        {"scene_id": "99-S4", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v2/99-S4.v4.json", "sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05"},
+        {"scene_id": "99-S5", "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v2/99-S5.v4.json", "sha256": "20f76cdc3e741937bee015f01dad1c5cee7ab8b2810ab96f54ede6cb00f9dbad"}
+      ],
+      "evidence": [
+        {"id": "99-Q01", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 3, "line_end": 3, "quote": "日子照旧过了几日。桌外侧留下的客册包仍在，宝玉隔日便把要问的字抄出，等甄宝玉按约来取。", "use": "首段、普通日缓冲与98末尾包的接续。"},
+        {"id": "99-Q02", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 3, "line_end": 3, "quote": "包好客册还去。他这次拿着自己的书包", "use": "甄实际取回客册包，不再给客册第二条运输史。"},
+        {"id": "99-Q03", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 9, "line_end": 9, "quote": "麝月从门外听见，便道他又看书看懒了", "use": "麝月起先误读，不与宝钗同步明白退出。"},
+        {"id": "99-Q04", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 13, "line_end": 13, "quote": "她又买菜，又买米，倒都归她了。", "use": "拒接明日任务的成本落在妻婢，不单是精神姿态。"},
+        {"id": "99-Q05", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 23, "line_end": 23, "quote": "摊主翻到前头看了看，照着自己所记的收讫，将借阅条收进旧纸堆，不再留作未还的凭据。", "use": "书摊最后借书及借条结清，未在尾声再出现第二未清条。"},
+        {"id": "99-Q06", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 27, "line_end": 27, "quote": "我不回来过日子了。", "use": "先对宝钗明确，不靠赶得上回来拖到外人解释。"},
+        {"id": "99-Q07", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 35, "line_end": 35, "quote": "我这次不回来住。", "use": "麝月到饭袜鞋照料后才听到清楚表达。"},
+        {"id": "99-Q08", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 39, "line_end": 39, "quote": "我问的不是一顿饭。", "use": "宝钗追问仍属过日子的现实，不替他说悟道。"},
+        {"id": "99-Q09", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 45, "line_end": 45, "quote": "最后还是松开门，走入巷中。", "use": "实际离门，不是一句想走。"},
+        {"id": "99-Q10", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 47, "line_end": 47, "quote": "又隔着些时日，寺中一排人跟着诵声翻页，宝玉的手却还停在前一页。", "use": "未锁旅程和寺居间隔，不瞬移、不指定早晚。"},
+        {"id": "99-Q11", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 47, "line_end": 47, "quote": "一个小和尚将自己的经页侧过来，指给他看", "use": "匿名指页、跟诵不熟而无经文/法号/点化。"},
+        {"id": "99-Q12", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 53, "line_end": 53, "quote": "那人猛地转过来，脸阔些，胡子也重，怀里护着一包货，瞪着他问做什么。", "use": "认错真人的可见事件，不是概述所有证人都准确。"},
+        {"id": "99-Q13", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 55, "line_end": 55, "quote": "他已喝了店里的水，只得买点吃的，又掏回程的船钱。", "use": "错误方向有实际脚费支出。"},
+        {"id": "99-Q14", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 67, "line_end": 67, "quote": "宝玉正从后面搬柴出来，头发已剃，灰衣肩头压着一层细屑。", "use": "寻见真人，不把旧source前驱或读者微课当贾芸知情。"},
+        {"id": "99-Q15", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 69, "line_end": 69, "quote": "家里就没活？你搬柴算活，她们买米洗衣不算？", "use": "贾芸不接受拒回的劳动借口，也有纠偏声口过密风险。"},
+        {"id": "99-Q16", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 73, "line_end": 73, "quote": "贾芸道只一趟，回来仍由他，宝玉仍摇头，只说不回。", "use": "亲劝、实际拒回，非转述无法返家。"},
+        {"id": "99-Q17", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 77, "line_end": 77, "quote": "贾芸问：“还有没有别的要我带回去的话？”宝玉答：“没有，只说我平安。”", "use": "没有否定别的带话要求，前问成立且保护字句保留。"},
+        {"id": "99-Q18", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 81, "line_end": 81, "quote": "宝钗已从屋中出来，问可是亲见，他说是", "use": "实际返家、可追问见闻来源。"},
+        {"id": "99-Q19", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 85, "line_end": 85, "quote": "麝月问可说以后哪一日回来看看，贾芸摇头，说自己不敢添这句。", "use": "平安不升为归期。"},
+        {"id": "99-Q20", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 91, "line_end": 91, "quote": "今日不是我交给你的么？", "use": "实际房租交付与宝钗锋利，也可评机锋密度。"},
+        {"id": "99-Q21", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 95, "line_end": 95, "quote": "够咱们两个吃的就是了。", "use": "两人饭保护句，没有宣称圆满。"},
+        {"id": "99-Q22", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 99, "line_end": 99, "quote": "麝月从针匣拣出新针，放到她掌心，旧的仍收在另边，免得混着又用。", "use": "旧针堵眼后另取新针，两根身份分开。"},
+        {"id": "99-Q23", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 101, "line_end": 101, "quote": "宝钗也起身，将这根新针暂别回旧衣边，线才穿过针眼，两头还未拉齐，一长一短挂在袖旁。", "use": "穿针未拉齐不混为已缝袖口，顾火而中断。"},
+        {"id": "99-Q24", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 105, "line_end": 105, "quote": "那根新针还别在衣边，穿进去的线没有拉齐，长的一头垂在未补完的袖口旁。", "use": "实际最后段仍针在、袖未补，不完成旧衣。"},
+        {"id": "99-Q25", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "line_start": 105, "line_end": 105, "quote": "两只碗并在灯下，饭上腾起的热气渐渐薄了。", "use": "实际最后一句为家中两碗，没有寺里第二尾声。"}
+      ],
+      "required_beat_review": [
+        {"scene_id": "99-S1", "required_ids": ["99-S1-R1", "99-S1-R2", "99-S1-R3"], "assessment": "OBSERVED_IN_PROSE", "lines": [[3, 25]], "finding": "先普通几日、校字取还客包、拣菜等继续；后逐册还书、少食、不接明日买柴米/补窗；麝月误作懒/乱放衣袜，宝钗先追问明日。饭尚有余留热，没有当天断粮、新病或玉/庄子触发。妻婢关系仍是实际日常。"},
+        {"scene_id": "99-S2", "required_ids": ["99-S2-R1", "99-S2-R2", "99-S2-R3"], "assessment": "OBSERVED_IN_PROSE_NOT_RUNTIME", "lines": [[25, 47]], "finding": "27向宝钗、35向麝月说不回，妻问住处/何处找、婢问粥袜鞋；33少衣零钱且旧鞋留，45真离门，47另隔些时日才到寺。没有锁件数/初程。文本顺序为S1→S2→S5；source前驱不被当知识。"},
+        {"scene_id": "99-S3", "required_ids": ["99-S3-R1", "99-S3-R2", "99-S3-R3"], "assessment": "OBSERVED_IN_PROSE", "lines": [[49, 87]], "finding": "贾芸在书摊、车脚、渡口、小店问，错认护货者、白过水买食、错门及脚痛都有；67见真人搬柴，69–77拒回与保护句成立；81–85实际返家转话，不许归期。宝钗麝月不随去寺，读者先见47并非她们先知道。男性寺院未冒作探庵。"},
+        {"scene_id": "99-S4", "required_ids": ["99-S4-R1", "99-S4-R2", "99-S4-R3"], "assessment": "OBSERVED_IN_PROSE_NOT_RUNTIME", "lines": [[87, 105]], "finding": "家中买米付租、量两人饭且保留句子；99旧针眼堵断线—另新针—线入未拉齐—101为顾火别在旧衣边—105新针仍在袖未补；两只饭碗为最后可见。未把旧衣认作95/100衣物，不重切寺或加二尾声。"},
+        {"scene_id": "99-S5", "required_ids": ["99-S5-R1", "99-S5-R2", "99-S5-R3"], "assessment": "OBSERVED_IN_PROSE_NOT_RUNTIME", "lines": [[47, 47], [67, 77]], "finding": "只有47一段课诵，跟不齐、匿名小和尚指页、散即搬水看锅；无经文、早晚时刻、法号、受戒或点化。它在离门后未锁间隔与贾芸寻见前；67以后只有劳动和会面，无第二次课诵。S4末镜不受源索引后项S5干扰。"}
+      ],
+      "forbidden_beat_review": [
+        {"scene_id": "99-S1", "forbidden_ids": ["99-S1-F1", "99-S1-F2"], "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "finding": "无玉归即出家、98庄子点化、托梦神谕、人生论文、所有人同步看懂或诗偈。"},
+        {"scene_id": "99-S2", "forbidden_ids": ["99-S2-F1", "99-S2-F2"], "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "finding": "离门不说玉带或不带、在包或别处、给谁或弃玉；无诀别信诗偈及精神胜利总结。"},
+        {"scene_id": "99-S3", "forbidden_ids": ["99-S3-F1", "99-S3-F2"], "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "finding": "线索互相抵牾、逐渐缩到寺门，未人人给准址；无神谕高僧安排。认错者虽骂和船户虽笑，贾芸仍真付钱伤脚，代价未被笑笔抹掉。拒回没有获写成超越众人。"},
+        {"scene_id": "99-S4", "forbidden_ids": ["99-S4-F1", "99-S4-F2", "99-S4-F3"], "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "finding": "两人饭不是经济恢复/情尽圆满；无终篇诗偈、留字佛理；家务后直到实际末行105没有再切寺，不倒灌47读者见闻。"},
+        {"scene_id": "99-S5", "forbidden_ids": ["99-S5-F1", "99-S5-F2"], "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "finding": "微课不教义点化、不托梦、不授戒得名；无题壁诗偈，不把寺院改为庵。"}
+      ],
+      "determinate_text_defect_audit": {
+        "object_count": {"status": "NO_CONFIRMED_FAIL", "finding": "98末客册包/夹条接99第3段由甄宝玉实际取还；99第7、19、23段另外是书摊借书渐次清还，最后一册23交清且借条收旧纸，不与甄的客册当成同一册回收两次。旧针99收另边、新针101/105仍别衣边，两根不互变；103拿来两只碗，105各人各一只，总数一致。33留旧鞋、45塞鞋垫不等同带走同一双旧鞋；旧衣无95/100身份赋值。"},
+        "chronology": {"status": "NO_CONFIRMED_FAIL", "finding": "3–25数日普通生活/退借/家务后果；27先告宝钗、35再让麝月听清、45离门；47未知间隔微课；49–65找人，67–77见真拒回，79返程、81–87返家转话；89翌日买米租务至105家中收。S1S2S5S3S4实际叙事成立，非旧source列表执行。"},
+        "knowledge": {"status": "NO_CONFIRMED_FAIL", "finding": "9/17/31麝月误作懒与口角，宝钗25已逼问，27宝钗先知不回、35麝月后知；49她们只知出巷，贾芸尚须查；67亲见后81向家中确认，83照实讲拒回、85不添归期。79小店人自认记对，贾芸明说不知此前问谁水，没有作者为传闻认证。小说中分层知情可见，但不等于注册知识事件已建。"},
+        "confirmed_text_FAILs": [],
+        "not_promoted_to_FAIL": [
+          "55买点吃的与59仍空腹并非确定自相矛盾：前处只写买，不写吃完；65明确吃干粮。吃食用途可略含混，但不足编成第二份定量食物账。",
+          "47寺中生活与67头发已剃不提供受戒日期或初到路径；未写这些不是缺微课，也不是确证瞬移。",
+          "贾芸寻访路径、路费具体金额和租米总库存未登记，不因UNKNOWN判FAIL。"
+        ],
+        "limitation": "未发现本次重点中的可确证件数/时序/知情冲突，不保证全面系统语义通过，不沿用旧短稿FAIL到新冻结稿。"
+      },
+      "literary_reservations_not_determinate_FAIL": [
+        {"id": "99-L1", "lines": [[9, 29], [37, 45]], "assessment": "REPEATED_WITHDRAWAL_RISK", "finding": "柴、米、窗纸、碗水多次构成明日不接/今日仍做、妻再问/他不答的结构，成本明确却反复延宕。27明说不回以后，39再问等不等而答不用等饭、41倒桶水、43合匣纸的离门滞留，有细节也有推迟已知决定的冗长感；不是明确不回缺写。"},
+        {"id": "99-L2", "lines": [[69, 77], [91, 97]], "assessment": "CORRECTIVE_COMMON_VOICE_RISK", "finding": "贾芸连说家里就没活、你没想到也得有人替走完，宝钗说今日不是我交给你的么、拦住这一回下一回呢，都敏捷地纠正对方前提。各人立场虽不同，句法同为漂亮反诘/一句堵回，易成统一的编辑审讯声。贾芸湿鞋、迟疑要给钱及宝玉拨木刺无言，比机锋更能保留不完满。"},
+        {"id": "99-L3", "lines": [[51, 65], [79, 85]], "assessment": "SEARCH_REDUNDANCY_RISK", "finding": "错认货主与白过河是强场；再加卖鞋不买、吃食摊错过、车脚不担保、店伙争记忆、柴户错门，社会网络丰富却有累计校正路径过密之感。79不替小店证词认证是好的边界，但又多一次辨真，可能拖慢拒回后的归家张力。"},
+        {"id": "99-L4", "lines": [[89, 105]], "assessment": "TERMINAL_OVEREXPLANATION_RISK", "finding": "房东对账使宝钗不只被动守家，两人米量争执也不和解，均有效。针链99–101已经足够清楚，103手近针又收、105再复述线未拉齐/袖口未补则略像逐项确认最终义务。实际终镜正确而可再凝练，不能把微课挪到末后补宗教力度。"},
+        {"id": "99-L5", "lines": [[47, 47]], "assessment": "MICRO_SCENE_TACTILE_DENSITY_RISK", "finding": "仅一段的相对短幅成立；前半跟诵失拍已写出不熟，后半桶梁、门槛、锅勺握法接连小障碍，劳动感足但也延续全篇动作受阻—调整的同一节律。作者disclosure报348字，本文不以该长度自动判文学适度。"}
+      ],
+      "strengths": [
+        "3把98末尾未清客册接口真正做完，而没有把客人书、家内册、书摊借书粗并成神秘一册。这里只认证末尾边界，不称98全文已读。",
+        "27不回来过日子与宝钗问是不回住处还是不肯同我们过，退出的关系伤害清楚；31麝月仍以口角理解、35方停针，知情时差比短稿真实。",
+        "贾芸有误认的羞恼、花钱的算计、余钱不愿拿出及伤脚，能质问却不能把人带回，不是全知忠义机器人。",
+        "77没有是答还有没有别的话，不否定平安；83口头转达、85不替许归期，没有新诀别纸信。",
+        "95两人量米未使分歧消失，97麝月仍恼宝钗当时不照实告诉；105有眼前饭而未补衣，余伤留住，绝不再回寺里。"
+      ],
+      "length_context_only": {"source": "author disclosure, not independently remeasured in this reading", "reported_total_characters": 10038, "reported_body_han_characters": 8609, "reported_micro_scene_characters": 348, "literary_PASS_inferred": false},
+      "execution_boundary": "decision及合同为NARRATIVE_ONLY_NOT_EXECUTABLE；本报告承认文字上可见新编排，不建立人间事件/身份、知识checkpoint，不重放旧run或追认旧稿。寺名、初程、准入/受戒日期、早晚经文、小和尚ID、玉离家后holder/location、旧衣注册身份继续开放。",
+      "review_disposition": "保留冻结候选供后续文学取舍；主要风险为退出问答和路径校正冗繁、反诘共声及末尾清单痕迹，不授予ADOPT或全语义PASS。"
+    }
+  ],
+  "cross_chapter_literary_observation": {
+    "scope": "仅本次完整读到的88与99，不外推全书、前八十回或其余十八回。",
+    "finding": "两回都善于用手边劳动把抽象离位落地，也都大量使用拿起—停住—放回、想说—收口、接差—再问清的微动作；宝钗在两回经常承担把信息和职责划清的正确声音。88新婚与迎春无权后事的差异、99主动退出与妻婢被迫续活的差异并未被抹平，但统一纠偏节奏会让不同处境听起来相似。此为文学声口/节奏风险，不是两回物数时序混乱的确定FAIL。",
+    "not_claimed": "不称盲比、不同reader共识、独立人工同行或全书阅读完成。"
+  },
+  "validation_and_tool_disclosure": {
+    "performed_before_freeze": [
+      "Read实际覆盖88第1–101行、99第1–105行及98末尾93–107行，notes/disclosures及99 decision全指定范围。",
+      "选中合同description/notes/unresolved、editor对应章文学反馈均按已声明的投影补读，持久输出预览未算全读。",
+      "read-only Node对候选、disclosures、notes、requests、editor报告、选中合同及decision计算SHA-256；十份request内嵌合同与绑定文件深值相等。哈希不算全文实读。"
+    ],
+    "report_json_and_quote_check": "将在写入本报告后执行只读JSON解析与逐条引文对应行子串检查；该检查不等于文学、合同执行或语义校验。最终工具结果通过父会话交接，不把未执行的校验预写为PASS。",
+    "not_executed": [
+      "未运行rcwh prose_integrity、全request完整性检查、合同/世界/对象/知识执行、semantic replay、import、ADOPT或任何测试套件。",
+      "未独立测量候选字数、正文汉字、微课字符或重复段落；本文长度值明确来自disclosure。",
+      "88作者disclosure记载其lint因安全分类服务不可用而未执行；本次没有代跑，也没有把作者此前工具失败改写为成功。"
+    ],
+    "blocking_policy": "本次没有遇到安全权限阻止后的换工具/换语言绕行。大文件Read体积限制以允许的字段投影和分段补读处理，不是安全拒绝规避；如工具再阻止则停，不更改权限或委派代执行。",
+    "no_runtime_PASS_claimed": true
+  },
+  "write_boundary": {
+    "only_new_repo_path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/readings/ch88-99-v1-reader1.json",
+    "manuscripts_modified": false,
+    "disclosures_modified": false,
+    "requests_modified": false,
+    "notes_editors_contracts_decisions_modified": false,
+    "code_modified": false,
+    "delegated": false,
+    "committed": false,
+    "imported": false,
+    "adopted": false,
+    "frozen_report_no_followup_input_rewrite": true
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT",
+  "requested_label_alias": "MODELSUBAGENT",
+  "mode": "FEEDBACK_ONLY",
+  "authority_effect": "NONE",
+  "status": "NOT_ADOPTED_NOT_RELEASED",
+  "reading_experiment": "phase6全书连续阅读D",
+  "reader": {
+    "reader_id": "reader1",
+    "segment": 3,
+    "environment_reported_model_label": "gpt-6.1-sol",
+    "identity_basis": "同一reader原context第三段，不新增独立人数；仅环境自报标签，不认证provider或human独立性。",
+    "delegated": false,
+    "actual_continuous_model_reading": "81–95按顺序实读；本轮只新增91–95正文阅读，其中91为v2，92–95为长v1。",
+    "cross_segment_memory_limits": "前两段保留原context及自己报告记忆，本轮只回读90末95–105行，未重读81–89全章或前两报告全文；不能声称所有旧细节重新逐条核验。未借他人结论定位。"
+  },
+  "selection": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/continuity-reading-selection-v1.json",
+    "sha256": "6f3355d85563f8226429afb25e9ab7ec65914fa889a7fbe9d7b623114c7a0829",
+    "selection_effect": "READING_ONLY_NOT_ADOPT",
+    "reread_before_segment": true,
+    "rule": "91只读ch91-v2.txt，不读其v1或disclosure；92–95按selection选v1。"
+  },
+  "prior_reports": [
+    {"path":"artifacts/agent_research/phase6/revisions-v2/continuity/reader1-ch81-85-v1.json","sha256":"0468753bfbc3c3c7d222d4809c6cc898529b6a9acefb383c7ae4aa0103606cde","frozen_unchanged":true},
+    {"path":"artifacts/agent_research/phase6/revisions-v2/continuity/reader1-ch86-90-v1.json","sha256":"fc083ed136de1d4644caf43a1638d5d385ac69498465bfb294b685434f324b19","frozen_unchanged":true}
+  ],
+  "retained_prior_uncertainties": {
+    "not_resolved_by_this_segment": ["83短夹袄及末尾姜粥信息来源", "83赔菜实际清偿", "元妃正式服制与丧中婚礼具体准办条文", "85普通未成稿、86空字旧笺、87宝玉护素笺是否同物及《十独吟》匣后续交接", "88迎春死因与娘家后来能否料理", "探春到达、回信、知宫讣与麒麟来源关系", "借院原有米的取得、总量、现金余额", "欠薪旧仆的清偿结果"],
+    "limited_updates_not_full_resolution": ["91腊尽天寒给出季节锚点，95明确家败后第二冬，中间又过春夏；不等于可还原81起全部日期。", "90末取物候回到91获认冬衣靠褥名目，但没有证明90原单所有请求已准；91实际核衣带出限定日用。", "95新增一次典衣、购米购干炭及当票保管的明文，不倒推89–90旧米来源已明。"],
+    "no_claim_of_all_old_questions_solved": true
+  },
+  "method": {
+    "primary_reading": "逐章按91–95顺序，Read分段完整读每行首尾；不使用hash、grep、摘要代读。",
+    "not_read": ["其他读报", "source", "notes", "旧稿", "disclosure正文", "原phase5", "96–100正文", "整个大request"],
+    "line_convention": "精确相对path，1-based inclusive；quote为指定行区间内逐字连续片段。实际覆盖按标准库splitlines行数，Read额外末尾空白不计。",
+    "checks": "仅Python -I标准库只读核JSON、sha、行数、quote与前两冻结报告哈希；不执行项目代码。",
+    "repo_lint_tests_import_release_registration": "NOT_EXECUTED",
+    "permission_denials": [],
+    "permission_bypass_or_escalation": false,
+    "only_new_output": "artifacts/agent_research/phase6/revisions-v2/continuity/reader1-ch91-95-v1.json",
+    "no_prose_input_or_old_report_edits": true
+  },
+  "actual_coverage": [
+    {"chapter":91,"revision":"v2","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","sha256":"0bf1f11f7a53f2112ac8eeaa21d166cf26737b7e29415de9f2624e808d22a6a1","selection_hash_match":true,"line_start":1,"line_end":119,"complete":true,"read_requests":[{"offset":1,"limit":85},{"offset":86,"limit":85}]},
+    {"chapter":92,"revision":"v1","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","sha256":"2472cc0b1a0f0a48eef056e31266c12a52b89e43cf2a9289f1fe14426f3dbc37","selection_hash_match":true,"line_start":1,"line_end":130,"complete":true,"read_requests":[{"offset":1,"limit":85},{"offset":86,"limit":85}]},
+    {"chapter":93,"revision":"v1","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","sha256":"89a7130d0455e9b260336c974ee860f78675cdb46cba892490d36e5f08ccc3ec","selection_hash_match":true,"line_start":1,"line_end":135,"complete":true,"read_requests":[{"offset":1,"limit":85},{"offset":86,"limit":85}]},
+    {"chapter":94,"revision":"v1","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","sha256":"0fe24fd08773b9b9fe670146b40d25e4f489a7607252c50826b5ca834fe1dddb","selection_hash_match":true,"line_start":1,"line_end":119,"complete":true,"read_requests":[{"offset":1,"limit":85},{"offset":86,"limit":85}]},
+    {"chapter":95,"revision":"v1","path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","sha256":"3f25c4dccf29af78417578fa44f172a00bcb07741c7264849110b4d1a1ab925a","selection_hash_match":true,"line_start":1,"line_end":125,"complete":true,"read_requests":[{"offset":1,"limit":85},{"offset":86,"limit":85}]}
+  ],
+  "boundary_reread": {"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":95,"line_end":105,"read_request":{"offset":95,"limit":15},"purpose":"核对受控旧府取物纸、平儿候回、宝玉补袖与已送出的夹衣；不是全章重读。"},
+  "chapter_observations": [
+    {
+      "chapter":91,
+      "scope_judgment":"腊尽、借住小院、凤姐衰弱仍生存；亲赴旧府认衣、核物出门回院，另有雪物未完成交回处理与宝玉认单的次晨传唤。",
+      "observations": [
+        {"id":"91-O1","classification":"OBSERVATION","observation":"准的是去认指定日用，入内、翻认、领出各有控制。凤姐用左袖补丁拆孔与里襟旧缝共同认青灰袄，错认厚衣会有赔责，不因暖和就拿。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":9,"line_end":9,"quote":"准进门，不等于准拿东西。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":43,"line_end":43,"quote":"摸到里襟一处旧接缝，才点了头。"}]},
+        {"id":"91-O2","classification":"OBSERVATION","observation":"两棉衣、较薄靠褥、焦孔旧毡分别辨认后出门核过带回；空画轴匣和不认得旧枕不准混入，麝月旧钥匙不构成取物权限。旧毡湿角回院另挂。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":47,"line_end":47,"quote":"这匣还在所存之物里，不能取。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":71,"line_end":71,"quote":"看守核过，让她们领出"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":87,"line_end":87,"quote":"旧毡的湿角挂开，不叫它压住干的一头。"}]},
+        {"id":"91-O3","classification":"OBSERVATION","observation":"凤姐隔纸拾雪中小物放在书办示意干处，只称玉样，记录拾起不等于领走；交回接办仍待处理，不是已经完成收缴登记全链。不能当通灵玉。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":63,"line_end":63,"quote":"笔尖落下，写的是“玉样物一”。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":65,"line_end":65,"quote":"写你拾起，没写领走。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":69,"line_end":69,"quote":"只说已记，交回的事还待接着办。"}]},
+        {"id":"91-O4","classification":"OBSERVATION","observation":"领衣副单、平儿转抄带话小纸与留在旧府的原单不是同一纸。宝玉听说雪物，知道转述未附在自己手纸上；未说亲见小物或问讯对象必为雪物。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":97,"line_end":97,"quote":"没有，仍留在那边。这张只记要带的话。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":103,"line_end":103,"quote":"这上面只有旧单问话，并没有那四个字"}]},
+        {"id":"91-O5","classification":"OBSERVATION","observation":"天黑正式再传只说次晨认单，家属问回时无人答；本章不写已经羁押。宝钗又缝裂袖，五更热粥后宝玉带转抄纸出门，麝月未跟出正式认单。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":107,"line_end":107,"quote":"传来只说认单，回来时辰没说。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":117,"line_end":117,"quote":"宝玉将平儿记话的小纸折起，放在怀里"}]}
+      ]
+    },
+    {
+      "chapter":92,
+      "scope_judgment":"从天未亮认单到留候、实际入监、送衣验物、再问、准返未放；读者知道羁中细节不等于家属得到同等消息。",
+      "observations": [
+        {"id":"92-O1","classification":"OBSERVATION","observation":"开篇承接91新缝袖与贾芸送行；问讯要求分亲见、亲手和听闻，单子具体物未命名，不得以91雪物替换。暮色时留一留后入监，留时未定。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":3,"line_end":3,"quote":"衣袖上昨夜新缝的地方有些紧。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":9,"line_end":9,"quote":"东西怎样出去，我没在跟前。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":25,"line_end":25,"quote":"狱卒领他到睡处"}]},
+        {"id":"92-O2","classification":"OBSERVATION","observation":"入监有暂存物与随身物区分，平儿小纸获准自留；公用毡和领定粗碗不能当私产调换。宝玉由吃冷粥、鞋湿、无处晾巾逐渐学会让出空间，不是突变全能。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":21,"line_end":21,"quote":"将可留在身边的与须暂存的分开。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":25,"line_end":25,"quote":"报了再换，莫混着拿。"}]},
+        {"id":"92-O3","classification":"OBSERVATION","observation":"小红问的是接物而不是审讯或放人，衣袜与食物分验、不能夹纸口信；茜雪送袜、宝钗送衣、麝月炒米，不把捐物者认作刑案证人或知情人。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":61,"line_end":61,"quote":"不许借衣裳夹着进去。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":63,"line_end":63,"quote":"我只管接物，不管叫谁问话。"}]},
+        {"id":"92-O4","classification":"OBSERVATION","observation":"外面先知已交转送者而不知穿没穿；叙述后进入里面，明确宝玉收包穿厚袜吃炒米，但他不知道谁补袜。消息边界保持，不能把读者所见倒灌外面。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":83,"line_end":83,"quote":"穿没穿，眼下还不知道。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":87,"line_end":87,"quote":"他不知道是谁补的"}]},
+        {"id":"92-O5","classification":"OBSERVATION","observation":"再问后准返只是不用为其他待核项继续留，仍可传；领物和放行未到狱卒手，章末仍用公碗未过监门。小红与贾芸只传这个限度，宝钗未当已到家铺床。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":111,"line_end":111,"quote":"领物与放行还得接着办"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":129,"line_end":129,"quote":"宝玉尚未过监门，领物与放行还在后头。"}]}
+      ]
+    },
+    {
+      "chapter":93,
+      "scope_judgment":"顺接同一次准返，完成领物放行后归借院；同日西屋凤姐渐弱、晚间死亡，巧姐在平儿与宝钗之间有数次具体照看交接。",
+      "observations": [
+        {"id":"93-O1","classification":"OBSERVATION","observation":"开头仍等，外间重说明所报住处及再传须来，领原暂存物与后送衣袜分认，再还公碗才过门。不是第二次新羁押或新获准。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":3,"line_end":3,"quote":"却说宝玉听了准回的话，仍在原处等着。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":7,"line_end":7,"quote":"辨清原先交存的与后来送入的。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":11,"line_end":11,"quote":"叫把公用的放回。"}]},
+        {"id":"93-O2","classification":"OBSERVATION","observation":"归路由贾芸接包报家，宝玉先换外衣、吃粥、请安后才见凤姐；身体仍瘦且手足乏，不把获准返还当病体立复。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":29,"line_end":29,"quote":"你这一身从外头穿回来，挤进去又得平儿腾手照管。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":31,"line_end":31,"quote":"瘦得骨节分明。"}]},
+        {"id":"93-O3","classification":"OBSERVATION","observation":"凤姐生前看见宝玉回来，以自己的青灰袄袖白布与孩子硬缝袖相映，指平儿改巧姐硬缝在侧。两件衣不是同件，死亡前孩子试穿已不再挠。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":47,"line_end":47,"quote":"那件青灰袄穿过后又脱下，眼下搭在一边，袖里的白布露出一点。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":63,"line_end":63,"quote":"硬缝挪到侧面，针脚压平"}]},
+        {"id":"93-O4","classification":"OBSERVATION","observation":"晚间不应水、婆子流泪、平儿哭、门外告死形成死亡确认；李纨请贾琏，由贾琏主眼前后事，白布不足需拼旧，未恢复旧排场。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":77,"line_end":77,"quote":"只有婆子出来，低声说奶奶去了。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":83,"line_end":83,"quote":"叫白事经手的先寻可用的，不要远处那些排场"}]},
+        {"id":"93-O5","classification":"OBSERVATION","observation":"死后平儿先获知麝月看孩子，再抱巧姐明说母死；后来交宝钗才能去比白布。孩子药钱纸仍平儿保管，买米纸李纨接去另派人，不和白事纸、母衣或旧钥匙混包。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":97,"line_end":97,"quote":"奶奶死了，不能再同你说话。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":111,"line_end":111,"quote":"临了又扣住孩子那张，说药铺的婆子回来仍找她。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":129,"line_end":129,"quote":"最终握住了宝钗袖口，眼睛仍望平儿。"}]}
+      ]
+    },
+    {
+      "chapter":94,
+      "scope_judgment":"借院丧后未了，王仁与媒人催不明亲事被长辈阻止，随后核问刘家炕饭接送才让巧姐暂住；与95成年三人另租房不是同一迁移。",
+      "observations": [
+        {"id":"94-O1","classification":"OBSERVATION","observation":"说亲方不说明年龄家情、接送责任，车已留而双方互推；贾母贾琏阻止当日送走。可认有催迫与不明风险，尚未写孩子被卖成或已有收财数目。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":23,"line_end":23,"quote":"谁叫你先留车的？我不过说顺路。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":31,"line_end":31,"quote":"贾琏叫车先走，亲事待问清再议。"}]},
+        {"id":"94-O2","classification":"OBSERVATION","observation":"刘姥姥先回去问家人、挪炕、说明邻妇非随叫随到，获贾母贾琏同意才办暂住；不把好心等同已有无限食宿照护。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":41,"line_end":41,"quote":"你是叫她去住，不是跟我走一趟。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":47,"line_end":47,"quote":"只认这一点，回来同平儿说准了炕和饭、自己暂能在家的安排。"}]},
+        {"id":"94-O3","classification":"OBSERVATION","observation":"用当下衣堆与褥子现包，不假定旧府小包随身；散扣在平儿针包小袋留城，车费由两人小钱加一趟柴折抵商量，非已有稳定天工收入。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":53,"line_end":53,"quote":"平儿没把寻不着的旧包当作已在身边。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":55,"line_end":55,"quote":"平儿将散扣包在针包小袋里，收进自己日用包"}]},
+        {"id":"94-O4","classification":"OBSERVATION","observation":"巧姐由平儿交姥姥上车，平儿不随行；到村衣褥接下、写到达纸托返城车脚。平儿迟后仅知到达与短时笑，不因回执就知夜眠饮食鞋痛。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":63,"line_end":63,"quote":"平儿托着孩子，把她送到姥姥怀中"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":109,"line_end":109,"quote":"忽想起自己并不知晚间睡得怎样，又将纸折起，没有笑出来。"}]},
+        {"id":"94-O5","classification":"OBSERVATION","observation":"乡村暂住并非立刻安稳：粗碗食物、鞋垫磨脚、误叫平儿、邻妇有自己活；学理线与短歌仅是手边劳动，不认证命定纺绩人生。孩子穿到93改平的袖口，散扣仍不在乡下。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":91,"line_end":91,"quote":"她忽然脱口道：“平儿。”"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":117,"line_end":117,"quote":"摸摸里头补平的地方，才把手穿出。"}]}
+      ]
+    },
+    {
+      "chapter":95,
+      "scope_judgment":"越过春夏到家败第二冬，房东需腾房而非加钱即可续住；宝钗两次看同一偏院、付房钱后另日搬物，典衣购米炭与当票分置都有实写。",
+      "observations": [
+        {"id":"95-O1","classification":"OBSERVATION","observation":"明确长时间跳接；临街亮屋贵，偏院便宜但风大水远，宝钗先看再返家问、午后回同处付钱收纸，之后才写搬物那日。不是一次看房就当全家已到。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":3,"line_end":3,"quote":"已是家败后第二个冬天。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":35,"line_end":35,"quote":"午后贾芸又陪宝钗回到那同一处偏院。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":37,"line_end":37,"quote":"搬物那日，车先停在院外"}]},
+        {"id":"95-O2","classification":"OBSERVATION","observation":"搬迁物只管宝玉宝钗麝月这一房，大木架暂留旧借院，锅被衣与旧毡先走。偏院米瓮是借留空器，米为旧院剩米另包；不是空瓮变出粮，也未挪旁房铺盖。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":45,"line_end":45,"quote":"米用的小瓮尚空着，是偏院所留的，旧院现吃的剩米由麝月另包"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":45,"line_end":45,"quote":"不是他们这一房的，先别动。"}]},
+        {"id":"95-O3","classification":"OBSERVATION","observation":"丢的是普通盛水小碗，非狱中公碗；小木碗从衣包取。两碗满一碗半是熟粥分配，不是生米量器或缺一只碗导致少米。宝钗拨粥后未宣称粮增。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":47,"line_end":47,"quote":"少的是平日淘菜暂盛水的一只普通小碗。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":61,"line_end":61,"quote":"粥成时，两碗盛满，另一只只到半处。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":89,"line_end":89,"quote":"米不是拿吃饭的碗这么一排便数。"}]},
+        {"id":"95-O4","classification":"OBSERVATION","observation":"宝玉取典青夹袄经当铺看磨损、报值、点头、收票钱后衣才归铺；钱票先分开，先购少米再回问干炭，钱不是全换米、也未先买潮炭。租住收领纸、当票及房钱后留存日用钱分别存置。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":71,"line_end":71,"quote":"等衣真正被收过去，才把空出来的手拢进怀里。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":79,"line_end":79,"quote":"票边留在外面，租住那张收领的纸仍在钱袋，不混放"}]},
+        {"id":"95-O5","classification":"OBSERVATION","observation":"少量干炭成交，灯油只问价未购；晚上补窗改布挡风、旧毡遮壁不够全盖，票连干布在箱面仍压同角，余米留明早。药铺余款从另留钱问，不从米炭款默认补。","evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":83,"line_end":83,"quote":"原想顺路添的灯油便只问了价，没有拿。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":107,"line_end":107,"quote":"将票连同底下那块干布一并移到箱面，仍让匣压住同一角"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":113,"line_end":113,"quote":"米炭这点钱不再挪给旁的，药钱须从原来留下的另问。"}]}
+      ]
+    }
+  ],
+  "cross_boundary_observations": [
+    {
+      "id":"B90-91","classification":"LIMITED_LATER_AUTHORIZATION_NOT_ALL_REQUESTS_GRANTED","interface":"90候旧府取物答复 → 91冬衣靠褥认领与新认单",
+      "observation":"90尾只交名目，91另收准去认冬衣靠褥纸，不能读作90已领完。季节到腊尽但间隔未写。90补袖与91又裂袖可能是再损或另一处，未有不可再破声明，不升FAIL。91夜晚仍只是认单传唤，羁押在92实际发生；雪中物与认单具体对象不自动同一。",
+      "left_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":95,"line_end":95,"quote":"补的那处正抵着腕骨，有些硬。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":105,"line_end":105,"quote":"那人只收纸往里去，平儿退到门侧，手里空着，站下等回话。"}],
+      "right_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":5,"line_end":5,"quote":"准咱们去认冬衣、靠褥。取什么还得在那里登记。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":107,"line_end":107,"quote":"传来只说认单，回来时辰没说。"}]
+    },
+    {
+      "id":"B91-92","classification":"EXPLICIT_NEXT_MORNING_ENTRY_AND_LATER_DETENTION","interface":"91五更带纸出门 → 92问单后羁留",
+      "observation":"同一新缝袖、转抄纸、贾芸送行顺接；91没有‘保证当日返还’，92宝玉的认认就出来是自估。此后见狱卒、同监才可确认读者所见羁中，不把家中有限传话等同正式获知所有细节。衣物另暂存不等于雪物归他或玉失。",
+      "left_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":117,"line_end":117,"quote":"昨夜缝的袖口有一截线尾未剪"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":119,"line_end":119,"quote":"才随人走出去。"}],
+      "right_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":3,"line_end":3,"quote":"贾芸送他到外头"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":17,"line_end":17,"quote":"今日不能回去么？"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":19,"line_end":19,"quote":"眼下未定，待核了再传。"}]
+    },
+    {
+      "id":"B92-93","classification":"SAME_RELEASE_PROCESS_COMPLETED_IN_NEXT_CHAPTER","interface":"92准回未过监门 → 93领物还碗实际出门",
+      "observation":"93回指已有准回话，等待后办理，同一释放流程；未出现重新羁押的中间事件。暂存与后送衣分清，公碗还架，家仍报原借处且日后可传。无罪结案、永久免传、全单已清都不能从准返推出。",
+      "left_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":111,"line_end":111,"quote":"准他返还的事已经传下，领物与放行还得接着办"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":129,"line_end":129,"quote":"宝玉尚未过监门，领物与放行还在后头。"}],
+      "right_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":3,"line_end":3,"quote":"直到名字真叫到头上，才将衣抱起。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":11,"line_end":11,"quote":"才提脚跨出去。"}]
+    },
+    {
+      "id":"B93-94","classification":"BEREAVEMENT_AND_CARE_CONTINUITY","interface":"93凤姐亡、孩子交宝钗照看 → 94丧后未了、巧姐暂住安排",
+      "observation":"93末平儿为后事暂离孩子、宝钗留照看，94平儿仍在借院问未了后事、给孩子找照护。不是母亲复生或孩子凭空失踪；94先阻说亲再核刘家住处、现包衣褥、亲交上车，平儿本人不去。两次转抱不是法律收养或终身送养的完成声明。",
+      "left_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":129,"line_end":129,"quote":"最终握住了宝钗袖口，眼睛仍望平儿。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":135,"line_end":135,"quote":"走到灯下接住婆子递来的那一端白布。"}],
+      "right_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":3,"line_end":3,"quote":"凤姐的后事尚有零星未了"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":61,"line_end":61,"quote":"话到了口边只剩“我不去”。"}]
+    },
+    {
+      "id":"B94-95","classification":"DIFFERENT_MOVES_WITH_EXPLICIT_SEASONAL_GAP","interface":"94巧姐去刘家暂住、平儿留城 → 95第二冬三人另赁偏院",
+      "observation":"94是为孩子避不明婚事并缓解照护的暂住，95是过春夏后房东催腾房引起宝玉宝钗麝月这一房搬迁。不能把95搬家理解成94全府跟巧姐去乡下；也不能把长跳接当孩子已永久定居。95没叙别房及巧姐这段月日的去向，保留未知。",
+      "left_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":71,"line_end":71,"quote":"姥姥只说来住几日。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":111,"line_end":111,"quote":"那扣子仍留在城里"}],
+      "right_evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":3,"line_end":3,"quote":"却说又过了春夏，寒风再起"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":5,"line_end":5,"quote":"后头人已经在预备，不能再往后挪。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":45,"line_end":45,"quote":"旁边别家铺盖仍各有人料理"}]
+    }
+  ],
+  "confirmed_failures": [],
+  "failure_scope_statement": "就91-v2、92–95-v1完整实读及90末接口，未找到已排除省笔、含糊日名或未知物身份后的明确互斥事实。确定FAIL列空，不是全书、文学采用或历史PASS。94日期标签单列较强疑点，未强造重排，也未自动消解。",
+  "uncertainties": [
+    {
+      "id":"U3-1","classification":"TEMPORAL_LABEL_AMBIGUITY_NOT_AUTOMATIC_FAIL",
+      "question":"94:113‘刘家那头，第一日将晚’如何对上到村后已叙一夜、次晨、午前与午饭？",
+      "observation":"主叙已从到村傍晚经过首夜、天亮、午前和午后，后来从平儿城里回切刘家却称第一日将晚。若第一日指到达日，则顺叙会退一天；也可能指到达后第一个完整白日或回切标签不严。正文未明说倒叙，不能无声替作者改成第二日，也不足把宽泛日名当不可救的双重事件。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":79,"line_end":79,"quote":"这一夜巧姐靠着姥姥睡"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":83,"line_end":83,"quote":"天亮后，姥姥先下地忙水。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":113,"line_end":113,"quote":"刘家那头，第一日将晚"}],
+      "resolution_needed":"保留为较强时间标签疑点；后读不以此自定到达日或纸回城的确切日数。"
+    },
+    {
+      "id":"U3-2","classification":"OBJECT_AND_CASE_IDENTITY_UNKNOWN_NOT_FAIL",
+      "question":"雪中玉样物、旧单所指物与宝玉通灵玉有没有关系？",
+      "observation":"91只认玉样物未验身份，原单留旧府且只抄面询句，92案件物仍不命名，93领物没有列出每项。不能把雪物当通灵玉失而复得，不能把领物默认含雪物或认证颈玉仍在。89颈玉在的旧读记忆不抵当前交接缺项。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":63,"line_end":63,"quote":"是玉样的东西。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":97,"line_end":97,"quote":"某件物，候宝玉面询"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":7,"line_end":7,"quote":"他逐样看了一遍，拿起一件又放下"}],
+      "resolution_needed":"等待明确物貌、姓名与交接；不据题目、颜色或相邻段落强认同物。"
+    },
+    {
+      "id":"U3-3","classification":"LEGAL_SCOPE_AND_DURATION_LIMIT_NOT_FAIL",
+      "question":"旧单案件的具体事由、羁候确切天数与准返法律效力？",
+      "observation":"92末诗句说门里十日，但散文主要说候些日子，没有逐日历；93沿同次释放。只证暂可返仍可传，不认证起诉罪名、洗冤结案、幕后营救或小红茜雪证成无辜。回目寻证不扩大正文所见仅问接物的行动。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":130,"line_end":130,"quote":"门里十日，只知饭冷灯昏"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":5,"line_end":5,"quote":"若再传问仍须来。"}],
+      "resolution_needed":"以正文限度留待后文，不从回目补造查案结论或严密十日日历。"
+    },
+    {
+      "id":"U3-4","classification":"LONG_GAP_AND_HOUSEHOLD_SCOPE_UNKNOWN_NOT_FAIL",
+      "question":"94说住几日到95第二冬间，巧姐、平儿、别房各住何处，暂住是否延长？",
+      "observation":"95仅清楚这一房三人另迁，别房各料理；没有说明孩子这几月持续住刘家、返城或正式被收养。临时住几日不是保票何日一定回，因此不以跨季自动判过期不归矛盾。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":57,"line_end":57,"quote":"回来哪顿还不能定。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":55,"line_end":55,"quote":"余下各处的事仍照先前，不许旁人以为搬了便无处寻。"}],
+      "resolution_needed":"后读若回到巧姐或平儿，须实际接续，不把95沉默当完整结局。"
+    },
+    {
+      "id":"U3-5","classification":"CLOTHING_IDENTITY_AND_AMOUNT_UNSPECIFIED_NOT_FAIL",
+      "question":"95典青夹袄的早期来历、与90已赠青布夹衣及91领衣是否同一？典钱购米炭的具体金额？",
+      "observation":"90所赠确已给人，95衣只名典青且有补线，未指为那件青布夹衣、凤姐青灰袄或麝月短袖棉衣。多件旧衣可以存在，不因颜色近就造出回收再典矛盾。95交易动作有序但无金额，不能自算租金、典价、粮重及余额，也不能据药钱另留断言全部债已结。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch90-v1.txt","line_start":99,"line_end":99,"quote":"不必，已给她的，自己用就是。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":65,"line_end":65,"quote":"他才从布里抽出典青的"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":79,"line_end":79,"quote":"说明米铺花了些，余下在此，票另递。"}],
+      "resolution_needed":"只守住当前典衣在铺、钱票分开、已购米干炭的局部事实，不补前身或账本。"
+    }
+  ],
+  "literary_risks": [
+    {
+      "id":"L3-1","classification":"LITERARY_RISK_NOT_CONTINUITY_FAIL",
+      "risk":"认物、认纸、认话、准许与实际办理的区别连续承担大量对白。91认袄、92认单、93领物、94识媒、95看房典衣都靠问清边界推进，因果严密但五章节拍可能过度一型，人物语言仍常像共享核验训练。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":9,"line_end":9,"quote":"准进门，不等于准拿东西。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":113,"line_end":113,"quote":"准回去，放你过门的事还没到我手。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":15,"line_end":15,"quote":"人没问明白，礼倒先算清了。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":9,"line_end":9,"quote":"别看见房门便算有家了"}]
+    },
+    {
+      "id":"L3-2","classification":"LITERARY_RISK_NOT_CONTINUITY_FAIL",
+      "risk":"93凤姐最后通过为孩子改硬缝完成关切，比泛泛临终托孤具体；但91亲认补袖、92袜缝、93孩子硬缝、94鞋垫和改袖记忆、95补衣补窗集中用同一触觉伦理，可能使针线成为每个冲突的通用答案，死亡与贫困各自重量被相似手势吸收。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":71,"line_end":71,"quote":"走一步磨一下，才是受罪。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":63,"line_end":63,"quote":"硬缝挪到侧面，针脚压平"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":117,"line_end":117,"quote":"摸摸里头补平的地方，才把手穿出。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":101,"line_end":101,"quote":"眼下只能先补窗，衣留到明日"}]
+    },
+    {
+      "id":"L3-3","classification":"LITERARY_RISK_NOT_CONTINUITY_FAIL",
+      "risk":"91雪物、92羁中、93病亡、94孩子陌生乡居、95搬新屋都反复湿鞋、挪凳、手满、杯碗、热粥和衣袖碰物。触感有连续性，但高潮也容易同样慢与低声；大量小障碍可能稀释死亡和羁押应有的独特紧迫。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch91-v2.txt","line_start":75,"line_end":75,"quote":"三个人都吓得收紧了手。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch92-v1.txt","line_start":93,"line_end":93,"quote":"你这一条巾，倒要三个人伺候。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch93-v1.txt","line_start":33,"line_end":33,"quote":"另一只手也伸出来，别只暖半边。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":55,"line_end":55,"quote":"门快关，你也快关，偏要一齐赶我。"}]
+    },
+    {
+      "id":"L3-4","classification":"LITERARY_RISK_NOT_CONTINUITY_FAIL",
+      "risk":"94回目先定狠舅贪财，正文主要靠家情含糊、车脚露缝、问答拆穿；95贫困主要靠可量资源与身体磨损显形，两章均有实物承载而非全靠判断。风险是王仁媒人近乎专为被问倒而写，而巧姐、宝玉的每次学会又反复被相近动作失误重置，长读可能显得程序化成长。",
+      "evidence":[{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":13,"line_end":13,"quote":"单问铺子不算认人家。"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch94-v1.txt","line_start":103,"line_end":103,"quote":"她手里几件事纠在一起，一时竟不肯放"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":59,"line_end":59,"quote":"以为要连瓮递"},{"path":"artifacts/agent_research/phase6/revisions-v2/authored/ch95-v1.txt","line_start":89,"line_end":89,"quote":"这回没有添过。"}]
+    }
+  ],
+  "handoff_state_at_95_end": {
+    "basis":"只保存已实读的局部状态，不替96后补结局。",
+    "snow_item_and_jade":"91只记玉样物一，拾起后未带回，交回接办尚待处理；无身份认证。通灵玉当前存处不能从雪物或93未列明的发还物推断。",
+    "baoyu_legal_status":"92入监候核，后准返；93同次领物还公碗实际出门归原借院，仍可再传，不是全案结清。95这房另租后无新传问信息。",
+    "fengjie":"93晚间死亡，贾琏主眼前后事，拼接旧白布；青灰袄与日用衣由平儿包收在原收布处，未证后来随95这一房迁走。",
+    "qiaojie":"94交刘姥姥暂住，衣褥现包、车脚回报到门，平儿留城；散扣留平儿日用包针包小袋。乡下有补平袖衣、短线与鞋垫适应，不能宣称95时已长成或永久定居。",
+    "new_lodging":"95家败第二冬，房东需腾借院；宝玉宝钗麝月这一房付存钱赁同一偏院再搬，留大木架在原院限定角落，带锅被衣旧毡。新处门急关、水路绕、窗坏，尚未修妥。",
+    "food_and_containers":"普通盛水小碗仍找不回，小木碗在新灶旁晾干；借留米瓮装旧剩米再加典钱新购米，熟粥两碗半不能当生米计数。明日米尚留，水须提。",
+    "pawn_and_money":"典青夹袄实交当铺，赎期未作保证；典衣款部分购米再购少量干炭，未买新灯油。租收纸在钱袋；当票连干布移到箱面仍由针线匣压同角，露边未折进匣。药钱从另留来源问，未混挪米炭钱。",
+    "night_objects":"旧毡挡半墙但漏脚风；窗用旧布暂挡，破纸仍响；贾芸新木片只稍顶住门，未认证彻底修门；湿衣补衣未全完，夜里守余火不添新炭。",
+    "older_threads":"前两段所有未得正文解决的信路、麒麟、诗稿、服制、迎春后事、旧欠薪问题仍开放。"
+  },
+  "unread_remainder": {
+    "complete_remaining_chapters":[96,97,98,99,100],
+    "body_read_status":"ALL_NOT_READ",
+    "next_segment_requires_coordinator_message":true,
+    "pending_actual_reading_questions":["新偏院的米炭药钱与当票去向", "房租收纸、当票、旧单转抄纸各自身份不混", "羁中可再传的后续边界", "雪物是否另有明文认证而非自动通灵玉", "巧姐暂住和城里平儿的后续接口", "诗稿旧匣与信路、麒麟未完线", "人物成长与声口是否仍被相近手满动作循环覆盖"],
+    "no_self_start":true
+  },
+  "verification_contract": {
+    "candidate_selection_and_prior_report_hash_check":"EXECUTED_SUCCESS_BEFORE_REPORT_WRITE",
+    "json_quote_and_hash_check":"写入后仅Python -I标准库只读校验JSON、全部quote路径行区间与包含关系、selection与五章及前两冻结报告哈希；执行结果在交接记录，不为追填改动报告。",
+    "freeze_policy":"校验后冻结第三报告；前两报告始终不改。若调用拒绝如实NOT_EXECUTED，不换工具绕过。",
+    "no_adoption_or_historical_pass_claim":true
+  }
+}

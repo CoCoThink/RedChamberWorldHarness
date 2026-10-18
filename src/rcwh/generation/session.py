@@ -75,7 +75,12 @@ def prepare_rendered(root: Path, rendered: dict, budget: Budget, model: str, con
 def selection_context(root: Path, *, package_path: str | None = None, chapter: int | None = None,
                       route: str = "harness", characters: int = 6000, plan_path: str | None = None,
                       previous_path: str | None = None, parent_path: str | None = None,
-                      feedback_path: str | None = None, notes_path: str | None = None) -> dict:
+                      feedback_path: str | None = None, notes_path: str | None = None,
+                      revision_template: str = "revise-v1") -> dict:
+    if revision_template not in {"revise-v1", "revise-v2"}:
+        raise ValueError("unknown revision template")
+    if not parent_path and revision_template != "revise-v1":
+        raise ValueError("revision template requires a revision parent")
     if parent_path:
         from .writing import load_draft
         if not feedback_path or package_path or chapter is not None or plan_path or previous_path:
@@ -86,10 +91,14 @@ def selection_context(root: Path, *, package_path: str | None = None, chapter: i
         characters = None
     elif not package_path or chapter is None or feedback_path or notes_path:
         raise ValueError("draft preparation requires package and chapter, without revision selections")
-    return {"operation": "revise" if parent_path else "draft", "package_path": package_path,
-            "chapter": chapter, "route": route, "characters": characters,
-            "plan_path": plan_path, "previous_path": previous_path,
-            "parent_path": parent_path, "feedback_path": feedback_path, "notes_path": notes_path}
+    context = {"operation": "revise" if parent_path else "draft", "package_path": package_path,
+               "chapter": chapter, "route": route, "characters": characters,
+               "plan_path": plan_path, "previous_path": previous_path,
+               "parent_path": parent_path, "feedback_path": feedback_path, "notes_path": notes_path}
+    # Preserve the exact legacy selection envelope for existing frozen requests.
+    if revision_template != "revise-v1":
+        context["revision_template"] = revision_template
+    return context
 
 
 def _render_context(root: Path, context: dict) -> dict:
@@ -98,18 +107,21 @@ def _render_context(root: Path, context: dict) -> dict:
                                           characters=context["characters"], plan_path=context["plan_path"],
                                           previous_path=context["previous_path"])
     from .writing import revision_prompt
-    return revision_prompt(root, context["parent_path"], context["feedback_path"], context["notes_path"])
+    return revision_prompt(root, context["parent_path"], context["feedback_path"], context["notes_path"],
+                           revision_template=context.get("revision_template", "revise-v1"))
 
 
 def prepare_request(root: Path, *, package_path: str | None = None, chapter: int | None = None,
                     route: str = "harness", characters: int = 6000, plan_path: str | None = None,
                     previous_path: str | None = None, parent_path: str | None = None,
                     feedback_path: str | None = None, notes_path: str | None = None,
-                    budget: Budget | None = None, model: str = DEFAULT_MODEL) -> dict:
+                    budget: Budget | None = None, model: str = DEFAULT_MODEL,
+                    revision_template: str = "revise-v1") -> dict:
     """Prepare a draft (package/chapter) or revision (parent/feedback) offline."""
     context = selection_context(root, package_path=package_path, chapter=chapter, route=route,
                                 characters=characters, plan_path=plan_path, previous_path=previous_path,
-                                parent_path=parent_path, feedback_path=feedback_path, notes_path=notes_path)
+                                parent_path=parent_path, feedback_path=feedback_path, notes_path=notes_path,
+                                revision_template=revision_template)
     return prepare_rendered(root, _render_context(root, context), budget or Budget(), model, context)
 
 
@@ -186,7 +198,8 @@ def _verify_prepared_request(root: Path, prepared: dict) -> tuple[dict, dict]:
     context = prepared["context"]
     if context["operation"] == "revise":
         expected_context = selection_context(root, parent_path=context["parent_path"],
-                                             feedback_path=context["feedback_path"], notes_path=context["notes_path"])
+                                             feedback_path=context["feedback_path"], notes_path=context["notes_path"],
+                                             revision_template=context.get("revision_template", "revise-v1"))
     else:
         expected_context = selection_context(root, package_path=context["package_path"], chapter=context["chapter"],
                                              route=context["route"], characters=context["characters"],

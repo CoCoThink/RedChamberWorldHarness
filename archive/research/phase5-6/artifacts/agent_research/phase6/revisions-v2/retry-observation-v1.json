@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "kind": "REVISION_AUTHOR_RETRY_OBSERVATION",
+  "authority_effect": "NONE",
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "observed_at_utc": "2026-10-14T07:13:33Z",
+  "output_files_observed": [],
+  "events": [
+    {"chapter": 91, "status": "API_ERROR_524_NOT_COMPLETED", "error_timestamp_utc": "2026-10-14T07:09:13Z", "retry_after_seconds": 120, "retry": "SAME_AUTHOR_CONTEXT_RESUMED_AFTER_BACKOFF"},
+    {"chapter": 86, "status": "API_ERROR_524_NOT_COMPLETED", "error_timestamp_utc": "2026-10-14T07:11:33Z", "retry_after_seconds": 120, "retry": "SAME_AUTHOR_CONTEXT_RESUMED_AFTER_BACKOFF"},
+    {"chapter": 81, "status": "API_ERROR_524_NOT_COMPLETED", "error_timestamp_utc": "2026-10-14T07:12:22Z", "retry_after_seconds": 120, "retry": "DEFERRED_TO_REDUCE_CONCURRENCY"},
+    {"chapter": 96, "status": "API_ERROR_524_NOT_COMPLETED", "error_timestamp_utc": "2026-10-14T07:13:09Z", "retry_after_seconds": 120, "retry": "DEFERRED_TO_REDUCE_CONCURRENCY", "partial_report_scope": "Declared reading progress only; no completed prose or disclosure file."}
+  ],
+  "retry_strategy": "At most two retrying authors initially; preserve original request and author context, use bounded natural-prose file writes, never scripts or repetition to pad length.",
+  "limitations": ["Gateway error metadata does not authenticate served model identity.", "No completed revision or adoption is inferred from a failure event, partial progress report, or request file.", "This observation is not provider usage or billing proof."]
+}

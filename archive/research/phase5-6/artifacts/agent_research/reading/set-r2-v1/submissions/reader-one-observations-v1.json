@@ -1,0 +1,275 @@
+{
+  "schema_version": 1,
+  "report_kind": "ANONYMOUS_FULL_TEXT_LITERARY_OBSERVATIONS",
+  "reviewer_id": "reader:r2-one",
+  "session_id": "session:reading-r2-one",
+  "opinion_path": "artifacts/agent_research/reading/set-r2-v1/submissions/reader-one-opinion-v1.json",
+  "packet": {
+    "path": "artifacts/agent_research/reading/set-r2-v1/public/packet.json",
+    "sha256": "9d4fe4d6d07965fb3e476fb34d7226e0da0064b6907745892c03a5caefa41884",
+    "id": "reading-c8470a505f84f759f575f4b7"
+  },
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "model": {"label": "gpt-6.1-sol (environment self-report)", "verification": "DECLARED_NOT_VERIFIED"},
+  "isolation": {
+    "asserted": false,
+    "verification": "NOT_PROVEN",
+    "explanation": "本会话收到调用方任务、环境/工具说明以及自动注入的分支名、修改文件路径和近期提交标题；这些不是匿名正文的一部分。因此不主张干净上下文隔离，更不把自我约束当作隔离证明。没有主动读取被禁材料，没有据此推测任一匿名组身份。"
+  },
+  "exposure_and_limits": {
+    "active_reads": [
+      "artifacts/agent_research/reading/set-r2-v1/public/packet.json",
+      "schemas/agent_review.schema.json",
+      "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt",
+      "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt",
+      "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt"
+    ],
+    "automatic_extra_exposure": "用户消息自动附有工作区分支、改动路径和近期提交标题，以及环境自报模型、日期和其他会话名称。未读取这些路径正文，未向其他会话收取意见，未主动读取其他读者输出。packet自身出现的coordinator_session_id仅属被准许packet元数据，未据此打开coordinator文件。",
+    "not_accessed": ["coordinator材料", "原phase5/phase6正文", "旧评审", "source", "作者披露", "其他读者输出"],
+    "no_delegation": true,
+    "no_identity_inference": true,
+    "scope": "只按三份给定98–100回内部文本作文学比较和局部一致性判断；不把熟悉的旧书情节、制度常识或其他版本当此稿义务，不认证历史或原稿真实性。模型既有知识无法证明清除，当前文本判断不使用外部情节来补全或定罪。",
+    "execution_limits": "正文先逐份以Read有界连续分段实际读完，随后才用python -I标准库只读解析JSON、计算哈希/行数、核对本报告引文与覆盖。未用grep、摘要、哈希替代阅读，未运行仓库测试、导入仓库模块、登记、改稿或生成provider/human资格。只新增指定的两个JSON文件。",
+    "quote_convention": "证据path为仓库相对路径，行号为Read显示的正文行号；quote可为该行内连续精确子串，不用删节号拼接。每组每章至少三条证据。范围内空行也已随Read连续覆盖。",
+    "read_end_convention": "Read输出额外显示了末尾空行编号226/415/328；按标准库splitlines计算，实际内容行数分别225/414/327，最终实质文本均为石在，字在。覆盖以实际内容行为准，另外保留原请求区间和显示尾号。",
+    "opinion_frozen": true,
+    "freeze_policy": "本次意见为原始读后判断；后续机械校验只修格式或定位错误，不为迁就其他意见改变裁定。疑点不自动FAIL，PASS只表示本限定阅读内未确认硬矛盾，不代表所有过程已证明。"
+  },
+  "reading_log": [
+    {
+      "packet_order": 1,
+      "label": "A（仅packet顺序代号）",
+      "subject_id": "read-9f07dc491c6939b505ba0d2e",
+      "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt",
+      "sha256": "274b401e131ddae76f0cd01c5110652a893c21ed2a45823ac8b93703b6b473d8",
+      "hash_matches_packet": true,
+      "method": "Read连续分段，逐段实际全文阅读，无摘要替代",
+      "segments": [
+        {"sequence": 1, "requested_offset": 1, "requested_limit": 100, "line_start": 1, "line_end": 100},
+        {"sequence": 2, "requested_offset": 101, "requested_limit": 100, "line_start": 101, "line_end": 200},
+        {"sequence": 3, "requested_offset": 201, "requested_limit": 100, "line_start": 201, "line_end": 225, "displayed_terminal_blank_line": 226}
+      ],
+      "chapter_ranges": [{"chapter": 98, "line_start": 1, "line_end": 80}, {"chapter": 99, "line_start": 81, "line_end": 152}, {"chapter": 100, "line_start": 153, "line_end": 225}],
+      "actual_line_count": 225,
+      "full_text_covered": true,
+      "first_line": "第九十八回　贫舍二宝初相晤　误包一玉复归来",
+      "last_line": "石在，字在。"
+    },
+    {
+      "packet_order": 2,
+      "label": "B（仅packet顺序代号）",
+      "subject_id": "read-c5a6f3d1a9998c7d911be6bc",
+      "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt",
+      "sha256": "7ff839c82c7bdcaf2403c2b2400b07af5acfed19f2071bb73745ab5e786a7ea8",
+      "hash_matches_packet": true,
+      "method": "Read连续分段，逐段实际全文阅读，无摘要替代",
+      "segments": [
+        {"sequence": 4, "requested_offset": 1, "requested_limit": 100, "line_start": 1, "line_end": 100},
+        {"sequence": 5, "requested_offset": 101, "requested_limit": 100, "line_start": 101, "line_end": 200},
+        {"sequence": 6, "requested_offset": 201, "requested_limit": 100, "line_start": 201, "line_end": 300},
+        {"sequence": 7, "requested_offset": 301, "requested_limit": 100, "line_start": 301, "line_end": 400},
+        {"sequence": 8, "requested_offset": 401, "requested_limit": 100, "line_start": 401, "line_end": 414, "displayed_terminal_blank_line": 415}
+      ],
+      "chapter_ranges": [{"chapter": 98, "line_start": 1, "line_end": 123}, {"chapter": 99, "line_start": 124, "line_end": 279}, {"chapter": 100, "line_start": 280, "line_end": 414}],
+      "actual_line_count": 414,
+      "full_text_covered": true,
+      "first_line": "# 第九十八回　贫舍二宝初相晤　误包一玉复归来",
+      "last_line": "石在，字在。"
+    },
+    {
+      "packet_order": 3,
+      "label": "C（仅packet顺序代号）",
+      "subject_id": "read-99b4ff27f91eb3f5348e0dea",
+      "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt",
+      "sha256": "cda49aa3ec543bc5ceab0c071b06a91c8815da6b54c5ef909bddac5e851d2675",
+      "hash_matches_packet": true,
+      "method": "Read连续分段，逐段实际全文阅读，无摘要替代",
+      "segments": [
+        {"sequence": 9, "requested_offset": 1, "requested_limit": 100, "line_start": 1, "line_end": 100},
+        {"sequence": 10, "requested_offset": 101, "requested_limit": 100, "line_start": 101, "line_end": 200},
+        {"sequence": 11, "requested_offset": 201, "requested_limit": 100, "line_start": 201, "line_end": 300},
+        {"sequence": 12, "requested_offset": 301, "requested_limit": 100, "line_start": 301, "line_end": 327, "displayed_terminal_blank_line": 328}
+      ],
+      "chapter_ranges": [{"chapter": 98, "line_start": 1, "line_end": 108}, {"chapter": 99, "line_start": 109, "line_end": 214}, {"chapter": 100, "line_start": 215, "line_end": 327}],
+      "actual_line_count": 327,
+      "full_text_covered": true,
+      "first_line": "第九十八回　贫舍二宝初相晤　误包一玉复归来",
+      "last_line": "石在，字在。"
+    }
+  ],
+  "evidence": [
+    {"id": "A98-voice", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 25, "line_end": 25, "quote": "线可换，字不能照着一个意思就添。", "use": "贾的留白原则以口头判断露出，但也偏近校读格言。"},
+    {"id": "A98-discovery", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 33, "line_end": 33, "quote": "却到今日才亲眼看见这纸上的字。", "use": "只认当稿设定的初读，不拿外部旧情节纠正它。"},
+    {"id": "A98-error", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 49, "line_end": 49, "quote": "小厮拿了折口朝坐客处的厚纸包，双手托起，未拆看；甄宝玉收抄页，也没转身验。", "use": "误取主体、对象、未检验均可定位。"},
+    {"id": "A98-transfer", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 59, "line_end": 59, "quote": "札放在外层，他叫一个送信的人立即送还，嘱到门先说甄家退还误取的书包，须亲交屋里收件的人，不能放下就走。", "use": "归玉为甄发起、他人转送，不是本人再访。"},
+    {"id": "A98-stays", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 59, "line_end": 59, "quote": "交给来人，自己留在屋内。", "use": "方向限定：甄没有同行。"},
+    {"id": "A98-receipt", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 67, "line_end": 67, "quote": "写说包已收，册页帕玉俱在，虫蛀册改日送还。", "use": "贾验收并回札；客册尚未返还并非漏账。"},
+    {"id": "A99-refusal", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 101, "line_end": 101, "quote": "不回来吃饭，还是不回来过日子？", "use": "宝钗把事务撤离和关系撤离分开逼问。"},
+    {"id": "A99-cost", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 131, "line_end": 131, "quote": "你说平安，和她们平安不是一回事。", "use": "伦理差别明确，也有小型课语的风险。"},
+    {"id": "A99-two", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 147, "line_end": 147, "quote": "够咱们两个吃的就是了。", "use": "不是抽象决绝，而是今日份量的调整。"},
+    {"id": "A99-final", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 151, "line_end": 151, "quote": "针还别在边上，方才穿了一半的线松着。", "use": "未完衣线构成终镜，不把生活写成已经解决的寓言。"},
+    {"id": "A100-office", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 171, "line_end": 171, "quote": "贾兰回来，官身已经有了。", "use": "官身在母亲受荣及病亡以前。"},
+    {"id": "A100-care", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 193, "line_end": 193, "quote": "贾兰让煎时守着，她说守药还须别人看饭，他才叫帮手。", "use": "照护和厨房并非同一人凭空兼任；补人也需钱。"},
+    {"id": "A100-death", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 205, "line_end": 205, "quote": "李纨辞世，离受荣已过数月。", "use": "明确阻止把受荣和即时死亡误读为同一时刻。"},
+    {"id": "A100-funeral", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 209, "line_end": 209, "quote": "宝钗得信，来理屋中用物；麝月隔时送缺的布，还须回去顾那边灶。", "use": "丧中女眷任务与各自原有生活同时存在。"},
+    {"id": "A100-scroll", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 217, "line_end": 217, "quote": "警幻另展一轴素榜，纸上分正、副、再副、三副、四副，五层芳讳，疏密各异。", "use": "旧册在旁，榜是一轴五层，不混称五册。"},
+    {"id": "A100-copy", "subject_id": "read-9f07dc491c6939b505ba0d2e", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-9f07dc491c6939b505ba0d2e.txt", "line_start": 223, "line_end": 223, "quote": "遇漫漶处，看过仍不可辨，便留空，不另添字。", "use": "抄录动作与98回的保留空缺呼应，风险是呼应略显可预期。"},
+    {"id": "B98-voice", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 33, "line_end": 33, "quote": "淡些正好。我若说不好，倒像专来挑茶。", "use": "甄的客套被贾拆穿，有可读的交锋，但二人机锋常同一种轻快节奏。"},
+    {"id": "B98-join", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 46, "line_end": 46, "quote": "于是两个人又埋头比字，方才那一点空处便过去了。“看得杂。有时真看，有时翻几页就搁下。", "use": "抒情空处后忽接无标明发言人的口语，像话轮衔接残痕，是文学清晰度风险而非确定硬矛盾。"},
+    {"id": "B98-pack-take", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 68, "line_end": 68, "quote": "见桌角有一个小布包，顺手同自己的书札包一起拿起，因大小相近、颜色又都旧，并没有拆看。", "use": "字面是旧帕玉包与自家书札包一并拿起。"},
+    {"id": "B98-pack-left", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 76, "line_end": 76, "quote": "桌角那只留下的青灰布包，谁也没有去动。", "use": "从拿起两包到留下青灰包，未见放回动作，列PENDING。"},
+    {"id": "B98-pack-found", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 78, "line_end": 78, "quote": "她拆开一看，里头不是玉，却是五封折好的书札，外加两张题签。", "use": "确认留下的是书札包，接续缺一动作但并非明说绝无放回机会。"},
+    {"id": "B98-person", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 88, "line_end": 88, "quote": "甄宝玉仍是昨日那身青袍，手里亲自拿着一个旧帕包，昨天的小厮跟在后面", "use": "是次日本人携玉再访，小厮同行，并非仅托人转送。"},
+    {"id": "B98-verify", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 96, "line_end": 96, "quote": "又翻到背面看绳孔边那一道旧磨痕，道：“是我的。”", "use": "物的辨认是私人使用痕，不是借玉字制造玄学认证。"},
+    {"id": "B99-refusal", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 164, "line_end": 164, "quote": "停了很久，才道：“不回了。”", "use": "关系切断明确，但原因刻意留白。"},
+    {"id": "B99-dialogue", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 264, "line_end": 264, "quote": "“家里答应的事呢？”宝玉脸上的笑淡了，却没有答。", "use": "还书承诺与家中承诺不能互相替代，戏剧性强，也逼近主题问答。"},
+    {"id": "B99-report", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 268, "line_end": 268, "quote": "没见吃饭，只见寺里有人做饭。他自己说吃寺里的。", "use": "报告区分亲见与转述，人物可信度非全知担保。"},
+    {"id": "B99-final", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 276, "line_end": 276, "quote": "她捻了两下，没有立即再穿，只听见外头锅里水声渐响。", "use": "留在已完成一半的肩缝与将沸的水；没有结尾宣讲，但情绪标注较前两组的简默选择更外显。"},
+    {"id": "B100-order", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 282, "line_end": 282, "quote": "起初不过得了科名，家里接一两回喜信；后来又隔些年，方有实授，真正有了官身。", "use": "科名与实授明确分开；后有受封，再有数月病势，不能混作报喜即死。"},
+    {"id": "B100-care", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 354, "line_end": 354, "quote": "贾兰守在床前，老嬷嬷在旁温药。", "use": "临终亲子守候和护理动作各有承担。"},
+    {"id": "B100-duty", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 360, "line_end": 360, "quote": "丧期既定，贾兰便依制丁忧，暂离原职。", "use": "稿内把辞世后的职位处理说得最显式；不据此认证外部制度。"},
+    {"id": "B100-one-scroll", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 380, "line_end": 380, "quote": "警幻看了一回，命侍者另展一轴素榜。", "use": "同一轴而非两卷，可限定收卷冲突的对象。"},
+    {"id": "B100-end-placement", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 390, "line_end": 392, "quote": "榜卷将尽，末端却另留一行空白。少顷，墨痕渐生：\n\n**贾宝玉——情不情。**", "use": "情不情被明确定位在榜卷末端。"},
+    {"id": "B100-conflict-first", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 396, "line_end": 396, "quote": "侍者便从榜尾卷起。", "use": "硬矛盾一端：收卷从尾开始。"},
+    {"id": "B100-conflict-last", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 396, "line_end": 396, "quote": "卷到黛玉名下时，“情情”二字随榜面一闪而隐；最末“情不情”三字最后卷入。", "use": "硬矛盾另一端：尾端行却在卷至前部黛玉后最后卷入。"},
+    {"id": "B100-copy", "subject_id": "read-c5a6f3d1a9998c7d911be6bc", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-c5a6f3d1a9998c7d911be6bc.txt", "line_start": 404, "line_end": 404, "quote": "石上若有漫漶，纸上便照样空着，不肯自补。", "use": "外框抄录有留空限度，不等于叙述者拥有原稿认证权。"},
+    {"id": "C98-dispute", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 29, "line_end": 29, "quote": "甄宝玉道只旁边作记，又不是替人把字补回去，话说得稍快，笔已蘸了墨。", "use": "甄急于通读而不全然草率，和贾坚持找依据形成可演出的差别。"},
+    {"id": "C98-discovery", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 33, "line_end": 33, "quote": "他此前竟未曾读到，如今一行行看完，嘴角轻轻动了一下，拇指仍按在翻页的地方，没有翻下去。", "use": "动作让读字和旧情相遇，不认证文本之外的故事。"},
+    {"id": "C98-one-package", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 61, "line_end": 61, "quote": "他只取了这一个包，抱在臂中走到门边，客人的虫蛀册包仍放在桌外侧。", "use": "误取家内包而留下客包，数量明白。"},
+    {"id": "C98-intent", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 67, "line_end": 67, "quote": "他若原是打算只指纸，那手指过去的地方还隔着茶壶；若是要取包，自己明明方才已说留。", "use": "叙述刻意保留甄的指包意图不明，不能强行解释成另有第三包，也不自动定FAIL。"},
+    {"id": "C98-person", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 71, "line_end": 71, "quote": "小厮本已走到门前，想跟过去，甄宝玉叫他留下，说那里那包册子本就约了下回取，不用今日再拿，自己只去交回这一包。", "use": "本人独自同日亲还；客册不在此次取回。"},
+    {"id": "C98-weight", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 73, "line_end": 73, "quote": "自己并未问抱着沉不沉，倒是每逢那人要放下便催近些。", "use": "本人回程的身体费用带来短促反省；若再解释成德性转变就会过度，本文未如此收口。"},
+    {"id": "C98-time-agreed", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 5, "line_end": 5, "quote": "那就说过午罢。", "use": "约定时段明确，但不等于已经确认客人实际严格守时。"},
+    {"id": "C98-time-recalled", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 98, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 73, "line_end": 73, "quote": "他想起上午小厮抱书站门口", "use": "与约定过午存在时段张力，因未明确实际到门钟点，记PENDING而不追加硬FAIL。"},
+    {"id": "C99-book-return", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 111, "line_end": 111, "quote": "他这次拿着自己的书包，走到门口，回头说下回有了信再来", "use": "98回客册去向在99回开头交清。"},
+    {"id": "C99-question", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 147, "line_end": 147, "quote": "我问的不是一顿饭。", "use": "宝钗不是只会数饭的功能角色，直指被回避的共同生活。"},
+    {"id": "C99-cost", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 179, "line_end": 179, "quote": "你没想到的，也得有人替你走完。", "use": "贾芸脚程使这句有重量，仍有可摘抄的微课风险。"},
+    {"id": "C99-two", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 203, "line_end": 203, "quote": "够咱们两个吃的就是了。", "use": "不是接纳的证明，只是今日米量决定。"},
+    {"id": "C99-conflict", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 205, "line_end": 205, "quote": "她那时只知道袜和鞋，谁肯照实告诉她。", "use": "两名留家者之间有告知不对称和怨怼，不被立即调解成共守范本。"},
+    {"id": "C99-final", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 99, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 213, "line_end": 213, "quote": "那根新针还别在衣边，穿进去的线没有拉齐，长的一头垂在未补完的袖口旁。", "use": "终镜将线的未齐保留为事实，不代人物说明未来。"},
+    {"id": "C100-office", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 231, "line_end": 231, "quote": "又隔了一段时候，贾兰才真得了实授的消息。", "use": "此前等候不是已经授职；随后公服、母亲受荣。"},
+    {"id": "C100-status", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 241, "line_end": 241, "quote": "他却舍不得立刻脱，连拿水也先收袖。", "use": "贾兰有真实地位欲而非纯粹理家道理的传声筒。"},
+    {"id": "C100-care-error", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 257, "line_end": 257, "quote": "她未及答，他已将外间一叠帖纸搬到桌上", "use": "贾兰误把母亲能做针线当恢复能力，后来学着分担，照护不是天然全会。"},
+    {"id": "C100-death-work", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 291, "line_end": 291, "quote": "帮厨的婆子却来问灶里那锅饭怎么办，未吃的还有些，不能全倒了。他回头说留给做事的人", "use": "死亡没有自动暂停厨房；亲子悲伤与他人劳动并置。"},
+    {"id": "C100-office-pending", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 299, "line_end": 299, "quote": "另有人问此后官中的事怎样办，他只道眼下先料理家中，旁的待问明白。", "use": "官中后续是稿内待办，不因未展开制度手续就判FAIL。"},
+    {"id": "C100-scroll", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 315, "line_end": 315, "quote": "警幻将它向里移过，另取一轴素榜，双手展平。", "use": "旧册与新展的一轴区分明白。"},
+    {"id": "C100-scroll-end", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 317, "line_end": 317, "quote": "素榜慢慢卷起，正压着的那一角也收进轴内。", "use": "未明定从哪端开始，没有确认的末尾先后互撞。"},
+    {"id": "C100-stone", "subject_id": "read-99b4ff27f91eb3f5348e0dea", "chapter": 100, "path": "artifacts/agent_research/reading/set-r2-v1/public/read-99b4ff27f91eb3f5348e0dea.txt", "line_start": 319, "line_end": 319, "quote": "那石劫终，已复还本质，仍在峰下。", "use": "石已归本质是外框明示；不擅造从人到石的细节补足。"}
+  ],
+  "hard_failures": [
+    {
+      "id": "B100-scroll-direction",
+      "subject_id": "read-c5a6f3d1a9998c7d911be6bc",
+      "status": "FAIL",
+      "scope": "第100回同一轴榜卷局部动作先后",
+      "evidence_ids": ["B100-one-scroll", "B100-end-placement", "B100-conflict-first", "B100-conflict-last"],
+      "reason": "380行限定一轴；390–392行把情不情放在榜卷末端；396行先说从榜尾卷起，接着写卷到前部黛玉，最后却又说最末情不情最后卷入。尾端字在从尾开始的同一连续收卷中不能既先被卷入又在越过前部后最后卷入；正文未写重展、换向或第二轴。因此不是仅缺步骤，而是局部同时承诺互斥先后。",
+      "nonclaims": "不据此判其余章节失败，不据此推论作者、历史或稿本真实性；不把读完当成PASS理由。"
+    }
+  ],
+  "pending_questions": [
+    {
+      "subject_id": "read-9f07dc491c6939b505ba0d2e",
+      "status": "PENDING",
+      "topic": "甄贾差异是否足以越过共享的校字口吻",
+      "details": "A以甄的问缺页与不推过给小厮、贾的旧字触动和家庭迟疑作差异，但甄的独立欲望与内心相对少，不能仅凭同名证明是两个足够不同的小说人物。这是文学判断开放项，不是事实矛盾。",
+      "evidence_ids": ["A98-voice", "A98-discovery", "A98-transfer"]
+    },
+    {
+      "subject_id": "read-9f07dc491c6939b505ba0d2e",
+      "status": "PENDING",
+      "topic": "离家动机及石已在峰下的过渡",
+      "details": "脱离家庭的决定和寺中自愿留住已明确，心理根源与人间玉到石的具体过渡未完整演出。外框独立转换可成立，本阅读不要求补写熟悉旧书的收束机制。",
+      "evidence_ids": ["A99-refusal", "A100-scroll", "A100-copy"]
+    },
+    {
+      "subject_id": "read-c5a6f3d1a9998c7d911be6bc",
+      "status": "PENDING",
+      "topic": "68行拿起两包到76–78行留下书札包的动作缺口",
+      "details": "68行说小厮将桌角小布包同自己的书札包一起拿起；76行又有留下的青灰包，78行拆出五封书札。没有写何时放回书札包。拿起不等于最终携出，故仍可存在未叙出的放回动作，不能仅凭省略升级为硬FAIL。缺口会损害误包事件的可信清晰度。",
+      "evidence_ids": ["B98-pack-take", "B98-pack-left", "B98-pack-found"]
+    },
+    {
+      "subject_id": "read-c5a6f3d1a9998c7d911be6bc",
+      "status": "PENDING",
+      "topic": "99回回叙次序及鞋的指代",
+      "details": "214行说第四日，216行退述第三日晚，220行次日再问，读者需自行辨回叙而非顺叙；148行穿试修鞋、174行提所穿鞋与274行床下另一双鞋的修补指代也不够省力。均未明确排除另一时点或另一双鞋，不列硬FAIL。",
+      "evidence_ids": ["B99-final"]
+    },
+    {
+      "subject_id": "read-99b4ff27f91eb3f5348e0dea",
+      "status": "PENDING",
+      "topic": "甄到底想拿什么",
+      "details": "59行已约留客册再取，随后却说那一包拿着；67行叙述进入甄自己也不清楚的迟疑，可能原想指纸，也可能说书分心。身体行动链可复述，最初意图却未定。把含糊写成人物的疏忽可以成立，但若读者需要明确误令对象，这一处仍有压力；不自造第三包，不定硬矛盾。",
+      "evidence_ids": ["C98-one-package", "C98-intent", "C98-person"]
+    },
+    {
+      "subject_id": "read-99b4ff27f91eb3f5348e0dea",
+      "status": "PENDING",
+      "topic": "过午之约与上午回忆的时间张力",
+      "details": "5行约过午且回帖圈去早来，73行却追想上午小厮抱书在门口。正文没有钉死实际到门时钟点，尚不能排除来早而叙述省略；这是很值得留意的局部时序疑点，不用约定必然等于实际来访时间来制造硬FAIL。",
+      "evidence_ids": ["C98-time-agreed", "C98-time-recalled"]
+    },
+    {
+      "subject_id": "read-99b4ff27f91eb3f5348e0dea",
+      "status": "PENDING",
+      "topic": "剃发、入寺及母丧后的官务",
+      "details": "155行直接置入寺中，经声和做活可读但入寺过程省略；299行本人说官中事情待问明白。不能把未明手续自动判为违反某项外部制度。人间与已归本质的石之间也是外框转换，过程不由读者代填。",
+      "evidence_ids": ["C100-office-pending", "C100-stone"]
+    }
+  ],
+  "literary_assessments": [
+    {
+      "subject_id": "read-9f07dc491c6939b505ba0d2e",
+      "verdict": "PASS",
+      "novelistic_strengths": "A最擅短程因果：不稳的椅子导致木桶待客、锅和纸争桌面、误包后的回札与验收、路费与饭量使离家有可计算的外部代价。宝钗不只是冷静，她收回衣、不接那句天冷嘱咐，有把决定权从宝玉手中收回的力量。李纨摸旧书、贾兰重复问母亲的饭，靠物的用途改变表现丧失。",
+      "zhen_jia_voices": "两人共同爱零纸缺字，贾较容易被旧情与家务拉扯，甄守客礼、认错有承担。对话本身的句法差异仍有限，许多聪明话由麝月和贾芸承担。不能因二人不等同旧书某型声口就扣真实性。",
+      "jade_direction": "解玉换绦，家内厚纸误取；甄到家发现，另托送信人携原包返贾，自己留屋。贾验帕玉回札，客册先留，99回来人按约取回。转送链完整，本人不往返的选择不是硬失败。",
+      "chapter99_final_and_microlecture": "最后仍吃两人的饭，旧衣半线留在桌角，既没有等待者被奖励，也没有两人忽然顿悟。风险在147行米知道不知道人的拟人句和131行平安对照都过于可作课语，作者的伦理结论有时抢到人物前面；终镜自身较节制。",
+      "chapter100": "先受职，后受荣，数月照护再病逝。妇人不被设为无限兼工，药须有人守、饭须有人看；宝钗理物、麝月送布仍须顾自己灶，贾兰办棺、分账、报母丧，分工有实际阻力。外框一轴五层与旁置旧册分明，石前留空有回声，但最后极短，石归过程留白使神异的余味略薄。",
+      "literary_risks": ["米数纸、茶、碗、衣、柴反复过密时，人物容易成为管理物件的动作链。", "保留空字与抄石留空的对应清楚，可能太整齐。", "甄的自主烦恼和离开贾家后的叙事重量较少。"],
+      "hard_failure_ids": []
+    },
+    {
+      "subject_id": "read-c5a6f3d1a9998c7d911be6bc",
+      "verdict": "FAIL",
+      "novelistic_strengths": "B有最充分的拜客闲谈和广泛关系网络：甄的装样子读书、茶的客套、小厮的窘迫、袭人与蒋玉菡加入寻访，能让家门外世界有回声。李纨病程以几次误以为好转、夜路和送信延迟展开，不是一句无常的图解。母亲不能因儿子坐床边就少一分病，给亲子关系加入不相等的时间。",
+      "zhen_jia_voices": "开头客套与拆客套的对答最直接，读者容易听见说话者；但熟络后两人都爱机锋，麝月更几乎句句能收笑，悲感常被轻巧回复消解。46行话轮突接有编辑残痕。",
+      "jade_direction": "早起取玉，午后来客；文本主张小厮误拿，次晨发现，甄次日亲携玉、小厮跟随来还，贾以绳孔旧磨痕验玉，麝月还书札包。本人方向明确；两包拿起和一包留下之间少动作，留PENDING，不拿硬FAIL掩盖这一差别。",
+      "chapter99_final_and_microlecture": "水声与未续的线作为末镜有效，宝钗一语两个份量不是自足人格的胜利宣言。中段贾芸问家里答应的事、麝月问平安是否够，伦理质问扎实但轮番排布，稍像替读者列问题清单。人物哭、叹、心堵和叙述解释较多，给末镜预留的空处较少。",
+      "chapter100": "科名、隔年实授、再有母亲恩荣、封典后秋雨、数月病势、辞世与丁忧层次最显式。护理有老嬷嬷、临终有贾兰，丧后文书公物交清，冠帔和旧袄再分配都可读。漏屋、借桌、旧箱反复强化贫与荣不相抵，偶有过度证明。外框是已归山的石、全书续全再由道人抄录，神异叙述比A饱满，但一轴收卷动作存在确定互撞，故结果FAIL。",
+      "literary_risks": ["解释句、笑声和机锋密度较高，音色容易同化。", "100回旧屋旧箱等物反复声明未改变，容易把荣华之虚讲得太明。", "99回回叙和鞋的指代提高了不必要的跟踪成本。"],
+      "hard_failure_ids": ["B100-scroll-direction"]
+    },
+    {
+      "subject_id": "read-99b4ff27f91eb3f5348e0dea",
+      "verdict": "PASS",
+      "novelistic_strengths": "C让人不是一次明白就永远会：甄急着认缺字、穿错半页、亲抱包仍嫌回程闷，贾恋书也会忘水盆；贾兰享受公服、搬礼失当、误让母亲再理帖子，随后在茶包、花盆和碗汤中学习具体地照护。李纨既要看花又嫌搬错、肯认颜色好又不愿丢旧袄，不是单向清醒的贤母。这些欲望的微小不一致最增加小说性。",
+      "zhen_jia_voices": "甄的读法欲求较强，贾反问所据又被异手字绊住；本人还包的难堪改变后半场说话余地。声口差异主要由话语行为与停顿构成，而非方言或词汇系统，动作旁白过多时仍会遮住声音。",
+      "jade_direction": "家内玉帕零册一包、客册一包并置，小厮只抱错一个；甄回去识错，当日独自亲还，小厮留家；客册仍在贾家，下章甄当面取还。本人来回的体力和等路费用被写入，这不是比转送天然高的道德等级。初始指令对象不明另记PENDING。",
+      "chapter99_final_and_microlecture": "米量两份之后并非两女相互完全理解；麝月埋怨自己未被照实告知，宝钗只能先撇浮糠，冲突停在锅响里。堵针眼、换针、线未拉齐又去救火，最后两碗热气渐薄，保持情绪未归整而饭仍得吃。风险是细节过密，针线象征的镜头接力略精心；贾芸那句替你走完仍是可摘成微课的金句，但磨破脚和受误认的羞辱已为它付出叙事代价。",
+      "chapter100": "从成人候缺到实授、穿公服、母亲受荣，再过数月渐病，顺序可辨。病者对茶、风、花、旧袄的偏好与照护者误读形成关系变化；死后谁管饭、谁选棺、谁裁布、谁留钥匙各有任务，哭不抹掉工作。官务仍待问明，不自动认证制度。太虚旧册移开另展一轴，局部可见与未展处并存；收卷不作方向互斥断言，接石归本质与道人抄录留空，外框比A多手感、比B少解释。",
+      "literary_risks": ["抬手又收、话未出口、碗热换手、让路挡路反复形成相近段落节拍。", "有些阻挡、泼水和手忙脚乱仿佛每场必须出现，会削弱关键停顿的稀缺性。", "过午之约与上午回忆需要读者补出未说明的到门时点。", "97回以前的生活不在本次范围，不把本组三回内未解释的全部背景都说成已验证。"],
+      "hard_failure_ids": []
+    }
+  ],
+  "dimension_preferences": {
+    "overall_winner": null,
+    "principle": "只记录本次读后的维度偏好，不加权合成总榜；同档可平手，偏好不是资格与真实性认证，硬FAIL也不抹掉该稿局部文学优点。",
+    "dimensions": [
+      {"dimension": "人物有自己的欲求、犯错和未解决的关系", "preferred": ["read-99b4ff27f91eb3f5348e0dea"], "reason": "C的甄、贾兰和李纨都能短暂不讨喜，99回留家两人的冲突也没有被马上修好。"},
+      {"dimension": "紧凑因果与归玉链可追踪", "preferred": ["read-9f07dc491c6939b505ba0d2e"], "reason": "A把误取、甄识错、他人转送、贾验收回札交代清楚；不把亲还当比转送必然正确。"},
+      {"dimension": "甄贾交锋的声口区分", "preferred": ["read-99b4ff27f91eb3f5348e0dea"], "reason": "C争读法与认错后的停顿有差异；B客套对答鲜明但易同化，A更节制却差异偏弱。三者都未形成完全独立的语言系统。"},
+      {"dimension": "99回终镜的未完成感", "preferred": ["read-9f07dc491c6939b505ba0d2e", "read-99b4ff27f91eb3f5348e0dea"], "tie": true, "reason": "A以简短用饭留线，C以未拉齐线和未调解怨怼留在热气中；C细节丰富，A节奏更省。"},
+      {"dimension": "授职至死亡与职务交接的显式程度", "preferred": ["read-c5a6f3d1a9998c7d911be6bc"], "reason": "B区分科名、实授、受封与丁忧、公物交还最明，但这只是稿内明晰度，不是历史制度正确性认证。"},
+      {"dimension": "死亡前后照护劳动的关系层次", "preferred": ["read-9f07dc491c6939b505ba0d2e", "read-99b4ff27f91eb3f5348e0dea"], "tie": true, "reason": "A把煎药和看饭的人力矛盾点得省，C把亲子学习与帮厨、丧务人的限制演得更细；B也有充分病程。"},
+      {"dimension": "一轴外框动作无已确认互撞", "preferred": ["read-9f07dc491c6939b505ba0d2e", "read-99b4ff27f91eb3f5348e0dea"], "tie": true, "reason": "A和C都未发现同一收卷动作的互斥先后；B有精确可引的硬矛盾，不以气氛好掩盖。"}
+    ]
+  },
+  "validation_plan": {
+    "allowed_method": "python -I，仅标准库json/hashlib/pathlib等，只读允许输入和新写的两份报告，读取schema辅助结构校验，不导入或运行仓库代码。",
+    "checks": ["两份报告为有效JSON且没有重复键", "opinion符合schema中opinion分支的字段、常量、枚举、绑定和身份结构", "packet和三subject字节SHA256准确对应", "三份全文实际行范围无缺漏或重叠且覆盖所有98–100回", "每条证据精确quote位于声明的path与line_start/end内", "每组每章证据数至少三", "硬失败两端均有精确证据，疑点与文学风险分开", "authority_effect NONE、usage RESEARCH_ONLY、independent_human_admission false、sample_checks均为空"]
+  }
+}

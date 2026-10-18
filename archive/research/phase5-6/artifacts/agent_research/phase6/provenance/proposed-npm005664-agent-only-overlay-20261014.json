@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "record_kind": "DESIGN_PROPOSAL_NOT_CURRENT_RUNTIME_CONFIGURATION",
+  "authority_effect": "NONE",
+  "agent_kind": "MODEL_SUBAGENT",
+  "review_status": "PENDING",
+  "enabled": false,
+  "audience": "agent-only research review",
+  "research_report_sha256": "ec1c4e06e9093fcad665505b58e9d392ba025cd492cd60f1cc3a41c7b58f1868",
+  "source_proposals_path": "artifacts/agent_research/phase6/provenance/proposed-npm005664-sources-20261014.json",
+  "claim_proposals_path": "artifacts/agent_research/phase6/provenance/proposed-npm005664-claims-20261014.json",
+  "explicit_mappings": [
+    {
+      "existing_source": "src:history:cao:1728:inventory-seal",
+      "candidate_source": "src:history:npm005664:1728:inventory-seal",
+      "existing_claim": "claim:history:h02:inventory-sealing",
+      "candidate_claim": "claim:history:npm005664:1728:inventory-seal",
+      "relation": "RESEARCH_ALTERNATIVE_ONLY_NOT_SAME_LINEAGE_ASSERTION"
+    },
+    {
+      "existing_source": "src:history:cao:1728:pawn-tickets",
+      "candidate_source": "src:history:npm005664:1728:pawn-tickets",
+      "existing_claim": "claim:history:h05:pawn-as-cashflow",
+      "candidate_claim": "claim:history:npm005664:1728:pawn-tickets",
+      "relation": "NARROWER_RESEARCH_ALTERNATIVE_NOT_CASHFLOW_DURATION_SUPPORT"
+    },
+    {
+      "existing_source": "src:history:cao:1728:family-housing",
+      "candidate_source": "src:history:npm005664:1728:family-housing",
+      "existing_claim": "claim:history:h04:post-confiscation-housing",
+      "candidate_claim": "claim:history:npm005664:1728:family-housing",
+      "relation": "REPORTED_INTENTION_ONLY_NOT_PROOF_OF_COMPLETED_ALLOCATION"
+    }
+  ],
+  "custody_rules": [
+    "Do not feed proposal files into legacy YAML glob traversal or global ProvenanceGraph.from_repo.",
+    "Do not rewrite old source IDs, claims, status flags or frozen request/input digests.",
+    "Do not exempt any frozen request from fresh custody verification.",
+    "If future review code supports an overlay, pass only explicit proposal IDs and exact file hashes under an opt-in agent-only context; this file activates no code.",
+    "Any future adoption requires a new separately frozen request/corpus context, never implicit expansion of an old request root set."
+  ],
+  "forbidden_inferences": [
+    "CAO-ARCHIVE-286 equals 故宮005664 as authoritative established mapping",
+    "1975 first-edition publication belongs to the unknown 130-page electronic reprint",
+    "machine derivative-text PASS establishes manuscript transcription fidelity",
+    "pawn-ticket count proves sustained cashflow duration",
+    "new historical mechanism evidence establishes a novel character event",
+    "population count difference becomes a new claim"
+  ]
+}

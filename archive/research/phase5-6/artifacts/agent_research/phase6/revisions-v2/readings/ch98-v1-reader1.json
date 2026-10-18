@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "kind": "SEGMENTED_COMPLETE_LITERARY_READING",
+  "id": "phase6-ch98-v1-reader1",
+  "chapter": 98,
+  "version": "v1",
+  "reviewer_kind": "MODEL_SUBAGENT",
+  "mode": "FEEDBACK_ONLY",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "adoption": "NOT_ADOPTED",
+  "literary_acceptance": "NOT_CLAIMED",
+  "source_validity_global": "NOT_ADJUDICATED",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "qualified_independent_panel_claim": false,
+  "provider_proof": "NONE",
+  "status": "FROZEN_COMPLETE_READING_FEEDBACK",
+  "frozen": true,
+  "freeze_policy": "完整交回后冻结本读报；不修改冻结正文、disclosure、编辑输入、合同、决定或旧运行记录。后续读报须另立版本，不回填本次消费范围。",
+  "scope": {
+    "only_repo_file_created": "artifacts/agent_research/phase6/revisions-v2/readings/ch98-v1-reader1.json",
+    "delegated_agents_started": 0,
+    "commits_created": 0,
+    "prose_or_input_edits": 0,
+    "runtime_replay_executed": false,
+    "source_registry_edits": false,
+    "phase5_prose_or_templates_read": false,
+    "repo_wide_scan_performed": false,
+    "method": "直接分四段阅读全文，再按已选合同逐动作、逐义务比对。目录定位限本次输入所在目录及项目根/上级CLAUDE.md存在性检查；未扫repo。Python仅作JSON定点提取、哈希、计数及引用校验，不生成正文。"
+  },
+  "input_bindings": [
+    {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt",
+      "sha256": "badea6a60cc2c65a08a03a0494cc5afdb8e336ca78184d510cc96e90e5e52588",
+      "read_status": "ACTUALLY_READ_COMPLETE_SEGMENTED",
+      "utf8_bytes": 30050,
+      "characters": 10088,
+      "physical_lines": 107
+    },
+    {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1-disclosure.json",
+      "sha256": "72a7d7c13bc3c703fff7477d1b0e63d2db7acac5c727d533b4fce932b813edbe",
+      "read_status": "ACTUALLY_READ_COMPLETE_LINES1_193",
+      "limitation": "作者自述仅用于披露消费与权限边界，不以其中enacted_local_fiction或阈值自证修好。"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch98-v1.txt",
+      "sha256": "426175d97db0bb8a11339ab9e69d50ff4efca417519e9e7d75e263be2af66065",
+      "read_status": "ACTUALLY_READ_COMPLETE_LINES1_16"
+    },
+    {
+      "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+      "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+      "pointer": "/chapters/7",
+      "read_status": "ACTUALLY_READ_COMPLETE_CH98_ENTRY_ONLY",
+      "extraction_coverage": "定点JSON提取chapter98全项，输出落盘后实读工具结果lines1–280、281–560、561–854；含旧短稿逐beat评审、引用、确证FAIL、扩展方案、editorC选择及unknowns。未将预览或哈希当作全文。",
+      "not_claimed": "没有阅读全文十回报告、其他章节项或旧短稿文件本体；旧短稿负面只按本项所引原文比较。"
+    },
+    {
+      "path": "data/planning/contracts/agent-final-v2/98-S1.v3.json",
+      "sha256": "8a02f53471517badfd967fc306eb65ee33da0ef297320580633d1746998cf0db",
+      "read_status": "SUBSTANTIVE_SEMANTIC_PROJECTION_READ_COMPLETE",
+      "scope": "所有required/forbidden descriptions及嵌入grounding语义、entry/exit/preconditions理由、对象/人物语义、UNKNOWN、unresolved、function、notes；另直接读原文件lines1–240。"
+    },
+    {
+      "path": "data/planning/contracts/agent-final-v2/98-S2.v3.json",
+      "sha256": "e2f5b3e49203963a75832f634d11120e5d2edb49433efcaee3bfe89a743fc3a1",
+      "read_status": "SUBSTANTIVE_SEMANTIC_PROJECTION_READ_COMPLETE"
+    },
+    {
+      "path": "data/planning/contracts/agent-final-v2/98-S3.v3.json",
+      "sha256": "63cbcf201b6e1fde1a82db59905933c1991aa1f3bda980ef017dda19038c1388",
+      "read_status": "SUBSTANTIVE_SEMANTIC_PROJECTION_READ_COMPLETE"
+    },
+    {
+      "path": "data/planning/decisions/phase6-ch98-v1.json",
+      "sha256": "850e993895101a0e759983e9427a76db624d5e9ca7f5f4ab8e4fa9d3b24155d4",
+      "read_status": "ACTUALLY_READ_COMPLETE_LINES1_279"
+    }
+  ],
+  "contract_consumption_limit": {
+    "method": "三合同递归打印非元数据值与JSON pointer；每个文件重复字符串仅首次打印，数值/布尔/null照印。完整实读落盘投影lines1–150、151–330、331–439。",
+    "excluded": "sha256/text_sha256/path/ref/pointer/citation/source_packet/chapter_plan_ref字段；未据此称已消费它们引用的外部材料。",
+    "not_claimed": "未逐字阅读全文三合同全部重复哈希/引用元数据，未打开phase5 source_packet、旧运行、物件/知识注册文件或直接底本。实质约束完整消费不等于执行验证。"
+  },
+  "reading_coverage": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt",
+    "sha256": "badea6a60cc2c65a08a03a0494cc5afdb8e336ca78184d510cc96e90e5e52588",
+    "start_line": 1,
+    "end_line": 107,
+    "start_character_offset": 0,
+    "end_character_offset_exclusive": 10088,
+    "start_utf8_byte_offset": 0,
+    "end_utf8_byte_offset_exclusive": 30050,
+    "coverage_fraction": 1.0,
+    "offset_convention": "Unicode code points；UTF-8 byte；区间含起不含止；coverage包含末换行，quote不含换行。Read显示的末尾空行108不当作额外正文行。",
+    "segments_actually_read": [
+      {"lines": [1, 28], "characters": [0, 2447], "utf8_bytes": [0, 7285], "content": "回目、递帖回话、待客劳动、换绦临置、客册到桌、贾芸离开"},
+      {"lines": [29, 56], "characters": [2447, 5143], "utf8_bytes": [7285, 15317], "content": "校字分歧、续庄/黛玉异手首次认出、装订、笑料、留册与饭"},
+      {"lines": [57, 84], "characters": [5143, 7967], "utf8_bytes": [15317, 23733], "content": "只取错家包、甄家拆见、承责重包、本人返程、贾接包开验"},
+      {"lines": [85, 107], "characters": [7967, 10088], "utf8_bytes": [23733, 30050], "content": "再次承责、麝月理绦交贾系好、甄空手走、客册留桌、抄字接饭碗"}
+    ],
+    "first_prose_quote": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt",
+      "line_start": 3,
+      "line_end": 3,
+      "character_offset_start": 23,
+      "character_offset_end_exclusive": 190,
+      "utf8_byte_offset_start": 65,
+      "utf8_byte_offset_end_exclusive": 566,
+      "quote": "贾芸送帖来时，宝玉正将一张纸压在旧书里，手边墨还没干，听见敲门，只叫进来，自己却不起身。麝月端着盆走到门边，腾出一只手开门，见是贾芸，先让他接住盆，自己抽闩。贾芸捧了一手凉水，笑道：“帖子还没送上，倒先领了差使。”麝月将盆接回，叫他脚下慢些，门槛里外都是水。宝钗从灶间出来，他才将帖子递过去，说甄宝玉想来借书校字，先问这里方便不方便。"
+    },
+    "last_prose_quote": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt",
+      "line_start": 107,
+      "line_end": 107,
+      "character_offset_start": 9923,
+      "character_offset_end_exclusive": 10087,
+      "utf8_byte_offset_start": 29557,
+      "utf8_byte_offset_end_exclusive": 30049,
+      "quote": "宝玉笑了，起身去帮着挪桌面的东西。客册包仍留在干处，借阅条夹在里头；他把自己那册拿开，露出桌缝中夹的一点松子壳，便用薄木片拨出来，交给麝月同地上细屑一并扫去。宝钗端菜过来，他还举着木片，见她两手不便，才将木片放下，接住菜碟搁在当中。麝月盛好饭，递来一碗，他双手接了，碗底热得换了换指头，坐定后，先用箸将碗沿一粒黏着的饭拨进碗里。"
+    }
+  },
+  "length_observation": {
+    "all_characters": 10088,
+    "body_characters": 10065,
+    "body_nonwhitespace_characters": 9960,
+    "body_basic_han_characters": 8684,
+    "utf8_bytes": 30050,
+    "independently_counted": true,
+    "method": "正文去回目及其后空行；Python Unicode code points，nonwhitespace用isspace，basic Han为U+4E00–U+9FFF。本次与披露所报Han数恰同，不泛称两种Han分类等价。",
+    "interpretation": "不再是2028字短候选，满足notes的正文双下限。10088略高于旧编辑建议8500–10000，不据此判FAIL，也不以作者新版10000–11000阈值判文学PASS；prepared request本轮未全文消费，长度目标变化不作权威裁决。篇幅不证明节奏或物链成立。"
+  },
+  "verbatim_quotes": [
+    {"id": "Q01", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 5, "line_end": 5, "quote": "他要来，我先把帖子送来，看你应不应；你应了，我明日带他到门口便是。"},
+    {"id": "Q02", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 11, "line_end": 11, "quote": "麝月将茶罐拿来，斜着倒出些，见有几片整的，便拣了数一数，留作这一壶，茶末仍收回去。"},
+    {"id": "Q03", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 15, "line_end": 15, "quote": "宝玉摸摸玉上的旧绦，结已磨毛，便解下来交她，叫趁来人之前换。她接过玉，拿旧帕裹着，暂放在零册上，道：“线还得挑，你别又催。”"},
+    {"id": "Q04", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 17, "line_end": 17, "quote": "她只得放下线，将旧帕包着的玉压在零册中间，掩起垫在底下的布角，拢成一个家内的小包，免得搬桌时散落。"},
+    {"id": "Q05", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 21, "line_end": 21, "quote": "小厮只抱着一个来访的书包，得了吩咐，便放在桌外侧。那包里是甄宝玉带来的虫蛀旧册，布面较平，包角收得小；桌里边的家内小包，布角拢着零册，略厚一些，正和它邻着。"},
+    {"id": "Q06", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 23, "line_end": 23, "quote": "他问另有纸没有，她道：“米数纸最忙。”"},
+    {"id": "Q07", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 25, "line_end": 25, "quote": "甄宝玉带的旧册从书摊借来，夹着一张借阅条，册子前头有些字模糊，他要拿来同这里的钞本对。"},
+    {"id": "Q08", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 29, "line_end": 29, "quote": "宝玉却说那点不像这一页原来的墨，恐怕是纸背透上来的。甄宝玉侧过去辨，觉得上下能连，便不愿留空。"},
+    {"id": "Q09", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 33, "line_end": 33, "quote": "隔在自己续文旁边的，正是黛玉写的四句。他此前竟未曾读到，如今一行行看完，嘴角轻轻动了一下，拇指仍按在翻页的地方，没有翻下去。"},
+    {"id": "Q10", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 35, "line_end": 35, "quote": "宝玉摇头，说前头还不知是谁，这里是林妹妹的字。"},
+    {"id": "Q11", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 43, "line_end": 43, "quote": "甄宝玉耳根微红，说以为孔是齐的，穿上就是了。宝玉说他从前也这样，待整本穿好，才知里外倒着，更费一番事。"},
+    {"id": "Q12", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 51, "line_end": 51, "quote": "麝月听见他们说留名字好取，过来取线团，插嘴道：“名字不要钱。”"},
+    {"id": "Q13", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 53, "line_end": 53, "quote": "甄宝玉则将带来的虫蛀册包好，借阅条夹在册首，一同留在桌外侧。里边的家内包还原样放着，零册压着玉帕，外布角拢在一处，麝月的绦线则另在窗沿。"},
+    {"id": "Q14", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 59, "line_end": 59, "quote": "甄宝玉只得向小厮招手，朝桌角一指：“那一包拿着。”指时脸仍朝着窗下，袖子垂过两包之间，小厮望见近里那只略厚的家内包，便上前抱起。"},
+    {"id": "Q15", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 61, "line_end": 61, "quote": "他只取了这一个包，抱在臂中走到门边，客人的虫蛀册包仍放在桌外侧。"},
+    {"id": "Q16", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 63, "line_end": 63, "quote": "甄宝玉擦干手，解开外布，先露出一册家内零钞，封皮并非自己带去的那本，书角还夹着半截废纸。"},
+    {"id": "Q17", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 65, "line_end": 65, "quote": "他展开帕角，玉露了出来，断了一点毛丝的结垂在外头。他没有拿去临窗细看，只将玉仍放回帕中，抬头叫小厮近前。"},
+    {"id": "Q18", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 67, "line_end": 67, "quote": "甄宝玉把外布拢到帕边：“我自己指得含糊，临出门又没看。你问我，我也还在说书。”"},
+    {"id": "Q19", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 69, "line_end": 69, "quote": "说罢低头重新将零册放好，旧帕仍裹着玉，收进同一块外布里，系住布角，亲手拿起。"},
+    {"id": "Q20", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 71, "line_end": 71, "quote": "甄宝玉叫他留下，说那里那包册子本就约了下回取，不用今日再拿，自己只去交回这一包。"},
+    {"id": "Q21", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 71, "line_end": 71, "quote": "来时贾芸曾在街口指过路，如今仍照那条街走，到了窄处，前面运柴的人正卸担，他便在路边等着"},
+    {"id": "Q22", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 75, "line_end": 75, "quote": "麝月抱柴往桶里放，短的先落，长的横着，桶口便竖起高高一层。"},
+    {"id": "Q23", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 77, "line_end": 77, "quote": "宝玉问借阅条在不在，她说既是别人包好的，自己还没打开，他便拿过来，记着下回取还，放回桌外侧。"},
+    {"id": "Q24", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 79, "line_end": 79, "quote": "将自己拿来的包交到宝玉两手中：“这是你家里的，方才我指着桌角，话没说清，小厮就抱走了。我回去打开才知道。”"},
+    {"id": "Q25", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 79, "line_end": 79, "quote": "宝玉接住，带到桌前解开，先看见自己那册零钞，往旁一放，旧帕便从底下露出。他揭开帕角，玉还裹在其中，旧绦贴着帕边，这才叫麝月来。"},
+    {"id": "Q26", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 81, "line_end": 81, "quote": "麝月看见，先把手上的水擦干，取过玉，说自己刚要接着理绦。他将零册归到里边，帕子展开留在她手旁"},
+    {"id": "Q27", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 87, "line_end": 87, "quote": "她将玉交回他手，说先拿着等她收去多余的线。他捧住，等剪口合上，自己将新绦系好，把玉收回身前，衣襟压住结头"},
+    {"id": "Q28", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 91, "line_end": 91, "quote": "宝玉应下，说借阅条也一并夹着，下回取时同他交清。甄宝玉点头，拱手告辞，这一回手上空着"},
+    {"id": "Q29", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 95, "line_end": 95, "quote": "便把客册包移到桌外侧的干处，上头不压茶杯，留待下回来取。里边的家内零册则摊开，旧帕搁在一旁"},
+    {"id": "Q30", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 101, "line_end": 101, "quote": "他看了一会儿，只将那一行照可见处抄下，缺处留着。"},
+    {"id": "Q31", "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "line_start": 107, "line_end": 107, "quote": "麝月盛好饭，递来一碗，他双手接了，碗底热得换了换指头"}
+  ],
+  "action_reconstruction": [
+    {"step": 1, "lines": [15, 17], "evidence": ["Q03", "Q04"], "observed": "玉从贾宝玉交麝月，因为旧绦磨毛待换；麝月用旧帕裹玉，先放零册上，再连同零册收进家内底布。", "not_assumed": "这里只承认本场起点；不倒推出97之前的连续保管史或91雪物身份。"},
+    {"step": 2, "lines": [21, 25], "evidence": ["Q05", "Q07"], "observed": "客方只带一个虫蛀册包，放桌外侧；家内零册玉帕包在里侧，相邻但可辨。客册解包校书，借阅条在册首。", "not_assumed": "两只叙事容器不自动映射注册OBJ-ZHEN-PACKAGE-98全部内容。"},
+    {"step": 3, "lines": [39, 59], "evidence": ["Q13", "Q14"], "observed": "先约暂留客册，饭前甄把客册与借阅条包好置外侧，家包原样在里侧；告辞仍约下次取册。指令却说那一包拿着，视线未看桌。", "not_assumed": "不替甄补一个本来应拿的第三包，也不把他矛盾指令润饰成合理精确吩咐。"},
+    {"step": 4, "lines": [59, 61], "evidence": ["Q14", "Q15"], "observed": "小厮只抱里侧家包一次，随甄离开；外侧客册包仍留桌。", "not_assumed": "没有两包都提、掉包再换、遗漏放下或暗中交换。"},
+    {"step": 5, "lines": [63, 65], "evidence": ["Q16", "Q17"], "observed": "到甄住处后甄自己拆外布，先见非己封皮零钞，再揭旧帕见玉；玉实际写回帕中。", "not_assumed": "未把玉见光/离帕当成另一次误取；放回有明文，不靠补动作。"},
+    {"step": 6, "lines": [67, 69], "evidence": ["Q18", "Q19"], "observed": "甄从责小厮转为认自己指得含糊且未验；拒绝小厮代返，重放零册、帕玉入同一外布，系好并亲手拿起。", "not_assumed": "承责与携包分别有动作，不用一句负责代替运输。"},
+    {"step": 7, "lines": [71, 73], "evidence": ["Q20", "Q21"], "observed": "小厮留下，甄只持此家包沿贾芸已指道路返程；运柴阻路仅使等候，不造成第二个包/玉巧合。", "not_assumed": "没有贾芸追客送玉、信使转手、伴送或新注册运输ID。"},
+    {"step": 8, "lines": [75, 79], "evidence": ["Q22", "Q23", "Q24"], "observed": "镜头回贾家仍在收饭后物件，客册包没拆；开门时贾还问是否想起疑字，待甄解释交包才获知误拿。", "not_assumed": "这只支持贾家起初未发现的叙事，未生成可执行知识事件。"},
+    {"step": 9, "lines": [79, 81], "evidence": ["Q24", "Q25", "Q26"], "observed": "甄当面把同一误取家包交贾两手；贾一次开外布、移零钞、揭帕见玉，麝月随后取玉。", "not_assumed": "甄家的拆包与贾收件这一次开验不是收件人多轮验包；客册包另未拆。"},
+    {"step": 10, "lines": [81, 87], "evidence": ["Q26", "Q27"], "observed": "贾归零册、帕留麝月旁；麝月理旧结、穿新绦、打实结脚，再交贾持玉并收线；贾自己系好收身前。", "not_assumed": "末持者为本段贾宝玉，不因甄在旁或旧稿终持反转而改判；非物主史证。"},
+    {"step": 11, "lines": [89, 95], "evidence": ["Q28", "Q29"], "observed": "甄明确不取自己的册包并空手告辞；贾叠帕归零册旁，客册移干处留待下次取。", "not_assumed": "不补未演出的交换/送回；99实际取还未读，故只认本章待取义务。"},
+    {"step": 12, "lines": [97, 107], "evidence": ["Q30", "Q31"], "observed": "米数与抄字继续分纸，疑字留缺，家务继续，客册包仍在干处，贾最后接饭碗。", "not_assumed": "不以普通归玉/旧文停手推断99出家顿悟或后章兑现。"}
+  ],
+  "selected_contract_beat_review": [
+    {"id": "98-S1-R1", "contract_path": "data/planning/contracts/agent-final-v2/98-S1.v3.json", "pointer": "/required_beats/0", "assessment": "OBSERVED_LOCAL_C_NOT_RUNTIME", "evidence": ["Q01"], "lines": [3, 27], "finding": "书摊问缺页相识→贾芸先递帖→宝玉回帖按宝钗定过午→次日带到门→贾芸先离。地址可达桥已演，未另引花家旧识或找门巧遇。具体地址/时间与localcast注册不因此KNOWN。"},
+    {"id": "98-S1-R2", "contract_path": "data/planning/contracts/agent-final-v2/98-S1.v3.json", "pointer": "/required_beats/1", "assessment": "OBSERVED_LOCAL_C_NOT_RUNTIME", "evidence": ["Q01", "Q05"], "finding": "递帖先准备借校来意；客包随次日访客到门才上桌。先前家内包不等于访客包已到。照面、同玉、误包实现均仅所选C。"},
+    {"id": "98-S1-R3", "contract_path": "data/planning/contracts/agent-final-v2/98-S1.v3.json", "pointer": "/required_beats/2", "assessment": "OBSERVED_LOCAL", "evidence": ["Q02", "Q22", "Q31"], "lines": [11, 107], "finding": "数茶、腾柴擦桶垫桶、实际坐桶（贾坐、甄椅）、坐后装柴、淡饭与重蒸余饭全部有用处，未见访客赞助。没有把桶坐客机械读成必须甄坐。"},
+    {"id": "98-S2-R1", "contract_path": "data/planning/contracts/agent-final-v2/98-S2.v3.json", "pointer": "/required_beats/0", "assessment": "OBSERVED_LOCAL_WITH_SOURCE_OBLIGATION_OPEN", "evidence": ["Q07", "Q08", "Q09", "Q10", "Q11"], "finding": "一层书摊借册来路、虫蛀/题签/借阅条、对字与穿线在场；先认自己续庄再认黛玉四句，明写此前未读；无名家善本谱系。原页为何在此、异手获取事件及直接底本原字仍未证，不补身份来源史。"},
+    {"id": "98-S2-R2", "contract_path": "data/planning/contracts/agent-final-v2/98-S2.v3.json", "pointer": "/required_beats/1", "assessment": "OBSERVED_LOCAL_C_NOT_RUNTIME", "evidence": ["Q03", "Q04", "Q05", "Q13", "Q15"], "finding": "换绦→旧帕→家内零册包与客虫蛀册包邻置清楚；只错拿家包一次，客包留。对象映射未知不等于此处物流FAIL。"},
+    {"id": "98-S2-R3", "contract_path": "data/planning/contracts/agent-final-v2/98-S2.v3.json", "pointer": "/required_beats/2", "assessment": "OBSERVED_LOCAL", "evidence": ["Q06", "Q12", "Q30", "Q31"], "finding": "两句笑料、米数纸背抄字均在日用劳动内；异手后很快回校字，结末回饭，未用庄子点化99。"},
+    {"id": "98-S3-R1", "contract_path": "data/planning/contracts/agent-final-v2/98-S3.v3.json", "pointer": "/required_beats/0", "assessment": "OBSERVED_LOCAL_C_NOT_RUNTIME", "evidence": ["Q14", "Q15", "Q16", "Q17", "Q19"], "finding": "一次错取家包、客包留；甄家先拆见零册帕玉、玉写回帕、同外布重包。没有用看不见的放下/交换修补。"},
+    {"id": "98-S3-R2", "contract_path": "data/planning/contracts/agent-final-v2/98-S3.v3.json", "pointer": "/required_beats/1", "assessment": "OBSERVED_LOCAL_C_LEGACY_RUNTIME_STILL_UNKNOWN", "evidence": ["Q18", "Q19", "Q20", "Q21", "Q24"], "finding": "指令含糊及未看包由甄承认；同包本人沿已知路返、当面交贾，贾起初未知。旧OT98-04/05为zhen_messenger的冲突不删除、不宣称兼容或重放通过。"},
+    {"id": "98-S3-R3", "contract_path": "data/planning/contracts/agent-final-v2/98-S3.v3.json", "pointer": "/required_beats/2", "assessment": "OBSERVED_LOCAL_WITH_NEXT_CHAPTER_PENDING", "evidence": ["Q25", "Q26", "Q27", "Q28", "Q29", "Q31"], "finding": "贾一次开验册帕玉、麝月续绦交回、贾系好；甄空手走，客册未交换仍留桌，接饭。没有额外赠钱物不等于包内没有玉；原物归还不是馈赠。99取还尚未消费，不能替它结案。"}
+  ],
+  "forbidden_beat_review": [
+    {"id": "98-S1-F1", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "scope": "现实会面/同玉未在正文中被明称原稿硬证；本读报也不作此升级。"},
+    {"id": "98-S1-F2", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "scope": "未见第二个找门偶然、贵人引荐或甄送钱；贾芸只在所选先递帖带路桥内。"},
+    {"id": "98-S2-F1", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "scope": "未见真假一体论战、答诗、遗言或悟道宣言；相似不代换通过不同注意与反应呈现。"},
+    {"id": "98-S2-F2", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "scope": "宝钗在灶事和腾桌内，不专门见证四句；没有善本谱系代替校书。"},
+    {"id": "98-S3-F1", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT", "scope": "未见两玉交换、第二次掉包、甄送钱、归玉触发99；返程运柴挡路并未产生第二次物链偶然。"},
+    {"id": "98-S3-F2", "assessment": "NOT_OBSERVED_IN_COMPLETE_READ_TEXT_RUNTIME_NOT_CHECKED", "scope": "甄先见错物、贾后知；本人实际携包不是信使承责偷换。正文不声称旧run认证，本读报不因局部叙事清楚改任何注册状态。"}
+  ],
+  "confirmed_local_failures_current_revision": [],
+  "confirmed_local_failure_assessment": "本次完整逐动作阅读，未找到足以确证的当前v1包裹方向、终持者或所选核心义务局部FAIL；这不是全篇文学PASS。尤其不能因用户要求列FAIL便凭UNKNOWN造FAIL，也不能仅凭作者自述把旧FAIL消掉。局部未见硬冲突与文学/底本/运行验收分列。",
+  "prior_failures_comparison_only": [
+    {"prior_issue": "旧短稿两包都提后另抱一包而无放下，客包留桌不成立", "prior_evidence": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json#/chapters/7/confirmed_issues/0；该项引旧candidate lines51、53", "current_evidence": ["Q05", "Q13", "Q14", "Q15"], "current_assessment": "当前动作已重建为只拿家包一次；旧稿FAIL保留，不迁移成新版同一FAIL。"},
+    {"prior_issue": "旧短稿玉在贾家，由贾芸追甄送玉，方向反转", "prior_evidence": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json#/chapters/7/confirmed_issues/0；该项引旧candidate lines59、67", "current_evidence": ["Q16", "Q17", "Q19", "Q20", "Q24"], "current_assessment": "当前在甄住处拆见，同包本人返交；不依赖贾芸追送。旧FAIL不删除。"},
+    {"prior_issue": "旧短稿甄把玉收起，终持者反转，末句已送还不能洗掉", "prior_evidence": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json#/chapters/7/confirmed_issues/1；该项引旧candidate lines69、77、83、85", "current_evidence": ["Q25", "Q26", "Q27", "Q28"], "current_assessment": "当前有贾开验→麝月理绦→交贾→贾系好与甄空手走，终持方向未反转。"},
+    {"prior_issue": "旧短稿女子手笔匿名化、换绦帕包和若干P-Lock遗漏", "prior_evidence": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json#/chapters/7/confirmed_issues/2；artifacts/agent_research/phase6/editor-feedback/notes-ch98-v1.txt:6", "current_evidence": ["Q03", "Q04", "Q06", "Q09", "Q10", "Q12", "Q22"], "current_assessment": "身份首次认出、两笑句、红绳叫卖、木桶还柴在当前正文有实演；四句直接底本原字核验仍OPEN，不能把身份补明等同底本义务闭合。"}
+  ],
+  "literary_risks_separate_from_confirmed_failures": [
+    {
+      "id": "CORRECTION_DENSITY",
+      "assessment": "LITERARY_RISK_NOT_LOGISTICS_FAIL",
+      "lines": [7, 107],
+      "examples": ["7–9米数纸压书/沾墨", "21–23让路/垫杯", "41–49找针/穿错页/互纠读法/退让水壶", "55–57碟子/碗/布/纸", "81–85安慰失措与重复认错", "95–105放书/分纸/旧线/椅子/柴/墨/木桶"],
+      "finding": "家务不是纯道具，确实打断访客与校字，这是修订所得；但几乎每两段一处拿错、放错、看错、要人纠正或让路，麝月/宝钗频繁收束贾的动作。后半纠偏密度仍可能显得为证明日常而编排，削弱异手停顿与返程尴尬的层次。",
+      "boundary": "是节奏、声口和重复结构风险，不把所有家庭纠正自动判违规，也不因长度达标而豁免。"
+    },
+    {
+      "id": "OBJECT_AUDIT_LEDGER_PRESSURE",
+      "assessment": "LITERARY_RISK_NOT_CONFIRMED_CHAIN_BREAK",
+      "lines": [53, 107],
+      "evidence": ["Q13", "Q15", "Q19", "Q23", "Q25", "Q28", "Q29"],
+      "finding": "已避免多轮收件验包，核心动作方向清楚；然而家包/客包、里外、下回取的重申从53、61、71、77、89、91、95直到107反复出现，可能仍像物审台账。某些重复服务责任和残局，但不能把全部重复都当人物自然记挂。",
+      "boundary": "不是建议删掉必须可见的重包/交付/终持动作；当前没有证据要求把清楚的链再判FAIL。"
+    },
+    {
+      "id": "RETURN_ROUTE_PROPORTION",
+      "assessment": "LITERARY_RISK_NOT_SECOND_COINCIDENCE",
+      "lines": [71, 85],
+      "finding": "73行卸柴、候路、湿袖、换握、硌腕到想起小厮，给亲送真实劳动和体面负担，较只说他负责有效；但该段展开很长，返来81–85又三次说未看/话乱并屡次让坐，让本可短促的返还尾场拖长。",
+      "boundary": "阻路未改变物链，无凭据当第二次掉包巧合或新增运输事件。"
+    },
+    {
+      "id": "DELAYED_HANDWRITING_AFTERIMAGE",
+      "assessment": "MIXED_EFFECT_NOT_SOURCE_FAIL",
+      "lines": [33, 105],
+      "evidence": ["Q09", "Q10"],
+      "finding": "33–35明认黛玉且不追问遗言，停手比玉归先触心，随后劳动叫回，满足迟见方向。105又遇异手停手形成余波，未点化99；但其间连续家务校正过多，可能把重要短停与其他小动作磨到同等分量。"
+    }
+  ],
+  "source_and_unknown_boundaries": [
+    {"field": "face_to_face_same_jade_original_chapter", "status": "OPEN_LOCKED_C_NARRATIVE_ONLY", "basis": "data/planning/decisions/phase6-ch98-v1.json:179–190；三合同相关forbidden_beats", "finding": "照面、这一玉前后同一、误包与本人亲送都是当前C演法；不因本章动作连贯变成R18源证，也不解决原稿回次。"},
+    {"field": "legacy_messenger_runtime", "status": "UNKNOWN_NOT_REPLAYED_CONFLICT_RETAINED", "basis": "data/planning/decisions/phase6-ch98-v1.json:227–271", "finding": "OT98-04.to.holder与OT98-05.from.holder仍是zhen_messenger；新版三合同删除两者作本人运输支持。这里不改from/to、不读取旧run冒称重放，不宣布本人叙事与旧链兼容。"},
+    {"field": "snow_found_object_91", "status": "OPEN_NOT_MERGED", "basis": "data/planning/contracts/agent-final-v2/98-S3.v3.json#/unresolved/6", "finding": "本场未把91雪物放进包；未出场并非缺义务，不据同玉叙事认同雪物。"},
+    {"field": "containers_holders_localcast_knowledge_events", "status": "UNKNOWN_NOT_AUTOMATIC_FAIL", "basis": "data/planning/decisions/phase6-ch98-v1.json:192–208；三合同unresolved", "finding": "正文局部持有方向已可读，不等于局部状态登记、容器对象映射、完整localcast、地址路线或旧文获取事件通过验证；未注册小厮/书摊/抄书人只保留叙事称谓，不造ID。"},
+    {"field": "four_lines_exact_direct_base_bytes", "status": "UNRESOLVED_NOT_DIRECT_BASE_VERIFIED", "basis": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1-disclosure.json:121–134；data/planning/decisions/phase6-ch98-v1.json:210–215；data/planning/contracts/agent-final-v2/98-S2.v3.json#/unresolved/1", "finding": "披露自报只查candidate corpus第21回若干records，未读直接PDF/底本。本读者也未打开该corpus或直接底本，不能把作者自报lookup当独立复核。正文33–35已明四句身份且未全文引诗，没有凭记忆补诗；原四句原字/载体义务仍未闭合，不由不引诗自动豁免，也不因未知自动判正文伪引。"},
+    {"field": "no_extra_gift_vs_jade_in_package", "status": "DISTINGUISHED_LOCAL", "basis": "data/planning/decisions/phase6-ch98-v1.json:173–176；正文15–17、65、79、87", "finding": "完整读未见甄额外送钱物；包内明有贾方玉和零册，送回原物非馈赠。没有使用包里没有钱物来抹去玉。不能将无钱赠扩写成包内绝无有价物。"},
+    {"field": "next_chapter_pickup", "status": "PENDING_NOT_READ", "basis": "正文71、89、91、95、107", "finding": "98确实将客册与借阅条留桌待下回取，符合通向99取还的接口；本轮没读99，不能声称99已取或客册已全部送回。"}
+  ],
+  "overall_feedback": {
+    "local_action_chain": "OBSERVED_COHERENT_IN_READ_TEXT_NOT_EXECUTABLE_CERTIFICATION",
+    "current_confirmed_local_fail_count": 0,
+    "literary_status": "FEEDBACK_REMAINS_OPEN_NOT_PASS_NOT_ADOPT",
+    "summary": "这次不是靠末句归还总结洗旧稿动作：换绦临置、两包邻置、只取家包、甄家拆见并重包、甄承责亲返、贾一次开验、麝月理绦交贾系好、甄空手走及客册留家桌都有可追踪明文。帖子桥、茶饭劳作、黛玉异手首次明认和木桶还柴也已演出。本轮未确证新版局部物流FAIL，但频繁纠偏与物包位置重申仍可能过密；直接底本四句、源证身份、旧messenger运行与99实际取还仍未闭合。",
+    "not_a_release_gate": "此为MODEL_SUBAGENT FEEDBACK_ONLY authority NONE；不提供文学ADOPT、史证/source资格、人工资格或合格独立panel，不将长度、lint、作者披露或UNKNOWN自动转PASS/FAIL。"
+  }
+}

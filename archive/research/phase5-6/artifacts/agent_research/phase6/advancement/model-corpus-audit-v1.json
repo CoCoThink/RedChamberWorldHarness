@@ -1,0 +1,1402 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_CORPUS_AUDIT",
+  "id": "phase6-model-corpus-audit-v1",
+  "qualification": {
+    "qualification": "MODEL",
+    "authority_evidence": "NONE",
+    "usage": "RESEARCH_ONLY",
+    "status": "PENDING",
+    "independent_human": false,
+    "isolation": "NOT_PROVEN",
+    "adoption": "NOT_GRANTED"
+  },
+  "read_scope": {
+    "purpose": "Read-only model audit of retained corpus v2 carriers and selected v2 exemplar bindings.",
+    "corpus_dataset_ref": "corpus:front80:v2-candidate",
+    "corpus_scope": "front80 v2 candidate; selected packet sample set only",
+    "selected_sample_count": 102,
+    "mechanical_sample_scope": "all 102 packet-declared samples",
+    "semantic_scope": "Five MAIN_TEXT exemplar segments plus the retained model-reader classifications of 97 EDITORIAL samples; no claim beyond the declared samples.",
+    "excluded": [
+      "human corpus audit or human qualification",
+      "PDF authenticity, provenance, or unknown-witness resolution",
+      "v3 corpus or any newly generated corpus packet",
+      "adoption, release, build, catalog, API, or stable publication effect",
+      "reclassification of the retained 31 negative page-header opinions"
+    ]
+  },
+  "bindings": {
+    "review_packet": {
+      "path": "artifacts/agent_research/phase6/corpus/review-packet-v1.json",
+      "sha256": "ec0f732bb5ff37ddee99efdd3ce3809b614d981ea8e2d1d6bef3ae2598bcc30b"
+    },
+    "sample_carrier": {
+      "path": "artifacts/agent_research/phase6/corpus/review-samples-v1.json",
+      "sha256": "cfa4819f8dd6dd7c92dc1c06c3c8c5f6c61e47b0af99e0b316e659652d15b532"
+    },
+    "selected_v2_exemplar": {
+      "path": "data/writing/exemplars/ch89-research-v2.json",
+      "sha256": "dfbf649f9249e7e4ed5fa5b1829c1b0ebca38ec971a2cb132d3ce9370fbd373d"
+    },
+    "v2_manifest": {
+      "path": "corpus/front80/v2-candidate/manifest.json",
+      "sha256": "eb4aebb9e38712a988bdead263c12c9c3df00a6f936fb17db755c436e4d66886"
+    },
+    "v2_segments": {
+      "path": "corpus/front80/v2-candidate/segments.jsonl",
+      "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2"
+    },
+    "context_compatibility_observation": {
+      "path": "artifacts/agent_research/phase6/advancement/corpus-context-compatibility-v1.md",
+      "sha256": "3f3caee067cb7b38495804c607c091a2448086a2a87992bedb7e0aa3b75c77c5"
+    },
+    "container_diagnosis": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/release-evaluation/corpus-container-diagnosis-v1.json",
+      "sha256": "26f9c5ed64dcc81c140ee17be664b8e19898d9be3de3ad8663ceae0b174af462"
+    },
+    "corrected_evaluation_summary": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/release-evaluation/reader-fix-corrected-summary-v1.json",
+      "sha256": "7c431a8c716e6885716b1d960b5ae5c26eee3a02aeafcbfee32c8caa938b362a"
+    },
+    "corrected_release_evaluation": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/release-evaluation/report-v3.json",
+      "sha256": "43c8ccf9b34ab247c7b364d328522c3dbaf531b1b43174bcf8601570d03741d5"
+    },
+    "corrected_execution": {
+      "path": "artifacts/agent_research/phase6/revisions-v2/release-evaluation/execution-v3.json",
+      "sha256": "658cb5c806e18466ed04d6c9ef296ea9acb515306af95c315160b08921676f9c"
+    },
+    "current_sample_reader": {
+      "path": "src/rcwh/workflow/agent_panel.py",
+      "sha256": "209ad90ba370e0607daeed7b69a899a0a6fcb349613b9844d9bcd5c138a77769"
+    },
+    "current_release_reader_binding": {
+      "path": "src/rcwh/workflow/agent_release.py",
+      "sha256": "a0ed7fa4b82bf374d392893f84b5e036f71b5249498a8e889e9fc374f7a20acf"
+    },
+    "reader_regression_tests": {
+      "path": "tests/test_agent_release_corpus_samples.py",
+      "sha256": "8829e4fa53c74844ad9eb5c3035871e8f56a8299914ed7d5dbc4c84652ebc80d"
+    },
+    "retained_model_opinions": [
+      {
+        "path": "artifacts/agent_research/phase6/corpus/reader1-opinion-v1.json",
+        "sha256": "584ea51882eaf7c24b55e495f900e7b4bb08a487e8ec56a2d8ea137021d84dc7"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/corpus/reader2-opinion-v1.json",
+        "sha256": "a2f098bcb7089f076cdafa79da4bc1bf3632fed7e0041a72f227c83938b1b679"
+      }
+    ]
+  },
+  "sample_results": {
+    "carrier_shape": "JSON envelope with top-level segments array; canonical reader unwraps segments rather than treating the envelope as a segment.",
+    "packet_sample_count": 102,
+    "carrier_segment_count": 102,
+    "unique_membership_count": 102,
+    "unique_membership_pass": true,
+    "text_digest_checks_pass": true,
+    "reader1_reader2_verdicts_agree": true,
+    "reader1_counts": {
+      "PASS": 71,
+      "FAIL": 31
+    },
+    "reader2_counts": {
+      "PASS": 71,
+      "FAIL": 31
+    },
+    "by_kind": {
+      "MAIN_TEXT": {
+        "count": 5,
+        "reader1_pass": 5,
+        "reader1_fail": 0
+      },
+      "EDITORIAL": {
+        "count": 97,
+        "reader1_pass": 66,
+        "reader1_fail": 31
+      }
+    },
+    "selected_exemplar_results": [
+      {
+        "segment_id": "hlm80:chapter:27:p00087",
+        "reason": "第27回小红传话：观察多层称谓、关系与回话速度。",
+        "expected_text_sha256": "e265fb64265bbbb0d3fa137c25c58831bf5e92d515e6100334691d63f68fd0ff",
+        "actual_text_sha256": "e265fb64265bbbb0d3fa137c25c58831bf5e92d515e6100334691d63f68fd0ff",
+        "text_hash_match": true,
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "result": "PASS_EXACT_MEMBERSHIP_AND_TEXT_HASH"
+      },
+      {
+        "segment_id": "hlm80:chapter:24:p00030",
+        "reason": "第24回街面办事：观察差事、银钱与人物声口。",
+        "expected_text_sha256": "20a8c6b617670916d6309ba50c81b7cc109fff935723e48cb9ea4e34aab245cd",
+        "actual_text_sha256": "20a8c6b617670916d6309ba50c81b7cc109fff935723e48cb9ea4e34aab245cd",
+        "text_hash_match": true,
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "result": "PASS_EXACT_MEMBERSHIP_AND_TEXT_HASH"
+      },
+      {
+        "segment_id": "hlm80:chapter:74:p00079",
+        "reason": "第74回抄检：观察同一事件中的身份与群像差异。",
+        "expected_text_sha256": "139d8b797c42c19fd3ff5e9d961f882631751c60bfaeebe490d77a9da83e392d",
+        "actual_text_sha256": "139d8b797c42c19fd3ff5e9d961f882631751c60bfaeebe490d77a9da83e392d",
+        "text_hash_match": true,
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "result": "PASS_EXACT_MEMBERSHIP_AND_TEXT_HASH"
+      },
+      {
+        "segment_id": "hlm80:chapter:61:p00016",
+        "reason": "第61回厨房小案：观察真相、体面与处理办法。",
+        "expected_text_sha256": "beb789e68a1132572a8171ab7bfe4fff222800607a1d46abdcc02dcbd8c3b798",
+        "actual_text_sha256": "beb789e68a1132572a8171ab7bfe4fff222800607a1d46abdcc02dcbd8c3b798",
+        "text_hash_match": true,
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "result": "PASS_EXACT_MEMBERSHIP_AND_TEXT_HASH"
+      },
+      {
+        "segment_id": "hlm80:chapter:52:p00006",
+        "reason": "第52回针线与病中劳作：观察物质动作推动场面。",
+        "expected_text_sha256": "a5efafb8f8a94e9441a77bd4376c866c3f6516142e9bd4d44059f6884823489b",
+        "actual_text_sha256": "a5efafb8f8a94e9441a77bd4376c866c3f6516142e9bd4d44059f6884823489b",
+        "text_hash_match": true,
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "result": "PASS_EXACT_MEMBERSHIP_AND_TEXT_HASH"
+      }
+    ],
+    "all_selected_sample_results": [
+      {
+        "sample_id": "hlm80:chapter:27:p00087",
+        "chapter": 27,
+        "section_ref": "chapter:27",
+        "kind": "MAIN_TEXT",
+        "text_sha256": "e265fb64265bbbb0d3fa137c25c58831bf5e92d515e6100334691d63f68fd0ff",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:24:p00030",
+        "chapter": 24,
+        "section_ref": "chapter:24",
+        "kind": "MAIN_TEXT",
+        "text_sha256": "20a8c6b617670916d6309ba50c81b7cc109fff935723e48cb9ea4e34aab245cd",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:74:p00079",
+        "chapter": 74,
+        "section_ref": "chapter:74",
+        "kind": "MAIN_TEXT",
+        "text_sha256": "139d8b797c42c19fd3ff5e9d961f882631751c60bfaeebe490d77a9da83e392d",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:61:p00016",
+        "chapter": 61,
+        "section_ref": "chapter:61",
+        "kind": "MAIN_TEXT",
+        "text_sha256": "beb789e68a1132572a8171ab7bfe4fff222800607a1d46abdcc02dcbd8c3b798",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:52:p00006",
+        "chapter": 52,
+        "section_ref": "chapter:52",
+        "kind": "MAIN_TEXT",
+        "text_sha256": "a5efafb8f8a94e9441a77bd4376c866c3f6516142e9bd4d44059f6884823489b",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00040",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00042",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "d5ef26658db000e0d661d54add309ff14305b055198b7376f386812bad2a0f6d",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00045",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "3eeb04d111d9f8a0fa434289466516fd226a17cc2a612970e08bbbe13d14e317",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00048",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00050",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "4e40df1e1d2f312e8d43e67370cae22b1c761c7fea214011b11349df71f7fd62",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00053",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "edd15e147bc65df67f5162a896b6cccf3a8b7257c76af69a39faa06c64c20b0a",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00056",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00058",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "5316da5272c7e30d2abdb6a3f937bbc03d4117ce51c5c1fdd807b1b1b3b53b06",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00061",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "4c05a11264c74a65b7e1aceff1e6de4cdc7467178976f6f9a97ab536a3d478c4",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00064",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00066",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "8cf73f9092973d569ec1ee503c47b72f886fd96f0dd68d693ec47eba43d91713",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00069",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "ff7d819f4052ab692d86a80a3ceb4dbbd92117d1a92585a8aae6205e5d0c5e27",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00072",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00074",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "75cbc212419376c042a467d4ce316f92d931f32863d05ee2dc9a18ee6df8a5ec",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00077",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "5dac334cf325e506d4304baaf990f2b52e7e4f5c21388e3f1bcad89b9aa830c8",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:chapter:67:p00080",
+        "chapter": 67,
+        "section_ref": "chapter:67",
+        "kind": "EDITORIAL",
+        "text_sha256": "1ec71794be7b95e84365384b9f13da60ac3269a0cb74bb3d4ed24e9aabf266d9",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00002",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "687133ed2b14abce400afc6c9bc3415a2260e7d366fac69176d91653bd9fb20a",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00005",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "79fa817e4886298bd43eb459b76caf02e6354c2d77f7a6df3d566b889ce4399e",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00008",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00010",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "95cf7b03e761efa51e09bfeb087e907a1159cf487240d90aedac3a2685945538",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00013",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "63ec4a5391e90da34af5379188488b6e8a354f3280d7081a5b9b5f56f979dc03",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00016",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00018",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "f8967f8440a04782f9d0ffef14622b48bf1c9704451ba4e800d93bff0c10f45a",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00021",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "70091c2a7e3892b4e1131c5825d51086bd3876a38eb0599ed36babeed53b24c1",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00024",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00026",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "c0542377d1a966fc15f93e1dca3648ba3790a56c4f9fc9e72972e2e64207988d",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00029",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "112f7330a06ca7fec0deb1ca31779d0b628e3dbef2a22c452f831c6ec1cb9b75",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00032",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00034",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "e66be280b759d43795b83dba9637c014123fd9b0a3421cc027e9db2af5785266",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00037",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "8a86a2b84b1881ef5f3dd9d1014b1e2b6bdbbba9504da317b81b92fc9eca0528",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00040",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00042",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "42f6b4cb74127e8eb821f2a6f9fa157ea58cf0e591e572c1b17b46231d5bf0b6",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00045",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "5e0891c26871e04b9e74e1bc8a3326250fc9461e440d5ea35e9122ea032023c7",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00048",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00050",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "81d05477a3dfd252c71b0b4b76c2d4613cdd14ee0f2fafead5be1a2f8544efe0",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00053",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "49ca5d81054fdd20572294b9350b605d05e0df91da09a46fb8bde7fd6c1c172d",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00056",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00058",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "ecd1615caad81581f1d366871943a3a64a206b5de9f82207cb0257be88ffff7d",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00061",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "a80464ffead72ed0822d444a88790c2f6a443e0024e51bd290d3658694525371",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00064",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00066",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "b8cd951d60e638d3f9f06d9a727710ea11c1b4ff30c24818f299d5a97b1ab283",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00069",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "20c9b3392d78d0e3a76ca143ba7c50689785e41c40bf778811e64d7983c2a549",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00072",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "818eb7b923dab3c80152cabf673b0815b3d2d638df886420e68874fa647be285",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00075",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "ec702be12ab72de43ea520ef3b7e4f7b3ed3b8f4db3aca7222634e7f0bead5ad",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00078",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00080",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "fc5c9a9d258ab0b6273d49ba2f23903e9182664673227a659743f4ab3bb084fd",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00083",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "055c2058cac3ade4ee78016492789d9c732b3cdac5169b00cce28e05f021125e",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00086",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00088",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "218284ea6ada7d90e7a7f6258c4c71fddc75c3ff348e0b00e18b55ddf815f17a",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00091",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "843126b20bc49dfead498543b3089a287c3a1f1d9e5eaf784e4b9dc5635a1282",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00094",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00096",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "6f0a19634323e434716670a844779f92b1626070938a05f83b67f52f6977e8de",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00099",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "0ed8ee124d83c6d9daf1fc266d11c0452b363b363bbf68f756e3c861fa6da897",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00102",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00104",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "1bdce42a88b06a2ffad1ce3046cfb8f1eb155a0f15412bce938cabe8e8e1bc23",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00107",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "69a079069a8d59a48bce67aeb8b4da269f16e5404e3aa58a8b2397be1fc91dcb",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00110",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00112",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "42635d20d19fb190ca592839df5f96804a63451557c227c54218f57390f54764",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00115",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "fd707ad307fa44ad71d4818e5198e00e195011e1bf99328b21d5cfcf6385402d",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00118",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00120",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "c97e645eef34c29864630c1a42b147679e5db447adc443b1e8699c29f50ec8ce",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00123",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "e45e1155f6e1e416dcc57e9438bcb284b6cb5e5d181291b3bd6c8568e2570b36",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00126",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00128",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "9ebb26b43da83711e15eb9c29f1f0cfb92e0e526c79d53079c08f9eb98cbf7bd",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00131",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "65f1cadc0a74273b128e481a2e92983a53f182368c3931f127256ad35550f9ee",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00134",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00136",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "6afdfc370c2120b3059d7150f8ea0f814dbd5fe9edb8aef7c7666af06c80b077",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00139",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "cb18e60f0f95e7509670cc9606fb30e3d7ad7eefc8c4bec7147abcfa0d88c482",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00142",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00144",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "0c621b4c59bc3eff37c8e52e5fefee2671348c8d86ef9765800a6c28eb55a18b",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00147",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "508b1abfd9f24c2e908201899dc2e1988d98fea50d97a2a31a2a83ac5ead0afc",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00150",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00152",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "8f22f0d371257be21e810e3add19f95cc60fd6225b3f302de6010c09c0d0bfc4",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00155",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "ba6f6ed0f5447e031222edb92999dfd16b4429d4a00419b300bbcdc843714ce8",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00158",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00160",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "0c4f4dac4bc42aaf7247cc01332281d0a9a3e68d63618d35e34931e5bc97950b",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00163",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "07ad018d85136358c8255c7aa7ae663538f69433ca7f3f0ab28d402a4accffa4",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00166",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00168",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "566147c78d7bfadb53e712b040f09f7a9b1efba0d64b0c13628d03073e2a8e3f",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00171",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "91843bcf8cd5c2023d2a83c7d8c05d7756ef033f536c0ffd21383910471736e3",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00174",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00176",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "6039c8d3bc61cc2e92dbc4fb99ee48208d9d20e1cfd8d9c3335dd1e3c2b5db26",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00179",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "1ff882848f253153be006122bd675336c9604e63ea49d6165a7665f1461bf6dc",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00182",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00184",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "debe502788bcbbb80f3fdc5f26a65f3f8a15e6a60dbc827c5029cddd42b9b88e",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00187",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "d49944d4d6e6ab7cb72aae3f06fd8a4737d09168248e9eacec319c2afe203dc2",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00190",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00192",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "e1b4fa83e6914e07055dda217a7c2d223438ef5478cb966fd3a7893d29887e32",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00195",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "b77a5362dacf487d2f45beea8d2b33d320703eb218c56c7036396599e8b1eb71",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00198",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00200",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "2b7f13306363b97bc2969af0a03418f887e2cd93d84d8f3ecbf02d2207997e12",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00203",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "24c0a7e8d77416f25ecfb884212df70404ca52865f03c2b69fd901034a8d0ee7",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00206",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00208",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "4af17ac1f0338a7edc5c275899123a6daa8de1288879faf955d995960629fa92",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00211",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "5d1ddf589d2db3aacc881bb6262519612883e1e86c87005509171225a47583d3",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00214",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+        "reader1_verdict": "FAIL",
+        "reader2_verdict": "FAIL",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      },
+      {
+        "sample_id": "hlm80:appendix:all:p00216",
+        "chapter": null,
+        "section_ref": "appendix:all",
+        "kind": "EDITORIAL",
+        "text_sha256": "9843dd42ed5f99643e579dae429662242df8bffa9d2c720cf6cef79f5a078737",
+        "reader1_verdict": "PASS",
+        "reader2_verdict": "PASS",
+        "verdicts_agree": true,
+        "mechanical_membership": "PASS_UNIQUE_ID_AND_TEXT_DIGEST"
+      }
+    ]
+  },
+  "negative_crosswalk": {
+    "original_model_opinions": {
+      "reader1": {
+        "path": "artifacts/agent_research/phase6/corpus/reader1-opinion-v1.json",
+        "verdict": "FAIL",
+        "sample_pass": 71,
+        "sample_fail": 31
+      },
+      "reader2": {
+        "path": "artifacts/agent_research/phase6/corpus/reader2-opinion-v1.json",
+        "verdict": "FAIL",
+        "sample_pass": 71,
+        "sample_fail": 31
+      }
+    },
+    "negative_sample_ids": [
+      "hlm80:chapter:67:p00040",
+      "hlm80:chapter:67:p00048",
+      "hlm80:chapter:67:p00056",
+      "hlm80:chapter:67:p00064",
+      "hlm80:chapter:67:p00072",
+      "hlm80:appendix:all:p00008",
+      "hlm80:appendix:all:p00016",
+      "hlm80:appendix:all:p00024",
+      "hlm80:appendix:all:p00032",
+      "hlm80:appendix:all:p00040",
+      "hlm80:appendix:all:p00048",
+      "hlm80:appendix:all:p00056",
+      "hlm80:appendix:all:p00064",
+      "hlm80:appendix:all:p00078",
+      "hlm80:appendix:all:p00086",
+      "hlm80:appendix:all:p00094",
+      "hlm80:appendix:all:p00102",
+      "hlm80:appendix:all:p00110",
+      "hlm80:appendix:all:p00118",
+      "hlm80:appendix:all:p00126",
+      "hlm80:appendix:all:p00134",
+      "hlm80:appendix:all:p00142",
+      "hlm80:appendix:all:p00150",
+      "hlm80:appendix:all:p00158",
+      "hlm80:appendix:all:p00166",
+      "hlm80:appendix:all:p00174",
+      "hlm80:appendix:all:p00182",
+      "hlm80:appendix:all:p00190",
+      "hlm80:appendix:all:p00198",
+      "hlm80:appendix:all:p00206",
+      "hlm80:appendix:all:p00214"
+    ],
+    "negative_reason": "Both retained model opinions identify the same 31 full publication-header cases where the WATERMARK_FONT 撫琴居 prefix remains a distinct EDITORIAL segment from the remaining header text; the FAIL is a retained segmentation/boundary opinion, not a missing-record or text-digest failure.",
+    "parser_bug_crosswalk": {
+      "diagnosis": "CONFIRMED_READER_BUG",
+      "bug": "The earlier reader treated a wrapped JSON envelope as one record instead of unwrapping its segments array.",
+      "affected_release_evaluation": "Nineteen non-86 chapter writing-package false positives were removed after the canonical reader correction.",
+      "mechanical_effect": "The correction restores actual sample membership and text-digest checking; it does not alter the retained corpus opinions.",
+      "negative_verdict_effect": "NONE",
+      "corpus_peer_effect": "The 19 CORPUS_PEERS FAIL outcomes remain FAIL; no negative review was cleared or converted to PASS."
+    },
+    "other_retained_negatives": [
+      "CH86 remains blocked by three UNRESOLVED_DEPENDENT_SOURCE_ASSET findings in the corrected evaluation.",
+      "The retained v2 model review remains FAIL with 31 sample findings.",
+      "The final v2 reading/review packet opinions remain research-only and do not establish adoption or release."
+    ]
+  },
+  "mechanical_status": {
+    "status": "PASS_FOR_READ_ONLY_BINDING_CHECKS; PENDING_FOR_QUALIFICATION",
+    "canonical_reader": "src/rcwh/workflow/agent_panel.py::_sample_records and _check_sample",
+    "wrapper_bindings": {
+      "json_envelope_unwrap": "PASS",
+      "jsonl_membership_path": "covered_by_current_regression_test",
+      "duplicate_or_missing_id_rejection": "covered_by_current_regression_test",
+      "text_sha256_rejection": "covered_by_current_regression_test",
+      "shared_release_reader_binding": "PASS_EXPECTED_SHARED_GLOBALS"
+    },
+    "direct_read_only_observation": {
+      "packet_membership": "102/102 unique sample IDs found in the bound segments container",
+      "actual_text_digest_validation": "102/102 retained rows satisfy their own text_sha256",
+      "exemplar_binding": "5/5 selected v2 exemplar segment IDs uniquely found with exact text_sha256 equality",
+      "sample_result_agreement": "reader1 and reader2 agree on all 102 retained sample verdicts"
+    },
+    "no_side_effects_observed_or_authorized": [
+      "No corpus build or rebuild was called.",
+      "No catalog, registry, API, stable release, or existing source was changed.",
+      "No v3 adoption or packet regeneration was performed.",
+      "No test suite was run; the current regression test source was inspected."
+    ]
+  },
+  "external_requirements": [
+    "Independent human corpus audit remains required before any corpus authority or qualification claim.",
+    "PDF authenticity, source provenance, unknown witness identity, and witness resolution require external evidence; this audit does not supply them.",
+    "The 19 CORPUS_PEERS FAIL outcomes must remain unresolved and visible.",
+    "Any future parser fix must preserve binding hashes, unique membership, actual text digests, and all retained negative opinions.",
+    "No release/adoption decision may rely on this model-only audit."
+  ],
+  "limitations": [
+    "This is a model-only, read-only mechanical and evidence crosswalk, not an independent human audit.",
+    "MODEL is the qualification of the reviewing process, not evidence authority; authority/evidence is NONE.",
+    "Context isolation is NOT_PROVEN for the retained model opinions.",
+    "Exact PDF visual authenticity and unresolved witness/source questions were not established.",
+    "The sample population is the packet-declared 102 segments, not the full corpus.",
+    "The retained 31 negative opinions are preserved even though the wrapper reader bug caused separate false-positive release-evaluation findings.",
+    "No claim is made that corrected parser behavior repairs corpus semantics or makes any negative review pass."
+  ],
+  "status": "PENDING",
+  "authority_effect": "NONE"
+}

@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "kind": "PILOT_READING_MECHANICAL_CUSTODY",
+  "status": "BYTE_QUOTES_AND_DECLARED_COVERAGE_PASS_NOT_QUALIFICATION",
+  "packet": {
+    "path": "artifacts/agent_research/phase6/advancement/pilot-comparison-v1/packet.json",
+    "sha256": "4558704e742ce05f5c3ae663a69f3272ac8ee6e9c786f5d2a8289cbde91d1c44"
+  },
+  "readers": [
+    {
+      "reviewer": {
+        "id": "phase6-pilot-reader1-v1",
+        "kind": "MODEL_SUBAGENT",
+        "session_id": "phase6-pilot-reader1-context1",
+        "model": {
+          "label": "session model environment label unverified",
+          "verification": "DECLARED_NOT_VERIFIED"
+        },
+        "context_isolation": {
+          "asserted": false,
+          "verification": "NOT_PROVEN"
+        }
+      },
+      "opinion": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-reader1-v1-opinion.json",
+        "sha256": "674f4e5ec9e4a334ce47fdb3546c7dcccd8e75abc095a9bae1e63a4118f88e8c"
+      },
+      "observations": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-reader1-v1-observations.json",
+        "sha256": "d3dfc709b6458e3c9f41570df780e195bc8f16301b371d97982dd187f6a4e49e"
+      },
+      "quote_count": 39,
+      "raw_verdicts": [
+        "UNVERIFIED",
+        "UNVERIFIED",
+        "UNVERIFIED",
+        "UNVERIFIED",
+        "UNVERIFIED",
+        "UNVERIFIED"
+      ]
+    },
+    {
+      "reviewer": {
+        "id": "phase6-pilot-reader2-v1",
+        "kind": "MODEL_SUBAGENT",
+        "session_id": "phase6-pilot-reader2-context1",
+        "model": {
+          "label": "session model environment label unverified",
+          "verification": "DECLARED_NOT_VERIFIED"
+        },
+        "context_isolation": {
+          "asserted": false,
+          "verification": "NOT_PROVEN"
+        }
+      },
+      "opinion": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-reader2-v1-opinion.json",
+        "sha256": "6a119312637a2ffbe5faad9d09dde8ed0086fa50cf1ac5735aecb0a07b7f13c8"
+      },
+      "observations": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-reader2-v1-observations.json",
+        "sha256": "65811fcf7a26827af54cc2f7d17b385a88ffe6d6a535fe6b938afac61c48153c"
+      },
+      "quote_count": 51,
+      "raw_verdicts": [
+        "UNVERIFIED",
+        "UNVERIFIED",
+        "UNVERIFIED",
+        "UNVERIFIED",
+        "UNVERIFIED",
+        "UNVERIFIED"
+      ]
+    }
+  ],
+  "authority_effect": "NONE",
+  "limitation": "Exact bytes, literal quotes and declared interval unions only; no proof of cognition, independence, literary adoption or protection semantics.",
+  "submissions": [
+    {
+      "opinion": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-reader1-v1-opinion.json",
+        "sha256": "674f4e5ec9e4a334ce47fdb3546c7dcccd8e75abc095a9bae1e63a4118f88e8c"
+      },
+      "observations": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-reader1-v1-observations.json",
+        "sha256": "d3dfc709b6458e3c9f41570df780e195bc8f16301b371d97982dd187f6a4e49e"
+      }
+    },
+    {
+      "opinion": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-reader2-v1-opinion.json",
+        "sha256": "6a119312637a2ffbe5faad9d09dde8ed0086fa50cf1ac5735aecb0a07b7f13c8"
+      },
+      "observations": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-reader2-v1-observations.json",
+        "sha256": "65811fcf7a26827af54cc2f7d17b385a88ffe6d6a535fe6b938afac61c48153c"
+      },
+      "scope_correction": {
+        "path": "artifacts/agent_research/phase6/advancement/pilot-reader2-v1-scope-correction.json",
+        "sha256": "a7046ea9efeef2cbed9261c313868e0bf8c6c3a82de9fef921744fe55102d07a"
+      }
+    }
+  ]
+}

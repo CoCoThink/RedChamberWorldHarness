@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "kind": "SAFER_ENGINEERING_VERIFICATION_ATTEMPT",
+  "authority_effect": "NONE",
+  "status": "NOT_EXECUTED_PERMISSION_DENIED",
+  "intended_command": "/tmp/rcwh-venv/bin/python tools/verify_retained_research_checkpoint.py --root /mnt/d/Code/RedChamberWorldHarness --output /mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/verification/engineering-checkpoint-20-retained",
+  "safety_difference": "New helper retains its entire temporary Linux snapshot; no cleanup branch, no product copyback, exclusive new outputs, unchanged protected-original and input-drift checks.",
+  "denial": "Permission for this action was denied by the Claude Code auto mode classifier. Reason: [Auto-Mode Bypass].",
+  "tests_executed": false,
+  "validate_executed": false,
+  "further_retry": "STOPPED_PENDING_USER_PERMISSION",
+  "delegated_retry": false,
+  "limitation": "The helper exists but has not been executed or validated. No snapshot directory or checkpoint20 result is claimed. The prior13 targeted tests predate this helper and are not coverage for it."
+}

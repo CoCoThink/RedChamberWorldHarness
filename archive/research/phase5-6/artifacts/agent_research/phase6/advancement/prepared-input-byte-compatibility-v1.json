@@ -1,0 +1,27 @@
+{
+  "schema_version": 1,
+  "kind": "PREPARED_INPUT_BYTE_COMPATIBILITY_OBSERVATION",
+  "qualification": "MODEL",
+  "authority_effect": "NONE",
+  "prepared_requests_checked": 20,
+  "request_path_rule": "artifacts/agent_research/phase6/revisions-v2/requests/ch{81..100}.json",
+  "checked_fields": "Every inputs[] entry, plus nonnull package/parent/feedback/template bindings.",
+  "binding_occurrences_checked": 3427,
+  "mismatches": [],
+  "per_chapter_binding_occurrences": [
+    [81,45], [82,43], [83,45], [84,47], [85,45],
+    [86,669], [87,672], [88,49], [89,669], [90,45],
+    [91,47], [92,46], [93,49], [94,51], [95,668],
+    [96,47], [97,47], [98,45], [99,49], [100,49]
+  ],
+  "fresh_renderer_reexecution": false,
+  "new_package_preparation": false,
+  "draft_rebinding": false,
+  "catalog_registration": false,
+  "scope": "Current frozen long-v1 revision requests only; separate narrow-v2 requests are not counted as these20.",
+  "limitations": [
+    "Binding occurrences include shared files and do not count independent evidence.",
+    "Exact current hashes are a necessary compatibility check, not fresh renderer/import verification or semantic/source qualification.",
+    "No future corpus-v3 or source-set migration experiment is represented by this observation."
+  ]
+}

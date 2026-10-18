@@ -100,10 +100,14 @@ class PromptRenderer:
             paths.add(path.relative_to(self.root).as_posix())
         data["guidance"] = "Organize scene obligations and check entry/exit constraints before writing." if route == "harness" else "Write the supplied task directly."
         data["exemplar_dataset_ref"] = report["exemplars"]["spec"]["dataset_ref"]
+        if "supplemental_source_sets" in report:
+            data["supplemental_source_sets"] = report["supplemental_source_sets"]
+            for selected in report["supplemental_source_sets"]:
+                paths.update(selected["paths"])
         return self.render("author-v1", data, [binding(self.root, path) for path in sorted(paths)])
 
     def render(self, template_name: str, data: dict, inputs: list[dict]) -> dict:
-        if template_name not in {"author-v1", "revise-v1", "plan-draft-v1"}:
+        if template_name not in {"author-v1", "revise-v1", "revise-v2", "plan-draft-v1"}:
             raise ValueError("unknown generation template")
         path = f"data/writing/prompts/{template_name}.md"
         template = binding(self.root, path)

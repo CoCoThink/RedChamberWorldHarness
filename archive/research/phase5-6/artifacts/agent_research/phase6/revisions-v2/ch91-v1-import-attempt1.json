@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "kind": "REVISION_IMPORT_ATTEMPT_OBSERVATION",
+  "chapter": 91,
+  "authority_effect": "NONE",
+  "status": "FAIL_INPUT_DRIFT_NO_COPYBACK",
+  "date": "2026-10-16",
+  "candidate": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch91-v1.txt",
+    "sha256": "751bca67b2e72bd13883a8ee2331baaf60878967b3c4f276b277e7cc2b11c602"
+  },
+  "request_path": "artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch91.json",
+  "proposed_session_id": "phase6-reviser-ch91-context1",
+  "tool": "tools/import_research_revision.py",
+  "error": "original inputs changed during revision import",
+  "changed_snapshot_input": "artifacts/agent_research/phase6/revisions-v2/authored/ch81-v1.txt",
+  "copyback_reached": false,
+  "next_action": "Wait for currently active manuscript files to freeze, then retry the unchanged chapter91 request and candidate. Do not weaken input-drift checks.",
+  "limitations": [
+    "This failure concerns changing snapshot inputs, not a chapter91 prose finding.",
+    "No successful research registration is claimed from the failed attempt.",
+    "No literary adoption or provider identity qualification is implied."
+  ]
+}

@@ -1,0 +1,185 @@
+{
+  "schema_version": 1,
+  "report_kind": "ANONYMOUS_FULL_TEXT_READING_OBSERVATIONS",
+  "id": "reader-one-observations-v1",
+  "reviewer_id": "reader:k7-one",
+  "session_id": "session:reading-k7-one",
+  "packet": {"path": "artifacts/agent_research/reading/set-k7-v1/public/packet.json", "sha256": "228c7ff021ee8c022b799a2b9da72fa93dba503428aeb858e82507369c55ef54"},
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "model_declaration": {"label": "gpt-6.1-sol", "source": "本会话Environment声明；未查询provider或运行时遥测", "verification": "DECLARED_NOT_VERIFIED"},
+  "context_isolation": {
+    "asserted": true,
+    "verification": "NOT_PROVEN",
+    "meaning_of_assertion": "仅断言本任务实际只读指定packet、三份binding正文及获准schema，并按subjects顺序亲自全文阅读；无委派或身份推断。不是全新模型、空上下文、独立进程安全边界或访问控制证明。",
+    "same_repository_permission_isolation": false,
+    "extra_exposure": [
+      "任务消息自动带入工作区、分支名、dirty gitStatus截段及五条近期commit标题；这些包含研究、修订、诗稿等一般主题词。未打开对应diff、文件或历史记录，也未将标题映射至匿名组。不能声称零仓库背景暴露。",
+      "会话预载角色、模型声明、工具/技能说明、其他活跃agent名称及用户的评审维度和隔离要求；没有读取其他读者产物，没有联系其他agent。",
+      "模型预训练可能包含《红楼梦》人物、学诗、探春远行与麒麟伏线等一般熟悉知识；无法清除或验证具体训练来源。本次不以外部原文记忆核准作者身份、真伪或补写未述事件。",
+      "仅两份新文件由本任务创建；没有panel登记、provider telemetry、人类资格或独立人类准入主张。"
+    ]
+  },
+  "method": {
+    "reading_mode": "Read有界连续分段，实际阅读每段正文，不用摘要、关键词、字数或哈希替代阅读；所有三组读完后再比较。",
+    "actual_source_read_order": [
+      "artifacts/agent_research/reading/set-k7-v1/public/packet.json",
+      "schemas/agent_review.schema.json",
+      "read-bc2de607ba9a89417a59f2a0: Read请求1–100，101–200，201–300，301–400",
+      "read-a50044cfb9d00954ccc935b7: Read请求1–100，101–200，201–300，301–400",
+      "read-7764f395f666c95e1b25ae3a: Read请求1–100，101–200，201–300，301–400"
+    ],
+    "line_accounting": "标准库按原文件splitlines核得物理行386、386、327；末段Read分别另显示空白尾号387、387、328。以下覆盖以原文件物理行为准，正文首尾均已见。",
+    "quote_policy": "引文是标明行内的连续原文片段，不加改字；单行可能是长段落，截引仅为定位证据，不表示以截引替代全文阅读。",
+    "verdict_meaning": "PASS指在81–83局部审查范围内未见确定硬矛盾并具可讨论文学成立性，不表示仅完成阅读，不是史实完备或真伪认证。FAIL仅给有两侧明确文字冲突的组；风格不足、UNKNOWN和偏好不自动触发FAIL。",
+    "sample_checks": [],
+    "scope_exclusions": ["coordinator目录", "phase5/phase6正文原件", "已有读报", "作者披露", "身份映射", "context文件", "其他读者输出", "仓库测试与import", "panel登记", "真伪判定"],
+    "validation_mode": "全文读完之后才用python3 -I标准库校验获准输入的字节sha256、行数，以及本任务两份输出的JSON结构和引文；不运行仓库代码。"
+  },
+  "subjects": [
+    {
+      "order": 1,
+      "label": "第一组",
+      "subject_id": "read-bc2de607ba9a89417a59f2a0",
+      "path": "artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt",
+      "sha256": "e483afa1ab916836e8b52a93a89b05ff064ed5bc8011c45efa04c736aeb7afe6",
+      "sha256_matches_packet": true,
+      "coverage": {"physical_lines": 386, "read_ranges_actual": [[1,100],[101,200],[201,300],[301,386]], "gaps": [], "full_text_read": true, "chapters": [{"chapter":81,"line_start":1,"line_end":142},{"chapter":82,"line_start":143,"line_end":262},{"chapter":83,"line_start":263,"line_end":386}]},
+      "verdict": "PASS",
+      "chapter_notes": [
+        {"chapter":81,"finding":"疾病由每日吃食和照护动作递减，不靠临终长篇抒情；未缝衣袖保留香菱的手艺与意愿。银匙、甜羹在死后由用途转成残留，悲伤克制。亲属与差役逐级报信讲得过全，后半回像在消除一切操作空白。"},
+        {"chapter":82,"finding":"待书的嘴硬、晕船及被服侍使行旅有生活触感；探春笑话中保留组织能力，赵姨娘不放手的小包与贾环藏物不说也留余味。装包、签单、钱源、取水反复往返，出府和离岸的情感锋面被均匀日常节拍削弱。"},
+        {"chapter":83,"finding":"护菜老仆与争输赢少年让麒麟露面不是独占舞台；麒麟碰凳、仍系衣带、眼熟而不认定，证据边界稳定。后半食匣、盘碟、帕子和家书的程序性互证太密，湘云的针线停顿有情态，但每次又被小物解释拉回。"}
+      ],
+      "evidence": [
+        {"id":"A81-1","chapter":81,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt","line_start":7,"line_end":7,"quote":"香菱看了一看，低声道：“那一边别压死了，线还没抽匀。”","use":"手艺与病中主体性，非泛写柔弱。"},
+        {"id":"A81-2","chapter":81,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt","line_start":89,"line_end":89,"quote":"房内没有别的话，只有莺儿压住的哭声；放在小炉旁的甜羹还暖着，银匙横在碗沿，谁也没有先伸手收它。","use":"用途暂停承载死亡，物象不必被解释成象征。"},
+        {"id":"A81-3","chapter":81,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt","line_start":141,"line_end":141,"quote":"那只匣子已安放好了，匣里的三张旧诗稿，并没人再念一遍。","use":"诗稿保存而非临终吟诵，余韵成立，但结句明确点出不念。"},
+        {"id":"A82-1","chapter":82,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt","line_start":183,"line_end":183,"quote":"赵姨娘道：“还不都是小针小线，难道是金子？”话说得急，手却不肯立刻放开。","use":"母女声口与别离落在手上，少讲大道理。"},
+        {"id":"A82-2","chapter":82,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt","line_start":213,"line_end":213,"quote":"待书拭着嘴说早饭吃得急了。探春拿着水盏，等她接稳，便把刚摊开的簿子合上了。","use":"合簿这一动作把管理暂停给照料。"},
+        {"id":"A82-3","chapter":82,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt","line_start":261,"line_end":261,"quote":"探春依经手人所报的昨日初写之日，补上正文末尾留空的月日；今晨所添几字旁另注明是次日晨间所补，同在这封原信上。","use":"信件初写日与补记日明确区分，也显示说明过密。"},
+        {"id":"A83-1","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt","line_start":305,"line_end":305,"quote":"麒麟仍系在他衣带上，贴着衣襟，若兰伸手往里收了一下，便坐下来吃茶。","use":"佩系未转手。"},
+        {"id":"A83-2","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt","line_start":309,"line_end":309,"quote":"宝玉迟疑一下，道：“不拿在一处，哪里说得准。我原当自己记得，才一看，又觉得有处不同。”","use":"眼熟不是确定同物，麒麟线保持开放。"},
+        {"id":"A83-3","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt","line_start":363,"line_end":363,"quote":"信是前后两张，第二张续着第一张未完的话，写了一页多；次晨添的几字挨着正文旁的空白，字比原来略小。","use":"跨回信纸结构与第82回相接。"},
+        {"id":"A83-4","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-bc2de607ba9a89417a59f2a0.txt","line_start":369,"line_end":369,"quote":"宝玉低头看月日，距收到时已有些日子，便问不知在路上走了多久。宝钗说婆子也只听得前头这样回，尚没有详细话。","use":"明示相隔时日，不把寄递未详当作瞬时送达。"}
+      ],
+      "confirmed_failures": [],
+      "uncertainties": [
+        {"id":"A-U1","status":"UNKNOWN_NOT_FAIL","description":"具体递信人怎样接信、行路多久，未在本组完整呈现。第82回尚候便人，第83回说随回信送到且已隔时日，缺省不等于互斥。"},
+        {"id":"A-U2","status":"UNKNOWN_NOT_FAIL","description":"大麒麟的来源与旧物对应未明；人物拒绝仅凭远近一瞥认定，不借预训练记忆补出交接。"},
+        {"id":"A-U3","status":"UNKNOWN_NOT_FAIL","description":"婚行制度、薛家支费、医药知识等与本三回以外历史或既有章节是否吻合，本任务材料不足。"}
+      ],
+      "literary_risks": [
+        "照料细节虽真实，几乎每个动作都配套水、碗、帕、包的避混说明，累积成确认清单。",
+        "多数人物都以温和、聪明、会照料的短句应答；探春的锋棱、薛家关系的尴尬有时被妥善管理抹平。",
+        "第83回射圃争箭、食匣归还与家书封套多次重述，悬线被降成低压日常；不是错，但需要读者接受舒缓而平的高潮。"
+      ]
+    },
+    {
+      "order": 2,
+      "label": "第二组",
+      "subject_id": "read-a50044cfb9d00954ccc935b7",
+      "path": "artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt",
+      "sha256": "781888bb0226716fd43155c276b5b5e2d1f0743bd6d3444741d159d8d7171a75",
+      "sha256_matches_packet": true,
+      "coverage": {"physical_lines":386,"read_ranges_actual":[[1,100],[101,200],[201,300],[301,386]],"gaps":[],"full_text_read":true,"chapters":[{"chapter":81,"line_start":1,"line_end":114},{"chapter":82,"line_start":115,"line_end":232},{"chapter":83,"line_start":233,"line_end":386}]},
+      "verdict": "FAIL",
+      "chapter_notes": [
+        {"chapter":81,"finding":"三稿在生前被翻读，学诗往事使香菱不仅是病体；薛蟠买杏脯、炭盆多此一举，笨拙歉意不等于开脱。金桂和宝蟾有噪音也有送水，非单色恶役。死后插科打诨尚能维持人物习惯，但叙述反复解释各人的心思，余白少于另两组。"},
+        {"chapter":82,"finding":"亲族齐聚、数箱失手、赵姨娘与贾环、王夫人和贾母各有来往，送别的社会面最宽。赵姨娘松袖、远岸衣色、没带走的蔫柳有场面力量。探春几乎逢问必有妙答，其他人物也不断接包袱，机智变成均质节拍；一两处话太像今人口吻。"},
+        {"chapter":83,"finding":"射箭、坏弦、捡箭、试马、分饼构成相对有起伏的群体游玩；若兰不只佩物载体。麒麟细伤给叙述者高度确认，接下来以婚姓流言与湘云急问表现暧昧。末段家书让读者回到探春，但隔几日后的来访又被翌日叙述称作昨日射圃，时间链破损。"}
+      ],
+      "evidence": [
+        {"id":"B81-1","chapter":81,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":41,"line_end":41,"quote":"宝钗把纸包放到高处，道：“记得便记得。你也别为这一包杏脯替他算功劳。”","use":"关照并不洗白薛蟠，声口有棱角。"},
+        {"id":"B81-2","chapter":81,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":61,"line_end":61,"quote":"香菱道：“那时候手有力，写得也快。如今看这些字，倒像别人写的。”宝钗没有接她的病，只把纸边压平。","use":"病与创作旧我相隔，悲伤从诗稿发生。"},
+        {"id":"B81-3","chapter":81,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":81,"line_end":81,"quote":"宝钗没有抬头：“没有。”薛蟠道：“早知道就不买了。”这话谁也没接。","use":"未食杏脯与失效的心意；笨话比悼词有力。"},
+        {"id":"B82-1","chapter":82,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":169,"line_end":169,"quote":"墙边一只花瓶里插着前几日折的两枝新柳，已经有些蔫。待书问：“这花要不要撤？”探春道：“留着罢。又不跟我走。”","use":"家中留下之物对照离去，不只装箱术。"},
+        {"id":"B82-2","chapter":82,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":175,"line_end":175,"quote":"赵姨娘这才松手，又忙把她衣襟抚平，仿佛刚才拉皱了一点。贾环站在稍远处，怀里竟夹着昨日那本字帖。","use":"母女和姐弟前场铺垫在送别动作中收束。"},
+        {"id":"B82-3","chapter":82,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":229,"line_end":229,"quote":"探春把昨夜那封未封的信从册中拿出来，在末后又添一行：“今早又行，待书已能起身吃粥，不必挂念。”随后补上日期，才重新夹好。","use":"次晨补句和补日期明写，日后念信能接。"},
+        {"id":"B83-1","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":257,"line_end":257,"quote":"老仆道：“只够你逞这一回能。”若兰笑：“那便只逞一回。”这一箭果然没有拉满，却仍落在内圈。","use":"冒险、技艺与玩笑相连；后面再用弦的张力值得质疑但未证硬错。"},
+        {"id":"B83-2","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":287,"line_end":287,"quote":"麒麟颈侧一道极细的旧擦痕、背后扣环边一处小磕，他越看越熟，正是旧日自己曾得过、后来一度失落，湘云替他拾见的那枚金麒麟。","use":"叙述确认比人物口头‘像’更强，不宜把未叙转移自动判错。"},
+        {"id":"B83-3","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":351,"line_end":351,"quote":"宝玉笑道：“若兰也是这么说。”湘云立刻道：“他也这么说？”屋里静了一下。袭人终于忍不住，笑出了声。","use":"湘云口快泄露兴趣，但围观促狭让暧昧偏明。"},
+        {"id":"B83-T1","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":325,"line_end":325,"quote":"谁知隔了几日，湘云果然过来。","use":"确定FAIL时距侧一，接在射圃归府谈话之后。"},
+        {"id":"B83-T2","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":359,"line_end":359,"quote":"到晚间湘云要回去，袭人替她拿披风。","use":"同次来访晚间桥接，非回到射圃当日。"},
+        {"id":"B83-T3","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":367,"line_end":367,"quote":"第二日清早，果然有人从外头送来一封沿途转到的家书，说是三姑娘船上寄回来的。信还没有拆，贾母那边已经使人来叫众人过去一同看。宝玉听见，先把昨日射圃的事丢在一边，起身道：“三妹妹的信真到了。”","use":"确定FAIL时距侧二；叙述层称昨日射圃。"},
+        {"id":"B83-4","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-a50044cfb9d00954ccc935b7.txt","line_start":371,"line_end":371,"quote":"宝玉往下看，道：“前头说略有晕眩，末后又添了小字，说今早已经能起身吃粥，叫家里不必挂念。”","use":"书信内部今早有前回次晨补记依据，不能与叙述昨日误置混为一谈。"}
+      ],
+      "confirmed_failures": [
+        {"id":"B-TIME-01","category":"LOCAL_TIMELINE_CONTRADICTION","certainty":"CONFIRMED","side_a_evidence_ids":["B83-T1"],"bridge_evidence_ids":["B83-T2"],"side_b_evidence_ids":["B83-T3"],"reason":"设射圃归来为D，325行明叙隔几日湘云来访为D+n；359行到该日晚上；367行第二日清早为D+n+1，却以叙述者口吻称昨日射圃，等于把射圃置在D+n。不是人物回忆错误，不是信内时态，也不是仅有物流空白。只要保留‘隔了几日’就不能同时把这同一次射圃称作该清早的昨日。","effect":"subject verdict FAIL；不推出文学全盘失败或身份判断。"}
+      ],
+      "uncertainties": [
+        {"id":"B-U1","status":"SUSPECT_NOT_CONFIRMED_FAIL","description":"第257行老仆说麻线‘只够你逞这一回能’，第261行若兰又因缠弦不敢全力而射小靶。‘一回’可指这次聚会，前后还说射两三箭，不能把警告当精密次数上限；弓具安全或史实未知。"},
+        {"id":"B-U2","status":"UNKNOWN_NOT_FAIL","description":"第287行叙述确认同枚，人物后来谨慎或不愿追问并不必然互斥；何时如何从旧持有人到若兰家中未述，不以外部原文补出排他占有。"},
+        {"id":"B-U3","status":"UNKNOWN_NOT_FAIL","description":"第82回日期在次晨才补，未写具体数值；第83回念到‘今早’属信内补句，不要求收信当日就是写信次晨。"}
+      ],
+      "literary_risks": [
+        "‘不是算人，是省事’一类迅速封口的机锋多，人物声口容易共用同一种当代俏皮。",
+        "赵姨娘想带自己丫头又舍不得、薛蟠觉得自己话无凭据等被叙述者直接解释，读者可自行会意的部分又说一遍。",
+        "若兰弓术与体贴反复被集体笑话烘托，人物有魅力但显编排；麒麟擦痕确定性较高，后续若一直不解决来历会积累悬线债务。",
+        "湘云急问、袭人笑、宝钗笑反复强化同一暗示，男女暧昧成立却余白变少。"
+      ]
+    },
+    {
+      "order":3,
+      "label":"第三组",
+      "subject_id":"read-7764f395f666c95e1b25ae3a",
+      "path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt",
+      "sha256":"a64f5a96de991b0a6df767951fd8cca0d1a1389ee4aee4f686563ec548925274",
+      "sha256_matches_packet":true,
+      "coverage":{"physical_lines":327,"read_ranges_actual":[[1,100],[101,200],[201,300],[301,327]],"gaps":[],"full_text_read":true,"chapters":[{"chapter":81,"line_start":1,"line_end":114},{"chapter":82,"line_start":115,"line_end":222},{"chapter":83,"line_start":223,"line_end":327}]},
+      "verdict":"PASS",
+      "chapter_notes":[
+        {"chapter":81,"finding":"香菱不是永远配合的病人，怕照护者失望又确实不想吃，冲突从碗中剩食长出。莺儿的口快伤人、宝钗和薛姨妈因预备白布争执又退让，有关系的摩擦。死亡后仍想换帕子，把悲伤压在未做完的惯常动作里。母女两次互相承认说硬话，解释稍显自觉。"},
+        {"chapter":82,"finding":"选择行装没有一劳永逸，舱窄、腰伤、晕船、饥饿迫使探春亲自端盆喂粥；能力仍在，却不只是能说会算。‘摸摸姑娘在不在’把离家落到主仆互依，局部感情最集中。亲族辞别多放在事前或省略，回目‘辞骨肉’的正面场幅偏小。寄信安排的对话过长，像在主动驳斥可能质疑。"},
+        {"chapter":83,"finding":"菜苗真受损且赔菜不能让它马上长好，笑话有代价，老仆不是负责配合公子们风趣的道具。若兰大麒麟只短露，湘云另收旧物，双方并未判为同物；家书问石榴与留书，把第82回带回来。跑腿、脚费、取碟多线尚有社会层次，但中后段跟踪程序占幅大。"}
+      ],
+      "evidence":[
+        {"id":"C81-1","chapter":81,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":41,"line_end":41,"quote":"宝钗手下一顿，道：“你饿了便吃，不饿便歇着，不必为我们吃。”香菱低头抚那条搭在被上的帕子，道：“午间我是真想吃。”宝钗道：“我知道。”","use":"照护善意与病人的自主既冲突又互认。"},
+        {"id":"C81-2","chapter":81,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":63,"line_end":63,"quote":"香菱睁着眼看她，忽道：“原来真要走。”莺儿急道：“我去柜里拿东西，转眼就回来，难道连这屋也出不得？”","use":"将死者怕人离去与服侍者疲劳互相摩擦，不是抽象悲悯。"},
+        {"id":"C81-3","chapter":81,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":85,"line_end":85,"quote":"宝钗扶她起来，她却把身子挣了一挣，道：“我还没替他换这条帕子。”姨妈哭着道：“换罢，换条干净的，别扯着他。”","use":"死后继续惯常照料，悲伤通过不能停止的动作呈现。"},
+        {"id":"C82-1","chapter":82,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":171,"line_end":171,"quote":"待书这才放开，低头看见她腕上攥红了一圈，便轻轻道：“姑娘疼不疼？”探春将干帕子送到她手上，说：“你若再问一遍，我也要疼了。”","use":"主仆关切改变动作关系，探春口硬并非无感。"},
+        {"id":"C82-2","chapter":82,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":195,"line_end":195,"quote":"她摇头，道：“我摸摸姑娘在不在。”探春原要说这里还能往哪去，话到口边却咽下了，只把她的手送回被里，道：“在呢。水也在旁边。”","use":"离家后的依赖不靠哭别长论，忍住一句反驳显示人物变化。"},
+        {"id":"C82-3","chapter":82,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":201,"line_end":201,"quote":"她在末尾补上这一日的日期，另添舟中二字。昨日写下的上船、衣包诸事仍在前面，她没有涂改，留着纸角，等早饭送来再接着写。","use":"初日内容保留、次日才落日期；不是必须改回初写日期。"},
+        {"id":"C82-4","chapter":82,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":205,"line_end":205,"quote":"待书慢慢吃了半碗，自己说不要了，探春没有劝，等她靠稳，才将留在几上的信纸挪近，在日期旁边添了待书昨日不耐舟行、今晨已能吃粥的话。","use":"信内昨日/今晨与落款日一致，也回应第81回不强食。"},
+        {"id":"C83-1","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":245,"line_end":245,"quote":"宝玉道：“那葱若肯站在靶上，我也不至于误它。”老仆没有笑，只将手里的箭交给小厮，弯腰去扶那棵葱，又拢些土在根边。","use":"笑话碰到他人真实劳动，不以风趣自动免责。"},
+        {"id":"C83-2","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":299,"line_end":299,"quote":"他答道：“我是说记起这个，谁说两件一样？”湘云听他自己转过话，也笑了，将旧物放在帕上，并没有递到他手里。","use":"旧物在湘云手中与若兰佩物未被判同一件，不认物件分身。"},
+        {"id":"C83-3","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":303,"line_end":303,"quote":"这信原不是探春初写那一日便交出去的。后来船上遇着肯往回捎带的人，船家来回话，跟船婆子先出去见了，问清到了家门如何传给里头，才回舱请探春。","use":"收信时插叙交信，不把83回本日当作82回初写日。"},
+        {"id":"C83-4","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":307,"line_end":307,"quote":"其间候船、行路，并非一日里就能接上。","use":"寄递显式经过时日；解释清楚但也带防误读语气。"},
+        {"id":"C83-5","chapter":83,"path":"artifacts/agent_research/reading/set-k7-v1/public/read-7764f395f666c95e1b25ae3a.txt","line_start":319,"line_end":319,"quote":"湘云听了，将纸角按平，道：“她叫我们看花，倒还像站在窗边问的一样。”","use":"家书的文学作用不止报清单，缺席者短暂重临。"}
+      ],
+      "confirmed_failures":[],
+      "uncertainties":[
+        {"id":"C-U1","status":"UNKNOWN_NOT_FAIL","description":"第299行湘云旧匣中麒麟的尺寸、性别和来历未明；第251行若兰大金麒麟未被叙述确认为同一物，不能凭读者预训练知识推定排他所有权。"},
+        {"id":"C-U2","status":"UNKNOWN_NOT_FAIL","description":"第273–281行送弓套者同时谈已交弓套与卷着包布，具体往返差事略绕，未形成同一时刻既未送又已送的确定命题。留作物流易混而非硬FAIL。"},
+        {"id":"C-U3","status":"UNKNOWN_NOT_FAIL","description":"初写日与次晨落款有意分开；寄信又是后来，经外纸封寄，文本没有要求‘今晨’按收信日解释。精确航程、目的地与时代制度未验证。"}
+      ],
+      "literary_risks":[
+        "母女两次解释为何话说硬、病人解释午间确实想吃，心理互认有层次，但过度整齐会让人物像在主持照护伦理讨论。",
+        "第82回亲族告别多在幕后，只正写宝玉车边短别；偏重行旅磨合，回目所许群体辞别未像第二组那样展开。",
+        "姜包、包件、脚费、取碟、接信人与回带保证讲得过细，有些段落对预期质疑逐条作答，小说流动被手续说明拖慢。",
+        "结尾看花与收书较有余味，麒麟又被暂停；是否能承担长篇伏线需要后续正文，不能在三回内作整体闭合保证。"
+      ]
+    }
+  ],
+  "dimension_comparison":[
+    {"dimension":"声口与人物区分","judgment":"partial preferences / mixed","assessment":"第二组的亲族对白区分面最宽，薛蟠笨、探春硬、赵姨娘急、凤姐会接话，读来最有群像声势；但几乎人人会接俏皮，现代机锋密度最高。第三组让莺儿的急嘴与事后愧疚、探春忍住反驳等有动作后果，局部人物关系更可信。第一组温厚顺畅，物件间的玩笑自然，但多角色共享沉着照料声口。不能以‘古典’字面套语多少排定真伪。"},
+    {"dimension":"小说场面","judgment":"第二组群像广度、第三组身体阻力各有优势","assessment":"第二组有齐聚理箱、母女姐弟、长辈夜辞、江岸摆手和射圃试马分饼，社会舞台最宽。第三组舱窄腰伤、主仆互相腾地、赔菜不抵劳作，场面通过物理限制改变关系；我在这项局部更偏第三组。第一组物件可触，却常由逐项安排取代阻力，处理问题太妥帖时戏剧性偏低。"},
+    {"dimension":"悲伤与别离","judgment":"不设单一胜者","assessment":"第一组未缝衣袖和仍暖甜羹很克制；第二组杏脯未食、薛蟠多搬炭盆、赵姨娘放袖和蔫柳留下，死亡与骨肉辞别都较正面且有记忆点；第三组‘我还没替他换这条帕子’与‘摸摸姑娘在不在’，把死亡失手和离家依赖串成关系回声，局部更打动我。第二组在亲族别离完整度上胜第三组，第三组在照料中不愿失去对方的复杂度上胜第二组。"},
+    {"dimension":"节奏与轻重","judgment":"第二组较有波峰；第一、三组各有慢叙收益和代价","assessment":"第二组从病中起落到夜间急变、再到集体辞别、射圃喧闹，转场较鲜明，虽笑话连发会挤掉沉默。第一组近乎均匀慢拍，最利病房静物，最不利第83回食匣与针线反复。第三组第82回照料有递进，后半第83回脚费和取碟又拖长。局部节奏偏好第二组，不因此忽略其时序FAIL。"},
+    {"dimension":"过度说明与余白","judgment":"三组都有，不宜硬排总序","assessment":"第一组对钱源、交接、纸张顺序、未拿在手中的限制解释最密，风格像一边叙事一边确保没有遗漏。第二组更爱代人物解释想法与以笑声明暧昧；第三组在病房放入更尖锐的误解，随后又通过互相认错说明清楚，在寄信物流上也防误读过多。三种问题机制不同，不是一个字数排序。"},
+    {"dimension":"跨回时序","judgment":"第一、三组在局部一致性上并列优于第二组","assessment":"第一组过些日子、又过些日子、收到时已有时日均容许跨回间隔；第三组在射圃日收到此前候人封寄的信，回叙不要求同日寄达。第二组明写来访隔几日又在翌晨称昨日射圃，确认B-TIME-01。此项是明确错误与否，不是纯审美。"},
+    {"dimension":"家书物理与内容延续","judgment":"第一组物理互证最明；第三组情感内容更有回声；第二组亦有连续性","assessment":"第一组前后两张、初写日、次晨旁注和收信折序互证最细，代价是像校对单。第二组完整引出短家书，次晨续句与83回念信内容一致，没有因未详寄递而失败。第三组初日问安衣包及石榴、次晨日期与待书补句、后来封寄的层次可接，石榴让留守者从报平安转成替缺席者看家。我偏第三组的文学功能，不要求第一组的落款方案成为三组唯一合法方案。"},
+    {"dimension":"麒麟线与证据强度","judgment":"开放式与确认式各有取舍","assessment":"第一组看见衣带大金麒麟而不能认同物，第三组若兰佩物和湘云旧物并置而明确未认一样，两组把未知保留在人物视野内。第二组翻面细看且叙述确认，提供较强悬念与暧昧刺激，也承担更高的后续交代责任；未述来源不是当场矛盾。只比较这三回如何让伏线进入场面，不猜匿名身份，不追认原著真伪。"}
+  ],
+  "overall": {
+    "total_ranking": null,
+    "reason_no_total_ranking":"第二组的群像和节拍优势并不因局部FAIL消失；第三组的关系阻力与照料复杂性较突出，第一组的静物克制与一致性互证有独立价值。审美偏好和硬一致性裁定分开。",
+    "confirmed_failure_ids":["B-TIME-01"],
+    "historical_unknown_is_failure":false,
+    "unexplained_logistics_is_failure":false,
+    "authenticity_verdict_provided":false,
+    "identity_inference_attempted":false,
+    "output_freeze":"两份v1 JSON在结构、哈希和引文校验后作为本次最终提交；不再因其他读者结果或身份披露回改。冻结指本次不再修改，不声称设置了文件系统不可变权限。"
+  }
+}

@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT",
+  "mode": "FEEDBACK_ONLY",
+  "chapter": 82,
+  "revision": "v1",
+  "reader": "reader1",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "qualification": "RESEARCH_ONLY",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "literary_acceptance": "NOT_GRANTED",
+  "automatic_adopt": false,
+  "adoption": "NOT_REQUESTED_NOT_PERFORMED",
+  "review_type": "ACTUAL_FULL_TEXT_LITERARY_READING_NOT_LINT",
+  "candidate": {
+    "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt",
+    "sha256": "edc6d81e46a9e25717109198a8f50d8ef51b487c85550238826d151e5a75da81",
+    "utf8_bytes": 28721,
+    "unicode_characters": 9645,
+    "body_han_characters": 8081,
+    "line_count": 107,
+    "measurement_scope": "UTF-8原字节；字符按Unicode码点；正文汉字排除第一行标题，只计U+4E00—U+9FFF。数量不是文学合格证明。"
+  },
+  "actual_reading": {
+    "complete_candidate_read": true,
+    "method": "Read分三段逐段完整阅读可见正文，再以只读python -I核对哈希、行数和连续分段大小；未以检索或哈希代替实读。",
+    "segments": [
+      {"line_start": 1, "line_end": 36, "utf8_bytes": 9261, "unicode_characters": 3111, "truncated": false},
+      {"line_start": 37, "line_end": 72, "utf8_bytes": 9852, "unicode_characters": 3308, "truncated": false},
+      {"line_start": 73, "line_end": 107, "utf8_bytes": 9608, "unicode_characters": 3226, "truncated": false}
+    ],
+    "coverage": "1—107行，标题、收拾、亲人接话、岸边装载、离岸复点、初写夹册、晕船晚饭、共同过夜、次晨补日期补信及末段全读；三段连续无缺口。",
+    "first_line_exact": "第八十二回　敏探春整装辞骨肉　一江风送故园渐遥",
+    "last_sentence_exact": "那封第一日上船后起笔的家书，隔了一夜，已有了日期，也有了今晨的一句话，等着下一回有人来问可有信带。",
+    "disclosure": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1-disclosure.json",
+      "sha256": "9a72ce7e748ec6541d3058fecf67f12967234716918febfdb6fed8da6924f385",
+      "coverage": "全部169行，包括作者输入实读范围、81额外上下文暴露、对象/家书自述、非provider证明、限制和冻结；自述实现不替代正文核对。"
+    },
+    "editorial_notes": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/editor-feedback/notes-ch82-v1.txt",
+      "sha256": "03ff91c646707fd1c5425637d298885717a1608b12c33175d450b08db0bb4e1b",
+      "coverage": "全部1—13行；旧稿称谓、三分筐、姜位置、离岸复点与信件时序逐项重新核对，不继承旧稿判定。"
+    },
+    "selected_contract_comparison": {
+      "container_path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch82.json",
+      "container_sha256": "a66bfe28cda62869d68455fa6e20a89041d98384d77175a52fa2509eaa4a19ec",
+      "fully_read_substantive_fields": [
+        "task.writing_task.agent_contracts[0..1]：82-S1/S2.v2全部required_beats及forbidden_beats、function、notes、participants、required_objects、entry/preconditions/exit_state、unresolved；递归略去重复grounding/source_records/references/bindings/basis/citations/provenance/source_bindings",
+        "task.writing_task.chapter_plan.card_fields全部18项文字及该次输出的locator；protections指针",
+        "task.writing_task.plan['data/project/plan_constraints_v1.json']全部"
+      ],
+      "required_beat_count": 8,
+      "forbidden_beat_count": 4,
+      "standalone_contract_files_independently_read": false,
+      "qualification": "比较冻结request所携选定合同的实质要求；不是合同所有来源枝节或全部绑定原文件的阅读，也不是注册状态回放。"
+    },
+    "p_lock": {
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/implementation_alignment/m6.json",
+      "sha256": "f9ba473eb93d8639d2cc9639aa67a698010cee8d1da20b05ebf81eb897bf0fe1",
+      "pointer": "/chapter_protections/1",
+      "coverage": "仅该章保护对象：整装三分筐、针线包、晕船姜片稀粥、家书递信问题；容许行旅劳务、船家车脚路费；不加一场哭别、不抹去旅途劳务。"
+    },
+    "context_and_limits": {
+      "actual_chapters_fully_read_in_this_assignment": [82, 87],
+      "other_chapter_prose_read": false,
+      "other_exposure": "同时完整实读87及其disclosure/notes/选定合同；为JSON字段口径曾读现有phase6/readings/ch86-v1-reader1.json第1—90行，仅他人的阅读记录与结论，不是86正文实读。87婚议史料与B03选定摘录另作窄字段阅读，不推作82来源。",
+      "not_a_blind_comparison": true,
+      "whole_book_read": false,
+      "not_read": ["81、83、86等相邻实际正文", "phase5模板", "原1883字短稿全文及父登记正文", "完整world/threads、全request、全部来源原书和影印", "全文v3十章编辑报告"],
+      "failed_or_truncated_reads_not_counted": "开始对requests/ch82、requests/ch87及大editorial request的整文件Read有超限失败；改用冻结editorial-requests-v1窄字段分组输出。一次87来源/保护组合输出36.4KB截断，仅可见两章保护对象计入，87所需source.text/notes后另窄提取完整读。候选正文、两篇disclosure及notes均未截断。"
+    }
+  },
+  "overall_assessment": {
+    "verdict": "REVISE_RECOMMENDED_NOT_ADOPTED",
+    "confirmed_contradiction_count": 0,
+    "summary": "三分筐已真正分为带走封箱、留下、现用；姜包的经手与离岸即复点可追；开船后初写—夹册未署日—一夜照护—次晨补日期—早餐后补已能吃粥均能逐段定位，三姑娘称谓正确。最好的是宝玉替拢嫩枝、待书半夜摸姑娘在不在、探春亲手照护而吃凉粥，才干有了代价。最弱的是后四分之一反复证明信没送、不能冒报送达，以及终段天明回顾使次晨推进变得迟疑。没有据此判定确定物件或时间矛盾；风格风险与未知接口另列。",
+    "length_is_literary_pass": false,
+    "lint_is_literary_pass": false,
+    "unknown_is_automatic_fail": false,
+    "scope_of_positive_results": "仅本候选文本相对选定写作要求的可见履行，不授人审资格、历史事实、场级语义PASS或文学ADOPT。"
+  },
+  "evidence_quotes": [
+    {"id": "82-Q01", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 7, "line_end": 7, "quote": "探春把要封箱带走的往一处归，留在屋里的另放，路上随手要用的独放一处，待书因而叫作“三分筐”。", "use": "功能三分，不是各省三分比例。"},
+    {"id": "82-Q02", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 9, "line_end": 9, "quote": "姜从头到尾只这一包，婆子特将包口朝上；药仍留着原包，外头加裹一层干净布。", "use": "一包姜及独立药包；兼有审核式旁白。"},
+    {"id": "82-Q03", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 11, "line_end": 11, "quote": "探春打开匣子，拣出一册，余下的仍放回留下的筐里。", "use": "选书有舍弃；一册书和行装册并非同一物。"},
+    {"id": "82-Q04", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 13, "line_end": 13, "quote": "探春问：“跟我上船的，屋里是待书和这位妈妈；送箱子的人到了岸上还回不回来？”", "use": "局部同行关系与返回者区分；非整支队伍人数。"},
+    {"id": "82-Q05", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 19, "line_end": 19, "quote": "探春看见他衣带垂下一截，便道：“你别跟着到外头乱跑，叫他们又来找你。”", "use": "亲人难说之话落到熟悉的管束口吻，不另开哭别。"},
+    {"id": "82-Q06", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 25, "line_end": 25, "quote": "车脚来问：“三姑娘，这些脚费跟谁领？”探春让他找随来经手的管事，车船大件由家里行旅费支；待书自己添的零星物件，仍是随身小包里的钱，不要混交。", "use": "称谓及公私费用；无精确银钱数。"},
+    {"id": "82-Q07", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 31, "line_end": 31, "quote": "婆子将姜药针线那一包抱在胸前，道：“这个我拿，姑娘先上，待书跟着，我后头来。”", "use": "现用包和人员上船接力。"},
+    {"id": "82-Q08", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 39, "line_end": 39, "quote": "缆绳收起，船慢慢离了岸。婆子才想往门边站，探春先叫她坐住，把随身的两个包拿过来。", "use": "离岸第一动作复点，两个是外层现用包。"},
+    {"id": "82-Q09", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 41, "line_end": 41, "quote": "她挪开自己的衣包，将姜药针线那包放到靠着舱壁的干处，衣包压在外侧，免得滑。", "use": "复点改变位置，不是徒数箱数。"},
+    {"id": "82-Q10", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 45, "line_end": 45, "quote": "探春听船板上传来放桶的响声，翻开行装册，把一张空白信纸抽出来。", "use": "离岸后从空白起笔。"},
+    {"id": "82-Q11", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 51, "line_end": 51, "quote": "探春点头，把纸晾干，夹进行装册，没有写日期。", "use": "首次夹册不等于完成或送信。"},
+    {"id": "82-Q12", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 55, "line_end": 55, "quote": "婆子从方才重新放好的包里取姜，解开纸包，递了一片，她说不要。", "use": "从复点后位置取一片，不是另从第五箱生姜。"},
+    {"id": "82-Q13", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 75, "line_end": 75, "quote": "探春将碗放下，试自己的那碗，面上已经不热。", "use": "照护改变自己的饭，避免只有发话。"},
+    {"id": "82-Q14", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 81, "line_end": 81, "quote": "探春接住，问是否又难受，她摇头，道：“我摸摸姑娘在不在。”", "use": "一夜共同照护的关系重心。"},
+    {"id": "82-Q15", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 87, "line_end": 87, "quote": "她在末尾补上这一日的日期，另添舟中二字。昨日写下的上船、衣包诸事仍在前面，她没有涂改，留着纸角，等早饭送来再接着写。", "use": "过夜后日期和早餐后更新分开，未给具体年月日。"},
+    {"id": "82-Q16", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 91, "line_end": 91, "quote": "待书慢慢吃了半碗，自己说不要了，探春没有劝，等她靠稳，才将留在几上的信纸挪近，在日期旁边添了待书昨日不耐舟行、今晨已能吃粥的话。", "use": "早餐亲见后再补讯息，不预知病势。"},
+    {"id": "82-Q17", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 99, "line_end": 99, "quote": "探春道：“那便请你留神。有了肯接的人，先告诉我们，信仍由我们亲手交。若没有，也不用为了应这句话，倒替我们胡乱找。”", "use": "未来交信条件；不是已经交出。"},
+    {"id": "82-Q18", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 99, "line_end": 99, "quote": "探春慢慢折起纸，道：“所以得写明是在船上写的，等人捎，不能写已经托了。”", "use": "明确未托，亦显自证审核倾向。"},
+    {"id": "82-Q19", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 101, "line_end": 101, "quote": "她没有另抄，只将纸照原折痕收拢，夹在册中干净的两页之间，交给待书放回随身包。", "use": "章末仍在随身包内；这次交给待书是内部分工而非寄递交接。"},
+    {"id": "82-Q20", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 107, "line_end": 107, "quote": "江上的船各自往前走，远处的火光到了天明才一盏盏隐去。", "use": "早餐、停歇后再写到天明，时间镜头有回摆风险，不足独立判二次天明。"},
+    {"id": "82-Q21", "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/authored/ch82-v1.txt", "line_start": 107, "line_end": 107, "quote": "那封第一日上船后起笔的家书，隔了一夜，已有了日期，也有了今晨的一句话，等着下一回有人来问可有信带。", "use": "全文末句仍为等待；也重复总结已展示过的时序。"}
+  ],
+  "selected_contract_assessments": [
+    {"contract": "82-S1.v2", "required": [
+      {"id": "82-S1-R1", "assessment": "VISIBLE_TEXT_SATISFIED_WITH_UNREGISTERED_DETAILS", "lines": [3, 35], "details": "三只筐功能三分、题签和针线转入上船准备；13行先问同行及坐卧，23—35行等候、逐口装载、拆绳重扎、按册复认。无五口箱硬锁；这些只构成本候选施工。"},
+      {"id": "82-S1-R2", "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [13, 35], "details": "问待书/婆子随行及送箱人返岸；留进出空处，顺次上船和挪铺盖具体可见，不造实名新随从或全队人数。"},
+      {"id": "82-S1-R3", "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [25, 27], "details": "家内行旅费由管事接脚夫，待书添置走私人钱包；只承接一次费用，不造确价、夫家或地名。"},
+      {"id": "82-S1-R4", "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [3, 37], "details": "短夹袄、书匣和铺盖有取舍；码头解包与舱内重挪有工序。17/37只问信道，45才从空白纸起笔，不再出门前已有半封信。"}
+    ], "forbidden": [
+      {"id": "82-S1-F1", "assessment": "NO_VIOLATION_OBSERVED", "details": "19—21车边简短接话无新哭别、送别诗琴曲；全章未用命定远嫁、海外神梦或再无归日判词。"},
+      {"id": "82-S1-F2", "assessment": "NO_VIOLATION_OBSERVED", "details": "岸边确认和开船不等于抵达婚家；无夫名、婚家、目的地、具体婚期或精确箱总数。"}
+    ]},
+    {"contract": "82-S2.v2", "required": [
+      {"id": "82-S2-R1", "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [39, 43], "details": "缆绳收起后立即核箱包题签并看针线、药、姜；发现取物被挡才让坐处与包位，不新增丢失危机。"},
+      {"id": "82-S2-R2", "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [53, 91], "details": "嘴硬冷饼说法接取姜、盆帕、喂水、晾粥、夹袄垫颈和过夜；探春饿着、饭凉、手麻可见。待书症候不升级世界医学状态。"},
+      {"id": "82-S2-R3", "assessment": "VISIBLE_TEXT_SATISFIED", "lines": [65, 77], "details": "烧水等灶、天暗船火、分粥和交碗连成第一顿行旅晚饭；前场公私费区分未被混用，船家只管自己的时间与船位。"},
+      {"id": "82-S2-R4", "assessment": "VISIBLE_TEXT_SATISFIED_DELIVERY_UNRESOLVED", "lines": [45, 107], "details": "45—49初写，51晾干夹册未署日，77—83过夜，85—87次晨补日期，91早餐后补已能吃粥，95—101询托但无实际可靠回船，信未封仍夹册。托递、送达和回信一概未发生。"}
+    ], "forbidden": [
+      {"id": "82-S2-F1", "assessment": "NO_VIOLATION_OBSERVED", "details": "只在船上持续迁徙，未借OT82-01装载推OT82-02终点，没有海路、婚期、再无归日定论。"},
+      {"id": "82-S2-F2", "assessment": "NO_VIOLATION_OBSERVED", "details": "无第二场哭别、诗或命定解释；实际劳动和吃住占主体。问题在劳动和信件的强调次数，不是被抒情抹去。"}
+    ]}
+  ],
+  "object_quantity_time_and_handoff_audit": {
+    "baskets": "7行明确三只分拣筐：带走封箱/留屋/现用。留下的一筐不运走，另两筐待装；三筐不是三类各省三分，也不是来源锁定筐数。",
+    "outer_packages": "9行姜药针线一随身包，另一包夹袄帕子；31/33婆子抱前包上船，39明说两个包，41—43重新安放。53干粮包是新增食品容器，不能据此断言随身两个包自相矛盾，因为两个包是复点的现用外包而非全物总账。若未来要严格清册，需另界定食品包层级。",
+    "ginger": "9行一纸包姜，药另包；29暂在岸边箱旁，31婆子抱包，33待书接包，39开口核，41挪干处，55从重放包内取一片，65粥中放姜，103还有余姜。不再第五箱凭空出现。未写姜总片数/粥用量，无法验证每次来源分量；这不是已经确定的耗量矛盾。",
+    "chests_and_books": "未宣布总共五箱；被褥箱、书箱、高箱是功能称呼，可能重合，不能加总成确数。11书匣留屋、随身拣一册，15/31/105保持该册；行装册为另外记录容器。未见书匣突然跟船或单册增殖。",
+    "minor_new_objects": "碗、水杯、盆、帕、小几、垫布、铺盖、冷饼干粮包、外衣、帘灯、笔纸在需用时出现；没有独立库存和尺寸依据，均属本候选生活施工而非复原原稿实物。73/75各人碗的取用不构成固定器皿总数。",
+    "people": "探春、待书、跟船婆子的局部三人照管关系明确；管事、送箱者、脚夫返岸，船里另有做事人。不能由此建立整船人数、实名船工、轮班表。",
+    "time_sequence": ["3—21临行日整装接话", "23—37码头等候装载问信道", "39—43离岸即复点挪包", "45—51初写夹册不署日", "53—75晕船照护至天暗姜粥", "77—83共同过夜", "85—87天亮问日并补日期", "89—91早餐后添已能吃粥", "95—101问托未得实人、夹回随身包", "103—107停歇后续行、信仍等待"],
+    "explicit_dates_prices_destination": "无具体年月日、银钱数、路线终点或婚期；87只说补这一日日期，不提供其数值。",
+    "letter_terminal_state": "WRITTEN_AND_UPDATED_UNSEALED_IN_REGISTER_NOT_HANDED_TO_CARRIER_NOT_DELIVERED",
+    "chapter83_boundary": "本章不能给83提供‘已经收到’事实。99所说未来由我们亲手交与101交待书保管不同，后者不是寄递。未读83实际正文，故不宣布已确认82/83矛盾或修复；若83确有收信，应另外写明交出者—可靠承运—接收者及其先后，不能拿本阅读记录补剧情。"
+  },
+  "confirmed_contradictions": [],
+  "style_and_literary_risks": [
+    {"id": "82-STYLE-1", "priority": "MEDIUM", "lines": [9, 9], "issue": "‘姜从头到尾只这一包’是作者站在整段故事外替物流核查作保证，人物尚未用它，旁白先回答旧稿bug。", "suggestion": "若另获新版授权，让包口、隔布和接手动作自己承担单包可追；本次不改正文。", "not_a_confirmed_fact_contradiction": true},
+    {"id": "82-STYLE-2", "priority": "MEDIUM", "lines": [85, 107], "issue": "补日期后，93讨论怎么写，95问婆子，97再当面问，99解释不能写托了，101再未封夹册，107再总结起笔/日期/今晨。难寄信的真实距离已建立，后续反复有展示审核链的痕迹。", "suggestion": "下一授权版本可保留可靠人未定的挫折和婆子想带话，把同一未寄结论的重复解释收短。", "not_a_confirmed_fact_contradiction": true},
+    {"id": "82-STYLE-3", "priority": "LOW_TO_MEDIUM", "lines": [103, 107], "issue": "已吃早餐、问船家、停歇后又行一程，末段才说远处火光‘到了天明’隐去；可以是回顾黎明，但镜头未标回顾，读起来像第二次天明。", "suggestion": "仅列时间指向风险，不凭早餐耗时或行船时长推确定错日。", "not_a_confirmed_fact_contradiction": true},
+    {"id": "82-STYLE-4", "priority": "LOW", "lines": [55, 99], "issue": "探春的明快、待书嘴硬、婆子务实、船家工序各有分工，但连串机锋和‘不能写已经托了’的准则感使探春偶像化为总能正确解释的人。", "suggestion": "保留81行想反驳却咽下、83行手麻和晚饭凉等不完满；不再添加更漂亮的管理格言。", "not_a_confirmed_fact_contradiction": true}
+  ],
+  "voice_and_scene_findings": {
+    "tanchun": "13/25/27的问经手、护劳动不只发指令；19让宝玉送到车边而不说离愁，81收回一句硬话更好。末段过密自证削弱这份克制。",
+    "daishu": "夹袄胜负、冷饼归因和帕子作证可辨声口；81‘摸摸姑娘在不在’使嘴硬背后有依赖，不宜再加同型笑话。",
+    "boatman_and_old_woman": "脚夫要赶下一趟、船家不包回信、婆子腰痛但仍照看，各有自身时间。65—75等待烧粥比纯物资清单更像生活。",
+    "best_existing_actions_to_preserve": ["19宝玉替她拢嫩枝", "41挪自己坐处使姜可取", "63夹袄垫待书颈旁", "75自己的粥不热", "81摸手确认仍在", "83两人晚些才问吃饱没有"]
+  },
+  "unresolved_not_promoted": [
+    "所有具体包筐数、舱内布局、食物来源与照管动作均属候选施工，未成为独立对象登记或历史事实。",
+    "夫家、对象、婚期、终点、海路、抵达时间仍未知；不以标题远适推已抵达。",
+    "待书病症与姜粥效果只是叙事，不作医学验证。",
+    "OT82/W82粗节点、合同参与者KNOWN及顺序声明不证明本回局部回放通过。",
+    "没有实际承运者、交出、送达、家中获知或回信事件；不替83背书。"
+  ],
+  "write_boundary_and_freeze": {
+    "only_new_path_for_this_chapter": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/readings/ch82-v1-reader1.json",
+    "paired_authorized_new_path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase6/revisions-v2/readings/ch87-v1-reader1.json",
+    "prose_or_disclosure_modified": false,
+    "other_repo_files_modified_by_this_review": false,
+    "delegated": false,
+    "committed": false,
+    "human_review_or_literary_adopt_granted": false,
+    "frozen_after_completion_report": true,
+    "further_rewrite_authorized": false
+  }
+}

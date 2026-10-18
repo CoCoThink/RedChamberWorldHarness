@@ -1,0 +1,53 @@
+{
+  "schema_version": 1,
+  "kind": "RESEARCH_SOURCE_RANGE_ADVERSE_FINDINGS",
+  "qualification": "MODEL",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "scope": {"selected_legacy_sources": 25, "literary_contexts_scrutinized": 14, "historical_contexts_scrutinized": 11, "facsimile_fidelity_newly_verified": false, "candidate_drafts_audited": 0},
+  "reports": [
+    {"path": "artifacts/agent_research/phase6/advancement/literary-source-range-review-v1.md", "sha256": "759bd907f9a7e2d2c4c686d7077ac6b2adfe62e443226ad835cbd2988af118c3"},
+    {"path": "artifacts/agent_research/phase6/advancement/historical-source-range-review-v1.md", "sha256": "78b5d21ef695f913e757c9f82fed76f0a068979c72b8906917dc3e8ba4ca9b20"}
+  ],
+  "findings": [
+    {
+      "id": "H05_DURATION_CASHFLOW_NOT_DIRECTLY_ESTABLISHED",
+      "classification": "ADVERSE_SUPPORT_RANGE_FINDING",
+      "subject_id": "claim:history:h05:pawn-as-cashflow",
+      "claim_file": {"path": "data/provenance/claims/r4_historical.yaml", "sha256": "c7c493cf53bd08a4a295e6ad3b444020182382a99ac41cf69156deaf99e58fa2"},
+      "source_file": {"path": "data/provenance/sources/r4_historical.yaml", "sha256": "cbea8882712a91f4f8eb6764de4500625920a509101151ae4427842cc44d9820"},
+      "mechanism_file": {"path": "data/mechanisms/r4_historical.yaml", "sha256": "a3d065d18d6e5ca1f81fd332e3ad8a402a1877fdc5d8c35eaf58ea2c383de23c"},
+      "source_id": "src:history:cao:1728:pawn-tickets",
+      "actual_source_quote": "餘則桌椅床杌舊衣裳零星等件及當票百餘張外並無別項與總督所查冊內彷彿",
+      "claim_statement": "曹家抄没清查记录“当票百余张”，说明旧家衰败过程中持续典当作为现金流工具具有现实可能。",
+      "stored_modality": "DIRECT_ASSERTION",
+      "stored_relation": "DIRECT",
+      "stored_status": "SUPPORTED",
+      "narrow_support": "The derivative memorial excerpt reports more than one hundred pawn tickets alongside remaining items and an inventory comparison.",
+      "not_directly_established": ["Duration or continuity of pawning", "Cashflow function or dependable revenue", "Dates, pledged objects, sums, redemption or fictional household finances"],
+      "affected_mechanism": "H05",
+      "disposition": "Retain adverse finding. Do not consume stored SUPPORTED/PASS as proof of duration/cashflow. Any revised source/claim/mechanism selection requires versioned inputs and compatibility/lineage assessment; no old record edited.",
+      "automatic_runtime_gate_change": false
+    },
+    {
+      "id": "XIAOHONG_WITNESS_ATTRIBUTION_UNRESOLVED",
+      "classification": "ATTRIBUTION_UNCERTAINTY",
+      "subject_id": "src:gengchen:ch27:xiaohong-great-help",
+      "narrow_support": "Stored modern compilation transmits Hongyu's future substantial usefulness toward Baoyu.",
+      "limitation": "Adjacent stored context does not independently establish advertised GENGCHEN siglum; not a proven misattribution. Prison action and chapter92 remain current-C choices.",
+      "disposition": "Preserve uncertainty; no source rename, removal or qualification upgrade."
+    },
+    {
+      "id": "DAIYU_DEATH_MIXED_ATTRIBUTION_LAYERS",
+      "classification": "ATTRIBUTION_BOUNDARY",
+      "subject_id": "src:jimao:ch18:daiyu-death",
+      "limitation": "Record combines narrative play title, 己夹 annotation and a ◇ segment; the symbol's editorial attribution convention was not checked. Do not silently attribute all components to one early hand.",
+      "disposition": "Preserve text and boundary; no claim of early-witness or full manuscript inspection."
+    }
+  ],
+  "other_preserved_limits": ["Housing allocation remains prospective/discretionary, not completed delivery.", "Imperial ritual clocks and mourning categories do not fix a marriage date.", "Tongzhou prison-shrine account is local and retrospective, not every jail's layout.", "1774 temple commercial lease is not a residential rental-price index.", "Fourteen literary IDs share one modern compilation; chapter placements and added event mechanics are not recovered by exact quotation."],
+  "old_records_changed": false,
+  "source_admission_granted": false,
+  "release_result_changed": false,
+  "limitation": "Attributed model support-range scrutiny, not adjudicated human audit, original-image authentication or complete draft claim-use audit."
+}

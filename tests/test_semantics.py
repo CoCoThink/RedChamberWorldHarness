@@ -86,7 +86,28 @@ def test_nonactual_forbidden_event_does_not_count_as_violation(scope):
     reading["events"][0].update(scope=scope, violations=["supernatural_resolution"])
     report = check(request, reading)
     assert next(c for c in report["checks"] if c["id"] == "supernatural_resolution")["status"] == "PASS"
-    assert report["status"] == "FAIL"  # actual required housework absent
+    # Actual required housework is now absent, but an uncited scene beat is an
+    # author preference: reported as a replaceable advisory, not a FAIL.
+    absent = {a["id"] for a in report["advisories"]}
+    assert {"medicine_not_finished", "ordinary_domestic_labor_continues"} <= absent
+    assert report["status"] == "PASS"
+
+
+def test_only_beats_citing_an_evidence_hard_lock_fail():
+    from rcwh.graph import ProvenanceGraph
+    from rcwh.findings import BLOCKING, severity_for_decision
+    graph = ProvenanceGraph.from_repo(ROOT)
+    locked = next(d for d in graph.decisions if severity_for_decision(graph, d) == BLOCKING)
+    contract = deepcopy(CONTRACT)
+    beat = next(b for b in contract["required_beats"] if b["id"] == "medicine_not_finished")
+    beat["decision_refs"] = [locked]
+    request, reading = positive()
+    request = make_request(contract, request["text"], request["entry"], request["authors"])
+    reading.update({k: request[k] for k in ("candidate_sha256", "contract_sha256", "context_sha256")})
+    reading["events"][0]["beats"] = ["ordinary_domestic_labor_continues"]
+    report = check(request, reading)
+    assert report["status"] == "FAIL"
+    assert next(c for c in report["checks"] if c["id"] == "medicine_not_finished")["severity"] == BLOCKING
 
 
 def test_exit_uses_last_actual_change_and_rejects_recovery():

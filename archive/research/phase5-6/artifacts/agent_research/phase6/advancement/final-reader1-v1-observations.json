@@ -1,0 +1,4091 @@
+{
+  "schema_version": 1,
+  "report_kind": "FINAL_SELECTION_SCOPED_RESEARCH_OBSERVATIONS",
+  "packet": {
+    "path": "artifacts/agent_research/phase6/advancement/final-packet-v1.json",
+    "sha256": "36a828c84c72c0ef282f7cd0812f8108e03f4d05d75b891ef2cf4bc8d0bd6112"
+  },
+  "reviewer": {
+    "id": "phase6-pilot-reader1-v1",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "phase6-pilot-reader1-context1",
+    "model": {
+      "label": "session model environment label unverified",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "language": "zh-CN",
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "context_isolation": {
+    "asserted": false,
+    "verification": "NOT_PROVEN"
+  },
+  "counts": {
+    "packet_subjects": 44,
+    "opinion_results": 28,
+    "candidate_whole_texts": 4,
+    "package_whole_descriptors": 4,
+    "contract_semantic_projections": 20,
+    "omitted_unread_candidates": 16,
+    "candidate_wc_lines_total": 458,
+    "new_reader_count": 0,
+    "new_full_reads_for_hash_aliases": 0
+  },
+  "actual_read_order": {
+    "original_pilot_full_read_subjects": [
+      "text-68c3843047d27d72b5a3",
+      "text-4d2eb635d84e07cf103a",
+      "text-3d948c07fc950149f8b1",
+      "text-c83fcfaa1a6d61aa5df2",
+      "text-96a0454e30698b523d48",
+      "text-4e3814b91a186ad4f38e"
+    ],
+    "later_explicit_full_reads": [
+      "extension-authored-v1/ch94-final-v1.txt",
+      "extension-authored-v1/ch99-final-v1.txt"
+    ],
+    "packages": [
+      86,
+      94,
+      95,
+      99
+    ],
+    "contracts": [
+      "86-S1",
+      "86-S2",
+      "86-S3",
+      "86-S4",
+      "86-S5",
+      "86-S6",
+      "94-S1",
+      "94-S2",
+      "94-S3",
+      "94-S4",
+      "94-S5",
+      "94-S6",
+      "95-S1",
+      "95-S2",
+      "95-S3",
+      "99-S1",
+      "99-S2",
+      "99-S3",
+      "99-S4",
+      "99-S5"
+    ],
+    "order_note": "先六份匿名逐份全文；后94、99显名完整Read；后四package完整Read及20合同语义分组投影；最后读final packet并hash对齐，不倒改匿名判断。"
+  },
+  "read_scope": [
+    {
+      "subject_id": "chapter-86",
+      "binding": {
+        "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+        "sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "WHOLE_TEXT_READ_AT_BYTE_IDENTICAL_SOURCE_PATH",
+      "actual_read_path": "artifacts/agent_research/phase6/advancement/pilot-comparison-v1/text-68c3843047d27d72b5a3.txt",
+      "line_ranges": [
+        [
+          1,
+          55
+        ],
+        [
+          56,
+          107
+        ]
+      ],
+      "complete": true,
+      "scope_complete": true,
+      "re_read_count_added_for_final_packet": 0,
+      "identity_note": "此前实际逐段全文Read；最终candidate路径仅hash对齐，不伪计新完整Read。"
+    },
+    {
+      "subject_id": "package-86",
+      "binding": {
+        "path": "data/writing/packages/ch86-agent-research-v3.json",
+        "sha256": "55d4018f6f3564e1370f37f57302c8bf22df73bd3fbc73b601b57b2b9082cbe5"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "WHOLE_DESCRIPTOR_READ",
+      "line_ranges": [
+        [
+          1,
+          114
+        ]
+      ],
+      "complete": true,
+      "scope_complete": true,
+      "dependency_closure_complete": false
+    },
+    {
+      "subject_id": "contract-86-S1",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S1.v2.json",
+        "sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-86-S2",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S2.v2.json",
+        "sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-86-S3",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S3.v2.json",
+        "sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-86-S4",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S4.v2.json",
+        "sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-86-S5",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S5.v2.json",
+        "sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-86-S6",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S6.v2.json",
+        "sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "chapter-94",
+      "binding": {
+        "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+        "sha256": "d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "WHOLE_TEXT_READ_AT_BYTE_IDENTICAL_SOURCE_PATH",
+      "actual_read_path": "artifacts/agent_research/phase6/advancement/extension-authored-v1/ch94-final-v1.txt",
+      "line_ranges": [
+        [
+          1,
+          45
+        ],
+        [
+          46,
+          90
+        ],
+        [
+          91,
+          119
+        ]
+      ],
+      "complete": true,
+      "scope_complete": true,
+      "re_read_count_added_for_final_packet": 0,
+      "identity_note": "此前实际逐段全文Read；最终candidate路径仅hash对齐，不伪计新完整Read。"
+    },
+    {
+      "subject_id": "package-94",
+      "binding": {
+        "path": "data/writing/packages/ch94-agent-research-v3.json",
+        "sha256": "3ff9a9c7358f76a1e569cc59b9bd7aa0a04689120480c4c3409215b449bc1b43"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "WHOLE_DESCRIPTOR_READ",
+      "line_ranges": [
+        [
+          1,
+          95
+        ]
+      ],
+      "complete": true,
+      "scope_complete": true,
+      "dependency_closure_complete": false
+    },
+    {
+      "subject_id": "contract-94-S1",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S1.v2.json",
+        "sha256": "4fa4ed03e86fbe52f81505bde1eeecb91d20cee85950b9342fcea82e0169374d"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-94-S2",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S2.v2.json",
+        "sha256": "68534b52619a4b6b43bad0b2a5ac280754bd48c1fbc62ef00a7eb8e0ad57ca33"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-94-S3",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S3.v2.json",
+        "sha256": "c4430ef30c52351e52f73feb528c1696246630784ed800bbba31c58880de585f"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-94-S4",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S4.v2.json",
+        "sha256": "c7ef3052728db805b330923719a2af2f1f6c8a2e2b8b886946001337fdc49b51"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-94-S5",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S5.v2.json",
+        "sha256": "b84feed75fd2651686ac7f979ff8ac5797fd9b8878c0ad1337c03ec757b6da7c"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-94-S6",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S6.v2.json",
+        "sha256": "378a7a4db4eb8deee05f4d338148e42c8c77a7b38fefb60a155b44d4bb9c8f16"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "chapter-95",
+      "binding": {
+        "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+        "sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "WHOLE_TEXT_READ_AT_BYTE_IDENTICAL_SOURCE_PATH",
+      "actual_read_path": "artifacts/agent_research/phase6/advancement/pilot-comparison-v1/text-3d948c07fc950149f8b1.txt",
+      "line_ranges": [
+        [
+          1,
+          45
+        ],
+        [
+          46,
+          90
+        ],
+        [
+          91,
+          127
+        ]
+      ],
+      "complete": true,
+      "scope_complete": true,
+      "re_read_count_added_for_final_packet": 0,
+      "identity_note": "此前实际逐段全文Read；最终candidate路径仅hash对齐，不伪计新完整Read。"
+    },
+    {
+      "subject_id": "package-95",
+      "binding": {
+        "path": "data/writing/packages/ch95-agent-research-v3.json",
+        "sha256": "e35ad39628e4698e47f2a6259484874aa3fb140ea64f871f60dfe69cce298cc4"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "WHOLE_DESCRIPTOR_READ",
+      "line_ranges": [
+        [
+          1,
+          110
+        ]
+      ],
+      "complete": true,
+      "scope_complete": true,
+      "dependency_closure_complete": false
+    },
+    {
+      "subject_id": "contract-95-S1",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/95-S1.v2.json",
+        "sha256": "4e115d3505f932d9c567639bc9fd698e30398262d7071a7e1acf1c31e4187ab3"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-95-S2",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/95-S2.v2.json",
+        "sha256": "ffd1144613a890396be457cee64d05c5fb469a3bd1608f25f73d87d1b83b4de6"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-95-S3",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/95-S3.v2.json",
+        "sha256": "b397d24aa0098ceef31ab29868911c1aa43f0f57beaeed23320e68c1ad559374"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "chapter-99",
+      "binding": {
+        "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+        "sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "WHOLE_TEXT_READ_AT_BYTE_IDENTICAL_SOURCE_PATH",
+      "actual_read_path": "artifacts/agent_research/phase6/advancement/extension-authored-v1/ch99-final-v1.txt",
+      "line_ranges": [
+        [
+          1,
+          55
+        ],
+        [
+          56,
+          105
+        ]
+      ],
+      "complete": true,
+      "scope_complete": true,
+      "re_read_count_added_for_final_packet": 0,
+      "identity_note": "此前实际逐段全文Read；最终candidate路径仅hash对齐，不伪计新完整Read。"
+    },
+    {
+      "subject_id": "package-99",
+      "binding": {
+        "path": "data/writing/packages/ch99-agent-research-v3.json",
+        "sha256": "67d6b9b4502ab198ea3b411a9583242cc477c889a423c9fb051761d76f960154"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "WHOLE_DESCRIPTOR_READ",
+      "line_ranges": [
+        [
+          1,
+          96
+        ]
+      ],
+      "complete": true,
+      "scope_complete": true,
+      "dependency_closure_complete": false
+    },
+    {
+      "subject_id": "contract-99-S1",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+        "sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-99-S2",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+        "sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-99-S3",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+        "sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-99-S4",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+        "sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    },
+    {
+      "subject_id": "contract-99-S5",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S5.v4.json",
+        "sha256": "20f76cdc3e741937bee015f01dad1c5cee7ab8b2810ab96f54ede6cb00f9dbad"
+      },
+      "hash_checked": true,
+      "hash_matches_packet": true,
+      "reading_mode": "BOUNDED_SEMANTIC_PROJECTION",
+      "line_ranges": [],
+      "complete": false,
+      "scope_complete": true,
+      "whole_file_read_claimed": false,
+      "projection_fields": [
+        "id",
+        "kind",
+        "chapter",
+        "order",
+        "function",
+        "participants",
+        "participants_status",
+        "entry_checkpoint",
+        "required_objects",
+        "required_beats",
+        "forbidden_beats",
+        "status",
+        "entry_state",
+        "preconditions",
+        "exit_state",
+        "unresolved",
+        "notes"
+      ],
+      "projection_stored_in": "contract_projections",
+      "line_range_note": "JSON字段投影阅读，不以伪造原始行范围代替；保留equals/value/status/reason等语义子字段。"
+    }
+  ],
+  "omitted_subject_ids": [
+    "chapter-81",
+    "chapter-82",
+    "chapter-83",
+    "chapter-84",
+    "chapter-85",
+    "chapter-87",
+    "chapter-88",
+    "chapter-89",
+    "chapter-90",
+    "chapter-91",
+    "chapter-92",
+    "chapter-93",
+    "chapter-96",
+    "chapter-97",
+    "chapter-98",
+    "chapter-100"
+  ],
+  "projection_boundary": {
+    "projection_complete": true,
+    "whole_grounding_read": false,
+    "full_dependency_closure_read": false,
+    "included_fields": [
+      "id",
+      "kind",
+      "chapter",
+      "order",
+      "function",
+      "participants",
+      "participants_status",
+      "entry_checkpoint",
+      "required_objects",
+      "required_beats",
+      "forbidden_beats",
+      "status",
+      "entry_state",
+      "preconditions",
+      "exit_state",
+      "unresolved",
+      "notes"
+    ],
+    "state_subfields": "equals/value/status/reason及非排除树内字段原样保留；beat有id/description/status即保留，缺失不编造。",
+    "excluded_recursive_keys": [
+      "grounding",
+      "source_records",
+      "references",
+      "bindings",
+      "包含basis或citation的键"
+    ],
+    "excluded_external_inputs": "未打开world、章卡、历史来源、资产、exemplar、研究源集及notes中指向的panel/decision/editor报告。",
+    "truncation_disclosure": "最初94-S1/S2宽投影含grounding，29.8KB输出被截断；未把该次算完整，随后排grounding重新输出94-S1/S2/S3全部指定字段，无截断。其他最终投影分组完整。工具自动保存截断输出文件未读。86-S1最初较宽投影内嵌source_records可见，未打开外部引用文件。",
+    "not_a_runtime": "python -I仅标准库读取指定JSON与核sha，不运行项目模块、import命令、测试或构建；没有把合同order/AGENT_EDITED/KNOWN自声明当执行证明。"
+  },
+  "contract_projections": [
+    {
+      "subject_id": "contract-86-S1",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S1.v2.json",
+        "sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "86-S1",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 86,
+        "order": 1,
+        "function": "以仍能安排明日的普通病晨建立长期照护的延续，使终末病程不是因缺药缺钱或戏剧性刺激骤然发动。",
+        "participants": [
+          "daiyu",
+          "zijuan"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "CHAPTER_ENTRY",
+          "chapter": 85
+        },
+        "required_objects": [
+          "OBJ-MEDICINE-BOWL-86"
+        ],
+        "required_beats": [
+          {
+            "description": "黛玉仍对明日作小安排，紫鹃把安排接入已有照护差事；语气保留病日的普通性，而非预知死亡。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "病晨温药、取米汤、备热水与炉火仍在可继续的照护链上；火箸碰茶盘来自这次劳作。资源齐全而身体难以承受，与86-S6最后无人再温的冷药分开，不用药冷倒推缺药致死。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "若用米汤或小丫头的短口角，仅限死亡前的病晨生活；它不能取代吞咽、取水、温药的身体困难。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "明日安排是病者尚在安排下一次日常照护，不是叙述者替她预告死期；元春丧后的长期病程不能被压缩成元春死后几天。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "description": "把未能活到明日解释成宝玉结婚、失玉或断药断钱的单因果。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "此时用临终遗言、冷月显灵、托梦或悟道提前封死普通病日。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.daiyu.life_state",
+            "value": "ACTIVE",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "character.daiyu.body_state",
+            "value": "declining_under_mourning",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "value": "warm",
+            "status": "KNOWN"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.daiyu.life_state",
+            "value": "ACTIVE",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "object.OBJ-MEDICINE-BOWL-86.status",
+            "value": "CONTAINS_UNFINISHED_MEDICINE",
+            "status": "KNOWN"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.daiyu.body_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "普通病晨到下一场的身体变化没有场级事件；W86-DAIYU-DEATH只给全回终态。"
+          },
+          {
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "OT86-01在全回末端转冷，不能据此断定明日安排结束时的药温。"
+          }
+        ],
+        "unresolved": [
+          "participants: 雪雁及厨房小丫头在卡中有角色，但实体库没有对应ID；不能伪造xueyan或厨房人员。",
+          "objects: 米汤器、药吊子、火箸、茶盘、热水器与炉火没有独立对象记录；仅药碗可实名绑定。",
+          "knowledge: daiyu_illness_severe是已注册事实，但ch86_last_night入口不能自动充当86-S1局部认知入口。",
+          "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+          "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+          "timing: 元春丧后长期病程与本场最后病晨必须区分；T+开放窗不是精确日期，未绑定本场时刻。"
+        ],
+        "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/86-S1.v1.json，sha256=a89c5b370f03bceb16d1627b29f7b51492d61ab2884365a63ef7469d42876c19。本场精确改动：明确仍有资源却身体不能承受，使冷药只在不可继续照护的末端承担收束；不新增药温事件。 保持chapter-1粗层入口及其原有来源条件，不把它提升为局部时刻。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+      }
+    },
+    {
+      "subject_id": "contract-86-S2",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S2.v2.json",
+        "sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "86-S2",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 86,
+        "order": 2,
+        "function": "把医者迟到落实为医疗劳务与跑腿链的普通延误，不让任何人故意截断照护或阻拦宝玉。",
+        "participants": [
+          "daiyu",
+          "zijuan"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [
+          "OBJ-MEDICINE-BOWL-86"
+        ],
+        "required_beats": [
+          {
+            "description": "至少让候医者收到医者被别处事务绊住的现实反馈，和跑腿去请、返回/再问的劳务接上；反馈足以说明迟到而不伪造具体病家、诊断、时辰或已解决的行程。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "药铺、跑腿、厨房与热水工作继续接力，紫鹃的照护不因等医者而悬空。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "医者迟到的反馈与病危消息报宝玉是两条经手链：病势先恶化，报信再外传；不能因为医生未到就令宝玉同步知道死亡，更不能让等医生暂停紫鹃的照护。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "description": "用家庭命令、权谋或骗婚人为扣住医生和宝玉。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "把现实医疗工序扩写成现代医学讲解，或用神迹补救医者迟到。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.daiyu.body_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未有86-S1出口到此场的身体检查点；全回病程不能注入局部入口。"
+          },
+          {
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "已注册药碗基线与全回转冷事件不足以给出候医时药温。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.zijuan.knowledge.daiyu_illness_severe",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "legacy认知场的入口虽列病重，尚无86-S2与该入口的明确对应。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.daiyu.body_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "候医延误的具体时长及身体结果没有场级世界事件。"
+          },
+          {
+            "equals": "character.zijuan.knowledge.daiyu_may_die_tonight",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "K86-ZIJUAN-SEES-RAPID-DECLINE是真实注册事件，但没有证据把它精确放进此候医场。"
+          }
+        ],
+        "unresolved": [
+          "participants: 医者、药铺经手人、跑腿及可能报信的雪雁都无实体ID，故演员集合仅部分可绑定。",
+          "timing: 医者在别处何事、往返路径及病危报信先后尚未有独立场级事实，必须留作具体作者选择而非KNOWN。",
+          "knowledge: 病重与今夜可能不起均有事实记录，但怀疑获得的种子场位置未核定。",
+          "entry_checkpoint: 86-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+          "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+          "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+          "entry_state.character.daiyu.body_state: 未有86-S1出口到此场的身体检查点；全回病程不能注入局部入口。",
+          "entry_state.object.OBJ-MEDICINE-BOWL-86.temperature: 已注册药碗基线与全回转冷事件不足以给出候医时药温。",
+          "preconditions.character.zijuan.knowledge.daiyu_illness_severe: legacy认知场的入口虽列病重，尚无86-S2与该入口的明确对应。",
+          "relay: 请医反馈、报病危与宝玉到达仍缺三种局部时间边界；本次只规定分链，不给出路线或取得事件。"
+        ],
+        "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/86-S2.v1.json，sha256=d7883d68ce0cd150643bd3bc8069d89f9f9d4fec16fd8f84febc9c0490e99e1d。本场精确改动：要求可见的请医反馈与报病危经手动作分别存在，避免人为封锁和全员同步知情。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+      }
+    },
+    {
+      "subject_id": "contract-86-S3",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S3.v2.json",
+        "sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "86-S3",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 86,
+        "order": 3,
+        "function": "把最后的文人动作缩到改字未成，保留手与身体的失能，不再承担85回已完成诗文的任务。",
+        "participants": [
+          "daiyu",
+          "zijuan"
+        ],
+        "participants_status": "KNOWN",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [],
+        "required_beats": [
+          {
+            "description": "G01“小院苔痕留宿雨 / 隔帘花影 □ 新晴”只出现欲改未成的动作，空字始终不补。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "紫鹃面对的是黛玉伸手改字却不能续做的身体动作；旧集/稿夹只为这一临终生活动作服务，紫鹃不翻稿、不辨作品、不替她续写。G01的空字也不由叙述者或旁人补出。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "A01在85的既有任务不回灌成86的新诗；旧作的暗回声不得转成现场诵诗或新增悼诗。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "description": "替G01补字、生成完整绝命诗、黛玉诔或作者挽诗。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "把稿夹展开为遗稿展览，或借冷月葬花魂的明引解释死亡。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "借改字未成转出一段可完整引用的遗言或绝命诗，或把85的A01完成任务当作本场新作完成事实。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.daiyu.life_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "该种子在局部时序上标为临终前，但顺序仍是来源列表顺序，不能作为实际生命检查点。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.daiyu.body_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "伸手改字所需身体能力没有86-S3的世界记录；不可从宣言推回可行动状态。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.daiyu.body_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "未成改字不是可执行身体效果；W86仅有长期病程终态。"
+          }
+        ],
+        "unresolved": [
+          "objects: G01草稿、旧集、稿夹与书写用具没有对象注册ID；G01是卡内诗文接口，不得冒充对象ID。",
+          "timing: 改字未成相对医者迟到和身体不可逆的场级顺序尚待编辑，不能把source-list order当死亡计时。",
+          "entry_checkpoint: 86-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+          "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+          "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+          "entry_state.character.daiyu.life_state: 该种子在局部时序上标为临终前，但顺序仍是来源列表顺序，不能作为实际生命检查点。",
+          "preconditions.character.daiyu.body_state: 伸手改字所需身体能力没有86-S3的世界记录；不可从宣言推回可行动状态。"
+        ],
+        "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/86-S3.v1.json，sha256=ce9381d2f9050dbb668388f89326020fd2df3d6797501ae6c3df23a9139fc531。本场精确改动：把中止点限定为身体不能续做，封住旁人/叙述者补全和遗稿展览；旧稿仍不伪装为对象ID。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+      }
+    },
+    {
+      "subject_id": "contract-86-S4",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S4.v2.json",
+        "sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "86-S4",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 86,
+        "order": 4,
+        "function": "让死亡后的第一轮身体与热水衣物料理先于抒情反应，显出照护工作在不可逆之后改变用途。",
+        "participants": [
+          "daiyu",
+          "zijuan",
+          "liwan",
+          "wangfuren"
+        ],
+        "participants_status": "KNOWN",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [
+          "OBJ-MEDICINE-BOWL-86"
+        ],
+        "required_beats": [
+          {
+            "description": "不可逆之后先分清床边身体料理、拿热水衣物、第一轮后事安排的承接；紫鹃保持床边照护位置，李纨/王夫人的参与必须落在可见实务而非轮流哭说。具体礼俗动作不扩写为未有依据的仪式清单。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "药、炉火与照护器物仍留在工作位置；紫鹃不转去翻稿，旧稿不抢身体这一层。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "死后的第一轮处理与病危消息外传分别写清；此前的轻口角至此立即退场。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "身体处理与外传病危/死讯可以交错，但必须标清各自经手和消息所指；86-S4在列表中先于86-S5，不等于所有后事完毕之后才准许报信。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "description": "全家轮流说遗言、集体围哭或用长哭诉挤掉死后身体料理。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "把死亡写成临终悟道、托梦、仪式性单因果报应或作者评叹。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.daiyu.life_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "种子要求死后身体料理，但W86死亡事件是全回粗粒度终点，未给此场入口的检查点。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.zijuan.knowledge.daiyu_death_exact_moment",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "K86-DEATH-OCCURS只绑定ch86_last_night；本种子的目击时点未独立对应。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.daiyu.life_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "死亡是所需叙事节点，不能因本合同声明就把此场出口当已回放DEAD。"
+          },
+          {
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "身体料理阶段药温何时转冷未有种子级对象事件；OT86-01不能整段回灌。"
+          }
+        ],
+        "unresolved": [
+          "events: W86-DAIYU-DEATH含全回生命终态及关系变化，不等于86-S4的精确身体入口/出口；暂不绑定事件。",
+          "knowledge: K86-DEATH-OCCURS的目击者更新已注册，但旧场覆盖整个最后一夜，不能默认本种子等同旧场。",
+          "objects: 热水、衣物、炉火与死后身体料理器具未独立注册；药碗不替代这些物。",
+          "entry_checkpoint: 86-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+          "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+          "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+          "entry_state.character.daiyu.life_state: 种子要求死后身体料理，但W86死亡事件是全回粗粒度终点，未给此场入口的检查点。",
+          "preconditions.character.zijuan.knowledge.daiyu_death_exact_moment: K86-DEATH-OCCURS只绑定ch86_last_night；本种子的目击时点未独立对应。",
+          "obligations: 身体、热水衣物与后事第一轮已有编辑任务分层；具体承接时刻、死讯内容与礼俗操作仍无场级事实，不声明已执行。"
+        ],
+        "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/86-S4.v1.json，sha256=5fdef5e3c9400f22d2151b91730e47ed4fd38ea5577151d40f6ec7d30145cdb0。本场精确改动：显式分层实务承接并允许信息链交错；死亡和确切死时仍不由要求本身自证。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+      }
+    },
+    {
+      "subject_id": "contract-86-S5",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S5.v2.json",
+        "sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "86-S5",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 86,
+        "order": 5,
+        "function": "用病危信息经手、迟获与赶来的真实链条解释来迟；场面压力来自信息落差而非增加哭喊或人为阻挠。",
+        "participants": [
+          "baoyu",
+          "zijuan"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [],
+        "required_beats": [
+          {
+            "description": "病危先被照护者感知，再由雪雁或其他经手人去报，宝玉迟获消息后才赶来。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "把照护者感到病危、经手人去报、宝玉迟获病势突变、赶来及死后身体料理的相对边界写清；消息只是病危不等于确切死时，SOURCE_LIST顺序不能把报信硬放在所有料理之后。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "来迟的痛感靠尚在进行的照护与信息差成立；宝玉不得赶上黛玉最后一息作同步诀别。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "到场前宝玉不得知道最后一息的确切时刻；可能赶上只是人物信念，不能变成他确曾赶上。到达边界交给86-S6的到场动作，不以同在S02替代赶路。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "description": "用骗婚、失玉消息或家人拦门制造死亡与迟到的单一因果。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "把宝玉获得病危消息直接等同知道确切死时，或把可能赶上这一belief写成事实。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "旧场入口记宝玉不知确切死时，但无法证明86-S5起点与该入口相同。"
+          },
+          {
+            "equals": "character.baoyu.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "S02只是粗府域；未有宝玉收到消息时的场级位置与行程。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.baoyu.knowledge.baoyu_may_still_arrive_in_time",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "注册belief不证明本场收到消息前后仍持同一信念。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "K86-BAOYU-LEARNS-AFTER-ARRIVAL须在到达后；此场信息传递边界未定，不提前给知情终态。"
+          },
+          {
+            "equals": "character.baoyu.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "赶来路径与抵达边界未有场级移动事件；不能由同府位置推断已经入室。"
+          }
+        ],
+        "unresolved": [
+          "participants: 报信的雪雁/跑腿没有注册ID，不能把信息链压缩成只有宝玉与紫鹃面对面。",
+          "timing: 报信者路线、宝玉获信地点及到达边界未记录；当前列表顺序也不证明通知发生在全部料理之后。",
+          "knowledge: 三个相关事实/信念均可引用，但旧场K86更新在六个种子之间的分配未独立核定。",
+          "entry_checkpoint: 86-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+          "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+          "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+          "entry_state.character.baoyu.knowledge.daiyu_death_exact_moment: 旧场入口记宝玉不知确切死时，但无法证明86-S5起点与该入口相同。",
+          "entry_state.character.baoyu.location: S02只是粗府域；未有宝玉收到消息时的场级位置与行程。",
+          "preconditions.character.baoyu.knowledge.baoyu_may_still_arrive_in_time: 注册belief不证明本场收到消息前后仍持同一信念。",
+          "arrival_boundary: 已限定到场前不得知确切死时，但报信内容、获信地点与抵达时刻未有本种子知识/移动检查点。"
+        ],
+        "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/86-S5.v1.json，sha256=20b66f0464782200fdb8bf8179619a01a7397b06c0650e5b0e3e1f16868b3101。本场精确改动：要求报病危与获知死时分离，把真实到达留给下一场；不把K86旧场的取得事件搬入本场。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+      }
+    },
+    {
+      "subject_id": "contract-86-S6",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/86-S6.v2.json",
+        "sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "86-S6",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 86,
+        "order": 6,
+        "function": "以宝玉对尚未吃完的药的普通问话和再无人温药的物理终态收束，拒绝用诗或大哭覆盖冷药。",
+        "participants": [
+          "baoyu",
+          "zijuan"
+        ],
+        "participants_status": "KNOWN",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [
+          "OBJ-MEDICINE-BOWL-86"
+        ],
+        "required_beats": [
+          {
+            "description": "实际到场后宝玉面对仍未吃完的药，只问“药还没吃么？再温一温”；问药是请求，不是温药执行，也不证明到场前已知确切死时。到场后获知与问话的精确相位仍待场级核定。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "药吊子与熄去的炉火保留照护留下的物理痕迹；药仍未尽，无人落实宝玉再温的请求，紫鹃不翻稿。冷药保持为结尾实物，不因一个祈使句转成温热或已服完。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "结尾停在冷药这一物理事实，以散文收，不追加作者诗、解释性象征或总结性哭声。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "description": "实际重新温好药、让黛玉复活回应，或以同时诀别抹去宝玉来迟。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "冷药之后接悼诗、绝命诗、作者评叹或冷月显灵。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          },
+          {
+            "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+            "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+            "authority_effect": "NONE",
+            "evidence_effect": "NONE"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "OT86-01支持本回药转冷，但种子抵达时的具体转冷检查点仍未绑定。"
+          },
+          {
+            "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "到达与获知先后尚未映射到86-S6；不可把K86到达后更新当入口已知。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "object.OBJ-MEDICINE-BOWL-86.status",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "全回药碗基线未尽药不能自动成为后场局部入口；需独立确认是否始终同碗未动。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "冷药是必须写出的目标；缺少86-S6事件绑定，故不能因写作要求声称已回放cold。"
+          },
+          {
+            "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "K86-BAOYU-LEARNS-AFTER-ARRIVAL是真实旧场事件，其具体种子归属和取证尚待独立编辑。"
+          },
+          {
+            "equals": "object.OBJ-MEDICINE-BOWL-86.status",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "末端仍为未尽药是新增明确写作义务，但OT86-01未映射此种子，不能把全回to.status自动当本场回放结果。"
+          }
+        ],
+        "unresolved": [
+          "objects: 只使用OBJ-MEDICINE-BOWL-86；medicine_bowl_86是独立legacy记录，位置包含声明不构成两ID或两地点相等。",
+          "events: OT86-01是全回末端药温转换，未宣称它等于此种子的场级事件。",
+          "knowledge: ch86_last_night不自动等于86-S6；宝玉获知死时的具体局部边界未核定。",
+          "entry_checkpoint: 86-S6为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+          "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+          "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+          "entry_state.object.OBJ-MEDICINE-BOWL-86.temperature: OT86-01支持本回药转冷，但种子抵达时的具体转冷检查点仍未绑定。",
+          "entry_state.character.baoyu.knowledge.daiyu_death_exact_moment: 到达与获知先后尚未映射到86-S6；不可把K86到达后更新当入口已知。",
+          "preconditions.object.OBJ-MEDICINE-BOWL-86.status: 全回药碗基线未尽药不能自动成为后场局部入口；需独立确认是否始终同碗未动。",
+          "terminal_object: 必须同时守住未尽药与冷两种末端义务；冷药请求未执行，但种子级状态/温度转换仍未知。"
+        ],
+        "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/86-S6.v1.json，sha256=f59ffd5398999032c0a73073cf36a35eaa42fa639abaf3c8a29a76a1cc4081c3。本场精确改动：区分请求与执行，并把未尽药作为独立UNKNOWN出口目标；死亡、到场、获知和末端冷药不自证。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+      }
+    },
+    {
+      "subject_id": "contract-94-S1",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S1.v2.json",
+        "sha256": "4fa4ed03e86fbe52f81505bde1eeecb91d20cee85950b9342fcea82e0169374d"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "94-S1",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 94,
+        "order": 1,
+        "function": "从凤姐后事余波进入看似正常、条件似乎不错的说亲，先让礼钱先行与家庭信息不足显出隐患，而不先揭大阴谋。",
+        "participants": [
+          "jiamu",
+          "ping_er",
+          "qiaojie"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "CHAPTER_ENTRY",
+          "chapter": 93
+        },
+        "required_objects": [],
+        "required_beats": [
+          {
+            "id": "94-S1-R1",
+            "description": "说亲先条件似不错、可议可问；媒人求说成，王仁先算礼钱，平儿核家情。巧姐不是成人调查全知听众，在场/所听范围待落实；礼钱先行不推已成交。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S1-R2",
+            "description": "保留贾母“人没问明白，礼倒先算清了”，让危险从次序和含糊处出现，不是反派当场自揭阴谋。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S1-R3",
+            "description": "贾母那句只指出人未问明礼先算的次序；礼钱/婚书/对方家情未注册时问来源，不补已收礼、签婚书或订婚期。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "94-S1-F1",
+            "description": "不得先写巧姐已卖掉、宏大人口贩卖阴谋或神救；王仁贪、媒人求成不等于恶魔化。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S1-F2",
+            "description": "不得锁板儿婚配时机，或以狱庙相逢替换当前旧恩现实救援。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S1-F3",
+            "description": "凤姐只通过后事与巧姐处境存在，不回来主持说亲；正常议亲表面不洗平遗留保护缺口。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.qiaojie.location",
+            "value": "S06",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "character.ping_er.household_role",
+            "value": "qiaojie_protection_executor",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "character.qiaojie.marital_status",
+            "value": "CHILD",
+            "status": "KNOWN"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.qiaojie.marital_status",
+            "value": "CHILD",
+            "status": "KNOWN"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.qiaojie.marital_status",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "有说亲表面不等于婚约、成交或婚配；条件、拒绝与后场调查未注册为本场关系更新。"
+          }
+        ],
+        "unresolved": [
+          "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+          "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+          "participants: 王仁、媒人无注册人物ID；保留原称与职业行动，不造别名ID或用贾琏冒充。",
+          "implementation_gap: 礼钱、婚书、提亲对象家情没有对象/事实ID；巧姐本人所知仅“住几日”的后续限度不能前推为已核知全案。",
+          "exit_state: character.qiaojie.marital_status — 有说亲表面不等于婚约、成交或婚配；条件、拒绝与后场调查未注册为本场关系更新。",
+          "child_hearing_money: 巧姐听多少成人议亲、礼钱实交及婚书是否有均未核，不新增事实。"
+        ],
+        "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+      }
+    },
+    {
+      "subject_id": "contract-94-S2",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S2.v2.json",
+        "sha256": "68534b52619a4b6b43bad0b2a5ac280754bd48c1fbc62ef00a7eb8e0ad57ca33"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "94-S2",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 94,
+        "order": 2,
+        "function": "让平儿逐项核问家情、定礼与急办细节，使危险从信息漏洞中逐步露出；调查得力不等于全知破案。",
+        "participants": [
+          "ping_er"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [],
+        "required_beats": [
+          {
+            "id": "94-S2-R1",
+            "description": "平儿逐项问家情、定礼为何先算、谁提急办、谁能说清条件；每条答话留来源，含糊或不合只是待核漏洞，不变犯罪已证。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S2-R2",
+            "description": "问话仍是正常说亲过程中的核实，王仁和媒人各有钱与说成的职业关切；发现不对劲即可推动保护。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S2-R3",
+            "description": "核问结果由实际渠道交给需作决定的人；贾母前场话不当亲见全部后续问答，巧姐/刘姥姥不因调查推进同步知成人全貌。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "94-S2-F1",
+            "description": "不得使平儿一句问话便全知庞大拐卖案，也不得以“坏人自白”代替具体问题和信息漏洞。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S2-F2",
+            "description": "不得从有限家情线索推出巧姐已被卖掉或最终嫁给板儿。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.ping_er.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "虽W93有保护执行者章级身份，后续场的实际调查入口与职责范围未有局部检查点。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.ping_er.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "媒人来往、核问场所和经手口信未有注册路径。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.ping_er.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "逐项追问是否足以中止说亲仍待场内落实；没有本场调查事实或权力转移事件。"
+          }
+        ],
+        "unresolved": [
+          "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+          "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+          "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+          "participants: 王仁、媒人及家情消息经手人未注册，不能虚构确凿官面侦查者。",
+          "implementation_gap: 家情、定礼、急办理由和交叉问答没有知识事实ID，不能借监所全案事实冒充婚事调查。",
+          "entry_state: character.ping_er.household_role — 虽W93有保护执行者章级身份，后续场的实际调查入口与职责范围未有局部检查点。",
+          "preconditions: character.ping_er.location — 媒人来往、核问场所和经手口信未有注册路径。",
+          "exit_state: character.ping_er.household_role — 逐项追问是否足以中止说亲仍待场内落实；没有本场调查事实或权力转移事件。",
+          "query_sources: 答话者、转告给谁及巧姐所听无知识事件；贾母不强制共同在场。"
+        ],
+        "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+      }
+    },
+    {
+      "subject_id": "contract-94-S3",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S3.v2.json",
+        "sha256": "c4430ef30c52351e52f73feb528c1696246630784ed800bbba31c58880de585f"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "94-S3",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 94,
+        "order": 3,
+        "function": "以定礼急办和家情含糊达到“已经不对劲”的保护阈值，暂缓坏亲事并转向低调空间安置，而不追求传奇式破案。",
+        "participants": [
+          "ping_er",
+          "jiamu",
+          "qiaojie"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [],
+        "required_beats": [
+          {
+            "id": "94-S3-R1",
+            "description": "危险只需由定礼先行、急办、家情说不清逐步成立，使平儿有理由不再贸然答应，不必查出犯罪组织。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S3-R2",
+            "description": "让巧姐的保护需求接向现实安置；对孩子的信息保持有限，不以成人调查结论逼她承担全部恐惧。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S3-R3",
+            "description": "“已不对劲”足以止贸然答应和谋临时保护；谁能暂缓、怎样暂缓、谁接安置有实际经手，不把识风险写成司法裁罪或婚约法律解除。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "94-S3-F1",
+            "description": "不得让坏亲事先真实卖成再神奇大救援，不得把王仁升级为庞大拐卖阴谋主谋。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S3-F2",
+            "description": "不得用神迹、狱庙、田园婚配或提前锁板儿婚姻来保证后续命运。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S3-F3",
+            "description": "拖缓坏亲事不等于巧姐已到乡居，知风险不等于孩子全知；不以W94终点提前赋已安置。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.qiaojie.marital_status",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "前场只是调查，暂无经核定的婚事关系更新，不能认定已议定、已卖或已解除婚约。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.ping_er.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "制止或拖缓议亲的实际权限与经手步骤没有场级事件。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.qiaojie.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "危险被辨出不等于已有安全安置，刘氏照顾的注册效果在后续章级转移接口，不能提前填入。"
+          }
+        ],
+        "unresolved": [
+          "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+          "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+          "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+          "participants: 王仁、媒人和提亲家庭未注册，待落实正常议亲中的钱与信息关系。",
+          "implementation_gap: 暂缓说亲的可行形式和巧姐能听到的有限话语没有知识/法律事件；不可写为已证明人口买卖。",
+          "entry_state: character.qiaojie.marital_status — 前场只是调查，暂无经核定的婚事关系更新，不能认定已议定、已卖或已解除婚约。",
+          "preconditions: character.ping_er.household_role — 制止或拖缓议亲的实际权限与经手步骤没有场级事件。",
+          "exit_state: character.qiaojie.household_role — 危险被辨出不等于已有安全安置，刘氏照顾的注册效果在后续章级转移接口，不能提前填入。",
+          "risk_not_shelter: 暂缓权限/经手/孩子限知未核，不新建犯罪/解除婚约/完成安置事件。"
+        ],
+        "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+      }
+    },
+    {
+      "subject_id": "contract-94-S4",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S4.v2.json",
+        "sha256": "c7ef3052728db805b330923719a2af2f1f6c8a2e2b8b886946001337fdc49b51"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "94-S4",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 94,
+        "order": 4,
+        "function": "让刘姥姥以旧恩与社会信用提供住处、饭和乡邻劳动网络，先提出空间转移方案，不变成现金或超凡营救。",
+        "participants": [
+          "liulaolao",
+          "ping_er",
+          "qiaojie"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [],
+        "required_beats": [
+          {
+            "id": "94-S4-R1",
+            "description": "刘姥姥先提出能给住处和饭及邻人借针线/搭手网络；这是需平儿接话核实的方案，不是巧姐已到、房已安排完或所有乡邻必然帮助。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S4-R2",
+            "description": "方案只需小额路费与衣物，刘姥姥不拿大银；民间念佛可作口语但不参与达成安置。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "94-S4-F1",
+            "description": "不得把刘姥姥写成神奇救星、携大银赎人或法力解决坏亲事；也不增狱庙。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S4-F2",
+            "description": "不得把乡下先说成无忧桃花源或顺势锁定板儿婚配。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S4-F3",
+            "description": "口头回应不等于正式监护、孩子已转移或包袱已装；刘姥姥无需知全情，念佛为口语不作成功因果。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.liulaolao.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "刘姥姥章前位置为未指明，提方案时的来往及交谈地点未注册，不补造精确行程。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.qiaojie.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "前场风险辨认并未形成可执行安置状态；尚不能填guest_under_liu_care。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.liulaolao.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "提供住处与日用帮助不等于已验证法律监护或新正式家庭角色；W94只注册章级照顾接口。"
+          },
+          {
+            "equals": "character.qiaojie.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "接纳方案无本场出发/抵达事件；W94的S08为后续章级结果，不能提前作已安置。"
+          }
+        ],
+        "unresolved": [
+          "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+          "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+          "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+          "implementation_gap: 乡居具体门址、空间容量、生活分工与接话渠道待落实；不在提出方案时提前要求转移包已组装。",
+          "entry_state: character.liulaolao.location — 刘姥姥章前位置为未指明，提方案时的来往及交谈地点未注册，不补造精确行程。",
+          "preconditions: character.qiaojie.household_role — 前场风险辨认并未形成可执行安置状态；尚不能填guest_under_liu_care。",
+          "exit_state: character.liulaolao.household_role — 提供住处与日用帮助不等于已验证法律监护或新正式家庭角色；W94只注册章级照顾接口。",
+          "exit_state: character.qiaojie.location — 接纳方案无本场出发/抵达事件；W94的S08为后续章级结果，不能提前作已安置。",
+          "offer_not_arrival: 接话确认、可用空间和临时分工PENDING，不由方案推出抵达或正式监护。",
+          "participants_scope: 具名角色为待写集合非已验证实际在场，v1的KNOWN集合降为PENDING。"
+        ],
+        "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+      }
+    },
+    {
+      "subject_id": "contract-94-S5",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S5.v2.json",
+        "sha256": "b84feed75fd2651686ac7f979ff8ac5797fd9b8878c0ad1337c03ec757b6da7c"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "94-S5",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 94,
+        "order": 5,
+        "function": "把保护方案落实成小包袱、有限路费、陪送经手与出城进乡的连续过程；巧姐只知住几日，不承担成人全局。",
+        "participants": [
+          "liulaolao",
+          "ping_er",
+          "qiaojie"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [
+          "OBJ-QIAOJIE-BUNDLE"
+        ],
+        "required_beats": [
+          {
+            "id": "94-S5-R1",
+            "description": "包袱衣物/路费/陪送逐段经手，谁送哪一步与出城进乡要清；同时明留人已借院S06而包袱登记仍起S02的缺桥，不假装此前同步或已在安全炕上。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S5-R2",
+            "description": "巧姐本人只知“住几日”，成人安排和给平儿的消息有实际传递渠道；包袱随人而非物件瞬移。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S5-R3",
+            "description": "真正起运前确认取物/组装及交接来源；无S02到S06包袱搬运事件，不补虚构过往修平OT94.from，不改对象位置。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "94-S5-F1",
+            "description": "不得把小包袱扩大成大额财产或花大银赎救；不得让未经手的乡居位置自动解决所有危险。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S5-F2",
+            "description": "不得真正卖掉后传奇救回、增加狱庙插入或在转移中锁定板儿婚事。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S5-F3",
+            "description": "平儿筹办不等全程陪送；未注册车脚/陪送者不换成已知人物补ID，“住几日”不推巧姐知成人危险。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "object.OBJ-QIAOJIE-BUNDLE.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "注册基线仍为S02，而人在89后章级位置为S06；此前包袱搬运没有注册桥，不把这处差异掩平。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.qiaojie.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "本场转移前的位置没有局部前驱检查点，不能从W94的S08终点反填起点。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.qiaojie.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "W94登记S08乡居，但出城、陪送与到达的本场映射未经过独立核定。"
+          },
+          {
+            "equals": "object.OBJ-QIAOJIE-BUNDLE.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "OT94-01从S02到S08的包袱转移确有接口；借院阶段缺桥与实际路程仍未解决。"
+          },
+          {
+            "equals": "object.OBJ-QIAOJIE-BUNDLE.holder",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "章级qiaojie_under_liu_care非每段陪送/保管人；借院缺桥和交付時点未核，不填某个具名陪送者。"
+          }
+        ],
+        "unresolved": [
+          "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+          "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+          "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+          "participants: 车脚、实际陪送人及途中经手者未有ID；平儿负责筹办不等于已证明她全程陪到乡居。",
+          "implementation_gap: 包袱S02基线与搬后S06人物位置的桥缺失，不能假装物与人一直同步；小额路费、路线和陪送人待核定。",
+          "entry_state: object.OBJ-QIAOJIE-BUNDLE.location — 注册基线仍为S02，而人在89后章级位置为S06；此前包袱搬运没有注册桥，不把这处差异掩平。",
+          "preconditions: character.qiaojie.location — 本场转移前的位置没有局部前驱检查点，不能从W94的S08终点反填起点。",
+          "exit_state: character.qiaojie.location — W94登记S08乡居，但出城、陪送与到达的本场映射未经过独立核定。",
+          "exit_state: object.OBJ-QIAOJIE-BUNDLE.location — OT94-01从S02到S08的包袱转移确有接口；借院阶段缺桥与实际路程仍未解决。",
+          "registered_event_placement: 已引用的世界/物件事件仅为义务涉及的现行章级接口，不证明这些事件在此种子场逐项执行；局部条件保持UNKNOWN。",
+          "exit_state: object.OBJ-QIAOJIE-BUNDLE.holder — 章级qiaojie_under_liu_care非每段陪送/保管人；借院缺桥和交付時点未核，不填某个具名陪送者。",
+          "missing_relocation_retained: 包袱S02到人物借院S06无事件；陪送/到达确认不造，OT94-01原样保留。"
+        ],
+        "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+      }
+    },
+    {
+      "subject_id": "contract-94-S6",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/94-S6.v2.json",
+        "sha256": "378a7a4db4eb8deee05f4d338148e42c8c77a7b38fefb60a155b44d4bb9c8f16"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "94-S6",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 94,
+        "order": 6,
+        "function": "用乡下第一日的鞋、鸡狗、炕、粗饭与纺线写缓慢适应及社会网络的差异；安置是生活劳动，不是田园解脱。",
+        "participants": [
+          "liulaolao",
+          "qiaojie"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [
+          "OBJ-QIAOJIE-BUNDLE"
+        ],
+        "required_beats": [
+          {
+            "id": "94-S6-R1",
+            "description": "包袱到炕、粗饭到鞋跟、鸡狗到纺车，逐项写生活难题；邻人有人好奇、有人嫌娇、有人肯借针线。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S6-R2",
+            "description": "保留板儿追鸡改口、巧姐误认平儿及乡下口语的笑；笑里仍有适应和离开旧照料者的成本。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S6-R3",
+            "description": "只保留口传劳动小曲“线儿长，莫着忙；手一急，线先伤。”及“伤/断都使得，哪有定词”的不定词性质；劳动属日用而非田园诗。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S6-R4",
+            "description": "平儿经实际消息得知抵达/近况，谁见什么、转告多少要有限，发消息不等已收到；孩子“误认平儿”不因此把平儿移入乡居，照顾不是一夜终结困难。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "94-S6-F1",
+            "description": "不得扩成完整民歌、田园诗或乡村桃花源；贫寒者的生活网络不写成高贵神迹。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S6-F2",
+            "description": "不得把板儿的日常动作解释成婚配已定，也不得以念佛或狱庙替代旧恩照顾。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "94-S6-F3",
+            "description": "S08和包袱章级终态不证明第一日已拆用全部物或平儿即时知近况；不新增孩子知识事实、乡邻ID、板儿婚配作安全保证。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.qiaojie.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "前场出城到乡未有独立入口核验；W94的S08章级终点不能代替第一夜/第一日时序。"
+          },
+          {
+            "equals": "object.OBJ-QIAOJIE-BUNDLE.status",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "包袱已到、打开和换衣的局部物态未注册。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.qiaojie.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "guest_under_liu_care为章级照顾接口，具体第一日照料分工与劳动学习未形成场级前置记录。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.qiaojie.body_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "鞋跟、饭和纺线的适应成本没有独立身体事件，不能称彻底安心、脱困或劳动即治愈。"
+          }
+        ],
+        "unresolved": [
+          "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+          "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+          "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+          "participants: 板儿、乡妇、好奇或嫌娇的邻人、小贩未有实体ID，不能用另一注册人物代替。",
+          "implementation_gap: 乡下鞋、鸡狗、炕、粗饭、纺车与针线没有单独对象ID；平儿收到消息的渠道与第一夜/第一日界限待核定。",
+          "entry_state: character.qiaojie.location — 前场出城到乡未有独立入口核验；W94的S08章级终点不能代替第一夜/第一日时序。",
+          "entry_state: object.OBJ-QIAOJIE-BUNDLE.status — 包袱已到、打开和换衣的局部物态未注册。",
+          "preconditions: character.qiaojie.household_role — guest_under_liu_care为章级照顾接口，具体第一日照料分工与劳动学习未形成场级前置记录。",
+          "exit_state: character.qiaojie.body_state — 鞋跟、饭和纺线的适应成本没有独立身体事件，不能称彻底安心、脱困或劳动即治愈。",
+          "first_day_feedback: 实到/拆包/误认/平儿收讯時点仍未决；劳作笑话不证明安全和适应终态。"
+        ],
+        "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+      }
+    },
+    {
+      "subject_id": "contract-95-S1",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/95-S1.v2.json",
+        "sha256": "4e115d3505f932d9c567639bc9fd698e30398262d7071a7e1acf1c31e4187ab3"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "95-S1",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 95,
+        "order": 1,
+        "function": "补借院不能久居的住房桥，以期限、房钱与生活分工提出换低成本住处的必要性；这是第二个冬天的持续贫困，不是第二次家败。",
+        "participants": [
+          "baoyu",
+          "baochai",
+          "sheyue"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "CHAPTER_ENTRY",
+          "chapter": 94
+        },
+        "required_objects": [],
+        "required_beats": [
+          {
+            "id": "95-S1-R1",
+            "description": "借院不能久居理由经实际通知落实，再让宝钗估现金/麝月说日用米量推动找房；这为待写分工，不升级知识事实或精确收支。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S1-R2",
+            "description": "明确95处于不同于91的另一个冬天；换住处是持续低现金下的住房选择，不再制造查抄或断炊大危机。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "95-S1-F1",
+            "description": "不得让借住到期变成恶房东羞辱、无家可归冻死或第二次大灾难。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S1-F2",
+            "description": "不得把贫困美化为清净修行，或增贫困组诗、名画古砚典卖寓言。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S1-F3",
+            "description": "米瓮/炭筐/破毡/夹袄基线预置S09不证明家人已搬入或期限通知已收到，不能以预置对象抹掉住房桥。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.baoyu.location",
+            "value": "S06",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "character.baochai.location",
+            "value": "S06",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "character.sheyue.location",
+            "value": "S06",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "character.baochai.household_role",
+            "value": "wife_and_daily_manager",
+            "status": "KNOWN"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.baochai.location",
+            "value": "S06",
+            "status": "KNOWN"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.baochai.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "借住将到期不等于已搬S09；W95将新住所与贫困合成章级事件，不能在期限商量场提前执行。"
+          }
+        ],
+        "unresolved": [
+          "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+          "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+          "participants: 房东/代管者未有实体ID，借住期限由誰接话与旧约内容仍待落实。",
+          "implementation_gap: 房钱、借院期限、住处约据未有对象ID；91第一冬与95第二冬的间隔为当前C时间框，不反升原稿准确纪年。",
+          "exit_state: character.baochai.location — 借住将到期不等于已搬S09；W95将新住所与贫困合成章级事件，不能在期限商量场提前执行。",
+          "housing_notice_scope: 贾芸不强制讨论；通知实收和现金米量来源、S06到新居桥待核。"
+        ],
+        "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+      }
+    },
+    {
+      "subject_id": "contract-95-S2",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/95-S2.v2.json",
+        "sha256": "ffd1144613a890396be457cee64d05c5fb469a3bd1608f25f73d87d1b83b4de6"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "95-S2",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 95,
+        "order": 2,
+        "function": "让贾芸带看两三处住处并解释低价与漏风的权衡，帮找房而不解决结构性贫困；保持妻、仆与宝玉感知现金的不同速度。",
+        "participants": [
+          "jia_yun",
+          "baochai"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [],
+        "required_beats": [
+          {
+            "id": "95-S2-R1",
+            "description": "贾芸带看两三处，按房钱、漏风、能修与日用距离比较；最终偏向漏风但便宜的住处，帮的是寻找接口。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S2-R2",
+            "description": "看房由宝钗衡现金、贾芸解释寻找接口；麝月米量/宝玉见物减少为家中并行分工，不强制同走所有房，也不以便宜房填平米炭药灯油缺口。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S2-R3",
+            "description": "两三候选为待写比较，不造地点ID、精确地址/租金额；便宜、漏风、可修的权衡展开，看中不等付钱订妥或搬入。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "95-S2-F1",
+            "description": "不得让贾芸找到免费好屋或大额外援而解决贫困；米炭小贩与房屋经手人也不必恶人化。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S2-F2",
+            "description": "不得用漏风制造冻死绝境、清净修行或贫士诗；保持住房桥的L2尺度。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S2-F3",
+            "description": "贾芸带看不是产权/代管/出资人，不一个角色代所有未注册租约经手接口。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.baochai.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "前场借院期限商量与看房出入没有局部入口检查点。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.jia_yun.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "贾芸基线位置未指明，带看两三处的路线和在场记录没有注册。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.baochai.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "看房决定尚不是实际搬入，候选房屋未注册，不能直接赋S09已居住。"
+          }
+        ],
+        "unresolved": [
+          "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+          "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+          "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+          "participants: 房东/代管者未注册；看房的具体应答人不能由贾芸充作产权人。",
+          "implementation_gap: 候选两三处地址、租金、押钱和漏风修缮成本未有实体或事件记录；不把S09章级位置当全部备选地址。",
+          "entry_state: character.baochai.location — 前场借院期限商量与看房出入没有局部入口检查点。",
+          "preconditions: character.jia_yun.location — 贾芸基线位置未指明，带看两三处的路线和在场记录没有注册。",
+          "exit_state: character.baochai.location — 看房决定尚不是实际搬入，候选房屋未注册，不能直接赋S09已居住。",
+          "house_view_casting: 仅贾芸/宝钗強制拟写，其他家中分工待落位；候选/租金/占用未注册。"
+        ],
+        "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+      }
+    },
+    {
+      "subject_id": "contract-95-S3",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v1/95-S3.v2.json",
+        "sha256": "b397d24aa0098ceef31ab29868911c1aa43f0f57beaeed23320e68c1ad559374"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "95-S3",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 95,
+        "order": 3,
+        "function": "把首次主动舍弃笨重旧物与搬入偏院接成连续物流，再以典衣、量米、少炭、针线和破毡保持一日三餐的持续低现金生活。",
+        "participants": [
+          "baoyu",
+          "baochai",
+          "sheyue",
+          "jia_yun"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [
+          "OBJ-HOUSEHOLD-BEDDING-BUNDLE",
+          "OBJ-TONGLING-JADE",
+          "OBJ-RICE-JAR-95",
+          "OBJ-CHARCOAL-BASKET-95",
+          "OBJ-OLD-FELT-95",
+          "OBJ-PAWNABLE-JACKET-95"
+        ],
+        "required_beats": [
+          {
+            "id": "95-S3-R1",
+            "description": "首次舍弃笨重旧物时，选择、留下/转交、装载、搬运、到新居分开；注册铺盖95转移缺失，不先断全带或全丢，通灵玉仅既有连续性不另开玉线。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S3-R2",
+            "description": "保留补窗越补越破、典青夹袄、当票压针线盒；房钱米炭药灯油互相挤占，典衣只换有限日用现金。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S3-R3",
+            "description": "保留酸齑仍可笑、“今日这口正好”、麝月门快关、邻家萝卜叶、小木碗、两碗半与问碗；一日三餐仍过得下去。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S3-R4",
+            "description": "夜风与破毡是持续生活成本，明日仍两碗半；米低炭少但不是断炊断炭，不以一次性象征替代真实贫困。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S3-R5",
+            "description": "铺盖S06到S09、预置米瓮/炭筐/破毡/夹袄进入日用及典衣后有限现金换米炭均需实经手桥；OT95序号/章级效果不代选房、搬家、量米的场内时点。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "95-S3-F1",
+            "description": "不得断炊、冻死风险、第二次大危机或恶商羞辱；贾芸带路、典旧衣与少量物资不能让贫困逆转。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S3-F2",
+            "description": "不得加入名画古砚典卖寓言、贫困组诗、作者贫士吟、回末诗或把寒冬写成审美清净修行。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S3-F3",
+            "description": "不得因雪中玉样物出现而混同通灵玉；随身通灵玉本次只是既有网络的搬迁连续性，不是遗弃或身份鉴定场。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "95-S3-F4",
+            "description": "不得改基线/OT95.from或造铺盖搬家事件让断链似闭合；LOW不填精确米重/当价/断炊，静态破毡OLD_REUSED不当已核修补完成。",
+            "status": "PENDING",
+            "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.baoyu.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "看房与搬家之间无局部检查点，不能据W95章级新居反填搬出时位置。"
+          },
+          {
+            "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "OT89只记进借院，95哪些铺盖带走、留下或转用没有对象组级后续事件。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "object.OBJ-PAWNABLE-JACKET-95.status",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "对象基线已在S09，但本场含搬入过程；夹袄如何携入及何时可典的场级入口未注册。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.baoyu.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "W95确登记S09，但具体舍弃、搬运与居住落点未独立验证为本场执行。"
+          },
+          {
+            "equals": "object.OBJ-RICE-JAR-95.quantity_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "OT95-01的LOW为现行章级低量，不等于本场量米动作已核定，更不支持断炊或精确米重。"
+          },
+          {
+            "equals": "object.OBJ-CHARCOAL-BASKET-95.quantity_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "OT95-02只有LOW，少买炭非断炭，局部采购与剩量未核定。"
+          },
+          {
+            "equals": "object.OBJ-PAWNABLE-JACKET-95.status",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "OT95-03确有典衣接口，但当价、当票经手与此场实际交付未验证。"
+          },
+          {
+            "equals": "object.OBJ-OLD-FELT-95.status",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "破毡的持续使用与修补没有95转移事件；不可把静态OLD_REUSED强说成本场已完成的状态更新。"
+          },
+          {
+            "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "原铺盖95搬运缺桥未解；舍弃笨重物不證整个铺盖组到S09、留S06或毁弃，出口UNKNOWN。"
+          },
+          {
+            "equals": "object.OBJ-TONGLING-JADE.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "OT95-00只有随宝玉S06到S09章级连续性，无本场装载/实到检查点；不由玉接口补铺盖或全家已搬。"
+          }
+        ],
+        "unresolved": [
+          "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+          "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+          "entry_checkpoint: 后续场无可执行局部入口；不从相邻合同或章末快照注入前场结果。",
+          "participants: 当铺伙计、米铺、炭贩、邻妇及房屋经手人未有实体ID；职业需求不造恶商。",
+          "implementation_gap: 笨重旧物具体弃置/转交清单、铺盖包从S06搬入新居的桥缺失，不能由选择舍弃推定丢弃全部注册铺盖。",
+          "implementation_gap: 米瓮、炭筐、破毡、夹袄基线预置S09，进入新居的场级装载过程待核定；旧物减少不能变作新奢物典卖寓言。",
+          "implementation_gap: 当票、针线盒、补窗纸、小木碗、酸齑与邻家萝卜叶无单独对象ID；价格、米炭分量和外出经手时点仍开放。",
+          "entry_state: character.baoyu.location — 看房与搬家之间无局部检查点，不能据W95章级新居反填搬出时位置。",
+          "entry_state: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location — OT89只记进借院，95哪些铺盖带走、留下或转用没有对象组级后续事件。",
+          "preconditions: object.OBJ-PAWNABLE-JACKET-95.status — 对象基线已在S09，但本场含搬入过程；夹袄如何携入及何时可典的场级入口未注册。",
+          "exit_state: character.baoyu.location — W95确登记S09，但具体舍弃、搬运与居住落点未独立验证为本场执行。",
+          "exit_state: object.OBJ-RICE-JAR-95.quantity_state — OT95-01的LOW为现行章级低量，不等于本场量米动作已核定，更不支持断炊或精确米重。",
+          "exit_state: object.OBJ-CHARCOAL-BASKET-95.quantity_state — OT95-02只有LOW，少买炭非断炭，局部采购与剩量未核定。",
+          "exit_state: object.OBJ-PAWNABLE-JACKET-95.status — OT95-03确有典衣接口，但当价、当票经手与此场实际交付未验证。",
+          "exit_state: object.OBJ-OLD-FELT-95.status — 破毡的持续使用与修补没有95转移事件；不可把静态OLD_REUSED强说成本场已完成的状态更新。",
+          "registered_event_placement: 已引用的世界/物件事件仅为义务涉及的现行章级接口，不证明这些事件在此种子场逐项执行；局部条件保持UNKNOWN。",
+          "exit_state: object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location — 原铺盖95搬运缺桥未解；舍弃笨重物不證整个铺盖组到S09、留S06或毁弃，出口UNKNOWN。",
+          "exit_state: object.OBJ-TONGLING-JADE.location — OT95-00只有随宝玉S06到S09章级连续性，无本场装载/实到检查点；不由玉接口补铺盖或全家已搬。",
+          "move_bedding_unknowns_retained: 原8项entry/pre/exit移动和日用品UNKNOWN全原样保留；铺盖95事件缺失、S09预置桥及玉实到仍未解。"
+        ],
+        "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+      }
+    },
+    {
+      "subject_id": "contract-99-S1",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+        "sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "99-S1",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 99,
+        "order": 1,
+        "function": "在玉归后先留普通数日，再由还书、少食与不再接事分层显出退出意图；不是所有人都看懂。",
+        "participants": [
+          "baoyu",
+          "baochai",
+          "sheyue"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "CHAPTER_ENTRY",
+          "chapter": 98
+        },
+        "required_objects": [
+          "OBJ-TONGLING-JADE",
+          "OBJ-RICE-JAR-95"
+        ],
+        "required_beats": [
+          {
+            "id": "99-S1-R1",
+            "description": "玉归后先“日子照旧过几日”，吃饭、抄字、小事继续，随后还借书、少感食物兴趣并逐项不再接事务；这里饭食最低仍可维持，不因当日断粮或新病驱使撒手。数日长度和退出事务清单待定，玉RETURNED只为章入口粗状态，不是因果机关。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S1-R2",
+            "description": "宝玉先知意图、宝钗半知、麝月从饭袜鞋后知；可误作疲倦或惯常毛病。M3 EARLY_INTENT只是叙事信息边界，不是可绑v03 fact或获取事件；旁人不能从同一个动作同步悟出决定。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S1-R3",
+            "description": "还书体现文化接口退出而非焚书或折笔；保留宝钗为妻、麝月为婢的成立关系，退出仍伤及正在过日子的人。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "99-S1-F1",
+            "description": "不得玉归即出家、以98《续庄子》因果点化，或靠黛玉/警幻托梦、神谕驱动离家。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S1-F2",
+            "description": "不得以人生论文、终于看破宝钗黛玉或所有人看懂替代分层后知；人物作者均无诗偈。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.baoyu.location",
+            "value": "S09",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "character.baochai.marital_status",
+            "value": "MARRIED_BAOYU",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "character.sheyue.household_role",
+            "value": "remaining_baoyu_baochai_attendant",
+            "status": "KNOWN"
+          },
+          {
+            "equals": "object.OBJ-TONGLING-JADE.status",
+            "value": "RETURNED",
+            "status": "KNOWN"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.baoyu.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "第98回粗角色仍jia_son；逐项退出有哪些具体事务没有新事件，不能以该标签证明别人已看懂意图。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.baoyu.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "W99-BAOYU-LEAVES是后续章级离家终点，不能提前用为本场数日缓冲后的实际退出值。"
+          }
+        ],
+        "unresolved": [
+          "ordinary_days: 数日具体长度、还哪些借书、退出事务次序与各人后知时刻未登记。",
+          "books_unregistered: 归还借书、袜鞋及日用文纸没有对象ID；不拿通灵玉代替文化退出动作。",
+          "knowledge_registry_gap: baoyu_departure_intent只有M3规则，不能把半知/后知编码为未注册事实状态。",
+          "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+          "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+          "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+          "editor_stage_only: 本次仅获用户agent编辑授权且已新增义务；两份PLAN意见已读但真实panel仍PENDING，不能作独立人工认可、正文执行或文学通过。",
+          "declared_sequence_only: source_index不变，entry_from按source order绑定新版；另行editorC叙事=99-S1,99-S2,99-S5,99-S3,99-S4；前驱只是来源索引，绝不注入状态/知识，历史次序与执行PENDING。",
+          "narrative_execution_pending: NARRATIVE_ONLY_NOT_EXECUTABLE；新正文、场级事件/知识、运行身份和语义核验未建立，旧run不得冒充新剧情执行。",
+          "alternative_narrative_proposal_pending: 本次用户仅批准editorC叙事S1→S2→S5→S3→S4；源链S1→S2→S3→S4→S5不重排，旧v2不追认。前插是新版未来义务而非已演出，运行/正文仍PENDING。",
+          "v2_chain_failure_corrected: 旧v2源前驱失配历史保留；新v4仍S3←S2、S5←S4且其余entry_from按新版源前驱，source-index≠narrative-index。零声明FAIL不能认证新轨执行。"
+        ],
+        "notes": "PHASE6批准B已授权agent编辑；v4新增叙事义务，NARRATIVE_ONLY_NOT_EXECUTABLE。decision_path=data/planning/decisions/phase6-ch99-v1.json; decision_sha256=e9f09fb42347ddf186a7854c5071639b59d33ed3273467d37cf5d7d1a7fe6a7c。bindings/source_packet、seed、chapter_plan、world及所有状态/registry/知识绑定保持旧字节；decision仅notes中的具体绑定引用，不充作state basis。source_index=order=1；narrative_index=1；source_index≠narrative_index两类指标，不假设相同。entry_from仅新选source-order前驱索引，不是叙事前驱，不注入前场exit、chapter快照、地点或知识。叙事序列=99-S1,99-S2,99-S5,99-S3,99-S4仅editorC未来演出义务，当前检查器不会读取/执行此新叙事轨。participants只为旧注册候选，UNKNOWN/PENDING及value=null全保留；未建立人间新事件/身份registry继续PENDING。已有event_refs/object_transition_refs仅冻结旧关联，不认证新剧情已执行，98不相容运输支持已移除且decision原字保留冲突；100终态不增加运输。未写或绑定新正文，semantic replay=NOT_CHECKED；旧run、旧合同及旧cashflow依赖不改，不宣称source mismatch全部闭合。真实panel=PENDING、peer1 asserted=false，不改原声明；非正式采用、非发布。"
+      }
+    },
+    {
+      "subject_id": "contract-99-S2",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+        "sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "99-S2",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 99,
+        "order": 2,
+        "function": "把宝玉说走与宝钗现实追问、麝月饭鞋照料分开，留下实际离家接口和被退出关系的伤害，不给精神胜利结论。",
+        "participants": [
+          "baoyu",
+          "baochai",
+          "sheyue"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [
+          "OBJ-TONGLING-JADE"
+        ],
+        "required_beats": [
+          {
+            "id": "99-S2-R1",
+            "description": "宝玉表达走或不回时不作理论解释；宝钗只问住哪里、回来不回来等实际问题，麝月落在饭、袜、鞋，三人语气不能互换。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S2-R2",
+            "description": "离门体现不再接续角色而非无情；少带衣钱、旧鞋留下仅为义务，件数和携物身份未锁。W99-BAOYU-LEAVES已将宝玉置S13，是含寺居的章级终点，不能把出门一刻写成瞬间到寺；留出未知交通与入住接口。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S2-R3",
+            "description": "妻/婢关系成立而退出仍伤人。source order仍S2→S3→S4→S5仅供索引；本次editorC另列叙事S1→S2→S5→S3→S4，在离家及未锁旅程/寺居间隔后先演极短S5，再回贾芸寻找、末镜家中两人饭与未补完旧衣。S5前插不证明家中/贾芸知去处，旧source前驱不注入状态或知识，出门不能瞬间到寺。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "99-S2-F1",
+            "description": "不得主动设计弃玉仪式或决定玉给谁；尘世路线保持开放，玉不是出家触发器。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S2-F2",
+            "description": "不得写诀别信、诀别诗、佛偈、人生总结或“终于看破”的精神胜利旁白。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.baoyu.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "前驱数日退出只有声明顺序，实际离门起点、时间和携带物未登记。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.baochai.marital_status",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "妻的关系在章入口有实际依据，但本场半知、听见走或不回的时点不由婚姻标签自动推出。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.baoyu.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "W99仅把宝玉置S13的当前C终点，没有本场出门经过各地的场级检查点。"
+          },
+          {
+            "equals": "object.OBJ-TONGLING-JADE.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "OT99-01主动标EARTHLY_ROUTE_OPEN_AFTER_SA_SHOU；不论章节终点还是本场局部都不补物理去向。"
+          }
+        ],
+        "unresolved": [
+          "departure_handoff: 告知宝钗与真正离门的先后、带衣钱选择、路径和时间均未映射为局部事件。",
+          "jade_route: OT99-01只退出可知范围；不以UNKNOWN字符串当已知去处。",
+          "household_knowledge: 麝月何时获知、不回如何被理解尚无注册知识事件。",
+          "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+          "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+          "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+          "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+          "departure_terminal_scope: W99将宝玉设S13且角色monk_left_household；只是章末关联，不证明离门当刻已经到寺或剃发，旅程与入住缺口不补。",
+          "editor_stage_only: 本次仅获用户agent编辑授权且已新增义务；两份PLAN意见已读但真实panel仍PENDING，不能作独立人工认可、正文执行或文学通过。",
+          "declared_sequence_only: source_index不变，entry_from按source order绑定新版；另行editorC叙事=99-S1,99-S2,99-S5,99-S3,99-S4；前驱只是来源索引，绝不注入状态/知识，历史次序与执行PENDING。",
+          "narrative_execution_pending: NARRATIVE_ONLY_NOT_EXECUTABLE；新正文、场级事件/知识、运行身份和语义核验未建立，旧run不得冒充新剧情执行。",
+          "alternative_narrative_proposal_pending: 本次用户仅批准editorC叙事S1→S2→S5→S3→S4；源链S1→S2→S3→S4→S5不重排，旧v2不追认。前插是新版未来义务而非已演出，运行/正文仍PENDING。",
+          "v2_chain_failure_corrected: 旧v2源前驱失配历史保留；新v4仍S3←S2、S5←S4且其余entry_from按新版源前驱，source-index≠narrative-index。零声明FAIL不能认证新轨执行。"
+        ],
+        "notes": "PHASE6批准B已授权agent编辑；v4新增叙事义务，NARRATIVE_ONLY_NOT_EXECUTABLE。decision_path=data/planning/decisions/phase6-ch99-v1.json; decision_sha256=e9f09fb42347ddf186a7854c5071639b59d33ed3273467d37cf5d7d1a7fe6a7c。bindings/source_packet、seed、chapter_plan、world及所有状态/registry/知识绑定保持旧字节；decision仅notes中的具体绑定引用，不充作state basis。source_index=order=2；narrative_index=2；source_index≠narrative_index两类指标，不假设相同。entry_from仅新选source-order前驱索引，不是叙事前驱，不注入前场exit、chapter快照、地点或知识。叙事序列=99-S1,99-S2,99-S5,99-S3,99-S4仅editorC未来演出义务，当前检查器不会读取/执行此新叙事轨。participants只为旧注册候选，UNKNOWN/PENDING及value=null全保留；未建立人间新事件/身份registry继续PENDING。已有event_refs/object_transition_refs仅冻结旧关联，不认证新剧情已执行，98不相容运输支持已移除且decision原字保留冲突；100终态不增加运输。未写或绑定新正文，semantic replay=NOT_CHECKED；旧run、旧合同及旧cashflow依赖不改，不宣称source mismatch全部闭合。真实panel=PENDING、peer1 asserted=false，不改原声明；非正式采用、非发布。"
+      }
+    },
+    {
+      "subject_id": "contract-99-S3",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+        "sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "99-S3",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 99,
+        "order": 3,
+        "function": "把离家转成寻找花费、相互矛盾的城市目击和贾芸找到后宝玉拒回的社会后果；访客不是救世链。",
+        "participants": [
+          "jia_yun",
+          "baoyu"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [],
+        "required_beats": [
+          {
+            "id": "99-S3-R1",
+            "description": "书摊、车脚、渡口、小店只给各自模糊线索，允许误认；贾芸实际跑街的脚费与家中米租相抵。宝钗麝月可为询问/接报远端，不据章卡章级人物名单把她们列为城里和寺里的同场演员。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S3-R2",
+            "description": "贾芸寻找包含脚费、模糊目击、误认再见真人；宝玉寺中劳动为所见日常，拒回及“没有，只说我平安”保留。本次叙事上S5先演，但source entry_from仍索引S2，不以读者见微课或前驱索引证明贾芸已知寺名/去处，也不是执行寻访前提。见到—听到—返家转话—家中获知须逐层可追问；无知识事件继续PENDING，不造精确地址。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S3-R3",
+            "description": "城市误认与见到真人区分，贾芸转达只能转所见所闻；男性寺院不是尼庵，本场不得宣称兑现W2仗义探庵。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "99-S3-F1",
+            "description": "不得让所有证人给精确地址或同步认出，也不得靠神谕、托梦或高僧安排完成寻人。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S3-F2",
+            "description": "不得把拒回写成超越众人的精神胜利，或以找错人的笑笔消除宝钗麝月受害和搜寻成本。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.jia_yun.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "贾芸注册位置为空，找人路径未经事件登记；声明前驱不注入搜寻出发点。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.baoyu.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "S13是章级当前C终点，不可作为城市网络已经知道他所在的证据。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.jia_yun.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "找到寺院是章卡义务，无路程与返家转话的实际场级事件。"
+          },
+          {
+            "equals": "character.baoyu.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "章级monk_left_household不证明本场面对贾芸的拒回动作及他说平安的准确时点。"
+          }
+        ],
+        "unresolved": [
+          "search_network: 书摊、车脚、渡口、小店经手人与普通僧人均未注册；路线、费用、目击版本未定。",
+          "message_return: 贾芸见到、拒回、转话与家中获知的局部次序没有事件。",
+          "D2_boundary: 寺院寻人保留而探庵证据接口不得自动兑现。",
+          "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+          "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+          "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+          "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+          "household_offstage: 宝钗麝月属于询问/接报家中接口，不要求随贾芸城内/寺院寻人；远端获取时刻仍无事件。",
+          "editor_stage_only: 本次仅获用户agent编辑授权且已新增义务；两份PLAN意见已读但真实panel仍PENDING，不能作独立人工认可、正文执行或文学通过。",
+          "declared_sequence_only: source_index不变，entry_from按source order绑定新版；另行editorC叙事=99-S1,99-S2,99-S5,99-S3,99-S4；前驱只是来源索引，绝不注入状态/知识，历史次序与执行PENDING。",
+          "narrative_execution_pending: NARRATIVE_ONLY_NOT_EXECUTABLE；新正文、场级事件/知识、运行身份和语义核验未建立，旧run不得冒充新剧情执行。",
+          "alternative_narrative_proposal_pending: 本次用户仅批准editorC叙事S1→S2→S5→S3→S4；源链S1→S2→S3→S4→S5不重排，旧v2不追认。前插是新版未来义务而非已演出，运行/正文仍PENDING。",
+          "v2_chain_failure_corrected: 旧v2源前驱失配历史保留；新v4仍S3←S2、S5←S4且其余entry_from按新版源前驱，source-index≠narrative-index。零声明FAIL不能认证新轨执行。"
+        ],
+        "notes": "PHASE6批准B已授权agent编辑；v4新增叙事义务，NARRATIVE_ONLY_NOT_EXECUTABLE。decision_path=data/planning/decisions/phase6-ch99-v1.json; decision_sha256=e9f09fb42347ddf186a7854c5071639b59d33ed3273467d37cf5d7d1a7fe6a7c。bindings/source_packet、seed、chapter_plan、world及所有状态/registry/知识绑定保持旧字节；decision仅notes中的具体绑定引用，不充作state basis。source_index=order=3；narrative_index=4；source_index≠narrative_index两类指标，不假设相同。entry_from仅新选source-order前驱索引，不是叙事前驱，不注入前场exit、chapter快照、地点或知识。叙事序列=99-S1,99-S2,99-S5,99-S3,99-S4仅editorC未来演出义务，当前检查器不会读取/执行此新叙事轨。participants只为旧注册候选，UNKNOWN/PENDING及value=null全保留；未建立人间新事件/身份registry继续PENDING。已有event_refs/object_transition_refs仅冻结旧关联，不认证新剧情已执行，98不相容运输支持已移除且decision原字保留冲突；100终态不增加运输。未写或绑定新正文，semantic replay=NOT_CHECKED；旧run、旧合同及旧cashflow依赖不改，不宣称source mismatch全部闭合。真实panel=PENDING、peer1 asserted=false，不改原声明；非正式采用、非发布。"
+      }
+    },
+    {
+      "subject_id": "contract-99-S4",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+        "sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "99-S4",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 99,
+        "order": 4,
+        "function": "宝玉退出后家中仍买米付租、重新量两人饭，旧衣未补完的动作留下伤害与未尽，不用宏观结论封口。",
+        "participants": [
+          "baochai",
+          "sheyue"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [
+          "OBJ-RICE-JAR-95"
+        ],
+        "required_beats": [
+          {
+            "id": "99-S4-R1",
+            "description": "宝钗与麝月继续筹晚飯、买米和付租，重新量两个人的份量；保留“够咱们两个吃的就是了”，不为出家暂停家庭生计。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S4-R2",
+            "description": "本次editorC明确S4为实际未来叙事末镜：两只碗、眼前饭、未补完袖口和针别衣边；旧针眼被断线堵住后另取新针，线入新针眼未拉齐，为顾火将该针别回衣边，动作不得混同缝袖口。旧衣未注册，不等同95已典夹袄或100李纨旧衣，不补赎衣/归还/对象ID；未补完是生活余伤，不是圆满。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S4-R3",
+            "description": "entry_from仅索引新版99-S3，source列表后项99-S5不表示后演；明确source-index≠narrative-index。本次editorC叙事S1→S2→S5→S3→S4，S4后不再切寺、也不新增第二个家务尾声；未演出。家中只知贾芸实际转达所见所闻，不继承S5读者知识或source前驱快照；具体收信时点UNKNOWN。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "99-S4-F1",
+            "description": "不得将两人份饭写成圆满自足、经济恢复或退出伤害已全消失；不得把人间余波降成宝玉精神胜利的注脚。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S4-F2",
+            "description": "不得以终篇诗偈、宝玉留字或作者佛理总结取代旧衣和飯；人物无字、作者也无诗偈。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S4-F3",
+            "description": "不得把source列表S5在S4之后误作演出顺序；旧衣末镜后禁止再演课诵或切寺，不为调和source链造第二家务尾声。S5的reader knowledge不得倒灌家庭。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.baochai.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "声明前驱寻找网络不支持家中已经收到平安转话的时间；粗章住处不能代替本场晚饭入口。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "object.OBJ-RICE-JAR-95.quantity_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "最后已登记量米改变在第96回；97—99局部耗用和两人份调整没有对象转移，不能推持续余量。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "object.OBJ-RICE-JAR-95.quantity_state",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "“够咱们两个吃的就是了”是待实现动作与声口，不提供两人份的可执行对象状态。"
+          }
+        ],
+        "unresolved": [
+          "meal_measure: 两人份米实际数量、局部余粮、买米租支出未登记，96对象终点不能外推。",
+          "old_garment_unregistered: 未补完旧衣与针无对象ID，不与第95回已典旧夹袄自动并为同物。",
+          "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+          "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+          "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+          "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+          "terminal_garment_identity: 99未补完旧衣只是未注册日用品；95夹袄已在当铺，不能自动变成家中终末同一件衣。",
+          "editor_stage_only: 本次仅获用户agent编辑授权且已新增义务；两份PLAN意见已读但真实panel仍PENDING，不能作独立人工认可、正文执行或文学通过。",
+          "declared_sequence_only: source_index不变，entry_from按source order绑定新版；另行editorC叙事=99-S1,99-S2,99-S5,99-S3,99-S4；前驱只是来源索引，绝不注入状态/知识，历史次序与执行PENDING。",
+          "narrative_execution_pending: NARRATIVE_ONLY_NOT_EXECUTABLE；新正文、场级事件/知识、运行身份和语义核验未建立，旧run不得冒充新剧情执行。",
+          "alternative_narrative_proposal_pending: 本次用户仅批准editorC叙事S1→S2→S5→S3→S4；源链S1→S2→S3→S4→S5不重排，旧v2不追认。前插是新版未来义务而非已演出，运行/正文仍PENDING。",
+          "v2_chain_failure_corrected: 旧v2源前驱失配历史保留；新v4仍S3←S2、S5←S4且其余entry_from按新版源前驱，source-index≠narrative-index。零声明FAIL不能认证新轨执行。",
+          "placement_tension: 在editorC义务层已选择S5前插、S4末镜；原source S4→S5仅索引仍保留。不是旧v2获追认、不是旧v3/新正文已实现；运行检查器不会执行此分轨，正文与语义核验仍PENDING。"
+        ],
+        "notes": "PHASE6批准B已授权agent编辑；v4新增叙事义务，NARRATIVE_ONLY_NOT_EXECUTABLE。decision_path=data/planning/decisions/phase6-ch99-v1.json; decision_sha256=e9f09fb42347ddf186a7854c5071639b59d33ed3273467d37cf5d7d1a7fe6a7c。bindings/source_packet、seed、chapter_plan、world及所有状态/registry/知识绑定保持旧字节；decision仅notes中的具体绑定引用，不充作state basis。source_index=order=4；narrative_index=5；source_index≠narrative_index两类指标，不假设相同。entry_from仅新选source-order前驱索引，不是叙事前驱，不注入前场exit、chapter快照、地点或知识。叙事序列=99-S1,99-S2,99-S5,99-S3,99-S4仅editorC未来演出义务，当前检查器不会读取/执行此新叙事轨。participants只为旧注册候选，UNKNOWN/PENDING及value=null全保留；未建立人间新事件/身份registry继续PENDING。已有event_refs/object_transition_refs仅冻结旧关联，不认证新剧情已执行，98不相容运输支持已移除且decision原字保留冲突；100终态不增加运输。未写或绑定新正文，semantic replay=NOT_CHECKED；旧run、旧合同及旧cashflow依赖不改，不宣称source mismatch全部闭合。真实panel=PENDING、peer1 asserted=false，不改原声明；非正式采用、非发布。"
+      }
+    },
+    {
+      "subject_id": "contract-99-S5",
+      "binding": {
+        "path": "data/planning/contracts/agent-final-v2/99-S5.v4.json",
+        "sha256": "20f76cdc3e741937bee015f01dad1c5cee7ab8b2810ab96f54ede6cb00f9dbad"
+      },
+      "projection_complete": true,
+      "fields": {
+        "id": "99-S5",
+        "kind": "AGENT_SCENE_CONTRACT",
+        "chapter": 99,
+        "order": 5,
+        "function": "若选用寺庙微课，以不熟跟诵与立刻搬水看锅补普通宗教生活的一丝，不能将劳动变高僧课堂或人生答案。",
+        "participants": [
+          "baoyu"
+        ],
+        "participants_status": "PENDING",
+        "entry_checkpoint": {
+          "kind": "UNKNOWN",
+          "chapter": null
+        },
+        "required_objects": [],
+        "required_beats": [
+          {
+            "id": "99-S5-R1",
+            "description": "本次editorC选择一次极短课诵动作，非新微诗：宝玉跟诵不熟，匿名小和尚指页，散课马上搬水/看锅；不引经文、不加法号、不锁早晚时刻、受戒仪式或点化。选择义务不生成必有历史事件，亦不证明未来正文已演出。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S5-R2",
+            "description": "保留寺里搬柴挑水的劳务，普通僧人按日常分工相处；不让这场取消贾芸拒回及家里两人晚饭的世俗余波。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S5-R3",
+            "description": "order=5、entry_from索引新版99-S4，均仅source-index；本次narrative-index=3，在S2离门后的未锁寺居间隔与S3贾芸见真人之前演，S4仍末镜。source-index≠narrative-index，前驱只索引不注入家庭状态、宝玉位置或旁人知识；不是把source链重排，局部状态/具体时刻UNKNOWN，检查器未执行此新轨。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "forbidden_beats": [
+          {
+            "id": "99-S5-F1",
+            "description": "不得高僧点化、教义总结、黛玉或警幻托梦；不得跟诵后宣布情已尽或终于圆满。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          },
+          {
+            "id": "99-S5-F2",
+            "description": "不得题壁、辞世诗、佛偈或结尾作者韵文；不得把男性寺院说成探庵证据实现。",
+            "status": "PENDING",
+            "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT"
+          }
+        ],
+        "status": "AGENT_EDITED",
+        "entry_state": [
+          {
+            "equals": "character.baoyu.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "W99粗状态S13支持当前C寺居，不证明本场早/晚课的本地入口；前驱家中饭事不传播其位置。"
+          }
+        ],
+        "preconditions": [
+          {
+            "equals": "character.baoyu.household_role",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "章级monk_left_household不登记课诵熟练度或值日分工；不得把身份标签当悟道条件。"
+          }
+        ],
+        "exit_state": [
+          {
+            "equals": "character.baoyu.location",
+            "value": null,
+            "status": "UNKNOWN",
+            "reason": "跟诵后搬水、搬柴、看锅只有章卡动作接口，无寺院场级位置与时序事件。"
+          }
+        ],
+        "unresolved": [
+          "minor_actors: 小和尚与普通僧人无注册身份；不新增姓名、法号。",
+          "religious_props_unregistered: 指页经册、水桶、柴和锅均未注册，课诵内容不自行造经文。",
+          "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+          "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+          "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+          "local_cast_pending: 注册主角不证明本场完整到场；家中/搜寻/寺院必须分空间，未注册目击者与僧人身份仍未定。",
+          "editor_stage_only: 本次仅获用户agent编辑授权且已新增义务；两份PLAN意见已读但真实panel仍PENDING，不能作独立人工认可、正文执行或文学通过。",
+          "declared_sequence_only: source_index不变，entry_from按source order绑定新版；另行editorC叙事=99-S1,99-S2,99-S5,99-S3,99-S4；前驱只是来源索引，绝不注入状态/知识，历史次序与执行PENDING。",
+          "narrative_execution_pending: NARRATIVE_ONLY_NOT_EXECUTABLE；新正文、场级事件/知识、运行身份和语义核验未建立，旧run不得冒充新剧情执行。",
+          "alternative_narrative_proposal_pending: 本次用户仅批准editorC叙事S1→S2→S5→S3→S4；源链S1→S2→S3→S4→S5不重排，旧v2不追认。前插是新版未来义务而非已演出，运行/正文仍PENDING。",
+          "v2_chain_failure_corrected: 旧v2源前驱失配历史保留；新v4仍S3←S2、S5←S4且其余entry_from按新版源前驱，source-index≠narrative-index。零声明FAIL不能认证新轨执行。",
+          "optional_scene: 本次已选择极短课诵C义务及narrative-index=3；精确早晚、经文时刻、寺名/准入/首程和小和尚身份UNKNOWN，实际新正文/执行PENDING，不把旧source前驱当晚于家務证明。"
+        ],
+        "notes": "PHASE6批准B已授权agent编辑；v4新增叙事义务，NARRATIVE_ONLY_NOT_EXECUTABLE。decision_path=data/planning/decisions/phase6-ch99-v1.json; decision_sha256=e9f09fb42347ddf186a7854c5071639b59d33ed3273467d37cf5d7d1a7fe6a7c。bindings/source_packet、seed、chapter_plan、world及所有状态/registry/知识绑定保持旧字节；decision仅notes中的具体绑定引用，不充作state basis。source_index=order=5；narrative_index=3；source_index≠narrative_index两类指标，不假设相同。entry_from仅新选source-order前驱索引，不是叙事前驱，不注入前场exit、chapter快照、地点或知识。叙事序列=99-S1,99-S2,99-S5,99-S3,99-S4仅editorC未来演出义务，当前检查器不会读取/执行此新叙事轨。participants只为旧注册候选，UNKNOWN/PENDING及value=null全保留；未建立人间新事件/身份registry继续PENDING。已有event_refs/object_transition_refs仅冻结旧关联，不认证新剧情已执行，98不相容运输支持已移除且decision原字保留冲突；100终态不增加运输。未写或绑定新正文，semantic replay=NOT_CHECKED；旧run、旧合同及旧cashflow依赖不改，不宣称source mismatch全部闭合。真实panel=PENDING、peer1 asserted=false，不改原声明；非正式采用、非发布。"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "id": "86-MORNING",
+      "subject_id": "chapter-86",
+      "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+      "line_start": 19,
+      "line_end": 19,
+      "quote": "贵妃丧后，黛玉的病一层层沉了下去。中间也有能坐起来的日子，自己要书，嫌紫鹃守得紧，甚至问过外头花开得怎样；到了书只翻了两页便得放下的时候，雪雁还记着她要看的那几本，来回搬给她挑。后来紫鹃不让再搬，雪雁便觉得是她太小心。昨日姑娘多吃了些米汤，雪雁夜里特意到厨房去说薄厚，回来时心里连今日该劝什么都想好了。方才那只碗还在外间，她经过时不愿看，又不能不看。"
+    },
+    {
+      "id": "86-MEDICAL",
+      "subject_id": "chapter-86",
+      "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+      "line_start": 25,
+      "line_end": 25,
+      "quote": "请医的跑腿回来，身后并没有大夫。他在廊下说，大夫被别处的事务绊住了，去问的人尚候着，又将药铺送来的药交给雪雁。雪雁问几时来，他抹一把额头，说不准。紫鹃在帘内听着，本要站起，黛玉的手从她臂上滑下去，她连忙坐定，将那手托回被上，隔帘叫人再去：“别只说原来病着。今日连米汤也难咽，照这个说。”那人应了，拿起帽子，又往外去。"
+    },
+    {
+      "id": "86-G01",
+      "subject_id": "chapter-86",
+      "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+      "line_start": 33,
+      "line_end": 33,
+      "quote": "紫鹃拿起床头的书，黛玉摇头：“案上，露着的。”雪雁便去找。稿夹压着一角旧笺，紫鹃伸手只将露在外面的一张抽出来，并没翻稿夹。黛玉看纸没拿反，轻轻点了一下头。笺上原有两行：“小院苔痕留宿雨 / 隔帘花影 □ 新晴”。后行空着一字，黛玉的手指移到那里，纸却随着她的指腹往下滑。紫鹃将被角掀开些，把笺垫平。雪雁在案旁等着，不知该将书放回去还是留着。"
+    },
+    {
+      "id": "86-PEN",
+      "subject_id": "chapter-86",
+      "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+      "line_start": 37,
+      "line_end": 37,
+      "quote": "雪雁看见那道浅墨痕，竟想拿绢子去擦。她往前迈了半步，又站住。黛玉缓了几口气，手再动时，笔管从虎口松开，紫鹃接住了，没让它掉在被上。那张笺还平铺着，黛玉的眼光停在空字旁，嘴唇微启，终究没说出字来。紫鹃将笔搁在床边的小碟里，扶她靠回去。黛玉忽然用力抽了一下手，力气不大，紫鹃却不敢再托，只摊开掌，等她自己落下来。"
+    },
+    {
+      "id": "86-MESSAGE",
+      "subject_id": "chapter-86",
+      "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+      "line_start": 49,
+      "line_end": 49,
+      "quote": "到了廊下，她又退回来，隔帘问：“叫他屋里谁去找？”紫鹃没回头：“见着能递话的就说。别只说姑娘找他，说病势转坏。”雪雁这才跑出去。她跑过院门，才觉手里仍攥着湿帕，想塞进袖子，塞了两次都没进去。方才她不肯离开，如今又怕自己走得慢；一路碰到的人问她做什么，她只摇头，直到李纨的丫头伸手拦住，才喘着说要见大奶奶。"
+    },
+    {
+      "id": "86-DEATH",
+      "subject_id": "chapter-86",
+      "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+      "line_start": 63,
+      "line_end": 63,
+      "quote": "那一次气息过去，再没有接上。紫鹃按着黛玉的腕，眼睛却还盯住她胸前，嘴角慢慢抖起来。雪雁不看床上，只看紫鹃，像只要她不出声，便还可以这样等。紫鹃伸过手来，将她的手指一根根拨松，雪雁不肯松，哑着嗓子叫了一句姑娘。紫鹃的手也抖了，终于把黛玉的手放回被上，先去扶正枕头。黛玉已经死了，李纨的脚步这时才到了廊下，宝玉还在赶来的路上。"
+    },
+    {
+      "id": "86-DEATH-RELAY",
+      "subject_id": "chapter-86",
+      "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+      "line_start": 75,
+      "line_end": 75,
+      "quote": "外间送水的人问米汤还盛不盛。李纨走出去，道：“水留下。米汤不盛了。”那人本以为大夫到了，听了这句，提壶的手慢慢低下去。李纨叫她往厨房说，又把跟来的丫头唤到门边，叫报王夫人：“先前回的是病危，如今姑娘已经去了。”丫头听清，出去找原先递话的人。李纨回身时，紫鹃正用帕子掩住口，肩耸了几下，仍坐在床前。"
+    },
+    {
+      "id": "86-ARRIVAL",
+      "subject_id": "chapter-86",
+      "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+      "line_start": 97,
+      "line_end": 97,
+      "quote": "王夫人握住他的手，道：“林姑娘去了。”她说得慢，手指用力扣着他。宝玉看黛玉，过了一会儿，低头看看被握住的手，将它抽回来。李纨把盆往旁边挪，给他让出一点地方，轻声说她进来时已经晚了。宝玉的眼光又移到紫鹃脸上。紫鹃道：“报信的时候，姑娘还在。后来……”她停住，宝玉等着，她才把底下的话说出：“没等到你。”"
+    },
+    {
+      "id": "86-REQUEST",
+      "subject_id": "chapter-86",
+      "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+      "line_start": 103,
+      "line_end": 103,
+      "quote": "盏旁的小碗还在，匙子搭得斜了。他走过去，把匙子拨正，手指扶住盏沿。药汁在里面停得平平的，盏边有一道干痕。他将药盏端起，拿得很慢，大半盏暗褐色的药沿着内壁晃上去，又落下。紫鹃看着他的手，身子略向前。他抬眼问她：“药不是还没吃么？再温一温。今儿早起她还说药苦。”"
+    },
+    {
+      "id": "86-COLD",
+      "subject_id": "chapter-86",
+      "path": "artifacts/candidates/ch86/1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460.txt",
+      "line_start": 107,
+      "line_end": 107,
+      "quote": "宝玉的指头还拢着那个圆，等盏离了手，才慢慢松开。紫鹃将盏放稳，湿袖口垂在几旁，手背上那一道浅墨痕还没有洗。那盏药早已冷透，再没有人去温。"
+    },
+    {
+      "id": "94-RISK",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 23,
+      "line_end": 23,
+      "quote": "平儿抬眼看她，媒人立刻道：“不是今日这车。我说的是定下来以后。”王仁皱眉，说车脚都在外头，再等就得另添脚钱。媒人转向他，声音也硬了：“谁叫你先留车的？我不过说顺路。”两人都住了口，平儿将先前那句不远又问一遍，媒人只说路熟的人走得快。她原备下许多问话，这时反只剩一个：孩子若受不惯，谁送回来？"
+    },
+    {
+      "id": "94-HALT",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 31,
+      "line_end": 31,
+      "quote": "贾琏叫车先走，亲事待问清再议。王仁要拦，说白跑的脚钱谁出，贾琏只道孩子今日不去，有脚钱另说。车脚在门口嘟囔，说自己不是白候着听人拌嘴，媒人也要走，三个人挤在门边，谁都不肯先让。平儿拿出自己身边的小钱，才伸手，王仁便道她倒会做好人，家里的人情全叫她占了。她手停在半空，贾琏让收回，说自己同车脚说，叫她回屋看孩子。"
+    },
+    {
+      "id": "94-CAPACITY",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 41,
+      "line_end": 41,
+      "quote": "刘姥姥说家里人吃什么，孩子先跟着吃，细粮不能日日有，热的总得让她吃到。平儿又问白天谁看，姥姥道自己不是整日闲着，出门时须同家里人商量，邻家也有能搭手的，但不能先替人应下。她说要回去把炕边东西挪开，问准谁在家，再来接。平儿才松一点神，又怕耽误，问可否今日便带。刘姥姥摇头：“眼下带回去，叫她坐在哪里等我收拾？你是叫她去住，不是跟我走一趟。”"
+    },
+    {
+      "id": "94-NEIGHBOR",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 47,
+      "line_end": 47,
+      "quote": "刘姥姥回去问了家里，挪开炕上的杂物，把近门的东西堆到另一头。家里人说孩子可来，做饭须照旧轮着，不能因来个客人便不下地。她答应，托邻妇在自己出去时来坐一会儿，那妇人说有活便不能，没活可帮看，针线倒能借。刘姥姥只认这一点，回来同平儿说准了炕和饭、自己暂能在家的安排。平儿听见不是人人随叫随到，嘴上虽应，仍忍不住问孩子哭了怎么办。"
+    },
+    {
+      "id": "94-NEW-BUNDLE",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 53,
+      "line_end": 53,
+      "quote": "待车定了，平儿才在小院当下收着的衣物里取换洗的。巧姐要原先旧府那只小包，平儿停手，问旁边婆子可曾见，婆子说不清搬出后在哪一堆，她便没再找，拿眼前这块干布现包。衣是今日从衣堆一件件取出的，褥子也是当面卷，平儿没把寻不着的旧包当作已在身边。巧姐不愿，抱着一件小衣不放，平儿许她穿在里面，才肯让出一只手。"
+    },
+    {
+      "id": "94-BUTTON-CITY",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 55,
+      "line_end": 55,
+      "quote": "衣旁有一枚脱下的旧扣子，孩子摸到，要放进去。平儿从她手里接过，道：“这个不带，掉在路上又要哭。替你放好。”巧姐要抢，姥姥让她摸摸自己衣上那颗还缝着的，说穿在身上这颗才要管好，别扯坏。平儿将散扣包在针包小袋里，收进自己日用包，孩子眼睛一直追着，终于伏在平儿肩头不言语。包袱另扎好，交姥姥试提，太坠手，便将干粮分出，由送到车边的婆子拿。"
+    },
+    {
+      "id": "94-LOCAL-DAY",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 83,
+      "line_end": 83,
+      "quote": "天亮后，姥姥先下地忙水。巧姐坐起来，鞋不在脚边，原来板儿昨晚怕鸡啄，帮她踢到凳下，她够了半天才够到一只。另一只更里，叫人没人应，她把脚放到凳上，身子往下探，鞋终于拨出来，自己衣袖也拖了地。板儿进来见了，笑她倒会拿袖扫土，她涨红脸，把脚缩回去。他不再笑，蹲下替她把鞋放好，说昨夜是自己踢进去的，姥姥若问，别赖她没收。"
+    },
+    {
+      "id": "94-SONG",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 95,
+      "line_end": 95,
+      "quote": "纺车挪近，巧姐以为也要自己摇，手刚伸上去，邻妇压住，道先认线往哪里走，轮子转快便缠。她便收手看，木轴转时发出吱呀声，一截线慢慢往前走，竟比自己急拉快。邻妇随口哼道：“线儿长，莫着忙；手一急，线先伤。”巧姐问伤是不是断了，那人笑道：“伤、断都使得，哪有定词。”说完便去解自己手边的结，没有再唱。"
+    },
+    {
+      "id": "94-RETURN",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 107,
+      "line_end": 107,
+      "quote": "且说那车脚回城，先卸去旁人的物件，又转到一处交还借来的绳。姥姥的小纸压在他衣内，直等他摸钱，才想起来。他到借院门上时，平儿正出去问凤姐未了的日用账，看门婆子按先前嘱咐接下，叫他稍等，问是亲见孩子到家还是半路托的。车脚道亲送到门口，褥子也搬进了，后头吃什么自己不晓得，便要走。婆子叫住，说平姑娘总要问孩子哭没哭，他答车上哭，到门口看鸡又笑，往后不敢说，转身出了巷。"
+    },
+    {
+      "id": "94-UNKNOWN-NIGHT",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 109,
+      "line_end": 109,
+      "quote": "平儿回来，婆子先从围裙内取出纸，递给她，说人走了，话替她问过。她接得急，纸角差些撕开，听见已经进门，才松一点手。纸上字少，只记到达和已安歇，她看了两遍，又问褥子亲手递给谁。婆子转述姥姥亲接，孩子看鸡笑了一下。平儿道笑了便好，嘴角想动，忽想起自己并不知晚间睡得怎样，又将纸折起，没有笑出来。"
+    },
+    {
+      "id": "94-BUTTON-RETURN",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 111,
+      "line_end": 111,
+      "quote": "婆子问还托不托别的话去，平儿原想问冷暖、吃饭、鞋掉不掉，话挤在嘴边，末了只说若再有人顺路，先叫自己知道，别把这张纸随手扔了。她把纸放入日用包，针包里的旧扣碰到手指，她便停了一停，将小袋系紧。那扣子仍留在城里，她摸清袋口，才把包拢好，出去问方才没有回完的药钱。走到门边，又回头看巧姐平日坐的地方，凳上只搁着一块未收的软布。"
+    },
+    {
+      "id": "94-NEW-EVENING",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 113,
+      "line_end": 113,
+      "quote": "刘家那头，这日将晚，邻妇来取线，巧姐忙将篮捧给她，以为自己惹下错。那人看了看，说分开这一小截就算帮忙，余下自己带回去，明儿有闲再让她擎。巧姐舍不得方才绕松的小圈，又怕不还便生气，手指松得很慢。邻妇便将能用的一头收去，留那段缠着的短线给她，说这不急用，别拿到鸡跟前，丢了也莫哭。她点头，仔细盘在掌上，盘得仍不匀。"
+    },
+    {
+      "id": "94-OPEN-END",
+      "subject_id": "chapter-94",
+      "path": "artifacts/candidates/ch94/d12930f57fc8645b7dffcbbf5c716f02dd490bc029d82967844692129d295e4f.txt",
+      "line_start": 119,
+      "line_end": 119,
+      "quote": "夜里再听狗叫，她仍醒着。姥姥已困，呼吸沉下来，巧姐翻身不敢太大，脚边褥子又卷起，她伸手去压，压平一头，另一头还翘着。炕边那筐里有未理开的短线，她在暗里看不清，只记得最后一个结没有解。明日邻妇来时若又要擎，她得先把手里的这点弄开。她往里挪了一寸，替姥姥留出脚边，手掌贴着褥边慢慢压住，等它不再往回卷，才闭上眼。眼才合，门边又响，她伸手抓住褥角，没有起身。"
+    },
+    {
+      "id": "95-WINTER",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 3,
+      "line_end": 3,
+      "quote": "却说春夏过去，寒风又起，已是家败后第二个冬天。借院里门边补过的砖，渐渐踩得同旧砖一个颜色，屋里的人却仍要往别处去。这日麝月洗衣，宝钗替她按住盆沿，房东便到檐下来，说前番提过腾房，后头要用的人已来问过，不能再等了。"
+    },
+    {
+      "id": "95-HOUSING",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 21,
+      "line_end": 21,
+      "quote": "贾芸在门口扶了半日，换只手道：“这门倒催人。”代管的找了片木塞住，说平日这样将就。宝钗只看那缝，没有笑。她将两处房钱在心里比过，问能否容她回家商量。那人要出去，听说午后还来，便说可等一会，却不肯叫贾芸替她定。贾芸道：“我只认得路，她自己的事还得她应。”宝钗谢过，才退出去。"
+    },
+    {
+      "id": "95-LABOR",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 27,
+      "line_end": 27,
+      "quote": "麝月站着没动。宝钗将临街房的价说给她听，又说若付那边，留给日用的便要挪开，药铺余下那笔也还在。麝月道：“我不是非要住好的。只是别说一句省房钱，我这边便样样都省下了。”宝玉原想说谁也没这样说，见她袖口尚湿，便住口。宝钗低头喝了两口粥，道：“先前没有同你看，是我急了。”麝月道奶奶也不能把人都带出去，锅总得留个人顾着。"
+    },
+    {
+      "id": "95-CONSENT",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 33,
+      "line_end": 33,
+      "quote": "两人立在屋里，一时都没说话。外头忽有孩子叫，隔墙的妇人应了一声，接着是锅盖轻响。麝月道：“先赁罢。再看下去，眼前那边也等不得。”宝钗问她灶口是否真能用，她道能，只须先清净。这才由宝钗取出留存的钱，交给代管的，问清空物和搬来的日子，拿了记收的纸。她将纸收妥，重新走到灶前。方才还可站着挑拣的地方，这会已要安自家的锅了。"
+    },
+    {
+      "id": "95-MOVE",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 43,
+      "line_end": 43,
+      "quote": "宝玉听得不是意思，说自己的架耽误了，可陪她回头再找。麝月看了他一眼：“你的架说留下，人家便给你留着。我的碗谁瞧见了？”说罢自己也觉得话重，抱起碗篮先走。宝钗要叫她，前头已抬起铺盖，只得把话咽下，扶着锅跟出去。车上旧毡的破边勾了木板，贾芸替他们摘开，压在被卷旁；衣包、现有的米和余炭分开装妥，才慢慢出了院门。"
+    },
+    {
+      "id": "95-ARRIVAL",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 45,
+      "line_end": 45,
+      "quote": "到偏院，贾芸同搬物的将铺盖抬入靠里干处，锅放到清出的灶边。宝玉进门时先护着胸前的小包，站稳了才接衣卷，接着便去扶门。宝钗将带来的剩米倒进借用的小瓮，麝月把旧炭归到空筐里，自己弯腰端详了一会灶眼。贾芸帮完要走，她们倒水给他，他喝了便去，说明日若碰着会修门的可问一声，来不来得成还不知道。"
+    },
+    {
+      "id": "95-JACKET",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 53,
+      "line_end": 53,
+      "quote": "吃过，那件典青夹袄从衣包里取了出来。宝玉见宝钗翻平袖口，才知道并不是拿来穿的。他问自己那件坎肩为何不能替，麝月正在洗碗，头也没回：“前两日夜里谁叫找它？”宝钗说两件薄厚不同，夹袄眼下还能腾出，便将里子抚平。宝玉道：“你这样一说，倒像它原是多的。”她手停了停，将衣折好：“不是多的。你替我把布拿来。”"
+    },
+    {
+      "id": "95-PAWN",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 61,
+      "line_end": 61,
+      "quote": "伙计忙完，再问他当不当。他这才点头。钱推出来，票写好，对方将赎取的规矩讲给他听，指着字密处叫看。他问到期了能否仍取这件，伙计道按票办，不能只记着衣的样子。宝玉又看过，票面上几个字挤在一处，方才手里还是完整的衣，这会却只剩这些。他把钱和票分别收妥，直到伙计将夹袄收进里面，才放开一直搭在柜边的手。"
+    },
+    {
+      "id": "95-DESIRE",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 75,
+      "line_end": 75,
+      "quote": "走了一段，麝月抱炭的手向上抬抬，宝钗要接，她说快到了，不必换来换去。宝钗却站住，将底下松出的纸托好，问方才那话可是怪她选错。麝月望着她：“奶奶若赁贵的，我也得问米呢。”宝钗道：“我知道。只是我也想要那扇亮窗。”她说得很轻，像话才出口便觉不该，再往前走，却又道：“不做活，坐着也好。”"
+    },
+    {
+      "id": "95-COOKED",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 87,
+      "line_end": 87,
+      "quote": "晚饭的米仍由麝月下。宝玉望着那只小木碗，问方才说的两碗半，是不是每人都盛不满。她叫他看锅：“煮好了分出来，是两碗半熟粥。我下锅量米，不是照着这几只吃饭碗摆一排。”宝钗从旁拿起半碗那只，指给他看，他这才明白白日问的同她答的错在哪里。麝月又道午后温的也吃了，别只记这一顿。他说自己帮添水，她指着锅里水线，叫到这里便住。"
+    },
+    {
+      "id": "95-TICKET-BOX",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 103,
+      "line_end": 103,
+      "quote": "铺处调过，衣箱压住一边，另一边只得把被角折拢。麝月试躺了一下，脚底仍有风，便坐起来将边沿再塞。宝钗叫不必全弄好，先歇一歇。她坐在箱旁，将当铺带回的票沿折痕叠好，同几张零碎纸票一道，收进旧针线匣底。宝玉看着那只匣，盖角早磨掉漆，里头的线也一圈圈短了，便问若有钱赎，仍是去今日那家。宝钗道照票去，又说：“那时候手里多少，得到了时候看。”"
+    },
+    {
+      "id": "95-DEBT",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 115,
+      "line_end": 115,
+      "quote": "他问这回典的钱可够给药铺，宝钗将小包收回：“这里买米炭后，还要留盐和灯油。那笔仍得另想。”麝月正在把小木碗侧放晾干，听到灯油，手停了停，也没说今晚省下多少。宝玉望着她们，想起铺柜里夹袄被收走时，自己只顾问能否赎回，原来钱从那里出来，也不是每一处都能应上。他将歇在膝上的手展开，掌心勒过的地方仍有一点发热。"
+    },
+    {
+      "id": "95-LAST",
+      "subject_id": "chapter-95",
+      "path": "artifacts/candidates/ch95/ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438.txt",
+      "line_start": 127,
+      "line_end": 127,
+      "quote": "宝钗原还醒着，想问她手上的裂处可疼，听呼吸渐沉，便没有开口。风来时布角往里鼓，白日撕开的旧纸擦了两下，又停住。她将伸出被外的手收回，明早有光再补的袖口就在箱边，米瓮里也还有要下锅的米。外头又一阵雪粒敲过，她慢慢把脚往毡下挪，没有从旁人身上扯回被角。"
+    },
+    {
+      "id": "99-PRIOR-DISCLOSURE",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 25,
+      "line_end": 25,
+      "quote": "院里麝月还在拧衣服，水声一阵阵落下。宝玉等她提盆走开，才低声说自己想出去。宝钗问出去几日。他道还说不定。她又问住谁家，要走远近，得先收拾什么。他摇头，说带点换洗就够。宝钗把剪子往里移了移，问何时回来。宝玉两手放在膝上，过了片刻，道：“我不回来过日子了。”宝钗没有立刻说话。门外晾绳上的衣裳滴着水，落在石边，声音比方才细了。"
+    },
+    {
+      "id": "99-HEARD",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 33,
+      "line_end": 33,
+      "quote": "麝月端来粥，叫他坐下，又伸手捏衣包，问袜子拿的是哪双，前日洗的还潮着，别塞进去沤坏了。他说拿了别的。她低头见旧鞋未带，道这一双走路舒坦，本要替他缝，等两针就好。宝玉说不必赶，麝月已去取针，嘴里道不赶，如今闲着，缝了省得回来又抱怨硌脚。他抬眼看她，终于道：“你别赶了。我这次不回来住。”麝月将针捏在指头上，手停在半空，先看他，又朝宝钗那里看。"
+    },
+    {
+      "id": "99-QUESTION",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 35,
+      "line_end": 35,
+      "quote": "“你要住哪里？”她问。宝玉道先出去。宝钗在窗下说昨夜问过，还没答。麝月低下头，把针收回，却又端起粥碗来，硬要他再喝。他说不饿，她道：“总是你不饿。出去谁叫你吃？袜子湿了谁替你晾？你又嫌人多管。”他伸手接碗，碗底碰着她的指头，她还没有放，直到他捧稳，才猛地松开，转过身去，背着他在桌旁站着。"
+    },
+    {
+      "id": "99-TEMPLE",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 43,
+      "line_end": 43,
+      "quote": "又隔了些时日，寺中众人随着诵声翻页，宝玉手中仍停在前页，嘴里已跟不上。旁边一个小和尚把自己的经页侧过，指给他看。他循着指处接上，才低低跟了几声，又落在后面。散课后，经册收了，小和尚叫他去看锅。他应着，将灶旁半桶水提进厨房，添过水，便守在那里搅动，听见后头叫搬柴，抬头答了一声，说锅有人来接便去。"
+    },
+    {
+      "id": "99-EVENING",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 55,
+      "line_end": 55,
+      "quote": "他回来寻那车脚，车已装好，问的话被轮轴声盖去半截。车脚听说白跑了一趟，先道谁叫他当了真，随即又说城外小店倒可以问，进出走远路的都在那里歇。贾芸伸手按住车边，还要问，那人叫他松开，车要走了。他松了手，看车轮从脚前碾过去，原想回一句，到底没说。天已往晚，他想到那两个人在家，自己回去，头一句便得说还没见着；便将剩下的干粮拢好，又往城外走。"
+    },
+    {
+      "id": "99-REFUSAL",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 69,
+      "line_end": 69,
+      "quote": "他到底拿碗喝了水，问宝玉身上衣服够不够，吃的是什么。宝玉一一答了，说饭有，衣裳也还使得。贾芸听到后头，自己先住了口。过一会儿，他又说就回去一趟，当面同她们讲清，回头仍要来，也随他。宝玉道：“不回了。”贾芸道只一趟，并不绑着他。宝玉没有改口。贾芸低头看见自己鞋口翘起，拿手压着，压下又翘，索性不管了，道家中还不知道已找着，自己得先回去。"
+    },
+    {
+      "id": "99-REPORT",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 77,
+      "line_end": 77,
+      "quote": "麝月开门，见他一个人，先朝身后望，问人呢。贾芸道见着了，在寺里。宝钗听见，从屋中出来，问是亲见，还是又听谁说。贾芸道自己同他说了话，见他搬柴，头发也已经剃了。麝月扶住门扇，道那怎么不带回来。贾芸说劝过，他不肯。她又问是不是寺里不放，贾芸道没人拦，进门问了，人便出来，自己几次叫回，也没人插一句。宝钗让他进屋，他坐下时，伤脚往前伸着，不敢平踩。麝月看见了，才回身端水。"
+    },
+    {
+      "id": "99-LATE-HOME",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 85,
+      "line_end": 85,
+      "quote": "送到巷口，她还是问了路。贾芸站着，将该走的大概方向说给她，叫别照自己过水那一趟绕。麝月一一听了，直到他说还有一段山路，才道知道了，让他快回。她回来，宝钗正在收匣，桌边放着明日买米的袋子。麝月说自己明日先去买米，回来再说。宝钗点头，叫她看看剩下的钱，还得预备房钱。她原要说话，低头数过，才道房东已经催过，这两日便会来。两人将钱分开，窗外晚了，麝月起身去点灯。"
+    },
+    {
+      "id": "99-MEASURE",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 95,
+      "line_end": 95,
+      "quote": "后来该做晚饭了，麝月先起来，去瓮边量米。量了一回，手腕照旧又转过去，想再添些。宝钗站在旁边，伸手挡住碗口，道：“够咱们两个吃的就是了。”麝月的手停着，望望米，又望望她，问若有客人来怎么办。宝钗道有客再做，今日不必多下。她将那一点米退回瓮里，碗在手中轻了，倒进盆里，声音也比惯常短。她把盆端到门边，仍朝巷口看了一眼，才低头淘米。"
+    },
+    {
+      "id": "99-REPAIR",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 97,
+      "line_end": 97,
+      "quote": "水倒出去，细糠浮了一层。麝月忽然道那日若早知道，就该拦住门。宝钗说他那时也已说了。麝月道：“临走才告诉我，我一时哪里当得真？还想着替他收拾袜子，缝好鞋再走。”宝钗低头看着盆中，道她自己听见了，也没有留住。麝月本有许多话，听到这里，却把盆往身前收了收。水在盆沿荡了一圈，两人的衣角都湿了一点。她将米送进锅，拿着空盆回来，道自己不是怪她。宝钗嗯了一声，接过盆，放到灶边。"
+    },
+    {
+      "id": "99-THREADED",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 101,
+      "line_end": 101,
+      "quote": "宝钗取原别在衣边的旧针穿线，针眼里堵着一截断线，捻细的线头送了两次都不过。麝月接去对光看，道这根先搁着，别费眼，从针匣另取一根新的给她。宝钗将线穿入新针眼，露出一小截，指甲刚捏住，还没拉齐，锅里米汤便涌了上来。麝月先跑去揭盖，叫她来看火。她将这根新针别回旧衣边，线一长一短垂着，起身到灶前，拿火箸将深处的柴退出些。两人守着等汤落下，才把锅盖斜放稳。"
+    },
+    {
+      "id": "99-ENDING",
+      "subject_id": "chapter-99",
+      "path": "artifacts/candidates/ch99/8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036.txt",
+      "line_start": 105,
+      "line_end": 105,
+      "quote": "椅背上的旧衣动了一点，麝月伸手扶住，指头避开衣边那根新针，将未补完的袖口搭好。穿进针眼的线还没拉齐，长的一头垂在衣褶外，短的一头贴着布。她收回手，夹起方才搁下的菜。宝钗把自己的碗向灯下挪近些，两只碗并着，热气一点点薄下去。"
+    },
+    {
+      "id": "CONTRACT-95-S3-R2",
+      "subject_id": "contract-95-S3",
+      "path": "data/planning/contracts/agent-final-v1/95-S3.v2.json",
+      "line_start": 589,
+      "line_end": 589,
+      "quote": "      \"description\": \"保留补窗越补越破、典青夹袄、当票压针线盒；房钱米炭药灯油互相挤占，典衣只换有限日用现金。\","
+    }
+  ],
+  "chapter_assessments": [
+    {
+      "subject_id": "chapter-86",
+      "chapter": 86,
+      "verdict": "UNVERIFIED",
+      "evidence_ids": [
+        "86-MORNING",
+        "86-G01",
+        "86-PEN",
+        "86-DEATH",
+        "86-REQUEST",
+        "86-COLD"
+      ],
+      "literary": "保持原匿名偏好：照料者不同欲求、病者仍要作主、死后等抬腕的变义和冷药墨痕有力；扶握停缩和小碰撞仍可能程式化。",
+      "support": "单回普通病晨至死亡、死后料理、迟到与冷药收束完整；大部分显式合同叙事要求有可见支持。",
+      "negative": "早起闻药苦的知识来源未在本回正面出现；医疗延误能否造成影响不做反事实认证。",
+      "continuity": "未确证回内硬矛盾，不是全书连续性合格。"
+    },
+    {
+      "subject_id": "chapter-94",
+      "chapter": 94,
+      "verdict": "UNVERIFIED",
+      "evidence_ids": [
+        "94-RISK",
+        "94-HALT",
+        "94-CAPACITY",
+        "94-NEW-BUNDLE",
+        "94-RETURN",
+        "94-UNKNOWN-NIGHT",
+        "94-NEW-EVENING",
+        "94-OPEN-END"
+      ],
+      "literary": "显名新全文复读，不是新匿名票选。孩子误认、护线与未解结保留儿童尺度，邻妇有耐性差别；鞋帕碗线等微障碍过密，53等处解释物链正确性的旁白较显眼。",
+      "support": "暂缓风险与真正安置分开，收信和发信分开；散扣城中、缝扣随衣，没有两地同时持散扣。",
+      "negative": "注册旧包S02→S06缺桥仍未解决；53现场另包不能证明原OBJ同一身份。107回城支线日期与113这日接续仍不直接。",
+      "continuity": "未确证正文内硬矛盾；保留世界登记缺桥及转场日序歧义。"
+    },
+    {
+      "subject_id": "chapter-95",
+      "chapter": 95,
+      "verdict": "FAIL",
+      "verdict_scope": "仅对95-S3-R2当票/针线盒具体动作的一致性失败，不等于文学否决或整章全面失败。",
+      "evidence_ids": [
+        "CONTRACT-95-S3-R2",
+        "95-TICKET-BOX",
+        "95-MOVE",
+        "95-ARRIVAL",
+        "95-DESIRE",
+        "95-COOKED",
+        "95-DEBT"
+      ],
+      "literary": "不因显名映射改变原匿名偏好：仍偏此sha的劳动议价、木架/小碗差别与宝钗想坐亮窗的私人欲望；概念直说和家务纠正重复仍是风险。",
+      "support": "通知、看房、付款、弃架、实搬、典衣、米炭灯油竞争和漏风一夜有连续场景，未把贫困写断炊或修行。",
+      "negative": "硬负面：合同要保留当票压针线盒；正文103行当票收进旧针线匣底，是具体存放动作不同，不能凭文学偏好或hash/导入PASS抹去。即使把合同习语宽解为盒压票，匣底收存仍不等同压在盒下的可见动作。",
+      "continuity": "这是合同—正文不一致，不是正文前后票据自相矛盾。注册铺盖移动与小包实名玉仍UNVERIFIED。"
+    },
+    {
+      "subject_id": "chapter-99",
+      "chapter": 99,
+      "verdict": "UNVERIFIED",
+      "evidence_ids": [
+        "99-PRIOR-DISCLOSURE",
+        "99-HEARD",
+        "99-QUESTION",
+        "99-REPAIR",
+        "99-TEMPLE",
+        "99-REPORT",
+        "99-THREADED",
+        "99-ENDING"
+      ],
+      "literary": "显名窄修跟进，不新投票。原匿名对此家中尾声与停顿选择的相对偏好不改；出走内在缘由是否挣得须未知前文。",
+      "support": "97明确临走才告诉且未当真，与33—35已听到相容；寺中极短场前插，最终两碗饭及未补完旧衣，不再切寺；线已穿新针但未拉齐。",
+      "negative": "还想着的时间回指仍轻微含糊；55已晚后走寺返城85又晚，行旅时长压缩歧义仍在；13概括性纠错和家务微障碍密度未因修一句自动消失。",
+      "continuity": "本回局部知识字面否认已澄清；不等全书/世界知识事件已闭合。"
+    }
+  ],
+  "contract_assessments": [
+    {
+      "subject_id": "contract-86-S1",
+      "evidence_ids": [
+        "86-MORNING",
+        "86-MEDICAL"
+      ],
+      "textual_support": "明日安排与长期逐层病沉、米汤药水齐备有正文支持，不是断药钱骤死。",
+      "counterevidence_or_limits": "病晨资源齐备不证明若医者及时到场也不能影响结果；合同医疗反事实未外部核实。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-86-S2",
+      "evidence_ids": [
+        "86-MEDICAL",
+        "86-MESSAGE"
+      ],
+      "textual_support": "跑腿带回被别事绊住的反馈，药与照料继续；请医和病危报宝玉分两链。",
+      "counterevidence_or_limits": "医者地点、时刻未锁；正文普通延误不能升级为世界事件执行或证明无人主观责任。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-86-S3",
+      "evidence_ids": [
+        "86-G01",
+        "86-PEN"
+      ],
+      "textual_support": "G01空字未补；只抽露出的笺不翻稿，握笔失败未变成绝命诗。",
+      "counterevidence_or_limits": "85回A01与全书旧作未在本轮读取，不能认证跨章任务完全分离。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-86-S4",
+      "evidence_ids": [
+        "86-DEATH",
+        "86-DEATH-RELAY"
+      ],
+      "textual_support": "死后第一轮身体与水衣料理可见，病危和死讯分次报告，无轮流长篇遗言。",
+      "counterevidence_or_limits": "料理与报信交错，不把合同source顺序当严格计时；地方礼俗真实性未查核。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-86-S5",
+      "evidence_ids": [
+        "86-MESSAGE",
+        "86-DEATH",
+        "86-ARRIVAL"
+      ],
+      "textual_support": "病势转坏经雪雁外传，黛玉先死，宝玉到场后由王夫人紫鹃告知。",
+      "counterevidence_or_limits": "到场前无精确死时知识；注册获取事件、行程精确映射仍UNKNOWN。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-86-S6",
+      "evidence_ids": [
+        "86-REQUEST",
+        "86-COLD"
+      ],
+      "textual_support": "请求再温未执行，大半盏药仍在，冷药实物收束且不追加诗或复活。",
+      "counterevidence_or_limits": "早起闻药苦的场外来源未在回内展示；药碗实名ID及场级温度事件未验证。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-94-S1",
+      "evidence_ids": [
+        "94-RISK",
+        "94-HALT"
+      ],
+      "textual_support": "说亲信息含糊、礼钱车脚先谈；没有先写卖成或犯罪组织，巧姐只期待出门。",
+      "counterevidence_or_limits": "王仁媒人实体ID、礼钱事实及婚书无注册核验，有限风险不推已成交。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-94-S2",
+      "evidence_ids": [
+        "94-RISK",
+        "94-HALT"
+      ],
+      "textual_support": "谁领谁接和车是否今日互相抵牾，27行经平儿转报贾母贾琏，非全员同步知情。",
+      "counterevidence_or_limits": "只证明正文问答来源与转告，不能认证底层knowledge事件存在。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-94-S3",
+      "evidence_ids": [
+        "94-HALT"
+      ],
+      "textual_support": "贾琏明确孩子今日不去，脚钱另谈，暂缓由具体经手落实。",
+      "counterevidence_or_limits": "不是司法裁罪或法律解除，风险识别也不等于已到乡居安全。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-94-S4",
+      "evidence_ids": [
+        "94-CAPACITY",
+        "94-NEIGHBOR"
+      ],
+      "textual_support": "先回家核炕饭与看护，再接孩子；邻妇只在无活时搭手，不有大银神救。",
+      "counterevidence_or_limits": "口头接纳不证明正式法律监护；农村劳动制度及空间均未外证。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-94-S5",
+      "evidence_ids": [
+        "94-NEW-BUNDLE",
+        "94-BUTTON-CITY",
+        "94-RETURN"
+      ],
+      "textual_support": "当前衣堆取衣现包，旧府小包不知在何处；衣被筹办、陪到车边及实到均有叙事经手。",
+      "counterevidence_or_limits": "旧府注册包S02到借院S06缺桥未闭合：现场新干布包不证明是同一OBJ-QIAOJIE-BUNDLE，更不重写OT94.from。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-94-S6",
+      "evidence_ids": [
+        "94-LOCAL-DAY",
+        "94-SONG",
+        "94-RETURN",
+        "94-UNKNOWN-NIGHT",
+        "94-OPEN-END"
+      ],
+      "textual_support": "鞋饭鸡狗线筐的学习有成本，短曲不定词，误叫平儿没有把平儿移到乡下；到达回讯不冒称全程近况。",
+      "counterevidence_or_limits": "107回城支线与113这日接回哪个日期仍歧义；正文跨抵达夜及翌日，不以function第一日强压成一天。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-95-S1",
+      "evidence_ids": [
+        "95-WINTER",
+        "95-LABOR"
+      ],
+      "textual_support": "房东通知不能续住，现金和米量推动找房；明确家败后第二冬，不再查抄或断炊。",
+      "counterevidence_or_limits": "第一冬前文未读，第二冬仅是本回明示，不认证全书确切纪年。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-95-S2",
+      "evidence_ids": [
+        "95-HOUSING",
+        "95-CONSENT"
+      ],
+      "textual_support": "两处比较价格、光线、灶水距离漏风；贾芸只带看，代管收款，麝月参与第二看。",
+      "counterevidence_or_limits": "没有精确租金与历史约据，候选地点与实际住所的registry映射未执行。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-95-S3",
+      "evidence_ids": [
+        "95-MOVE",
+        "95-ARRIVAL",
+        "95-PAWN",
+        "95-COOKED",
+        "95-TICKET-BOX",
+        "CONTRACT-95-S3-R2"
+      ],
+      "textual_support": "架商议留原院、铺盖锅衣实搬，借留瓮筐、旧米炭进入日用；典衣换有限米炭现金，两碗半明确熟粥，仍有明日。",
+      "counterevidence_or_limits": "硬负面：95-S3-R2明要当票压针线盒，选中正文103行却将当票收进旧针线匣底，物件动作/位置不同，不得称该具体义务完全兑现。铺盖注册移动及小包是否实名通灵玉仍未核。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-99-S1",
+      "evidence_ids": [
+        "99-PRIOR-DISCLOSURE",
+        "99-HEARD"
+      ],
+      "textual_support": "普通数日、还书、少食和逐项不接未来差事渐进；先告妻、婢临走才知，不全员同步悟透。",
+      "counterevidence_or_limits": "98玉归及文化接口前文未读，不能由入口RETURNED标签证明本回退出的精神因果。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-99-S2",
+      "evidence_ids": [
+        "99-PRIOR-DISCLOSURE",
+        "99-HEARD",
+        "99-QUESTION",
+        "99-REPAIR"
+      ],
+      "textual_support": "去处与回不回的现实追问、饭袜鞋照料各有声口；97现承认临走被告知，未字面否认33—35。",
+      "counterevidence_or_limits": "还想着可回指告知前照料或持续预期，轻微时间语用歧义保留；未决定玉的尘世去处。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-99-S3",
+      "evidence_ids": [
+        "99-EVENING",
+        "99-REFUSAL",
+        "99-REPORT",
+        "99-LATE-HOME"
+      ],
+      "textual_support": "模糊目击、误认、伤脚花费、见真人拒回、家中再听转话逐层呈现，不继承读者先见寺的知识。",
+      "counterevidence_or_limits": "55天已往晚到寻寺会面返城85窗外晚了，时长压缩仍歧义；并未完成探庵证据或注册knowledge事件。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-99-S4",
+      "evidence_ids": [
+        "99-MEASURE",
+        "99-THREADED",
+        "99-ENDING"
+      ],
+      "textual_support": "晚饭按两人量，新针已穿未拉齐即顾火，衣未补完；末镜两碗饭不再切寺，不被写成经济恢复。",
+      "counterevidence_or_limits": "未注册旧衣不能同95典青夹袄或100旧衣；局部米余量和执行事件未证。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    },
+    {
+      "subject_id": "contract-99-S5",
+      "evidence_ids": [
+        "99-TEMPLE",
+        "99-ENDING"
+      ],
+      "textual_support": "离门隔些时日后仅一次极短课诵不熟、指页与看锅，再写寻找家中末镜，符合S1→S2→S5→S3→S4叙事分轨。",
+      "counterevidence_or_limits": "仅观察文本排列，不证明检查器执行新轨；寺名、准入首程、仪式与僧人身份未知。",
+      "verdict": "PENDING",
+      "world_execution": "UNVERIFIED",
+      "note": "合同文本AGENT_EDITED/KNOWN为被审输入声明，不是本reader给的认证；UNKNOWN/null及PENDING不改。"
+    }
+  ],
+  "qualification_and_runtime": {
+    "research_review": "新非作者reader1角色；显名跟进复用同session，不新增独立reader。",
+    "runtime_import": "coordinator告知normal94/99导入PASS与输入无漂移；本reader未运行或独立检查该流程，不把告知当文学/合同语义PASS。",
+    "world_execution": "UNVERIFIED；20合同所含UNKNOWN/null、未注册知识/运输事件未由正文观察改写为KNOWN。",
+    "source_and_history": "UNVERIFIED；只读包描述符及合同投影，不认证历史原稿、史实或来源独立性。",
+    "formal_adoption": "无；authority NONE，RESEARCH_ONLY，human false。",
+    "result_policy": "chapter95 FAIL限合同95-S3-R2具体动作一致性；其余candidate与package UNVERIFIED，合同PENDING。没有以完成阅读或导入PASS自动授予PASS。"
+  },
+  "uncertainties": [
+    "86医学反事实与早起药苦场外知识未核。",
+    "94注册包身份/借院搬运缺桥；107回城支线与113这日日期连接不明。",
+    "95合同当票动作不一致为明确反证；正文票入匣自身不构成连续性矛盾。",
+    "95实名玉及注册铺盖移动无由文学小包/铺盖动作自动证明。",
+    "99临走才告知澄清字面知识否认，但还想着回指和行旅时长仍歧义。",
+    "未读其余16章，不评价全书完整性、跨章世界执行或所有诗文配额。"
+  ],
+  "extra_exposure": {
+    "automatic_git_metadata": {
+      "branch": "phase5-agent-reconstruction",
+      "main_branch": "main",
+      "git_user": "Fred Guan",
+      "dirty_snapshot": "自动可见大量data/catalog资产与origins修改列表且被截断；未运行git或打开这些文件。",
+      "recent_commit_ids": [
+        "4cd8d5a",
+        "b973e1a",
+        "6145f95",
+        "5120044",
+        "409043e"
+      ],
+      "commit_title_topics": "自动标题提保留修订、分段全书阅读、属性修复与冻结作者事实；可能形成一般预期，未当匿名subject身份/质量证据。"
+    },
+    "automatic_environment_metadata": {
+      "cwd": "/mnt/d/Code/RedChamberWorldHarness",
+      "platform": "linux",
+      "shell": "bash",
+      "os": "Linux 6.18.40.1-microsoft-standard-WSL2",
+      "provided_date": "2026-10-18",
+      "provided_model_label": "gpt-6.1-sol，未独立核实",
+      "harness_identity": "含Claude agent/SDK通用说明，非实际provider验证",
+      "visible_agent_names": [
+        "main",
+        "code-review"
+      ],
+      "skills_and_agent_type_listings_visible": true,
+      "invoked_skills_or_delegation": false
+    },
+    "later_nonblind_exposure": "显名94/99最终新bytes、四包20合同及其notes、最终packet选中映射、coordinator导入PASS告知。原匿名边界已经结束，不能伪称final报告仍盲。notes内其他审查/授权只作为输入字面，不读对应外部意见。",
+    "technical_isolation_proven": false,
+    "other_reader_opinions_read": false,
+    "prohibited_originals_or_disclosures_opened": false
+  },
+  "freeze": {
+    "state": "FINAL",
+    "old_raw_unchanged": true,
+    "instruction": "仅新建final-reader1-v1-observations.json及final-reader1-v1-opinion.json。两文件本轮完成后冻结停写；无新增匿名意见或改票。",
+    "filesystem_immutability_claimed": false
+  }
+}

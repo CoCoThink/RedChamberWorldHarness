@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "PolicyEvidenceReading",
+  "description": "Attributed declarations only. The raw-byte binding is detached, never self-referential. No submitted aggregate PASS.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["schema_version", "kind", "request_sha256", "context_sha256", "manifest_sha256", "candidate_sha256", "reader", "read_scope", "checks", "qualification", "authority_effect", "evidence_effect"],
+  "properties": {
+    "schema_version": {"const": 1},
+    "kind": {"const": "POLICY_EVIDENCE_READING"},
+    "request_sha256": {"$ref": "#/$defs/sha"},
+    "context_sha256": {"$ref": "#/$defs/sha"},
+    "manifest_sha256": {"$ref": "#/$defs/sha"},
+    "candidate_sha256": {"$ref": "#/$defs/sha"},
+    "qualification": {"const": "MODEL"},
+    "authority_effect": {"const": "NONE"},
+    "evidence_effect": {"const": "NONE"},
+    "reader": {
+      "type": "object", "additionalProperties": false,
+      "required": ["principal_id", "session_id", "context_id", "isolation_asserted", "disclosures"],
+      "properties": {
+        "principal_id": {"$ref": "#/$defs/label"},
+        "session_id": {"$ref": "#/$defs/label"},
+        "context_id": {"$ref": "#/$defs/label"},
+        "isolation_asserted": {"type": "boolean"},
+        "disclosures": {"type": "array", "items": {"$ref": "#/$defs/label"}}
+      }
+    },
+    "read_scope": {"type": "array", "items": {"$ref": "#/$defs/scope"}},
+    "checks": {
+      "type": "array",
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["key", "finding", "explanation", "support", "counterevidence"],
+        "properties": {
+          "key": {"$ref": "#/$defs/label"},
+          "finding": {"enum": ["SUPPORTED", "VIOLATED", "UNKNOWN", "CONTEXT_ONLY"]},
+          "explanation": {"$ref": "#/$defs/label"},
+          "support": {"type": "array", "items": {"$ref": "#/$defs/evidence"}},
+          "counterevidence": {"type": "array", "items": {"$ref": "#/$defs/evidence"}}
+        }
+      }
+    }
+  },
+  "$defs": {
+    "label": {"type": "string", "minLength": 1, "pattern": "\\S"},
+    "sha": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "binding": {
+      "type": "object", "additionalProperties": false, "required": ["path", "sha256"],
+      "properties": {"path": {"$ref": "#/$defs/label"}, "sha256": {"$ref": "#/$defs/sha"}}
+    },
+    "scope": {
+      "type": "object", "additionalProperties": false, "required": ["file", "start", "end"],
+      "properties": {"file": {"$ref": "#/$defs/binding"}, "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 1}}
+    },
+    "evidence": {
+      "type": "object", "additionalProperties": false, "required": ["file", "start", "end", "quote"],
+      "properties": {"file": {"$ref": "#/$defs/binding"}, "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 1}, "quote": {"type": "string", "minLength": 1}}
+    }
+  }
+}

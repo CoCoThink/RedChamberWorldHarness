@@ -1,7 +1,11 @@
 """Local, research-only model opinions. Never an independent-human admission lane.
 
 All immutable receipts and records are inspected, not a coordinator-selected
-favorable subset. Packet scoping changes presentation, never record integrity.
+favorable subset. A packet-scoped summary judges only records bound to that
+packet; problems elsewhere in the store are reported, not imputed to it.
+Only a negative verdict of BLOCKING severity (rcwh.findings) fails a subject;
+softer negatives stay visible as advisories. A reviewer may supersede their own
+earlier record; it remains in history but no longer counts.
 Byte custody is verified; reviewer/model identity and context isolation are not.
 """
 from __future__ import annotations
@@ -20,6 +24,7 @@ from ..schema import validate_instance
 DIRECTORY = "data/agent_panel"
 MINIMUM_REVIEWERS = 2
 NEGATIVE = {"FAIL", "REJECT"}
+BLOCKING = "BLOCKING"
 LIMITATIONS = {
     "identity_basis": "DECLARED_REVIEWER_IDS_AND_SESSION_IDS_NOT_AUTHENTICATED",
     "model_identity": "DECLARED_NOT_VERIFIED",
@@ -83,35 +88,41 @@ def _unique_rows(rows: list, key: str, description: str) -> dict:
     return result
 
 
+def _sample_records(root: Path, binding: dict) -> list | None:
+    """Parse a bound sample carrier using the canonical packet rules."""
+    raw = _bound(root, binding)
+    path = repository_path(root, binding["path"])
+    if path.suffix == ".jsonl":
+        return [_json(line) for line in raw.splitlines() if line.strip()]
+    if path.suffix in {".json", ".yaml", ".yml"}:
+        document = load_data(path)
+        if isinstance(document, list):
+            return document
+        if isinstance(document, dict):
+            keys = ("segments", "samples", "sources")
+            present = [key for key in keys if key in document]
+            if len(present) > 1:
+                raise ValueError("sample product has ambiguous record containers")
+            if present:
+                records = document[present[0]]
+                if not isinstance(records, list):
+                    raise ValueError("sample product record container must be a list")
+                return records
+            return [document]
+        raise ValueError("sample product must contain records")
+    # Images and other whole-file samples have no record membership to check.
+    return None
+
+
 def _sample_record(root: Path, sample: dict, cache: dict) -> None:
     """Verify real JSON/JSONL record membership, parsing each product once."""
     binding = sample["binding"]
     key = (binding["path"], binding["sha256"])
-    if key in cache:
-        rows = cache[key]
-        if rows is None:
-            return
+    if key not in cache:
+        cache[key] = _sample_records(root, binding)
+    rows = cache[key]
+    if rows is not None:
         _check_sample(rows, sample["id"])
-        return
-    raw = _bound(root, binding)
-    path = repository_path(root, binding["path"])
-    if path.suffix == ".jsonl":
-        rows = [_json(line) for line in raw.splitlines() if line.strip()]
-    elif path.suffix in {".json", ".yaml", ".yml"}:
-        document = load_data(path)
-        if isinstance(document, list):
-            rows = document
-        elif isinstance(document, dict):
-            rows = next((document[k] for k in ("segments", "samples", "sources")
-                         if isinstance(document.get(k), list)), [document])
-        else:
-            raise ValueError("sample product must contain records")
-    else:
-        # An image, text excerpt or other artifact can be a whole-file sample.
-        cache[key] = None
-        return
-    cache[key] = rows
-    _check_sample(rows, sample["id"])
 
 
 def _check_sample(rows: list, identity: str) -> None:
@@ -174,6 +185,16 @@ def _verify_opinion(root: Path, opinion: dict) -> dict:
     return packet
 
 
+def _declared_packet(root: Path, binding: dict | None) -> dict | None:
+    """Best-effort packet of a broken record, so its failure is charged to it."""
+    try:
+        record = _json(_original(repository_path(root, binding["path"])))
+        packet = record["opinion"]["packet"]
+        return packet if isinstance(packet, dict) else None
+    except (KeyError, OSError, TypeError, ValueError):
+        return None
+
+
 def _records(root: Path) -> tuple[list[dict], list[dict]]:
     """Read EVERY receipt and EVERY record; an unreceipted record cannot vanish."""
     reports, valid = [], []
@@ -213,6 +234,7 @@ def _records(root: Path) -> tuple[list[dict], list[dict]]:
                           "opinion": raw_opinion, "packet": packet})
         except (KeyError, OSError, TypeError, ValueError) as exc:
             report["findings"].append(str(exc))
+            report["packet"] = _declared_packet(root, report.get("record"))
         reports.append(report)
     for path in sorted(records.iterdir()) if records.exists() else []:
         relative = path.relative_to(root).as_posix()
@@ -249,23 +271,54 @@ def _same_subject(left: dict, right: dict) -> bool:
     return all(left.get(key) == right.get(key) for key in ("scope", "binding", "source_ref", "dataset_ref"))
 
 
-def _subject_summary(subject: dict, records: list[dict], packet_binding: dict) -> dict:
-    opinions = []
+def _superseded(records: list[dict]) -> tuple[dict[str, dict], list[str]]:
+    """Map superseded record paths to their replacing record; reject foreign claims."""
+    by_path = {r["record"]["path"]: r for r in records}
+    replaced, findings = {}, []
+    for record in records:
+        for old in record["opinion"].get("supersedes", []):
+            target = by_path.get(old["path"])
+            if target is None or target["record"] != old:
+                findings.append(f"{record['record']['path']}: supersedes unknown record {old['path']}")
+            elif target["opinion"]["reviewer"]["id"] != record["opinion"]["reviewer"]["id"]:
+                findings.append(f"{record['record']['path']}: cannot supersede another reviewer's record")
+            elif old["path"] == record["record"]["path"]:
+                findings.append(f"{record['record']['path']}: cannot supersede itself")
+            else:
+                replaced[old["path"]] = record["record"]
+    return replaced, findings
+
+
+def _subject_summary(subject: dict, records: list[dict], packet_binding: dict,
+                     superseded: dict[str, dict] | None = None) -> dict:
+    superseded = superseded or {}
+    opinions, history = [], []
     for record in records:
         declared = {s["id"]: s for s in record["packet"]["subjects"]}
         for row in record["opinion"]["results"]:
             if _same_subject(subject, declared[row["subject_id"]]):
-                opinions.append({"record": record["record"], "raw_output": record["raw_output"],
-                                 "packet": record["opinion"]["packet"],
-                                 "same_packet_context": record["opinion"]["packet"] == packet_binding,
-                                 "reviewer": record["opinion"]["reviewer"], **row})
-    pending, findings, coverage = [], [], []
+                opinion = {"record": record["record"], "raw_output": record["raw_output"],
+                           "packet": record["opinion"]["packet"],
+                           "same_packet_context": record["opinion"]["packet"] == packet_binding,
+                           "reviewer": record["opinion"]["reviewer"], **row}
+                if record["record"]["path"] in superseded:
+                    history.append({**opinion, "superseded_by": superseded[record["record"]["path"]]})
+                else:
+                    opinions.append(opinion)
+    pending, findings, advisories, coverage = [], [], [], []
     full = []
     for opinion in opinions:
         rejected = [c["sample_id"] for c in opinion["sample_checks"] if c["verdict"] in NEGATIVE]
-        if opinion["verdict"] in NEGATIVE or rejected:
+        blocking = opinion.get("severity", BLOCKING) == BLOCKING
+        if (opinion["verdict"] in NEGATIVE and blocking) or rejected:
             findings.append({"record": opinion["record"], "verdict": opinion["verdict"],
+                             "severity": BLOCKING,
                              "rejected_samples": rejected, "notes": opinion["notes"]})
+        elif opinion["verdict"] in NEGATIVE:
+            # A full reading that found only non-blocking problems still counts
+            # as a review; its objections are kept as replaceable advisories.
+            advisories.append({"record": opinion["record"], "verdict": opinion["verdict"],
+                               "severity": opinion["severity"], "notes": opinion["notes"]})
         if not opinion["same_packet_context"]:
             pending.append({"record": opinion["record"], "reason": "DIFFERENT_PACKET_CONTEXT_FOR_SAME_SUBJECT_BYTES"})
         if opinion["verdict"] != "PASS" and opinion["verdict"] not in NEGATIVE:
@@ -273,7 +326,8 @@ def _subject_summary(subject: dict, records: list[dict], packet_binding: dict) -
         if not opinion["reviewer"]["context_isolation"]["asserted"]:
             pending.append({"record": opinion["record"], "reason": "CONTEXT_ISOLATION_NOT_ASSERTED"})
         checks = {c["sample_id"]: c for c in opinion["sample_checks"]}
-        if (opinion["same_packet_context"] and opinion["verdict"] == "PASS" and opinion["reviewer"]["context_isolation"]["asserted"]
+        accepted = opinion["verdict"] == "PASS" or (opinion["verdict"] in NEGATIVE and not blocking)
+        if (opinion["same_packet_context"] and accepted and opinion["reviewer"]["context_isolation"]["asserted"]
                 and all(checks.get(s["id"], {}).get("verdict") == "PASS" for s in subject.get("samples", []))):
             full.append(opinion)
         for check in checks.values():
@@ -296,7 +350,8 @@ def _subject_summary(subject: dict, records: list[dict], packet_binding: dict) -
     state = "FAIL" if findings else "PENDING" if pending or any(c["status"] != "PASS" for c in coverage) else "PASS"
     return {**subject, "status": state, "review_count": len(opinions),
             "distinct_reviewer_count": count, "full_reviewers": _identities(full),
-            "sample_coverage": coverage, "opinions": opinions, "findings": findings, "pending": pending}
+            "sample_coverage": coverage, "opinions": opinions, "findings": findings,
+            "advisories": advisories, "superseded_opinions": history, "pending": pending}
 
 
 def summary(root: Path, packet: str | Path | dict | None = None) -> dict:
@@ -306,7 +361,11 @@ def summary(root: Path, packet: str | Path | dict | None = None) -> dict:
     except (KeyError, OSError, TypeError, ValueError) as exc:
         return {**_base(), "status": "FAIL", "record_integrity_status": "FAIL",
                 "findings": [str(exc)], "pending": [], "panels": [], "records": []}
-    findings = [f"{r.get('receipt', r.get('record'))}: {issue}" for r in reports for issue in r["findings"]]
+    store_findings = [f"{r.get('receipt', r.get('record'))}: {issue}" for r in reports for issue in r["findings"]]
+    superseded, supersede_findings = _superseded(records)
+    store_findings += supersede_findings
+    store_integrity = "FAIL" if store_findings else "PASS"
+    findings = list(store_findings) if packet is None else []
     packets: dict[tuple[str, str], dict] = {}
     for record in records:
         binding = record["opinion"]["packet"]
@@ -319,6 +378,8 @@ def summary(root: Path, packet: str | Path | dict | None = None) -> dict:
                 path = Path(packet)
                 relative = path.relative_to(root).as_posix() if path.is_absolute() else path.as_posix()
                 binding = {"path": relative, "sha256": digest(repository_path(root, relative).read_bytes())}
+            findings += [f"{r.get('receipt', r.get('record'))}: {issue}" for r in reports
+                         if r.get("packet") == binding for issue in r["findings"]]
             document = verify_packet(root, binding)
             requested = (binding["path"], binding["sha256"])
             packets = {requested: document}
@@ -328,7 +389,7 @@ def summary(root: Path, packet: str | Path | dict | None = None) -> dict:
     panels = []
     for (path, sha), document in sorted(packets.items()):
         bound = [r for r in records if r["opinion"]["packet"] == {"path": path, "sha256": sha}]
-        subjects = [_subject_summary(s, records, {"path": path, "sha256": sha}) for s in document["subjects"]]
+        subjects = [_subject_summary(s, records, {"path": path, "sha256": sha}, superseded) for s in document["subjects"]]
         state = "FAIL" if any(s["status"] == "FAIL" for s in subjects) else (
             "PENDING" if any(s["status"] == "PENDING" for s in subjects) else "PASS")
         panels.append({"packet": {"path": path, "sha256": sha}, "id": document["id"],
@@ -336,8 +397,11 @@ def summary(root: Path, packet: str | Path | dict | None = None) -> dict:
     pending = [] if panels else ["NO_REGISTERED_AGENT_REVIEW_PACKET"]
     state = "FAIL" if findings or any(p["status"] == "FAIL" for p in panels) else (
         "PASS" if panels and all(p["status"] == "PASS" for p in panels) else "PENDING")
-    return {**_base(), "status": state,
-            "record_integrity_status": "FAIL" if any(r["status"] == "FAIL" for r in reports) else "PASS",
+    # A packet-scoped view is judged by its own packet and records; store-wide
+    # problems are surfaced separately and still fail `rcwh validate`.
+    integrity = store_integrity if packet is None else ("FAIL" if findings else "PASS")
+    return {**_base(), "status": state, "record_integrity_status": integrity,
+            "store_integrity_status": store_integrity, "store_findings": store_findings,
             "findings": findings, "pending": pending, "panels": panels, "records": reports,
             "review_count": len(records)}
 
@@ -392,6 +456,15 @@ def register(root: Path, file: Path, *, origin: str, origin_kind: str = "FILE", 
     current = summary(root)
     if current["record_integrity_status"] == "FAIL":
         raise ValueError("existing registered agent records invalid: " + "; ".join(current["findings"]))
+    if opinion.get("supersedes"):
+        _, valid = _records(root)
+        by_path = {r["record"]["path"]: r for r in valid}
+        for old in opinion["supersedes"]:
+            target = by_path.get(old["path"])
+            if target is None or target["record"] != old:
+                raise ValueError(f"superseded record is not registered: {old['path']}")
+            if target["opinion"]["reviewer"]["id"] != opinion["reviewer"]["id"]:
+                raise ValueError("a reviewer can only supersede their own registered record")
     raw_binding = {"path": f"{DIRECTORY}/raw/{digest(raw)}.json", "sha256": digest(raw)}
     for existing in current["records"]:
         if existing.get("raw_output") == raw_binding:

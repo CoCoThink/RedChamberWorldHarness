@@ -1,0 +1,151 @@
+{
+  "schema_version": 1,
+  "kind": "PHASE6_B_EDITORIAL_DECISION_DRAFT",
+  "chapter": 98,
+  "reviewer_kind": "MODEL_SUBAGENT",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "status": "DRAFT_PENDING_PEER_REVIEW",
+  "usage": "RESEARCH_ONLY_NOT_ADOPTED_NOT_RELEASED",
+  "scope": "仅提议新版合同及未来正文接口；不修改章卡、旧合同、对象事件、来源、stable或共享代码。",
+  "decision": {
+    "issue": "甄宝玉亲送与差人返包的载体冲突",
+    "selected_option": "PERSONAL_CARRIER_C_DRAFT",
+    "epistemic_tier": "C_CREATIVE_CHOICE_NOT_NEW_SOURCE_EVIDENCE",
+    "ruling": "建议未来新版实现由甄宝玉本人携误取包返贾家，并当面交给宝玉。本人承担责任与本人运输分别写清；不把信使亲交收件人称为甄宝玉亲送。不宣称此草案已符合现有OT98-04/05。",
+    "why": "章卡四链与玉线物流表当前主案均写亲送；选择本人载体可保留这一施工方向，并让访客承担指包不清与未验包的责任。但R18只锁送玉事件，不锁搬运者，故该选择可撤销，不解除OL-020/021。",
+    "current_input_conflict_stays_open": "现有OT98-04.to.holder及OT98-05.from.holder都是zhen_messenger；phase5 revision1明确甄宝玉留屋差人。本轮不改这些事实记录，不宣布兼容或完成重放。"
+  },
+  "options": [
+    {
+      "id": "PERSONAL_CARRIER_C_DRAFT",
+      "disposition": "SELECTED_FOR_DRAFT_ONLY",
+      "benefit": "保留章卡亲送；第二次照面可用短交付而非重开长茶饭；没有新增巧合。",
+      "cost": "需要将未来运行链的载体从信使改为本人，重写返包段及重新绑定新版合同；旧OT不能作新版路线的执行依据。"
+    },
+    {
+      "id": "AUTHORIZED_MESSENGER_C_ALTERNATIVE",
+      "disposition": "NOT_SELECTED_NOT_HISTORICALLY_REFUTED",
+      "reason": "phase5差人链局部可追踪，也可以承载R18。但须显式声明替代章卡当前亲送实现，不能靠送还责任抹去不同载体。本草案优先保留章卡施工主案，不以读者限定阅读意见自动采用代理。"
+    },
+    {
+      "id": "ACCOMPANIED_OR_DOUBLE_DELIVERY",
+      "disposition": "REJECTED_FOR_THIS_DRAFT",
+      "reason": "本人陪信使、另取另送或第二次交换只为调和旧标签，会扩大经手人与事件成本，仍不说明到底谁持包；不增加这类补桥。"
+    },
+    {
+      "id": "RESPONSIBILITY_EQUALS_PERSONAL_DELIVERY",
+      "disposition": "REJECTED",
+      "reason": "将承担责任或信使当面交付偷换成本人运输，违反98-S3-R2/F2；不能用于消除冲突。"
+    }
+  ],
+  "proposed_narrative_interface": {
+    "sequence": [
+      "贾芸提前送帖、带路；二宝照面、校书与异手迟见仍是当前C方案。",
+      "玉因换绦暂置旧帕；家中零册/玉帕包与客人虫蛀册包相邻，但两个包不等于两次误取。",
+      "甄方小厮只拿错一包；客人的原包留桌上。不可写拿两包而后又无动作地留下一包。",
+      "甄家先拆见错册与玉帕；甄宝玉承认指包不清、未验包，重新包妥。",
+      "甄宝玉亲自持这同一误取包循已知来路返家交付；不另造掉包、巧遇或注册运输角色。",
+      "宝玉开包验册、帕、玉，麝月处理绦子；无额外钱赠。客册不靠未展示的交换自动已送回，可仍留至99开头按约取还。",
+      "回到抄字、接饭碗和普通家务；不因玉归或庄子旧文触发99。"
+    ],
+    "wording_limits": [
+      "无钱赠指没有额外馈赠，不写包内没有钱物来否定已见玉。",
+      "亲送不要求重演长篇相晤；交付后的离开与饭事留可见动作。",
+      "收件验物只证明所选正文局部物链，不证明史料同玉身份、91雪玉身份或全史保管连续。"
+    ]
+  },
+  "verbatim_evidence": [
+    {
+      "id": "E98-01",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+      "lines": [1183, 1183],
+      "quote": "E4不救济。物链：旧册→书札包→误拿→发现→送回；信息链：小厮错误→甄家发现→亲送。仅此一次巧合。",
+      "role": "章卡当前施工约束，不是直接原稿载体证据"
+    },
+    {
+      "id": "E98-02",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/94328cfc12eac812/81—100_OPEN接口冻结表_v1.0.md",
+      "lines": [28, 29],
+      "quote": "不得把现实会面写成源证必然。",
+      "role": "OL-020冻结边界；OL-021同时禁止硬化同一通灵玉和误包"
+    },
+    {
+      "id": "E98-03",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/planning/contracts/agent-final-v1/98-S3.v2.json",
+      "pointer": "/required_beats/1/description",
+      "quote": "甄家先发现、贾家起初未知；送还责任与亲自搬运分开：章卡信息链说甄家发现后“亲送”，实际OT98-04把holder设为zhen_messenger，OT98-05也从该信使交回baoyu。两者是尚未解决的实现冲突，不得把“承担责任/委托”自动写成满足亲送；未协调前，不选定亲送或代理，不新增信使identity、陪送或二次交通事件。",
+      "role": "旧合同保留的真实冲突；草案不是对其已执行判定"
+    },
+    {
+      "id": "E98-04",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/data/objects/m4.json",
+      "lines": [957, 1006],
+      "quote": "\"holder\": \"zhen_messenger\"",
+      "occurrences_in_range": 2,
+      "role": "OT98-04/05既有运行载体；不得覆盖"
+    },
+    {
+      "id": "E98-05",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/authored/fullbook-ch98-revision1.txt",
+      "lines": [59, 59],
+      "quote": "交给来人，自己留在屋内。",
+      "role": "已阅读的研究正文明确代理，不是本人亲送"
+    },
+    {
+      "id": "E98-06",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-feedback-98-100-format-v2.json",
+      "pointer": "/chapters/0/notes/4/issue",
+      "quote": "运输接口确实未解决：本稿明确由送信人返包，甄宝玉留在甄家；“须亲交屋里收件的人”只是信使当面交付，不是章卡四链的甄宝玉“亲送”。这不是把委托解释成亲送就能抹去的差别，也不是未注册角色本身构成文学失败。",
+      "role": "反馈定位，不作来源或采用票"
+    },
+    {
+      "id": "E98-07",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/c1946d9ff097372a/红楼梦八十回后佚稿复原_工作底稿_v2.1_最终母本.md",
+      "lines": [489, 502],
+      "quote": "R18只锁“甄宝玉送玉”。",
+      "role": "原来源约束；同段明确可信中间人转交为备选"
+    },
+    {
+      "id": "E98-08",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/sources/project/2b5f2bcae5ce0269/玉线物流表_v0.2.md",
+      "lines": [47, 51],
+      "quote": "→ 甄宝玉亲自送还。",
+      "role": "当前U3P方案，非唯一原稿解"
+    },
+    {
+      "id": "E98-09",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/TAIL_READING_RESULTS.md",
+      "lines": [7, 7],
+      "quote": "中间没有放下或交换。",
+      "role": "既有基线两包位置局部负面意见必须保留；本轮未独立重读整份基线"
+    },
+    {
+      "id": "E98-10",
+      "path": "/mnt/d/Code/RedChamberWorldHarness/artifacts/agent_research/phase5/submissions/fullbook-late-reader-2-observations.json",
+      "pointer": "/pending_and_unverified/1/notes",
+      "quote": "第九十五回贴身玉可见，此前六回没有其所有历史交接。未读更早篇章，不以识得红楼梦补链；出现玉不是单凭遗漏路线即可 FAIL。",
+      "role": "LATE上游保管缺桥，不由98重写补成已核前史"
+    }
+  ],
+  "must_remain_unknown": [
+    {"field": "source.same_jade_identity_and_snow_jade_merge", "status": "OPEN_LOCKED", "value": null, "reason": "O03/OL-021及91雪玉身份仍开放；C连续物包不能升级源证。"},
+    {"field": "source.face_to_face_and_original_chapter_number", "status": "OPEN_LOCKED", "value": null, "reason": "OL-020/028不因亲送选择解除。"},
+    {"field": "contract.scene_local_checkpoints_and_knowledge_events", "status": "UNKNOWN", "value": null, "reason": "没有新绑定正文和场级事件；旧章级节点不能自证局部入口/退出。"},
+    {"field": "minor_actor_registry_identity", "status": "UNKNOWN", "value": null, "reason": "小厮未注册；选择本人载体不让zhen_messenger成为真名。"},
+    {"field": "prior_jade_custody_full_history", "status": "UNKNOWN", "value": null, "reason": "LATE和97→98协调阅读未证明全部保管前史。"},
+    {"field": "four_lines_front80_exact_bytes", "status": "UNKNOWN", "value": null, "reason": "本轮未阅读全文第21回直接底本；不据记忆补原四句。"}
+  ],
+  "new_contract_changes_required": [
+    {"target": "98-S3 new revision, required_beats 98-S3-R2 and unresolved.carrier_conflict", "change": "在新版中明确采用本人运输C草案；分别约束甄家发现、本人持包返程、宝玉验收。旧版本冲突原文保留；新版本说明这是替代旧代理实现，不声明旧OT已兼容。", "approval_state": "PENDING_PEER_REVIEW"},
+    {"target": "98-S3 new revision, object_transition_refs and world_basis", "change": "旧OT98-04/05仅作冲突比较来源，不作为本人载体的支持事实；如后续授权实施，必须有独立版本的运行输入或显式非执行叙事声明，再绑定新版合同，不能悄改m4或沿用旧hash认证新路线。", "approval_state": "BLOCKED_UNTIL_NEW_VERSIONED_INPUT_AUTHORIZED"},
+    {"target": "98-S2/S3 new revisions, package requirements", "change": "确定两只相邻容器与一次错取，分别描述客册留桌、零册玉帕包被取；未注册容器不自动等于OBJ-ZHEN-PACKAGE-98既有书札内容。签/条/包皮验收及99取书接口应随新正文重新绑定。", "approval_state": "PENDING_PEER_REVIEW"},
+    {"target": "98-S1/S2/S3 new revisions, participants and entry_from/bindings", "change": "亲送段可使用已存在zhen_baoyu注册候选，但其实际到场仍待正文绑定；不加信使ID。生成同一新批次前驱路径与实际读取hash；不把agent-final目录名当旧entry_from已经指向final。", "approval_state": "PENDING_PEER_REVIEW"},
+    {"target": "98-S3 new revision, entry_state/exit_state/preconditions", "change": "保留value=null的UNKNOWN局部检查点；只有未来合法场级绑定/重放才能改变，不由编辑裁定直接填RETURNED或确定holder。", "approval_state": "MUST_PRESERVE_UNKNOWN"}
+  ],
+  "blockers": [
+    "同伴尚未审阅本草案；不输出采用、放行或语义通过。",
+    "现有对象输入与本人运输方案冲突；本轮权限仅新增editorial文件，不能实现新的运行链。",
+    "直接脂批底本和第21回四句原字未在本輪重核；引用母本/台账属于项目上游约束，不冒充新直接见证。"
+  ]
+}

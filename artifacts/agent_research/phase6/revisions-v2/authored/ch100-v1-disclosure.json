@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "kind": "SESSION_AUTHORED_LITERARY_REVISION_DISCLOSURE",
+  "chapter": 100,
+  "version": "v1",
+  "status": "FROZEN_V1_LENGTH_TARGET_MET",
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "literary_acceptance": "NOT_CLAIMED",
+  "final_manuscript_adoption": "NOT_CLAIMED",
+  "request": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch100.json",
+    "file_sha256": "84d397a011aa7f247d57d38d7a8eae3cc09e9c8fb17eb95dea449788690af0ed",
+    "embedded_request_sha256": "dc35eab30c84699eaced3ecc88d9a5e93778b0e49f1b654de4e7e20c294c7083",
+    "prompt_sha256": "0aa7ebc44d3c4650208656775fa5e882fef9fc1330281b774fd72349c2e631a8",
+    "integrity_limitation": "Computed actual request file byte hash, not a rerun of complete prepared-request integrity validation. Bound hashes and declared PASS do not mean all files were read or prose was accepted."
+  },
+  "parent": {
+    "path": "data/writing/drafts/ch100/9107546f650a7675a098a8161bde1a1aec3715c291ed22c50a99bded50373dba.json",
+    "sha256": "9107546f650a7675a098a8161bde1a1aec3715c291ed22c50a99bded50373dba",
+    "current_byte_hash_matches": true,
+    "consumption": "Parent JSON byte-hashed, not separately semantically read. Complete prose actually read from task.original."
+  },
+  "original": {
+    "pointer": "/task/original",
+    "declared_characters_in_full_feedback": 2590,
+    "sha256": "c29028efb516030e9b332a8d1eded830dd0e423c2556fbdb9ad15554fd5fd680",
+    "hash_status": "Exact bound original hash from request feedback/editor entry; not separately recomputed from task.original during final metric outage",
+    "consumption": "ACTUALLY_READ_COMPLETE_SHORT_PARENT",
+    "retained_unchanged": true,
+    "full_chapter_claim": false
+  },
+  "candidate": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt",
+    "sha256": "25c484ca93a7fd7f7e4e963fe9f5fc334726bc1e0db1bfa32a2b73c32d6da383",
+    "characters": 10045,
+    "body_characters": 10021,
+    "body_han_characters": 8645,
+    "body_nonwhitespace_characters": 9910,
+    "utf8_bytes": 29909,
+    "outer_frame_characters_including_linebreaks_and_final_newline": 756,
+    "terminal_text": "石在，字在。",
+    "counting_method": "wc -m and wc -c for whole UTF-8 file; tail -n +3 excludes title and blank line, then wc -m for body. grep -oP Unicode sc=Han piped to wc -l for body Han. Body tr deletion of newline/carriage-return/tab/ASCII space then wc -m; authored prose has no other whitespace. grep -A100 from the line beginning 不知何日何时 to end, piped to wc -m, for outer frame. sha256sum on actual file bytes.",
+    "thresholds": {
+      "total_characters_min": 10000,
+      "total_characters_max": 11000,
+      "body_han_min": 7000,
+      "body_nonwhitespace_min": 7315,
+      "outer_frame_target_min": 700,
+      "outer_frame_target_max": 1100,
+      "all_met": true
+    },
+    "frozen": true,
+    "freeze_policy": "No modification to this v1 prose after disclosure; later readings must not be backdated into actual consumption. Frozen research version is not final literary adoption.",
+    "mechanical_threshold_pass_is_not_literary_acceptance": true
+  },
+  "selected_decision": {
+    "path": "data/planning/decisions/phase6-ch100-v1.json",
+    "sha256": "9105d1991a15205db9afeae5240254feeb0a9df0868d0857c4e29c7ccfcb8538",
+    "consumption": "ACTUALLY_READ_COMPLETE_LINES1_356",
+    "execution_mode": "NARRATIVE_ONLY_NOT_EXECUTABLE",
+    "selected_contracts": [
+      "data/planning/contracts/agent-final-v2/100-S1.v3.json",
+      "data/planning/contracts/agent-final-v2/100-S2.v3.json",
+      "data/planning/contracts/agent-final-v2/100-S3.v3.json",
+      "data/planning/contracts/agent-final-v2/100-S4.v3.json",
+      "data/planning/contracts/agent-final-v2/100-S5.v3.json"
+    ],
+    "selection": "Explicit terminal return-to-essence in C wording, no earthly transport; Jinghuan and Kongkong as narrative role names, registry/localcast UNKNOWN.",
+    "limitation": "No source order/entry_from change, no registered actor or frame scene execution. OT100-01 remains FRAME_STATE_CHANGE, movement NONE, earthly holder/location UNKNOWN."
+  },
+  "actual_consumption": {
+    "complete_request_fields_read": [
+      "/request/system",
+      "/task/original",
+      "/task/feedback",
+      "/task/editorial_notes",
+      "/task/writing_task/package",
+      "/task/writing_task/scenes",
+      "/task/writing_task/plan/data~1project~1plan_constraints_v1.json"
+    ],
+    "recursive_chapter_plan_contract_sources": {
+      "scope": "/task/writing_task/chapter_plan, agent_contracts/0..4, sources/0..1",
+      "required_beats_read": 16,
+      "forbidden_beats_read": 11,
+      "method": "Read complete unique-string semantic projection, including all card/protection texts, source-record semantic values, required/forbidden descriptions and embedded groundings, notes, unresolved restrictions, entry/exit/precondition reasons, knowledge and object/actor limits. Repeated identical strings emitted once; most path/ref/hash metadata and numeric/boolean fields not separately consumed.",
+      "plan_aliases": "All five selected agent-final-v2 plan entries mechanically checked equal to agent_contracts; not independent additional readings.",
+      "limitation": "Selected embedded semantics do not imply complete reading of referenced source files, registry, phase5 source packet or provider execution."
+    },
+    "source_card": {
+      "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+      "lines_inclusive": [1267, 1331],
+      "scope": "ACTUALLY_READ_COMPLETE_CH100_CARD_ONLY"
+    },
+    "bound_source_excerpts_read": [
+      {"id": "src:gengchen:ch18:qingbang-layers", "text": "至末回警幻情榜，方知正副、再副及三四副芳讳。"},
+      {"id": "src:jimao:qingbang-ratings", "text": "后观《情榜》评曰“宝玉情不情”，“黛玉情情”，此二评自在评痴之上，亦属囫囵不解，妙甚！"}
+    ],
+    "source_limitation": "Read supplied records and excerpt texts/selected verification labels, not original facsimiles or direct PDF image pages, full source witnesses, full corpus or independently rebuilt extraction. No historical institutional verification performed for rank, mourning rules, dates or diagnosis.",
+    "exemplars_read_complete_as_supplied": [
+      "hlm80:chapter:27:p00087",
+      "hlm80:chapter:24:p00030",
+      "hlm80:chapter:74:p00079",
+      "hlm80:chapter:61:p00016",
+      "hlm80:chapter:52:p00006"
+    ],
+    "exemplar_limitation": "Complete supplied five segment texts/selection reasons reread, not full source chapters. Same excerpts already exposed in earlier author context.",
+    "editor_feedback": [
+      {
+        "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch100-v1.txt",
+        "sha256": "19c06b6d1339eb02000ba1a97050f26283d8d221472607c993441e395072f627",
+        "scope": "ACTUALLY_READ_COMPLETE_LINES1_15; complete embedded editorial_notes also read"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+        "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+        "pointer": "/chapters/9",
+        "scope": "ACTUALLY_READ_COMPLETE_CH100_ENTRY including all beat reviews, quotes, terminal punctuation/stone/new-rating failures, expansion scenes, selection and unknowns; not full report chapters91–95"
+      }
+    ],
+    "world_selected_scope": "Read embedded chapter100 body, human late-life/death and outer-frame events, forbidden human access knowledge rule, S14 space, presence/resources, global selected constraints and object frame-state limits. Other world/object/knowledge files not fully consumed; no registered event replay performed.",
+    "truncation_and_recovery": [
+      "Initial system/original/notes/package field extraction delivered in full; complete request/messages rendering not read.",
+      "Large feedback plus recursive chapter_plan/contracts/sources/exemplar output persisted and read completely in ranges covering lines1–398; feedback is full minified line1. Projection exclusions/deduplication explicit above.",
+      "Large editor100 entry persisted and read completely in ranges covering lines1–925.",
+      "A complete local prose reread covered the then-current 108-line chapter before final pre-freeze human-section expansion; all later expansion text was authored directly via Edit. No claim of an independent reader review.",
+      "A preliminary grep using broad Unicode Han property also matched punctuation in this PCRE environment and produced a large persisted character dump. It was not used for metrics or counted as a prose reading. Final Han count used explicit sc=Han, excluding punctuation."
+    ],
+    "tool_service_failures": "Multiple Node/Perl/Python/shell metric attempts and one SendMessage attempt did not execute because the auto-mode safety classifier service timed out or returned server error. No bypass or delegated execution was used. Eventually ordinary read-only wc/sha256sum/grep/tail/tr calls succeeded. Final reported counts and hashes come only from successful tool results. These failures are not provider authorship proof.",
+    "adjacent_author_context": {
+      "prepared_previous_path": null,
+      "prepared_previous_ending": null,
+      "unbound_full_prose_exposure": [
+        {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt", "sha256": "a3b5b31e5e95d6ac659eedd2fc1f35db455bab55489a9c91c41a45565f9f6b7e"},
+        {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt", "sha256": "26ddbcee34a91b22a9ad6288c9ec162b526b20de1286352677699bead3d9b3c3"},
+        {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt", "sha256": "badea6a60cc2c65a08a03a0494cc5afdb8e336ca78184d510cc96e90e5e52588"},
+        {"path": "artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt", "sha256": "24542b331d03561f4a1fc15ed1349ad10157274a3ede0fc89c8df0f54312cbc3"}
+      ],
+      "reason": "Same author session wrote complete revisions96–99; actual additional context exposure, not selected prepared previous_path or independent-author separation.",
+      "prior_frozen_hashes_checked_unchanged": true,
+      "no_retroactive_binding": true
+    },
+    "unread_not_claimed": [
+      "Whole request.messages duplicate rendering and every hash-bound input",
+      "Phase5 prose/templates or full contract packet",
+      "Original source images/direct PDF witnesses, full sources behind excerpts, complete corpus",
+      "Complete object/world/knowledge/provenance registries beyond selected embedded fields",
+      "Parent JSON semantics beyond full task.original prose",
+      "Editor report chapters91–95; only complete entries96–100 actually read in reused context",
+      "Independent historical rank/mourning/medical verification or full stone-text/roster verification"
+    ]
+  },
+  "authorship_execution": {
+    "method": "Direct session-authored Chinese natural paragraphs through Write and substantive Edit appends/insertions. No scripts generated sentences, reused templates or repeated-text padding. Pre-freeze self-edits clarified separate clothing-change day, reborrowed funeral table and earlier advice to replace old clothing. Read-only tools extracted fields and measured text.",
+    "human_narrative": "Childhood-to-adult ordinary changes, still-unappointed career waiting, later actual appointment notice and kitchen rice question, unstable borrowed table and child’s food/money expectation, enjoyed public dress and mother’s crown pressure, genuine additional income with practical return-gift consequences, explicit months of daily decline, son’s mistaken improvement inference causing fatigue, imperfect household handoff, death followed by allocated white cloth/coffin/visitor tea-food work and human closure.",
+    "frame_narrative": "Nonhuman 太虚 introduced after human closure; old booklet only glimpsed, separate single scroll with five tiers, only exact two ratings and selected permitted names; Jinghuan 收罢; explicit chapter transition to Qinggeng, stone 劫终，已复还本质; Kongkong uses coarse paper, thins remaining ink, checks legible stone characters, leaves worn gaps, steadies paper in wind; all pen/paper actions precede exact terminal sentence.",
+    "protected_exact_text": ["林黛玉——情情", "贾宝玉——情不情", "收罢", "石在，字在。"],
+    "limits": "No complete sixty-name or twelve-name roster reconstruction, formal total-board title or new ratings; no human dream/list knowledge, grand reunion or restored old property; no named diagnosis, exact year/rank, ordination or mourning-law assertion; no jade-to-stone transport, courier, flight, transformation or scroll-caused return. Jinghuan/Kongkong are narrative roles, not newly registered actor IDs. Earthly jade holder/location and whole-book completeness remain UNKNOWN. Fictional local actions do not execute frozen world records.",
+    "environment_model_claim": "Invocation environment states gpt-6.1-sol; unverified environment metadata, not independently verified provider identity, response proof, billing or measured token accounting. provider_proof NONE.",
+    "delegated_agents_started": 0,
+    "provider_call_executed": false,
+    "import_adopt_commit_executed": false,
+    "only_repo_files_added_for_ch100": [
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1.txt",
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch100-v1-disclosure.json"
+    ],
+    "independent_review": "NONE. Mechanical thresholds and author self-reading do not certify literary acceptance, qualified peer agreement, source authenticity or UNKNOWN-to-KNOWN promotion."
+  }
+}

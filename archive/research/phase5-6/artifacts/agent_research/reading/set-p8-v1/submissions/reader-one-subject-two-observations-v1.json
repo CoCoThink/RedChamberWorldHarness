@@ -1,0 +1,237 @@
+{
+  "schema_version": 1,
+  "report_kind": "STAGED_SUBJECT_READING_OBSERVATIONS",
+  "stage": "SUBJECT_TWO_ONLY",
+  "frozen": true,
+  "reader": "p8-one",
+  "session": "reading-p8-one",
+  "reviewer": {
+    "id": "p8-one", "kind": "MODEL_SUBAGENT", "session_id": "reading-p8-one",
+    "model": {"label": "gpt-6.1-sol", "verification": "DECLARED_NOT_VERIFIED"},
+    "context_isolation": {"asserted": false, "verification": "NOT_PROVEN"}
+  },
+  "feedback_mode": "FEEDBACK_ONLY",
+  "authority_effect": "NONE",
+  "adoption_release_status": "NOT_ADOPTED_NOT_RELEASED",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false,
+  "not_final_three_subject_opinion": true,
+  "schema_note": "本件为协调续发的单组阶段观察，不冒充最终AGENT_REVIEW_OPINION或REGISTERED_AGENT_REVIEW；不声称通过agent_review.schema.json最终意见schema。",
+  "packet": {
+    "path": "artifacts/agent_research/reading/set-p8-v1/public/packet.json",
+    "sha256": "53d857bc30b6df44fa51c498256254676a29df309677baa6e1c2ee36f70a725f"
+  },
+  "subject": {
+    "packet_index": 1, "id": "read-c25e7c679cc1c53fb9e60dfb", "scope": "CANDIDATE",
+    "binding": {
+      "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt",
+      "sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c"
+    },
+    "observed_sha256": "e14c056dcaef35ed3e8d218600b059abaa9481eb502685f87dd689541881d94c",
+    "binding_hash_matches": true
+  },
+  "reading_record": {
+    "method": "原reader:p8-one context本人直接连续有界Read第二组全文；不委派、不搜索、不以摘要、hash或程序提取代读。首组报告冻结未改。本轮标准库核验在七段Read全文完成后进行。",
+    "packet": "沿用本context第一阶段完整Read的packet；本轮仅标准库重核同一packet字节哈希以确认绑定。",
+    "subject_read_calls": [
+      {"offset": 1, "limit": 110, "covered_physical_lines": [1, 110]},
+      {"offset": 111, "limit": 110, "covered_physical_lines": [111, 220]},
+      {"offset": 221, "limit": 110, "covered_physical_lines": [221, 330]},
+      {"offset": 331, "limit": 110, "covered_physical_lines": [331, 440]},
+      {"offset": 441, "limit": 110, "covered_physical_lines": [441, 550]},
+      {"offset": 551, "limit": 110, "covered_physical_lines": [551, 660]},
+      {"offset": 661, "limit": 110, "covered_physical_lines": [661, 719], "displayed_terminal_empty_line": 720}
+    ],
+    "physical_line_count": 719,
+    "full_coverage": true,
+    "coverage_gaps": [],
+    "coverage_note": "Read显示末尾第720行空行，splitlines核验真实文本719行，以1–719为完整覆盖口径，空行和各回题均读。",
+    "chapters": [
+      {"chapter": 92, "range": [1, 134], "complete": true, "evidence_ids": ["Q01", "Q02", "Q03", "Q04", "Q05", "Q06", "Q07", "Q08", "Q09", "Q10"]},
+      {"chapter": 93, "range": [135, 240], "complete": true, "evidence_ids": ["Q11", "Q12", "Q13", "Q14", "Q15", "Q16"]},
+      {"chapter": 94, "range": [241, 352], "complete": true, "evidence_ids": ["Q17", "Q18", "Q19", "Q20", "Q21", "Q22", "Q23"]},
+      {"chapter": 95, "range": [353, 500], "complete": true, "evidence_ids": ["Q24", "Q25", "Q26", "Q27", "Q28", "Q29", "Q30"]},
+      {"chapter": 96, "range": [501, 600], "complete": true, "evidence_ids": ["Q31", "Q32", "Q33", "Q34", "Q35", "Q36", "Q37", "Q38"]},
+      {"chapter": 97, "range": [601, 719], "complete": true, "evidence_ids": ["Q39", "Q40", "Q41", "Q42", "Q43", "Q44", "Q45", "Q46", "Q47", "Q48", "Q49"]}
+    ],
+    "third_subject_body_read": false,
+    "repository_code_or_tests_run": false,
+    "registration_or_import_performed": false
+  },
+  "local_provisional_verdict": {
+    "verdict": "FAIL",
+    "scope": "仅第二组92–97回局部连续性筛查：有一条同一厚袜脚跟的明确相对时序矛盾。不是全组文学否定，不是三组最终opinion或排序。",
+    "hard_fail_count": 1,
+    "hard_fail_ids": ["F01"],
+    "literary_assessment": "本组人物对话和关系冲撞较鲜明，贫居不是只讲规则，宝玉施舍围巾的愿望会与宝钗算过冬相顶，袭人重访也让旧主仆与新夫妻关系发生尴尬。93回病程的旧枕、药钱、鞋和死亡后未完之事有压力。95回仍有家务段落铺得过满和宝玉反复笨手笨脚的风险。97回将湘云迟归丈夫、妙玉为米油出门做佛事、惜春落发分别落实，人物不是一种统一正确的声口。"
+  },
+  "evidence": [
+    {"id":"Q01","chapter":92,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":15,"line_end":15,"quote":"今儿且不能走，还要留着等两处话。"},
+    {"id":"Q02","chapter":92,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":67,"line_end":67,"quote":"只是门上收下，几时递到里头，我不敢说。"},
+    {"id":"Q03","chapter":92,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":75,"line_end":75,"quote":"里头另包着炒米，还有两双袜子，一双寻常厚棉袜，一双却针线粗密，式样也不像家里原有的。"},
+    {"id":"Q04","chapter":92,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":77,"line_end":77,"quote":"晚间脱鞋时，脚果然冻得发木，便把那双粗厚的袜子穿上。穿时才发现脚跟处针脚略拙，像是后来赶补的。"},
+    {"id":"Q05","chapter":92,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":79,"line_end":79,"quote":"过了两日，家里按例得了一次入视。"},
+    {"id":"Q06","chapter":92,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":91,"line_end":91,"quote":"又过两日，宝玉午睡才醒，忽有人来叫，说外头送东西的人中，有一个旧日在家里服侍过的，托着想隔门见一面。"},
+    {"id":"Q07","chapter":92,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":95,"line_end":95,"quote":"茜雪道：“不像就对了。我又不是麝月。她的针线齐整，我的只图厚。脚跟那里还是昨夜赶着补的，若硌脚，你就翻过来穿。”"},
+    {"id":"Q08","chapter":92,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":121,"line_end":121,"quote":"你这一处暂且问明白了，先回去候着。家里的事还没有完，若再叫你，仍须来。"},
+    {"id":"Q09","chapter":92,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":125,"line_end":125,"quote":"外门开时，一股冷风直扑脸上。他站在门槛外，眯了眯眼，只见街边背阴处仍有旧雪，来往人声忽然比监里大了许多。"},
+    {"id":"Q10","chapter":92,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":131,"line_end":131,"quote":"他掀起帘子，已经看见自家那扇窄门；门口没有人声，只墙根放着一只才倒过药渣的簸箕。"},
+    {"id":"Q11","chapter":93,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":137,"line_end":137,"quote":"话说宝玉那日出得门来，坐车回到小巷，天色已经昏黑。"},
+    {"id":"Q12","chapter":93,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":185,"line_end":185,"quote":"平儿进去床下翻，果然在旧包里找出一双。"},
+    {"id":"Q13","chapter":93,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":207,"line_end":207,"quote":"凤姐又道：“听平姐姐的话。”声音很轻，孩子却听见了，终于由平儿牵出去。"},
+    {"id":"Q14","chapter":93,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":227,"line_end":227,"quote":"琏二奶奶王氏，本日酉初病故，现停寓所"},
+    {"id":"Q15","chapter":93,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":231,"line_end":231,"quote":"把她的小铺盖搬到我炕边。今夜先跟我睡。"},
+    {"id":"Q16","chapter":93,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":235,"line_end":235,"quote":"里面不是银子，也不是什么值钱首饰，只是巧姐小时候用过的一只小荷包、一根系帽的旧红带和两枚散扣。"},
+    {"id":"Q17","chapter":94,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":259,"line_end":259,"quote":"姐儿如今没了娘，往后不论住哪里、定什么亲，都得明明白白回老太太和二爷。"},
+    {"id":"Q18","chapter":94,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":289,"line_end":289,"quote":"昨夜那个蓝布小包仍压在炕头，里头是巧姐旧荷包、红帽带、两枚散扣。"},
+    {"id":"Q19","chapter":94,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":295,"line_end":295,"quote":"贾琏一早仍在外头，昨夜已经知道此事，只让平儿安顿好后回来告诉他地方情形，并没有另派人跟着。"},
+    {"id":"Q20","chapter":94,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":303,"line_end":303,"quote":"她把小铺盖打开，铺在炕里边，再把蓝布包搁在枕边。"},
+    {"id":"Q21","chapter":94,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":337,"line_end":337,"quote":"平儿只把几枚零用钱缝在蓝布包内层，嘱咐真有急用再拆。"},
+    {"id":"Q22","chapter":94,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":341,"line_end":341,"quote":"回城以后，平儿先去回贾母，说屋虽粗，炕暖，刘家人也实在，巧姐头夜睡得尚安。"},
+    {"id":"Q23","chapter":94,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":343,"line_end":343,"quote":"板儿道：“头两夜醒过，第三夜就好了。吃饭也吃，只嫌我们家的粥里有一粒硬豆，挑了半日。"},
+    {"id":"Q24","chapter":95,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":355,"line_end":355,"quote":"城里这边，凤姐身后诸事早已收束，原先借住的院落到底不能久居，各房只得分头另寻落脚处。"},
+    {"id":"Q25","chapter":95,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":357,"line_end":357,"quote":"两床还能用的铺盖，一只米瓮，一只炭筐，几个衣包，一个书箱，另有锅碗针线。"},
+    {"id":"Q26","chapter":95,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":383,"line_end":383,"quote":"宝玉脸上微红，道：“难道穷了便只顾自己？”"},
+    {"id":"Q27","chapter":95,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":395,"line_end":395,"quote":"说着从怀里掏出几块碎银和一张当票，放在桌上。"},
+    {"id":"Q28","chapter":95,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":397,"line_end":397,"quote":"票纸窄而硬，第一行写着“青夹袄一件”，下面便是银数、日子和赎取期限，字挤得极密。"},
+    {"id":"Q29","chapter":95,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":419,"line_end":419,"quote":"宝钗将昨日的当票沿原折痕叠好，票面“青夹袄一件”几个字压在最里，和几张零碎纸票放进一只旧针线匣底下。"},
+    {"id":"Q30","chapter":95,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":499,"line_end":499,"quote":"麝月摸黑把那只小木碗仍搁回米瓮边。"},
+    {"id":"Q31","chapter":96,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":503,"line_end":503,"quote":"次早麝月照旧拿那只小木碗量米，宝钗仍叫留出中午的一顿。"},
+    {"id":"Q32","chapter":96,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":519,"line_end":519,"quote":"米和炭既来了，我不同你们推。银子也先收着，只是说在前头：这一回是来看人，不能往后定成月例。你们也有自己的日子。"},
+    {"id":"Q33","chapter":96,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":531,"line_end":531,"quote":"麝月只往瓮里倒了一半，余下仍扎好袋口，搁在梁下。"},
+    {"id":"Q34","chapter":96,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":563,"line_end":563,"quote":"米袋只开了一个小口，炭也没有添炉。"},
+    {"id":"Q35","chapter":96,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":565,"line_end":565,"quote":"炭不全倒进旧筐，只添半筐，余下连筐搁在灶棚干处；米也分作瓮里一半、袋里一半。"},
+    {"id":"Q36","chapter":96,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":571,"line_end":571,"quote":"那一袋米仍有大半扎在梁下，一筐炭也只少了灶上用的几块。"},
+    {"id":"Q37","chapter":96,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":573,"line_end":573,"quote":"是史大姑娘——如今自然该叫卫奶奶——托人转来的。原先送到旧相识那里，辗转才到我手。"},
+    {"id":"Q38","chapter":96,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":591,"line_end":591,"quote":"当票在匣底，银子也在匣底，信只暂放。你少把三样说成一处。"},
+    {"id":"Q39","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":603,"line_end":603,"quote":"卫若兰自前番出门，原说月内便归；月尽不归，又捎信说还要多留些时日。"},
+    {"id":"Q40","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":619,"line_end":619,"quote":"若兰仍在外，原说近日归，如今又迟，几时回来我也不知道。"},
+    {"id":"Q41","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":633,"line_end":633,"quote":"又隔一阵，宝钗果然收到她那张短笺。"},
+    {"id":"Q42","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":639,"line_end":639,"quote":"妙玉后来离开旧处，寄在城外一所小庵中。"},
+    {"id":"Q43","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":647,"line_end":647,"quote":"只是人家的米油咱们已经吃了，明日叫我一个人去回这个话，也得有个说法。"},
+    {"id":"Q44","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":657,"line_end":657,"quote":"妙玉换了那件灰青外衣，拿自己的经袋随住持出去。"},
+    {"id":"Q45","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":673,"line_end":673,"quote":"妙玉这回没有再把它另搁开，只叫小尼：“下次别把袖子折在里头，潮气散不尽。”"},
+    {"id":"Q46","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":675,"line_end":675,"quote":"又过些日子，宝钗那里有一个从城边尼庵回来的婆子来传话，说四姑娘惜春已正式留在庵里，头发也剃了，不肯再回家。"},
+    {"id":"Q47","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":677,"line_end":677,"quote":"里头是两件颜色已经不算鲜的旧衣、一双绣鞋并一只小画袋。画袋里还有两管旧笔，却没有颜料。"},
+    {"id":"Q48","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":687,"line_end":687,"quote":"惜春坐在窗下，头发已经剃去，穿一件灰布衣，面前摊着经书。"},
+    {"id":"Q49","chapter":97,"path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":705,"line_end":705,"quote":"惜春道：“谁同你说我件件想得明白？”"}
+  ],
+  "hard_failures": [
+    {
+      "id": "F01", "status": "CONFIRMED_LOCAL_FAIL", "severity": "LOCAL_CONTINUITY", "topic": "厚袜已穿数日与茜雪昨夜才补同一袜跟的相对时间冲突",
+      "side_a": {
+        "evidence_ids": ["Q03", "Q04", "Q05", "Q06"],
+        "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt",
+        "line_start": 77, "line_end": 77,
+        "quote": "晚间脱鞋时，脚果然冻得发木，便把那双粗厚的袜子穿上。穿时才发现脚跟处针脚略拙，像是后来赶补的。"
+      },
+      "side_b": {
+        "evidence_ids": ["Q07"],
+        "path": "artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt",
+        "line_start": 95, "line_end": 95,
+        "quote": "茜雪道：“不像就对了。我又不是麝月。她的针线齐整，我的只图厚。脚跟那里还是昨夜赶着补的，若硌脚，你就翻过来穿。”"
+      },
+      "reasoning": "75行收到两双，其中一双粗厚；77行当天夜里已经穿上并看到脚跟赶补的针脚。79行明确过两日宝钗入视，87行仍问那双厚袜针线；91行又过两日才见茜雪。93–95行问穿了没有、宝玉回答原来是你送的，所指仍是早先粗厚袜，不是新领另一双。因而95行茜雪说脚跟昨夜才补，晚于这双袜已在宝玉脚上的数日，不能按现有叙述同时为真。",
+      "alternative_test": "未见期间将该双带出返补再送回、递来新替换袜或茜雪有意撒谎的叙述。99行“若袜子坏了，叫他们带出来，我再补”还是未来条件，不能拿来补出此前已返补。不是以省略就FAIL，而是明确相对时标与同物同部位相抵。范围仅此。"
+    }
+  ],
+  "interfaces": [
+    {"id":"I01","topic":"羁押、放行与实际出门及跨回到家","side_a":{"evidence_ids":["Q01","Q08"],"quote":"你这一处暂且问明白了，先回去候着。家里的事还没有完，若再叫你，仍须来。"},"side_b":{"evidence_ids":["Q09","Q10","Q11"],"quote":"外门开时，一股冷风直扑脸上。他站在门槛外，眯了眯眼，只见街边背阴处仍有旧雪，来往人声忽然比监里大了许多。"},"judgment":"92回121行准回，125行已在外门槛，127行上车，131行见家门，93回137行到家进门。没有把家中得信当成已出门，归候也不等于全案完结。未细写领随身物的手续不是缺场义务，不能因第一组写了便判本组漏掉。"},
+    {"id":"I02","topic":"收物与里头实领、知晓袜子作者","side_a":{"evidence_ids":["Q02","Q03"],"quote":"只是门上收下，几时递到里头，我不敢说。"},"side_b":{"evidence_ids":["Q04","Q07"],"quote":"晚间脱鞋时，脚果然冻得发木，便把那双粗厚的袜子穿上。穿时才发现脚跟处针脚略拙，像是后来赶补的。"},"judgment":"物的收进、送到、穿上本身有步骤，宝玉起先不知道作者，见茜雪才知道，不是全知。但同一袜跟的赶补日期确有F01冲突，不能把传递链完整就评为全无问题。"},
+    {"id":"I03","topic":"凤姐死与孩子照护转接","side_a":{"evidence_ids":["Q13","Q14"],"quote":"凤姐又道：“听平姐姐的话。”声音很轻，孩子却听见了，终于由平儿牵出去。"},"side_b":{"evidence_ids":["Q15"],"quote":"把她的小铺盖搬到我炕边。今夜先跟我睡。"},"judgment":"213–219行临终无应、家人哭，227行报丧帖明言本日酉初病故，死亡不是只凭喘息猜测。平儿牵孩子、交奶妈、死后接回、同炕睡，再到94回寄住，照护转换有实际动作；不以一句遗嘱代替后续交接。"},
+    {"id":"I04","topic":"遗留蓝布包到送乡衣物、鞋、少量应急钱","side_a":{"evidence_ids":["Q12","Q16","Q18"],"quote":"里面不是银子，也不是什么值钱首饰，只是巧姐小时候用过的一只小荷包、一根系帽的旧红带和两枚散扣。"},"side_b":{"evidence_ids":["Q20","Q21"],"quote":"平儿只把几枚零用钱缝在蓝布包内层，嘱咐真有急用再拆。"},"judgment":"93回235行小物包，94回289行拆蓝布重包两身衣、一外衣、袜、梳子与原小物，303行铺盖、枕边包到刘家，337行当刘女点物并缝应急钱再入柜。337行说没有另放银包与把几枚钱缝入内层不矛盾。旧包鞋185行实际取到并试，乡里继续调棉，未凭空新增。289行“昨夜”有另列时标疑点S01，不改变物的辨认。"},
+    {"id":"I05","topic":"送乡知情允准、实际安顿与回报","side_a":{"evidence_ids":["Q17","Q19"],"quote":"贾琏一早仍在外头，昨夜已经知道此事，只让平儿安顿好后回来告诉他地方情形，并没有另派人跟着。"},"side_b":{"evidence_ids":["Q22","Q23"],"quote":"回城以后，平儿先去回贾母，说屋虽粗，炕暖，刘家人也实在，巧姐头夜睡得尚安。"},"judgment":"父亲知情、贾母同意临住、平儿亲自认地方并过夜，故可亲述首夜；后数日板儿反馈另有来源。不是议亲已经定或送走不管。平儿没有把板儿消息说成自己亲见。"},
+    {"id":"I06","topic":"借院各房分散与偏院实际搬屋","side_a":{"evidence_ids":["Q24"],"quote":"城里这边，凤姐身后诸事早已收束，原先借住的院落到底不能久居，各房只得分头另寻落脚处。"},"side_b":{"evidence_ids":["Q25"],"quote":"两床还能用的铺盖，一只米瓮，一只炭筐，几个衣包，一个书箱，另有锅碗针线。"},"judgment":"355行概述寻偏院并搬来，357行实际所带物与旧毡同行，后续室内物事相接。这里省去逐屋议价，不因第一组写详就要求同样三处看房。各房分头找地方，不能将老少十几口仍全算入新偏院三人饭额。"},
+    {"id":"I07","topic":"典衣到票、银、米炭与票收存","side_a":{"evidence_ids":["Q27","Q28"],"quote":"说着从怀里掏出几块碎银和一张当票，放在桌上。"},"side_b":{"evidence_ids":["Q29"],"quote":"宝钗将昨日的当票沿原折痕叠好，票面“青夹袄一件”几个字压在最里，和几张零碎纸票放进一只旧针线匣底下。"},"judgment":"青绸夹袄选出包走，麝月典回银与新票，399–413行分银买米炭，447行解释余钱供灯油盐线，419行票入匣底。票不是放空的旧道具；期满如何赎的问答比较含混，未给金额期限故不作精确逾期判定。"},
+    {"id":"I08","topic":"小木量碗跨回与失碗关注词","side_a":{"evidence_ids":["Q30"],"quote":"麝月摸黑把那只小木碗仍搁回米瓮边。"},"side_b":{"evidence_ids":["Q31"],"quote":"次早麝月照旧拿那只小木碗量米，宝钗仍叫留出中午的一顿。"},"judgment":"量米碗跨回存在。429–445行邻人送菜粗碗洗还也有闭合；监中只禁换碗，无已失一碗的确定事件。659行外家摔碗是另一场景。没有失碗不是漏履行任务，不能强迫各版都有。"},
+    {"id":"I09","topic":"援物入存、未赎夹袄与数量不稳","side_a":{"evidence_ids":["Q32","Q33"],"quote":"麝月只往瓮里倒了一半，余下仍扎好袋口，搁在梁下。"},"side_b":{"evidence_ids":["Q35","Q36"],"quote":"那一袋米仍有大半扎在梁下，一筐炭也只少了灶上用的几块。"},"judgment":"援米炭碎银被接收、银与票分开，565行不赎是要先留房钱等，收援助不自动消费或赎衣；但半袋与大半、531与565再次分装的叙述有数量和重复收束疑点S02，不能完全判为无缝。"},
+    {"id":"I10","topic":"湘云长札、迟归短笺与实收","side_a":{"evidence_ids":["Q37","Q39","Q40"],"quote":"若兰仍在外，原说近日归，如今又迟，几时回来我也不知道。"},"side_b":{"evidence_ids":["Q41"],"quote":"又隔一阵，宝钗果然收到她那张短笺。"},"judgment":"96回长札由旧相识转贾芸到宝钗，97回隔月余明写若兰外出延期、又收短札后湘云写给宝钗，621行封交稳便人，633行迟收。不是同日即时信，也不是从共同家书无因跳到丧偶。97回信称“回信”，可理解对前一轮往来的回复，不强制要求正文展示宝钗每封回邮。"},
+    {"id":"I11","topic":"妙玉出门做佛事的米油约束与衣物变化","side_a":{"evidence_ids":["Q42","Q43"],"quote":"只是人家的米油咱们已经吃了，明日叫我一个人去回这个话，也得有个说法。"},"side_b":{"evidence_ids":["Q44","Q45"],"quote":"妙玉这回没有再把它另搁开，只叫小尼：“下次别把袖子折在里头，潮气散不尽。”"},"judgment":"本庵旧日依靠断裂，既收米油且缺熟手，使她不能只依个人清洁性情拒绝外出；做佛事被催、沾灰、回庵节水，灰青外衣从临时穿到与众衣同洗同收。不是抽象忽然入尘，也没宣布她彻底不洁癖：667–669行仍坚持盆只盛干灰、再过水。"},
+    {"id":"I12","topic":"惜春传话落发、退物到亲访","side_a":{"evidence_ids":["Q46","Q47"],"quote":"又过些日子，宝钗那里有一个从城边尼庵回来的婆子来传话，说四姑娘惜春已正式留在庵里，头发也剃了，不肯再回家。"},"side_b":{"evidence_ids":["Q48","Q49"],"quote":"惜春坐在窗下，头发已经剃去，穿一件灰布衣，面前摊着经书。"},"judgment":"消息先由亲去送物的婆子带回，宝钗将退物送王夫人，宝玉次日照问明路去见，亲见剃发，不是来信就等于全家见到。画袋笔退回而庵内仍能抄经不矛盾，庵有纸笔；梳子未退、忘扔保留了未想圆的一角。"},
+    {"id":"I13","topic":"三线与两个庵的辨认","side_a":{"evidence_ids":["Q42"],"quote":"妙玉后来离开旧处，寄在城外一所小庵中。"},"side_b":{"evidence_ids":["Q46"],"quote":"又过些日子，宝钗那里有一个从城边尼庵回来的婆子来传话，说四姑娘惜春已正式留在庵里，头发也剃了，不肯再回家。"},"judgment":"97回先湘云家、再妙玉城外小庵、后惜春城边尼庵。妙玉庵东佛堂西住屋、惜春庵佛堂在前住屋在后，宝玉仅探惜春，没有两人同庵相见的事件。两庵未署名，不能细定地理关系；也不能把共享米油与抄经劳作混成同一庵务。"
+    }
+  ],
+  "suspicions_and_unknowns": [
+    {
+      "id":"S01","status":"TIME_DEIXIS_SUSPICION","topic":"94回蓝布小包的昨夜",
+      "evidence_ids":["Q16","Q18"],
+      "assessment":"93回235行是在凤姐死亡当夜收巧姐小物包，94回243行明说丧事忙乱十来日，继而王仁到、次日刘姥姥来、午后回贾母，289行却称昨夜那个蓝布小包。疑似沿用跨回近接词，跨度不合。未列第二个确定FAIL，因为289行之前可能在未详叙的一夜又整理或把同包搁回炕头，“昨夜那个”未必严格声称包在昨夜第一次生成；但时标造成明显回跳感，宜核对。与F01同一袜跟已穿数日而昨夜才补的明确排他关系不同。"
+    },
+    {
+      "id":"S02","status":"QUANTITY_AND_REPEATED_STAGING_SUSPICION","topic":"96回援米半袋与大半、重做分装",
+      "evidence_ids":["Q33","Q34","Q35","Q36"],
+      "assessment":"531行明说米一半入瓮、余下梁下，565行客走后又说分作瓮里一半袋里一半；563行说米袋只开小口仍可指袋口而不说明只倒一点，不能单据此判冲突。571行却说一袋米仍有大半扎梁下，与两处精确的一半不协调。可能“大半”泛指尚余很多，也可能讲整批尚有大半而地点压缩失准，故列高置信措辞/数量疑点，不擅自假定另有倒回米或第二袋来修复。它还暴露场面结尾重复安置同物的文学问题。"
+    },
+    {
+      "id":"S03","status":"UNKNOWN","topic":"金额、典期、物件未交代与外出原因",
+      "evidence_ids":["Q28","Q39","Q40"],
+      "assessment":"当票写数额日期但读者未得具体值，不能核算赎期。若兰离家有延期消息而缘由不详，缺席不等于死亡；两庵具体名称、明细经济与此前原稿不在本范围，UNKNOWN不自动FAIL。没有失碗不要求补失碗。"
+    },
+    {
+      "id":"S04","status":"WORDING_SUSPICION","topic":"晚饭量米的她指代",
+      "path":"artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt","line_start":567,"line_end":567,
+      "quote":"到晚饭时，她照旧叫麝月用那只小木碗量米。",
+      "assessment":"紧接麝月塞好小银包、靠扫帚、去洗手，主语她容易读成麝月自己叫自己；由下句宝钗答份量可回解为宝钗。是局部指代失稳，不是有两位麝月的事实矛盾。"
+    }
+  ],
+  "literary_judgments": {
+    "chapter_notes": [
+      {"chapter":92,"evidence_ids":["Q01","Q02","Q03","Q04","Q05","Q06","Q07","Q08","Q09","Q10"],"judgment":"瘦汉贫嘴有自己的饥饿、铺位与咸萝卜输赢，和宝玉说话不只是讲规范。茜雪以回嘴挡掉宝玉的愧疚感，比顺势接受感激更有人格。小红找旧经手人让“寻证”不止送物问规矩；她与贾芸争“伏侍的是差使，不是衣裳”使情分落在分工。缺点是点心纸17行已见被丢，27行再伤心带不回，强调略多；最实在的是F01脚跟日期矛盾，损害这条原本有情感重量的物线。"},
+      {"chapter":93,"evidence_ids":["Q11","Q12","Q13","Q14","Q15","Q16"],"judgment":"病程不是一出场立即死：凤姐仍能嘲宝玉看她喘气、记药钱、找孩子鞋、挑人数，旧日能干与身体衰竭互相磨。贾琏伸手想托旧枕却停，比整段悔罪更有力。病故帖、白布、棺木、药渣与孩子的睡铺连着逼来，感情没有全变成作者议论。宝玉听门响的余惧延续数夜，有效但相似惊醒段可稍减。"},
+      {"chapter":94,"evidence_ids":["Q17","Q18","Q19","Q20","Q21","Q22","Q23"],"judgment":"王仁从问衣物首饰到定礼，再想把孩子接自己家里，利诱和控制比单纯说错家情更有威胁；平儿礼貌回话中有不愿撕破脸的压力。平儿亲送留夜使照护交接可信，孩子从怕分离到数车夫推车、问筛子与鸡蛋、手里攥废线，有童稚自己的兴趣，不只是创伤符号。乡村笑话和互借让刘家不是单为报恩设的空景；但成人时时解说哪些必须先问也略正。"},
+      {"chapter":95,"evidence_ids":["Q24","Q25","Q26","Q27","Q28","Q29","Q30"],"judgment":"本回强处是利益真冲突。宝玉想送围巾给扫雪孩子，“难道穷了便只顾自己”使宝钗的节省不是毫无道德代价的正确答案；她没有永久禁施舍，而要一起看现物。邻人半碗菜、淡茶夸香与回两筷酸齑把体面也写成支出。弱处是破窗、搬毡摔凳、提米、穿针、洗衣、理箱、再量米的串联太长，麝月总以快嘴获胜，宝玉常被固定为笨拙笑料。"},
+      {"chapter":96,"evidence_ids":["Q31","Q32","Q33","Q34","Q35","Q36","Q37","Q38"],"judgment":"袭人、麝月不再能随手接管对方家务，‘从前是从前’、米瓮不知道在哪、误认旧锁，形成实在的离散感。蒋玉菡会补戏箱、教身段、被一顿有肉的饭抵工钱，不是纯送钱角色；宝玉说‘她从前也这样’，他回‘我知道’有新夫妻与旧主人的微妙张力。湘云长信有骑射、茶浓淡互报复与旧麒麟系带，声口比纯家务箴言活。客走后再数钱分米炭，重复了客在时的安置，量词也松，拖累收束。"},
+      {"chapter":97,"evidence_ids":["Q39","Q40","Q41","Q42","Q43","Q44","Q45","Q46","Q47","Q48","Q49"],"judgment":"湘云不知归期却能租西屋、付针线工钱，孤独中有管理家产和对丈夫的气，并非只有幽怨；迟归原因省笔但独膳有足够近因。妙玉被佛事施主催进度仍照卷念，回庵才在洗水和瓷盆上让步，守与让并存；入尘是被共同生计逼着做事，不是忽然性格翻面。惜春说园子也不在那里、梳子忘扔，拒哥哥替自己全说圆。三线分段各有完整场面，比频繁切同构洗盆动作更有事件感；代价是97回体量很大、日子推进快，湘云长段家务事务与尼姑两段仍有重复。"}
+    ],
+    "strengths": [
+      {"id":"P01","evidence_ids":["Q26","Q32","Q43","Q49"],"assessment":"人物正确与错误不是单选：宝玉的施舍是真怜悯又不懂余量，宝钗维护过冬又得回应不能只顾自己；妙玉既嫌污又坚持经声，不只是在学会妥协；惜春留下梳子也不承认自己事事悟透。关系冲突有余味。"},
+      {"id":"P02","evidence_ids":["Q13","Q14","Q15","Q16","Q20","Q22"],"assessment":"死亡与孩子交接有劳动与夜晚，不靠“交代给某人”略过。旧鞋塞棉不断跑偏，照护不是收到一包衣物就永远妥当，平儿会亲见也会等板儿消息，叙事可信度较高。"},
+      {"id":"P03","evidence_ids":["Q37","Q39","Q40","Q41","Q42","Q46","Q48"],"assessment":"97回知识来源较清楚：湘云丈夫延期有本人短札，宝钗收短笺后只知道纸上几句；惜春落发由送衣婆子带回再由宝玉亲见；妙玉是叙述者另开的一线，不偷渡进宝玉认知。"}
+    ],
+    "risks": [
+      {"id":"L01","severity":"MEDIUM_HIGH","evidence_ids":["Q24","Q25","Q27","Q28","Q29","Q30","Q31"],"assessment":"95回后半的生活动作有过度铺陈：同一贫困结论由反复添水、省油、留线头、怕扯衣、塞窗再证，事件改变少于段落数量。它比抽象诉苦好，但连续阅读会感到每项日用都要轮到一次、每次都以机锋收尾。"},
+      {"id":"L02","severity":"MEDIUM","evidence_ids":["Q26","Q30","Q31","Q38"],"assessment":"麝月快嘴鲜活但太常赢，宝玉提米困难、补窗捅破、搬凳被毡罩、穿针慢、拧衣被拒，一再落入少爷无用的同一种笑料。围巾争论和共铺斗篷能打破这一格局，值得保留；不宜让所有实际生活都只用于教训宝玉。"},
+      {"id":"L03","severity":"MEDIUM","evidence_ids":["Q02","Q17","Q32","Q38"],"assessment":"仍有审计式解释：门收不等于实到、临住不等于定亲、援助不定月例、篮与匣和当票银包信必须逐项分清。多数由人物的窘迫与怕担责支撑，较自然，但591行‘你少把三样说成一处’尤其像叙述自校对，容易把戏内争嘴变成向读者澄清账位。"},
+      {"id":"L04","severity":"MEDIUM","evidence_ids":["Q33","Q34","Q35","Q36"],"assessment":"客在时与客走后重复分装米炭、银包反复收压，形成两个近似结束。数量措辞变松不是文学小节：物事重复得越仔细，读者越会注意半袋怎又大半。应以情绪或关系转折收尾，不必再以同物复点证明已安置。此为反馈，不是改稿授权。"},
+      {"id":"L05","severity":"LOW_MEDIUM","evidence_ids":["Q39","Q40","Q41","Q43","Q44","Q45","Q46","Q48"],"assessment":"97回三线推进跨度大，独膳、出租、换瓦、短札、付工钱后再转妙玉整场佛事与惜春探访，密度高但篇幅均衡欠缺。湘云的情绪多用嘴硬遮盖，若所有丫头都配合笑与察颜，缺席的威胁可能被接连事务冲淡；不能据此强制补出若兰死因或外出阴谋。"}
+    ]
+  },
+  "provisional_two_subject_comparison": {
+    "status":"TWO_SUBJECTS_ONLY_NO_FINAL_RANKING",
+    "basis":"第一组为同一context已实际全文Read并冻结的观察记忆，本轮不改首组报告，不重读其正文，不读第三组。不是盲于前组的全新context。",
+    "continuity":"首组暂未找到硬矛盾；第二组袜子昨夜赶补有F01确定局部矛盾，另有蓝布包昨夜和米半袋/大半疑点。只比较实际发现，不把未发现等同绝对无错，也不将第二组缺第一组细节当错。",
+    "literature":"第二组声口、喜剧与关系冲突暂较有活气，围巾施舍、袭人/麝月/蒋玉菡新旧分寸、妙玉佛事均有具体选择与代价；首组的限制知情写得更稳，却较易变成逐级确认与同构微动作。两组凤姐与孩子都能把照料写成真实成本，各有好场面。",
+    "narrative_choice_difference":"第一组小红送物后主要靠回话、平儿留城由妇人陪送孩子；第二组有宝钗入视与茜雪隔门相见、平儿亲送留宿。均可成立，不能以一种方案为另一种的缺场义务。第一组湘云独膳原因悬置，第二组明确丈夫外出延归；不同信息量不等于作者身份信息。",
+    "final_three_way_opinion":"DEFERRED_UNREAD_THIRD_SUBJECT"
+  },
+  "exposure_and_limits": {
+    "this_stage_explicitly_read_sources":["artifacts/agent_research/reading/set-p8-v1/public/read-c25e7c679cc1c53fb9e60dfb.txt"],
+    "retained_context_sources":["第一阶段已Read的public/packet.json、第一组匿名正文与许可schema，以及自己形成的第一组判断；首组报告未改。"],
+    "extra_exposure":[
+      "packet全文一行包含三个匿名绑定与coordinator_session_id，第一阶段已不可避免看到；未读第三组正文或追踪身份。",
+      "用户自动附带git状态和近期提交标题仍在本context，涉及原稿修订等背景；未打开其文件、不据此猜身份。",
+      "已见第一阶段自己的完整观察及协调续发第二组要求；不是此前阅读记忆被清空的独立第二位读者。",
+      "工具清单和main/code-review等agent名称可见，未委派或联系他人，未读任何其他读者结果。",
+      "标准库为核验读packet、第二组和本输出JSON，不增加文学阅读来源。"
+    ],
+    "not_read":"未读coordinator文件、他人报告、source、映射、原件、原phase5/phase6、notes、作者披露、第三组正文；未搜索仓库。",
+    "isolation_limit":"同repo分工是阅读约束而非权限隔离，context_isolation NOT_PROVEN；MODEL_SUBAGENT不是独立人类审稿。",
+    "pretraining_limit":"模型可能有红楼梦预训练记忆且不能证明无污染。本件不以旧书命运强加若兰死亡、失碗、元叙事或具体剃度义务，不猜组别身份。",
+    "memory_limit":"连续两组长文本可能使措辞、排序或短时记忆受前组影响；本组引文均回到本组已Read的准确行数并标准库核验，不将首组细节移植为本组事实。第三组尚未读取，不宣称三方覆盖。",
+    "scope_limit":"只判断92–97回局部，不检前91回/后续；UNKNOWN与省笔不自动FAIL。"
+  },
+  "validation": {
+    "mechanism":"仅Python -I标准库读JSON、核SHA256/物理行数/quote与coverage；不执行仓库代码、测试、登记、导入或schema运行器。",
+    "packet_hash_checked":true,
+    "subject_hash_checked":true,
+    "coverage_checked_against_physical_line_count":true,
+    "chapter_minimum_evidence_requirement":3,
+    "quotes_check_status":"PASS",
+    "quote_checks_passed":78,
+    "evidence_count":49,
+    "interface_count":13,
+    "self_check_note":"最终标准库核验：JSON解析、packet与subject SHA256、1–719连续行覆盖、每回至少3条精确引文与78项quote子串均通过，无引文错误；实际每回6–11条。",
+    "output_policy":"仅新增本第二组JSON，不改首组冻结报告或任何旧文件，不改稿、不采用、不放行、不发布artifact。"
+  },
+  "handoff":"第二组观察冻结后交回，等待同一context协调续发第三组；不自行开始第三组。"
+}

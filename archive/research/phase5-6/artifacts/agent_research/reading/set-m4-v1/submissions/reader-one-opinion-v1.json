@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "packet": {
+    "path": "artifacts/agent_research/reading/set-m4-v1/public/packet.json",
+    "sha256": "fdd9f2189626e92f78d979cbb73635e165a971d732228f88685d258e40670c87"
+  },
+  "reviewer": {
+    "id": "reader:m4-one",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:reading-m4-one",
+    "model": {"label": "gpt-6.1-sol", "verification": "DECLARED_NOT_VERIFIED"},
+    "context_isolation": {"asserted": false, "verification": "NOT_PROVEN"}
+  },
+  "results": [
+    {
+      "subject_id": "read-0340e7c4723a6dcac2a5b602",
+      "subject_sha256": "ccfd694d4ce3a1fc8197e0d428757fbe7faf35697cffbfe3989cd26eaf089c4e",
+      "verdict": "FAIL",
+      "notes": "完整Read84–91实际1–1146行；本subject局部连续性FAIL，非整个packet裁决。确认M1-86-SNOW-ROUNDTRIP：本主体正文390行雪雁在紫鹃刚确认死亡时已冲回床前，同段随后才派人向老太太报死；392–394行李纨问老太太太太是否知道，雪雁却说‘我才回到那边，正说着，便有人来报。’前后把她置于互斥的传报位置/次序，正文无回叙、撒谎或另次口信标记，不能以补造往返消解。第一阶段报告PENDING是当时阶段状态，冻结不改，但最终本subject须FAIL，不由尚未比较或文学优点抵消。其病程、封府取衣主链有长处，婚丧时间/锁具/借院空间另有疑点，声口趋同、动作与审核式纠偏过密另为文学风险。完整证据见reader-one-subject-one-observations-v1.json与绑定三阶段的reader-one-comparison-v1.json。sample_checks空不代表未实读，实际全读范围与逐章引文在阶段报告。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-41f4d5700535e40c8254bec7",
+      "subject_sha256": "a739f57290193fc35d9c3537008f2d3d67a4fea1c12ad75c40921e40b18ed49f",
+      "verdict": "PENDING",
+      "notes": "完整Read84–91实际1–855行；未发现达到确定互斥门槛的硬错，不套第一组M1。保留PENDING基于本subject自身S2-Q1-MOURNING，而非三方没读完：325、333行要求守丧与礼例问妥，341行只说服用往来规模问过且有事仍搁下，359行紧邻定日明确‘丧中本不宜闹’，361–365行仍红绸成礼；允许成婚与仅允许缩减规模之间未充分闭合。没有内文绝对禁婚条款，不以外部朝代礼制或未明省笔硬判FAIL，但也不将问礼务篇幅多认证为条件满足。死亡两次传报、原住户锅水权、欠薪不饭抵、宝钗索还披风等有实质连续性与关系力度；动作阻滞过密、纠偏语反复、宝玉赶路时长体感、玉样物待接办与粮源续给仍有风险/开放项。末尾855行确随人离院，未出现后续羁押收衣。详见reader-one-subject-two-observations-v1.json；此PENDING不是文学不合格或任何身份推断。",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "read-12bf9f583ccbd9ca3465ba4f",
+      "subject_sha256": "536d22dbc9efae09285b3ca9a01ad5a2e958fdd40daee6f9f81f1bebbae3a59c",
+      "verdict": "PASS",
+      "notes": "完整Read84–91实际1–859行；PASS仅表示本次八回内部连续性/重点因果与物件知情边界的局部检查当前成立、未发现确定互斥，不认证文学合格、历史礼法正确、后续情节完整或可采用发布。第三组35行有后到服制，199行明写又数月病程；雪雁寻人期间妈妈守床，死讯后报另路追传，不含第一组M1。335行有限回话撤外客席、两家接人与见长辈照简样办且不设乐，347行实际简礼成婚；不等于所有服丧要求终止或外部权威已证。567行迁人与指定物核放、569行薄书核看准带、697行米须另买、791行玉样物连登记实际交接均有原句。玉归属和匿名接者、精确礼制上游仍未知，不凭省笔自动FAIL。文学负面保留：否定式防误读旁白、流程清点与动作重复偏密，关系情感过度借物件表达，不能由程序周密抵消。第三组859终点仍在五更前备衣留粥，收碗出去的是麝月，宝玉尚未出门，更未被叙述为羁押。详见reader-one-subject-three-observations-v1.json。",
+      "sample_checks": []
+    }
+  ],
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false
+}

@@ -1,0 +1,195 @@
+{
+  "schema_version": 1,
+  "kind": "SESSION_AUTHORED_LITERARY_REVISION_DISCLOSURE",
+  "chapter": 99,
+  "version": "v1",
+  "status": "FROZEN_V1_LENGTH_TARGET_MET",
+  "execution_basis": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED",
+  "authority": "NONE",
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "provider_proof": "NONE",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "literary_acceptance": "NOT_CLAIMED",
+  "request": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/editorial-requests-v1/ch99.json",
+    "file_sha256": "ba82d25311beff9cf42a96ddce853f1fe73af3018e7b3c38ad5de3a43052ae6d",
+    "embedded_request_sha256": "101f119f219267c56940436a54ffaa0c8a5244f7729ddf060f8c40147633eb0d",
+    "prompt_sha256": "72de066f43c0a77a01c82f87ef09ece586d98b84aedd7b4bcd3f3acc31de9011",
+    "integrity_limitation": "Computed actual request-file hash and selected input hashes; did not rerun complete prepared-request integrity validation. Declared PASS and bound hashes are not full-file reading or literary acceptance."
+  },
+  "parent": {
+    "path": "data/writing/drafts/ch99/20d4e9356f94b6acf46a28b0318625009c89f4e8cf80839bea95c111b9cbfc4c.json",
+    "sha256": "20d4e9356f94b6acf46a28b0318625009c89f4e8cf80839bea95c111b9cbfc4c",
+    "current_byte_hash_matches": true,
+    "consumption": "Parent JSON byte-hashed, not separately semantically read; complete parent prose read from task.original."
+  },
+  "original": {
+    "pointer": "/task/original",
+    "characters": 2365,
+    "sha256": "dc59bcee779bd8be7a48f8329ae17b1e2641c0ec11c8884d064f86ecf1787a22",
+    "consumption": "ACTUALLY_READ_COMPLETE_SHORT_PARENT",
+    "retained_unchanged": true,
+    "full_chapter_claim": false
+  },
+  "candidate": {
+    "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt",
+    "sha256": "24542b331d03561f4a1fc15ed1349ad10157274a3ede0fc89c8df0f54312cbc3",
+    "characters": 10038,
+    "body_characters": 10013,
+    "body_han_characters": 8609,
+    "body_nonwhitespace_characters": 9910,
+    "utf8_bytes": 29904,
+    "body_paragraphs": 52,
+    "exact_duplicate_body_paragraphs": 0,
+    "quotation_marks_open": 31,
+    "quotation_marks_close": 31,
+    "reviewVerdict_present": false,
+    "micro_recitation_characters": 348,
+    "counting_method": "Unicode code points using JavaScript spread; body excludes title and following blank line; Han uses Script=Han, nonwhitespace removes JavaScript Unicode whitespace; UTF-8 bytes include final newline. Micro segment is single paragraph beginning 又隔着些时日 and ending before 城里，贾芸, with outer whitespace removed.",
+    "thresholds": {
+      "total_characters_min": 10000,
+      "total_characters_max": 11000,
+      "body_han_min": 7000,
+      "body_nonwhitespace_min": 8500,
+      "micro_recitation_min": 300,
+      "micro_recitation_max": 450,
+      "all_met": true
+    },
+    "frozen": true,
+    "freeze_policy": "No further changes to this v1 after disclosure. Later chapter readings must not be backdated into this consumption record.",
+    "threshold_pass_is_not_literary_acceptance": true
+  },
+  "selected_decision": {
+    "path": "data/planning/decisions/phase6-ch99-v1.json",
+    "sha256": "e9f09fb42347ddf186a7854c5071639b59d33ed3273467d37cf5d7d1a7fe6a7c",
+    "consumption": "ACTUALLY_READ_COMPLETE_LINES1_278",
+    "execution_mode": "NARRATIVE_ONLY_NOT_EXECUTABLE",
+    "narrative_sequence": ["99-S1", "99-S2", "99-S5", "99-S3", "99-S4"],
+    "source_index_preserved": ["99-S1", "99-S2", "99-S3", "99-S4", "99-S5"],
+    "selected_contracts": [
+      "data/planning/contracts/agent-final-v2/99-S1.v4.json",
+      "data/planning/contracts/agent-final-v2/99-S2.v4.json",
+      "data/planning/contracts/agent-final-v2/99-S3.v4.json",
+      "data/planning/contracts/agent-final-v2/99-S4.v4.json",
+      "data/planning/contracts/agent-final-v2/99-S5.v4.json"
+    ],
+    "limitation": "New presentation sequence realized only as research prose, not source-list reorder, historical chronology, state event execution or semantic replay. No old source predecessor or chapter snapshot promoted to local knowledge."
+  },
+  "actual_consumption": {
+    "complete_request_fields_read": [
+      "/request/system",
+      "/task/original",
+      "/task/feedback",
+      "/task/editorial_notes",
+      "/task/writing_task/package",
+      "/task/writing_task/scenes",
+      "/task/writing_task/plan/data~1project~1plan_constraints_v1.json"
+    ],
+    "chapter_plan_contract_sources_projection": {
+      "scope": "/task/writing_task/chapter_plan, agent_contracts/0..4, sources/0",
+      "required_beats_read": 15,
+      "forbidden_beats_read": 11,
+      "method": "Recursive unique-string projection read completely: all unique required/forbidden descriptions and groundings, card fields, protections, source-record semantic values, contract notes, preconditions, entry/exit reasons, knowledge restrictions and unresolved limitations. Identical strings emitted once, most paths/refs/hashes omitted; not every numeric/boolean/citation field separately emitted.",
+      "plan_aliases": "All five selected plan entries mechanically checked equal to agent_contracts; not counted as independent extra readings.",
+      "limitation": "Projection and hash binding do not imply complete reading of full referenced files, phase5 source packet, registry, original source or provider execution."
+    },
+    "source_card": {
+      "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+      "lines_inclusive": [1206, 1266],
+      "scope": "ACTUALLY_READ_COMPLETE_CH99_CARD_ONLY"
+    },
+    "bound_source_excerpt_read": {
+      "id": "src:gengchen:ch21:cliff-release",
+      "text": "故后文方有“悬崖撒手”一回。若他人得宝钗之妻、麝月之婢，岂能弃而为僧哉？",
+      "limitation": "Read supplied source record/excerpt and selected verification labels, not direct PDF witness, full chapter or independently rebuilt extraction."
+    },
+    "exemplars_read_complete_as_supplied": [
+      "hlm80:chapter:27:p00087",
+      "hlm80:chapter:24:p00030",
+      "hlm80:chapter:74:p00079",
+      "hlm80:chapter:61:p00016",
+      "hlm80:chapter:52:p00006"
+    ],
+    "exemplar_limitation": "Five complete supplied segment texts and selection reasons reread, not full source chapters/corpus/PDF. Same excerpts were exposed in earlier chapters of this reused author context.",
+    "editor_feedback": [
+      {
+        "path": "artifacts/agent_research/phase6/editor-feedback/notes-ch99-v1.txt",
+        "sha256": "0169a68db4aa24fe0d29792a95845613ae6ca0515dbb6fa632751cb18d1f6aa2",
+        "scope": "ACTUALLY_READ_COMPLETE_LINES1_17; embedded editorial_notes also read fully"
+      },
+      {
+        "path": "artifacts/agent_research/phase6/editor-feedback/v3-ch91-100-v1.json",
+        "sha256": "bbe772562ca4f4eaf8af5eff788b9e213054c12b65f8141cf1af812e8cc1a5e0",
+        "pointer": "/chapters/8",
+        "scope": "ACTUALLY_READ_COMPLETE_CH99_ENTRY, including all beat reviews, exact quotes, failures, five expansion scenes, editorC selection and unknowns; not whole ten-chapter report"
+      }
+    ],
+    "world_selected_scope": "Read chapter99 body/core event/presence/resource records, S13 location/access definition, and early-intent knowledge rule. Selected contracts include old OT98-05 messenger-based coarse context and OT99-01 earthly-route-open limitations; those were read as frozen constraints/conflicts, not executed. Other world data not fully read for this chapter.",
+    "truncation_recovery": [
+      "Initial request field extraction system/original/notes/package delivered fully; whole request/messages rendering not read.",
+      "Full feedback and recursive plan/contract/source/exemplar projection persisted due output size, then read in ranges covering complete lines1–400. Line1 full minified feedback was consumed; semantic exclusions/deduplication explicit above.",
+      "Full editor99 entry persisted due size, then read completely in ranges covering lines1–937.",
+      "No preview or byte hash counted as complete semantic reading."
+    ],
+    "adjacent_author_context": {
+      "prepared_previous_path": null,
+      "prepared_previous_ending": null,
+      "unbound_complete_prose_exposure": [
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch96-v1.txt",
+          "sha256": "a3b5b31e5e95d6ac659eedd2fc1f35db455bab55489a9c91c41a45565f9f6b7e"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch97-v1.txt",
+          "sha256": "26ddbcee34a91b22a9ad6288c9ec162b526b20de1286352677699bead3d9b3c3"
+        },
+        {
+          "path": "artifacts/agent_research/phase6/revisions-v2/authored/ch98-v1.txt",
+          "sha256": "badea6a60cc2c65a08a03a0494cc5afdb8e336ca78184d510cc96e90e5e52588"
+        }
+      ],
+      "reason": "Same session wrote complete chapters96–98. This is actual extra context exposure, not selected request previous_path, provider proof or independent-author separation.",
+      "prior_frozen_text_hashes_unchanged_checked": true,
+      "chapter100_new_prose_read": false,
+      "no_retroactive_binding": true
+    },
+    "unread_not_claimed": [
+      "Full request.messages duplicate rendering or all bound inputs",
+      "Phase5 prose/templates or full source contract packet",
+      "Full referenced world/objects/knowledge/provenance registries and source PDFs",
+      "Full parent JSON semantics beyond task.original",
+      "Full corpus behind selected exemplars or source records",
+      "Full ten-chapter editorial report beyond actual chapter96–99 entries",
+      "Unfinished later chapter100 prose"
+    ]
+  },
+  "authorship_execution": {
+    "method": "Direct session-authored Chinese natural paragraphs using Write and substantive Edit appends/insertions, with one brief pre-freeze domestic continuation. No program-generated sentences, templates or repeated-text padding. Read-only Node used for field extraction, hashes, alias checks and metrics.",
+    "enacted_structure": [
+      "Ordinary days: visitor book parcel visibly collected once; household work continues before book returns, reduced food interest and refusal of next-day tasks, with Baochai earlier partly aware and Sheyue initially misreading ordinary fatigue/untidiness",
+      "Departure: explicit not returning to live together, practical questions about lodging/where to find him unanswered, rice/socks/shoes friction and uncompleted window work; no jade custody account",
+      "Single 348-character micro scene after unspecified interval: imperfect following recitation, unnamed novice points page, dispersal directly into carrying water and tending pot; no exact liturgical time or scripture",
+      "Search: bookstall/transport workers/ferry/small shops give partial conflicting impressions; wrong man and wasted crossing concretely cost money; Jia Yun finds actual shaved-headed Baoyu doing labor, challenges refusal, receives limited message and personally reports only witnessed/heard facts",
+      "Final household scene only: rent discussion and rice purchase, two-person ration disagreement, old needle eye blocked by broken thread, new needle threaded but tails not aligned, interrupted by fire and pinned back to garment; two rice bowls and unpatched sleeve remain actual last image"
+    ],
+    "locked_reply": {
+      "question": "还有没有别的要我带回去的话？",
+      "exact_answer": "没有，只说我平安。",
+      "answer_occurrences": 1
+    },
+    "locked_meal_phrase": "够咱们两个吃的就是了",
+    "continuity_limits": "Old garment is unregistered daily clothing, not identified with pawned chapter95 jacket or chapter100 garment. No temple name, initial journey, ordination/admission date, exact recitation time, scripture, new actor ID, leave-taking poem/letter/gatha or jade holder/location after departure. Search route does not certify Baoyu initial route. No reader-knowledge propagation to household before Jia Yun actually returns. No temple cut after final domestic scene.",
+    "source_execution_limits": "Current research prose realizes selected C presentation obligations only; does not alter source order, entry_from, source documents, request, notes, world/object/knowledge records or old runs. No semantic replay or UNKNOWN-to-KNOWN promotion claimed.",
+    "environment_model_claim": "Invocation environment states gpt-6.1-sol; this is unverified environment metadata, not independently verified provider identity, response proof, billing or measured token accounting. provider_proof NONE.",
+    "delegated_agents_started": 0,
+    "provider_call_executed": false,
+    "import_adopt_commit_executed": false,
+    "only_repo_files_added_for_ch99": [
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1.txt",
+      "artifacts/agent_research/phase6/revisions-v2/authored/ch99-v1-disclosure.json"
+    ],
+    "independent_review": "NONE. Mechanical thresholds and author self-check do not certify literary acceptance, qualified peer agreement or historical facts."
+  }
+}
