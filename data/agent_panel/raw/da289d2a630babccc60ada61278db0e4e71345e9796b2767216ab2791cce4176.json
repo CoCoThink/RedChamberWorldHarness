@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "packet": {
+    "path": "data/agent_release/research-81-100-pilot-v1/packets/candidates.json",
+    "sha256": "b7723e490b6a1c287181db7df229fd9380ab6db51cb86f46aab7b77726d17139"
+  },
+  "reviewer": {
+    "id": "reviewer:pilot-v1:ch99:a",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "session:pilot-v1:ch99:a",
+    "model": {
+      "label": "claude subagent (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    }
+  },
+  "results": [
+    {
+      "subject_id": "chapter-99",
+      "subject_sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036",
+      "verdict": "PASS",
+      "notes": "Read all 9292 characters (53 distinct paragraphs, no duplicated or padded blocks). Heading is exactly '第九十九回　贾宝玉悬崖撒手去　宝钗麝月共守寒家', matching the ch99 title axis TG in the policy. It is a complete chapter with a real close (the two bowls and the unfinished sleeve). Order is S1 -> S2 -> S5 (monastery) -> S3 (Jia Yun's search) -> S4 (home meal), as the contracts' declared narrative track requires. M6 chapter protection (P1) is kept: ordinary days ('日子照旧过了几日'), returning borrowed books and eating less as stepwise withdrawal, Baochai asks practical questions ('你住在哪里？'), Sheyue asks about socks and shoes, wood-carrying at the temple, '没有，只说我平安', and the ending '够咱们两个吃的就是了' with the unfinished old garment. forbidden_drift is respected: nothing triggers the departure (the jade 通灵玉 is never mentioned, no dream, no 黛玉/警幻, no monk's enlightenment); there is no long essay on life; the world does not stop to witness the leaving (a neighbour borrowing a scale and a peddler shouting 收旧物 walk past); no verse, gatha, farewell letter or wall-inscription (0 occurrences of 诗/偈/佛/悟/看破/托梦/警幻/黛玉). Baochai as wife and Sheyue as maid are present at the departure. No contradiction of a LOCKED first-hand decision found. Non-blocking observations: (1) Jia Yun speaks to Baoyu in a blunt, peer-to-peer or reproving register ('你倒问得好' / '你在这里搬柴，倒肯做了？' / '你没想到的，也得有人替你走完'); in front-80 (ch24) he calls himself Baoyu's 'son' and defers, so this is a register shift that is defensible after the collapse of the household but is author-preference level. (2) The 'wrong man at the ferry' episode is long and mildly comic, but it does cost Jia Yun (blushing, ferry fare, wet shoe) and does not erase the search cost. (3) XLOCK-PAWN-TICKET is only indirectly honoured (rent collector, rice money; no 当票 object), which is advisory. Quoted checks: [heading exact match] 「第九十九回　贾宝玉悬崖撒手去　宝钗麝月共守寒家」 -> PASS; [departure not triggered by jade; no dream/monk] 「宝玉两手放在膝上，过了片刻，道：“我不回来过日子了。”」 -> PASS (0 mentions of 通灵玉/托梦/警幻); [stepwise withdrawal (books)] 「他到书摊，将尚未看完的一册也送回。」 -> PASS; [stepwise withdrawal (food)] 「饭量也渐渐少了。……菜移到跟前，他也吃，却不肯添饭。」 -> PASS; [Baochai practical, Sheyue socks/shoes] 「“你住在哪里？”/“袜子拿的是哪双，前日洗的还潮着”」 -> PASS; [temple wood-carrying, unskilled chanting] 「后头叫搬柴，抬头答了一声，说锅有人来接便去。」 -> PASS; [Baoyu's message] 「“没有，只说我平安。”」 -> PASS; [ending: two-person meal, unfinished garment] 「“够咱们两个吃的就是了。”/ 穿进针眼的线还没拉齐，长的一头垂在衣褶外，短的一头贴着布。」 -> PASS; [integrity: duplicates/padding] 「53 paragraphs, 53 unique」 -> PASS",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "package-99",
+      "subject_sha256": "67d6b9b4502ab198ea3b411a9583242cc477c889a423c9fb051761d76f960154",
+      "verdict": "PASS",
+      "notes": "Writing package ch99-agent-research-v3: chapter=99, operation_scope RESEARCH, authority_effect NONE, purpose states unaccepted/unqualified research draft. The five plan contracts it binds (99-S1..S5 v4) carry the same sha256 values as the reading list and packet; plan_constraints and chapter plan ch99.json are listed; sources include src:gengchen:ch21:cliff-release (early commentary) as the only external source ref. Nothing contradicts the chapter. Package is what the subject claims. Quoted checks: [contract refs match packet bindings] 「data/planning/contracts/agent-final-v2/99-S4.v4.json 143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05」 -> PASS; [scope/authority] 「\"authority_effect\": \"NONE\", \"operation_scope\": \"RESEARCH\"」 -> PASS",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-99-1",
+      "subject_sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507",
+      "verdict": "PASS",
+      "notes": "S1 (ordinary days and layered withdrawal). R1: '日子照旧过了几日', copying characters, books returned, eating less; meals remain adequate, no fresh famine or illness drives it. R2: Baoyu knows, Baochai half-knows, Sheyue learns late via meal/sock/shoe ('宝钗偶尔问一个字……' / 麝月 '以为又为哪件小事拌了嘴'). R3: returning books, not burning or breaking a brush ('伸手将书脊断线处扶好，才推过去'); wife/maid relation is intact and the withdrawal hurts them. F1: no leaving on return, no 98 Zhuangzi causality, no dream or oracle. F2: no essay and no verse. Required object OBJ-RICE-JAR-95 appears as the rice jar; the jade is absent by design (never a trigger). All beats met; the chapter honours the contract. ADVISORY-level only in any case. Quoted checks: [R1] 「日子照旧过了几日。」 -> met; [R3] 「他到书摊，将尚未看完的一册也送回。」 -> met; [F1/F2] 「(no dream, verse, essay)」 -> respected",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-99-2",
+      "subject_sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1",
+      "verdict": "PASS",
+      "notes": "S2 (spoken leaving, practical questions). R1: no theory, Baochai asks '你住在哪里？' and '何时回来', Sheyue talks of wet socks and the old shoes; three voices are distinct. R2: few clothes and little money, worn shoes left behind ('门边有双底软的旧鞋……仍放回去，换了脚上这一双'), and no instant arrival at the temple (a later 又隔了些时日 cut). R3: wife/maid and the harm to them remain. F1: no jade ceremony or disposition; jade not mentioned. F2: no letter, poem, gatha, or 'seeing through' narration. All met. Quoted checks: [R1] 「“你要住哪里？”她问。宝玉道先出去。」 -> met; [R2] 「又隔了些时日，寺中众人随着诵声翻页」 -> met (no instant arrival); [F2] 「(no farewell text)」 -> respected",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-99-3",
+      "subject_sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc",
+      "verdict": "PASS",
+      "notes": "S3 (search). R1: bookstall keeper, cart-hand, ferry, roadside shop each give vague or contradictory clues and one misidentification ('忙收手，说认错了'); Baochai gives travel money ('宝钗取出些脚费，他只接一部分'); Baochai and Sheyue stay at home (offstage). R2: a seen-heard-relayed chain is explicit ('自己同他说了话，见他搬柴，头发也已经剃了'); refusal and '没有，只说我平安' kept; the temple is reached by a woodcutter's loose direction and no one gives a precise address. R3: a men's temple, no claim of 仗义探庵. F1/F2 respected: no oracle, no all-witnesses-agree, and the mistaken-man episode does not remove the cost to the women (Sheyue: '先前一只袜子找不着，都叫问我。如今倒什么也没有了。'). All met. Minor texture: Jia Yun addresses Baoyu bluntly (author-preference register). Quoted checks: [R1] 「旁边送纸的车脚听见，说见过一个相像的，穿着旧衣，拿小包，朝渡口那边去。」 -> met; [R2] 「“倒真在这里。”」 -> met; [D2 boundary] 「(temple only, no 庵)」 -> respected",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-99-4",
+      "subject_sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05",
+      "verdict": "PASS",
+      "notes": "S4 (home aftermath, final shot). R1: buy rice, pay rent, re-measure supper; '“够咱们两个吃的就是了。”' present verbatim. R2: two bowls, immediate meal, unfinished sleeve, needle blocked by broken thread, a new needle, thread through eye but not drawn even, needle pinned back at the garment edge for the fire; not confused with the sleeve mending ('宝钗取了旧线……' vs '将这根新针别回旧衣边，线一长一短垂着'). The garment is unregistered and not tied to the pawned jacket. R3/F3: no cut back to the temple and no second domestic epilogue after the garment; Sheyue/Baochai only know what Jia Yun relayed. F1/F2: meal is not presented as completeness or recovery (Baochai still looks toward the alley, Sheyue's '我不是怪她'); no verse, no author summary. All met; the closing image '两只碗并着，热气一点点薄下去' matches the intended final shot. Quoted checks: [R1] 「“够咱们两个吃的就是了。”」 -> met; [R2] 「穿进针眼的线还没拉齐，长的一头垂在衣褶外，短的一头贴着布。」 -> met; [F3] 「宝钗把自己的碗向灯下挪近些，两只碗并着，热气一点点薄下去。」 -> met (final image, no more scenes)",
+      "sample_checks": []
+    },
+    {
+      "subject_id": "contract-99-5",
+      "subject_sha256": "20f76cdc3e741937bee015f01dad1c5cee7ab8b2810ab96f54ede6cb00f9dbad",
+      "verdict": "PASS",
+      "notes": "S5 (temple micro-lesson). R1: an extremely short chanting moment, Baoyu cannot keep up, an anonymous little monk points to the page ('旁边一个小和尚把自己的经页侧过，指给他看'), then immediately carries water and watches the pot; no sutra quoted, no Dharma name, no ordination, no 点化. R2: wood and water labour with ordinary monks ('宝玉抱着一捆柴从后面过来'), and it does not cancel Jia Yun's refusal or the home supper. R3: placed after the leaving and before Jia Yun meets him (narrative index 3). F1/F2: no high-monk teaching, no declaration that feeling is exhausted, no wall verse, no 庵 claim. All met. Quoted checks: [R1] 「旁边一个小和尚把自己的经页侧过，指给他看。」 -> met; [F1] 「(no sermon, no Dharma name)」 -> respected",
+      "sample_checks": []
+    }
+  ],
+  "authority_effect": "NONE",
+  "usage": "RESEARCH_ONLY",
+  "independent_human_admission": false
+}

@@ -17,6 +17,10 @@ from ..graph import ProvenanceGraph
 from ..io import load_data
 from ..mechanism_adapters import HistoricalAdapterRuntime
 
+# Catalog kinds of project-authored documents: context for adapters, not evidence.
+PROJECT_DOCUMENT_KINDS = {"PROJECT_REFERENCE", "PROJECT_RESEARCH"}
+
+
 def chapter_scope(root: Path, package_path: str, *, plan_contracts: bool = False) -> dict:
     package = load_data(repository_path(root, package_path))
     graph = ProvenanceGraph.from_repo(root)
@@ -83,6 +87,15 @@ def chapter_scope(root: Path, package_path: str, *, plan_contracts: bool = False
     if not contracts and not advisory_paths:
         findings.append("CHAPTER_SCENE_SCOPE_MISSING")
 
+    project_context: set[str] = set()
+    asset_kinds: dict[str, str | None] = {}
+
+    def project_document(ref):
+        if not asset_kinds:
+            assets = AssetCatalog.from_repo(root).assets
+            asset_kinds.update({identity: asset.get("kind") for identity, asset in assets.items()})
+        return asset_kinds.get(ref) in PROJECT_DOCUMENT_KINDS
+
     def source(ref):
         used.add(ref)
         if ref not in graph.sources:
@@ -108,7 +121,11 @@ def chapter_scope(root: Path, package_path: str, *, plan_contracts: bool = False
                         return any(contains(v) for v in value)
                     return value == ref
                 matched = [s["id"] for s in graph.sources.values() if contains(s)]
-                if not matched:
+                if not matched and project_document(ref):
+                    # Project-authored references/research are working context,
+                    # never Sources (docs/PROVENANCE_MODEL.md; ADR 0004).
+                    project_context.add(ref)
+                elif not matched:
                     findings.append(f"UNRESOLVED_DEPENDENT_SOURCE_ASSET: {ref}")
                 for identity in matched:
                     source(identity)
@@ -165,7 +182,8 @@ def chapter_scope(root: Path, package_path: str, *, plan_contracts: bool = False
               "used_source_ids": sorted(used), "declared_source_ids": sorted(declared),
               "dependent_source_ids": sorted(used - declared),
               "dataset_refs": [exemplars["dataset_ref"]], "paths": sorted(paths),
-              "findings": sorted(set(findings)), "authority_effect": "NONE"}
+              "findings": sorted(set(findings)), "project_reference_context": sorted(project_context),
+              "authority_effect": "NONE"}
     if plan_contracts:
         result["advisory_contract_paths"] = sorted(advisory_paths)
         result["advisory_contract_reports"] = advisory_reports

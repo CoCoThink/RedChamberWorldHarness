@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "report_kind": "AGENT_REVIEW_OPINION",
+ "packet": {
+  "path": "data/agent_release/research-81-100-pilot-v1/packets/corpus.json",
+  "sha256": "df47a0e743faacfabf62456b016e1f1280b8436acedb0dd1b567c9a8dd0efd64"
+ },
+ "reviewer": {
+  "id": "reviewer:pilot-v1:corpus:a",
+  "kind": "MODEL_SUBAGENT",
+  "session_id": "session:pilot-v1:corpus:a",
+  "model": {
+   "label": "claude subagent (declared)",
+   "verification": "DECLARED_NOT_VERIFIED"
+  },
+  "context_isolation": {
+   "asserted": true,
+   "verification": "NOT_PROVEN"
+  }
+ },
+ "results": [
+  {
+   "subject_id": "corpus:front80:v2-candidate",
+   "subject_sha256": "eb4aebb9e38712a988bdead263c12c9c3df00a6f936fb17db755c436e4d66886",
+   "verdict": "PASS",
+   "notes": "All 5 samples exist exactly once in segments.jsonl as MAIN_TEXT, digests verified, clean front-80 prose of the stated chapters. Manifest names dataset corpus:front80:v2-candidate with readiness CANDIDATE_PENDING_HUMAN_AUDIT, authority_effect NONE, and each segment has human_review PENDING - honest about being an unaudited candidate. I cannot authenticate the printed edition or the PDF extraction against it; chapter attribution rests on content recognition only. Advisory: samples are page-bounded fragments with hard line breaks and mid-sentence starts/ends.",
+   "sample_checks": [
+    {
+     "sample_id": "hlm80:chapter:24:p00030",
+     "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+     "verdict": "PASS",
+     "notes": "Exists once; kind MAIN_TEXT; text_sha256 matches text (113 chars). Text starts '叫什么名字。贾琏笑道：' - Jia Lian introduces Jia Yun to Baoyu, consistent with ch24. Clean prose, no notes/page furniture/OCR garbage; typography is declared main font SimSun/size 15.58/color 2301728. ADVISORY only: opens and ends mid-sentence (page-bounded fragment, ends '你倒比先越发出挑了，'), hard line breaks every ~25 chars; short, so a modest dialogue exemplar. human_review PENDING."
+    },
+    {
+     "sample_id": "hlm80:chapter:27:p00087",
+     "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+     "verdict": "PASS",
+     "notes": "Exists once; kind MAIN_TEXT; text_sha256 matches (212 chars). Starts '红玉道：“若是宝姑娘听见，还倒罢了。' - Hongyu/Xiaohong and Fengjie scene of ch27. Clean main text, no commentary or garbage. ADVISORY only: ends mid-sentence ('可不知你能'), hard line breaks, trailing spaces/blank line from page layout. Good short dialogue/transition exemplar."
+    },
+    {
+     "sample_id": "hlm80:chapter:52:p00006",
+     "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+     "verdict": "PASS",
+     "notes": "Exists once; kind MAIN_TEXT; text_sha256 matches (314 chars). Starts '  宝玉因记挂着晴雯、袭人等事，便先回园里来。' - Baoyu and sick Qingwen, ch52. Clean, complete-ended passage (ends '我来。”'), no editorial notes or OCR garbage. ADVISORY only: leading indent spaces and hard line breaks from PDF layout. Good exemplar of narrative plus dialogue."
+    },
+    {
+     "sample_id": "hlm80:chapter:61:p00016",
+     "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+     "verdict": "PASS",
+     "notes": "Exists once; kind MAIN_TEXT; text_sha256 matches (745 chars). Starts '横竖等十来日就来了，只管找他做什么。' - Wuer, Lin Zhixiao's wife and the rose-dew theft, ch61. Clean main text spanning multiple paragraphs, no commentary or garbage. ADVISORY only: opens mid-speech and ends mid-sentence ('凭你主'), hard line breaks. Strong multi-speaker dialogue exemplar."
+    },
+    {
+     "sample_id": "hlm80:chapter:74:p00079",
+     "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+     "verdict": "PASS",
+     "notes": "Exists once; kind MAIN_TEXT; text_sha256 matches (430 chars). Starts '遂命众丫\\n鬟秉烛开门而待。' - Tanchun vs Fengjie during the garden search, ch74. Clean main text, no editorial notes or garbage. ADVISORY only: opens with a line break splitting '丫鬟', ends mid-sentence ('果然今日真抄了。' after a speech without closing quote), hard line breaks. Good confrontational dialogue exemplar."
+    }
+   ]
+  }
+ ],
+ "authority_effect": "NONE",
+ "usage": "RESEARCH_ONLY",
+ "independent_human_admission": false
+}

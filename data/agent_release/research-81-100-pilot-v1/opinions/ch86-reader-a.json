@@ -1,0 +1,89 @@
+{
+ "schema_version": 1,
+ "report_kind": "AGENT_REVIEW_OPINION",
+ "packet": {
+  "path": "data/agent_release/research-81-100-pilot-v1/packets/candidates.json",
+  "sha256": "b7723e490b6a1c287181db7df229fd9380ab6db51cb86f46aab7b77726d17139"
+ },
+ "reviewer": {
+  "id": "reviewer:pilot-v1:ch86:a",
+  "kind": "MODEL_SUBAGENT",
+  "session_id": "session:pilot-v1:ch86:a",
+  "model": {
+   "label": "claude subagent (declared)",
+   "verification": "DECLARED_NOT_VERIFIED"
+  },
+  "context_isolation": {
+   "asserted": true,
+   "verification": "NOT_PROVEN"
+  }
+ },
+ "results": [
+  {
+   "subject_id": "chapter-86",
+   "subject_sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460",
+   "verdict": "PASS",
+   "notes": "ADR0004检查：完整性无问题。文件sha256与绑定一致，8209字、54段无重复段落或重复句、无填充；回目“第八十六回 潇湘馆泪尽芳魂逝　痴公子来迟旧梦空”与data/planning/chapters/ch86.json的title逐字一致；自病晨起至“那盏药早已冷透，再没有人去温。”收束，是完整一回而非残片。无BLOCKING项：D(decision:daiyu:death-direction，LOCKED/MUST，黛玉死于长期病程)得到满足——“贵妃丧后，黛玉的病一层层沉了下去。中间也有能坐起来的日子”，死因为长病而非单因果；未检出与前八十回一手内证相抵的写法（雪雁、紫鹃、李纨、王夫人、袭人均各在本位）。P-Lock两条精确锚点均逐字在文且位置正确：“药不是还没吃么？再温一温。今儿早起她还说药苦。”（宝玉到场后所说）与全章末句“那盏药早已冷透，再没有人去温。”。冷药物质链完整：“药早已煎得。紫鹃试了盏沿，热意透到指上”→“他将药盏端起……大半盏暗褐色的药”→“药吊子停在垫砖上，炉口收着，灰里没有红光”→“紫鹃托住盏底，将药从他手中接下来，没有往炉边走，仍搁回几上”。P-Lock/policy的forbidden_drift逐项核对：无绝命诗（全文无“绝命诗/绝笔诗/诔/冷月/葬花”）；宝玉进门前仅得“病势转坏”，其心理“一忽儿觉得该快走，一忽儿又想到了总要先让她静着”，未神秘感知死亡；无全员围哭一口声，各人哭法分散且克制。G01“小院苔痕留宿雨 / 隔帘花影 □ 新晴”空字未补，“紫鹃伸手只将露在外面的一张抽出来，并没翻稿夹”。以下均非阻断：(1)WARNING/文风：李纨称宝玉“二叔”（“李纨从外间转来，叫了声二叔”）——前八十回语料中“二叔”见于贾芹、贾蓉、贾芸等晚辈称谓，李纨称宝玉未见同例；属措辞可行性疑点，可改“宝兄弟”之类，不阻断。(2)ADVISORY/时间合理性：宝玉听到口信即动身，却在黛玉断气、换衣、挑灯、王夫人赶到、婆子问后事之后才进门，仅靠“错了一步”“踩着自己的衣带”解释这段耽搁，略薄；信息链本身（雪雁→李纨/袭人→小厮→跟班→宝玉）是写足的，故只记为建议。(3)ADVISORY：规划卡人物表列有宝钗，本章未出场；卡内偏好，可替换。",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "package-86",
+   "subject_sha256": "55d4018f6f3564e1370f37f57302c8bf22df73bd3fbc73b601b57b2b9082cbe5",
+   "verdict": "PASS",
+   "notes": "完整性核对：package（id writing-package:ch86:agent-research:v3，operation_scope RESEARCH，authority_effect NONE）文件sha256 55d4018f…与绑定一致；其plan列出的data/project/plan_constraints_v1.json、data/planning/chapters/ch86.json、86-S1至86-S6六份合同、六份data/world/m3_*.json、research_source_sets与exemplar_set的sha256我逐一重算，全部吻合；assets中五个sha256均在sources/project下有对应目录。六份合同的哈希与读本清单中contract-86-1至6一致，包确为第86回研究试写包而非他章文件。purpose声明“未知状态仍未验收，史料/语料/文学资格未授予；不修改稳定版”，与研究版范围相符，无越权声明。ADVISORY级别以上无问题。小记：exemplar_set取自ch89（data/writing/exemplars/ch89-research-v2.json），跨章范例仅供文风参考，不影响本章，只作记录。",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-1",
+   "subject_sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6",
+   "verdict": "PASS",
+   "notes": "ADR0004：本合同beat均来自规划卡（epistemic: CURRENT_IMPLEMENTATION_REQUIREMENT），最多ADVISORY；逐条核对候选章，全部满足。明日安排：“明日把外间小几搬来”“窗下那个帘角，明日缝了罢”“明日晴了，拿出来透透”，紫鹃接入照护（“挪到案上去”）。病晨温药/米汤/热水/炉火与“火箸碰茶盘”：“她用火箸拨了一下，收手时碰到旁边的茶盘，叮的一声”。米汤口角限于病晨且不取代吞咽困难：“喉间动了几次，没能再吃”。非缺药致死：药、米汤俱在，“身体难以承受”。长期病程：“贵妃丧后，黛玉的病一层层沉了下去”。forbidden全无：无临终遗言、托梦、冷月、总结诗、宝玉成婚/失玉单因果。entry_state（life_state ACTIVE、药温warm：“热意透到指上”）与首场相符；exit全为UNKNOWN，无可查项。unresolved各条（雪雁无实体ID等）本章未虚构实体。PASS，无问题。",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-2",
+   "subject_sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339",
+   "verdict": "PASS",
+   "notes": "ADR0004：全部beat为卡导出的ADVISORY，核对均满足。大夫被别处绊住：“大夫被别处的事务绊住了，去问的人尚候着”；跑腿返回—再问：“隔帘叫人再去：‘别只说原来病着。今日连米汤也难咽，照这个说。’那人应了，拿起帽子，又往外去”；药铺送药：“又将药铺送来的药交给雪雁”；厨房与热水接力：送水小丫头隔帘问壶、“厨房还留着小锅”。照护未因等医悬空：紫鹃始终“俯下身去，再没抬头”。医迟与病危报宝玉分为两条链：医者是跑腿廊下回话，报宝玉由紫鹃另遣雪雁（“去请大奶奶。再找二爷，说姑娘病势转坏”）。forbidden核查：无家庭命令、权谋、骗婚扣医扣人，无现代医学讲解、无神迹。未伪造具体病家、诊断或时辰。PASS，无问题。",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-3",
+   "subject_sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec",
+   "verdict": "PASS",
+   "notes": "ADR0004：beat皆卡导出的ADVISORY，核对满足。G01原样出现且空字始终未补：“笺上原有两行：‘小院苔痕留宿雨 / 隔帘花影 □ 新晴’。后行空着一字，黛玉的手指移到那里，纸却随着她的指腹往下滑。”改字未成的身体失能：“指节却没扣住笔管”“笔管从虎口松开，紫鹃接住了”“嘴唇微启，终究没说出字来”。紫鹃不翻稿、不辨作品：“伸手只将露在外面的一张抽出来，并没翻稿夹”。A01未回灌，无现场诵诗、无新悼诗、无《黛玉诔》、无冷月葬花魂明引、稿夹未展成遗稿展览，亦无完整遗言：“不要收深了。明日还找。”entry life_state为UNKNOWN，不可检。PASS，无问题。",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-4",
+   "subject_sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8",
+   "verdict": "PASS",
+   "notes": "ADR0004：beat为卡导出的ADVISORY，核对满足。死后先身体料理再抒情：“雪雁去拧绢子……紫鹃接来擦到唇角”“取些衣物来”“两人照着往日换衣的样子，一人扶肩，一人理袖”；热水：“李纨接过送来的盆”“问水在哪里”。李纨/王夫人落在可见实务：李纨指挥取盆、衣物、报王夫人、“水留下。米汤不盛了”，王夫人“叫送衣物的先去”并把后事交李纨，“你先去听听”；无轮流哭说或遗言。药/炉保留工作位：“把炉旁那只药吊子移到垫砖上……炉里的炭渐渐暗了”；紫鹃不转去翻稿。病危外传与死讯分写：“报王夫人：‘先前回的是病危，如今姑娘已经去了。’”此前雪雁/小丫头轻口角至“黛玉已经死了”后即退场。无悟道、托梦、作者评叹、总结诗。禁止项“集体围哭”未出现。PASS，无问题。",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-5",
+   "subject_sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0",
+   "verdict": "PASS",
+   "notes": "ADR0004：beat为卡导出的ADVISORY。信息链写足：紫鹃感病危→遣雪雁（“去请大奶奶。再找二爷，说姑娘病势转坏，快些来”）→李纨→怡红院袭人→“小厮先到宝玉常去的地方寻问”→“将口信托进去”跟班→宝玉；宝玉得到的只是病危，“宝玉听见，先问：‘谁来说的？’……又问大夫去了没有”。到场前不知确切死时，且未赶上最后一息：叙述明写“黛玉已经死了，李纨的脚步这时才到了廊下，宝玉还在赶来的路上”，到场后紫鹃才说“没等到你”，符合“到场后获知”。无骗婚/失玉/拦门，无同步诀别。ADVISORY（不阻断）：宝玉动身后仍耗了足够长的时间——断气、净面、换衣、挑灯、王夫人赶到、婆子来问后事——才进门，除了“错了一步”“踩着自己的衣带”外耽搁理由偏薄；本合同unresolved已承认报信路线与抵达时刻未定，故不构成缺陷。PASS。",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-6",
+   "subject_sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522",
+   "verdict": "PASS",
+   "notes": "ADR0004：beat为卡导出的ADVISORY，核对满足。宝玉到场后问药：“药不是还没吃么？再温一温。今儿早起她还说药苦。”（问药是请求，未执行；到场前不知确切死时）。药吊子与熄火保留：“药吊子停在垫砖上，炉口收着，灰里没有红光”。药仍未尽、无人实际重温：“紫鹃托住盏底，将药从他手中接下来，没有往炉边走，仍搁回几上”；紫鹃不翻稿。结尾停在冷药，散文收，无作者诗/象征解释/总结哭声：全章末句即“那盏药早已冷透，再没有人去温。”forbidden无：未重新温药，无复活回应，无同步诀别，无悼诗/绝命诗/冷月。entry/exit的药温、知识均为UNKNOWN，不可查，亦无冲突。PASS，无问题。",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-7",
+   "subject_sha256": "30fab56f00c242eeeabccfb0a216864b1eb4d4d5eda9d833d32b114527a780fa",
+   "verdict": "PASS",
+   "notes": "ADR0004：legacy场景合同data/scenes/ch86_last_night.yaml，核对如下。required_beats的any_text在候选章中均命中：药（药盏、药汁、药吊子多处，含“药早已煎得”）；“再温一温”（1次，在宝玉问话中）；“灯”（“外间的灯还隔着帘子。李纨自己端进来……挑了灯花”）、“热水”（“热水壶仍有人提着进出”）、“炉”（8次）。注：“药碗”“温药”两个字面未出现（章中用“药盏”），但每个beat是any_text任一即可，且“药”命中，故满足；字面差异只是措辞，不是缺失。forbidden_beats的any_text（绝命诗、绝笔诗、我终于明白、人生不过、看破红尘、神迹、显灵救活）全文0次。knowledge_guards的短语（“我早知道你就是这时候咽气”“紫鹃早已知道黛玉死在这一刻”等）0次，且宝玉到场前只知“病势转坏”。historical_adapters的forbidden_any（“史料已经证明黛玉必用此方”“按清代医理黛玉必然如此死”“一剂药便起死回生”“史料已经证明这一夜只剩这些炭”“清代规矩规定必须由紫鹃做这些事”）均不在文。household_economy的required_any两组均命中（米汤/热水/炉/炭/灯/丫头；添水/送药/取药/药铺）。exit_state：黛玉dead（“黛玉已经死了”），药冷（“那盏药早已冷透”）。PASS，无问题。",
+   "sample_checks": []
+  }
+ ],
+ "authority_effect": "NONE",
+ "usage": "RESEARCH_ONLY",
+ "independent_human_admission": false
+}

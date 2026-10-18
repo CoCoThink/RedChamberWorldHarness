@@ -403,3 +403,21 @@ def test_missing_review_packet_is_pending_input_not_failure(edition):
     assert gates["CANDIDATE_PEERS"] == "PENDING"
     assert report["status"] == "PENDING"
     assert any("packet not found" in p for p in report["chapters"][0]["pending"])
+
+
+def test_chapter_without_dependent_sources_or_corpus_needs_no_such_reviews(edition, monkeypatch):
+    e = edition
+    exemplar = write(e.root, "data/exemplars/ch86.json", {"dataset_ref": "synthetic-dataset", "segments": []})
+    e.request["chapters"][0]["writing_package"] = write(e.root, "data/packages/ch86-new.json", {"chapter": 86, "exemplar_set": exemplar})
+    e.packet = packet(e.root, "no-sources", [
+        {"id": "candidate", "scope": "CANDIDATE", "binding": e.candidate},
+        {"id": "package", "scope": "PACKAGE", "binding": e.request["chapters"][0]["writing_package"]},
+        {"id": "contract", "scope": "CONTRACT", "binding": e.contract}])
+    e.request["chapters"][0]["panel"]["packet"] = e.packet
+    peers(e.root, e.packet)
+    monkeypatch.setattr("rcwh.workflow.admission.chapter_scope", lambda root, path, **kwargs: {
+        "chapter": 86, "paths": [e.package["path"], e.contract["path"]], "used_source_ids": [],
+        "dataset_refs": [], "findings": []})
+    gates, reports = e.runtime._inputs(e.request["chapters"][0])
+    assert gates["SOURCE_PEERS"] == gates["CORPUS_PEERS"] == "PASS"
+    assert "SOURCE_PEERS: NO_DEPENDENT_SOURCES" in reports["info"]

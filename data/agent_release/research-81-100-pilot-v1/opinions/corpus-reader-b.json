@@ -1,0 +1,64 @@
+{
+ "schema_version": 1,
+ "report_kind": "AGENT_REVIEW_OPINION",
+ "packet": {
+  "path": "data/agent_release/research-81-100-pilot-v1/packets/corpus.json",
+  "sha256": "df47a0e743faacfabf62456b016e1f1280b8436acedb0dd1b567c9a8dd0efd64"
+ },
+ "reviewer": {
+  "id": "reviewer:pilot-v1:corpus:b",
+  "kind": "MODEL_SUBAGENT",
+  "session_id": "session:pilot-v1:corpus:b",
+  "model": {
+   "label": "claude subagent (declared)",
+   "verification": "DECLARED_NOT_VERIFIED"
+  },
+  "context_isolation": {
+   "asserted": true,
+   "verification": "NOT_PROVEN"
+  }
+ },
+ "results": [
+  {
+   "subject_id": "corpus:front80:v2-candidate",
+   "subject_sha256": "eb4aebb9e38712a988bdead263c12c9c3df00a6f936fb17db755c436e4d66886",
+   "verdict": "PASS",
+   "notes": "All 5 sample segment_ids exist exactly once in segments.jsonl, kind MAIN_TEXT, chapter/section_ref match their ids, text_sha256 matches the text and the exemplar file digests, with no editorial notes, page furniture or OCR garbage seen. Manifest names dataset corpus:front80:v2-candidate, scope FRONT80_CANDIDATE, readiness CANDIDATE_PENDING_HUMAN_AUDIT (quality report human_checks is empty and each segment human_review is PENDING), which is an honest not-yet-audited status. I cannot authenticate the printed edition or check the text against it; this review covers only byte integrity and visible cleanliness. ADVISORY: all samples are mid-sentence excerpts (several start and stop mid-utterance, ch24 is only 113 chars) and two exemplar reasons (ch24, ch52) do not match the passage content.",
+   "sample_checks": [
+    {
+     "sample_id": "hlm80:chapter:24:p00030",
+     "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+     "verdict": "PASS",
+     "notes": "ADVISORY only. Exactly one MAIN_TEXT record in chapter 24 (pdf:page:342, 113 chars), text_sha256 matches the text. Text starts '叫什么名字。贾琏笑道：“你怎么发呆，连他也不认得？……' and is clean front-80 dialogue (Jia Lian introduces Jia Yun to Baoyu); no editorial/zhipi notes, page furniture or OCR garbage seen; hard line breaks are PDF layout only. Advisory: the fragment starts mid-sentence and stops mid-sentence ('你倒比先越发出挑了，'), is only 113 chars, and the exemplar reason ('街面办事：观察差事、银钱与人物声口') does not match what this passage shows (a household introduction, no street errand or money); weak as a style exemplar."
+    },
+    {
+     "sample_id": "hlm80:chapter:27:p00087",
+     "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+     "verdict": "PASS",
+     "notes": "Exactly one MAIN_TEXT record in chapter 27 (pdf:page:391, 212 chars), digest matches. Text starts '红玉道：“若是宝姑娘听见，还倒罢了。林姑娘嘴里又爱刻薄人……' ; clean prose (Hongyu and Xiangling/Siqi, then Fengjie calling Hongyu). No annotations or furniture; a trailing double space after '顽笑。' is layout whitespace. Good fit for the stated reason (relayed message, address terms, quick replies). ADVISORY: ends mid-sentence ('可不知你能')."
+    },
+    {
+     "sample_id": "hlm80:chapter:52:p00006",
+     "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+     "verdict": "PASS",
+     "notes": "Exactly one MAIN_TEXT record in chapter 52 (pdf:page:699, 314 chars), digest matches. Text starts '宝玉因记挂着晴雯、袭人等事，便先回园里来。到房中，药香满屋……' ; clean narrative and dialogue (Baoyu finds Qingwen ill, discusses Ping'er). Complete scene ending with a closed quote. ADVISORY: the exemplar reason says '针线与病中劳作：观察物质动作推动场面', but this passage shows sickroom physical business (touching her brow, warming hands) and no needlework; reason is loosely matched, though the passage is a good prose-and-dialogue exemplar."
+    },
+    {
+     "sample_id": "hlm80:chapter:61:p00016",
+     "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+     "verdict": "PASS",
+     "notes": "Exactly one MAIN_TEXT record in chapter 61 (pdf:page:818, 745 chars), digest matches. Text starts '横竖等十来日就来了，只管找他做什么。方才使了他往前头去了……' ; clean prose with no editorial notes, page furniture or OCR garbage (Wuer, Lin Zhixiao's wife, the rose-dew bottle). Strong exemplar for the stated reason (kitchen case, truth/face/handling). ADVISORY: begins mid-utterance and ends mid-sentence ('凭你主')."
+    },
+    {
+     "sample_id": "hlm80:chapter:74:p00079",
+     "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+     "verdict": "PASS",
+     "notes": "Exactly one MAIN_TEXT record in chapter 74 (pdf:page:1013, 430 chars), digest matches. Text starts '遂命众丫鬟秉烛开门而待。一时，众人来了。探春故问何事。' ; clean prose (the search of Tanchun's rooms, Fengjie and Tanchun, Ping'er and Fenger); the word '丫/鬟' is split by a PDF line break only. Good fit for the stated reason (same event, differing identities). ADVISORY: excerpt ends mid-speech ('……果然今日真抄了。' with Tanchun's quotation left unclosed)."
+    }
+   ]
+  }
+ ],
+ "authority_effect": "NONE",
+ "usage": "RESEARCH_ONLY",
+ "independent_human_admission": false
+}

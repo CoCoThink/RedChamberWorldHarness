@@ -9,10 +9,22 @@ from ..workflow.agent_release import AgentRelease
 from .common import repo_root
 
 
+def _span(part: str) -> range:
+    start, _, end = part.strip().partition("-")
+    return range(int(start), int(end or start) + 1)
+
+
 def cmd_agent_release(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     try:
         release = AgentRelease(root)
+        if args.agent_release_command == "prepare":
+            from ..workflow.release_packets import prepare
+            chapters = sorted({int(c) for part in args.chapters.split(",") for c in _span(part)})
+            payload = prepare(root, args.edition, args.selection, chapters,
+                              coordinator_session_id=args.coordinator_session_id)
+            print(json.dumps(payload, ensure_ascii=False, indent=2))
+            return 0
         if args.agent_release_command == "build":
             payload = release.build(args.request, allow_pending=args.allow_pending)
         else:
@@ -44,3 +56,9 @@ def add_commands(sub) -> None:
         if command == "build":
             child.add_argument("--allow-pending", action="store_true", help="Emit staging manifest only; do not publish reviewed prose")
         child.set_defaults(func=cmd_agent_release)
+    prepare = commands.add_parser("prepare", help="Write review packets, reading lists and a research request")
+    prepare.add_argument("edition", help="Edition id (also the request id), e.g. research-81-100-pilot-v1")
+    prepare.add_argument("--selection", required=True, help="Repository-relative chapter selection JSON")
+    prepare.add_argument("--chapters", required=True, help="Chapters to review, e.g. 86,95,99 or 81-100")
+    prepare.add_argument("--coordinator-session-id", required=True, help="Declared coordinator session (not a reviewer)")
+    prepare.set_defaults(func=cmd_agent_release)

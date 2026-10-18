@@ -140,3 +140,17 @@ def test_wrong_contract_internal_reference_is_rejected(monkeypatch):
     monkeypatch.setattr('rcwh.planning.contracts.inspect_contract', broken)
     with pytest.raises(AssetError, match='CONTRACT_REFERENCE_INVALID'):
         chapter_scope(ROOT, 'data/writing/packages/ch81-agent-research-v2.json', plan_contracts=True)
+
+
+def test_project_documents_cited_by_adapters_are_context_not_missing_sources(monkeypatch):
+    path = 'data/writing/packages/ch86-agent-research-v3.json'
+    scope = chapter_scope(ROOT, path, plan_contracts=True)
+    assert not [f for f in scope['findings'] if f.startswith('UNRESOLVED_DEPENDENT_SOURCE_ASSET')]
+    assert {'asset:sha256:3735d2b2d82d70aac061f2cf7f5ccee84370064d6935364aa587402dccb7ff96',
+            'asset:sha256:98d9c0a13e692043b440941fe50cdcb719ab9cb4f1623f061f894cb6d6a3155c',
+            'asset:sha256:e9b9b54f25c6c2419433b9b3da040e936d0f4d1bad4945817c5cad1643161f97'} <= set(scope['project_reference_context'])
+    # An asset that is not a catalogued project document stays a missing input.
+    from types import SimpleNamespace
+    monkeypatch.setattr('rcwh.workflow.admission.AssetCatalog.from_repo', lambda root: SimpleNamespace(assets={}))
+    scope = chapter_scope(ROOT, path, plan_contracts=True)
+    assert [f for f in scope['findings'] if f.startswith('UNRESOLVED_DEPENDENT_SOURCE_ASSET')]

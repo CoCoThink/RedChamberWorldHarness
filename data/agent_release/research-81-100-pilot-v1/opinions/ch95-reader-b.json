@@ -1,0 +1,61 @@
+{
+ "schema_version": 1,
+ "report_kind": "AGENT_REVIEW_OPINION",
+ "packet": {
+  "path": "data/agent_release/research-81-100-pilot-v1/packets/candidates.json",
+  "sha256": "b7723e490b6a1c287181db7df229fd9380ab6db51cb86f46aab7b77726d17139"
+ },
+ "reviewer": {
+  "id": "reviewer:pilot-v1:ch95:b",
+  "kind": "MODEL_SUBAGENT",
+  "session_id": "session:pilot-v1:ch95:b",
+  "model": {
+   "label": "claude subagent (declared)",
+   "verification": "DECLARED_NOT_VERIFIED"
+  },
+  "context_isolation": {
+   "asserted": true,
+   "verification": "NOT_PROVEN"
+  }
+ },
+ "results": [
+  {
+   "subject_id": "chapter-95",
+   "subject_sha256": "ab58fae08d8d01f2f0f2e232b804da67841bad1e944652636d30d107aa67c438",
+   "verdict": "PASS",
+   "notes": "Full-chapter integrity OK: heading '第九十五回 薄粥量米延寒日 旧毡遮壁度长宵' (correct number, two-clause title); 64 distinct paragraphs, no duplicated/garbled padding, ends cleanly on '没有从旁人身上扯回被角'; no verse before/after (card item 17 locks 无诗, honoured). No contradiction of any locked front-80/early-commentary evidence found: the package's first-hand source 己卯夹批 on ch19 '寒冬噎酸虀，雪夜围破毡' is realised without being quoted ('酸齑，宝玉夹一口，喉中酸得一紧，急着咽下' / '旧毡挡住半面墙，底下仍有风'); 宝钗 as wife/daily manager, 麝月 as the servant who knows the rice ('米已量了，锅里这点先留着'), 贾芸 as helper not owner ('我只认得路，她自己的事还得她应') are consistent with front-80 roles. Frame is right: '已是家败后第二个冬天' (91/95 two distinct winters), no 断炊: 'forbidden_drift 不连续哭穷；不突然断炊；不一次外援升级生活' respected (贾芸 gives only a door wedge, a wood scrap; 邻妇 only turnip leaves; 典衣 yields 'only 眼前要的' money and the ticket is not redeemed). Card beats all present: 补窗越补越破 ('原来的裂口先长了'), 典青夹袄, 米炭药灯油互挤 ('药铺余下那笔也还在'; '灯油暂缓'), 酸齑仍可笑 ('这回有骨头了?'), 当票 ('收进旧针线匣底'), 邻家萝卜叶, 两碗半 and 问碗 ('怎么只有两碗半？' / '我下锅量米，不是照着这几只吃饭碗摆一排'), 破毡, 小木碗, '今日这口正好' (twice, with callback '这回听见了'), 笨重旧物 = the 木架. Forbidden items absent: no 恶房东/恶商, no 名画古砚, no 贫士诗, no 修行清净 romanticising. Historical texture (房东通知, 当铺按成色 '先看领袖，翻到薄处', 米斗, 炭摊, 油灯, 窗纸浆糊) shows no anachronism I could detect. ADVISORY craft/beat notes only, none blocking: (1) card item 8 笑料 '麝月门快关': in text the door is 'that 门 一松便向里合，麝月伸胳膊抵住', and the later '门快关上' line is spoken by 宝玉 ('宝玉缩肩道：门快关上'), 麝月 answering '等我腾出手' — the gag is kept but the speaker is inverted relative to the card wording; planning-card detail, replaceable. (2) 麝月-vs-宝钗 friction ('我不是非要住好的。只是别说一句省房钱，我这边便样样都省下了'; '算到我头上，总像不要钱的') recurs about five times in the day; with the narration's very dry, hedged syntax ('宝玉听得不是意思') the middle risks reading as 'continuous 哭穷/苦难 grind' (card item 18 risk), though each time it is resolved by a small act of care and never escalates. (3) '宝玉进门时先护着胸前的小包' is ambiguous (could be read as the jade; contract S3-F3 wants only continuity) — harmless. (4) No 回末套语 ('且听下回分解'); acceptable for the research edition, flagged only as a form note.",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "package-95",
+   "subject_sha256": "e35ad39628e4698e47f2a6259484874aa3fb140ea64f871f60dfe69cce298cc4",
+   "verdict": "PASS",
+   "notes": "Package id 'writing-package:ch95:agent-research:v3', chapter 95, operation_scope RESEARCH, authority_effect NONE. Every path+sha256 pair nested in it that exists on disk matches its bytes (0 mismatches; plan constraints, chapter plan, three contracts, world files, exemplar set, source set). Its source list (Cao 1728 family-housing and pawn tickets, Beijing 1774 rental contract, Daqinglu, and 己卯 ch19 'cold-winter-torn-felt') is on-subject for a rent/pawn/poverty chapter and the chapter text uses none of them as invented hard facts (no rent amounts, no addresses). Purpose text '未知状态仍未验收，史料/语料/文学资格未授予；不修改稳定版' is an honest research-only declaration.",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-95-1",
+   "subject_sha256": "4e115d3505f932d9c567639bc9fd698e30398262d7071a7e1acf1c31e4187ab3",
+   "verdict": "PASS",
+   "notes": "S1 (借住不能久居). Beats checked against text: R1 notice-then-search with 宝钗 estimating cash and 麝月 the rice: '说前番提过腾房，后头要用的人已来问过，不能再等了' then '米已量了，锅里这点先留着'; R2 different winter, no catastrophe: '已是家败后第二个冬天'. Forbidden F1 (no 恶房东): landlord says '不是这几日钱。我既应下人家，也不能两头失信' — firm, not abusive. F2 no poem/romanticising: ok. F3: preset objects not used to erase the housing bridge — the bridge is dramatised. exit_state UNKNOWN respected (S1 ends without moving). Participants 宝玉/宝钗/麝月 all present. No beat missing; nothing to downgrade.",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-95-2",
+   "subject_sha256": "ffd1144613a890396be457cee64d05c5fb469a3bd1608f25f73d87d1b83b4de6",
+   "verdict": "PASS",
+   "notes": "S2 (贾芸带看两三处). R1: 贾芸 leads to two places (临街 bright/dear; 偏角 cheap, '风从背后沿腰钻', paper 'edge brittle' (纸边发脆), door needing a wood plug) and the cheaper leaky one is chosen ('先赁罢'). R2: 宝钗 weighs cash ('若付那边，留给日用的便要挪开，药铺余下那笔也还在'), 贾芸 only supplies the lead; 麝月 splits off for her own look and rice shop is visited en route. R3: no addresses/rents quoted, 'looking' not equated with paid/moved until 宝钗 hands over money and receives a receipt. F1-F3: no free house or windfall; 代管者 neither villain nor 贾芸 — '贾芸道：我只认得路，她自己的事还得她应'. 贾芸 is not made the lessor. All beats met; exit unknown honoured.",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-95-3",
+   "subject_sha256": "b397d24aa0098ceef31ab29868911c1aa43f0f57beaeed23320e68c1ad559374",
+   "verdict": "PASS",
+   "notes": "S3 (舍弃/搬/典衣/米炭/一日三餐/破毡). R1 separate steps select/keep/load/move/arrive: 木架 argued over, '宝玉叫先装别的，自己把架搬出去…房东…答应留在墙角给院里用' then loading '车上旧毡的破边勾了木板'; bedding, rice and charcoal are packed separately ('衣包、现有的米和余炭分开装妥'); no wholesale discard, no new jade line. R2: 补窗越补越破 ('原来的裂口先长了'), 典青夹袄 for limited cash ('典衣所得…存项另包'), 当票 in the sewing box, rent/rice/charcoal/oil/medicine crowded ('灯油暂缓', '药铺那笔仍得另想'). R3 all comic/domestic items present (酸齑 bone joke, '今日这口正好', 麝月 door, 邻家萝卜叶, 小木碗, 两碗半, 问碗). R4 night wind and felt as ongoing cost, 明日仍两碗半 ('两碗半熟粥，早上稀些，中午留着温'), low rice/charcoal but not out. R5 hand-offs (pawn shop → rice shop → charcoal stall) are actually walked. Forbidden F1-F4 clean: pawnbroker just assesses ('先看领袖，翻到薄处'), no 名画古砚, no verse, 雪粒 is weather not 玉样物, no exact rice weight or price figures. Only advisory residue: the card-wording '麝月门快关' speaker shuffle noted under chapter-95.",
+   "sample_checks": []
+  }
+ ],
+ "authority_effect": "NONE",
+ "usage": "RESEARCH_ONLY",
+ "independent_human_admission": false
+}

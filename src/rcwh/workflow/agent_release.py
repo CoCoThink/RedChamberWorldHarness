@@ -320,7 +320,11 @@ class AgentRelease:
                 states.append(state); reviews.append(subject)
             if found != required:
                 states.append("PENDING")
-            gates["SOURCE_PEERS" if kind == "SOURCE" else "CORPUS_PEERS"] = _status(states)
+            gate = "SOURCE_PEERS" if kind == "SOURCE" else "CORPUS_PEERS"
+            # A chapter with no dependent sources/datasets has nothing to review.
+            gates[gate] = "PASS" if not required and not states else _status(states)
+            if not required:
+                reports.setdefault("info", []).append(f"{gate}: NO_DEPENDENT_{kind}S")
             reports[key] = reviews
         return gates, reports
 

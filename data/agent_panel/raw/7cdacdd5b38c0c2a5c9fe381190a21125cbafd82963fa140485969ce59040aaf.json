@@ -1,0 +1,89 @@
+{
+ "schema_version": 1,
+ "report_kind": "AGENT_REVIEW_OPINION",
+ "packet": {
+  "path": "data/agent_release/research-81-100-pilot-v1/packets/candidates.json",
+  "sha256": "b7723e490b6a1c287181db7df229fd9380ab6db51cb86f46aab7b77726d17139"
+ },
+ "reviewer": {
+  "id": "reviewer:pilot-v1:ch86:b",
+  "kind": "MODEL_SUBAGENT",
+  "session_id": "session:pilot-v1:ch86:b",
+  "model": {
+   "label": "claude subagent (declared)",
+   "verification": "DECLARED_NOT_VERIFIED"
+  },
+  "context_isolation": {
+   "asserted": true,
+   "verification": "NOT_PROVEN"
+  }
+ },
+ "results": [
+  {
+   "subject_id": "chapter-86",
+   "subject_sha256": "1dd378c525a699ca74db2b6c445ba06b999adf9e1b4148638cb141b7734cd460",
+   "verdict": "PASS",
+   "notes": "Read in full. Complete, correctly headed chapter 86 (not a fragment, no padding or duplication); both P-Lock anchors verbatim and the terminal anchor is the final sentence; arc follows the card's six segments (明日安排 -> 医者迟 -> 改字未成 -> 身体不可逆/死后料理 -> 宝玉迟到 -> 冷药). No BLOCKING problem; no ADVISORY problem serious enough to fail. Minor observations listed in the 'advisory-observations' check. [heading PASS] First line 第八十六回 潇湘馆泪尽芳魂逝　痴公子来迟旧梦空 equals the working title in data/planning/chapters/ch86.json and m6.json (title_source TG工作回目); chapter 86 as the subject claims. No duplicated or garbled paragraphs (54 paragraphs, 54 distinct; ~8200 characters; single heading). [p-lock-anchor-1 PASS] Verbatim: 药不是还没吃么？再温一温。今儿早起她还说药苦。 spoken by Baoyu after he lifts the cup; the preceding lines show him already told 林姑娘去了 and 没等到你, so the line reads as mundane displacement, not foreknowledge. [p-lock-anchor-2-terminal PASS] Last sentence verbatim: 那盏药早已冷透，再没有人去温。 Chapter ends there in prose, no coda poem (card: 回末诗 强锁无诗). [cold-medicine-object-chain PASS] Chain is physically expanded, not a one-line authorial gloss: 药早已煎得。紫鹃试了盏沿; 雪雁将药包放好; 雪雁把炉旁那只药吊子移到垫砖上; 红光一线线隐下去; 药吊子停在垫砖上，炉口收着，灰里没有红光. Satisfies PRESERVE_OBJECT_CHAIN and forbidden_drift 3. [unfinished-writing-no-death-poem PASS] G01 appears as 小院苔痕留宿雨 / 隔帘花影 □ 新晴 and the blank is never filled; 紫鹃伸手只将露在外面的一张抽出来，并没翻稿夹; 笔管从虎口松开. No 绝命诗/诔/挽诗, no 冷月/葬花, no 遗言, no 托梦, no 悟道 (grep for 绝命诗, 绝笔诗, 我终于明白, 人生不过, 看破红尘, 神迹, 显灵, 冷月, 葬花, 托梦 all 0). [no-mystic-foreknowledge PASS] Baoyu's approach is mundane: 宝玉想起雪雁平日来回话，常将姑娘一句不吃说得很重; 错了一步; he learns of death only inside the room. Narrator marks the timing neutrally: 宝玉还在赶来的路上. No synchronized farewell. [locked-decision-check PASS] decision:daiyu:death-direction (LOCKED, MUST; claim backed by 脂批 src:jimao:ch18) requires only that Daiyu dies as a long-illness endpoint; text has 贵妃丧后，黛玉的病一层层沉了下去 and a day of ordinary decline, no single-cause (no marriage/lost-jade/poverty cause). Character facts consistent with front-80 (Zijuan, Xueyan as Daiyu's maids; Li Wan as 大奶奶; Wang Furen). No BLOCKING contradiction found. [no-mass-wailing PASS] After death the first sequence is material: 取盆和干净绢子来, 取些衣物来, 婆子来问后事; weeping is individual and brief (紫鹃正用帕子掩住口), no chorus of wailing or last words, matching m6 forbidden_drift 不得全员围哭一口声. [advisory-observations PASS] Non-blocking observations only: (1) Baoyu says 药还没吃, though earlier 勉强咽了 shows Daiyu took a few sips; he did not see it, and 大半盏 remains, so it works as a misread. (2) 今儿早起她还说药苦 is an anchor line whose referent (a morning remark) is not shown on stage; the chapter gives only a grimace. Locked by P-Lock, so only noted. (3) Li Wan addresses Baoyu as 二叔; plausible kinship usage but I did not verify against front-80 forms of address (WARNING-grade at most). (4) Baoyu's elapsed time between hearing the news and arriving is long (he arrives after Wang Furen and after the lamp is lit) and is carried only by the relay chain and his hesitation; acceptable under the card's 信息链 requirement.",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "package-86",
+   "subject_sha256": "55d4018f6f3564e1370f37f57302c8bf22df73bd3fbc73b601b57b2b9082cbe5",
+   "verdict": "PASS",
+   "notes": "Read in full. Package writing-package:ch86:agent-research:v3 is chapter 86, operation_scope RESEARCH, authority_effect NONE, binds plan constraints, chapter plan ch86.json and contracts 86-S1..S6 (v2) by sha256 and honestly states 'unknown states remain unaccepted; no source/corpus/literary qualification granted; stable untouched'. Sources include src:jimao:ch18:daiyu-death, the evidence for the locked death-direction decision. The candidate text matches its stated plan. Note: package plan lists S1-S6 only, not the legacy scene ch86_last_night (packet subject contract-86-7); not a defect (scene is PENDING placement in ch86.json existing_contracts). [package-fields PASS] id writing-package:ch86:agent-research:v3; chapter 86; authority_effect NONE; plan shas match the packet's contract-86-1..6 bindings.",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-1",
+   "subject_sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6",
+   "verdict": "PASS",
+   "notes": "Read in full (entry/exit_state, 4 required, 3 forbidden, unresolved). Required/forbidden are CURRENT_IMPLEMENTATION_REQUIREMENT cards: ADVISORY by ADR 0004. All met anyway. Exit-state values are null/UNKNOWN, honestly declared. [明日安排接入照护 PASS] Daiyu: 明日把外间小几搬来。东西各放各的 ; 明日窗一开，直吹着它; Zijuan: 挪到案上去; ordinary tone, no death prediction. [火箸碰茶盘/资源齐全 PASS] 用火箸拨了一下，收手时碰到旁边的茶盘，叮的一声; cause is the body, not scarcity: 厨房还说，比昨日又薄些 is a light remark only, and the recess 喉间动了几次，没能再吃 is the swallowing difficulty. [长期病程 PASS] 贵妃丧后，黛玉的病一层层沉了下去。中间也有能坐起来的日子 - not compressed into days.",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-2",
+   "subject_sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339",
+   "verdict": "PASS",
+   "notes": "Read in full. Doctor delay is an ordinary labor-chain delay; no one blocks Baoyu or the doctor; no authorial or modern-medicine digression. [医者被绊住 PASS] 大夫被别处的事务绊住了，去问的人尚候着; runner sent again: 别只说原来病着。今日连米汤也难咽，照这个说。 [两条经手链 PASS] Illness worsens first, then Zijuan sends Xueyan: 去请大奶奶。再找二爷，说姑娘病势转坏，快些来。; care does not stop for the doctor.",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-3",
+   "subject_sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec",
+   "verdict": "PASS",
+   "notes": "Read in full. G01 untouched blank, Zijuan not leafing through the draft folder, no new poem or elegy, no manuscript exhibition. [G01空字不补 PASS] 隔帘花影 □ 新晴; 黛玉的眼光停在空字旁，嘴唇微启，终究没说出字来. [紫鹃不翻稿 PASS] 并没翻稿夹; no pen result: 手腕向下压，笔尾在紫鹃的手背上擦了一下 (the ink trace later closes the chapter).",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-4",
+   "subject_sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8",
+   "verdict": "PASS",
+   "notes": "Read in full. Body care, hot water and clothes precede lament; no collective wailing, last words, enlightenment, or authorial comment. [先身体料理 PASS] 李纨接过送来的盆; 取些衣物来; 两人照着往日换衣的样子，一人扶肩，一人理袖. [轻口角退场/药炉留位 PASS] 米汤不盛了 ends the 米汤 thread; 雪雁把炉旁那只药吊子移到垫砖上 (equipment stays in place, Zijuan does not turn to the manuscripts).",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-5",
+   "subject_sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0",
+   "verdict": "PASS",
+   "notes": "Read in full. Information-chain explains the lateness; no human obstruction; Baoyu does not catch the last breath or know the moment before arrival. [信息链 PASS] Zijuan -> Xueyan -> Li Wan -> Yihongyuan/Xiren -> messenger -> 跟班 -> Baoyu: 等跟班的赶上宝玉，雪雁已转回园内; 宝玉听见，先问：“谁来说的？”. [确切死时不知 PASS] 黛玉已经死了，李纨的脚步这时才到了廊下，宝玉还在赶来的路上; Baoyu learns only by 林姑娘去了.",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-6",
+   "subject_sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522",
+   "verdict": "PASS",
+   "notes": "Read in full. The ending is exactly the card's: ordinary question about unfinished medicine, request not carried out, cold medicine as final fact, prose closing, no poem. [再温一温问话 PASS] 药不是还没吃么？再温一温。今儿早起她还说药苦。 followed by 紫鹃托住盏底，将药从他手中接下来，没有往炉边走，仍搁回几上. [炉火熄/冷药结尾 PASS] 灰里没有红光; last line 那盏药早已冷透，再没有人去温。.",
+   "sample_checks": []
+  },
+  {
+   "subject_id": "contract-86-7",
+   "subject_sha256": "30fab56f00c242eeeabccfb0a216864b1eb4d4d5eda9d833d32b114527a780fa",
+   "verdict": "PASS",
+   "notes": "Read in full (data/scenes/ch86_last_night.yaml, legacy chapter-level scene). Required any_text beats met; forbidden strings absent; knowledge guards (Baoyu/Zijuan claiming exact death-time foreknowledge) not triggered. [required_beats PASS] 药 / 再温一温 / 灯 / 热水 / 炉 all present: 外间的灯还隔着帘子; 水兑好了; 炉口收着; 再温一温; (the literal tokens 温药/药碗 do not appear but the any_text lists 药 and 再温一温 alternatives are met). [forbidden_beats PASS] 绝命诗, 绝笔诗, 我终于明白, 人生不过, 看破红尘, 神迹, 显灵救活 occur 0 times. [exit_state PASS] life_state dead (黛玉已经死了) and medicine cold (那盏药早已冷透).",
+   "sample_checks": []
+  }
+ ],
+ "authority_effect": "NONE",
+ "usage": "RESEARCH_ONLY",
+ "independent_human_admission": false
+}
