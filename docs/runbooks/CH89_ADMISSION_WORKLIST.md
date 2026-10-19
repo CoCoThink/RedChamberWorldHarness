@@ -15,7 +15,7 @@ rcwh literary-inputs package data/writing/packages/ch89-production-v5.json --pro
 
 `data/writing/packages/ch89-production-v5.json` 沿用 v4 的世界、计划、范例与资产绑定，补列了 v4 漏掉的两项来源。这两项是从 `data/scenes/ch89_confiscation_message.yaml` 经 `data/mechanism_adapters/v04.json`、`data/mechanisms/r4_historical.yaml` 推导出的。v4 不改写，也不继承 v4 下的任何评审资格。
 
-第五阶段已将 `data/project/closure_roots.json` 的写作包记录显式切换到 v5 并绑定其字节摘要；旧 v4 文件与旧竞争记录不变，不迁移其评审。该治理变更只修复来源声明，不替代来源、语料或文学审核。
+第五阶段已将 `data/project/closure_roots.json` 的写作包记录显式切换到 v5 并绑定其字节摘要（2026-10-19 曹家史料改版后再切到 v6，只换来源 id 与摘要）；旧 v4 文件与旧竞争记录不变，不迁移其评审。该治理变更只修复来源声明，不替代来源、语料或文学审核。
 
 ## 来源复核（5项）
 
