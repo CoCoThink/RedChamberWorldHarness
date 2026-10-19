@@ -446,6 +446,37 @@ def _store(root: Path, relative: str, raw: bytes) -> bool:
     return True
 
 
+def scaffold(root: Path, packet: str | Path, *, reviewer_id: str, session_id: str,
+             subjects: list[str] | None = None, model_label: str = "claude subagent (declared)") -> dict:
+    """Opinion skeleton with exact bindings; it cannot be registered until filled in.
+
+    Verdicts and notes are left empty, which the schema rejects, so an unreviewed
+    skeleton never becomes a record. ``sample_checks`` is prefilled from the
+    packet's declared samples (empty when a subject declares none).
+    """
+    root = Path(root).resolve()
+    path = Path(packet)
+    relative = path.relative_to(root).as_posix() if path.is_absolute() else path.as_posix()
+    binding = {"path": relative, "sha256": digest(repository_path(root, relative).read_bytes())}
+    document = verify_packet(root, binding)
+    chosen = document["subjects"]
+    if subjects is not None:
+        known = {s["id"] for s in chosen}
+        if set(subjects) - known:
+            raise ValueError(f"unknown packet subjects: {sorted(set(subjects) - known)}")
+        chosen = [s for s in chosen if s["id"] in subjects]
+    return {"schema_version": 1, "report_kind": "AGENT_REVIEW_OPINION", "packet": binding,
+            "reviewer": {"id": reviewer_id, "kind": "MODEL_SUBAGENT", "session_id": session_id,
+                         "model": {"label": model_label, "verification": "DECLARED_NOT_VERIFIED"},
+                         "context_isolation": {"asserted": True, "verification": "NOT_PROVEN"}},
+            "results": [{"subject_id": s["id"], "subject_sha256": s["binding"]["sha256"],
+                         "verdict": "", "notes": "",
+                         "sample_checks": [{"sample_id": x["id"], "sha256": x["binding"]["sha256"],
+                                            "verdict": "", "notes": ""} for x in s.get("samples", [])]}
+                        for s in chosen],
+            "authority_effect": "NONE", "usage": "RESEARCH_ONLY", "independent_human_admission": False}
+
+
 def register(root: Path, file: Path, *, origin: str, origin_kind: str = "FILE", dry_run: bool = False) -> dict:
     root = Path(root).resolve()
     if origin_kind != "FILE" or not origin.strip():

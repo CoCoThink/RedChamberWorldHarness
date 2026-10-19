@@ -575,3 +575,30 @@ def test_reviewer_cannot_supersede_another_reviewers_negative(repo):
     with pytest.raises(ValueError, match="their own"):
         receive(repo, forged)
     assert panel.summary(repo, packet=binding)["panels"][0]["subjects"][0]["status"] == "FAIL"
+
+
+def test_scaffold_prefills_exact_bindings_and_rejects_unfilled_skeleton(repo):
+    binding, packet = make_packet(repo)
+    skeleton = panel.scaffold(repo, binding["path"], reviewer_id="reviewer:s", session_id="session:s")
+    assert skeleton["packet"] == binding
+    by_id = {r["subject_id"]: r for r in skeleton["results"]}
+    assert set(by_id) == {s["id"] for s in packet["subjects"]}
+    assert all(r["subject_sha256"] == s["binding"]["sha256"]
+               for r in skeleton["results"] for s in packet["subjects"] if s["id"] == r["subject_id"])
+    assert by_id["subject:candidate"]["sample_checks"] == []
+    assert [c["sample_id"] for c in by_id["subject:corpus"]["sample_checks"]] == ["seg:0", "seg:1"]
+    path = save(repo, "incoming/skeleton.json", skeleton)
+    with pytest.raises(ValueError):  # empty verdicts/notes never become records
+        panel.register(repo, path, origin="test:scaffold")
+
+
+def test_scaffold_filled_in_registers_and_subject_filter_is_checked(repo):
+    binding, packet = make_packet(repo)
+    skeleton = panel.scaffold(repo, binding["path"], reviewer_id="reviewer:s", session_id="session:s",
+                              subjects=["subject:candidate"])
+    assert [r["subject_id"] for r in skeleton["results"]] == ["subject:candidate"]
+    skeleton["results"][0].update(verdict="PASS", notes="Filled by the reviewer after reading.")
+    result = receive(repo, skeleton)
+    assert result["status"] in {"PASS", "PENDING"}
+    with pytest.raises(ValueError, match="unknown packet subjects"):
+        panel.scaffold(repo, binding["path"], reviewer_id="r", session_id="s", subjects=["nope"])
