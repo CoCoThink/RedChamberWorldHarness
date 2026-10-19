@@ -3,7 +3,7 @@
 本单列出第89回正式准入仍需的人工条件，由 `ChapterAdmission` 实时计算得出，本身不授予资格。
 
 ```bash
-rcwh literary-inputs package data/writing/packages/ch89-production-v5.json --production
+rcwh literary-inputs package data/writing/packages/ch89-production-v6.json --production
 ```
 
 当前结果为 `PENDING`，阻塞项只剩：

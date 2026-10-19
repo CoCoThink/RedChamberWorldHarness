@@ -56,8 +56,8 @@ python tools/verify_corpus_candidates.py
 
 ```bash
 rcwh literary-inputs exemplars data/writing/exemplars/ch89-research-v1.json
-rcwh literary-inputs package data/writing/packages/ch89-research-v4.json --require-tracked
-rcwh literary-inputs package data/writing/packages/ch89-production-v5.json --production --require-tracked
+rcwh literary-inputs package data/writing/packages/ch89-agent-research-v4.json --require-tracked
+rcwh literary-inputs package data/writing/packages/ch89-production-v6.json --production --require-tracked
 rcwh literary-inputs index-map corpus:front80:v1-candidate --output artifacts/new-index-map.json
 rcwh literary-inputs dataset-map corpus:front80:pilot:v1 corpus:front80:v1-candidate --output artifacts/new-version-map.json
 ```
