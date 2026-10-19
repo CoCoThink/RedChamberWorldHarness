@@ -37,7 +37,7 @@ rcwh self-contained check --profile source-locators
 rcwh sources verify-all
 ```
 
-在 CPython 3.12.13 声明环境下，当前 `source-content`、`source-locators` 与 `sources verify-all` 均可核对全部32条Source。曹家三段已按故宫005664原件图像作代理校录，使用明确标注的派生文本载体；`python tools/verify_cao_facsimile.py` 重算原PDF嵌入图像及派生关系。图像识读是代理判断，独立人工认可仍待提交，见[原件校录记录](../reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)。
+在 CPython 3.12.13 声明环境下，当前 `source-content`、`source-locators` 与 `sources verify-all` 均可核对全部35条Source。曹家三段已按故宫005664原件图像作代理校录，使用明确标注的派生文本载体；`python tools/verify_cao_facsimile.py` 重算原PDF嵌入图像及派生关系。图像识读是代理判断，独立人工认可仍待提交，见[原件校录记录](../reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)。
 
 后续工作按[来源闭包与语料建设设计](../RCWH_来源闭包与语料建设后续设计_v1.1_20261008.md)推进。R0.1 的统一接收、R0.2 的确定性抽取／Locator v2 和 R0.4 的导航／固定输入已实现，操作见[日常资产接收](ASSET_INTAKE.md)、[来源定位](SOURCE_LOCATORS.md)和[导航与固定输入](ASSET_DISCOVERY_AND_CORPUS_INPUTS.md)。R0.3 的逐字定位缺口已归零；12条代理更正／校录的独立证据审查仍待提交。完整声明闭包及语料层次验收继续保留真实状态。
 

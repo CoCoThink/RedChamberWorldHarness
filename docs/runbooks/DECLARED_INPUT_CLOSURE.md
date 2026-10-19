@@ -12,7 +12,7 @@ rcwh sources gap-check --require-tracked --base-ref HEAD
 rcwh self-contained check --profile declared-inputs-regression --require-tracked
 ```
 
-前两项是严格定位／闭包验收。当前32条来源定位检查通过；三条曹家摘录使用故宫005664原件影像的明确代理校录，详见[原件核验](../reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)。声明闭包还要求 `source_evidence_audit` 通过，目前12条代理更正／校录的独立人工复核仍为 PENDING，故完整声明闭包继续失败。后两项约束工程回归；它们保留实际 `closure_status`，不替代人工验收。
+前两项是严格定位／闭包验收。当前35条来源定位检查通过；三条曹家摘录使用故宫005664原件影像的明确代理校录，详见[原件核验](../reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)。声明闭包还要求 `source_evidence_audit` 通过，目前12条代理更正／校录的独立人工复核仍为 PENDING，故完整声明闭包继续失败。后两项约束工程回归；它们保留实际 `closure_status`，不替代人工验收。
 
 `data/project/source_gap_baseline.json` 已删除全部三项临时豁免，保留全部32个固定 Source ID 防止删除 roots。CI 直接要求 `sources verify-all --require-tracked` 通过；`sources gap-check` 另检查固定 roots 与禁止重新扩大豁免。确定性校录定位通过不表示手写字识读已获得独立人工认可。
 

@@ -24,7 +24,7 @@
 
 ## 可复查材料
 
-- [逐列校勘记录](../../artifacts/migration/cao-facsimile-20261009/collation-agent-v2.json)与[固定材料绑定](../../artifacts/migration/cao-facsimile-20261009/bundle-v1.json)：原档身份、下载、原图、图像位置、局部校录及三个当前 Source 摘要。
+- [逐列校勘记录](../../artifacts/migration/cao-facsimile-20261009/collation-agent-v2.json)与[固定材料绑定](../../artifacts/migration/cao-facsimile-20261009/bundle-v2.json)：原档身份、下载、原图、图像位置、局部校录、三个当前 Source 摘要，以及 2026-10-19 改版的 `:npm005664` 记录（与原记录同摘录、同定位、同载体，验证器逐项核对）。v1 保留原字节。
 - [载体迁移审计](../../artifacts/migration/cao-facsimile-20261009/carrier-migration.json)与[摘录更正审计](../../artifacts/migration/cao-facsimile-20261009/excerpt-corrections.json)：分别记录载体／定位变化和录文变化。新校录是本地派生资产，不沿用旧候选 PDF 的 HTTP 响应。
 - [公开独立复核材料 v2](../../artifacts/reviews/source-independent-v2-20261009/README.md)：绑定12条当前代理更正／校录及协议 v2。旧协议、旧 ZIP 与旧研究写作包保持原字节。
 - [该次第89回研究写作包原件 v2](../../sources/project/4e752b83baeabb6f4295938576cdbe7bb5873dac88da3102db953cb2a77bd437/ch89-research-v2.json)：保存该次 Source、文学范例、规划和世界输入绑定。当前写作包由声明闭包配置选择，操作见[语料及评审输入](../runbooks/CORPUS_AND_REVIEW_INPUTS.md)。
@@ -36,7 +36,7 @@ rcwh sources gap-check
 rcwh sources audit
 ```
 
-当前32条 Source 均有可重算的 Locator v2，三条技术缺口的豁免已删除。CI 要求 `sources verify-all --require-tracked` 通过，并重算原 PDF 嵌入图像及校录派生链。
+当前35条 Source（含三条 `:npm005664` 改版记录）均有可重算的 Locator v2，三条技术缺口的豁免已删除。CI 要求 `sources verify-all --require-tracked` 通过，并重算原 PDF 嵌入图像及校录派生链。
 
 **图像识读由 Codex 以 AGENT_TEXT_REVIEW 完成。** 确定性检查验证下载、原图字节、派生关系、图像位置声明及校录摘录一致性；它不独立判断手写字识读是否正确。独立人工 Source 审查仍为 PENDING，语料人工抽查和 P9 文学盲评保留原实际状态。史料核验公开出处，无需盲评。
 

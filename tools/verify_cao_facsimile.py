@@ -84,8 +84,23 @@ def verify(root: Path, bundle_path: str) -> dict:
         if report["status"] != "PASS":
             raise AssetError("FACSIMILE_SOURCE_LOCATOR_FAILED: " + "; ".join(report["findings"]))
         rows.append({"source_id": source["id"], "status": "PASS", "source_sha256": source_digest(source), "text_sha256": source["text_sha256"]})
-    if set(bundle["sources"]) != {row["source_id"] for row in rows} or len(rows) != 3:
+        # A relabelled record cites the same transcription: same excerpt, span and carrier.
+        relabel = bundle.get("relabelled_sources", {}).get(source["id"])
+        if relabel is not None:
+            sibling = repository.graph.sources.get(relabel["source_ref"])
+            if sibling is None or source_digest(sibling) != relabel["sha256"]:
+                raise AssetError("STALE_FACSIMILE_RELABELLED_SOURCE")
+            if any(sibling[key] != source[key] for key in ("text", "text_sha256", "locator", "container")):
+                raise AssetError("FACSIMILE_RELABELLED_SOURCE_MISMATCH")
+            if repository.source_report(sibling, locators=True)["status"] != "PASS":
+                raise AssetError("FACSIMILE_RELABELLED_SOURCE_LOCATOR_FAILED")
+            rows.append({"source_id": sibling["id"], "status": "PASS", "relabels": source["id"],
+                         "source_sha256": source_digest(sibling), "text_sha256": sibling["text_sha256"]})
+    collated = {row["source_id"] for row in rows if "relabels" not in row}
+    if set(bundle["sources"]) != collated or len(collated) != 3:
         raise AssetError("FACSIMILE_EXCERPT_SET_MISMATCH")
+    if set(bundle.get("relabelled_sources", {})) - collated:
+        raise AssetError("FACSIMILE_RELABELLED_SOURCE_SET_MISMATCH")
     return {"status": "PASS", "scope": "FIXED_FACSIMILE_AND_AGENT_TRANSCRIPTION_CHAIN",
             "bundle_sha256": digest(repository_path(root, bundle_path).read_bytes()), "sources": rows,
             "independent_witnesses": 1, "embedded_images_recomputed": len(bundle["images"]),
@@ -97,7 +112,7 @@ def verify(root: Path, bundle_path: str) -> dict:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path.cwd())
-    parser.add_argument("--bundle", default="artifacts/migration/cao-facsimile-20261009/bundle-v1.json")
+    parser.add_argument("--bundle", default="artifacts/migration/cao-facsimile-20261009/bundle-v2.json")
     args = parser.parse_args()
     try:
         report = verify(args.root.resolve(), args.bundle)
