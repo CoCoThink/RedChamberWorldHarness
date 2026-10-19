@@ -16,7 +16,7 @@ def test_h01_h06_verdicts_are_exact():
         "H02": "PASS",
         "H03": "PASS-BOUNDARY",
         "H04": "PASS",
-        "H05": "PASS",
+        "H05": "PASS-WITH-CAUTION",
         "H06": "PASS-SOFT",
     }
 

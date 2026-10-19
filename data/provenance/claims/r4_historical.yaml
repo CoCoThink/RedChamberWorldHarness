@@ -35,7 +35,7 @@ claims:
   authority_scope: HISTORICAL_FEASIBILITY
   modality: DIRECT_ASSERTION
   support:
-  - source: src:history:cao:1728:inventory-seal
+  - source: src:history:cao:1728:inventory-seal:npm005664
     relation: DIRECT
   status: SUPPORTED
 - id: claim:history:h03:mourning-constrains-marriage
@@ -71,7 +71,7 @@ claims:
   authority_scope: HISTORICAL_FEASIBILITY
   modality: DIRECT_ASSERTION
   support:
-  - source: src:history:cao:1728:family-housing
+  - source: src:history:cao:1728:family-housing:npm005664
     relation: DIRECT
   status: SUPPORTED
 - id: claim:history:h04:rental-mechanism
@@ -85,13 +85,14 @@ claims:
     note: 该契为昌平地区铺面租契，只支持租赁机制，不证明贾府住宅形态。
   status: SUPPORTED
 - id: claim:history:h05:pawn-as-cashflow
-  statement: 曹家抄没清查记录“当票百余张”，说明旧家衰败过程中持续典当作为现金流工具具有现实可能。
+  statement: 曹家抄没清查记录载有“当票百余张”；据此推断典当是旧家衰败过程中真实存在的资产周转形态，持续典当作为现金流手段具有可行性，但档案并未直接记载持续典当。
   kind: HISTORICAL_MECHANISM
   authority_scope: HISTORICAL_FEASIBILITY
-  modality: DIRECT_ASSERTION
+  modality: INFERENCE
   support:
-  - source: src:history:cao:1728:pawn-tickets
+  - source: src:history:cao:1728:pawn-tickets:npm005664
     relation: DIRECT
+    note: 直接支持的只是“清查时有当票百余张”；持续典当与现金流是据此作出的可行性推断。
   status: SUPPORTED
 - id: claim:history:h05:rental-cost
   statement: 清代北京地区房屋租赁可形成持续租金义务。

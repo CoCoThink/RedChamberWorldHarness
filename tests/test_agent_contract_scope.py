@@ -13,7 +13,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 def test_stable_default_scope_remains_exact():
     expected = json.loads((ROOT / 'tests/fixtures/baseline-ch89-scope.json').read_bytes())
-    assert chapter_scope(ROOT, 'data/writing/packages/ch89-production-v5.json') == expected
+    assert chapter_scope(ROOT, 'data/writing/packages/ch89-production-v6.json') == expected
 
 
 def test_actual_ch81_advisory_scope_is_explicit_and_not_semantic_pass():
