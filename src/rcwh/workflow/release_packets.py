@@ -26,6 +26,7 @@ from ..assets import AssetCatalog, AssetError
 from ..assets.paths import repository_path
 from ..assets.transactions import digest
 from ..candidate_reviews import canonical_bytes
+from ..generation.records import bound_bytes
 from ..contracts import project_chapters
 from ..io import load_data
 from ..schema import validate_instance
@@ -65,7 +66,7 @@ def _packet(edition: str, kind: str, coordinator: str, subjects: list[dict]) -> 
 
 
 def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], *,
-            coordinator_session_id: str) -> dict:
+            coordinator_session_id: str, max_book_read_bytes: int = 197 * 1024) -> dict:
     """Write packets, reading lists and the request; return their bindings."""
     from .admission import chapter_scope
     from ..corpus.dataset import CorpusRepository
@@ -172,12 +173,21 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
             raise AssetError("book review chapter has unbound prefix")
         prose[chapter] = text
     book = _write_immutable(root, f"{base}/reading/book.md", (prefix + "".join(prose[ch] for ch in scope_chapters)).encode())
-    packets["book"] = _write_immutable(root, f"{base}/packets/book.json", _packet(
-        edition, "book", coordinator_session_id, [{"id": "book-continuity", "scope": "BOOK",
-            "binding": book, "review_policy": "ADVISORY"}]))
-    request["book_review"] = {"packet": packets["book"], "subject_id": "book-continuity"}
-    _write_immutable(root, f"{base}/reading/book.json", {
-        "schema_version": 1, "packet": packets["book"], "read_in_full": [book],
+    from .book_review import partition, subjects as verify_book_subjects
+    segments = []
+    for span in partition(list(scope_chapters), prose, max_book_read_bytes):
+        label = f"{span[0]}-{span[-1]}"
+        binding = _write_immutable(root, f"{base}/reading/book-segments-v2/ch{label}.md",
+                                   "".join(prose[ch] for ch in span).encode())
+        segments.append({"id": f"book-continuity-{label}", "scope": "BOOK", "chapters": span,
+                         "binding": binding, "review_policy": "ADVISORY"})
+    packets["book"] = _write_immutable(root, f"{base}/packets/book-segments-v2.json", _packet(
+        edition, "book-segments-v2", coordinator_session_id, segments))
+    request["book_review"] = {"packet": packets["book"], "subject_ids": [s["id"] for s in segments]}
+    verify_book_subjects(root, request["book_review"], book=bound_bytes(root, book), chapters=list(scope_chapters))
+    _write_immutable(root, f"{base}/reading/book-segments-v2.json", {
+        "schema_version": 2, "packet": packets["book"], "assembled_book": book,
+        "max_read_bytes": max_book_read_bytes, "overlap_chapters": 1, "segments": segments,
         "chapter_candidates": [{"chapter": ch, "candidate": rows[ch]["candidate"]} for ch in sorted(chapters)],
         "seams": [[a, b] for a, b in zip(scope_chapters, scope_chapters[1:])],
         "focus": ["回际接缝与时间顺序", "物件持有与流转状态", "称谓和人物语体", "知识获得与后文照应"],

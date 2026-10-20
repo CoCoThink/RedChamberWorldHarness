@@ -24,8 +24,11 @@ def test_edition_request_binds_verified_packets_for_all_twenty_chapters():
             assert ref["subject_id"] in {s["id"] for s in packet["subjects"]}
     assert "archive/" not in (EDITION / "request.json").read_text()
     book = verify_packet(ROOT, request["book_review"]["packet"])
-    assert book["subjects"][0]["scope"] == "BOOK"
-    assert book["subjects"][0]["review_policy"] == "ADVISORY"
+    spans = [s["chapters"] for s in book["subjects"]]
+    assert spans == [list(range(81, 88)), list(range(87, 93)), list(range(92, 98)), list(range(97, 101))]
+    assert request["book_review"]["subject_ids"] == [s["id"] for s in book["subjects"]]
+    assert all(s["scope"] == "BOOK" and s["review_policy"] == "ADVISORY" for s in book["subjects"])
+    assert all(len((ROOT / s["binding"]["path"]).read_bytes()) <= 197 * 1024 for s in book["subjects"])
 
 
 def test_rebound_selection_uses_v4_packages_with_disclosure_receipts():

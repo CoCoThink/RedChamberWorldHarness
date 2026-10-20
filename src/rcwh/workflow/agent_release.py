@@ -511,19 +511,18 @@ class AgentRelease:
 
     def _book_review(self, ref: dict, book: bytes, excluded: set[str]) -> dict:
         try:
-            from .agent_panel import verify_packet
-            packet = verify_packet(self.root, ref["packet"])
-            subjects = packet["subjects"]
-            if (len(subjects) != 1 or subjects[0]["id"] != ref["subject_id"]
-                    or subjects[0]["scope"] != "BOOK" or subjects[0]["review_policy"] != "ADVISORY"
-                    or self._bound(subjects[0]["binding"]) != book):
-                raise AssetError("book review does not bind the assembled current edition")
+            from .book_review import subjects as book_subjects
+            subjects = book_subjects(self.root, ref, book=book, chapters=list(project_chapters(self.root)))
             report = self._packet_summary(ref["packet"])
             if any(o["reviewer"]["session_id"] in excluded for panel in report["panels"]
                    for subject in panel["subjects"] for o in subject["opinions"]):
                 raise AssetError("book author/reviser/custodian cannot be its continuity reader")
+            progress = {s["id"]: s for panel in report["panels"] for s in panel["subjects"]}
             return {"severity": "ADVISORY", "gate_effect": "NONE", "packet": ref["packet"],
-                    "status": report["status"], "panels": report["panels"], "findings": report["findings"]}
+                    "status": report["status"], "panels": report["panels"], "findings": report["findings"],
+                    "segments": [{"subject_id": s["id"], "chapters": s.get("chapters", list(project_chapters(self.root))),
+                                  "binding": s["binding"], "status": progress[s["id"]]["status"],
+                                  "distinct_reviewer_count": progress[s["id"]]["distinct_reviewer_count"]} for s in subjects]}
         except (KeyError, OSError, TypeError, ValueError) as exc:
             return {"severity": "ADVISORY", "gate_effect": "NONE", "status": "INVALID", "findings": [str(exc)]}
 

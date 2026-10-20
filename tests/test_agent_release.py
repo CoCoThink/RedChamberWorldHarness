@@ -107,14 +107,17 @@ def positive_gates(e, monkeypatch):
     monkeypatch.setattr(e.runtime, "_inputs", lambda row, **kwargs: ({"WRITING_PACKAGE": "PASS", "CONTRACT_PEERS": "PASS", "SOURCE_PEERS": "PASS", "CORPUS_PEERS": "PASS"}, {}))
 
 
-def test_two_whole_book_negatives_remain_advisory_and_do_not_change_gates(edition, monkeypatch):
+@pytest.mark.parametrize("segmented", [False, True])
+def test_two_whole_book_negatives_remain_advisory_and_do_not_change_gates(edition, monkeypatch, segmented):
     e = edition
     positive_gates(e, monkeypatch)
     before, book = e.runtime._evaluate(e.request)
-    binding = write(e.root, "research/book.md", book.decode())
+    _, prose = _split(book.decode(), (86, 87))
+    binding = write(e.root, "research/book.md", "".join(prose.values()) if segmented else book.decode())
     ref = packet(e.root, "book", [{"id": "continuity", "scope": "BOOK", "binding": binding,
+                                   **({"chapters": [86, 87]} if segmented else {}),
                                    "review_policy": "ADVISORY"}])
-    e.request["book_review"] = {"packet": ref, "subject_id": "continuity"}
+    e.request["book_review"] = {"packet": ref, **({"subject_ids": ["continuity"]} if segmented else {"subject_id": "continuity"})}
     peers(e.root, ref, verdict="FAIL", session_prefix="book-reader")
     report = e.runtime.evaluate(e.request)
     assert report["status"] == before["status"] == "PASS"

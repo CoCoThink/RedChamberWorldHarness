@@ -32,12 +32,14 @@
         "id": {"$ref": "#/$defs/label"},
         "scope": {"enum": ["SOURCE", "CORPUS", "CANDIDATE", "SCENE", "CONTRACT", "BACKTEST", "PLAN", "PROVENANCE", "ASSET", "PACKAGE", "BOOK"]},
         "review_policy": {"const": "ADVISORY"},
+        "chapters": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1}},
         "binding": {"$ref": "#/$defs/binding"},
         "source_ref": {"$ref": "#/$defs/label"},
         "dataset_ref": {"$ref": "#/$defs/label"},
         "samples": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sample"}}
       },
       "allOf": [
+        {"if": {"required": ["chapters"]}, "then": {"properties": {"scope": {"const": "BOOK"}}}},
         {"if": {"properties": {"scope": {"const": "BOOK"}}}, "then": {"required": ["review_policy"]}, "else": {"not": {"required": ["review_policy"]}}},
         {"if": {"properties": {"scope": {"const": "SOURCE"}}}, "then": {"required": ["source_ref"]}},
         {"if": {"properties": {"scope": {"const": "CORPUS"}}}, "then": {"required": ["dataset_ref", "samples"]}}

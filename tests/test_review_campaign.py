@@ -11,7 +11,7 @@ import pytest
 
 from rcwh.candidate_reviews import canonical_bytes, digest
 from rcwh.workflow import review_campaign as campaign
-from rcwh.workflow.agent_panel import summary
+from rcwh.workflow.agent_panel import register, summary
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -30,7 +30,7 @@ def work(tmp_path, monkeypatch):
     package = write("package.json", {"chapter": 86})
     contract = write("contract.json", {"chapter": 86, "text": "contract" * 20})
     second_contract = write("contract2.json", {"chapter": 86, "text": "second-contract" * 12})
-    book = write("book.md", "current whole book" * 50)
+    book = write("book.md", "current whole book" * 5)
     subjects = [{"id": "chapter-86", "scope": "CANDIDATE", "binding": candidate},
                 {"id": "package-86", "scope": "PACKAGE", "binding": package},
                 {"id": "contract-86", "scope": "CONTRACT", "binding": contract},
@@ -156,3 +156,144 @@ def test_timeout_retries_without_registering_partial_output(work, monkeypatch):
     report = campaign.run(work.root, "campaign.json", ["test-worker"], backoff_seconds=0)
     assert all(j["status"] == "EXHAUSTED" for j in report["jobs"])
     assert summary(work.root)["review_count"] == 0
+
+
+def exported(work, **kwargs):
+    result = campaign.dispatch(work.root, "campaign.json", **kwargs)
+    return [(row, json.loads((work.root / row["assignment"]["path"]).read_bytes())) for row in result["assignments"]]
+
+
+def test_exported_batch_respects_active_slots_and_resume_does_not_redispatch(work):
+    batch = exported(work)
+    assert len(batch) == 2
+    assert exported(work) == []
+    report = campaign.status(work.root, "campaign.json")
+    assert sum(j["status"] == "ASSIGNED" for j in report["jobs"]) == 2
+    row, assignment = batch[0]
+    work.write("returned.json", json.loads(opinion(assignment)))
+    campaign.submit(work.root, "campaign.json", row["job_id"], "returned.json", origin="synthetic agent environment")
+    assert len(exported(work)) == 1
+    assert summary(work.root)["review_count"] == 1
+
+
+def test_direct_panel_registration_counts_and_campaign_runner_skips_it(work, monkeypatch):
+    row, assignment = exported(work, limit=1)[0]
+    work.write("returned.json", json.loads(opinion(assignment)))
+    record = register(work.root, work.root / "returned.json", origin="direct agent-panel register")
+    current = campaign.status(work.root, "campaign.json")
+    job = next(j for j in current["jobs"] if j["id"] == row["job_id"])
+    assert job["status"] == "COMPLETE" and job["record"] == record["record"]
+
+    def worker(command, *, input, **kwargs):
+        task = json.loads(input)
+        assert task["job"]["id"] != row["job_id"]
+        return SimpleNamespace(returncode=0, stdout=opinion(task), stderr=b"")
+    monkeypatch.setattr(campaign.subprocess, "run", worker)
+    assert campaign.run(work.root, "campaign.json", ["test-worker"])["status"] == "PASS"
+    assert summary(work.root)["review_count"] == len(current["jobs"])
+
+
+def test_exported_empty_or_wrong_identity_opinion_cannot_complete_job(work):
+    row, assignment = exported(work, limit=1)[0]
+    work.write("empty.json", assignment["opinion_scaffold"])
+    with pytest.raises(ValueError):
+        campaign.submit(work.root, "campaign.json", row["job_id"], "empty.json", origin="unfilled")
+    wrong = json.loads(opinion(assignment))
+    wrong["reviewer"]["session_id"] = "somebody-else"
+    work.write("wrong.json", wrong)
+    with pytest.raises(ValueError, match="assigned"):
+        campaign.submit(work.root, "campaign.json", row["job_id"], "wrong.json", origin="wrong reader")
+    register(work.root, work.root / "wrong.json", origin="unrelated valid opinion")
+    assert campaign.status(work.root, "campaign.json")["jobs"][0]["status"] == "ASSIGNED"
+
+
+def test_direct_registration_with_missing_receipt_is_not_credited(work):
+    row, assignment = exported(work, limit=1)[0]
+    work.write("returned.json", json.loads(opinion(assignment)))
+    record = register(work.root, work.root / "returned.json", origin="synthetic")
+    (work.root / f"data/agent_panel/receipts/{record['record']['sha256']}.json").unlink()
+    with pytest.raises(OSError):
+        campaign.status(work.root, "campaign.json")
+
+
+def test_manual_503_retries_wait_and_exhaust_without_counting_opinions(work, monkeypatch):
+    now = [100.0]
+    monkeypatch.setattr(campaign.time, "time", lambda: now[0])
+    row, first = exported(work, limit=1)[0]
+    for attempt in range(1, 4):
+        report = campaign.fail(work.root, "campaign.json", row["job_id"], reason="actual synthetic 503", status_code=503)
+        state = next(j for j in report["jobs"] if j["id"] == row["job_id"])
+        assert state["attempts"] == attempt
+        assert state["status"] == ("RETRY_WAIT" if attempt < 3 else "EXHAUSTED")
+        if attempt < 3:
+            # Leave no room for unrelated tasks while checking the retry delay.
+            assert row["job_id"] not in [r["job_id"] for r, _ in exported(work, limit=1)]
+            now[0] += 5 * 2 ** (attempt - 1)
+            # The other available slot may already be occupied.
+            batch = exported(work)
+            retry_row, retry = next((r, a) for r, a in batch if r["job_id"] == row["job_id"])
+            assert retry_row["attempt"] == attempt + 1
+            assert retry["opinion_scaffold"]["reviewer"]["session_id"] != first["opinion_scaffold"]["reviewer"]["session_id"]
+    assert summary(work.root)["review_count"] == 0
+
+
+def test_runner_refuses_to_duplicate_active_exported_work(work, monkeypatch):
+    exported(work, limit=1)
+    monkeypatch.setattr(campaign.subprocess, "run", lambda *a, **k: pytest.fail("duplicate dispatch"))
+    with pytest.raises(ValueError, match="active"):
+        campaign.run(work.root, "campaign.json", ["test-worker"])
+
+
+def test_oversized_legacy_book_cannot_be_dispatched(work):
+    work.write("book.md", "oversized" * 100)
+    packet = json.loads((work.root / "book-packet.json").read_bytes())
+    packet["subjects"][0]["binding"] = work.write("book.md", "oversized" * 100)
+    ref = work.write("book-packet.json", packet)
+    request = json.loads((work.root / "request.json").read_bytes())
+    request["book_review"]["packet"] = ref
+    work.write("request.json", request)
+    with pytest.raises(ValueError, match="exceeds reading budget"):
+        campaign.plan(work.root, "request.json", "new-campaign.json", max_read_bytes=400)
+
+
+def test_agent_environment_cli_dispatch_register_and_status(work, monkeypatch, capsys):
+    import sys
+    from rcwh.cli import main
+
+    def invoke(*args):
+        monkeypatch.setattr(sys, "argv", ["rcwh", "--root", str(work.root), *args])
+        with pytest.raises(SystemExit) as stop:
+            main()
+        return stop.value.code, json.loads(capsys.readouterr().out)
+
+    code, batch = invoke("agent-release", "review-dispatch", "campaign.json", "--limit", "1")
+    assert code == 0 and len(batch["assignments"]) == 1
+    row = batch["assignments"][0]
+    assignment = json.loads((work.root / row["assignment"]["path"]).read_bytes())
+    work.write("returned.json", json.loads(opinion(assignment)))
+    code, registration = invoke("agent-release", "review-register", "campaign.json", row["job_id"],
+                                "--opinion", "returned.json", "--origin", "synthetic environment reader")
+    assert code == 0 and registration["record"]
+    code, progress = invoke("agent-release", "review-status", "campaign.json")
+    assert code == 2 and progress["jobs"][0]["status"] == "COMPLETE"
+
+
+def test_exported_permanent_failure_is_terminal_and_real_interruption_can_retry(work, monkeypatch):
+    now = [100.0]
+    monkeypatch.setattr(campaign.time, "time", lambda: now[0])
+    batch = exported(work)
+    campaign.fail(work.root, "campaign.json", batch[0][0]["job_id"], reason="synthetic permanent error", status_code=401)
+    report = campaign.fail(work.root, "campaign.json", batch[1][0]["job_id"], reason="synthetic actual interruption", interrupted=True)
+    assert [j["status"] for j in report["jobs"][:2]] == ["FAILED", "RETRY_WAIT"]
+    now[0] += 5
+    retried = [r["job_id"] for r, _ in exported(work)]
+    assert batch[0][0]["job_id"] not in retried and batch[1][0]["job_id"] in retried
+
+
+def test_registered_original_bytes_are_checked_on_external_progress_recovery(work):
+    row, assignment = exported(work, limit=1)[0]
+    work.write("returned.json", json.loads(opinion(assignment)))
+    record = register(work.root, work.root / "returned.json", origin="synthetic")
+    (work.root / record["raw_output"]["path"]).write_text("changed")
+    with pytest.raises(ValueError):
+        campaign.status(work.root, "campaign.json")

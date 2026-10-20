@@ -77,23 +77,52 @@ rcwh agent-release prepare research-81-100-v1 \
   --selection data/agent_release/selection-81-100-v2.json --chapters 81-100 \
   --coordinator-session-id coordinator:release-v1
 
-rcwh agent-release review-status data/agent_release/research-81-100-v1/review-campaign.json
+rcwh agent-release review-status data/agent_release/research-81-100-v1/review-campaign-v2.json
 python tools/verify_agent_release.py --build-smoke
 ```
 
-已备好的 `review-campaign.json` 固定材料和任务分组。默认同时五个任务；每项材料两位读者，超大章回分组，合同读者同时看正文和写作包。语料按样本投影并校验原 carrier。整书两位读者须通读 `reading/book.md`，按 `reading/book.json` 查全部回际接缝；意见固定 ADVISORY，发布 manifest 展示进度但不新增门控。
+已备好的 `review-campaign-v2.json` 固定材料和任务分组。默认同时五个任务；每项材料两位读者，超大章回分组，合同读者同时看正文和写作包。语料按样本投影并校验原 carrier。
 
-实际铺开时接入本地独立读者适配器：
+连续性审读使用 `reading/book-segments-v2.json` 和四个分段：81–87、87–92、92–97、97–100。相邻段重叠一回，每段两位独立读者，共八个 BOOK 任务。每段 UTF-8 正文不超过 197 KiB；19 处接缝全部位于某一段内部。意见固定 ADVISORY，发布 manifest 逐段展示进度；`reading/book.md` 是组装校验原件，不再分派给单个读者。字节预算是实测文件大小，不是模型 token 数；读者若仍无法读全，必须报 NOT_CHECKED 和未读范围。
+
+### 主 agent 环境内执行（默认路径，无适配器）
+
+1. 先运行 `review-status`，检查是否存在上次已领取的 ASSIGNED 任务。主 agent 按环境实际空闲子代理槽位领取；`--limit` 限制包括已领取任务在内的总数，不能超过 campaign 的五个。
 
 ```bash
-rcwh agent-release review-run data/agent_release/research-81-100-v1/review-campaign.json \
-  --worker-command 'python /absolute/path/to/local_reviewer_adapter.py' \
-  --timeout 600 --model-label '实际路由的模型声明'
+rcwh agent-release review-dispatch data/agent_release/research-81-100-v1/review-campaign-v2.json \
+  --limit 3 --model-label '当前环境实际路由模型（声明）'
 ```
 
-适配器从 stdin 读取 assignment，按 `job.read_in_full` 和 `job.samples` 阅读，填写 `opinion_scaffold` 后仅向 stdout 返回完整意见 JSON。失败向 stderr 写 `{"status_code":503}` 或退出 75 可触发临时故障重试；不要把诊断日志混进 stdout。身份和 subject 清单不能更换。默认三次尝试，自动退避；成功意见串行登记，原始输出和失败记录保存在 `data/agent_release/review-attempts/`。恢复运行跳过已登记任务。空骨架或格式错误不会被重试成 PASS。
+2. 命令返回 assignment 文件路径，其中已经由 scaffold 生成准确的身份、packet、subject、样本检查和阅读清单。主 agent 用当前环境的子代理工具逐项启动全新读者，把这个 assignment 路径及仓库根目录交给读者。要求完整阅读 `job.read_in_full`、按 `instructions` 填写 `opinion_scaffold`，只返回实际意见 JSON。**只读本任务的 subjects**，不要把共享 packet 的全部材料再读一遍。读者不自行登记或改仓库文件。BOOK 任务必须逐一检查 `job.continuity.seams` 的两回接缝。
 
-改正文需建立新 edition 和计划；候选稿、写作包、政策或 packet 改变后，旧计划拒绝继续派发，应以新路径运行 `review-plan REQUEST --out NEW_PLAN.json`。加入协调者决定不改变审阅依据，可继续原计划。既有 request 副本、packet 和意见不覆盖，未处理的口味类 ADVISORY 留给协调者裁决。先提交、推送并确认 CI，再启动读者。详见 [ADR 0006](../decisions/0006_RELEASE_ATTRIBUTION_AND_REVIEW_SCALE.md)。
+使用本环境的 `collaboration.spawn_agent` 时设置 `fork_turns: "none"`，在 message 中提供绝对仓库根路径和该 assignment 路径，并要求返回原始意见 JSON；task_name 为该任务独有名称。不要继承主 agent 的长对话、作者提示词或其他读者的意见，以免挤占阅读上下文和污染独立判断。模型沿用当前环境路由；只有用户另行指定时才覆盖。
+
+3. 主 agent 原样保存返回的 JSON（不替读者填 verdict/notes），串行登记：
+
+```bash
+rcwh agent-release review-register data/agent_release/research-81-100-v1/review-campaign-v2.json JOB_ID \
+  --opinion /tmp/returned-opinion.json --origin '实际子代理任务和会话说明'
+```
+
+也支持既有 `rcwh agent-panel register /tmp/returned-opinion.json --origin '实际子代理任务和会话说明'`。随后 `review-status` 会凭准确的分派身份、packet、subject、原始输出及登记回执核实并计入 COMPLETE；无需伪造 runner 的 stdout 文件或事件。其他读者的意见不会被冒认成本任务。
+
+4. 子代理确实返回 503 等临时错误时，主 agent 登记故障并继续处理其他任务：
+
+```bash
+rcwh agent-release review-fail data/agent_release/research-81-100-v1/review-campaign-v2.json JOB_ID \
+  --status-code 503 --reason '保留实际服务错误内容'
+```
+
+超时或任务丢失使用 `--interrupted --reason '实际原因'`；先确保原任务已停止，再登记中断。默认最多三次尝试，前两次分别退避 5、10 秒。后续 `review-dispatch` 自动挑选到期且未耗尽的重试；退避中不会再派发。其他错误不自动重试。每次尝试使用新会话声明，保留旧故障与原件；失败不计意见。格式错误、空 scaffold、身份或 subject 不符不能登记为完成，应保留原件并报失败，不能改填 PASS。
+
+5. 重复领取、启动、登记和状态检查，直至收到全部意见或明确报告 FAILED/EXHAUSTED。恢复时 ASSIGNED 保留为进行中，不能悄悄重派；主 agent 应恢复原子代理或记录真实中断。COMPLETE 只说明收到了有效格式的意见，意见仍可为 PENDING/NOT_CHECKED 或负面。文学门控与协调者决定仍独立计算。本流程只调用当前环境提供的子代理能力，不启动 API provider，不要求密钥或新增付费预算。
+
+### 已有本地适配器的可选路径
+
+`review-run PLAN --worker-command COMMAND` 仍支持 JSON stdin/stdout 协议及自动临时故障重试，但不是主 agent 执行的前提。存在 ASSIGNED 任务时拒绝混用 runner，避免重复启动。两条路径使用同一份 scaffold、字节校验、意见原件和恢复进度。
+
+改正文需建立新 edition 和计划；候选稿、写作包、政策或 packet 改变后，旧计划拒绝继续派发，应以新路径运行 `review-plan REQUEST --out NEW_PLAN.json`。加入协调者决定不改变审阅依据，可继续原计划。本次仅修订审读方案：旧 `book.json`、整书 packet、campaign 和 request 快照保留，新分段使用 v2 路径；旧计划因当前审读依据已更新而拒绝派发。既有 request 副本、packet 和意见不覆盖，未处理的口味类 ADVISORY 留给协调者裁决。先提交、推送并确认 CI，再启动读者。详见 [ADR 0006](../decisions/0006_RELEASE_ATTRIBUTION_AND_REVIEW_SCALE.md)。
 
 ## 已知限制
 

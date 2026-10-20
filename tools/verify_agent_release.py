@@ -18,7 +18,7 @@ from rcwh.workflow.agent_release import AgentRelease
 from rcwh.workflow.review_campaign import _load
 
 REQUEST = "data/agent_release/research-81-100-v1/request.json"
-PLAN = "data/agent_release/research-81-100-v1/review-campaign.json"
+PLAN = "data/agent_release/research-81-100-v1/review-campaign-v2.json"
 
 
 def verify(root: Path) -> dict:
@@ -42,7 +42,9 @@ def verify(root: Path) -> dict:
         expected.update((row["panel"]["packet"]["sha256"], s) for s in required)
         expected.update((r["packet"]["sha256"], r["subject_id"]) for key in ("source_reviews", "corpus_reviews") for r in row.get(key, []))
     book = request["book_review"]
-    expected.add((book["packet"]["sha256"], book["subject_id"]))
+    from rcwh.workflow.book_review import subjects as book_subjects
+    segments = book_subjects(root, book, chapters=[r["chapter"] for r in request["chapters"]])
+    expected.update((book["packet"]["sha256"], s["id"]) for s in segments)
     coverage = Counter((j["packet"]["sha256"], s) for j in plan["jobs"] for s in j["subjects"])
     if set(coverage) != expected or set(coverage.values()) != {2}:
         raise ValueError("campaign must assign exactly two readers to every required subject")
@@ -51,6 +53,9 @@ def verify(root: Path) -> dict:
     return {"status": "PASS", "release_status": manifest["status"], "failures": manifest["findings"],
             "request_sha256": manifest["request_sha256"],
             "chapters": len(manifest["changed_chapters"]), "jobs": dict(Counter(j["kind"] for j in plan["jobs"])),
+            "continuity_segments": [s.get("chapters") for s in segments],
+            "continuity_seams": len({tuple(seam) for j in plan["jobs"] for seam in j.get("continuity", {}).get("seams", [])}),
+            "largest_reading_bytes": max(j["reading_bytes"] for j in plan["jobs"]),
             "batch_size": plan["batch_size"], "authority_effect": "NONE"}
 
 

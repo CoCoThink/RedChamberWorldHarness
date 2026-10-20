@@ -26,6 +26,13 @@ def cmd_agent_release(args: argparse.Namespace) -> int:
             elif args.agent_release_command == "review-run":
                 payload = review_campaign.run(root, args.plan, shlex.split(args.worker_command),
                     timeout=args.timeout, model_label=args.model_label)
+            elif args.agent_release_command == "review-dispatch":
+                payload = review_campaign.dispatch(root, args.plan, limit=args.limit, model_label=args.model_label)
+            elif args.agent_release_command == "review-register":
+                payload = review_campaign.submit(root, args.plan, args.job, args.opinion, origin=args.origin)
+            elif args.agent_release_command == "review-fail":
+                payload = review_campaign.fail(root, args.plan, args.job, reason=args.reason,
+                    status_code=args.status_code, interrupted=args.interrupted)
             else:
                 payload = review_campaign.status(root, args.plan)
             print(json.dumps(payload, ensure_ascii=False, indent=2))
@@ -35,7 +42,8 @@ def cmd_agent_release(args: argparse.Namespace) -> int:
             from ..workflow.release_packets import prepare
             chapters = sorted({int(c) for part in args.chapters.split(",") for c in _span(part)})
             payload = prepare(root, args.edition, args.selection, chapters,
-                              coordinator_session_id=args.coordinator_session_id)
+                              coordinator_session_id=args.coordinator_session_id,
+                              max_book_read_bytes=args.max_book_read_bytes)
             print(json.dumps(payload, ensure_ascii=False, indent=2))
             return 0
         if args.agent_release_command == "build":
@@ -45,7 +53,7 @@ def cmd_agent_release(args: argparse.Namespace) -> int:
     except (KeyError, OSError, UnicodeError, TypeError, ValueError) as exc:
         payload = {"status": "FAIL", "scope": "AGENT_RESEARCH_RELEASE", "findings": [str(exc)],
                    "authority_effect": "NONE", "stable_active_effect": "NONE"}
-    if getattr(args, "json", False) or args.agent_release_command in {"prepare", "review-plan", "review-run", "review-status"}:
+    if getattr(args, "json", False) or args.agent_release_command == "prepare" or args.agent_release_command.startswith("review-"):
         print(json.dumps(payload, ensure_ascii=False, indent=2))
     else:
         print(f"AGENT RESEARCH RELEASE: {payload['status']}")
@@ -74,8 +82,10 @@ def add_commands(sub) -> None:
     prepare.add_argument("--selection", required=True, help="Repository-relative chapter selection JSON")
     prepare.add_argument("--chapters", required=True, help="Chapters to review, e.g. 86,95,99 or 81-100")
     prepare.add_argument("--coordinator-session-id", required=True, help="Declared coordinator session (not a reviewer)")
+    prepare.add_argument("--max-book-read-bytes", type=int, default=197 * 1024,
+                         help="Maximum UTF-8 bytes per overlapping continuity segment")
     prepare.set_defaults(func=cmd_agent_release)
-    campaign = commands.add_parser("review-plan", help="Prepare two readers per subject and two advisory book readers")
+    campaign = commands.add_parser("review-plan", help="Prepare two readers per subject and per bounded continuity segment")
     campaign.add_argument("request")
     campaign.add_argument("--out", required=True, help="New immutable repository-relative campaign plan")
     campaign.add_argument("--batch-size", type=int, default=5, help="Maximum concurrent workers, 1..6")
@@ -88,6 +98,25 @@ def add_commands(sub) -> None:
     runner.add_argument("--timeout", type=float, default=600)
     runner.add_argument("--model-label", default="local worker (declared)")
     runner.set_defaults(func=cmd_agent_release)
+    dispatch = commands.add_parser("review-dispatch", help="Export a bounded batch for subagents in the current agent environment")
+    dispatch.add_argument("plan")
+    dispatch.add_argument("--limit", type=int, help="Total active tasks; lower this to the available subagent slots")
+    dispatch.add_argument("--model-label", default="agent environment reader (declared)")
+    dispatch.set_defaults(func=cmd_agent_release)
+    submit = commands.add_parser("review-register", help="Register an actual opinion against its exported assignment")
+    submit.add_argument("plan")
+    submit.add_argument("job")
+    submit.add_argument("--opinion", required=True, help="Original returned AGENT_REVIEW_OPINION JSON file")
+    submit.add_argument("--origin", required=True, help="Actual subagent session/task description")
+    submit.set_defaults(func=cmd_agent_release)
+    failure = commands.add_parser("review-fail", help="Record an actual subagent failure; allow bounded temporary retries")
+    failure.add_argument("plan")
+    failure.add_argument("job")
+    failure.add_argument("--reason", required=True)
+    transport = failure.add_mutually_exclusive_group()
+    transport.add_argument("--status-code", type=int, help="Transport status, e.g. 503")
+    transport.add_argument("--interrupted", action="store_true", help="Agent was cancelled, timed out or lost")
+    failure.set_defaults(func=cmd_agent_release)
     inspect = commands.add_parser("review-status", help="Inspect bound campaign attempts and registrations")
     inspect.add_argument("plan")
     inspect.set_defaults(func=cmd_agent_release)

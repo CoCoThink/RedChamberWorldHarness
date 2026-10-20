@@ -16,7 +16,7 @@
 
 ## 当前整本读本
 
-prepare 按发布使用的同一稳定底本、所选候选稿和项目章回顺序拼接 `reading/book.md`。`reading/book.json` 固定全部章回字节、19 处接缝与阅读重点：时序、物件状态、称谓、知识获得及后文照应。BOOK packet 的策略固定为 ADVISORY，自动安排两位独立声明的读者。
+prepare 按发布使用的同一稳定底本、所选候选稿和项目章回顺序拼接 `reading/book.md`。`reading/book.json` 固定全部章回字节、19 处接缝与阅读重点：时序、物件状态、称谓、知识获得及后文照应。BOOK packet 的策略固定为 ADVISORY。后续修订将整书审读改为重叠分段，详见 ADR 0007；不再给单一读者分派全部正文。
 
 整书意见与其他意见一样按原件登记、保留异议及 supersedes 历史；BOOK 的负面意见即使未写 severity，也只产生 ADVISORY。manifest 在 `advisories.book_continuity` 展示意见和覆盖度。缺审读、异议、读本过期分别可见，但不增加门控。`BOOK_STRUCTURE` 继续只代表结构检查；整书审读不会自动证明语义正确。
 
@@ -26,9 +26,9 @@ prepare 按发布使用的同一稳定底本、所选候选稿和项目章回顺
 
 `agent-release review-plan` 以实际依赖计算任务。每项 CANDIDATE、PACKAGE、CONTRACT、SOURCE、CORPUS subject 均安排两位读者。章回组超过默认 197 KiB 时按完整 subject 分组；合同组仍附候选稿和写作包供对照，避免脱离正文。单份过大合同不会截断后冒充完整阅读，而是显式报告超预算。
 
-语料只导出所需完整样本记录，保留 carrier 哈希及记录 ID，加载时重新比对原 carrier；不会让读者通读重复的整个 JSONL。整书任务例外地保留完整全文，并明确报告其体量。
+语料只导出所需完整样本记录，保留 carrier 哈希及记录 ID，加载时重新比对原 carrier；不会让读者通读重复的整个 JSONL。整书任务按 ADR 0007 改为有重叠的完整章回分段，受同一阅读预算约束；超预算任务拒绝派发。
 
-`review-run` 通过本地适配器执行：JSON assignment 从 stdin 输入，包含字节绑定、阅读清单及由既有 scaffold 生成的意见骨架；stdout 必须为真实填写的 AGENT_REVIEW_OPINION。适配器负责启动实际独立读者。程序不自行调用付费服务，不根据 scaffold 编造意见。
+默认由主 agent 使用 ADR 0007 的 `review-dispatch` / `review-register` 路径执行，无须适配器；已有适配器的 `review-run` 仍可使用：JSON assignment 从 stdin 输入，包含字节绑定、阅读清单及由既有 scaffold 生成的意见骨架；stdout 必须为真实填写的 AGENT_REVIEW_OPINION。适配器负责启动实际独立读者。程序不自行调用付费服务，不根据 scaffold 编造意见。
 
 默认最多五个任务同时执行，允许 1–6。只对退出码 75、stderr JSON 的 429/500/502/503/504 以及超时自动重试，最多三次，退避 5、10 秒；其他失败不自动重试。任务、原始 stdout/stderr、失败、登记记录逐次追加保留。登记串行化；失败尝试不计意见，已登记任务恢复时不重复执行。空 verdict、空 notes、换 packet、换审阅身份、漏 subject 都拒绝登记。运行完成只表示已收到意见，意见可为 PENDING 或负面，不能冒充文学通过。
 
