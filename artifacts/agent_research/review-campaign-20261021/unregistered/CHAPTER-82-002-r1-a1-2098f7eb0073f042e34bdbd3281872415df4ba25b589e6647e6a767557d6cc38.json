@@ -1,0 +1,54 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/c4d993af65344f9daf423781d12332a51e00a3831539a553f0222dc7c7c02116.json",
+    "sha256": "c4d993af65344f9daf423781d12332a51e00a3831539a553f0222dc7c7c02116"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整阅读本候选107行、研究包、82-S1/S2两份v2合同及ch82政策；五份必读文件共105498字节，连同packet均与分派SHA256相符，未读范围为空；job.samples为空，故sample_checks为空。正文第7—15行把三分筐、针线包、短夹袄及箱笼题签接到整装，第13、23—35行落实随行照看者、先后上船及箱包安放，第25行分开家内行旅费和私人小包，第39—43行在离岸后先复点并解决取物位置，第53—75行用姜片、吐后清理、端水、稀粥及船火写照护和第一顿行旅晚饭。第45—51行初写并夹册，第85—87行隔夜补日期，第91行再补今晨能吃粥，三项动作没有压成同时完成；第95—107行仍待可靠人船，未把夹册等同寄出或到家。未见第二场哭别、送别诗琴、命定远嫁、婚家姓名、具体目的地或婚期，也未把装载当作抵达。ADVISORY：第107行在第85行窗缝渐白、第91行早粥、第103—105行再度行船之后，又说远处火光“到了天明才一盏盏隐去”，没有回叙标记，读来时间退回；可改成火光早已隐去，或明确是回看昨夜。第9行“姜从头到尾只这一包”也略像作者为连续性作账，可由包口、拿取动作自然交代。以上属时间衔接及文风建议，不构成BLOCKING。只就本章未写事败已发生作观察，不据单章替全书先后关系出具额外验收结论。",
+      "sample_checks": [],
+      "subject_id": "chapter-82",
+      "subject_sha256": "edc6d81e46a9e25717109198a8f50d8ef51b487c85550238826d151e5a75da81",
+      "verdict": "ADVISORY"
+    },
+    {
+      "notes": "已完整阅读79行研究包，并与完整候选、两份合同和完整政策对照。chapter=82、operation_scope=RESEARCH、authority_effect=NONE与用途相符；plan明确选择本次审阅的82-S1.v2和82-S2.v2，路径及SHA256一致。研究包、两份合同及政策中合计36组去重后的path/sha256引用均已逐项计算实际文件哈希，全部匹配。assets为带哈希的引用；sources为空，purpose同时明示未知状态未验收、史料/语料/文学资格未授予，未发现将研究材料冒充已授予权威的声明。ch89 exemplar_set只是明示的范例集引用，本次未据其名称推断历史或文学资格。结论限于分派研究包及其与附属正文、合同、政策的关系，不把引用文件的哈希校验等同对所有上游内容的语义审阅。必读范围全部读完；无分派samples，sample_checks为空。",
+      "sample_checks": [],
+      "subject_id": "package-82",
+      "subject_sha256": "a1a42b5a37f68a1856daef02c0e8a94ba5310ac92d5dfa83084e1f8305e58d02",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已逐段完整读完82-S1.v2全部740行，包括状态、嵌入引文、required/forbidden beats及unresolved，并对照完整候选、研究包及政策。合同保留UNKNOWN/PENDING与空basis，authority_effect/evidence_effect均NONE；participants_status=KNOWN只覆盖注册的tanchun，notes及unresolved明确不据此补造未注册随从状态。R1在正文第7—15行分类、点件、题签及第23—35行实际装船核位中落实；R2由第13行问清待书与婆子跟船、送箱者返回，以及第33—35行通路与铺盖安排落实；R3第25行区分费用并交由管事承接，无精确价目；R4第3—15及29—35行保留夹袄争论和解包，第17、37行只问可靠递信条件，初写与夹册留至离岸后第45—51行。F1/F2所禁哭别诗琴、宿命预判、婚家终点和细节锁死未见。五口箱仅留在被标为施工要求的章卡引文，合同本身明示不硬锁箱数，正文亦未强行列为证据。未把装载前核对冒充OT82-01既成结果。绑定哈希匹配；未发现完整性故障或本分派材料支持的A-W1/LOCKED违反。无未读必读范围、无分派samples，sample_checks为空。",
+      "sample_checks": [],
+      "subject_id": "contract-82-1",
+      "subject_sha256": "45dbb758714882ca5ed1c955d636948e1f0ab2ab9d29975d8367555ecde9581c",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已逐段完整读完82-S2.v2全部760行，包括状态、嵌入引文、required/forbidden beats及unresolved，并对照完整候选、研究包及政策。入口UNKNOWN和出口PENDING没有被章级装载或远适事件填成已知局部状态；object_transition_refs只选OT82-01，未选OT82-02或W82终点。entry_from使用agent-edited-v1/82-S1.v2.json路径，已验证该文件存在且SHA256为45dbb758714882ca5ed1c955d636948e1f0ab2ab9d29975d8367555ecde9581c，与本包所选agent-final-v1/82-S1.v2.json完全同字节，故不是断链或版本内容冲突。R1由正文第39行离岸后立即照册复点、打开随用包，第41—43行挪到可取处落实；R2第53—63行嘴硬、取姜、吐后清理、换帕及垫颈，第71—75行吃粥落实；R3第65—75行灶上等待、船火、分粥及探春晚吃，保留船家工序限制而无风俗百科；费用区分已由第25行承接。R4第45—51、85—87、91行分开初写夹册、补日期、补次晨进食，第95—101行由船家认人、婆子面问、探春亲交而仍未找到可靠递信者，没有送达或回信知识越权。F1/F2未见违反，合同亦不授予历史事实或独立读者资格。正文第107行时间衔接已在chapter-82列作ADVISORY，不将文风或计划偏好升级为阻断。无未读必读范围、无分派samples，sample_checks为空。",
+      "sample_checks": [],
+      "subject_id": "contract-82-2",
+      "subject_sha256": "ace6f62807dad47b257c8f8b017ddf72de4f34b9b5e58ea7c100037882c12cb8",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-82-002-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-82-002-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

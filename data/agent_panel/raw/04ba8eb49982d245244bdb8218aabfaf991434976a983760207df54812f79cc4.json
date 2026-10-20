@@ -1,0 +1,64 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/b6cc5c40fd9523872c99dd00ae6762488f50b6eb4653118a85f320e80b1985f2.json",
+    "sha256": "b6cc5c40fd9523872c99dd00ae6762488f50b6eb4653118a85f320e80b1985f2"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已逐段完整阅读正文1—113行、写作包、政策及三份合同的全部内容（job.read_in_full共133799字节），并仅查看packet中本次分派的五个subject；六份必读文件与packet的SHA256均符合分派绑定，未读范围为空。分派samples为空，sample_checks据实保留为空。正文从既有慢病、进食与换医推进到体力衰退，未添新绝症、咳血奇观、神医或第二次死亡危机；第83—85行明确交代一次死亡，之后香菱只作为被料理的身体。薛姨妈决定支出、备布和报信，宝钗实际照护与收稿，莺儿及普通仆妇有接手动作；王夫人一路有回报，往大爷处一路明确交给候差者，未声称全宅同步知情。莺儿抢针线、淡青袖口、甜羹银匙、三张旧月诗合匣及末句无人再念均已落实；没有死后朗诵、临终作诗、托梦或作者挽诗，厨房、洗衣、饭食与轮守始终继续。未发现本次材料可支持的BLOCKING问题。文学建议为ADVISORY：第25行母女互认说话不妥，第51行莺儿自责催食，第73行母女再次解释并和解，第95行又解释帮忙与推责，几段都把人物的照护压力说得很透，母女与主仆的口气趋同，也削弱了沉默和误会留下的余味。可删短其中一轮解释，让换手、递碗、收布等动作承担部分和解；此为节奏与人物声音建议，不将章卡、P-Lock或口味升级为硬约束。",
+      "sample_checks": [],
+      "subject_id": "chapter-81",
+      "subject_sha256": "a92799e04f61fdd2e99eb6eba99b38a7fa87ef2f5d137fc4eb1fdc681bccda0d",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "已完整阅读83行写作包并与附带正文、政策及三份完整合同对照。package.plan明确选择agent-final-v1下的81-S1.v2、81-S2.v2、81-S3.v2，三项SHA256与本次实际读取的合同完全相符；章号、研究用途与正文内容一致。authority_effect=NONE、operation_scope=RESEARCH，purpose明说未知状态未验收、史料/语料/文学资格未授予，未把模型编辑或本次候选冒充稳定版、历史证据或人类独立验收。政策的慢病承接、普通生活继续、旧稿非临终神作等要求在候选中可逐项找到对应；可选病前旧稿未选定，正文也没有擅添具体诗句。包内其余世界、资产、范例和上游计划是引用声明，未被本意见扩大为对那些未分派外部文件的独立审阅或资格授予。分派无样本项。",
+      "sample_checks": [],
+      "subject_id": "package-81",
+      "subject_sha256": "d580114a04b004e60cd6b3916be7cdace1865249e003b0762b2b88f5855dd245",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已完整阅读合同1—740行。合同将第80回香菱terminal_chronic与ACTIVE基线作为有basis的入口，同时保留宝钗和薛姨妈本场位置UNKNOWN、出口PENDING、莺儿及物件未注册等缺口；未以写作要求自证历史状态，也未借第86回药碗或知识场景填空。与候选核对，81-S1-R1—R4均有实际动作：粥药与旧方问题引出换医，薛姨妈作主请普通大夫，宝钗说明旧药不停及原方随送，第23行明确薛家日用支诊药钱和仆妇回话链，开头莺儿确实抢针线；第31行甜羹银匙说嘴及袖口折边在照护中延续，能吃几口未当作治愈。F1、F2未见触犯：无另造病因、新咳血、名医判死或临终诗。合同本身保持AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT、authority_effect/evidence_effect=NONE，与附带研究包一致。此PASS表示已核本次合同与正文的实现关系，不改变合同UNKNOWN/PENDING或未注册状态。分派无样本项。",
+      "sample_checks": [],
+      "subject_id": "contract-81-1",
+      "subject_sha256": "69a661188a11669b716a9c4f301f9fc1048c82c17aff1a728d1a9d52e5c0684f",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已完整阅读合同1—687行。81-S2-R1—R4在候选中基本落实：第55行以后药饭留下越来越多、翻身无力，薛姨妈据眼前观察提出先找白布；第59—71行区分仍在喂汤、温水药饭与暂放外间的白布，莺儿先向宝钗交代水、帕和小枕才去取，姨妈掌钥匙、验布、决定是否添置并说钱仍由薛家出。病重的口径只交内宅经手者，没有预先正式发布死讯、停止给药或展开大丧礼；医者不预知确切死时，未添临终诗、托梦或悟道。合同入口UNKNOWN、出口PENDING及知识/对象缺口保留得当，准备并未被冒充死亡事实。ADVISORY在版本接线：entry_from写的是data/planning/contracts/agent-edited-v1/81-S1.v2.json，而本次写作包选择和分派读取的是agent-final-v1/81-S1.v2.json；该字段本身不能明确指回本包的前驱版本。建议统一指向所选合同，或显式说明两个路径的关系。本次没有读取未分派的edited文件，未断言它缺失或内容不同；因此这不是已证实的字节完整性失败，也不作BLOCKING。分派无样本项。",
+      "sample_checks": [],
+      "subject_id": "contract-81-2",
+      "subject_sha256": "671efeff98dff5cfe22e9fb12fdc05cae44ff4ce416cde9d35dd2c927947228b",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "已完整阅读合同1—707行。正文先在第83—85行确认死亡，再由宝钗与莺儿整理身体，薛姨妈授权帮手、留下守候者、分路派信并承接后事费用，符合81-S3-R1、R2；后文没有让死者再次行动或把W81事件外推成全宅皆知。向王夫人报信有实际回来复命，往大爷那边则写到中间接话人应下为止，不能再把它理解成薛蟠本人收信已得到本次文本验证。第99—107行把袖口与旧月诗放在收拾家务中，由宝钗亲手夹好三张入匣；没有新增未选定旧稿的诗句，没有朗读或临终才华展览。收匣后洗碗、热饭、添衣和轮守继续，第113行以无人再念收束，R3、R4和F1、F2均有实质对应。合同没有将叙事前提强改为已验局部快照。ADVISORY在entry_from仍指data/planning/contracts/agent-edited-v1/81-S2.v2.json，与本包实际选用的agent-final-v1/81-S2.v2.json路径不同；建议明确前驱版本或说明路径关系。没有证实外部edited文件缺失、异字节或状态继承错误，不据此阻断；本意见也不授予W81精确死时、物态重放或历史资格。分派无样本项。",
+      "sample_checks": [],
+      "subject_id": "contract-81-3",
+      "subject_sha256": "16cc416444f2c9f1dbd28a0188700671dc466dbe27aceb3918d9197937a1beb2",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-81-000-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-81-000-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}
