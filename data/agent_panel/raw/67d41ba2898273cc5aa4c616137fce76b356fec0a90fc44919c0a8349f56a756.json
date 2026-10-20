@@ -1,0 +1,82 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/481ed26abbef59e7bbd614c98662be63cc3890f55ba557e4ed6bb924e9275a1f.json",
+    "sha256": "481ed26abbef59e7bbd614c98662be63cc3890f55ba557e4ed6bb924e9275a1f"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整通读候选全文、写作包、政策及所分派86-S1至86-S5；job.samples为空，无图像分派。八份read_in_full材料与packet的实算SHA256均匹配。正文第19行以“病一层层沉了下去”及多次起伏交代长期病程；第21行仍有热药，米汤、水难咽是身体能力下降；第33—41行旧笺空字未补，紫鹃没有翻稿；第63行明确死亡，之后有清洗、换衣、停米汤、收炉、点灯等劳动；第103—107行药盏递接及最终冷透没有被诗或集体哭声盖住。未见本范围内可作为BLOCKING的完整性问题或A-W1支撑的LOCKED违例。保留两项真实建议性异议：（1）时序支撑仍不充分：第57行宝玉已获信且“脚下已向外走”，第59行雪雁返室，第63行才断气；而宝玉第91行才进园，期间第65—79行已完成较多身体料理及收炉点灯，第81—85行王夫人又经历接死讯、差遣、动身、到场。此前寻人和转托足以说明迟获消息，却没有说明获信出发后为何仍晚于这些动作；同府空间没有给出可衡量此差距的路径或历时。建议重排传信、出发和料理的交叉时点，使来迟由实际耗时成立。（2）第15行紫鹃“嘴边动了一下”，第79行雪雁“手伸出又缩回”，第83行王夫人伸手又收住，第95行宝玉欲取帕而不知用途，第101行又连续安排起身、收袖、叫名而无后话。单处有效，集中使用则使不同人物共享一种迟疑节拍；建议删减重复，让最后接回药盏、松开手指的动作有更大分量。上述异议均为章法与文风层面的ADVISORY，FAIL不表示硬门槛失败。",
+      "sample_checks": [],
+      "subject_id": "chapter-86",
+      "subject_sha256": "4440a83f1c9a3022c0b9d338dc4793eb8978fa5c398637b6851c3785e6e12af0",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读取本包，实算SHA256与分派一致。operation_scope=RESEARCH、authority_effect=NONE及purpose中未授予史料/语料/文学资格的声明保持清楚；包的第86回编号、候选所需语义及所选86-S1至S5路径/哈希一致。正文实际落实了这些合同的病日、候医、未成稿、身体料理及消息链任务，没有将包的引用清单写成原作鉴定。此PASS评价本次分派包的清单完整性和与所分派正文/合同的适配；包内exemplar_set、world、sources等引用原件不在本任务read_in_full或samples中，未据此作真实性或独立语料验收。未读取同包未分派合同及其他读者意见。",
+      "sample_checks": [],
+      "subject_id": "package-86",
+      "subject_sha256": "8e087cc43573cd1ef9071efac14deb2e3eaf5935375cc68628db3ebc3e0a33b3",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整读取86-S1.v2并核对其分派哈希。required_beats在正文第9—17行的搬小几、护兰花、缝帘角，以及第31行明日透薄衫中有具体承接；第5—7行米汤难咽、第9—13行拨火和火箸/茶盘劳作、第21行试盏晾药与勉强吞咽，使资源仍在而病体难承的差别可见。第19行长期渐重未被压成贵妃死后几天，也未由婚姻、失玉或断药触发死亡。病前短口角伴随身体困难，没有进入死后作笑料。合同自身保留局部出口UNKNOWN、未注册物件及雪雁实体缺项，没有把chapter85粗入口升级为本场已执行状态；本PASS不解除这些未定绑定，也不证明T+开放窗的精确日期。",
+      "sample_checks": [],
+      "subject_id": "contract-86-1",
+      "subject_sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整读取86-S2.v2并核对分派哈希；entry_from所指86-S1副本存在且字节与本次分派前驱相同。正文第25行跑腿带回“大夫被别处的事务绊住了”的反馈，同时交付药铺的药，紫鹃仍托手、隔帘再催；第23行厨房留锅及添水、第27—29行床边照料继续运作。第87行跑腿再返并转报死讯，使请医劳务并未凭空消失。没有虚构具体病家诊断、家人扣医或神迹补救；第47行以后另启动报病危链，宝玉未因医者未到而同步知道死亡。合同对局部时长、知识取得及世界事件保持UNKNOWN/空引用是如实留缺，不能把此PASS理解为这些状态已有独立检查点。",
+      "sample_checks": [],
+      "subject_id": "contract-86-2",
+      "subject_sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整读取86-S3.v2并核对分派哈希；entry_from所指86-S2副本与分派前驱字节相同。正文第33行明确旧笺“两行”及G01“小院苔痕留宿雨 / 隔帘花影 □ 新晴”，后文始终未补空字；第35—39行握笔、抬腕、笔管松脱、紫鹃接笔及黛玉坚持暂不收，准确把中止原因落在身体不能续做。紫鹃只抽出露着的一张而未翻稿夹，未辨识或展览遗稿，叙述者、雪雁亦未代填。无完整绝命诗、黛玉诔、挽诗或85回A01完成任务的现场回灌。合同没有将G01冒作注册物件，场级生命/身体入口仍UNKNOWN；本PASS只确认本次文本与任务要求的对应，不替未注册对象和时点作验收。",
+      "sample_checks": [],
+      "subject_id": "contract-86-3",
+      "subject_sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整读取86-S4.v2并核对分派哈希；entry_from所指86-S3副本与分派前驱字节相同。第63行“黛玉已经死了”先确定不可逆，第65—73行李纨到场、取盆绢、托身理领、拭药痕、取衣换袖具体承接；第75行明确“先前回的是病危，如今姑娘已经去了”，第77—79行药吊子离火、收炉、点灯，第81—85行王夫人送衣、给帕并安排听取后事实务。紫鹃始终守在床边，没有转去翻稿；各人反应有实务承载，无全家轮番遗言、集体围哭或未经依据的礼俗清单。报病危在死亡前已发出，身体料理与死讯外传交错，不是照合同列表机械串行。局部死亡/药温/目击时点仍未绑定，正文叙述也不能自动将合同UNKNOWN改为已回放终态。文风重复与赶路历时异议列在chapter-86，属ADVISORY。",
+      "sample_checks": [],
+      "subject_id": "contract-86-4",
+      "subject_sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整读取86-S5.v2并核对分派哈希；entry_from所指86-S4副本与分派前驱字节相同。合同自身将确切死时、获信地点、到达边界及belief保留UNKNOWN，未将来源列表次序当实际发生次序，这一边界正确。正文第45—47行先由紫鹃察觉病危，再遣雪雁；第49—57行依次到李纨、怡红院、袭人、小厮、跟班并终于告知宝玉；来信内容始终是病势转坏，第97行入室后才由王夫人告知死亡、紫鹃补说“没等到你”，没有骗婚、失玉、拦门或同步诀别。但required_beats中“迟获与赶来的真实链条”落实尚有建议性缺口：第57行已获信出发，比第63行断气还早，随后正文容纳洗拭换衣、收炉点灯、王夫人接死讯并赶到，宝玉到第91行才进园，给出的一个岔路错步及途中日常误读不足以衡量这段出发后延迟。请明确交叉叙事的相对时间，或调整获信/出发与料理的先后，使来迟具有可读的耗时依据。这是对合同在正文中落实程度的ADVISORY异议，非A-W1/LOCKED违例；不以本意见解除其知识/移动检查点缺项。",
+      "sample_checks": [],
+      "subject_id": "contract-86-5",
+      "subject_sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-86-011-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-86-011-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

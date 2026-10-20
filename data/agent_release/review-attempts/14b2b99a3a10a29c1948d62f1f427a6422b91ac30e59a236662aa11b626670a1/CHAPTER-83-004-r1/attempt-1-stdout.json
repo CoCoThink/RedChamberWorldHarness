@@ -1,0 +1,66 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/822002fee5a2751bc4cc55076995b602c7546aff0bf8ff402c4f32403249707b.json",
+    "sha256": "822002fee5a2751bc4cc55076995b602c7546aff0bf8ff402c4f32403249707b"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整通读分派正文105行，并逐一对照包、政策及83-S1/S2/S3三份合同；分派样本为空，无图像要求。正文及所有read_in_full文件、packet哈希均匹配。射圃入口有相熟子弟引入及老仆核问（3行），若兰还弓套的来往（7行）自然；横风、争输赢、箭落菜地及借箭不能抵赔均落实（9—27行）。擦汗掀襟后宝玉实际看清大金麒麟（29行），随后找箭、续射和茶食未被首饰吞没，未追造取得路径或断言婚姻、生死。回府与消息链分开（49—69行），湘云能问清一瞥及猜旧的限度，所取为自己的旧物（77—79行），未把若兰佩物交到她手上。家书的写信日、捎出日、路途延迟均有区别（81—85行），正文没有宣布已到夫家。保留两项建议异议：其一，81、83行直接切回船舱，实写探春抽信、亲封、说话及触空页，超出了83-S3-R4“远适之后只经家书或传闻低频出现”的拟定出场方式；可改为来人报告，或明确说明替换该规划偏好的理由。其二，53、59、61、65、73、75行逐层复述佩麒麟及是否问过，信息递进主要靠重复核问；菜根赔偿的教训亦从13、25行再讲到73、101行，令轻巧笑话和湘云的接话趋于同一种讲道理声口。建议压缩一次复述及末次训诫，保留二手链与人物停顿即可。以上均为规划/文学ADVISORY，未发现本分派材料足以支持的A-W1 LOCKED违反或字节完整性失败。",
+      "sample_checks": [],
+      "subject_id": "chapter-83",
+      "subject_sha256": "b219396269ed1f5b1781e7d8e0fedc636c06f21e0fe1e76134c3eeec4948daa8",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读取包83行及本任务全部附带合同、候选和政策。包选定83-S1/S2/S3的agent-final-v1版本，三份哈希与assignment和实际文件一致；包内plan、world及exemplar_set各路径均存在且字节哈希匹配。资产条目的asset_ref后缀与其sha256逐项相同。authority_effect=NONE、operation_scope=RESEARCH及purpose中“未知状态仍未验收”的限制与本轮模型研究用途一致，没有把sources为空或资产列表包装成已获史料资格。候选采用三合同的主要社交、照面及二手收讯顺序。正文文学异议另记在chapter-83与contract-83-3，不构成包绑定失效；此PASS不扩展为未分派上游史料/语料内容的认证。samples为空，sample_checks按分派保留空数组。",
+      "sample_checks": [],
+      "subject_id": "package-83",
+      "subject_sha256": "03e33a42a355c763b00400852373429163fb2674d3cb91e451e588eacc6e3391",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读本合同743行，核对required_beats R1—R4及forbidden_beats F1—F2。正文3行由相熟子弟带宝玉入圃并与老仆交代；7行若兰归还借用弓套，为常来社交提供普通动作，没有新增重要邀约人物。9、15、21、23、27行宝玉以不射便不输、葱若站靶上等眼前轻口角岔开争胜，不作军事、命数或人生论断；13、17、19行老仆护菜、停箭后收箭、扶人保留场地劳动。29行以收弓擦汗抬臂承接佩物偶露，之前没有让金麒麟统领场面。未见神秘老人、琴诗、婚期/事故/生死断言或前史赠受。合同明确AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT，entry UNKNOWN、exit PENDING及未注册经手均未假充史实已证；本PASS是候选对本场写作功能的支持，不宣告世界事件已经登记。",
+      "sample_checks": [],
+      "subject_id": "contract-83-1",
+      "subject_sha256": "ddf8d40bdcea825fcdbccf0d355a623029574159656f48610e4049b27a29ac67",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读本合同711行，逐项核对R1—R4及F1—F2。正文29行先写衣襟、衣带，再由站在侧前的宝玉看清头角与足辨为大金麒麟，31行理回衣内；没有通过一瞥推出前主、赠受或取得路径。31—39行立刻续找箭、再射、茶和垫凳，41—47行又续食盒、赔菜和离场，佩物没有替代射圃生活。35行仅记忆模糊的旧麒麟关联；49行才完整回府，未把湘云收讯预先塞到射圃。未见发光、梦、识命或预告婚姻吉凶。包所选本合同及其entry_from指向的83-S1前驱文件均存在，前驱与本轮所选83-S1哈希相同；UNKNOWN局部入口、PENDING出口及OT83-01关联仍没有被冒称局部知识/物权快照。",
+      "sample_checks": [],
+      "subject_id": "contract-83-2",
+      "subject_sha256": "42e919b0eec728e518690d4dfb00f8ce1bc2216ef7eaf152b6e4b69d9b45b72f",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读本合同747行并对照正文后半。R1—R3主要成立：49行宝玉先回府；53、59行亲见者说起麒麟，61行婆子向湘云转述，65—67行小厮隔帘补说明仅一瞥、未上手及“像旧”不可靠；湘云从未被写成射圃亲见者，若兰也未因报道挪入贾府。空盒缺碟、跑腿和脚费均造成实际等待（51—69行），无无来源金额；79行家书拉开话头，85—99行信经外门、内宅及王夫人并处理茶饭脚费，区分写信与到达时间。F1/F2未见违反，旧物亦未等同于若兰佩物移交。真实保留R4执行异议：81、83行用直接场景写探春在船上抽出旧信、亲封、交代以及触空页，并非只经家书或传闻出现；虽未临时召回她，仍与本合同“探春远适之后只经家书或传闻低频出现”不完全相合。建议由带信人可知范围转述送出过程，或由作者有理由地替换这一规划安排。此为规划卡写作边界的ADVISORY，不能升为A-W1 LOCKED硬门。entry_from所指83-S2实际存在且与包选版本哈希相同，没有绑定失败。",
+      "sample_checks": [],
+      "subject_id": "contract-83-3",
+      "subject_sha256": "e1bfb521cea8691c8b5ba507e024a293ba5870a8fb11a8e1cc7a92fb6617ed86",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-83-004-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-83-004-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

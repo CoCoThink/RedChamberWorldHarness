@@ -1,0 +1,126 @@
+{
+  "observed_utc": "2026-10-20T18:38:22.515167+00:00",
+  "issues": [
+    {
+      "record": {
+        "path": "data/agent_panel/records/03a402ff3f143278a5cadc9dc980c8741752c71b6d9e4ee92334bfa3aa58077c.json",
+        "sha256": "03a402ff3f143278a5cadc9dc980c8741752c71b6d9e4ee92334bfa3aa58077c"
+      },
+      "reviewer": {
+        "context_isolation": {
+          "asserted": true,
+          "verification": "NOT_PROVEN"
+        },
+        "id": "14b2b99a3a10:CHAPTER-81-000-r1",
+        "kind": "MODEL_SUBAGENT",
+        "model": {
+          "label": "current agent environment (declared)",
+          "verification": "DECLARED_NOT_VERIFIED"
+        },
+        "session_id": "review:14b2b99a3a10:CHAPTER-81-000-r1:1"
+      },
+      "subject_id": "chapter-81",
+      "verdict": "FAIL",
+      "severity": "ADVISORY",
+      "notes": "已逐段完整阅读正文1—113行、写作包、政策及三份合同的全部内容（job.read_in_full共133799字节），并仅查看packet中本次分派的五个subject；六份必读文件与packet的SHA256均符合分派绑定，未读范围为空。分派samples为空，sample_checks据实保留为空。正文从既有慢病、进食与换医推进到体力衰退，未添新绝症、咳血奇观、神医或第二次死亡危机；第83—85行明确交代一次死亡，之后香菱只作为被料理的身体。薛姨妈决定支出、备布和报信，宝钗实际照护与收稿，莺儿及普通仆妇有接手动作；王夫人一路有回报，往大爷处一路明确交给候差者，未声称全宅同步知情。莺儿抢针线、淡青袖口、甜羹银匙、三张旧月诗合匣及末句无人再念均已落实；没有死后朗诵、临终作诗、托梦或作者挽诗，厨房、洗衣、饭食与轮守始终继续。未发现本次材料可支持的BLOCKING问题。文学建议为ADVISORY：第25行母女互认说话不妥，第51行莺儿自责催食，第73行母女再次解释并和解，第95行又解释帮忙与推责，几段都把人物的照护压力说得很透，母女与主仆的口气趋同，也削弱了沉默和误会留下的余味。可删短其中一轮解释，让换手、递碗、收布等动作承担部分和解；此为节奏与人物声音建议，不将章卡、P-Lock或口味升级为硬约束。",
+      "coordinator_disposition": "PENDING_REVIEW"
+    },
+    {
+      "record": {
+        "path": "data/agent_panel/records/03a402ff3f143278a5cadc9dc980c8741752c71b6d9e4ee92334bfa3aa58077c.json",
+        "sha256": "03a402ff3f143278a5cadc9dc980c8741752c71b6d9e4ee92334bfa3aa58077c"
+      },
+      "reviewer": {
+        "context_isolation": {
+          "asserted": true,
+          "verification": "NOT_PROVEN"
+        },
+        "id": "14b2b99a3a10:CHAPTER-81-000-r1",
+        "kind": "MODEL_SUBAGENT",
+        "model": {
+          "label": "current agent environment (declared)",
+          "verification": "DECLARED_NOT_VERIFIED"
+        },
+        "session_id": "review:14b2b99a3a10:CHAPTER-81-000-r1:1"
+      },
+      "subject_id": "contract-81-2",
+      "verdict": "FAIL",
+      "severity": "ADVISORY",
+      "notes": "已完整阅读合同1—687行。81-S2-R1—R4在候选中基本落实：第55行以后药饭留下越来越多、翻身无力，薛姨妈据眼前观察提出先找白布；第59—71行区分仍在喂汤、温水药饭与暂放外间的白布，莺儿先向宝钗交代水、帕和小枕才去取，姨妈掌钥匙、验布、决定是否添置并说钱仍由薛家出。病重的口径只交内宅经手者，没有预先正式发布死讯、停止给药或展开大丧礼；医者不预知确切死时，未添临终诗、托梦或悟道。合同入口UNKNOWN、出口PENDING及知识/对象缺口保留得当，准备并未被冒充死亡事实。ADVISORY在版本接线：entry_from写的是data/planning/contracts/agent-edited-v1/81-S1.v2.json，而本次写作包选择和分派读取的是agent-final-v1/81-S1.v2.json；该字段本身不能明确指回本包的前驱版本。建议统一指向所选合同，或显式说明两个路径的关系。本次没有读取未分派的edited文件，未断言它缺失或内容不同；因此这不是已证实的字节完整性失败，也不作BLOCKING。分派无样本项。",
+      "coordinator_disposition": "PENDING_REVIEW"
+    },
+    {
+      "record": {
+        "path": "data/agent_panel/records/03a402ff3f143278a5cadc9dc980c8741752c71b6d9e4ee92334bfa3aa58077c.json",
+        "sha256": "03a402ff3f143278a5cadc9dc980c8741752c71b6d9e4ee92334bfa3aa58077c"
+      },
+      "reviewer": {
+        "context_isolation": {
+          "asserted": true,
+          "verification": "NOT_PROVEN"
+        },
+        "id": "14b2b99a3a10:CHAPTER-81-000-r1",
+        "kind": "MODEL_SUBAGENT",
+        "model": {
+          "label": "current agent environment (declared)",
+          "verification": "DECLARED_NOT_VERIFIED"
+        },
+        "session_id": "review:14b2b99a3a10:CHAPTER-81-000-r1:1"
+      },
+      "subject_id": "contract-81-3",
+      "verdict": "FAIL",
+      "severity": "ADVISORY",
+      "notes": "已完整阅读合同1—707行。正文先在第83—85行确认死亡，再由宝钗与莺儿整理身体，薛姨妈授权帮手、留下守候者、分路派信并承接后事费用，符合81-S3-R1、R2；后文没有让死者再次行动或把W81事件外推成全宅皆知。向王夫人报信有实际回来复命，往大爷那边则写到中间接话人应下为止，不能再把它理解成薛蟠本人收信已得到本次文本验证。第99—107行把袖口与旧月诗放在收拾家务中，由宝钗亲手夹好三张入匣；没有新增未选定旧稿的诗句，没有朗读或临终才华展览。收匣后洗碗、热饭、添衣和轮守继续，第113行以无人再念收束，R3、R4和F1、F2均有实质对应。合同没有将叙事前提强改为已验局部快照。ADVISORY在entry_from仍指data/planning/contracts/agent-edited-v1/81-S2.v2.json，与本包实际选用的agent-final-v1/81-S2.v2.json路径不同；建议明确前驱版本或说明路径关系。没有证实外部edited文件缺失、异字节或状态继承错误，不据此阻断；本意见也不授予W81精确死时、物态重放或历史资格。分派无样本项。",
+      "coordinator_disposition": "PENDING_REVIEW"
+    },
+    {
+      "record": {
+        "path": "data/agent_panel/records/7370c1dfd70658726bb9de11ab79ee6b34ea072d5b120de8929c104f2ffeb4a0.json",
+        "sha256": "7370c1dfd70658726bb9de11ab79ee6b34ea072d5b120de8929c104f2ffeb4a0"
+      },
+      "reviewer": {
+        "context_isolation": {
+          "asserted": true,
+          "verification": "NOT_PROVEN"
+        },
+        "id": "14b2b99a3a10:CHAPTER-81-001-r2",
+        "kind": "MODEL_SUBAGENT",
+        "model": {
+          "label": "current agent environment (declared)",
+          "verification": "DECLARED_NOT_VERIFIED"
+        },
+        "session_id": "review:14b2b99a3a10:CHAPTER-81-001-r2:1"
+      },
+      "subject_id": "chapter-81",
+      "verdict": "FAIL",
+      "severity": "ADVISORY",
+      "notes": "已逐段完整阅读候选正文第1—113行，并完整对照分派包、政策及三份合同；packet与全部6项read_in_full的SHA256均相符，无未读的分派范围，job.samples为空，故sample_checks为空。正文由既有慢病逐渐转重至一次明确死亡（第83—87行），未另造新病、神医、绝命诗或死后发言；针线、淡青袖口、甜羹银匙、三张旧月诗入匣与无人再念均有实际动作，饭、水、洗碗、轮守在死后继续，未见可提出的A-W1支持LOCKED违规或字节完整性失败。ADVISORY仅为文学判断：午间至晚间反复采用劝吃—怕添麻烦—自责—体谅的对话，第41行“不必为我们吃”、第51行“催得他不敢说不要”已将动作中的关系说透；备白布段又走了一遍母女分歧及第73行彼此体谅的收束。两轮结构相近，宝钗与姨妈反复解释自己、修复误会，使人物声音趋同，病程的推进被这些解释拉长。建议酌减一轮道歉或体谅的说明，保留碗、手、帘和接手照护的动作来承担其意。这属节奏与文风建议，不将章卡、P-Lock或个人口味升级为硬门槛。",
+      "coordinator_disposition": "PENDING_REVIEW"
+    },
+    {
+      "record": {
+        "path": "data/agent_panel/records/77d0091d2c692630aea926dfaf4745830eff460f370081d63ce4b94d9da79dff.json",
+        "sha256": "77d0091d2c692630aea926dfaf4745830eff460f370081d63ce4b94d9da79dff"
+      },
+      "reviewer": {
+        "context_isolation": {
+          "asserted": true,
+          "verification": "NOT_PROVEN"
+        },
+        "id": "14b2b99a3a10:CHAPTER-82-002-r1",
+        "kind": "MODEL_SUBAGENT",
+        "model": {
+          "label": "current agent environment (declared)",
+          "verification": "DECLARED_NOT_VERIFIED"
+        },
+        "session_id": "review:14b2b99a3a10:CHAPTER-82-002-r1:1"
+      },
+      "subject_id": "chapter-82",
+      "verdict": "FAIL",
+      "severity": "ADVISORY",
+      "notes": "已完整阅读本候选107行、研究包、82-S1/S2两份v2合同及ch82政策；五份必读文件共105498字节，连同packet均与分派SHA256相符，未读范围为空；job.samples为空，故sample_checks为空。正文第7—15行把三分筐、针线包、短夹袄及箱笼题签接到整装，第13、23—35行落实随行照看者、先后上船及箱包安放，第25行分开家内行旅费和私人小包，第39—43行在离岸后先复点并解决取物位置，第53—75行用姜片、吐后清理、端水、稀粥及船火写照护和第一顿行旅晚饭。第45—51行初写并夹册，第85—87行隔夜补日期，第91行再补今晨能吃粥，三项动作没有压成同时完成；第95—107行仍待可靠人船，未把夹册等同寄出或到家。未见第二场哭别、送别诗琴、命定远嫁、婚家姓名、具体目的地或婚期，也未把装载当作抵达。ADVISORY：第107行在第85行窗缝渐白、第91行早粥、第103—105行再度行船之后，又说远处火光“到了天明才一盏盏隐去”，没有回叙标记，读来时间退回；可改成火光早已隐去，或明确是回看昨夜。第9行“姜从头到尾只这一包”也略像作者为连续性作账，可由包口、拿取动作自然交代。以上属时间衔接及文风建议，不构成BLOCKING。只就本章未写事败已发生作观察，不据单章替全书先后关系出具额外验收结论。",
+      "coordinator_disposition": "PENDING_REVIEW"
+    }
+  ],
+  "authority_effect": "NONE"
+}
