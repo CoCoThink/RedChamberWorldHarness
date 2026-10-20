@@ -19,6 +19,7 @@ and may be regenerated (e.g. after decisions are added).
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 from ..assets import AssetCatalog, AssetError
@@ -37,8 +38,8 @@ def _binding(root: Path, relative: str) -> dict:
     return {"path": relative, "sha256": digest(repository_path(root, relative).read_bytes())}
 
 
-def _write_immutable(root: Path, relative: str, document: dict) -> dict:
-    raw = canonical_bytes(document)
+def _write_immutable(root: Path, relative: str, document: dict | bytes) -> dict:
+    raw = document if isinstance(document, bytes) else canonical_bytes(document)
     path = repository_path(root, relative)
     if path.exists() and path.read_bytes() != raw:
         raise AssetError(f"packet already exists with different bytes; use a new edition id: {relative}")
@@ -70,6 +71,8 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
     from ..corpus.dataset import CorpusRepository
 
     root = Path(root).resolve()
+    if not re.fullmatch(r"[a-z0-9][a-z0-9._-]{0,79}", edition) or not coordinator_session_id.strip():
+        raise AssetError("valid edition id and nonblank coordinator session required")
     selection = load_data(repository_path(root, selection_path))
     rows = {row["chapter"]: row for row in selection["chapters"]}
     scope_chapters = project_chapters(root)
@@ -140,7 +143,9 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
             continue
         row = rows[chapter]
         entry = {key: row[key] for key in ("candidate", "draft", "writing_package", "policy", "plock_ref",
-                                           "minimum_body_characters", "minimum_baseline_ratio") if key in row}
+                                           "minimum_body_characters", "minimum_baseline_ratio", "rebind_receipt") if key in row}
+        from .attribution import release_attribution
+        release_attribution(root, {**entry, "chapter": chapter})
         entry.update(chapter=chapter, mode="AGENT_CANDIDATE",
                      panel={"packet": packets["candidates"], "subject_id": f"chapter-{chapter}"},
                      source_reviews=[{"packet": packets["sources"], "subject_id": f"source:{identity}"}
@@ -151,6 +156,32 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
         if repository_path(root, decision).is_file():
             entry["decision"] = _binding(root, decision)
         request["chapters"].append(entry)
+    # Exact current full-scope reader, not an archived phase-5 draft.
+    from .agent_release import _split
+    baseline = catalog.resolve(selection["baseline"]["asset_ref"])
+    if baseline.sha256 != selection["baseline"]["sha256"]:
+        raise AssetError("book review baseline digest mismatch")
+    prefix, prose = _split(baseline.path.read_bytes().decode(), scope_chapters)
+    for chapter in chapters:
+        candidate = rows[chapter]["candidate"]
+        if _binding(root, candidate["path"]) != candidate:
+            raise AssetError("book review candidate digest mismatch")
+        text = repository_path(root, candidate["path"]).read_bytes().decode()
+        candidate_prefix, _ = _split(text, (chapter,))
+        if candidate_prefix:
+            raise AssetError("book review chapter has unbound prefix")
+        prose[chapter] = text
+    book = _write_immutable(root, f"{base}/reading/book.md", (prefix + "".join(prose[ch] for ch in scope_chapters)).encode())
+    packets["book"] = _write_immutable(root, f"{base}/packets/book.json", _packet(
+        edition, "book", coordinator_session_id, [{"id": "book-continuity", "scope": "BOOK",
+            "binding": book, "review_policy": "ADVISORY"}]))
+    request["book_review"] = {"packet": packets["book"], "subject_id": "book-continuity"}
+    _write_immutable(root, f"{base}/reading/book.json", {
+        "schema_version": 1, "packet": packets["book"], "read_in_full": [book],
+        "chapter_candidates": [{"chapter": ch, "candidate": rows[ch]["candidate"]} for ch in sorted(chapters)],
+        "seams": [[a, b] for a, b in zip(scope_chapters, scope_chapters[1:])],
+        "focus": ["回际接缝与时间顺序", "物件持有与流转状态", "称谓和人物语体", "知识获得与后文照应"],
+        "severity": "ADVISORY", "gate_effect": "NONE"})
     schema = load_data(repository_path(root, "schemas/agent_release_manifest.schema.json"))
     errors = validate_instance(request, {"$ref": "#/$defs/request", "$defs": schema["$defs"]})
     if errors:

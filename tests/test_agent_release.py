@@ -107,6 +107,30 @@ def positive_gates(e, monkeypatch):
     monkeypatch.setattr(e.runtime, "_inputs", lambda row, **kwargs: ({"WRITING_PACKAGE": "PASS", "CONTRACT_PEERS": "PASS", "SOURCE_PEERS": "PASS", "CORPUS_PEERS": "PASS"}, {}))
 
 
+def test_two_whole_book_negatives_remain_advisory_and_do_not_change_gates(edition, monkeypatch):
+    e = edition
+    positive_gates(e, monkeypatch)
+    before, book = e.runtime._evaluate(e.request)
+    binding = write(e.root, "research/book.md", book.decode())
+    ref = packet(e.root, "book", [{"id": "continuity", "scope": "BOOK", "binding": binding,
+                                   "review_policy": "ADVISORY"}])
+    e.request["book_review"] = {"packet": ref, "subject_id": "continuity"}
+    peers(e.root, ref, verdict="FAIL", session_prefix="book-reader")
+    report = e.runtime.evaluate(e.request)
+    assert report["status"] == before["status"] == "PASS"
+    assert report["gates"] == before["gates"]
+    advisory = report["advisories"]["book_continuity"]
+    assert advisory["status"] == "PASS" and advisory["gate_effect"] == "NONE"
+    subject = advisory["panels"][0]["subjects"][0]
+    assert subject["distinct_reviewer_count"] == 2
+    assert len(subject["advisories"]) == 2 and not subject["findings"]
+    # A stale book packet is visible as invalid, never called reviewed or gated.
+    (e.root / binding["path"]).write_text("stale")
+    changed = e.runtime.evaluate(e.request)
+    assert changed["status"] == "PASS"
+    assert changed["advisories"]["book_continuity"]["status"] == "INVALID"
+
+
 def test_no_reviews_are_pending_not_adopted_and_only_manifest_can_stage(edition):
     e = edition
     # Missing inputs stay pending; a missing writing-package proof is not PASS.

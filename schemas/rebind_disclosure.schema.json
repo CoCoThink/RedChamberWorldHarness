@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object", "additionalProperties": false,
+  "required": ["schema_version", "kind", "chapter", "edition", "current", "previous", "prose_identical_to_previous", "declaration", "authority_effect", "usage"],
+  "properties": {
+    "schema_version": {"const": 1}, "kind": {"const": "REBIND_DISCLOSURE"},
+    "chapter": {"type": "integer", "minimum": 1}, "edition": {"type": "string", "minLength": 1},
+    "current": {"$ref": "#/$defs/selection"}, "previous": {"$ref": "#/$defs/selection"},
+    "prose_identical_to_previous": {"type": "boolean"}, "declaration": {"type": "string", "minLength": 1},
+    "coordinator_edit": {"type": "array", "items": {"type": "string"}},
+    "edit_reason": {"type": "string", "minLength": 1},
+    "authority_effect": {"const": "NONE"}, "usage": {"const": "RESEARCH_ONLY"}
+  },
+  "$defs": {
+    "binding": {"type": "object", "additionalProperties": false, "required": ["path", "sha256"], "properties": {
+      "path": {"type": "string", "minLength": 1}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}},
+    "selection": {"type": "object", "additionalProperties": false, "required": ["candidate", "draft", "writing_package"], "properties": {
+      "candidate": {"$ref": "#/$defs/binding"}, "draft": {"$ref": "#/$defs/binding"}, "writing_package": {"$ref": "#/$defs/binding"}}}
+  }
+}

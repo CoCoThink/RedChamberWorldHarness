@@ -153,6 +153,14 @@ class AgentRelease:
             sessions.add(run["session_id"])
             authors.extend(draft["authors"])
             current = draft["parent"]
+        from .attribution import release_attribution
+        if "rebind_receipt" not in row and any(s.startswith("rebind-") for s in sessions):
+            raise AssetError("rebind draft requires an explicit rebind_receipt")
+        attribution = release_attribution(self.root, row) if "rebind_receipt" in row else None
+        if attribution is not None:
+            authors = attribution["contributors"]
+            sessions.update(a["principal_id"].removeprefix("session:")
+                            for a in authors + attribution["custodians"])
         if any(o["reviewer"]["session_id"] in sessions for o in subject.get("opinions", [])):
             raise AssetError("candidate author/reviser cannot be a peer reviewer")
         return "PASS", authors
@@ -393,7 +401,7 @@ class AgentRelease:
             reports[ch] = report
             if ch not in changed:
                 continue
-            report["bindings"] = {k: row[k] for k in ("candidate", "panel", "policy", "decision", "writing_package", "draft") if k in row}
+            report["bindings"] = {k: row[k] for k in ("candidate", "panel", "policy", "decision", "writing_package", "draft", "rebind_receipt") if k in row}
             report["gates"] = {name: "PENDING" for name in ("BYTE_INTEGRITY", "FULL_CHAPTER_LENGTH", "CANDIDATE_PEERS", "AUTHOR_PROVENANCE", "CURRENT_WRITING_INPUTS", "COORDINATOR_DECISION", "CHAPTER_SAFETY_POLICY", "WRITING_PACKAGE", "CONTRACT_PEERS", "SOURCE_PEERS", "CORPUS_PEERS")}
             try:
                 raw = self._bound(row["candidate"])
@@ -436,7 +444,8 @@ class AgentRelease:
                 "CURRENT_WRITING_INPUTS": lambda: self._compatibility(row),
                 "COORDINATOR_DECISION": lambda: self._decision(row, report["reviews"].get("candidate", {})),
                 "CHAPTER_SAFETY_POLICY": lambda: self._policy(row, changed, book.decode("utf-8"), after[ch]),
-                "INPUT_PEERS": lambda: self._inputs(row, authors=report["reviews"].get("authors", [])),
+                "INPUT_PEERS": lambda: self._inputs(row, authors=report["reviews"].get("authors", [])
+                    + report["reviews"].get("author_lineage", {}).get("custodians", [])),
             }
             for name, operation in operations.items():
                 try:
@@ -447,6 +456,9 @@ class AgentRelease:
                             report["findings"].extend(f"CANDIDATE_PEERS: {f}" for f in result[1].get("findings", []))
                     elif name == "AUTHOR_PROVENANCE":
                         report["gates"][name], report["reviews"]["authors"] = result
+                        if "rebind_receipt" in row:
+                            from .attribution import release_attribution
+                            report["reviews"]["author_lineage"] = release_attribution(self.root, row)
                     elif name == "CURRENT_WRITING_INPUTS":
                         report["gates"][name], report["reviews"]["current_writing_inputs"] = result
                         if result[0] == "FAIL":
@@ -488,8 +500,32 @@ class AgentRelease:
             "output": {"directory": output, "manifest_path": f"{output}/manifest.json",
                        "text": {"path": f"{output}/book.md", "sha256": digest(book), "bytes": len(book)} if state == "PASS" else None},
         }
+        if "book_review" in request:
+            # Continuity reading is always advisory, independent of every gate.
+            excluded = {a["principal_id"].removeprefix("session:") for report in reports.values()
+                        for a in report["reviews"].get("authors", [])
+                        + report["reviews"].get("author_lineage", {}).get("custodians", [])}
+            manifest["advisories"] = {"book_continuity": self._book_review(request["book_review"], book, excluded)}
         self._validate(manifest, "manifest")
         return manifest, book
+
+    def _book_review(self, ref: dict, book: bytes, excluded: set[str]) -> dict:
+        try:
+            from .agent_panel import verify_packet
+            packet = verify_packet(self.root, ref["packet"])
+            subjects = packet["subjects"]
+            if (len(subjects) != 1 or subjects[0]["id"] != ref["subject_id"]
+                    or subjects[0]["scope"] != "BOOK" or subjects[0]["review_policy"] != "ADVISORY"
+                    or self._bound(subjects[0]["binding"]) != book):
+                raise AssetError("book review does not bind the assembled current edition")
+            report = self._packet_summary(ref["packet"])
+            if any(o["reviewer"]["session_id"] in excluded for panel in report["panels"]
+                   for subject in panel["subjects"] for o in subject["opinions"]):
+                raise AssetError("book author/reviser/custodian cannot be its continuity reader")
+            return {"severity": "ADVISORY", "gate_effect": "NONE", "packet": ref["packet"],
+                    "status": report["status"], "panels": report["panels"], "findings": report["findings"]}
+        except (KeyError, OSError, TypeError, ValueError) as exc:
+            return {"severity": "ADVISORY", "gate_effect": "NONE", "status": "INVALID", "findings": [str(exc)]}
 
     def _evaluate_scoped(self, request: dict | str | Path) -> tuple[dict, bytes]:
         # All chapters bind the same corpus: verify its rebuild once per pass.

@@ -68,6 +68,33 @@ python tools/verify_writing_lineage.py --freeze-history
 
 治理闭包配置、进度、审核 selection 不再作为作者提示词的全局依赖。所选写作包、计划、场景、材料和模板变化仍会使当前相容性失败；新依赖也须通过重渲染核对。修订保留父稿原依据，切换写作包应建立新的起草请求。尚未迁移的 v1 保留原检查行为；已失配的 v1 必须在拥有可核实原字节的历史检出中迁移。详见 [ADR 0005](../decisions/0005_WRITING_INPUT_CUSTODY.md)。
 
+## 发布作者链与批量审阅
+
+当前入口为 `data/agent_release/research-81-100-v1/request.json`。prepare 从选择器携带逐回 `rebind_receipt`；发布报告中 `reviews.authors` 为正文贡献者，`reviews.author_lineage` 另列原作者链、协调者改动与保管会话。不能把重绑会话宣称为新提示词的正文作者。
+
+```bash
+rcwh agent-release prepare research-81-100-v1 \
+  --selection data/agent_release/selection-81-100-v2.json --chapters 81-100 \
+  --coordinator-session-id coordinator:release-v1
+
+rcwh agent-release review-status data/agent_release/research-81-100-v1/review-campaign.json
+python tools/verify_agent_release.py --build-smoke
+```
+
+已备好的 `review-campaign.json` 固定材料和任务分组。默认同时五个任务；每项材料两位读者，超大章回分组，合同读者同时看正文和写作包。语料按样本投影并校验原 carrier。整书两位读者须通读 `reading/book.md`，按 `reading/book.json` 查全部回际接缝；意见固定 ADVISORY，发布 manifest 展示进度但不新增门控。
+
+实际铺开时接入本地独立读者适配器：
+
+```bash
+rcwh agent-release review-run data/agent_release/research-81-100-v1/review-campaign.json \
+  --worker-command 'python /absolute/path/to/local_reviewer_adapter.py' \
+  --timeout 600 --model-label '实际路由的模型声明'
+```
+
+适配器从 stdin 读取 assignment，按 `job.read_in_full` 和 `job.samples` 阅读，填写 `opinion_scaffold` 后仅向 stdout 返回完整意见 JSON。失败向 stderr 写 `{"status_code":503}` 或退出 75 可触发临时故障重试；不要把诊断日志混进 stdout。身份和 subject 清单不能更换。默认三次尝试，自动退避；成功意见串行登记，原始输出和失败记录保存在 `data/agent_release/review-attempts/`。恢复运行跳过已登记任务。空骨架或格式错误不会被重试成 PASS。
+
+改正文需建立新 edition 和计划；候选稿、写作包、政策或 packet 改变后，旧计划拒绝继续派发，应以新路径运行 `review-plan REQUEST --out NEW_PLAN.json`。加入协调者决定不改变审阅依据，可继续原计划。既有 request 副本、packet 和意见不覆盖，未处理的口味类 ADVISORY 留给协调者裁决。先提交、推送并确认 CI，再启动读者。详见 [ADR 0006](../decisions/0006_RELEASE_ATTRIBUTION_AND_REVIEW_SCALE.md)。
+
 ## 已知限制
 
 模型预训练接触前八十回的情况未知，不能以重合阈值证明记忆。79–80在所选版本中是一原回拆成两半，不是两个独立留出样本。原文识别和同类写作偏好会影响模型读者。会话路由、耗时与实际资源无法按原 API 预算核算，因此研究比较必须另标 `RESOURCE_PARITY_NOT_VERIFIED`，现有 provider 回测的严格资格不被改写。

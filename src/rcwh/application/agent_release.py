@@ -4,6 +4,7 @@ from __future__ import annotations
 import argparse
 import json
 from pathlib import Path
+import shlex
 
 from ..workflow.agent_release import AgentRelease
 from .common import repo_root
@@ -17,6 +18,18 @@ def _span(part: str) -> range:
 def cmd_agent_release(args: argparse.Namespace) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     try:
+        if args.agent_release_command.startswith("review-"):
+            from ..workflow import review_campaign
+            if args.agent_release_command == "review-plan":
+                payload = review_campaign.plan(root, args.request, args.out, batch_size=args.batch_size,
+                    max_read_bytes=args.max_read_bytes, max_attempts=args.max_attempts)
+            elif args.agent_release_command == "review-run":
+                payload = review_campaign.run(root, args.plan, shlex.split(args.worker_command),
+                    timeout=args.timeout, model_label=args.model_label)
+            else:
+                payload = review_campaign.status(root, args.plan)
+            print(json.dumps(payload, ensure_ascii=False, indent=2))
+            return {"PASS": 0, "PENDING": 2, "FAIL": 1}[payload["status"]]
         release = AgentRelease(root)
         if args.agent_release_command == "prepare":
             from ..workflow.release_packets import prepare
@@ -32,7 +45,7 @@ def cmd_agent_release(args: argparse.Namespace) -> int:
     except (KeyError, OSError, UnicodeError, TypeError, ValueError) as exc:
         payload = {"status": "FAIL", "scope": "AGENT_RESEARCH_RELEASE", "findings": [str(exc)],
                    "authority_effect": "NONE", "stable_active_effect": "NONE"}
-    if args.json:
+    if getattr(args, "json", False) or args.agent_release_command in {"prepare", "review-plan", "review-run", "review-status"}:
         print(json.dumps(payload, ensure_ascii=False, indent=2))
     else:
         print(f"AGENT RESEARCH RELEASE: {payload['status']}")
@@ -62,3 +75,19 @@ def add_commands(sub) -> None:
     prepare.add_argument("--chapters", required=True, help="Chapters to review, e.g. 86,95,99 or 81-100")
     prepare.add_argument("--coordinator-session-id", required=True, help="Declared coordinator session (not a reviewer)")
     prepare.set_defaults(func=cmd_agent_release)
+    campaign = commands.add_parser("review-plan", help="Prepare two readers per subject and two advisory book readers")
+    campaign.add_argument("request")
+    campaign.add_argument("--out", required=True, help="New immutable repository-relative campaign plan")
+    campaign.add_argument("--batch-size", type=int, default=5, help="Maximum concurrent workers, 1..6")
+    campaign.add_argument("--max-read-bytes", type=int, default=197 * 1024)
+    campaign.add_argument("--max-attempts", type=int, default=3)
+    campaign.set_defaults(func=cmd_agent_release)
+    runner = commands.add_parser("review-run", help="Run a local JSON stdin/stdout reviewer adapter with retries")
+    runner.add_argument("plan")
+    runner.add_argument("--worker-command", required=True, help="Executable and args; no shell expansion")
+    runner.add_argument("--timeout", type=float, default=600)
+    runner.add_argument("--model-label", default="local worker (declared)")
+    runner.set_defaults(func=cmd_agent_release)
+    inspect = commands.add_parser("review-status", help="Inspect bound campaign attempts and registrations")
+    inspect.add_argument("plan")
+    inspect.set_defaults(func=cmd_agent_release)

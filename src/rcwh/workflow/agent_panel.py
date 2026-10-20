@@ -309,8 +309,9 @@ def _subject_summary(subject: dict, records: list[dict], packet_binding: dict,
     full = []
     for opinion in opinions:
         rejected = [c["sample_id"] for c in opinion["sample_checks"] if c["verdict"] in NEGATIVE]
-        blocking = opinion.get("severity", BLOCKING) == BLOCKING
-        if (opinion["verdict"] in NEGATIVE and blocking) or rejected:
+        advisory_only = subject.get("review_policy") == "ADVISORY"
+        blocking = not advisory_only and opinion.get("severity", BLOCKING) == BLOCKING
+        if (opinion["verdict"] in NEGATIVE and blocking) or (rejected and not advisory_only):
             findings.append({"record": opinion["record"], "verdict": opinion["verdict"],
                              "severity": BLOCKING,
                              "rejected_samples": rejected, "notes": opinion["notes"]})
@@ -318,7 +319,7 @@ def _subject_summary(subject: dict, records: list[dict], packet_binding: dict,
             # A full reading that found only non-blocking problems still counts
             # as a review; its objections are kept as replaceable advisories.
             advisories.append({"record": opinion["record"], "verdict": opinion["verdict"],
-                               "severity": opinion["severity"], "notes": opinion["notes"]})
+                               "severity": "ADVISORY" if advisory_only else opinion["severity"], "notes": opinion["notes"]})
         if not opinion["same_packet_context"]:
             pending.append({"record": opinion["record"], "reason": "DIFFERENT_PACKET_CONTEXT_FOR_SAME_SUBJECT_BYTES"})
         if opinion["verdict"] != "PASS" and opinion["verdict"] not in NEGATIVE:
@@ -471,6 +472,7 @@ def scaffold(root: Path, packet: str | Path, *, reviewer_id: str, session_id: st
                          "context_isolation": {"asserted": True, "verification": "NOT_PROVEN"}},
             "results": [{"subject_id": s["id"], "subject_sha256": s["binding"]["sha256"],
                          "verdict": "", "notes": "",
+                         **({"severity": "ADVISORY"} if s.get("review_policy") == "ADVISORY" else {}),
                          "sample_checks": [{"sample_id": x["id"], "sha256": x["binding"]["sha256"],
                                             "verdict": "", "notes": ""} for x in s.get("samples", [])]}
                         for s in chosen],

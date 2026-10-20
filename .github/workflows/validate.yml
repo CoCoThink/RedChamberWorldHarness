@@ -21,6 +21,8 @@ jobs:
       - run: rcwh validate
       - name: Verify selected writing histories and current inputs
         run: python tools/verify_writing_lineage.py
+      - name: Verify release attribution, review coverage and cloned pending build
+        run: python tools/verify_agent_release.py --build-smoke
       - name: Verify physical assets and immutable versions
         env:
           RCWH_ASSET_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}

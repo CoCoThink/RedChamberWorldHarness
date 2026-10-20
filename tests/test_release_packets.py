@@ -18,10 +18,14 @@ def test_edition_request_binds_verified_packets_for_all_twenty_chapters():
     assert [row["chapter"] for row in request["chapters"]] == list(range(81, 101))
     assert all(row["mode"] == "AGENT_CANDIDATE" for row in request["chapters"])
     for row in request["chapters"]:
+        assert row["rebind_receipt"]["path"] == f"data/agent_release/rebind-v4/receipts/ch{row['chapter']}.json"
         for ref in [row["panel"], *row["source_reviews"], *row["corpus_reviews"]]:
             packet = verify_packet(ROOT, ref["packet"])
             assert ref["subject_id"] in {s["id"] for s in packet["subjects"]}
     assert "archive/" not in (EDITION / "request.json").read_text()
+    book = verify_packet(ROOT, request["book_review"]["packet"])
+    assert book["subjects"][0]["scope"] == "BOOK"
+    assert book["subjects"][0]["review_policy"] == "ADVISORY"
 
 
 def test_rebound_selection_uses_v4_packages_with_disclosure_receipts():
