@@ -1,0 +1,66 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/083c0a0d76931394288f366d7aad2c7cd8293a62714374dcb3574160747fb655.json",
+    "sha256": "083c0a0d76931394288f366d7aad2c7cd8293a62714374dcb3574160747fb655"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整通读正文105行、包、三份合同及政策，共128782个分派字节；packet及六份材料的SHA256均与分派相符，无分派材料未读，无样本/图像待查。本项为有具体修订意见的ADVISORY负面判断，不是BLOCKING。回目第1行逐字保留；第3—19行吩咐落空、减冬物与喝药，第25—49行赠衣—受冷—披风补缺，第73—87行两种管理交锋，第103—105行压纸送单且仍候回话，均有实际动作支持。宝玉第45行虽说“你说的我知道”，第99行仍关心病妇热饭而未许诺改过；凤姐仍改纸、算米，贾琏第5行明确被平儿见到，未写成失踪。未见所分派材料支持的A-W1/LOCKED硬约束违例。保留三点修订意见：(1) 第57行米袋留在屋内脚边、平儿“自己拿木升出去”；第59行又明说“只带升不带米”，紧接着妇人却“指着米袋”，平儿在“旁边药炉”处舀米，第61行才说“进屋”。这段没有交代回屋舀米/送米的转接，米袋与药炉究竟在床边还是灶边不够清楚；宜补出移动动作或明确视线、地点，不能仅凭读者替文本搬物。(2) 第81行“要到受控旧府交给经手的人”和第105行“她往受控旧府走”把合同里的流程术语直接带入人物叙述，“受控旧府”尤其显得像工作标签，建议改为当时人能说的门禁与候传细节。(3) 第51行绕线被接手、第53行找布被拦、第69行举衣被拦、第95行送单被婉拒，连续采用宝玉想帮忙却马上被纠正的同一节奏；再叠加第63、73、97行腾挪物件，后半回对劳动受限的展示略显复写。建议压缩一两处同构动作，保留赠衣成本、凤姐强撑和两人管理交锋的主要变化。上述均属局部叙事清晰度/文风意见，不据规划偏好阻断。",
+      "sample_checks": [],
+      "subject_id": "chapter-90",
+      "subject_sha256": "ddc1647302b7efcc145fc2839bbadc05eec62afe24c55db9a72e7951df92d71e",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整通读包88行，并与本次正文、三份合同和政策对照。chapter=90、id=writing-package:ch90:agent-research:v4及purpose一致；包显式选择agent-final-v1的90-S1/S2/S3.v2，其哈希与分派和实际字节一致。exemplar_set、plan和world共12个path绑定均存在且哈希相符；保留RESEARCH、authority_effect=NONE和“未知状态仍未验收”“资格未授予”等边界，没有把正文实现或模型编辑标签充作史料/文学认证。正文实际采用的三段因果与包选合同相符，未见清单自身串回或绑定破损。此PASS仅覆盖分派包清单、字节绑定及与已读正文/合同的适配，不声称完成清单外世界文件、来源资产或exemplar的语义复审；这些引用不在job.read_in_full，未扩读为其他审阅subject。本次无分派材料未读，无分派样本。",
+      "sample_checks": [],
+      "subject_id": "package-90",
+      "subject_sha256": "a3c9f8bb91df4a0badf621549bae6f71694e694accfc560c258de5273248ebc8",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读90-S1.v2的800行并核对正文。第3—5行平儿空手回、纸未收且贾琏也要等准许，给出吩咐不能自动执行的具体反馈；第7—19行药盏、米袋、被卷、痰盒、热水壶同挤，补窗者晚到且纸补歪，护理与劳动限制没有被名义身份消除。第13—15行凤姐留下垫肩铺盖、以厚衣挡窗并缩减此次取物，第83—85行再将整套冬物改为眼前夜用，不是悟道停办，也未恢复万能调度。合同仅将已迁借院的铺盖组作为粗层绑定，退出身体状态保持UNKNOWN，event_refs/object_transition_refs为空；未借用黛玉药碗，也未凭章级身体节点冒充本场已执行结果。正文第57—61行米袋/药炉地点转接的清晰度意见已在chapter-90列为ADVISORY，不能从该省略反推合同绑定的铺盖组违反A-W1硬事实。本合同要求及其知识边界在所读材料中成立，无BLOCKING发现。无分派材料未读，无分派样本。",
+      "sample_checks": [],
+      "subject_id": "contract-90-1",
+      "subject_sha256": "1a630560f604cbcf8bc6708af0cdf68036e78f5135a8a3710a6a402d292d674b",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读90-S2.v2的600行并核对正文。第21—35行先有麝月补破袖和门后空钉，再经孩子述病妇所需，宝钗指出“如今给出去真少一件”，夹衣经孩子送达并回报穿上；包袱布也实际留给病妇，付出没有被收回。第37—45行宝玉等饭且在穿堂受冷，宝钗把自己下午要用的披风给他，并说“你周全一个，总有人补这个缺”；第49行补衣穿上、披风归还，第71行宝钗披上往凤姐处，衣物交接顺序清楚。宝玉第45行仍将话头扯到不能收回赠衣，第99行仍惦记病妇热饭，未以“我以后改”受箴；第71、95行对少量家务的体谅只是局部反应，不足以判定突然改过。宝钗赞成病妇应有衣穿并付出披风/包袱布，不是吝啬反派；也未把宝玉抬为没有劳动代价的圣人。合同保留病妇无实体ID、participants_status=PENDING及局部身体/角色状态UNKNOWN，没有硬认95回夹袄。entry_from虽指agent-edited-v1，实存文件与包所选agent-final-v1的S1字节完全相同，本次不构成断链。无分派材料未读，无分派样本。",
+      "sample_checks": [],
+      "subject_id": "contract-90-2",
+      "subject_sha256": "8af5c6c27fa27ebe5b3a2c27e91f23ed5d2b9a8781e7afb8bfa7358b33faf665",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读90-S3.v2的777行并核对正文。第73—87行宝钗与凤姐只有一次正面会谈：一并列名目与逐项问米/劳动/办理人交锋，宝钗也承认明早没准，凤姐未被判成全错，更未撤退。第81—85行宝钗收回自己小单、凤姐决定米与夜用被褥先问、整套冬物暂缓，平儿仅剩一趟的腿脚与护理时限实际改变决定。第87—93行仍需吃药、安排巧姐、挪壶痰盒，第103行风掀纸角由平儿自己压平，第105行到门前将单交人而自己空手候回话；送单、获准、取回未混为一件事，没有预演91回物资补入或恢复旧府供给。贾琏第5、65、91行被见到/忙着/暂无回话，不是已失踪。合同的局部角色、身体和铺盖可支配量均保持UNKNOWN，未把并置管理写成已执行的世界角色更新；entry_from所指agent-edited-v1的S2与当前所选agent-final-v1文件哈希相同。第81、105行“受控旧府”的措辞问题已在chapter-90列为ADVISORY，不升为硬约束违例。无分派材料未读，无分派样本。",
+      "sample_checks": [],
+      "subject_id": "contract-90-3",
+      "subject_sha256": "e10b91adcc9845df5a00159a002e6fb6db9f456e8abd6afd68471b7a97e6c43f",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-90-022-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-90-022-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

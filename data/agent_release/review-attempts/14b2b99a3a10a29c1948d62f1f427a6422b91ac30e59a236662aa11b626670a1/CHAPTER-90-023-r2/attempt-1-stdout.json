@@ -1,0 +1,66 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/083c0a0d76931394288f366d7aad2c7cd8293a62714374dcb3574160747fb655.json",
+    "sha256": "083c0a0d76931394288f366d7aad2c7cd8293a62714374dcb3574160747fb655"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整逐段读正文105行，并完整对照分派写作包、90-S1/S2/S3三份v2合同与ch90政策；本任务samples为空，无图像或语料样本需要填写，分派阅读范围内无未读。正文、包、合同、政策及packet的实际SHA256均与assignment一致。第1行保留政策HEADING_EXACT允许的完整回目。第27行“如今给出去真少一件”、第37—49行受冷—披风补缺—换回补衣、第45行“你说的我知道”之后仍维护赠衣，保留宝钗有理而宝玉未改过；第15、83—91行凤姐缩减取物名目且仍喝药、管米与巧姐，未悟道退出。末行只交单候话，未把送单写成获准或物资恢复。人物所知主要经小丫头、平儿回话取得；贾琏第5、65、91行有明确消息，未被写成失踪。\n保留两项ADVISORY异议，均非完整性失败或A-W1-backed LOCKED违反。①第57—61行舀米段空间衔接不清：第57行米袋留在凤姐房内、平儿只拿木升出去；第59行原住妇人在灶边见她“只带升不带米”，接着却指米袋，平儿蹲下舀米并碰到“旁边药炉”；第61行又“进屋”，药炉与米袋仍待在房内分开。中间缺少回屋取米或搬运的动作，难以确定实际在哪里舀、哪袋米被分、药炉如何邻灶。建议明确房内量米与送往灶边的往返。现有文字尚不足以断言注册物件发生瞬移，故不作BLOCKING。②第81、105行“受控旧府”直接沿用合同术语，尤其“她往受控旧府走”使章末露出规划说明口气；可用旧府门上守候、递单、等经手人的具体叙述承担取用受限。其余多次让路、候水、理布的重复虽有劳动压力的用处，仍可酌减；这一项也是文风建议。此FAIL仅表达上述建议级异议，不宣称历史来源、全书接缝或未分派世界文件已获验证。",
+      "sample_checks": [],
+      "subject_id": "chapter-90",
+      "subject_sha256": "ddc1647302b7efcc145fc2839bbadc05eec62afe24c55db9a72e7951df92d71e",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读写作包88行及本任务全部附件。包明确operation_scope=RESEARCH、authority_effect=NONE，purpose明确未知状态未验收且未授予史料/语料/文学资格；没有把本轮模型意见变成原作或真人鉴定。plan所选三份agent-final-v1 v2合同的路径和SHA256与assignment及实际字节一致；exemplar_set、plan、world合计12个路径绑定均存在且哈希一致。正文使用青布夹衣、披风、空钉、米升、药与纸单，未把95回夹袄ID强认成本回衣物，亦未为病妇伪造实体ID。来源record与assets这里只核对包内声明及给定合同中的内嵌摘录，不把未分派的原始影像、exemplar全文或世界文件全文当作已目读/已获资格。本任务要求的read_in_full与samples范围无未读；空sample_checks对应无分派样本。",
+      "sample_checks": [],
+      "subject_id": "package-90",
+      "subject_sha256": "a3c9f8bb91df4a0badf621549bae6f71694e694accfc560c258de5273248ebc8",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取90-S1.v2.json的800行，并与正文和政策核对。required_beats的“吩咐碰到缺人/取用受限—平儿回报—缩小或改做一项安排”由正文第3—15行落实：单子未收、尚须准许、糊窗与看锅不能兼顾，凤姐改留换洗及夜里厚物；第7—19行药炉、痰盒、热壶、米袋、被卷互碍及破窗补歪构成实际劳动限制。凤姐病中仍决断，第13、15、61、83行的取舍未变成认命或恢复万能调度；药亦未被硬认成黛玉药碗。合同只以章节粗入口绑定S06、旧病、已搬入铺盖，局部exit保持UNKNOWN，event_refs等为空，notes没有把编辑动作自证成场级既成事实。第57—61行空间衔接问题已在chapter-90提出ADVISORY；它不构成这份合同的已知硬约束违例。分派范围无未读，无样本。",
+      "sample_checks": [],
+      "subject_id": "contract-90-1",
+      "subject_sha256": "1a630560f604cbcf8bc6708af0cdf68036e78f5135a8a3710a6a402d292d674b",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取90-S2.v2.json的600行。正文第21—35行把麝月补衣、门后空钉、青布夹衣送病妇及包袱布留下连成接收链；孩子第35行回报已经穿上，送衣的结果不靠作者概述补证。第37—45行因候饭而补衣迟、宝玉在穿堂受冷，宝钗拿自己的披风补缺；第49行索回披风，第71行自己披去探病，交接次序明确。两次含讽确为口语和衣物机会成本，没有误写成词牌诗作、功名说教、吝啬批判或慈善圣人。宝玉虽递线、端碗等有小动作，仍在第99行关心病妇热饭、没有承诺以后改，不能据这些局部体贴认定成功受箴。合同对病妇无实体ID保留participants_status=PENDING，对具体身体/角色进出口与送达注册事实保留UNKNOWN和空事件，符合其研究声明；entry_from虽用agent-edited-v1目录，该前驱实际存在且字节哈希与本包所选final-v1/S1相同，未发现实质断链。分派范围无未读，无样本。",
+      "sample_checks": [],
+      "subject_id": "contract-90-2",
+      "subject_sha256": "8af5c6c27fa27ebe5b3a2c27e91f23ed5d2b9a8781e7afb8bfa7358b33faf665",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取90-S3.v2.json的777行。正文第73—87行只有一次宝钗与凤姐正面会谈：凤姐要各样一并开，宝钗问今夜米、水、软饭及平儿尚能跑几回；宝钗收回自己小纸，凤姐把整套冬物缓后，未以旁白裁判谁更高明。第83—91行米升失手、写清一件/一床、喝药与巧姐照护同时存在，知限制仍强撑；贾琏仍忙于外头、没有为单子取得准话。第103行风掀纸、平儿自行压平折痕；第105行到门外交单候传，明确止在申请，未宣布许可、取回冬衣包或恢复供给。合同entry/exit及具体铺盖可支配量保留UNKNOWN，retrieval_boundaries未被正文偷换成已执行注册事实；entry_from对应的edited-v1/S2实际存在且哈希同包内final-v1/S2。正文第81、105行“受控旧府”的文风异议已列chapter-90 ADVISORY，手续因果本身成立。分派范围无未读，无样本。",
+      "sample_checks": [],
+      "subject_id": "contract-90-3",
+      "subject_sha256": "e10b91adcc9845df5a00159a002e6fb6db9f456e8abd6afd68471b7a97e6c43f",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-90-023-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-90-023-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

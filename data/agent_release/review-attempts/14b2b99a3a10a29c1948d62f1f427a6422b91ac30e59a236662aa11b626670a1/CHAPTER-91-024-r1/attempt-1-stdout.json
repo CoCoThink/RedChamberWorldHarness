@@ -1,0 +1,74 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/8cee909eb61503e900aeb0839786c810947180ec0a651d857d2794798deb6626.json",
+    "sha256": "8cee909eb61503e900aeb0839786c810947180ec0a651d857d2794798deb6626"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "完整通读分派正文119行、写作包、91-S1至S4 v2及ch91政策；分派samples为空，无未读的分派材料。正文/包/四合同/政策及packet的SHA256均与分派一致。政策主边界有实证支撑：L57脚尖扫薄雪、L61凤姐隔纸拾物、L63只称“玉样的东西”及“玉样物一”，直到L103仍未鉴定；L29—35看守核纸、书办领路、禁开封柜，L45登记后尚须出口核物，L71核过才领出，未写自由搬家。腊尽残雪→返院→天黑通知→五更出门时序清楚；青灰袄左袖白布、麝月右襟斜线棉衣、焦孔旧毡与副单往返可追踪。保留三点建议：一、L67写“尚待接办”，L69明说“交回的事还待接着办”，L103又说“仍待那边接着处理”，现可确认物件留在受控地点，却不能确认91-S3所涉OT91-02的交回完成；建议用不具名收受者的一次接收动作消除歧义，不需要鉴定玉或给收受者命名。二、L115宝玉忽提“那袖里的白布”，L99—103回话未明确带给他这项细节；白布辨衣只在他未在场的L13、43、79、87—93展开，补出一次告知可使人物知识更稳。三、L41、53、59—61、71—77多次用无法兼顾扶人和抱物推进，湿鞋笑话及“衣认人”也反复出现；这些细节有效，但密度使取物段落的进展慢，可压缩部分同功能动作。以上均为正文落实与文风ADVISORY，未检出可据A-W1-backed LOCKED判BLOCKING的违背；不是源证鉴定或全书连续性通过。",
+      "sample_checks": [],
+      "subject_id": "chapter-91",
+      "subject_sha256": "0bf1f11f7a53f2112ac8eeaa21d166cf26737b7e29415de9f2624e808d22a6a1",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读取ch91-agent-research-v4.json。包明确operation_scope=RESEARCH、authority_effect=NONE，purpose保留未知与未授资格；显式选用四份本任务v2合同，路径和SHA256与分派及packet相同。另只读核验exemplar_set、plan和world所列文件的实际字节绑定，全部匹配；此项不把字节匹配当作这些未分派文件的语义通读。正文落实包内本次分派合同的准取、三类物件、雪中拾物身份开放、旧单及夜传认单主链。包的source/assets仅为引用，不据此声称见过见证图像或证明原稿史实。范围限本任务分派包与附文；未读取非分派world/plan/exemplar全文或底层source/asset内容，无分派样本、无漏读的read_in_full文件。正文具体建议见chapter-91与contract-91-3。",
+      "sample_checks": [],
+      "subject_id": "package-91",
+      "subject_sha256": "8d8ec7489698b86a0b72a70a7bc4b079e538fb064e5e2902bd8573eba265e6ce",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取91-S1.v2。R1：L5通知先到，L7—9平儿核名目，L29—31看守核纸并等书办，再准入；L35守物人按书办指示取外层衣，L45登记与L71实际领出分开。R2：L27湿鞋及L29候门、L31—33受控路径落实财产现场；凤姐L13喘、L19鞋不合脚、L25上车失足构成亲往成本。R3：可取冬衣/靠褥、旧毡另核焦孔、书办和看守接口清楚；无新增官役姓名或杜撰明确准入期限。F1/F2未见自由搬家、钥匙恢复权力、鬼宅神异或大段怀旧。合同本身仍把未注册局部出入/领出写作UNKNOWN，未把粗章级结果冒充已核定场末事实。PASS只指本分派读后对应，不把AGENT_EDITED当历史资格。",
+      "sample_checks": [],
+      "subject_id": "contract-91-1",
+      "subject_sha256": "095c1f81bcbe363bf2b97e517d75b16dbb7ab48748a5bf699eb8466a67eadfe1",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取91-S2.v2。R1及F1/F3的三类物件有实际经手：L43—45两件棉衣与L51薄靠褥、L53焦孔毡登记准取；L47空画轴匣被拒，L51破厚褥暂不可取；L49旧布枕无人认而仍留待认，未混入包中。R2：L27开始的湿鞋延续到返院L85先脱鞋烤暖，L87才拆包再认衣；L89/91以肥瘦、袖短写“认人”，L93钥匙转向无柜屋角，地点与物流没有错塞到旧府内。R3只选空画轴匣和匾额色差（L47、55），没有堆展览；无新诗或重触《续庄子》。合同持有人、场内位置和新身份保持UNKNOWN并说明不可倒填，未制造已完成检查点。可压缩反复湿鞋/认衣笑话是文风建议，未改变本合同对应判断。",
+      "sample_checks": [],
+      "subject_id": "contract-91-2",
+      "subject_sha256": "d31230a15b39621185e9ddc9ef39993727203b4e069a9929f7bea17073d8d975",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取91-S3.v2。拾取、登记与身份开放落实良好：L57脚扫残雪发现，L61凤姐隔纸拈起，L63书办只登记“玉样物一”，L65询问接触者、凤姐复核“拾起”并非“领走”；无神光、感应、通灵玉自动合并或把发现登记做成同一人同一瞬间。保留R1/R2交回落实异议：合同绑定OT91-02的to.status为RETURNED_TO_HANDLING_CHAIN_IDENTITY_OPEN，并要求“把登记和物件交接写清”；正文L67却说“尚待接办”，只见凤姐把湿纸上的物推落干纸并松手，书办去催；L69明确“交回的事还待接着办”，离开时干纸还张着，L103仍称待处理。物件未带回家可以确认，真正接收动作及处理链责任转移则未写清，不能只凭放入干纸断言HANDOFF完成。建议补一次不具名人员或处理链明确接收，继续保留身份OPEN；无需把收受者改成书办本人、宝玉或平儿。此差距来自当前场景合同/C_HANDOFF接口，不据此升格A-W1 LOCKED或BLOCKING；局部UNKNOWN与真实未完成语义均保留。",
+      "sample_checks": [],
+      "subject_id": "contract-91-3",
+      "subject_sha256": "4f6f778960742fd473471e13828dddc2abfd739216e2c6bd732d99c65642b597",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读取91-S4.v2。R1/R3：L71—81核出、搬运、返小院及宝钗接物，L85—93烤鞋和再认旧衣；L95回述书办翻旧单见宝玉名字，L97和L101反复分清平儿手记与留在旧府的原单，未冒称宝玉见原件。R2：L105官面传话人到门，贾芸主动退开，李纨先听后向王夫人传，宝钗仅听家中有限认单通知；L109宝玉本人问而未获更多答复，贾芸只答应送一段路；L117—119五更预备并出门。F1/F2未见认单直接变定罪、连坐或以雪中小物身份解释案件。建议保留：L115宝玉说“那袖里的白布”时，本场此前给宝玉的回话只明确衣物种类、旧单、空匣和玉样物，缺少白布信息的明示来源；可在L99回话添一句。主合同认单与经手分层仍满足，因此PASS附ADVISORY，不声称法定程序、未分派第92回衔接或全书知识系统已经通过。",
+      "sample_checks": [],
+      "subject_id": "contract-91-4",
+      "subject_sha256": "e14b6d4f773e7f1c939f3754a08739f1ddd5d2f35c1ee854a8cb8c275e1c5270",
+      "verdict": "PASS",
+      "severity": "ADVISORY"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-91-024-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-91-024-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

@@ -1,0 +1,42 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/0c79e40c1e0c6372b58002a8ad896b6827028a74183c03624e6a7a0bc236aac5.json",
+    "sha256": "0c79e40c1e0c6372b58002a8ad896b6827028a74183c03624e6a7a0bc236aac5"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整通读89-S6合同1061行、候选正文105行、消息场景、写作包及政策；packet与全部5项分派材料的实测SHA256均与assignment一致。仅评本任务两项subject，未读其他意见；本任务samples为空且无inspect_images，sample_checks保持空。89-S6的迁居因果与物件路径在正文有实际支撑：第51行先落实借几间且不添床具、共用井灶；第53—65行将准取衣被药包、装载议车脚、老病者缓慢上车、未准箱子退回及门上复核接成一链；第67—75行有狭路勘看、递铺盖、原住者接收与柜/通道限制、先给老人铺、混拿被卷和辨认宝玉旧衣，未以章节终态代替搬运。第77—89行这一程车脚实付但旧欠薪保留，药炉与原住者饭锅、过人地段和半壶水相互挤占；第95—105行临时铺位明早仍须挪、原住者仍需灶火洗碗，故末问水桶仍为未解共享问题。第61行“因为薄”没有揭书名，玉只写“仍在颈下”；第105行以“谁家的水桶还在井边？”直接终止，没有续诗或官府总结。未见本项所禁的家具空降、物件瞬移、独井新灶或权贵资源恢复。本PASS仅指所读候选对合同的表现，不将合同内UNKNOWN/PENDING、未绑定场级状态或来源权威升级为已验证事实。",
+      "sample_checks": [],
+      "subject_id": "contract-89-6",
+      "subject_sha256": "703967d31a2e651f8a5ed90b420f861d5b2c71911829fc40b9eec8517604324c",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读同一候选及本场景全部内容；绑定字节核验一致，无未读分派材料，samples为空。官面有限消息确已传到宝钗：候选第7行管事先明确“官差已到”“不要擅搬箱笼”，第11行媳妇向王夫人传管事的话，宝钗在场并追问“全封了”是亲见还是传闻；媳妇承认只见车不能出，王夫人制止混报，宝钗要求照原话问清。因此official_message_arrives、meaning_remains_partial及宝钗收到消息均有支撑；未发现宝钗、传话者或旁白掌握完整案情和最终法律范围。异议在人物知识落实：场景列在场参与者baochai/xiaohong/qianxue，exit_state又明确要求character.xiaohong.knowledge.official_confiscation_message=knows，但正文从第1行到第105行没有小红或茜雪出场、收讯、听讯或传讯事件；第11行未具名媳妇不能无证据认作小红，亦不能由宝钗已经听到推定小红获知。故本项不能整体PASS，尤其小红的知识出口没有正文依据。建议补入小红实际听到有限官面消息的事件，并交代茜雪的在场/传递关系，或明确修订该当前实施场景及相应知识绑定。此为当前场景实施与知识连续性的建议性缺口；分派材料未提供将这条特定人物传讯链列为A-W1支撑LOCKED硬约束的依据，所以使用FAIL/ADVISORY，不判BLOCKING。",
+      "sample_checks": [],
+      "subject_id": "contract-89-7",
+      "subject_sha256": "0652e28af2598aec4b548c5a341063d7a67ae0b4a33b8a5bebdd8f49d98e2317",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-89-020-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-89-020-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

@@ -1,0 +1,673 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch89.json",
+      "sha256": "ad6cee1c1ac402ffd24afb1faea19b82eb1a6620ae8ca98f2547eb107d0bcfcf"
+    },
+    "seed": {
+      "path": "data/planning/scenes/89-S3.json",
+      "sha256": "9798487623e10a304ee201cd214608ce68ad3a4c5fb564f9f0a70d92b38d364f"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 89,
+  "chapter_plan_ref": "data/planning/chapters/ch89.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/89-S2.v2.json",
+  "entry_state": [
+    {
+      "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "全回前基线在旧府，不等于封门点人之后本种子的局部对象检查点。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "点物结束不等于OT89-01搬至借院；登记、放行与搬运尚需区分。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "文物清单/赏鉴喧宾夺主，或把所有被点物自动当作可自由带走。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "01213de1f13bd2444ca9a97cbd313bde0de82a8fd6c763a822ca8e84fdb6904b",
+          "value": {
+            "id": "89-S3",
+            "title": "再点“物”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24736,
+            24831
+          ],
+          "lines": [
+            606,
+            608
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fce811e6ab359457c2e45895210d69a79de5b6b24408248f22fa8b90563c2baa"
+        },
+        {
+          "byte_range": [
+            25242,
+            25460
+          ],
+          "lines": [
+            621,
+            623
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94c0575c7208193d80e426a36153389c086004736dc1647e4fa8a940e97d389b"
+        },
+        {
+          "byte_range": [
+            26084,
+            26438
+          ],
+          "lines": [
+            639,
+            642
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29a25382814bd3e8bee73e0b9772b840132042ec9fbd96dfb5c9fedd979585dd"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "把点物一步直接写成全府财物瞬间运空，跳过账物错位与搬运机制。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "01213de1f13bd2444ca9a97cbd313bde0de82a8fd6c763a822ca8e84fdb6904b",
+          "value": {
+            "id": "89-S3",
+            "title": "再点“物”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24102,
+            24253
+          ],
+          "lines": [
+            594,
+            596
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ac6007c98a044dc28411d8cf6b697cd28bf108589dfdef4e27e9d10048e15cb2"
+        },
+        {
+          "byte_range": [
+            24253,
+            24387
+          ],
+          "lines": [
+            597,
+            599
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "933f2b282691675e5285b0c4f457736c49f1f75edf4b86c83680629f6496f49a"
+        },
+        {
+          "byte_range": [
+            25672,
+            25779
+          ],
+          "lines": [
+            627,
+            629
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "d19c0f3d8108cb247e7d1056b399a022f07db43deda2c883507ad32b6eb40d89"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "01213de1f13bd2444ca9a97cbd313bde0de82a8fd6c763a822ca8e84fdb6904b",
+          "value": {
+            "id": "89-S3",
+            "title": "再点“物”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            26016,
+            26044
+          ],
+          "lines": [
+            636,
+            636
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            26044,
+            26084
+          ],
+          "lines": [
+            637,
+            638
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44e50474767c8d9301ed3c5c77ae2942e439a0cef17b919c728501c816f9af53"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "89-S3",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 3,
+  "participants": [
+    "baochai",
+    "sheyue",
+    "ping_er"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "哪些衣被已经准取没有种子级程序记录，不能用IN_OLD_HOUSE自证可自由搬走。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/8",
+        "ref": "data/world/m3_core.json#/characters/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "18eb0f602b315bef39498961532a6d16a05dbd3cac2e572c07257b6fdf99a63d",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "fengjie_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "ping_er",
+          "name": "平儿"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/5",
+        "ref": "data/objects/m4.json#/objects/5",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "ccec5081b501878b4d0e5edd7c0dc3d9c0a8a57baa680db06dd545a0df97a063",
+        "value": {
+          "baseline": {
+            "holder": "jia_household",
+            "location": "S02",
+            "status": "IN_OLD_HOUSE"
+          },
+          "continuity_rules": [
+            "抄没后通过搬运进入借住院落，不允许物件瞬移"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-HOUSEHOLD-BEDDING-BUNDLE",
+          "identity_status": "C_WORLD_OBJECT_GROUP",
+          "kind": "bedding_bundle",
+          "name": "事败迁居铺盖包",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "description": "账簿、房契、封识、衣箱等各经过实际点验，书办记录与差役控流动不是同一差事。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "01213de1f13bd2444ca9a97cbd313bde0de82a8fd6c763a822ca8e84fdb6904b",
+          "value": {
+            "id": "89-S3",
+            "title": "再点“物”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24253,
+            24387
+          ],
+          "lines": [
+            597,
+            599
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "933f2b282691675e5285b0c4f457736c49f1f75edf4b86c83680629f6496f49a"
+        },
+        {
+          "byte_range": [
+            25090,
+            25242
+          ],
+          "lines": [
+            618,
+            620
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "d325b978aa536dea18211626009f54c7c9e049d0eebc3e87bb65e584cce6af6a"
+        },
+        {
+          "byte_range": [
+            25242,
+            25460
+          ],
+          "lines": [
+            621,
+            623
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94c0575c7208193d80e426a36153389c086004736dc1647e4fa8a940e97d389b"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "画轴匣、匾额壁痕与书册只作为财物项，少量衣被能否带走要和控产程序接上。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "01213de1f13bd2444ca9a97cbd313bde0de82a8fd6c763a822ca8e84fdb6904b",
+          "value": {
+            "id": "89-S3",
+            "title": "再点“物”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24736,
+            24831
+          ],
+          "lines": [
+            606,
+            608
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fce811e6ab359457c2e45895210d69a79de5b6b24408248f22fa8b90563c2baa"
+        },
+        {
+          "byte_range": [
+            25242,
+            25460
+          ],
+          "lines": [
+            621,
+            623
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94c0575c7208193d80e426a36153389c086004736dc1647e4fa8a940e97d389b"
+        },
+        {
+          "byte_range": [
+            26084,
+            26438
+          ],
+          "lines": [
+            639,
+            642
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29a25382814bd3e8bee73e0b9772b840132042ec9fbd96dfb5c9fedd979585dd"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "让宝钗、麝月或平儿面临实际要用的衣被与登记项不重合的问题，为后面的账物不符/迁居留出压力。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "01213de1f13bd2444ca9a97cbd313bde0de82a8fd6c763a822ca8e84fdb6904b",
+          "value": {
+            "id": "89-S3",
+            "title": "再点“物”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24102,
+            24253
+          ],
+          "lines": [
+            594,
+            596
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ac6007c98a044dc28411d8cf6b697cd28bf108589dfdef4e27e9d10048e15cb2"
+        },
+        {
+          "byte_range": [
+            24253,
+            24387
+          ],
+          "lines": [
+            597,
+            599
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "933f2b282691675e5285b0c4f457736c49f1f75edf4b86c83680629f6496f49a"
+        },
+        {
+          "byte_range": [
+            25242,
+            25460
+          ],
+          "lines": [
+            621,
+            623
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94c0575c7208193d80e426a36153389c086004736dc1647e4fa8a940e97d389b"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "点验时区分账上列入、当下使用和获准带走三种范围；药包应在有限可带日用物中优先考虑，铺盖登记不等于搬运许可，也不等于已经到了借院。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/8/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/8/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "01213de1f13bd2444ca9a97cbd313bde0de82a8fd6c763a822ca8e84fdb6904b",
+          "value": {
+            "id": "89-S3",
+            "title": "再点“物”"
+          }
+        },
+        {
+          "ref": "data/world/m3_resources.json#/resource_flows/8",
+          "path": "data/world/m3_resources.json",
+          "pointer": "/resource_flows/8",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+          "text_sha256": "2ebf1d8ce7b3cae6a2aad01d436e721a1aaa5c6de30ad00053e3f1adfd05b38c",
+          "value": {
+            "boundary": "不能一日归零",
+            "chapter": 89,
+            "epistemic": "REFERENCE_RESOURCE_FLOW",
+            "food_medicine": "饭菜减样但不断；药包优先带走",
+            "labor": "仆役散失；贾芸雇车；少数人搬运",
+            "money_state": "资产与空间受官面限制，现金流开始紧",
+            "object_interface": "箱笼、账册、铺盖、车钱",
+            "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            24253,
+            24387
+          ],
+          "lines": [
+            597,
+            599
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "933f2b282691675e5285b0c4f457736c49f1f75edf4b86c83680629f6496f49a"
+        },
+        {
+          "byte_range": [
+            25090,
+            25242
+          ],
+          "lines": [
+            618,
+            620
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "d325b978aa536dea18211626009f54c7c9e049d0eebc3e87bb65e584cce6af6a"
+        },
+        {
+          "byte_range": [
+            25242,
+            25460
+          ],
+          "lines": [
+            621,
+            623
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94c0575c7208193d80e426a36153389c086004736dc1647e4fa8a940e97d389b"
+        },
+        {
+          "byte_range": [
+            26084,
+            26438
+          ],
+          "lines": [
+            639,
+            642
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29a25382814bd3e8bee73e0b9772b840132042ec9fbd96dfb5c9fedd979585dd"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [
+    "OBJ-HOUSEHOLD-BEDDING-BUNDLE"
+  ],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "objects: 仅衣被物流组有真实ID；账簿、房契、封识、衣箱、画匣及书册没有注册，不能用凤姐后事束替此账簿。",
+    "participants: 书办、差役和点物搬运人没有实体记录，不能只靠房内女眷完成官面程序。",
+    "permissions: 哪些衣被准带、点验项与放行量未有执行记录，具体箱数/物目不锁。",
+    "entry_checkpoint: 89-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+    "entry_state.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.location: 全回前基线在旧府，不等于封门点人之后本种子的局部对象检查点。",
+    "preconditions.object.OBJ-HOUSEHOLD-BEDDING-BUNDLE.status: 哪些衣被已经准取没有种子级程序记录，不能用IN_OLD_HOUSE自证可自由搬走。",
+    "medicine_priority: 药包优先与点验/准带边界已加为义务，药包、封识和具体许可无注册对象/事件，不能用已死黛玉药碗替代。"
+  ],
+  "function": "让点物体现账簿、房契、封识与可带衣被的实物边界，文化物仅作为财物项，为搬运限制建立接口。",
+  "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/89-S3.v1.json，sha256=e17791fe9b7aab48d5ff1b6e02a05bdaa58d75a41b2eff3156616b0ef91c4380。本场精确改动：将有限可带日用物与药包优先接入本场点验，不补造药包ID或已批准状态。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+}

@@ -1,0 +1,628 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch88.json",
+      "sha256": "1e430cea49987663351ccb3eb0275b610fb9cc647f4f7aae9cb3068aeab26479"
+    },
+    "seed": {
+      "path": "data/planning/scenes/88-S4.json",
+      "sha256": "d80e1307eebf9676ab6f521f3a9139ceb5d18b74a6b68d97c6e393f83946f374"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 88,
+  "chapter_plan_ref": "data/planning/chapters/ch88.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/88-S3.v2.json",
+  "entry_state": [
+    {
+      "equals": "character.yingchun.life_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "迎春是场外消息对象，不是出场演员；W88合并终态不能定死讯到达时的局部检查点。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.yingchun.life_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "传来死讯是要求写出的结果，但听见消息不等于注册生命事件已在本种子回放。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "迎春密使带绝命信、遗诗或托梦，或者扩写孙绍祖虐待现场。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a62e998f33a595ad1fbc64f012f97cc7adb5f29cf67f2358a90fa3ba1b6b95c8",
+          "value": {
+            "id": "88-S4",
+            "title": "消息必须从孙家那边“有成本地”传来"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            22035,
+            22174
+          ],
+          "lines": [
+            541,
+            543
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29f1ea5d322c90ee9bbfefe1cf20b6f392e3aacb699199c47a3eb6cb5bf794ef"
+        },
+        {
+          "byte_range": [
+            22262,
+            22360
+          ],
+          "lines": [
+            547,
+            549
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94449cc2d7d85e3d2f2e5e1c07526b41500b6897b0172b44de0a4d182c9dea4f"
+        },
+        {
+          "byte_range": [
+            22436,
+            22525
+          ],
+          "lines": [
+            553,
+            555
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "9b86f34b6742dfae929c43948ff738774766e212e4c5c54c27c810672932f8b8"
+        },
+        {
+          "byte_range": [
+            22895,
+            22972
+          ],
+          "lines": [
+            565,
+            567
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fce0ae558bf16630b75f7dd8b6c32397787c28d54c80b3f62195b16ae8dbdc3e"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "将孙家后事控制权自动移给贾府，或把传信人写成没有成本的万能信息NPC。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a62e998f33a595ad1fbc64f012f97cc7adb5f29cf67f2358a90fa3ba1b6b95c8",
+          "value": {
+            "id": "88-S4",
+            "title": "消息必须从孙家那边“有成本地”传来"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            21674,
+            21826
+          ],
+          "lines": [
+            535,
+            537
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "6ec3971f4ab47d21b5e56b5121ef2434187a934d4cb1fedefa7f1637ec81f4f9"
+        },
+        {
+          "byte_range": [
+            22525,
+            22614
+          ],
+          "lines": [
+            556,
+            558
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "17cf1f4f23998c1b6e7661ef27a7ba2c77a82805b2afda4964f668a7df18e09f"
+        },
+        {
+          "byte_range": [
+            22614,
+            22761
+          ],
+          "lines": [
+            559,
+            561
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ab716736a05ead801e8dc836d4fc75d4441bea728ddc875ec53fc6e4cdee8329"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a62e998f33a595ad1fbc64f012f97cc7adb5f29cf67f2358a90fa3ba1b6b95c8",
+          "value": {
+            "id": "88-S4",
+            "title": "消息必须从孙家那边“有成本地”传来"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            23178,
+            23206
+          ],
+          "lines": [
+            574,
+            574
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            23206,
+            23233
+          ],
+          "lines": [
+            575,
+            576
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4ce526aecba789d8fb664d11031ea1dcfb21bf96efab2e4510b2cee0f78d282d"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "88-S4",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 4,
+  "participants": [
+    "wangfuren",
+    "baochai",
+    "sheyue"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.wangfuren.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "孙家到门、再入内宅的经手路径尚无局部位置记录。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/25",
+        "ref": "data/world/m3_core.json#/characters/25",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "a65f17f6bbf2cfddd4d5c2094fd86646d034352e611faed657faf9db1383095e",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "senior_household_woman",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "MARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "wangfuren",
+          "name": "王夫人"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/18",
+        "ref": "data/world/m3_core.json#/characters/18",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "f1c66f594860f98a5b54779594c79d9333820437233b879ab1caf05b2b5b48ed",
+        "value": {
+          "baseline": {
+            "body_state": "under_marital_pressure",
+            "household_role": "married_daughter",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "OFFSTAGE_MARRIED_HOUSEHOLD",
+            "marital_status": "MARRIED_SUN"
+          },
+          "groups": [
+            "human"
+          ],
+          "id": "yingchun",
+          "name": "贾迎春"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "description": "孙家来人—娘家经手—内宅接收至少分出来源、接力与接收三个环节，时间/跑腿麻烦是传信成本；接收者只拿到传来的死亡结果，不自动知道死亡确切时刻、完整过程或可取遗物范围。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a62e998f33a595ad1fbc64f012f97cc7adb5f29cf67f2358a90fa3ba1b6b95c8",
+          "value": {
+            "id": "88-S4",
+            "title": "消息必须从孙家那边“有成本地”传来"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            21674,
+            21826
+          ],
+          "lines": [
+            535,
+            537
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "6ec3971f4ab47d21b5e56b5121ef2434187a934d4cb1fedefa7f1637ec81f4f9"
+        },
+        {
+          "byte_range": [
+            21826,
+            22035
+          ],
+          "lines": [
+            538,
+            540
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fb5f093d0ec66ca9c5a460eedab0f67926bde0ad5692ca6a5994099d0f06ba37"
+        },
+        {
+          "byte_range": [
+            22035,
+            22174
+          ],
+          "lines": [
+            541,
+            543
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29f1ea5d322c90ee9bbfefe1cf20b6f392e3aacb699199c47a3eb6cb5bf794ef"
+        },
+        {
+          "byte_range": [
+            22525,
+            22614
+          ],
+          "lines": [
+            556,
+            558
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "17cf1f4f23998c1b6e7661ef27a7ba2c77a82805b2afda4964f668a7df18e09f"
+        },
+        {
+          "byte_range": [
+            22614,
+            22761
+          ],
+          "lines": [
+            559,
+            561
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ab716736a05ead801e8dc836d4fc75d4441bea728ddc875ec53fc6e4cdee8329"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "只接收迎春恶婚的死亡结果，不正面再造受虐或写她亲发密使绝命信。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a62e998f33a595ad1fbc64f012f97cc7adb5f29cf67f2358a90fa3ba1b6b95c8",
+          "value": {
+            "id": "88-S4",
+            "title": "消息必须从孙家那边“有成本地”传来"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            21063,
+            21484
+          ],
+          "lines": [
+            524,
+            531
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44c59fa7e004c69a8e52835a55ef26316717ea46a45ec7ddf7729404f7f94661"
+        },
+        {
+          "byte_range": [
+            22035,
+            22174
+          ],
+          "lines": [
+            541,
+            543
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "29f1ea5d322c90ee9bbfefe1cf20b6f392e3aacb699199c47a3eb6cb5bf794ef"
+        },
+        {
+          "byte_range": [
+            22262,
+            22360
+          ],
+          "lines": [
+            547,
+            549
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "94449cc2d7d85e3d2f2e5e1c07526b41500b6897b0172b44de0a4d182c9dea4f"
+        },
+        {
+          "byte_range": [
+            22895,
+            22972
+          ],
+          "lines": [
+            565,
+            567
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "fce0ae558bf16630b75f7dd8b6c32397787c28d54c80b3f62195b16ae8dbdc3e"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "消息进入时麝月仍有房内与厨房差事，外部死讯和日常劳动形成冷对照而非全家合唱悼词。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/7/candidate_scenes/3",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/7/candidate_scenes/3",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "a62e998f33a595ad1fbc64f012f97cc7adb5f29cf67f2358a90fa3ba1b6b95c8",
+          "value": {
+            "id": "88-S4",
+            "title": "消息必须从孙家那边“有成本地”传来"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            21484,
+            21674
+          ],
+          "lines": [
+            532,
+            534
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "3876e1f3006da9d2edd983e0233efc2f99e5d8c5b1cff46cb2279a566b84aba2"
+        },
+        {
+          "byte_range": [
+            22761,
+            22895
+          ],
+          "lines": [
+            562,
+            564
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "f42dbecc678adfc1385c35c40470ab0bba809b9577a6928b5ff17b137b4613e3"
+        },
+        {
+          "byte_range": [
+            22972,
+            23094
+          ],
+          "lines": [
+            568,
+            570
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "3bf8f73f93f70619eb37d214393a2384502cbbd04d316137e50a952916893531"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "participants: 孙家来人和中间传信经手者无ID；yingchun仅作为场外生命状态对象引用，不列入出场participants。",
+    "knowledge: 知识库没有迎春死讯/后事范围事实ID；不能编造yingchun_death_news。",
+    "timing: 孙家传信成本的具体形式、迟到时长与告知范围未定；W88不能填补。",
+    "entry_checkpoint: 88-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+    "entry_state.character.yingchun.life_state: 迎春是场外消息对象，不是出场演员；W88合并终态不能定死讯到达时的局部检查点。",
+    "preconditions.character.wangfuren.location: 孙家到门、再入内宅的经手路径尚无局部位置记录。",
+    "MISSING_SEED_88-S3b: entry_from只承接S3来源列表的声明顺序，不证明其间成礼/短返谢恩已执行；孙家消息线不能代替袭人嫁后桥。"
+  ],
+  "function": "让迎春死讯从孙家付出传信成本才进入贾家内宅，结果在场而虐待不重演；厨房日常与消息压力并存。",
+  "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/88-S4.v1.json，sha256=98a6377ebcdf2ed9c032c9465e2040a4c73c67f3f19a88f71e5711e12a4a5491。本场精确改动：分开来源、经手、接收和消息范围；保持未注册知识事实为空，不借孙家线填88-S3b。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+}

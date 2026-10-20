@@ -1,0 +1,82 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/0c79e40c1e0c6372b58002a8ad896b6827028a74183c03624e6a7a0bc236aac5.json",
+    "sha256": "0c79e40c1e0c6372b58002a8ad896b6827028a74183c03624e6a7a0bc236aac5"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "完整通读本回1—105行、写作包、89-S1至S5五份合同和ch89政策；本任务read_in_full八份材料全部读完，samples为空，未有遗漏的分派样本。正文在第3—19行由控门、传话、点名及候着逐步收紧，宝钗查问“全封了”是否亲见，宝玉应名后仍候着，均未让人物凭消息知道完整处置范围或提前负91回刑责；第21—33行把点验、使用及放行分开；第37—45行保留资产存在而取用受限、债务未消、去留仆役各有生计；第53、65、67行形成衣被药物准取、复查、装运及入院链；第69—105行共井共灶、借被误拿、锅火和水的排队，有实际生活摩擦，最后确以“谁家的水桶还在井边？”收束。没有一日赤贫、救场权贵、全员被押或神罚总结，未发现本次材料可支撑的BLOCKING违反。保留三项真实建议性异议：一，第61行仅写“一本薄书”“因为薄”，第101行仍只称薄书，无法从本回识别政策/semantic_obligations中IF-016指定的“旧《庄子》”，建议加最小书名或可辨物理特征，保留随手取书的自然性；二，政策XLOCK-MEDICINE-BOX要求88交接的药盒在89仍被带走，本回仅见药包，且第53行交平儿抱至凤姐处、第61行又在宝玉取日用处出现药包，单件还是多包未分明，尚不能证明药盒接口的同一性，可用一笔载体及经手动作澄清；本次未分派88正文，不据此断言两回已经冲突。三，第17行“不再另添押字”、第31行“不是就许你带走”、第41行“不是箱里空了，是不能动”、第79行“饭是饭，钱还是钱”等屡次直接说清区别，虽准确，却使读感较像逐条证明合同；第63行“把问号留着”也偏现代叙述习语。建议减少重复解释，让凤姐摸钥匙、仆人摔被和借桶等动作自行承担意思。这些均属规划接口或文学判断，故以FAIL加ADVISORY明确保留，不能算硬闸失败。",
+      "sample_checks": [],
+      "subject_id": "chapter-89",
+      "subject_sha256": "98b90821bf2f23f91bf2745747623aae61c781a30213dfe6089eee963a826d4a",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整阅读包清单及其在本任务的上下文。chapter=89、operation_scope=RESEARCH、authority_effect=NONE、purpose中未知状态未验收的表述一致；包显式选择agent-final-v1的S1—S6，而本次实际审阅S1—S5与packet、assignment所绑定的五份文件和SHA256逐一对应。八份read_in_full及packet自身SHA256均匹配，另仅做字节完整性检查，包中所有带path的plan、world、exemplar_set、research_source_sets引用均存在且SHA256一致。正文体现合同要求的控门、点人点物、账物错位和欠薪分流，没有借研究包宣称原稿、史料或真人资格已合格。此PASS限本次分派包及正文/五合同的一致性与可追溯性；S6未分派，包外原史料载体、exemplar与世界文件未作全文语义复审，也未读其他意见，不以哈希核对冒充这些范围的阅读或资格审定。薄书/药盒接口的正文异议已独立列在chapter-89。",
+      "sample_checks": [],
+      "subject_id": "package-89",
+      "subject_sha256": "7398fd59bc43c949c4dca161d49c043b6f8b8726065daaaca1a8c1e0e6e1d824",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读89-S1.v2。正文第3—9行落实门房等热粥、车物先停、管事传话再接贾琏，王夫人与宝钗在第11—13行内宅接话，不要求三人同时在门房。宝钗把“门上不让车出去”与传闻“全封了”拆开核问，支持合同required_beats关于分段接力、信息不同时同解的要求。第15—19行只约束当下移动，后文宝玉获准回房并同行迁居，没有全体男丁定罪押走、新罪名或全家一日赤贫。热粥在第65行仍以凉碗回扣，末句保留生活动作。合同本身对宝钗知识取得及exact_scope保留UNKNOWN、event_refs为空，与其声明的场级证据限度一致；本次结论是附着候选的实现核对，不把合同UNKNOWN或当前模型意见升级为已登记世界状态。",
+      "sample_checks": [],
+      "subject_id": "contract-89-1",
+      "subject_sha256": "aca8e1441fe9698e1f3296be3453acb4f26c0105709f83114fb531420df7c9e2",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读89-S2.v2。第15行书办摊名册、问姓名与经手处，有人两次答“在”后被令站旁候着；第17行宝玉应名、转身欲走被止住，再由管事传内宅“已应过名、仍在前面候着”，实际覆盖required_beats所需的应答/候着/传递接口。登记在场与移动限制没有被叙述成刑事定罪；第61行宝玉得回房、第65行出门进一步说明没有套用91回羁押结果。车夫误工、搬运人等待及管事怕麻烦贯穿周边，细小利益未被程序威压抹掉；差役和书办以具体职事说话，未脸谱化酷吏，也无笑话消解威压。合同entry/exit的legal_status及贾琏局部在场仍标UNKNOWN，未虚造注册拘禁事件，作为场级规划的声明边界清楚。",
+      "sample_checks": [],
+      "subject_id": "contract-89-2",
+      "subject_sha256": "e694f0990a9b3191aed77fb2b85a20d564bd3eddac7d3883f9c85719b4848eb6",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读89-S3.v2。第21—29行衣箱移到亮处、掌钥匙者开箱、书办逐项落笔、平儿递账簿、管事交房契供比对、差役往另一屋看封识，职责有区别；画匣及墙面浅痕只短写，不转成赏鉴。第23—27行药包被指认、另置候问、再欲送病人处仍不准，第31行注明登记用途不等于放行，第53行管事认用途并往上回过才准取有限衣被药包，连接了登记、实际需用与获准带走三层。第65行未问过的箱子被退回，第67—73行铺盖实际运入借院并发生混拿，OBJ-HOUSEHOLD-BEDDING-BUNDLE未瞬移。合同不以基线在旧府自证许可，出入口UNKNOWN、object_transition_refs为空，也未挪用已死黛玉药碗。药包优先的场内功能已实现；跨回药盒载体同一性仍见chapter-89所列ADVISORY异议，非本合同的点物/准取机制失效。",
+      "sample_checks": [],
+      "subject_id": "contract-89-3",
+      "subject_sha256": "9fada651bc7f26422f4e7e0b1aab659047dac55599f1510a617f1dd920cab3bd",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读89-S4.v2。第29—31行有具体核对：册上仍列库中，实物已拆用或换被面，书办追问何时经谁换面，婆子只能指人再找，旧册与记用途纸留在一起待查；不使用别物补数，也没有把错账写成已证贪污或新政治案。第33行凤姐欲照旧两头叫人并取账查看，平儿告知账已交出拿不回，第35—41行讨账单获承认但现银不能擅取，管事登记债主去处、债务仍欠，将资产、权限、清偿分别处理。凤姐摸惯放钥匙处又收回，以动作表现旧管理能力受阻，未虚构她已丧失全部角色权力。贾琏留前头应问亦无刑责定论。合同金额、起因、责任及局部权限保持未知，未创造后事束或法律结论。正文中说明区别的重复措辞属于chapter-89的文风建议，不构成合同硬性失败。",
+      "sample_checks": [],
+      "subject_id": "contract-89-4",
+      "subject_sha256": "850feac3f68ed25ad8f308e749c856fd482447c90f5b40d429da3aa2eee8be7d",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读89-S5.v2。第43—47行走者需去亲戚处找事、留下者怕欠薪无人认，钥匙经管事见证才交接，旧鞋经查看再包回；两人均有生计和体面，未以忠奸判去留。第49、55行车夫坚持一程费用及等待上限，贾芸不敢许拿不出的数，管事和搬运者各有经手劳动；第67行贾芸分不开手时请旧仆帮另一边，没有独力包办。第77—79行王夫人仍有小包现金可付眼前车脚，旧仆的旧欠不能从中擅挪，给饭不抹工资；第93—105行该仆仍因睡处争执、最终获暂铺却再问追欠去处，欠薪压力没有随迁居消失。没有探庵W2、权贵或大额资源救场，钱仍存在而流动受限的E1功能明确。贾芸第19行从外到门上等待引入，再往返找人问车问院，提供了候选内可见的在场路径；合同自身未将此偷升为已注册原子事件，保留UNKNOWN/PENDING合理。",
+      "sample_checks": [],
+      "subject_id": "contract-89-5",
+      "subject_sha256": "c2186b267d8a1a128b48016d916697e2b6183a99e98f476eb403256d796410f0",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-89-019-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-89-019-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

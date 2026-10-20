@@ -1,0 +1,82 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/1f808af3093dbbc56b3a9657b6fdc102a9c5ba7817dbc517ec0140d838c2ab87.json",
+    "sha256": "1f808af3093dbbc56b3a9657b6fdc102a9c5ba7817dbc517ec0140d838c2ab87"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整通读候选101行、包、五场合同和政策；八份分派材料及packet均逐一核对SHA256相符，samples为空。正文第1行保留“花袭人有始有终”；第45—49行确有到蒋家、行礼与礼成后的共同生活，第51行才由袭人说“好歹留着麝月”，未用婚前许可或出门代替成礼。第19—33行钥匙和药盒交给麝月，公用针线匣留下，嫁后回访未恢复袭人的差事；第59—93行病讯、死讯、探看请求与受阻回话逐层进入人物所知，来人不知临终细节，未出现绝命信或受虐场景。保留两项建议级异议：(1) 第95行送来的汤碗放稳后，第97行忽然出现“她拿下来的空碗”并交人往厨房送，第99行宝玉才“喝了一点汤，将碗放下”；如果是另一只旧碗，应交代它从何处取下，否则读者易把同一碗理解为先空后饮，建议明确两只碗或调整次序。(2) 第23行“正因为服侍久，才不能把公私混在一处”及第61行“先把话送到该送的人耳朵里”将物权、传话原则直接说破；结合第55、91、97行反复分派差事，人物口吻有时接近统一的管理说明。建议让已有的剪子、卡锁和提盒动作承担部分说明。FAIL仅表示这些实际阅读异议，严重度为ADVISORY；未发现完整性失败或分派政策中LOCKED原字、先后要求的违反。分派范围无未读；未审阅未分派章节、其他读者意见或包外原作图像。",
+      "sample_checks": [],
+      "subject_id": "chapter-88",
+      "subject_sha256": "16a578156216378fcc0902e116b55784007a1301929f5ed53bd866665e054f2b",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "已完整读取包100行，并对照本次候选、五场合同与ch88政策。chapter=88、RESEARCH、authority_effect=NONE及“未知状态仍未验收”的用途声明一致；plan明确选择agent-final-v1五份v2合同，其路径/哈希与本次分派逐项相符。对包内14个带path/sha256的直接绑定作字节核对，均存在且匹配；exemplar_set明确指向ch89-research-v3，未据文件名将其误称为第88回正文源证。包中只给source_ref/record_sha256及asset_ref的对象，本次未进行原始见证语义或图像鉴定；世界、计划及exemplar的内容也不在本次read_in_full中，不能由本项PASS推称它们已完成独立全文验收。PASS范围为所分派包的实际声明、直接绑定及与候选/合同/政策的一致性；无分派样本及未读分派材料。",
+      "sample_checks": [],
+      "subject_id": "package-88",
+      "subject_sha256": "38aa18296bc526db01b779f62ecde2de9c4a265627caec533e0a156677f999ef",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取609行。/required_beats/0—2将花蒋婚事形成、府内许可与后续成礼分开；/entry_state仍用章级既有baseline，/exit_state为UNKNOWN，未将谈妥冒充已婚。候选第3—15行显示花家传话、蒋家跑腿、自家床上衣被与府内随身物的分担，第13行行头和交差只露职业边角，未扩写唱戏；第45—49行另行呈现出阁到达与成礼，第51行才放置硬引语。/unresolved明确保存缺88-S3b种子与未绑定场级事件，正文增加可见桥段并不等于该合同数据缺口或世界状态已经获证。直接路径/哈希引用均匹配。无需以规划偏好阻断，也未发现本场所禁的婚前硬引语、长札或以许可顶替礼成。无分派样本；本场全文无未读。",
+      "sample_checks": [],
+      "subject_id": "contract-88-1",
+      "subject_sha256": "2d50f5c490d9f451099756776fee250379186a6ee619706e46d0dc9c618ffe64",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取580行，曾补读首次工具输出省略的participants段，确认袭人、麝月、宝钗引用与baseline内容。/required_beats/0—2要求的先整理别人、公私物件区分、药盒留用、钥匙经手和小麻烦均有正文落点：第17行先分宝玉衣物，第19—21行卡锁与钥匙交接，第23—25行房内针线匣/剪子与私人小包分开，第27行逐字有“药陈了可换，盒子别丢”，第29行麝月自己改放低格。药盒用于取药与存放，未变成旁白解释的纪念物；第31行交接中的恼意保留了接任摩擦。合同/entry_state、/preconditions、/exit_state保留UNKNOWN，objects和event_refs为空且明确不冒用黛玉药碗，没有把劳动交接当作已婚或全部代任已经注册。/entry_from所指agent-edited-v1版本与本次final版本逐字节相同；直接带哈希绑定匹配。无分派样本或未读本场材料。",
+      "sample_checks": [],
+      "subject_id": "contract-88-2",
+      "subject_sha256": "0d5abb7b3ffe4eaf4073eaed4f82445b8ae85ac73195e8ee42ca403334c6ff5f",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取645行。合同严格区分婚前最后任务/离门与其后成礼，/forbidden_beats/0、3及/required_beats/2没有给缺种子虚造可执行状态；/exit_state关于位置、婚姻均为UNKNOWN。正文第35行袭人仍先处置换下衣裳，第37行伸手至衣襟而停止，由麝月扣衣，第39—43行让门、带自己的小包离开，未扩为长篇告别。随后第45—49行可见迎入、同拜、礼成及生活物件安放，第51行以“成礼之后”明示短返谢恩并说“好歹留着麝月”，回访未再开柜或查差事。该桥已经写入候选，不能反向声称合同记录中MISSING_SEED_88-S3b、UNKNOWN或空event_refs得到补核；这里PASS是合同与正文边界不冲突。前驱旧目录副本与本次对应final文件字节一致，直接哈希引用匹配。无分派样本，合同与指定上下文均完整读完。",
+      "sample_checks": [],
+      "subject_id": "contract-88-3",
+      "subject_sha256": "68753fe60514ea7c0fb053499e218760a271de1e0cdf084d5d0d3a97ae66b18e",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取628行。/participants不列场外迎春，references中的迎春只是生命状态对象；/entry_state、/exit_state和知识绑定保持UNKNOWN/null，未把传闻直接冒作登记生命事件。候选第59—67行先由孙家来人报病、内宅媳妇经手、王夫人问讯，麝月返房转述且不增加未知诊疗内容；第69—75行另一个孙家仆妇报丧，门上寻找经手者、候廊、入内回话清楚，鞋磨破和等候给传信成本实际落点。第71、73行限定她未在临终跟前、未入里屋；接收者没有由此获得死时、遗言或过程的全知。第79行麝月正在重热汤，外部死讯与差事并置。第81—89行娘家请求仍须孙家回应，未直接取得尸身遗物。未见绝命信、托梦、虐待重演或万能传信人。直接哈希绑定匹配；前驱两目录对应文件同字节。无分派样本及未读分派材料。",
+      "sample_checks": [],
+      "subject_id": "contract-88-4",
+      "subject_sha256": "96cd27b34e2ba30c65169c29ca9790841ad26f80b30bc7261472d7987ff4a799",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取589行。/required_beats/0要求的“请求—回话—办不了”在候选第77—89行具体发生：先拟派素来服侍的妇人看看收拾穿用、备常用衣物，第85行孙家门上答今日不能带人进去且收拾自有安排，第87—89行确认娘家名义仍未获准，并让预备的人和物暂留。正文写的是本次办事受阻，没有宣布抽象法律规则、取得尸身或取回遗物。王夫人第81行想做点什么、第87行沉脸与宝钗第83行意识到自己的话太平，保留了不同反应，没有集体悼词。第95—101行麝月继续收衣、催修柜、吃饭、系钥匙端盆，末句以盆沿撞门框“当的一声”收束；袭人不再复位。第97行空碗与第99行饮汤的关系存在建议级澄清项，已在chapter-88结果保留；不构成此合同规定劳动位置或结束动作未实现。合同自身仍公开桥段、对象ID、场级角色事件的未核状态，没有以正文完成宣告这些数据均已验证。直接哈希引用匹配；无分派样本，分派全文无未读。",
+      "sample_checks": [],
+      "subject_id": "contract-88-5",
+      "subject_sha256": "5994b71dae713ae0ba258df709c62a58d1fe8421579e6dcf56a16928c1f4f415",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-88-016-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-88-016-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}
