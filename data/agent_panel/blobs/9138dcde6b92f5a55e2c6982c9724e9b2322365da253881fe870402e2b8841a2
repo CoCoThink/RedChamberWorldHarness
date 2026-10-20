@@ -1,0 +1,648 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch97.json",
+      "sha256": "b1143acc307f5d7970d045c64d9eaa61b30fc9c774c4264c91337568b36a1512"
+    },
+    "seed": {
+      "path": "data/planning/scenes/97-S2.json",
+      "sha256": "4e28a4dfd779524610e98a55b6e9ca5f8e848dfdaa6ac6a0c43bbf2925f72b8c"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 97,
+  "chapter_plan_ref": "data/planning/chapters/ch97.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/97-S1.v2.json",
+  "entry_state": [
+    {
+      "equals": "character.miaoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "前驱湘云线不提供妙玉位置；W97给S10只是章级当前C落点，非本场厨房或佛事入口。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.miaoyu.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "洁与生活的冲突要求以动作实现；章级依附身份不证明本场具体劳动或个人领悟状态。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "97-S2-F1",
+      "description": "不得使妙玉“终于悟”或诵新佛偈解释变化；不得加高僧书法、名茶名器展览。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/16/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/16/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "0b5ab87b58032cb17a8a4fb48a6afd47f475b5acf38caf3b8d06b25f84cc51c1",
+          "value": {
+            "id": "97-S2",
+            "title": "妙玉线核心是“洁”被生活一点点迫着重新定义"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                44127,
+                44259
+              ],
+              "lines": [
+                1103,
+                1105
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "45bde41bfe1fa89c358331a06c0b9bc95ef15c92ca55a6ee28357b58a628ca3f"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n97文化动作已充分，保护不增：不找“终极大观园残图”，不加名茶名器、高僧书法。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                44259,
+                44372
+              ],
+              "lines": [
+                1106,
+                1108
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0045c275f11629e1d3f0e544127a45f38796d5890cd5ff5df3c51fad60ebb210"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \n湘云无完整新诗；妙玉无偈；惜春无偈/终极画跋。实用书写即足。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                44481,
+                44664
+              ],
+              "lines": [
+                1112,
+                1114
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "400c9af47afb8926552ec4466ca0f9fa863bc4d6788b2b2a86b3e8aa09db4183"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n41最高重点：妙玉=洁与尘，不“终于悟”；惜春=断与冷，不“件件想明白”。湘云门栓错听只作梦阈，不升级若兰托梦。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                45080,
+                45197
+              ],
+              "lines": [
+                1124,
+                1126
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "de902b88f3f91947d35faf70b46c31da966dbde1a065d9f108f2f060d2a27c09"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n“三人都看破了”的作者句；妙玉佛偈；惜春悟道宣言；湘云望夫诗/梦。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "97-S2-F2",
+      "description": "不得从瓜州接口生成独立传奇、钉死具体遭遇；不得拿尼庵场景倒填贾芸W2“仗义探庵”。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/16/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/16/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "0b5ab87b58032cb17a8a4fb48a6afd47f475b5acf38caf3b8d06b25f84cc51c1",
+          "value": {
+            "id": "97-S2",
+            "title": "妙玉线核心是“洁”被生活一点点迫着重新定义"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                43034,
+                43195
+              ],
+              "lines": [
+                1086,
+                1088
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "51e0f8952a21bb0a8094a1fcaba0d209642709bf4ef8e896ccf40002c09f9f27"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR34湘云/若兰关联但O06终局开放；R41妙玉“欲洁未洁、终陷淖泥”方向，瓜州具体遭遇不锁；R33惜春为尼。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                43856,
+                44127
+              ],
+              "lines": [
+                1098,
+                1102
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c624e58bf144ed77055468f3aec7fa06618e160d700ce76de944a600fa7ed85b"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n湘云一线房东/邻妇/瓦匠/送信人；妙玉一线老尼/小徒/香客/厨房；惜春一线师父/同住者/宝玉。\n\n**D2边界｜** 97虽有尼庵，贾芸并无独立来访动机；不得拿本回“庵”字去倒填W2“仗义探庵”。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "97-S2",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 2,
+  "participants": [
+    "miaoyu"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.miaoyu.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "dependent_religious_resident由粗章事件支持；老尼、小徒与庵务的本地分工尚未注册，不能直接投为局部条件。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/16",
+        "ref": "data/world/m3_core.json#/characters/16",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "113fbdee8cdaa213b549b481ddfaea5f786d2100c6dd2314612343c151f26fa6",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "independent_religious_woman",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "religious_network",
+            "human"
+          ],
+          "id": "miaoyu",
+          "name": "妙玉"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "97-S2-R1",
+      "description": "妙玉的洗盏、用水、香灰与茶具选择须受共食米油和厨房/香火劳务约束：呈现失去自主的生活依附，不诊断洁癖为新病，也不以同样贫困概括湘云和惜春。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/16/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/16/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "0b5ab87b58032cb17a8a4fb48a6afd47f475b5acf38caf3b8d06b25f84cc51c1",
+          "value": {
+            "id": "97-S2",
+            "title": "妙玉线核心是“洁”被生活一点点迫着重新定义"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                43195,
+                43464
+              ],
+              "lines": [
+                1089,
+                1091
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cacb62ca388065258bdbfeb52a0e5df5564bc5176eab203360676653ef29b531"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n湘云两副箸改单份、修瓦付工钱；妙玉米油水香灰与茶具冲突；惜春旧画袋/旧笔、抄经、废纸翻面、黄纸、灯油；梳子“忘了扔”与“谁同你说我件件想得明白？”；结尾裁黄纸。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                43588,
+                43856
+              ],
+              "lines": [
+                1095,
+                1097
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9e79533523458f3e4a1dec8ed3ebffe7114fc4a0add892698bc56dca54cb7b53"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n用“饭—衣—纸”三母题交叉：湘云饭/若兰衣/信；妙玉粥/灰衣/经卷；惜春择菜/退衣/黄纸。湘云缺席丈夫如何变成房租、瓦钱、工钱；妙玉洁癖怎样受劳务制约；惜春先显示已住久。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                44778,
+                44934
+              ],
+              "lines": [
+                1118,
+                1120
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "aa79c3495bd389fb23dd681e2c79303b8cfaacf632f7a3eb69174e55e136ff82"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n湘云：钱是修瓦/房钱/工钱；妙玉：米油/香火/佛事所得；惜春：灯油、纸、份饭。三线经济必须不同。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                44934,
+                45080
+              ],
+              "lines": [
+                1121,
+                1123
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "8c99583f0b1518febad2a02925b6cce6e60a74e8c7608dbdf88d2535546d4044"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n双箸、若兰旧衣/金麒麟；妙玉洗盏盆/香灰/灰衣；惜春梳子、空字不猜、黄纸、菜、灯油。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/16",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/16",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "9cdde5a5b0ec0cd66b2bc3b8f82ad935a7611c7688da19a7b6259e155e480736",
+            "value": {
+              "chapter": 97,
+              "money_state": "各人物进入不同经济处境",
+              "food_medicine": "湘云家仍能维持仆妇；妙玉依赖小庵米油；惜春尼庵生活简化",
+              "labor": "各空间自己的劳动系统",
+              "object_interface": "若兰衣箱、米油、灰衣、灯油",
+              "boundary": "不能把所有人都写成同一贫困",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/7",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/7",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "5b0123eb778dbdb360d50ae380263450250cd5b31012d3733674fbd1f9f82b62",
+            "value": {
+              "chapter": 97,
+              "targets": [
+                "xiangyun",
+                "miaoyu",
+                "xichun"
+              ],
+              "kind": "MUTUAL_NONKNOWLEDGE",
+              "fact": "parallel_endgame_lines",
+              "note": "三条线互不知情，不建立全知串联",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "97-S2-R2",
+      "description": "老尼、小徒、香客或厨房人员只经手份粥、灰衣、用水与经卷这样的实务；维持庵中香火与劳动约束，不赋予未注册人物姓名。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/16/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/16/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "0b5ab87b58032cb17a8a4fb48a6afd47f475b5acf38caf3b8d06b25f84cc51c1",
+          "value": {
+            "id": "97-S2",
+            "title": "妙玉线核心是“洁”被生活一点点迫着重新定义"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                43588,
+                43856
+              ],
+              "lines": [
+                1095,
+                1097
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9e79533523458f3e4a1dec8ed3ebffe7114fc4a0add892698bc56dca54cb7b53"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n用“饭—衣—纸”三母题交叉：湘云饭/若兰衣/信；妙玉粥/灰衣/经卷；惜春择菜/退衣/黄纸。湘云缺席丈夫如何变成房租、瓦钱、工钱；妙玉洁癖怎样受劳务制约；惜春先显示已住久。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                43856,
+                44127
+              ],
+              "lines": [
+                1098,
+                1102
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c624e58bf144ed77055468f3aec7fa06618e160d700ce76de944a600fa7ed85b"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n湘云一线房东/邻妇/瓦匠/送信人；妙玉一线老尼/小徒/香客/厨房；惜春一线师父/同住者/宝玉。\n\n**D2边界｜** 97虽有尼庵，贾芸并无独立来访动机；不得拿本回“庵”字去倒填W2“仗义探庵”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                44664,
+                44778
+              ],
+              "lines": [
+                1115,
+                1117
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cfe93e1ac33f8a8333a227489f88d1f784d26090ecd6a09e5edfe618f5dccc43"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n瓦匠、房东、庵中佛事/香火、抄经与厨房劳动形成三套社会基础设施。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "97-S2-R3",
+      "description": "把粥—灰衣—经卷拆作与另两线对应的母题段，接97-S4交叉接口；每次切回仍在妙玉寄居小庵S10的独立劳动体系，不与S11惜春庵合并。三线互不知情，不把失洁写成看破结论。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/16/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/16/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "0b5ab87b58032cb17a8a4fb48a6afd47f475b5acf38caf3b8d06b25f84cc51c1",
+          "value": {
+            "id": "97-S2",
+            "title": "妙玉线核心是“洁”被生活一点点迫着重新定义"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                43464,
+                43588
+              ],
+              "lines": [
+                1092,
+                1094
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "11777bf5d02cd7d980fb5067000917be0adb8b30743da166b50623d2fc95227b"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n当前三大块仍略像“三个结局说明”；需改成交叉互照，但不能使三人同义。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                43588,
+                43856
+              ],
+              "lines": [
+                1095,
+                1097
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "9e79533523458f3e4a1dec8ed3ebffe7114fc4a0add892698bc56dca54cb7b53"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n用“饭—衣—纸”三母题交叉：湘云饭/若兰衣/信；妙玉粥/灰衣/经卷；惜春择菜/退衣/黄纸。湘云缺席丈夫如何变成房租、瓦钱、工钱；妙玉洁癖怎样受劳务制约；惜春先显示已住久。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                44481,
+                44664
+              ],
+              "lines": [
+                1112,
+                1114
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "400c9af47afb8926552ec4466ca0f9fa863bc4d6788b2b2a86b3e8aa09db4183"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n41最高重点：妙玉=洁与尘，不“终于悟”；惜春=断与冷，不“件件想明白”。湘云门栓错听只作梦阈，不升级若兰托梦。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                45497,
+                45796
+              ],
+              "lines": [
+                1136,
+                1139
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "633a4c663bd35ced1c40a1a793abbb659b0e2829bce7bea227aa7edae03fe696"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n饭母题三线切换 → 衣母题三线切换 → 纸母题三线切换 → 宝玉探惜春作为现实交叉点 → 三处分别收束。  \n**压力测试问题：**交叉后是否仍能一眼区分三个人；“哲学更深”是否完全依赖动作而非议论。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/16",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/16",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "9cdde5a5b0ec0cd66b2bc3b8f82ad935a7611c7688da19a7b6259e155e480736",
+            "value": {
+              "chapter": 97,
+              "money_state": "各人物进入不同经济处境",
+              "food_medicine": "湘云家仍能维持仆妇；妙玉依赖小庵米油；惜春尼庵生活简化",
+              "labor": "各空间自己的劳动系统",
+              "object_interface": "若兰衣箱、米油、灰衣、灯油",
+              "boundary": "不能把所有人都写成同一贫困",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/7",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/7",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "5b0123eb778dbdb360d50ae380263450250cd5b31012d3733674fbd1f9f82b62",
+            "value": {
+              "chapter": 97,
+              "targets": [
+                "xiangyun",
+                "miaoyu",
+                "xichun"
+              ],
+              "kind": "MUTUAL_NONKNOWLEDGE",
+              "fact": "parallel_endgame_lines",
+              "note": "三条线互不知情，不建立全知串联",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "editor_stage_only: 已作EDITOR96-100编辑；正文语义、合格同行及人工核验均未进行，AGENT_EDITED不得充作验证通过。",
+    "declared_sequence_only: 依种子列表声明前驱；历史顺序、局部检查点与既有正文放置未核验。",
+    "minor_actors: 老尼、小徒、香客、厨房经手人未注册；采用哪些角色及分工仍未定。",
+    "objects_unregistered: 洗盏盆、茶具、米油水灰、灰衣、经卷没有适配本线的注册对象；S11灯油不能挪给S10妙玉线。",
+    "miaoyu_scope: 瓜州具体遭遇、庵务依附形成过程和清洁动作细节仍开放。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+    "local_cast_pending: 注册主角不构成完整本场名单；未注册劳务角色与三线跨段到场未核，不声称KNOWN。",
+    "intercut_execution: 已选饭→衣→纸交叉接口，但实际切点、时距、localcast和场级状态事件仍未执行；entry_from不建立跨空间连续检查点。"
+  ],
+  "function": "让妙玉的洁被米油、水、香灰、灰衣与厨房劳务逐步牵制；保持现实依附与不洁张力，不写顿悟。",
+  "notes": "EDITOR96-100独立编辑阶段的新v2，status=AGENT_EDITED仅表示已编辑，不表示语义核验、合格同行审查或人工认可；authority_effect=NONE，evidence_effect=NONE。原v1、seed、章卡、packet及世界输入均保留字节绑定，不改权威。order仍是不可变种子列表索引；entry_from是编辑候选编排，不是历史顺序或可执行局部检查点，后场不继承前场快照。participants只列注册候选角色；PENDING表示到场、替代角色或完整名单未核，注册身份不等于已知localcast。KNOWN条件仅限显式chapter-1粗入口，不能投射到本场动作；局部缺口继续UNKNOWN/PENDING且value=null。章卡/seed支持待实现义务，world_basis支持所选运行资料的约束，不证明本场已发生。event_refs/object_transition_refs仅为既有章级或外框关联，不能伪装场级事件重放。96—100没有v03知识场景或获取事件；保留M3信息不对称为叙事义务，不造fact、actor或event ID。未绑定正文，prose_supported_semantic_replay=NOT_CHECKED。"
+}

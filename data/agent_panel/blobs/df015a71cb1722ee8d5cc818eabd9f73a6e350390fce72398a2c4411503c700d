@@ -1,0 +1,686 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch100.json",
+      "sha256": "04adbb27665d5901abb41e787328a3439267414ee9167fbeb1b6a3ae3c5998e1"
+    },
+    "seed": {
+      "path": "data/planning/scenes/100-S3.json",
+      "sha256": "18d5b74671ee19815a750b3f94466f1d5e410fb41e0b5fcc87462e8f2baf50ba"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 100,
+  "chapter_plan_ref": "data/planning/chapters/ch100.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-final-v2/100-S2.v3.json",
+  "entry_state": [
+    {
+      "equals": "character.liwan.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W100-LATE-HUMAN给late_life_decline章级粗值，前驱封荣后的疲倦、日常起居入口未登记。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.liwan.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "章级晚衰/死的两节点没有数月饮食、照料与病情波动记录；本场渐退而非死亡事实已发生。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "100-S3-F1",
+      "description": "不得用得荣当日骤死、神示报应或特造奇病替数月普通衰退；具体病程和年份开放。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "5f3d76cbdbe723155f0f81729dab5602e6c32ea9bfd7a416d64aa0f3548911ec",
+          "value": {
+            "id": "100-S3",
+            "title": "李纨受荣以后仍继续生活一段"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                51546,
+                51998
+              ],
+              "lines": [
+                1272,
+                1280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0f8c98f59636ebca22e70494e23174aff057b666c1571cf5fb2d4a13e3e18b30"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR40\n\n**EVIDENCE-INTERFACES｜**\n- STRUCTURE：末回情榜；`警幻情榜`仅SOURCE-EXACT批语称谓；\n- V4：`宝玉情不情 / 黛玉情情`；\n- V5：末回五层`正、副、再副、三副、四副芳讳`；\n- NEG：`皆系漫拟`，下层猜名不得硬化。贾兰功名、R39李纨“因子得荣而终归虚幻”强约束；R08/R09/P11末回情榜；R01/P10石归。李纨具体病程、贾兰官品、年份开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                52269,
+                52595
+              ],
+              "lines": [
+                1284,
+                1286
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "550595fba6e20c38a859b545cfab4b91ec24f2067b28c0f026ae81743245c7e1"
+            },
+            "name": "当前正文最薄处",
+            "number": 3,
+            "text": "**3｜当前正文最薄处**  \n当前情榜已压到“一轴素榜+最小硬锚”；R4-G真正遗留曾在情榜收卷后的石/道人尾段过长，Phase 4已裁定采用100-B中压尾。李纨数月普通老衰、贾兰丁忧等历史机制已完成R4-E可行性复核，但具体年份与制度细节仍属C/H边界。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                52595,
+                52924
+              ],
+              "lines": [
+                1287,
+                1289
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0760ba1695c6c800ca9a97371ca156fa2050244ee9406a60e6c3aa165e8877bf"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n人间层：实授→贺客/礼务→李纨受封后疲倦→数月衰退→日常移交→死→简化但有礼的丧务。太虚层：旧册略现但不重读→另展一轴情榜→五层芳讳→少量评语→榜末宝玉“情不情”→警幻“收罢”→章回切换青埂峰→道人抄录。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "100-S3-F2",
+      "description": "不得让李纨为一生立论或把旧物总展当移交，也不得从情榜提前解说她的命。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "5f3d76cbdbe723155f0f81729dab5602e6c32ea9bfd7a416d64aa0f3548911ec",
+          "value": {
+            "id": "100-S3",
+            "title": "李纨受荣以后仍继续生活一段"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                53157,
+                53275
+              ],
+              "lines": [
+                1293,
+                1295
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4cdcf848b7efa0507f776d8ab848c244e4da0cf72e461921d67cfbef23c6e3e7"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n少数旧物归置即可：贾珠旧书、账纸、冠帔、旧袄。不要大观园遗物总展。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                53830,
+                54110
+              ],
+              "lines": [
+                1302,
+                1304
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cbb7a7f96ec8865248485b4046eb32a658bea37ad34b1fbc138a664ad0c6021c"
+            },
+            "name": "宗教/梦/哲学",
+            "number": 9,
+            "text": "**9｜宗教/梦/哲学**  \n太虚不是凡人做梦；保留“不知何日何时”。可有极轻旧香/卷轴声，不重播《红楼梦》曲。情榜不解释；删除榜首“情有所钟……”总释。情榜与石归用章回切换，不写“榜收即石飞回”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                55370,
+                55918
+              ],
+              "lines": [
+                1326,
+                1329
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "64af51dbefdc142c1db5508ac3a3701da71b21898b37000c051f4c02d2552aa9"
+            },
+            "name": "最终章法 / 风险",
+            "number": 18,
+            "text": "**18｜最终章法 / 风险**  \n多年压缩 → 贾兰实授 → 晚荣的现实礼务 → 李纨数月衰退与日常移交 → 人间丧务收束 → “人间这些余事，到此按下” → 太虚感官回声 → 一轴情榜五层 → 宝黛硬评、少量G评 → 宝玉榜末“情不情” → “收罢” → 青埂峰切换 → 道人粗纸残墨抄录 → 漫漶留空 → 石在，字在。  \n**风险：**把100写成“答案发布会”、把贾兰写成家族中兴、把情榜写成数据库、把石归写成佛理结论。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "100-S3",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 3,
+  "participants": [
+    "liwan",
+    "jialan"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.liwan.life_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "基线ACTIVE与后续死事件之间缺少场级检查点，必须在本场生活中实现而不能借宣称自证。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/20",
+        "ref": "data/world/m3_core.json#/characters/20",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "7237c0dbc8553508a03f706fee4f293d0d3232ea10b6a7a377aa6677ea8550d4",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "widow_mother",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "WIDOWED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "liwan",
+          "name": "李纨"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/21",
+        "ref": "data/world/m3_core.json#/characters/21",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "6fe4b5d3a561bb33d7992f53a27dbb86b3a79d0112945ff234a85df3289f8971",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "son_student",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "jialan",
+          "name": "贾兰"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "100-S3-R1",
+      "description": "受荣以后继续数月普通日子：冠帔不常戴、仍收旧衣，疲倦和少动从日用中显出，不在荣耀时立即病死。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "5f3d76cbdbe723155f0f81729dab5602e6c32ea9bfd7a416d64aa0f3548911ec",
+          "value": {
+            "id": "100-S3",
+            "title": "李纨受荣以后仍继续生活一段"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                51998,
+                52269
+              ],
+              "lines": [
+                1281,
+                1283
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b34ed3ce60a291c1adf97cb95a1c0e40c328105d157eb98907b6ff38746ba2b6"
+            },
+            "name": "最强处 / P-Lock",
+            "number": 2,
+            "text": "**2｜最强处 / P-Lock**  \n多年真实时间；厨房听见官讯先问“饭够不够”；借桌腿歪；孩子以为做官便有钱；李纨冠帔压额、仍爱旧衣；贾珠旧书；空空道人粗纸残墨抄石、漫漶留空；结尾“石在，字在”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                52269,
+                52595
+              ],
+              "lines": [
+                1284,
+                1286
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "550595fba6e20c38a859b545cfab4b91ec24f2067b28c0f026ae81743245c7e1"
+            },
+            "name": "当前正文最薄处",
+            "number": 3,
+            "text": "**3｜当前正文最薄处**  \n当前情榜已压到“一轴素榜+最小硬锚”；R4-G真正遗留曾在情榜收卷后的石/道人尾段过长，Phase 4已裁定采用100-B中压尾。李纨数月普通老衰、贾兰丁忧等历史机制已完成R4-E可行性复核，但具体年份与制度细节仍属C/H边界。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                52595,
+                52924
+              ],
+              "lines": [
+                1287,
+                1289
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0760ba1695c6c800ca9a97371ca156fa2050244ee9406a60e6c3aa165e8877bf"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n人间层：实授→贺客/礼务→李纨受封后疲倦→数月衰退→日常移交→死→简化但有礼的丧务。太虚层：旧册略现但不重读→另展一轴情榜→五层芳讳→少量评语→榜末宝玉“情不情”→警幻“收罢”→章回切换青埂峰→道人抄录。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54556,
+                54732
+              ],
+              "lines": [
+                1311,
+                1313
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ad4f27831ba15d8b08b8b371c9b143048ebd399eb24dad718ca158515d19094d"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n真实多年；官礼与破家具并存；李纨旧衣；父亲旧书；“收罢”；道人不解释；石文漫漶留空；“石在，字在”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "100-S3-R2",
+      "description": "受荣以后数月生活和日常移交先于死；李纨逐渐安排账纸、旧衣或贾珠书，贾兰一次误判好转不能变成全知临床判断。W100晚衰/死亡两节点不提供月内病情波动、物件交接或诊断事件，未知项保持未决。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "5f3d76cbdbe723155f0f81729dab5602e6c32ea9bfd7a416d64aa0f3548911ec",
+          "value": {
+            "id": "100-S3",
+            "title": "李纨受荣以后仍继续生活一段"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                52595,
+                52924
+              ],
+              "lines": [
+                1287,
+                1289
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0760ba1695c6c800ca9a97371ca156fa2050244ee9406a60e6c3aa165e8877bf"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n人间层：实授→贺客/礼务→李纨受封后疲倦→数月衰退→日常移交→死→简化但有礼的丧务。太虚层：旧册略现但不重读→另展一轴情榜→五层芳讳→少量评语→榜末宝玉“情不情”→警幻“收罢”→章回切换青埂峰→道人抄录。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                53157,
+                53275
+              ],
+              "lines": [
+                1293,
+                1295
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4cdcf848b7efa0507f776d8ab848c244e4da0cf72e461921d67cfbef23c6e3e7"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n少数旧物归置即可：贾珠旧书、账纸、冠帔、旧袄。不要大观园遗物总展。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54290,
+                54556
+              ],
+              "lines": [
+                1308,
+                1310
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "68b39859b7c5092546607e5e946be9c069c0eb3774dfff0896d1d9aa929448f1"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE5：官位增加收入/礼数，不恢复旧宅旧产。李纨受封本身增加衣礼、回礼、待客成本。病亡又产生白布、棺木、吊客等开支。信息：官讯→亲友→贺客；病情→贾兰误判好转→逐渐退出。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                55370,
+                55918
+              ],
+              "lines": [
+                1326,
+                1329
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "64af51dbefdc142c1db5508ac3a3701da71b21898b37000c051f4c02d2552aa9"
+            },
+            "name": "最终章法 / 风险",
+            "number": 18,
+            "text": "**18｜最终章法 / 风险**  \n多年压缩 → 贾兰实授 → 晚荣的现实礼务 → 李纨数月衰退与日常移交 → 人间丧务收束 → “人间这些余事，到此按下” → 太虚感官回声 → 一轴情榜五层 → 宝黛硬评、少量G评 → 宝玉榜末“情不情” → “收罢” → 青埂峰切换 → 道人粗纸残墨抄录 → 漫漶留空 → 石在，字在。  \n**风险：**把100写成“答案发布会”、把贾兰写成家族中兴、把情榜写成数据库、把石归写成佛理结论。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/19",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/19",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "d9a252c045d5267b91a26626cc03e19d22f927716dcc0ac85f4048c8b85e0e25",
+            "value": {
+              "chapter": 100,
+              "money_state": "贾兰官俸/功名带来名位，但旧产业不复",
+              "food_medicine": "受贺可办几桌茶饭；李纨病中有医药",
+              "labor": "贾兰在外任职/回家侍母；少量家人待客",
+              "object_interface": "公服、冠帔、旧箱柜",
+              "boundary": "不能写中兴",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/10",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/10",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "d2cfe3a886b2e2b37cd85529e47e50b3154e7ef593a0ea4b262619628e8b0d9f",
+            "value": {
+              "chapter": 100,
+              "targets": [
+                "human"
+              ],
+              "kind": "FORBIDDEN_KNOWLEDGE",
+              "fact": "outer_frame_emotion_register",
+              "note": "太虚/情榜层的信息绝不倒灌给人间人物",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "100-S3-R3",
+      "description": "医者/照料者以现实劳动处理病中粥、少动与日用，不锁病名、治疗有效性或具体病程；这些未注册角色使完整localcast为PENDING。衣礼、回礼、药费仍需成本，不以受封一刻即死形成报应解释。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/19/candidate_scenes/2",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/19/candidate_scenes/2",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "5f3d76cbdbe723155f0f81729dab5602e6c32ea9bfd7a416d64aa0f3548911ec",
+          "value": {
+            "id": "100-S3",
+            "title": "李纨受荣以后仍继续生活一段"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                51546,
+                51998
+              ],
+              "lines": [
+                1272,
+                1280
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0f8c98f59636ebca22e70494e23174aff057b666c1571cf5fb2d4a13e3e18b30"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR40\n\n**EVIDENCE-INTERFACES｜**\n- STRUCTURE：末回情榜；`警幻情榜`仅SOURCE-EXACT批语称谓；\n- V4：`宝玉情不情 / 黛玉情情`；\n- V5：末回五层`正、副、再副、三副、四副芳讳`；\n- NEG：`皆系漫拟`，下层猜名不得硬化。贾兰功名、R39李纨“因子得荣而终归虚幻”强约束；R08/R09/P11末回情榜；R01/P10石归。李纨具体病程、贾兰官品、年份开放。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                52924,
+                53157
+              ],
+              "lines": [
+                1290,
+                1292
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "1e8b7734f131ad20db05cc39a845f59add46a73d6815940cac08feb362ce4d5c"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n人间：贾兰、李纨、宝钗/麝月等残余人物、报喜人、贺客、帮厨、医者、丧务人。太虚：警幻只管理，不讲解。外框：空空道人是抄写劳动者，不是哲学解说员。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54110,
+                54290
+              ],
+              "lines": [
+                1305,
+                1307
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f5773c28f5384c276a35cd6229fe2c92adf00a6a8da9816acbb7214853cce581"
+            },
+            "name": "职业人物",
+            "number": 10,
+            "text": "**10｜职业人物**  \n报喜、医者、贺客、帮厨、丧务；道人抄写需要纸墨劳动。官礼/丁忧具体制度措辞在正式正文前再做一次历史校核。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                54290,
+                54556
+              ],
+              "lines": [
+                1308,
+                1310
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "68b39859b7c5092546607e5e946be9c069c0eb3774dfff0896d1d9aa929448f1"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \nE5：官位增加收入/礼数，不恢复旧宅旧产。李纨受封本身增加衣礼、回礼、待客成本。病亡又产生白布、棺木、吊客等开支。信息：官讯→亲友→贺客；病情→贾兰误判好转→逐渐退出。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/19",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/19",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "d9a252c045d5267b91a26626cc03e19d22f927716dcc0ac85f4048c8b85e0e25",
+            "value": {
+              "chapter": 100,
+              "money_state": "贾兰官俸/功名带来名位，但旧产业不复",
+              "food_medicine": "受贺可办几桌茶饭；李纨病中有医药",
+              "labor": "贾兰在外任职/回家侍母；少量家人待客",
+              "object_interface": "公服、冠帔、旧箱柜",
+              "boundary": "不能写中兴",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/10",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/10",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "d2cfe3a886b2e2b37cd85529e47e50b3154e7ef593a0ea4b262619628e8b0d9f",
+            "value": {
+              "chapter": 100,
+              "targets": [
+                "human"
+              ],
+              "kind": "FORBIDDEN_KNOWLEDGE",
+              "fact": "outer_frame_emotion_register",
+              "note": "太虚/情榜层的信息绝不倒灌给人间人物",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [],
+  "revision": "v3",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "decline_duration: 数月长度、症状、看诊频率和好转误判节点未登记；不由粗事件补病名。",
+    "minor_actors: 医者和具体照料者未注册，不能补名医或治疗结论。",
+    "handoff_objects: 李纨旧衣、账纸和贾珠书未注册，交接人、地点和物数待核。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+    "local_cast_pending: 人间残余候选与未注册报喜/医者/丧务角色到场未核；registry不证明localcast，太虚/青埂峰不使用人间候选充数。",
+    "editor_stage_only: 本次仅获用户agent编辑授权且已新增义务；两份PLAN意见已读但真实panel仍PENDING，不能作独立人工认可、正文执行或文学通过。",
+    "declared_sequence_only: source_index不变，entry_from按source order绑定新版；另行editorC叙事=100-S1,100-S2,100-S3,100-S4,100-S5；前驱只是来源索引，绝不注入状态/知识，历史次序与执行PENDING。",
+    "narrative_execution_pending: NARRATIVE_ONLY_NOT_EXECUTABLE；新正文、场级事件/知识、运行身份和语义核验未建立，旧run不得冒充新剧情执行。"
+  ],
+  "function": "封荣后仍让李纨过数月普通生活，体力渐退和家务移交先于死；贾兰误判好转不是明示病历。",
+  "notes": "PHASE6批准B已授权agent编辑；v3新增叙事义务，NARRATIVE_ONLY_NOT_EXECUTABLE。decision_path=data/planning/decisions/phase6-ch100-v1.json; decision_sha256=9105d1991a15205db9afeae5240254feeb0a9df0868d0857c4e29c7ccfcb8538。bindings/source_packet、seed、chapter_plan、world及所有状态/registry/知识绑定保持旧字节；decision仅notes中的具体绑定引用，不充作state basis。source_index=order=3；narrative_index=3；source_index≠narrative_index两类指标，不假设相同。entry_from仅新选source-order前驱索引，不是叙事前驱，不注入前场exit、chapter快照、地点或知识。叙事序列=100-S1,100-S2,100-S3,100-S4,100-S5仅editorC未来演出义务，当前检查器不会读取/执行此新叙事轨。participants只为旧注册候选，UNKNOWN/PENDING及value=null全保留；未建立人间新事件/身份registry继续PENDING。已有event_refs/object_transition_refs仅冻结旧关联，不认证新剧情已执行，98不相容运输支持已移除且decision原字保留冲突；100终态不增加运输。未写或绑定新正文，semantic replay=NOT_CHECKED；旧run、旧合同及旧cashflow依赖不改，不宣称source mismatch全部闭合。真实panel=PENDING、peer1 asserted=false，不改原声明；非正式采用、非发布。"
+}

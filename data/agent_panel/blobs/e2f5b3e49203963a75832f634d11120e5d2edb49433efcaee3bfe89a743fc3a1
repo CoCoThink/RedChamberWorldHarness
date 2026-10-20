@@ -1,0 +1,726 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch98.json",
+      "sha256": "67797bb3651577dcb5d62b962736363215518fbbd351c169199de2afa4d308dd"
+    },
+    "seed": {
+      "path": "data/planning/scenes/98-S2.json",
+      "sha256": "981aaed1da15b27bba837bacdf76a568b281fa92e9dd676be98ab5aed77e9d94"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-96-100.json",
+      "sha256": "9f27939b7cc580ad53c4d074b70316ad754a5ebc75056d9cdf07ce4311e7afa7"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 98,
+  "chapter_plan_ref": "data/planning/chapters/ch98.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-final-v2/98-S1.v3.json",
+  "entry_state": [
+    {
+      "equals": "character.zhen_baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "前驱地址桥不证明已经到S12客座；访客章级位置不能替代局部相见。"
+    }
+  ],
+  "event_refs": [
+    "W98-ZHEN-VISIT"
+  ],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.baoyu.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "异手认出与继续对书是待实现义务，不提供可执行人物退出位置；不得由校书声明自证。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "98-S2-F1",
+      "description": "不得加二宝真假哲学论战、“真假一体”、答诗或“原来这是遗言”；迟见仍属C工作主案。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "d23278030a89cbd75dc8de29f7a217ca34fbe57f8c6192320f1ca6ab5f060867",
+          "value": {
+            "id": "98-S2",
+            "title": "旧钞本的来路再有一层现实"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                47034,
+                47212
+              ],
+              "lines": [
+                1170,
+                1172
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bcb513ec0605613288aabdd0c1a8b1632a384ed8002906b5331519e5e18383b1"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nB02/C04：第21《续庄子》四句后文余步；“宝玉后来亲见”仍只是工作主案，不冒充硬证。原四句不得改写。无答诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47303,
+                47459
+              ],
+              "lines": [
+                1176,
+                1178
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "55ba0c52a893f669be05b5c6d6c90e08c2ef53062bb503e337e66b49b970672a"
+            },
+            "name": "宗教/哲学",
+            "number": 9,
+            "text": "**9｜宗教/哲学**  \n真假必须由“越像越不可替代”的物/字/反应表达；甄宝玉不说“真假一体”。庄子旧文不点化99。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47791,
+                47910
+              ],
+              "lines": [
+                1188,
+                1190
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7fa837444174c174331919f256df2e09bcf81209fa32d54880a03da7fea9196c"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n第二次巧合；甄贾哲学论战；宝钗专门见证黛玉四句；“原来这是遗言”。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "98-S2-F2",
+      "description": "不得专门安排宝钗见证黛玉四句，也不得扩写版本源流、名器善本来替换校书实务。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "d23278030a89cbd75dc8de29f7a217ca34fbe57f8c6192320f1ca6ab5f060867",
+          "value": {
+            "id": "98-S2",
+            "title": "旧钞本的来路再有一层现实"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                46947,
+                47034
+              ],
+              "lines": [
+                1167,
+                1169
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "a088fafbc126854993af1df6ec8d135058149853b1977b105cf65a913b93a677"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n38标准样板，P-Lock；不得再加版本源流、名家善本。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47791,
+                47910
+              ],
+              "lines": [
+                1188,
+                1190
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7fa837444174c174331919f256df2e09bcf81209fa32d54880a03da7fea9196c"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n第二次巧合；甄贾哲学论战；宝钗专门见证黛玉四句；“原来这是遗言”。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "98-S2",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [
+    "OT98-01"
+  ],
+  "order": 2,
+  "participants": [
+    "baoyu",
+    "zhen_baoyu",
+    "sheyue"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "object.OBJ-ZHEN-PACKAGE-98.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "书札包有OT98-01当前C客座节点，但旧钞本是否在包中及借阅条来历没有对象或场级记录。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/23",
+        "ref": "data/world/m3_core.json#/characters/23",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "bd7a8e1c9927bff34f49badc580eb381a73e8bb3d90c17a0a82cf47abd1ef299",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "zhen_household_member",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": null,
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "human"
+          ],
+          "id": "zhen_baoyu",
+          "name": "甄宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/15",
+        "ref": "data/objects/m4.json#/objects/15",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "3d63a2e2b15aaec7dc8d5d325791fd8979839838c6bb514788d01bd0df5c844c",
+        "value": {
+          "baseline": {
+            "holder": null,
+            "location": null,
+            "status": "OFFSTAGE_BEFORE_VISIT"
+          },
+          "continuity_rules": [
+            "作为误包偶然的现实容器；不携带大额资源，不承担真假哲理说明"
+          ],
+          "evidence_status": "REFERENCE_WORLD",
+          "id": "OBJ-ZHEN-PACKAGE-98",
+          "identity_status": "C_WORLD_OBJECT",
+          "kind": "visitor_package",
+          "name": "甄家来访书札包",
+          "source_refs": [
+            "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+            "asset:sha256:92749de3e62e80c89611bf1b19081bbb56e4d025df981092451682333dd2b6bb",
+            "R18"
+          ]
+        }
+      }
+    ],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "id": "98-S2-R1",
+      "description": "旧钞本只给一层现实来路：旧书摊或抄书、装订劳动一两笔，虫蛀缺页、不同手迹与借阅条足够；不新添名家善本谱系。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "d23278030a89cbd75dc8de29f7a217ca34fbe57f8c6192320f1ca6ab5f060867",
+          "value": {
+            "id": "98-S2",
+            "title": "旧钞本的来路再有一层现实"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                46311,
+                46492
+              ],
+              "lines": [
+                1155,
+                1157
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "3b5fe6f166c300b2fe7f50d313706c1dcf91a928a28e60a164d5d571b1425794"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n旧钞本、虫蛀缺页、不同手迹、借阅条、米数纸背抄字；甄贾相见不哲学辩论；一包误拿、一次归还；待客仍淡茶简饭。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                46492,
+                46637
+              ],
+              "lines": [
+                1158,
+                1160
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7edc02b8a86d5a4d449b9336fac5b26ec962ff6c6fe7624896fa99aad05e56cd"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \n37-0-C《续庄子》接口需嵌入现有“女子手笔”位置；甄家误拿包裹的物流要只保留一次偶然。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                46947,
+                47034
+              ],
+              "lines": [
+                1167,
+                1169
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "a088fafbc126854993af1df6ec8d135058149853b1977b105cf65a913b93a677"
+            },
+            "name": "文化",
+            "number": 6,
+            "text": "**6｜文化**  \n38标准样板，P-Lock；不得再加版本源流、名家善本。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47459,
+                47524
+              ],
+              "lines": [
+                1179,
+                1181
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "4bedabf3ad509181ebe5cd0689ea1f8a907df4f059643defef748a76b6fbb1ce"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n旧书摊、抄书、装订只露一两笔。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "98-S2-R2",
+      "description": "按本次C义务明确两个相邻可辨容器：客人的虫蛀册包、家中零册与玉帕包；玉因换绦暂放旧帕。容器数与误取次数分开，后续只拿错家中一包，客册包留桌。未注册容器不得自动等同OBJ-ZHEN-PACKAGE-98的内容或事件，不凭旧绑定证明布局已执行。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "d23278030a89cbd75dc8de29f7a217ca34fbe57f8c6192320f1ca6ab5f060867",
+          "value": {
+            "id": "98-S2",
+            "title": "旧钞本的来路再有一层现实"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                46637,
+                46832
+              ],
+              "lines": [
+                1161,
+                1163
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "328a7c4249615910b9de3dee6e11f0319c7147bdda9eeb92cde16e81878c8fbc"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n不新造场景，只做身份回填：甄先看到宝玉续庄文字，再看到异手；宝玉第一次认出黛玉四句，轻笑/停手/无言；很快回到对书。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47034,
+                47212
+              ],
+              "lines": [
+                1170,
+                1172
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "bcb513ec0605613288aabdd0c1a8b1632a384ed8002906b5331519e5e18383b1"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nB02/C04：第21《续庄子》四句后文余步；“宝玉后来亲见”仍只是工作主案，不冒充硬证。原四句不得改写。无答诗。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47949,
+                48053
+              ],
+              "lines": [
+                1194,
+                1196
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f9b4e4242f69a28b4afdba51462530248ab4733a86851059ef2e714e37f0cf0b"
+            },
+            "name": "前80同构",
+            "number": 15,
+            "text": "**15｜前80同构**  \n21宝黛《庄子》信息不对称；56“真假”梦结构只作远回声。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                48108,
+                48364
+              ],
+              "lines": [
+                1200,
+                1203
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f383384fac7fe9a430194580c3304bb9c2fa3b2a5236d49def3016ecb283abe0"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n拜帖 → 旧书相会 → 异手/《续庄子》迟见 → 回到校书 → 包裹误拿 → 通灵玉归 → 继续抄字/吃饭。  \n**风险：**让C级“亲见”伪装硬证；把98变成通往99的“悟道机关”。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/17",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/17",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "a5ccf3cd6e541eb3f5dbeda4545621dc0e1434133909c20046beeb23aca4655e",
+            "value": {
+              "chapter": 98,
+              "money_state": "贫居仍可最低待客",
+              "food_medicine": "茶、绦线、旧帕、书札",
+              "labor": "麝月换绦送茶；甄仆收包",
+              "object_interface": "两个相邻小包",
+              "boundary": "甄家不送钱",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/8",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/8",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "8d0ca42b5e6714b32f3c3c1e8bff6f2cb6e6f6ca79f4e93477c98e6b75cbe51c",
+            "value": {
+              "chapter": 98,
+              "targets": [
+                "zhen_baoyu"
+              ],
+              "kind": "EARLY_KNOWLEDGE",
+              "fact": "mistaken_jade_package",
+              "note": "甄家一侧先发现误拿，贾家最初不知道发生了什么",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "98-S2-R3",
+      "description": "麝月“米数纸最忙”“名字不要钱”和纸背抄字保留日用尺度。W98-ZHEN-VISIT/OT98-01只为章级访客及包到关联，不登记认字获取事件；旧文不能点化99，校书之后仍吃饭。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/17/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/17/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "d23278030a89cbd75dc8de29f7a217ca34fbe57f8c6192320f1ca6ab5f060867",
+          "value": {
+            "id": "98-S2",
+            "title": "旧钞本的来路再有一层现实"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                47212,
+                47303
+              ],
+              "lines": [
+                1173,
+                1175
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d054d43659beff779dde0d9cf167d072af9be8dd5a29382536935ee6f81bd154"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n麝月“米数纸最忙”“名字不要钱”、红绳叫卖保留。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47303,
+                47459
+              ],
+              "lines": [
+                1176,
+                1178
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "55ba0c52a893f669be05b5c6d6c90e08c2ef53062bb503e337e66b49b970672a"
+            },
+            "name": "宗教/哲学",
+            "number": 9,
+            "text": "**9｜宗教/哲学**  \n真假必须由“越像越不可替代”的物/字/反应表达；甄宝玉不说“真假一体”。庄子旧文不点化99。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                47687,
+                47791
+              ],
+              "lines": [
+                1185,
+                1187
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d3d5807ac867fb0d457481e9081eba672a9c7f92e8f73d4d491d1a6cd340a534"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n数茶、木桶、米数纸、虫蛀旧书、单一包裹误拿、无钱赠。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                48108,
+                48364
+              ],
+              "lines": [
+                1200,
+                1203
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "f383384fac7fe9a430194580c3304bb9c2fa3b2a5236d49def3016ecb283abe0"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n拜帖 → 旧书相会 → 异手/《续庄子》迟见 → 回到校书 → 包裹误拿 → 通灵玉归 → 继续抄字/吃饭。  \n**风险：**让C级“亲见”伪装硬证；把98变成通往99的“悟道机关”。\n\n"
+          }
+        ],
+        "world_basis": [
+          {
+            "ref": "data/world/m3_resources.json#/resource_flows/17",
+            "path": "data/world/m3_resources.json",
+            "pointer": "/resource_flows/17",
+            "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668",
+            "text_sha256": "a5ccf3cd6e541eb3f5dbeda4545621dc0e1434133909c20046beeb23aca4655e",
+            "value": {
+              "chapter": 98,
+              "money_state": "贫居仍可最低待客",
+              "food_medicine": "茶、绦线、旧帕、书札",
+              "labor": "麝月换绦送茶；甄仆收包",
+              "object_interface": "两个相邻小包",
+              "boundary": "甄家不送钱",
+              "source_ref": "asset:sha256:ffed02aee8809a8937651529048e2cc10256a0ae2e2706251c9b806a6ea6ef50",
+              "epistemic": "REFERENCE_RESOURCE_FLOW"
+            }
+          },
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/8",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/8",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "8d0ca42b5e6714b32f3c3c1e8bff6f2cb6e6f6ca79f4e93477c98e6b75cbe51c",
+            "value": {
+              "chapter": 98,
+              "targets": [
+                "zhen_baoyu"
+              ],
+              "kind": "EARLY_KNOWLEDGE",
+              "fact": "mistaken_jade_package",
+              "note": "甄家一侧先发现误拿，贾家最初不知道发生了什么",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [
+    "OBJ-ZHEN-PACKAGE-98"
+  ],
+  "revision": "v3",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "manuscript_unregistered: 旧钞本、借阅条、米数纸和异手页没有注册对象；具体来路与持有史未定。",
+    "quote_verification: 第21回四句须另行按前80原文核对，包中章节/页次和本场亲见仍为C，不能生成佚文。",
+    "remote_workers: 书摊、抄书人与装订者未注册；不补名家身份。",
+    "local_entry_checkpoint: 仅声明候选前驱，不注入chapter-1快照或前场exit；入口、前提与退出保持局部UNKNOWN。",
+    "knowledge_bindings: 本章无v03注册知识场景/获取事件，未注册信息内容只作叙事义务，不新增事实ID。",
+    "event_scene_alignment: 既有世界/对象事件是粗章级C或外框节点，不足以执行本场局部状态；关联IDs仅指已存在来源。",
+    "local_cast_pending: 地址中介、甄小厮/信使及收件者的完整到场集合未核；已有注册主角只为候选，不把registry或holder标签当localcast。",
+    "editor_stage_only: 本次仅获用户agent编辑授权且已新增义务；两份PLAN意见已读但真实panel仍PENDING，不能作独立人工认可、正文执行或文学通过。",
+    "declared_sequence_only: source_index不变，entry_from按source order绑定新版；另行editorC叙事=98-S1,98-S2,98-S3；前驱只是来源索引，绝不注入状态/知识，历史次序与执行PENDING。",
+    "narrative_execution_pending: NARRATIVE_ONLY_NOT_EXECUTABLE；新正文、场级事件/知识、运行身份和语义核验未建立，旧run不得冒充新剧情执行。",
+    "package_mapping_pending: 两容器/一次错取已选为C叙事义务，具体对象映射、摆放时刻与新正文仍PENDING，不建立新对象ID。"
+  ],
+  "function": "以旧钞本来路与校书劳动承载二宝相遇和第21回异手迟见；认字反应短促，立刻回到缺页与饭纸。",
+  "notes": "PHASE6批准B已授权agent编辑；v3新增叙事义务，NARRATIVE_ONLY_NOT_EXECUTABLE。decision_path=data/planning/decisions/phase6-ch98-v1.json; decision_sha256=850e993895101a0e759983e9427a76db624d5e9ca7f5f4ab8e4fa9d3b24155d4。bindings/source_packet、seed、chapter_plan、world及所有状态/registry/知识绑定保持旧字节；decision仅notes中的具体绑定引用，不充作state basis。source_index=order=2；narrative_index=2；source_index≠narrative_index两类指标，不假设相同。entry_from仅新选source-order前驱索引，不是叙事前驱，不注入前场exit、chapter快照、地点或知识。叙事序列=98-S1,98-S2,98-S3仅editorC未来演出义务，当前检查器不会读取/执行此新叙事轨。participants只为旧注册候选，UNKNOWN/PENDING及value=null全保留；未建立人间新事件/身份registry继续PENDING。已有event_refs/object_transition_refs仅冻结旧关联，不认证新剧情已执行，98不相容运输支持已移除且decision原字保留冲突；100终态不增加运输。未写或绑定新正文，semantic replay=NOT_CHECKED；旧run、旧合同及旧cashflow依赖不改，不宣称source mismatch全部闭合。真实panel=PENDING、peer1 asserted=false，不改原声明；非正式采用、非发布。"
+}

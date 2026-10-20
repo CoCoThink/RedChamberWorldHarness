@@ -1,0 +1,74 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/7c2b196987bd89d307c2221bdd64836b05b8e6cc6afa867365e013d1acaca556.json",
+    "sha256": "7c2b196987bd89d307c2221bdd64836b05b8e6cc6afa867365e013d1acaca556"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整通读本次分派的105行正文、写作包、S1—S4四份v4合同及ch99政策；无分派未读范围，samples为空且没有分派图像。候选、包、四合同、政策与packet八个SHA256绑定均实测一致。正文L3—21用普通生活、还书、少食和不接明日事务递进；L25—35清楚分开宝钗昨夜先知与麝月临行后知；L41仍有争菜价和借秤，L43课诵跟不上立即接看锅提水，未以玉、神谕或佛理论文作离家原因。L37关心宝钗伤手、L71关心贾芸脚伤，与明确拒回并存，未把撒手封成圆满或纯无情。L77—85以贾芸亲见及转述给家中消息，L87—105买米付租和未补完袖口承接其代价。保留一项需要修订的时序表达意见：L55已说“天已往晚”，此后还有城外小店、伤脚慢行和走错岔口、寺中长谈、L75绕旱路回城及中途歇脚，L85才“窗外晚了”并点灯；读者很难估计这段山路与回程究竟占多久。建议补一两处时段或暮色变化以落实当天脚程；现有信息不能证明路程绝对不可能，故本项FAIL仅为ADVISORY，不是完整性或A-W1 LOCKED阻断。未发现所分派材料可支持的BLOCKING违反；本结论不认证未分派史料或原作资格。",
+      "sample_checks": [],
+      "subject_id": "chapter-99",
+      "subject_sha256": "8b6b3ac654d3e702155c066c4b5bed02ee17d839c618e0b552210b20468aa036",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读过包的96行，核对chapter=99、operation_scope=RESEARCH及authority_effect=NONE；plan列表中S1—S4的路径和哈希与本任务实读合同逐项吻合，所附正文与政策亦属于第99回。包的purpose明确未知状态未验收、史料/语料/文学资格未授予，与四合同保留UNKNOWN/PENDING、NARRATIVE_ONLY_NOT_EXECUTABLE的口径相容，没有把本候选或模型意见写成稳定版发布或独立人工认可。S2-R3、S3-R2及S4-R3虽保持来源索引S1→S2→S3→S4→S5，均明确另列叙事S1→S2→S5→S3→S4；候选L43在寻找前短切寺院、L105留在家中，与这一显式分层一致。本任务只审包及分派S1—S4内容；包另列S5、exemplar_set、资产、来源记录及底层世界文件未分派递归全文阅读，不据此作其内容或史料资格认证。samples为空，sample_checks按分派保留空数组。",
+      "sample_checks": [],
+      "subject_id": "package-99",
+      "subject_sha256": "1d9323d5b7de7e5d640d1f4905269f5d934796bdfd466f2b05f6afd2649d75d3",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读99-S1.v4.json全部916行。对照R1，正文L3“日子照旧过了几日”后仍问字、修架、拣菜、提水，L7和L21分次还书，L9—13不肯接续买柴买米，L15少食却仍提得起水并抄字，未让断粮或新病触发离家；对照R2，L15麝月先疑菜不合口，L25宝钗单独听到不回，L29麝月仍以为小事拌嘴，直到L33—35才被明说，后知层次成立；对照R3，书包与借阅条有归还交接，未焚书折笔，家务照料与拒接未来责任相互牵连。F1/F2所禁的玉归即悟、98《续庄子》点化、托梦、神谕、诗偈和人人同步看懂均未出现。合同把EARLY_INTENT保留为叙事边界而未造v03获取事件，章级状态与局部UNKNOWN有区分；此PASS针对分派文本与候选的相容性，不把P-Lock、作者要求或粗章终点升级为A-W1事实。",
+      "sample_checks": [],
+      "subject_id": "contract-99-1",
+      "subject_sha256": "6da01b80731f20a953ff03576893ce3d12ef3d72c1ddc8c84c794574133c1507",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读99-S2.v4.json全部742行。R1在正文L25—27、L35—37有清楚声口：宝钗追问住处、归期、出事如何问讯，麝月落在粥、袜、鞋，宝玉只简短说不回而不讲理论；“不用等饭”没有代替回答妻子所问的关系问题。R2对应L31旧衣零钱入包、旧鞋留门边，L39鞋垫由麝月塞入，L41自行开闩出门；L43“又隔了些时日”再切寺院，未从跨门瞬间推到S13或剃发。R3所要求的退出伤害在宝钗压住匣盖、麝月收针与手迟迟离包等动作中成立；寺院段前插后，家中L45仍不知去处，没有继承读者所见。F1/F2所禁弃玉仪式、玉交给谁、诀别信诗偈及精神胜利旁白均未出现，玉的人间路线仍留白。UNKNOWN状态和章级W99/OT99关联未被当作场级既成事件使用。",
+      "sample_checks": [],
+      "subject_id": "contract-99-2",
+      "subject_sha256": "a7519af434d9f3c86baf7ebb67453339f5689c5600dfa64c8713539722151be1",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读99-S3.v4.json全部696行。R1/R2/R3的大部分演出可追踪：L47书摊只证还书，L49车脚日期不准，L51搭肩误认导致真实难堪，L53再过水仍问错，L57小店两说不一且挑柴人只给近寺线索，L59另问岔路才抵寺；L61—73亲见、听到拒回和“没有，只说我平安”，L77宝钗再问“是亲见，还是又听谁说”，取得消息的层次没有混同。船钱、干粮、鞋伤与L83补脚费使寻访没有成为无成本笑料，家中两人没有被列入寺院同场，也没有把寺院说成尼庵或兑现W2仗义探庵。F1/F2禁项未见。保留与chapter-99相同的一项执行建议：L55“天已往晚”之后接山路慢行、寺中劝说及L75绕旱路返城，L85点灯前的时段衔接欠明确；宜增加少量时间或光线定位，让受伤脚程及家中等待时间可以核对。合同本身承认路线、费用、目击版本未锁，此意见不要求补成精确地址，也不宣称现有路线已被证伪。FAIL只表示此处尚宜修订，severity=ADVISORY；无BLOCKING结论。",
+      "sample_checks": [],
+      "subject_id": "contract-99-3",
+      "subject_sha256": "214213662d06a8575485f7ea5058dfc0a297b435f7b3ff1b1cf43456531663cc",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整通读99-S4.v4.json全部696行。R1见正文L85—95：先分米钱房钱，翌日交租对账并买米，量米时宝钗挡住多添的一碗，说“够咱们两个吃的就是了”，麝月仍问有客怎么办并望巷口，没有把少一人写成轻松省用。R2的物件动作逐步清楚：L99先清拆线，L101旧针眼被断线堵住、另取新针、线入新针眼尚未拉齐，因米汤涌锅而将这根新针别回衣边；L105麝月避开新针，长短线仍未齐，确实是穿针被中断，不是已完成缝袖。旧衣未被说成95已典夹袄或100李纨之物，也无赎回补链。R3及F3要求的最后镜头落实于L103—105两只碗与未补完旧衣，此后没有再切寺院或第二家务尾声；家中只依贾芸转述获知，不知道L43课诵细节。F1/F2所禁的经济恢复、伤害消失、佛理总结、人物或作者诗偈均未出现。",
+      "sample_checks": [],
+      "subject_id": "contract-99-4",
+      "subject_sha256": "143b4b97bda4af57be97b56787d959b1897e39ee46045d7704341db4e4275f05",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-99-048-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-99-048-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

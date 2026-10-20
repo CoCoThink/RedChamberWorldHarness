@@ -1,6 +1,6 @@
 # 八十回后研究写作：审阅、修订与采用执行计划
 
-日期：2026-10-21。状态：执行中；三十九项已完整登记，继续全量审阅。授权：用户要求「撰写详细计划后，再开始执行」。
+日期：2026-10-21。状态：执行中；五十六项章回审阅已完整登记，继续共享依赖及分段整书审阅。授权：用户要求「撰写详细计划后，再开始执行」。
 
 ## 1. 目标与范围
 
@@ -146,3 +146,5 @@ BOOK 全部为 ADVISORY，缺失和异议照实展示，不新增机器门控。
 - `status-004.json` 检查点：25 COMPLETE、3 ASSIGNED、48 PENDING，无 needs_followup；34条负面结果均为 ADVISORY，原件及存储完整性仍 PASS。
 
 - `status-005.json` 检查点：39 COMPLETE、3 ASSIGNED、34 PENDING，46条负面结果均为ADVISORY，无 needs_followup；协调者已通读全部39项结果与附注，仍未生成采用决定。
+
+- `status-006.json` 检查点：56 COMPLETE（全部章回任务）、3 ASSIGNED、17 PENDING，67条负面结果均为 ADVISORY，无 needs_followup；全部56项结果与附注已逐项阅读，原始意见/回执/快照完整性 PASS。20回当前输入在42项时点评估仍全部 PASS；未修改候选或生成采用决定。
