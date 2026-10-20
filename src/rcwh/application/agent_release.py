@@ -32,7 +32,9 @@ def cmd_agent_release(args: argparse.Namespace) -> int:
                 payload = review_campaign.submit(root, args.plan, args.job, args.opinion, origin=args.origin)
             elif args.agent_release_command == "review-fail":
                 payload = review_campaign.fail(root, args.plan, args.job, reason=args.reason,
-                    status_code=args.status_code, interrupted=args.interrupted)
+                    assignment_sha256=args.assignment_sha256, status_code=args.status_code, interrupted=args.interrupted)
+            elif args.agent_release_command == "review-reopen":
+                payload = review_campaign.reopen(root, args.plan, args.job, reason=args.reason)
             else:
                 payload = review_campaign.status(root, args.plan)
             print(json.dumps(payload, ensure_ascii=False, indent=2))
@@ -113,10 +115,16 @@ def add_commands(sub) -> None:
     failure.add_argument("plan")
     failure.add_argument("job")
     failure.add_argument("--reason", required=True)
+    failure.add_argument("--assignment-sha256", required=True, help="Exact assignment hash returned by dispatch")
     transport = failure.add_mutually_exclusive_group()
     transport.add_argument("--status-code", type=int, help="Transport status, e.g. 503")
     transport.add_argument("--interrupted", action="store_true", help="Agent was cancelled, timed out or lost")
     failure.set_defaults(func=cmd_agent_release)
+    reopen = commands.add_parser("review-reopen", help="Request a genuine followup reading, preserving the old opinion")
+    reopen.add_argument("plan")
+    reopen.add_argument("job")
+    reopen.add_argument("--reason", required=True)
+    reopen.set_defaults(func=cmd_agent_release)
     inspect = commands.add_parser("review-status", help="Inspect bound campaign attempts and registrations")
     inspect.add_argument("plan")
     inspect.set_defaults(func=cmd_agent_release)

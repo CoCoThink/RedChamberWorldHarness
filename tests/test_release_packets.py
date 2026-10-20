@@ -73,6 +73,34 @@ def test_packets_are_immutable_once_written(tmp_path):
         _write_immutable(tmp_path, "p.json", {"a": 2})
 
 
+def test_chapter_packet_is_unchanged_when_another_chapter_is_revised(tmp_path):
+    from rcwh.workflow.release_packets import chapter_packets
+    def binding(value):
+        return _write_immutable(tmp_path, f"{value}.json", {"text": value})
+    rows = {ch: {"candidate": binding(f"candidate-{ch}"), "writing_package": binding(f"package-{ch}")} for ch in (81, 82)}
+    subjects = [{"id": f"chapter-{ch}", "scope": "CANDIDATE", "binding": row["candidate"]} for ch, row in rows.items()]
+    before = chapter_packets(tmp_path, subjects, rows, "coordinator")
+    rows[82]["candidate"] = binding("candidate-82-revised")
+    subjects[1]["binding"] = rows[82]["candidate"]
+    after = chapter_packets(tmp_path, subjects, rows, "coordinator")
+    assert after[81] == before[81] and after[82] != before[82]
+
+
+def test_current_source_assignments_include_bound_context_and_every_original_image():
+    from rcwh.workflow.review_campaign import _load, MAX_IMAGES, MAX_IMAGE_BYTES
+    plan = _load(ROOT, "data/agent_release/research-81-100-v1/review-campaign-v3.json")
+    source_jobs = [j for j in plan["jobs"] if j["kind"] == "SOURCE"]
+    assert source_jobs and all(len(j.get("inspect_images", [])) <= MAX_IMAGES for j in source_jobs)
+    for job in source_jobs:
+        assert job["reading_bytes"] <= plan["max_read_bytes"] and job.get("image_bytes", 0) <= MAX_IMAGE_BYTES
+        packet = json.loads((ROOT / job["packet"]["path"]).read_bytes())
+        for subject in (s for s in packet["subjects"] if s["id"] in job["subjects"]):
+            assert subject["evidence"] in job["read_in_full"]
+            evidence = json.loads((ROOT / subject["evidence"]["path"]).read_bytes())
+            assert evidence["contexts"] and evidence["carrier"]["sha256"]
+            assert all(image["binding"] in job.get("inspect_images", []) for image in evidence["images"])
+
+
 def test_full_edition_has_no_failures_and_only_missing_reviews_pending():
     from rcwh.workflow.agent_release import AgentRelease
     report = AgentRelease(ROOT).evaluate("data/agent_release/research-81-100-v1/request.json")

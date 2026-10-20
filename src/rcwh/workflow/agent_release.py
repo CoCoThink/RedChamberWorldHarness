@@ -27,7 +27,7 @@ from ..io import load_data
 from ..promotion import load_promotion_policy, policy_supported
 from ..findings import combine as _status
 from ..schema import validate_instance
-from .agent_panel import AgentPanel, _check_sample, _sample_records
+from .agent_panel import AgentPanel, _check_sample, _sample_records, _records
 
 
 DIRECTORY = "releases/agent"
@@ -108,7 +108,15 @@ class AgentRelease:
         # An absent packet is a missing review input (PENDING), not a failure.
         if not repository_path(self.root, packet["path"]).is_file():
             raise FileNotFoundError(f"agent review packet not found: {packet['path']}")
-        return AgentPanel(self.root).summary(packet=packet)
+        cache = getattr(self, "_evaluating_panels", None)
+        key = (packet["path"], packet["sha256"])
+        if cache is None:
+            return AgentPanel(self.root).summary(packet=packet)
+        if key not in cache:
+            if "records" not in cache:
+                cache["records"] = _records(self.root)
+            cache[key] = AgentPanel(self.root).summary(packet=packet, _records_snapshot=cache["records"])
+        return cache[key]
 
     def _subject(self, ref: dict, scope: str, binding: dict | None = None) -> tuple[str, dict]:
         report = self._packet_summary(ref["packet"])
@@ -175,7 +183,7 @@ class AgentRelease:
         state = "PENDING" if report["compatibility"] == "NOT_CHECKED" else report["status"]
         return state, report
 
-    def _decision(self, row: dict, subject: dict) -> str:
+    def _decision(self, row: dict, subject: dict, inputs: dict | None = None) -> str:
         if "decision" not in row:
             return "PENDING"
         decision = json.loads(self._bound(row["decision"]))
@@ -187,7 +195,10 @@ class AgentRelease:
             raise AssetError("coordinator decision session differs from bound packet")
         if any(r["session_id"] == decision["coordinator_session_id"] for r in subject.get("full_reviewers", [])):
             raise AssetError("coordinator cannot count as a candidate peer reviewer")
-        opinions = {record_sha256(o["record"]): o for o in subject.get("opinions", [])}
+        subjects = [subject] + [s for key in ("contract_reviews", "source_reviews", "corpus_reviews")
+                                for s in (inputs or {}).get(key, [])]
+        all_opinions = [o for s in subjects for key in ("opinions", "prior_context_opinions") for o in s.get(key, [])]
+        opinions = {record_sha256(o["record"]): o for o in all_opinions}
         considered = {record_sha256(o) for o in decision["considered_opinions"]}
         if considered != set(opinions):
             return "PENDING"  # A new opinion invalidates a previously complete decision.
@@ -195,7 +206,7 @@ class AgentRelease:
         rejected_ids = [record_sha256(o["record"]) for o in rejected]
         if len(rejected_ids) != len(set(rejected_ids)) or not set(rejected_ids) <= set(opinions):
             raise AssetError("coordinator rejected opinions are duplicate or unbound")
-        negative = {key for key, o in opinions.items() if o["verdict"] in {"FAIL", "REJECT"}}
+        negative = {record_sha256(o["record"]) for o in all_opinions if o["verdict"] in {"FAIL", "REJECT"}}
         if not negative <= set(rejected_ids):
             return "PENDING"  # Every dissent needs an explicit, reasoned ruling.
         # Overruled dissent stays recorded in the decision. A BLOCKING negative
@@ -261,6 +272,10 @@ class AgentRelease:
         elif packet_report is not None:
             subjects = [s for p in packet_report["panels"] for s in p["subjects"]]
             check_peer_sessions(subjects)
+            expected_context = [row[k] for k in ("candidate", "writing_package", "policy") if k in row]
+            for s in subjects:
+                if "context" in s and s["context"] != expected_context:
+                    raise AssetError("chapter review context differs from selected candidate/package/policy")
             requirements = [("PACKAGE", row["writing_package"])]
             for path in scope["paths"]:
                 if path.startswith("data/scenes/") or path in scope.get("advisory_contract_paths", []):
@@ -276,6 +291,7 @@ class AgentRelease:
             for kind, binding in requirements:
                 matching = [s for s in subjects if s["scope"] == kind and s["binding"] == binding]
                 states.append(_status(s["status"] for s in matching))
+                reports.setdefault("contract_reviews", []).extend(matching)
             gates["CONTRACT_PEERS"] = _status(states)
             reports["contract_peer_bindings"] = [binding for _, binding in requirements]
 
@@ -442,10 +458,10 @@ class AgentRelease:
                 "CANDIDATE_PEERS": lambda: self._subject(row["panel"], "CANDIDATE", row["candidate"]),
                 "AUTHOR_PROVENANCE": lambda: self._authors(row, report["reviews"].get("candidate", {})),
                 "CURRENT_WRITING_INPUTS": lambda: self._compatibility(row),
-                "COORDINATOR_DECISION": lambda: self._decision(row, report["reviews"].get("candidate", {})),
                 "CHAPTER_SAFETY_POLICY": lambda: self._policy(row, changed, book.decode("utf-8"), after[ch]),
                 "INPUT_PEERS": lambda: self._inputs(row, authors=report["reviews"].get("authors", [])
                     + report["reviews"].get("author_lineage", {}).get("custodians", [])),
+                "COORDINATOR_DECISION": lambda: self._decision(row, report["reviews"].get("candidate", {}), report["reviews"]),
             }
             for name, operation in operations.items():
                 try:
@@ -506,6 +522,10 @@ class AgentRelease:
                         for a in report["reviews"].get("authors", [])
                         + report["reviews"].get("author_lineage", {}).get("custodians", [])}
             manifest["advisories"] = {"book_continuity": self._book_review(request["book_review"], book, excluded)}
+        if state == "PENDING":
+            revision = digest(canonical_bytes({k: v for k, v in manifest.items() if k != "output"}))
+            output = f"{DIRECTORY}/.pending/{request['id']}/{revision}"
+            manifest["output"].update(directory=output, manifest_path=f"{output}/manifest.json")
         self._validate(manifest, "manifest")
         return manifest, book
 
@@ -529,8 +549,12 @@ class AgentRelease:
     def _evaluate_scoped(self, request: dict | str | Path) -> tuple[dict, bytes]:
         # All chapters bind the same corpus: verify its rebuild once per pass.
         from ..corpus.dataset import rebuild_scope
-        with rebuild_scope():
-            return self._evaluate(request)
+        self._evaluating_panels = {}
+        try:
+            with rebuild_scope():
+                return self._evaluate(request)
+        finally:
+            self._evaluating_panels = None
 
     def evaluate(self, request: dict | str | Path) -> dict:
         return self._evaluate_scoped(request)[0]
@@ -544,6 +568,8 @@ class AgentRelease:
         target = repository_path(self.root, manifest["output"]["directory"])
         base.mkdir(parents=True, exist_ok=True)
         if target.exists():
+            if manifest["status"] == "PENDING" and (target / "manifest.json").read_bytes() == canonical_bytes(manifest):
+                return manifest
             raise AssetError("agent release already exists; refusing overwrite")
         stage = Path(tempfile.mkdtemp(prefix=".staging-", dir=base))
         reserved = False
@@ -555,12 +581,14 @@ class AgentRelease:
             latest, latest_book = self._evaluate_scoped(request)  # Fresh scope: genuine re-verification.
             if latest != manifest or latest_book != book or self._stable_snapshot() != snapshot:
                 raise AssetError("agent release inputs or stable storage changed while staging")
+            target.parent.mkdir(parents=True, exist_ok=True)
             target.mkdir()  # Exclusive reservation; never replace even an empty edition.
             reserved = True
             if manifest["status"] == "PASS":
                 os.link(stage / "book.md", target / "book.md")
             os.link(stage / "manifest.json", target / "manifest.json")  # Atomic commit marker, no overwrite.
             sync_directory(target)
+            sync_directory(target.parent)
             sync_directory(base)
         except BaseException:
             if reserved:

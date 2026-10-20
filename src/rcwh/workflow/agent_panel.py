@@ -14,10 +14,10 @@ from contextlib import contextmanager
 import json
 import os
 from pathlib import Path
+import yaml
 
 from ..assets.paths import repository_path
 from ..candidate_reviews import canonical_bytes, digest
-from ..io import load_data
 from ..schema import validate_instance
 
 
@@ -88,14 +88,14 @@ def _unique_rows(rows: list, key: str, description: str) -> dict:
     return result
 
 
-def _sample_records(root: Path, binding: dict) -> list | None:
+def _sample_records(root: Path, binding: dict, *, read=None) -> list | None:
     """Parse a bound sample carrier using the canonical packet rules."""
-    raw = _bound(root, binding)
+    raw = read(binding) if read else _bound(root, binding)
     path = repository_path(root, binding["path"])
     if path.suffix == ".jsonl":
         return [_json(line) for line in raw.splitlines() if line.strip()]
     if path.suffix in {".json", ".yaml", ".yml"}:
-        document = load_data(path)
+        document = yaml.safe_load(raw)
         if isinstance(document, list):
             return document
         if isinstance(document, dict):
@@ -114,12 +114,12 @@ def _sample_records(root: Path, binding: dict) -> list | None:
     return None
 
 
-def _sample_record(root: Path, sample: dict, cache: dict) -> None:
+def _sample_record(root: Path, sample: dict, cache: dict, *, read=None) -> None:
     """Verify real JSON/JSONL record membership, parsing each product once."""
     binding = sample["binding"]
     key = (binding["path"], binding["sha256"])
     if key not in cache:
-        cache[key] = _sample_records(root, binding)
+        cache[key] = _sample_records(root, binding, read=read)
     rows = cache[key]
     if rows is not None:
         _check_sample(rows, sample["id"])
@@ -135,17 +135,29 @@ def _check_sample(rows: list, identity: str) -> None:
         raise ValueError(f"sample text digest mismatch: {identity}")
 
 
-def verify_packet(root: Path, binding: dict) -> dict:
-    """Verify the packet FILE bytes, every subject, and every declared sample."""
-    packet = _json(_bound(root, binding))
+def verify_packet(root: Path, binding: dict, *, subjects=None, read=None, historical: bool = False) -> dict:
+    """Verify exact packet bytes and the selected (or all) subjects and samples."""
+    original_read = read or (lambda ref: _bound(root, ref))
+    read_cache = {}
+    def read(ref):
+        key = (ref["path"], ref["sha256"])
+        if key not in read_cache:
+            read_cache[key] = original_read(ref)
+        return read_cache[key]
+    packet = _json(read(binding))
     _schema(root, packet, "agent_packet")
     _unique_rows(packet["subjects"], "id", "packet subject")
+    if subjects is not None and not set(subjects) <= {s["id"] for s in packet["subjects"]}:
+        raise ValueError("review subjects absent from packet")
     sample_cache = {}
     for subject in packet["subjects"]:
-        _bound(root, subject["binding"])
-        path = repository_path(root, subject["binding"]["path"])
+        if subjects is not None and subject["id"] not in subjects:
+            continue
+        raw = read(subject["binding"])
+        for ref in subject.get("context", []):
+            read(ref)
         if subject["scope"] == "SOURCE":
-            document = load_data(path)
+            document = yaml.safe_load(raw)
             rows = document.get("sources", [document]) if isinstance(document, dict) else []
             matches = [row for row in rows if row.get("id") == subject["source_ref"]]
             if len(matches) != 1:
@@ -153,22 +165,25 @@ def verify_packet(root: Path, binding: dict) -> dict:
             source = matches[0]
             if not isinstance(source.get("text"), str) or digest(source["text"].encode()) != source.get("text_sha256"):
                 raise ValueError(f"source excerpt digest mismatch: {subject['source_ref']}")
+            if "evidence" in subject:
+                from .source_reading import verify
+                verify(source, subject["evidence"], read, rebuild_images=not historical)
         elif subject["scope"] == "CORPUS":
-            manifest = load_data(path)
+            manifest = yaml.safe_load(raw)
             if not isinstance(manifest, dict) or manifest.get("dataset_ref") != subject["dataset_ref"]:
                 raise ValueError(f"corpus manifest dataset mismatch: {subject['id']}")
         samples = subject.get("samples", [])
         _unique_rows(samples, "id", f"sample in {subject['id']}")
         for sample in samples:
-            _sample_record(root, sample, sample_cache)
+            _sample_record(root, sample, sample_cache, read=read)
     return packet
 
 
-def _verify_opinion(root: Path, opinion: dict) -> dict:
+def _verify_opinion(root: Path, opinion: dict, *, read=None, historical: bool = False) -> dict:
     _schema(root, opinion, "agent_review")
     if opinion.get("report_kind") != "AGENT_REVIEW_OPINION":
         raise ValueError("FILE input must be the actual AGENT_REVIEW_OPINION, not a filing envelope")
-    packet = verify_packet(root, opinion["packet"])
+    packet = verify_packet(root, opinion["packet"], subjects={r["subject_id"] for r in opinion["results"]}, read=read, historical=historical)
     if opinion["reviewer"]["session_id"] == packet["coordinator_session_id"]:
         raise ValueError("reviewer session must differ from coordinator_session_id")
     subjects = {row["id"]: row for row in packet["subjects"]}
@@ -228,8 +243,15 @@ def _records(root: Path) -> tuple[list[dict], list[dict]]:
             raw_opinion = _json(_bound(root, record["raw_output"]))
             if raw_opinion != record["opinion"] or record["packet"] != raw_opinion["packet"]:
                 raise ValueError("raw agent output does not match structured opinion")
-            packet = _verify_opinion(root, raw_opinion)
+            from .review_inputs import reader
+            read = reader(root, record["input_snapshot"]) if "input_snapshot" in record else None
+            packet = _verify_opinion(root, raw_opinion, read=read, historical=read is not None)
             report["status"] = "PASS"
+            try:
+                _verify_opinion(root, raw_opinion)
+                report["current_compatibility"] = "CURRENT"
+            except (KeyError, OSError, TypeError, ValueError) as exc:
+                report.update(current_compatibility="STALE", current_findings=[str(exc)])
             valid.append({"record": binding, "raw_output": record["raw_output"],
                           "opinion": raw_opinion, "packet": packet})
         except (KeyError, OSError, TypeError, ValueError) as exc:
@@ -292,17 +314,22 @@ def _superseded(records: list[dict]) -> tuple[dict[str, dict], list[str]]:
 def _subject_summary(subject: dict, records: list[dict], packet_binding: dict,
                      superseded: dict[str, dict] | None = None) -> dict:
     superseded = superseded or {}
-    opinions, history = [], []
+    opinions, history, prior_context = [], [], []
     for record in records:
         declared = {s["id"]: s for s in record["packet"]["subjects"]}
         for row in record["opinion"]["results"]:
             if _same_subject(subject, declared[row["subject_id"]]):
+                previous = declared[row["subject_id"]]
                 opinion = {"record": record["record"], "raw_output": record["raw_output"],
                            "packet": record["opinion"]["packet"],
                            "same_packet_context": record["opinion"]["packet"] == packet_binding,
                            "reviewer": record["opinion"]["reviewer"], **row}
                 if record["record"]["path"] in superseded:
                     history.append({**opinion, "superseded_by": superseded[record["record"]["path"]]})
+                elif (subject["scope"] in {"CANDIDATE", "PACKAGE", "CONTRACT"}
+                        and "context" in subject and "context" in previous and subject["context"] != previous["context"]):
+                    prior_context.append({**opinion, "applicability": "INPUT_CONTEXT_CHANGED",
+                                          "previous_context": previous.get("context", [])})
                 else:
                     opinions.append(opinion)
     pending, findings, advisories, coverage = [], [], [], []
@@ -320,11 +347,9 @@ def _subject_summary(subject: dict, records: list[dict], packet_binding: dict,
             # as a review; its objections are kept as replaceable advisories.
             advisories.append({"record": opinion["record"], "verdict": opinion["verdict"],
                                "severity": "ADVISORY" if advisory_only else opinion["severity"], "notes": opinion["notes"]})
-        if not opinion["same_packet_context"]:
-            pending.append({"record": opinion["record"], "reason": "DIFFERENT_PACKET_CONTEXT_FOR_SAME_SUBJECT_BYTES"})
-        if opinion["verdict"] != "PASS" and opinion["verdict"] not in NEGATIVE:
+        if opinion["same_packet_context"] and opinion["verdict"] != "PASS" and opinion["verdict"] not in NEGATIVE:
             pending.append({"record": opinion["record"], "reason": opinion["verdict"]})
-        if not opinion["reviewer"]["context_isolation"]["asserted"]:
+        if opinion["same_packet_context"] and not opinion["reviewer"]["context_isolation"]["asserted"]:
             pending.append({"record": opinion["record"], "reason": "CONTEXT_ISOLATION_NOT_ASSERTED"})
         checks = {c["sample_id"]: c for c in opinion["sample_checks"]}
         accepted = opinion["verdict"] == "PASS" or (opinion["verdict"] in NEGATIVE and not blocking)
@@ -332,7 +357,7 @@ def _subject_summary(subject: dict, records: list[dict], packet_binding: dict,
                 and all(checks.get(s["id"], {}).get("verdict") == "PASS" for s in subject.get("samples", []))):
             full.append(opinion)
         for check in checks.values():
-            if check["verdict"] not in NEGATIVE | {"PASS"}:
+            if opinion["same_packet_context"] and check["verdict"] not in NEGATIVE | {"PASS"}:
                 pending.append({"record": opinion["record"], "sample_id": check["sample_id"],
                                 "reason": check["verdict"]})
     for sample in subject.get("samples", []):
@@ -352,13 +377,14 @@ def _subject_summary(subject: dict, records: list[dict], packet_binding: dict,
     return {**subject, "status": state, "review_count": len(opinions),
             "distinct_reviewer_count": count, "full_reviewers": _identities(full),
             "sample_coverage": coverage, "opinions": opinions, "findings": findings,
-            "advisories": advisories, "superseded_opinions": history, "pending": pending}
+            "advisories": advisories, "superseded_opinions": history,
+            "prior_context_opinions": prior_context, "pending": pending}
 
 
-def summary(root: Path, packet: str | Path | dict | None = None) -> dict:
+def summary(root: Path, packet: str | Path | dict | None = None, *, _records_snapshot=None) -> dict:
     root = Path(root).resolve()
     try:
-        reports, records = _records(root)
+        reports, records = _records_snapshot if _records_snapshot is not None else _records(root)
     except (KeyError, OSError, TypeError, ValueError) as exc:
         return {**_base(), "status": "FAIL", "record_integrity_status": "FAIL",
                 "findings": [str(exc)], "pending": [], "panels": [], "records": []}
@@ -485,7 +511,14 @@ def register(root: Path, file: Path, *, origin: str, origin_kind: str = "FILE", 
         raise ValueError("agent registration requires local FILE origin and a nonblank origin description")
     raw = _original(Path(file))
     opinion = _json(raw)
-    _verify_opinion(root, opinion)
+    inputs = {}
+    def capture_input(ref):
+        raw_input = _bound(root, ref)
+        inputs[(ref["path"], ref["sha256"])] = raw_input
+        return raw_input
+    _verify_opinion(root, opinion, read=capture_input)
+    from .review_inputs import capture
+    input_snapshot, snapshot_writes = capture(root, inputs)
     current = summary(root)
     if current["record_integrity_status"] == "FAIL":
         raise ValueError("existing registered agent records invalid: " + "; ".join(current["findings"]))
@@ -505,7 +538,8 @@ def register(root: Path, file: Path, *, origin: str, origin_kind: str = "FILE", 
     record = {"schema_version": 1, "record_kind": "REGISTERED_AGENT_REVIEW",
               "origin_kind": "FILE", "origin": origin, "packet": opinion["packet"],
               "raw_output": raw_binding, "opinion": opinion, "authority_effect": "NONE",
-              "usage": "RESEARCH_ONLY", "independent_human_admission": False}
+              "usage": "RESEARCH_ONLY", "independent_human_admission": False,
+              "input_snapshot": input_snapshot}
     _schema(root, record, "agent_review")
     record_raw = canonical_bytes(record)
     binding = {"path": f"{DIRECTORY}/records/{digest(record_raw)}.json", "sha256": digest(record_raw)}
@@ -519,13 +553,17 @@ def register(root: Path, file: Path, *, origin: str, origin_kind: str = "FILE", 
         if _original(Path(file)) != raw:
             raise ValueError("raw agent output changed after preflight")
         _verify_opinion(root, opinion)
+        if any(_bound(root, {"path": path, "sha256": sha}) != raw_input
+               for (path, sha), raw_input in inputs.items()):
+            raise ValueError("review inputs changed after preflight")
         now = summary(root)
         if now["record_integrity_status"] == "FAIL":
             raise ValueError("existing registered agent records invalid after preflight")
         if any(r.get("raw_output") == raw_binding for r in now["records"]):
             raise ValueError("raw agent opinion already registered")
         written = []
-        for relative, data in ((raw_binding["path"], raw), (binding["path"], record_raw), (receipt_path, receipt_raw)):
+        for relative, data in (*snapshot_writes.items(), (raw_binding["path"], raw),
+                               (binding["path"], record_raw), (receipt_path, receipt_raw)):
             if _store(root, relative, data):
                 written.append(relative)
     report = summary(root, packet=opinion["packet"])
@@ -538,8 +576,8 @@ class AgentPanel:
     def __init__(self, root: Path):
         self.root = Path(root).resolve()
 
-    def summary(self, packet: str | Path | dict | None = None) -> dict:
-        return summary(self.root, packet=packet)
+    def summary(self, packet: str | Path | dict | None = None, *, _records_snapshot=None) -> dict:
+        return summary(self.root, packet=packet, _records_snapshot=_records_snapshot)
 
     def register(self, file: Path, *, origin: str, origin_kind: str = "FILE", dry_run: bool = False) -> dict:
         return register(self.root, file, origin=origin, origin_kind=origin_kind, dry_run=dry_run)

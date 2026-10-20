@@ -448,7 +448,7 @@ def test_reissued_packet_cannot_hide_same_byte_negative_opinion(repo):
     assert subject["status"] == "FAIL" and len(subject["opinions"]) == 3
     assert subject["distinct_reviewer_count"] == 2
     assert any(o["verdict"] == "REJECT" and o["packet"] == first for o in subject["opinions"])
-    assert any(p["reason"] == "DIFFERENT_PACKET_CONTEXT_FOR_SAME_SUBJECT_BYTES" for p in subject["pending"])
+    assert subject["pending"] == []  # The retained BLOCKING negative fails; old context alone does not pend.
 
 
 def test_same_byte_old_packet_positive_is_not_new_context_peer_credit(repo):
@@ -459,6 +459,63 @@ def test_same_byte_old_packet_positive_is_not_new_context_peer_credit(repo):
     subject = panel.summary(repo, second)["panels"][0]["subjects"][0]
     assert subject["status"] == "PENDING" and subject["distinct_reviewer_count"] == 1
     assert len(subject["opinions"]) == 2
+
+
+def test_old_positive_or_unread_opinion_does_not_block_two_fresh_readers(repo):
+    old, packet = make_packet(repo, ("CANDIDATE",), "old.json")
+    receive(repo, opinion(old, packet, 1))
+    receive(repo, opinion(old, packet, 2, "NOT_CHECKED"))
+    fresh, packet = make_packet(repo, ("CANDIDATE",), "fresh.json")
+    receive(repo, opinion(fresh, packet, 3))
+    receive(repo, opinion(fresh, packet, 4))
+    subject = panel.summary(repo, fresh)["panels"][0]["subjects"][0]
+    assert subject["status"] == "PASS" and subject["distinct_reviewer_count"] == 2
+    assert len(subject["opinions"]) == 4
+
+
+def test_source_annotation_change_preserves_custody_and_allows_unrelated_registration(repo):
+    old, packet = make_packet(repo, ("SOURCE",), "source-old.json")
+    registered = receive(repo, opinion(old, packet, 1))
+    source = json.loads((repo / "data/provenance/sources/a.yaml").read_bytes())
+    source["sources"][0]["notes"] = "Annotation changed; excerpt bytes are unchanged."
+    save(repo, "data/provenance/sources/a.yaml", source)
+    fresh, packet = make_packet(repo, ("CANDIDATE",), "unrelated.json")
+    assert receive(repo, opinion(fresh, packet, 2))["registered"]
+    historical = panel.summary(repo)
+    record = next(r for r in historical["records"] if r["record"] == registered["record"])
+    assert historical["record_integrity_status"] == record["status"] == "PASS"
+    assert record["current_compatibility"] == "STALE"
+    assert panel.summary(repo, old)["status"] == "FAIL"
+
+
+def test_corrupt_snapshot_is_integrity_failure_even_when_live_inputs_are_unchanged(repo):
+    binding, packet = make_packet(repo, ("CANDIDATE",))
+    registered = receive(repo, opinion(binding, packet, 1))
+    record = json.loads((repo / registered["record"]["path"]).read_bytes())
+    snapshot = json.loads((repo / record["input_snapshot"]["path"]).read_bytes())
+    (repo / snapshot["files"][0]["snapshot"]["path"]).write_bytes(b"corrupt")
+    assert panel.summary(repo)["record_integrity_status"] == "FAIL"
+    with pytest.raises(ValueError, match="existing registered"):
+        receive(repo, opinion(binding, packet, 2))
+
+
+def test_changed_explicit_candidate_context_keeps_old_contract_dissent_visible(repo):
+    old, packet = make_packet(repo, ("CANDIDATE",), "contract-old.json")
+    save(repo, "context-old.txt", b"old candidate context")
+    packet["subjects"][0].update(scope="CONTRACT", context=[bound(repo, "context-old.txt")])
+    save(repo, old["path"], packet)
+    old = bound(repo, old["path"])
+    receive(repo, opinion(old, packet, 1, "FAIL"))
+    save(repo, "context-new.txt", b"revised candidate context")
+    packet["subjects"][0]["context"] = [bound(repo, "context-new.txt")]
+    save(repo, "contract-new.json", packet)
+    fresh = bound(repo, "contract-new.json")
+    receive(repo, opinion(fresh, packet, 2))
+    receive(repo, opinion(fresh, packet, 3))
+    subject = panel.summary(repo, fresh)["panels"][0]["subjects"][0]
+    assert subject["status"] == "PASS"
+    assert subject["prior_context_opinions"][0]["verdict"] == "FAIL"
+    assert subject["prior_context_opinions"][0]["applicability"] == "INPUT_CONTEXT_CHANGED"
 
 
 def test_registration_preserves_independent_human_selections_and_admission_inputs(repo):

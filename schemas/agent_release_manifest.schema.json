@@ -24,7 +24,7 @@
     "findings": {"type": "array", "items": {"type": "string"}},
     "pending": {"type": "array", "items": {"type": "string"}},
     "advisories": {"type": "object"},
-    "output": {"type": "object", "additionalProperties": false, "required": ["directory", "manifest_path", "text"], "properties": {"directory": {"type": "string", "pattern": "^releases/agent/[a-z0-9][a-z0-9._-]*$"}, "manifest_path": {"type": "string", "pattern": "^releases/agent/"}, "text": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/byte_binding"}]}}}
+    "output": {"type": "object", "additionalProperties": false, "required": ["directory", "manifest_path", "text"], "properties": {"directory": {"type": "string", "pattern": "^releases/agent/(?:[a-z0-9][a-z0-9._-]*|\\.pending/[a-z0-9][a-z0-9._-]*/[a-f0-9]{64})$"}, "manifest_path": {"type": "string", "pattern": "^releases/agent/"}, "text": {"oneOf": [{"type": "null"}, {"$ref": "#/$defs/byte_binding"}]}}}
   },
   "allOf": [
     {"if": {"properties": {"status": {"const": "PASS"}}}, "then": {"properties": {"provenance": {"const": "RESEARCH_AGENT_REVIEWED"}, "output": {"properties": {"text": {"$ref": "#/$defs/byte_binding"}}}, "gates": {"additionalProperties": {"const": "PASS"}}, "findings": {"maxItems": 0}, "pending": {"maxItems": 0}}}},

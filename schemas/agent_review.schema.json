@@ -69,6 +69,7 @@
         "schema_version": {"const": 1}, "record_kind": {"const": "REGISTERED_AGENT_REVIEW"},
         "origin_kind": {"const": "FILE"}, "origin": {"$ref": "#/$defs/label"},
         "packet": {"$ref": "#/$defs/binding"}, "raw_output": {"$ref": "#/$defs/binding"},
+        "input_snapshot": {"$ref": "#/$defs/binding"},
         "opinion": {"$ref": "#/$defs/opinion"},
         "authority_effect": {"const": "NONE"}, "usage": {"const": "RESEARCH_ONLY"},
         "independent_human_admission": {"const": false}

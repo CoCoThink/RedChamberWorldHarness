@@ -1,16 +1,16 @@
 """Prepare review packets and a request for an agent research edition.
 
 From a live chapter selection (candidate, draft, package, policy, P-Lock per
-chapter) this writes, under ``data/agent_release/<edition>/``:
+chapter) this writes:
 
-- ``packets/candidates.json``: per chapter one CANDIDATE, one PACKAGE and one
-  CONTRACT subject for every selected scene/plan contract in its input scope;
-- ``packets/sources.json``: one SOURCE subject per dependent provenance source;
-- ``packets/corpus.json``: one CORPUS subject sampling exactly the exemplar
-  segments the packages cite;
-- ``reading/chNN.json``: the files a reviewer must read in full, with hashes;
-- ``request.json``: the release request binding all of the above plus any
-  coordinator decision present at ``decisions/chNN.json``.
+- content-addressed per-chapter packets under ``review-packets/``, binding
+  the candidate, package, policy and selected contracts for that chapter;
+- source record projections and evidence under ``source-records/`` and
+  ``source-reading/``, including surrounding text and original page images;
+- edition-local source/corpus packets, ``reading/chNN.json`` and
+  ``request.json``, binding these inputs and available coordinator decisions.
+
+All paths are relative to ``data/agent_release/``.
 
 Packets are immutable once written: re-preparing with different bytes raises
 instead of silently invalidating registered opinions. The request is derived
@@ -65,6 +65,32 @@ def _packet(edition: str, kind: str, coordinator: str, subjects: list[dict]) -> 
             "authority_effect": "NONE", "usage": "RESEARCH_ONLY"}
 
 
+def chapter_packets(root: Path, candidates: list[dict], rows: dict, coordinator: str) -> dict[int, dict]:
+    """Stable, per-chapter review contexts survive unrelated edition changes."""
+    packets = {}
+    for chapter, row in sorted(rows.items()):
+        context = [row[k] for k in ("candidate", "writing_package", "policy") if k in row]
+        subjects = [{**s, "context": context} for s in candidates
+                    if s["id"] in {f"chapter-{chapter}", f"package-{chapter}"}
+                    or s["id"].startswith(f"contract-{chapter}-")]
+        document = _packet(f"chapter-{chapter}", "inputs-v3", coordinator, subjects)
+        packets[chapter] = _write_immutable(root,
+            f"{DIRECTORY}/review-packets/{digest(canonical_bytes(document))}.json", document)
+    return packets
+
+
+def source_subject(root: Path, source: dict, catalog: AssetCatalog, cache=None) -> dict:
+    from .source_reading import prepare as prepare_evidence
+    raw = canonical_bytes({"schema_version": 1, "sources": [source]})
+    binding = _write_immutable(root, f"{DIRECTORY}/source-records/{digest(raw)}.json", raw)
+    evidence = prepare_evidence(catalog, source, f"{DIRECTORY}/source-reading", _write_immutable, cache)
+    images = json.loads(bound_bytes(root, evidence))["images"]
+    return {"id": f"source:{source['id']}", "scope": "SOURCE", "source_ref": source["id"],
+            "binding": binding, "evidence": evidence, "context": [],
+            **({"samples": [{"id": f"{source['id']}:image:{i}", "binding": image["binding"]}
+                             for i, image in enumerate(images, 1)]} if images else {})}
+
+
 def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], *,
             coordinator_session_id: str, max_book_read_bytes: int = 197 * 1024) -> dict:
     """Write packets, reading lists and the request; return their bindings."""
@@ -80,6 +106,8 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
     if not chapters or any(ch not in rows or ch not in scope_chapters for ch in chapters):
         raise AssetError("selected chapters must be in both the selection and project scope")
     base = f"{DIRECTORY}/{edition}"
+    catalog = AssetCatalog.from_repo(root)
+    source_cache = {}
     sources = _source_files(root)
     candidates, source_subjects, scopes, dataset_samples = [], {}, {}, {}
     for chapter in sorted(chapters):
@@ -97,14 +125,14 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
         for identity in scope["used_source_ids"]:
             if identity not in sources:
                 raise AssetError(f"dependent source has no provenance record file: {identity}")
-            source_subjects[identity] = {"id": f"source:{identity}", "scope": "SOURCE", "source_ref": identity,
-                                         "binding": _binding(root, sources[identity])}
+            if identity not in source_subjects:
+                source = next(s for s in load_data(repository_path(root, sources[identity]))["sources"] if s["id"] == identity)
+                source_subjects[identity] = source_subject(root, source, catalog, source_cache)
         package = load_data(repository_path(root, row["writing_package"]["path"]))
         exemplars = load_data(repository_path(root, package["exemplar_set"]["path"]))
         dataset_samples.setdefault(exemplars["dataset_ref"], set()).update(
             segment["segment_id"] for segment in exemplars["segments"])
 
-    catalog = AssetCatalog.from_repo(root)
     registry = CorpusRepository(catalog).registry()
     corpus_subjects = []
     for dataset_ref, segment_ids in sorted(dataset_samples.items()):
@@ -117,8 +145,8 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
                                 "binding": {"path": manifest_asset.relative_path, "sha256": manifest_asset.sha256},
                                 "samples": [{"id": identity, "binding": carrier} for identity in sorted(segment_ids)]})
 
-    packets = {"candidates": _write_immutable(root, f"{base}/packets/candidates.json",
-                                              _packet(edition, "candidates", coordinator_session_id, candidates))}
+    chapter_refs = chapter_packets(root, candidates, {ch: rows[ch] for ch in chapters}, coordinator_session_id)
+    packets = {f"chapter-{ch}": ref for ch, ref in chapter_refs.items()}
     if source_subjects:
         packets["sources"] = _write_immutable(root, f"{base}/packets/sources.json", _packet(
             edition, "sources", coordinator_session_id, [source_subjects[k] for k in sorted(source_subjects)]))
@@ -131,7 +159,7 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
     for chapter in sorted(chapters):
         subjects = [s for s in candidates if s["id"] in {f"chapter-{chapter}", f"package-{chapter}"}
                     or s["id"].startswith(f"contract-{chapter}-")]
-        document = {"schema_version": 1, "chapter": chapter, "packet": packets["candidates"],
+        document = {"schema_version": 1, "chapter": chapter, "packet": chapter_refs[chapter],
                     "read_in_full": [{"subject_id": s["id"], "scope": s["scope"], **s["binding"]} for s in subjects],
                     "policy": rows[chapter].get("policy"), "plock_ref": rows[chapter]["plock_ref"],
                     "severity_rule": "docs/decisions/0004_EVIDENCE_FLOOR_SEVERITY.md"}
@@ -148,7 +176,7 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
         from .attribution import release_attribution
         release_attribution(root, {**entry, "chapter": chapter})
         entry.update(chapter=chapter, mode="AGENT_CANDIDATE",
-                     panel={"packet": packets["candidates"], "subject_id": f"chapter-{chapter}"},
+                     panel={"packet": chapter_refs[chapter], "subject_id": f"chapter-{chapter}"},
                      source_reviews=[{"packet": packets["sources"], "subject_id": f"source:{identity}"}
                                      for identity in scopes[chapter]["used_source_ids"]],
                      corpus_reviews=[{"packet": packets["corpus"], "subject_id": ref}

@@ -20,11 +20,13 @@ from ..assets.paths import repository_path
 from ..candidate_reviews import canonical_bytes, digest
 from ..generation.records import bound_bytes
 from ..schema import validate_instance
-from .agent_panel import _sample_records, _verify_opinion, register, scaffold, verify_packet
+from .agent_panel import _sample_records, _verify_opinion, _records, register, scaffold, summary, verify_packet
 from .release_packets import _binding, _write_immutable
 
 TEMPORARY = {429, 500, 502, 503, 504}
 DEFAULT_LIMIT = 197 * 1024
+MAX_IMAGES = 4
+MAX_IMAGE_BYTES = 6 * 1024 * 1024
 
 
 def _review_basis(request: dict) -> str:
@@ -66,6 +68,15 @@ def plan(root: Path, request_path: str, output: str, *, batch_size: int = 5,
         index = {s["id"]: s for s in document["subjects"]}
         files = {index[s]["binding"]["path"]: index[s]["binding"] for s in subjects}
         files.update({b["path"]: b for b in context})
+        images = {}
+        for s in subjects:
+            files.update({b["path"]: b for b in index[s].get("context", [])})
+            if kind == "SOURCE":
+                if "evidence" not in index[s]:
+                    raise AssetError("source review requires bound carrier context and images; prepare a new source packet")
+                proof = index[s]["evidence"]
+                files[proof["path"]] = proof
+                images.update({i["binding"]["path"]: i["binding"] for i in json.loads(bound_bytes(root, proof))["images"]})
         samples = [{"subject_id": s, **sample} for s in subjects for sample in index[s].get("samples", [])]
         for sample in samples:
             carrier_key = (sample["binding"]["path"], sample["binding"]["sha256"])
@@ -73,7 +84,7 @@ def plan(root: Path, request_path: str, output: str, *, batch_size: int = 5,
                 carriers[carrier_key] = _sample_records(root, sample["binding"])
             records = carriers[carrier_key]
             if records is None:
-                files[sample["binding"]["path"]] = sample["binding"]
+                (images if sample["binding"]["path"] in images else files)[sample["binding"]["path"]] = sample["binding"]
             else:
                 selected = [r for r in records if sample["id"] in (r.get("id"), r.get("segment_id"))]
                 projection = {"sample_id": sample["id"], "carrier": sample["binding"], "records": selected}
@@ -81,11 +92,13 @@ def plan(root: Path, request_path: str, output: str, *, batch_size: int = 5,
                 sample["reading"] = _write_immutable(root, relative, projection)
                 files[relative] = sample["reading"]
         size = sum(len(bound_bytes(root, b)) for b in files.values())
+        image_size = sum(len(bound_bytes(root, b)) for b in images.values())
         for reader in (1, 2):
             identity = f"{kind}-{chapter if chapter is not None else 'shared'}-{len(jobs):03d}-r{reader}"
             jobs.append({"id": identity, "kind": kind, "chapter": chapter, "packet": ref,
                          "subjects": subjects, "read_in_full": list(files.values()), "samples": samples,
                          "reading_bytes": size, "exceeds_budget": size > max_read_bytes,
+                         **({"inspect_images": list(images.values()), "image_bytes": image_size} if images else {}),
                          "severity": "ADVISORY" if kind == "BOOK" else "EVIDENCE_FLOOR",
                          "gate_effect": "NONE" if kind == "BOOK" else "EXISTING_PEER_GATES"})
 
@@ -128,7 +141,27 @@ def plan(root: Path, request_path: str, output: str, *, batch_size: int = 5,
     for (path, sha), subjects in sorted(shared.items()):
         ref = {"path": path, "sha256": sha}
         kind = "CORPUS" if all(s["scope"] == "CORPUS" for s in packet(ref)["subjects"]) else "SOURCE"
-        add(kind, ref, sorted(subjects))
+        if kind != "SOURCE":
+            add(kind, ref, sorted(subjects))
+        else:
+            index = {s["id"]: s for s in packet(ref)["subjects"]}
+            group, files, images = [], {}, {}
+            for identity in sorted(subjects):
+                subject = index[identity]
+                proof = subject.get("evidence")
+                if not proof:
+                    raise AssetError("source review requires bound carrier context and images")
+                extra_files = {b["path"]: b for b in [subject["binding"], proof]}
+                extra_images = {i["binding"]["path"]: i["binding"] for i in json.loads(bound_bytes(root, proof))["images"]}
+                combined_files, combined_images = files | extra_files, images | extra_images
+                if group and (sum(len(bound_bytes(root, b)) for b in combined_files.values()) > max_read_bytes
+                              or len(combined_images) > MAX_IMAGES
+                              or sum(len(bound_bytes(root, b)) for b in combined_images.values()) > MAX_IMAGE_BYTES):
+                    add(kind, ref, group)
+                    group, files, images = [], {}, {}
+                group.append(identity); files.update(extra_files); images.update(extra_images)
+            if group:
+                add(kind, ref, group)
     if "book_review" in request:
         from .book_review import subjects as book_subjects
         ref = request["book_review"]
@@ -140,6 +173,8 @@ def plan(root: Path, request_path: str, output: str, *, batch_size: int = 5,
                         "seams": [list(pair) for pair in zip(subject["chapters"], subject["chapters"][1:])]}
     if any(j["exceeds_budget"] for j in jobs):
         raise AssetError("review material exceeds reading budget; split complete subjects/continuity segments before dispatch")
+    if any(len(j.get("inspect_images", [])) > MAX_IMAGES or j.get("image_bytes", 0) > MAX_IMAGE_BYTES for j in jobs):
+        raise AssetError("source review exceeds visual budget; split source subjects")
     document = {"schema_version": 1, "kind": "AGENT_REVIEW_CAMPAIGN", "request": request_binding,
                 "current_request_path": request_path, "review_basis_sha256": _review_basis(request),
                 "batch_size": batch_size, "max_attempts": max_attempts, "max_read_bytes": max_read_bytes,
@@ -178,6 +213,20 @@ def _load(root: Path, path: str) -> dict:
             raise AssetError("campaign subjects absent from packet")
         for ref in job["read_in_full"]:
             bound_bytes(root, ref)
+        images = job.get("inspect_images", [])
+        if (len(images) > MAX_IMAGES or job.get("image_bytes", 0) != sum(len(bound_bytes(root, b)) for b in images)
+                or job.get("image_bytes", 0) > MAX_IMAGE_BYTES):
+            raise AssetError("campaign visual budget exceeded or misreported")
+        for subject in (s for s in packet["subjects"] if s["id"] in job["subjects"]):
+            if any(ref not in job["read_in_full"] for ref in subject.get("context", [])):
+                raise AssetError("campaign omits assigned review context")
+            if subject["scope"] == "SOURCE":
+                proof = subject.get("evidence")
+                if not proof or proof not in job["read_in_full"]:
+                    raise AssetError("source assignment omits carrier evidence")
+                evidence = json.loads(bound_bytes(root, proof))
+                if any(i["binding"] not in images for i in evidence["images"]):
+                    raise AssetError("source assignment omits original images")
         size = sum(len(bound_bytes(root, b)) for b in job["read_in_full"])
         if (job["reading_bytes"] != size or job["exceeds_budget"] != (size > value["max_read_bytes"])
                 or size > value["max_read_bytes"]):
@@ -214,18 +263,29 @@ def _load(root: Path, path: str) -> dict:
 def _matches(assignment: dict, opinion: dict) -> bool:
     return (opinion["reviewer"] == assignment["opinion_scaffold"]["reviewer"]
             and opinion["packet"] == assignment["job"]["packet"]
-            and {r["subject_id"] for r in opinion["results"]} == set(assignment["job"]["subjects"]))
+            and {r["subject_id"] for r in opinion["results"]} == set(assignment["job"]["subjects"])
+            and all(ref in opinion.get("supersedes", []) for ref in assignment["opinion_scaffold"].get("supersedes", [])))
 
 
-def _assignment(root: Path, document: dict, job: dict, attempt: int, model_label: str, mode: str) -> dict:
+def _assignment(root: Path, document: dict, job: dict, attempt: int, model_label: str, mode: str, supersedes=()) -> dict:
     sha = digest(canonical_bytes(document))
-    skeleton = scaffold(root, job["packet"]["path"], reviewer_id=f"{sha[:12]}:{job['id']}",
+    reviewer_id = f"{sha[:12]}:{job['id']}"
+    if supersedes:
+        identities = {json.loads(bound_bytes(root, ref))["opinion"]["reviewer"]["id"] for ref in supersedes}
+        if len(identities) != 1:
+            raise AssetError("followup cannot replace different reviewers")
+        reviewer_id = identities.pop()
+    skeleton = scaffold(root, job["packet"]["path"], reviewer_id=reviewer_id,
                         session_id=f"review:{sha[:12]}:{job['id']}:{attempt}",
                         subjects=job["subjects"], model_label=model_label)
+    if supersedes:
+        skeleton["supersedes"] = list(supersedes)
     return {"job": job, "execution_mode": mode, "opinion_scaffold": skeleton,
             "instructions": (
                 "Read the assigned continuity segment in full and in order, including both chapters of every listed seam. Examine chronology, object custody, forms of address, character knowledge and unresolved callbacks. Cite chapters and exact passages for each problem. Every finding is ADVISORY. "
                 if job["kind"] == "BOOK" else
+                "Read each source record and its bound evidence/context. Inspect every job.inspect_images image with the image viewer, check the excerpt against the fixed carrier, locator, bibliography and witness attribution, and distinguish original text from agent transcription and inference. Fill each image sample check. If an image cannot be inspected or text is illegible, report NOT_CHECKED, naming the image and unread scope. Never infer verified transcription from a matching digest. "
+                if job["kind"] == "SOURCE" else
                 "Read the assigned bytes and all listed samples. Compare contracts with the attached candidate and package. Use BLOCKING for byte/integrity failures or A-W1-backed LOCKED violations; plan-card beats, P-Lock anchors and taste objections are ADVISORY under ADR 0004. "
             ) + "Read only the assigned subjects, not all subjects in the shared packet. Fill every verdict and notes, and all sample checks. If context or reading is incomplete, report NOT_CHECKED with the unread scope; never PASS. Return only the opinion JSON. Preserve assigned identity and bindings. Do not register or edit repository files yourself."}
 
@@ -233,7 +293,7 @@ def _assignment(root: Path, document: dict, job: dict, attempt: int, model_label
 def _events(root: Path, directory: str, job: dict) -> list[dict]:
     base = repository_path(root, f"{directory}/{job['id']}")
     events = []
-    for assignment_file in sorted(base.glob("attempt-*-assignment.json")) if base.exists() else []:
+    for assignment_file in sorted(base.glob("attempt-*-assignment.json"), key=lambda p: int(p.name.split("-")[1])) if base.exists() else []:
         match = re.fullmatch(r"attempt-(\d+)-assignment\.json", assignment_file.name)
         if match is None:
             continue
@@ -249,61 +309,138 @@ def _events(root: Path, directory: str, job: dict) -> list[dict]:
                      "assignment": assignment_ref, "record": None}
             # Also reconcile direct `agent-panel register` after an exported
             # assignment. A matching packet alone never credits campaign work.
-            matches = []
-            for registered in repository_path(root, "data/agent_panel/records").glob("*.json"):
-                record = json.loads(registered.read_bytes())
-                if _matches(assignment, record["opinion"]):
-                    matches.append((registered, record))
-            if len(matches) > 1:
-                raise AssetError("multiple registered opinions for one campaign attempt")
-            if matches:
-                registered, record = matches[0]
-                event.update(status="REGISTERED", retryable=False,
-                    record=_binding(root, registered.relative_to(root).as_posix()), stdout=record["raw_output"])
         else:
             event = json.loads(file.read_bytes())
             if event["attempt"] != number or event["assignment"] != assignment_ref or (event["status"] == "REGISTERED") != bool(event["record"]):
                 raise AssetError("campaign event/registration mismatch")
+        matches = []
+        for registered in repository_path(root, "data/agent_panel/records").glob("*.json"):
+            record = json.loads(registered.read_bytes())
+            if _matches(assignment, record["opinion"]):
+                ref = _binding(root, registered.relative_to(root).as_posix())
+                raw = json.loads(bound_bytes(root, record["raw_output"]))
+                receipt = repository_path(root, f"data/agent_panel/receipts/{ref['sha256']}.json")
+                from .review_inputs import reader
+                _verify_opinion(root, raw, read=reader(root, record["input_snapshot"]) if "input_snapshot" in record else None,
+                                historical="input_snapshot" in record)
+                if (registered.stem != ref["sha256"] or record["opinion"] != raw
+                        or json.loads(receipt.read_bytes())["record"] != ref):
+                    raise AssetError("campaign opinion custody mismatch")
+                matches.append((registered, record))
+        replaced = {ref["path"] for _, record in matches for ref in record["opinion"].get("supersedes", [])}
+        latest = [(file, record) for file, record in matches if file.relative_to(root).as_posix() not in replaced]
+        if len(latest) > 1 or (matches and not latest):
+            raise AssetError("multiple registered opinions for one campaign attempt without a unique superseding opinion")
+        if latest and event["status"] in {"ASSIGNED", "INTERRUPTED", "REGISTERED"}:
+            registered, record = latest[0]
+            event.update(status="REGISTERED", retryable=False,
+                record=_binding(root, registered.relative_to(root).as_posix()), stdout=record["raw_output"])
         for key in ("assignment", "stdout", "stderr"):
             if key in event:
                 bound_bytes(root, event[key])
         if event.get("record"):
             record = json.loads(bound_bytes(root, event["record"]))
             opinion = json.loads(bound_bytes(root, event["stdout"]))
-            _verify_opinion(root, opinion)
+            from .review_inputs import reader
+            _verify_opinion(root, opinion, read=reader(root, record["input_snapshot"]) if "input_snapshot" in record else None,
+                            historical="input_snapshot" in record)
             receipt = repository_path(root, f"data/agent_panel/receipts/{event['record']['sha256']}.json")
             if (record["opinion"] != opinion or record["raw_output"]["sha256"] != event["stdout"]["sha256"]
                     or json.loads(receipt.read_bytes())["record"] != event["record"]
                     or not _matches(assignment, opinion)):
                 raise AssetError("campaign registration differs from assigned work")
+        reopened = base / f"attempt-{number}-reopen.json"
+        if reopened.exists():
+            note = json.loads(reopened.read_bytes())
+            if note["record"] != event["record"] or note["assignment"] != assignment_ref or not note["reason"].strip():
+                raise AssetError("reopened review differs from registered attempt")
+            event["reopened"] = True
         events.append(event)
     return events
 
 
 def _state(events: list[dict], maximum: int) -> str:
+    if events and events[-1].get("reopened"):
+        return "PENDING"
     if events and events[-1]["status"] == "REGISTERED":
         return "COMPLETE"
     if events and events[-1]["status"] == "ASSIGNED":
         return "ASSIGNED"
     if events and not events[-1]["retryable"]:
         return "FAILED"
-    if len(events) >= maximum:
+    round_start = max((i + 1 for i, e in enumerate(events) if e.get("reopened")), default=0)
+    if len(events) - round_start >= maximum:
         return "EXHAUSTED"
     if events and events[-1].get("retry_after", 0) > time.time():
         return "RETRY_WAIT"
     return "PENDING"
 
 
+def _followup(root: Path, directory: str, job: dict) -> list[dict]:
+    file = repository_path(root, f"{directory}/{job['id']}/followup.json")
+    if not file.exists():
+        return []
+    note = json.loads(file.read_bytes())
+    record = json.loads(bound_bytes(root, note["record"]))
+    if (not note["reason"].strip() or record["opinion"]["packet"] != job["packet"]
+            or not set(job["subjects"]) <= {r["subject_id"] for r in record["opinion"]["results"]}):
+        raise AssetError("reused review followup differs from assigned subjects")
+    return [note["record"]]
+
+
+def _reuse(root: Path, job: dict, cache: dict, directory: str) -> dict | None:
+    """Credit unchanged review contexts without launching another pair."""
+    if _followup(root, directory, job) or not repository_path(root, "data/agent_panel/records").exists():
+        return None
+    key = (job["packet"]["path"], job["packet"]["sha256"])
+    if key not in cache:
+        if "records" not in cache:
+            cache["records"] = _records(root)
+        cache[key] = summary(root, job["packet"], _records_snapshot=cache["records"])
+    report = cache[key]
+    if report["record_integrity_status"] != "PASS" or not report["panels"]:
+        return None
+    sets, records = [], {}
+    for subject in (s for s in report["panels"][0]["subjects"] if s["id"] in job["subjects"]):
+        valid = set()
+        for opinion in subject["opinions"]:
+            if (opinion["same_packet_context"] and
+                    {"id": opinion["reviewer"]["id"], "session_id": opinion["reviewer"]["session_id"]} in subject["full_reviewers"]
+                    and (opinion["verdict"] == "PASS" or (opinion["verdict"] in {"FAIL", "REJECT"}
+                         and (subject.get("review_policy") == "ADVISORY" or opinion.get("severity", "BLOCKING") != "BLOCKING")))
+                    and all(any(c["sample_id"] == s["id"] and c["verdict"] == "PASS" for c in opinion["sample_checks"])
+                            for s in subject.get("samples", []))):
+                sha = opinion["record"]["sha256"]
+                records[sha] = opinion
+                valid.add(sha)
+        sets.append(valid)
+    if len(sets) != len(job["subjects"]):
+        return None
+    candidates = sorted((records[sha] for sha in set.intersection(*sets)),
+                        key=lambda o: (o["reviewer"]["id"], o["reviewer"]["session_id"]))
+    for first in candidates:
+        for second in candidates:
+            if (first["reviewer"]["id"] != second["reviewer"]["id"]
+                    and first["reviewer"]["session_id"] != second["reviewer"]["session_id"]):
+                return (first if job["id"].endswith("-r1") else second)["record"]
+    return None
+
+
 def status(root: Path, path: str) -> dict:
     root = Path(root).resolve()
     document = _load(root, path)
     directory = f"data/agent_release/review-attempts/{digest(canonical_bytes(document))}"
-    rows = []
+    rows, cache = [], {}
     for job in document["jobs"]:
         events = _events(root, directory, job)
-        rows.append({"id": job["id"], "status": _state(events, document["max_attempts"]), "attempts": len(events),
+        reused = _reuse(root, job, cache, directory) if not events else None
+        record = events[-1]["record"] if events else reused
+        opinion = json.loads(bound_bytes(root, record))["opinion"] if record else None
+        needs_followup = bool(opinion and any(r["verdict"] in {"NOT_CHECKED", "PENDING", "UNVERIFIED"}
+            or any(c["verdict"] in {"NOT_CHECKED", "PENDING", "UNVERIFIED"} for c in r["sample_checks"]) for r in opinion["results"]))
+        rows.append({"id": job["id"], "status": "COMPLETE" if reused else _state(events, document["max_attempts"]), "attempts": len(events),
                      "assignment": events[-1]["assignment"] if events else None,
-                     "record": events[-1]["record"] if events else None,
+                     "record": record, "reused": bool(reused), "needs_followup": needs_followup,
                      "retry_after": events[-1].get("retry_after") if events else None})
     return {"status": "PASS" if all(r["status"] == "COMPLETE" for r in rows) else
             "FAIL" if any(r["status"] in {"FAILED", "EXHAUSTED"} for r in rows) else "PENDING",
@@ -324,6 +461,10 @@ def dispatch(root: Path, path: str, *, limit: int | None = None,
         directory = f"data/agent_release/review-attempts/{digest(canonical_bytes(document))}"
         events = {j["id"]: _events(root, directory, j) for j in document["jobs"]}
         states = {key: _state(value, document["max_attempts"]) for key, value in events.items()}
+        cache = {}
+        for job in document["jobs"]:
+            if not events[job["id"]] and _reuse(root, job, cache, directory):
+                states[job["id"]] = "COMPLETE"
         active = sum(state == "ASSIGNED" for state in states.values())
         slots = max(0, (limit if limit is not None else maximum) - active)
         assignments = []
@@ -333,7 +474,8 @@ def dispatch(root: Path, path: str, *, limit: int | None = None,
             if states[job["id"]] != "PENDING":
                 continue
             number = len(events[job["id"]]) + 1
-            assignment = _assignment(root, document, job, number, model_label, "AGENT_ENVIRONMENT")
+            supersedes = _followup(root, directory, job) + [e["record"] for e in events[job["id"]] if e.get("reopened") and e["record"]]
+            assignment = _assignment(root, document, job, number, model_label, "AGENT_ENVIRONMENT", supersedes)
             binding = _write_immutable(root, f"{directory}/{job['id']}/attempt-{number}-assignment.json", assignment)
             assignments.append({"job_id": job["id"], "attempt": number, "assignment": binding})
     return {"status": "PASS", "scope": "REVIEW_DISPATCH_ONLY", "assignments": assignments,
@@ -376,7 +518,7 @@ def submit(root: Path, path: str, job_id: str, opinion_path: str, *, origin: str
             "record": record, "authority_effect": "NONE"}
 
 
-def fail(root: Path, path: str, job_id: str, *, reason: str, status_code: int | None = None,
+def fail(root: Path, path: str, job_id: str, *, assignment_sha256: str, reason: str, status_code: int | None = None,
          interrupted: bool = False) -> dict:
     """Record an actual launch/transport failure before a bounded redispatch."""
     from .review_intake import _intake_lock
@@ -384,15 +526,52 @@ def fail(root: Path, path: str, job_id: str, *, reason: str, status_code: int | 
     if not reason.strip():
         raise AssetError("failure reason required")
     with _intake_lock(root):
+        document = _load(root, path)
+        job = next((j for j in document["jobs"] if j["id"] == job_id), None)
+        if job is None:
+            raise AssetError("unknown campaign job")
+        directory = f"data/agent_release/review-attempts/{digest(canonical_bytes(document))}"
+        prior = _events(root, directory, job)
+        expected = next((e for e in prior if e["assignment"]["sha256"] == assignment_sha256), None)
+        if expected and expected["status"] == "FAILED" and expected.get("error") == reason and expected.get("status_code") == status_code:
+            return status(root, path)  # Duplicate delivery, including after a retry started.
+        if not prior or prior[-1]["assignment"]["sha256"] != assignment_sha256:
+            raise AssetError("stale or unknown failure assignment")
         _, directory, _, events = _active(root, path, job_id)
         last = events[-1]
         base = f"{directory}/{job_id}/attempt-{len(events)}"
         stderr = _write_immutable(root, base + "-stderr.txt", reason.encode())
         retryable = interrupted or status_code in TEMPORARY
-        delay = min(30, 5 * 2 ** (len(events) - 1)) if retryable else 0
+        round_start = max((i + 1 for i, e in enumerate(events) if e.get("reopened")), default=0)
+        delay = min(30, 5 * 2 ** (len(events) - round_start - 1)) if retryable else 0
         _write_immutable(root, base + ".json", {**last, "status": "FAILED", "retryable": retryable,
             "status_code": status_code, "stderr": stderr, "error": reason,
             "retry_after": time.time() + delay})
+    return status(root, path)
+
+
+def reopen(root: Path, path: str, job_id: str, *, reason: str) -> dict:
+    """Request another genuine reading, retaining and superseding the old record."""
+    from .review_intake import _intake_lock
+    root = Path(root).resolve()
+    if not reason.strip():
+        raise AssetError("reopening reason required")
+    with _intake_lock(root):
+        document = _load(root, path)
+        job = next((j for j in document["jobs"] if j["id"] == job_id), None)
+        if job is None:
+            raise AssetError("unknown campaign job")
+        directory = f"data/agent_release/review-attempts/{digest(canonical_bytes(document))}"
+        events = _events(root, directory, job)
+        reused = _reuse(root, job, {}, directory) if not events else None
+        if reused:
+            _write_immutable(root, f"{directory}/{job_id}/followup.json", {"record": reused, "reason": reason})
+        elif _state(events, document["max_attempts"]) not in {"COMPLETE", "FAILED", "EXHAUSTED"}:
+            raise AssetError("only a completed reading or terminal failure can be reopened")
+        else:
+            last = events[-1]
+            _write_immutable(root, f"{directory}/{job_id}/attempt-{len(events)}-reopen.json",
+                             {"assignment": last["assignment"], "record": last["record"], "reason": reason})
     return status(root, path)
 
 
@@ -405,21 +584,27 @@ def run(root: Path, path: str, worker: list[str], *, timeout: float = 600,
     campaign_sha = digest(canonical_bytes(document))
     directory = f"data/agent_release/review-attempts/{campaign_sha}"
     registration_lock = threading.Lock()
+    reuse_cache = {}
+    reused = {j["id"]: _reuse(root, j, reuse_cache, directory) for j in document["jobs"]}
 
     def execute(job):
         events = _events(root, directory, job)
-        if events and events[-1]["status"] == "REGISTERED":
+        if not events and reused[job["id"]]:
             return
-        # A terminal worker/validation failure requires a new campaign, not
-        # automatically spending the remaining transport retry budget.
-        if events and not events[-1]["retryable"]:
+        if _state(events, document["max_attempts"]) == "COMPLETE":
             return
-        for attempt in range(len(events) + 1, document["max_attempts"] + 1):
+        # Terminal failures require an explicit reopening after correction;
+        # they never automatically spend another transport retry budget.
+        if events and not events[-1]["retryable"] and not events[-1].get("reopened"):
+            return
+        round_start = max((i + 1 for i, e in enumerate(events) if e.get("reopened")), default=0)
+        for attempt in range(len(events) + 1, round_start + document["max_attempts"] + 1):
             _current_request(root, document)
             base = f"{directory}/{job['id']}/attempt-{attempt}"
             if events and events[-1].get("retry_after", 0) > time.time():
                 time.sleep(min(30, events[-1]["retry_after"] - time.time()))
-            assignment = _assignment(root, document, job, attempt, model_label, "SUBPROCESS")
+            assignment = _assignment(root, document, job, attempt, model_label, "SUBPROCESS",
+                                     _followup(root, directory, job) + [e["record"] for e in events if e.get("reopened") and e["record"]])
             skeleton = assignment["opinion_scaffold"]
             assignment_ref = _write_immutable(root, base + "-assignment.json", assignment)
             started = time.monotonic()
@@ -444,8 +629,7 @@ def run(root: Path, path: str, worker: list[str], *, timeout: float = 600,
                 try:
                     opinion = json.loads(stdout)
                     _verify_opinion(root, opinion)
-                    if (opinion["packet"] != skeleton["packet"] or opinion["reviewer"] != skeleton["reviewer"]
-                            or {r["subject_id"] for r in opinion["results"]} != set(job["subjects"])):
+                    if not _matches(assignment, opinion):
                         raise AssetError("worker changed assigned reviewer, packet or subject coverage")
                     with registration_lock:
                         _current_request(root, document)
@@ -460,8 +644,8 @@ def run(root: Path, path: str, worker: list[str], *, timeout: float = 600,
             _write_immutable(root, base + ".json", event)
             if record or not retryable:
                 break
-            if attempt < document["max_attempts"]:
-                time.sleep(min(30, backoff_seconds * 2 ** (attempt - 1)))
+            if attempt < round_start + document["max_attempts"]:
+                time.sleep(min(30, backoff_seconds * 2 ** (attempt - round_start - 1)))
 
     # One campaign runner owns the store; independent jobs run in bounded batches.
     from .review_intake import _intake_lock

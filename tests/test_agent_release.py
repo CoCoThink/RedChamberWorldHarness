@@ -309,6 +309,53 @@ def test_new_opinion_requires_new_bound_coordinator_decision(edition, monkeypatc
     assert report["chapters"][0]["gates"]["COORDINATOR_DECISION"] == "PENDING"
 
 
+def test_split_contract_dissent_requires_consideration_and_reasoned_disposition(edition, monkeypatch):
+    e = edition
+    positive_gates(e, monkeypatch)
+    raw = json.loads((e.root / f"research/{e.packet['sha256']}-reader-0.json").read_bytes())
+    raw["reviewer"]["id"] = "contract-only-reader"
+    raw["reviewer"]["session_id"] = "contract-only-session"
+    raw["results"] = [{**r, "verdict": "FAIL", "severity": "ADVISORY"} for r in raw["results"] if r["subject_id"] == "contract"]
+    opinion = write(e.root, "research/contract-dissent.json", raw)
+    dissent = register(e.root, e.root / opinion["path"], origin="synthetic contract-only dissent")
+    contract = next(s for s in AgentPanel(e.root).summary(e.packet)["panels"][0]["subjects"] if s["scope"] == "CONTRACT")
+    monkeypatch.setattr(e.runtime, "_inputs", lambda *a, **k: ({k: "PASS" for k in
+        ("WRITING_PACKAGE", "CONTRACT_PEERS", "SOURCE_PEERS", "CORPUS_PEERS")}, {"contract_reviews": [contract]}))
+    assert e.runtime.evaluate(e.request)["chapters"][0]["gates"]["COORDINATOR_DECISION"] == "PENDING"
+    decision = json.loads((e.root / e.request["chapters"][0]["decision"]["path"]).read_bytes())
+    decision["considered_opinions"].append(dissent["record"])
+    e.request["chapters"][0]["decision"] = write(e.root, "research/decision-considered.json", decision)
+    assert e.runtime.evaluate(e.request)["chapters"][0]["gates"]["COORDINATOR_DECISION"] == "PENDING"
+    decision["rejected_opinions"].append({"record": dissent["record"], "rationale": "Synthetic explicit disposition of this contract objection"})
+    e.request["chapters"][0]["decision"] = write(e.root, "research/decision-resolved.json", decision)
+    assert e.runtime.evaluate(e.request)["status"] == "PASS"
+
+
+def test_pending_stage_does_not_reserve_final_edition_id(edition, monkeypatch):
+    e = edition
+    pending = e.runtime.build(e.request, allow_pending=True)
+    assert "/.pending/" in pending["output"]["directory"]
+    assert e.runtime.build(e.request, allow_pending=True) == pending
+    positive_gates(e, monkeypatch)
+    final = e.runtime.build(e.request)
+    assert final["status"] == "PASS" and final["output"]["directory"] == "releases/agent/synthetic-edition"
+    assert (e.root / pending["output"]["manifest_path"]).exists()
+
+
+def test_new_book_opinion_produces_new_pending_snapshot_without_overwriting(edition):
+    e = edition
+    _, book = e.runtime._evaluate(e.request)
+    binding = write(e.root, "research/book.md", book.decode())
+    ref = packet(e.root, "book", [{"id": "continuity", "scope": "BOOK", "binding": binding, "review_policy": "ADVISORY"}])
+    e.request["book_review"] = {"packet": ref, "subject_id": "continuity"}
+    before = e.runtime.build(e.request, allow_pending=True)
+    peers(e.root, ref, count=1, session_prefix="book-reader")
+    after = e.runtime.build(e.request, allow_pending=True)
+    assert before["status"] == after["status"] == "PENDING"
+    assert before["output"]["directory"] != after["output"]["directory"]
+    assert all((e.root / m["output"]["manifest_path"]).exists() for m in (before, after))
+
+
 @pytest.mark.parametrize("text", ["# 第八十七回 错回\n\n" + "文" * 1000,
     "# 第八十六回 空回\n\n", "# 第八十六回 第一\n正文\n# 第八十六回 第二\n正文\n",
     "# 第八十六回 短摘\n\n" + "文" * 10])

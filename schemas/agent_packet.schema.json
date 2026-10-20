@@ -35,6 +35,8 @@
         "chapters": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1}},
         "binding": {"$ref": "#/$defs/binding"},
         "source_ref": {"$ref": "#/$defs/label"},
+        "evidence": {"$ref": "#/$defs/binding"},
+        "context": {"type": "array", "uniqueItems": true, "items": {"$ref": "#/$defs/binding"}},
         "dataset_ref": {"$ref": "#/$defs/label"},
         "samples": {"type": "array", "minItems": 1, "items": {"$ref": "#/$defs/sample"}}
       },

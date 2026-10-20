@@ -18,7 +18,7 @@ from rcwh.workflow.agent_release import AgentRelease
 from rcwh.workflow.review_campaign import _load
 
 REQUEST = "data/agent_release/research-81-100-v1/request.json"
-PLAN = "data/agent_release/research-81-100-v1/review-campaign-v2.json"
+PLAN = "data/agent_release/research-81-100-v1/review-campaign-v3.json"
 
 
 def verify(root: Path) -> dict:
@@ -56,7 +56,10 @@ def verify(root: Path) -> dict:
             "continuity_segments": [s.get("chapters") for s in segments],
             "continuity_seams": len({tuple(seam) for j in plan["jobs"] for seam in j.get("continuity", {}).get("seams", [])}),
             "largest_reading_bytes": max(j["reading_bytes"] for j in plan["jobs"]),
-            "batch_size": plan["batch_size"], "authority_effect": "NONE"}
+            "batch_size": plan["batch_size"],
+            "largest_image_bytes": max(j.get("image_bytes", 0) for j in plan["jobs"]),
+            "largest_image_count": max(len(j.get("inspect_images", [])) for j in plan["jobs"]),
+            "authority_effect": "NONE"}
 
 
 def main() -> int:

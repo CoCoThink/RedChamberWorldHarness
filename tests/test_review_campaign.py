@@ -193,6 +193,81 @@ def test_direct_panel_registration_counts_and_campaign_runner_skips_it(work, mon
     assert summary(work.root)["review_count"] == len(current["jobs"])
 
 
+def test_direct_superseding_opinion_recovers_latest_record_without_losing_history(work):
+    row, assignment = exported(work, limit=1)[0]
+    first = json.loads(opinion(assignment))
+    first["results"][0]["verdict"] = "NOT_CHECKED"
+    work.write("first.json", first)
+    original = register(work.root, work.root / "first.json", origin="synthetic incomplete reading")
+    followup = json.loads(opinion(assignment))
+    followup["supersedes"] = [original["record"]]
+    work.write("followup.json", followup)
+    latest = register(work.root, work.root / "followup.json", origin="synthetic actual followup")
+    job = campaign.status(work.root, "campaign.json")["jobs"][0]
+    assert job["status"] == "COMPLETE" and job["record"] == latest["record"]
+    assert (work.root / original["record"]["path"]).exists()
+
+
+@pytest.mark.parametrize("direct", [False, True])
+def test_incomplete_reading_reopens_into_new_session_and_supersedes_original(work, monkeypatch, direct):
+    row, assignment = exported(work, limit=1)[0]
+    first = json.loads(opinion(assignment))
+    first["results"][0]["verdict"] = "NOT_CHECKED"
+    work.write("first.json", first)
+    if direct:
+        original = register(work.root, work.root / "first.json", origin="synthetic first")
+    else:
+        original = campaign.submit(work.root, "campaign.json", row["job_id"], "first.json", origin="synthetic first")
+    assert campaign.reopen(work.root, "campaign.json", row["job_id"], reason="Actual assigned text was not read")["jobs"][0]["status"] == "PENDING"
+    retry_row, retry = exported(work, limit=1)[0]
+    assert retry_row["attempt"] == 2
+    assert retry["opinion_scaffold"]["supersedes"] == [original["record"]]
+    assert retry["opinion_scaffold"]["reviewer"]["session_id"] != first["reviewer"]["session_id"]
+    work.write("followup.json", json.loads(opinion(retry)))
+    campaign.submit(work.root, "campaign.json", row["job_id"], "followup.json", origin="synthetic completed followup")
+    monkeypatch.setattr(campaign.subprocess, "run", lambda command, *, input, **k:
+        SimpleNamespace(returncode=0, stdout=opinion(json.loads(input)), stderr=b""))
+    assert campaign.run(work.root, "campaign.json", ["synthetic-worker"])["status"] == "PASS"
+    assert summary(work.root)["status"] == "PASS"
+
+
+def test_late_failure_cannot_fail_the_next_attempt_and_duplicates_are_idempotent(work, monkeypatch):
+    now = [100.0]
+    monkeypatch.setattr(campaign.time, "time", lambda: now[0])
+    row, _ = exported(work, limit=1)[0]
+    kwargs = {"assignment_sha256": row["assignment"]["sha256"], "reason": "Actual synthetic 503", "status_code": 503}
+    campaign.fail(work.root, "campaign.json", row["job_id"], **kwargs)
+    now[0] += 5
+    retry, _ = exported(work, limit=1)[0]
+    assert retry["attempt"] == 2
+    report = campaign.fail(work.root, "campaign.json", row["job_id"], **kwargs)
+    assert report["jobs"][0]["status"] == "ASSIGNED"
+    with pytest.raises(ValueError, match="stale"):
+        campaign.fail(work.root, "campaign.json", row["job_id"], **{**kwargs, "reason": "Different late failure"})
+    assert campaign.status(work.root, "campaign.json")["jobs"][0]["status"] == "ASSIGNED"
+
+
+def test_new_plan_reuses_complete_unchanged_readings(work, monkeypatch):
+    monkeypatch.setattr(campaign.subprocess, "run", lambda command, *, input, **k:
+        SimpleNamespace(returncode=0, stdout=opinion(json.loads(input)), stderr=b""))
+    campaign.run(work.root, "campaign.json", ["synthetic-worker"])
+    campaign.plan(work.root, "request.json", "different-plan.json", batch_size=3, max_read_bytes=400)
+    report = campaign.status(work.root, "different-plan.json")
+    assert report["status"] == "PASS" and all(j["reused"] for j in report["jobs"])
+    assert campaign.dispatch(work.root, "different-plan.json")["assignments"] == []
+    first = report["jobs"][0]
+    campaign.reopen(work.root, "different-plan.json", first["id"], reason="New genuine reading requested")
+    batch = campaign.dispatch(work.root, "different-plan.json", limit=1)
+    assert [r["job_id"] for r in batch["assignments"]] == [first["id"]]
+    task = json.loads((work.root / batch["assignments"][0]["assignment"]["path"]).read_bytes())
+    assert task["opinion_scaffold"]["supersedes"] == [first["record"]]
+    work.write("reused-followup.json", json.loads(opinion(task)))
+    campaign.submit(work.root, "different-plan.json", first["id"], "reused-followup.json", origin="synthetic rereading")
+    updated = campaign.status(work.root, "different-plan.json")
+    assert updated["status"] == "PASS"
+    assert updated["jobs"][0]["record"] != updated["jobs"][1]["record"]
+
+
 def test_exported_empty_or_wrong_identity_opinion_cannot_complete_job(work):
     row, assignment = exported(work, limit=1)[0]
     work.write("empty.json", assignment["opinion_scaffold"])
@@ -221,7 +296,7 @@ def test_manual_503_retries_wait_and_exhaust_without_counting_opinions(work, mon
     monkeypatch.setattr(campaign.time, "time", lambda: now[0])
     row, first = exported(work, limit=1)[0]
     for attempt in range(1, 4):
-        report = campaign.fail(work.root, "campaign.json", row["job_id"], reason="actual synthetic 503", status_code=503)
+        report = campaign.fail(work.root, "campaign.json", row["job_id"], assignment_sha256=row["assignment"]["sha256"], reason="actual synthetic 503", status_code=503)
         state = next(j for j in report["jobs"] if j["id"] == row["job_id"])
         assert state["attempts"] == attempt
         assert state["status"] == ("RETRY_WAIT" if attempt < 3 else "EXHAUSTED")
@@ -232,6 +307,7 @@ def test_manual_503_retries_wait_and_exhaust_without_counting_opinions(work, mon
             # The other available slot may already be occupied.
             batch = exported(work)
             retry_row, retry = next((r, a) for r, a in batch if r["job_id"] == row["job_id"])
+            row = retry_row
             assert retry_row["attempt"] == attempt + 1
             assert retry["opinion_scaffold"]["reviewer"]["session_id"] != first["opinion_scaffold"]["reviewer"]["session_id"]
     assert summary(work.root)["review_count"] == 0
@@ -282,12 +358,41 @@ def test_exported_permanent_failure_is_terminal_and_real_interruption_can_retry(
     now = [100.0]
     monkeypatch.setattr(campaign.time, "time", lambda: now[0])
     batch = exported(work)
-    campaign.fail(work.root, "campaign.json", batch[0][0]["job_id"], reason="synthetic permanent error", status_code=401)
-    report = campaign.fail(work.root, "campaign.json", batch[1][0]["job_id"], reason="synthetic actual interruption", interrupted=True)
+    campaign.fail(work.root, "campaign.json", batch[0][0]["job_id"], assignment_sha256=batch[0][0]["assignment"]["sha256"], reason="synthetic permanent error", status_code=401)
+    report = campaign.fail(work.root, "campaign.json", batch[1][0]["job_id"], assignment_sha256=batch[1][0]["assignment"]["sha256"], reason="synthetic actual interruption", interrupted=True)
     assert [j["status"] for j in report["jobs"][:2]] == ["FAILED", "RETRY_WAIT"]
     now[0] += 5
     retried = [r["job_id"] for r, _ in exported(work)]
     assert batch[0][0]["job_id"] not in retried and batch[1][0]["job_id"] in retried
+
+
+def test_corrected_permanent_failure_can_be_explicitly_reopened(work):
+    row, _ = exported(work, limit=1)[0]
+    campaign.fail(work.root, "campaign.json", row["job_id"], assignment_sha256=row["assignment"]["sha256"],
+                  reason="Actual synthetic configuration failure", status_code=401)
+    campaign.reopen(work.root, "campaign.json", row["job_id"], reason="Worker configuration was corrected")
+    next_row, task = exported(work, limit=1)[0]
+    assert next_row["attempt"] == 2 and "supersedes" not in task["opinion_scaffold"]
+
+
+def test_reopened_runner_has_its_own_bounded_transport_budget_and_backoff(work, monkeypatch):
+    monkeypatch.setattr(campaign.subprocess, "run", lambda command, *, input, **k:
+        SimpleNamespace(returncode=0, stdout=opinion(json.loads(input)), stderr=b""))
+    report = campaign.run(work.root, "campaign.json", ["synthetic-worker"])
+    job = report["jobs"][0]["id"]
+    campaign.reopen(work.root, "campaign.json", job, reason="New genuine reading after prior completion")
+    calls, delays = [], []
+    def worker(command, *, input, **kwargs):
+        task = json.loads(input)
+        assert task["job"]["id"] == job
+        calls.append(task)
+        if len(calls) < 3:
+            return SimpleNamespace(returncode=75, stdout=b"", stderr=b"actual synthetic temporary failure")
+        return SimpleNamespace(returncode=0, stdout=opinion(task), stderr=b"")
+    monkeypatch.setattr(campaign.subprocess, "run", worker)
+    monkeypatch.setattr(campaign.time, "sleep", delays.append)
+    assert campaign.run(work.root, "campaign.json", ["synthetic-worker"])["status"] == "PASS"
+    assert len(calls) == 3 and delays == [5, 10]
 
 
 def test_registered_original_bytes_are_checked_on_external_progress_recovery(work):
