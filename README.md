@@ -82,6 +82,8 @@ The 85–87 trial contains two causal routes and a direct-writing example, nine 
 
 ## Planning, API writing and holdout research
 
+Writing v2 preserves historical inputs in content-addressed snapshots and checks current input compatibility separately. Governance edits no longer invalidate writing history. See [the custody design](docs/decisions/0005_WRITING_INPUT_CUSTODY.md) and [migration and verification commands](docs/runbooks/AGENT_RECONSTRUCTION.md#写作输入与历史谱系v2).
+
 ```bash
 rcwh plan check --chapters 85-87
 rcwh plan threads

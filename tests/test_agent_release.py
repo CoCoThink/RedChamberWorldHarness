@@ -103,6 +103,7 @@ def positive_gates(e, monkeypatch):
     decide(e)
     monkeypatch.setattr(e.runtime, "_policy", lambda *args: "PASS")
     monkeypatch.setattr(e.runtime, "_authors", lambda *args: ("PASS", [{"principal_id": "session:author"}]))
+    monkeypatch.setattr(e.runtime, "_compatibility", lambda *args: ("PASS", {"compatibility": "CURRENT"}))
     monkeypatch.setattr(e.runtime, "_inputs", lambda row, **kwargs: ({"WRITING_PACKAGE": "PASS", "CONTRACT_PEERS": "PASS", "SOURCE_PEERS": "PASS", "CORPUS_PEERS": "PASS"}, {}))
 
 
@@ -146,6 +147,18 @@ def test_reviewed_build_exact_full_scope_and_stable_storage_unchanged(edition, m
     assert report["chapters"][1]["integrity"] == report["chapters"][1]["baseline"]
     assert e.runtime._stable_snapshot() == snapshot
     assert digest(text) == report["output"]["text"]["sha256"]
+
+
+def test_current_input_failure_does_not_become_an_author_provenance_failure(edition, monkeypatch):
+    e = edition
+    positive_gates(e, monkeypatch)
+    monkeypatch.setattr(e.runtime, '_compatibility', lambda row: ('FAIL', {
+        'compatibility': 'STALE', 'findings': ['selected writing inputs changed']}))
+    report = e.runtime.evaluate(e.request)
+    chapter = report['chapters'][0]
+    assert chapter['gates']['AUTHOR_PROVENANCE'] == 'PASS'
+    assert chapter['gates']['CURRENT_WRITING_INPUTS'] == 'FAIL'
+    assert report['status'] == 'FAIL' and report['output']['text'] is None
 
 
 def test_length_cannot_hide_repeated_numbered_padding(edition, monkeypatch):

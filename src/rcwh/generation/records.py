@@ -116,12 +116,17 @@ def verify_raw_run(root: Path, legacy_run: dict, candidate_raw: bytes) -> None:
         raise ValueError("author identity differs from served model")
     if legacy_run["prompt"] != record["request"]["system"] or legacy_run["input"] != canonical_bytes(record["request"]["messages"]).decode():
         raise ValueError("legacy prompt/input differs from raw request")
-    for ref in record["inputs"] + [record["template"]]:
-        bound_bytes(root, ref)
+    if record["schema_version"] == 2:
+        from .snapshots import InputSnapshot
+        snapshot = InputSnapshot(root, record["input_snapshot"])
+        snapshot.verify(record["inputs"] + [record["template"]])
+    else:
+        for ref in record["inputs"] + [record["template"]]:
+            bound_bytes(root, ref)
 
 
 def run_task(root: Path, runner: ModelRunner, request: dict, *, inputs: list[dict], template: dict,
-             budget: Budget) -> dict:
+             budget: Budget, dependency_records: list[dict] | None = None) -> dict:
     """Generic Messages request hook; callers own task/response-schema semantics."""
     if request.get("fallbacks"):
         raise ValueError("provider fallbacks are not enabled in this bounded runner")
@@ -135,6 +140,8 @@ def run_task(root: Path, runner: ModelRunner, request: dict, *, inputs: list[dic
         raise ValueError("request exceeds explicit input byte ceiling; no truncation performed")
     for ref in inputs + [template]:
         bound_bytes(root, ref)
+    from .snapshots import freeze_inputs
+    snapshot = freeze_inputs(root, inputs + [template], records=dependency_records)
     started = datetime.now(timezone.utc).isoformat()
     result = runner.run(deepcopy(request), budget)
     response = result["response"]
@@ -143,13 +150,13 @@ def run_task(root: Path, runner: ModelRunner, request: dict, *, inputs: list[dic
         status, findings = "PASS", []
     except ValueError as exc:
         output, status, findings = "", "FAIL", [str(exc)]
-    record = {"schema_version": 1, "kind": "MODEL_RUN", "provider": runner.provider,
+    record = {"schema_version": 2, "kind": "MODEL_RUN", "provider": runner.provider,
               "sdk_version": runner.sdk_version, "request": request,
               "request_sha256": digest(canonical_bytes(request)), "response": response,
               "response_sha256": digest(canonical_bytes(response)), "request_id": result.get("request_id"),
               "usage": response.get("usage", {}), "stop_reason": response.get("stop_reason"),
               "started_at": started, "finished_at": datetime.now(timezone.utc).isoformat(),
-              "template": template, "inputs": inputs, "budget": budget.to_dict(),
+              "template": template, "inputs": inputs, "input_snapshot": snapshot, "budget": budget.to_dict(),
               "extraction": EXTRACTION, "output": output, "output_sha256": digest(output.encode()),
               "status": status, "findings": findings, "authority_effect": "NONE"}
     if status == "PASS":

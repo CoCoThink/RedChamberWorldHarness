@@ -84,6 +84,13 @@ result=import_draft(root,TEXT,REQUEST,session_id=SESSION,session_model_label=MOD
             if hashlib.sha256(raw).hexdigest() != binding['sha256']:
                 raise ValueError(f'snapshot import output hash mismatch: {field}')
             products[binding['path']] = raw
+        if 'input_snapshot' in result:
+            from rcwh.generation.snapshots import InputSnapshot
+            frozen = InputSnapshot(snapshot, result['input_snapshot'])
+            frozen.verify()
+            refs = [result['input_snapshot'], *frozen.entries.values()]
+            for ref in refs:
+                products[ref['path']] = repository_path(snapshot, ref['path']).read_bytes()
         for relative, raw in products.items():
             path = repository_path(root, relative)
             if path.exists():

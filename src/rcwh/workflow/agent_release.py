@@ -157,6 +157,16 @@ class AgentRelease:
             raise AssetError("candidate author/reviser cannot be a peer reviewer")
         return "PASS", authors
 
+    def _compatibility(self, row: dict) -> tuple[str, dict]:
+        from ..generation.lineage import current_compatibility
+
+        if "draft" not in row:
+            return "PENDING", {"compatibility": "NOT_CHECKED", "findings": ["DRAFT_REQUIRED"]}
+        self._bound(row["draft"])
+        report = current_compatibility(self.root, row["draft"]["path"])
+        state = "PENDING" if report["compatibility"] == "NOT_CHECKED" else report["status"]
+        return state, report
+
     def _decision(self, row: dict, subject: dict) -> str:
         if "decision" not in row:
             return "PENDING"
@@ -384,7 +394,7 @@ class AgentRelease:
             if ch not in changed:
                 continue
             report["bindings"] = {k: row[k] for k in ("candidate", "panel", "policy", "decision", "writing_package", "draft") if k in row}
-            report["gates"] = {name: "PENDING" for name in ("BYTE_INTEGRITY", "FULL_CHAPTER_LENGTH", "CANDIDATE_PEERS", "AUTHOR_PROVENANCE", "COORDINATOR_DECISION", "CHAPTER_SAFETY_POLICY", "WRITING_PACKAGE", "CONTRACT_PEERS", "SOURCE_PEERS", "CORPUS_PEERS")}
+            report["gates"] = {name: "PENDING" for name in ("BYTE_INTEGRITY", "FULL_CHAPTER_LENGTH", "CANDIDATE_PEERS", "AUTHOR_PROVENANCE", "CURRENT_WRITING_INPUTS", "COORDINATOR_DECISION", "CHAPTER_SAFETY_POLICY", "WRITING_PACKAGE", "CONTRACT_PEERS", "SOURCE_PEERS", "CORPUS_PEERS")}
             try:
                 raw = self._bound(row["candidate"])
                 body = raw.decode("utf-8")
@@ -423,6 +433,7 @@ class AgentRelease:
             operations = {
                 "CANDIDATE_PEERS": lambda: self._subject(row["panel"], "CANDIDATE", row["candidate"]),
                 "AUTHOR_PROVENANCE": lambda: self._authors(row, report["reviews"].get("candidate", {})),
+                "CURRENT_WRITING_INPUTS": lambda: self._compatibility(row),
                 "COORDINATOR_DECISION": lambda: self._decision(row, report["reviews"].get("candidate", {})),
                 "CHAPTER_SAFETY_POLICY": lambda: self._policy(row, changed, book.decode("utf-8"), after[ch]),
                 "INPUT_PEERS": lambda: self._inputs(row, authors=report["reviews"].get("authors", [])),
@@ -436,6 +447,10 @@ class AgentRelease:
                             report["findings"].extend(f"CANDIDATE_PEERS: {f}" for f in result[1].get("findings", []))
                     elif name == "AUTHOR_PROVENANCE":
                         report["gates"][name], report["reviews"]["authors"] = result
+                    elif name == "CURRENT_WRITING_INPUTS":
+                        report["gates"][name], report["reviews"]["current_writing_inputs"] = result
+                        if result[0] == "FAIL":
+                            report["findings"].extend(f"CURRENT_WRITING_INPUTS: {f}" for f in result[1]["findings"])
                     elif name == "INPUT_PEERS":
                         input_gates, input_reports = result
                         report["gates"].update(input_gates); report["reviews"].update(input_reports)

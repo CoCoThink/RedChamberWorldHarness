@@ -12,10 +12,15 @@ from ..literary_inputs import LiteraryInputs
 from .records import binding, bound_bytes
 from .runner import Budget, DEFAULT_MODEL
 
+DEFAULT_RENDERER_VERSION = 2
+
 
 class PromptRenderer:
-    def __init__(self, root: Path):
+    def __init__(self, root: Path, *, version: int | None = None):
         self.root = root.resolve()
+        self.version = DEFAULT_RENDERER_VERSION if version is None else version
+        if self.version not in {1, 2}:
+            raise ValueError("unsupported writing renderer version")
         # Per invocation only: samples share one verified package/exemplar load.
         # No persistent corpus cache that could hide changed carrier bytes.
         self.packages: dict[str, dict] = {}
@@ -77,11 +82,16 @@ class PromptRenderer:
             paths.add(relative)
             data["scenes"].append({"path": relative, "contract": contract,
                                    "entry": SceneStateAdapter(self.root, contract).snapshot()})
-        # Entry projection and knowledge guard dependencies are explicit bindings.
-        for domain in ("project", "world", "knowledge", "objects"):
-            for path in sorted((self.root / "data" / domain).rglob("*")):
-                if path.is_file() and path.suffix in {".json", ".yaml", ".yml"}:
-                    paths.add(path.relative_to(self.root).as_posix())
+        if self.version == 1:
+            # Frozen v1 protocol only. New requests never use a directory as a
+            # proxy for their semantic dependencies.
+            for domain in ("project", "world", "knowledge", "objects"):
+                for path in sorted((self.root / "data" / domain).rglob("*")):
+                    if path.is_file() and path.suffix in {".json", ".yaml", ".yml"}:
+                        paths.add(path.relative_to(self.root).as_posix())
+        elif scene_paths:
+            from ..evaluation.state import scene_state_input_paths
+            paths.update(scene_state_input_paths(self.root))
         hints = "data/planning/hints.json"
         if repository_path(self.root, hints).exists():
             data["threads"] = load_data(repository_path(self.root, hints))
@@ -96,15 +106,36 @@ class PromptRenderer:
         graph = ProvenanceGraph.from_repo(self.root)
         data["sources"] = [{"record": graph.sources[ref["source_ref"]], "verification": row}
                            for ref, row in zip(package["sources"], report["sources"], strict=True)]
-        for path in sorted((self.root / "data/provenance/sources").glob("*.yaml")):
-            paths.add(path.relative_to(self.root).as_posix())
+        if self.version == 1:
+            for path in sorted((self.root / "data/provenance/sources").glob("*.yaml")):
+                paths.add(path.relative_to(self.root).as_posix())
         data["guidance"] = "Organize scene obligations and check entry/exit constraints before writing." if route == "harness" else "Write the supplied task directly."
         data["exemplar_dataset_ref"] = report["exemplars"]["spec"]["dataset_ref"]
         if "supplemental_source_sets" in report:
             data["supplemental_source_sets"] = report["supplemental_source_sets"]
-            for selected in report["supplemental_source_sets"]:
-                paths.update(selected["paths"])
-        return self.render("author-v1", data, [binding(self.root, path) for path in sorted(paths)])
+            if self.version == 1:
+                for selected in report["supplemental_source_sets"]:
+                    paths.update(selected["paths"])
+        records = []
+        if self.version == 2:
+            from .dependencies import WritingDependencies, without_governance
+            dependencies = WritingDependencies(self.root, catalog, graph)
+            dependencies.selected(package, report)
+            # Corpus material is selected by the exemplar manifest, not by all
+            # registered datasets or catalog shards.
+            dependencies.walk(report["exemplars"]["spec"])
+            paths.update(dependencies.files)
+            records = dependencies.manifest_records()
+            data = without_governance(data)
+        result = self.render("author-v1", data, [binding(self.root, path) for path in sorted(paths)])
+        if self.version == 2:
+            result.update(renderer_version=2, dependency_records=records,
+                          readiness={"scope": report["scope"], "blockers": report["production_blockers"]},
+                          selection_context={"operation": "draft", "package_path": package_path, "chapter": chapter,
+                                             "route": route, "characters": characters, "plan_path": plan_path,
+                                             "previous_path": previous_path, "parent_path": None,
+                                             "feedback_path": None, "notes_path": None})
+        return result
 
     def render(self, template_name: str, data: dict, inputs: list[dict]) -> dict:
         if template_name not in {"author-v1", "revise-v1", "revise-v2", "plan-draft-v1"}:

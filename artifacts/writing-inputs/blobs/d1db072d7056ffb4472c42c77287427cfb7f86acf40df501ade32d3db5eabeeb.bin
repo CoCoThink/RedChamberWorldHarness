@@ -1,0 +1,46 @@
+schema_version: 1
+assets:
+- id: asset:sha256:02c540a0c70baea0f9685947e4133b3a898c1d8f8403ac56c89f2aace6b56f7b
+  path: artifacts/reviews/02c540a0c70baea0f9685947e4133b3a898c1d8f8403ac56c89f2aace6b56f7b/02c540a0c70baea0f9685947e4133b3a898c1d8f8403ac56c89f2aace6b56f7b.json
+  sha256: 02c540a0c70baea0f9685947e4133b3a898c1d8f8403ac56c89f2aace6b56f7b
+  bytes: 1388
+  media_type: application/json
+  kind: REVIEW_RECORD
+  immutable: true
+  origin_refs:
+  - origin:ingest:aabd0e71daf7d9ab948b8513d8c1fb76c4ce83fa1089833a0d19e187d0fa26e4
+- id: asset:sha256:467773d41ca44dc150d8d680b4bb37874c005a7af55637b1a875d91a1fa4b28c
+  path: corpus/front80/v2-candidate/chapters/ch80.json
+  sha256: 467773d41ca44dc150d8d680b4bb37874c005a7af55637b1a875d91a1fa4b28c
+  bytes: 22526
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:378efea7ab7ce743bb9f4b9f1445f72dee182f11a04beaa74b8a52ac83b2ce94:1c699ba2d99f7100a73a7ee0d54033f5af8ca6026e8fbc26272b156d5cec0690
+  derived_from: &id001
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
+- id: asset:sha256:8259fe427cc453b9d90126bcd5b5e6fd44c24053c282e4598141f45e0990dac0
+  path: corpus/front80/v2-candidate/chapters/ch09.json
+  sha256: 8259fe427cc453b9d90126bcd5b5e6fd44c24053c282e4598141f45e0990dac0
+  bytes: 19695
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:378efea7ab7ce743bb9f4b9f1445f72dee182f11a04beaa74b8a52ac83b2ce94:a6557d147dd9c216d169683145dfe7c361e29424b65021400128eceeacf89296
+  derived_from: *id001
+- id: asset:sha256:d5d7084210ccb0b05c53ab1544e6217c3228660827d0312534f71d37d84ccf30
+  path: sources/project/d5d7084210ccb0b0/第30-F_81—100草蛇灰线审计_v1.0.md
+  sha256: d5d7084210ccb0b05c53ab1544e6217c3228660827d0312534f71d37d84ccf30
+  bytes: 4064
+  media_type: text/markdown
+  kind: PROJECT_REFERENCE
+  immutable: true
+  origin_refs:
+  - origin:handover-20261008:6e756c72ea929f6fb8a68954
+  - origin:handover-20261008:8e1967e915473f181cc82dd0

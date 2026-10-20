@@ -46,6 +46,28 @@ rcwh plan check --chapters 81-100 --contracts-directory data/planning/contracts/
 
 副本保留原前驱路径，检查只在该原前驱与当前选中前驱**字节完全一致**时允许路径别名；同ID或同回次但内容不同仍拒绝。第99回的另一改序只是未选中的文学方案，不通过篡改源场景顺序获得 PASS。零 FAIL仍可能整体 PENDING，尤其局部入口和正文语义尚未核查。
 
+## 写作输入与历史谱系（v2）
+
+新请求默认采用 renderer v2。准备请求仍是只读操作；导入会话稿或执行 provider 请求时保存内容寻址快照。原路径的现行文件被修改或退休后，已登记稿仍按快照验证原请求、正文、作者和父稿关系。读取历史不会重新调用当前渲染器。
+
+```bash
+# 当前研究版选中的 20 回：历史完整性与当前输入相容性分列
+python tools/verify_writing_lineage.py
+
+# 单稿；--production 另查当前生产准入，不会由历史 PASS 推定准入
+rcwh write check data/writing/drafts/ch89/RECORD.json --current --production
+
+# v1 旧稿只追加迁移凭证和快照，必须先通过原协议全部校验
+rcwh write freeze-history data/writing/drafts/ch89/RECORD.json
+
+# 对明确选中的旧稿批量迁移；失败不会重写原稿或替换旧输入摘要
+python tools/verify_writing_lineage.py --freeze-history
+```
+
+`historical_integrity=PASS` 表示所存历史字节与关系可核实；`current_compatibility=CURRENT/STALE/NOT_CHECKED` 单独说明当前写作依据是否相容。生产审核、来源核对和人工资格仍独立计算。研究发布分别检查 `AUTHOR_PROVENANCE` 和 `CURRENT_WRITING_INPUTS`，历史有效但当前依据过期的稿件不能通过后一个门控。
+
+治理闭包配置、进度、审核 selection 不再作为作者提示词的全局依赖。所选写作包、计划、场景、材料和模板变化仍会使当前相容性失败；新依赖也须通过重渲染核对。修订保留父稿原依据，切换写作包应建立新的起草请求。尚未迁移的 v1 保留原检查行为；已失配的 v1 必须在拥有可核实原字节的历史检出中迁移。详见 [ADR 0005](../decisions/0005_WRITING_INPUT_CUSTODY.md)。
+
 ## 已知限制
 
 模型预训练接触前八十回的情况未知，不能以重合阈值证明记忆。79–80在所选版本中是一原回拆成两半，不是两个独立留出样本。原文识别和同类写作偏好会影响模型读者。会话路由、耗时与实际资源无法按原 API 预算核算，因此研究比较必须另标 `RESOURCE_PARITY_NOT_VERIFIED`，现有 provider 回测的严格资格不被改写。

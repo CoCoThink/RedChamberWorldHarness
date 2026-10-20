@@ -3,8 +3,9 @@
   "type": "object",
   "required": ["schema_version", "kind", "execution_basis", "session_id", "session_configured_model", "request_source", "prepared_request", "imported_text", "package", "request_sha256", "prompt_sha256", "inputs", "template", "candidate", "output", "output_sha256", "parent", "feedback", "qualification", "formal_eligibility", "human_qualification", "authority_effect"],
   "properties": {
-    "schema_version": {"const": 1},
+    "schema_version": {"enum": [1, 2]},
     "kind": {"const": "SESSION_AUTHOR_RUN"},
+    "input_snapshot": {"type":"object","required":["path","sha256"],"properties":{"path":{"type":"string","minLength":1},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"}},"additionalProperties":false},
     "execution_basis": {"const": "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED"},
     "session_id": {"type": "string", "pattern": "\\S", "minLength": 1},
     "session_configured_model": {
@@ -35,6 +36,7 @@
     "authority_effect": {"const": "NONE"}
   },
   "additionalProperties": false,
+  "allOf": [{"if":{"properties":{"schema_version":{"const":2}}},"then":{"required":["input_snapshot"]},"else":{"not":{"required":["input_snapshot"]}}}],
   "$defs": {
     "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
     "binding": {
@@ -71,8 +73,11 @@
       "type": "object",
       "required": ["schema_version", "kind", "status", "mode", "context", "chapter", "route", "package", "parent", "feedback", "task", "prompt_sha256", "request_sha256", "request", "template", "inputs", "budget", "budget_limitation", "qualification", "formal_eligibility", "human_qualification", "authority_effect"],
       "properties": {
-        "schema_version": {"const": 1},
+        "schema_version": {"enum": [1, 2]},
         "kind": {"const": "WRITING_PREPARED_REQUEST"},
+        "renderer_version": {"const":2},
+        "dependency_records": {"type":"array","items":{"type":"object","required":["kind","id","sha256","value"],"properties":{"kind":{"enum":["SOURCE","CLAIM","ASSET"]},"id":{"type":"string","minLength":1},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"value":{"type":"object"}},"additionalProperties":false}},
+        "readiness": {"type":"object"},
         "status": {"const": "PASS"},
         "mode": {"const": "DRY_RUN"},
         "context": {"$ref": "#/$defs/context"},
@@ -119,7 +124,8 @@
         "human_qualification": {"const": false},
         "authority_effect": {"const": "NONE"}
       },
-      "additionalProperties": false
+      "additionalProperties": false,
+      "allOf": [{"if":{"properties":{"schema_version":{"const":2}}},"then":{"required":["renderer_version","dependency_records","readiness"]},"else":{"not":{"anyOf":[{"required":["renderer_version"]},{"required":["dependency_records"]},{"required":["readiness"]}]}}}]
     }
   }
 }

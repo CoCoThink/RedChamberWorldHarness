@@ -1,0 +1,100 @@
+id: ch86_last_night
+chapter: 86
+entry_state:
+  - equals: character.daiyu.resources.physical_strength
+    value: critical
+preconditions:
+  - equals: character.daiyu.resources.physical_strength
+    value: critical
+  - equals: object.medicine_bowl_86.state.status
+    value: contains_unfinished_medicine
+participants:
+  - daiyu
+  - baoyu
+  - zijuan
+required_objects:
+  - medicine_bowl_86
+required_beats:
+  - id: medicine_not_finished
+    description: 药仍未饮尽，须由人物拿取、递送、搁置或观察药碗的实际行动呈现。
+    any_text:
+      - 药
+      - 药碗
+  - id: baoyu_mundane_reaction
+    description: 宝玉来迟后仍以照常温药理解眼前处境，须有实际行动或对白。
+    any_text:
+      - 再温一温
+      - 温药
+  - id: ordinary_domestic_labor_continues
+    description: 人死前后仍有添水、挑灯、移炉等具体家务，不能只有物件名词。
+    any_text:
+      - 灯
+      - 热水
+      - 炉
+forbidden_beats:
+  - id: complete_death_poem
+    description: 黛玉在此场景实际完成作为临终总结的诗稿；否定、引用或未成稿不算。
+    any_text:
+      - 绝命诗
+      - 绝笔诗
+  - id: philosophical_last_words
+    description: 临终黛玉以对白或内心总结参透人生、彻悟生死；叙述者比喻或人物猜测需另分。
+    any_text:
+      - 我终于明白
+      - 人生不过
+      - 看破红尘
+  - id: supernatural_resolution
+    description: 神灵、魂魄等在现实事件中干预并化解病情；幻觉、梦境、比喻或否定不算。
+    any_text:
+      - 神迹
+      - 显灵救活
+p_locks:
+  - cold_medicine_chain
+  - unfinished_textual_action
+historical_adapters:
+  - medical
+  - household_economy
+historical_adapter_requirements:
+  medical:
+    required_any:
+      - [药, 药碗, 大夫, 医生, 诊脉]
+      - [温, 热水, 炉, 煎]
+    forbidden_any:
+      - "史料已经证明黛玉必用此方"
+      - "按清代医理黛玉必然如此死"
+      - "一剂药便起死回生"
+  household_economy:
+    required_any:
+      - [米汤, 饭, 热水, 炉, 炭, 灯, 跑腿, 丫头]
+      - [再温一温, 温药, 煎药, 添水, 送药, 取药, 药铺]
+    forbidden_any:
+      - "史料已经证明这一夜只剩这些炭"
+      - "清代规矩规定必须由紫鹃做这些事"
+exit_state:
+  - equals: character.daiyu.life_state
+    value: dead
+  - equals: object.medicine_bowl_86.state.temperature
+    value: cold
+
+knowledge_checkpoint: ENTRY
+knowledge_guards:
+  - id: baoyu_no_exact_death_time_before_arrival
+    actor: baoyu
+    fact: daiyu_death_exact_moment
+    modes: [DIALOGUE, ACTION, THOUGHT]
+    allowed_status: [knows]
+    any_text:
+      - "我早知道你就是这时候咽气"
+      - "宝玉早已知道黛玉死在这一刻"
+  - id: zijuan_no_exact_death_time_before_event
+    actor: zijuan
+    fact: daiyu_death_exact_moment
+    modes: [DIALOGUE, ACTION, THOUGHT]
+    allowed_status: [knows]
+    any_text:
+      - "我早知道姑娘就是这一刻咽气"
+      - "紫鹃早已知道黛玉死在这一刻"
+voice_profile_hooks:
+  - daiyu
+  - baoyu
+  - zijuan

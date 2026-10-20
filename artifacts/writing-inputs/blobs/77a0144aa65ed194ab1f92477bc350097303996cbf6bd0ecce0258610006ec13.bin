@@ -1,0 +1,35 @@
+schema_version: 1
+assets:
+- id: asset:sha256:60bbcaefecfc751bc8eb32d7fa3f7c6d8a48b1e5de8f14d431ec81bedfc780b6
+  path: sources/project/60bbcaefecfc751b/60bbcaefec__R4_遗留问题总台账_v1.8_R4_COMPLETE.csv
+  sha256: 60bbcaefecfc751bc8eb32d7fa3f7c6d8a48b1e5de8f14d431ec81bedfc780b6
+  bytes: 12876
+  media_type: text/csv
+  kind: PROJECT_REFERENCE
+  immutable: true
+  origin_refs:
+  - origin:handover-20261008:f2d7b211af1f37be7d13995e
+- id: asset:sha256:633bafd249e2b9cfe159499534b15161517c24daaf407aec936a228dba9a114e
+  path: corpus/front80/v2-candidate/chapters/ch16.json
+  sha256: 633bafd249e2b9cfe159499534b15161517c24daaf407aec936a228dba9a114e
+  bytes: 27251
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:378efea7ab7ce743bb9f4b9f1445f72dee182f11a04beaa74b8a52ac83b2ce94:97c240644265add4f3a8457b84185f822e3f4ed20d8ffdf5de8fa356d91b8c77
+  derived_from:
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
+- id: asset:sha256:b4f3284dd23602d269ccc44bd524bed935a04477faf31627ce27360545b29638
+  path: archive/imports/received/b4f3284dd23602d269ccc44bd524bed935a04477faf31627ce27360545b29638/npm-exhibition-capture.json
+  sha256: b4f3284dd23602d269ccc44bd524bed935a04477faf31627ce27360545b29638
+  bytes: 1455
+  media_type: application/json
+  kind: IMPORT_RECORD
+  immutable: true
+  origin_refs:
+  - origin:ingest:2acfe1ad97d8197f5bf168fe1ed491a5729bfb346648a0149d7fb7335ef2bd6c

@@ -52,7 +52,10 @@ def test_only_explicit_research_selection_adds_pending_bound_data(writing_repo, 
     plan.write_bytes(canonical_bytes({'chapter': 89, 'scenes': [{'ref': 'data/planning/scenes/scene.json'}]}))
     rendered = PromptRenderer(root).draft(path, 89)
     assert binding(root, 'supplement.json') in rendered['inputs']
-    assert rendered['task']['supplemental_source_sets'] == report['supplemental_source_sets']
+    expected = deepcopy(report['supplemental_source_sets'])
+    for selected in expected:
+        selected.pop('paths')
+    assert rendered['task']['supplemental_source_sets'] == expected
 
 
 @pytest.mark.parametrize('scope', [None, 'BACKTEST', 'PRODUCTION'])

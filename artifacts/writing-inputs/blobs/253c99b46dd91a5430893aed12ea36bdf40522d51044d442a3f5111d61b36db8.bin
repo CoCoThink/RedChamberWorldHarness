@@ -1,0 +1,20 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TitleAxisRecord",
+  "type": "object",
+  "required": ["id", "text", "class", "generated", "claim_refs"],
+  "properties": {
+    "id": {"type": "string", "minLength": 1},
+    "text": {"type": "string", "minLength": 1},
+    "class": {"enum": ["T0", "T1", "T2", "T2_W2", "T3", "TG"]},
+    "generated": {"type": "boolean"},
+    "claim_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "placement_decision_ref": {"type": ["string", "null"]},
+    "formal_title_decision_ref": {"type": ["string", "null"]},
+    "implementation_refs": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "current_chapter": {"type": ["integer", "null"], "minimum": 1},
+    "embedded_axes": {"type": "array", "items": {"type": "string"}, "uniqueItems": true},
+    "notes": {"type": ["string", "null"]}
+  },
+  "additionalProperties": true
+}

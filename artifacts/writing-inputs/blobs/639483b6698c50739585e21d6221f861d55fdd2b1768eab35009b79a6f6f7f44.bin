@@ -1,0 +1,59 @@
+schema_version: 1
+assets:
+- id: asset:sha256:1b9a77f496b34878ee91ee5142f5f6261b371c58f42956bb6184ab654a6d154b
+  path: corpus/front80/v1-candidate/chapters/ch24.json
+  sha256: 1b9a77f496b34878ee91ee5142f5f6261b371c58f42956bb6184ab654a6d154b
+  bytes: 29928
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:f870420b248d62e69a65e88b70b219f4bbf935ef3ad01df02da5b8c483e264b8
+  derived_from: &id001
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
+- id: asset:sha256:224c7f123870705499f3b5703e93548d2a3c9a10897c20041b5e892ec4aeb94f
+  path: corpus/extractions/e7ddabc616f3194e3fc017e5b7f217e5de22c1a6cfede738b4bcd29a626a468c/manifest.json
+  sha256: 224c7f123870705499f3b5703e93548d2a3c9a10897c20041b5e892ec4aeb94f
+  bytes: 971
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:extraction:e7ddabc616f3194e3fc017e5b7f217e5de22c1a6cfede738b4bcd29a626a468c:manifest
+  derived_from:
+  - asset:sha256:82148b657616c84a4577da12977325a45e32b11dcc4545fa150de7d7d50e0b52
+  - asset:sha256:95a90a748496d3358ad80c5e108b4af0831ce8c4f78541cca3aa3c276986a3bb
+- id: asset:sha256:5d9b861a239aa83356b0d7a96fe5f4ffe626834032a2c1df65d01b94f7585758
+  path: corpus/front80/v1-candidate/chapters/ch30.json
+  sha256: 5d9b861a239aa83356b0d7a96fe5f4ffe626834032a2c1df65d01b94f7585758
+  bytes: 18322
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:51ed6302260f8212f89448c120a9ec4e6105b84c1ccc7892e1a9452198709e5c
+  derived_from: *id001
+- id: asset:sha256:61dade3847b630bdc09d71a9db7f9ee817a1e050c3c92bfeeaa7c65c90772622
+  path: corpus/front80/v1-candidate/chapters/ch06.json
+  sha256: 61dade3847b630bdc09d71a9db7f9ee817a1e050c3c92bfeeaa7c65c90772622
+  bytes: 26484
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:e093ef1c12c415ee3f8813f6c8017861f16d16813af0fce4031b1aaa6655e50e
+  derived_from: *id001
+- id: asset:sha256:65918016b82034399bcc1f0ce2810fa45ef457ca43da9f0c0bd026b047665c20
+  path: sources/project/65918016b8203439/第098回_文学复原剧情增厚卡_v1.0.md
+  sha256: 65918016b82034399bcc1f0ce2810fa45ef457ca43da9f0c0bd026b047665c20
+  bytes: 2486
+  media_type: text/markdown
+  kind: PROJECT_REFERENCE
+  immutable: true
+  origin_refs:
+  - origin:handover-20261008:c4b9b58c33b940f117ae587b
+  - origin:handover-20261008:d4ae49fa9782bf49cf916b10

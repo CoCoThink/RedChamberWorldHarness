@@ -1,0 +1,249 @@
+{
+  "schema_version": 1,
+  "id": "plan-constraints:imported:v1",
+  "authority": "CURRENT_IMPLEMENTATION_ONLY",
+  "baseline": {
+    "release_id": "release:stable:v1.4",
+    "text_sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+  },
+  "provenance": {
+    "kind": "EXISTING_BASELINE_MIGRATION",
+    "note": "2026-10-08 将现行运行校验中的方案选择迁为版本约束；继承当前保护，不产生新的文学裁决、采用或发布。"
+  },
+  "rules": {
+    "reconstruction": [
+      {
+        "id": "jade-model",
+        "path": [
+          "jade_logistics",
+          "current_model"
+        ],
+        "equals": "U3P_PARTIAL_CONVERGENCE",
+        "basis_refs": [
+          "asset:sha256:2b5f2bcae5ce0269b0f33f4d89cad32c03d5ad77b388232da28e6fa446f5ed9d"
+        ]
+      },
+      {
+        "id": "prison-model",
+        "path": [
+          "prison_case",
+          "model_id"
+        ],
+        "equals": "J1",
+        "basis_refs": [
+          "asset:sha256:22663c798bd4d39d6d133dcc2f1bd48b7c1ce8d59def37d6b33faceb52f24448"
+        ]
+      },
+      {
+        "id": "timeline-91",
+        "path": [
+          "timeline",
+          91,
+          "time_window"
+        ],
+        "equals": "家败后的第一冬",
+        "basis_refs": [
+          "asset:sha256:4eed139b84d8506466df695d4ec9d2b1e479c2b5df856da8cf08d4d15f3091bd"
+        ]
+      },
+      {
+        "id": "timeline-95",
+        "path": [
+          "timeline",
+          95,
+          "time_window"
+        ],
+        "equals": "家败后的第二冬",
+        "basis_refs": [
+          "asset:sha256:4eed139b84d8506466df695d4ec9d2b1e479c2b5df856da8cf08d4d15f3091bd"
+        ]
+      }
+    ],
+    "world": [
+      {
+        "id": "checkpoint-1",
+        "path": [
+          "snapshots",
+          86,
+          "characters",
+          "daiyu",
+          "life_state"
+        ],
+        "equals": "DEAD",
+        "basis_refs": [
+          "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+          "asset:sha256:b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
+        ]
+      },
+      {
+        "id": "checkpoint-2",
+        "path": [
+          "snapshots",
+          87,
+          "relations",
+          "rel:baoyu_baochai",
+          "status"
+        ],
+        "equals": "ACTIVE_SPOUSES",
+        "basis_refs": [
+          "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+          "asset:sha256:b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
+        ]
+      },
+      {
+        "id": "checkpoint-3",
+        "path": [
+          "snapshots",
+          92,
+          "characters",
+          "baoyu",
+          "legal_status"
+        ],
+        "equals": "DETAINED_PENDING_INQUIRY",
+        "basis_refs": [
+          "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+          "asset:sha256:b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
+        ]
+      },
+      {
+        "id": "checkpoint-4",
+        "path": [
+          "snapshots",
+          93,
+          "characters",
+          "baoyu",
+          "legal_status"
+        ],
+        "equals": "RELEASED_NO_RESTORATION",
+        "basis_refs": [
+          "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+          "asset:sha256:b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
+        ]
+      },
+      {
+        "id": "checkpoint-5",
+        "path": [
+          "snapshots",
+          93,
+          "characters",
+          "fengjie",
+          "life_state"
+        ],
+        "equals": "DEAD",
+        "basis_refs": [
+          "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+          "asset:sha256:b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
+        ]
+      },
+      {
+        "id": "checkpoint-6",
+        "path": [
+          "snapshots",
+          94,
+          "characters",
+          "qiaojie",
+          "location"
+        ],
+        "equals": "S08",
+        "basis_refs": [
+          "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+          "asset:sha256:b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
+        ]
+      },
+      {
+        "id": "checkpoint-7",
+        "path": [
+          "snapshots",
+          95,
+          "global",
+          "economy_stage"
+        ],
+        "equals": "E3",
+        "basis_refs": [
+          "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+          "asset:sha256:b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
+        ]
+      },
+      {
+        "id": "checkpoint-8",
+        "path": [
+          "snapshots",
+          99,
+          "characters",
+          "baoyu",
+          "location"
+        ],
+        "equals": "S13",
+        "basis_refs": [
+          "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+          "asset:sha256:b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
+        ]
+      },
+      {
+        "id": "checkpoint-9",
+        "path": [
+          "snapshots",
+          97,
+          "relations",
+          "rel:xiangyun_weiruolan",
+          "status"
+        ],
+        "equals": "COHABITATION_INTERRUPTED_CAUSE_OPEN",
+        "basis_refs": [
+          "asset:sha256:b27e9229499cbe39f4c9339d6186fe6db113d0e7d48f3ae6b0071e1b1ca88f41",
+          "asset:sha256:b32e45cbc0745d671b2eff2f8945316cf531fd3cd4f1af89a9ed6aaca8d06108"
+        ]
+      }
+    ],
+    "literary_ecology": [
+      {
+        "id": "farewell-choice",
+        "path": [
+          "g_layer",
+          "G07",
+          "decision"
+        ],
+        "equals": "无字胜出",
+        "basis_refs": [
+          "asset:sha256:c974385eeaa02e7b1a6170cb702aae2bed84eab96e5ba13f5e68968d5f1700c2"
+        ]
+      },
+      {
+        "id": "rhyme-exception",
+        "path": [
+          "author_rhyme",
+          92,
+          "winner"
+        ],
+        "equals": "B_PRESERVE_EXISTING",
+        "basis_refs": [
+          "asset:sha256:fc421b406baee7946b3d3bf4291c59678bfb09a04d13939c9e80199f157e7674"
+        ]
+      },
+      {
+        "id": "rhyme-b-chapters",
+        "path": [
+          "author_rhyme_b_chapters"
+        ],
+        "equals": [
+          92
+        ],
+        "basis_refs": [
+          "asset:sha256:fc421b406baee7946b3d3bf4291c59678bfb09a04d13939c9e80199f157e7674"
+        ]
+      },
+      {
+        "id": "terminal-rhyme",
+        "path": [
+          "author_rhyme",
+          100,
+          "winner"
+        ],
+        "equals": "C_TERMINAL_LOCK",
+        "basis_refs": [
+          "asset:sha256:fc421b406baee7946b3d3bf4291c59678bfb09a04d13939c9e80199f157e7674"
+        ]
+      }
+    ]
+  }
+}

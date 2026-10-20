@@ -45,10 +45,21 @@ def _writing_task(task: dict) -> dict:
 def _parent_package(root: Path, draft: dict) -> dict:
     if draft.get("execution_basis") == EXECUTION_BASIS:
         return deepcopy(draft["package"])
+    if draft["schema_version"] == 2 and draft["parent"] is not None:
+        from .writing import load_draft
+        return _parent_package(root, load_draft(root, draft["parent"]["path"])[0])
     package = _writing_task(draft["task"])["package"]
+    from .lineage import snapshot_for_draft
+    from ..io import parse_yaml
+    snapshot = snapshot_for_draft(root, draft)
+    def value(ref):
+        if snapshot is None:
+            return load_data(repository_path(root, ref["path"]))
+        raw = snapshot.read(ref)
+        return json.loads(raw) if Path(ref["path"]).suffix == ".json" else parse_yaml(raw)
     matches = [ref for ref in draft["inputs"]
                if Path(ref["path"]).suffix in {".json", ".yaml", ".yml"}
-               and load_data(repository_path(root, ref["path"])) == package]
+               and value(ref) == package]
     if len(matches) != 1:
         raise ValueError("revision parent must bind exactly one writing package")
     return deepcopy(matches[0])
@@ -61,15 +72,25 @@ def prepare_rendered(root: Path, rendered: dict, budget: Budget, model: str, con
         raise ValueError("request exceeds input byte budget; no truncation performed")
     parent = binding(root, context["parent_path"]) if context["parent_path"] else None
     feedback = binding(root, context["feedback_path"]) if context["feedback_path"] else None
-    return {"schema_version": 1, "kind": "WRITING_PREPARED_REQUEST", "status": "PASS", "mode": "DRY_RUN",
+    version = rendered.get("renderer_version", 1)
+    if parent is not None and version == 2:
+        from .writing import load_draft
+        package = _parent_package(root, load_draft(root, parent["path"])[0])
+    else:
+        package = binding(root, context["package_path"])
+    result = {"schema_version": version, "kind": "WRITING_PREPARED_REQUEST", "status": "PASS", "mode": "DRY_RUN",
             "context": deepcopy(context), "chapter": context["chapter"], "route": context["route"],
-            "package": binding(root, context["package_path"]), "parent": parent, "feedback": feedback,
+            "package": package, "parent": parent, "feedback": feedback,
             "task": deepcopy(rendered["task"]), "prompt_sha256": rendered["prompt_sha256"],
             "request_sha256": digest(canonical_bytes(request)), "request": request,
             "template": deepcopy(rendered["template"]), "inputs": deepcopy(rendered["inputs"]),
             "budget": budget.to_dict(), "budget_limitation": BUDGET_LIMITATION,
             "qualification": "RESEARCH_ONLY", "formal_eligibility": False, "human_qualification": False,
             "authority_effect": "NONE"}
+    if version == 2:
+        result.update(renderer_version=2, dependency_records=deepcopy(rendered["dependency_records"]),
+                      readiness=deepcopy(rendered.get("readiness", {})))
+    return result
 
 
 def selection_context(root: Path, *, package_path: str | None = None, chapter: int | None = None,
@@ -101,14 +122,14 @@ def selection_context(root: Path, *, package_path: str | None = None, chapter: i
     return context
 
 
-def _render_context(root: Path, context: dict) -> dict:
+def _render_context(root: Path, context: dict, *, version: int | None = None) -> dict:
     if context["operation"] == "draft":
-        return PromptRenderer(root).draft(context["package_path"], context["chapter"], route=context["route"],
+        return PromptRenderer(root, version=version).draft(context["package_path"], context["chapter"], route=context["route"],
                                           characters=context["characters"], plan_path=context["plan_path"],
                                           previous_path=context["previous_path"])
     from .writing import revision_prompt
     return revision_prompt(root, context["parent_path"], context["feedback_path"], context["notes_path"],
-                           revision_template=context.get("revision_template", "revise-v1"))
+                           revision_template=context.get("revision_template", "revise-v1"), renderer_version=version)
 
 
 def prepare_request(root: Path, *, package_path: str | None = None, chapter: int | None = None,
@@ -116,18 +137,19 @@ def prepare_request(root: Path, *, package_path: str | None = None, chapter: int
                     previous_path: str | None = None, parent_path: str | None = None,
                     feedback_path: str | None = None, notes_path: str | None = None,
                     budget: Budget | None = None, model: str = DEFAULT_MODEL,
-                    revision_template: str = "revise-v1") -> dict:
+                    revision_template: str = "revise-v1", renderer_version: int | None = None) -> dict:
     """Prepare a draft (package/chapter) or revision (parent/feedback) offline."""
     context = selection_context(root, package_path=package_path, chapter=chapter, route=route,
                                 characters=characters, plan_path=plan_path, previous_path=previous_path,
                                 parent_path=parent_path, feedback_path=feedback_path, notes_path=notes_path,
                                 revision_template=revision_template)
-    return prepare_rendered(root, _render_context(root, context), budget or Budget(), model, context)
+    return prepare_rendered(root, _render_context(root, context, version=renderer_version), budget or Budget(), model, context)
 
 
-def _saved_task_render(root: Path, prepared: dict, task: dict) -> dict:
+def _saved_task_render(root: Path, prepared: dict, task: dict, *, read=None) -> dict:
     """Rebuild the frozen envelope, without consulting runtime observations."""
-    prompt = {"system": bound_bytes(root, prepared["template"]).decode("utf-8"),
+    read = read or (lambda ref: bound_bytes(root, ref))
+    prompt = {"system": read(prepared["template"]).decode("utf-8"),
               "messages": [{"role": "user", "content": canonical_bytes(task).decode()}]}
     return {**prompt, "prompt_sha256": digest(canonical_bytes(prompt)), "task": task,
             "template": prepared["template"], "inputs": prepared["inputs"]}
@@ -179,14 +201,16 @@ def _runtime_observations(saved_task: dict, fresh_task: dict) -> tuple[dict, lis
     return normalized, variations
 
 
-def _verify_prepared_request(root: Path, prepared: dict) -> tuple[dict, dict]:
+def verify_frozen_request(root: Path, prepared: dict, *, read=None) -> dict:
+    """Check a saved request using its own inputs, without invoking today's renderer."""
     _validate(root, prepared, prepared=True)
+    read = read or (lambda ref: bound_bytes(root, ref))
     for ref in prepared["inputs"] + [prepared["template"], prepared["package"], prepared["parent"], prepared["feedback"]]:
         if ref is not None:
-            bound_bytes(root, ref)
+            read(ref)
     budget = Budget(**prepared["budget"])
     budget.validate(prepared.get("samples", 1))
-    frozen = _saved_task_render(root, prepared, prepared["task"])
+    frozen = _saved_task_render(root, prepared, prepared["task"], read=read)
     if prepared["prompt_sha256"] != frozen["prompt_sha256"]:
         raise ValueError("prepared request frozen prompt hash mismatch")
     if prepared["request_sha256"] != digest(canonical_bytes(prepared["request"])):
@@ -195,6 +219,28 @@ def _verify_prepared_request(root: Path, prepared: dict) -> tuple[dict, dict]:
         raise ValueError("prepared request differs from frozen task/template")
     if len(canonical_bytes(prepared["request"])) > budget.max_input_bytes:
         raise ValueError("prepared request exceeds input byte budget; no truncation performed")
+    if prepared["chapter"] != prepared["context"]["chapter"] or prepared["route"] != prepared["context"]["route"]:
+        raise ValueError("prepared request selection identity mismatch")
+    for record in prepared.get("dependency_records", []):
+        if digest(canonical_bytes(record["value"])) != record["sha256"] or record["value"]["id"] != record["id"]:
+            raise ValueError("prepared request dependency record identity mismatch")
+    return frozen
+
+
+def _verify_prepared_request(root: Path, prepared: dict) -> tuple[dict, dict]:
+    # Import preparation still checks fresh semantics. Historical draft loading
+    # uses verify_frozen_request and a content-addressed snapshot instead.
+    inherited = None
+    if prepared.get("schema_version") == 2 and prepared.get("parent"):
+        from .lineage import snapshot_for_draft
+        from .writing import load_draft
+        inherited = snapshot_for_draft(root, load_draft(root, prepared["parent"]["path"])[0])
+    def read(ref):
+        if inherited is not None and inherited.contains(ref):
+            return inherited.read(ref)
+        return bound_bytes(root, ref)
+    verify_frozen_request(root, prepared, read=read)
+    budget = Budget(**prepared["budget"])
     context = prepared["context"]
     if context["operation"] == "revise":
         expected_context = selection_context(root, parent_path=context["parent_path"],
@@ -206,7 +252,7 @@ def _verify_prepared_request(root: Path, prepared: dict) -> tuple[dict, dict]:
                                              plan_path=context["plan_path"], previous_path=context["previous_path"])
     if canonical_bytes(context) != canonical_bytes(expected_context):
         raise ValueError("prepared request selection context mismatch")
-    rendered = _render_context(root, context)
+    rendered = _render_context(root, context, version=prepared["schema_version"])
     current = prepare_rendered(root, rendered, budget, prepared["request"]["model"], context)
     if "samples" in prepared:
         current["samples"] = prepared["samples"]
@@ -216,6 +262,9 @@ def _verify_prepared_request(root: Path, prepared: dict) -> tuple[dict, dict]:
     semantic["task"], semantic["prompt_sha256"] = normalized_task, semantic_render["prompt_sha256"]
     semantic["request"] = request_for(semantic_render, budget, prepared["request"]["model"])
     semantic["request_sha256"] = digest(canonical_bytes(semantic["request"]))
+    if prepared["schema_version"] == 2:
+        # This is a historical observation, never an admission credential.
+        current["readiness"] = semantic["readiness"]
     if canonical_bytes(current) != canonical_bytes(semantic):
         raise ValueError("prepared request differs from current renderer/context manifest")
     report = {"status": "PASS", "scope": "PREPARED_REQUEST_INTEGRITY",
@@ -277,7 +326,18 @@ def import_draft(root: Path, text_path: str, request_path: str, *, session_id: s
            "candidate": candidate, "output": text, "output_sha256": digest(raw),
            "parent": prepared["parent"], "feedback": prepared["feedback"], "qualification": "RESEARCH_ONLY",
            "formal_eligibility": False, "human_qualification": False, "authority_effect": "NONE"}
+    if prepared["schema_version"] == 2:
+        run["schema_version"] = 2
+        # Validate declarations before publishing any snapshot assets.
+        run["input_snapshot"] = {"path": "pending-snapshot.json", "sha256": "0" * 64}
     _validate(root, run)
+    if prepared["schema_version"] == 2:
+        from .lineage import session_refs, snapshot_for_draft
+        from .snapshots import freeze_inputs
+        from .writing import load_draft
+        inherited = snapshot_for_draft(root, load_draft(root, prepared["parent"]["path"])[0]) if prepared["parent"] else None
+        run["input_snapshot"] = freeze_inputs(root, session_refs(prepared, run), inherited=inherited,
+                                               records=prepared["dependency_records"])
     _publish(root, f"artifacts/candidates/ch{chapter}", raw, "txt")
     _publish(root, "artifacts/writing-requests", prepared_raw, "json")
     author_run = _publish(root, "artifacts/author-runs", canonical_bytes(run), "json")
@@ -289,12 +349,17 @@ def import_draft(root: Path, text_path: str, request_path: str, *, session_id: s
              "template": prepared["template"], "task": prepared["task"], "prompt_sha256": prepared["prompt_sha256"],
              "parent": prepared["parent"], "feedback": prepared["feedback"], "qualification": "RESEARCH_ONLY",
              "formal_eligibility": False, "human_qualification": False, "authority_effect": "NONE"}
+    if run["schema_version"] == 2:
+        draft.update(schema_version=2, input_snapshot=run["input_snapshot"])
     verify_session_draft(root, draft, raw)
     draft_ref = _publish(root, f"data/writing/drafts/ch{chapter}", canonical_bytes(draft), "json")
-    return {"status": "PASS", "draft": draft_ref, "candidate": candidate, "run": author_run,
+    result = {"status": "PASS", "draft": draft_ref, "candidate": candidate, "run": author_run,
             "prepared_request": request_ref, "execution_basis": EXECUTION_BASIS,
             "session_configured_model": run["session_configured_model"], "qualification": "RESEARCH_ONLY",
             "formal_eligibility": False, "human_qualification": False, "authority_effect": "NONE"}
+    if run["schema_version"] == 2:
+        result["input_snapshot"] = run["input_snapshot"]
+    return result
 
 
 def verify_session_draft(root: Path, draft: dict, candidate_raw: bytes) -> None:
@@ -304,15 +369,28 @@ def verify_session_draft(root: Path, draft: dict, candidate_raw: bytes) -> None:
         raise ValueError("invalid session draft record: " + "; ".join(errors))
     run = json.loads(bound_bytes(root, draft["run"]))
     _validate(root, run)
+    from .lineage import session_refs, snapshot_for_draft
+    snapshot = snapshot_for_draft(root, draft)
+    if draft["schema_version"] != run["schema_version"] or draft.get("input_snapshot") != run.get("input_snapshot"):
+        raise ValueError("session draft/run snapshot binding mismatch")
+    read = snapshot.read if snapshot is not None else lambda ref: bound_bytes(root, ref)
     if run["output"].encode("utf-8") != candidate_raw or digest(candidate_raw) != run["output_sha256"]:
         raise ValueError("session output differs from authored candidate")
-    if bound_bytes(root, run["imported_text"]) != candidate_raw:
+    if read(run["imported_text"]) != candidate_raw:
         raise ValueError("session import text identity mismatch")
     prepared_raw = bound_bytes(root, run["prepared_request"])
-    if bound_bytes(root, run["request_source"]) != prepared_raw:
+    if read(run["request_source"]) != prepared_raw:
         raise ValueError("session prepared request source identity mismatch")
     prepared = json.loads(prepared_raw)
-    verify_prepared_request(root, prepared)
+    if snapshot is not None:
+        snapshot.verify(session_refs(prepared, run))
+        if snapshot.document["records"] != prepared.get("dependency_records", []):
+            raise ValueError("session snapshot dependency records mismatch")
+        verify_frozen_request(root, prepared, read=read)
+        if prepared["parent"] is not None:
+            _verify_revision_history(root, prepared, read)
+    else:
+        verify_prepared_request(root, prepared)
     for field in ("candidate", "prepared_request", "package", "inputs", "template", "prompt_sha256", "parent", "feedback"):
         if canonical_bytes(draft[field]) != canonical_bytes(run[field]):
             raise ValueError(f"session draft/run {field} binding mismatch")
@@ -327,3 +405,25 @@ def verify_session_draft(root: Path, draft: dict, candidate_raw: bytes) -> None:
                  "kind": "MODEL", "run": draft["run"]}]
     if draft["authors"] != expected:
         raise ValueError("session draft author identity mismatch")
+
+
+def _verify_revision_history(root: Path, prepared: dict, read) -> None:
+    from .writing import load_draft
+
+    parent, text = load_draft(root, prepared["parent"]["path"])
+    if read(prepared["parent"]) != repository_path(root, prepared["parent"]["path"]).read_bytes():
+        raise ValueError("historical revision parent identity mismatch")
+    feedback = json.loads(read(prepared["feedback"]))
+    if (feedback["draft"] != prepared["parent"] or feedback["candidate"] != parent["candidate"]
+            or feedback["inputs"] != parent["inputs"] or prepared["package"] != _parent_package(root, parent)):
+        raise ValueError("historical revision feedback/parent binding mismatch")
+    task = prepared["task"]
+    notes_path = prepared["context"]["notes_path"]
+    notes = None
+    if notes_path is not None:
+        refs = [ref for ref in prepared["inputs"] if ref["path"] == notes_path]
+        if len(refs) != 1:
+            raise ValueError("historical revision notes binding mismatch")
+        notes = read(refs[0]).decode("utf-8")
+    if task != {"writing_task": parent["task"], "original": text, "feedback": feedback, "editorial_notes": notes}:
+        raise ValueError("historical revision differs from frozen parent/context")

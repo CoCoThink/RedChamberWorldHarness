@@ -49,7 +49,28 @@ def preview(rendered: dict, budget: Budget, args, *, root: Path | None = None,
 def command(args) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     try:
-        if args.write_action == "import-draft":
+        if args.write_action == "freeze-history":
+            from ..corpus.dataset import rebuild_scope
+            from ..generation.lineage import freeze_history
+            with rebuild_scope():
+                results = [freeze_history(root, path) for path in args.candidates]
+            payload = {"status": "PASS", "histories": results, "authority_effect": "NONE"}
+        elif args.write_action == "check":
+            from ..generation.lineage import current_compatibility
+            draft, _ = load_draft(root, args.candidate)
+            payload = {"status": "PASS", "historical_integrity": {"status": "PASS"}, "authority_effect": "NONE"}
+            if args.current or args.production:
+                payload["current_compatibility"] = current_compatibility(root, args.candidate)
+                if payload["current_compatibility"]["status"] != "PASS":
+                    payload["status"] = "FAIL"
+            if args.production:
+                from ..workflow.admission import ChapterAdmission
+                from ..generation.session import _parent_package
+                report = ChapterAdmission(root).summary(draft["chapter"], _parent_package(root, draft)["path"])
+                payload["production_admission"] = report
+                if report["status"] != "PASS" and payload["status"] == "PASS":
+                    payload["status"] = report["status"]
+        elif args.write_action == "import-draft":
             payload = import_draft(root, args.text, args.request, session_id=args.session_id,
                                    session_model_label=args.session_model_label,
                                    parent_path=args.parent, feedback_path=args.feedback)
@@ -140,6 +161,12 @@ def add_commands(sub) -> None:
     diff = commands.add_parser("diff")
     diff.add_argument("left")
     diff.add_argument("right")
+    history = commands.add_parser("freeze-history", help="Append exact input snapshots to verifiable legacy session drafts")
+    history.add_argument("candidates", nargs="+", help="Immutable draft record paths; originals remain unchanged")
+    check = commands.add_parser("check", help="Verify historical custody; optionally compare current inputs and admission")
+    check.add_argument("candidate")
+    check.add_argument("--current", action="store_true", help="Also compare current selected writing inputs")
+    check.add_argument("--production", action="store_true", help="Also compute current chapter production admission")
     for p in (draft, feedback, revise):
         p.add_argument("--dry-run", action="store_true")
         p.add_argument("--execute", action="store_true", help="Actually send model requests; requires separate network consent")

@@ -1,0 +1,142 @@
+schema_version: 1
+title_axes:
+- id: axis:t0:baochai-fengjie
+  text: 薛宝钗借词含讽谏，王熙凤知命强英雄
+  class: T0
+  generated: false
+  claim_refs:
+  - claim:future-title:baochai-fengjie:full-heading
+  placement_decision_ref: decision:future-title:baochai-fengjie:placement
+  formal_title_decision_ref: decision:future-title:baochai-fengjie:wording
+  implementation_refs:
+  - impl:active:ch90:title
+  current_chapter: 90
+- id: axis:t1:xiren
+  text: 花袭人有始有终
+  class: T1
+  generated: false
+  claim_refs:
+  - claim:xiren:future-heading-part
+  placement_decision_ref: decision:xiren:placement
+  implementation_refs:
+  - impl:active:ch88:title
+  current_chapter: 88
+  notes: 只锁正文标目局部文字，不恢复完整上下联。
+- id: axis:t2:prison-comfort
+  text: 狱神庙慰宝玉
+  class: T2
+  generated: false
+  claim_refs:
+  - claim:prison:comfort-baoyu:draft-label
+  placement_decision_ref: decision:prison:comfort-baoyu:placement
+  formal_title_decision_ref: decision:prison:comfort-baoyu:formal-title
+  implementation_refs:
+  - impl:active:ch92:title
+  current_chapter: 92
+- id: axis:t2:cliff-release
+  text: 悬崖撒手
+  class: T2
+  generated: false
+  claim_refs:
+  - claim:cliff-release:future-interface
+  placement_decision_ref: decision:cliff-release:placement
+  formal_title_decision_ref: decision:cliff-release:formal-title
+  implementation_refs:
+  - impl:active:ch99:cliff-release
+  current_chapter: 99
+- id: axis:t2:mistaken-theft
+  text: 误窃
+  class: T2
+  generated: false
+  claim_refs:
+  - claim:mistaken-theft:chapter-call
+  placement_decision_ref: decision:mistaken-theft:placement
+  formal_title_decision_ref: decision:mistaken-theft:formal-title
+  implementation_refs:
+  - impl:active:ch98:title
+  current_chapter: 98
+- id: axis:t3:fengjie-snow-jade
+  text: 凤姐扫雪拾玉
+  class: T3
+  generated: false
+  claim_refs:
+  - claim:fengjie-snow-jade:event
+  placement_decision_ref: decision:fengjie-snow-jade:placement
+  formal_title_decision_ref: decision:fengjie-snow-jade:formal-title
+  implementation_refs:
+  - impl:active:ch91:snow-jade
+  current_chapter: 91
+- id: axis:t3:zhen-sends-jade
+  text: 甄宝玉送玉
+  class: T3
+  generated: false
+  claim_refs:
+  - claim:zhen-sends-jade:event
+  placement_decision_ref: decision:zhen-sends-jade:placement
+  formal_title_decision_ref: decision:zhen-sends-jade:formal-title
+  implementation_refs:
+  - impl:active:ch98:zhen-jade
+  current_chapter: 98
+- id: axis:t3:cold-winter-torn-felt
+  text: 寒冬噎酸虀，雪夜围破毡
+  class: T3
+  generated: false
+  claim_refs:
+  - claim:cold-winter-torn-felt:event
+  placement_decision_ref: decision:cold-winter-torn-felt:placement
+  formal_title_decision_ref: decision:cold-winter-torn-felt:formal-title
+  implementation_refs:
+  - impl:active:ch95:title
+  current_chapter: 95
+- id: axis:tg:ch88
+  text: 花袭人有始有终　贾迎春薄命赴黄粱
+  class: TG
+  generated: true
+  claim_refs: []
+  implementation_refs:
+  - impl:active:ch88:title
+  current_chapter: 88
+  embedded_axes:
+  - axis:t1:xiren
+- id: axis:tg:ch91
+  text: 病凤姐雪中寻旧物　贾宝玉夜闻传唤声
+  class: TG
+  generated: true
+  claim_refs: []
+  implementation_refs:
+  - impl:active:ch91:title
+  current_chapter: 91
+- id: axis:tg:ch92
+  text: 贾宝玉羁中候问讯　小红寻证茜雪送衣
+  class: TG
+  generated: true
+  claim_refs: []
+  implementation_refs:
+  - impl:active:ch92:title
+  current_chapter: 92
+- id: axis:tg:ch95
+  text: 薄粥量米延寒日　旧毡遮壁度长宵
+  class: TG
+  generated: true
+  claim_refs: []
+  implementation_refs:
+  - impl:active:ch95:title
+  current_chapter: 95
+- id: axis:tg:ch98
+  text: 贫舍二宝初相晤　误包一玉复归来
+  class: TG
+  generated: true
+  claim_refs: []
+  implementation_refs:
+  - impl:active:ch98:title
+  current_chapter: 98
+- id: axis:tg:ch99
+  text: 贾宝玉悬崖撒手去　宝钗麝月共守寒家
+  class: TG
+  generated: true
+  claim_refs: []
+  implementation_refs:
+  - impl:active:ch99:title
+  current_chapter: 99
+  embedded_axes:
+  - axis:t2:cliff-release

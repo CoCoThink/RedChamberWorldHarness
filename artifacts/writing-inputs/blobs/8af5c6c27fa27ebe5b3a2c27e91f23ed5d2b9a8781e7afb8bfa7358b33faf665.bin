@@ -1,0 +1,600 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch90.json",
+      "sha256": "6a84320ad0d6531ef7ca2af8899ee3db03f9f38503c2186624fcef42ebfc5b2e"
+    },
+    "seed": {
+      "path": "data/planning/scenes/90-S2.json",
+      "sha256": "85a1a1076de48ba2810718de8aab55a5155a3ca91deda5d8ad3b2ecdf1780979"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-86-90.json",
+      "sha256": "dd1ed67911e8a836c9ff3fffbaee881da0c2e629916dbc7ef895033e48edb7b9"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 90,
+  "chapter_plan_ref": "data/planning/chapters/ch90.json",
+  "entry_checkpoint": {
+    "kind": "UNKNOWN",
+    "chapter": null
+  },
+  "entry_from": "data/planning/contracts/agent-edited-v1/90-S1.v2.json",
+  "entry_state": [
+    {
+      "equals": "character.baochai.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "S1未提供宝钗接管小户的局部角色入口，章节wife状态不等于本场管理执行。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.baoyu.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "下午受冷披风是待写身体动作，没有种子级受寒/恢复事件。"
+    },
+    {
+      "equals": "character.baochai.household_role",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "W90角色升级是全回粗粒度目标，不能由两句讽谏自证出口。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "description": "让宝玉说“我以后改”并成功受劝，把宝钗写成吝啬或宝玉写成慈善圣人。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c9a63538d640b5232794e858cadd759d2a7ae658817d85b9136efd2339ff0bdd",
+          "value": {
+            "id": "90-S2",
+            "title": "宝钗第一次承担“小户经济”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            27064,
+            27167
+          ],
+          "lines": [
+            661,
+            663
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "2f2d2a44c8cf808ed58f6f9cc0524bdb32f37491ee4f6d3503a76532ee0c8bfa"
+        },
+        {
+          "byte_range": [
+            27167,
+            27420
+          ],
+          "lines": [
+            664,
+            666
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "37eeb07cb23be54075439b07f8242bd2d9c1a3464b44d08314318ade5df40269"
+        },
+        {
+          "byte_range": [
+            28198,
+            28326
+          ],
+          "lines": [
+            691,
+            693
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "025952528cf2266b4f1d74de0b6518f2e3cbd71e246feb6e94fd0f9ac7c1de96"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "把借词含讽谏写成词牌诗作，或用95回旧夹袄ID硬认本回青布夹衣/宝钗披风。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c9a63538d640b5232794e858cadd759d2a7ae658817d85b9136efd2339ff0bdd",
+          "value": {
+            "id": "90-S2",
+            "title": "宝钗第一次承担“小户经济”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            27523,
+            27592
+          ],
+          "lines": [
+            670,
+            672
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "eb226d44d92879e383072abcd8f777ea8d9c3fb8a587c6aefb187b24f781536c"
+        },
+        {
+          "byte_range": [
+            27592,
+            27707
+          ],
+          "lines": [
+            673,
+            675
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "47b193a23e99d452e87275c8abad587235342dbcf29da7ad39ebf36b3eaec97a"
+        },
+        {
+          "byte_range": [
+            27968,
+            28100
+          ],
+          "lines": [
+            685,
+            687
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "313017755dc3b28f649cc1e2a9fcb8b5f533206c2f0289c3307138971a4d4faf"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c9a63538d640b5232794e858cadd759d2a7ae658817d85b9136efd2339ff0bdd",
+          "value": {
+            "id": "90-S2",
+            "title": "宝钗第一次承担“小户经济”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            28492,
+            28520
+          ],
+          "lines": [
+            700,
+            700
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            28520,
+            28547
+          ],
+          "lines": [
+            701,
+            702
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "4ce526aecba789d8fb664d11031ea1dcfb21bf96efab2e4510b2cee0f78d282d"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "id": "90-S2",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 2,
+  "participants": [
+    "baoyu",
+    "baochai",
+    "sheyue"
+  ],
+  "participants_status": "PENDING",
+  "preconditions": [
+    {
+      "equals": "character.baoyu.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "送衣前具体御寒能力及身体状态没有场级数据，不能提前设定受寒结果。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/0",
+        "ref": "data/world/m3_core.json#/characters/0",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "c90d10be26bb276650ff292a0dc2e511347a54c0bd8bfef95a7ed588454eff94",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "jia_son",
+            "legal_status": "FREE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "baoyu",
+          "name": "贾宝玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/1",
+        "ref": "data/world/m3_core.json#/characters/1",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "539bb81553f85ece6e29214a008c499290b50068e2127c17a80cc113c82ae6b5",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "xue_daughter_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "xue_household",
+            "human"
+          ],
+          "id": "baochai",
+          "name": "薛宝钗"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/6",
+        "ref": "data/world/m3_core.json#/characters/6",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "779594feec7c611f21661c22a7c613a048e7457e0503012f1f3b98a4c39b8978",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "baoyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "sheyue",
+          "name": "麝月"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "required_beats": [
+    {
+      "description": "青布夹衣送病妇前，宝钗指出“如今给出去真少一件”，物资受限使赠衣直接付出机会成本。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c9a63538d640b5232794e858cadd759d2a7ae658817d85b9136efd2339ff0bdd",
+          "value": {
+            "id": "90-S2",
+            "title": "宝钗第一次承担“小户经济”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            26910,
+            27064
+          ],
+          "lines": [
+            658,
+            660
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "48ca71f39bd96218e8f373e7ea629f7de678063970767b48b9ae1c9eb78e9d3d"
+        },
+        {
+          "byte_range": [
+            27167,
+            27420
+          ],
+          "lines": [
+            664,
+            666
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "37eeb07cb23be54075439b07f8242bd2d9c1a3464b44d08314318ade5df40269"
+        },
+        {
+          "byte_range": [
+            27968,
+            28100
+          ],
+          "lines": [
+            685,
+            687
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "313017755dc3b28f649cc1e2a9fcb8b5f533206c2f0289c3307138971a4d4faf"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "下午宝玉反受冷才由宝钗披风补这一缺口，第二次含讽“你周全一个，总有人补这个缺”落在实际补缺劳动上；宝玉承认道理但不撤销已付出的赠衣成本、不承诺以后改，也不让一句承认变成成功受箴。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c9a63538d640b5232794e858cadd759d2a7ae658817d85b9136efd2339ff0bdd",
+          "value": {
+            "id": "90-S2",
+            "title": "宝钗第一次承担“小户经济”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            26910,
+            27064
+          ],
+          "lines": [
+            658,
+            660
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "48ca71f39bd96218e8f373e7ea629f7de678063970767b48b9ae1c9eb78e9d3d"
+        },
+        {
+          "byte_range": [
+            27064,
+            27167
+          ],
+          "lines": [
+            661,
+            663
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "2f2d2a44c8cf808ed58f6f9cc0524bdb32f37491ee4f6d3503a76532ee0c8bfa"
+        },
+        {
+          "byte_range": [
+            27167,
+            27420
+          ],
+          "lines": [
+            664,
+            666
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "37eeb07cb23be54075439b07f8242bd2d9c1a3464b44d08314318ade5df40269"
+        },
+        {
+          "byte_range": [
+            27968,
+            28100
+          ],
+          "lines": [
+            685,
+            687
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "313017755dc3b28f649cc1e2a9fcb8b5f533206c2f0289c3307138971a4d4faf"
+        },
+        {
+          "byte_range": [
+            28198,
+            28326
+          ],
+          "lines": [
+            691,
+            693
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "025952528cf2266b4f1d74de0b6518f2e3cbd71e246feb6e94fd0f9ac7c1de96"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    },
+    {
+      "description": "麝月补衣、门后空钉仍在，第一轮小户自算以衣物缺口落实，不以情理长论或功名说教代替。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT",
+      "source_records": [
+        {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/9/candidate_scenes/1",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/9/candidate_scenes/1",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "c9a63538d640b5232794e858cadd759d2a7ae658817d85b9136efd2339ff0bdd",
+          "value": {
+            "id": "90-S2",
+            "title": "宝钗第一次承担“小户经济”"
+          }
+        }
+      ],
+      "citations": [
+        {
+          "byte_range": [
+            27420,
+            27523
+          ],
+          "lines": [
+            667,
+            669
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "7012714ae1d9a5a829d142b19f589a9ea267499f7d2fab8e3e5a00313fe3761b"
+        },
+        {
+          "byte_range": [
+            27707,
+            27789
+          ],
+          "lines": [
+            676,
+            678
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "cf7514fddc704e2b952e59193fcc46b1dc73907831c0b118124a63fcc028fd01"
+        },
+        {
+          "byte_range": [
+            27789,
+            27878
+          ],
+          "lines": [
+            679,
+            681
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "77f4874a0d50fc34afd8742696320f093bd079f7acc3c77adebcc74858068886"
+        },
+        {
+          "byte_range": [
+            28100,
+            28198
+          ],
+          "lines": [
+            688,
+            690
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "7e9dba6c3667a82710525ac9d634589f12d8bd77dc684f035b129da84579d459"
+        }
+      ],
+      "authority_effect": "NONE",
+      "evidence_effect": "NONE"
+    }
+  ],
+  "required_objects": [],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "objects: 青布夹衣、宝钗披风、空钉、补衣用具未注册；OBJ-PAWNABLE-JACKET-95不能未经证据视作同衣。",
+    "participants: 病妇没有实体ID，她是赠衣接收者而非可造registry人物。",
+    "body: 受冷程度、送衣路径和披风的实际转交时点无原子事件，不创造身体诊断或衣物转移ID。",
+    "entry_checkpoint: 90-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+    "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+    "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+    "entry_state.character.baochai.household_role: S1未提供宝钗接管小户的局部角色入口，章节wife状态不等于本场管理执行。",
+    "preconditions.character.baoyu.body_state: 送衣前具体御寒能力及身体状态没有场级数据，不能提前设定受寒结果。",
+    "recipient: 病妇是必需赠衣接收者但无实体ID，本场完整参与链仅部分可绑定，participants_status由KNOWN改PENDING；送达/披风经手仍未知。"
+  ],
+  "function": "用送旧衣、受冷、借披风与两次含讽显出小户经济的机会成本；宝玉承认道理却仍不可箴，不写成改过。",
+  "notes": "AGENT_EDITED v2（EDITOR86-90）：基于实际 data/planning/contracts/agent-v1/90-S2.v1.json，sha256=b4d2312755eb9d192b5b290087b20515fb0a60127a709ccc5209cdd7577309ae。本场精确改动：保持送衣成本和他人补缺，不给改过终态；完整接收链未齐时改PENDING，不虚构病妇ID。 后场前驱改为本批前一v2，但entry_checkpoint仍UNKNOWN，只表示来源列表声明次序。 保留全部原有UNKNOWN/PENDING与未绑定事件；新增义务是编辑选择/来源要求，不是已执行场态、原稿事实或语义PASS。AGENT_EDITED只证明实际编辑发生，不代表合格同行审查；authority_effect=NONE，evidence_effect=NONE。"
+}

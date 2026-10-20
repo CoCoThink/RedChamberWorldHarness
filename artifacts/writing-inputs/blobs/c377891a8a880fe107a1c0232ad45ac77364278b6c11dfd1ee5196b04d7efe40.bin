@@ -1,0 +1,45 @@
+schema_version: 1
+claims:
+- id: claim:falling-leaves:future-line
+  statement: 后文有原字“落叶萧萧，寒烟漠漠”。
+  kind: FUTURE_LINE
+  role: FUTURE_LINE
+  modality: DIRECT_ASSERTION
+  literal_targets:
+  - NOVEL_EXACT
+  support:
+  - source: src:jiaxu:ch26:falling-leaves-cold-smoke
+    relation: DIRECT
+  status: SUPPORTED
+- id: claim:falling-leaves:chapter-87
+  statement: “落叶萧萧，寒烟漠漠”必定出现在第87回。
+  kind: PLACEMENT
+  support: []
+  status: NOT_ESTABLISHED
+- id: claim:sheyue-speech:future-speech
+  statement: 袭人后文说出原字“好歹留着麝月”，宝玉依从。
+  kind: FUTURE_SPEECH
+  role: FUTURE_SPEECH
+  modality: DIRECT_ASSERTION
+  literal_targets:
+  - NOVEL_EXACT
+  support:
+  - source: src:jimao:ch20:keep-sheyue
+    relation: DIRECT
+  status: SUPPORTED
+- id: claim:sheyue-speech:after-xiren-marriage
+  statement: “好歹留着麝月”发生在袭人出嫁之后。
+  kind: ORDER
+  role: FUTURE_SPEECH
+  modality: DIRECT_ASSERTION
+  literal_targets:
+  - BOUNDARY
+  support:
+  - source: src:jimao:ch20:keep-sheyue
+    relation: DIRECT
+  status: SUPPORTED
+- id: claim:sheyue-speech:chapter-88
+  statement: “好歹留着麝月”必定出现在第88回。
+  kind: PLACEMENT
+  support: []
+  status: NOT_ESTABLISHED

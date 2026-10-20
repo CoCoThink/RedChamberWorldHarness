@@ -79,6 +79,12 @@ def test_raw_response_and_input_tampering_rejected(root):
     with pytest.raises(ValueError, match='identity'):
         verify_record(changed)
     (root / 'input.json').write_text('{"changed": true}')
+    assert load_draft(root, result['draft']['path'])[1] == response()['content'][1]['text']
+    from rcwh.generation.snapshots import InputSnapshot
+    snapshot = InputSnapshot(root, record['input_snapshot'])
+    assert snapshot.read(record['inputs'][0]) == b'{}\n'
+    blob = snapshot.entries[('input.json', record['inputs'][0]['sha256'])]
+    (root / blob['path']).write_bytes(b'tampered historical bytes')
     with pytest.raises(ValueError, match='stale'):
         load_draft(root, result['draft']['path'])
 

@@ -2,6 +2,7 @@
 import importlib.util
 import json
 from pathlib import Path
+import shutil
 from types import SimpleNamespace
 
 import pytest
@@ -28,7 +29,7 @@ def inputs(tmp_path, monkeypatch):
     return root
 
 
-def stub(monkeypatch, root, *, drift=False, fail=False):
+def stub(monkeypatch, root, *, drift=False, fail=False, with_snapshot=False):
     def run(command, *, cwd=None, **kwargs):
         if command[0] == 'git':
             return SimpleNamespace(returncode=0)
@@ -46,6 +47,12 @@ def stub(monkeypatch, root, *, drift=False, fail=False):
             target.parent.mkdir(parents=True, exist_ok=True)
             target.write_bytes(raw)
             result[field] = {'path': relative, 'sha256': digest(raw)}
+        if with_snapshot:
+            from rcwh.generation.records import binding
+            from rcwh.generation.snapshots import freeze_inputs
+            (snapshot / 'schemas').mkdir()
+            shutil.copyfile(ROOT / 'schemas/writing_input_snapshot.schema.json', snapshot / 'schemas/writing_input_snapshot.schema.json')
+            result['input_snapshot'] = freeze_inputs(snapshot, [binding(snapshot, 'text.txt')])
         (snapshot / 'snapshot-import-result.json').write_bytes(canonical_bytes(result))
         if drift:
             (root / 'fixed.json').write_bytes(b'changed')
@@ -90,3 +97,17 @@ def test_revision_mode_requires_actual_parent_and_template(inputs):
     (root / 'request.json').write_bytes(canonical_bytes(request))
     with pytest.raises(ValueError, match='actual revise-v2 parent'):
         call(root)
+
+
+def test_v2_import_copies_snapshot_manifest_and_physical_blobs(inputs, monkeypatch):
+    root = inputs
+    stub(monkeypatch, root, with_snapshot=True)
+    result = call(root)
+    ref = result['input_snapshot']
+    raw = (root / ref['path']).read_bytes()
+    assert digest(raw) == ref['sha256']
+    manifest = json.loads(raw)
+    for entry in manifest['entries']:
+        blob = entry['blob']
+        assert digest((root / blob['path']).read_bytes()) == blob['sha256']
+        assert (root / blob['path']).read_bytes() == (root / 'text.txt').read_bytes()

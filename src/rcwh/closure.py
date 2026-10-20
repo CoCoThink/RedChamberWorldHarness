@@ -54,6 +54,28 @@ class InputClosure:
             # Only typed asset IDs are resolved. Other strings are explanations,
             # never arbitrary paths/URLs to try when a carrier is absent.
             if isinstance(value, dict):
+                if value.get("kind") == "WRITING_DRAFT":
+                    from .generation.lineage import historical_artifact_paths, snapshot_for_draft
+                    from .generation.writing import load_draft
+                    if snapshot_for_draft(self.root, value) is not None:
+                        canonical = f"data/writing/drafts/ch{value['chapter']}/{digest(canonical_bytes(value))}.json"
+                        load_draft(self.root, canonical)
+                        paths.update(historical_artifact_paths(self.root, value))
+                        paths.add(canonical)
+                        return
+                if value.get("kind") == "WRITING_HISTORY_MIGRATION":
+                    # Its compatibility baseline describes old semantic input
+                    # identities. Physical custody is verified through the draft.
+                    visit_record({"path": value["draft"]["path"], "sha256": value["draft"]["sha256"]})
+                    return
+                if value.get("kind") == "WRITING_INPUT_SNAPSHOT":
+                    from .generation.snapshots import InputSnapshot
+                    ref = {"path": f"artifacts/writing-inputs/manifests/{digest(canonical_bytes(value))}.json",
+                           "sha256": digest(canonical_bytes(value))}
+                    frozen = InputSnapshot(self.root, ref)
+                    frozen.verify()
+                    paths.update(row["path"] for row in frozen.entries.values())
+                    return
                 if isinstance(value.get("path"), str) and isinstance(value.get("sha256"), str):
                     path = repository_path(self.root, value["path"])
                     if digest(path.read_bytes()) != value["sha256"]:

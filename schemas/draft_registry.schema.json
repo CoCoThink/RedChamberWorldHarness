@@ -19,7 +19,7 @@
   ],
   "properties": {
     "schema_version": {
-      "const": 1
+      "enum": [1, 2]
     },
     "candidate": {
       "type": "object",
@@ -94,6 +94,9 @@
       },
       "additionalProperties": false
     },
+    "input_snapshot": {"type":"object","required":["path","sha256"],"properties":{"path":{"type":"string","minLength":1},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"}},"additionalProperties":false},
+    "selection_context": {"type":"object"},
+    "dependency_records": {"type":"array","items":{"type":"object","required":["kind","id","sha256","value"],"properties":{"kind":{"enum":["SOURCE","CLAIM","ASSET"]},"id":{"type":"string","minLength":1},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"value":{"type":"object"}},"additionalProperties":false}},
     "execution_basis": {"enum": ["PROVIDER_RUN", "SESSION_AUTHORED_NOT_PROVIDER_VERIFIED"]},
     "prepared_request": {"$ref": "#/$defs/binding"},
     "package": {"$ref": "#/$defs/binding"},
@@ -219,7 +222,7 @@
       "required": ["raw_run"],
       "not": {"anyOf": [{"required": ["prepared_request"]}, {"required": ["package"]}]}
     }
-  }],
+  }, {"if":{"properties":{"schema_version":{"const":2}}},"then":{"required":["input_snapshot"]},"else":{"not":{"required":["input_snapshot"]}}}],
   "$defs": {
     "binding": {
       "type": "object", "required": ["path", "sha256"],

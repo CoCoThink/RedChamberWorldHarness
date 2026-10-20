@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ExtractionTextUnit",
+  "type": "object", "additionalProperties": false,
+  "required": ["unit_ref", "input", "text", "text_sha256", "nodes"],
+  "properties": {
+    "unit_ref": {"type": "string", "minLength": 1},
+    "input": {"type": "object", "additionalProperties": false, "required": ["asset_ref", "sha256"],
+      "properties": {"asset_ref": {"type": "string", "pattern": "^asset:"}, "sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"}}
+    },
+    "text": {"type": "string"},
+    "text_sha256": {"type": "string", "pattern": "^[a-f0-9]{64}$"},
+    "nodes": {
+      "type": "array", "items": {
+        "type": "object", "additionalProperties": false, "required": ["start", "end", "origin"],
+        "properties": {
+          "start": {"type": "integer", "minimum": 0}, "end": {"type": "integer", "minimum": 0},
+          "origin": {"type": "object", "minProperties": 1}
+        }
+      }
+    }
+  }
+}

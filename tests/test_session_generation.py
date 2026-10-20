@@ -18,6 +18,9 @@ from test_generation import response, root
 
 @pytest.fixture
 def session_root(root, monkeypatch):
+    # Preserve the frozen v1 protocol's stricter live-context contract. The v2
+    # suite explicitly selects the new default and tests historical snapshots.
+    monkeypatch.setattr('rcwh.generation.render.DEFAULT_RENDERER_VERSION', 1)
     package = {'chapter': 89, 'exemplar_set': None, 'world': [], 'plan': [], 'sources': []}
     for path, value in {
         'examples.json': {}, 'manifest.json': {}, 'data/world/version.json': {'id': 'world'},

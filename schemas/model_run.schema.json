@@ -27,11 +27,12 @@
   ],
   "properties": {
     "schema_version": {
-      "const": 1
+      "enum": [1, 2]
     },
     "kind": {
       "const": "MODEL_RUN"
     },
+    "input_snapshot": {"type":"object","required":["path","sha256"],"properties":{"path":{"type":"string","minLength":1},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"}},"additionalProperties":false},
     "provider": {
       "type": "string",
       "minLength": 1
@@ -213,6 +214,7 @@
     }
   },
   "additionalProperties": false,
+  "allOf": [{"if":{"properties":{"schema_version":{"const":2}}},"then":{"required":["input_snapshot"]},"else":{"not":{"required":["input_snapshot"]}}}],
   "$defs": {
     "sha": {
       "type": "string",

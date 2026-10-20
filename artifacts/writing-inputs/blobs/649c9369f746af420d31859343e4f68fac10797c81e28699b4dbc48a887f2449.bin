@@ -1,0 +1,49 @@
+schema_version: 1
+assets:
+- id: asset:release:stable:v1.4:readable
+  path: releases/stable/v1.4/readable/baseline.md
+  sha256: 4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320
+  bytes: 545334
+  media_type: text/markdown
+  kind: RELEASE_TEXT
+  immutable: true
+  origin_refs:
+  - origin:handover-20261008:f66339cf04b61e286294c95d
+- id: asset:sha256:1f586ceb8e23a0dd039890259dbfe60fdf10211f306cb2c9da856a9f2288c8c8
+  path: corpus/front80/v1-candidate/chapters/ch77.json
+  sha256: 1f586ceb8e23a0dd039890259dbfe60fdf10211f306cb2c9da856a9f2288c8c8
+  bytes: 33549
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:bec7613386131e514ca5c91042c3837257cb4e17c11fc2e578b6985f5364493b
+  derived_from:
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
+- id: asset:sha256:5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20
+  path: corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg
+  sha256: 5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20
+  bytes: 498534
+  media_type: image/jpeg
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:ingest:6e92aaffe7508acb35250b29999a99fb972fda0b514de57c64025a9e967f7441
+  derived_from:
+  - asset:sha256:5791f0fee06af35e1f5d98c0ab4f06a7c088f818f5597b4eab6f30bd519327fa
+- id: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+  path: corpus/extractions/14678ba9a4bf99943d9aedc06d41f50031a3ac8ec85e614a5571bd9d59a549aa/manifest.json
+  sha256: e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
+  bytes: 1243
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:extraction:14678ba9a4bf99943d9aedc06d41f50031a3ac8ec85e614a5571bd9d59a549aa:manifest
+  derived_from:
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920

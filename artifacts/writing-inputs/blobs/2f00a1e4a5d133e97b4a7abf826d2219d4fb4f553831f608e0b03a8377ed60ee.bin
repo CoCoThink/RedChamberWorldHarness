@@ -1,0 +1,871 @@
+{
+  "authority_effect": "NONE",
+  "bindings": {
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch85.json",
+      "sha256": "e98bba7be7c3fde71b9008cdcce31fae9be2d5cf36ec773f391403c5c8d18535"
+    },
+    "seed": {
+      "path": "data/planning/scenes/85-S1.json",
+      "sha256": "fa2f7aad41e7bcc5e80441619e5427d1696569a0dc7ad1791b026efd4a130b87"
+    },
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-81-85.json",
+      "sha256": "64a339142412c537b6caf39c03642449db6d69e5da39d1f239037a1a34e05b35"
+    },
+    "world": {
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ],
+      "status": "BOUND"
+    }
+  },
+  "chapter": 85,
+  "chapter_plan_ref": "data/planning/chapters/ch85.json",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 84
+  },
+  "entry_from": "CHAPTER_ENTRY:84",
+  "entry_state": [
+    {
+      "equals": "character.daiyu.body_state",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "85章入口84无本场病纸开始时的局部身体快照；W84章级病势变化不能替代纸上逐日观察。"
+    },
+    {
+      "equals": "character.zijuan.knowledge.daiyu_illness_severe",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "真实注册事实对应知识场景86；没有85-S1入口知情记录，严重病情的标签不是获取证据。"
+    }
+  ],
+  "event_refs": [],
+  "evidence_effect": "NONE",
+  "exit_state": [
+    {
+      "equals": "character.daiyu.body_state",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "连续记录、短暂好转与不可逆下降没有85世界事件，不能让作者要求反过来证明病身出口。"
+    },
+    {
+      "equals": "character.zijuan.knowledge.daiyu_illness_severe",
+      "value": null,
+      "status": "PENDING",
+      "basis": [],
+      "reason": "病纸观察是否形成此知识状态仍无85知识事件和源场景，知识出口待登记与独立检查。"
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "85-S1-F1",
+      "description": "不得以起居纸读数诊断新急性绝症、精确死期或最后一夜；不得把短暂好转当成已证治愈。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/4/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/4/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3b4288aa97c512d3654aafea2d73ed4c7e7e3d8ea12f4527140aca215c851871",
+          "value": {
+            "id": "85-S1",
+            "title": "一张不起眼的起居纸开始比口头判断可靠"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                12899,
+                13018
+              ],
+              "lines": [
+                347,
+                349
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "17beb24734fa25cc7e24030b3834670b9fb35170e2cce1c3bc140233aa57fb42"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR10/R11：黛玉必须沉痼日深、泪尽夭亡；不许新造急性绝症。H03丧期仍在。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                13343,
+                13527
+              ],
+              "lines": [
+                356,
+                358
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d68dd761d9a2da09f2ac251150f90296ce3a2676152c0b221d1799f24032b9b1"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n85-S1五项起居指标持续；S2宝玉探视从随意改为先问；S3宝钗现实照料增加但不宣布角色；A01在数日旧稿基础上整理成组。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                14239,
+                14325
+              ],
+              "lines": [
+                371,
+                373
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d8dd428c12b972554b90fbca22c5f4a1b06496fd25d1ce384c1c78f10e6e4cf7"
+            },
+            "name": "宗教/梦",
+            "number": 9,
+            "text": "**9｜宗教/梦**  \n低。黛玉不参禅、不梦警幻、不预言自己死期。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                14325,
+                14408
+              ],
+              "lines": [
+                374,
+                376
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "0fe2673355c12078abe02ad5ce87e2f155aff23d1a9dfd280efaff81a2d3d559"
+            },
+            "name": "职业",
+            "number": 10,
+            "text": "**10｜职业**  \n大夫、药铺只继续长期病线；不诊断“新病”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                15036,
+                15289
+              ],
+              "lines": [
+                395,
+                398
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "066268ae67c055259c72b9827f011267cd976f7cf4dd2a6b8178e10ef76ac7d1"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n丧常例变静 → 起居记录 → 一次短暂好转 → 探视受限 → 《十独吟》旧稿整理/成组 → 普通未成稿仍在 → 夜醒。  \n**风险：**诗压过身体；把《十独吟》写成绝命组诗。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "85-S1-F2",
+      "description": "不得把《十独吟》归给黛玉、实体化作者篇数诗体、全读十首或标成最后一部作品；题名存在不补足实施事实。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/4/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/4/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3b4288aa97c512d3654aafea2d73ed4c7e7e3d8ea12f4527140aca215c851871",
+          "value": {
+            "id": "85-S1",
+            "title": "一张不起眼的起居纸开始比口头判断可靠"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                13186,
+                13343
+              ],
+              "lines": [
+                353,
+                355
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "adf55bd62accec7a630c747be806342c2ba318635dfc81fd6cc2670eb95e2bfe"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \nA01《十独吟》需要在本回建立完整容器；病情“偶有好转假象”与作品完成要协调，不得像临终冲刺。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                13724,
+                14160
+              ],
+              "lines": [
+                365,
+                367
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b5f180defda97694e82ca62745967f84fa6cfb0ecd0959efb74fd0e06ffeeb71"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nA01《十独吟》题名存在为硬证；**85显题仅为C-main，作者与具体形制继续OPEN**。当前正文只让题名稿件出现在黛玉旧书/旧纸环境中，不以此宣布作者。若后续要实体化作者、篇数或诗体，必须先更新实施事实登记再进入正文。G01普通未成小诗可在85出现，但86才最后停笔。C03《五美吟》只作结构远回声，不重引。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                14642,
+                14791
+              ],
+              "lines": [
+                383,
+                385
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ee604a11d1d6b35565534f2b17faf6cf2ee80ff06d5cb09871315b3ef5f2f685"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n“这是她最后一部作品”式作者标注；《十独吟》直接十首全读若压垮病日节奏，需要分段呈现。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                14791,
+                14888
+              ],
+              "lines": [
+                386,
+                388
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "c456752a520c1a587247bb64c6885b4730951b608aa9a8459f930483777f2efd"
+            },
+            "name": "L3候选",
+            "number": 14,
+            "text": "**14｜L3候选**  \nA01插入位置可做局部结构重排，但不得把整回变诗社回。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "id": "85-S1",
+  "kind": "AGENT_SCENE_CONTRACT",
+  "knowledge_binding": null,
+  "knowledge_event_refs": [],
+  "object_transition_refs": [],
+  "order": 1,
+  "participants": [
+    "daiyu",
+    "zijuan"
+  ],
+  "participants_status": "KNOWN",
+  "preconditions": [
+    {
+      "equals": "character.zijuan.location",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "夜守、记纸动作只作为拟写要求，无85现场位置事件。"
+    },
+    {
+      "equals": "object.OBJ-MEDICINE-BOWL-86.status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "第86回药碗不得默认等同85起居纸所记药器；没有本场对象身份或温度连结。"
+    }
+  ],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/2",
+        "ref": "data/world/m3_core.json#/characters/2",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "7a8cf2f8057851bc3567ddbecbe17a44ec3ed061b238276e2235cea507a777ec",
+        "value": {
+          "baseline": {
+            "body_state": "chronic_declining",
+            "household_role": "jia_guest",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNMARRIED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "daiyu",
+          "name": "林黛玉"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/28",
+        "ref": "data/world/m3_core.json#/characters/28",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "3b707fbd7be9241f9d10978db2507e02c5466802019e9c3bdd78bb3c5f231249",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "daiyu_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "zijuan",
+          "name": "紫鹃"
+        }
+      }
+    ],
+    "objects": [
+      {
+        "path": "data/objects/m4.json",
+        "pointer": "/objects/3",
+        "ref": "data/objects/m4.json#/objects/3",
+        "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+        "text_sha256": "ff8e37e26a9bb86c228a0713f303e67c705b445a4648fa5e220c3f542a8bf232",
+        "value": {
+          "baseline": {
+            "holder": "zijuan",
+            "location": "S02",
+            "status": "CONTAINS_UNFINISHED_MEDICINE",
+            "temperature": "warm"
+          },
+          "continuity_rules": [
+            "药冷是死亡场的物理连续性，不作象征学解释"
+          ],
+          "evidence_status": "LEGACY_ACTIVE_BRIDGED_TO_M4",
+          "id": "OBJ-MEDICINE-BOWL-86",
+          "identity_status": "CURRENT_IMPLEMENTATION_OBJECT",
+          "kind": "medicine_vessel",
+          "legacy_location_refinements": [
+            {
+              "authority_effect": "NONE",
+              "basis_segments": [
+                "hlm80:chapter:23:p00078",
+                "hlm80:chapter:78:p00028"
+              ],
+              "epistemic": "CURRENT_IMPLEMENTATION",
+              "legacy_value": "xiaoxiang_room",
+              "note": "前八十回：潇湘馆为大观园内林黛玉住处（第23回），第78回黛玉仍居潇湘馆；S02为贾府/大观园末期空间。仅声明空间包含，不使两个位置等同，也不证明药碗或黛玉死所的位置。",
+              "relation": "CONTAINED_IN",
+              "within": "S02"
+            }
+          ],
+          "legacy_ref": "data/objects/medicine_bowl.yaml",
+          "name": "第86回药碗",
+          "source_refs": [
+            "asset:sha256:7e4ba5576d56cf953338ef9dfa98b9dea3da4be4a595fff241a5c26d4c7e23bf"
+          ]
+        }
+      }
+    ],
+    "knowledge": [
+      {
+        "path": "data/knowledge/v03_slice2.json",
+        "pointer": "/facts/0",
+        "ref": "data/knowledge/v03_slice2.json#/facts/0",
+        "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7",
+        "text_sha256": "7cb069f7b63f2630f45c0691fe041c94026f4afeec69fc8d9c76047727ca1561",
+        "value": {
+          "epistemic": "CURRENT_SCENE_FACT",
+          "id": "daiyu_illness_severe",
+          "label": "黛玉病势已重"
+        }
+      }
+    ]
+  },
+  "required_beats": [
+    {
+      "id": "85-S1-R1",
+      "description": "承接84起居纸，以睡眠、夜醒、饭、药等连续记项代替今日看着好些的印象；注明每项观察时段，不把缺记当作没有症状。第五项及具体数量仍待后续源和正文核对，世界身体矩阵的咳嗽/耐力只供核对方向，不能自动补成第五列或编精确读数。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/4/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/4/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3b4288aa97c512d3654aafea2d73ed4c7e7e3d8ea12f4527140aca215c851871",
+          "value": {
+            "id": "85-S1",
+            "title": "一张不起眼的起居纸开始比口头判断可靠"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                13018,
+                13186
+              ],
+              "lines": [
+                350,
+                352
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b70ac5c7f04638768c39964dab0f0437f34cb61c1e8790859d2ec47a3db82e9e"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n紫鹃起居纸、雪雁“药铺账”笑话、睡眠/饭/药连续记录；黛玉仍有笑与嫌闷；“明日看旧集”的普通明日感。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                13343,
+                13527
+              ],
+              "lines": [
+                356,
+                358
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d68dd761d9a2da09f2ac251150f90296ce3a2676152c0b221d1799f24032b9b1"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n85-S1五项起居指标持续；S2宝玉探视从随意改为先问；S3宝钗现实照料增加但不宣布角色；A01在数日旧稿基础上整理成组。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                14408,
+                14550
+              ],
+              "lines": [
+                377,
+                379
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e393a20adbc9fece6ab3ab5087356f8a5e78a2aacd3f716de3db4b1098e4dffb"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱仍E0；药、食养、热水、夜守有人力；信息以起居纸替代“她今日看着好些”的主观判断。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                14550,
+                14642
+              ],
+              "lines": [
+                380,
+                382
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7173a63f79af94b2190e58ff8f1fa80fab5df23a5b968969c291b256ccc90631"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n睡眠记录、热水、窗纱、旧集、紫鹃夜守、日常玩笑。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "85-S1-R2",
+      "description": "观察、写下、再翻看前几日纸的动作分开，让一次短暂好转与长期下降可以同时存在，不能由能吃一口便断言病已好。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/4/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/4/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3b4288aa97c512d3654aafea2d73ed4c7e7e3d8ea12f4527140aca215c851871",
+          "value": {
+            "id": "85-S1",
+            "title": "一张不起眼的起居纸开始比口头判断可靠"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                12899,
+                13018
+              ],
+              "lines": [
+                347,
+                349
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "17beb24734fa25cc7e24030b3834670b9fb35170e2cce1c3bc140233aa57fb42"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR10/R11：黛玉必须沉痼日深、泪尽夭亡；不许新造急性绝症。H03丧期仍在。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                13018,
+                13186
+              ],
+              "lines": [
+                350,
+                352
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b70ac5c7f04638768c39964dab0f0437f34cb61c1e8790859d2ec47a3db82e9e"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n紫鹃起居纸、雪雁“药铺账”笑话、睡眠/饭/药连续记录；黛玉仍有笑与嫌闷；“明日看旧集”的普通明日感。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                13343,
+                13527
+              ],
+              "lines": [
+                356,
+                358
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d68dd761d9a2da09f2ac251150f90296ce3a2676152c0b221d1799f24032b9b1"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n85-S1五项起居指标持续；S2宝玉探视从随意改为先问；S3宝钗现实照料增加但不宣布角色；A01在数日旧稿基础上整理成组。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                14408,
+                14550
+              ],
+              "lines": [
+                377,
+                379
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "e393a20adbc9fece6ab3ab5087356f8a5e78a2aacd3f716de3db4b1098e4dffb"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱仍E0；药、食养、热水、夜守有人力；信息以起居纸替代“她今日看着好些”的主观判断。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                15036,
+                15289
+              ],
+              "lines": [
+                395,
+                398
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "066268ae67c055259c72b9827f011267cd976f7cf4dd2a6b8178e10ef76ac7d1"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n丧常例变静 → 起居记录 → 一次短暂好转 → 探视受限 → 《十独吟》旧稿整理/成组 → 普通未成稿仍在 → 夜醒。  \n**风险：**诗压过身体；把《十独吟》写成绝命组诗。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "85-S1-R3",
+      "description": "雪雁药铺账的笑话接口、听咳有功或记账第一的活声与热水、窗纱、夜守继续；未注册雪雁不进入已知参与者或状态。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/4/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/4/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3b4288aa97c512d3654aafea2d73ed4c7e7e3d8ea12f4527140aca215c851871",
+          "value": {
+            "id": "85-S1",
+            "title": "一张不起眼的起居纸开始比口头判断可靠"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                13018,
+                13186
+              ],
+              "lines": [
+                350,
+                352
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b70ac5c7f04638768c39964dab0f0437f34cb61c1e8790859d2ec47a3db82e9e"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n紫鹃起居纸、雪雁“药铺账”笑话、睡眠/饭/药连续记录；黛玉仍有笑与嫌闷；“明日看旧集”的普通明日感。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                13527,
+                13630
+              ],
+              "lines": [
+                359,
+                361
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "87ece390325808016f90b1668621d104ad9029ce34d0952f0ea5e829d453c3e3"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n紫鹃、雪雁、宝玉、宝钗、医者；避免家族轮流“探病打卡”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                14160,
+                14239
+              ],
+              "lines": [
+                368,
+                370
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "47dda190d17e7c75969a0a94f84759c274f1565761460541a2ce6ceb2f8497ec"
+            },
+            "name": "笑料",
+            "number": 8,
+            "text": "**8｜笑料**  \n“听咳有功”“记账第一”等保持病中活声。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                14550,
+                14642
+              ],
+              "lines": [
+                380,
+                382
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7173a63f79af94b2190e58ff8f1fa80fab5df23a5b968969c291b256ccc90631"
+            },
+            "name": "保留",
+            "number": 12,
+            "text": "**12｜保留**  \n睡眠记录、热水、窗纱、旧集、紫鹃夜守、日常玩笑。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "85-S1-R4",
+      "description": "旧集旧纸环境中保留《十独吟》题名可辨的稿件，并交代数日旧稿收拢整理到同一题名下的容器动作；整理成组不等于已选定诗篇数、诗体或作者，也不新增完整诗文。题名显现仍仅C-main，不是黛玉临终冲刺或最后一部作品，具体实施继续待核。",
+      "status": "PENDING",
+      "scope": "AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/4/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/4/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "3b4288aa97c512d3654aafea2d73ed4c7e7e3d8ea12f4527140aca215c851871",
+          "value": {
+            "id": "85-S1",
+            "title": "一张不起眼的起居纸开始比口头判断可靠"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                13186,
+                13343
+              ],
+              "lines": [
+                353,
+                355
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "adf55bd62accec7a630c747be806342c2ba318635dfc81fd6cc2670eb95e2bfe"
+            },
+            "name": "最薄处",
+            "number": 3,
+            "text": "**3｜最薄处**  \nA01《十独吟》需要在本回建立完整容器；病情“偶有好转假象”与作品完成要协调，不得像临终冲刺。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                13343,
+                13527
+              ],
+              "lines": [
+                356,
+                358
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d68dd761d9a2da09f2ac251150f90296ce3a2676152c0b221d1799f24032b9b1"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n85-S1五项起居指标持续；S2宝玉探视从随意改为先问；S3宝钗现实照料增加但不宣布角色；A01在数日旧稿基础上整理成组。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                13724,
+                14160
+              ],
+              "lines": [
+                365,
+                367
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b5f180defda97694e82ca62745967f84fa6cfb0ecd0959efb74fd0e06ffeeb71"
+            },
+            "name": "诗文身份",
+            "number": 7,
+            "text": "**7｜诗文身份**  \nA01《十独吟》题名存在为硬证；**85显题仅为C-main，作者与具体形制继续OPEN**。当前正文只让题名稿件出现在黛玉旧书/旧纸环境中，不以此宣布作者。若后续要实体化作者、篇数或诗体，必须先更新实施事实登记再进入正文。G01普通未成小诗可在85出现，但86才最后停笔。C03《五美吟》只作结构远回声，不重引。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                14642,
+                14791
+              ],
+              "lines": [
+                383,
+                385
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ee604a11d1d6b35565534f2b17faf6cf2ee80ff06d5cb09871315b3ef5f2f685"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n“这是她最后一部作品”式作者标注；《十独吟》直接十首全读若压垮病日节奏，需要分段呈现。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                15036,
+                15289
+              ],
+              "lines": [
+                395,
+                398
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "066268ae67c055259c72b9827f011267cd976f7cf4dd2a6b8178e10ef76ac7d1"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n丧常例变静 → 起居记录 → 一次短暂好转 → 探视受限 → 《十独吟》旧稿整理/成组 → 普通未成稿仍在 → 夜醒。  \n**风险：**诗压过身体；把《十独吟》写成绝命组诗。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "required_objects": [],
+  "revision": "v2",
+  "schema_version": 1,
+  "status": "AGENT_EDITED",
+  "unresolved": [
+    "model_peer_readings_pending: 已由81—85编辑核对实际v1、绑定章卡/种子及世界边界；编辑不计独立读者，模型同侪阅读尚待进行，正文语义未验。",
+    "declared_sequence_only: 依候选列表显式声明前驱；历史场景顺序和与既有正文的精确放置未核验。",
+    "chapter_entry_not_scene_snapshot: 首场chapter-1仅是显式章入口，未覆盖本场所有位置、医学、物态和知情条件。",
+    "unregistered_participants: 雪雁、医者、药铺经手未注册，不编造ID或轮流探病角色。",
+    "object_detail_gap: 起居纸、热水、窗纱、旧集和《十独吟》题名稿件无对象登记；第86药碗仅边界参照，不作85必需对象。",
+    "observation_detail_gap: 种子提出五项起居指标，章卡只列睡眠/夜醒/饭/药等，完整第五项、数值和日序缺证，保留待核。",
+    "event_registry_gap: 第85回没有注册世界或对象事件，纸上记录不生成历史状态或自动通过重放。",
+    "knowledge_scene_gap: dai yu严重病情事实定义可引用但无85场景/获取事件；不能引入86今夜可能不起或确切死时。",
+    "literary_implementation_gap: A01题名存在不定作者、篇数、诗体；任何实体化必须先更新实施事实登记并另审。",
+    "literary_container_execution_pending: A01题名可辨及数日收拢/整理成组是待实现要求，未选作者、篇数、诗体或完整文本；G01普通未成稿另存，85不执行最后停笔。"
+  ],
+  "function": "把起居纸的连续五项观察从她今日看着好些的口头判断中分离，使长期病势与日常活声并存；旧纸文学容器不宣布作者、形制或最后作品。",
+  "notes": "81—85编辑从本场实际v1深拷贝新建v2，status=AGENT_EDITED只表示已作编辑，不表示语义支持、独立阅读、证据或权威；authority_effect=NONE、evidence_effect=NONE。原v1字节不变。本次逐项改动：85-S1-R1：承接84起居纸，以睡眠、夜醒、饭、药等连续记项代替今日看着好些的印象；注明每项观察时段，不把缺记当作没有症状。第五项及具体数量仍待后续源和正文核对，世界身体矩阵的咳嗽/耐力只供核对方向，不能自动补成第五列或编精确读数。；85-S1-R4：旧集旧纸环境中保留《十独吟》题名可辨的稿件，并交代数日旧稿收拢整理到同一题名下的容器动作；整理成组不等于已选定诗篇数、诗体或作者，也不新增完整诗文。题名显现仍仅C-main，不是黛玉临终冲刺或最后一部作品，具体实施继续待核。。后场前驱如有只改指同一编辑选集v2，显式顺序仍非核实年代且不继承状态。参与者KNOWN只指已绑定注册主体子集，不证明现场同在或涵盖未注册接口；所有原状态值、UNKNOWN/PENDING、basis、知识绑定、事件关联及对象ID不变。另核已绑定声口、85身体矩阵与资源边界：紫鹃须有判断而非纯护理，宝钗不是现代管理者；不把咳嗽/耐力自动选为第五项，不制造断药贫困线，不借86严重病情获知或药碗补85现场。模型同侪阅读与正文语义验证仍待进行，不声明任何语义PASS。"
+}

@@ -12,6 +12,22 @@ from ..world import WorldRuntime
 from ..object_network import ObjectNetworkRuntime
 
 
+def scene_state_input_paths(root: Path) -> set[str]:
+    """The input files consumed by SceneStateProjector, including object entries.
+
+    Project governance is not a state runtime. Scope is the one project file
+    consumed by ObjectNetworkRuntime. Optional existence supports small fixtures;
+    the actual runtimes reject missing required files when constructing state.
+    """
+    from ..knowledge import KNOWLEDGE_PATH
+
+    selected = {f"data/world/m3_{name}.json" for name in
+                ("core", "locations", "presence", "body", "resources", "knowledge")}
+    selected.update({"data/objects/m4.json", KNOWLEDGE_PATH, "data/project/scope.json"})
+    selected.update(p.relative_to(root).as_posix() for p in (root / "data/objects").glob("*.yaml"))
+    return {path for path in selected if (root / path).is_file()}
+
+
 def canonical_target(target: str) -> str:
     parts = target.split(".")
     if len(parts) < 3 or parts[0] not in {"character", "object"}:

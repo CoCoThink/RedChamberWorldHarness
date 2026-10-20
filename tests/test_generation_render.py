@@ -45,7 +45,7 @@ def test_renderer_equal_task_information_source_text_and_single_package_load(tmp
         'resolve': lambda self, ref: type('Asset', (), {'path': root / 'manifest.json'})()})())
     monkeypatch.setattr('rcwh.generation.render.LiteraryInputs', Inputs)
     monkeypatch.setattr('rcwh.generation.render.SceneStateAdapter', State)
-    monkeypatch.setattr('rcwh.graph.ProvenanceGraph.from_repo', lambda root: type('Graph', (), {'sources': {'source': {'text': '史料原文'}}})())
+    monkeypatch.setattr('rcwh.graph.ProvenanceGraph.from_repo', lambda root: type('Graph', (), {'sources': {'source': {'id': 'source', 'text': '史料原文'}}})())
     renderer = PromptRenderer(root)
     a = renderer.draft('package.json', 89, route='direct')
     b = renderer.draft('package.json', 89, route='harness')

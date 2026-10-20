@@ -1,0 +1,46 @@
+schema_version: 1
+assets:
+- id: asset:sha256:b8e5a9c848ddc3cc53aa0979468d770c2dc581d732e580051e7899108bb76073
+  path: archive/imports/received/b8e5a9c848ddc3cc53aa0979468d770c2dc581d732e580051e7899108bb76073/cao286-alt.fixed-capture.json
+  sha256: b8e5a9c848ddc3cc53aa0979468d770c2dc581d732e580051e7899108bb76073
+  bytes: 1277
+  media_type: application/json
+  kind: IMPORT_RECORD
+  immutable: true
+  origin_refs:
+  - origin:ingest:3d00102ca183cfc8f5c072b553188ee4d51cf3f690e110d816662282632ba72d
+- id: asset:sha256:b9278b790bc2fd8a7e90ec8ca86295a60105b0defe0843fc39cdc598e6826353
+  path: corpus/extractions/b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f/units.jsonl
+  sha256: b9278b790bc2fd8a7e90ec8ca86295a60105b0defe0843fc39cdc598e6826353
+  bytes: 2804941
+  media_type: application/x-ndjson
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:extraction:b9df50fdab4356483924e76e3952a43ae26413e16cc15997d73ec1eab9fb166f:units
+  derived_from:
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+- id: asset:sha256:c5e8e3f7cfc21a7a2d2398c70ac7e017a8cd8ee905a186e1e17f4fbcc29bb943
+  path: artifacts/reviews/c5e8e3f7cfc21a7a2d2398c70ac7e017a8cd8ee905a186e1e17f4fbcc29bb943/npm005664-collation-agent-v2.json
+  sha256: c5e8e3f7cfc21a7a2d2398c70ac7e017a8cd8ee905a186e1e17f4fbcc29bb943
+  bytes: 8278
+  media_type: application/json
+  kind: REVIEW_RECORD
+  immutable: true
+  origin_refs:
+  - origin:ingest:6b296725b3d3a5a7f138cd721c0cca2c437837eff5cdb943668da5d5f12d81ab
+- id: asset:sha256:ec1baaca3ac155ee40e2c585dbad4dda36f1bb995ecf101c5f535b0c01191425
+  path: corpus/front80/v1-candidate/chapters/ch51.json
+  sha256: ec1baaca3ac155ee40e2c585dbad4dda36f1bb995ecf101c5f535b0c01191425
+  bytes: 22001
+  media_type: application/json
+  kind: CORPUS_DERIVATIVE
+  immutable: true
+  origin_refs:
+  - origin:corpus:3832d86270570aa4648ed7b7aee408b1907475b90feda90c819e3fb0822c1bdc:ccdf8a40e67cece421c2aa75c32d70eb0eaf5a8ce340eacd493bbca2c2d29523
+  derived_from:
+  - asset:primary:hlm:zhihui:v3.1416:pdf
+  - asset:sha256:1c9dee98f867ea07dade7b69b2b8d3987c5046ddb51e1e377c5e306fd26ba900
+  - asset:primary:hlm:zhihui:v3.1416:epub
+  - asset:sha256:deadbec02fe70993e96c25b12afcbb10eebf139f512a09eedd1eeda641f69d3b
+  - asset:sha256:1960def9bb4bb99cc87ad0c445e94fc19be21c25627c632a7bb5c897a493c2a2
