@@ -16,7 +16,6 @@ import tempfile
 
 from rcwh.workflow.agent_release import AgentRelease
 from rcwh.workflow.review_campaign import _load
-from rcwh.candidate_reviews import canonical_bytes, digest
 
 REQUEST = "data/agent_release/research-81-100-v1/request.json"
 PLAN = "data/agent_release/research-81-100-v1/review-campaign.json"
@@ -50,7 +49,7 @@ def verify(root: Path) -> dict:
     if manifest["advisories"]["book_continuity"]["status"] == "INVALID":
         raise ValueError("current whole-book review packet invalid")
     return {"status": "PASS", "release_status": manifest["status"], "failures": manifest["findings"],
-            "request_sha256": digest(canonical_bytes(request)),
+            "request_sha256": manifest["request_sha256"],
             "chapters": len(manifest["changed_chapters"]), "jobs": dict(Counter(j["kind"] for j in plan["jobs"])),
             "batch_size": plan["batch_size"], "authority_effect": "NONE"}
 
