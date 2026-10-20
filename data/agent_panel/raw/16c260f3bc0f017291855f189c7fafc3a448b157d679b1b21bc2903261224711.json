@@ -1,0 +1,42 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/8273e48ea5e768b3e2cdd3fac2d82e25b12ee6a338610384f3b864e4a097229f.json",
+    "sha256": "8273e48ea5e768b3e2cdd3fac2d82e25b12ee6a338610384f3b864e4a097229f"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "完整通读本次分派的92-S6.v2合同（1—1114行）、ch92_delivery_gate、候选正文（1—130行）、写作包及政策；五份材料与packet的SHA256均匹配assignment。无分派样本或图像，sample_checks为空。就92-S6-R1、R3及F1—F3，正文有实质支持：第99—105行以旧单和前次记录分辨见物、听闻、亲手经办，纠正记录中多出的一层意思；第109行明确其余经办另核，不再为这些待核项留人，书办拿纸入内后传回准返还；第111行同时保留再传和不得替旁人作保的限度。第21行暂存随身物，第111—127行区分准返还、领物与放行，未让贾芸包办决定，也未用袜子、钱、权贵、酷刑或狱神灯解释案情变化。第99行只说候过些日子，没有把保留韵文中的十日转写成精确羁押天数，正文仅末尾这一组正是韵文。保留的实际异议是92-S6-R2的收束尚未完成：第125行饭香和窄门属于家中等候者，第127—129行明确宝玉仍在监内、尚未过监门，故章内没有回窄巷的动作；第130行门外一程、才觉人间路窄却已按走出后的体验收束。并置等候场景可以成立，但这不能等同于合同所列的回窄巷已经兑现，建议核定唯一放行及回家位置后再决定韵文落点。本项FAIL仅指这项当前实现及章法要求，severity为ADVISORY，不是A-W1支持的LOCKED违反或完整性失败。92-S6-R4在本章内只出现一次准返还，未重复实际释放，也未搬入凤姐死亡；但93-S1正文未被分派，未读，92末/93-S1是否只落实一套释放的联合检查为NOT_CHECKED，不声称已通过。全部指定材料已读，无指定材料未读。",
+      "sample_checks": [],
+      "subject_id": "contract-92-6",
+      "subject_sha256": "563ac3435baebaeb2b7a65a746d1eb1226237e439161e141a8615cf69b6e70c3",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整通读本次分派的送物门禁合同、92-S6合同、候选正文、写作包及政策，并核对全部指定文件和packet的绑定哈希一致；无分派样本或图像。ask_rule_before_action有事件链支持：第57行小红先承认经手人未问着，第59—63行空手到门外问衣袜能否收、谁经手、何处交、拆验与不得夹话、吃食另验及拒收返还；第65—67行向贾芸与宝钗转述，宝钗依新得规则取出夹信；第69行再向茜雪说明拆验，茜雪剪线、去填物并调整包法，第75行小红明确毡的规则没问着，符合从不知道到有限知道的入口和退出状态。第77—85行分别落实门外等待、衣袜翻验、吃食另查、接物登记、转送回话及宝玉当面接物；茜雪第79行受阻即退，第83行没有求见，未取得自由探监权。limited_information也有明确支持：第63—65行接物者不管问话、不知放人时刻；第69行只问到能送；第83行已转送不等于已穿，第87行宝玉不知道谁补袜；第117—123行新传出的仅是准返还而领物放行未办，逐次保留未见人、未放行、时刻不知的限度。该有限行政消息没有被扩成全案或最终官面判断。小红、宝钗、茜雪均未被写成知道全案，小红的得力落在问规则和对交接，茜雪落在厚袜与补缀，两者功能可区分。就本合同的知识和送物边界未发现需否决的问题；此PASS只覆盖分派合同及所附候选，不认证未分派的历史原件、其他章节或93-S1接缝。全部指定材料已读，无指定材料未读。",
+      "sample_checks": [],
+      "subject_id": "contract-92-7",
+      "subject_sha256": "b207b3e25f59fef3711da9b6444e9b522d4840e6ffbab4648207bde73772afa9",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CHAPTER-92-030-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CHAPTER-92-030-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

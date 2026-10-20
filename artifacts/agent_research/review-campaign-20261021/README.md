@@ -2,7 +2,7 @@
 
 固定运行时：84a5612。详细计划见 docs/plans/POST80_REVIEW_AND_REVISION_20261021.md。
 
-检查点 status-004：25 COMPLETE、3 ASSIGNED、48 PENDING；无未读补读项，无传输失败。第81—90回全部章回任务及第91回首位已登记；第91回第二位和第92回首组两位在读。34条负面结果均为读者本人声明的 FAIL + ADVISORY，原件和异议全部保留，尚未作出采用决定。状态随任务进展变化，应重新运行 review-status。
+检查点 status-005：39 COMPLETE、3 ASSIGNED、34 PENDING；无未读补读项，无传输失败。第81—93回全部章回任务及第94回前三项已登记；第94回末项及第95回双读在进行。46条负面结果均为读者声明的 FAIL + ADVISORY，原件和异议全部保留，尚未作出采用决定。状态随任务进展变化，应重新运行 review-status。
 
 - baseline.json：初始状态、commit、输入摘要、执行根目录。
 - dispatch-*.json / status-*.json / registration-*.json：按观察时点保存的实际命令结果；当前状态须重新运行 review-status。
@@ -12,6 +12,8 @@
 - issue-intake.json：逐条保留原记录及负面原话的动态收件台账，处置尚待协调者；issues-first-batch.json 仅为首批观察。
 - predecessor-alias-check.json：46处同回前驱别名与所选文件字节一致；不等于正文或历史状态验收。
 - panel-integrity-012.json / panel-integrity-025.json：十二项和二十五项时点的记录和存储完整性均PASS，无findings。
+- coordinator-notes-read.jsonl：协调者实际通读登记意见全部results/notes/sample_checks的声明日志；不计同行阅读，也不代表已读全部正文。
+- panel-integrity-039.json：39项时点记录及存储完整性PASS。
 - coordinator-working-notes.md：基于实际收件的核对方向，尚未替代正式协调者裁决。
 - evaluation-partial-009.json：九项时点的真实评估，二十回仍PENDING；不得当作当前完整评估。
 

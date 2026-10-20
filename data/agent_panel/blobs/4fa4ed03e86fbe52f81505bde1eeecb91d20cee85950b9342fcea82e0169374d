@@ -1,0 +1,744 @@
+{
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "schema_version": 1,
+  "kind": "AGENT_SCENE_CONTRACT",
+  "revision": "v2",
+  "id": "94-S1",
+  "chapter": 94,
+  "order": 1,
+  "chapter_plan_ref": "data/planning/chapters/ch94.json",
+  "status": "AGENT_EDITED",
+  "bindings": {
+    "source_packet": {
+      "path": "artifacts/agent_research/phase5/inputs/contract-packet-91-95.json",
+      "sha256": "7a044fc4b0b30b9fa3f694714dbe79519af88ff6318819e74a3f38a2e0016816"
+    },
+    "seed": {
+      "path": "data/planning/scenes/94-S1.json",
+      "sha256": "06beec66d766079b2912b608d1b9374c397269448f07b3586c3419af17a41719"
+    },
+    "chapter_plan": {
+      "path": "data/planning/chapters/ch94.json",
+      "sha256": "cacd7c08f626cefa5a068864a9cdc36d890d10aad662dfdd258841fda4b48a3b"
+    },
+    "world": {
+      "status": "BOUND",
+      "inputs": [
+        {
+          "path": "data/project/scope.json",
+          "sha256": "ecd0c76ea442f5538a3bd5d12f1f3e33d0243318032b5c0446789fb5fdb91dbe"
+        },
+        {
+          "path": "data/world/m3_core.json",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733"
+        },
+        {
+          "path": "data/world/m3_locations.json",
+          "sha256": "ed1a4053f1459193777f486b3a9743c5aec28afb7d027dee12684da6e3a9d81b"
+        },
+        {
+          "path": "data/world/m3_presence.json",
+          "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb"
+        },
+        {
+          "path": "data/world/m3_body.json",
+          "sha256": "429ca248ea42aa0601e11a55d40fa446da92cee48936627a83b335ab9b18056e"
+        },
+        {
+          "path": "data/world/m3_resources.json",
+          "sha256": "b823f72594d4a2af2216525cbfd3411b00d41c4ad0fa89830348933be6de7668"
+        },
+        {
+          "path": "data/world/m3_knowledge.json",
+          "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b"
+        },
+        {
+          "path": "data/objects/m4.json",
+          "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db"
+        },
+        {
+          "path": "data/knowledge/v03_slice2.json",
+          "sha256": "37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7"
+        },
+        {
+          "path": "data/objects/medicine_bowl.yaml",
+          "sha256": "ad304b16d955e904b6de156bf88c38f51f0d552698bb7f2ff6ba07bb5572d361"
+        }
+      ]
+    }
+  },
+  "entry_from": "CHAPTER_ENTRY:93",
+  "entry_checkpoint": {
+    "kind": "CHAPTER_ENTRY",
+    "chapter": 93
+  },
+  "participants": [
+    "jiamu",
+    "ping_er",
+    "qiaojie"
+  ],
+  "participants_status": "PENDING",
+  "required_objects": [],
+  "references": {
+    "participants": [
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/24",
+        "ref": "data/world/m3_core.json#/characters/24",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "2cf082751e433eb468cd874dc43d7de79d779f4bd3f374e53e348c7abedeb0d8",
+        "value": {
+          "baseline": {
+            "body_state": "elderly",
+            "household_role": "senior_matriarch",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "WIDOWED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "jiamu",
+          "name": "贾母"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/8",
+        "ref": "data/world/m3_core.json#/characters/8",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "18eb0f602b315bef39498961532a6d16a05dbd3cac2e572c07257b6fdf99a63d",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary",
+            "household_role": "fengjie_attendant",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "UNRESOLVED"
+          },
+          "groups": [
+            "jia_household",
+            "human"
+          ],
+          "id": "ping_er",
+          "name": "平儿"
+        }
+      },
+      {
+        "path": "data/world/m3_core.json",
+        "pointer": "/characters/9",
+        "ref": "data/world/m3_core.json#/characters/9",
+        "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+        "text_sha256": "30c29d3a2465ba5aeda93f0359e32a72d1b5424fa9ee01f8cc480d957f3f2ec9",
+        "value": {
+          "baseline": {
+            "body_state": "ordinary_child",
+            "household_role": "fengjie_daughter",
+            "legal_status": "NOT_AT_ISSUE",
+            "life_state": "ACTIVE",
+            "location": "S02",
+            "marital_status": "CHILD"
+          },
+          "groups": [
+            "jia_household",
+            "human",
+            "child"
+          ],
+          "id": "qiaojie",
+          "name": "巧姐"
+        }
+      }
+    ],
+    "objects": [],
+    "knowledge": []
+  },
+  "entry_state": [
+    {
+      "equals": "character.qiaojie.location",
+      "value": "S06",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/6/effects/8",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/6/effects/8",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "9aa160f490d8a4f6a3542407f6174123659b40df13a8174e813bd703417a1aad",
+          "value": {
+            "set": "characters.qiaojie.location",
+            "value": "S06"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.ping_er.household_role",
+      "value": "qiaojie_protection_executor",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/events/10/effects/7",
+          "path": "data/world/m3_core.json",
+          "pointer": "/events/10/effects/7",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "70f734ccf13fa732a0774553e20c4ee1cdc50486cb54e577a13ad4021fc48301",
+          "value": {
+            "set": "characters.ping_er.household_role",
+            "value": "qiaojie_protection_executor"
+          }
+        }
+      ]
+    },
+    {
+      "equals": "character.qiaojie.marital_status",
+      "value": "CHILD",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/qiaojie/marital_status",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/qiaojie/marital_status",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "abc024d3bc060c55b965b30dff39b3b45d66292cfb6a4dd539f4d96aed34bc69",
+          "value": "CHILD"
+        }
+      ]
+    }
+  ],
+  "preconditions": [
+    {
+      "equals": "character.qiaojie.marital_status",
+      "value": "CHILD",
+      "status": "KNOWN",
+      "basis": [
+        {
+          "ref": "data/world/m3_core.json#/baseline/characters/qiaojie/marital_status",
+          "path": "data/world/m3_core.json",
+          "pointer": "/baseline/characters/qiaojie/marital_status",
+          "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+          "text_sha256": "abc024d3bc060c55b965b30dff39b3b45d66292cfb6a4dd539f4d96aed34bc69",
+          "value": "CHILD"
+        }
+      ]
+    }
+  ],
+  "exit_state": [
+    {
+      "equals": "character.qiaojie.marital_status",
+      "value": null,
+      "status": "UNKNOWN",
+      "basis": [],
+      "reason": "有说亲表面不等于婚约、成交或婚配；条件、拒绝与后场调查未注册为本场关系更新。"
+    }
+  ],
+  "required_beats": [
+    {
+      "id": "94-S1-R1",
+      "description": "说亲先条件似不错、可议可问；媒人求说成，王仁先算礼钱，平儿核家情。巧姐不是成人调查全知听众，在场/所听范围待落实；礼钱先行不推已成交。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "83dc666c0cc45bb32cd4271c09e2a7fd4ea48005195072be3f9dab4eeed46ca3",
+          "value": {
+            "id": "94-S1",
+            "title": "先出现“条件还不错”的表面"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                36447,
+                36682
+              ],
+              "lines": [
+                904,
+                906
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "135860b221082b18275aafef2bf4205009dafc102d87d8e2ab245aa30453387e"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n王仁先算礼钱；平儿追问家情；贾母一句“人没问明白，礼倒先算清了”；刘姥姥提供空间、饭、劳动网络；巧姐乡下鞋跟、鸡狗、纺车；两句不定词劳动小曲。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                36815,
+                37029
+              ],
+              "lines": [
+                910,
+                912
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "af109a504aacd0b27b977e5c2515968bb574e8172efd225f0d65c1880c8341db"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n94-S1条件表面不错 → S2平儿逐项核问 → S3只需证明“不对劲”而非人口买卖大阴谋 → S4刘姥姥给空间 → S5小包袱/路费/谁陪 → S6乡下第一日。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37029,
+                37174
+              ],
+              "lines": [
+                913,
+                915
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ff7f8933d12457b3e1a4116e33233eea38b1bbeb08dc3a3f1fa38ca264c267af"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n媒人不是恶魔，只关心说成；王仁贪但不必大反派；乡邻有人好奇、有人嫌娇、有人肯借针线。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37662,
+                37872
+              ],
+              "lines": [
+                933,
+                935
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "23b67b7e92911914f052fc5addfb3743639841fdcd9437fac09d7d9aa0429b40"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：小额路费/衣物即可；坏亲事的危险首先从定礼、急办、信息含糊显现。物：小包袱→炕→粗饭→鞋→纺线。信：巧姐本人只知“住几日”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                38326,
+                38620
+              ],
+              "lines": [
+                951,
+                954
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7cf2354a0c38324e701179105e9987ad7fe4a0a833c36e94fb135ce2a6053e2e"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n凤姐后事余波 → 王仁/媒人正常说亲 → 平儿调查 → 危险渐显 → 刘姥姥现实方案 → 低调转移 → 乡间第一夜/劳动 → 平儿收到消息 → 巧姐慢慢适应。  \n**风险：**反派化、田园化、提前锁板儿婚姻。\n\n"
+          }
+        ],
+        "world_records": [
+          {
+            "ref": "data/world/m3_knowledge.json#/knowledge_rules/6",
+            "path": "data/world/m3_knowledge.json",
+            "pointer": "/knowledge_rules/6",
+            "sha256": "d8ee374ec667317af6ef304dc4b66ad7d3ceae9f20753c1b35cf029c73dee18b",
+            "text_sha256": "b11f023fa5f307d653ed174cf9ec013f410ac7a3bda302df25f83a807f9d2d85",
+            "value": {
+              "chapter": 94,
+              "epistemic": "REFERENCE_INFORMATION_ASYMMETRY",
+              "fact": "qiaojie_marriage_risk",
+              "kind": "LIMITED_KNOWLEDGE",
+              "note": "刘姥姥无需知道坏亲事全部细节即可实施接纳/转移",
+              "source_ref": "asset:sha256:bc6bf7cb5e60a47ff8a60fe348fc816c060d39901714efb1006695da81a68823",
+              "targets": [
+                "liulaolao"
+              ]
+            }
+          }
+        ]
+      }
+    },
+    {
+      "id": "94-S1-R2",
+      "description": "保留贾母“人没问明白，礼倒先算清了”，让危险从次序和含糊处出现，不是反派当场自揭阴谋。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "83dc666c0cc45bb32cd4271c09e2a7fd4ea48005195072be3f9dab4eeed46ca3",
+          "value": {
+            "id": "94-S1",
+            "title": "先出现“条件还不错”的表面"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                36447,
+                36682
+              ],
+              "lines": [
+                904,
+                906
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "135860b221082b18275aafef2bf4205009dafc102d87d8e2ab245aa30453387e"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n王仁先算礼钱；平儿追问家情；贾母一句“人没问明白，礼倒先算清了”；刘姥姥提供空间、饭、劳动网络；巧姐乡下鞋跟、鸡狗、纺车；两句不定词劳动小曲。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37872,
+                37988
+              ],
+              "lines": [
+                936,
+                938
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cb54057cd85d931e7aafa9dc6e198b3ebc75e610f9b0eaf03933e473481526bc"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n贾母那句；王仁钱先行；刘姥姥不拿大银；鸡狗纺车；不定词小曲。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "94-S1-R3",
+      "description": "贾母那句只指出人未问明礼先算的次序；礼钱/婚书/对方家情未注册时问来源，不补已收礼、签婚书或订婚期。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "83dc666c0cc45bb32cd4271c09e2a7fd4ea48005195072be3f9dab4eeed46ca3",
+          "value": {
+            "id": "94-S1",
+            "title": "先出现“条件还不错”的表面"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                36447,
+                36682
+              ],
+              "lines": [
+                904,
+                906
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "135860b221082b18275aafef2bf4205009dafc102d87d8e2ab245aa30453387e"
+            },
+            "name": "最强处",
+            "number": 2,
+            "text": "**2｜最强处**  \n王仁先算礼钱；平儿追问家情；贾母一句“人没问明白，礼倒先算清了”；刘姥姥提供空间、饭、劳动网络；巧姐乡下鞋跟、鸡狗、纺车；两句不定词劳动小曲。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                36815,
+                37029
+              ],
+              "lines": [
+                910,
+                912
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "af109a504aacd0b27b977e5c2515968bb574e8172efd225f0d65c1880c8341db"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n94-S1条件表面不错 → S2平儿逐项核问 → S3只需证明“不对劲”而非人口买卖大阴谋 → S4刘姥姥给空间 → S5小包袱/路费/谁陪 → S6乡下第一日。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37662,
+                37872
+              ],
+              "lines": [
+                933,
+                935
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "23b67b7e92911914f052fc5addfb3743639841fdcd9437fac09d7d9aa0429b40"
+            },
+            "name": "四链",
+            "number": 11,
+            "text": "**11｜四链**  \n钱：小额路费/衣物即可；坏亲事的危险首先从定礼、急办、信息含糊显现。物：小包袱→炕→粗饭→鞋→纺线。信：巧姐本人只知“住几日”。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37872,
+                37988
+              ],
+              "lines": [
+                936,
+                938
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "cb54057cd85d931e7aafa9dc6e198b3ebc75e610f9b0eaf03933e473481526bc"
+            },
+            "name": "必须保留",
+            "number": 12,
+            "text": "**12｜必须保留**  \n贾母那句；王仁钱先行；刘姥姥不拿大银；鸡狗纺车；不定词小曲。\n\n"
+          }
+        ]
+      }
+    }
+  ],
+  "forbidden_beats": [
+    {
+      "id": "94-S1-F1",
+      "description": "不得先写巧姐已卖掉、宏大人口贩卖阴谋或神救；王仁贪、媒人求成不等于恶魔化。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "83dc666c0cc45bb32cd4271c09e2a7fd4ea48005195072be3f9dab4eeed46ca3",
+          "value": {
+            "id": "94-S1",
+            "title": "先出现“条件还不错”的表面"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                37029,
+                37174
+              ],
+              "lines": [
+                913,
+                915
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "ff7f8933d12457b3e1a4116e33233eea38b1bbeb08dc3a3f1fa38ca264c267af"
+            },
+            "name": "人物",
+            "number": 5,
+            "text": "**5｜人物**  \n媒人不是恶魔，只关心说成；王仁贪但不必大反派；乡邻有人好奇、有人嫌娇、有人肯借针线。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                37988,
+                38092
+              ],
+              "lines": [
+                939,
+                941
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "d19db58f4456da5d50604961b87c1908f5730c13104d52b8886f477495dbd426"
+            },
+            "name": "应删",
+            "number": 13,
+            "text": "**13｜应删**  \n真正卖掉再神救；乡村桃花源；把王仁写成庞大拐卖阴谋主谋。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "94-S1-F2",
+      "description": "不得锁板儿婚配时机，或以狱庙相逢替换当前旧恩现实救援。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "83dc666c0cc45bb32cd4271c09e2a7fd4ea48005195072be3f9dab4eeed46ca3",
+          "value": {
+            "id": "94-S1",
+            "title": "先出现“条件还不错”的表面"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                36026,
+                36447
+              ],
+              "lines": [
+                896,
+                903
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b4b285a5633cc2383beb306fd469293a9c6fb4bbac8f640a730cdb7cfe097a85"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR37/R38/R42\n\n**V-INTERFACES｜**\n- 巧姐得救硬骨架仍来自判词/曲文与旧恩线；\n- W2：`狱庙相逢之日始知遇难成祥，逢凶化吉`在批语附着关系上最自然地增权巧姐线；\n- **D2裁定：当前不采用。94继续用刘氏旧恩现实救援，不增狱庙。**；板儿婚配时机仍开放。巧姐得救必须来自刘姥姥旧恩，但不许神奇大救援。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                38326,
+                38620
+              ],
+              "lines": [
+                951,
+                954
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7cf2354a0c38324e701179105e9987ad7fe4a0a833c36e94fb135ce2a6053e2e"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n凤姐后事余波 → 王仁/媒人正常说亲 → 平儿调查 → 危险渐显 → 刘姥姥现实方案 → 低调转移 → 乡间第一夜/劳动 → 平儿收到消息 → 巧姐慢慢适应。  \n**风险：**反派化、田园化、提前锁板儿婚姻。\n\n"
+          }
+        ]
+      }
+    },
+    {
+      "id": "94-S1-F3",
+      "description": "凤姐只通过后事与巧姐处境存在，不回来主持说亲；正常议亲表面不洗平遗留保护缺口。",
+      "status": "PENDING",
+      "scope": "CURRENT_IMPLEMENTATION_REQUIREMENT_NOT_HISTORICAL_FACT",
+      "grounding": {
+        "seed": {
+          "path": "data/prewrite/v06.json",
+          "pointer": "/omitted_scene_plans/13/candidate_scenes/0",
+          "ref": "data/prewrite/v06.json#/omitted_scene_plans/13/candidate_scenes/0",
+          "sha256": "caaa49d2f61760be27df0c9cbbc00433b6d54999199e08caec8260c8b15287ff",
+          "text_sha256": "83dc666c0cc45bb32cd4271c09e2a7fd4ea48005195072be3f9dab4eeed46ca3",
+          "value": {
+            "id": "94-S1",
+            "title": "先出现“条件还不错”的表面"
+          }
+        },
+        "chapter_card_fields": [
+          {
+            "citation": {
+              "byte_range": [
+                36026,
+                36447
+              ],
+              "lines": [
+                896,
+                903
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "b4b285a5633cc2383beb306fd469293a9c6fb4bbac8f640a730cdb7cfe097a85"
+            },
+            "name": "硬节点",
+            "number": 1,
+            "text": "**1｜硬节点**  \nR37/R38/R42\n\n**V-INTERFACES｜**\n- 巧姐得救硬骨架仍来自判词/曲文与旧恩线；\n- W2：`狱庙相逢之日始知遇难成祥，逢凶化吉`在批语附着关系上最自然地增权巧姐线；\n- **D2裁定：当前不采用。94继续用刘氏旧恩现实救援，不增狱庙。**；板儿婚配时机仍开放。巧姐得救必须来自刘姥姥旧恩，但不许神奇大救援。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                36815,
+                37029
+              ],
+              "lines": [
+                910,
+                912
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "af109a504aacd0b27b977e5c2515968bb574e8172efd225f0d65c1880c8341db"
+            },
+            "name": "缺失情节",
+            "number": 4,
+            "text": "**4｜缺失情节**  \n94-S1条件表面不错 → S2平儿逐项核问 → S3只需证明“不对劲”而非人口买卖大阴谋 → S4刘姥姥给空间 → S5小包袱/路费/谁陪 → S6乡下第一日。\n\n"
+          },
+          {
+            "citation": {
+              "byte_range": [
+                38326,
+                38620
+              ],
+              "lines": [
+                951,
+                954
+              ],
+              "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+              "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+              "text_sha256": "7cf2354a0c38324e701179105e9987ad7fe4a0a833c36e94fb135ce2a6053e2e"
+            },
+            "name": "章法 / 风险",
+            "number": 18,
+            "text": "**18｜章法 / 风险**  \n凤姐后事余波 → 王仁/媒人正常说亲 → 平儿调查 → 危险渐显 → 刘姥姥现实方案 → 低调转移 → 乡间第一夜/劳动 → 平儿收到消息 → 巧姐慢慢适应。  \n**风险：**反派化、田园化、提前锁板儿婚姻。\n\n"
+          }
+        ],
+        "world_records": [
+          {
+            "ref": "data/world/m3_presence.json#/presence_matrix/13",
+            "path": "data/world/m3_presence.json",
+            "pointer": "/presence_matrix/13",
+            "sha256": "7880480b001c321e50056e887f1285f6c7ccf975aed140d1515967ea925bb3bb",
+            "text_sha256": "5f6fb2ae7efeb51f3a97fb027796ea6826ce3d93a32a135edb97f47152f141e2",
+            "value": {
+              "chapter": 94,
+              "epistemic": "LITERARY_CONSTRUCTION_RESOURCE",
+              "forbidden_note": "凤姐只通过遗留事务/巧姐处境存在",
+              "main_source": "平儿、巧姐、刘姥姥、贾母",
+              "natural_source": "王仁",
+              "source_ref": "asset:sha256:30a6ecd37a4f3e846a72ef3cd445ba78db902fa788d45ee7cd3d73d86eb4df32",
+              "state_change": "巧姐暂居乡下；纺绩趋向建立但婚配开放"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "event_refs": [],
+  "object_transition_refs": [],
+  "knowledge_event_refs": [],
+  "knowledge_binding": null,
+  "unresolved": [
+    "agent_edit_and_semantics: AGENT_EDITED仅表示基于实际v1及绑定包完成当前模型编辑；非人类、非独立盲审、非合资格历史鉴定，正文/同行语义NOT_CHECKED，authority/evidence均NONE。",
+    "scene_chronology: 前驱只声明SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY的源列表次序，不证明历史原稿或场内时序。",
+    "participants: 王仁、媒人无注册人物ID；保留原称与职业行动，不造别名ID或用贾琏冒充。",
+    "implementation_gap: 礼钱、婚书、提亲对象家情没有对象/事实ID；巧姐本人所知仅“住几日”的后续限度不能前推为已核知全案。",
+    "exit_state: character.qiaojie.marital_status — 有说亲表面不等于婚约、成交或婚配；条件、拒绝与后场调查未注册为本场关系更新。",
+    "child_hearing_money: 巧姐听多少成人议亲、礼钱实交及婚书是否有均未核，不新增事实。"
+  ],
+  "function": "从凤姐后事余波进入看似正常、条件似乎不错的说亲，先让礼钱先行与家庭信息不足显出隐患，而不先揭大阴谋。",
+  "notes": "EDITOR91–95模型只编辑实际v1和绑定源包/章卡/世界引用，未读其他editor提交或reviews。AGENT_EDITED不证明历史事实、正文语义、同行语义PASS、人类或独立盲审资格。participants均PENDING；原entry/pre/exit逐项原样保留，新增状态均UNKNOWN/null且不造basis。源列表只为声明次序；世界/对象/知识绑定不变，不从粗章级接口补场内检查点、知识、身份、人物、物或事件。场别before/after+packet/issues/rationale/unresolved见独占新提交contract-editor-91-95.json；原v1/包/种子/章卡/世界/旧合同字节不变。"
+}
