@@ -1,0 +1,34 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/research-81-100-v1/packets/book-segments-v2.json",
+    "sha256": "5859cb6ffe33a7cdb00f9c24f5b74a164f4e8651f275c4d94041ede9df0a17f0"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已按顺序完整通读第97—100回（分块读取全部432行，工具输出无截断），并核对分派packet中本subject、绑定哈希与审阅schema；本任务无分派样本，sample_checks为空。所有判断仅为ADVISORY，不产生门禁或权威效果。接缝97→98：第97回湘云将金麒麟“用软布裹好，放回衣箱里”，其后仍在衣箱一角；该物件没有与第98回误包的宝玉之玉混同。妙玉白瓷盆从拒借、亲送、洗还至次日复用有连续保管链；惜春与妙玉明确分住两庵。第97回宝玉访惜春后，第98回另起贾芸送帖并约“明日”“过午”，无明确日期冲突；第97回妙玉的“次日”后转回惜春“是在宝玉走后接着裁纸”，是可辨的回叙。湘云回信仍未写完，后文未误称已送达。接缝98→99：第98回客册包始终留在桌外侧、借阅条夹册首，误走的是零册与玉帕所在家内包；甄宝玉亲自送回、麝月换绦、宝玉重新佩玉的动作连贯。第99回“日子照旧过了几日”后甄宝玉来取，“连借阅条一并递还”，履行了约定；未定疑字也仍未定。两位宝玉同应“二爷”在第98回当场解释，未见称谓串位。接缝99→100：第99回宝钗先知不归、麝月临行才知、贾芸后来寻到寺中并亲见剃发，再向二人报告，人物知识有取得路径；“是亲见，还是又听谁说”的追问进一步保证见证层次。第100回从贾兰小时起用“冬去春来”“又过几年”“这样过了多年”回溯并推进，再经实授、数月、衰病、辞世，不能将其起点误读为第99回翌日。建议性问题1（ADVISORY，物件与结尾呼应，定位第98回后半／第99回离家／第100回末）：第98回明确写“自己将新绦系好，把玉收回身前，衣襟压住结头”，实体玉最后可定位在宝玉身上；第99回离家清点仅写“拣了些旧衣，把不多的零钱收好”，其后寺中剃发亦没有重提玉的去留；第100回忽接“那石劫终，已复还本质，仍在峰下”。这不是已证实的丢失或人物知识矛盾，但第98回大篇幅建立的玉之保管线，在撒手与归山之间缺少可见的收束环节，读者难以确认随身玉与结尾石的衔接。建议在第99回离家或寺中段，或第100回归山处，补一个简短的去留／转化提示；若意在有意留白，也宜留下明确的最后在场照应。因此对本subject给出FAIL／ADVISORY，表示建议修订此处呼应，不把它提升为硬约束失败。其余所列接缝未发现足以成立的日期、称谓、知识或实体交接冲突。",
+      "sample_checks": [],
+      "severity": "ADVISORY",
+      "subject_id": "book-continuity-97-100",
+      "subject_sha256": "5a290c45e031475921b3f958e66d8cb5d34673f7373fba7b94dd742ba4ccb6e5",
+      "verdict": "FAIL"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:BOOK-shared-075-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:BOOK-shared-075-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}
