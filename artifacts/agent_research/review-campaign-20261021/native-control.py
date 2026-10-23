@@ -16,6 +16,7 @@ p.add_argument('opinion', nargs='?')
 p.add_argument('--origin')
 p.add_argument('--plan', default=PLAN)
 p.add_argument('--out', help='Repository-relative observation directory')
+p.add_argument('--raw-directory', default='/home/guan/rcwh-review-outputs-20261023')
 a = p.parse_args()
 PLAN = a.plan
 if a.out:
@@ -37,7 +38,7 @@ if a.command == 'launch':
         f.write(json.dumps({'observed_utc': datetime.now(timezone.utc).isoformat(), 'job': a.job,
             'attempt': job['attempts'], 'task': a.origin, 'fork_turns': 'none',
             'model': 'current environment route (declared)',
-            'raw_output': f'/home/guan/rcwh-review-outputs-20261023/{a.job}-a{job["attempts"]}.json'}, ensure_ascii=False) + '\n')
+            'raw_output': str(Path(a.raw_directory) / f'{a.job}-a{job["attempts"]}.json')}, ensure_ascii=False) + '\n')
 elif a.command in {'read', 'log-read'}:
     n = int(a.job)
     e = json.loads((OUT / f'registration-{n:03d}.json').read_bytes())

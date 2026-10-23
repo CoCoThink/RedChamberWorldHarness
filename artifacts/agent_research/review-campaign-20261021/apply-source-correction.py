@@ -17,7 +17,8 @@ execution = status(ROOT, 'data/agent_release/research-81-100-v1/review-campaign-
 assert execution['status'] == 'PASS' and not any(j['needs_followup'] for j in execution['jobs'])
 file = ROOT / 'data/provenance/sources/r4_core_completion.yaml'
 raw = file.read_text()
-before = next(s for s in yaml.safe_load(raw)['sources'] if s['id'] == ID)
+original_records = yaml.safe_load(raw)['sources']
+before = next(s for s in original_records if s['id'] == ID)
 assert before['witness']['siglum'] == 'GENGCHEN', 'one-time correction; do not rewrite a corrected source'
 source = deepcopy(before)
 source['title'] = '甲戌本第二十七回总评——红玉后有宝玉大得力处'
@@ -47,6 +48,8 @@ start = raw.index('- id: ' + ID + '\n')
 end = raw.find('\n- id: ', start + 1)
 end = len(raw) if end < 0 else end + 1
 file.write_text(raw[:start] + yaml.safe_dump([source], allow_unicode=True, sort_keys=False, width=100) + raw[end:])
+assert [s for s in yaml.safe_load(file.read_text())['sources'] if s['id'] != ID] == [
+    s for s in original_records if s['id'] != ID], 'unrelated provenance records changed'
 negatives = []
 for p in sorted((ROOT / 'data/agent_panel/records').glob('*.json')):
     record = json.loads(p.read_bytes())
