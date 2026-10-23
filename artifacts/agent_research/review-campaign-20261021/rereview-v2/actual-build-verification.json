@@ -1,0 +1,123 @@
+{
+  "status": "PASS",
+  "request_sha256": "46ba3e5807805e6ce59d7bef9bdfcbb705270ea97504c5f356ba1eb1334428f4",
+  "gates": {
+    "BASELINE_IDENTITY": "PASS",
+    "BOOK_STRUCTURE": "PASS",
+    "CH100": "PASS",
+    "CH81": "PASS",
+    "CH82": "PASS",
+    "CH83": "PASS",
+    "CH84": "PASS",
+    "CH85": "PASS",
+    "CH86": "PASS",
+    "CH87": "PASS",
+    "CH88": "PASS",
+    "CH89": "PASS",
+    "CH90": "PASS",
+    "CH91": "PASS",
+    "CH92": "PASS",
+    "CH93": "PASS",
+    "CH94": "PASS",
+    "CH95": "PASS",
+    "CH96": "PASS",
+    "CH97": "PASS",
+    "CH98": "PASS",
+    "CH99": "PASS",
+    "NON_TARGET_INTEGRITY": "PASS"
+  },
+  "findings": [],
+  "pending": [],
+  "output": {
+    "directory": "releases/agent/research-81-100-v2",
+    "manifest_path": "releases/agent/research-81-100-v2/manifest.json",
+    "text": {
+      "bytes": 572152,
+      "path": "releases/agent/research-81-100-v2/book.md",
+      "sha256": "0a284ddda63188f9799f9c639a930ce8dd7b9d90f50a8399a69c59f9f35156f1"
+    }
+  },
+  "baseline": {
+    "asset_ref": "asset:release:stable:v1.4:readable",
+    "bytes": 545334,
+    "path": "releases/stable/v1.4/readable/baseline.md",
+    "sha256": "4645da79b1bed76f54be281c50b5df648f599ea41541fb7855685753b6a85320"
+  },
+  "chapters": 20,
+  "chapter_gate_counts": {
+    "PASS": 240
+  },
+  "continuity_segments": [
+    {
+      "binding": {
+        "path": "data/agent_release/research-81-100-v2/reading/book-segments-v2/ch81-87.md",
+        "sha256": "f1cd3f0b7e2438688a93627fa46f9fa23150cdff7044984e2c879e96edfe50b1"
+      },
+      "chapters": [
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87
+      ],
+      "distinct_reviewer_count": 2,
+      "status": "PASS",
+      "subject_id": "book-continuity-81-87"
+    },
+    {
+      "binding": {
+        "path": "data/agent_release/research-81-100-v2/reading/book-segments-v2/ch87-92.md",
+        "sha256": "c2a2367afe6cf4f99851d0b75314b050f12ae57218ac55b3ea55d21c562720b1"
+      },
+      "chapters": [
+        87,
+        88,
+        89,
+        90,
+        91,
+        92
+      ],
+      "distinct_reviewer_count": 2,
+      "status": "PASS",
+      "subject_id": "book-continuity-87-92"
+    },
+    {
+      "binding": {
+        "path": "data/agent_release/research-81-100-v2/reading/book-segments-v2/ch92-97.md",
+        "sha256": "715ab8a592459f690a5597f52832108e8924d6c8afabbe03f37ba40a5a121aba"
+      },
+      "chapters": [
+        92,
+        93,
+        94,
+        95,
+        96,
+        97
+      ],
+      "distinct_reviewer_count": 2,
+      "status": "PASS",
+      "subject_id": "book-continuity-92-97"
+    },
+    {
+      "binding": {
+        "path": "data/agent_release/research-81-100-v2/reading/book-segments-v2/ch97-100.md",
+        "sha256": "9c404c781515c2d653d80844c15163d9d0ec4c3ecde447a54a67b894a16afd91"
+      },
+      "chapters": [
+        97,
+        98,
+        99,
+        100
+      ],
+      "distinct_reviewer_count": 2,
+      "status": "PASS",
+      "subject_id": "book-continuity-97-100"
+    }
+  ],
+  "original_authorship": "PASS",
+  "pure_rebind_custodians_not_contributors": "PASS",
+  "ch86_actual_v4_edit_credit": "COORDINATOR_EDITOR_RETAINED",
+  "authority_effect": "NONE"
+}

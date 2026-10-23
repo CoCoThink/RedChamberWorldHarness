@@ -21,7 +21,7 @@ jobs:
       - run: rcwh validate
       - name: Verify selected writing histories and current inputs
         run: python tools/verify_writing_lineage.py --request data/agent_release/research-81-100-v2/request.json
-      - name: Verify release attribution, review coverage and cloned pending build
+      - name: Verify release attribution, review coverage and cloned research build
         run: python tools/verify_agent_release.py --request data/agent_release/research-81-100-v2/request.json --plan data/agent_release/research-81-100-v2/review-campaign-v1.json --build-smoke
       - name: Verify physical assets and immutable versions
         env:

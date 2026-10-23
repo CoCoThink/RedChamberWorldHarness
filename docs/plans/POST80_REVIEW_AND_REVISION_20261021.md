@@ -1,6 +1,6 @@
 # 八十回后研究写作：审阅、修订与采用执行计划
 
-日期：2026-10-21；更新：2026-10-23。状态：首轮76项已全部登记和通读；来源纠错、十回局部修订及92单回重绑已完成，新版30项复用，46项新审中已收到33项并逐项通读（当前共63/76 COMPLETE）；其余来源与分段整书双读继续。运行时基线双版本CI已绿，新增构建检查测试另发现CI导入方式差异，修复与再验收正在进行。授权：用户要求「撰写详细计划后，再开始执行」。
+日期：2026-10-21；更新：2026-10-23。状态：首轮76项与新版46项全部实际登记、逐项通读；当前campaign为30复用+46新读，76 COMPLETE、无补读项。来源见证纠错、十回局部修订和92单回重绑已复审；185项明确处置与20回研究采用裁定已绑定，实际研究版构建PASS，最终克隆与CI验证进行中。授权：用户要求「撰写详细计划后，再开始执行」。
 
 ## 1. 目标与范围
 
@@ -12,7 +12,7 @@
 
 ## 2. 固定基线与入口
 
-下表为首轮冻结入口；当前迭代入口是`data/agent_release/research-81-100-v2/request.json`（SHA256 `c066ff391c71a31146a6251bd7b373b2c5d5a6178a21a1e4f456e7c103ef4465`）及同目录`review-campaign-v1.json`（SHA256 `b5fbf3bd7891d3de05cf996ae81bf39e4cca9715c8781670f33c7a743ce899e6`）。当前执行根为`/home/guan/rcwh-review-execution-20261023`，新版记录在执行目录的`rereview-v2/`；任何后续输入变化须另开版本。
+下表为首轮冻结入口；当前迭代入口是`data/agent_release/research-81-100-v2/request.json`（读者冻结阶段record_sha256 `c066ff391c71a31146a6251bd7b373b2c5d5a6178a21a1e4f456e7c103ef4465`；加入20份协调者决定后的record_sha256 `46ba3e5807805e6ce59d7bef9bdfcbb705270ea97504c5f356ba1eb1334428f4`，文件绑定SHA256 `d3ab7a60d9d7d411b1b3351ad0d7b104bcea0933ee42d376e2f507801eb9c790`，读者输入和campaign basis不变）及同目录`review-campaign-v1.json`（SHA256 `b5fbf3bd7891d3de05cf996ae81bf39e4cca9715c8781670f33c7a743ce899e6`）。当前执行根为`/home/guan/rcwh-review-execution-20261023`，新版记录在执行目录的`rereview-v2/`；任何后续输入变化须另开版本。
 
 | 项目 | 本轮入口 |
 |---|---|
@@ -164,3 +164,9 @@ BOOK 全部为 ADVISORY，缺失和异议照实展示，不新增机器门控。
 - 新版复审检查点：当前33项新审已登记并通读全部notes/sample_checks，累计63/76 COMPLETE；章回复审30项全部完成，保留27条FAIL/ADVISORY而非凑文学PASS。红玉批语甲戌归属的两位新读者均实际看过PDF399/400并PASS，旧版两份BLOCKING不删除。新增构建检查测试在CI pytest入口不能导入tools，现按仓库既有importlib路径加载惯例修正，保留原失败日志；继续来源和BOOK审读，不等待数据检查点CI。
 
 - 新版40项新意见检查点：30章回复审、8来源复审与81—87整书双读均完成，累计70/76 COMPLETE，无needs_followup。来源更正获真实双读，所有PASS附注继续保留；《会典》实际识典载体与书目ctext差异已记录为后续展示建议。20回实际预检220项非协调者门控全PASS，仅20项COORDINATOR_DECISION待定；其余分段整书审读继续，未提前裁决。
+
+- 新版审读收齐：76 COMPLETE、无needs_followup；新版46项新读有30条FAIL/ADVISORY。两轮122份登记意见共504项subject结果，104条负面（102 ADVISORY、2份旧来源BLOCKING）；185项处置包括PASS附注，原话与verdict不改写。新版BOOK八位完整覆盖四重叠分段、全部19接缝；92—97两位均保留巧姐暂住/若兰缺席锚点不足，97—100两位对玉归石省叙一PASS一FAIL，原分歧保留。20回研究采用须逐条绑定台账，所有非协调者门控已实际独立PASS，不代表全部文学异议消失或人工准入。
+
+- 协调者实际收束：`coordinator-dispositions.json`保留104条原始负面和PASS附注共185项处置，20回均明确研究ADOPT；已绑定全部相关当前/先前上下文意见，不能解除BLOCKING的守卫通过。加入决定后的请求record_sha256为46ba3e5807805e6ce59d7bef9bdfcbb705270ea97504c5f356ba1eb1334428f4（文件绑定SHA256为d3ab7a60d9d7d411b1b3351ad0d7b104bcea0933ee42d376e2f507801eb9c790），campaign仍76 COMPLETE。实际研究版build及最终验证进行中。下一版本的桥接、规划接口、声口、载体展示和人工准入安排见`rereview-v2/FOLLOWUPS.md`。
+
+- 实际build已完成：20回PASS、240项章回门控全PASS、0 findings/0 pending；产物为`releases/agent/research-81-100-v2/book.md`及`manifest.json`，正文SHA256 0a284ddda63188f9799f9c639a930ce8dd7b9d90f50a8399a69c59f9f35156f1。stable字节不变；原作者、真实编辑与纯保管者区分通过，86的v4实际称呼修订保留COORDINATOR_EDITOR。现准备提交真实产物并在已提交HEAD克隆复建。
