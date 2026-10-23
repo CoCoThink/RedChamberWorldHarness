@@ -70,18 +70,21 @@ python tools/verify_writing_lineage.py --freeze-history
 
 ## 发布作者链与批量审阅
 
-当前入口为 `data/agent_release/research-81-100-v1/request.json`。prepare 从选择器携带逐回 `rebind_receipt`；发布报告中 `reviews.authors` 为正文贡献者，`reviews.author_lineage` 另列原作者链、协调者改动与保管会话。不能把重绑会话宣称为新提示词的正文作者。
+当前入口为 `data/agent_release/research-81-100-v2/request.json`；v1保留为包含来源归属错误及BLOCKING意见的历史研究版。prepare 从选择器携带逐回 `rebind_receipt`；连续重绑另由 `previous_rebind_receipt` 保留前次声明；发布报告中 `reviews.authors` 为正文贡献者，`reviews.author_lineage` 另列原作者链、协调者改动与保管会话。不能把重绑会话宣称为新提示词的正文作者。
 
 ```bash
-rcwh agent-release prepare research-81-100-v2 \
-  --selection data/agent_release/selection-81-100-v2.json --chapters 81-100 \
-  --coordinator-session-id coordinator:release-v1
+rcwh agent-release prepare research-81-100-v3 \
+  --selection data/agent_release/selection-81-100-v3.json --chapters 81-100 \
+  --coordinator-session-id coordinator:release-v1 \
+  --reuse-request data/agent_release/research-81-100-v2/request.json
 
-rcwh agent-release review-status data/agent_release/research-81-100-v1/review-campaign-v3.json
+rcwh agent-release review-status data/agent_release/research-81-100-v2/review-campaign-v1.json
 python tools/verify_agent_release.py --build-smoke
 ```
 
-当前 v1 edition 已迁移至 v3 审阅输入；上面的 prepare 示例用于新增 edition。已备好的 `review-campaign-v3.json` 共 76 项任务：56 项章回、10 项来源、2 项语料、8 项连续性。默认同时五项；每项材料两位读者。合同读者同时看正文和写作包。来源附固定载体上下文和原页图像，文字每项最多 197 KiB、图像每项最多四张且合计 6 MiB，分别报告。语料按样本投影并校验原 carrier。
+当前 v2 edition 使用纠错后的来源及实际编辑稿；上面的 prepare 示例用于新增 edition。已备好的 `research-81-100-v2/review-campaign-v1.json` 共 76 项任务：56 项章回、10 项来源、2 项语料、8 项连续性。默认同时五项；每项材料两位读者。合同读者同时看正文和写作包。来源附固定载体上下文和原页图像，文字每项最多 197 KiB、图像每项最多四张且合计 6 MiB，分别报告。语料按样本投影并校验原 carrier。
+
+跨版本复用通过 `--reuse-request` 显式选择前版。仅完整subject、coordinator、绑定与上下文相同时保留旧packet；意见覆盖另由campaign核对。当前v2准备时76项中30项可复用，46项需新读（30章回、8来源、8整书）；来源分组重排仍可能增加未改条目的组合复审，不能将该数量解释成46个内容都变了。未改条目的原始意见继续保留。
 
 连续性审读使用 `reading/book-segments-v2.json` 和四个分段：81–87、87–92、92–97、97–100。相邻段重叠一回，每段两位独立读者，共八个 BOOK 任务。每段 UTF-8 正文不超过 197 KiB；19 处接缝全部位于某一段内部。意见固定 ADVISORY，发布 manifest 逐段展示进度；`reading/book.md` 是组装校验原件，不再分派给单个读者。字节预算是实测文件大小，不是模型 token 数；读者若仍无法读全，必须报 NOT_CHECKED 和未读范围。
 
@@ -90,7 +93,7 @@ python tools/verify_agent_release.py --build-smoke
 1. 先运行 `review-status`，检查是否存在上次已领取的 ASSIGNED 任务。主 agent 按环境实际空闲子代理槽位领取；`--limit` 限制包括已领取任务在内的总数，不能超过 campaign 的五个。
 
 ```bash
-rcwh agent-release review-dispatch data/agent_release/research-81-100-v1/review-campaign-v3.json \
+rcwh agent-release review-dispatch data/agent_release/research-81-100-v2/review-campaign-v1.json \
   --limit 3 --model-label '当前环境实际路由模型（声明）'
 ```
 
@@ -101,7 +104,7 @@ rcwh agent-release review-dispatch data/agent_release/research-81-100-v1/review-
 3. 主 agent 原样保存返回的 JSON（不替读者填 verdict/notes），串行登记：
 
 ```bash
-rcwh agent-release review-register data/agent_release/research-81-100-v1/review-campaign-v3.json JOB_ID \
+rcwh agent-release review-register data/agent_release/research-81-100-v2/review-campaign-v1.json JOB_ID \
   --opinion /tmp/returned-opinion.json --origin '实际子代理任务和会话说明'
 ```
 
@@ -110,7 +113,7 @@ rcwh agent-release review-register data/agent_release/research-81-100-v1/review-
 4. 子代理确实返回 503 等临时错误时，主 agent 登记故障并继续处理其他任务：
 
 ```bash
-rcwh agent-release review-fail data/agent_release/research-81-100-v1/review-campaign-v3.json JOB_ID \
+rcwh agent-release review-fail data/agent_release/research-81-100-v2/review-campaign-v1.json JOB_ID \
   --assignment-sha256 ASSIGNMENT_SHA256 --status-code 503 --reason '保留实际服务错误内容'
 ```
 
@@ -126,7 +129,7 @@ ASSIGNMENT_SHA256 使用 dispatch 返回的 `assignment.sha256`；迟到错误�
 
 `review-run PLAN --worker-command COMMAND` 仍支持 JSON stdin/stdout 协议及自动临时故障重试，但不是主 agent 执行的前提。存在 ASSIGNED 任务时拒绝混用 runner，避免重复启动。两条路径使用同一份 scaffold、字节校验、意见原件和恢复进度。
 
-改正文需建立新 edition 和计划；候选稿、写作包、政策或 packet 改变后，旧计划拒绝继续派发，应以新路径运行 `review-plan REQUEST --out NEW_PLAN.json`。加入协调者决定不改变审阅依据，可继续原计划。旧读本、packet、campaign 和 request 快照保留；当前计划为 v3，连续性分段仍使用 v2 读本。已登记意见保存当时输入快照，当前路径变化不冒充历史损坏。既有 request 副本、packet 和意见不覆盖，未处理的口味类 ADVISORY 留给协调者裁决。先提交、推送并确认 CI，再启动读者。详见 [ADR 0008](../decisions/0008_REVIEW_INPUT_CUSTODY_AND_FOLLOWUP.md)。
+改正文需建立新 edition 和计划；候选稿、写作包、政策或 packet 改变后，旧计划拒绝继续派发，应以新路径运行 `review-plan REQUEST --out NEW_PLAN.json`。加入协调者决定不改变审阅依据，可继续原计划。旧读本、packet、campaign 和 request 快照保留；当前研究版v2使用自身v1计划，连续性分段仍使用v2读本格式。已登记意见保存当时输入快照，当前路径变化不冒充历史损坏。既有 request 副本、packet 和意见不覆盖，未处理的口味类 ADVISORY 留给协调者裁决。运行时与新选稿先提交、推送并确认 CI，再启动读者。详见 [ADR 0008](../decisions/0008_REVIEW_INPUT_CUSTODY_AND_FOLLOWUP.md)。
 
 ## 已知限制
 

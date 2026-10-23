@@ -1,0 +1,14 @@
+{
+  "status": "FAILED",
+  "stage": "prepare_request before first draft import",
+  "error": "ValueError: an explicit Claude model ID is required",
+  "cause": "One-off script passed current-agent-environment as provider-format request.model",
+  "retained_files": [
+    "ch82-editorial-notes.txt",
+    "ch82-feedback.json"
+  ],
+  "new_drafts_imported": 0,
+  "fix": "Use existing offline preview default; actual session model label remains separate and unverified. No provider execution.",
+  "resume": "Only byte-identical existing files can be reused; differing bytes fail.",
+  "authority_effect": "NONE"
+}

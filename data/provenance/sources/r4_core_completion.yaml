@@ -42,19 +42,21 @@ sources:
 - id: src:gengchen:ch27:xiaohong-great-help
   type: EARLY_COMMENT
   tier: W1_DIRECT
-  title: 庚辰本第二十七回总评——红玉后有宝玉大得力处
+  title: 甲戌本第二十七回总评——红玉后有宝玉大得力处
   witness:
-    siglum: GENGCHEN
-    label: 庚辰本
-    annotation: 第二十七回批语
+    siglum: JIAXU
+    label: 甲戌本
+    annotation: 第二十七回回末总评，跨PDF399—400页
+    context_units:
+    - pdf:page:399
   container:
     ref: asset:primary:hlm:zhihui:v3.1416:pdf
     sha256: 37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7
   locator:
     schema_version: 2
     kind: PDF_TEXT_SPANS
-    extraction_ref: asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7
-    output_sha256: 628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920
+    extraction_ref: asset:sha256:c2e2d9fb53fd0d3eb3bc210a0d8adc9f5b7caafb9df9423f5effb7d4a4bcd69b
+    output_sha256: 2f2d8504628a86ca3d827e80793bb16f25c605ac3514e8b2d91fe2cb4d1d25f7
     spans:
     - unit_ref: pdf:page:400
       start: 85
@@ -63,14 +65,14 @@ sources:
     raw_text_sha256: f89dd2b5b05c4991f17a5367a4b1c2467fffaa9f589d149e0bccee310dc1854b
   text: 且红玉后有宝玉大得力处，此于千里外伏线也。
   text_sha256: f89dd2b5b05c4991f17a5367a4b1c2467fffaa9f589d149e0bccee310dc1854b
-  notes: 锁“小红/红玉后有宝玉大得力处”的未来功能，不锁具体帮助方式与回次。
+  notes: 锁“小红/红玉后有宝玉大得力处”的未来功能，不锁具体帮助方式与回次。固定汇校PDF399页绿色总评以甲起，400页目标句为其连续段。旧ID含gengchen只作历史稳定标识，不再表示见证归属；见证以witness的甲戌本为准。旧来源投影及两份BLOCKING意见保留，未将纠错冒充人工准入。
   locator_verification:
     status: VERIFIED
-    reason: Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded
-      in migration audit.
-    report_ref: asset:sha256:3dd44d59fa6a613504e906cbb066d9a2d99867a1e4a8a8d6db75c52bf544042f
-    report_sha256: 3dd44d59fa6a613504e906cbb066d9a2d99867a1e4a8a8d6db75c52bf544042f
-    source_record_sha256: 757e5018c4b7f085ea91bf444872d38f51b8a0b7684305c0c3a117d7d78c73ed
+    reason: Exact excerpt recomputed from fixed carrier; witness correction supported by PDF399/400 images.
+      Model review is not human admission.
+    report_ref: asset:sha256:534fb3f2ad18b9b33ffefb7075597abd2073c43942daf40ee139fff56da6c414
+    report_sha256: 534fb3f2ad18b9b33ffefb7075597abd2073c43942daf40ee139fff56da6c414
+    source_record_sha256: 1440e11807936c1d91a1cc7962794cd378d3456253a9637d2266d3fa865a648b
   legacy_locator:
     chapter: 27
     pdf_page: 400

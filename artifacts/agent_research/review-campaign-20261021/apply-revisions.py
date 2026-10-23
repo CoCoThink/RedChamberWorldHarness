@@ -65,8 +65,10 @@ def write(relative, value):
     target = ROOT / relative
     target.parent.mkdir(parents=True, exist_ok=True)
     raw = value if isinstance(value, bytes) else canonical_bytes(value)
-    assert not target.exists(), f'one-off output already exists: {relative}'
-    target.write_bytes(raw)
+    if target.exists():
+        assert target.read_bytes() == raw, f'resume would replace retained bytes: {relative}'
+    else:
+        target.write_bytes(raw)
     return binding(ROOT, relative)
 
 def run():
@@ -98,8 +100,7 @@ def run():
                  '\n'.join(before + ' → ' + after for before, after in EDITS[chapter]) + '\n')
         note_ref = write(base + '-editorial-notes.txt', notes.encode())
         prepared = prepare_request(ROOT, parent_path=row['draft']['path'], feedback_path=feedback['path'],
-            notes_path=note_ref['path'], revision_template='revise-v2', renderer_version=2,
-            model='current-agent-environment')
+            notes_path=note_ref['path'], revision_template='revise-v2', renderer_version=2)
         request = write(base + '-request.json', prepared)
         text = write(base + '-edited.txt', new.encode())
         result = import_draft(ROOT, text['path'], request['path'], session_id=f'coordinator-edit-20261023:ch{chapter}',
@@ -124,7 +125,7 @@ def run():
     row['writing_package'] = write('data/writing/packages/ch92-agent-research-v5.json', package)
     base = 'data/agent_release/rebind-v5/ch92'
     request = write(base + '-request.json', prepare_request(ROOT, package_path=row['writing_package']['path'],
-        chapter=92, renderer_version=2, model='current-agent-environment'))
+        chapter=92, renderer_version=2))
     result = import_draft(ROOT, row['candidate']['path'], request['path'], session_id='rebind-v5:ch92',
         session_model_label='current agent environment (declared); custody only, no prose generation')
     row.update(candidate=result['candidate'], draft=result['draft'])

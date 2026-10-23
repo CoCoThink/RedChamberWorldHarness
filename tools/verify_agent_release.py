@@ -17,8 +17,8 @@ import tempfile
 from rcwh.workflow.agent_release import AgentRelease
 from rcwh.workflow.review_campaign import _load
 
-REQUEST = "data/agent_release/research-81-100-v1/request.json"
-PLAN = "data/agent_release/research-81-100-v1/review-campaign-v3.json"
+REQUEST = "data/agent_release/research-81-100-v2/request.json"
+PLAN = "data/agent_release/research-81-100-v2/review-campaign-v1.json"
 
 
 def verify(root: Path, request_path: str = REQUEST, plan_path: str = PLAN) -> dict:

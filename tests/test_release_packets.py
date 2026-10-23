@@ -88,7 +88,7 @@ def test_chapter_packet_is_unchanged_when_another_chapter_is_revised(tmp_path):
 
 def test_current_source_assignments_include_bound_context_and_every_original_image():
     from rcwh.workflow.review_campaign import _load, MAX_IMAGES, MAX_IMAGE_BYTES
-    plan = _load(ROOT, "data/agent_release/research-81-100-v1/review-campaign-v3.json")
+    plan = _load(ROOT, "data/agent_release/research-81-100-v2/review-campaign-v1.json")
     source_jobs = [j for j in plan["jobs"] if j["kind"] == "SOURCE"]
     assert source_jobs and all(len(j.get("inspect_images", [])) <= MAX_IMAGES for j in source_jobs)
     for job in source_jobs:
@@ -103,7 +103,7 @@ def test_current_source_assignments_include_bound_context_and_every_original_ima
 
 def test_full_edition_has_no_failures_and_only_missing_reviews_pending():
     from rcwh.workflow.agent_release import AgentRelease
-    report = AgentRelease(ROOT).evaluate("data/agent_release/research-81-100-v1/request.json")
+    report = AgentRelease(ROOT).evaluate("data/agent_release/research-81-100-v2/request.json")
     assert report["findings"] == [] and report["status"] in {"PENDING", "PASS"}
     assert all(not c["findings"] for c in report["chapters"])
     allowed = {"CANDIDATE_PEERS", "COORDINATOR_DECISION", "CHAPTER_SAFETY_POLICY", "CONTRACT_PEERS",
