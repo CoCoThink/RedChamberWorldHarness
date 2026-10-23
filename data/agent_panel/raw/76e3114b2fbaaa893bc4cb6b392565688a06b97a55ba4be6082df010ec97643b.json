@@ -1,0 +1,82 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/8ccc21535cb77e5130e4572bfae11c9b114a99444d8d898fab147007000b016a.json",
+    "sha256": "8ccc21535cb77e5130e4572bfae11c9b114a99444d8d898fab147007000b016a"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已按指定顺序完整通读正文107行、包、86-S1至S5五份合同及政策；八份read_in_full和packet实测SHA256均吻合，无图像或样本分派。正文第19行“贵妃丧后……一层层沉了下去”及间有好转、翻书又不能的回顾建立持续病程，第5、21、43行米汤、药、水难咽显示身体不能承受，并未写成缺药缺钱、婚讯或失玉刺激致死。第47—57行病危经雪雁、袭人、小厮、跟班接力，第59—61行死亡时宝玉未获消息，第89—97行迟获病危、赶路、到床前才被告知已死，信息不对称成立。第63—83行身体、衣水、炉火、灯及后事料理各有承接，未由全员围哭取代；第33—41行旧笺空字始终不补。第9、21、75、103—107行构成炉、温药、撤火、递药、冷透的同一物质链，两个政策锚句在103和107行，末句后无总结诗。未见已分派范围内的完整性或LOCKED硬约束违反。ADVISORY文风建议：第67、77、81、95、99、101、105行多次采用伸手又停、欲言又止、动作退回的节奏，局部停顿过密，可择一二处缩减，使最终接药动作更突出；这属阅读感受，不是硬约束失败。本结论不扩展为原作鉴定或未分派跨回材料验收。",
+      "sample_checks": [],
+      "subject_id": "chapter-86",
+      "subject_sha256": "a08013239d9fba3781e2c4fc0487b57685e4b6859a5455c4b226db6236149bcf",
+      "verdict": "PASS",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读取包114行并与本次正文、政策和已分派五份合同对照。chapter=86、operation_scope=RESEARCH、authority_effect=NONE及purpose中“未知状态仍未验收”相互一致；包plan明确选用agent-final-v1/86-S1至S5的v2，路径和SHA256与assignment及实际字节一致。正文体现包内这些合同要求的普通病晨、现实候医、改字未成、死后料理、病危递话；没有把研究来源标记或合同中的UNKNOWN/PENDING写成资格授予。包还列有S6、来源集、exemplar及world依赖，但它们不在本job完整阅读和subjects范围，本意见仅审核包自身及本次指定对照，不声称完成其来源或世界资料的独立鉴证。",
+      "sample_checks": [],
+      "subject_id": "package-86",
+      "subject_sha256": "8e087cc43573cd1ef9071efac14deb2e3eaf5935375cc68628db3ebc3e0a33b3",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读86-S1.v2全部733行。entry/preconditions中的生命ACTIVE、温药、未服尽药碗与正文第3—21行相容；出口仍保留UNKNOWN，没有把章节终态偷作局部已知。正文第9、13、17、31、39行分别涉及小几、兰花、帘角、薄衫和明日找笺，是病者继续安排日常；第9行火箸碰茶盘来自照护劳作。第5、11、21行吞咽、咳喘与服药动作使轻口角不替代身体困难；第19行长期病程回顾未将死亡压成元春死后数天。没有临终悟道、神迹或单因果解释；正文实现该场功能。合同对雪雁、厨房人员和未注册器物等保留unresolved，不把文学具象化冒充实体库已有ID。",
+      "sample_checks": [],
+      "subject_id": "contract-86-1",
+      "subject_sha256": "9f31b586dfc2dd260c9ee82a1765aa4daaba67cb0bb74fd441c52b9d41d1b3f6",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读86-S2.v2全部633行。正文第25行跑腿返回，明确反馈大夫“被别处的事务绊住了”、药铺药包已送到，紫鹃给出更准确病情后命再请；第85行跑腿再回，听到死讯后仍须回报。候医的往返链可见而未捏造特定病家、诊断和时辰。第21—29、43—45行紫鹃照护持续；水、厨房、药铺和跑腿未被等待医者悬停。第47行后才另启报病危链，到第89行宝玉才获知，未把候医反馈等同宝玉知道死时。未见人为扣医、骗婚拦门、现代医学讲解或神迹补救；合同中的知识获得场点及药温UNKNOWN没有被当成已核定历史。",
+      "sample_checks": [],
+      "subject_id": "contract-86-2",
+      "subject_sha256": "e134e6a3a1eea20e82cab0f814ae4bf969603d53278633fc1fe8f698cf642339",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读86-S3.v2全部574行。正文第33行只由稿夹外抽出露着的旧笺，明确“不翻稿夹”，所见正是G01“小院苔痕留宿雨 / 隔帘花影 □ 新晴”。第35—37行托肘、试抬腕、笔管松落而由紫鹃接住，之后第39—41行收放争执和理袖承接失能；笔尖未落纸，空字未由黛玉、旁人或叙述者补出。没有展示遗稿全集、完成绝命诗、现场诵旧诗或把85回A01当86回新作。手背浅墨到107行仍在，物理痕迹持续且没有把G01冒充注册对象ID；合同生命/身体局部UNKNOWN保持其证据边界。",
+      "sample_checks": [],
+      "subject_id": "contract-86-3",
+      "subject_sha256": "3c1dc6b323df7eaf8a23fb2a780e7416e439d2b40be3cd76dd28ec8ff65c99ec",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读86-S4.v2全部729行。正文第59—61行先写最后气息不接及紫鹃探腕，再于第63行向刚来的李纨明确告知；李纨不是最后一息目击者。第65—71行铺平领下布、擦药痕、开箱选衣、扶肩理袖是连续身体料理，第73行停止米汤并另报“如今姑娘已经去了”，与第51行病危信区分。第75—77行撤炉、端灯，第79—83行王夫人接两轮消息后到来、送衣物、让李纨听后事需求，人物职责有差异，没有轮流哭说或无依据仪式清单。紫鹃仍在床边，不翻旧稿；病危外传已于死亡前发生，不受合同source-list顺序错误拘束。已实现本合同功能，未把世界章节级死亡登记当本场事先取得的确切死时。",
+      "sample_checks": [],
+      "subject_id": "contract-86-4",
+      "subject_sha256": "3e1ee138428507bf37bd6a71a4c915f6c1a9b06dc1e2c35423653cf72434bac8",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读86-S5.v2全部690行。正文第43—47行由吞咽与身体恶化触发紫鹃命雪雁报病危；第49—55行雪雁先李纨、后怡红院，经袭人向外找小厮，因宝玉不在、寻常去处未遇再托跟班继续找；第57行雪雁返床边时黛玉仍活，第61行已死而宝玉无消息。第89行跟班才找到宝玉，传的仍是雪雁所报病危，且不知道大夫到否；第91—93行有实际赶路、错岔、入院掀帘，第97行进门后由王夫人与紫鹃给出死亡及未等到他的消息。来迟由迟获与行程成立，没有家人拦门、神秘感应、同步诀别，也未把可能赶上写成确实赶上；合同保留局部移动/知识检查点UNKNOWN的限度。",
+      "sample_checks": [],
+      "subject_id": "contract-86-5",
+      "subject_sha256": "7f6ba4e4e56d72f974476e18772ca8b57856ba0de574766f5c0cfd80414e1fc0",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-86-010-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-86-010-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

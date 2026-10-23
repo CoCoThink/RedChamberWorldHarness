@@ -1,0 +1,42 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/8ccc21535cb77e5130e4572bfae11c9b114a99444d8d898fab147007000b016a.json",
+    "sha256": "8ccc21535cb77e5130e4572bfae11c9b114a99444d8d898fab147007000b016a"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已按 assignment 顺序完整阅读五项 read_in_full，并核对其 SHA256；只审本项及 contract-86-7，无分派样本。第86回候选正文第21行写紫鹃试热、晾药、喂药后将盏移开，第103行宝玉端起的仍是“大半盏”药，实际拿取和药量支持未尽药；第75行雪雁移药吊子、拨灰收炉口，第105行炉灰无红光，随后紫鹃接盏仍搁回几上，第107行明确“那盏药早已冷透，再没有人去温”，请求没有变成执行。第89—97行先写宝玉仅收到病危口信、入院入室，再由王夫人告知死亡、紫鹃说明没等到他；第103行才问“再温一温”，同时写“连日子也记混了”，未赋予到场前确切死时知识或同步诀别。第33行紫鹃只抽露出的旧笺而不翻稿夹；第35—41行写字动作失败、笔未成字，不是完成临终诗。末尾无悼诗、神灵、作者象征解说或总结性哭声，散文以冷药落止；两个政策锚句均在实际功能位置。包所列86-S6版本及本项绑定一致。未见本项正文违反；合同入口、出口和事件绑定的 UNKNOWN 不因本意见升级为已核定状态，OBJ-MEDICINE-BOWL-86与legacy ID也不据此宣称相等。",
+      "sample_checks": [],
+      "subject_id": "contract-86-6",
+      "subject_sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整阅读分派 YAML、候选全文及其余必读包和政策，所列文件 SHA256 均匹配，无分派样本。第21行药只勉强咽下一点便移开，第103行宝玉拨正匙子、端起“大半盏”药，第105行紫鹃托底接回，未尽药由连续照护、观察和递送呈现。宝玉第89行才获病危口信，第93—97行入室后才被告知死亡，第103行实际说“药不是还没吃么？再温一温。今儿早起她还说药苦。”，记混日子有叙述定位，支持来迟后的日常误读而非先知。家务持续有第23行接水倒水、第65—73行擦药痕换衣及留下水、第75行移药吊子和收炉火、第77行端灯挑灯花，均非只列物件名。第33—41行旧笺空字、持笔失败和“明日还找”保留未成动作；黛玉未完成绝命诗，无参透生死的遗言，无现实超自然救治。第59—61行气息断绝后明确“黛玉已经死了”，宝玉仍未到；紫鹃只在观察气息和手腕后确认死亡，未预先知道确切死时。第107行末态药冷且无人再温。医药与家计描写有药、热水、炉、跑腿及温药请求，未出现 YAML 所禁的历史必然断言。未见本项不满足之处；此判断不把 YAML 的 medicine_bowl_86 与另一合同对象ID等同，也不代替未绑定的场级回放验收。",
+      "sample_checks": [],
+      "subject_id": "contract-86-7",
+      "subject_sha256": "30fab56f00c242eeeabccfb0a216864b1eb4d4d5eda9d833d32b114527a780fa",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-86-012-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-86-012-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}
