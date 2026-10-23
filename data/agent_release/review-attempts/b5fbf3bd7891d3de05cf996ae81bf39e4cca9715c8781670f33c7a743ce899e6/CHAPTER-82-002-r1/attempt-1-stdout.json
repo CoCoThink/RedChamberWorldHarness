@@ -1,0 +1,58 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/70340b4652a82c4f0950e68b97cc71f83c960f66b9047414e8e5221fe1ad991a.json",
+    "sha256": "70340b4652a82c4f0950e68b97cc71f83c960f66b9047414e8e5221fe1ad991a"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已按顺序完整通读全部指定材料；正文107行及两份合同全文均未截断，全部read_in_full字节与分配哈希一致；本项无分派样本。正文第7—17行以三分筐、书匣留下、题签和随行婆子的睡位落实分类与装载准备；第27行由管事承接家内行旅费，待书小钱包另管；第31—43行解包、上船、复点及移包使姜药针线可取。待书第53—79行从冷饼借口、取姜到呕吐和姜粥，夹袄从争执物转成枕物，人物照护有因果和物件承接。第45—51行开船后初写信、夹册且无日期，第85—93行隔夜补日期及已能吃粥，第101—107行仍夹册待捎，未冒写已寄或到家；无人预知家败，婚家、婚期、地点未被锁死，未见第二场哭别、送别诗或命定解释。保留的文学异议：第37、51、95、97、99行连续重申须熟人、须可靠、遇船才知、不包哪日、先告诉再亲交，尤其第95行刚让婆子问回相同限制，第97行又本人重新问明，第99行再向待书解释未托寄，主要知识限制已在第51行成立。新增的当面询问和回信问题有小幅信息增量，但当前篇幅反复强调流程，削弱照护后自然收束的余味；建议合并次晨递信问答，保留等捎与未封口的实物动作。此为节奏及表达建议，非A-W1支持的LOCKED违反，不作BLOCKING。",
+      "sample_checks": [],
+      "subject_id": "chapter-82",
+      "subject_sha256": "6d61ecdcbd6f83abebb878d37abe8aec04aeb5ead66533e6aa0e1a34cf55b5ce",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读过本包79行并与指定正文、两合同及政策核对。chapter=82、operation_scope=RESEARCH、authority_effect=NONE，与试写用途一致；plan明确选入agent-final-v1/82-S1.v2.json和82-S2.v2.json，所列哈希分别与本次完整阅读的合同实际字节一致。sources为空，purpose没有把未知状态或模型编辑冒称史料、语料或文学资格；正文呈现旅途劳务和未送达家书，不与包所选合同的开放边界冲突。本次PASS仅覆盖分派包内容及它与分派材料的对应，不声称已完整阅读包内另列的world、exemplar、asset或章卡原件；这些不在job.read_in_full内。无分派样本。",
+      "sample_checks": [],
+      "subject_id": "package-82",
+      "subject_sha256": "a1a42b5a37f68a1856daef02c0e8a94ba5310ac92d5dfa83084e1f8305e58d02",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整读82-S1.v2.json的740行并逐项对照正文。R1/R2：正文第7行三分筐，9—17行姜药针线、书匣留下和题签，15行问清待书、婆子及送箱者返回并先向岸上带话留通道；25—35行船家分口装载、各人上船，待书照册认题签。R3：27行脚费交实际经手管事，家内行旅费与私人小包分开，无精确价目。R4：3—5、19、31—35行短夹袄及拆包有动作和对话，23、37行只问信路，真正落笔在开船后45行开始。F1/F2均未见所禁的新增哭别、诗琴、宿命或抵达婚家定论；未把章卡五口箱变为硬锁数量。合同仍保留UNKNOWN/PENDING、空basis和未注册接口，不以剧情实现冒称世界状态已经登记。条目依据属作者施工要求，评价未将其升级为历史事实或A-W1硬约束。无分派样本。",
+      "sample_checks": [],
+      "subject_id": "contract-82-1",
+      "subject_sha256": "45dbb758714882ca5ed1c955d636948e1f0ab2ab9d29975d8367555ecde9581c",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读82-S2.v2.json的760行。R1对应正文39—43行：缆绳收起后首先照册核箱，针线拿到手、药仍原包、姜揭口确认，并为可取性移包；不存在用OT82-01跳过实际复点。R2对应53—65、71—79行：待书嘴硬、婆子取姜、探春照管及姜粥均有前后工序，药没有被虚构成治疗结论。R3由69行船火与夜饭、婆子接碗分粥等动作落实，船家仅说明灶忙、留通道等工作限制，费用不与前场私人钱物混同。R4对应45—51行初写夹册、85—87行次晨补日期、91—93行补进食讯息、95—101行仍无可靠托信者并保留未封家书，未压成同时完成或冒称到家。F1/F2未见婚家、海路、婚期、再无归日或命定解释；终点保持开放。入口UNKNOWN、出口PENDING与叙事局部动作并不等于注册状态已核验。正文递信问答的重复已在chapter-82以ADVISORY单列；它不是合同支持失败或硬约束违反。entry_from字符串仍指agent-edited-v1的前驱路径，本次所选前驱在final-v1；本意见仅按明确分派的两份字节比较语义，没有据此宣称该外部路径失效或两者已验证等同。无分派样本。",
+      "sample_checks": [],
+      "subject_id": "contract-82-2",
+      "subject_sha256": "ace6f62807dad47b257c8f8b017ddf72de4f34b9b5e58ea7c100037882c12cb8",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-82-002-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-82-002-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

@@ -1,0 +1,74 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/a5a71aed1f0a334bfa5df89e8e6c1f54809de538f78da305fc553c3cfc08e57d.json",
+    "sha256": "a5a71aed1f0a334bfa5df89e8e6c1f54809de538f78da305fc553c3cfc08e57d"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已顺序完整通读候选正文第1—101行及全部分派包、四合同、政策；7项材料实算SHA256均匹配，无分派样本或图像。消息由门上至凤姐、平儿、王夫人、贾母，再到潇湘馆，见第3、11、17、27、55、59行；没有全宅同步知情，元妃只在讣信中出现，不补死因、精确死亡日期或宫廷阴谋。第35—41行误划饭单与纠错保留冷笔和正常供应；第75、77行实际两次夜醒后第79行才落纸，观察者、夜次和日间饭药分开；第89行旧喜事先搁且未换新日子，未抢写第86回死亡场。我的异议是文风：第33行“不是叫你替宫里定样子”、第45行“并没叫你替宫里传令”、第87行“不许经手人张口便说全是宫令”，加第89行再解释正式交代仍候，反复让人物说明同一个权限边界，后半回呈现核对流程的腔口，削弱丧后各人不同的感受。建议留一处明确说明，其余以经手人实际误会、纠正及人物反应承担。此为文学与节奏异议，按协议只记ADVISORY；未发现字节完整性或A-W1所支持的LOCKED阻断问题。",
+      "sample_checks": [],
+      "subject_id": "chapter-84",
+      "subject_sha256": "0acaef1e5b52113c8514d5724526dc30982257ea420d7fbc06222fbb782454c5",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "已完整读87行包文件并与本次候选、四份合同及政策对照，包自身SHA256匹配；chapter=84，plan明确列入本次分派的84-S1至S4.v2，四合同路径和SHA256与assignment相合，正文实际覆盖接讯、内宅确认、家务改令、潇湘馆获讯与起居纸。purpose、operation_scope=RESEARCH及authority_effect=NONE明确限于研究；sources为空、exemplar_set指向ch89只是包的声明，不等于取得史料或文学资格。本次未延伸评阅包中未分派world、exemplar或资产正文，不以这些绑定推定外部材料语义已通过。就所分派包与候选/合同的一致性未见拒绝理由。",
+      "sample_checks": [],
+      "subject_id": "package-84",
+      "subject_sha256": "2ea6eba0a2e431124e77e9f03ee3fa093ca60376e525d7f7ee1471ddc7a961ea",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整读787行合同，逐项对照正文。R1由第3—7行饭单被打断、门上询问领往何处和折返实现；R2第5行传讯人湿袖滴水，与第9行丫头碰托盘泼湿分写，未推导雨天或宫廷内幕；R3第9—15行请入偏厅、遣散围观、平儿明确奉凤姐转给王夫人，第17行才进入其接讯；R4第13行“饭不必停，宴席先停”与第11行服色规矩未随讣信交代分开。F1/F2所禁死因、精确日期、新增内幕者、即刻查抄和死亡笑料均未出现。合同的UNKNOWN/PENDING、空knowledge_binding及未注册接口没有被正文冒称为既有可重放证据；此PASS为本次语义对照结论，不替其生成历史状态或资格。",
+      "sample_checks": [],
+      "subject_id": "contract-84-1",
+      "subject_sha256": "a4fbab4a7e7465e829a31cdd72bda54153b89d8dba3d63232656478a46c5d14c",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整读765行合同，R1见正文第17—23行：平儿说明凤姐偏厅亲接，王夫人问“你亲听见的”，平儿再区分亲听与路闻；R2人物追问只得到“眼下来的只这一句”，不获宫中详情。R3第23—25行将停家宴和先换现成素衣作为家中先办，细服制待正式传来；第27—29行贾母接讯后才反应，未以W84让人同步全知。R4及F1/F2：元妃无现场发言或托梦，饭仍送，无挽诗祭辞、查抄直论。正式命令在后续第87—89行仍未接全是文本明确保留的未知，不以换素衣自证收令。正文虽有chapter-84条所述说明重复，但不构成本合同知识层次或硬约束失守。",
+      "sample_checks": [],
+      "subject_id": "contract-84-2",
+      "subject_sha256": "f8b3f99162d637b8a29cea94e0c5b33f10052e2ef4d6c5fb6b33a9e89f5f31ff",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整读741行合同。R1的权责与传令由第13、25、29—45行具体动作支持，王夫人要现成衣、凤姐分派、平儿到针线房和厨房分别交接；误划饭单在第35—39行查明、重装并由丫头亲回责任，而非全知概述。R2第31—33行先找素衣并候正式服制，第81—95行经次日及数日反复执行形成常例；没有把相对数日写成法定丧期。R3第39—41行“远也得送”“不可白倒”保住冷笔，失误不以死亡取笑。R4第55行潇湘馆当日受讯早于第87行数日推进，第91行素料领取、余料还库和家里支钱各有经手，未骤贫、断供或借死讯直连查抄；第89行旧喜事不再按原日催，未定新婚期。无丧礼百科、完整挽辞或第86回物态提前。",
+      "sample_checks": [],
+      "subject_id": "contract-84-3",
+      "subject_sha256": "43d8006e52413fbddf83e4b2b1a66beb2c45a65bf3c1965ae626c4d821134a88",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整读783行合同。R1见正文第51—61行：紫鹃先只知宫门有人来，平儿遣来的媳妇后交代来源，黛玉服药后才由紫鹃缓声得讯，仍只知死讯；这是当日相对延迟，未等待数日常例。R2第51、63、99行扇子嫌冷与饭药照护相续，黛玉的停勺、起坐力乏不同于王夫人的哭问，不添突发新病。R3第73行先入睡，第75行醒来用水、第77行再醒换枕，第79行天明注明接讯后首夜、两次皆紫鹃所见，并另记日间半碗饭药；第97、101行按日、按观察者续记及交纸，未预写未来读数。R4第89行喜事先搁而不定新日期，保留缓冲空间；F1/F2无宫廷内幕、托梦、查抄断语、死亡时刻预告，药杯与饭碗也未强认OBJ-MEDICINE-BOWL-86。合同注册空缺仍为声明边界，不由本次PASS倒推已注册知识事件。",
+      "sample_checks": [],
+      "subject_id": "contract-84-4",
+      "subject_sha256": "f602679dc5359c119c6c40fb5dcdc5955053e511ad9352fa030c6a8d16647282",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-84-006-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-84-006-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

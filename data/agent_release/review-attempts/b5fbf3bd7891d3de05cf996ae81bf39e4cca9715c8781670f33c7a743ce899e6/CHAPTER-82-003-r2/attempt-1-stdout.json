@@ -1,0 +1,58 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/70340b4652a82c4f0950e68b97cc71f83c960f66b9047414e8e5221fe1ad991a.json",
+    "sha256": "70340b4652a82c4f0950e68b97cc71f83c960f66b9047414e8e5221fe1ad991a"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已按清单顺序完整通读正文107行、写作包、82-S1.v2、82-S2.v2及ch82政策，五份文件SHA256均与assignment一致；无分派样本。人、钱、物、信四链可定位：正文第13行问清待书、跟船婆子与送箱人是否返岸，第25行由管事承接脚费并分家内行旅费与私人钱包；第33行上船、35行换箱取铺盖并照册复核、39—43行离岸后复点针线药姜并重安包位。第55—77行待书晕船、姜片、温水、姜粥与照护有因果和劳动代价，婆子腰扭、探春误饭和夹袄垫颈均有后续。家书第45—49行起笔、第51行末夹册不写日期，第85—87行次晨补当日日期与舟中、第91行补昨日不耐舟行今晨能吃粥，第99—101行仍未封寄；没有把家中收信知识提前赋给人物。人物只知道当面所问所得，未锁夫名、婚期、具体终点，也未出现事败、送别诗、宿命或第二场哭别。ADVISORY异议：可靠回船的未定状态在第17、37、51、95、97、99行附近反复解释，后半尤其“今日所见的船都没有说定”→“不包路上哪日遇着”→“等人捎，不能写已经托了”信息增量偏小，削弱了夜间照护之后的收束。建议合并其中一至两轮问答，保留第97行亲手交信、第101行不封口的实际变化。此为节奏与文风判断，不是完整性或A-W1-backed LOCKED违规，不阻断证据底线。",
+      "sample_checks": [],
+      "subject_id": "chapter-82",
+      "subject_sha256": "6d61ecdcbd6f83abebb878d37abe8aec04aeb5ead66533e6aa0e1a34cf55b5ce",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读取79行写作包并与本次正文、两份场景合同、政策对照。包明确chapter=82、operation_scope=RESEARCH、authority_effect=NONE，purpose没有宣称史料、语料、文学或稳定版资格；sources为空也没有被当成历史证据。plan明确选择agent-final-v1/82-S1.v2与82-S2.v2，其SHA256分别与本次已读文件和scaffold一致。正文实际完成了两合同的装载前确认与离岸后复点/照护/家书工序，未把包内列出的world、assets或exemplar绑定直接冒充已核验的章节事实。本次只审包与所列材料的对应关系，不为未列入read_in_full的底层world、assets或exemplar内容授予独立阅读通过。未发现本包绑定或权限声明的阻断问题。",
+      "sample_checks": [],
+      "subject_id": "package-82",
+      "subject_sha256": "a1a42b5a37f68a1856daef02c0e8a94ba5310ac92d5dfa83084e1f8305e58d02",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取82-S1.v2全部740行，并逐项对照已读正文。R1的三分筐、题签、针线分类在正文第7—15行，屋内先问随行与岸边留道，第23—35行才实际依次搬箱、让人、上跳板、移箱取铺盖并复核，没有把装载前询问提前当作已到婚家。R2由探春问送箱人返不返、婆子指出舱口坐卧问题，船家控制进舱人数和先后，具体跟船婆子仍为未命名接口，未伪造注册人物。R3第25行清楚分开家内行旅费与待书私人小钱包，管事接脚夫费用，没有虚构价目或行程地名。R4保留短夹袄争执、包结拆解和题签抹平，写信在离岸之后才发生；船前两次询问托信均没有许诺送达。F1/F2所列诗、神梦、命定、再无归日与婚家细节均未出现。合同自身保持UNKNOWN/PENDING与空basis，participants KNOWN没有被拿来证明全体同在；未发现把章级W82或OT82结果提前注入的内容。相关规划偏好仅作为ADVISORY尺度，未升格历史硬锁。",
+      "sample_checks": [],
+      "subject_id": "contract-82-1",
+      "subject_sha256": "45dbb758714882ca5ed1c955d636948e1f0ab2ab9d29975d8367555ecde9581c",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取82-S2.v2全部760行，并逐项对照已读正文。R1对应第39—43行缆绳收起后立即摊册、按题签复核箱包，针线取到手、药原包放回、姜揭口确认，随后因包位与睡处冲突重排；没有强造丢失危机。R2第55—65行待书嘴硬、吐后换帕、姜片与热水照料，第71—77行稀粥进食，次晨第89—91行恢复，症候是正文新叙事而非合同声称的已注册世界事实。R3第67—77行船家忙灶、传盆、船火、掌灯与第一顿晚餐有持续时间和劳动限制，正文未混用公私钱，也无风俗百科插说。R4的起笔、晾干夹册、隔夜问日期、补日期与舟中、吃粥后再补讯息、重新夹册分别发生在第45—51、85—87、91、101行；最后仍等可靠人来问带信，没有寄出或到家。F1/F2的婚家/海路/婚期/命定/第二场哭别均未引入，OT82-01未被当作复点已验证或OT82-02范围退出。合同自身没有从声明前驱继承入口状态，保留UNKNOWN/PENDING及登记缺口，未发现证据底线阻断问题。",
+      "sample_checks": [],
+      "subject_id": "contract-82-2",
+      "subject_sha256": "ace6f62807dad47b257c8f8b017ddf72de4f34b9b5e58ea7c100037882c12cb8",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-82-003-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-82-003-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}
