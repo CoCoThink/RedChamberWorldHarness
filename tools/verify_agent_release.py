@@ -21,12 +21,12 @@ REQUEST = "data/agent_release/research-81-100-v1/request.json"
 PLAN = "data/agent_release/research-81-100-v1/review-campaign-v3.json"
 
 
-def verify(root: Path) -> dict:
-    manifest = AgentRelease(root).evaluate(REQUEST)
+def verify(root: Path, request_path: str = REQUEST, plan_path: str = PLAN) -> dict:
+    manifest = AgentRelease(root).evaluate(request_path)
     if manifest["status"] == "FAIL" or manifest["findings"]:
         raise ValueError(f"release integrity failed: {manifest['findings']}")
-    plan = _load(root, PLAN)
-    request = json.loads((root / REQUEST).read_bytes())
+    plan = _load(root, plan_path)
+    request = json.loads((root / request_path).read_bytes())
     expected = set()
     for row in request["chapters"]:
         if row["mode"] != "AGENT_CANDIDATE":
@@ -66,15 +66,17 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--build-smoke", action="store_true")
+    parser.add_argument("--request", default=REQUEST)
+    parser.add_argument("--plan", default=PLAN)
     args = parser.parse_args()
     root = args.root.resolve()
-    report = verify(root)
+    report = verify(root, args.request, args.plan)
     if args.build_smoke:
         with tempfile.TemporaryDirectory(prefix="rcwh-release-smoke-") as temporary:
             clone = Path(temporary) / "repo"
             subprocess.run(["git", "clone", "--quiet", "--shared", str(root), str(clone)], check=True)
             environment = {**os.environ, "PYTHONPATH": str(clone / "src")}
-            result = subprocess.run([sys.executable, "-m", "rcwh.cli", "agent-release", "build", REQUEST,
+            result = subprocess.run([sys.executable, "-m", "rcwh.cli", "agent-release", "build", args.request,
                                      "--allow-pending", "--json"], cwd=clone, env=environment, capture_output=True, check=False)
             if result.returncode not in (0, 2):
                 raise ValueError(f"cloned build failed: {result.stdout.decode()} {result.stderr.decode()}")

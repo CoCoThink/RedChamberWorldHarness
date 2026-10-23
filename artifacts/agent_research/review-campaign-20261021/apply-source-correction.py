@@ -13,7 +13,8 @@ from rcwh.workflow.review_campaign import status
 ROOT = Path(__file__).resolve().parents[3]
 OUT = Path(__file__).resolve().parent / 'source-correction-evidence'
 ID = 'src:gengchen:ch27:xiaohong-great-help'
-assert status(ROOT, 'data/agent_release/research-81-100-v1/review-campaign-v3.json')['status'] == 'PASS'
+execution = status(ROOT, 'data/agent_release/research-81-100-v1/review-campaign-v3.json')
+assert execution['status'] == 'PASS' and not any(j['needs_followup'] for j in execution['jobs'])
 file = ROOT / 'data/provenance/sources/r4_core_completion.yaml'
 raw = file.read_text()
 before = next(s for s in yaml.safe_load(raw)['sources'] if s['id'] == ID)

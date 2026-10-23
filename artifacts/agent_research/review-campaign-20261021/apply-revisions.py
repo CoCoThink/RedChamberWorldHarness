@@ -53,9 +53,16 @@ def write(relative, value):
     return binding(ROOT, relative)
 
 def run():
-    assert status(ROOT, 'data/agent_release/research-81-100-v1/review-campaign-v3.json')['status'] == 'PASS'
+    execution = status(ROOT, 'data/agent_release/research-81-100-v1/review-campaign-v3.json')
+    assert execution['status'] == 'PASS' and not any(j['needs_followup'] for j in execution['jobs'])
     selection = json.loads((ROOT / 'data/agent_release/selection-81-100-v2.json').read_bytes())
     assert not (ROOT / 'data/agent_release/selection-81-100-v3.json').exists()
+    # Check every replacement before creating any revision records.
+    for row in selection['chapters']:
+        text = bound_bytes(ROOT, row['candidate']).decode()
+        for before, after in EDITS.get(row['chapter'], []):
+            assert text.count(before) == 1, (row['chapter'], before, text.count(before))
+            text = text.replace(before, after)
     summary = []
     for row in selection['chapters']:
         chapter = row['chapter']
