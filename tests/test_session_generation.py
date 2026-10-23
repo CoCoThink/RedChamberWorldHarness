@@ -332,6 +332,40 @@ def test_only_two_runtime_python_observations_vary_and_frozen_bytes_are_retained
     assert not {'usage', 'request_id', 'elapsed', 'consumed', 'response'}.intersection(report)
 
 
+@pytest.mark.parametrize('stored,current', [('CPython 3.12.13', 'CPython 3.12.3'),
+                                            ('CPython 3.12.3', 'CPython 3.12.13')])
+@pytest.mark.parametrize('tamper', [None, 'code', 'missing_diff', 'failed_rebuild'])
+def test_registered_python_boundary_requires_faithful_content_rebuild(observed_session, stored, current, tamper):
+    from rcwh.corpus.extraction import toolchain_diff
+    root, source = observed_session
+    rebuild = source['verification']['verification_report']['rebuild']
+    rebuild['registered_toolchain'] = deepcopy(rebuild['current_toolchain'])
+    rebuild['registered_toolchain']['extractor']['python'] = 'CPython 3.12.13'
+    def observe(version):
+        rebuild['current_toolchain']['extractor']['python'] = version
+        rebuild['toolchain_diff'] = toolchain_diff(rebuild['registered_toolchain'], rebuild['current_toolchain'])
+    observe(stored)
+    packet = prepare(root)
+    frozen = deepcopy(packet)
+    frozen_bytes = (root / 'request.json').read_bytes()
+    observe(current)
+    if tamper == 'code':
+        rebuild['current_toolchain']['extractor']['code_sha256'] = 'f' * 64
+        observe(current)  # Even a faithful diff cannot waive changed code.
+    elif tamper == 'missing_diff':
+        rebuild['toolchain_diff'] = {} if rebuild['toolchain_diff'] else {'extractor': {}}
+    elif tamper == 'failed_rebuild':
+        rebuild['status'] = 'FAIL'
+    if tamper:
+        with pytest.raises(ValueError, match='prepared request'):
+            verify_prepared_request(root, packet)
+    else:
+        assert verify_prepared_request(root, packet) == PromptRenderer(root).draft('package.json', 89)
+        variations = prepared_request_integrity_report(root, packet)['runtime_observation_variations']
+        assert any(row['path'].endswith('.toolchain_diff') for row in variations)
+    assert packet == frozen and (root / 'request.json').read_bytes() == frozen_bytes
+
+
 @pytest.mark.parametrize('tamper', ['prompt_hash', 'fresh_prompt_hash', 'request_hash', 'task', 'request',
                                    'task_body_rehashed', 'system_rehashed', 'messages_rehashed', 'params_rehashed'])
 def test_runtime_drift_does_not_waive_frozen_envelope_or_hash_forgery(observed_session, tamper):

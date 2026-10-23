@@ -1,0 +1,42 @@
+...........................................F............................ [ 42%]
+........................................................................ [ 84%]
+...........................                                              [100%]
+=================================== FAILURES ===================================
+_ test_registered_python_boundary_requires_faithful_content_rebuild[missing_diff-CPython 3.12.13-CPython 3.12.3] _
+
+observed_session = (PosixPath('/tmp/pytest-of-guan/pytest-5/test_registered_python_boundar4'), {'record': {'excerpt': 'unchanged carrier ...eeeeeeeeeeeeee', 'registered_toolchain': {'dependency_lock': {...}, 'extractor': {...}}, ...}, 'status': 'VERIFIED'}}})
+stored = 'CPython 3.12.13', current = 'CPython 3.12.3', tamper = 'missing_diff'
+
+    @pytest.mark.parametrize('stored,current', [('CPython 3.12.13', 'CPython 3.12.3'),
+                                                ('CPython 3.12.3', 'CPython 3.12.13')])
+    @pytest.mark.parametrize('tamper', [None, 'code', 'missing_diff', 'failed_rebuild'])
+    def test_registered_python_boundary_requires_faithful_content_rebuild(observed_session, stored, current, tamper):
+        from rcwh.corpus.extraction import toolchain_diff
+        root, source = observed_session
+        rebuild = source['verification']['verification_report']['rebuild']
+        rebuild['registered_toolchain'] = deepcopy(rebuild['current_toolchain'])
+        rebuild['registered_toolchain']['extractor']['python'] = 'CPython 3.12.13'
+        def observe(version):
+            rebuild['current_toolchain']['extractor']['python'] = version
+            rebuild['toolchain_diff'] = toolchain_diff(rebuild['registered_toolchain'], rebuild['current_toolchain'])
+        observe(stored)
+        packet = prepare(root)
+        frozen = deepcopy(packet)
+        frozen_bytes = (root / 'request.json').read_bytes()
+        observe(current)
+        if tamper == 'code':
+            rebuild['current_toolchain']['extractor']['code_sha256'] = 'f' * 64
+            observe(current)  # Even a faithful diff cannot waive changed code.
+        elif tamper == 'missing_diff':
+            rebuild['toolchain_diff'] = {} if rebuild['toolchain_diff'] else {'extractor': {}}
+        elif tamper == 'failed_rebuild':
+            rebuild['status'] = 'FAIL'
+        if tamper:
+>           with pytest.raises(ValueError, match='prepared request'):
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+E           Failed: DID NOT RAISE <class 'ValueError'>
+
+tests/test_session_generation.py:360: Failed
+=========================== short test summary info ============================
+FAILED tests/test_session_generation.py::test_registered_python_boundary_requires_faithful_content_rebuild[missing_diff-CPython 3.12.13-CPython 3.12.3]
+1 failed, 170 passed in 117.81s (0:01:57)

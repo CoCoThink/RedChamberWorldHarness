@@ -22,3 +22,5 @@
 2026-10-23恢复说明：此前/tmp未提交实现已丢失；本ADR对应当前重新实现及重新运行的测试，以当前提交和报告为准。
 
 真实数据检查已复现：更正红玉批语见证后，20回历史均PASS，19回当前相容性PASS、仅92为STALE_WRITING_SOURCE；语料86产品完整重建不变（CHANGED_WITH_IDENTICAL_PRODUCTS）。92沿v4回执再绑v5，原作者链与两个保管者均可验证；研究版v2实际复审尚待完成。报告位于artifacts/agent_research/review-campaign-20261021/source-correction-evidence及rebind-v5记录。
+
+双版本CI 39892075943 暴露新提取物的已登记Python边界：同版本时toolchain_diff为空，跨版本内容重建仍PASS但新增extractor差异分支。现仅在两侧差异表均精确由各自registered/current stamp推导、重建成功且已有合法CPython观察变化时，从原保存stamp及允许变化的叶重新计算差异表。原注册stamp、依赖、代码和全部内容仍严格比较；不复制任意新差异表，不改历史请求。伪造/缺失差异表、代码漂移及重建失败须继续拒绝。实际双版本资格以修复后的CI为准，模拟版本元数据检查单独标注。

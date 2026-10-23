@@ -155,8 +155,8 @@ def _saved_task_render(root: Path, prepared: dict, task: dict, *, read=None) -> 
             "template": prepared["template"], "inputs": prepared["inputs"]}
 
 
-# Only these two freshly observed leaves vary across the known CPython rebuilds.
-# Registered toolchains, code/lock hashes, rebuild status and diff shape stay exact.
+# Only the observed CPython version and its faithfully derived diff can vary.
+# Registered toolchains, code/lock hashes and rebuild results stay exact.
 _RUNTIME_PYTHON_PATHS = (("current_toolchain", "extractor", "python"),
                          ("toolchain_diff", "extractor", "current", "python"))
 _CPYTHON_VERSION = re.compile(r"CPython 3\.[0-9]+\.[0-9]+")
@@ -171,7 +171,8 @@ def _object_at(value: dict, keys: tuple[str, ...]) -> dict | None:
 
 
 def _runtime_observations(saved_task: dict, fresh_task: dict) -> tuple[dict, list[dict]]:
-    """Copy only named source observation leaves, including revision task nesting."""
+    """Normalize named Python observations and their exact derived diff."""
+    from ..corpus.extraction import toolchain_diff
     normalized = deepcopy(saved_task)
     saved, fresh, task_path = normalized, fresh_task, "task"
     variations = []
@@ -186,6 +187,19 @@ def _runtime_observations(saved_task: dict, fresh_task: dict) -> tuple[dict, lis
                         or old_rebuild.get("scope") != "EXTRACTION_CONTENT_REBUILD"
                         or new_rebuild.get("scope") != "EXTRACTION_CONTENT_REBUILD"):
                     continue
+                old_registered = old_rebuild.get("registered_toolchain")
+                old_current = old_rebuild.get("current_toolchain")
+                new_registered = new_rebuild.get("registered_toolchain")
+                new_current = new_rebuild.get("current_toolchain")
+                faithful_diff = (
+                    all(isinstance(v, dict) for v in
+                        (old_registered, old_current, new_registered, new_current))
+                    and old_rebuild.get("toolchain_diff") == toolchain_diff(old_registered, old_current)
+                    and new_rebuild.get("toolchain_diff") == toolchain_diff(new_registered, new_current)
+                )
+                if not faithful_diff:
+                    continue
+                variation_start = len(variations)
                 for keys in _RUNTIME_PYTHON_PATHS:
                     old_parent, new_parent = _object_at(old_rebuild, keys[:-1]), _object_at(new_rebuild, keys[:-1])
                     if old_parent is None or new_parent is None:
@@ -196,6 +210,18 @@ def _runtime_observations(saved_task: dict, fresh_task: dict) -> tuple[dict, lis
                         old_parent[keys[-1]] = new
                         variations.append({"path": f"{task_path}.sources[{index}]." + ".".join(prefix + keys),
                                            "stored": old, "current": new})
+                if len(variations) != variation_start:
+                    # A same-version extraction has no extractor diff. Moving
+                    # onto/off its registered Python adds/removes that branch.
+                    # Recompute from the saved stamps with only the allowed
+                    # leaves normalized; never copy an arbitrary fresh diff.
+                    derived = toolchain_diff(old_registered, old_current)
+                    if derived != old_rebuild["toolchain_diff"]:
+                        variations.append({"path": f"{task_path}.sources[{index}]." +
+                                           ".".join(prefix + ("toolchain_diff",)),
+                                           "stored": deepcopy(old_rebuild["toolchain_diff"]),
+                                           "current": deepcopy(derived)})
+                        old_rebuild["toolchain_diff"] = derived
         saved, fresh = saved.get("writing_task"), fresh.get("writing_task")
         task_path += ".writing_task"
     return normalized, variations
