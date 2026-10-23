@@ -1,0 +1,66 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/7897437d19cbdd7f5057e9704b98a90ac0beade6ca8d7edd33288098a05a9a1a.json",
+    "sha256": "7897437d19cbdd7f5057e9704b98a90ac0beade6ca8d7edd33288098a05a9a1a"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已按顺序完整通读本次全部六份 read_in_full（183084 字节），无分派样本或图像；六份文件的 SHA256 均与 assignment 一致。就正文支持、知识分工、物件和时序而言，住房通知→两处比较→麝月复看→付款→舍架及搬运→典衣→米炭取舍→补窗和夜宿有可追踪因果。第3行明确“家败后第二个冬天”；第33行交钱和记收纸，第35—45行木架留给原院、铺盖装运及到屋安置；第55—71行夹袄交当、收钱票、买米、炭油取舍，没有全知人物凭空掌握钱粮，也没有外援逆转、断炊、新病或冻死绝境。第87、121行已明说“两碗半熟粥”，并把午后温食、量米与盛粥碗分开；第103行当票入针线匣，第117行关门动作承接木楔。未发现可据本次材料成立的 BLOCKING 问题。文风仍有真实 ADVISORY 异议，故此项不作文学层面的无保留 PASS：第9行“灶总能搭”被麝月追问吃什么，第69行宝玉称自己烧火也一样又被追问能否日日承担，第85行“几针，倒还容易”再次被拆旧衣工序纠正，第107行又以“我叫你歇一会”纠正宝玉对往后分工的概括。重复的说轻—驳正—收声/学习结构使劳动主题被多次讲明，也使宝玉偏成供纠正的发问者、麝月偏成持续指出成本的声音。建议删减其中一两轮解释，用失碗、提水、湿袜等已有动作承担其意；此为叙事节奏和人物声音建议，不是 A-W1 LOCKED 违例。",
+      "sample_checks": [],
+      "subject_id": "chapter-95",
+      "subject_sha256": "e296a66f85620b5f01d7458995eeae5404bd8c77de1ef72daa2efb089b1ff919",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整通读 ch95-agent-research-v4.json，并与候选、三个 v2 合同和 ch95 政策对照。包明确 chapter=95、operation_scope=RESEARCH、authority_effect=NONE，purpose 未授予史料/语料/文学资格；plan 中三个实际合同路径及 SHA256 与 assignment 和已读文件相符。候选使用另赁偏院、典衣、米炭及破毡，未把包中的研究来源升级成原稿正式回目或历史精确租价；TG 标题也与政策的当前工作标题相合。包列举的历史来源、资产及 exemplar/world 外部全文不属于本次 read_in_full，我没有据此声称完成源像或历史鉴定。本项 PASS 仅针对本次包身份、绑定与候选/合同/政策的相容性，不表示已经逐项证明未分派外部文件。",
+      "sample_checks": [],
+      "subject_id": "package-95",
+      "subject_sha256": "e3c77f7bfb214d74a0d6e32ae2188b729c56703c3a09ac65794e6464868705b3",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读 95-S1.v2.json 的全部794行，对照正文开头至请贾芸看房。R1有实收通知和现金/日用分工：房东说明已应别人、宝钗问交房时点再摊钱，麝月边洗衣边说米已量；不是仅由对象预置反推搬迁。R2由正文第3行“春夏过去”“家败后第二个冬天”落实为另一个冬季。F1—F3未见违背：房东以承诺解释腾房，无羞辱及灾难；没有贫士吟、名画古砚寓言或清净修行；人物看房前仍在原借院。合同保留 UNKNOWN 出口和未注册期限/约据问题，正文的具体措置属于当前叙事实现，不能反将其当成已注册世界事实。本场的住房必要性和后场接口得到实际支持。",
+      "sample_checks": [],
+      "subject_id": "contract-95-1",
+      "subject_sha256": "4e115d3505f932d9c567639bc9fd698e30398262d7071a7e1acf1c31e4187ab3",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读 95-S2.v2.json 全部845行，对照正文第11—33行。贾芸带宝钗分别看临街亮窗与偏角低价屋，比较合赁房钱、灶、水路、纸窗、门板及另付修缮钱；未编精确地址、租金额或地点ID。宝钗回家交代价差及药铺余款，麝月提出每日取水成本后亲自复看，宝玉留家看锅，符合并行家务而非强制全员同路。第21行贾芸明说“我只认得路，她自己的事还得她应”，代管者收钱和承诺维修的接口与贾芸带路分开；没有免费好房或大额资助。看中、回商、再看、付款与搬家先后分明，合同 UNKNOWN 的看房出口未被当作预先已搬入。该场的比较与住房桥落实。",
+      "sample_checks": [],
+      "subject_id": "contract-95-2",
+      "subject_sha256": "ffd1144613a890396be457cee64d05c5fb469a3bd1608f25f73d87d1b83b4de6",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读 95-S3.v2.json 全部1751行，对照正文付款后至结尾。R1/R5：木架先试抬、核额外车趟、问房东、留原院墙角；铺盖、锅、衣包、余米、旧炭及旧毡明确装车，到偏院再抬入干处；米瓮/炭筐已由代管说可借用，入居后倒剩米、归旧炭，夹袄从衣包取出，物流没有靠S09预置瞬移。宝玉护胸前小包是随身物的含蓄延续，正文没有明确命名其为通灵玉，故本次不把此句当作玉身份鉴定或已注册检查点；但也无弃玉、玉样物混同或另开玉线。R2—R4：典青夹袄有柜内翻看、报价、交付、分别收钱票；宝玉买米并因炭需减量，宝钗/麝月选择少量干炭暂缓灯油，药铺余款仍未解决；当票归针线匣、萝卜叶交换小衣修补、酸齑仍有笑话、窗纸补破改用旧布和旧毡、小木碗和明日两碗半均有动作支持。结尾仍有米、火灰与明日工作，无断炊、断炭、一次获救或诗化清净。F4涉及禁止改注册基线/造事件之限制未被正文当成已登记事实；合同的登记层 UNKNOWN 仍应保留，本次只判断当前叙事桥得到实现。",
+      "sample_checks": [],
+      "subject_id": "contract-95-3",
+      "subject_sha256": "b397d24aa0098ceef31ab29868911c1aa43f0f57beaeed23320e68c1ad559374",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-95-041-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-95-041-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

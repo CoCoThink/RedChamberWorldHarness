@@ -1,0 +1,42 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/6a594ba3d12ef01d5b77ed65896524c72c7a5cd3a17d49891fb93b8eacaa8892.json",
+    "sha256": "6a594ba3d12ef01d5b77ed65896524c72c7a5cd3a17d49891fb93b8eacaa8892"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已依次完整通读本次 read_in_full 五项共105234字节，逐项核对SHA256均与assignment相符；仅审本项92-S6合同与分派送物合同，未读93正文或其他读者意见。92-S6-R1/R3及F1/F3基本落实：第二轮逐项区分亲见物、亲手经办与听闻，书办更正把听闻写成亲见的记录，再将问项收在宝玉所能回答的范围；“旁的经办还须另核”“若再传仍要来”限制其知情与案件结论。其后准返还、狱卒未获放行消息、仍须领物的层次连续，未让贾芸包办司法，未以小红送物、茜雪厚袜或狱神灯造成结案。羁押时长仅写“候过些日子”，末尾唯一“正是”二句不曾转成精确十日纪日，也无另造人物诗或获释颂。实际异议是R2的章级收束：末段明言“宝玉尚未过监门，领物与放行还在后头”，窄巷与饭香是家中并行场景，宝玉没有实际“回窄巷”；紧接“门外一程，才觉人间路窄”遂成为预叙。保留韵文本身符合合同，但与实际尚在监内的收束位置有落差。建议核定92末/93-S1边界后，将实际离监、领物及回巷的单次顺序与韵文落点合拢，或明确采用此处预叙的章法选择。合同本身将释放边界标为PENDING，政策也将罪由、天数及释放条件开放；因此此项FAIL仅为ADVISORY规划/章法异议，不作A-W1硬约束或完整性失败。93-S1未在本次材料内，不能宣称已核实跨回不重复释放。",
+      "sample_checks": [],
+      "subject_id": "contract-92-6",
+      "subject_sha256": "563ac3435baebaeb2b7a65a746d1eb1226237e439161e141a8615cf69b6e70c3",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "已完整阅读ch92_delivery_gate.yaml并在完整候选正文中逐项核对。ask_rule_before_action落实于小红先问“可知里头谁管送物”，继而依守门人指引找到书办，获知须交经手查物处、拆开看、不得夹带口信；其后亲到查物处再确认衣袜、吃食分开与可否退回，次日才备包交验，没有先天全知。limited_information及knowledge_guards均得到正文支持：她向贾芸明确“那边管接物的也不知道。我没有得着这句话”，向茜雪只传“只问到能送”，宝钗听规矩后取出小纸，茜雪据小红转达拆袜中布团并松叠查验，故规则获得与传递有可见事件。宝钗、茜雪均未获官面全案判断；送物与转送、转送与宝玉实收严格分层，小红纠正“穿没穿，眼下还不知道”。后段准返还消息也有接物处这一有限来源，小红强调“我没见着人”，贾芸仅照话传达，宝钗仍追问人已出来没有。未出现以送物接口知全案或宣布最后怎么判的语义漂移。门禁、知识与物件交接因果连贯；本job未分派samples，sample_checks保留空数组。",
+      "sample_checks": [],
+      "subject_id": "contract-92-7",
+      "subject_sha256": "b207b3e25f59fef3711da9b6444e9b522d4840e6ffbab4648207bde73772afa9",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-92-031-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-92-031-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

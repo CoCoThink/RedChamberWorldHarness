@@ -1,0 +1,42 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/6a594ba3d12ef01d5b77ed65896524c72c7a5cd3a17d49891fb93b8eacaa8892.json",
+    "sha256": "6a594ba3d12ef01d5b77ed65896524c72c7a5cd3a17d49891fb93b8eacaa8892"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已按 read_in_full 顺序分块完整通读两份合同、130行候选正文、写作包及政策；五项文件 SHA256 均与 assignment 相符。仅审 contract-92-4、contract-92-5；本项无分派 samples，sample_checks 保持空数组。92-S4-R1/R2 在候选正文第57、59、61、63、65、67、69行有具体落实：贾芸先说没问着，小红空手先问能否收冬衣，再经守门人、书办找到查物处，问清衣袜与吃食拆验、不可夹口信、拒收退还；第63行接物人明说“我只管接物，不管叫谁问话”，第65行小红答“我没有得着这句话”，没有由送物渠道推出全案或放人时辰。第67行向宝钗原样转告，宝钗抽出夹纸；第69行次日才向茜雪说明拆验，区别于小红自己取得经手地点，未把全部门路自动写成茜雪先知。贾芸第65、77行只承担送到门外的跑腿，未被写成侦查者。F1/F2/F3 未见违反：没有重金、权贵、神迹、巧姐或刘姥姥入场；问准后仍需次日备物、查验与转交，小红没有自由入监。合同原有 UNKNOWN/PENDING 是局部状态未核定声明，不能当作正文已证历史事实；这里的 PASS 是对当前正文实现的意见。小红的能力由逐问与撤下夹纸的动作支撑，无旁白封授万能能力；未发现本项完整性问题或所附政策中的 LOCKED 功能边界违例。",
+      "sample_checks": [],
+      "subject_id": "contract-92-4",
+      "subject_sha256": "f31cd3b6d62597b41382ff4d33f44a57888985e25a9c8c03b02b02ecd5963d74",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整阅读与绑定核对范围同上，无未读分派材料；本项无分派 samples。92-S5-R1/R2/R3 在候选正文第69、71、73、75、77、79、81、83、85、87、89、91行有连续物件及知识链：茜雪收到具体拆验规则后剪开扎线，摸到脚跟粗线结，拆补至不硌；在小院与外衣、另包炒米组装。第75行小红承认毡未问到，故不擅添；第77行贾芸送至门外，小红接手等查验，茜雪托衣而不入监。第79行衣缝、袜内和吃食逐一验看；第81行明确“还须转进去”，第83行只有交给转送者的有限回话，小红还纠正“穿没穿，眼下还不知道”。第85行切入监内，先交代包裹又等了一阵，后由狱卒叫名、展示衣袜与吃食，宝玉放稳碗再当面接包，实收有独立场面而非送物纸替代。第87行明确宝玉“不知道是谁补的”，没有把准备者、来源知识与 holder 终态混同；第89行脚底暖仍鞋紧，第91行“夜里暖的只有脚，肩背仍冷”，未把厚袜推成身体压力全消。F1/F2/F3 未见违反：茜雪不追全案、不清算旧怨，也无当然探监权、翻案指挥、神迹或送袜换获释因果。第115、117行外头仍只掌握无退/未见穿的消息，与监内读者所见分层；释回仍待领物放行。情分通过修补、等候和替挽衣角表达，角色功能分开。PASS 限当前分派正文实现；不将合同 UNKNOWN 状态升级为历史确证，也不主张史料或人类鉴定资格。",
+      "sample_checks": [],
+      "subject_id": "contract-92-5",
+      "subject_sha256": "ec069827f383cc7140ce9a4b7d28b5113feb19a645a1d64ee779b24be5e51137",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-92-029-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-92-029-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

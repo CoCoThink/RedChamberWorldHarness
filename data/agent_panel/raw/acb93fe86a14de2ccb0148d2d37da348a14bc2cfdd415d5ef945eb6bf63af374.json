@@ -1,0 +1,74 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/b220a2326b33b23986fc21395e6c38e42a3ef15ce7503fb20b5134dbb497a805.json",
+    "sha256": "b220a2326b33b23986fc21395e6c38e42a3ef15ce7503fb20b5134dbb497a805"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "完整通读候选正文119行，并依序读完包、94-S1至S4合同和ch94政策；七份指定材料共169308字节均与assignment SHA256匹配，samples为空。本项为文风建议性异议，不是硬约束失败。正文L51“没添出定数天工”、L53“衣是今日从衣堆一件件取出的，褥子也是当面卷，平儿没把寻不着的旧包当作已在身边”，在人物已完成商量、现包衣物后又由旁白解释未补出哪些事实，明显露出核验口吻；建议删去这种复核性陈述，让取衣、卷褥、现包的动作承担物件来源。后半多次鞋掉、垫团、再缝、鞋湿、晾鞋、鞋跟仍红与褥边反复卷起，虽能表达适应艰难，篇幅分配也可收紧。实质检查：L15贾母原句保留；L21-31用谁领、谁接、谁留车的矛盾推动暂缓，未写人口买卖案已经证实；L27平儿分别报告贾母、贾琏，知识有渠道；巧姐只听出门、问鸡和住几日，不知成人全案；L39-51刘氏只供炕饭、有限照看和小钱/劳动抵费，非权势或神迹救援；L55与L111旧散扣留平儿针包，乡间孩子摸到缝在身上的扣，物件没有瞬移；L77、107-111送达口信有车脚和门婆经手，未把送达人写成知道第一夜全部冷暖；L95不定词小曲、鸡狗纺车均落实，板儿婚配未锁。未发现A-W1支撑的LOCKED违约或字节完整性问题。",
+      "sample_checks": [],
+      "subject_id": "chapter-94",
+      "subject_sha256": "f357f9ebe56f402a58525808d35b750de685e5ee48c2508200e9f770313cafb2",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读取本包95行。包明示operation_scope=RESEARCH、authority_effect=NONE、sources为空，purpose亦保留史料/语料/文学资格未授予；未将试写包装成历史鉴定。chapter=94及94-S1至S4路径和哈希与本次实读合同逐项一致，正文中现实暂居、有限人物知识与这些合同的CURRENT_IMPLEMENTATION_REQUIREMENT相容。包同时列S5/S6、世界文件、plan与exemplar引用，但它们不在本job.read_in_full中，本结论仅确认当前分派包与已附正文/合同的相容及声明边界，不声称已审那些引用内容或授予包外证据资格。全部本次指定绑定字节校验通过。",
+      "sample_checks": [],
+      "subject_id": "package-94",
+      "subject_sha256": "0629993a27f6b9bfac0d199e0ea8dba40ab5c68a31509f81e13a95a86e6ad65d",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读94-S1.v2.json的744行，并对照完整候选正文。L3以凤姐后事未了进入，凤姐未复活主持；L5-9媒人称吃穿有着落、可来往，平儿有短暂倾听，确有先似可议的表面；L9-15王仁算媒钱车脚、贾母说“人没问明白，礼倒先算清了”，并明说还没接东西，不推已收礼/签婚书。巧姐L11在隔屋误把日用听作换衣，L35问车与鸡，未成为全知调查听众。R1-R3和F1-F3在所附正文均得到支持；无已卖后神救、庞大阴谋、狱庙或板儿婚配锁定。合同自身保留authority/evidence NONE、participants PENDING、婚事exit UNKNOWN，未把规划充作已验证历史事实。",
+      "sample_checks": [],
+      "subject_id": "contract-94-1",
+      "subject_sha256": "4fa4ed03e86fbe52f81505bde1eeecb91d20cee85950b9342fcea82e0169374d",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读94-S2.v2.json的589行。候选L5-7问日后探看、照看者、男子年纪与家人，L13问铺子和路，L21-25问谁领、见谁、谁送回来；媒人避实、王仁转指媒人，L23“谁叫你先留车的”使急办来源产生矛盾，各答话均可追溯到场内人，并未凭漏洞变成犯罪已证。L27平儿先回贾母再向贾琏传，贾母闭眼歇后没有自动全知；L39她给刘氏只说风险概况，巧姐仍只知出门。R1-R3与F1-F2成立，正常议亲外表中的钱/说成关切和有限核问均未被传奇破案替代。UNKNOWN局部入口和未注册消息事实在合同中仍明示。",
+      "sample_checks": [],
+      "subject_id": "contract-94-2",
+      "subject_sha256": "68534b52619a4b6b43bad0b2a5ac280754bd48c1fbc62ef00a7eb8e0ad57ca33",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读94-S3.v2.json的766行。候选L23车脚等待与领人说法冲突、L25不肯保证返送，使暂缓有现实理由；L27贾母令今日不许糊涂送走，平儿传贾琏，L29贾琏再核，L31由贾琏令车走、亲事待问清再议，权限和执行人有场内交代，未写司法裁罪或解除既定婚约。L35孩子只知今日改了、想看鸡，随后L37-47另经刘姥姥提出、回家核实才能推进暂住，未将识别危险直接等同已到乡下。R1-R3、F1-F3均受正文支持；无真卖后神救、狱庙或预定板儿婚姻。合同UNKNOWN exit与章级W94结果分开，未从终点倒灌本场状态。",
+      "sample_checks": [],
+      "subject_id": "contract-94-3",
+      "subject_sha256": "c4430ef30c52351e52f73feb528c1696246630784ed800bbba31c58880de585f",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整通读94-S4.v2.json的772行。候选L37交代刘氏因得知凤姐的信惦记孩子进城探看，L39平儿只告知含糊亲事和催走，刘氏先问孩子知道否，再提腾炕住几日；L41明确需回去问家里、腾地方，且拒绝立刻把孩子带去等收拾。L45长辈与贾琏核实接送、回话，L47写实际回家问过与有限邻助，未把方案预写成全部安排完成。L49-51只几枚小钱、不够部分商量捡柴抵费；念佛只是一句口语。后续乡居实际出现炕窄、家人照旧下地、邻妇好奇嫌娇或肯借针线，非桃源，也未锁板儿婚配或正式法律监护。R1-R2、F1-F3与完整正文相容；合同本身保留PENDING/UNKNOWN和无权威声明。本章L51、53核验式旁白的文风异议另记chapter-94，不能据此把合同规划偏好升级成BLOCKING。",
+      "sample_checks": [],
+      "subject_id": "contract-94-4",
+      "subject_sha256": "c7ef3052728db805b330923719a2af2f1f6c8a2e2b8b886946001337fdc49b51",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-94-037-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-94-037-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}
