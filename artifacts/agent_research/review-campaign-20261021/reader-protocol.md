@@ -1,6 +1,6 @@
 # 本轮模型同行读者执行协议
 
-协调者只分配一个 JOB_ID、一个绝对 assignment 路径和一个仓库外输出路径。仓库根目录为 `/tmp/rcwh-review-execution-20261021`。你是单项真实读者，不是协调者或作者。
+协调者只分配一个 JOB_ID、一个绝对 assignment 路径和一个仓库外输出路径。仓库根目录为 `/home/guan/rcwh-review-execution-20261023`。你是单项真实读者，不是协调者或作者。
 
 1. 完整读取 assignment，严格遵循其 instructions、job.read_in_full、job.subjects、opinion_scaffold。逐个文件完整通读，必要时分块，确认工具输出未截断。不能只搜索、只看摘要、按关键词或字节摘要推断已读。只审分派 subjects，不读取其他读者意见，不调用其他模型/API，不启动子代理。
 2. 对照正文、包、政策和所分派合同，检查正文支持、人物知识、物件、时序、因果和文风。BLOCKING 限完整性问题或 A-W1 支撑的 LOCKED 硬约束；规划偏好、P-Lock、口味与文风用 ADVISORY。真实异议应保留，目标不是凑 PASS。PASS 也应说明实际检查和定位依据。
