@@ -14,7 +14,13 @@ p.add_argument('command', choices=['status', 'dispatch', 'register', 'recover', 
 p.add_argument('job', nargs='?')
 p.add_argument('opinion', nargs='?')
 p.add_argument('--origin')
+p.add_argument('--plan', default=PLAN)
+p.add_argument('--out', help='Repository-relative observation directory')
 a = p.parse_args()
+PLAN = a.plan
+if a.out:
+    OUT = ROOT / a.out
+    OUT.mkdir(parents=True, exist_ok=True)
 
 def save(prefix, value):
     n = 1

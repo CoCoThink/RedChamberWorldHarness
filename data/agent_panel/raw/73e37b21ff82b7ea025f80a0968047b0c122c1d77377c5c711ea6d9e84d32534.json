@@ -1,0 +1,62 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/de89c33266e7f5e425779596fbe12ede6d2862a5d1653eb2a1d2c35fe51b01c2.json",
+    "sha256": "de89c33266e7f5e425779596fbe12ede6d2862a5d1653eb2a1d2c35fe51b01c2"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "完整读本任务分配的 source record 与 evidence，并目读样本全页。固定载体为吴铭恩《红楼梦脂评汇校本》电子版3.1416，并非庚辰原抄本影印；其整理说明明确“庚”指庚辰本、“夹”指夹批。PDF第334页（书内页323）在正文“刚至穿堂门前，”后以绿色小号评语列“庚夹妙！这便是凤姐扫雪拾玉之处，一丝不乱。”，之后恢复正文“只见袭人倚门立在那里”。引文逐字相符，抽取unit pdf:page:334的[285,306)重算与记录一致，见证标签与批语层次有载体支持。该批只提供“凤姐扫雪拾玉之处”的线索，不构成正式回目、具体发生回次或情节细节的证据，记录notes已正确限制。PASS限于该固定汇校载体所作转录与归属，不宣称已独立校验原抄本。",
+      "sample_checks": [
+        {
+          "notes": "已用图像工具目读 b5fec832…jpg 全页。页眉第二十三回、页脚323对应PDF页334；在“刚至穿堂门前”与“只见袭人”之间清楚显示绿色“庚夹”及“妙！这便是凤姐扫雪拾玉之处，一丝不乱。”，文字、标点、位置均与source/evidence一致。它是带本别标签的夹批，非正文。",
+          "sample_id": "src:gengchen:ch23:fengjie-snow-jade:image:1",
+          "sha256": "b5fec832fd53aeb86952e84c8296b3b203ffede38bec016b390a056e191b2711",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:gengchen:ch23:fengjie-snow-jade",
+      "subject_sha256": "ecffab08bbfb5aceae6645d312b09db7dca29f69307476d6c7aa7c3423d72e4f",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读本任务分配的 source record 与 evidence，目读样本全页，并为核对见证归属只读固定PDF的整理说明及第398—400页相邻上下文、额外目读第399页底部图像。引文“且红玉后有宝玉大得力处，此于千里外伏线也。”在PDF第400页（书内389）绿色总评段中逐字存在，unit pdf:page:400的[85,106)重算正确；但本条GENGCHEN/庚辰本见证归属与固定载体相违。该总评在前一PDF页399（书内388）正文结尾之后明确以绿色“甲”起首：“甲饯花辰不论典与不典，只取其韵致生趣耳。池边戏蝶，偶尔适兴；亭外急智，[金蝉]脱壳。明写宝钗”，跨页接“非拘拘然一女夫子”，随后才是“凤姐用小红……且红玉后有宝玉大得力处……”。直至后面的蓝色“戚总评”前未见另换本别标签。整理说明（PDF第6—7页、书内I—II）明确甲=甲戌本，庚=庚辰本，且甲/己/庚墨批均用绿色，不能凭绿色认作庚辰。因而该载体支持甲戌本该段评语，不能支持记录标题、ID及witness声称的庚辰本归属。这是证据身份的完整性问题，须纠正归属或另给可核验的庚辰见证；不否定句子本身确在载体中，也不据此补造未来帮助方式或回次。",
+      "sample_checks": [
+        {
+          "notes": "已用图像工具目读9b88ac54…jpg全页：页眉第二十七回、页脚389对应PDF页400，第二段清晰为“凤姐用小红，可知晴雯等埋没其人久矣，无怪有私心私情。且红玉后有宝玉大得力处，此于千里外伏线也。”。引文转录及定位通过；见证归属不通过。本页绿色段没有“庚”标签，额外目读同一固定PDF第399页底部确认总评起首为“甲饯花辰……”，与本页首句“非拘拘然一女夫子”跨页相接，故本样本不能佐证GENGCHEN归属。",
+          "sample_id": "src:gengchen:ch27:xiaohong-great-help:image:1",
+          "sha256": "9b88ac54e404dde77e4a9db06d579f50f8443ed7ea9926b5066ae597ba81d075",
+          "verdict": "FAIL"
+        }
+      ],
+      "subject_id": "source:src:gengchen:ch27:xiaohong-great-help",
+      "subject_sha256": "81943c21a3497224580a9400cdb64d00b8a263289f96d3ffcb4a61b8aedd5764",
+      "verdict": "FAIL",
+      "severity": "BLOCKING"
+    },
+    {
+      "notes": "完整读本条record与evidence中html:1的[3260,4379)上下文，核对固定HTML载体绑定及抽取[3760,3879)的119字录文。页面标题“寺院土地田产的经营方式（中）”、日期2020年01月21日、来源大觉寺，与北京市文物局页面录文的书目/见证说明一致。上下文以“录文如下”引出“乾隆三十九年（1774年）僧宗玉立租房契”，录文后列乾隆三十九年六月初六日及立契人宗玉、见证人等，支持本条的文书日期与归属。引文保留页面录文的“二拔子”“作理生意”“租帖”等实际用字，未以页面叙述中的“二拨子”“做生意”代换；十六间铺面、年租五十千、现收三十千、租价不增长等均有对应文字。支持范围为该官方页面所转录的一件清代寺院铺面租契；未分配原契照片，故不宣称已鉴定原契或独立复核手稿。记录notes正确限于北京地区正式房租契约及租价约定的存在，不推定贾家住宅、租价或一般所有租约规则。此subject没有分配图像样本。",
+      "sample_checks": [],
+      "subject_id": "source:src:history:beijing:1774:rental-contract",
+      "subject_sha256": "d7a4cc2e0eb39ac6643c2c7033f294e6ab75c97b55d82eb539f0fdaa02d8ea4b",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:SOURCE-shared-060-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:SOURCE-shared-060-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

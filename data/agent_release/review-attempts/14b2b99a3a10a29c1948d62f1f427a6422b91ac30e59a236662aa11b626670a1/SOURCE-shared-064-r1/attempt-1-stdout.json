@@ -1,0 +1,96 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/de89c33266e7f5e425779596fbe12ede6d2862a5d1653eb2a1d2c35fe51b01c2.json",
+    "sha256": "de89c33266e7f5e425779596fbe12ede6d2862a5d1653eb2a1d2c35fe51b01c2"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "完整通读来源记录及其证据上下文，并目读固定汇校本PDF第141页（印刷页130）。引文位于袭人摘玉、包好塞在褥下和李嬷嬷散去之后的甲夹批语；“塞玉”“误窃”“晴雯茜雪二婢”均与图像一致。当前两段字符定位拼接逐字相符。批语只称“误窃”一回伏线，不能据此扩成正式回目或确定未来回次，记录notes已守此边界。核读固定PDF整理说明I—II：“甲”为甲戌本，“夹”为夹批；本次确认的是吴铭恩汇校、版本3.1416载体所标归属，未声称目验甲戌原抄本。",
+      "sample_checks": [
+        {
+          "notes": "已目读1fb4393…jpg全页；页底130，对应PDF141。目标为红色甲夹小字：“交代清楚。”后的“塞玉”至“又为后文先作一引。”，不是邻近甲眉“偷度金针法”或黑色正文。摘录文字、跨行拼接与见证标签均核对一致。",
+          "sample_id": "src:jiazxu:ch8:mistaken-theft:image:1",
+          "sha256": "1fb4393aac192064d5dab241fae056f38a0f0e63bd7b19f92360a14bd30cb9d4",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:jiazxu:ch8:mistaken-theft",
+      "subject_sha256": "ca4b2492cee3c731c86fdb00c1963f98c6d307687d0a92292ca7b956b70f0ce0",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整通读记录与上下文，并目读PDF第265页（印刷页254）下部四出戏。黑色正文“第四出《离魂》。”后接绿色己夹“《牡丹亭》中。伏黛玉死。◇所点之戏剧伏四事，乃通部书之大过节、大关键。”，与所录含正文/批语标签的引文一致；◇按该书说明分隔同位置批语。当前定位两段拼接逐字相符。该批可支持死亡方向，未给病程、临终写法或具体未来回次。旧legacy_locator.pdf_page为266，与当前265有一页差异，现行locator和证据图像正确，旧字段不宜用于定位。整理说明确认己=己卯本、夹=夹批；本结论限于固定现代汇校本所载见证归属。",
+      "sample_checks": [
+        {
+          "notes": "已目读03399616…jpg全页；印刷页254/PDF265。第四出戏及其后绿色己夹中可清楚读到《牡丹亭》、伏黛玉死及◇后总批；正文与批语层分明，所摘未发生串项。现行定位正确，旧页码266偏一页。",
+          "sample_id": "src:jimao:ch18:daiyu-death:image:1",
+          "sha256": "0339961669b50bb8d3eb456334617d5662f490add1810b68c6eb0346dac2cac0",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:jimao:ch18:daiyu-death",
+      "subject_sha256": "d3e2868054106c3b7a7d4b8dd45e4c44673799b81573a1d98104dfde326d89ab",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整通读记录与证据上下文，目读PDF第265页（印刷页254）下部“第三出《仙缘》；”及其绿色己夹“《邯郸梦》中。伏甄宝玉送玉。”。书名、甄字及“送玉”方向与记录一致；字符595—619的现行定位逐字重算相符。上下文确将此项与贾家败、元妃死、黛玉死并列，并总称四事为大过节、大关键。未据此补出送玉时刻、对象或具体机制。己夹见证标记与固定载体及整理说明一致；没有把此现代汇校载体视作己卯抄本影像。",
+      "sample_checks": [
+        {
+          "notes": "已目读03399616…jpg全页；印刷页254/PDF265。倒数第四行附近第三出《仙缘》后绿色己夹清楚写《邯郸梦》中、伏甄宝玉送玉，未与第四出黛玉死混并；引文和载体见证标签相符。",
+          "sample_id": "src:jimao:ch18:zhen-baoyu-sends-jade:image:1",
+          "sha256": "0339961669b50bb8d3eb456334617d5662f490add1810b68c6eb0346dac2cac0",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:jimao:ch18:zhen-baoyu-sends-jade",
+      "subject_sha256": "39fcfbf7f7a6dd5870efcc9cba80c7692e4daf122e51dcf0f33df8878b129925",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整通读记录和袭人家接待宝玉的证据上下文，目读PDF第273页（印刷页262）中下部己夹批。“补明宝玉自幼何等娇贵”后紧接所摘“以此一句留与下部后数十回‘寒冬噎酸虀，雪夜围破毡’等处对看，可为后生过分之戒。叹叹！”。噎、酸虀、围破毡均与图像相符，两段定位拼接逐字重算一致。语句属于批者预示的未来贫寒场景，与当前正文的娇贵形成对照，未构成正式回目证据，记录notes的界限恰当。己夹归属由载体标记和整理说明相互支持，仅确认此汇校本所标。",
+      "sample_checks": [
+        {
+          "notes": "已目读14087972…jpg全页；印刷页262/PDF273。下半页绿色己夹在“袭人见总无可吃之物”后展开，所摘跨“破／毡”行界，仍属于同一己夹批；“寒冬噎酸虀，雪夜围破毡”等字可辨，与转录一致。",
+          "sample_id": "src:jimao:ch19:cold-winter-torn-felt:image:1",
+          "sha256": "140879727566240fb8e96d625f600e3e9c64d883f3964b3d28b55cec22658dce",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:jimao:ch19:cold-winter-torn-felt",
+      "subject_sha256": "5cf86f79dfb928454d9ca29cc26dc31c304d64c715d545cc2b318d47e92a0730",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整通读记录及长段己夹上下文，并目读PDF第293页（印刷页282）中部。所摘“故袭人出嫁后云‘好歹留着麝月’一语，宝玉便依从此话。”在绿色己夹段中跨行，区别于前后黑色正文；好歹、麝月、依从均清楚。两段定位拼接逐字重算一致。上文提袭人出嫁之后宝玉、宝钗身边尚有一人，下文说“虽去实未去”，支持保留麝月和袭人离去的关系；并未提供婚期日数或后文确切回次。归属己夹与固定汇校本整理说明一致，检查未越称为己卯原抄本鉴定。",
+      "sample_checks": [
+        {
+          "notes": "已目读6fa8e4db…jpg全页；印刷页282/PDF293。中段绿色己夹内可读“故袭人出嫁后云‘好歹留着麝／月’一语，宝玉便依从此话”，跨行“麝月”复原正确；不是当下黑色正文中的人物直接发言。",
+          "sample_id": "src:jimao:ch20:keep-sheyue:image:1",
+          "sha256": "6fa8e4dbb8999d6490e49014231799c20e15508a92b84a1c483cf624c918f07b",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:jimao:ch20:keep-sheyue",
+      "subject_sha256": "00e2ccf476afc2020e98a6be3e54c2ae2e4cbadf8221d4b2c2794d113b2be1a9",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:SOURCE-shared-064-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:SOURCE-shared-064-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}
