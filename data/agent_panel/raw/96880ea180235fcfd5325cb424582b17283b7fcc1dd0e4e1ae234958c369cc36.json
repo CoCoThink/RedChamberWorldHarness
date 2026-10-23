@@ -1,0 +1,42 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/8ccc21535cb77e5130e4572bfae11c9b114a99444d8d898fab147007000b016a.json",
+    "sha256": "8ccc21535cb77e5130e4572bfae11c9b114a99444d8d898fab147007000b016a"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已依序完整通读本次 read_in_full 五份文件，共75616字节，逐份SHA256与assignment一致；仅审contract-86-6及contract-86-7，本项无分派样本。86-S6的到场、知识和药碗链得到正文实际叙述支持：末段先写宝玉掀帘入室，再由王夫人告知“林姑娘去了”、李纨说明来晚、紫鹃说“没等到你”，到场前跟班只传病势转坏的旧口信，未让宝玉预知最后一息。药盏从先前紫鹃试热、待凉、递服少量到末段宝玉端起“大半盏暗褐色的药”，未尽状态及照护用药的延续可辨；药吊子被雪雁移至垫砖、炉口收好，宝玉问“药不是还没吃么？再温一温。今儿早起她还说药苦”后，雪雁看无红光的炉灰而手落回膝头，紫鹃接盏仍放回几上，没有执行再温。末句为“那盏药早已冷透，再没有人去温”，未接悼诗、作者评叹、显灵或总括性大哭；紫鹃只抽露在稿夹外的旧笺而没有翻稿。政策的两项锚点均有实际落位。通过的是正文对本项义务的支持：合同明列UNKNOWN的入口、出口、场级事件绑定，以及OBJ-MEDICINE-BOWL-86与legacy medicine_bowl_86未证同一的边界，仍保持UNKNOWN；不把这次文学核对当作场级世界状态回放证明。写作包RESEARCH/NONE边界与此相符。未发现本项需阻断或另提修改建议的矛盾。",
+      "sample_checks": [],
+      "subject_id": "contract-86-6",
+      "subject_sha256": "7143d53628e36e6daf3836c4e1d1efb7e81714b7e09563fa1af49811171c3522",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "已完整阅读本项YAML及assignment指定的正文、86-S6合同、写作包和政策；全部指定文件哈希匹配，无分派样本。正文以米汤难咽、扶肩挪枕、气息变弱及未能续接写出critical至dead的过程，并明言“黛玉已经死了”；不是因宝玉未到或大夫未到而直接宣布单因死亡。药未饮尽由紫鹃实际端递少量、黛玉只点唇未咽多少，以及来迟宝玉端起仍有大半盏的药呈现；宝玉拨正匙子、端盏并说“再温一温”，具有日常误认的动作与对白。添水兑水、移药吊子收炉口、李纨端灯挑灯花、拧绢换衣的劳动跨越死亡时点持续，满足ordinary_domestic_labor_continues，非罗列物名。旧笺“隔帘花影 □ 新晴”仍留空字，笔未落纸且未补成，后续无绝命诗或临终哲理总结；无神灵干预。紫鹃在最后气息未续时才按腕、观察并确认，宝玉到室内听明后才面对冷药，二人均无事件前知道确切死时的对白、行动或内心。医疗及家计适配的药、煎、温、热水、炉、炭、灯、跑腿等均置于实际行动中，未把具体方剂、死因或劳动分工作史料必然性断言。终点冷药、未成文字及来迟反应与两项p_locks的本次正文功能相合；未将这些P-Lock偏好提升为A-W1硬约束，也不把legacy对象与86-S6的另一ID自行合并。未发现本项支持不足或人物知识、物件、因果冲突。",
+      "sample_checks": [],
+      "subject_id": "contract-86-7",
+      "subject_sha256": "30fab56f00c242eeeabccfb0a216864b1eb4d4d5eda9d833d32b114527a780fa",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-86-013-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-86-013-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

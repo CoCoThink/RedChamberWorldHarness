@@ -216,6 +216,58 @@ def test_no_overwrite_even_empty_output_directory(edition, monkeypatch):
         e.runtime.build(e.request)
 
 
+def test_smoke_preserves_completed_edition_and_checks_exact_rebuilt_book(edition, monkeypatch):
+    from tools.verify_agent_release import preserve_existing_release, compare_release_manifests
+    e = edition
+    positive_gates(e, monkeypatch)
+    write(e.root, "research/request.json", e.request)
+    original = e.runtime.build(e.request)
+    snapshot = e.runtime._stable_snapshot()
+    quarantine = e.root.parent / "preserved-edition"
+    stored = preserve_existing_release(e.root, "research/request.json", quarantine)
+    assert stored == original and (quarantine / "manifest.json").exists()
+    rebuilt = e.runtime.build(e.request)
+    assert compare_release_manifests(stored, rebuilt) == []
+    assert (quarantine / "book.md").read_bytes() == (e.root / rebuilt["output"]["text"]["path"]).read_bytes()
+    assert e.runtime._stable_snapshot() == snapshot
+    # Corruption must fail before moving the existing artifact.
+    (e.root / rebuilt["output"]["text"]["path"]).write_text("corrupt")
+    with pytest.raises(ValueError, match="mismatch"):
+        preserve_existing_release(e.root, "research/request.json", e.root.parent / "bad-copy")
+    assert (e.root / rebuilt["output"]["manifest_path"]).exists()
+
+
+def test_smoke_manifest_comparison_allows_only_named_runtime_observations():
+    from tools.verify_agent_release import compare_release_manifests
+    from rcwh.corpus.extraction import toolchain_diff
+    registered = {"extractor": {"python": "CPython 3.12.13", "code_sha256": "a" * 64}}
+    old = {"status": "PASS", "scope": "EXTRACTION_CONTENT_REBUILD", "output_sha256": "b" * 64,
+           "registered_toolchain": registered, "current_toolchain": deepcopy(registered), "toolchain_diff": {}}
+    new = deepcopy(old)
+    new["current_toolchain"]["extractor"]["python"] = "CPython 3.12.3"
+    new["toolchain_diff"] = toolchain_diff(registered, new["current_toolchain"])
+    def manifest(rebuild):
+        return {"chapters": [{"reviews": {"source_reviews": [{"source_proof": {
+            "verification_report": {"rebuild": rebuild}}}]}}]}
+    before, after = manifest(old), manifest(new)
+    assert len(compare_release_manifests(before, after)) == 1
+    for field in ("output_sha256", "status"):
+        changed = deepcopy(after)
+        changed["chapters"][0]["reviews"]["source_reviews"][0]["source_proof"]["verification_report"]["rebuild"][field] = "WRONG"
+        with pytest.raises(ValueError, match="differs"):
+            compare_release_manifests(before, changed)
+    forged = deepcopy(after)
+    forged["chapters"][0]["reviews"]["source_reviews"][0]["source_proof"]["verification_report"]["rebuild"]["toolchain_diff"] = {}
+    with pytest.raises(ValueError, match="differs"):
+        compare_release_manifests(before, forged)
+    changed = deepcopy(after)
+    changed["chapters"][0]["reviews"]["source_reviews"][0]["source_proof"]["verification_report"]["rebuild"]["current_toolchain"]["extractor"]["code_sha256"] = "c" * 64
+    changed_rebuild = changed["chapters"][0]["reviews"]["source_reviews"][0]["source_proof"]["verification_report"]["rebuild"]
+    changed_rebuild["toolchain_diff"] = toolchain_diff(registered, changed_rebuild["current_toolchain"])
+    with pytest.raises(ValueError, match="differs"):
+        compare_release_manifests(before, changed)
+
+
 def test_publish_failure_rolls_back_both_files_without_marker(edition, monkeypatch):
     e = edition
     positive_gates(e, monkeypatch)

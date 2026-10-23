@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
+from copy import deepcopy
 import json
 import os
 from pathlib import Path
@@ -16,9 +17,84 @@ import tempfile
 
 from rcwh.workflow.agent_release import AgentRelease
 from rcwh.workflow.review_campaign import _load
+from rcwh.candidate_reviews import digest
+from rcwh.contracts import record_sha256
+from rcwh.assets.paths import repository_path
 
 REQUEST = "data/agent_release/research-81-100-v2/request.json"
 PLAN = "data/agent_release/research-81-100-v2/review-campaign-v1.json"
+
+
+def preserve_existing_release(clone: Path, request_path: str, quarantine: Path) -> dict | None:
+    """Preserve a committed PASS edition in the disposable clone before rebuilding.
+
+    The real build's exclusive reservation stays in force. An incomplete or
+    corrupt existing edition is an error, not something the smoke test removes.
+    """
+    request = json.loads(repository_path(clone, request_path).read_bytes())
+    relative = f"releases/agent/{request['id']}"
+    target = repository_path(clone, relative)
+    if not target.exists():
+        return None
+    if target.is_symlink() or not target.is_dir() or {p.name for p in target.iterdir()} != {"manifest.json", "book.md"}:
+        raise ValueError("existing release is incomplete or has unexpected files")
+    if any(p.is_symlink() or not p.is_file() for p in target.iterdir()):
+        raise ValueError("existing release must contain ordinary files")
+    stored = json.loads((target / "manifest.json").read_bytes())
+    AgentRelease(clone)._validate(stored, "manifest")
+    text = (target / "book.md").read_bytes()
+    if (stored["status"] != "PASS" or stored["id"] != request["id"]
+            or stored["request_sha256"] != record_sha256(request)
+            or stored["output"] != {"directory": relative, "manifest_path": f"{relative}/manifest.json",
+                                    "text": {"path": f"{relative}/book.md", "sha256": digest(text), "bytes": len(text)}}):
+        raise ValueError("existing release manifest/request/book mismatch")
+    target.rename(quarantine)
+    return stored
+
+
+def compare_release_manifests(stored: dict, fresh: dict) -> list[str]:
+    """Require exact release semantics; disclose only named runtime observations.
+
+    Successful extraction rebuild reports use the same narrow, faithful Python
+    normalization as writing compatibility. The compatibility report's list of
+    historical runtime observations is retained in the original manifest, while
+    the fresh build recomputes it. No review, gate, author or binding is omitted.
+    """
+    from rcwh.generation.session import _runtime_observations
+
+    differences = []
+
+    def compare(old, new, path=()):
+        if old == new:
+            return
+        label = ".".join(map(str, path))
+        if (path[-2:] == ("verification_report", "rebuild")
+                and isinstance(old, dict) and isinstance(new, dict)):
+            def task(report):
+                return {"sources": [{"verification": {"verification_report": {"rebuild": report}}}]}
+            normalized, variations = _runtime_observations(task(old), task(new))
+            if variations and normalized == task(new):
+                differences.append(label)
+                return
+        if path[-2:] == ("current_writing_inputs", "runtime_observation_variations"):
+            # These are historical observations, not admission credentials.
+            # The full report's status, changed inputs/records and findings
+            # still compare exactly, and fresh compatibility is reverified.
+            if isinstance(old, list) and isinstance(new, list):
+                differences.append(label)
+                return
+        if isinstance(old, dict) and isinstance(new, dict) and old.keys() == new.keys():
+            for key in old:
+                compare(old[key], new[key], path + (key,))
+            return
+        if isinstance(old, list) and isinstance(new, list) and len(old) == len(new):
+            for index, (a, b) in enumerate(zip(old, new, strict=True)):
+                compare(a, b, path + (index,))
+            return
+        raise ValueError(f"committed release differs from current rebuild: {label}")
+
+    compare(deepcopy(stored), fresh)
+    return differences
 
 
 def verify(root: Path, request_path: str = REQUEST, plan_path: str = PLAN) -> dict:
@@ -75,6 +151,7 @@ def main() -> int:
         with tempfile.TemporaryDirectory(prefix="rcwh-release-smoke-") as temporary:
             clone = Path(temporary) / "repo"
             subprocess.run(["git", "clone", "--quiet", "--shared", str(root), str(clone)], check=True)
+            preserved = preserve_existing_release(clone, args.request, Path(temporary) / "committed-release")
             environment = {**os.environ, "PYTHONPATH": str(clone / "src")}
             result = subprocess.run([sys.executable, "-m", "rcwh.cli", "agent-release", "build", args.request,
                                      "--allow-pending", "--json"], cwd=clone, env=environment, capture_output=True, check=False)
@@ -93,6 +170,13 @@ def main() -> int:
                 raise ValueError("pending staging must not emit reviewed prose")
             report["cloned_build"] = {"status": "PASS", "release_status": built["status"],
                 "manifest_path": built["output"]["manifest_path"], "text": built["output"]["text"]}
+            if preserved is not None:
+                differences = compare_release_manifests(preserved, built)
+                if (Path(temporary) / "committed-release/book.md").read_bytes() != (clone / built["output"]["text"]["path"]).read_bytes():
+                    raise ValueError("committed research book differs from cloned rebuild")
+                report["cloned_build"]["committed_release"] = {
+                    "status": "PASS", "book": "EXACT_BYTES", "manifest": "EXACT_EXCEPT_NAMED_RUNTIME_OBSERVATIONS",
+                    "runtime_observation_paths": differences, "original_preserved_in_disposable_clone": True}
     print(json.dumps(report, ensure_ascii=False, indent=2))
     return 0
 

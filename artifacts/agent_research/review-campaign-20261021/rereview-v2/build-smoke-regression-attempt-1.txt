@@ -1,0 +1,54 @@
+.......F........................................                         [100%]
+=================================== FAILURES ===================================
+_____ test_smoke_preserves_completed_edition_and_checks_exact_rebuilt_book _____
+
+edition = namespace(root=PosixPath('/tmp/pytest-of-guan/pytest-9/test_smoke_preserves_completed0'), runtime=<rcwh.workflow.agent...espace(assets={'asset:baseline': {'immutable': True}}, resolve=<function edition.<locals>.<lambda> at 0x7c94084aade0>))
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x7c94083645c0>
+
+    def test_smoke_preserves_completed_edition_and_checks_exact_rebuilt_book(edition, monkeypatch):
+        from tools.verify_agent_release import preserve_existing_release, compare_release_manifests
+        e = edition
+        positive_gates(e, monkeypatch)
+        write(e.root, "research/request.json", e.request)
+        original = e.runtime.build(e.request)
+        snapshot = e.runtime._stable_snapshot()
+        quarantine = e.root.parent / "preserved-edition"
+>       stored = preserve_existing_release(e.root, "research/request.json", quarantine)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+tests/test_agent_release.py:227: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+clone = PosixPath('/tmp/pytest-of-guan/pytest-9/test_smoke_preserves_completed0')
+request_path = 'research/request.json'
+quarantine = PosixPath('/tmp/pytest-of-guan/pytest-9/preserved-edition')
+
+    def preserve_existing_release(clone: Path, request_path: str, quarantine: Path) -> dict | None:
+        """Preserve a committed PASS edition in the disposable clone before rebuilding.
+    
+        The real build's exclusive reservation stays in force. An incomplete or
+        corrupt existing edition is an error, not something the smoke test removes.
+        """
+        request = json.loads(repository_path(clone, request_path).read_bytes())
+        relative = f"releases/agent/{request['id']}"
+        target = repository_path(clone, relative)
+        if not target.exists():
+            return None
+        if target.is_symlink() or not target.is_dir() or {p.name for p in target.iterdir()} != {"manifest.json", "book.md"}:
+            raise ValueError("existing release is incomplete or has unexpected files")
+        if any(p.is_symlink() or not p.is_file() for p in target.iterdir()):
+            raise ValueError("existing release must contain ordinary files")
+        stored = json.loads((target / "manifest.json").read_bytes())
+        AgentRelease(clone)._validate(stored, "manifest")
+        text = (target / "book.md").read_bytes()
+        if (stored["status"] != "PASS" or stored["id"] != request["id"]
+                or stored["request_sha256"] != digest(canonical_bytes(request))
+                or stored["output"] != {"directory": relative, "manifest_path": f"{relative}/manifest.json",
+                                        "text": {"path": f"{relative}/book.md", "sha256": digest(text), "bytes": len(text)}}):
+>           raise ValueError("existing release manifest/request/book mismatch")
+E           ValueError: existing release manifest/request/book mismatch
+
+tools/verify_agent_release.py:49: ValueError
+=========================== short test summary info ============================
+FAILED tests/test_agent_release.py::test_smoke_preserves_completed_edition_and_checks_exact_rebuilt_book
+1 failed, 47 passed in 2.89s
