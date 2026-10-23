@@ -91,8 +91,34 @@ def source_subject(root: Path, source: dict, catalog: AssetCatalog, cache=None) 
                              for i, image in enumerate(images, 1)]} if images else {})}
 
 
+def reuse_shared_review_inputs(root: Path, request: dict, previous_path: str) -> list[dict]:
+    """Retain old packets only for exactly identical subjects and coordinators."""
+    previous = json.loads(bound_bytes(root, _binding(root, previous_path)))
+    cache, reused = {}, []
+    def packet(ref):
+        key = (ref["packet"]["path"], ref["packet"]["sha256"], ref["subject_id"])
+        if key not in cache:
+            document = verify_packet(root, ref["packet"], subjects={ref["subject_id"]})
+            cache[key] = (document["coordinator_session_id"],
+                next(s for s in document["subjects"] if s["id"] == ref["subject_id"]))
+        return cache[key]
+    for key in ("source_reviews", "corpus_reviews"):
+        old_refs = [ref for row in previous["chapters"] for ref in row.get(key, [])]
+        for row in request["chapters"]:
+            for index, ref in enumerate(row.get(key, [])):
+                current = packet(ref)
+                for old in old_refs:
+                    if old["subject_id"] == ref["subject_id"] and packet(old) == current:
+                        row[key][index] = old
+                        reused.append({"chapter": row["chapter"], "kind": key, "subject_id": ref["subject_id"],
+                                       "prepared_packet": ref["packet"], "retained_packet": old["packet"]})
+                        break
+    return reused
+
+
 def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], *,
-            coordinator_session_id: str, max_book_read_bytes: int = 197 * 1024) -> dict:
+            coordinator_session_id: str, max_book_read_bytes: int = 197 * 1024,
+            reuse_request_path: str | None = None) -> dict:
     """Write packets, reading lists and the request; return their bindings."""
     from .admission import chapter_scope
     from ..corpus.dataset import CorpusRepository
@@ -224,9 +250,11 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
     errors = validate_instance(request, {"$ref": "#/$defs/request", "$defs": schema["$defs"]})
     if errors:
         raise AssetError("invalid prepared request: " + "; ".join(errors))
+    reused = reuse_shared_review_inputs(root, request, reuse_request_path) if reuse_request_path else []
     request_path = repository_path(root, f"{base}/request.json")
     request_path.write_bytes(canonical_bytes(request))
     return {"status": "PASS", "edition": edition, "packets": packets, "reading": reading,
+            "reused_shared_review_inputs": reused,
             "request": _binding(root, f"{base}/request.json"),
             "subjects": {"candidates": len(candidates), "sources": len(source_subjects),
                          "corpus_samples": sum(len(s["samples"]) for s in corpus_subjects)},

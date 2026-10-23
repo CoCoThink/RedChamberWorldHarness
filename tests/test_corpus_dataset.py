@@ -96,6 +96,28 @@ def test_two_independent_builds_without_cache_have_identical_products(corpus_rep
     assert {p.relative_to(tmp_path/'first').as_posix():digest(p.read_bytes()) for p in (tmp_path/'first').rglob('*') if p.is_file()}=={p.relative_to(tmp_path/'second').as_posix():digest(p.read_bytes()) for p in (tmp_path/'second').rglob('*') if p.is_file()}
 
 
+def test_unused_source_metadata_does_not_invalidate_corpus_but_crosswalk_does(corpus_repo):
+    from rcwh.corpus.dataset import rebuild_scope
+    from rcwh.graph import ProvenanceGraph
+    root, _, _ = corpus_repo
+    CorpusRepository(AssetCatalog.from_repo(root)).build(BUILD, 'corpus/front80/test-metadata-v1')
+    source = deepcopy(ProvenanceGraph.from_repo(root).sources['src:test:corpus'])
+    with rebuild_scope():
+        repository = CorpusRepository(AssetCatalog.from_repo(root))
+        repository.load(DATASET)
+        source['witness']['label'] = 'corrected bibliographic label'
+        source['notes'] = 'Metadata correction, no text or locator change.'
+        write_source(root, source)
+        repository.load(DATASET)
+        observation = repository.rebuild_reports[DATASET]['source_record_metadata']
+        assert observation['status'] == 'CHANGED_WITH_IDENTICAL_PRODUCTS'
+        assert observation['registered_sha256'] != observation['current_sha256']
+        source['locator']['spans'][0]['unit_ref'] = 'pdf:page:1'
+        write_source(root, source)
+        with pytest.raises(AssetError, match='STALE_CORPUS_BUILD_OR_PRODUCTS'):
+            repository.load(DATASET)
+
+
 @pytest.mark.parametrize('change,error',[
     (lambda c:c['inputs'].update(sha256='0'*64),'STALE_CORPUS_INPUT_CONFIG'),
     (lambda c:c['variant_starts'][0].update(offset=0),'STALE_VARIANT_BOUNDARY'),

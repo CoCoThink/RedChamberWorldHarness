@@ -54,6 +54,10 @@ class CorpusRepository:
         self.root = catalog.root
         self.rebuild_reports: dict[str, dict] = {}
 
+    def source_record_digest(self, carrier_ref: str) -> str:
+        return digest(canonical_bytes([s for s in sorted(ProvenanceGraph.from_repo(self.root).sources.values(), key=lambda s: s["id"])
+                                       if s.get("container", {}).get("ref") == carrier_ref]))
+
     def config(self, relative: str) -> dict:
         raw = repository_path(self.root, relative).read_bytes()
         config = json.loads(raw)
@@ -234,9 +238,7 @@ class CorpusRepository:
                     "dependencies": [{"asset_ref": ref, "sha256": self.catalog.resolve(ref).sha256} for ref in dependencies],
                     "products": {name: {"asset_ref": f"asset:sha256:{digest(raw)}", "sha256": digest(raw), "bytes": len(raw)} for name, raw in sorted(products.items())},
                     "readiness": quality["readiness"], "authority_effect": "NONE"}
-        graph = ProvenanceGraph.from_repo(self.root)
-        manifest["source_record_digest"] = digest(canonical_bytes([s for s in sorted(graph.sources.values(), key=lambda s: s["id"])
-                                                                  if s.get("container", {}).get("ref") == fixed["pdf"]["asset_ref"]]))
+        manifest["source_record_digest"] = self.source_record_digest(fixed["pdf"]["asset_ref"])
         validate(self.root, manifest, "corpus_manifest")
         return manifest, products
 
@@ -362,8 +364,11 @@ class CorpusRepository:
             products[name] = product.path.read_bytes()
         if rebuild:
             cache = _REBUILD_CACHE.get()
+            fixed = CorpusInputs(self.catalog).config(config["inputs"]["path"])
+            source_records = self.source_record_digest(fixed["pdf"]["asset_ref"])
             key = (str(self.root), dataset_ref, asset.sha256, manifest["build_config"]["sha256"],
                    tuple((d["asset_ref"], d["sha256"]) for d in manifest["dependencies"]),
+                   source_records,
                    code_digest("dataset.py", "layers.py", "inputs.py", "extraction.py", "adapters.py"))
             if cache is not None and key in cache:
                 expected_manifest, expected_products = cache[key]
@@ -372,13 +377,21 @@ class CorpusRepository:
                 if cache is not None:
                     cache[key] = (expected_manifest, expected_products)
             def content(document):
-                return {**document, "builder": {key: value for key, value in document["builder"].items() if key != "code_sha256"}}
+                # The source crosswalk remains checked in quality_report.json.
+                # Metadata not used by any product is an observation only.
+                return {**{k: v for k, v in document.items() if k != "source_record_digest"},
+                        "builder": {key: value for key, value in document["builder"].items() if key != "code_sha256"}}
             if content(expected_manifest) != content(manifest) or expected_products != products:
                 raise AssetError("STALE_CORPUS_BUILD_OR_PRODUCTS")
             self.rebuild_reports[dataset_ref] = {
                 "status": "PASS", "scope": "CORPUS_CONTENT_REBUILD", "dataset_ref": dataset_ref,
                 "product_count": len(products), "toolchain_diff": toolchain_diff(manifest["builder"], expected_manifest["builder"]),
                 "registered_builder": manifest["builder"], "current_builder": expected_manifest["builder"],
+                "source_record_metadata": {
+                    "status": "UNCHANGED" if manifest["source_record_digest"] == source_records else "CHANGED_WITH_IDENTICAL_PRODUCTS",
+                    "registered_sha256": manifest["source_record_digest"], "current_sha256": source_records,
+                    "qualification": "METADATA_OBSERVATION_ONLY; all corpus products and source crosswalk rebuilt exactly",
+                },
             }
         return manifest, products
 

@@ -1,0 +1,65 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/research-81-100-v1/packets/corpus.json",
+    "sha256": "4aaa856c97efc7abe6c962e879b76581223ae71fd7121d19dc470175417cd2b6"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整通读本任务协议、assignment、schema、manifest、corpus packet及五个分派样本投影，另核对各样本相邻载体记录与前后正文。packet、manifest、五个投影及segments载体SHA256均与绑定一致；五个投影records与对应载体记录逐项相同，text_sha256复算一致。五段均为MAIN_TEXT，字形元数据为主文字体SimSun-GBK-EUC-H、字号15.58、颜色2301728，与manifest正文层政策相符。所见相邻脂批、页眉/页码等另列ZHIPI或EDITORIAL，未混入分派正文。人物话语与行动、香料赊借、补裘、露与茯苓霜的追查、探春拒搜的局部因果均可读通；没有发现本任务范围内的完整性失败。PASS只覆盖这五段及其绑定/分层核对，不代表全文80回或原始PDF影像校勘；manifest的人审待定状态及研究用途声明均保留。",
+      "sample_checks": [
+        {
+          "notes": "完整读本段。第24回pdf:page:344[659:762]，叙卜世仁经营香料铺、贾芸求赊冰片麝香各四两并许八月付银，人物关系及请求明确。邻接p00065“庚侧既云……”和p00067“庚夹甥舅之谈如此，叹叹！”独列ZHIPI；p00068正文续“卜世仁冷笑道”，正文和评语边界分明。投影与载体逐项相同且文本哈希一致。",
+          "sample_id": "hlm80:chapter:24:p00066",
+          "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "完整读本段。第27回pdf:page:393[516:568]，红玉转述平儿的话，连续的奶奶称谓属于转述正文。句末“等五奶奶”由同页p00130正文“好些，我们奶奶还会了五奶奶来瞧奶奶呢”接续；中间p00129“甲侧又一门。”单列ZHIPI。并非正文漏句或把甲侧评语混入。投影与载体、文本哈希均一致。",
+          "sample_id": "hlm80:chapter:27:p00128",
+          "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "完整读本段。第52回pdf:page:709[37:713]，“刚安静了些”承前页p00050“翻腾至掌灯”；宝玉烧坏褂子、匠人不敢揽、晴雯辨孔雀金线并病中应补的物件与行动因果连贯。p00051页眉及页码698列EDITORIAL，末后p00053“庚夹妙谈！”列ZHIPI，随后正文p00054叙拆里子补裘。分派正文没有吞入这两层文字。投影、载体、文本哈希一致。",
+          "sample_id": "hlm80:chapter:52:p00052",
+          "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "完整读本段。第61回pdf:page:820[45:795]，平儿访袭人、芳官确认赠露、宝玉担心茯苓霜牵连舅舅、晴雯指出彩云与贾环、平儿顾探春体面，人物知识随对话展开可理解。开头“恐次日有变”承前页“惟”；末尾“袭人等听说，便知”接下一页p00022“他说的是探春”，有完整接续。前后页眉/页码均另列EDITORIAL。投影、载体、文本哈希一致。",
+          "sample_id": "hlm80:chapter:61:p00020",
+          "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "完整读本段。第74回pdf:page:1013[63:493]，探春命开门迎搜、凤姐解释、探春自称窝主并拒搜丫鬟、提甄家抄家，称谓与行动一致。前p00078“庚夹实注一笔。”及后p00080“庚夹奇极！此日甄家事。”均另列ZHIPI，正文p00081接“咱们也渐渐的来了”。本段末尾并非全段话的终点，但正文按层过滤后连贯。投影、载体、文本哈希一致。",
+          "sample_id": "hlm80:chapter:74:p00079",
+          "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "corpus:front80:v2-candidate",
+      "subject_sha256": "eb4aebb9e38712a988bdead263c12c9c3df00a6f936fb17db755c436e4d66886",
+      "verdict": "PASS",
+      "severity": "INFO"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CORPUS-shared-057-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CORPUS-shared-057-r2:2"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

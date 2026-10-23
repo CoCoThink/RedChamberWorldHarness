@@ -1,0 +1,64 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/research-81-100-v1/packets/corpus.json",
+    "sha256": "4aaa856c97efc7abe6c962e879b76581223ae71fd7121d19dc470175417cd2b6"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整通读任务分派、manifest、corpus packet和全部五个分派样本投影。packet、manifest、五个投影及segments载体的SHA256均与任务绑定一致，五个投影记录逐项等于载体中同ID记录，正文text_sha256与字符跨度长度也全部相符。五段均为人物叙事或对白，样本未混入脂批、校记、页眉或水印；MAIN_TEXT分类所声明的SimSun-GBK-EUC-H、15.58字号、2301728色值符合manifest正文层政策。分派范围内未见字节完整性或文本层归属问题。此PASS仅覆盖所分派样本和绑定检查，不把CANDIDATE_PENDING_HUMAN_AUDIT或classification.human_review=PENDING提升为已完成人工审计，也未对未分派全文或原PDF图像作鉴定。",
+      "sample_checks": [
+        {
+          "notes": "完整读完第24回样本，pdf:page:344字符659–762。卜世仁开香料铺、贾芸求赊冰片麝香各四两并许八月付款，叙事、对白及物件指代连贯；无批注文字混入。MAIN_TEXT样式符合manifest正文层声明。投影与载体同ID记录完全一致，text_sha256正确，103字符与定位跨度相符。",
+          "sample_id": "hlm80:chapter:24:p00066",
+          "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "完整读完第27回样本，pdf:page:393字符516–568。红玉转述平儿关于“我们奶奶”“这里奶奶”“我们二爷”的口信，属于正文人物转述，不能因称谓密集当作校注。样本止于“等五奶奶”，是该投影所含52字符片段的边界，未将其视为完整对白或据此判定全篇缺文。投影与载体同ID记录完全一致，正文样式、text_sha256及定位长度均相符。",
+          "sample_id": "hlm80:chapter:27:p00128",
+          "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "完整读完第52回样本，pdf:page:709字符37–713。从宝玉褂子烧损、麝月遣人求织补未果，到病中晴雯认出孔雀金线并安排麝月拈线，人物知识、衣物与修补因果在本段内连贯。“哦啰嘶国的裁缝”处于宝玉对白，无批注串入。676字符跨两叙事段仍属MAIN_TEXT；投影与载体、text_sha256及定位长度全部相符。",
+          "sample_id": "hlm80:chapter:52:p00052",
+          "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "完整读完第61回样本，pdf:page:820字符45–795。玫瑰露与茯苓霜的来源、芳官的承认、宝玉拟承认取露、平儿顾全探春体面的推理在段内可辨；晴雯所说彩云偷露及平儿的说明均为人物对白，不误作编者裁定。末尾“便知”是750字符样本边界，不声称覆盖下文。投影与载体完全一致，正文层样式、text_sha256及定位长度均相符。",
+          "sample_id": "hlm80:chapter:61:p00020",
+          "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "完整读完第74回样本，pdf:page:1013字符63–493。探春开箱抗搜、凤姐解释奉太太之命、平儿丰儿收拾，以及探春以甄家抄家反讽自家搜检，叙事和对白角色清楚，未见批注混入。“遂命众丫”起首及未闭合对白末尾均在所绑定430字符投影中如实保留。投影与载体同ID记录完全一致，正文样式、text_sha256及定位长度均相符。",
+          "sample_id": "hlm80:chapter:74:p00079",
+          "sha256": "fddf648183770baead283dd80075515a517274c40c18a171237a2399ea9fe6c2",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "corpus:front80:v2-candidate",
+      "subject_sha256": "eb4aebb9e38712a988bdead263c12c9c3df00a6f936fb17db755c436e4d66886",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "14b2b99a3a10:CORPUS-shared-056-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:14b2b99a3a10:CORPUS-shared-056-r1:2"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

@@ -72,7 +72,7 @@ def retained_chain(root: Path, ref: dict, chapter: int) -> list[dict]:
     return chain
 
 
-def release_attribution(root: Path, row: dict) -> dict | None:
+def release_attribution(root: Path, row: dict, *, _receipts: set[str] | None = None) -> dict | None:
     """Require an explicit disclosure for known rebind sessions; never infer authors."""
     draft = json.loads(bound_bytes(root, row["draft"]))
     run = json.loads(bound_bytes(root, draft["run"]))
@@ -88,6 +88,11 @@ def release_attribution(root: Path, row: dict) -> dict | None:
                 raise AssetError("rebind draft requires an explicit rebind_receipt")
             current = ancestor["parent"]
         return None
+    seen = set() if _receipts is None else _receipts
+    receipt_sha = row["rebind_receipt"]["sha256"]
+    if receipt_sha in seen:
+        raise AssetError("attribution rebind receipt cycle")
+    seen.add(receipt_sha)
     receipt = _record(root, row["rebind_receipt"], "rebind_disclosure")
     newer = retained_chain(root, row["draft"], row["chapter"])
     matches = [link for link in newer if link["draft"] == receipt["current"]["draft"]]
@@ -113,9 +118,20 @@ def release_attribution(root: Path, row: dict) -> dict | None:
             raise AssetError("rebind receipt must disclose the exact coordinator edit and reason")
     elif receipt.get("coordinator_edit"):
         raise AssetError("identical rebind cannot declare a coordinator edit")
+    prior_row = {**previous, "chapter": row["chapter"]}
+    if "previous_rebind_receipt" in receipt:
+        prior_row["rebind_receipt"] = receipt["previous_rebind_receipt"]
+    prior = release_attribution(root, prior_row, _receipts=seen)
     chain = retained_chain(root, previous["draft"], row["chapter"])
-    custodians = [{**a, "role": "REBIND_CUSTODIAN"} for a in rebound["authors"]]
-    contributors = [{**a, "role": link["role"]} for link in reversed(chain) for a in link["authors"]]
+    if prior:
+        for link in chain:
+            if link["draft"] == prior["rebind_draft"]:
+                link["role"] = "REBIND_CUSTODIAN"
+        chain.extend(prior["chain"])
+    custodians = (prior["custodians"] if prior else []) + [
+        {**a, "role": "REBIND_CUSTODIAN"} for a in rebound["authors"]]
+    contributors = list(prior["contributors"]) if prior else [
+        {**a, "role": link["role"]} for link in reversed(chain) for a in link["authors"]]
     if not identical:
         contributors.extend({**a, "role": "COORDINATOR_EDITOR"} for a in rebound["authors"])
     subsequent = newer[:newer.index(rebound)]
@@ -126,4 +142,5 @@ def release_attribution(root: Path, row: dict) -> dict | None:
             "contributors": contributors, "custodians": custodians, "chain": chain,
             "rebind_draft": rebound["draft"], "subsequent_revisions": subsequent,
             "coordinator_edit": receipt.get("coordinator_edit", []), "edit_reason": receipt.get("edit_reason"),
+            "receipt_chain": (prior["receipt_chain"] if prior else []) + [row["rebind_receipt"]],
             "authority_effect": "NONE"}

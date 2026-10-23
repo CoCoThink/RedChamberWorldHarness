@@ -127,3 +127,57 @@ def test_later_revision_retains_original_authorship_and_rebind_receipt(rebound):
     assert report["contributors"][-1]["principal_id"] == "session:later-reviser"
     assert report["contributors"][-1]["role"] == "REVISER"
     assert len(report["subsequent_revisions"]) == 1
+
+
+def second_rebind(root, row):
+    """Construct another byte-identical custody transfer of a retained draft."""
+    def store(name, value):
+        raw = canonical_bytes(value)
+        (root / name).write_bytes(raw)
+        return {"path": name, "sha256": digest(raw)}
+    previous = {k: row[k] for k in ("candidate", "draft", "writing_package")}
+    prior_receipt = row["rebind_receipt"]
+    draft = json.loads((root / row["draft"]["path"]).read_bytes())
+    run = json.loads((root / draft["run"]["path"]).read_bytes())
+    prepared = json.loads((root / draft["prepared_request"]["path"]).read_bytes())
+    prepared.update(parent=None, feedback=None)
+    prepared_ref = store("second-request.json", prepared)
+    run.update(session_id="rebind-v5:test", parent=None, feedback=None,
+               prepared_request=prepared_ref, request_source=prepared_ref)
+    run_ref = store("second-run.json", run)
+    draft.update(parent=None, feedback=None, prepared_request=prepared_ref, run=run_ref,
+        authors=[{"principal_id": "session:rebind-v5:test", "kind": "MODEL",
+                  "source_id": "session-author:" + run_ref["sha256"], "run": run_ref}])
+    row["draft"] = store("second-draft.json", draft)
+    receipt = {"schema_version": 1, "kind": "REBIND_DISCLOSURE", "chapter": row["chapter"],
+        "edition": "test-second", "current": {k: row[k] for k in previous}, "previous": previous,
+        "previous_rebind_receipt": prior_receipt, "prose_identical_to_previous": True,
+        "declaration": "Test custody transfer; original author retained.", "authority_effect": "NONE", "usage": "RESEARCH_ONLY"}
+    row["rebind_receipt"] = store("second-receipt.json", receipt)
+
+
+def test_successive_custody_preserves_all_contributors_and_custodians(rebound):
+    root, row = rebound
+    first = release_attribution(root, row)
+    second_rebind(root, row)
+    report = release_attribution(root, row)
+    assert report["contributors"] == first["contributors"]
+    assert [a["principal_id"] for a in report["custodians"]] == ["session:rebind-v4:ch86", "session:rebind-v5:test"]
+    assert len(report["receipt_chain"]) == 2
+    assert report["chain"][0]["role"] == "REBIND_CUSTODIAN"
+
+
+def test_successive_custody_cannot_omit_previous_disclosure(rebound):
+    root, row = rebound
+    second_rebind(root, row)
+    replace(root, row, lambda r: r.pop("previous_rebind_receipt"))
+    with pytest.raises(AssetError, match="explicit rebind_receipt"):
+        release_attribution(root, row)
+
+
+def test_successive_custody_rejects_unrelated_previous_disclosure(rebound):
+    root, row = rebound
+    second_rebind(root, row)
+    replace(root, row, lambda r: r["previous"].update(draft=json.loads((root / r["previous_rebind_receipt"]["path"]).read_bytes())["previous"]["draft"]))
+    with pytest.raises(AssetError, match="bindings mismatch|chapter/bindings"):
+        release_attribution(root, row)

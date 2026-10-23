@@ -56,3 +56,51 @@ def test_historical_source_custody_does_not_depend_on_future_image_codec(monkeyp
     verify(source, subject["evidence"], read, rebuild_images=False)
     with pytest.raises(RuntimeError, match="new renderer"):
         verify(source, subject["evidence"], read)
+
+
+def test_witness_context_requires_full_text_and_original_page_images():
+    from copy import deepcopy
+    from rcwh.assets import AssetCatalog
+    from rcwh.corpus.extraction import ExtractionRepository
+    from rcwh.workflow.source_reading import prepare
+    _, _, source, _ = source_case()
+    source = deepcopy(source)
+    catalog = AssetCatalog.from_repo(ROOT)
+    _, units = ExtractionRepository(catalog).load(source["locator"]["extraction_ref"], rebuild=False)
+    locator_refs = {s["unit_ref"] for s in source["locator"]["spans"]}
+    extra = next(ref for ref in units if ref not in locator_refs)
+    source["witness"]["context_units"] = [extra]
+    stored = {}
+
+    def write(root, path, value):
+        raw = value if isinstance(value, bytes) else canonical_bytes(value)
+        stored[path] = raw
+        return {"path": path, "sha256": digest(raw)}
+
+    ref = prepare(catalog, source, "test-witness-context", write)
+    def read(binding):
+        raw = stored[binding["path"]] if binding["path"] in stored else (ROOT / binding["path"]).read_bytes()
+        assert digest(raw) == binding["sha256"]
+        return raw
+    value = json.loads(read(ref))
+    assert next(c for c in value["contexts"] if c["unit_ref"] == extra)["text"] == units[extra]["text"]
+    assert {i["page"] for i in value["images"]} == {int(r.rsplit(":", 1)[1]) for r in locator_refs | {extra}}
+    verify(source, ref, read)
+    for fault in ("missing-context", "missing-image", "changed-context"):
+        bad = deepcopy(value)
+        if fault == "missing-context":
+            bad["contexts"] = [c for c in bad["contexts"] if c["unit_ref"] != extra]
+        elif fault == "missing-image":
+            bad["images"] = [i for i in bad["images"] if i["page"] != int(extra.rsplit(":", 1)[1])]
+        else:
+            next(c for c in bad["contexts"] if c["unit_ref"] == extra)["text"] = "invented witness"
+        bad_ref = write(ROOT, "test-witness-context/bad.json", bad)
+        with pytest.raises(ValueError, match="context differs|omits an original"):
+            verify(source, bad_ref, read)
+
+
+@pytest.mark.parametrize("refs", ["pdf:page:1", ["missing"], [1], ["pdf:page:1", "pdf:page:1"]])
+def test_invalid_witness_context_units_fail_closed(refs):
+    from rcwh.workflow.source_reading import context_units
+    with pytest.raises(ValueError, match="invalid witness context"):
+        context_units({"witness": {"context_units": refs}}, {"pdf:page:1": {"text": "fixed"}})

@@ -109,3 +109,40 @@ def test_full_edition_has_no_failures_and_only_missing_reviews_pending():
     allowed = {"CANDIDATE_PEERS", "COORDINATOR_DECISION", "CHAPTER_SAFETY_POLICY", "CONTRACT_PEERS",
                "SOURCE_PEERS", "CORPUS_PEERS"}
     assert all(set(c["pending"]) <= allowed for c in report["chapters"])
+
+
+@pytest.mark.parametrize('change', ['none', 'binding', 'context', 'coordinator'])
+def test_shared_review_reuse_requires_identical_full_subject_and_coordinator(tmp_path, change):
+    from copy import deepcopy
+    from rcwh.workflow.release_packets import reuse_shared_review_inputs
+    from rcwh.candidate_reviews import canonical_bytes, digest
+    import shutil
+    shutil.copytree(ROOT / 'schemas', tmp_path / 'schemas')
+    def store(path, value):
+        raw = value if isinstance(value, bytes) else canonical_bytes(value)
+        target = tmp_path / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        target.write_bytes(raw)
+        return {'path': path, 'sha256': digest(raw)}
+    source = {'id': 'src:test', 'text': 'old', 'text_sha256': digest(b'old')}
+    subject = {'id': 'source:test', 'scope': 'SOURCE', 'source_ref': 'src:test',
+               'binding': store('source.json', source), 'context': []}
+    packet = {'schema_version': 1, 'packet_kind': 'AGENT_REVIEW_PACKET', 'id': 'old',
+              'coordinator_session_id': 'coordinator', 'subjects': [subject],
+              'authority_effect': 'NONE', 'usage': 'RESEARCH_ONLY'}
+    old_ref = {'packet': store('old.json', packet), 'subject_id': 'source:test'}
+    previous = {'chapters': [{'chapter': 81, 'source_reviews': [old_ref]}]}
+    store('request.json', previous)
+    packet = deepcopy(packet)
+    packet['id'] = 'new'
+    if change == 'binding':
+        packet['subjects'][0]['binding'] = store('new-source.json', {**source, 'text': 'new', 'text_sha256': digest(b'new')})
+    if change == 'context':
+        packet['subjects'][0]['context'] = [store('context.txt', b'new context')]
+    if change == 'coordinator':
+        packet['coordinator_session_id'] = 'another-coordinator'
+    current_ref = {'packet': store('new.json', packet), 'subject_id': 'source:test'}
+    current = {'chapters': [{'chapter': 81, 'source_reviews': [current_ref]}]}
+    reused = reuse_shared_review_inputs(tmp_path, current, 'request.json')
+    assert bool(reused) == (change == 'none')
+    assert current['chapters'][0]['source_reviews'][0] == (old_ref if change == 'none' else current_ref)

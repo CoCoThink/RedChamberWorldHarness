@@ -148,3 +148,5 @@ BOOK 全部为 ADVISORY，缺失和异议照实展示，不新增机器门控。
 - `status-005.json` 检查点：39 COMPLETE、3 ASSIGNED、34 PENDING，46条负面结果均为ADVISORY，无 needs_followup；协调者已通读全部39项结果与附注，仍未生成采用决定。
 
 - `status-006.json` 检查点：56 COMPLETE（全部章回任务）、3 ASSIGNED、17 PENDING，67条负面结果均为 ADVISORY，无 needs_followup；全部56项结果与附注已逐项阅读，原始意见/回执/快照完整性 PASS。20回当前输入在42项时点评估仍全部 PASS；未修改候选或生成采用决定。
+
+- 2026-10-23环境重启恢复：可交付基线退回31b2052的56项；丢失的未提交成果不计完成。三个在途任务如实中断后重新派发，执行工作树移到/home/guan，逐批提交；详见RECOVERY-20261023.md。来源/连续保管/共享复用/语料依赖修复重新实现，定向26项通过，扩大回归执行中。

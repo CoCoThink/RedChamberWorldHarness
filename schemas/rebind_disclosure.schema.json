@@ -6,6 +6,7 @@
     "schema_version": {"const": 1}, "kind": {"const": "REBIND_DISCLOSURE"},
     "chapter": {"type": "integer", "minimum": 1}, "edition": {"type": "string", "minLength": 1},
     "current": {"$ref": "#/$defs/selection"}, "previous": {"$ref": "#/$defs/selection"},
+    "previous_rebind_receipt": {"$ref": "#/$defs/binding"},
     "prose_identical_to_previous": {"type": "boolean"}, "declaration": {"type": "string", "minLength": 1},
     "coordinator_edit": {"type": "array", "items": {"type": "string"}},
     "edit_reason": {"type": "string", "minLength": 1},

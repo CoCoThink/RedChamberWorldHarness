@@ -45,7 +45,8 @@ def cmd_agent_release(args: argparse.Namespace) -> int:
             chapters = sorted({int(c) for part in args.chapters.split(",") for c in _span(part)})
             payload = prepare(root, args.edition, args.selection, chapters,
                               coordinator_session_id=args.coordinator_session_id,
-                              max_book_read_bytes=args.max_book_read_bytes)
+                              max_book_read_bytes=args.max_book_read_bytes,
+                              reuse_request_path=args.reuse_request)
             print(json.dumps(payload, ensure_ascii=False, indent=2))
             return 0
         if args.agent_release_command == "build":
@@ -86,6 +87,7 @@ def add_commands(sub) -> None:
     prepare.add_argument("--coordinator-session-id", required=True, help="Declared coordinator session (not a reviewer)")
     prepare.add_argument("--max-book-read-bytes", type=int, default=197 * 1024,
                          help="Maximum UTF-8 bytes per overlapping continuity segment")
+    prepare.add_argument("--reuse-request", help="Reuse unchanged source/corpus contexts from this prior request")
     prepare.set_defaults(func=cmd_agent_release)
     campaign = commands.add_parser("review-plan", help="Prepare two readers per subject and per bounded continuity segment")
     campaign.add_argument("request")
