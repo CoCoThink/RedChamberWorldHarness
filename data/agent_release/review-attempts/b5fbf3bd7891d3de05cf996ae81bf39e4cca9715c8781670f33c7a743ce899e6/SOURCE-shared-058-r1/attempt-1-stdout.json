@@ -1,0 +1,46 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/research-81-100-v2/packets/sources.json",
+    "sha256": "5cb0d58602c845fc24fa5168fa8d4f8dfa209b6586bc88a3c345cec8a2d8a5d3"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整阅读分派 source record 与 evidence，并用图像工具逐张查看 PDF399、400 页（印刷页388、389）。目标句“且红玉后有宝玉大得力处，此于千里外伏线也。”在 PDF400 页绿色回末评语中清楚可读；其上文为“凤姐用小红，可知晴雯等埋没其人久矣，无怪有私心私情”，与所录引文一致。PDF399 页绿色评语由“甲”起，“明写宝钗”跨页接 PDF400 页“非拘拘然一女夫子”，目标句继续处于该绿色段内，至蓝色“戚总评”才变换见证；故不能因稳定 ID 含 gengchen 将它归为庚辰本。另读固定载体 PDF6—7 页整理说明的文本层，甲被释为甲戌本，庚为庚辰本，并说明墨批为绿色，支持当前 witness=JIAXU。已核对章回页眉、印刷页码与 PDF 页序的差别；定位 pdf:page:400 的 [85,106) 精确抽出目标句。所见是吴铭恩《红楼梦脂评汇校本》3.1416 的排印载体及其见证标记，并非目验甲戌原抄；正文《葬花吟》、红色侧眉批、绿色回末评、蓝色戚总评和黑色现代校注均已区分。引文支持红玉后有对宝玉“大得力处”的未来功能，不提供帮助方式、具体回次或行动细节，当前 notes 的限定没有越出该引文。",
+      "sample_checks": [
+        {
+          "notes": "已用 view_image 实际查看此整页。页眉为“撫琴居红楼梦脂评汇校本”，印刷页码388；正文《葬花吟》及红色“甲侧”“庚眉”之后有“宝玉听了，不觉痴倒。要知端底，再看下回。”，其下绿色评语以“甲”起：“饯花辰不论典与不典，只取其韵致生趣耳。”继以“池边戏蝶，偶尔适兴；亭外急智，[金蝉]脱壳。明写宝钗”，页末句未完。此页本身没有目标句，作用是提供跨页绿色总评的甲戌见证起点；与 evidence 的 PDF399 上下文和下页接文相符。红色庚眉不是目标绿色总评的署属。",
+          "sample_id": "src:gengchen:ch27:xiaohong-great-help:image:1",
+          "sha256": "e3f135033e72f5079f56042df2cae9bf741f65f761ff59af926934a06359715a",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "已用 view_image 实际查看此整页。页眉为第二十七回“滴翠亭杨妃戏彩蝶 埋香冢飞燕泣残红”，印刷页码389。顶端绿色“非拘拘然一女夫子”续上页“明写宝钗”，随后绿色两行先评凤姐用小红，下一行目标句“且红玉后有宝玉大得力处，此于千里外伏线也。”逐字可辨，与 record.text、evidence 及 pdf:page:400 [85,106) 一致。其后仍是绿色《石头记》诸法等评语，下方另以蓝色“戚总评”起新见证，黑色编号文字为现代校注。跨页段落及甲戌标记支持当前 witness 和回末总评定位，未把邻近校注或戚评混入引文。",
+          "sample_id": "src:gengchen:ch27:xiaohong-great-help:image:2",
+          "sha256": "9b88ac54e404dde77e4a9db06d579f50f8443ed7ea9926b5066ae597ba81d075",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:gengchen:ch27:xiaohong-great-help",
+      "subject_sha256": "20475137d781a67c33025235ecf43ed73fbfd36e6ccf9a6e8465fe1bc5af5c72",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:SOURCE-shared-058-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:SOURCE-shared-058-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

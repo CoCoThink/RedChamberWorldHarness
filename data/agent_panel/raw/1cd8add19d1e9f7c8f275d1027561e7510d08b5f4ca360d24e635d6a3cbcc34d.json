@@ -1,0 +1,74 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/1d7b10679c48b4acb980a08c69730fd3d060566c9c74a80703110ef86b321726.json",
+    "sha256": "1d7b10679c48b4acb980a08c69730fd3d060566c9c74a80703110ef86b321726"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已按分派顺序完整读完97行候选正文、写作包、96-S1至S4四份合同及政策；七个指定文件SHA256均与assignment相符，本项无样本。结论为建议性异议，不是BLOCKING：正文将96-S3-R2及96-S4-R3所说的“仍两碗半”改为第53行“麝月照平日的分量量了米”，能说明量用不随援助增加，但失去贫居日用的明确尺度，建议保留一次“两碗半”。另一文风建议：宝玉扫门槛添黑纹、解绳越解越紧、误以为还有茶末、松子不足、回信又写“近来都好”、最后挑菜不成一撮，连续以他做小事受纠正来组织笑料，密度偏高；可压缩其中一两处，让故人重逢及读到“写两句揉掉”的停顿更突出。这是人物节奏与趣味判断，按ADVISORY处理。实际成立处：第11至13行通过“芸二爷昨日才告诉我”及巷口问门补地址，第15至19行蒋自搬米炭并因送补行头、过晌教唱同行；第43至53行碎银收匣、夹袄不赎、半袋米留存、新旧米同淘均保留有限照应，第55至59行信封未开、书摊耽搁两日、贾芸转袭人再到宝玉的知识顺序清楚；第67行不复原两句诗，湘云只在信内出现；第75至87行回信暂不封、送客与蒋赶铺子相互制约，末尾春菜仅买小束。未见恢复阶级、袭人回住、整折演唱、宿命宣告或将开放终局写死。",
+      "sample_checks": [],
+      "subject_id": "chapter-96",
+      "subject_sha256": "9eef6b74101ffc6ac623197686200d8c9a6e8bacb779a11a303da91522c641e8",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读取写作包。其chapter=96、operation_scope=RESEARCH、authority_effect=NONE，与候选及本次研究阅读范围一致；plan明确绑定四个agent-final-v1/96-S*.v2.json，路径和SHA256逐一与指定合同相合。purpose明说未知状态尚未验收、未授史料/语料/文学资格，sources为空，没有把候选自称原稿史实。包列出的world、assets和exemplar只是依赖声明，本次未展开这些未分派材料，也不据此授予其内容或原典出处认证。就本次全文已读的包与四合同、政策和候选的接口，未发现冲突。",
+      "sample_checks": [],
+      "subject_id": "package-96",
+      "subject_sha256": "8ecc212c3c7fcf261309fb0c0e8463a88476b90b845b30c058562263bc8467e0",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取96-S1.v2.json并对照正文。合同将袭人已婚/原侍女身份列为KNOWN，将贾芸位置、局部到门状态列UNKNOWN，未把注册身份冒充同场事件；required/forbidden均是AUTHORING_REQUIREMENT_NOT_HISTORICAL_FACT，未作原作情节认证。正文第11至13行选定贾芸一条线，以袭人口述昨日受地址、巷口问门、晒衣裳为可追问线索，未同时实化花家旧人。贾芸没有被添为现场人物或救济者；袭人在第13至19行照顾丈夫、说明一道出门，在故人家以访客落座，未返做同住婢女。地址桥回叙很轻，接到敲门和蒋门外略候自然。合同本身保留地址具体文本、相遇处及局部事件未登记的限制；正文提供研究性的叙事选择并不消除这些数据状态缺口。本范围未见实质冲突。",
+      "sample_checks": [],
+      "subject_id": "contract-96-1",
+      "subject_sha256": "360170ff2d1d5062a82ed96ddfd2bed25316e6aac5bdd7636554e019c68aedf9",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取96-S2.v2.json并对照正文。第11行先听袭人声、再轻叩门，第15行蒋在门旁候着，故人相见未被演出盖过；第23至35行淡茶、松子、便宜油膏、袜口互揭短满足R1。第19行“今日送行头去补，铺子就在这边，过晌还要回去教孩子”给蒋同行独立原因，第23至25行嗓子与教唱、39至41行行头不能随便拆看与后台等钱、第79行赶在铺里歇前交件，使职业约束持续作用到离场，R2不止是职业标签。蒋自己搬米炭，袭人交小包碎银，第45行仍需留租钱；没有固定救济承诺、搬入、整折唱戏或大笔银钱。R3中的生计限制以等发钱和有工夫才再来间接呈现，未给未经来源支持的具体收入数字。合同仍保留UNKNOWN/PENDING、无伪造知识事件或对象ID，符合本次研究层级。",
+      "sample_checks": [],
+      "subject_id": "contract-96-2",
+      "subject_sha256": "3b136329552976e18e831043504ed0b4f208a51270f2a443ef15d00894beba55",
+      "verdict": "PASS",
+      "severity": "INFO"
+    },
+    {
+      "notes": "完整读取96-S3.v2.json。主要分配接口在正文成立：第43至45行宝钗先收银包入匣，旧夹袄当票仍留且答“眼下先不赎”，原因是租钱与补窗；第49行宝钗令米只倒一半，另一半扎好垫高，麝月收放、蒋搬炭，第53行只量一次米再新旧同淘，未把一袋米全部当餐消费，也未写具体银数与当铺身份。补米、收炭在淘米前，未从合同同序35强推相反动作；访客留场由连贯缝衣与说话呈现，而非仅凭对象事件。建议性未满足处是R2明确的“仍两碗半”：正文只有“仍照旧量米么”与“照平日的分量”，没有给出两碗半的尺度。有限缓冲的语义已在，但建议恢复这个具体日常细节；它属于章卡/规划要求，不作A-W1支持的LOCKED硬约束，因此FAIL仅为ADVISORY。合同对章级事件和场级动作仍有明确分层，没有把UNKNOWN伪装成语义重放已验收。",
+      "sample_checks": [],
+      "subject_id": "contract-96-3",
+      "subject_sha256": "dfc46c494e79853745d3a6cde6f6a39e0f372573fd60e8994276307b17cbde30",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读取96-S4.v2.json。第55至59行呈现送信人交书摊、贾芸隔两日取信、昨日交袭人、袭人袖内带来、宝玉擦手接收后才开封朗读；袭人还明确不知道此前路上几日，未制造全知或无延时送达。信中漏瓦、米价、邻儿借箸、寻笔和“写两句揉掉”保持婚后家常声口；宝玉没去辨墨团、没有复原诗，湘云若兰始终是信中的远端人物，未锁未来终局。第53行淘米上锅后第55行才取信，后续锅盖、水沫、收火、端饭持续同一锅，未把OT96-02写成两次补米量用；第71行纸缝饭气及末尾春菜收束有正文支持。与96-S3同一项建议性缺口：R3要求“仍两碗半”，正文仅以“平日的分量”指代，具体尺度未落字；FAIL/ADVISORY仅标该规划细节，非硬约束阻断。合同继续承认信件、经手人及局部知识事件未注册，未把正文选择包装成历史资格。",
+      "sample_checks": [],
+      "subject_id": "contract-96-4",
+      "subject_sha256": "0febc091720b6ddc1c801468f8a380ff34009c0347e3f584b18fe8b709922641",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:CHAPTER-96-043-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:CHAPTER-96-043-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

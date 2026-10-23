@@ -1,5 +1,6 @@
 """Research-only synthetic releases: no real prose editions are created."""
 from copy import deepcopy
+import importlib.util
 import json
 from pathlib import Path
 from types import SimpleNamespace
@@ -14,6 +15,9 @@ from rcwh.workflow.agent_release import AgentRelease, _split
 
 
 ROOT = Path(__file__).resolve().parents[1]
+SMOKE_SPEC = importlib.util.spec_from_file_location('verify_agent_release', ROOT / 'tools/verify_agent_release.py')
+SMOKE = importlib.util.module_from_spec(SMOKE_SPEC)
+SMOKE_SPEC.loader.exec_module(SMOKE)
 
 
 def write(root, path, value):
@@ -217,7 +221,8 @@ def test_no_overwrite_even_empty_output_directory(edition, monkeypatch):
 
 
 def test_smoke_preserves_completed_edition_and_checks_exact_rebuilt_book(edition, monkeypatch):
-    from tools.verify_agent_release import preserve_existing_release, compare_release_manifests
+    preserve_existing_release = SMOKE.preserve_existing_release
+    compare_release_manifests = SMOKE.compare_release_manifests
     e = edition
     positive_gates(e, monkeypatch)
     write(e.root, "research/request.json", e.request)
@@ -238,7 +243,7 @@ def test_smoke_preserves_completed_edition_and_checks_exact_rebuilt_book(edition
 
 
 def test_smoke_manifest_comparison_allows_only_named_runtime_observations():
-    from tools.verify_agent_release import compare_release_manifests
+    compare_release_manifests = SMOKE.compare_release_manifests
     from rcwh.corpus.extraction import toolchain_diff
     registered = {"extractor": {"python": "CPython 3.12.13", "code_sha256": "a" * 64}}
     old = {"status": "PASS", "scope": "EXTRACTION_CONTENT_REBUILD", "output_sha256": "b" * 64,
