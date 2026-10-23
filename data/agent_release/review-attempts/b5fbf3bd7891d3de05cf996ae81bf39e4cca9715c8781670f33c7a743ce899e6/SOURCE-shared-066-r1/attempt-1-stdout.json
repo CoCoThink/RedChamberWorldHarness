@@ -1,0 +1,68 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/de89c33266e7f5e425779596fbe12ede6d2862a5d1653eb2a1d2c35fe51b01c2.json",
+    "sha256": "de89c33266e7f5e425779596fbe12ede6d2862a5d1653eb2a1d2c35fe51b01c2"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "完整读完本项 source record 与绑定 evidence 的全部上下文，并实际目读指定页图。固定载体为撫琴居《红楼梦脂评汇校本》v3.1416 的现代 PDF，PDF 第293页对应印刷页282；绿色“己夹”从“闲闲一段儿女口舌”起连续涵盖引文，黑色正文在“这里宝玉通了头”恢复。图中文字“故袭人出嫁后云‘好歹留着麝月’一语，宝玉便依从此话”与记录相符；两个 spans 跨排版换行拼接合理。前文明确“袭人出嫁之后，宝玉、宝钗身边还有一人”，支持出嫁后的时序限定及宝玉依从留麝月之语。PASS 仅指固定载体中的文字、批语层与己夹归属标注相符，不把现代汇校页认作己卯原抄本影印，不证明底本传承或独立人工资格。",
+      "sample_checks": [
+        {
+          "notes": "已用 view_image 实际查看 6fa8e4db…918f07b.jpg 全页。印刷页282中部绿色己夹段可辨：末行“故袭人出嫁后云‘好歹留着麝”接次行“月’一语，宝玉便依从此话”。连续读得完整引文，排版换行不产生缺字；正文/己夹颜色及标记可区分，PDF 页293与证据对应。图像是现代汇校页，未冒称己卯原抄本。",
+          "sample_id": "src:jimao:ch20:keep-sheyue:image:1",
+          "sha256": "6fa8e4dbb8999d6490e49014231799c20e15508a92b84a1c483cf624c918f07b",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:jimao:ch20:keep-sheyue",
+      "subject_sha256": "00e2ccf476afc2020e98a6be3e54c2ae2e4cbadf8221d4b2c2794d113b2be1a9",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读完本项 source record 与绑定 evidence 的全部上下文，并实际目读指定页图。PDF 第277页对应印刷页266，页眉为撫琴居《红楼梦脂评汇校本》。长段绿色批语在“倒生在这里”后以“己夹这皆是宝玉意中心中确实之念”起，持续至“后观《情榜》评曰‘宝玉情不情’，‘黛玉情情’，此二评自在评痴之上，亦属囫囵不解，妙甚！”，随后黑色“袭人道”恢复正文；因此本句属于连续己夹批语而非正文，记录对此归属的说明准确。引文、跨行 spans 与页上可见文字一致，只支持汇校本所载情评，不扩张为现存完整《情榜》正文。载体为现代汇校本，己卯本归属是该载体的署记，未经原抄本影印独立鉴定；此 PASS 不授予原本或人工资格。",
+      "sample_checks": [
+        {
+          "notes": "已用 view_image 实际查看 ffa17ede…b7ef18d.jpg 全页。印刷页266绿色长段承接“己夹”，可读“后观《情榜》评曰‘宝玉情不情’，‘黛玉情情’，此二评自在评痴之上，”及下行“亦属囫囵不解，妙甚！”，紧接黑色“袭人道”。引文、连续己夹归属与 PDF 页277定位吻合；这验证汇校本呈现，未验证己卯原抄本。",
+          "sample_id": "src:jimao:qingbang-ratings:image:1",
+          "sha256": "ffa17ede99192fbf13d5f56de9598f1f27aecf96df681d1570ff6bba6b7ef18d",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:jimao:qingbang-ratings",
+      "subject_sha256": "4889f597e58002277fef14699d83a1ed602f4a3fd66555d1d81e34362af4b4cc",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读完本项 source record 与绑定 evidence 的全部上下文，并实际目读指定页图。PDF 第867页对应印刷页856，页眉为撫琴居《红楼梦脂评汇校本》。正文列西施、虞姬、昭君、绿珠、红拂五诗，宝玉题名《五美吟》后，蓝色“戚夹《五美吟》与后《十独吟》对照。”位于下一行，再接黑色宝钗谈诗正文。记录的 text 包含“戚夹”标记，与页图及单段 span 一致，清楚属于批语层。该短批支持后有《十独吟》并与《五美吟》相对照，未提供作者、具体体裁、篇数、对象或所在回次，记录 notes 的克制边界成立。PASS 限固定现代汇校载体的文字与戚夹归属标注，不等同戚序原抄本鉴定或独立人工资格。",
+      "sample_checks": [
+        {
+          "notes": "已用 view_image 实际查看 5a4f13e0…71032c4.jpg 全页。印刷页856下部蓝色“戚夹《五美吟》与后《十独吟》对照。”清晰，前接宝玉题《五美吟》，后接宝钗正文；引文及批语边界、戚夹署记与 PDF 页867定位相符。仅验证现代汇校页所载标注，不宣称原抄本见证已目验。",
+          "sample_id": "src:qixu:ch64:ten-solitary-chants:image:1",
+          "sha256": "5a4f13e0de2fcd098c9b03073eca876eb49e52cc842b0cf739de1c5eb71032c4",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:qixu:ch64:ten-solitary-chants",
+      "subject_sha256": "7cb857893972f0e3dda8c5249818cbadb3beb5e7371b09324a5e3e94816df206",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:SOURCE-shared-066-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:SOURCE-shared-066-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

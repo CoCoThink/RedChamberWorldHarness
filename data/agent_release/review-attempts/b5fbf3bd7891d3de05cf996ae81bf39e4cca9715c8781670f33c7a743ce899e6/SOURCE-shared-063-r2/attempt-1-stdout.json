@@ -1,0 +1,174 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/de89c33266e7f5e425779596fbe12ede6d2862a5d1653eb2a1d2c35fe51b01c2.json",
+    "sha256": "de89c33266e7f5e425779596fbe12ede6d2862a5d1653eb2a1d2c35fe51b01c2"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "PASS 限固定现代汇编载体。完整读来源及 evidence，并目读 PDF 第334页（版面页323）；“刚至穿堂门前”后绿色小字明确标“庚夹”，引文“妙！这便是凤姐扫雪拾玉之处，一丝不乱。”相符，与黑色正文及“蒙侧”分层清楚。可支持此汇编所署庚辰夹批及未来地点提示，不能升级为正式回目。未见庚辰抄本原叶，本意见不核定原本见证、W1_DIRECT 的原件资格或人工准入。",
+      "sample_checks": [
+        {
+          "notes": "已目读整页。PDF页334版面页323，“刚至穿堂门前”之后绿色“庚夹”与引文逐字相合，属于现代汇编中的批语标记，黑色正文及蓝色蒙侧另层；不是庚辰抄本原叶，也不是回目。",
+          "sample_id": "src:gengchen:ch23:fengjie-snow-jade:image:1",
+          "sha256": "b5fec832fd53aeb86952e84c8296b3b203ffede38bec016b390a056e191b2711",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:gengchen:ch23:fengjie-snow-jade",
+      "subject_sha256": "ecffab08bbfb5aceae6645d312b09db7dca29f69307476d6c7aa7c3423d72e4f",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源与 evidence html:1:3260–4379。官方现代页面标题与所引文章相符，录文119字定位3760–3879与引文相符；上下文说明乾隆三十九年六月初六日、宗玉、二拨子铺面十六间、沙河德春店营业，年租五十千与现收三十千分属不同约定。只支持北京地区铺面租赁机制；不支持贾家住宅或住宅租价。未检原契影像，PASS 为固定官方录文层面，非底本鉴定。",
+      "sample_checks": [],
+      "subject_id": "source:src:history:beijing:1774:rental-contract",
+      "subject_sha256": "d7a4cc2e0eb39ac6643c2c7033f294e6ab75c97b55d82eb539f0fdaa02d8ea4b",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源、evidence 和代理校录载体，并目读三张奏折图。family-and-date 图可从“至曹頫家屬蒙”接“恩諭少留房產以資養贍今其家屬不久回”再抬头接“京奴才應將在／京房屋人口酌量撥給以彰／聖主覆載之恩”，与46字引文相符。署名江宁织造隋赫德及雍正六年三月初二日可见；少留养赡及拟酌拨是档案所述，不是贾家既成住房事实。书目自称故宮005664、月刊图5/19，但裁图本身无馆藏号，未另检整刊或目录；PASS 限所给图像与明确标记的代理转录，非馆方录文或独立人工复核。",
+      "sample_checks": [
+        {
+          "notes": "已目读。此图展示奏折开端及中段，左侧可见家属段起句“至曹頫家屬蒙”及少留房产、回京语，与第二图重叠；尾部不全，完整家属引文由第二图核对。此图不能独自证明全部46字或馆藏号。",
+          "sample_id": "src:history:cao:1728:family-housing:npm005664:image:1",
+          "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "已目读。由右至左逐列接续可核完整家属引文，跨抬头“恩諭”“京”“聖主”须顺读；“奴才應將”是拟酌拨语。左侧纪日可见雍正陸年參月初貳日。未见馆藏号。",
+          "sample_id": "src:history:cao:1728:family-housing:npm005664:image:2",
+          "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "已目读。此开端裁图能核江宁织造郎中奴才隋赫德署名及查抄正文开头；无家属引文本段，因此仅作同折署名及上下文辅助，家属段已在图2检查，不能称本图含完整引文。",
+          "sample_id": "src:history:cao:1728:family-housing:npm005664:image:3",
+          "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:history:cao:1728:family-housing:npm005664",
+      "subject_sha256": "ff0188488926a9fd39883b62c9a4198ba31fbe51912ec190559d23b9f0006261",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源、evidence 及代理校录；三图均目读。opening-and-inventory 图在“江宁织造郎中奴才隋赫德”署名旁可读“總督范時繹已將曹頫家管事數人拿去夾訊監禁所有房產什物一併查”，first-and-middle 图续“清造冊封固”，34字跨列引文相合。只能支持曹案清查、造册封固机制，不把它当成贾府逐项程序。裁图馆藏号及月刊出处仅有书目声明，未另核整刊；代理目读不是独立人工转录。",
+      "sample_checks": [
+        {
+          "notes": "已目读。开端“總督范時繹已將曹頫家管事數人拿去夾訊監禁所有房產什物一併查”续下一列“清造冊封固”，与34字转录相符；下文为到任后查房屋人口，并非小说贾府事实。",
+          "sample_id": "src:history:cao:1728:inventory-seal:npm005664:image:1",
+          "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "已目读。此图保留奏折中后段、家属段及雍正陸年參月初貳日，和图1在财产描述处相互重叠；不含本条查封起句全段，查封引文由图1、图3检查，本图只辅助同折关系及纪日。",
+          "sample_id": "src:history:cao:1728:inventory-seal:npm005664:image:2",
+          "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "已目读。江宁织造郎中奴才隋赫德署名清楚，开端“總督范時繹…拿去夾訊監禁…一併查”可见；裁图左缘续至清造册部分但未完整保留“封固”，结尾由图1接续核对。",
+          "sample_id": "src:history:cao:1728:inventory-seal:npm005664:image:3",
+          "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:history:cao:1728:inventory-seal:npm005664",
+      "subject_sha256": "1c92d68355da2dbfe351ae06ee486575be7e1b215009e7238be0f3cb7223d087",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源、evidence 及代理校录，目读全部三图。first-and-middle 与 family-and-date 的重叠部分可读“餘則桌椅床／杌舊衣裳零星等件及當票百餘張外並無別項與總／督所查冊內彷彿”，33字引文相合，未将“床杌”误拆或把“彷彿”当确定同一。只说明清查时所见当票百余张，不能据以确认持续典当、现金流或小说人物经历。故宮005664及刊图编号未由裁图独立证成；PASS 限图像转录一致性，保留书目所称未经人工复核状态。",
+      "sample_checks": [
+        {
+          "notes": "已目读。财产段从“餘則桌椅床”跨列接“杌舊衣裳零星等件及當票百餘張外並無別項與總”再接“督所查冊內彷彿”，33字引文相符。百余张是清查数量，不是典当频次记录。",
+          "sample_id": "src:history:cao:1728:pawn-tickets:npm005664:image:1",
+          "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "已目读。右缘可见“杌舊衣裳零星等件及當票百餘張外並無別項與總”，再接总督册内彷彿，和图1重叠；起首“餘則桌椅床”在图1，未假称此图单独覆盖全引文。纪日与家属段也可见。",
+          "sample_id": "src:history:cao:1728:pawn-tickets:npm005664:image:2",
+          "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7",
+          "verdict": "PASS"
+        },
+        {
+          "notes": "已目读。图示隋赫德署名和查抄奏折开端，未包含当票段；只辅助同折上下文，33字当票引文由图1并对图2重叠处实际检查，未把缺段当作图文直接印证。",
+          "sample_id": "src:history:cao:1728:pawn-tickets:npm005664:image:3",
+          "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89",
+          "verdict": "PASS"
+        }
+      ],
+      "subject_id": "source:src:history:cao:1728:pawn-tickets:npm005664",
+      "subject_sha256": "bcb5fb8ac5d2f275628d06504a8429bf380b6fe56e12b640e993f889fde164f1",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源与 evidence html:1:1943–2968；现代维基文库 HTML 的题名及 canonical 均为《大清律例（四库全书本）》卷10。“男女婚姻”条例中的2443–2468准确截到“從餘親主婚”，后文另有携女适人及定婚身故规则，未被错误并入。支持祖父母父母、其次余亲的主婚顺序，不决定贾母、王夫人或薛姨妈具体权限及谈判。PASS 仅为固定现代转录核验，未对四库原叶校勘。",
+      "sample_checks": [],
+      "subject_id": "source:src:history:daqinglu:v10:marriage-authority",
+      "subject_sha256": "91a514d64262f07e322df469fed17c6b03c166d0b05361a3d037a3d768815055",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源与 evidence html:1:2598–3775；“居喪嫁娶”正文3098–3275与177字引文一致，〈〉内夹注在摘录中保留而非无标记混入正文。上下文还包含妾、命妇、亲等差别以及后续不离异等规则；所引只是部分条文，不能据此计算元妃之丧的唯一婚期。固定 HTML 卷10题名与书目相符；PASS 不含四库底本字形或朝代适用时点的独立校核。",
+      "sample_checks": [],
+      "subject_id": "source:src:history:daqinglu:v10:mourning-marriage",
+      "subject_sha256": "d1d8055c1c98c47e393b48f67d9b934fb8c95a5e4c7d32b5b00085f9fd90a148",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源与 evidence html:1:5871–6907；卷36现代 HTML 题名及 canonical 相符。6371–6407位于“主守教囚反異”，引文保留〈獄官典卒〉及〈與囚𫝊通言語〉注释层；其前是增减罪情的重罚，此处为“罪無增減者笞五十”，其后另列私入监所限制。可支持受控出入及传话边界，不推出一切亲属探视均非法或小说场景。PASS 限固定现代转录，未校古籍原叶。",
+      "sample_checks": [],
+      "subject_id": "source:src:history:daqinglu:v36:outsider-access",
+      "subject_sha256": "7f98c6bd8065fa368aed007a224dab79cc96528a7df3a5f79c80ef9b0a481af4",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源与 evidence html:1:6777–7868；7277–7368的91字准确涵盖亲属一月两次入视、使役不越两名、提牢官验明禁子转送饮食，及盗犯妻子家口禁止入门和处罚。未遗漏该限制而泛称所有囚犯有自由探视权；“使役”不能推出旧仆当然的独立探监权。上下文功臣及五品以上官员另有亲人入视条。PASS 限卷36固定现代转录及机制支持，不认证四库底本或小说身份适用。",
+      "sample_checks": [],
+      "subject_id": "source:src:history:daqinglu:v36:relative-visits",
+      "subject_sha256": "59642d582edcbfc6e52cb8d317d2f010e4f471eade0397579afe170d18b00d81",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源与 evidence html:1:6969–8020；7469–7520的51字在“獄囚衣糧”条例内，确见五城司坊羁禁、刑部发交枷号及看守牵连待质，并附赤贫且无家属送饭者日给老米一升条件；后接按季报户部核销。由供粮规则能确认待质类别存在，不能确认宝玉属于该类或拘留日数。PASS 限固定现代卷36载体，未校底本或具体年代施行。",
+      "sample_checks": [],
+      "subject_id": "source:src:history:daqinglu:v36:waiting-for-questioning",
+      "subject_sha256": "617995e6da240048ddf7a2172a89371613bb69fec2dc7ca57b72b573850e4484",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源与 evidence html:1:1173–2192。1673–1692引文在雍正三年敦肃皇贵妃丧仪内，与“姻戚人等成服，皆大祭日除服，百日剃头。”一致，须与所生皇子二十七日除服、其他执事人员区别。实际固定 HTML 题名和 canonical 为识典古籍《钦定大清会典则例》卷八十九，非书目所留 ctext 链接；另读本源 carrier_capture，明确记载 ctext 遇安全验证、改用识典的载体替代，故差异已有记录。建议书目同时显示实际识典链接（ADVISORY）。PASS 限替代数字载体及此个案，不据百日剃头推定婚期，也未比对古籍原叶。",
+      "sample_checks": [],
+      "subject_id": "source:src:history:huidian:v89:huangguifei-mourning",
+      "subject_sha256": "0aa5c31bb39c5fca1203d703c749d827d13bb98f1b726c35ddaa76f02fa0d6b4",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读来源与 evidence html:1:2934–4000，固定识典 HTML 题名与 canonical 对应《光绪顺天府志》地理志四。3434–3500的66字引文与上下文相符；前文明确主语为通州州治，乾隆三十年知州万廷兰合并内外监，现列囚房、女囚房、狱神庙、禁卒及更夫房各自间数。只支持通州州署这一地方实例，且“现在”为志书记述时点，不是所有清代监狱或小说唯一布局。PASS 限现代数字化文字层，未校光绪刊本原叶。",
+      "sample_checks": [],
+      "subject_id": "source:src:history:shuntianfu:prison-god",
+      "subject_sha256": "2ec336c5a0a457373ea607e7892bbf54f4f8ac7b4039b44ecddeb4f20597585d",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "b5fbf3bd7891:SOURCE-shared-063-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared)",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:b5fbf3bd7891:SOURCE-shared-063-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}
