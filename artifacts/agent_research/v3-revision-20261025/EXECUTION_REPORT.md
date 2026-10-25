@@ -60,4 +60,6 @@
 
 正文 `releases/agent/research-81-100-v3/book.md`，SHA256 `ea7fcdb562474f84455df65a6ba173a04025fb7d6b753c6d237ed47b21c50335`，571255字节。最终请求文件SHA256 `bd20c3cdaaf70db7eeda7a60a90a09375408c164c7fe75f2e2ea7a3bb2572d41`。详见 [final-local-validation.json](final-local-validation.json) 和 [最终人工交接索引](human-final-release-index.json)。
 
-COMMITTED_CLONE_PENDING：先提交产物，再从已提交HEAD做克隆复现并补记录，最后推送最终提交、等待双版本CI。
+产物提交 `7f66947135df1fe27969aa50e839e73277a4f39d` 的真实克隆重建已PASS：读本EXACT_BYTES，manifest严格一致（仅允许已列明的忠实运行时观察差异），重建仍为PASS。工具内部命令确实带 `--allow-pending`，没有隐去该参数；已提交版是PASS且会严格对比门控/意见/作者/绑定，任何降级不符都会失败，因此本次未以该参数接受PENDING。详见 [克隆输出](committed-clone-verification.json) 和 [已测提交保管记录](committed-clone-custody.json)。
+
+最后一笔提交只补验收证据、脚本与文档，不改冻结正文、请求、意见和发布产物。最终HEAD推送后由GitHub再次执行双版本验证（包括克隆重建及全量pytest）；本文件不把提交前的状态冒充最终CI结果。可按[本分支CI](https://github.com/CoCoThink/RedChamberWorldHarness/actions?query=branch%3Aresearch%2Fv3-20261025)与最终提交SHA核对，交付回复给出实际最终运行链接。

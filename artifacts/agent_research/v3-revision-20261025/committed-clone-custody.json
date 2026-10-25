@@ -1,0 +1,33 @@
+{
+  "status": "PASS",
+  "scope": "ACTUAL_COMMITTED_PAYLOAD_CLONE_REPRODUCTION",
+  "tested_commit": "7f66947135df1fe27969aa50e839e73277a4f39d",
+  "verification": {
+    "path": "artifacts/agent_research/v3-revision-20261025/committed-clone-verification.json",
+    "sha256": "f1789563034e5a36c8f4af4947ac012a6899e1653abb08aab50e34240afac916"
+  },
+  "verification_tool": {
+    "path": "tools/verify_agent_release.py",
+    "sha256": "2d748cf3757b217ad80b1a5f7e0e43c7bfc3047229854752247b7a214b785658"
+  },
+  "clone_build_allow_pending_argument": true,
+  "clone_release_status": "PASS",
+  "committed_book": "EXACT_BYTES",
+  "manifest_comparison": "EXACT_EXCEPT_NAMED_RUNTIME_OBSERVATIONS",
+  "runtime_observation_paths": [],
+  "request": {
+    "path": "data/agent_release/research-81-100-v3/request.json",
+    "sha256": "bd20c3cdaaf70db7eeda7a60a90a09375408c164c7fe75f2e2ea7a3bb2572d41"
+  },
+  "manifest": {
+    "path": "releases/agent/research-81-100-v3/manifest.json",
+    "sha256": "8c6b03e0a5dd5125af910f69d13267fa5abdfce803ac3f1cba7d19219fdbf8e4"
+  },
+  "book": {
+    "path": "releases/agent/research-81-100-v3/book.md",
+    "sha256": "ea7fcdb562474f84455df65a6ba173a04025fb7d6b753c6d237ed47b21c50335"
+  },
+  "final_head_ci": "MUST_BE_VERIFIED_AFTER_FINAL_PUSH_NOT_CLAIMED_HERE",
+  "authority_effect": "NONE",
+  "P9_credit": false
+}
