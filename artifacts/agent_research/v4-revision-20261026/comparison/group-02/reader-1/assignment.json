@@ -1,0 +1,67 @@
+{
+  "kind": "MODEL_LITERARY_ANONYMOUS_COMPARISON",
+  "id": "literary-ab-g02-r1",
+  "chapters": [
+    89,
+    92,
+    93
+  ],
+  "read_in_full": {
+    "A": {
+      "path": "artifacts/agent_research/v4-revision-20261026/comparison/group-02/reader-1/A.md",
+      "sha256": "d5628efbc10dd01d14c934c1c8c47a6022efdd34fd6946958b1d75dcb905bb6b",
+      "bytes": 89438
+    },
+    "B": {
+      "path": "artifacts/agent_research/v4-revision-20261026/comparison/group-02/reader-1/B.md",
+      "sha256": "661480069313e7a0d1972ea74b3f23364d3ab5d43aca16269512d92ad99a9892",
+      "bytes": 90255
+    }
+  },
+  "reading_bytes": 179693,
+  "max_read_bytes": 201728,
+  "instructions": "只读本任务 A/B 两文件，逐回完整读；不读版本映射、历史、设计、意见或仓库其他正文。分别比较人物声口、动作因果、时间/物件可读性、叙事节奏、重复纠错与自证旁白。逐回独立选择 A/B/TIE/UNDETERMINED；可偏好不同版本。引两版原句定位优劣，指出新生问题，不因更清楚就自动判文学更好。材料未读完则 UNDETERMINED 并写 unread_scope。匿名仅是自愿限读、模型新上下文，不是技术隔离或人工盲评。",
+  "output_scaffold": {
+    "kind": "MODEL_LITERARY_COMPARISON_OPINION",
+    "assignment_id": "literary-ab-g02-r1",
+    "reader_session": "literary-ab-g02-r1",
+    "files": {
+      "A": {
+        "path": "artifacts/agent_research/v4-revision-20261026/comparison/group-02/reader-1/A.md",
+        "sha256": "d5628efbc10dd01d14c934c1c8c47a6022efdd34fd6946958b1d75dcb905bb6b",
+        "bytes": 89438
+      },
+      "B": {
+        "path": "artifacts/agent_research/v4-revision-20261026/comparison/group-02/reader-1/B.md",
+        "sha256": "661480069313e7a0d1972ea74b3f23364d3ab5d43aca16269512d92ad99a9892",
+        "bytes": 90255
+      }
+    },
+    "results": [
+      {
+        "chapter": 89,
+        "preference": "UNDETERMINED",
+        "reason": "",
+        "evidence": [],
+        "risks": []
+      },
+      {
+        "chapter": 92,
+        "preference": "UNDETERMINED",
+        "reason": "",
+        "evidence": [],
+        "risks": []
+      },
+      {
+        "chapter": 93,
+        "preference": "UNDETERMINED",
+        "reason": "",
+        "evidence": [],
+        "risks": []
+      }
+    ],
+    "unread_scope": [],
+    "authority_effect": "NONE",
+    "qualification": "MODEL_ONLY_NOT_P9"
+  }
+}
