@@ -21,8 +21,8 @@ from rcwh.candidate_reviews import digest
 from rcwh.contracts import record_sha256
 from rcwh.assets.paths import repository_path
 
-REQUEST = "data/agent_release/research-81-100-v4-r2/request.json"
-PLAN = "data/agent_release/research-81-100-v4-r2/review-campaign-v1.json"
+REQUEST = "data/agent_release/research-81-100-v4-r3/request.json"
+PLAN = "data/agent_release/research-81-100-v4-r3/review-campaign-v1.json"
 
 
 def preserve_existing_release(clone: Path, request_path: str, quarantine: Path) -> dict | None:

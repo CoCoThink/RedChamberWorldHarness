@@ -59,6 +59,7 @@ def main():
  assert binding(R,'releases/agent/research-81-100-v3/book.md')['sha256']=='ea7fcdb562474f84455df65a6ba173a04025fb7d6b753c6d237ed47b21c50335'
  assert binding(R,'data/agent_release/research-81-100-v3/request.json')['sha256']=='bd20c3cdaaf70db7eeda7a60a90a09375408c164c7fe75f2e2ea7a3bb2572d41'
  core=load(O/'core-causal-rulings.json');assert core['status']=='CLOSED_BY_ACTUAL_NEW_READER_EVIDENCE'
+ assert {x['issue_id'] for x in core['issues']}=={'MARRIAGE_DECISION','DETENTION_CAUSE','VERSE_PLACEMENT'} and len(core['issues'])==3
  current_records={r['record']['sha256'] for r in receipts}
  for issue in core['issues']:
   assert not issue['unresolved_same_gap']

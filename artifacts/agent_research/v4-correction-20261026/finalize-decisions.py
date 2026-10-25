@@ -20,6 +20,23 @@ def main():
     core = json.loads((CURRENT / "core-causal-rulings.json").read_bytes())
     if core["status"] != "CLOSED_BY_ACTUAL_NEW_READER_EVIDENCE" or any(len(x["fresh_formal_evidence"]) < 2 or x["unresolved_same_gap"] for x in core["issues"]):
         raise ValueError("two core causal gaps need actual new-reader evidence, not coordinator override")
+    if {i['issue_id'] for i in core['issues']} != {'MARRIAGE_DECISION', 'DETENTION_CAUSE', 'VERSE_PLACEMENT'} or len(core['issues']) != 3:
+        raise ValueError('all three named causal/placement obligations require reader evidence')
+    new_records = {json.loads(p.read_bytes())['record']['sha256'] for p in CURRENT.glob('registration-*.json')}
+    for issue in core['issues']:
+        readers = set()
+        for evidence in issue['fresh_formal_evidence']:
+            if evidence['record']['sha256'] not in new_records:
+                raise ValueError('core closure cannot cite reused or unknown opinions')
+            opinion = json.loads(bound_bytes(ROOT, evidence['record']))['opinion']
+            readers.add(opinion['reviewer']['id'])
+            result = next(r for r in opinion['results'] if r['subject_id'] == evidence['subject_id'])
+            if not evidence['quote_from_notes'].strip() or evidence['quote_from_notes'] not in result['notes'] or not evidence['interpretation'].strip():
+                raise ValueError('core closure needs an exact reader quotation and root interpretation')
+            if result['verdict'] != 'PASS' and not (result['verdict'] == 'FAIL' and result.get('severity') == 'ADVISORY'):
+                raise ValueError('incomplete or blocking opinions cannot establish core closure')
+        if len(readers) < 2:
+            raise ValueError('two distinct fresh formal reader identities required per obligation')
     campaign = status(ROOT, PLAN)
     if len(campaign["jobs"]) != 74 or any(j["status"] != "COMPLETE" or j["needs_followup"] for j in campaign["jobs"]):
         raise ValueError("all 74 current jobs must be complete without follow-up")

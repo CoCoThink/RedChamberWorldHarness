@@ -1,0 +1,60 @@
+{
+  "kind": "V4_R3_PRE_READER_INPUT_FREEZE_BASIS",
+  "baseline_commit": "29a81d5d0f5f0cc2fe67f33d21189797cc0138c9",
+  "superseded_r2_input_commit": "e47ba9fcda4b1880d820b95a35b92df4a540ee9c",
+  "request": {
+    "path": "data/agent_release/research-81-100-v4-r3/request.json",
+    "sha256": "ae478e899a7c1b33cd3e9f535d393e7b975fb8f059471e4b1e256c136e0286ec"
+  },
+  "plan": {
+    "path": "data/agent_release/research-81-100-v4-r3/review-campaign-v1.json",
+    "sha256": "02af992b4f273efd66ebb91f465b2307ba5086852fdce77557f9f4caafdc7aab"
+  },
+  "selection": {
+    "path": "data/agent_release/selection-81-100-v8.json",
+    "sha256": "f5fc902e953b14399f94b26e2c46b206acd7df45fc36dc46a6fa070c14b85961"
+  },
+  "design": {
+    "path": "artifacts/agent_research/v4-risk-revision-20261026/design-decisions.json",
+    "sha256": "40e10930c1fe9c91ab763657aa876264bb0f647465fa1f32470fee3b3c0ae8c7"
+  },
+  "python": "3.12.13 (main, Jun 23 2026, 15:18:55) [Clang 22.1.3 ]",
+  "prior_full_suite_ci": {
+    "path": "artifacts/agent_research/v4-correction-20261026/input-ci.json",
+    "sha256": "04d912cde39c3723961b96d291449936069932ef3d86dd279f460c98b6e2443b"
+  },
+  "prior_full_suite_results": {
+    "path": "artifacts/agent_research/v4-correction-20261026/input-ci-test-results.txt",
+    "sha256": "bce256ed85e06381a136f3511b96f4986ed6d9d70668822ddf0dfea7d2d4aedc"
+  },
+  "test_limitation": "Actual earlier r2 CI 1808 passed, 1 skipped per version; not a claim to tests on this new ch87 prose. New frozen input must pass dual full CI before readers. No runtime implementation change here.",
+  "checks": {
+    "preflight-lineage.json": {
+      "path": "artifacts/agent_research/v4-risk-revision-20261026/preflight-lineage.json",
+      "sha256": "a580b9858ac00958c7b360d2c627dc08a9f0d395d90b2441ea34169141f99208"
+    },
+    "preflight-release.json": {
+      "path": "artifacts/agent_research/v4-risk-revision-20261026/preflight-release.json",
+      "sha256": "210eb5476fc12810e25541ce7e44df93e35ad3542d8a02cbc5ea24294981be67"
+    },
+    "preflight-validate.txt": {
+      "path": "artifacts/agent_research/v4-risk-revision-20261026/preflight-validate.txt",
+      "sha256": "62c2d56e05bfe66aad17f15f0c77901ae00195ba5e27388bc65abcbba08f4c6e"
+    },
+    "preflight-assets.txt": {
+      "path": "artifacts/agent_research/v4-risk-revision-20261026/preflight-assets.txt",
+      "sha256": "9620e6fafebd90cc965f9dc8987245bf372b15959f6bb8e52ca000bd52c259ac"
+    },
+    "root-contract-preread.json": {
+      "path": "artifacts/agent_research/v4-risk-revision-20261026/root-contract-preread.json",
+      "sha256": "066c2f4091f1ce702314717594fcc5641b3f95f141e90c7f402a61a8a595607e"
+    }
+  },
+  "formal_new_readers_launched": false,
+  "required_new_formal_readers": 18,
+  "required_new_comparison_readers": 4,
+  "earlier_r2_readers_retained": 7,
+  "input_ci": "REQUIRED_FOR_NEW_COMMIT_BEFORE_ANY_NEW_READER",
+  "core_causes": "PENDING_NEW_READER_EVIDENCE",
+  "authority_effect": "NONE"
+}

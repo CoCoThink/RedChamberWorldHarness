@@ -2,17 +2,17 @@
 
 第五阶段采用会话内子 agent 起草、核对和阅读，不另行调用付费模型 API。主协调者保留分配与映射，记录会话来源和输入字节；这不是受控外部模型实验，也不提供供应商实测模型、token 或账单证明。
 
-## 当前执行输入（v4-r2）
+## 当前执行输入（v4-r3）
 
-本轮使用 `data/agent_release/research-81-100-v4-r2/request.json`、同目录 `review-campaign-v1.json` 和 `selection-81-100-v7.json`。修改83、85、87、92、93五回；89揭书名提案因违反现行合同在派读前撤回，恢复v3原稿。首版冻结e3b46d2及v4请求留档，不计正式新读或成功CI；当前执行证据见[本轮目录](../../artifacts/agent_research/v4-correction-20261026/DESIGN_AND_IMPACT.md)与[v4计划](../plans/POST80_V4_REVISION_20261026.md)。
+本轮使用 `data/agent_release/research-81-100-v4-r3/request.json`、同目录 `review-campaign-v1.json` 和 `selection-81-100-v8.json`。相对v3修改83、85、87、92、93五回；89揭书名提案已撤回。r2输入双版本CI均通过后实际登记7份新意见；87两位仍报风险衡量与责任缺口，因此再作真实正文修订、新请求和新输入CI，不靠协调者覆写。r2请求、意见和未执行任务均留档。当前证据见[本轮目录](../../artifacts/agent_research/v4-risk-revision-20261026/design-decisions.json)与[v4计划](../plans/POST80_V4_REVISION_20261026.md)。
 
 ```bash
-rcwh agent-release review-status data/agent_release/research-81-100-v4-r2/review-campaign-v1.json
+rcwh agent-release review-status data/agent_release/research-81-100-v4-r3/review-campaign-v1.json
 python tools/verify_writing_lineage.py
 python tools/verify_agent_release.py --build-smoke
 ```
 
-新读须等本版输入双版本CI成功。下文v3的完成数字和路径作为历史实例保留；实际本轮派发/登记要使用上面的v4-r2计划路径。COMPLETE不等于文学通过；两个核心因果问题另需新正式读者引用原句验证。
+新读须等本版输入双版本CI成功。下文v3的完成数字和路径作为历史实例保留；实际本轮派发/登记要使用上面的v4-r3计划路径。COMPLETE不等于文学通过；两个核心因果问题另需新正式读者引用原句验证。
 
 ## 执行顺序
 
