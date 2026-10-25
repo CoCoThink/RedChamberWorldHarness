@@ -50,7 +50,7 @@ def verify(root: Path, request_path: str, *, migrate: bool = False, current: boo
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--root', type=Path, default=Path(__file__).resolve().parents[1])
-    parser.add_argument('--request', default='data/agent_release/research-81-100-v4/request.json')
+    parser.add_argument('--request', default='data/agent_release/research-81-100-v4-r2/request.json')
     parser.add_argument('--freeze-history', action='store_true')
     parser.add_argument('--history-only', action='store_true')
     parser.add_argument('--output', help='Append a new repository-relative report')
