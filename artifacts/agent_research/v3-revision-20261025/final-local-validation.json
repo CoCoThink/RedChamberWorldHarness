@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "scope": "ACTUAL_LOCAL_RESEARCH_BUILD_AND_VALIDATION",
+  "build_command": "PYTHONPATH=src python -m rcwh.cli agent-release build data/agent_release/research-81-100-v3/request.json --json",
+  "allow_pending": false,
+  "release_status": "PASS",
+  "chapter_count": 20,
+  "release_gates": {
+    "PASS": 240
+  },
+  "findings": [],
+  "request": {
+    "path": "data/agent_release/research-81-100-v3/request.json",
+    "sha256": "bd20c3cdaaf70db7eeda7a60a90a09375408c164c7fe75f2e2ea7a3bb2572d41"
+  },
+  "manifest": {
+    "path": "releases/agent/research-81-100-v3/manifest.json",
+    "sha256": "8c6b03e0a5dd5125af910f69d13267fa5abdfce803ac3f1cba7d19219fdbf8e4"
+  },
+  "book": {
+    "path": "releases/agent/research-81-100-v3/book.md",
+    "sha256": "ea7fcdb562474f84455df65a6ba173a04025fb7d6b753c6d237ed47b21c50335"
+  },
+  "evidence": {
+    "actual-execution-verification.json": {
+      "path": "artifacts/agent_research/v3-revision-20261025/actual-execution-verification.json",
+      "sha256": "90f09a2d70563da9f35be77854eebf36c0fe9dda3d9fe5a14d258e05c2b3eef7"
+    },
+    "final-writing-lineage.json": {
+      "path": "artifacts/agent_research/v3-revision-20261025/final-writing-lineage.json",
+      "sha256": "67b2d9118c3c337feb9fca87bd5399b7b0153d8121b08d6602640b0824bd99f0"
+    },
+    "final-assets-validation.txt": {
+      "path": "artifacts/agent_research/v3-revision-20261025/final-assets-validation.txt",
+      "sha256": "9620e6fafebd90cc965f9dc8987245bf372b15959f6bb8e52ca000bd52c259ac"
+    },
+    "final-repository-validation.txt": {
+      "path": "artifacts/agent_research/v3-revision-20261025/final-repository-validation.txt",
+      "sha256": "62c2d56e05bfe66aad17f15f0c77901ae00195ba5e27388bc65abcbba08f4c6e"
+    }
+  },
+  "clone_reproduction": "SEPARATE_COMMITTED_CLONE_RECEIPT_REQUIRED",
+  "final_ci": "SEPARATE_GITHUB_FINAL_HEAD_RUN_REQUIRED",
+  "authority_effect": "NONE",
+  "P9_credit": false
+}

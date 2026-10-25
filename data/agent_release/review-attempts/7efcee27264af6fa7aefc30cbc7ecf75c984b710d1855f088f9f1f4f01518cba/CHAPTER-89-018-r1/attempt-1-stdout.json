@@ -1,0 +1,76 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/50e64ecebd8db15163149c815bbfa00d96d62a556ae46c38c5c366b35406373b.json",
+    "sha256": "50e64ecebd8db15163149c815bbfa00d96d62a556ae46c38c5c366b35406373b"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已逐块完整阅读候选正文1—107行、package、89-S1至S5与政策至EOF；八份read_in_full文件共168103字节，SHA-256均吻合，samples为空。正文3—17行实现控门、分段传信及点名候问而不宣告拘押；23—55行区分登记、准带与账物待查；45—81行保持欠薪、车脚与有限现金压力；69—107行以借院物件、共井共灶、药饭次序和仆役住处承接迁居，末句水桶原文完整保留，无宏大哀叹。建议性缺口：政策data/promotion/policies/agent/ch89.v1.json的semantic_obligations中IF-016明列“89带出一本因薄而取的旧《庄子》→98触发旧文本”，候选63行仅称“一本薄书”及“因为薄”，105行仍只称“那本薄书”，全文未明确旧《庄子》的身份，故此当前实施层接口尚不足以据文本辨认；建议在取书处自然明示书名或足以识别的物质特征。此项为C-bridge/可逆实现建议，FAIL+ADVISORY，不是A-W1支持的硬锁违规。未读package所引原始史料、语料、世界底层、未分派S6及98回，不声称这些已验证，也不判断后文实际承接。",
+      "sample_checks": [],
+      "subject_id": "chapter-89",
+      "subject_sha256": "5e785850e44d5cd53f7a48582ff0939625d045f8861cd973b5e6d8cb9c93e3af",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "已完整阅读ch89-agent-research-v4.json全部118行并核对其分派摘要。/chapter=89、/operation_scope=RESEARCH、/authority_effect=NONE与用途声明一致；/plan中89-S1至S5的路径及SHA-256逐项匹配本次实际完整读取的合同，正文和政策绑定亦与packet分派相符。仅通过本次分派范围内的包结构、绑定及合同配套检查；未读取/assets对应底层、/sources原始记录、/exemplar_set、/research_source_sets、非合同/plan项目、/world与未分派S6，不据包声明授予史料或文学资格。",
+      "sample_checks": [],
+      "subject_id": "package-89",
+      "subject_sha256": "7398fd59bc43c949c4dca161d49c043b6f8b8726065daaaca1a8c1e0e6e1d824",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "89-S1.v2.json已完整读至628行EOF，摘要吻合。/required_beats对应候选3—11行：门房惦记热粥，差役先看住门，管事向贾琏与内宅接力；“全封了”经宝钗追问退回目见范围。15—17行再点名候问，并未将控门自动写成男丁有罪或具体政治案件。/exit_state关于完整处置范围仍为UNKNOWN，正文没有越界填满。合同内引用的底层world、knowledge及来源文件未另读，PASS仅针对已给合同与候选的相符性及内部证据边界。",
+      "sample_checks": [],
+      "subject_id": "contract-89-1",
+      "subject_sha256": "aca8e1441fe9698e1f3296be3453acb4f26c0105709f83114fb531420df7c9e2",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "89-S2.v2.json已完整读至565行EOF，摘要吻合。/required_beats在候选15—19行有可见接口：名册点人、提笼者重复应答、宝玉应名后候着、管事回内宅只传“应过名、仍候着”而不添“押”字，贾芸出廊寻人也被要求回来报告；登记、暂限流动和刑事拘押得到区分。9、23、51行车夫及搬运人另有时间/费用利益，不因官面威压被取消。未独立读取所引底层状态记录，不把合同UNKNOWN变为已注册法律状态。",
+      "sample_checks": [],
+      "subject_id": "contract-89-2",
+      "subject_sha256": "e694f0990a9b3191aed77fb2b85a20d564bd3eddac7d3883f9c85719b4848eb6",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "89-S3.v2.json已完整读至673行EOF，摘要吻合。候选23—29行衣箱开验、账簿交出、房契比看、差役随看封识，书办记录与差役控流动有分工；画匣及墙痕未变赏鉴。25、29、33行药包与已用铺盖虽另放/登记仍须候准；55行再回准取眼下所需衣被药包，67行出门复查且未问箱被退回，69—77行实际搬到借院。/required_beats关于登记/使用/准带三种范围及药包优先均有落实。未读m4等底层对象文件及来源原件，不据正文宣告对象状态登记已完成。",
+      "sample_checks": [],
+      "subject_id": "contract-89-3",
+      "subject_sha256": "9fada651bc7f26422f4e7e0b1aab659047dac55599f1510a617f1dd920cab3bd",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "89-S4.v2.json已完整读至565行EOF，摘要吻合。候选31—33行以册上在库而铺盖已拆用/换面作实际核对，书办追问经手、留项待查且不许别物补数，未推定贪污罪。35行凤姐要账而账已交出，37—43行讨账者持原领用单求款、现银受控而不得擅取，欠款仍获承认；现金存在、支配权、债务清偿并未混同。旧管理办法碰上控产边界以具体问答、摸钥匙动作体现。未读底层财产/身份状态及来源文件，未将合同UNKNOWN改判成既成权力转移。",
+      "sample_checks": [],
+      "subject_id": "contract-89-4",
+      "subject_sha256": "850feac3f68ed25ad8f308e749c856fd482447c90f5b40d429da3aa2eee8be7d",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "89-S5.v2.json已完整读至645行EOF，摘要吻合。候选45—49行一仆为家口投亲求事、一仆为欠薪留下，交钥匙与小包查验使去留可见；81、97—107行留下者仍索工钱并争歇处，未被收编为无偿忠仆。51—57、65—81行车脚限时、谈定本程费用、借院条件与多人搬运均有现实约束，贾芸没有凭空包办一切；未出现探庵W2或权贵大额救场。/entry_state与/exit_state中的知识UNKNOWN不被此审读当作已获底层事件证明；所引world/knowledge等底层未另读。",
+      "sample_checks": [],
+      "subject_id": "contract-89-5",
+      "subject_sha256": "c2186b267d8a1a128b48016d916697e2b6183a99e98f476eb403256d796410f0",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-89-018-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-89-018-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

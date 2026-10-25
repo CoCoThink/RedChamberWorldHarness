@@ -1,0 +1,40 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/ae10921474ad21049d763da314a95db0b8afc56065d6a5b87a6f59cfffa0f1b6.json",
+    "sha256": "ae10921474ad21049d763da314a95db0b8afc56065d6a5b87a6f59cfffa0f1b6"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已逐块全文读完本次read_in_full五文件至EOF（合计120895字节），并核对各文件摘要及packet绑定摘要一致；packet仅核摘要，未读其其他subjects，未读取未分派底层史料，故不据此声称史料/底层语义已核证。94-S5：正文以“巧姐要原先旧府那只小包……婆子说不清搬出后在哪一堆……拿眼前这块干布现包”保留旧包来源的缺桥，并明确当下取衣、卷褥、分干粮及经手。小钱加捡柴抵脚钱、婆子送到车边、平儿交孩子给刘氏、刘氏随车出城抵村并收衣褥，物流连续；未把平儿送到乡居，也未补造既往S02→S06搬运。孩子反复只问住几日与哪顿回来，未获成人危险全局。车脚回话有实际传递，救助规模与风险边界符合所派合同；不把合同UNKNOWN或章级接口当独立史料核定。",
+      "sample_checks": [],
+      "subject_id": "contract-94-5",
+      "subject_sha256": "b84feed75fd2651686ac7f979ff8ac5797fd9b8878c0ad1337c03ec757b6da7c",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "本次read_in_full五文件均已全文阅读至EOF，摘要一致；样本列表为空，sample_checks原样保留。94-S6：抵达、第一夜、次日及再夜界限清楚；包袱上炕无处坐、粗饭噎喉、鞋跟仍红、鸡狗与纺车及邻妇分歧逐项落在动作中，没有以乡居或劳动宣告困难终结。“不是我追它，鸡自己跑的”和误叫“平儿”保留笑与离别成本；只唱规定两句，随即以“伤、断都使得，哪有定词”收住。车脚只报告亲送到门、哭过笑过，经门婆子转交纸条，平儿仍不知夜间近况，信息边界没有扩大。板儿仍是日常帮手，婚配未定；未见狱庙、神救或成人化的孩子知识。结尾衣物和线、褥角仍需照料，符合缓慢适应的功能。此PASS仅为分派合同与当前候选的模型阅读意见，不授予史料或人类资格。",
+      "sample_checks": [],
+      "subject_id": "contract-94-6",
+      "subject_sha256": "378a7a4db4eb8deee05f4d338148e42c8c77a7b38fefb60a155b44d4bb9c8f16",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-94-039-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-94-039-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

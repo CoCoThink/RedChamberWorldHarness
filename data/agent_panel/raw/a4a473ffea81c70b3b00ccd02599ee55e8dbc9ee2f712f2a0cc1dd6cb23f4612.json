@@ -1,0 +1,61 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/7a0e15cf82faaa5a4ecab0425fa82f037f6ef05aa6c6cc6e070781df2647b191.json",
+    "sha256": "7a0e15cf82faaa5a4ecab0425fa82f037f6ef05aa6c6cc6e070781df2647b191"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已全文读候选105行及全部六项read_in_full文件至EOF；无未读分派范围，无samples。候选把送帖、次日赴访、校书迟见异手、留客册、误取家内包、甄家先发现、本人独自返还、验玉换绦、抄字接饭串成可追踪的一日事件；“我自己指得含糊，临出门又没看”使责任承认有具体前因。两个容器位置及最终客册留存明确，归玉未制造顿悟、善款或第二次巧合。黛玉字迹一段以停手、按页后复对残缺收住，未把宝钗安排成见证者。文学上后半部反复出现挪桌、避壶、收纸及被家务打断，节奏略趋整齐，可酌量减去功能重复动作；目前不构成建议性不通过。此PASS为当前C候选审读意见，不授予史料或人工资格。",
+      "sample_checks": [],
+      "subject_id": "chapter-98",
+      "subject_sha256": "a956804b71151ad12c583c63ba6038de7b71697bf479d6a98a919b5e515f0e8f",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已全文读package并与候选、三份合同及policy对照，研究用途、authority_effect=NONE与未授资格声明清楚；三份所选v3合同摘要相符。另仅按字节核对本次五个JSON内38组path/sha256绑定，均MATCH；未全文读非分派的底层来源、世界文件、exemplar或计划，不据摘要一致核证其史料内容和文学质量。包内sources的记录语义及asset内容不在本次全文阅读范围。",
+      "sample_checks": [],
+      "subject_id": "package-98",
+      "subject_sha256": "3968c78ec65fde26088d4281c1a2abab570484e906cb00dcfb03bcb2ca4fa98e",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文至EOF。候选“贾芸接过回帖”与次日“贾芸已在外头招呼”落实已选送帖/带路桥；数茶、木桶先腾后复装柴维持贫居待客尺度。合同把地址桥、C相见与后续包到分开，未借章级绑定把UNKNOWN变为已执行；未发现需否定的合同/正文偏离。",
+      "sample_checks": [],
+      "subject_id": "contract-98-1",
+      "subject_sha256": "8a02f53471517badfd967fc306eb65ee33da0ef297320580633d1746998cf0db",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文至EOF。书摊借册、借阅条、虫蛀、穿线松结及不同手迹都有现实动作承载；候选先见续庄旧文再认林妹妹四句，迅速回到残页校字，未答诗、讲真假或扩增名家谱系。两包分在桌里外且可辨，玉帕因待换绦入家内包。原四句未被引述或改写；本次未核底层第21回原文，不将合同引文依据当作史料核证。",
+      "sample_checks": [],
+      "subject_id": "contract-98-2",
+      "subject_sha256": "e2f5b3e49203963a75832f634d11120e5d2edb49433efcaee3bfe89a743fc3a1",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文至EOF。候选明确“他只取了这一个包”，客册包留桌；甄宝玉拆见错册玉帕后重包，令小厮留下，亲持同包循来路交到宝玉两手，继而验册/帕/玉、续换绦，末尾仍抄字吃饭。甄家早知、贾家未察的时差清楚，未添第二运输者/交换或雪玉同一性结论。合同保留旧运输冲突与不可执行声明，不用旧OT98-04/05认证本人路线；这些运行缺口不由本次叙事PASS关闭。",
+      "sample_checks": [],
+      "subject_id": "contract-98-3",
+      "subject_sha256": "63cbcf201b6e1fde1a82db59905933c1991aa1f3bda980ef017dda19038c1388",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-98-046-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-98-046-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

@@ -1,0 +1,69 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/ba411dda75c160f165e12c4ea745d424bdda05a3c9b80ee583582504cdf797ab.json",
+    "sha256": "ba411dda75c160f165e12c4ea745d424bdda05a3c9b80ee583582504cdf797ab"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已逐行读完全回正文101行（27167字节），并完整阅读指定研究包、四契约、政策及本packet；摘要均相符，samples为空。宫门→门房→凤姐/平儿→王夫人及贾母→各房→紫鹃→黛玉的先后可辨，未添元春死因、精确日期、宫廷知情者、托梦解释或即刻抄家结论。第75、77行两次夜醒与79行次晨所记“夜醒二次”对应，白日晚饭、服药另记；87行才推进数日，未倒改黛玉即日获讯。89行旧喜活停催且未另排新日，未把几日概述冒充已满丧期。文学建议（按assignment所述ADR 0004仅ADVISORY）：33行平儿已说明家内素衣与正式服制之别，45行凤姐再次说明不替宫里传令，87、89行在数日过渡中仍反复作同一澄清，后段较多篇幅在复述同一权限边界，人物悲痛及家务变化的推进随之放缓。未决问题是：数日后正式条目仍悬而未到，是否本回有意保留给后续的接手续；本回文本没有给出新的收讯进展。此为叙事节奏和悬置范围的意见，不构成LOCKED或字节阻断。",
+      "sample_checks": [],
+      "subject_id": "chapter-84",
+      "subject_sha256": "a01c5887014a135e67d652995c69c82d39b508eda6d94c87a40042584a939cbd",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "完整读完87行研究包。chapter=84、operation_scope=RESEARCH、authority_effect=NONE及purpose对资格未授予的声明一致；明确选择四个84-S*.v2合同，路径摘要与本次完整所读版本一致。另作包内plan/world/exemplar_set引用的存在及摘要核对，均相符；这只是字节绑定检查，未通读这些非分派原件，也不据此认可其语义或史料/文学资格。sources为空，包本身没有把模型试写升为独立证据。",
+      "sample_checks": [],
+      "subject_id": "package-84",
+      "subject_sha256": "2ea6eba0a2e431124e77e9f03ee3fa093ca60376e525d7f7ee1471ddc7a961ea",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读完787行合同并与正文比对。正文3—17行先写饭单、门上问领往何处、找凤姐，再到偏厅由凤姐和平儿亲接；传讯人袖水与另一个丫头碰泼托盘的水分别有动作来源。平儿转往王夫人而非她提前全知，凤姐“别满院乱嚷”、日饭照送/宴席先停，接上R1—R4；未见F1/F2所指宫廷内幕、死因/精确日期、同步悲痛或抄家直说。合同UNKNOWN/PENDING、空知识/对象绑定及无局部事件的限制没有被当作已验世界快照。语义结论只限本次附带正文，未以场景规划授予历史事实资格。",
+      "sample_checks": [],
+      "subject_id": "contract-84-1",
+      "subject_sha256": "a4fbab4a7e7465e829a31cdd72bda54153b89d8dba3d63232656478a46c5d14c",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读完765行合同。正文19—29行平儿报来源、王夫人追问是否亲听/人在何处、凤姐随后说明只得一句讣信，知死讯与知细情分开；正式礼制尚候，素衣从柜中先取，家内停宴不冒充已收完整宫令，契合R1—R4。元春始终为消息对象，没有按ACTIVE基线再现为现场说话者；没有托梦补因、挽诗祭辞、同步全宅获知或抄家定论。W84关联未被声称能证明每个人的局部知识。entry_from虽指agent-edited目录，已校验实际文件存在且与分派前场字节一致，未见断链。",
+      "sample_checks": [],
+      "subject_id": "contract-84-2",
+      "subject_sha256": "f8b3f99162d637b8a29cea94e0c5b33f10052e2ef4d6c5fb6b33a9e89f5f31ff",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读完741行合同。正文31—45行针线房拆错封线盒、饭单误划与恢复供饭、余下食材留用、问路照送饭药均有经手与纠错动作，凤姐下令、平儿传办、王夫人取现成素衣的权责可辨。81—95行由次日再到87行“过了数日”，以厨房分单、衣料领取归还和继续供饭写出常例，非只凭全知一句落定；钱仍从家里支，未写骤贫。89行喜活旧单先搁、不重定日，丧期缓冲未被缩为数日已满。即日黛玉收讯在时间推进前完成。规划细目没有被用作A-W1；合同的UNKNOWN/PENDING及无局部事件声明保持。entry_from存在且与分派前场同字节。",
+      "sample_checks": [],
+      "subject_id": "contract-84-3",
+      "subject_sha256": "43d8006e52413fbddf83e4b2b1a66beb2c45a65bf3c1965ae626c4d821134a88",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "完整读完783行合同。正文51—61行紫鹃先仅知外头有事，服药后在门外问明，再缓声转告黛玉，交代凤姐亲接、平儿转太太的来源；这是各房已办差后的即日延迟，没有附带宫廷细情。冷扇、粥药和起身力乏体现长病承压，未引新急症或预言死时。75行要水、77行换枕两次醒来后，79行天明才把昨日下午接讯后的起居落纸，明确两次均紫鹃所见、日间饭药另列；97、101行按日接续照护。未把本回药杯等同OBJ-MEDICINE-BOWL-86，也没有提前死亡物态或最后一夜。知识事实ID与注册角色引用未冒充84的知识获取证明。entry_from存在且与分派前场同字节。",
+      "sample_checks": [],
+      "subject_id": "contract-84-4",
+      "subject_sha256": "f602679dc5359c119c6c40fb5dcdc5955053e511ad9352fa030c6a8d16647282",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-84-006-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-84-006-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

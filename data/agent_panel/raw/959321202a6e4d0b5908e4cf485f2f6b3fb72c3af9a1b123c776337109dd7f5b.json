@@ -1,0 +1,62 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/84f60bafcd285314e177b70346a64629fb75f1fd267049e933687d17a0f8acc0.json",
+    "sha256": "84f60bafcd285314e177b70346a64629fb75f1fd267049e933687d17a0f8acc0"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已全文读候选、package、92-S1/S2/S3合同及ch92 policy，六文件摘要均与assignment一致；未读其他合同正文、历史原页或旧ACTIVE正文，不作史料资格、全书接缝或程序净增量认定。建议层文学不通过：旧单的实体关联始终过虚。开头仅见“一行字”“这里所记的东西”，第二轮仍是“见过放在那里，单子那时没看”“这里你又说听见”，末后由书办说“不必为了其余待核项继续把他留在这里”推动准返还。亲见/听闻/亲手的区分是清楚的，但读者到尾仍不知道究竟是哪件可辨认的生活物、哪一笔来往令他被留，以及第二轮究竟排除了什么具体牵连；于是司法链有问答框架，缺少可感的事项变化。这是事项具体性和叙事说服力的问题，不要求编造罪名、法条或结案裁判，也不构成A-W1硬锁违规。另一个节奏问题是准返还后，狱卒、接物处、小红、贾芸、宝钗、王夫人及结尾反复确认尚未放行，数次传递同一有限消息，后段推进偏慢。正面所见：真实羁押及寒冷睡食成本充分；碗、毡、湿鞋的受制与茜雪袜跟补痕有物质后果；小红逐项找收物接口、茜雪只办保暖、贾芸跑腿，均未变万能救案。狱神灯没有翻案功能。结尾明确“宝玉尚未过监门”，应保留为准返还待放行，不能记成已经出狱。以上负面均为ADR 0004意义的ADVISORY，不否定底线兑现。",
+      "sample_checks": [],
+      "subject_id": "chapter-92",
+      "subject_sha256": "123994bee0e9c19f8ea5ca4b45ecf3ddb61513ddea3658261ab6cafd27831ab6",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "已全文读取本package至EOF，并与候选、分派合同及policy对照。chapter=92、operation_scope=RESEARCH、authority_effect=NONE，明确保持未知状态及史料/文学资格未授予；分派S1/S2/S3的path/sha256与实际字节一致。另只以原始字节摘要核了package全部plan、world及exemplar_set路径，均匹配；其中非分派章节计划、S4-S6、world及exemplar仅核摘要，未全文读，不能据此声称已核证语义或史料。assets/source记录的底层正文和原页未在本assignment分派，本PASS限package绑定与声明范围，不授予这些底层材料的证据资格。",
+      "sample_checks": [],
+      "subject_id": "package-92",
+      "subject_sha256": "6c21cf1b130a5e0416052adb19235705568d00784d1c19077f9aff86b4d203f4",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已全文读92-S1.v2.json至EOF并核摘要。候选从小院赴传问、书办问亲手交过/听闻/所见、问项被取纸打断后外间候问，落实R1-R3的有限行动；冷茶、鞋泥、旧凳使等候有身体压力。“认得这一说。东西怎样出去，我没在跟前”没有把认单写成全案知情或定罪。未见拷问、男丁连坐、权贵或金钱买结案等F1/F2漂移。合同的入场FORMALLY_SUMMONED及后续出口UNKNOWN分层合理，没有把章级W92快照当成本场已完成羁押。旧单事项仍过于抽象的章级文学意见已列chapter-92，属建议层；本PASS不证明未分派底层引用的史料真实性。",
+      "sample_checks": [],
+      "subject_id": "contract-92-1",
+      "subject_sha256": "22bd352da08137223f0a186ae2e6931f684ac5985bdde961b9593b5c58d3592f",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已全文读92-S2.v2.json至EOF并核摘要。候选以“先留着待核，尚有来往没有对清”“留一留”将等候转成真实留质，接着收看随身物、门闩合上、领入睡处，未直接宣罪。贾芸在外等到天暗，仅转出留一留和别等饭；宝钗先从贾芸听到，麝月后经宝钗得知，均未获时限或全案判断。家属先不知道送物经手处，许可由小红另行问来，符合R1/R2及F3。未出现巧姐/刘姥姥监所相逢、劫狱或权贵营救。合同明确不从较后送物入口前推家中知情，UNKNOWN状态没有被伪造basis补齐。PASS限本分派文件与候选的对应，不代表史料资格。",
+      "sample_checks": [],
+      "subject_id": "contract-92-2",
+      "subject_sha256": "9fd4264a3434b307accb1d1de992d1d74bbb5dd1d9544da6424ef82127cc3424",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已全文读92-S3.v2.json至EOF并核摘要。候选先写碗黑点引出“拿了便拿定，不能换碗”，后接萝卜稀粥、湿毡、鞋袜、洗碗用水和点名交班，R1/R3具体且分属各人的日用关切；添饭钱只可问送饭的，不能马上换热碗，更不买处置。狱神灯、剪灯花添油、老囚合掌与另一个仍吃萝卜落实R2，未作救案机制。首夜厚袜尚未送到，后经查物转送才入宝玉手中，R4没有被章级物件记录提前覆盖。小话带着争地、湿毡和冷睡的成本，未将司法威胁化成轻松冒险；无人物诗、显灵、酷刑或全案解说。合同监内规则与监外送物知识保持分开，身体/知识出口UNKNOWN未由待写效果自证。PASS不认证未分派底层史料。",
+      "sample_checks": [],
+      "subject_id": "contract-92-3",
+      "subject_sha256": "427a1a8b56cd497c98b80763c00e55592239149fdcf14126b375bdc6fb88cac3",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-92-027-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-92-027-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

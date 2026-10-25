@@ -1,0 +1,61 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/4d24bbc303c08f48cea12fb82960b413d2474bc762f664d9142381f9c976b581.json",
+    "sha256": "4d24bbc303c08f48cea12fb82960b413d2474bc762f664d9142381f9c976b581"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已完整阅读正文105行及分派研究包、三份合同、政策，六文件摘要均匹配。正文第3—7行分别以相熟子弟引入与归还弓套落实宝玉、若兰的普通入圃动作；第31—39行由擦汗抬臂露出大金麒麟，又转回找箭、射箭及凳脚不稳，未追造佩物来源或宣布婚期、生死。第49—69行将回府、缺碟和脚费争执、婆子转述、湘云询问亲见者逐步展开；湘云以“那你连旧也未必看得清”限制转述的确定性。第77—79行她拿出自己的旧物，没有收到若兰佩物；第85—105行递信、茶饭脚费、读信与收书看花把焦点拉开。ADVISORY定位：第81、83行直接回叙探春封信、交代婆子并触摸行装册空页，且有她的直接对白；这与83-S3-R4“远适之后只经家书或传闻低频出现”存在字面张力。该回叙确实说明递信工序，是否属于该要求允许的信件来历补叙仍待辨明。本意见仅记规划/章法疑问，按ADR 0004不作为LOCKED阻断，亦不代作采用决定。",
+      "sample_checks": [],
+      "subject_id": "chapter-83",
+      "subject_sha256": "07d1802811e6c8325293be1ba5d5c2781f5b690b4362536f488f109bae1f0d12",
+      "verdict": "ADVISORY"
+    },
+    {
+      "notes": "已完整阅读83行。研究包明确operation_scope=RESEARCH、authority_effect=NONE，purpose保留未知状态未验收及未授予史料/文学资格的限制。所选83-S1/S2/S3.v2路径及摘要与本次实际完整阅读的三份合同一致；正文候选、包、合同及政策的分派摘要全部匹配。assets、world、exemplar_set及其他plan引用的底层文件不在本次read_in_full内，未展开审读；本PASS仅指分派研究包自身及与本次已读材料的绑定/比较，不证明引用底层内容的文学或史料资格。无分派samples，保留空sample_checks。",
+      "sample_checks": [],
+      "subject_id": "package-83",
+      "subject_sha256": "03e33a42a355c763b00400852373429163fb2674d3cb91e451e588eacc6e3391",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已完整阅读743行。合同把位置与佩物入口保留UNKNOWN、出口保留PENDING，参与者KNOWN并未冒称全体在场已核验。与候选对照：第3行相熟子弟带宝玉经老仆准入，第7行若兰归还弓套并交代衬布，支持R1普通来往接口；第9—29行输赢、横风、安全收箭、菜苗和赔菜推动R2/R3；第31行擦手抬臂使佩物偶露，支持R4。老仆关心浇锄与收箭，未神秘识物；射圃未军事化，也未用本次在场断定婚期或事故。原合同未注册经手者、场景事件及知识记录等未决项仍是未决，不因本次正文可定位而改为已登记。",
+      "sample_checks": [],
+      "subject_id": "contract-83-1",
+      "subject_sha256": "ddf8d40bdcea825fcdbccf0d355a623029574159656f48610e4049b27a29ac67",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已完整阅读711行。合同区分注册对象关联OT83-01与UNKNOWN局部入口，不把章级佩戴记录倒灌为场内已验证状态。正文第31行先交代衣襟抬起和宝玉侧前目击，再辨出大金麒麟；第33—39行问话被少箭和下一轮打断，第41—47行仍有修凳、茶食与收弓，符合R1/R2；宝玉只记起旧麒麟且记忆不清，未推出前主、赠受或取得路径，符合R3。第47行出圃到第49行回府形成清楚接口，未重复回府或在射圃让湘云全知，符合R4。佩物没有发光、托梦、命物解释或未来吉凶旁白；本PASS不等于为对象前史及未登记知识事件补证。",
+      "sample_checks": [],
+      "subject_id": "contract-83-2",
+      "subject_sha256": "42e919b0eec728e518690d4dfb00f8ce1bc2216ef7eaf152b6e4b69d9b45b72f",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已完整阅读747行。R1—R3在正文第49—69行有逐项文本支撑：宝玉先回府，目击小厮说话，经婆子把空食盒带入转述，湘云再隔帘核问；若兰未被挪入府内，大金麒麟也未被交到湘云手里。新旧猜测由湘云明确限缩；缺碟往返、候脚费与经手人问答使传递有生活阻力，未新增具体金额。第79行家书打断旧物问话，第85—105行有门上接信、内宅转递、茶饭脚费、读信和照管留下书物，家书确实拉开焦点。ADVISORY定位为R4与正文第81、83行：R4要求探春远适后“只经家书或传闻低频出现”，候选却用叙述者直接回叙她在船上封信、发话、触摸空页，未明确框成传信人转述。是否容许这种递信来历的短回叙尚待澄清。按分派ADR 0004，这属于规划细目/文学范围，不能单凭此判BLOCKING；合同的知识注册缺口、局部检查点和经手人身份未决仍保留。",
+      "sample_checks": [],
+      "subject_id": "contract-83-3",
+      "subject_sha256": "e1bfb521cea8691c8b5ba507e024a293ba5870a8fb11a8e1cc7a92fb6617ed86",
+      "verdict": "ADVISORY"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-83-004-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-83-004-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

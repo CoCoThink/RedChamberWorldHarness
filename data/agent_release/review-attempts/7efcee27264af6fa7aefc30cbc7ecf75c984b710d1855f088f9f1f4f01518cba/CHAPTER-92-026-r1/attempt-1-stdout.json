@@ -1,0 +1,62 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/84f60bafcd285314e177b70346a64629fb75f1fd267049e933687d17a0f8acc0.json",
+    "sha256": "84f60bafcd285314e177b70346a64629fb75f1fd267049e933687d17a0f8acc0"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已阅读全文至末句，候问、真正入监、第一夜受制、贾芸延迟传话、小红问准送物及茜雪补袜的物件经手链均实际出现；狱神灯不救案，无酷刑、权贵营救、万能行贿或自由探监。文学/规划层面的保留：两轮问讯的核心对象一直只是“这里所记的东西”（正文第9行）、“另一处”“那一项”，到第105—111行仍只得到亲见/亲手/听闻的分类和“不必为了其余待核项继续把他留在这里”的宣布。读者可以懂宝玉学会不乱答，却无从复核哪一项旧单疑点怎样变化、为何此前须留而现在可准返还；这使本回中央事件的因果清晰度落后于很细的饭碗/袜子动作。建议以一项具体但有限的物件、时点或交接差异承接两轮问答，不必补罪名、法条或全案。章末第129行明确尚未过监门，不能把“准返还”算作已实际释放；此处保留悬候可读，但卡中“正常释放→饭香/窄门”的同回闭合并未完成。以上为ADR 0004下的叙事建议，不是A-W1硬锁或字节完整性错误，不据此授予或撤销历史资格。",
+      "sample_checks": [],
+      "subject_id": "chapter-92",
+      "subject_sha256": "123994bee0e9c19f8ea5ca4b45ecf3ddb61513ddea3658261ab6cafd27831ab6",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "已阅读全文。包明确RESEARCH、authority_effect NONE，并保留未知资格，未冒称史料/文学验收。candidate与本次分派的S1—S3版本绑定可对上；包所列可解析path+sha256引用已核字节，未见不符。正文中小红规则导航、茜雪保暖、真实羁押与有限案情知识彼此相容。未阅读非分派的S4—S6、world/plan/exemplar及source/asset底层全文，也未核证底层史料/图像或其语义；字节一致不代表这些资格已核验。",
+      "sample_checks": [],
+      "subject_id": "package-92",
+      "subject_sha256": "6c21cf1b130a5e0416052adb19235705568d00784d1c19077f9aff86b4d203f4",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已全文读至EOF。R1—R3在正文前段有对应：第9—13行问亲手交过/听人提过/见过的差别，叫入与退出候问分开，冷茶、歪凳、湿鞋持续造成身体成本；宝玉不讲全案。第17—23行留质属后续转折，未把入场认单直接写成定罪。F1/F2未见受刑、连坐、大反派或芸儿买结案。合同保留UNKNOWN/PENDING与未注册对象缺口，没有把世界章级快照伪作已核定场级史实。问项具体性仍有章级叙事建议，见chapter-92，不作合同硬锁失败。",
+      "sample_checks": [],
+      "subject_id": "contract-92-1",
+      "subject_sha256": "22bd352da08137223f0a186ae2e6931f684ac5985bdde961b9593b5c58d3592f",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已全文读至EOF。正文第17—25行以“尚有来往没有对清”“留一留”及不知多久落地第一次留质，随后实际入监。第47—55行贾芸经转传才回家，宝钗在王夫人处听话、麝月在灶边由宝钗告知，来源与接收时点分开；家人不知期限/完整案情，不凭“留一留”取得送物或见人许可。R1/R2与F1—F3均有相应边界；未加入巧姐/刘姥姥或营救小队。合同自身状态仍UNKNOWN，不从较后送物场倒推本场知识。",
+      "sample_checks": [],
+      "subject_id": "contract-92-2",
+      "subject_sha256": "9fd4264a3434b307accb1d1de992d1d74bbb5dd1d9544da6424ef82127cc3424",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已全文读至EOF。正文第25—45行依次落实不能换碗、粗粥萝卜、湿鞋袜、争毡、添饭须另问及点名交班；同监话语关乎自己的饭与铺处，并未全知讲案。第41行灯花添油、老囚合掌与另一人继续吃萝卜使礼俗存在而不救案。首夜未抢收茜雪袜；后文经拆验、转送再到宝玉手中。R1—R4均见，F1/F2未见神迹翻案、人物诗或轻松消解羁押威胁；饭鞋笑语仍连着湿冷、挤迫和不安。监内生活规矩未冒充监外送物规则。",
+      "sample_checks": [],
+      "subject_id": "contract-92-3",
+      "subject_sha256": "427a1a8b56cd497c98b80763c00e55592239149fdcf14126b375bdc6fb88cac3",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-92-026-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-92-026-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

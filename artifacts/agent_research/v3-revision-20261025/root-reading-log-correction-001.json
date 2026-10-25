@@ -1,0 +1,50 @@
+{
+  "kind": "ROOT_READING_CUSTODY_CORRECTION",
+  "registration": 38,
+  "original_declaration": {
+    "observed_utc": "2026-10-25T17:01:57.690847+00:00",
+    "registration": 38,
+    "job": "CHAPTER-100-055-r2",
+    "record": {
+      "path": "data/agent_panel/records/68a63074de27c8954b1d5a620e2b74c77c75973160a563b09b59627eb255326d.json",
+      "sha256": "68a63074de27c8954b1d5a620e2b74c77c75973160a563b09b59627eb255326d"
+    },
+    "scope": "ALL_RESULT_NOTES_AND_SAMPLE_CHECKS_READ_BY_COORDINATOR",
+    "basis": "DECLARED_ACTUAL_TOOL_READING_NOT_PROVEN",
+    "peer_credit": false,
+    "authority_effect": "NONE"
+  },
+  "retracted_declaration": {
+    "observed_utc": "2026-10-25T17:01:57.690847+00:00",
+    "registration": 38,
+    "job": "CHAPTER-100-055-r2",
+    "record": {
+      "path": "data/agent_panel/records/68a63074de27c8954b1d5a620e2b74c77c75973160a563b09b59627eb255326d.json",
+      "sha256": "68a63074de27c8954b1d5a620e2b74c77c75973160a563b09b59627eb255326d"
+    },
+    "scope": "RETRACTED_PREMATURE_ROOT_READING_DECLARATION",
+    "basis": "DECLARED_ACTUAL_TOOL_READING_NOT_PROVEN",
+    "peer_credit": false,
+    "authority_effect": "NONE",
+    "prior_scope": "ALL_RESULT_NOTES_AND_SAMPLE_CHECKS_READ_BY_COORDINATOR",
+    "retracted_utc": "2026-10-25T17:02:52.722776+00:00",
+    "reason": "Root batched write_stdin display and log mutation in one tool cell, before model could inspect returned notes. Retracted; actual full notes now read after that tool response. No extra reading credit."
+  },
+  "actual_after_response_declaration": {
+    "observed_utc": "2026-10-25T17:02:52.722776+00:00",
+    "registration": 38,
+    "job": "CHAPTER-100-055-r2",
+    "record": {
+      "path": "data/agent_panel/records/68a63074de27c8954b1d5a620e2b74c77c75973160a563b09b59627eb255326d.json",
+      "sha256": "68a63074de27c8954b1d5a620e2b74c77c75973160a563b09b59627eb255326d"
+    },
+    "scope": "ALL_RESULT_NOTES_AND_SAMPLE_CHECKS_READ_BY_COORDINATOR",
+    "basis": "DECLARED_ACTUAL_TOOL_READING_NOT_PROVEN",
+    "peer_credit": false,
+    "authority_effect": "NONE",
+    "correction": "ACTUAL_READING_AFTER_TOOL_RESPONSE_REPLACES_PREMATURE_DECLARATION; see root-reading-log-correction-001.json"
+  },
+  "peer_opinion_changed": false,
+  "new_reading_credit": false,
+  "prevention": "Root must inspect tool response before invoking mark-root-read in a subsequent tool call; never batch display and declaration in one exec cell."
+}

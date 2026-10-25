@@ -1,0 +1,41 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/84f60bafcd285314e177b70346a64629fb75f1fd267049e933687d17a0f8acc0.json",
+    "sha256": "84f60bafcd285314e177b70346a64629fb75f1fd267049e933687d17a0f8acc0"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已将job.read_in_full所列五文件逐块读至EOF，五项SHA-256均与assignment一致；samples为空。以下仅审contract-92-6，不声称已读绑定包所引用的底层史料或第93回。92-S6-R1及F1/F3在本回得到落实：候选正文第99—111行，书办对照前次所记区分亲见、亲手与听闻；“旁的经办还须另核”后入内传出“不必为了其余待核项继续把他留在这里”，且明言仍可传问，并非全案翻转；小红/茜雪送物没有被用作释放原因。R3及R4的本回程序接口亦清楚：第111—127行把准返还、领物、放行分开，狱卒尚未收到放行消息，章末仍留监；未见本回重复释放或擅拆W93混合事件。建议性未通过落在R2收束：第129行明确“宝玉尚未过监门，领物与放行还在后头”，第130行立即以“门外一程，才觉人间路窄”作已得经验式收束；第125行实际走过窄门、退到巷壁的是贾芸，宝玉尚无“回窄巷”的经验。饭香和窄门虽已通过家中准备出现，回巷义务与韵句的情境仍未落在同一完成动作上，收束有预支效果。建议复核这两句与单次离监/归巷的落位。合同本身已声明92末/93-S1边界PENDING，故此为规划与文学层ADVISORY，不指认为A-W1硬锁违规；未读93，不能判定跨回是否重复释放，也不为其接口核定背书。“门里十日”仅见于保留韵句，散文没有据此锁定精确天数；F2未见另增人物诗或第二首作者韵文。",
+      "sample_checks": [],
+      "subject_id": "contract-92-6",
+      "subject_sha256": "563ac3435baebaeb2b7a65a746d1eb1226237e439161e141a8615cf69b6e70c3",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "已完整阅读ch92_delivery_gate.yaml及附属候选、package、policy、92-S6合同至EOF，绑定摘要均相符；samples为空。只审contract-92-7的送物/知识边界，不将引用条目当作底层史料已核证。ask_rule_before_action：候选第57—63行先写小红问贾芸是否知道经手人，得否定答复后空手去门外，先后被守门人与书办区分问讯/查物，逐项问出交物、拆验、衣食分开、不得夹口信；第65—69行才返回传给宝钗、次日告知茜雪，后者实际剪扎线、撤布团并松包，送物规则的获得与使用均有事件。limited_information：第65行“小红道：那边管接物的也不知道。我没有得着这句话”，第77行明确毡的更换未问到，第83行明确“穿没穿，眼下还不知道”；第117—121行获准返还消息也限定为未见人、未放行。宝钗拆出纸条、茜雪退后待验，均无全案知情、自由探视或先天规矩全知。物件链自家中备衣袜，经查验/转送，至第85—89行宝玉接收穿袜有连续动作；小红问规则与茜雪补袜功能分开，程序由人物受限和物件操作呈现。exit_state所要求小红、茜雪知道送物规则有正文支持；未见whole_case_exposition或四项knowledge_guards所禁的提前知情表述。此PASS仅表示分派送物场合同与当前正文相容，不授予历史/人类资格。",
+      "sample_checks": [],
+      "subject_id": "contract-92-7",
+      "subject_sha256": "b207b3e25f59fef3711da9b6444e9b522d4840e6ffbab4648207bde73772afa9",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-92-031-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-92-031-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

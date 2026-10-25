@@ -1,0 +1,68 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/7693b7025baf3708ca2b563225eb3059ae1ce6548475a2ae69958181a20b68d7.json",
+    "sha256": "7693b7025baf3708ca2b563225eb3059ae1ce6548475a2ae69958181a20b68d7"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已分块全文读完候选正文、package、97-S1至S4合同及ch97 policy至EOF，分派七文件和packet摘要均相符；无samples或inspect_images。三线饭—衣—纸交叉可辨，湘云有仆妇而自行支应房瓦工钱，妙玉受共享水与庵务牵制，惜春已住惯并继续裁纸。白瓷盆拒借、粗钵裂后借灰、归还、次日续用的递进完整；妙玉仍闻水、试涩，无顿悟。三个对话锚点俱在；若兰去向及瓜州遭遇未定案，宝玉只现场探惜春，未替三线传递全景消息。未发现本次材料可支持的完整性或A-W1硬锁违规。",
+      "sample_checks": [],
+      "subject_id": "chapter-97",
+      "subject_sha256": "30197aedf723c5d9454e1c2bb6c598575e163c228fde2cce1197c825296ae7d4",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文已读。package明确为RESEARCH、authority_effect=NONE，准确选择四份agent-final-v1/v2合同；所列摘要与分派绑定一致。对package、合同及policy中40组嵌入的文件路径/摘要另作字节核对，均匹配；这些非分派底层仅核字节，未全文审读，不据此声称史料或底层语义、文学资格已获核证。",
+      "sample_checks": [],
+      "subject_id": "package-97",
+      "subject_sha256": "c7c047c2d707e1686bc07395f5ef2ea2023d5367ff07a24e060ddd2d6d75c8a8",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文已读并与候选核对。双箸、若兰旧衣及麒麟收置、咸淡口角、三片瓦工钱和另包房钱均落为家务动作；“还没有准信”及晚饭错听后见木杖保持缺席原因开放。未补麒麟此前取得路线，饭衣信分段参与三线交叉。合同的UNKNOWN/PENDING及研究身份未被本意见提升为已知历史事实。",
+      "sample_checks": [],
+      "subject_id": "contract-97-1",
+      "subject_sha256": "6bea94201ce17cf050e93bfd105d8f79b25b518bc6e333010002d82d108238ec",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文已读并与候选核对。粥、桶气、灰衣洗水、抄经纸和搬案借盆形成资源与劳动约束；盆还后反复擦拭、次日摸涩和闻盏仍保留人物边界。妙玉小庵与惜春别处尼庵分明，无瓜州传奇、佛偈或顿悟说明；未注册劳务人物未增姓名。",
+      "sample_checks": [],
+      "subject_id": "contract-97-2",
+      "subject_sha256": "9138dcde6b92f5a55e2c6982c9724e9b2322365da253881fe870402e2b8841a2",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文已读并与候选核对。宝玉到访之前已有熟路、领饭择菜、抄经和退衣；旧画袋旧笔、梳子两句、缺字留空和翻面纸均落实。挡光与带伞笑料服务实务互动，宝玉离后仍裁纸、拨短灯芯；未把惜春写成自我解释完整者，灯油仅呈生活纪律而无伪造耗量。",
+      "sample_checks": [],
+      "subject_id": "contract-97-3",
+      "subject_sha256": "d28f8baf96591eebd7a702701a6ffd98c09884b507baae5363957822aad87e6b",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文已读并与候选核对。饭三线、衣三线、纸三线依次交叉，宝玉来访只为惜春一线现场，后续交替收束至各自未了的家务。末尾湘云信未写完、妙玉次日仍试盆、惜春裁纸受问干布打断，各自动作有余地；无三人同地、同悟或联合退出快照。",
+      "sample_checks": [],
+      "subject_id": "contract-97-4",
+      "subject_sha256": "23d94a1561658749e7125f98d77593b6c994dcf8fea2d8d326232b052a3fb673",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-97-044-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-97-044-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

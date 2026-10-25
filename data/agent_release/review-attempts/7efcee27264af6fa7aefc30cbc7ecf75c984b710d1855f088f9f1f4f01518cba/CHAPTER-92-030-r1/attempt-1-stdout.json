@@ -1,0 +1,41 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/84f60bafcd285314e177b70346a64629fb75f1fd267049e933687d17a0f8acc0.json",
+    "sha256": "84f60bafcd285314e177b70346a64629fb75f1fd267049e933687d17a0f8acc0"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "完整读完本次 read_in_full 五文件至 EOF（初次合并输出截断部分已分块补读），无 samples；五项字节摘要与 assignment 一致，packet 仅核字节摘要，未读其其他 subjects。92-S6-R1 的问项收窄和不再留质依据基本落地：正文99—109行把亲见、亲手、听闻与不记得分开，109行“旁的经办还须另核”，书办入内后传出不必为其余项继续留质的决定；111行保留“还可传你”，无神迹、行贿或送袜即结案。R3 的领取物品及再传接口清楚。但 R2 所明列的“回窄巷”章级收束未兑现，现有韵文已先落在实际离监之前：125行的饭香与窄门是家中等候者的动作，127行仍在监内候领物，129行明说“宝玉尚未过监门，领物与放行还在后头”，130行随即收为“门外一程，才觉人间路窄”。这使回家体验由尚未发生的事承担本回完成式结语；仅增加一句未放行说明，未解决合同要求核定释放/离监边界后再落位的收束问题。建议核定92末与93-S1实际单次释放位置，并使现有收束的叙事视点、完成程度与之相配；本次未分派93正文，不能据此判断93是否重复释放，也未核证W93底层事件或历史程序。此为规划与文学落位意见，依ADR 0004仅ADVISORY，不作A-W1硬锁违规或阻断资格判断。",
+      "sample_checks": [],
+      "subject_id": "contract-92-6",
+      "subject_sha256": "563ac3435baebaeb2b7a65a746d1eb1226237e439161e141a8615cf69b6e70c3",
+      "verdict": "FAIL",
+      "severity": "ADVISORY"
+    },
+    {
+      "notes": "已全文读 ch92_delivery_gate.yaml、候选正文及同批指定合同/写作包/政策至 EOF；无 samples，五项文件摘要匹配。正文59—65行小红从“我不管这个”起逐层询问查物经手人、送物地点、拆验、禁夹口信及衣食分放，先问再备物，不是先天知道规矩；67行将“须拆着交，不能夹话”转告，69行宝钗取出纸条，71行茜雪经小红告知后剪线、取出布团，均落实知识获得后行动。77行小红明确“我只问过衣袜和吃食”，81—83行茜雪受退后限制，物件经查验再向内转送。85行小红纠正“穿没穿，眼下还不知道”，117行后来关于准返还的信息明确来自接物处，且只转传“还待领物放行”，121行宝钗继续追问人是否已出、何时能回。送物规则没有被写成全案及官面最终判断；小红、宝钗、茜雪三人的未知部分均保留，相关 knowledge guards 未见语义越界。此PASS限于分派送物场合同与本候选的一致性；未全文读写作包所链接的非分派底层，也不宣称史料核证、人类资格或跨回手续已核定。",
+      "sample_checks": [],
+      "subject_id": "contract-92-7",
+      "subject_sha256": "b207b3e25f59fef3711da9b6444e9b522d4840e6ffbab4648207bde73772afa9",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-92-030-r1",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-92-030-r1:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

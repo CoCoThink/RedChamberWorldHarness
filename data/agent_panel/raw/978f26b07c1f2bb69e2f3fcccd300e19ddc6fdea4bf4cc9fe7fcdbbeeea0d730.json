@@ -1,0 +1,68 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/3ab70bfd32379db81ec1a2f83530ed4389bb4567aad46b26a063bb27ae5fda70.json",
+    "sha256": "3ab70bfd32379db81ec1a2f83530ed4389bb4567aad46b26a063bb27ae5fda70"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已逐块全文读候选113行至EOF，并读完本次全部七份read_in_full文件；分派范围无未读，samples为空。候选由童年衣袖与贾珠旧书推进多年求仕，再经实授、晚荣、数月衰退、钥匙与日用移交进入丧务，生活尺度与人物所知连续；贾兰将做针线误认好转、之后学着料理礼单和汤饭，变化有动作支撑。情榜保留五层、黛玉“情情”、榜末宝玉“情不情”，人间先封口，石归另起章回，无信息倒灌、家族复兴或主题再解释。文学建议（ADVISORY）：中段连续取茶、摆花、转盆、换衣等多次采用“误会—纠正—学着照料”的相近节拍，可略收其中一组，让临终叠旧袄和丧中凉饭更突出；现有重复尚不构成不通过。判断仅针对所读候选与分派依据，不核证未分派史料。",
+      "sample_checks": [],
+      "subject_id": "chapter-100",
+      "subject_sha256": "3c1b68b4fa5755c7213075303c217e0b399c6fb784447a72e5d6e7cebe14cc35",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文读完100行至EOF，包内四份已分派合同的路径/摘要与实际字节一致；另对其余plan、world、exemplar路径只核字节摘要，全部匹配，未全文阅读那些非分派底层，未由hash推定史料或文学资格。RESEARCH、authority_effect=NONE及未验收声明明确。包、候选与已分派合同无发现的绑定矛盾；S5及资产/来源原件语义不在本次审读范围。",
+      "sample_checks": [],
+      "subject_id": "package-100",
+      "subject_sha256": "00fad706db5d71491179ae404ab5c0c3268dee1ca29a84df2224415fa21557c7",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文读完698行至EOF，按叙事义务对照候选。衣袖、旧书、应试与待回帖子使多年流逝具体；“还在等，未曾实授”之后又有生活间隔，才到“宝玉离家以后……又过了几年……才真得了实授”。未提前穿公服或兑现旧产；局部UNKNOWN及非运行性质保留，不以合同注册状态冒充历史证明。",
+      "sample_checks": [],
+      "subject_id": "contract-100-1",
+      "subject_sha256": "1862399465256ce42b2fb9455257551c3b8ad4b2c0b3915188b92f5d642281ca",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文读完702行至EOF。官讯入门时厨房先问“饭够不够”，歪腿借桌与孩子追问往后有肉同在贺客实务中；冠帔压额、旧袄袖口、修箱与粗瓷、裁错回礼呈现名位所得及礼务代价。未填官品、具体年份、诏敕或无限进项，未强拉宝钗麝月同场。",
+      "sample_checks": [],
+      "subject_id": "contract-100-2",
+      "subject_sha256": "a40c7186f721d7b867b73a783bd2a6e870d3bf384abccbbcf8362e1942ed336b",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文读完686行至EOF。“如此又过数月”后由粥、针线、帖子、钥匙、茶包与看花逐渐退出家务，贾兰的好转误判很快被疲倦与托不稳水碗纠正；医者不作病名与疗效保证，李纨仍有不耐烦及偏好，没有荣耀当日骤死或临终立论。合同未知项未被伪装成已核验病历。",
+      "sample_checks": [],
+      "subject_id": "contract-100-3",
+      "subject_sha256": "df015a71cb1722ee8d5cc818eabd9f73a6e350390fce72398a2c4411503c700d",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "全文读完713行至EOF。死亡之后白布采购、棺木交期、吊客茶饭、费用核对和少数旧物归置均有经手与成本；公服另包收箱，没有凭空确定丁忧官身。末以“人间这些余事，到此按下”再入非人间层，李纨死后无活跃对话，无人物命运总展。",
+      "sample_checks": [],
+      "subject_id": "contract-100-4",
+      "subject_sha256": "2ab28b514ca4de77179b55642448473af930470bc9f8d74093c85a275dfdeb8d",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "7efcee27264a:CHAPTER-100-053-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:7efcee27264a:CHAPTER-100-053-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}
