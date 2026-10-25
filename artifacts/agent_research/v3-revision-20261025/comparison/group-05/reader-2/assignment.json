@@ -1,0 +1,51 @@
+{
+  "kind": "MODEL_LITERARY_ANONYMOUS_COMPARISON",
+  "id": "literary-ab-g05-r2",
+  "chapters": [
+    100
+  ],
+  "read_in_full": {
+    "A": {
+      "path": "artifacts/agent_research/v3-revision-20261025/comparison/group-05/reader-2/A.md",
+      "sha256": "25c484ca93a7fd7f7e4e963fe9f5fc334726bc1e0db1bfa32a2b73c32d6da383",
+      "bytes": 29909
+    },
+    "B": {
+      "path": "artifacts/agent_research/v3-revision-20261025/comparison/group-05/reader-2/B.md",
+      "sha256": "3c1b68b4fa5755c7213075303c217e0b399c6fb784447a72e5d6e7cebe14cc35",
+      "bytes": 29996
+    }
+  },
+  "reading_bytes": 59905,
+  "max_read_bytes": 201728,
+  "instructions": "只读本任务 A/B 两文件，逐回完整读；不读版本映射、历史、设计、意见或仓库其他正文。分别比较人物声口、动作因果、时间/物件可读性、叙事节奏、重复纠错与自证旁白。逐回独立选择 A/B/TIE/UNDETERMINED；可偏好不同版本。引两版原句定位优劣，指出新生问题，不因更清楚就自动判文学更好。材料未读完则 UNDETERMINED 并写 unread_scope。匿名仅是自愿限读、模型新上下文，不是技术隔离或人工盲评。",
+  "output_scaffold": {
+    "kind": "MODEL_LITERARY_COMPARISON_OPINION",
+    "assignment_id": "literary-ab-g05-r2",
+    "reader_session": "literary-ab-g05-r2",
+    "files": {
+      "A": {
+        "path": "artifacts/agent_research/v3-revision-20261025/comparison/group-05/reader-2/A.md",
+        "sha256": "25c484ca93a7fd7f7e4e963fe9f5fc334726bc1e0db1bfa32a2b73c32d6da383",
+        "bytes": 29909
+      },
+      "B": {
+        "path": "artifacts/agent_research/v3-revision-20261025/comparison/group-05/reader-2/B.md",
+        "sha256": "3c1b68b4fa5755c7213075303c217e0b399c6fb784447a72e5d6e7cebe14cc35",
+        "bytes": 29996
+      }
+    },
+    "results": [
+      {
+        "chapter": 100,
+        "preference": "UNDETERMINED",
+        "reason": "",
+        "evidence": [],
+        "risks": []
+      }
+    ],
+    "unread_scope": [],
+    "authority_effect": "NONE",
+    "qualification": "MODEL_ONLY_NOT_P9"
+  }
+}
