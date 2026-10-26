@@ -57,3 +57,7 @@ world等全局文件仍是实际整文件依赖；本轮没有实现事件/状�
 执行审计实际PASS，复核三轮输入CI先于全部启动、真实失败/重试、30份新记录的原件和根阅读声明、19缝双读、4份比较，以及当前请求只在输入冻结后增添决定。历史来源、world、scenes、v1—v3版本和stable对29a81d5保持。审计详见[actual-execution-verification.json](actual-execution-verification.json)。[本地交接验证](final-local-validation.json)实际PASS，但release_status仍PENDING、normal_build_succeeded=false，不能读作正常版本已构建。
 
 索引组装脚本初次执行因循环变量覆盖binding helper而报TypeError，未生成交接产物；改名后实际重跑通过。[失败与更正](local-delivery-harness-correction.json)保留，不增加审读信用，不改变任何候选、意见或处置。
+
+payload提交为`f522e82c833009fbbe7619c8478afa89b785c360`，其已提交HEAD的真实一次性克隆验证已PASS。工具核验当前20回作者链、76项覆盖、19接缝与197KiB完整读集预算；最大实际读集199577字节。克隆使用显式allow-pending，结果仍PENDING，只生成临时manifest、text=null且无book；一次性目录随验证销毁，工作树不发布PENDING或正常版本。回执见[committed-clone-verification.json](committed-clone-verification.json)及[绑定到payload提交的保管说明](committed-clone-custody.json)。
+
+随后提交仅追加以上回执和本段说明，再推送`research/v4-20261026`；最终提交本身的双版本CI必须按最终HEAD另行确认。报告不虚构尚未产生的最终CI自引用回执，最终回复提供实际HEAD及对应GitHub run。正常发布仍由87PENDING阻止，下一正文动作按NEXT_ITERATION先作适用范围论证。
