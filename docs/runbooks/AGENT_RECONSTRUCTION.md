@@ -158,3 +158,5 @@ ASSIGNMENT_SHA256 使用 dispatch 返回的 `assignment.sha256`；迟到错误�
 当某subject要求核另一回正文时，在选择行声明`review_context_chapters: {"contract-92-6": [93]}`，用prepare生成新packet/请求；不要仅在提示词中口头增加文件。声明的章回必须是当前选择内的其他候选。campaign按全文去重并集拆分，单项仍超预算即停止分派。评价会拒绝未附或旧候选上下文，并排除所涉作者/编辑/保管者。
 
 当前上下文补读请求为`data/agent_release/research-81-100-v4-r4/request.json`，campaign同目录`review-campaign-v1.json`，新92补读执行目录`artifacts/agent_research/v4-context-followup-20261026/`。r3执行目录保留实际原读、NOT_CHECKED、BOOK和匿名比较，不能据r4复用统计抹掉这些历史。输入CI通过前不启动新92任务；87核心未决不能以COMPLETE或ADOPT消除。
+
+r4当前76项已实收齐备（70复用、6新读），但第87回同一核心风险缺口仍未解决，协调者保持PENDING。真实评价239门PASS、1门PENDING、无FAIL发现；不加allow-pending的正常build实际拒绝且不生成book。当前交付入口、审阅读本、原始负面、追加更正及后续动作见[v4执行报告](../../artifacts/agent_research/v4-context-followup-20261026/EXECUTION_REPORT.md)。勿将COMPLETE或本地交接PASS解释为正常发布或人工/P9通过。

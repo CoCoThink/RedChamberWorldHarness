@@ -46,3 +46,11 @@ r3输入提交4ccb6f3的双版本CI均成功，各1808 passed、1 skipped。两�
 r3的92-S6读者提交NOT_CHECKED：合同R2/R4要求核93落位和单次放行，但分派没有93候选。原意见保留，不能改PASS。新增ADR0010，允许选择/请求的review_context_chapters按subject声明相邻候选；prepare绑定所选字节、评价拒绝旧候选/漏上下文并排除相邻作者；campaign预算改计整项subject及全部context的去重并集。
 
 另建research-81-100-v4-r4请求、campaign及artifacts/agent_research/v4-context-followup-20261026执行目录。r3请求和原记录不覆写；r4正文20回、作者谱系、写作包与book packet均精确沿用，只改92审阅packet及显式上下文。任务76项，92拆为三组各两读，阅读量173813/163171/118382字节，无超预算。其他19回和8份分段意见按完整输入实际复用，仍完成r3剩余BOOK及4位新匿名比较。上下文新输入单独提交并等双版本CI，再派92补读。最终处置合并r2/r3/r4全部实际原始意见，原NOT_CHECKED与文学负面均保留。87保持PENDING的交付标准不变。
+
+## 最终审读完成与采用边界
+
+r4上下文输入提交9172e79900d7341de9d3a77277fe3e888672dc56、CI40328297205双版本成功，各1815 passed、1 skipped后，实际启动6位全新92读者，均原样登记，全部notes/sample_checks已由根逐条读取并另行记录声明。当前76项全部COMPLETE，无needs_followup，70项复用；r3历史74项完成及其一条NOT_CHECKED原样保留。
+
+本轮r2/r3/r4共30份实际新正式意见；连同前版共198份、788条结果。新增14条FAIL/REJECT均有具体处置，不改原文。另有8位实际分段读者，19接缝每缝双读；4位新A/B读者的10个逐回选择为83两票v3、85两票TIE、87两票v4、92两票v4、93两票v3。自主限读、阅读声明及未测资源平等的限制不变，非P9。
+
+最终根决定拟为19回研究ADOPT、87继续PENDING。92两位当前章读均认有限核对因果，一位仍就重复失措和等待节奏FAIL/ADVISORY；两位92-S6新读者完整读92/93，确认单次实际放行、热粥后原韵句落位。局部通过不取消文学负面或历史资格限制。87两位新章读仍报风险性质与边界不足，不以比较两票新版关闭。最终真实评价、正常build拒绝、已提交克隆核验及最终CI以`artifacts/agent_research/v4-context-followup-20261026/EXECUTION_REPORT.md`及其证据为准；完成前不得据本计划写成已发布。

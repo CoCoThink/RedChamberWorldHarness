@@ -1,0 +1,11 @@
+{
+  "kind": "ACTUAL_LOCAL_HARNESS_FAILURE_AND_CORRECTION",
+  "observed_utc": "2026-10-26T14:00:14.409880+00:00",
+  "first_command": "PYTHONPATH=src /home/guan/rcwh-review-venv/bin/python artifacts/agent_research/v4-context-followup-20261026/evaluate-and-attempt-build.py",
+  "first_exit_code": 1,
+  "first_harness_error": "ValueError: unresolved normal build must refuse and publish no edition files",
+  "cause": "CLI catches AssetError and prints JSON to stdout; initial harness incorrectly required refusal text in stderr only.",
+  "first_child_stdout_stderr": "NOT_RETAINED_BY_INITIAL_HARNESS; not reconstructed",
+  "correction": "Capture actual evaluation and child stdout/stderr before assertions; recognize refusal in either stream; rerun actual CLI command. No production runtime or prose input changed.",
+  "authority_effect": "NONE"
+}

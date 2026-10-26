@@ -1,0 +1,511 @@
+{
+  "conclusion": "success",
+  "event": "push",
+  "headSha": "9172e79900d7341de9d3a77277fe3e888672dc56",
+  "jobs": [
+    {
+      "completedAt": "2026-10-26T13:31:10Z",
+      "conclusion": "success",
+      "databaseId": 121590651997,
+      "name": "validate (3.12.3)",
+      "startedAt": "2026-10-26T13:10:27Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-26T13:10:29Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-26T13:10:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:10:36Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-26T13:10:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:10:47Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "startedAt": "2026-10-26T13:10:36Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:10:54Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install -e '.[dev]'",
+          "number": 4,
+          "startedAt": "2026-10-26T13:10:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:11:09Z",
+          "conclusion": "success",
+          "name": "Run rcwh validate",
+          "number": 5,
+          "startedAt": "2026-10-26T13:10:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:12:13Z",
+          "conclusion": "success",
+          "name": "Verify selected writing histories and current inputs",
+          "number": 6,
+          "startedAt": "2026-10-26T13:11:09Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:19:35Z",
+          "conclusion": "success",
+          "name": "Verify release attribution, review coverage and cloned research build",
+          "number": 7,
+          "startedAt": "2026-10-26T13:12:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:19:37Z",
+          "conclusion": "success",
+          "name": "Verify physical assets and immutable versions",
+          "number": 8,
+          "startedAt": "2026-10-26T13:19:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:19:50Z",
+          "conclusion": "success",
+          "name": "Smoke native foundation APIs",
+          "number": 9,
+          "startedAt": "2026-10-26T13:19:37Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:19:57Z",
+          "conclusion": "success",
+          "name": "Verify asset discovery and fixed corpus inputs",
+          "number": 10,
+          "startedAt": "2026-10-26T13:19:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:22:51Z",
+          "conclusion": "success",
+          "name": "Verify declared input regressions and corpus rebuilds offline",
+          "number": 11,
+          "startedAt": "2026-10-26T13:19:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:01Z",
+          "conclusion": "success",
+          "name": "Smoke domain runtimes",
+          "number": 12,
+          "startedAt": "2026-10-26T13:22:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:02Z",
+          "conclusion": "success",
+          "name": "Verify unreviewed scene remains pending semantic evidence",
+          "number": 13,
+          "startedAt": "2026-10-26T13:23:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:02Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_preserved.txt",
+          "number": 14,
+          "startedAt": "2026-10-26T13:23:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:02Z",
+          "conclusion": "success",
+          "name": "Verify replacement-case exit code",
+          "number": 15,
+          "startedAt": "2026-10-26T13:23:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:02Z",
+          "conclusion": "success",
+          "name": "Verify lexical flags retain the separate literal-replacement status",
+          "number": 16,
+          "startedAt": "2026-10-26T13:23:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:03Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_A_stable_full.md",
+          "number": 17,
+          "startedAt": "2026-10-26T13:23:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:03Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_B_light_full.md",
+          "number": 18,
+          "startedAt": "2026-10-26T13:23:03Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:03Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_C_strong_full.md",
+          "number": 19,
+          "startedAt": "2026-10-26T13:23:03Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:03Z",
+          "conclusion": "success",
+          "name": "Run rcwh competition comp:43-0:ch86:pressure-test",
+          "number": 20,
+          "startedAt": "2026-10-26T13:23:03Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:04Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_A_full.md",
+          "number": 21,
+          "startedAt": "2026-10-26T13:23:03Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:04Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_B_full.md",
+          "number": 22,
+          "startedAt": "2026-10-26T13:23:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:04Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_C_full.md",
+          "number": 23,
+          "startedAt": "2026-10-26T13:23:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:04Z",
+          "conclusion": "success",
+          "name": "Run rcwh competition comp:43-0:ch89:pressure-test",
+          "number": 24,
+          "startedAt": "2026-10-26T13:23:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:05Z",
+          "conclusion": "success",
+          "name": "Verify historical promotion remains pending independent reviews",
+          "number": 25,
+          "startedAt": "2026-10-26T13:23:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:23:06Z",
+          "conclusion": "success",
+          "name": "Replay archived internal semantic challenges",
+          "number": 26,
+          "startedAt": "2026-10-26T13:23:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:31:06Z",
+          "conclusion": "success",
+          "name": "Run pytest -q",
+          "number": 27,
+          "startedAt": "2026-10-26T13:23:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:31:06Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 53,
+          "startedAt": "2026-10-26T13:31:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:31:06Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 54,
+          "startedAt": "2026-10-26T13:31:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:31:06Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 55,
+          "startedAt": "2026-10-26T13:31:06Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/CoCoThink/RedChamberWorldHarness/actions/runs/40328297205/job/121590651997"
+    },
+    {
+      "completedAt": "2026-10-26T13:36:57Z",
+      "conclusion": "success",
+      "databaseId": 121590652360,
+      "name": "validate (3.12.13)",
+      "startedAt": "2026-10-26T13:10:27Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-10-26T13:10:29Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-10-26T13:10:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:10:35Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-10-26T13:10:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:10:43Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "startedAt": "2026-10-26T13:10:35Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:10:49Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install -e '.[dev]'",
+          "number": 4,
+          "startedAt": "2026-10-26T13:10:43Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:11:08Z",
+          "conclusion": "success",
+          "name": "Run rcwh validate",
+          "number": 5,
+          "startedAt": "2026-10-26T13:10:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:12:38Z",
+          "conclusion": "success",
+          "name": "Verify selected writing histories and current inputs",
+          "number": 6,
+          "startedAt": "2026-10-26T13:11:08Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:22:04Z",
+          "conclusion": "success",
+          "name": "Verify release attribution, review coverage and cloned research build",
+          "number": 7,
+          "startedAt": "2026-10-26T13:12:38Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:22:06Z",
+          "conclusion": "success",
+          "name": "Verify physical assets and immutable versions",
+          "number": 8,
+          "startedAt": "2026-10-26T13:22:04Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:22:23Z",
+          "conclusion": "success",
+          "name": "Smoke native foundation APIs",
+          "number": 9,
+          "startedAt": "2026-10-26T13:22:06Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:22:33Z",
+          "conclusion": "success",
+          "name": "Verify asset discovery and fixed corpus inputs",
+          "number": 10,
+          "startedAt": "2026-10-26T13:22:23Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:34Z",
+          "conclusion": "success",
+          "name": "Verify declared input regressions and corpus rebuilds offline",
+          "number": 11,
+          "startedAt": "2026-10-26T13:22:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:48Z",
+          "conclusion": "success",
+          "name": "Smoke domain runtimes",
+          "number": 12,
+          "startedAt": "2026-10-26T13:26:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:49Z",
+          "conclusion": "success",
+          "name": "Verify unreviewed scene remains pending semantic evidence",
+          "number": 13,
+          "startedAt": "2026-10-26T13:26:48Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:49Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_preserved.txt",
+          "number": 14,
+          "startedAt": "2026-10-26T13:26:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:49Z",
+          "conclusion": "success",
+          "name": "Verify replacement-case exit code",
+          "number": 15,
+          "startedAt": "2026-10-26T13:26:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:50Z",
+          "conclusion": "success",
+          "name": "Verify lexical flags retain the separate literal-replacement status",
+          "number": 16,
+          "startedAt": "2026-10-26T13:26:49Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:50Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_A_stable_full.md",
+          "number": 17,
+          "startedAt": "2026-10-26T13:26:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:50Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_B_light_full.md",
+          "number": 18,
+          "startedAt": "2026-10-26T13:26:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:51Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_C_strong_full.md",
+          "number": 19,
+          "startedAt": "2026-10-26T13:26:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:51Z",
+          "conclusion": "success",
+          "name": "Run rcwh competition comp:43-0:ch86:pressure-test",
+          "number": 20,
+          "startedAt": "2026-10-26T13:26:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:51Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_A_full.md",
+          "number": 21,
+          "startedAt": "2026-10-26T13:26:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:52Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_B_full.md",
+          "number": 22,
+          "startedAt": "2026-10-26T13:26:51Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:52Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_C_full.md",
+          "number": 23,
+          "startedAt": "2026-10-26T13:26:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:52Z",
+          "conclusion": "success",
+          "name": "Run rcwh competition comp:43-0:ch89:pressure-test",
+          "number": 24,
+          "startedAt": "2026-10-26T13:26:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:53Z",
+          "conclusion": "success",
+          "name": "Verify historical promotion remains pending independent reviews",
+          "number": 25,
+          "startedAt": "2026-10-26T13:26:52Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:26:54Z",
+          "conclusion": "success",
+          "name": "Replay archived internal semantic challenges",
+          "number": 26,
+          "startedAt": "2026-10-26T13:26:53Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:36:54Z",
+          "conclusion": "success",
+          "name": "Run pytest -q",
+          "number": 27,
+          "startedAt": "2026-10-26T13:26:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:36:54Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 53,
+          "startedAt": "2026-10-26T13:36:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:36:54Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 54,
+          "startedAt": "2026-10-26T13:36:54Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-10-26T13:36:55Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 55,
+          "startedAt": "2026-10-26T13:36:54Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/CoCoThink/RedChamberWorldHarness/actions/runs/40328297205/job/121590652360"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/CoCoThink/RedChamberWorldHarness/actions/runs/40328297205"
+}

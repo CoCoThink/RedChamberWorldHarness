@@ -1,0 +1,27 @@
+{
+  "kind": "ACTUAL_NORMAL_RESEARCH_BUILD_ATTEMPT",
+  "observed_utc": "2026-10-26T14:04:14.387587+00:00",
+  "command": [
+    "/home/guan/rcwh-review-venv/bin/python",
+    "-m",
+    "rcwh.cli",
+    "agent-release",
+    "build",
+    "data/agent_release/research-81-100-v4-r4/request.json",
+    "--json"
+  ],
+  "workdir": "/home/guan/rcwh-v4-20261026",
+  "allow_pending": false,
+  "request": {
+    "path": "data/agent_release/research-81-100-v4-r4/request.json",
+    "sha256": "7be76673ecf3cad0b2f35ac3b81aca5aec2bd2617577ecf64889eb1cd6f50f6b"
+  },
+  "release_status": "PENDING",
+  "exit_code": 1,
+  "stdout": "{\n  \"status\": \"FAIL\",\n  \"scope\": \"AGENT_RESEARCH_RELEASE\",\n  \"findings\": [\n    \"agent release PENDING; only explicit pending staging is allowed\"\n  ],\n  \"authority_effect\": \"NONE\",\n  \"stable_active_effect\": \"NONE\"\n}\n",
+  "stderr": "",
+  "refused": true,
+  "edition_directory_exists": false,
+  "authority_effect": "NONE",
+  "P9_credit": false
+}

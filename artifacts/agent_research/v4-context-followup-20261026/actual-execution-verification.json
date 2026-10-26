@@ -1,0 +1,383 @@
+{
+  "status": "PASS",
+  "scope": "ACTUAL_EXECUTION_CUSTODY_AND_UNRESOLVED_HANDOFF_NOT_LITERARY_PASS",
+  "rounds": [
+    {
+      "directory": "artifacts/agent_research/v4-correction-20261026",
+      "registered": 7,
+      "launches": 7,
+      "failed_transport_attempts": [],
+      "subject_results": 39,
+      "input_ci": {
+        "headSha": "e47ba9fcda4b1880d820b95a35b92df4a540ee9c",
+        "conclusion": "success",
+        "url": "https://github.com/CoCoThink/RedChamberWorldHarness/actions/runs/40226027296"
+      }
+    },
+    {
+      "directory": "artifacts/agent_research/v4-risk-revision-20261026",
+      "registered": 17,
+      "launches": 20,
+      "failed_transport_attempts": [
+        {
+          "job": "CHAPTER-92-028-r1",
+          "attempt": 1,
+          "task": "/root/v4r3_ch92_028_r1_a1",
+          "status_code": 503,
+          "error": "Agent errored: unexpected status 503 Service Unavailable: Service temporarily unavailable, url: https://api.ccinn.cc/responses, cf-ray: a504148f4ebd6d35-LAX, request id: fa7248a2-7719-47d1-b828-a2b14430a22d"
+        },
+        {
+          "job": "CHAPTER-92-029-r2",
+          "attempt": 1,
+          "task": "/root/v4r3_ch92_029_r2_a1",
+          "status_code": 429,
+          "error": "Agent errored: exceeded retry limit, last status: 429 Too Many Requests, request id: 995abf7d-c010-45e0-a691-3d4a6aa6b227"
+        },
+        {
+          "job": "CHAPTER-93-030-r1",
+          "attempt": 1,
+          "task": "/root/v4r3_ch93_030_r1_a1",
+          "status_code": 503,
+          "error": "Agent errored: unexpected status 503 Service Unavailable: Service temporarily unavailable, url: https://api.ccinn.cc/responses, cf-ray: a504147f1a712f37-LAX, request id: 71b43a08-327e-499a-af5c-7c379e639aad"
+        }
+      ],
+      "subject_results": 49,
+      "input_ci": {
+        "headSha": "4ccb6f373b0b98833a0d9da4f0ba0a01a227d7d3",
+        "conclusion": "success",
+        "url": "https://github.com/CoCoThink/RedChamberWorldHarness/actions/runs/40229694880"
+      }
+    },
+    {
+      "directory": "artifacts/agent_research/v4-context-followup-20261026",
+      "registered": 6,
+      "launches": 6,
+      "failed_transport_attempts": [],
+      "subject_results": 18,
+      "input_ci": {
+        "headSha": "9172e79900d7341de9d3a77277fe3e888672dc56",
+        "conclusion": "success",
+        "url": "https://github.com/CoCoThink/RedChamberWorldHarness/actions/runs/40328297205"
+      }
+    }
+  ],
+  "current_jobs": 76,
+  "reused_current_jobs": 70,
+  "new_v4_records_all_rounds": 30,
+  "new_v4_subject_results": 106,
+  "new_negative_results": 14,
+  "negative_severity": {
+    "ADVISORY": 14
+  },
+  "book_readers": [
+    {
+      "job": "BOOK-shared-068-r1",
+      "record": {
+        "path": "data/agent_panel/records/152554e172c214a23084d0d86038517292c9017fa2b9db46e28b88a352607811.json",
+        "sha256": "152554e172c214a23084d0d86038517292c9017fa2b9db46e28b88a352607811"
+      },
+      "seams": [
+        [
+          81,
+          82
+        ],
+        [
+          82,
+          83
+        ],
+        [
+          83,
+          84
+        ],
+        [
+          84,
+          85
+        ],
+        [
+          85,
+          86
+        ],
+        [
+          86,
+          87
+        ]
+      ],
+      "verdicts": [
+        "FAIL"
+      ]
+    },
+    {
+      "job": "BOOK-shared-069-r2",
+      "record": {
+        "path": "data/agent_panel/records/a436e5f16a579bcbd107449665338b399632055ab9c7f3308cb49f57657690ff.json",
+        "sha256": "a436e5f16a579bcbd107449665338b399632055ab9c7f3308cb49f57657690ff"
+      },
+      "seams": [
+        [
+          81,
+          82
+        ],
+        [
+          82,
+          83
+        ],
+        [
+          83,
+          84
+        ],
+        [
+          84,
+          85
+        ],
+        [
+          85,
+          86
+        ],
+        [
+          86,
+          87
+        ]
+      ],
+      "verdicts": [
+        "PASS"
+      ]
+    },
+    {
+      "job": "BOOK-shared-070-r1",
+      "record": {
+        "path": "data/agent_panel/records/76668a4275fddf3bbdca6a5997d53a9592fd59e452a26672b23e5293dabb5ef2.json",
+        "sha256": "76668a4275fddf3bbdca6a5997d53a9592fd59e452a26672b23e5293dabb5ef2"
+      },
+      "seams": [
+        [
+          87,
+          88
+        ],
+        [
+          88,
+          89
+        ],
+        [
+          89,
+          90
+        ],
+        [
+          90,
+          91
+        ],
+        [
+          91,
+          92
+        ]
+      ],
+      "verdicts": [
+        "PASS"
+      ]
+    },
+    {
+      "job": "BOOK-shared-071-r2",
+      "record": {
+        "path": "data/agent_panel/records/28a98ced5f8b3cc06f8887936fe9c49c499218117434a08a8084f102a6eee787.json",
+        "sha256": "28a98ced5f8b3cc06f8887936fe9c49c499218117434a08a8084f102a6eee787"
+      },
+      "seams": [
+        [
+          87,
+          88
+        ],
+        [
+          88,
+          89
+        ],
+        [
+          89,
+          90
+        ],
+        [
+          90,
+          91
+        ],
+        [
+          91,
+          92
+        ]
+      ],
+      "verdicts": [
+        "PASS"
+      ]
+    },
+    {
+      "job": "BOOK-shared-072-r1",
+      "record": {
+        "path": "data/agent_panel/records/f086431ff6ee83907c4e41b6d2367e7f21c5e52fbbaf2c9e31455595169488d7.json",
+        "sha256": "f086431ff6ee83907c4e41b6d2367e7f21c5e52fbbaf2c9e31455595169488d7"
+      },
+      "seams": [
+        [
+          92,
+          93
+        ],
+        [
+          93,
+          94
+        ],
+        [
+          94,
+          95
+        ],
+        [
+          95,
+          96
+        ],
+        [
+          96,
+          97
+        ],
+        [
+          97,
+          98
+        ]
+      ],
+      "verdicts": [
+        "PASS"
+      ]
+    },
+    {
+      "job": "BOOK-shared-073-r2",
+      "record": {
+        "path": "data/agent_panel/records/90b70b70d0ee4c820852d872dcdd3d270a9821a5213aea87a6756c599c53cbea.json",
+        "sha256": "90b70b70d0ee4c820852d872dcdd3d270a9821a5213aea87a6756c599c53cbea"
+      },
+      "seams": [
+        [
+          92,
+          93
+        ],
+        [
+          93,
+          94
+        ],
+        [
+          94,
+          95
+        ],
+        [
+          95,
+          96
+        ],
+        [
+          96,
+          97
+        ],
+        [
+          97,
+          98
+        ]
+      ],
+      "verdicts": [
+        "FAIL"
+      ]
+    },
+    {
+      "job": "BOOK-shared-074-r1",
+      "record": {
+        "path": "data/agent_panel/records/d092f6d001e6b0f4c27674b6d0e1cfa69ae5eb9ef77ea9e8341d714d4fe16cc0.json",
+        "sha256": "d092f6d001e6b0f4c27674b6d0e1cfa69ae5eb9ef77ea9e8341d714d4fe16cc0"
+      },
+      "seams": [
+        [
+          98,
+          99
+        ],
+        [
+          99,
+          100
+        ]
+      ],
+      "verdicts": [
+        "PASS"
+      ]
+    },
+    {
+      "job": "BOOK-shared-075-r2",
+      "record": {
+        "path": "data/agent_panel/records/9489e8add922f43e506651669deb7b89f2091f40b78f01c4a351398e78bc396c.json",
+        "sha256": "9489e8add922f43e506651669deb7b89f2091f40b78f01c4a351398e78bc396c"
+      },
+      "seams": [
+        [
+          98,
+          99
+        ],
+        [
+          99,
+          100
+        ]
+      ],
+      "verdicts": [
+        "PASS"
+      ]
+    }
+  ],
+  "unique_seams": 19,
+  "reader_seam_notes": 38,
+  "comparison_readers": 4,
+  "comparison_votes": {
+    "83": {
+      "v3": 2
+    },
+    "85": {
+      "TIE": 2
+    },
+    "87": {
+      "v4": 2
+    },
+    "92": {
+      "v4": 2
+    },
+    "93": {
+      "v3": 2
+    }
+  },
+  "core_status": "UNRESOLVED_RESEARCH_HANDOFF",
+  "release_status": "PENDING",
+  "unresolved_chapters": [
+    87
+  ],
+  "release_gates": {
+    "PASS": 239,
+    "PENDING": 1
+  },
+  "request": {
+    "path": "data/agent_release/research-81-100-v4-r4/request.json",
+    "sha256": "7be76673ecf3cad0b2f35ac3b81aca5aec2bd2617577ecf64889eb1cd6f50f6b"
+  },
+  "evaluation": {
+    "path": "artifacts/agent_research/v4-context-followup-20261026/final-release-evaluation.json",
+    "sha256": "28c6766a2a5dabc08dfbbc180fed80379afcfa795ccd3ba1f8f10b86a2cc00e1"
+  },
+  "reading_book": {
+    "path": "data/agent_release/research-81-100-v4-r3/reading/book.md",
+    "sha256": "de893589e23d0d08c3662ae5c869e337357b72ff255accb83d71837cbf68edef"
+  },
+  "published_book": null,
+  "published_manifest": null,
+  "preserved_trees": [
+    "data/world",
+    "data/scenes",
+    "data/provenance",
+    "sources",
+    "releases/stable",
+    "releases/agent/research-81-100-v1",
+    "releases/agent/research-81-100-v2",
+    "releases/agent/research-81-100-v3",
+    "data/agent_release/research-81-100-v1",
+    "data/agent_release/research-81-100-v2",
+    "data/agent_release/research-81-100-v3",
+    "data/agent_release/selection-81-100-v4.json"
+  ],
+  "resource_parity": "NOT_VERIFIED",
+  "reading_declarations": "DECLARED_NOT_MACHINE_PROOF",
+  "P9_credit": false,
+  "authority_effect": "NONE"
+}

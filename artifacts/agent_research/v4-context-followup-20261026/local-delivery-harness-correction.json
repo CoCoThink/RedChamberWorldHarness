@@ -1,0 +1,10 @@
+{
+  "kind": "ACTUAL_LOCAL_INDEX_ASSEMBLY_FAILURE_AND_CORRECTION",
+  "command": "PYTHONPATH=src /home/guan/rcwh-review-venv/bin/python artifacts/agent_research/v4-context-followup-20261026/finish-local-delivery.py",
+  "first_exit_code": 1,
+  "first_error": "TypeError: 'dict' object is not callable",
+  "cause": "loop variable ref shadowed binding helper ref",
+  "correction": "renamed loop variable context_ref; no input, opinion, verdict or completed check changed",
+  "outputs_created_by_failed_attempt": [],
+  "authority_effect": "NONE"
+}

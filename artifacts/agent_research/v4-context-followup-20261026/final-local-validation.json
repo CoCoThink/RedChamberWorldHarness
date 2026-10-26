@@ -1,0 +1,65 @@
+{
+  "status": "PASS",
+  "scope": "ACTUAL_LOCAL_UNRESOLVED_HANDOFF_AND_BUILD_REFUSAL",
+  "build_command": [
+    "/home/guan/rcwh-review-venv/bin/python",
+    "-m",
+    "rcwh.cli",
+    "agent-release",
+    "build",
+    "data/agent_release/research-81-100-v4-r4/request.json",
+    "--json"
+  ],
+  "allow_pending": false,
+  "release_status": "PENDING",
+  "chapter_count": 20,
+  "release_gates": {
+    "PASS": 239,
+    "PENDING": 1
+  },
+  "normal_build_succeeded": false,
+  "unresolved_chapters": [
+    87
+  ],
+  "findings": [],
+  "request": {
+    "path": "data/agent_release/research-81-100-v4-r4/request.json",
+    "sha256": "7be76673ecf3cad0b2f35ac3b81aca5aec2bd2617577ecf64889eb1cd6f50f6b"
+  },
+  "manifest": null,
+  "book": null,
+  "evaluation": {
+    "path": "artifacts/agent_research/v4-context-followup-20261026/final-release-evaluation.json",
+    "sha256": "28c6766a2a5dabc08dfbbc180fed80379afcfa795ccd3ba1f8f10b86a2cc00e1"
+  },
+  "reading_book": {
+    "path": "data/agent_release/research-81-100-v4-r3/reading/book.md",
+    "sha256": "de893589e23d0d08c3662ae5c869e337357b72ff255accb83d71837cbf68edef"
+  },
+  "evidence": {
+    "actual-execution-verification.json": {
+      "path": "artifacts/agent_research/v4-context-followup-20261026/actual-execution-verification.json",
+      "sha256": "38275a21c1d58243a5bae831cfe0db43e15d81d4e55d0c9f45df3346bb9f5b91"
+    },
+    "final-writing-lineage.json": {
+      "path": "artifacts/agent_research/v4-context-followup-20261026/final-writing-lineage.json",
+      "sha256": "33e26820b18b26e00a761427410629850f25eca4e85875c2d1665eb92e60f135"
+    },
+    "final-assets-validation.txt": {
+      "path": "artifacts/agent_research/v4-context-followup-20261026/final-assets-validation.txt",
+      "sha256": "9620e6fafebd90cc965f9dc8987245bf372b15959f6bb8e52ca000bd52c259ac"
+    },
+    "final-repository-validation.txt": {
+      "path": "artifacts/agent_research/v4-context-followup-20261026/final-repository-validation.txt",
+      "sha256": "62c2d56e05bfe66aad17f15f0c77901ae00195ba5e27388bc65abcbba08f4c6e"
+    },
+    "normal-build-attempt.json": {
+      "path": "artifacts/agent_research/v4-context-followup-20261026/normal-build-attempt.json",
+      "sha256": "c2174de4587c036b4344086c7003c5c54263af7e94bc47ee84276f9e33c9ae58"
+    }
+  },
+  "clone_reproduction": "SEPARATE_COMMITTED_CLONE_RECEIPT_REQUIRED",
+  "final_ci": "SEPARATE_GITHUB_FINAL_HEAD_RUN_REQUIRED",
+  "authority_effect": "NONE",
+  "P9_credit": false
+}
