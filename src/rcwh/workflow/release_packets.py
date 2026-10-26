@@ -69,10 +69,12 @@ def chapter_packets(root: Path, candidates: list[dict], rows: dict, coordinator:
     """Stable, per-chapter review contexts survive unrelated edition changes."""
     packets = {}
     for chapter, row in sorted(rows.items()):
-        context = [row[k] for k in ("candidate", "writing_package", "policy") if k in row]
-        subjects = [{**s, "context": context} for s in candidates
+        from .review_contexts import contexts
+        subjects = [s for s in candidates
                     if s["id"] in {f"chapter-{chapter}", f"package-{chapter}"}
                     or s["id"].startswith(f"contract-{chapter}-")]
+        expected = contexts({**row, 'chapter': chapter}, subjects, rows)
+        subjects = [{**s, "context": expected[s['id']]} for s in subjects]
         document = _packet(f"chapter-{chapter}", "inputs-v3", coordinator, subjects)
         packets[chapter] = _write_immutable(root,
             f"{DIRECTORY}/review-packets/{digest(canonical_bytes(document))}.json", document)
@@ -189,6 +191,10 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
                     "read_in_full": [{"subject_id": s["id"], "scope": s["scope"], **s["binding"]} for s in subjects],
                     "policy": rows[chapter].get("policy"), "plock_ref": rows[chapter]["plock_ref"],
                     "severity_rule": "docs/decisions/0004_EVIDENCE_FLOOR_SEVERITY.md"}
+        if rows[chapter].get('review_context_chapters'):
+            document['cross_chapter_reading'] = {
+                subject: [rows[ch]['candidate'] for ch in dependencies]
+                for subject, dependencies in rows[chapter]['review_context_chapters'].items()}
         reading[chapter] = _write_immutable(root, f"{base}/reading/ch{chapter}.json", document)
 
     request = {"schema_version": 1, "id": edition, "baseline": selection["baseline"], "chapters": []}
@@ -198,7 +204,8 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
             continue
         row = rows[chapter]
         entry = {key: row[key] for key in ("candidate", "draft", "writing_package", "policy", "plock_ref",
-                                           "minimum_body_characters", "minimum_baseline_ratio", "rebind_receipt") if key in row}
+                                           "minimum_body_characters", "minimum_baseline_ratio", "rebind_receipt",
+                                           "review_context_chapters") if key in row}
         from .attribution import release_attribution
         release_attribution(root, {**entry, "chapter": chapter})
         entry.update(chapter=chapter, mode="AGENT_CANDIDATE",

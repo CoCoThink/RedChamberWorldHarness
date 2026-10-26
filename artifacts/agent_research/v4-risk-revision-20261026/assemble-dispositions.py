@@ -27,6 +27,16 @@ def main():
  assert negative<=rulings.keys(),('missing specific negative ruling',negative-rulings.keys())
  assert rulings.keys()<=results.keys()
  issues=deepcopy(prior['issues'])  # Raw prior results and their historical rulings remain exact.
+ prior_issues={(i['record']['sha256'],i['subject_id']):i for i in prior['issues']}
+ for correction in root.get('historical_ruling_corrections',[]):
+  key=(correction['record_sha256'],correction['subject_id']);old=prior_issues[key]
+  assert correction['rationale'].strip() and correction['resolution_evidence']
+  issues.append({'record':old['record'],'subject_id':old['subject_id'],'job_id':old['job_id'],
+   'round':'V4_COORDINATOR_RECONSIDERATION_NOT_NEW_PEER_REVIEW','original_result':deepcopy(old['original_result']),
+   'ruling':correction['ruling'],'rationale':correction['rationale'],
+   'affected_chapters':correction['affected_chapters'],'resolution_evidence':correction['resolution_evidence'],
+   'prior_disposition_retained_in':prior_ref,'supersedes_coordinator_disposition_only':True,
+   'authority_effect':'NONE'})
  for key,ruling in rulings.items():
   receipt,result=results[key];assert ruling['rationale'].strip()
   issues.append({'record':receipt['record'],'subject_id':result['subject_id'],'job_id':receipt['job_id'],'round':'V4','original_result':result,'ruling':ruling['ruling'],'rationale':ruling['rationale'],'affected_chapters':ruling['affected_chapters'],'resolution_evidence':ruling.get('resolution_evidence',[]),'authority_effect':'NONE'})

@@ -1,0 +1,73 @@
+{
+  "kind": "ACTUAL_NATIVE_AGENT_TRANSPORT_ERRORS",
+  "errors": [
+    {
+      "job": "CHAPTER-92-029-r2",
+      "assignment": {
+        "path": "data/agent_release/review-attempts/02af992b4f273efd66ebb91f465b2307ba5086852fdce77557f9f4caafdc7aab/CHAPTER-92-029-r2/attempt-1-assignment.json",
+        "sha256": "b84ad6b86fe425586df2e5aedeae6a1135b853866e1b3557b0064144f7deed34"
+      },
+      "status_code": 429,
+      "actual_error": "Agent errored: exceeded retry limit, last status: 429 Too Many Requests, request id: 995abf7d-c010-45e0-a691-3d4a6aa6b227",
+      "state": {
+        "id": "CHAPTER-92-029-r2",
+        "status": "PENDING",
+        "attempts": 1,
+        "assignment": {
+          "path": "data/agent_release/review-attempts/02af992b4f273efd66ebb91f465b2307ba5086852fdce77557f9f4caafdc7aab/CHAPTER-92-029-r2/attempt-1-assignment.json",
+          "sha256": "b84ad6b86fe425586df2e5aedeae6a1135b853866e1b3557b0064144f7deed34"
+        },
+        "record": null,
+        "reused": false,
+        "needs_followup": false,
+        "retry_after": 1793017953.255034
+      }
+    },
+    {
+      "job": "CHAPTER-93-030-r1",
+      "assignment": {
+        "path": "data/agent_release/review-attempts/02af992b4f273efd66ebb91f465b2307ba5086852fdce77557f9f4caafdc7aab/CHAPTER-93-030-r1/attempt-1-assignment.json",
+        "sha256": "266c91c91bd910516427954864f4a86eeff66dedc380e08226c289c78f06a039"
+      },
+      "status_code": 503,
+      "actual_error": "Agent errored: unexpected status 503 Service Unavailable: Service temporarily unavailable, url: https://api.ccinn.cc/responses, cf-ray: a504147f1a712f37-LAX, request id: 71b43a08-327e-499a-af5c-7c379e639aad",
+      "state": {
+        "id": "CHAPTER-93-030-r1",
+        "status": "RETRY_WAIT",
+        "attempts": 1,
+        "assignment": {
+          "path": "data/agent_release/review-attempts/02af992b4f273efd66ebb91f465b2307ba5086852fdce77557f9f4caafdc7aab/CHAPTER-93-030-r1/attempt-1-assignment.json",
+          "sha256": "266c91c91bd910516427954864f4a86eeff66dedc380e08226c289c78f06a039"
+        },
+        "record": null,
+        "reused": false,
+        "needs_followup": false,
+        "retry_after": 1793017961.0707417
+      }
+    },
+    {
+      "job": "CHAPTER-92-028-r1",
+      "assignment": {
+        "path": "data/agent_release/review-attempts/02af992b4f273efd66ebb91f465b2307ba5086852fdce77557f9f4caafdc7aab/CHAPTER-92-028-r1/attempt-1-assignment.json",
+        "sha256": "290472e2e14c5e19fcc28115bcd4cd7c53e46a7504c38e7c74ca4a7591faa106"
+      },
+      "status_code": 503,
+      "actual_error": "Agent errored: unexpected status 503 Service Unavailable: Service temporarily unavailable, url: https://api.ccinn.cc/responses, cf-ray: a504148f4ebd6d35-LAX, request id: fa7248a2-7719-47d1-b828-a2b14430a22d",
+      "state": {
+        "id": "CHAPTER-92-028-r1",
+        "status": "RETRY_WAIT",
+        "attempts": 1,
+        "assignment": {
+          "path": "data/agent_release/review-attempts/02af992b4f273efd66ebb91f465b2307ba5086852fdce77557f9f4caafdc7aab/CHAPTER-92-028-r1/attempt-1-assignment.json",
+          "sha256": "290472e2e14c5e19fcc28115bcd4cd7c53e46a7504c38e7c74ca4a7591faa106"
+        },
+        "record": null,
+        "reused": false,
+        "needs_followup": false,
+        "retry_after": 1793017967.676064
+      }
+    }
+  ],
+  "opinion_credit": false,
+  "authority_effect": "NONE"
+}

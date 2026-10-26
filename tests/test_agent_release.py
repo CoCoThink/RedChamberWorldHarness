@@ -565,3 +565,31 @@ def test_chapter_without_dependent_sources_or_corpus_needs_no_such_reviews(editi
     gates, reports = e.runtime._inputs(e.request["chapters"][0])
     assert gates["SOURCE_PEERS"] == gates["CORPUS_PEERS"] == "PASS"
     assert "SOURCE_PEERS: NO_DEPENDENT_SOURCES" in reports["info"]
+
+
+def test_cross_chapter_context_is_checked_against_current_selection_and_authors(edition, monkeypatch):
+    e = edition
+    row = e.request['chapters'][0]
+    exemplar = write(e.root, 'exemplars.json', {'dataset_ref': 'test', 'segments': []})
+    row['writing_package'] = write(e.root, 'package-with-exemplar.json', {'chapter': 86, 'exemplar_set': exemplar})
+    adjacent = write(e.root, 'adjacent.txt', 'full synthetic adjacent candidate')
+    other = {'chapter': 87, 'mode': 'AGENT_CANDIDATE', 'candidate': adjacent}
+    rows = {86: row, 87: other}
+    row['review_context_chapters'] = {'contract': [87]}
+    base = [row['candidate'], row['writing_package']]
+    subjects = [{'id': 'candidate', 'scope': 'CANDIDATE', 'binding': e.candidate, 'context': base},
+                {'id': 'package', 'scope': 'PACKAGE', 'binding': row['writing_package'], 'context': base},
+                {'id': 'contract', 'scope': 'CONTRACT', 'binding': e.contract, 'context': base + [adjacent]}]
+    row['panel']['packet'] = packet(e.root, 'cross-chapter', subjects)
+    peers(e.root, row['panel']['packet'])
+    monkeypatch.setattr('rcwh.workflow.admission.chapter_scope', lambda *a, **k: {
+        'chapter': 86, 'paths': [e.contract['path']], 'used_source_ids': [], 'dataset_refs': [], 'findings': []})
+    gates, _ = e.runtime._inputs(row, chapter_rows=rows)
+    assert gates['CONTRACT_PEERS'] == 'PASS'
+    other['candidate'] = write(e.root, 'adjacent-new.txt', 'changed selected candidate')
+    with pytest.raises(AssetError, match='context differs'):
+        e.runtime._inputs(row, chapter_rows=rows)
+    other['candidate'] = adjacent
+    monkeypatch.setattr(e.runtime, '_authors', lambda *a: ('PASS', [{'principal_id': 'session:reader-session-0'}]))
+    with pytest.raises(AssetError, match='author/reviser'):
+        e.runtime._inputs(row, chapter_rows=rows)

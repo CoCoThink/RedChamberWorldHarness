@@ -1,0 +1,258 @@
+{
+  "status": "PASS",
+  "kind": "TARGETED_PROVENANCE_AFTER_ACTUAL_CH87_RISK_REVISION",
+  "chapter": 87,
+  "attribution": {
+    "receipt": {
+      "path": "data/agent_release/rebind-v4/receipts/ch87.json",
+      "sha256": "214d481912562b136af23d616e305d0303bc73966bc22e2cbb9e3389984f1005"
+    },
+    "declaration": "正文不是由 v4 提示词生成。本草稿只是把既有正文重新绑定到修正后的输入（曹家史料改版为 :npm005664、范例集 v3、source_gap_baseline、审计协议 v3）；原作者与原谱系见 previous。导入会话是协调者重绑，不是原作者。",
+    "verification": "RETAINED_RECORD_BYTES_AND_AUTHOR_RUN_BINDINGS",
+    "previous_writing_inputs_replay": "NOT_CHECKED",
+    "prose_identical_to_previous": true,
+    "contributors": [
+      {
+        "principal_id": "session:phase6-v3-author-ch87",
+        "kind": "MODEL",
+        "source_id": "session-author:74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163",
+        "run": {
+          "path": "artifacts/author-runs/74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163.json",
+          "sha256": "74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163"
+        },
+        "role": "ORIGINAL_AUTHOR"
+      },
+      {
+        "principal_id": "session:phase6-reviser-ch87-context1",
+        "kind": "MODEL",
+        "source_id": "session-author:edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf",
+        "run": {
+          "path": "artifacts/author-runs/edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf.json",
+          "sha256": "edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf"
+        },
+        "role": "REVISER"
+      },
+      {
+        "principal_id": "session:coordinator-edit-20261025:ch87",
+        "kind": "MODEL",
+        "source_id": "session-author:dd2426f2e15d523a3daf9b69ed195622ea92f88cb472e94c3ac42c13aadbaa07",
+        "run": {
+          "path": "artifacts/author-runs/dd2426f2e15d523a3daf9b69ed195622ea92f88cb472e94c3ac42c13aadbaa07.json",
+          "sha256": "dd2426f2e15d523a3daf9b69ed195622ea92f88cb472e94c3ac42c13aadbaa07"
+        },
+        "role": "REVISER"
+      },
+      {
+        "principal_id": "session:coordinator-edit-20261026:ch87",
+        "kind": "MODEL",
+        "source_id": "session-author:bad7a388627935ecd93c20c0a11cbbc08983a3eb6464c32409bfdbac231f0c97",
+        "run": {
+          "path": "artifacts/author-runs/bad7a388627935ecd93c20c0a11cbbc08983a3eb6464c32409bfdbac231f0c97.json",
+          "sha256": "bad7a388627935ecd93c20c0a11cbbc08983a3eb6464c32409bfdbac231f0c97"
+        },
+        "role": "REVISER"
+      },
+      {
+        "principal_id": "session:coordinator-risk-edit-20261026:ch87",
+        "kind": "MODEL",
+        "source_id": "session-author:64bd01382e69e57112cc17ce4ab5347714f945128ad7f800fed168692e651771",
+        "run": {
+          "path": "artifacts/author-runs/64bd01382e69e57112cc17ce4ab5347714f945128ad7f800fed168692e651771.json",
+          "sha256": "64bd01382e69e57112cc17ce4ab5347714f945128ad7f800fed168692e651771"
+        },
+        "role": "REVISER"
+      }
+    ],
+    "custodians": [
+      {
+        "principal_id": "session:rebind-v4:ch87",
+        "kind": "MODEL",
+        "source_id": "session-author:c1de93482b4faf4dd7d43299ebfe529cb8d489562d3160ce2038f9532996bc56",
+        "run": {
+          "path": "artifacts/author-runs/c1de93482b4faf4dd7d43299ebfe529cb8d489562d3160ce2038f9532996bc56.json",
+          "sha256": "c1de93482b4faf4dd7d43299ebfe529cb8d489562d3160ce2038f9532996bc56"
+        },
+        "role": "REBIND_CUSTODIAN"
+      }
+    ],
+    "chain": [
+      {
+        "draft": {
+          "path": "data/writing/drafts/ch87/32e048cb203385b4eca16641d57ff5306558bce7eb81a4b958527713b60ebdcd.json",
+          "sha256": "32e048cb203385b4eca16641d57ff5306558bce7eb81a4b958527713b60ebdcd"
+        },
+        "candidate": {
+          "path": "artifacts/candidates/ch87/86f74726ea7d3819dbc7251350d6ac46f22c14d9d3cff6751940e628edb3e401.txt",
+          "sha256": "86f74726ea7d3819dbc7251350d6ac46f22c14d9d3cff6751940e628edb3e401"
+        },
+        "run": {
+          "path": "artifacts/author-runs/edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf.json",
+          "sha256": "edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf"
+        },
+        "package": {
+          "path": "data/writing/packages/ch87-agent-research-v3.json",
+          "sha256": "1dddef91b4f1293d7774c1c223944f76efda78991af56fc1bd717dcfd4b279cb"
+        },
+        "authors": [
+          {
+            "principal_id": "session:phase6-reviser-ch87-context1",
+            "kind": "MODEL",
+            "source_id": "session-author:edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf",
+            "run": {
+              "path": "artifacts/author-runs/edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf.json",
+              "sha256": "edd61a430eb79d36fbae438e4048ee1618f73f8db1ca9269d07226d9352beecf"
+            }
+          }
+        ],
+        "role": "REVISER"
+      },
+      {
+        "draft": {
+          "path": "data/writing/drafts/ch87/d793f1bf4929452425628407c82c30b65de5b0a3719439497279efc5b16fe2ca.json",
+          "sha256": "d793f1bf4929452425628407c82c30b65de5b0a3719439497279efc5b16fe2ca"
+        },
+        "candidate": {
+          "path": "artifacts/candidates/ch87/941e8d1e205e06ec3755867e0135b5d1c6b90d08e9b0aaac2abb6d84dc9c606f.txt",
+          "sha256": "941e8d1e205e06ec3755867e0135b5d1c6b90d08e9b0aaac2abb6d84dc9c606f"
+        },
+        "run": {
+          "path": "artifacts/author-runs/74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163.json",
+          "sha256": "74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163"
+        },
+        "package": {
+          "path": "data/writing/packages/ch87-agent-research-v3.json",
+          "sha256": "1dddef91b4f1293d7774c1c223944f76efda78991af56fc1bd717dcfd4b279cb"
+        },
+        "authors": [
+          {
+            "principal_id": "session:phase6-v3-author-ch87",
+            "kind": "MODEL",
+            "source_id": "session-author:74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163",
+            "run": {
+              "path": "artifacts/author-runs/74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163.json",
+              "sha256": "74fef7e80364e1926483f2ef1e76c799f79061b1713f0ae9ea13939291290163"
+            }
+          }
+        ],
+        "role": "ORIGINAL_AUTHOR"
+      }
+    ],
+    "rebind_draft": {
+      "path": "data/writing/drafts/ch87/9531474df8cc3754ea1a75e9d4b436cb7ca33c3f043b887ee846d1da540dec97.json",
+      "sha256": "9531474df8cc3754ea1a75e9d4b436cb7ca33c3f043b887ee846d1da540dec97"
+    },
+    "subsequent_revisions": [
+      {
+        "draft": {
+          "path": "data/writing/drafts/ch87/85d6bf3765cc06cc7d728a1063736f7d747f69825f4a8e3ca266bef94e580807.json",
+          "sha256": "85d6bf3765cc06cc7d728a1063736f7d747f69825f4a8e3ca266bef94e580807"
+        },
+        "candidate": {
+          "path": "artifacts/candidates/ch87/10f8b5cc1c48668becef855d2e80227be5be47729d7fa8ed70d249912bab79f6.txt",
+          "sha256": "10f8b5cc1c48668becef855d2e80227be5be47729d7fa8ed70d249912bab79f6"
+        },
+        "run": {
+          "path": "artifacts/author-runs/64bd01382e69e57112cc17ce4ab5347714f945128ad7f800fed168692e651771.json",
+          "sha256": "64bd01382e69e57112cc17ce4ab5347714f945128ad7f800fed168692e651771"
+        },
+        "package": {
+          "path": "data/writing/packages/ch87-agent-research-v4.json",
+          "sha256": "e99eddb7771c296fb916a9ecf36d0f08790d45f5e2d3e024ff06bdd0fa5bb556"
+        },
+        "authors": [
+          {
+            "principal_id": "session:coordinator-risk-edit-20261026:ch87",
+            "kind": "MODEL",
+            "source_id": "session-author:64bd01382e69e57112cc17ce4ab5347714f945128ad7f800fed168692e651771",
+            "run": {
+              "path": "artifacts/author-runs/64bd01382e69e57112cc17ce4ab5347714f945128ad7f800fed168692e651771.json",
+              "sha256": "64bd01382e69e57112cc17ce4ab5347714f945128ad7f800fed168692e651771"
+            }
+          }
+        ],
+        "role": "REVISER"
+      },
+      {
+        "draft": {
+          "path": "data/writing/drafts/ch87/e7296d2631c91ee0ad14df94b376f57dbc6758a4e59e1ad80f4c57e8ac103a39.json",
+          "sha256": "e7296d2631c91ee0ad14df94b376f57dbc6758a4e59e1ad80f4c57e8ac103a39"
+        },
+        "candidate": {
+          "path": "artifacts/candidates/ch87/23c00a612d8e5bc5148c80765e63edf2456b163db3bcfc9804e3fde3b4dfd318.txt",
+          "sha256": "23c00a612d8e5bc5148c80765e63edf2456b163db3bcfc9804e3fde3b4dfd318"
+        },
+        "run": {
+          "path": "artifacts/author-runs/bad7a388627935ecd93c20c0a11cbbc08983a3eb6464c32409bfdbac231f0c97.json",
+          "sha256": "bad7a388627935ecd93c20c0a11cbbc08983a3eb6464c32409bfdbac231f0c97"
+        },
+        "package": {
+          "path": "data/writing/packages/ch87-agent-research-v4.json",
+          "sha256": "e99eddb7771c296fb916a9ecf36d0f08790d45f5e2d3e024ff06bdd0fa5bb556"
+        },
+        "authors": [
+          {
+            "principal_id": "session:coordinator-edit-20261026:ch87",
+            "kind": "MODEL",
+            "source_id": "session-author:bad7a388627935ecd93c20c0a11cbbc08983a3eb6464c32409bfdbac231f0c97",
+            "run": {
+              "path": "artifacts/author-runs/bad7a388627935ecd93c20c0a11cbbc08983a3eb6464c32409bfdbac231f0c97.json",
+              "sha256": "bad7a388627935ecd93c20c0a11cbbc08983a3eb6464c32409bfdbac231f0c97"
+            }
+          }
+        ],
+        "role": "REVISER"
+      },
+      {
+        "draft": {
+          "path": "data/writing/drafts/ch87/4afdcb0c2bfc452669bc78e9a8c0b65edef49c6956cfe3cd0988f5095357f3fc.json",
+          "sha256": "4afdcb0c2bfc452669bc78e9a8c0b65edef49c6956cfe3cd0988f5095357f3fc"
+        },
+        "candidate": {
+          "path": "artifacts/candidates/ch87/fdee0217343a5352c487c4634c3797d0395652d642231f6312ec9b6b3bd95542.txt",
+          "sha256": "fdee0217343a5352c487c4634c3797d0395652d642231f6312ec9b6b3bd95542"
+        },
+        "run": {
+          "path": "artifacts/author-runs/dd2426f2e15d523a3daf9b69ed195622ea92f88cb472e94c3ac42c13aadbaa07.json",
+          "sha256": "dd2426f2e15d523a3daf9b69ed195622ea92f88cb472e94c3ac42c13aadbaa07"
+        },
+        "package": {
+          "path": "data/writing/packages/ch87-agent-research-v4.json",
+          "sha256": "e99eddb7771c296fb916a9ecf36d0f08790d45f5e2d3e024ff06bdd0fa5bb556"
+        },
+        "authors": [
+          {
+            "principal_id": "session:coordinator-edit-20261025:ch87",
+            "kind": "MODEL",
+            "source_id": "session-author:dd2426f2e15d523a3daf9b69ed195622ea92f88cb472e94c3ac42c13aadbaa07",
+            "run": {
+              "path": "artifacts/author-runs/dd2426f2e15d523a3daf9b69ed195622ea92f88cb472e94c3ac42c13aadbaa07.json",
+              "sha256": "dd2426f2e15d523a3daf9b69ed195622ea92f88cb472e94c3ac42c13aadbaa07"
+            }
+          }
+        ],
+        "role": "REVISER"
+      }
+    ],
+    "coordinator_edit": [],
+    "edit_reason": null,
+    "receipt_chain": [
+      {
+        "path": "data/agent_release/rebind-v4/receipts/ch87.json",
+        "sha256": "214d481912562b136af23d616e305d0303bc73966bc22e2cbb9e3389984f1005"
+      }
+    ],
+    "authority_effect": "NONE"
+  },
+  "prior_targeted_audit": {
+    "path": "artifacts/agent_research/v4-correction-20261026/targeted-authorship-audit.json",
+    "sha256": "7c515c7c6f9dfd3b4be6304d2b590e2ae42842bd0dae6e88f3036542b7a7d9be"
+  },
+  "unchanged_prior_audited_rows": [
+    86,
+    89,
+    92,
+    93
+  ],
+  "declaration": "New root risk editor is an actual prose contributor with the old parent and all original authors retained. No new custodial rebind for87. Old86 actual editorial role and89 withdrawn editor exclusion remain;92/93 previous custodial chains remain.",
+  "authority_effect": "NONE"
+}

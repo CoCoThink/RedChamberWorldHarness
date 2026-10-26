@@ -118,18 +118,23 @@ def plan(root: Path, request_path: str, output: str, *, batch_size: int = 5,
                     (s["scope"] == "PACKAGE" and s["binding"] == package) or
                     (s["scope"] == "CONTRACT" and s["binding"]["path"] in paths)]
         # Split by whole review subject: never count a partial contract as read.
-        groups, current, size = [], [], 0
+        groups, current = [], []
         context = [row["candidate"], package]
         if "policy" in row:
             context.append(row["policy"])
-        context_paths = {b["path"] for b in context}
-        context_size = sum(len(bound_bytes(root, b)) for b in context)
-        size = context_size
+        context_files = {b["path"]: b for b in context}
+        files = dict(context_files)
         for subject in subjects:
-            count = 0 if subject["binding"]["path"] in context_paths else len(bound_bytes(root, subject["binding"]))
-            if current and size + count > max_read_bytes:
-                groups.append(current); current, size = [], context_size
-            current.append(subject["id"]); size += count
+            # Context belongs to a whole subject too. Counting only the
+            # contract itself can produce an oversized assignment after add()
+            # attaches the adjacent chapter needed to assess that contract.
+            extra = {b["path"]: b for b in [subject["binding"], *subject.get("context", [])]}
+            combined = files | extra
+            if current and sum(len(bound_bytes(root, b)) for b in combined.values()) > max_read_bytes:
+                groups.append(current)
+                current, combined = [], context_files | extra
+            current.append(subject["id"])
+            files = combined
         if current:
             groups.append(current)
         for group in groups:

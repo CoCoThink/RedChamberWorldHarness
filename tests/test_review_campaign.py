@@ -69,6 +69,38 @@ def test_large_chapter_is_partitioned_with_two_readers_for_each_subject(work):
     assert all(j["gate_effect"] == "NONE" for j in jobs if j["kind"] == "BOOK")
 
 
+def test_adjacent_chapter_context_is_counted_and_kept_with_each_whole_subject(work):
+    request = json.loads((work.root / "request.json").read_bytes())
+    packet = json.loads((work.root / "packet.json").read_bytes())
+    adjacent = work.write("adjacent-chapter.txt", "adjacent" * 13)
+    for subject in packet["subjects"]:
+        if subject["scope"] == "CONTRACT":
+            # The candidate is shared context; count it only once.
+            subject["context"] = [work.candidate, adjacent]
+    request["chapters"][0]["panel"]["packet"] = work.write("context-packet.json", packet)
+    work.write("request.json", request)
+    campaign.plan(work.root, "request.json", "context-campaign.json", max_read_bytes=500)
+    plan = campaign._load(work.root, "context-campaign.json")
+    chapters = [j for j in plan["jobs"] if j["kind"] == "CHAPTER"]
+    assert all(j["reading_bytes"] <= 500 for j in chapters)
+    assert Counter(s for j in chapters for s in j["subjects"]) == {
+        "chapter-86": 2, "package-86": 2, "contract-86": 2, "contract-86-2": 2}
+    for job in chapters:
+        if any(s.startswith("contract-") for s in job["subjects"]):
+            assert adjacent in job["read_in_full"]
+        assert len({ref["path"] for ref in job["read_in_full"]}) == len(job["read_in_full"])
+
+
+def test_single_subject_with_oversized_adjacent_context_is_refused(work):
+    request = json.loads((work.root / "request.json").read_bytes())
+    packet = json.loads((work.root / "packet.json").read_bytes())
+    packet["subjects"][-1]["context"] = [work.write("huge-adjacent.txt", "x" * 500)]
+    request["chapters"][0]["panel"]["packet"] = work.write("huge-context-packet.json", packet)
+    work.write("request.json", request)
+    with pytest.raises(ValueError, match="exceeds reading budget"):
+        campaign.plan(work.root, "request.json", "huge-context-campaign.json", max_read_bytes=500)
+
+
 def test_503_is_retried_concurrency_is_bounded_and_resume_does_not_duplicate(work, monkeypatch):
     calls = Counter()
     lock = threading.Lock()

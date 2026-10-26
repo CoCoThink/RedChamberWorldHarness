@@ -215,7 +215,8 @@ class AgentRelease:
             return "FAIL"
         return "PASS" if decision["outcome"] == "ADOPT" else "PENDING"
 
-    def _inputs(self, row: dict, *, authors: list[dict] | None = None) -> tuple[dict, dict]:
+    def _inputs(self, row: dict, *, authors: list[dict] | None = None,
+                chapter_rows: dict[int, dict] | None = None) -> tuple[dict, dict]:
         author_sessions = {a["principal_id"].removeprefix("session:") for a in authors or []
                            if a["principal_id"].startswith("session:")}
         def check_peer_sessions(subjects):
@@ -271,10 +272,21 @@ class AgentRelease:
             reports["contract_peer_findings"] = packet_report.get("findings", [])
         elif packet_report is not None:
             subjects = [s for p in packet_report["panels"] for s in p["subjects"]]
+            from .review_contexts import contexts
+            expected = contexts(row, subjects, chapter_rows or {row['chapter']: row})
+            dependencies = {ch for chapters in row.get('review_context_chapters', {}).values() for ch in chapters}
+            for chapter in sorted(dependencies):
+                other = chapter_rows[chapter]
+                _, contributors = self._authors(other, {})
+                from .attribution import release_attribution
+                lineage = release_attribution(self.root, other) if 'rebind_receipt' in other else None
+                contributors += lineage['custodians'] if lineage else []
+                author_sessions.update(a['principal_id'].removeprefix('session:') for a in contributors
+                                       if a['principal_id'].startswith('session:'))
             check_peer_sessions(subjects)
-            expected_context = [row[k] for k in ("candidate", "writing_package", "policy") if k in row]
             for s in subjects:
-                if "context" in s and s["context"] != expected_context:
+                if (("context" in s or s['id'] in row.get('review_context_chapters', {}))
+                        and s.get("context") != expected[s['id']]):
                     raise AssetError("chapter review context differs from selected candidate/package/policy")
             requirements = [("PACKAGE", row["writing_package"])]
             for path in scope["paths"]:
@@ -459,7 +471,7 @@ class AgentRelease:
                 "AUTHOR_PROVENANCE": lambda: self._authors(row, report["reviews"].get("candidate", {})),
                 "CURRENT_WRITING_INPUTS": lambda: self._compatibility(row),
                 "CHAPTER_SAFETY_POLICY": lambda: self._policy(row, changed, book.decode("utf-8"), after[ch]),
-                "INPUT_PEERS": lambda: self._inputs(row, authors=report["reviews"].get("authors", [])
+                "INPUT_PEERS": lambda: self._inputs(row, chapter_rows=rows, authors=report["reviews"].get("authors", [])
                     + report["reviews"].get("author_lineage", {}).get("custodians", [])),
                 "COORDINATOR_DECISION": lambda: self._decision(row, report["reviews"].get("candidate", {}), report["reviews"]),
             }

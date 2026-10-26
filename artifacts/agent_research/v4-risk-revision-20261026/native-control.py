@@ -6,13 +6,13 @@ import argparse,json
 from rcwh.workflow import review_campaign as campaign
 R=Path(__file__).resolve().parents[3];O=Path(__file__).resolve().parent
 P='data/agent_release/research-81-100-v4-r3/review-campaign-v1.json'
-a=argparse.ArgumentParser();a.add_argument('command',choices=['status','dispatch','register','launch','read','log-read']);a.add_argument('job',nargs='?');a.add_argument('opinion',nargs='?');a.add_argument('--origin');args=a.parse_args()
+a=argparse.ArgumentParser();a.add_argument('command',choices=['status','dispatch','register','launch','read','log-read']);a.add_argument('job',nargs='?');a.add_argument('opinion',nargs='?');a.add_argument('--origin');a.add_argument('--limit',type=int,default=3);args=a.parse_args()
 def save(prefix,value):
  n=1
  while (O/f'{prefix}-{n:03d}.json').exists():n+=1
  file=O/f'{prefix}-{n:03d}.json';file.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n');return file.relative_to(R).as_posix()
 if args.command=='dispatch':
- v=campaign.dispatch(R,P,limit=3,model_label='current agent environment (declared); fresh native reader');print(json.dumps({'observation':save('dispatch',v),**v},ensure_ascii=False))
+ v=campaign.dispatch(R,P,limit=args.limit,model_label='current agent environment (declared); fresh native reader');print(json.dumps({'observation':save('dispatch',v),**v},ensure_ascii=False))
 elif args.command=='register':
  v=campaign.submit(R,P,args.job,args.opinion,origin=args.origin);print(json.dumps({'observation':save('registration',v),**v},ensure_ascii=False))
 elif args.command=='launch':

@@ -1,5 +1,7 @@
 """Bind explicit coordinator rulings after actual reading; creates no peer opinions."""
 from collections import defaultdict
+import argparse
+from core_evidence import validate_core
 import json
 from pathlib import Path
 
@@ -17,26 +19,11 @@ PLAN = "data/agent_release/research-81-100-v4-r3/review-campaign-v1.json"
 
 
 def main():
-    core = json.loads((CURRENT / "core-causal-rulings.json").read_bytes())
-    if core["status"] != "CLOSED_BY_ACTUAL_NEW_READER_EVIDENCE" or any(len(x["fresh_formal_evidence"]) < 2 or x["unresolved_same_gap"] for x in core["issues"]):
-        raise ValueError("two core causal gaps need actual new-reader evidence, not coordinator override")
-    if {i['issue_id'] for i in core['issues']} != {'MARRIAGE_DECISION', 'DETENTION_CAUSE', 'VERSE_PLACEMENT'} or len(core['issues']) != 3:
-        raise ValueError('all three named causal/placement obligations require reader evidence')
-    new_records = {json.loads(p.read_bytes())['record']['sha256'] for p in CURRENT.glob('registration-*.json')}
-    for issue in core['issues']:
-        readers = set()
-        for evidence in issue['fresh_formal_evidence']:
-            if evidence['record']['sha256'] not in new_records:
-                raise ValueError('core closure cannot cite reused or unknown opinions')
-            opinion = json.loads(bound_bytes(ROOT, evidence['record']))['opinion']
-            readers.add(opinion['reviewer']['id'])
-            result = next(r for r in opinion['results'] if r['subject_id'] == evidence['subject_id'])
-            if not evidence['quote_from_notes'].strip() or evidence['quote_from_notes'] not in result['notes'] or not evidence['interpretation'].strip():
-                raise ValueError('core closure needs an exact reader quotation and root interpretation')
-            if result['verdict'] != 'PASS' and not (result['verdict'] == 'FAIL' and result.get('severity') == 'ADVISORY'):
-                raise ValueError('incomplete or blocking opinions cannot establish core closure')
-        if len(readers) < 2:
-            raise ValueError('two distinct fresh formal reader identities required per obligation')
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--unresolved-handoff', action='store_true',
+                        help='Keep every unresolved core chapter PENDING; never authorizes adoption.')
+    args = parser.parse_args()
+    core, unresolved = validate_core(ROOT, CURRENT, unresolved_handoff=args.unresolved_handoff)
     campaign = status(ROOT, PLAN)
     if len(campaign["jobs"]) != 74 or any(j["status"] != "COMPLETE" or j["needs_followup"] for j in campaign["jobs"]):
         raise ValueError("all 74 current jobs must be complete without follow-up")
@@ -68,6 +55,7 @@ def main():
     ledger = json.loads(bound_bytes(ROOT, ledger_ref))
     if ledger["status"] != "FINAL_ROOT_COORDINATOR_RULINGS" or ledger["authority_effect"] != "NONE":
         raise ValueError("explicit final coordinator rulings required")
+    validate_core(ROOT, CURRENT, unresolved_handoff=args.unresolved_handoff, chapters=ledger['chapters'])
     comparison_ref = binding(ROOT, str((CURRENT / "comparison/summary.json").relative_to(ROOT)))
     comparison = json.loads(bound_bytes(ROOT, comparison_ref))
     changed = json.loads((CURRENT / "design-decisions.json").read_bytes())["changed_chapters"]
@@ -124,7 +112,7 @@ def main():
         decision = {"schema_version": 1, "decision_kind": "AGENT_RELEASE_COORDINATOR_DECISION",
                     "chapter": chapter, "candidate": row["candidate"], "outcome": ruling["outcome"],
                     "coordinator_session_id": packet["coordinator_session_id"],
-                    "rationale": ruling["rationale"] + f" 完整逐项处置台账：{ledger_ref['path']}（SHA256 {ledger_ref['sha256']}）；这是研究轨采用，不是消除所有ADVISORY或取得人工资格。",
+                    "rationale": ruling["rationale"] + f" 完整逐项处置台账：{ledger_ref['path']}（SHA256 {ledger_ref['sha256']}）；本决定仅适用于研究轨；PENDING不是采用，ADOPT也不表示消除所有ADVISORY或取得人工资格。",
                     "considered_opinions": [opinions[k] for k in sorted(opinions)],
                     "rejected_opinions": [{"record": opinions[k], "rationale": "；".join(f"{s}：{reason}" for s, reason in sorted(v.items()))}
                                           for k, v in sorted(dissent.items())], "authority_effect": "NONE"}
@@ -141,7 +129,9 @@ def main():
         raise ValueError("decision binding changed campaign completion")
     result = {"status": "PASS", "scope": "EXPLICIT_COORDINATOR_DECISION_BINDING",
               "ledger": ledger_ref, "decisions": decisions, "request": binding(ROOT, REQUEST),
-              "authority_effect": "NONE", "release_evaluation": "REQUIRED_SEPARATELY"}
+              "authority_effect": "NONE", "release_evaluation": "REQUIRED_SEPARATELY",
+              "core_status": core["status"], "unresolved_chapters": sorted(unresolved),
+              "unresolved_handoff": args.unresolved_handoff}
     _write_immutable(ROOT, str((CURRENT / "coordinator-decision-bindings.json").relative_to(ROOT)), result)
     print(json.dumps(result, ensure_ascii=False, indent=2))
 

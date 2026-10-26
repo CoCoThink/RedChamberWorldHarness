@@ -1,0 +1,20 @@
+{
+  "kind": "ACTUAL_TARGETED_VALIDATION",
+  "checks": [
+    {
+      "command": "pytest -q tests/test_review_campaign.py tests/test_release_packets.py tests/test_agent_release.py",
+      "result": "90 passed, 1 failed in 121.49s",
+      "failure": "New test fixture omitted temporary packet schema; corrected fixture, not production behavior."
+    },
+    {
+      "command": "pytest -q tests/test_release_packets.py::test_explicit_cross_chapter_context_changes_only_dependent_packets tests/test_release_packets.py::test_invalid_cross_chapter_context_is_refused tests/test_agent_release.py::test_cross_chapter_context_is_checked_against_current_selection_and_authors",
+      "result": "5 passed in 0.18s"
+    },
+    {
+      "command": "pytest -q tests/test_review_campaign.py tests/test_release_packets.py::test_explicit_cross_chapter_context_changes_only_dependent_packets tests/test_release_packets.py::test_invalid_cross_chapter_context_is_refused tests/test_agent_release.py::test_cross_chapter_context_is_checked_against_current_selection_and_authors",
+      "result": "32 passed in 6.16s"
+    }
+  ],
+  "full_ci": "REQUIRED_AFTER_INPUT_PUSH",
+  "authority_effect": "NONE"
+}

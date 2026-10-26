@@ -86,6 +86,38 @@ def test_chapter_packet_is_unchanged_when_another_chapter_is_revised(tmp_path):
     assert after[81] == before[81] and after[82] != before[82]
 
 
+def test_explicit_cross_chapter_context_changes_only_dependent_packets(tmp_path):
+    from rcwh.workflow.release_packets import chapter_packets
+    _write_immutable(tmp_path, 'schemas/agent_packet.schema.json',
+                     (ROOT / 'schemas/agent_packet.schema.json').read_bytes())
+    def binding(value):
+        return _write_immutable(tmp_path, f"{value}.json", {"text": value})
+    rows = {ch: {'candidate': binding(f'candidate-{ch}'), 'writing_package': binding(f'package-{ch}')}
+            for ch in (81, 82, 83)}
+    rows[81]['review_context_chapters'] = {'contract-81-1': [82]}
+    subjects = [{'id': f'chapter-{ch}', 'scope': 'CANDIDATE', 'binding': row['candidate']}
+                for ch, row in rows.items()]
+    subjects.append({'id': 'contract-81-1', 'scope': 'CONTRACT', 'binding': binding('contract')})
+    before = chapter_packets(tmp_path, subjects, rows, 'coordinator')
+    packet = verify_packet(tmp_path, before[81])
+    assert rows[82]['candidate'] in packet['subjects'][-1]['context']
+    assert rows[82]['candidate'] not in packet['subjects'][0]['context']
+    rows[82]['candidate'] = binding('candidate-82-new')
+    subjects[1]['binding'] = rows[82]['candidate']
+    after = chapter_packets(tmp_path, subjects, rows, 'coordinator')
+    assert after[81] != before[81] and after[82] != before[82]
+    assert after[83] == before[83]
+
+
+@pytest.mark.parametrize('declared', [{'unknown': [82]}, {'chapter-81': [84]}, {'chapter-81': [81]}])
+def test_invalid_cross_chapter_context_is_refused(tmp_path, declared):
+    from rcwh.workflow.release_packets import chapter_packets
+    ref = _write_immutable(tmp_path, 'candidate.json', {'test': True})
+    rows = {81: {'candidate': ref, 'review_context_chapters': declared}, 82: {'candidate': ref}}
+    with pytest.raises(AssetError, match='cross-chapter review context'):
+        chapter_packets(tmp_path, [{'id': 'chapter-81', 'scope': 'CANDIDATE', 'binding': ref}], rows, 'coordinator')
+
+
 def test_current_source_assignments_include_bound_context_and_every_original_image():
     from rcwh.workflow.review_campaign import _load, MAX_IMAGES, MAX_IMAGE_BYTES
     plan = _load(ROOT, "data/agent_release/research-81-100-v2/review-campaign-v1.json")

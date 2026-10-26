@@ -56,6 +56,7 @@
             "minimum_body_characters": {"type": "integer", "minimum": 1}, "minimum_baseline_ratio": {"type": "number", "minimum": 0.8, "maximum": 2},
             "panel": {"$ref": "#/$defs/panel_ref"}, "policy": {"$ref": "#/$defs/binding"}, "decision": {"$ref": "#/$defs/binding"}, "writing_package": {"$ref": "#/$defs/binding"}, "draft": {"$ref": "#/$defs/binding"},
             "rebind_receipt": {"$ref": "#/$defs/binding"},
+            "review_context_chapters": {"type": "object", "propertyNames": {"minLength": 1}, "additionalProperties": {"type": "array", "minItems": 1, "uniqueItems": true, "items": {"type": "integer", "minimum": 1}}},
             "source_reviews": {"type": "array", "items": {"$ref": "#/$defs/panel_ref"}}, "corpus_reviews": {"type": "array", "items": {"$ref": "#/$defs/panel_ref"}}
           }}
         ]}}

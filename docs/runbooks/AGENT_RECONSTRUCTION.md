@@ -152,3 +152,9 @@ ASSIGNMENT_SHA256 使用 dispatch 返回的 `assignment.sha256`；迟到错误�
 ## 已知限制
 
 模型预训练接触前八十回的情况未知，不能以重合阈值证明记忆。79–80在所选版本中是一原回拆成两半，不是两个独立留出样本。原文识别和同类写作偏好会影响模型读者。会话路由、耗时与实际资源无法按原 API 预算核算，因此研究比较必须另标 `RESOURCE_PARITY_NOT_VERIFIED`，现有 provider 回测的严格资格不被改写。
+
+### 跨回合同上下文
+
+当某subject要求核另一回正文时，在选择行声明`review_context_chapters: {"contract-92-6": [93]}`，用prepare生成新packet/请求；不要仅在提示词中口头增加文件。声明的章回必须是当前选择内的其他候选。campaign按全文去重并集拆分，单项仍超预算即停止分派。评价会拒绝未附或旧候选上下文，并排除所涉作者/编辑/保管者。
+
+当前上下文补读请求为`data/agent_release/research-81-100-v4-r4/request.json`，campaign同目录`review-campaign-v1.json`，新92补读执行目录`artifacts/agent_research/v4-context-followup-20261026/`。r3执行目录保留实际原读、NOT_CHECKED、BOOK和匿名比较，不能据r4复用统计抹掉这些历史。输入CI通过前不启动新92任务；87核心未决不能以COMPLETE或ADOPT消除。
