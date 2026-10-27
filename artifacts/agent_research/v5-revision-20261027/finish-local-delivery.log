@@ -1,0 +1,68 @@
+{
+  "status": "PASS",
+  "scope": "ACTUAL_LOCAL_RESEARCH_BUILD_AND_VALIDATION",
+  "build_command": [
+    "/home/guan/rcwh-review-venv/bin/python",
+    "-m",
+    "rcwh.cli",
+    "agent-release",
+    "build",
+    "data/agent_release/research-81-100-v5/request.json",
+    "--json"
+  ],
+  "allow_pending": false,
+  "release_status": "PASS",
+  "chapter_count": 20,
+  "release_gates": {
+    "PASS": 240
+  },
+  "normal_build_succeeded": true,
+  "unresolved_chapters": [],
+  "findings": [],
+  "request": {
+    "path": "data/agent_release/research-81-100-v5/request.json",
+    "sha256": "b80941f271b22cea316b94fd8bf94f6cda7d88a091a8032f300f4c5aae54c6cc"
+  },
+  "manifest": {
+    "path": "releases/agent/research-81-100-v5/manifest.json",
+    "sha256": "fd8ae4f7f400e64d381437dd6e2acda8b5f0fd8c3a133fe46d22ad3cfac037a2"
+  },
+  "book": {
+    "path": "releases/agent/research-81-100-v5/book.md",
+    "sha256": "ffb72799c04bde96ea7c9bf2372c34d05c020dc84746b2bba0a2b6feb924d66e"
+  },
+  "evaluation": {
+    "path": "artifacts/agent_research/v5-revision-20261027/final-release-evaluation.json",
+    "sha256": "7b97637eae53083d52299337aa8b7abd80abe2e34519f9c29c11458b58b139dc"
+  },
+  "reading_book": {
+    "path": "data/agent_release/research-81-100-v5/reading/book.md",
+    "sha256": "ffb72799c04bde96ea7c9bf2372c34d05c020dc84746b2bba0a2b6feb924d66e"
+  },
+  "evidence": {
+    "actual-execution-verification.json": {
+      "path": "artifacts/agent_research/v5-revision-20261027/actual-execution-verification.json",
+      "sha256": "50b0243ed64cc67dc1ccd2f71797468a4604c9375db0fe76543a7cd5e5fe0b33"
+    },
+    "final-writing-lineage.json": {
+      "path": "artifacts/agent_research/v5-revision-20261027/final-writing-lineage.json",
+      "sha256": "64ae27ac2bb8c1aad5c0a2971f2c86e18298df040e0f4dfaab5977a0a37b9c9b"
+    },
+    "final-assets-validation.txt": {
+      "path": "artifacts/agent_research/v5-revision-20261027/final-assets-validation.txt",
+      "sha256": "9620e6fafebd90cc965f9dc8987245bf372b15959f6bb8e52ca000bd52c259ac"
+    },
+    "final-repository-validation.txt": {
+      "path": "artifacts/agent_research/v5-revision-20261027/final-repository-validation.txt",
+      "sha256": "62c2d56e05bfe66aad17f15f0c77901ae00195ba5e27388bc65abcbba08f4c6e"
+    },
+    "normal-build-attempt.json": {
+      "path": "artifacts/agent_research/v5-revision-20261027/normal-build-attempt.json",
+      "sha256": "c723d7fd4e01f09ef87b3933ede46ceef65989cc73129f964e45447b827ff343"
+    }
+  },
+  "clone_reproduction": "SEPARATE_COMMITTED_CLONE_RECEIPT_REQUIRED",
+  "final_ci": "SEPARATE_GITHUB_FINAL_HEAD_RUN_REQUIRED",
+  "authority_effect": "NONE",
+  "P9_credit": false
+}

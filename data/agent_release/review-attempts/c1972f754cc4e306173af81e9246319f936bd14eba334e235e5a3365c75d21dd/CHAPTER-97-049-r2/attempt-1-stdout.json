@@ -1,0 +1,61 @@
+{
+  "authority_effect": "NONE",
+  "independent_human_admission": false,
+  "packet": {
+    "path": "data/agent_release/review-packets/c45886ebc260bbd022a266519e541794016461645e715cc62424d4ee52cfadc1.json",
+    "sha256": "c45886ebc260bbd022a266519e541794016461645e715cc62424d4ee52cfadc1"
+  },
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "results": [
+    {
+      "notes": "已全文读完job.read_in_full的7文件共174396字节至EOF，含包、97-S1/S2/S3合同和政策的全部嵌套JSON；第96回曾有工具合并输出截断，已另分1—49、50—97行完整续读。本任务无samples。96→97：96回信中“若兰回来瞧见”、二人搬桌搬盆、“那几日若兰出门早”及寻笔后“回来我便只说笔寻着了”，建立的是寄信时仍共同生活、外出后会回家的日常；97开头“自寄出上封信后，又过些日子”，继以“起初若兰有一晚未回来”、第二日仍备两人数、留饭再热、另一碗到夜深无人动，给出了同居日常转成未归和等待失据的顺序，未把96旧信当作当下近讯。其后“等他——”改请瓦匠、“他既不在，就问我”、晚饭不再等并收双箸，把变化落到决定修瓦和份饭；她仍因门响停箸，木杖倒地解释声源，没有死亡、军务、遗弃或湘卫终局定案。97所收到宝玉的信问瓦、米价，补窗纸及住处照旧，与96回信逐项相接，未让宝玉知道尚未告知的缺席。三线饭—衣—纸交叉可辨：湘云仍有仆妇、工钱房钱分包；妙玉受共同水与厨房劳务制约；惜春熟悉庵务而保留梳子与未对缺字。白瓷盆拒借→粗钵裂后借盛灰→洗还→次日仍洗盏的递进完整，三句政策锚点均在相应争执中出现，没有以悟道结论替代动作。阅读充分；本分派范围未发现须判负的语义或衔接问题。判断不延伸为底层史料核证或采用决定。",
+      "sample_checks": [],
+      "subject_id": "chapter-97",
+      "subject_sha256": "b26bd71415e87fe1479b2e78fd34ae2da6e80f7f4514816644533faf94987bd3",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已全文读完包JSON。候选第97回、包自身、三份分派合同、政策及96上下文均与assignment绑定摘要一致；包中plan明确选用agent-final-v1的97-S1/S2/S3.v2，三项路径/摘要与分派相符。包的RESEARCH、authority_effect=NONE及“未知状态仍未验收”未把编辑或模型意见称作文学/史料资格。另对包13项文件引用（exemplar_set、plan、world）只作字节摘要核对，全部匹配；未全文阅读其中非分派的范例、规划、S4和世界底层，不能据此声称其史料或语义已核证。5项asset_ref只读到包内声明，未核底层资产。本PASS限包的分派接口与候选/合同对应；不授予人工或P9资格。",
+      "sample_checks": [],
+      "subject_id": "package-97",
+      "subject_sha256": "c7c047c2d707e1686bc07395f5ef2ea2023d5367ff07a24e060ddd2d6d75c8a8",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已读97-S1.v2全文及全部嵌套grounding、references、unresolved。R1：首段一晚未归→继续备两人→留饭无人动，与96信中共同搬盆和会回家的生活形成明确变化；旧衣试穿、拆自己收入的针线、麒麟取下软布包入箱，均作家务痕迹，不补此前麒麟物流或若兰结局。R2：盐淡口角后湘云自行定三片瓦、结工钱、另付房钱，仆妇仍在，房东对另一漏处未答允，未用全然贫困或万能自立结论收场。R3：份饭、衣、信分段与另两线交叉，信中只传家常，门响落实为木杖。F1/F2未见违反。合同把位置、保管链、localcast等列UNKNOWN/PENDING及unresolved，未以注册人物或章级资料伪装场级证明；本意见仅核其在已读候选的实现，不把规划义务升级为A-W1史实。",
+      "sample_checks": [],
+      "subject_id": "contract-97-1",
+      "subject_sha256": "6bea94201ce17cf050e93bfd105d8f79b25b518bc6e333010002d82d108238ec",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已读97-S2.v2全文及全部嵌套内容。R1/R2：桶气、热水先涮碗、灰衣洗涤等均被灶眼与劳动先后牵制；老尼“只是不用你看着数罢了”接纸油经手，未说物资自己生成。白瓷盆起初拒借，粗钵裂后只许盛灰、交接时仍托盆沿，归还反复擦、次日继续用且闻盏；依附增强而洁净边界未突变。小徒放桶较重、妇人忍话等亦有各自劳务反应。R3通过“惜春住的却是别处尼庵”及反复空间称谓维持两庵分开；厨房、用纸都没有跨线传成共有消息。没有瓜州传奇、贾芸探庵、新偈或“终于悟”。合同保留入口、角色分工和资源对象注册缺口，本文实现并不消除那些数据层未决状态。",
+      "sample_checks": [],
+      "subject_id": "contract-97-2",
+      "subject_sha256": "9138dcde6b92f5a55e2c6982c9724e9b2322365da253881fe870402e2b8841a2",
+      "verdict": "PASS"
+    },
+    {
+      "notes": "已读97-S3.v2全文及全部嵌套内容。R1：宝玉来前，惜春已知不平砖落脚、自己碗的惯常位置、菜梗另留与先送菜后抄经的分工，足以显示已住一段；未锁具体时长，也不是来访才使她为尼。R2：旧笔滑出即收匣，画纸提议未被接续；梳子压线、抵纸又移床边，“忘了扔”接“谁同你说我件件想得明白？”没有被整理成全悟。经簿磨字处夹条、待找全本而不猜，未决照应保留。R3：挡光、伞与灯壶搬物构成宝玉实际来访；他未获得湘云或妙玉全景信息，离开后仍有菜汁剪子、裁坏纸条、拨短灯芯、让灯后的不齐整劳动。结尾沿折痕裁黄纸，没有宣言或画跋；惜春灯油只在本庵用，未挪给妙玉。合同的场级油量、访程等UNKNOWN仍不由小说细节冒称注册完成。",
+      "sample_checks": [],
+      "subject_id": "contract-97-3",
+      "subject_sha256": "d28f8baf96591eebd7a702701a6ffd98c09884b507baae5363957822aad87e6b",
+      "verdict": "PASS"
+    }
+  ],
+  "reviewer": {
+    "context_isolation": {
+      "asserted": true,
+      "verification": "NOT_PROVEN"
+    },
+    "id": "c1972f754cc4:CHAPTER-97-049-r2",
+    "kind": "MODEL_SUBAGENT",
+    "model": {
+      "label": "current agent environment (declared); fresh native reader",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "session_id": "review:c1972f754cc4:CHAPTER-97-049-r2:1"
+  },
+  "schema_version": 1,
+  "usage": "RESEARCH_ONLY"
+}

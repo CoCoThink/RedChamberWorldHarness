@@ -12,6 +12,10 @@ def save(prefix,value):
  while (O/f'{prefix}-{n:03d}.json').exists():n+=1
  file=O/f'{prefix}-{n:03d}.json';file.write_text(json.dumps(value,ensure_ascii=False,indent=2)+'\n');return file.relative_to(R).as_posix()
 if args.command=='dispatch':
+ ci=json.loads((O/'input-ci.json').read_bytes());frozen=json.loads((O/'input-commit.json').read_bytes())
+ assert ci['headSha']==frozen['commit'] and ci['conclusion']=='success' and len(ci['jobs'])==2
+ assert {j['name'] for j in ci['jobs']}=={'validate (3.12.3)','validate (3.12.13)'}
+ assert all(j['conclusion']=='success' for j in ci['jobs']), 'fresh readers require exact frozen input dual CI success'
  v=campaign.dispatch(R,P,limit=args.limit,model_label='current agent environment (declared); fresh native reader');print(json.dumps({'observation':save('dispatch',v),**v},ensure_ascii=False))
 elif args.command=='register':
  v=campaign.submit(R,P,args.job,args.opinion,origin=args.origin);print(json.dumps({'observation':save('registration',v),**v},ensure_ascii=False))

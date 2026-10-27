@@ -5,6 +5,18 @@
 
 **新输入提交且双版本 CI 成功后才可启动新读者。** 具体完成状态以本轮实际记录为准；本段是执行入口，不授予文学、人工、P9 或 stable 资格。以下各轮说明为历史记录。
 
+本轮已完成82项正式任务（60复用、22新意见）及四位比较，正常v5研究版240门PASS并实际build；新增87-S2字面FAIL/ADVISORY和文学损失保留。完整结果与提交/克隆/CI的各自证据见[执行报告](../../artifacts/agent_research/v5-revision-20261027/EXECUTION_REPORT.md)，不要将本段简述当人工或最终CI证明。
+
+当前核验命令（不要复制下文历史轮次的请求路径）：
+
+```bash
+rcwh agent-release review-status data/agent_release/research-81-100-v5/review-campaign-v1.json
+python tools/verify_writing_lineage.py --request data/agent_release/research-81-100-v5/request.json
+python tools/verify_agent_release.py --request data/agent_release/research-81-100-v5/request.json --plan data/agent_release/research-81-100-v5/review-campaign-v1.json --build-smoke
+```
+
+`--build-smoke`在一次性克隆里核验；正常研究版是否已构建，另看本轮真实`normal-build-attempt.json`，不能由克隆命令推定。
+
 # 会话 agent 研究轨道
 
 第五阶段采用会话内子 agent 起草、核对和阅读，不另行调用付费模型 API。主协调者保留分配与映射，记录会话来源和输入字节；这不是受控外部模型实验，也不提供供应商实测模型、token 或账单证明。
