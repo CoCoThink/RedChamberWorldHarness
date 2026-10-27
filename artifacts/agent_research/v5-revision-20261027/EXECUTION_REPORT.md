@@ -56,3 +56,7 @@ design-assistance-ledger.json保留输入冻结时的NOT_STARTED快照，不覆�
 正常build实际退出0，未使用allow-pending；[实际命令、stdout/stderr和退出码](normal-build-attempt.json)与[评价](final-release-evaluation.json)已保存。生成[正常研究读本](../../../releases/agent/research-81-100-v5/book.md)及[manifest](../../../releases/agent/research-81-100-v5/manifest.json)，240门全部PASS、findings为空。book与冻结reading/book.md逐字节相同，SHA256为`ffb72799c04bde96ea7c9bf2372c34d05c020dc84746b2bba0a2b6feb924d66e`。
 
 [实际执行审计](actual-execution-verification.json)PASS：核对22份原始正式意见与根阅读记录、全部启动晚于输入双CI、19缝双读、四份比较、历史台账精确前缀及请求冻结后只加决定。核对当前只改四回，原v4请求、world/scenes、来源与stable不动。20回写作谱系历史及当前相容性、仓库完整性、require-tracked资产与相对ed403cc版本检查均PASS。[本地交付核验](final-local-validation.json)PASS，另有[最终人工材料索引](human-final-release-index.json)；人工意见仍为0，不授予资格。
+
+payload实际提交为`e7a884763129e4cb54fb992eac532a3bb4f5622a`，随后对该已提交HEAD作真实一次性克隆、隔离已提交release后从相同请求重建，结果PASS。20回、62项CHAPTER/10项SOURCE/2项CORPUS/8项BOOK、19缝和最大200093字节读集均核对通过。重建book与已提交book逐字节一致；manifest按严格字段比较，仅允许明确列名的运行时观测差别，本次实际差异清单为空。见[克隆原始结果](committed-clone-verification.json)与[绑定payload提交的回执](committed-clone-custody.json)。克隆命令包含allow-pending，但此次结果实际为PASS且有正常book；这不替代前面未带allow-pending、实际退出0的正常构建证据。
+
+随后提交只追加payload记录、克隆回执和本段报告，再推送`research/v5-20261027`。最终HEAD双版本CI须按该次推送后的实际run另行确认；本报告不预造自引用的最终CI回执，最终回复给实际HEAD与GitHub run。原`/mnt/d/code/redchamberworldharness`工作区核为干净，本轮使用`/home/guan/rcwh-v5-20261027`独立检出；无stable/ACTIVE或main合并。
