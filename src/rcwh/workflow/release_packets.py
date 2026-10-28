@@ -115,7 +115,39 @@ def reuse_shared_review_inputs(root: Path, request: dict, previous_path: str) ->
                         reused.append({"chapter": row["chapter"], "kind": key, "subject_id": ref["subject_id"],
                                        "prepared_packet": ref["packet"], "retained_packet": old["packet"]})
                         break
+    reused.extend(_reuse_book_review_inputs(root, request, previous))
     return reused
+
+
+def _reuse_book_review_inputs(root: Path, request: dict, previous: dict) -> list[dict]:
+    """Reuse a complete unchanged continuity reading across edition directories.
+
+    Only the packet id and prose file locations may differ. All review policy,
+    context, segment boundaries and coordinator data must match. Retaining the
+    actual old packet preserves its opinions and their original input custody;
+    no opinion is copied, rewritten or credited to a different packet.
+    """
+    current, old = request.get('book_review'), previous.get('book_review')
+    if not current or not old or 'subject_ids' not in current or 'subject_ids' not in old:
+        return []  # No migration of legacy single-book assignments here.
+    if {k: v for k, v in current.items() if k != 'packet'} != {k: v for k, v in old.items() if k != 'packet'}:
+        return []
+    from .book_review import subjects
+    current_rows = subjects(root, current)
+    old_rows = subjects(root, old)
+    current_packet, old_packet = verify_packet(root, current['packet']), verify_packet(root, old['packet'])
+    def metadata(packet):
+        return {k: v for k, v in packet.items() if k not in {'id', 'subjects'}}
+    if metadata(current_packet) != metadata(old_packet) or len(current_rows) != len(old_rows):
+        return []
+    for a, b in zip(current_rows, old_rows, strict=True):
+        if ({k: v for k, v in a.items() if k != 'binding'} != {k: v for k, v in b.items() if k != 'binding'}
+                or bound_bytes(root, a['binding']) != bound_bytes(root, b['binding'])):
+            return []
+    request['book_review'] = old
+    return [{'kind': 'book_review', 'subject_id': a['id'],
+             'prepared_packet': current['packet'], 'retained_packet': old['packet']}
+            for a in current_rows]
 
 
 def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], *,
@@ -246,6 +278,13 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
         edition, "book-segments-v2", coordinator_session_id, segments))
     request["book_review"] = {"packet": packets["book"], "subject_ids": [s["id"] for s in segments]}
     verify_book_subjects(root, request["book_review"], book=bound_bytes(root, book), chapters=list(scope_chapters))
+    schema = load_data(repository_path(root, "schemas/agent_release_manifest.schema.json"))
+    errors = validate_instance(request, {"$ref": "#/$defs/request", "$defs": schema["$defs"]})
+    if errors:
+        raise AssetError("invalid prepared request: " + "; ".join(errors))
+    reused = reuse_shared_review_inputs(root, request, reuse_request_path) if reuse_request_path else []
+    packets['book'] = request['book_review']['packet']
+    segments = verify_book_subjects(root, request['book_review'], book=bound_bytes(root, book), chapters=list(scope_chapters))
     _write_immutable(root, f"{base}/reading/book-segments-v2.json", {
         "schema_version": 2, "packet": packets["book"], "assembled_book": book,
         "max_read_bytes": max_book_read_bytes, "overlap_chapters": 1, "segments": segments,
@@ -253,11 +292,6 @@ def prepare(root: Path, edition: str, selection_path: str, chapters: list[int], 
         "seams": [[a, b] for a, b in zip(scope_chapters, scope_chapters[1:])],
         "focus": ["回际接缝与时间顺序", "物件持有与流转状态", "称谓和人物语体", "知识获得与后文照应"],
         "severity": "ADVISORY", "gate_effect": "NONE"})
-    schema = load_data(repository_path(root, "schemas/agent_release_manifest.schema.json"))
-    errors = validate_instance(request, {"$ref": "#/$defs/request", "$defs": schema["$defs"]})
-    if errors:
-        raise AssetError("invalid prepared request: " + "; ".join(errors))
-    reused = reuse_shared_review_inputs(root, request, reuse_request_path) if reuse_request_path else []
     request_path = repository_path(root, f"{base}/request.json")
     request_path.write_bytes(canonical_bytes(request))
     return {"status": "PASS", "edition": edition, "packets": packets, "reading": reading,

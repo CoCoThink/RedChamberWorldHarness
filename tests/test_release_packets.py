@@ -178,3 +178,50 @@ def test_shared_review_reuse_requires_identical_full_subject_and_coordinator(tmp
     reused = reuse_shared_review_inputs(tmp_path, current, 'request.json')
     assert bool(reused) == (change == 'none')
     assert current['chapters'][0]['source_reviews'][0] == (old_ref if change == 'none' else current_ref)
+
+
+@pytest.mark.parametrize('change', ['none', 'prose', 'span', 'context', 'coordinator', 'subject_id'])
+def test_book_reuse_requires_complete_same_reading_despite_edition_paths(tmp_path, change):
+    from copy import deepcopy
+    import shutil
+    from rcwh.workflow.release_packets import reuse_shared_review_inputs
+
+    shutil.copytree(ROOT / 'schemas', tmp_path / 'schemas')
+    store = lambda path, value: _write_immutable(tmp_path, path, value)
+    old_subjects = [
+        {'id': 'book-81-82', 'scope': 'BOOK', 'chapters': [81, 82],
+         'binding': store('old/81-82.md', b'prose 81 and 82'), 'review_policy': 'ADVISORY'},
+        {'id': 'book-82-83', 'scope': 'BOOK', 'chapters': [82, 83],
+         'binding': store('old/82-83.md', b'prose 82 and 83'), 'review_policy': 'ADVISORY'}]
+    packet = {'schema_version': 1, 'packet_kind': 'AGENT_REVIEW_PACKET', 'id': 'old-edition:book',
+              'coordinator_session_id': 'coordinator', 'subjects': old_subjects,
+              'authority_effect': 'NONE', 'usage': 'RESEARCH_ONLY'}
+    old_ref = {'packet': store('old/packet.json', packet), 'subject_ids': [s['id'] for s in old_subjects]}
+    retained_packet_bytes = (tmp_path / old_ref['packet']['path']).read_bytes()
+    store('old/request.json', {'chapters': [], 'book_review': old_ref})
+    current_packet = deepcopy(packet)
+    current_packet['id'] = 'new-edition:book'
+    for i, s in enumerate(current_packet['subjects']):
+        s['binding'] = store(f'new/{i}.md', (tmp_path / old_subjects[i]['binding']['path']).read_bytes())
+    if change == 'prose':
+        current_packet['subjects'][1]['binding'] = store('new/changed.md', b'changed final chapter')
+    elif change == 'span':
+        current_packet['subjects'][1]['chapters'] = [82, 83, 84]
+    elif change == 'context':
+        current_packet['subjects'][1]['context'] = [store('new/extra.txt', b'new requirements')]
+    elif change == 'coordinator':
+        current_packet['coordinator_session_id'] = 'another coordinator'
+    elif change == 'subject_id':
+        current_packet['subjects'][1]['id'] = 'book-another-id'
+    current_ref = {'packet': store('new/packet.json', current_packet),
+                   'subject_ids': [s['id'] for s in current_packet['subjects']]}
+    current = {'chapters': [], 'book_review': current_ref}
+    reused = reuse_shared_review_inputs(tmp_path, current, 'old/request.json')
+    assert len(reused) == (2 if change == 'none' else 0)
+    assert current['book_review'] == (old_ref if change == 'none' else current_ref)
+    # Reuse retains the actual old packet; it does not reattribute old opinions.
+    assert (tmp_path / old_ref['packet']['path']).read_bytes() == retained_packet_bytes
+    if change == 'none':
+        (tmp_path / 'old/81-82.md').write_bytes(b'corrupt retained prose')
+        with pytest.raises((ValueError, AssetError), match='stale bound file'):
+            reuse_shared_review_inputs(tmp_path, {'chapters': [], 'book_review': current_ref}, 'old/request.json')
