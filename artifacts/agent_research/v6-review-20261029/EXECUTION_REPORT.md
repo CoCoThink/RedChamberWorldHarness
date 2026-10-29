@@ -23,3 +23,7 @@
 正常build已实际退出0，未使用allow-pending；[实际命令与stdout/stderr](normal-build-attempt.json)、[完整发布评价](final-release-evaluation.json)和[读本](../../../releases/agent/research-81-100-v6-r2/book.md)均保留。240门PASS、findings为空。读本572074字节，SHA256 `ffb72799c04bde96ea7c9bf2372c34d05c020dc84746b2bba0a2b6feb924d66e`，与冻结reading/book.md及v5同字节。全量本地测试实际1831 passed、1 skipped，用时417.80秒，见[原始输出](local-pytest.txt)。
 
 [严格交付核验](verification.json)实际PASS：82项完成、19缝双读、历史台账前缀与原负面不变、当前双读引文和根阅读记录齐备；无决定的冻结请求再次实际拒绝为PENDING。20回当前输入、仓库完整性、require-tracked资产及相对af22429版本检查均PASS，见[本地检查绑定](final-local-validation.json)。场级声明仍有PENDING、正文语义回放仍NOT_CHECKED；不由研究发布门通过把这些值改成PASS。
+
+交付payload已实际提交为`b0df860aaf8e53ef170a0d79dd79fe4190cae4d0`。随后从该已提交检出作一次性克隆，隔离已提交研究版后正常重建，未带allow-pending、实际退出0且PASS；读本EXACT_BYTES，manifest按全部字段比较，仅允许明确列名的运行时观测差异。本次实际差异路径：`[]`。见[原始克隆结果](committed-clone-verification.json)与[绑定提交的回执](committed-clone-custody.json)。
+
+后续提交仅追加这两份克隆证据和本段记录，再一并推送research/v6-contract-20261028。最终准确HEAD双版本CI在推送后确认，证据置于工作树外避免自引用；最终回复给实际run链接，不用冻结输入CI替代。
