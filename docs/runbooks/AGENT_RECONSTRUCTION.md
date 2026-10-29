@@ -1,20 +1,21 @@
-# v6 合同复核输入入口
+# v6 合同复核与研究版交付入口
 
-2026-10-28继续v5交付。当前待审输入为`data/agent_release/research-81-100-v6-r2/request.json`，选择器`selection-81-100-v10.json`，campaign为同目录`review-campaign-v1.json`。先写计划再改合同，见[计划](../plans/POST80_V6_CONTRACT_20261028.md)及[执行报告](../../artifacts/agent_research/v6-contract-20261028/EXECUTION_REPORT.md)。
+2026-10-28继续v5交付，2026-10-29完成冻结输入后的独立双读与研究决定。当前请求为`data/agent_release/research-81-100-v6-r2/request.json`，选择器`selection-81-100-v10.json`，campaign为同目录`review-campaign-v1.json`。先写计划再改合同，见[计划](../plans/POST80_V6_CONTRACT_20261028.md)及[执行报告](../../artifacts/agent_research/v6-contract-20261028/EXECUTION_REPORT.md)。
 
-本次20回正文完全不变；87的五份合同另版，澄清累计核查范围、实际前驱与未注册场级状态的区别。原87-S2.v3字面FAIL、文学比较两票偏旧稿、全部原作者与真实编辑保留。新合同待真实独立双读，不自动变PASS。`research-81-100-v6`为未派发的首次准备原型，其10项待审统计保留；派发使用`v6-r2`。
+本次20回正文完全不变；87的五份合同另版，澄清累计核查范围、实际前驱与未注册场级状态的区别。原87-S2.v3字面FAIL、文学比较两票偏旧稿、全部原作者与真实编辑保留。新合同已由两位全新上下文读者完整独立复核，14项PASS，保留文学及合同严格解释建议，不授予人工/P9。`research-81-100-v6`为未派发的首次准备原型，其10项待审统计保留；派发使用`v6-r2`。
 
-显式前版输入且整书正文及审读要求全部相同时，保留实际旧BOOK packet及原意见。当前82项中80项精确复用，2项第87回任务待审；19处接缝各双读沿用v5记录，不冒充本轮新读。见[ADR 0011](../decisions/0011_EXACT_CONTINUITY_REUSE.md)。
+显式前版输入且整书正文及审读要求全部相同时，保留实际旧BOOK packet及原意见。当前82项均COMPLETE：80项精确复用、2份新第87回意见；19处接缝各双读沿用v5记录，不冒充本轮新读。见[ADR 0011](../decisions/0011_EXACT_CONTINUITY_REUSE.md)。
 
 ```bash
 rcwh agent-release review-status data/agent_release/research-81-100-v6-r2/review-campaign-v1.json
 python tools/verify_writing_lineage.py --request data/agent_release/research-81-100-v6-r2/request.json
-python tools/verify_contract_revision.py --expect-pending
+python tools/verify_contract_revision.py --expect-reviewed
+python tools/verify_agent_release.py --request data/agent_release/research-81-100-v6-r2/request.json --plan data/agent_release/research-81-100-v6-r2/review-campaign-v1.json --build-smoke
 ```
 
-冻结输入须先提交推送、双版本CI成功，再启动两位新正式读者。每位完整读集绑定84、87候选及五份新合同，由campaign实际分派和scaffold生成意见；新意见必须按原生登记流程入库，协调者完整读notes后再处置。没有本地外部worker适配器时继续现有主agent原生分派，不填写虚构适配器路径。阶段切换时移除CI的`--expect-pending`并追加实际证据；不能让技术校验自行授予审阅资格。
+冻结输入af22429的双版本CI40668805413成功后，已实际启动并登记两位新正式读者。每位完整读集绑定84、87候选及五份新合同，由campaign实际分派和scaffold生成意见；新意见必须按原生登记流程入库，协调者完整读notes后再处置。没有本地外部worker适配器时继续现有主agent原生分派，不填写虚构适配器路径。本轮正常build未带allow-pending、实际退出0，240门PASS，读本与冻结reading/book.md逐字节相同。CI已切换expect-reviewed并保留原始PENDING拒绝证据；提交后的克隆与最终准确HEAD CI分别核验。完整负面及后续world语义投影工作见[本轮执行报告](../../artifacts/agent_research/v6-review-20261029/EXECUTION_REPORT.md)及[下一阶段顺序](../../artifacts/agent_research/v6-review-20261029/NEXT_ITERATION.md)。
 
-以下为已交付版本和更早轮次的历史入口。默认谱系/发布核验器仍指向已交付v5，本轮CI另外显式核验待审v6-r2。
+以下为已交付版本和更早轮次的历史入口。默认谱系/发布核验器仍指向已交付v5，本轮CI另外显式核验已审v6-r2及正常克隆重建。
 
 # v5 已交付入口
 2026-10-27 从已完成的 v4 r4（`ed403cc`，第87回仍 PENDING）继续。当前新输入为 `data/agent_release/research-81-100-v5/request.json`，选择器为 `selection-81-100-v9.json`，campaign 为同目录 `review-campaign-v1.json`；执行材料见 `artifacts/agent_research/v5-revision-20261027/`，事前计划见 `docs/plans/POST80_V5_REVISION_20261027.md`。

@@ -23,10 +23,11 @@ jobs:
         run: python tools/verify_writing_lineage.py --request data/agent_release/research-81-100-v5/request.json
       - name: Verify release attribution, review coverage and cloned research build
         run: python tools/verify_agent_release.py --request data/agent_release/research-81-100-v5/request.json --plan data/agent_release/research-81-100-v5/review-campaign-v1.json --build-smoke
-      - name: Verify pending contract revision and exact continuity reuse
+      - name: Verify reviewed contract revision and exact continuity reuse
         run: |
           python tools/verify_writing_lineage.py --request data/agent_release/research-81-100-v6-r2/request.json
-          python tools/verify_contract_revision.py --expect-pending
+          python tools/verify_contract_revision.py --expect-reviewed
+          python tools/verify_agent_release.py --request data/agent_release/research-81-100-v6-r2/request.json --plan data/agent_release/research-81-100-v6-r2/review-campaign-v1.json --build-smoke
       - name: Verify physical assets and immutable versions
         env:
           RCWH_ASSET_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}

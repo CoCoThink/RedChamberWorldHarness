@@ -153,13 +153,16 @@ def main() -> int:
             subprocess.run(["git", "clone", "--quiet", "--shared", str(root), str(clone)], check=True)
             preserved = preserve_existing_release(clone, args.request, Path(temporary) / "committed-release")
             environment = {**os.environ, "PYTHONPATH": str(clone / "src")}
-            result = subprocess.run([sys.executable, "-m", "rcwh.cli", "agent-release", "build", args.request,
-                                     "--allow-pending", "--json"], cwd=clone, env=environment, capture_output=True, check=False)
-            if result.returncode not in (0, 2):
+            allow_pending = report["release_status"] == "PENDING"
+            command = [sys.executable, "-m", "rcwh.cli", "agent-release", "build", args.request, "--json"]
+            if allow_pending:
+                command.append("--allow-pending")
+            result = subprocess.run(command, cwd=clone, env=environment, capture_output=True, check=False)
+            if result.returncode not in ((0, 2) if allow_pending else (0,)):
                 raise ValueError(f"cloned build failed: {result.stdout.decode()} {result.stderr.decode()}")
             built = json.loads(result.stdout)
             stored = json.loads((clone / built["output"]["manifest_path"]).read_bytes())
-            if stored != built or stored["status"] == "FAIL":
+            if stored != built or stored["status"] != report["release_status"]:
                 raise ValueError("cloned manifest differs from build result")
             if built["request_sha256"] != report["request_sha256"]:
                 raise ValueError("committed HEAD request differs from verified working tree")
@@ -169,7 +172,8 @@ def main() -> int:
             if built["status"] == "PENDING" and (clone / built["output"]["directory"] / "book.md").exists():
                 raise ValueError("pending staging must not emit reviewed prose")
             report["cloned_build"] = {"status": "PASS", "release_status": built["status"],
-                "manifest_path": built["output"]["manifest_path"], "text": built["output"]["text"]}
+                "manifest_path": built["output"]["manifest_path"], "text": built["output"]["text"],
+                "allow_pending": allow_pending, "exit_code": result.returncode}
             if preserved is not None:
                 differences = compare_release_manifests(preserved, built)
                 if (Path(temporary) / "committed-release/book.md").read_bytes() != (clone / built["output"]["text"]["path"]).read_bytes():
