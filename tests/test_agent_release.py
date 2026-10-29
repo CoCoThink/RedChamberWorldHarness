@@ -593,3 +593,42 @@ def test_cross_chapter_context_is_checked_against_current_selection_and_authors(
     monkeypatch.setattr(e.runtime, '_authors', lambda *a: ('PASS', [{'principal_id': 'session:reader-session-0'}]))
     with pytest.raises(AssetError, match='author/reviser'):
         e.runtime._inputs(row, chapter_rows=rows)
+
+
+@pytest.mark.parametrize('current, preserved, historical, expected', [
+    ('PASS', {'status': 'PASS'}, False, 'PASS'),
+    ('PENDING', {'status': 'PASS'}, False, 'PENDING'),
+    ('PENDING', {'status': 'PASS'}, True, 'PASS'),
+    ('PASS', None, True, None),
+    ('PENDING', {'status': 'PENDING'}, True, None),
+])
+def test_historical_reproduction_does_not_change_current_admission(current, preserved, historical, expected):
+    before = deepcopy(preserved)
+    if expected is None:
+        with pytest.raises(ValueError, match='committed PASS edition'):
+            SMOKE.expected_build_status(current, preserved, historical=historical)
+    else:
+        assert SMOKE.expected_build_status(current, preserved, historical=historical) == expected
+    assert preserved == before
+
+
+def test_reproduction_must_use_a_real_ancestor_commit(tmp_path):
+    import subprocess
+    def git(*args):
+        return subprocess.check_output(['git', *args], cwd=tmp_path, text=True).strip()
+    git('init', '--quiet', '--initial-branch=main')
+    git('config', 'user.name', 'Synthetic test')
+    git('config', 'user.email', 'synthetic@example.invalid')
+    git('commit', '--quiet', '--allow-empty', '-m', 'root')
+    ancestor = git('rev-parse', 'HEAD')
+    git('checkout', '--quiet', '-b', 'sibling')
+    git('commit', '--quiet', '--allow-empty', '-m', 'foreign branch')
+    sibling = git('rev-parse', 'HEAD')
+    git('checkout', '--quiet', 'main')
+    git('commit', '--quiet', '--allow-empty', '-m', 'current')
+    assert SMOKE.resolve_build_commit(tmp_path, ancestor) == ancestor
+    assert SMOKE.resolve_build_commit(tmp_path) == git('rev-parse', 'HEAD')
+    with pytest.raises(ValueError, match='ancestor'):
+        SMOKE.resolve_build_commit(tmp_path, sibling)
+    with pytest.raises(subprocess.CalledProcessError):
+        SMOKE.resolve_build_commit(tmp_path, 'not-a-commit')

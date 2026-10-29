@@ -2,6 +2,8 @@
 
 Pending reviews are expected; integrity failures are not. --build-smoke uses a
 disposable clone of committed HEAD, so no publication files enter the worktree.
+An explicit --build-ref reproduces an ancestor's published edition and reports
+that historical result separately from the current release status.
 """
 from __future__ import annotations
 
@@ -23,6 +25,23 @@ from rcwh.assets.paths import repository_path
 
 REQUEST = "data/agent_release/research-81-100-v5/request.json"
 PLAN = "data/agent_release/research-81-100-v5/review-campaign-v1.json"
+
+
+def resolve_build_commit(root: Path, ref: str = "HEAD") -> str:
+    """An explicit historical build must use a real ancestor of current HEAD."""
+    commit = subprocess.check_output(
+        ["git", "rev-parse", "--verify", f"{ref}^{{commit}}"], cwd=root, text=True).strip()
+    if subprocess.run(["git", "merge-base", "--is-ancestor", commit, "HEAD"], cwd=root).returncode:
+        raise ValueError("build ref must be an ancestor of current HEAD")
+    return commit
+
+
+def expected_build_status(current: str, preserved: dict | None, *, historical: bool) -> str:
+    if historical:
+        if preserved is None or preserved["status"] != "PASS":
+            raise ValueError("historical build requires a complete committed PASS edition")
+        return "PASS"
+    return current
 
 
 def preserve_existing_release(clone: Path, request_path: str, quarantine: Path) -> dict | None:
@@ -142,18 +161,27 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--build-smoke", action="store_true")
+    parser.add_argument("--build-ref", help="explicit ancestor commit for historical reproduction; grants no current admission")
     parser.add_argument("--request", default=REQUEST)
     parser.add_argument("--plan", default=PLAN)
     args = parser.parse_args()
+    if args.build_ref and not args.build_smoke:
+        parser.error("--build-ref requires --build-smoke")
     root = args.root.resolve()
     report = verify(root, args.request, args.plan)
     if args.build_smoke:
+        commit = resolve_build_commit(root, args.build_ref or "HEAD")
         with tempfile.TemporaryDirectory(prefix="rcwh-release-smoke-") as temporary:
             clone = Path(temporary) / "repo"
             subprocess.run(["git", "clone", "--quiet", "--shared", str(root), str(clone)], check=True)
+            subprocess.run(["git", "checkout", "--quiet", "--detach", commit], cwd=clone, check=True)
+            if (repository_path(clone, args.request).read_bytes()
+                    != repository_path(root, args.request).read_bytes()):
+                raise ValueError("committed build request bytes differ from verified working tree")
             preserved = preserve_existing_release(clone, args.request, Path(temporary) / "committed-release")
+            expected_status = expected_build_status(report["release_status"], preserved, historical=bool(args.build_ref))
             environment = {**os.environ, "PYTHONPATH": str(clone / "src")}
-            allow_pending = report["release_status"] == "PENDING"
+            allow_pending = expected_status == "PENDING"
             command = [sys.executable, "-m", "rcwh.cli", "agent-release", "build", args.request, "--json"]
             if allow_pending:
                 command.append("--allow-pending")
@@ -162,7 +190,7 @@ def main() -> int:
                 raise ValueError(f"cloned build failed: {result.stdout.decode()} {result.stderr.decode()}")
             built = json.loads(result.stdout)
             stored = json.loads((clone / built["output"]["manifest_path"]).read_bytes())
-            if stored != built or stored["status"] != report["release_status"]:
+            if stored != built or stored["status"] != expected_status:
                 raise ValueError("cloned manifest differs from build result")
             if built["request_sha256"] != report["request_sha256"]:
                 raise ValueError("committed HEAD request differs from verified working tree")
@@ -173,7 +201,9 @@ def main() -> int:
                 raise ValueError("pending staging must not emit reviewed prose")
             report["cloned_build"] = {"status": "PASS", "release_status": built["status"],
                 "manifest_path": built["output"]["manifest_path"], "text": built["output"]["text"],
-                "allow_pending": allow_pending, "exit_code": result.returncode}
+                "allow_pending": allow_pending, "exit_code": result.returncode,
+                "commit": commit, "scope": "HISTORICAL_PINNED_COMMIT" if args.build_ref else "CURRENT_HEAD",
+                "current_admission_credit": False if args.build_ref else built["status"] == "PASS"}
             if preserved is not None:
                 differences = compare_release_manifests(preserved, built)
                 if (Path(temporary) / "committed-release/book.md").read_bytes() != (clone / built["output"]["text"]["path"]).read_bytes():

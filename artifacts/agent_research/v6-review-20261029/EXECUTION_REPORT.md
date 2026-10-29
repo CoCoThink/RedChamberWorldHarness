@@ -27,3 +27,9 @@
 交付payload已实际提交为`b0df860aaf8e53ef170a0d79dd79fe4190cae4d0`。随后从该已提交检出作一次性克隆，隔离已提交研究版后正常重建，未带allow-pending、实际退出0且PASS；读本EXACT_BYTES，manifest按全部字段比较，仅允许明确列名的运行时观测差异。本次实际差异路径：`[]`。见[原始克隆结果](committed-clone-verification.json)与[绑定提交的回执](committed-clone-custody.json)。
 
 后续提交仅追加这两份克隆证据和本段记录，再一并推送research/v6-contract-20261028。最终准确HEAD双版本CI在推送后确认，证据置于工作树外避免自引用；最终回复给实际run链接，不用冻结输入CI替代。
+
+首次交付CI40797597184（b1f63e1）实际失败，未将其写成绿灯。原因是新增v6同正文/不同合同上下文意见进入旧v5的prior_context_opinions，原v5决定未考虑它们，故其当前协调者门正确变为PENDING。完整失败metadata、日志摘要与摘要值保留于[失败证据](ci-failure-40797597184.json)及[原因与修复范围](ci-failure-assessment.json)。
+
+CI据此显式分开历史与当前：v5在原交付payload e7a884上实际checkout并重建，当前v5评价继续报告PENDING；v6仍从当前HEAD严格正常构建。历史ref须为当前HEAD祖先，须有完整已提交PASS，且请求字节与当前所验v5请求一致；不授予当前准入、不忽略新意见、不修改旧manifest或决定、不放松比较。对应局部防护与发布测试65项PASS，见[实际输出](local-ci-fix-tests.txt)。本轮交付数据和全部写作/审阅原件没有改变。
+
+修复后的v5历史重建已实际退出0，未用allow-pending。报告正确分开当前v5=PENDING、原e7a884交付重建=PASS且current_admission_credit=false；读本逐字节一致，完整manifest实际差异路径为空。见[实际历史重建结果](v5-historical-reproduction.json)。随后提交此验证器范围修复和真实结果；修复后的最终HEAD双版本CI仍须在推送后实际确认。

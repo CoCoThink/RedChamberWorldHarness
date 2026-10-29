@@ -15,7 +15,7 @@ python tools/verify_agent_release.py --request data/agent_release/research-81-10
 
 冻结输入af22429的双版本CI40668805413成功后，已实际启动并登记两位新正式读者。每位完整读集绑定84、87候选及五份新合同，由campaign实际分派和scaffold生成意见；新意见必须按原生登记流程入库，协调者完整读notes后再处置。没有本地外部worker适配器时继续现有主agent原生分派，不填写虚构适配器路径。本轮正常build未带allow-pending、实际退出0，240门PASS，读本与冻结reading/book.md逐字节相同。CI已切换expect-reviewed并保留原始PENDING拒绝证据；提交后的克隆与最终准确HEAD CI分别核验。完整负面及后续world语义投影工作见[本轮执行报告](../../artifacts/agent_research/v6-review-20261029/EXECUTION_REPORT.md)及[下一阶段顺序](../../artifacts/agent_research/v6-review-20261029/NEXT_ITERATION.md)。
 
-以下为已交付版本和更早轮次的历史入口。默认谱系/发布核验器仍指向已交付v5，本轮CI另外显式核验已审v6-r2及正常克隆重建。
+以下为已交付版本和更早轮次的历史入口。默认工具路径仍是v5历史入口；操作当前版请显式指定v6-r2。本轮CI核验v6当前HEAD正常重建；v5则在原交付提交e7a884上显式历史重建。新增v6意见会使旧v5当前协调者决定PENDING，不能把历史PASS当当前准入或忽略后来的意见。
 
 # v5 已交付入口
 2026-10-27 从已完成的 v4 r4（`ed403cc`，第87回仍 PENDING）继续。当前新输入为 `data/agent_release/research-81-100-v5/request.json`，选择器为 `selection-81-100-v9.json`，campaign 为同目录 `review-campaign-v1.json`；执行材料见 `artifacts/agent_research/v5-revision-20261027/`，事前计划见 `docs/plans/POST80_V5_REVISION_20261027.md`。
@@ -31,7 +31,7 @@ python tools/verify_agent_release.py --request data/agent_release/research-81-10
 ```bash
 rcwh agent-release review-status data/agent_release/research-81-100-v5/review-campaign-v1.json
 python tools/verify_writing_lineage.py --request data/agent_release/research-81-100-v5/request.json
-python tools/verify_agent_release.py --request data/agent_release/research-81-100-v5/request.json --plan data/agent_release/research-81-100-v5/review-campaign-v1.json --build-smoke
+python tools/verify_agent_release.py --request data/agent_release/research-81-100-v5/request.json --plan data/agent_release/research-81-100-v5/review-campaign-v1.json --build-smoke --build-ref e7a884763129e4cb54fb992eac532a3bb4f5622a
 ```
 
 `--build-smoke`在一次性克隆里核验；正常研究版是否已构建，另看本轮真实`normal-build-attempt.json`，不能由克隆命令推定。

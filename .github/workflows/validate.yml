@@ -21,8 +21,8 @@ jobs:
       - run: rcwh validate
       - name: Verify selected writing histories and current inputs
         run: python tools/verify_writing_lineage.py --request data/agent_release/research-81-100-v5/request.json
-      - name: Verify release attribution, review coverage and cloned research build
-        run: python tools/verify_agent_release.py --request data/agent_release/research-81-100-v5/request.json --plan data/agent_release/research-81-100-v5/review-campaign-v1.json --build-smoke
+      - name: Verify v5 current inputs and reproduce its original committed edition
+        run: python tools/verify_agent_release.py --request data/agent_release/research-81-100-v5/request.json --plan data/agent_release/research-81-100-v5/review-campaign-v1.json --build-smoke --build-ref e7a884763129e4cb54fb992eac532a3bb4f5622a
       - name: Verify reviewed contract revision and exact continuity reuse
         run: |
           python tools/verify_writing_lineage.py --request data/agent_release/research-81-100-v6-r2/request.json
