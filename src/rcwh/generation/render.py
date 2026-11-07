@@ -49,6 +49,14 @@ class PromptRenderer:
             for ref in package[domain]:
                 data[domain][ref["path"]] = load_data(repository_path(self.root, ref["path"]))
                 paths.add(ref["path"])
+        projected = [v for v in data['world'].values() if v.get('kind') == 'WORLD_PROJECTION']
+        if projected:
+            if self.version != 2 or len(data['world']) != 1:
+                raise ValueError('world projection requires v2 and exclusive world material')
+            from .world_projection import verify_projection
+            verify_projection(self.root, projected[0])
+            if projected[0]['query']['chapter'] != chapter:
+                raise ValueError('world projection chapter mismatch')
         selected_plan = plan_path or f"data/planning/chapters/ch{chapter}.json"
         if plan_path or repository_path(self.root, selected_plan).exists():
             data["chapter_plan"] = load_data(repository_path(self.root, selected_plan))
@@ -79,6 +87,8 @@ class PromptRenderer:
             if not data["scenes"]:
                 raise ValueError("no scene contracts or declared research skeletons for writing chapter")
         for relative, contract in sorted(scene_paths, key=lambda item: (item[1].get("order", 0), item[0])):
+            if any(value.get('kind') == 'WORLD_PROJECTION' for value in data['world'].values()):
+                raise ValueError('world projection pilot does not support executable scene state')
             paths.add(relative)
             data["scenes"].append({"path": relative, "contract": contract,
                                    "entry": SceneStateAdapter(self.root, contract).snapshot()})
@@ -92,6 +102,17 @@ class PromptRenderer:
         elif scene_paths:
             from ..evaluation.state import scene_state_input_paths
             paths.update(scene_state_input_paths(self.root))
+        if projected:
+            declared = set()
+            for contract in [*data['agent_contracts'], *(s['contract'] for s in data['scenes'])]:
+                participants = contract.get('participants', [])
+                if participants is None:  # Research skeleton explicitly leaves registration unknown.
+                    participants = []
+                if not isinstance(participants, list) or any(not isinstance(p, str) for p in participants):
+                    raise ValueError('unsupported projection participant declaration')
+                declared.update(participants)
+            if not declared <= set(projected[0]['query']['characters']):
+                raise ValueError('world projection omits declared scene participants')
         hints = "data/planning/hints.json"
         if repository_path(self.root, hints).exists():
             data["threads"] = load_data(repository_path(self.root, hints))

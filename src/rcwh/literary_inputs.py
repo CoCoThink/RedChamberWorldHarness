@@ -80,7 +80,15 @@ class LiteraryInputs:
             if len({item["path"] for item in spec[domain]}) != len(spec[domain]):
                 raise AssetError(f"DUPLICATE_WRITING_{domain.upper()}_INPUT")
             for binding in spec[domain]:
-                self.record(binding); paths.add(binding["path"])
+                material = self.record(binding); paths.add(binding["path"])
+                if domain == "world" and material.get("kind") == "WORLD_PROJECTION":
+                    from .generation.world_projection import verify_projection
+                    try:
+                        verify_projection(self.root, material)
+                    except (ValueError, KeyError, TypeError) as exc:
+                        raise AssetError(f"INVALID_WORLD_PROJECTION: {exc}") from exc
+                    if len(spec["world"]) != 1 or material['query']['chapter'] != spec['chapter']:
+                        raise AssetError("WORLD_PROJECTION_SCOPE_MISMATCH")
         graph = ProvenanceGraph.from_repo(self.root)
         if len({s["source_ref"] for s in spec["sources"]}) != len(spec["sources"]):
             raise AssetError("DUPLICATE_WRITING_SOURCE")

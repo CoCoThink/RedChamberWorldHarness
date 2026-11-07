@@ -1,3 +1,13 @@
+# World局部依赖试点（2026-11-08）
+
+新工程入口见[设计](../plans/WORLD_PROJECTION_20261108.md)、[ADR0012](../decisions/0012_RESEARCH_WORLD_PROJECTIONS.md)。活动机制试点包为`data/writing/packages/ch87-world-projection-pilot-v3.json`，材料协议WORLD_PROJECTION v1，请求仍用已有renderer/schema v2。仅生成并核验DRY_RUN请求，没有新增或重绑正文；原20回及研究版保持。
+
+```bash
+python tools/verify_world_projection_pilot.py
+```
+
+另建包时用`tools/prepare_world_projection.py --base-package ... --output-package 新路径 --id 新ID --characters 明确人物列表`。当前试点只支持研究骨架；可执行场景、v1 renderer、混合world绑定和遗漏明确参与者均拒绝。全局关系/制度/地点/长线仍保守全量，人物范围也未获完整性审阅；objects/knowledge可执行入口及生产资格尚未完成。v1/v2试点包仅留历史，当前使用v3，不取目录“最新”自动选择。
+
 # v6 合同复核与研究版交付入口
 
 2026-10-28继续v5交付，2026-10-29完成冻结输入后的独立双读与研究决定。当前请求为`data/agent_release/research-81-100-v6-r2/request.json`，选择器`selection-81-100-v10.json`，campaign为同目录`review-campaign-v1.json`。先写计划再改合同，见[计划](../plans/POST80_V6_CONTRACT_20261028.md)及[执行报告](../../artifacts/agent_research/v6-contract-20261028/EXECUTION_REPORT.md)。
