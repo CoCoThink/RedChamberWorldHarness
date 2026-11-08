@@ -2,6 +2,28 @@
 
 本切片增加可运行的研究工具，不交付新的稳定正文，不证明失稿复原成功。默认离线；准备任务、导入计划、输出差异包不构成独立评审。
 
+## 可选无损共享视图与明确字节预留
+
+新增 `PROMPT_SHARED_VIEW v1`，只给 renderer v2 的离线会话准备/导入使用。默认请求保持原样。共享值、路径绑定和说明模板均冻结；展开后必须与完整 task 的规范 JSON 字节相同。反馈和修订继续保留完整 task，不把合同删短，也不承诺递归修订永不增长。
+
+```bash
+rcwh write draft data/writing/packages/ch86-scene-projection-pilot-v2.json \
+  --chapter 86 --shared-view --context-bytes 350000 \
+  --context-overhead-bytes 32768 --context-output-bytes 24000 --dry-run \
+  > artifacts/prompt-view-pilot-20261108/NEW-prepared-request.json
+rcwh write export-request artifacts/prompt-view-pilot-20261108/NEW-prepared-request.json
+# 实际派发只交付上一步 payload.path 文件；不要派发完整 prepared-request.json。
+# 导出结果 receipt.path 是导入所需的回执，原文件不得原位改写。
+rcwh write import-draft artifacts/session-authored/NEW.txt \
+  --request artifacts/prompt-view-pilot-20261108/NEW-prepared-request.json \
+  --payload-export artifacts/session-dispatch/EXPORT_RECEIPT_SHA.json \
+  --session-id DECLARED_AUTHOR_SESSION --session-model-label DECLARED_MODEL
+```
+
+真实第86回工程准备包已另存为该目录中的 prepared-request.json；上例使用新文件名，重复演练请继续选择新文件名。派发的 payload 只有实际 `request`，准备包另存完整 task 用于保管和复验，整包大小不受该派发预算承诺覆盖。作者运行绑定导出回执及 payload，历史快照保存两者。回执仅证明导出文件对应准备包，`consumption_proof=false`；不能证明代理读完，作者模型声明仍是未核验声明。
+
+字节门计算完整 request 的 UTF-8 字节＋外部指令预留＋输出预留，超限拒绝且不截断；正文导入也检查实际输出字节。额外会话指令必须由操作者纳入明确预留，这不是实际环境用量测量。`token_capacity_status=NOT_MEASURED`，不能把350000字节当作模型token容量。新视图禁止直接走provider执行入口；共享引用的实际理解和文学效果、实体读集范围仍待独立审定，不授予P9、人工或生产资格。详细设计见 [ADR 0014](../decisions/0014_SHARED_PROMPT_VIEW_AND_BYTE_ADMISSION.md)。
+
 ## 按回准入与当前状态
 
 `literary-inputs package ... --production`、生产 competition 和 promotion 使用同一个章回准入服务。来源作用域取写作包声明与场景/历史机制/主张/实现依赖的并集；漏列来源、断开的引用、过期字节会阻塞，不能只列较容易审核的来源。

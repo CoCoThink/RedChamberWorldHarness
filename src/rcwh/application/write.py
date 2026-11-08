@@ -8,7 +8,7 @@ from ..assets.paths import repository_path
 from ..generation.records import binding, store
 from ..generation.render import PromptRenderer, request_for
 from ..generation.runner import AnthropicRunner, Budget, DEFAULT_MODEL, ReplayRunner
-from ..generation.session import import_draft, prepare_rendered, selection_context
+from ..generation.session import export_request, import_draft, prepare_rendered, selection_context
 from ..generation.writing import diff_report, feedback_report, generate, load_draft, revision_prompt
 from ..io import load_data
 from .common import repo_root
@@ -31,6 +31,20 @@ def is_dry(args) -> bool:
     return args.dry_run or (not args.execute and not args.replay)
 
 
+def shared_options(args) -> dict:
+    enabled = getattr(args, 'shared_view', False)
+    values = [getattr(args, name, None) for name in (
+        'context_bytes', 'context_overhead_bytes', 'context_output_bytes')]
+    if not enabled and all(value is None for value in values):
+        return {}
+    if not enabled or any(value is None for value in values):
+        raise ValueError('shared view requires all three explicit context byte reservations')
+    if not is_dry(args):
+        raise ValueError('shared view is currently session DRY_RUN/import only')
+    return {'prompt_view_version':1, 'context_limits':{'version':1, 'max_context_bytes':values[0],
+            'overhead_reserve_bytes':values[1], 'output_reserve_bytes':values[2]}}
+
+
 def preview(rendered: dict, budget: Budget, args, *, root: Path | None = None,
             context: dict | None = None) -> dict:
     if root is not None and context is not None:
@@ -49,6 +63,7 @@ def preview(rendered: dict, budget: Budget, args, *, root: Path | None = None,
 def command(args) -> int:
     root = Path(args.root).resolve() if args.root else repo_root()
     try:
+        view_options = shared_options(args) if args.write_action in {'draft','revise'} else {}
         if args.write_action == "freeze-history":
             from ..corpus.dataset import rebuild_scope
             from ..generation.lineage import freeze_history
@@ -70,10 +85,13 @@ def command(args) -> int:
                 payload["production_admission"] = report
                 if report["status"] != "PASS" and payload["status"] == "PASS":
                     payload["status"] = report["status"]
+        elif args.write_action == 'export-request':
+            payload = export_request(root, args.request, directory=args.directory)
         elif args.write_action == "import-draft":
             payload = import_draft(root, args.text, args.request, session_id=args.session_id,
                                    session_model_label=args.session_model_label,
-                                   parent_path=args.parent, feedback_path=args.feedback)
+                                   parent_path=args.parent, feedback_path=args.feedback,
+                                   payload_export_path=args.payload_export)
         elif args.write_action == "diff":
             payload = diff_report(root, args.left, args.right)
         elif args.write_action == "draft":
@@ -87,7 +105,7 @@ def command(args) -> int:
             if is_dry(args):
                 context = selection_context(root, package_path=args.package, chapter=args.chapter,
                                             route=args.route, characters=args.characters,
-                                            plan_path=args.plan, previous_path=args.previous)
+                                            plan_path=args.plan, previous_path=args.previous, **view_options)
                 payload = {**preview(rendered, budget, args, root=root, context=context), "samples": args.samples}
             else:
                 runner = runner_for(args, root)
@@ -117,7 +135,7 @@ def command(args) -> int:
             if is_dry(args):
                 context = selection_context(root, parent_path=args.candidate,
                                             feedback_path=args.feedback, notes_path=args.notes,
-                                            revision_template=args.revision_template)
+                                            revision_template=args.revision_template, **view_options)
                 payload = preview(rendered, budget, args, root=root, context=context)
             else:
                 payload = generate(root, runner_for(args, root), rendered, budget, chapter=draft["chapter"],
@@ -151,6 +169,14 @@ def add_commands(sub) -> None:
     revise.add_argument("--notes", help="Repository-relative editorial notes")
     revise.add_argument("--revision-template", choices=["revise-v1", "revise-v2"], default="revise-v1",
                         help="Explicit revision template; legacy v1 remains the default")
+    for p in (draft, revise):
+        p.add_argument('--shared-view', action='store_true', help='Lossless shared-value session transport v1')
+        p.add_argument('--context-bytes', type=int, help='Per-request total UTF-8 byte reservation ceiling')
+        p.add_argument('--context-overhead-bytes', type=int, help='Explicit unmeasured external instruction reserve')
+        p.add_argument('--context-output-bytes', type=int, help='Reserved output UTF-8 bytes, enforced on session import')
+    exported = commands.add_parser('export-request', help='Export only the counted shared-view author payload')
+    exported.add_argument('request', help='Repository-relative prepared shared-view request')
+    exported.add_argument('--directory', default='artifacts/session-payloads')
     imported = commands.add_parser("import-draft", help="Import session-authored research text; no provider execution claimed")
     imported.add_argument("text", help="Repository-relative UTF-8 prose; exact bytes are retained")
     imported.add_argument("--request", required=True, help="Repository-relative exact draft/revise dry-run JSON manifest")
@@ -158,6 +184,7 @@ def add_commands(sub) -> None:
     imported.add_argument("--session-model-label", required=True, help="Unverified session-configured model declaration")
     imported.add_argument("--parent", help="Optional assertion matching prepared revision parent")
     imported.add_argument("--feedback", help="Optional assertion matching prepared revision feedback")
+    imported.add_argument('--payload-export', help='Required export receipt for an explicit shared-view request')
     diff = commands.add_parser("diff")
     diff.add_argument("left")
     diff.add_argument("right")

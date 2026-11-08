@@ -52,7 +52,8 @@ def snapshot_for_draft(root: Path, draft: dict) -> InputSnapshot | None:
 
 def session_refs(prepared: dict, run: dict) -> list[dict]:
     return [ref for ref in [*prepared["inputs"], prepared["template"], prepared["package"],
-                           prepared["parent"], prepared["feedback"], run["request_source"], run["imported_text"]]
+                           prepared["parent"], prepared["feedback"], run["request_source"], run["imported_text"],
+                           run.get("payload_export"), run.get("exported_payload")]
             if ref is not None]
 
 

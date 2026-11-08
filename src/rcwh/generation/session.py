@@ -67,6 +67,8 @@ def _parent_package(root: Path, draft: dict) -> dict:
 
 def prepare_rendered(root: Path, rendered: dict, budget: Budget, model: str, context: dict) -> dict:
     """Attach reproducible selection context to an already rendered CLI preview."""
+    from .prompt_view import render_view, admission
+    rendered = render_view(root, rendered, context)
     request = request_for(rendered, budget, model)
     if len(canonical_bytes(request)) > budget.max_input_bytes:
         raise ValueError("request exceeds input byte budget; no truncation performed")
@@ -90,6 +92,11 @@ def prepare_rendered(root: Path, rendered: dict, budget: Budget, model: str, con
     if version == 2:
         result.update(renderer_version=2, dependency_records=deepcopy(rendered["dependency_records"]),
                       readiness=deepcopy(rendered.get("readiness", {})))
+    if 'prompt_view' in rendered:
+        result.update(prompt_view=deepcopy(rendered['prompt_view']),
+                      byte_admission=admission(request, context['context_limits']))
+        if result['byte_admission']['status'] != 'PASS':
+            raise ValueError('request and reservations exceed explicit context byte budget; no truncation performed')
     return result
 
 
@@ -97,7 +104,8 @@ def selection_context(root: Path, *, package_path: str | None = None, chapter: i
                       route: str = "harness", characters: int = 6000, plan_path: str | None = None,
                       previous_path: str | None = None, parent_path: str | None = None,
                       feedback_path: str | None = None, notes_path: str | None = None,
-                      revision_template: str = "revise-v1") -> dict:
+                      revision_template: str = "revise-v1", prompt_view_version: int | None = None,
+                      context_limits: dict | None = None) -> dict:
     if revision_template not in {"revise-v1", "revise-v2"}:
         raise ValueError("unknown revision template")
     if not parent_path and revision_template != "revise-v1":
@@ -119,6 +127,12 @@ def selection_context(root: Path, *, package_path: str | None = None, chapter: i
     # Preserve the exact legacy selection envelope for existing frozen requests.
     if revision_template != "revise-v1":
         context["revision_template"] = revision_template
+    if prompt_view_version is not None or context_limits is not None:
+        from .prompt_view import validate_limits
+        if type(prompt_view_version) is not int or prompt_view_version != 1:
+            raise ValueError('explicit prompt view version 1 required with context limits')
+        validate_limits(context_limits)
+        context.update(prompt_view_version=prompt_view_version, context_limits=deepcopy(context_limits))
     return context
 
 
@@ -137,21 +151,23 @@ def prepare_request(root: Path, *, package_path: str | None = None, chapter: int
                     previous_path: str | None = None, parent_path: str | None = None,
                     feedback_path: str | None = None, notes_path: str | None = None,
                     budget: Budget | None = None, model: str = DEFAULT_MODEL,
-                    revision_template: str = "revise-v1", renderer_version: int | None = None) -> dict:
+                    revision_template: str = "revise-v1", renderer_version: int | None = None,
+                    prompt_view_version: int | None = None, context_limits: dict | None = None) -> dict:
     """Prepare a draft (package/chapter) or revision (parent/feedback) offline."""
     context = selection_context(root, package_path=package_path, chapter=chapter, route=route,
                                 characters=characters, plan_path=plan_path, previous_path=previous_path,
                                 parent_path=parent_path, feedback_path=feedback_path, notes_path=notes_path,
-                                revision_template=revision_template)
+                                revision_template=revision_template, prompt_view_version=prompt_view_version,
+                                context_limits=context_limits)
     return prepare_rendered(root, _render_context(root, context, version=renderer_version), budget or Budget(), model, context)
 
 
-def _saved_task_render(root: Path, prepared: dict, task: dict, *, read=None) -> dict:
+def _saved_task_render(root: Path, prepared: dict, task: dict, *, read=None, recompile_view=False) -> dict:
     """Rebuild the frozen envelope, without consulting runtime observations."""
     read = read or (lambda ref: bound_bytes(root, ref))
-    prompt = {"system": read(prepared["template"]).decode("utf-8"),
-              "messages": [{"role": "user", "content": canonical_bytes(task).decode()}]}
-    return {**prompt, "prompt_sha256": digest(canonical_bytes(prompt)), "task": task,
+    from .prompt_view import frozen_prompt
+    prompt = frozen_prompt(root, prepared, task, read=read, recompile=recompile_view)
+    return {**prompt, "task": task,
             "template": prepared["template"], "inputs": prepared["inputs"]}
 
 
@@ -230,6 +246,8 @@ def _runtime_observations(saved_task: dict, fresh_task: dict) -> tuple[dict, lis
 def verify_frozen_request(root: Path, prepared: dict, *, read=None) -> dict:
     """Check a saved request using its own inputs, without invoking today's renderer."""
     _validate(root, prepared, prepared=True)
+    from .prompt_view import verify_admission
+    verify_admission(prepared)
     read = read or (lambda ref: bound_bytes(root, ref))
     for ref in prepared["inputs"] + [prepared["template"], prepared["package"], prepared["parent"], prepared["feedback"]]:
         if ref is not None:
@@ -268,26 +286,33 @@ def _verify_prepared_request(root: Path, prepared: dict) -> tuple[dict, dict]:
     verify_frozen_request(root, prepared, read=read)
     budget = Budget(**prepared["budget"])
     context = prepared["context"]
+    view_options = {k: context[k] for k in ('prompt_view_version','context_limits') if k in context}
     if context["operation"] == "revise":
         expected_context = selection_context(root, parent_path=context["parent_path"],
                                              feedback_path=context["feedback_path"], notes_path=context["notes_path"],
-                                             revision_template=context.get("revision_template", "revise-v1"))
+                                             revision_template=context.get("revision_template", "revise-v1"), **view_options)
     else:
         expected_context = selection_context(root, package_path=context["package_path"], chapter=context["chapter"],
                                              route=context["route"], characters=context["characters"],
-                                             plan_path=context["plan_path"], previous_path=context["previous_path"])
+                                             plan_path=context["plan_path"], previous_path=context["previous_path"], **view_options)
     if canonical_bytes(context) != canonical_bytes(expected_context):
         raise ValueError("prepared request selection context mismatch")
     rendered = _render_context(root, context, version=prepared["schema_version"])
+    from .prompt_view import render_view, admission
+    rendered = render_view(root, rendered, context)
     current = prepare_rendered(root, rendered, budget, prepared["request"]["model"], context)
     if "samples" in prepared:
         current["samples"] = prepared["samples"]
     normalized_task, variations = _runtime_observations(prepared["task"], rendered["task"])
     semantic = deepcopy(prepared)
-    semantic_render = _saved_task_render(root, prepared, normalized_task)
+    semantic_render = _saved_task_render(root, prepared, normalized_task, recompile_view=bool(variations))
+    if 'prompt_view' in prepared:
+        semantic['prompt_view'] = semantic_render['prompt_view']
     semantic["task"], semantic["prompt_sha256"] = normalized_task, semantic_render["prompt_sha256"]
     semantic["request"] = request_for(semantic_render, budget, prepared["request"]["model"])
     semantic["request_sha256"] = digest(canonical_bytes(semantic["request"]))
+    if 'prompt_view' in prepared:
+        semantic['byte_admission'] = admission(semantic['request'], context['context_limits'])
     if prepared["schema_version"] == 2:
         # This is a historical observation, never an admission credential.
         current["readiness"] = semantic["readiness"]
@@ -323,9 +348,38 @@ def _publish(root: Path, directory: str, raw: bytes, suffix: str) -> dict:
         return ref
 
 
+def export_request(root: Path, request_path: str, *, directory: str = 'artifacts/session-payloads') -> dict:
+    """Export only the counted author payload; full task custody stays separate."""
+    source = binding(root, request_path)
+    prepared = json.loads(bound_bytes(root, source))
+    if 'prompt_view' not in prepared:
+        raise ValueError('bounded payload export requires an explicit shared view')
+    verify_prepared_request(root, prepared)
+    raw = canonical_bytes(prepared['request'])
+    if len(raw) != prepared['byte_admission']['request_bytes']:
+        raise ValueError('payload export differs from admitted byte count')
+    payload = _publish(root, directory, raw, 'json')
+    receipt = {'kind':'SESSION_PAYLOAD_EXPORT', 'version':1, 'prepared_request':source,
+               'payload':payload, 'byte_admission':deepcopy(prepared['byte_admission']),
+               'execution_basis':EXECUTION_BASIS, 'consumption_proof':False, 'authority_effect':'NONE'}
+    ref = _publish(root, 'artifacts/session-dispatch', canonical_bytes(receipt), 'json')
+    return {'status':'PASS', **receipt, 'receipt':ref}
+
+
+def _verify_payload_export(prepared: dict, source: dict, receipt_ref: dict, payload_ref: dict, read) -> None:
+    receipt = json.loads(read(receipt_ref))
+    expected = {'kind':'SESSION_PAYLOAD_EXPORT', 'version':1, 'prepared_request':source,
+                'payload':payload_ref, 'byte_admission':prepared['byte_admission'],
+                'execution_basis':EXECUTION_BASIS, 'consumption_proof':False, 'authority_effect':'NONE'}
+    if canonical_bytes(receipt) != canonical_bytes(expected):
+        raise ValueError('payload export receipt differs from prepared request')
+    if read(payload_ref) != canonical_bytes(prepared['request']):
+        raise ValueError('exported payload differs from admitted request')
+
+
 def import_draft(root: Path, text_path: str, request_path: str, *, session_id: str,
                  session_model_label: str, parent_path: str | None = None,
-                 feedback_path: str | None = None) -> dict:
+                 feedback_path: str | None = None, payload_export_path: str | None = None) -> dict:
     """Import exact UTF-8 text plus a prepared manifest; no API/SDK is invoked."""
     imported_text, request_source = binding(root, text_path), binding(root, request_path)
     raw, prepared_raw = bound_bytes(root, imported_text), bound_bytes(root, request_source)
@@ -338,6 +392,21 @@ def import_draft(root: Path, text_path: str, request_path: str, *, session_id: s
         raise ValueError("session prose integrity failed: " + "; ".join(integrity["findings"]))
     prepared = json.loads(prepared_raw)
     verify_prepared_request(root, prepared)
+    if 'prompt_view' in prepared:
+        from .prompt_view import check_output
+        check_output(raw, prepared['context']['context_limits'])
+        if payload_export_path is None:
+            raise ValueError('shared view import requires a payload export receipt')
+        receipt_ref = binding(root, payload_export_path)
+        receipt = json.loads(bound_bytes(root, receipt_ref))
+        payload_ref = receipt.get('payload') if isinstance(receipt, dict) else None
+        schema = _schema(root)
+        if validate_instance(payload_ref, {'$ref':'#/$defs/binding', '$defs':schema['$defs']}):
+            raise ValueError('invalid payload export binding')
+        _verify_payload_export(prepared, request_source, receipt_ref, payload_ref,
+                               lambda ref: bound_bytes(root, ref))
+    elif payload_export_path is not None:
+        raise ValueError('payload export receipt requires an explicit shared view')
     for path, field in ((parent_path, "parent"), (feedback_path, "feedback")):
         if path is not None and binding(root, path) != prepared[field]:
             raise ValueError(f"session import {field} differs from prepared request")
@@ -352,6 +421,8 @@ def import_draft(root: Path, text_path: str, request_path: str, *, session_id: s
            "candidate": candidate, "output": text, "output_sha256": digest(raw),
            "parent": prepared["parent"], "feedback": prepared["feedback"], "qualification": "RESEARCH_ONLY",
            "formal_eligibility": False, "human_qualification": False, "authority_effect": "NONE"}
+    if 'prompt_view' in prepared:
+        run.update(payload_export=receipt_ref, exported_payload=payload_ref)
     if prepared["schema_version"] == 2:
         run["schema_version"] = 2
         # Validate declarations before publishing any snapshot assets.
@@ -408,6 +479,14 @@ def verify_session_draft(root: Path, draft: dict, candidate_raw: bytes) -> None:
     if read(run["request_source"]) != prepared_raw:
         raise ValueError("session prepared request source identity mismatch")
     prepared = json.loads(prepared_raw)
+    if 'prompt_view' in prepared:
+        from .prompt_view import check_output
+        check_output(candidate_raw, prepared['context']['context_limits'])
+        if not all(key in run for key in ('payload_export', 'exported_payload')):
+            raise ValueError('shared view author run lacks payload export bindings')
+        _verify_payload_export(prepared, run['request_source'], run['payload_export'], run['exported_payload'], read)
+    elif any(key in run for key in ('payload_export', 'exported_payload')):
+        raise ValueError('legacy author run has unexpected payload export bindings')
     if snapshot is not None:
         snapshot.verify(session_refs(prepared, run))
         if snapshot.document["records"] != prepared.get("dependency_records", []):

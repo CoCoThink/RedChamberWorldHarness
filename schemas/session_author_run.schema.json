@@ -18,6 +18,8 @@
       "additionalProperties": false
     },
     "request_source": {"$ref": "#/$defs/binding"},
+    "payload_export": {"$ref": "#/$defs/binding"},
+    "exported_payload": {"$ref": "#/$defs/binding"},
     "prepared_request": {"$ref": "#/$defs/binding"},
     "imported_text": {"$ref": "#/$defs/binding"},
     "package": {"$ref": "#/$defs/binding"},
@@ -46,6 +48,17 @@
     },
     "optionalBinding": {"anyOf": [{"$ref": "#/$defs/binding"}, {"type": "null"}]},
     "optionalPath": {"anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]},
+    "contextLimits": {
+      "type":"object", "required":["version","max_context_bytes","overhead_reserve_bytes","output_reserve_bytes"],
+      "properties":{"version":{"type":"integer","const":1},"max_context_bytes":{"type":"integer","minimum":1},
+        "overhead_reserve_bytes":{"type":"integer","minimum":0},"output_reserve_bytes":{"type":"integer","minimum":1}},
+      "additionalProperties":false
+    },
+    "promptView": {
+      "type":"object", "required":["version","template","task_sha256","payload"],
+      "properties":{"version":{"type":"integer","const":1},"template":{"$ref":"#/$defs/binding"},
+        "task_sha256":{"$ref":"#/$defs/sha256"},"payload":{"type":"object"}},"additionalProperties":false
+    },
     "context": {
       "type": "object",
       "required": ["operation", "package_path", "chapter", "route", "characters", "plan_path", "previous_path", "parent_path", "feedback_path", "notes_path"],
@@ -60,7 +73,9 @@
         "parent_path": {"$ref": "#/$defs/optionalPath"},
         "feedback_path": {"$ref": "#/$defs/optionalPath"},
         "notes_path": {"$ref": "#/$defs/optionalPath"},
-        "revision_template": {"const": "revise-v2"}
+        "revision_template": {"const": "revise-v2"},
+        "prompt_view_version": {"type":"integer","const":1},
+        "context_limits": {"$ref":"#/$defs/contextLimits"}
       },
       "allOf": [{
         "if": {"properties": {"operation": {"const": "draft"}}},
@@ -78,6 +93,8 @@
         "renderer_version": {"const":2},
         "dependency_records": {"type":"array","items":{"type":"object","required":["kind","id","sha256","value"],"properties":{"kind":{"enum":["SOURCE","CLAIM","ASSET"]},"id":{"type":"string","minLength":1},"sha256":{"type":"string","pattern":"^[a-f0-9]{64}$"},"value":{"type":"object"}},"additionalProperties":false}},
         "readiness": {"type":"object"},
+        "prompt_view": {"$ref":"#/$defs/promptView"},
+        "byte_admission": {"type":"object"},
         "status": {"const": "PASS"},
         "mode": {"const": "DRY_RUN"},
         "context": {"$ref": "#/$defs/context"},

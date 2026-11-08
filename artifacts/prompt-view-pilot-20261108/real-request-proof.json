@@ -1,0 +1,79 @@
+{
+  "status": "PASS",
+  "scope": "REAL_REQUEST_LOSSLESS_VIEW_AND_BYTE_RESERVATIONS",
+  "package": {
+    "path": "data/writing/packages/ch86-scene-projection-pilot-v2.json",
+    "sha256": "9aac06f280662b1408d9fc1e994ed2bc5388d805e2fc13bb5b47e7e773270989"
+  },
+  "task_sha256": "82c80c5e8c2c89014a417caa2271894bee4732c25d84e5ccfefb4e8efcfd3125",
+  "default_request_sha256": "8ef2a36938c4bfecff1d69550e6164f7b2160a524f9b805ef8fc71aadf711b22",
+  "shared_request_sha256": "c272837c2bb81933abba7ceade85f63f155859d184f70f028de2302aeb869614",
+  "default_request_bytes": 431610,
+  "shared_request_bytes": 281785,
+  "saved_request_bytes": 149825,
+  "shared_values": 10,
+  "bindings": 20,
+  "full_task_retained": true,
+  "default_under_same_limits": {
+    "version": 1,
+    "unit": "UTF8_BYTES",
+    "status": "FAIL",
+    "scope": "PER_REQUEST_RESERVATIONS",
+    "request_sha256": "8ef2a36938c4bfecff1d69550e6164f7b2160a524f9b805ef8fc71aadf711b22",
+    "request_bytes": 431610,
+    "overhead_reserve_bytes": 32768,
+    "output_reserve_bytes": 24000,
+    "reserved_total_bytes": 488378,
+    "max_context_bytes": 350000,
+    "token_capacity_status": "NOT_MEASURED",
+    "external_context_usage": "UNVERIFIED_RESERVATION",
+    "authority_effect": "NONE"
+  },
+  "shared_admission": {
+    "version": 1,
+    "unit": "UTF8_BYTES",
+    "status": "PASS",
+    "scope": "PER_REQUEST_RESERVATIONS",
+    "request_sha256": "c272837c2bb81933abba7ceade85f63f155859d184f70f028de2302aeb869614",
+    "request_bytes": 281785,
+    "overhead_reserve_bytes": 32768,
+    "output_reserve_bytes": 24000,
+    "reserved_total_bytes": 338553,
+    "max_context_bytes": 350000,
+    "token_capacity_status": "NOT_MEASURED",
+    "external_context_usage": "UNVERIFIED_RESERVATION",
+    "authority_effect": "NONE"
+  },
+  "one_byte_overflow": {
+    "result": "REJECTED",
+    "reason": "request and reservations exceed explicit context byte budget; no truncation performed"
+  },
+  "implementation": [
+    {
+      "path": "src/rcwh/generation/prompt_view.py",
+      "sha256": "5e1fc2c25b01b674382c522a96098ef01cb3c1f3583be706374bbc712bd2ccab"
+    },
+    {
+      "path": "src/rcwh/generation/session.py",
+      "sha256": "34f8235ddd6b03b8333ed0394d99c4666271515263c6e91414d69c8570fd16b5"
+    },
+    {
+      "path": "src/rcwh/generation/lineage.py",
+      "sha256": "08b468a7cbb449cbdf0e12418d561f64acd5c7fa1bd4a4a9d35166ab68712cb7"
+    },
+    {
+      "path": "src/rcwh/application/write.py",
+      "sha256": "f75b7d7097e9c9c09cc8adb9c7c1a55ba521fd02e12ca1f685a8fca2a16f89c2"
+    },
+    {
+      "path": "schemas/session_author_run.schema.json",
+      "sha256": "b65728b6aa11381e947d51b09e9ac6932740da9d92ab590f6c3e5f9682707e9f"
+    },
+    {
+      "path": "data/writing/prompts/shared-values-v1.md",
+      "sha256": "dd855a76ce9f437f1dc816237ac6f7fc814eb0794e5c266d4471f7fb378a2e38"
+    }
+  ],
+  "token_capacity_status": "NOT_MEASURED",
+  "authority_effect": "NONE"
+}
