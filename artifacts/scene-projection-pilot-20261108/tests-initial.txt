@@ -1,0 +1,23 @@
+.........................F.............................................. [ 33%]
+........................................................................ [ 67%]
+......................................................................   [100%]
+=================================== FAILURES ===================================
+______ test_object_relationship_closure_preserves_distinct_identity_nodes ______
+
+scene_root = PosixPath('/tmp/pytest-of-guan/pytest-35/test_object_relationship_closu0')
+
+    def test_object_relationship_closure_preserves_distinct_identity_nodes(scene_root):
+        mutate(scene_root, 'data/objects/m4.json', lambda d: d['identity_edges'].append({
+            'id':'NEW','from':'OBJ-MEDICINE-BOWL-86','to':'OBJ-TONGLING-JADE','status':'OPEN'}))
+        objects = project(scene_root, QUERY)['scenes'][0]['objects']
+>       assert set(objects['states']) == {'OBJ-MEDICINE-BOWL-86','OBJ-TONGLING-JADE','OBJ-SNOW-JADE-91'}
+E       AssertionError: assert {'OBJ-MEDICIN...N-PACKAGE-98'} == {'OBJ-MEDICIN...ONGLING-JADE'}
+E         
+E         Extra items in the left set:
+E         'OBJ-ZHEN-PACKAGE-98'
+E         Use -v to get more diff
+
+tests/test_scene_projection.py:122: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_scene_projection.py::test_object_relationship_closure_preserves_distinct_identity_nodes
+1 failed, 213 passed in 5.47s

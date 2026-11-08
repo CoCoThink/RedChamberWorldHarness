@@ -1,0 +1,55 @@
+{
+  "status": "PASS",
+  "scope": "REAL_PACKAGE_MUTATIONS_WITH_HOST_CODE_AND_WORKTREE_MATERIAL",
+  "package": {
+    "path": "data/writing/packages/ch87-world-projection-pilot-v3.json",
+    "sha256": "d9f280dcda433e4ef7b8cff37bb3c49e72d3a107b2f234c42323dca4e49fc834"
+  },
+  "implementation": [
+    {
+      "path": "src/rcwh/generation/world_projection.py",
+      "sha256": "77226085dc4de39801ca5fc0b47c653f4e2ce7b7bd84d9bbd6e5a487d49056d8"
+    },
+    {
+      "path": "src/rcwh/generation/render.py",
+      "sha256": "c4e6a7bee8a064966b895f81d0f7954c8a04b295736e6b157ca3c8c5896712c4"
+    },
+    {
+      "path": "src/rcwh/literary_inputs.py",
+      "sha256": "6a96f9048ea2604b7330ab74429df5ff9091bd1b23d4124753a7aa179dccd42f"
+    }
+  ],
+  "request_sha256": "f3d1d4246e694a7ba9546db4b652020d2ac2e222d684f6af6102fa542f80b9f3",
+  "request_bytes": 403301,
+  "raw_world_bindings": [],
+  "cases": [
+    {
+      "case": "unrelated_character",
+      "result": "EXACT_REQUEST_PRESERVED",
+      "reason": null,
+      "legacy_whole_file_control": "STALE_WRITING_INPUT: data/world/m3_core.json"
+    },
+    {
+      "case": "related_state",
+      "result": "STALE",
+      "reason": "INVALID_WORLD_PROJECTION: STALE_WORLD_PROJECTION: selected facts, query or rule changed"
+    },
+    {
+      "case": "new_related_event",
+      "result": "STALE",
+      "reason": "INVALID_WORLD_PROJECTION: STALE_WORLD_PROJECTION: selected facts, query or rule changed"
+    },
+    {
+      "case": "future_event",
+      "result": "EXACT_REQUEST_PRESERVED",
+      "reason": null
+    },
+    {
+      "case": "new_unrelated_event",
+      "result": "EXACT_REQUEST_PRESERVED",
+      "reason": null
+    }
+  ],
+  "authority_effect": "NONE",
+  "semantic_replay": "NOT_CHECKED"
+}

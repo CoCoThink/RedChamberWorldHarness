@@ -1,0 +1,63 @@
+{
+  "status": "PASS",
+  "scope": "REAL_SCENE_PACKAGE_WITH_HOST_CODE_AND_WORKTREE_MATERIAL",
+  "package": {
+    "path": "data/writing/packages/ch86-scene-projection-pilot-v1.json",
+    "sha256": "27559c36749b412d366a636df10e122542da0bd9c31955a726a0fb4437b90008"
+  },
+  "implementation": {
+    "src/rcwh/generation/scene_projection.py": "009910bcdcf8a24e8c91205b9b36c34e532c8081e557d1ba2402b157897b953a",
+    "src/rcwh/evaluation/state.py": "a9d47e8e339accea33f911b8865aedd00f780b0781b972e7cdec12abd3ab8b37",
+    "src/rcwh/knowledge.py": "4049939615412b5ab49979ef2a8c27fdffca3a22ea2d94b5202c6e2d9e210fdf",
+    "src/rcwh/object_network.py": "e32e08104c88a385bdd177e489e12141fbb8ca599365f13cb33b5de2dde4131e",
+    "src/rcwh/generation/render.py": "c4e6a7bee8a064966b895f81d0f7954c8a04b295736e6b157ca3c8c5896712c4",
+    "src/rcwh/generation/writing.py": "feb172d6d39bd95edec5da559a3e438c69ff3a7d93d44dc0154b43115cdb11a2"
+  },
+  "request_sha256": "4fa78410f83a87f81daf16d294f4522e2faf71f105476c5109e6d3dcce717f6a",
+  "request_bytes": 431610,
+  "raw_runtime_bindings": [],
+  "cases": [
+    {
+      "case": "unrelated_object",
+      "result": "EXACT_REQUEST_PRESERVED",
+      "reason": null
+    },
+    {
+      "case": "future_object_transition",
+      "result": "EXACT_REQUEST_PRESERVED",
+      "reason": null
+    },
+    {
+      "case": "new_prefix_object_transition",
+      "result": "STALE",
+      "reason": "INVALID_WORLD_PROJECTION: STALE_SCENE_INPUT_PROJECTION: selected facts, scope, checkpoint or rule changed"
+    },
+    {
+      "case": "legacy_state",
+      "result": "STALE",
+      "reason": "INVALID_WORLD_PROJECTION: STALE_SCENE_INPUT_PROJECTION: selected facts, scope, checkpoint or rule changed"
+    },
+    {
+      "case": "unrelated_knowledge_scene",
+      "result": "EXACT_REQUEST_PRESERVED",
+      "reason": null
+    },
+    {
+      "case": "new_prefix_knowledge_event",
+      "result": "STALE",
+      "reason": "INVALID_WORLD_PROJECTION: STALE_SCENE_INPUT_PROJECTION: selected facts, scope, checkpoint or rule changed"
+    },
+    {
+      "case": "selected_fact_definition",
+      "result": "STALE",
+      "reason": "INVALID_WORLD_PROJECTION: STALE_SCENE_INPUT_PROJECTION: selected facts, scope, checkpoint or rule changed"
+    },
+    {
+      "case": "new_same_chapter_scene",
+      "result": "STALE",
+      "reason": "INVALID_WORLD_PROJECTION: scene projection scene set changed or incomplete"
+    }
+  ],
+  "authority_effect": "NONE",
+  "semantic_replay": "NOT_CHECKED"
+}

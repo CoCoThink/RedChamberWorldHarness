@@ -30,6 +30,8 @@ jobs:
           python tools/verify_agent_release.py --request data/agent_release/research-81-100-v6-r2/request.json --plan data/agent_release/research-81-100-v6-r2/review-campaign-v1.json --build-smoke
       - name: Verify opt-in world projection package and real mutation matrix
         run: python tools/verify_world_projection_pilot.py
+      - name: Verify executable scene projection and real mutation matrix
+        run: python tools/verify_scene_projection_pilot.py
       - name: Verify physical assets and immutable versions
         env:
           RCWH_ASSET_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}

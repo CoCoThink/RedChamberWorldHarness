@@ -81,8 +81,11 @@ class LiteraryInputs:
                 raise AssetError(f"DUPLICATE_WRITING_{domain.upper()}_INPUT")
             for binding in spec[domain]:
                 material = self.record(binding); paths.add(binding["path"])
-                if domain == "world" and material.get("kind") == "WORLD_PROJECTION":
-                    from .generation.world_projection import verify_projection
+                if domain == "world" and material.get("kind") in {"WORLD_PROJECTION", "SCENE_INPUT_PROJECTION"}:
+                    if material['kind'] == 'SCENE_INPUT_PROJECTION':
+                        from .generation.scene_projection import verify_projection
+                    else:
+                        from .generation.world_projection import verify_projection
                     try:
                         verify_projection(self.root, material)
                     except (ValueError, KeyError, TypeError) as exc:

@@ -49,11 +49,15 @@ class PromptRenderer:
             for ref in package[domain]:
                 data[domain][ref["path"]] = load_data(repository_path(self.root, ref["path"]))
                 paths.add(ref["path"])
-        projected = [v for v in data['world'].values() if v.get('kind') == 'WORLD_PROJECTION']
+        projected = [v for v in data['world'].values() if v.get('kind') in {'WORLD_PROJECTION', 'SCENE_INPUT_PROJECTION'}]
+        scene_projection = projected[0] if projected and projected[0]['kind'] == 'SCENE_INPUT_PROJECTION' else None
         if projected:
             if self.version != 2 or len(data['world']) != 1:
                 raise ValueError('world projection requires v2 and exclusive world material')
-            from .world_projection import verify_projection
+            if scene_projection:
+                from .scene_projection import verify_projection
+            else:
+                from .world_projection import verify_projection
             verify_projection(self.root, projected[0])
             if projected[0]['query']['chapter'] != chapter:
                 raise ValueError('world projection chapter mismatch')
@@ -87,11 +91,18 @@ class PromptRenderer:
             if not data["scenes"]:
                 raise ValueError("no scene contracts or declared research skeletons for writing chapter")
         for relative, contract in sorted(scene_paths, key=lambda item: (item[1].get("order", 0), item[0])):
-            if any(value.get('kind') == 'WORLD_PROJECTION' for value in data['world'].values()):
+            if projected and not scene_projection:
                 raise ValueError('world projection pilot does not support executable scene state')
             paths.add(relative)
-            data["scenes"].append({"path": relative, "contract": contract,
-                                   "entry": SceneStateAdapter(self.root, contract).snapshot()})
+            if scene_projection:
+                selected = next(s for s in scene_projection['scenes'] if s['path'] == relative)
+                if selected['contract'] != contract:
+                    raise ValueError('scene projection contract changed')
+                data['scenes'].append({'path': relative, 'contract': contract, 'entry': selected['entry'],
+                                       'knowledge_checkpoints': selected['knowledge_checkpoints']})
+            else:
+                data["scenes"].append({"path": relative, "contract": contract,
+                                       "entry": SceneStateAdapter(self.root, contract).snapshot()})
         if self.version == 1:
             # Frozen v1 protocol only. New requests never use a directory as a
             # proxy for their semantic dependencies.
@@ -99,7 +110,7 @@ class PromptRenderer:
                 for path in sorted((self.root / "data" / domain).rglob("*")):
                     if path.is_file() and path.suffix in {".json", ".yaml", ".yml"}:
                         paths.add(path.relative_to(self.root).as_posix())
-        elif scene_paths:
+        elif scene_paths and not scene_projection:
             from ..evaluation.state import scene_state_input_paths
             paths.update(scene_state_input_paths(self.root))
         if projected:

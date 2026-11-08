@@ -121,7 +121,15 @@ def feedback_report(root: Path, draft_path: str, *, runner: ModelRunner | None =
     # Revision tasks carry their original frozen writing task, never re-infer it.
     while "writing_task" in task:
         task = task["writing_task"]
-    knowledge = CharacterKnowledgeRuntime.from_repo(root)
+    projections = [v for v in task.get('world', {}).values() if v.get('kind') == 'SCENE_INPUT_PROJECTION']
+    if projections:
+        if len(projections) != 1:
+            raise ValueError('ambiguous frozen scene projection')
+        from .scene_projection import frozen_knowledge
+        knowledge = frozen_knowledge(root, projections[0])
+    else:
+        knowledge = CharacterKnowledgeRuntime.from_repo(root)
+    semantic_version = 2 if projections else 1
     checks, semantic_requests, semantic_runs = [], [], []
     budget = budget or Budget()
     scenes = task["scenes"]
@@ -134,7 +142,7 @@ def feedback_report(root: Path, draft_path: str, *, runner: ModelRunner | None =
                            "qualification": "FEEDBACK_ONLY", "findings": ["DRAFT_SCENE_NO_EXECUTABLE_STATE_CONTRACT"]})
             continue
         entry = scene.get("entry") or SceneStateAdapter(root, contract).snapshot()
-        semantic = make_request(contract, text, entry, draft["authors"])
+        semantic = make_request(contract, text, entry, draft["authors"], request_version=semantic_version)
         semantic_requests.append(semantic)
         reading = None
         if runner is not None:
@@ -154,7 +162,7 @@ def feedback_report(root: Path, draft_path: str, *, runner: ModelRunner | None =
         # Supplying an empty reading prevents fallback to official scene registry.
         results = evaluate_scene_text(contract, text, knowledge_runtime=knowledge,
                                       semantic_reading=reading or {}, entry_state=entry,
-                                      candidate_authors=draft["authors"], root=root)
+                                      candidate_authors=draft["authors"], root=root, request_version=semantic_version)
         for result in results:
             item = result.to_dict()
             if runner is None and result.evaluator == "scene_semantics":
