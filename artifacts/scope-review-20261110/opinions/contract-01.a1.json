@@ -1,0 +1,97 @@
+{
+  "assignment_id": "contract-01",
+  "partition_sha256": "814b8d61b2717bbb6b27274b7ddd3310d6b5f7d17aa0ea30c23a6ef14c71286d",
+  "reading_status": "COMPLETE",
+  "scope_verdict": "PENDING",
+  "read_claim_basis": "SELF_REPORTED",
+  "files": [
+    {"file":"instructions.txt","bytes":1344,"sha256":"d7f245e9097316a71b0cbabd6e931625461bfcdd8ba6b04a987bd3f18ad3d7f9","read_complete":true},
+    {"file":"message.json","bytes":4091,"sha256":"3bae322778acb1473688c33c210502d34a78e3f9d9f96ada1d28c0284e998aaf","read_complete":true},
+    {"file":"shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json","bytes":21087,"sha256":"830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d","read_complete":true},
+    {"file":"shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json","bytes":16969,"sha256":"f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0","read_complete":true},
+    {"file":"task-00.json","bytes":32,"sha256":"b1c68fbfc2bbed9c8453599b87b1201445446bc5d8f50cd6f5139b87ee58a222","read_complete":true},
+    {"file":"task-08.json","bytes":4910,"sha256":"36c926a3e427d7fa0b0cea4f4441eb985f746dc2ba39183b4cbaced8391e34b4","read_complete":true}
+  ],
+  "findings": [
+    {
+      "kind":"未决",
+      "description":"S1明确保留角色、器物绑定缺口：雪雁和厨房小丫头不能因未入participants数组而从正文义务消失，也不能伪造实体ID。米汤器、药吊子、火箸、茶盘、热水器及炉火同样须保留生活功能，但不能假称已有独立对象记录。",
+      "evidence":[
+        {"file":"shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json","path":["unresolved",0],"quote":"雪雁及厨房小丫头在卡中有角色，但实体库没有对应ID"},
+        {"file":"shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json","path":["unresolved",1],"quote":"仅药碗可实名绑定"}
+      ],
+      "required_decision":"选择有依据的角色、器物表示方式；保留未绑定状态，勿以删掉生活动作消解缺口。"
+    },
+    {
+      "kind":"冲突",
+      "description":"章节卡同时保留六段、五段压力结构及不同动作排序，不能据scenes数组顺序认定完整场级时序。S1合同order=1也未解决其余动作的校时或旧场安置。",
+      "evidence":[
+        {"file":"shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json","path":["card_fields",3,"text"],"quote":"按35冻结六段：明日安排 → 医者迟 → 最后未成文人动作"},
+        {"file":"shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json","path":["card_fields",13,"text"],"quote":"本回正式重排为五段压力结构"}
+      ],
+      "required_decision":"明确压力段与六个合同的映射、医者迟和G01动作及信息外传的次序；existing_contract_placement继续待定。"
+    },
+    {
+      "kind":"未决",
+      "description":"S1入口仍是第85回粗层检查点，不是最后病晨的完整局部入口；身体与药温出口均UNKNOWN，知识未绑定、事件引用为空。不能用章节末死亡或冷药补齐这些空缺。",
+      "evidence":[
+        {"file":"shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json","path":["entry_from"],"quote":"CHAPTER_ENTRY:85"},
+        {"file":"shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json","path":["exit_state",1,"reason"],"quote":"OT86-01在全回末端转冷，不能据此断定明日安排结束时的药温。"}
+      ],
+      "required_decision":"补有依据的局部检查点或继续保持UNKNOWN/null；不要把合同标题、种子及旧场入口当同一时刻。"
+    },
+    {
+      "kind":"保护要求",
+      "description":"S1应保留可继续的照护劳动与身体难以承受的并行，死亡须是长期病程终点。完整章节还须保留G01不补完、紫鹃不翻稿、再温一温与冷药无人再温；不得以诗、单因果或预知死亡取代生活动作。",
+      "evidence":[
+        {"file":"shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json","path":["required_beats",1,"description"],"quote":"资源齐全而身体难以承受"},
+        {"file":"shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json","path":["card_fields",6,"text"],"quote":"G01“小院苔痕留宿雨 / 隔帘花影 □ 新晴”永不补完。"}
+      ],
+      "required_decision":"逐场承接这些保护；本分区不能确认其余五份合同已全部落实。"
+    }
+  ],
+  "answers": {
+    "shared_binding": {
+      "status":"ANSWERED",
+      "answer":"本任务可恢复的S1字面值同时用于agent_contracts[0]和plan下S1合同路径；章节计划字面值同时用于chapter_plan和plan下ch86路径，均须完整同值展开。task-00其余五个null及task-08其他合同null有绑定，但其shared值未分配，不能猜其内容；S1 knowledge_binding和章节entry_ref等未绑定null仍为null。",
+      "evidence":[
+        {"file":"message.json","path":["payload","bindings",0,"path"],"quote":"agent_contracts"},
+        {"file":"message.json","path":["payload","bindings",8,"path"],"quote":"data/planning/contracts/agent-final-v1/86-S1.v2.json"}
+      ]
+    },
+    "future_knowledge": {
+      "status":"ANSWERED",
+      "answer":"第86回DEAD约束是章节快照目标，不能回灌第85回粗入口或普通病晨。已注册病重事实也不能自动使角色在S1已知。到达后才获知的信息须留在到达后；本分区未分配实际到达知识检查点，不能指定谁在何刻已知死亡。",
+      "evidence":[
+        {"file":"task-08.json","path":["data/project/plan_constraints_v1.json","rules","world",0,"path"],"quote":"life_state"},
+        {"file":"shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json","path":["unresolved",2],"quote":"ch86_last_night入口不能自动充当86-S1局部认知入口"}
+      ]
+    },
+    "request_vs_execution": {
+      "status":"ANSWERED",
+      "answer":"“再温一温”是宝玉到来时的言语要求，不提供取药、加热、完成或温度变化的执行证据；同卡要求末尾冷药无人再温。S1病晨照护要求和warm基线也不能证明后来请求被执行，合同明确未新增药温事件。",
+      "evidence":[
+        {"file":"shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json","path":["card_fields",1,"text"],"quote":"宝玉赶到只问“药还没吃么？再温一温”；末尾**冷药无人再温**。"},
+        {"file":"shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json","path":["notes"],"quote":"不新增药温事件"}
+      ]
+    },
+    "world_vs_knowledge": {
+      "status":"ANSWERED",
+      "answer":"角色记录在S02只给世界基线及家庭身份，既不证明到达某房间，也不证明具体消息已被其接收。S1参与者仍PENDING，知识入口缺少绑定；事实注册不能替代传播事件、在场和认知检查点。S02的空间包含关系也不能证明药碗或死所位置。",
+      "evidence":[
+        {"file":"shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json","path":["references","participants",1,"value","baseline","location"],"quote":"S02"},
+        {"file":"shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json","path":["unresolved",2],"quote":"daiyu_illness_severe是已注册事实"}
+      ]
+    }
+  },
+  "remaining_decisions":[
+    "确认完整章节卡不同分段、排序方案的映射，保留SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY直到解决。",
+    "为S1角色、器物缺口选择有证据的表示方式，不制造实体ID。",
+    "解决局部入口、出口、知识及事件绑定，或明确保持UNKNOWN/PENDING/null。",
+    "在其他分区核查S2—S6合同、实际到达知识检查点以及网络药碗和legacy药碗的身份关系；本任务仅见legacy_ref，不能据此合并其对象身份。"
+  ],
+  "unread_scope":[],
+  "authority_effect":"NONE",
+  "provider_consumption_proof":false,
+  "independent_human_review":false
+}

@@ -40,6 +40,15 @@ python tools/prepare_scope_review.py --check artifacts/scope-preflight-20261110/
 
 任何文件或任务超限立即拒绝生成。无需再给读者整包准备请求；派发任务清单等额外消息须纳入外部指令预留。`--check`只复核原件及冻结读集，不把NOT_STARTED改成已审阅，不创建独立意见或实际理解证据。自由文本里的角色须读者明确处置，程序不按姓名造ID；UNKNOWN、后场状态和分离对象身份必须保留。详见[范围预检计划](../plans/SCOPE_PREFLIGHT_20261110.md)。
 
+第86回实际原生审读记录另存于 `artifacts/scope-review-20261110/`，原分段 manifest 不改。用户授权8名原生读者，每批最多3名；启动、原始意见、超限失败和同读者格式修复分别留存。用下列命令复核原字节、引用路径、已分配文件声明、外部字节账、并发及协调者保留的原始未知项：
+
+```bash
+python artifacts/scope-review-20261110/verify.py
+python -m unittest discover -s artifacts/scope-review-20261110 -p 'test_verify.py'
+```
+
+COMPLETE仅是读者对已分配文件的声明，分配外未读及NOT_CHECKED原样保留。格式修复不得由协调者代写，不增加独立人数，超限原稿不删除。协调文件的五压力段、角色器物表示和局部偏序是内部编辑选择，尚待版本化局部记录与合同实现；收齐8份意见不授予production、stable、人类审阅或provider消费证明。此类范围研究意见不能冒充 `agent-panel` 的正式正文发布审阅。详见[本轮执行计划](../plans/SCOPE_REVIEW_EXECUTION_20261110.md)及[执行报告](../../artifacts/scope-review-20261110/EXECUTION_REPORT.md)。
+
 ## 按回准入与当前状态
 
 `literary-inputs package ... --production`、生产 competition 和 promotion 使用同一个章回准入服务。来源作用域取写作包声明与场景/历史机制/主张/实现依赖的并集；漏列来源、断开的引用、过期字节会阻塞，不能只列较容易审核的来源。

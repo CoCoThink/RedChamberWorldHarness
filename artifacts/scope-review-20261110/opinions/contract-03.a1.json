@@ -1,0 +1,185 @@
+{
+  "assignment_id": "contract-03",
+  "partition_sha256": "814b8d61b2717bbb6b27274b7ddd3310d6b5f7d17aa0ea30c23a6ef14c71286d",
+  "reading_status": "COMPLETE",
+  "scope_verdict": "PENDING",
+  "read_claim_basis": "SELF_REPORTED",
+  "files": [
+    {
+      "file": "instructions.txt",
+      "bytes": 1344,
+      "sha256": "d7f245e9097316a71b0cbabd6e931625461bfcdd8ba6b04a987bd3f18ad3d7f9",
+      "read_complete": true
+    },
+    {
+      "file": "message.json",
+      "bytes": 4091,
+      "sha256": "3bae322778acb1473688c33c210502d34a78e3f9d9f96ada1d28c0284e998aaf",
+      "read_complete": true
+    },
+    {
+      "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+      "bytes": 16291,
+      "sha256": "387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5",
+      "read_complete": true
+    },
+    {
+      "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+      "bytes": 16969,
+      "sha256": "f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0",
+      "read_complete": true
+    },
+    {
+      "file": "task-00.json",
+      "bytes": 32,
+      "sha256": "b1c68fbfc2bbed9c8453599b87b1201445446bc5d8f50cd6f5139b87ee58a222",
+      "read_complete": true
+    },
+    {
+      "file": "task-08.json",
+      "bytes": 4910,
+      "sha256": "36c926a3e427d7fa0b0cea4f4441eb985f746dc2ba39183b4cbaced8391e34b4",
+      "read_complete": true
+    }
+  ],
+  "findings": [
+    {
+      "id": "C03-1",
+      "category": "未决",
+      "detail": "86-S3的前驱文件和order=3只声明来源列表位置；入口生命状态、伸手所需身体能力及出口身体状态均UNKNOWN。章节终态和编辑义务没有补足场级时点，不能据此宣布本场可执行。",
+      "required_decision": "确定改字未成相对医者延误、身体不可逆及死亡的先后，并给出适用的场级依据；在此之前保留null、空事件引用和UNKNOWN。",
+      "evidence": [
+        {
+          "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+          "path": ["entry_state", 0, "reason"],
+          "quote": "该种子在局部时序上标为临终前，但顺序仍是来源列表顺序，不能作为实际生命检查点。"
+        },
+        {
+          "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+          "path": ["preconditions", 0, "reason"],
+          "quote": "伸手改字所需身体能力没有86-S3的世界记录；不可从宣言推回可行动状态。"
+        }
+      ]
+    },
+    {
+      "id": "C03-2",
+      "category": "遗漏",
+      "detail": "本场散文义务包含旧集、稿夹及改字动作，但required_objects、references.objects、object_transition_refs均为空。其文学义务存在，器物身份和状态覆盖仍缺；G01是诗文接口，不能补作对象ID。",
+      "required_decision": "决定这些器物是否建立独立对象记录及状态依据；若维持未注册，显式保留身份未知，禁止与网络或legacy器物自动合并。",
+      "evidence": [
+        {
+          "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+          "path": ["unresolved", 0],
+          "quote": "objects: G01草稿、旧集、稿夹与书写用具没有对象注册ID；G01是卡内诗文接口，不得冒充对象ID。"
+        }
+      ]
+    },
+    {
+      "id": "C03-3",
+      "category": "冲突",
+      "detail": "章节卡同时使用“冻结六段”和“五段压力结构”，另列六个种子场，现有旧场placement_status仍PENDING。段落压力结构、种子数量和可执行场划分不能默认同义。",
+      "required_decision": "明确五段、六段、六种子与旧场之间的映射；通过编辑选择解决分段口径，不把列表编号转成死亡计时。",
+      "evidence": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": ["card_fields", 3, "text"],
+          "quote": "按35冻结六段：明日安排 → 医者迟 → 最后未成文人动作"
+        },
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": ["card_fields", 13, "text"],
+          "quote": "本回正式重排为五段压力结构，属于L3。"
+        }
+      ]
+    },
+    {
+      "id": "C03-4",
+      "category": "保护要求",
+      "detail": "本场应以身体不能继续完成改字收束；紫鹃及叙述者都不得补字、辨作品或展开遗稿。A01在85的任务不能变成本场新作完成事实，读者暗回声也不能变成角色现场诵诗。",
+      "required_decision": "落实动作中止和视角边界，保留G01空字；全回继续以冷药及生活动作收束，维持长期病程因果和死亡后笑料退出。",
+      "evidence": [
+        {
+          "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+          "path": ["required_beats", 1, "description"],
+          "quote": "紫鹃不翻稿、不辨作品、不替她续写。G01的空字也不由叙述者或旁人补出。"
+        },
+        {
+          "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+          "path": ["required_beats", 2, "description"],
+          "quote": "A01在85的既有任务不回灌成86的新诗；旧作的暗回声不得转成现场诵诗或新增悼诗。"
+        }
+      ]
+    }
+  ],
+  "answers": {
+    "shared_binding": {
+      "status": "ANSWERED",
+      "answer": "按message.payload.bindings恢复：387607…同一字面合同值放入task的agent_contracts[2]及plan[\"data/planning/contracts/agent-final-v1/86-S3.v2.json\"]；f7f33…同一章节卡放入chapter_plan及plan[\"data/planning/chapters/ch86.json\"]。两处同值不产生两份独立证据；合同内部未绑定null继续未知。其他合同共享值未分配，不能从task中的null推测内容。",
+      "evidence": [
+        {
+          "file": "message.json",
+          "path": ["payload", "bindings", 2],
+          "quote": "387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5"
+        },
+        {
+          "file": "message.json",
+          "path": ["payload", "bindings", 10],
+          "quote": "387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5"
+        }
+      ]
+    },
+    "future_knowledge": {
+      "status": "ANSWERED",
+      "answer": "task-08的世界约束把86章节快照life_state锁为DEAD，不能确定86-S3入口已经死亡，也不等于任何角色已知。章节卡要求病危经报信、宝玉迟获消息才赶来，故后来到达时所得知识不能倒灌到更早入口。本任务未分配到达场的实际知识检查点，不能验证具体死亡获知时刻。",
+      "evidence": [
+        {
+          "file": "task-08.json",
+          "path": ["data/project/plan_constraints_v1.json", "rules", "world", 0, "equals"],
+          "quote": "DEAD"
+        },
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": ["card_fields", 10, "text"],
+          "quote": "信：病危→雪雁/人去报→宝玉迟获消息→赶来。"
+        }
+      ]
+    },
+    "request_vs_execution": {
+      "status": "ANSWERED",
+      "answer": "章节卡把“再温一温”写成宝玉赶到时的话，同时锁定末尾冷药无人再温。话语只证明请求，不能证明有人应允、取药或完成加热，更不能推出任何药碗状态迁移。本范围没有分配药碗执行记录，网络和legacy药碗身份亦不能据此合并。",
+      "evidence": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": ["card_fields", 1, "text"],
+          "quote": "宝玉赶到只问“药还没吃么？再温一温”；末尾**冷药无人再温**。"
+        }
+      ]
+    },
+    "world_vs_knowledge": {
+      "status": "ANSWERED",
+      "answer": "合同引用的核心人物基线能确认黛玉和紫鹃的注册身份、基线位置；participants_status=KNOWN也仅确认参与者声明。它们不能证明本场实际到场、看见稿中文字或已知死亡。本合同knowledge_binding为null、知识引用为空；章节卡另列雪雁、李纨、宝钗、王夫人、医者和跑腿，不等于他们同时在第三场床边。其他场的覆盖未分配，本任务不能据此判全回角色遗漏。",
+      "evidence": [
+        {
+          "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+          "path": ["references", "participants", 1, "value", "baseline", "household_role"],
+          "quote": "daiyu_attendant"
+        },
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": ["card_fields", 4, "text"],
+          "quote": "紫鹃、雪雁、李纨、宝钗、王夫人、医者、跑腿、宝玉。不得全家轮流说遗言。"
+        }
+      ]
+    }
+  },
+  "remaining_decisions": [
+    "落实第三场改字、医者延误、身体不可逆及死亡之间的局部顺序与入口依据。",
+    "决定旧集、稿夹、草稿和书写用具的身份表达，保留未注册及对象迁移未知。",
+    "统一五段、六段、六种子和legacy旧场的结构映射；旧场安置仍未决。",
+    "由已分配其他范围的审读补足各角色照护、医疗劳务、报信和死后料理覆盖；本意见不作全回通过结论。"
+  ],
+  "unread_scope": [],
+  "authority_effect": "NONE",
+  "provider_consumption_proof": false,
+  "independent_human_review": false
+}

@@ -1,0 +1,1088 @@
+{
+  "kind": "INTERNAL_SCOPE_COORDINATOR_DECISIONS",
+  "version": 1,
+  "partition": {
+    "path": "artifacts/scope-preflight-20261110/review-v2/manifest.json",
+    "sha256": "814b8d61b2717bbb6b27274b7ddd3310d6b5f7d17aa0ea30c23a6ef14c71286d",
+    "bytes": 9429
+  },
+  "execution": {
+    "path": "artifacts/scope-review-20261110/execution.json",
+    "sha256": "1773b31f578b6f4e558cbf61b1c5a275e76c6d22daaf13de0be37ba0f06368f1",
+    "bytes": 21050
+  },
+  "accepted_opinions": [
+    {
+      "path": "artifacts/scope-review-20261110/opinions/contract-01.a2.json",
+      "sha256": "0823d5b04f8922df5d9d822ba6ea549fb27cb25b8afb4b077a473cb64c3f7997",
+      "bytes": 6410
+    },
+    {
+      "path": "artifacts/scope-review-20261110/opinions/contract-02.a2.json",
+      "sha256": "7e9c0f65916a9307237876072b82d214427ea6448f499d28967e22e694666907",
+      "bytes": 6115
+    },
+    {
+      "path": "artifacts/scope-review-20261110/opinions/contract-03.a2.json",
+      "sha256": "585141d132de9d0436cb3d2b977b0ff92f836c68701d73af9e5a3a157e1c28f1",
+      "bytes": 6078
+    },
+    {
+      "path": "artifacts/scope-review-20261110/opinions/contract-04.a1.json",
+      "sha256": "004c770351192b1ba5cdc09012fd1f16355e768c5aa42bfff47b37f10a216294",
+      "bytes": 5742
+    },
+    {
+      "path": "artifacts/scope-review-20261110/opinions/contract-05.a1.json",
+      "sha256": "dcb26d7e2c4f85f42c780ff74a721bfbaff9281629cb977789096efca5251bd3",
+      "bytes": 5702
+    },
+    {
+      "path": "artifacts/scope-review-20261110/opinions/contract-06.a1.json",
+      "sha256": "d17bff1dfbcfb09fcd6ee13a49324b0bd22bfbf0c6b3fd44b9116a4bf79d4adc",
+      "bytes": 4855
+    },
+    {
+      "path": "artifacts/scope-review-20261110/opinions/projection.a1.json",
+      "sha256": "125fa94539d84424da068d65db0edbf1acb4034e896c22b6b3a471c462c13668",
+      "bytes": 5754
+    },
+    {
+      "path": "artifacts/scope-review-20261110/opinions/context-01.a1.json",
+      "sha256": "133840cb847c7e41636dfb1f91326f2b3dea20e6c8e38e0639d7569706b0f34b",
+      "bytes": 5186
+    }
+  ],
+  "coordinator_basis": "PRIMARY_AGENT_INTERNAL_EDITORIAL_SELECTION_AFTER_READING_EIGHT_ORIGINAL_OPINIONS",
+  "status": "EDITORIAL_DESIGN_SELECTED_IMPLEMENTATION_PENDING",
+  "scope_status": "PENDING",
+  "choices": [
+    {
+      "id": "STRUCTURE",
+      "status": "EDITORIAL_DESIGN_SELECTED_IMPLEMENTATION_PENDING",
+      "decision": "选用五个压力段承载六项种子，S4/S5交错。卡字段4、14、18冲突原文保留；本映射是本地编辑选择，不声称来源已一致。",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            3,
+            "text"
+          ]
+        },
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            13,
+            "text"
+          ]
+        },
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            17,
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "CLOCK",
+      "status": "EDITORIAL_DESIGN_SELECTED_IMPLEMENTATION_PENDING",
+      "decision": "选定请医反馈早于改字、改字早于最后突变、病危报信启程早于死亡、宝玉到达晚于死亡，并在到场先问药后获知确切死时。只是待实现偏序，不映射旧场事件、不设置时辰、房间或路线。",
+      "basis": [
+        {
+          "file": "shared-a422ce53c17491a06039d17559db0642abadb709f8b1c3a4972a5570d441239d.json",
+          "path": [
+            "unresolved",
+            1
+          ]
+        },
+        {
+          "file": "shared-2217f1683694cec717e7a4e510869b13b0012d30475a736912c8300d3fe184b4.json",
+          "path": [
+            "required_beats",
+            0,
+            "description"
+          ]
+        },
+        {
+          "file": "shared-a9b5259034c27596caacc415223d7e18b4c33f9ef7739a3470149a9ab0efbc83.json",
+          "path": [
+            "required_beats",
+            0,
+            "description"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "IDENTITY",
+      "status": "EDITORIAL_DESIGN_SELECTED_IMPLEMENTATION_PENDING",
+      "decision": "卡内角色全保留，按roles登记或叙事表示；受检跨段身份必须登记。选择同一网络药碗连续性，legacy不合并；G01不变成对象。",
+      "basis": [
+        {
+          "file": "shared-a9b5259034c27596caacc415223d7e18b4c33f9ef7739a3470149a9ab0efbc83.json",
+          "path": [
+            "unresolved",
+            0
+          ]
+        },
+        {
+          "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+          "path": [
+            "unresolved",
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "id": "SOURCE_AND_HINTS",
+      "status": "RESTRICTIONS_CONFIRMED",
+      "decision": "新005664主张保持NOT_ESTABLISHED/PENDING，旧载体PASS不授予新原图验收。未选伏线不强行在86回应，不升级为现场事实或人物知识。",
+      "basis": [
+        {
+          "file": "task-12.json",
+          "path": [
+            0,
+            "records",
+            "claims",
+            2,
+            "status"
+          ]
+        },
+        {
+          "file": "task-14.json",
+          "path": [
+            "hints",
+            0,
+            "unresolved",
+            1
+          ]
+        }
+      ]
+    }
+  ],
+  "roles": [
+    {
+      "name": "黛玉",
+      "existing_entity_id": "daiyu",
+      "selected_representation": "EXISTING_STATE_ENTITY",
+      "scope": [
+        "86-S1",
+        "86-S2",
+        "86-S3",
+        "86-S4"
+      ],
+      "selected_duty": "普通病日、改字未成与长期病程终点；不预知死期。",
+      "local_arrival_and_knowledge": "IMPLEMENTATION_REQUIRED_NOT_IMPLIED_BY_WORLD_REGISTRY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            4,
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "紫鹃",
+      "existing_entity_id": "zijuan",
+      "selected_representation": "EXISTING_STATE_ENTITY",
+      "scope": [
+        "86-S1",
+        "86-S2",
+        "86-S3",
+        "86-S4",
+        "86-S5",
+        "86-S6"
+      ],
+      "selected_duty": "持续床边照护，观察突变后托雪雁报病危；死后料理身体，不翻稿。",
+      "local_arrival_and_knowledge": "IMPLEMENTATION_REQUIRED_NOT_IMPLIED_BY_WORLD_REGISTRY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            4,
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "宝玉",
+      "existing_entity_id": "baoyu",
+      "selected_representation": "EXISTING_STATE_ENTITY",
+      "scope": [
+        "86-S5",
+        "86-S6"
+      ],
+      "selected_duty": "迟获病危消息才赶来，到场问药后再获知确切死时；不赶上最后一息。",
+      "local_arrival_and_knowledge": "IMPLEMENTATION_REQUIRED_NOT_IMPLIED_BY_WORLD_REGISTRY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            4,
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "雪雁",
+      "existing_entity_id": null,
+      "selected_representation": "NEW_LOCAL_ACTOR_REQUIRED",
+      "scope": [
+        "86-S1",
+        "86-S2",
+        "86-S5"
+      ],
+      "selected_duty": "协助照护，受托传病危消息至宝玉；与请医跑腿分开，不捏造现存ID、路线或地点。",
+      "local_arrival_and_knowledge": "IMPLEMENTATION_REQUIRED_NOT_IMPLIED_BY_WORLD_REGISTRY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            4,
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "宝钗",
+      "existing_entity_id": "baochai",
+      "selected_representation": "EXPAND_EXISTING_ENTITY_PROJECTION",
+      "scope": [
+        "86-S1",
+        "86-S2"
+      ],
+      "selected_duty": "承接一次米汤或热水交接，保留独立实务出场；不设置床边告别，不默认目击死亡。",
+      "local_arrival_and_knowledge": "IMPLEMENTATION_REQUIRED_NOT_IMPLIED_BY_WORLD_REGISTRY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            4,
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "李纨",
+      "existing_entity_id": "liwan",
+      "selected_representation": "ADD_LOCAL_KNOWLEDGE",
+      "scope": [
+        "86-S4"
+      ],
+      "selected_duty": "选择死后接到通知再接手热水衣物的第一轮身体料理；须补传播与到场事件。",
+      "local_arrival_and_knowledge": "IMPLEMENTATION_REQUIRED_NOT_IMPLIED_BY_WORLD_REGISTRY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            4,
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "王夫人",
+      "existing_entity_id": "wangfuren",
+      "selected_representation": "ADD_LOCAL_KNOWLEDGE",
+      "scope": [
+        "86-S4"
+      ],
+      "selected_duty": "选择获死讯后分派第一轮后事和持续劳务；不设围哭或默认亲见死亡。",
+      "local_arrival_and_knowledge": "IMPLEMENTATION_REQUIRED_NOT_IMPLIED_BY_WORLD_REGISTRY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            4,
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "医者",
+      "existing_entity_id": null,
+      "selected_representation": "NEW_LOCAL_ACTOR_REQUIRED",
+      "scope": [
+        "86-S2"
+      ],
+      "selected_duty": "别处普通事务绊住，由请医链反馈；不新增具体病家、诊断、时辰或已到床边事实。",
+      "local_arrival_and_knowledge": "IMPLEMENTATION_REQUIRED_NOT_IMPLIED_BY_WORLD_REGISTRY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            4,
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "请医跑腿",
+      "existing_entity_id": null,
+      "selected_representation": "NEW_LOCAL_ACTOR_REQUIRED",
+      "scope": [
+        "86-S2"
+      ],
+      "selected_duty": "请医并带回现实延误反馈；不兼作雪雁的病危报信，以免两链混淆。",
+      "local_arrival_and_knowledge": "IMPLEMENTATION_REQUIRED_NOT_IMPLIED_BY_WORLD_REGISTRY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            4,
+            "text"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "厨房/药铺经手人",
+      "existing_entity_id": null,
+      "selected_representation": "NARRATIVE_LABOR_ROLES",
+      "scope": [
+        "86-S1",
+        "86-S2",
+        "86-S4"
+      ],
+      "selected_duty": "保留药铺、厨房、热水接力；若承担受检消息、持有或移动，须升级独立局部身份，不能绕过检查。",
+      "local_arrival_and_knowledge": "IMPLEMENTATION_REQUIRED_NOT_IMPLIED_BY_WORLD_REGISTRY",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-f7f33cd2f9a4370ce5f88bb585745210bb964ed8f7d2bdc9ef5b2361b2d021c0.json",
+          "path": [
+            "card_fields",
+            4,
+            "text"
+          ]
+        }
+      ]
+    }
+  ],
+  "objects": [
+    {
+      "name": "网络药碗",
+      "existing_entity_id": "OBJ-MEDICINE-BOWL-86",
+      "selected_representation": "EXISTING_TRACKED_OBJECT",
+      "continuity_rule": "选择同一网络药碗承载温药与末端未尽冷药；持有、取放、冷却及未尽分别建局部检查点。请求再温不创建加热事件。",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-a9b5259034c27596caacc415223d7e18b4c33f9ef7739a3470149a9ab0efbc83.json",
+          "path": [
+            "required_beats",
+            1,
+            "description"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "legacy药碗",
+      "existing_entity_id": "medicine_bowl_86",
+      "selected_representation": "SEPARATE_HISTORICAL_RECORD",
+      "continuity_rule": "保留独立身份及空间包含关系；其状态不迁移到网络药碗，不声明两对象同一。",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-a9b5259034c27596caacc415223d7e18b4c33f9ef7739a3470149a9ab0efbc83.json",
+          "path": [
+            "unresolved",
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "旧稿/稿夹/旧集",
+      "existing_entity_id": null,
+      "selected_representation": "NEW_LOCAL_OBJECT_REQUIRED",
+      "continuity_rule": "登记稿夹及承载稿页，区分容器与内容。G01仍为诗文接口，空字不补；紫鹃不翻稿，不做遗稿展览。",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+          "path": [
+            "unresolved",
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "书写用具",
+      "existing_entity_id": null,
+      "selected_representation": "NARRATIVE_PROP_WITH_UPGRADE_RULE",
+      "continuity_rule": "仅服务欲改未成；若跟踪持有、移动或书写结果，先登记独立局部对象。",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+          "path": [
+            "unresolved",
+            0
+          ]
+        }
+      ]
+    },
+    {
+      "name": "药吊子/炉火",
+      "existing_entity_id": null,
+      "selected_representation": "NEW_LOCAL_OBJECT_REQUIRED",
+      "continuity_rule": "药吊子与药碗不同；分别记录照护使用与熄炉阶段，不以熄炉推导缺药致死。",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json",
+          "path": [
+            "unresolved",
+            1
+          ]
+        }
+      ]
+    },
+    {
+      "name": "米汤/盛器",
+      "existing_entity_id": null,
+      "selected_representation": "NARRATIVE_CARE_PROP",
+      "continuity_rule": "保留准备、交接与难咽动作；若校验温度或持有，升级局部登记，不假称已有对象记录。",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json",
+          "path": [
+            "required_beats",
+            1,
+            "description"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "热水/衣物/身体料理器具",
+      "existing_entity_id": null,
+      "selected_representation": "NARRATIVE_CARE_PROPS",
+      "continuity_rule": "分清病前照护与死后料理、明确经手人；受检跨段个体先登记，不编礼俗清单。",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-26d23153e2a902f190534cc27855572cebeacddea76c8f5cbec948b38b8799e4.json",
+          "path": [
+            "unresolved",
+            2
+          ]
+        }
+      ]
+    },
+    {
+      "name": "火箸/茶盘",
+      "existing_entity_id": null,
+      "selected_representation": "NARRATIVE_ACTION_PROPS",
+      "continuity_rule": "保留照护劳动中的碰响，不据此制造对象同一、特殊寓意或全局ID。",
+      "implementation_status": "NOT_IMPLEMENTED",
+      "basis": [
+        {
+          "file": "shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json",
+          "path": [
+            "required_beats",
+            1,
+            "description"
+          ]
+        }
+      ]
+    }
+  ],
+  "pressure_phases": [
+    {
+      "id": "P1",
+      "function": "普通照护与现实候医",
+      "seeds": [
+        "86-S1",
+        "86-S2"
+      ]
+    },
+    {
+      "id": "P2",
+      "function": "最后改字未成",
+      "seeds": [
+        "86-S3"
+      ]
+    },
+    {
+      "id": "P3",
+      "function": "突变、病危外传与身体跨界",
+      "seeds": [
+        "86-S5",
+        "86-S4"
+      ]
+    },
+    {
+      "id": "P4",
+      "function": "第一轮身体料理与迟获消息赶来交错",
+      "seeds": [
+        "86-S4",
+        "86-S5"
+      ]
+    },
+    {
+      "id": "P5",
+      "function": "到场、问药、获知与冷药",
+      "seeds": [
+        "86-S6"
+      ]
+    }
+  ],
+  "proposed_local_order": {
+    "epistemic": "EDITORIAL_PROPOSAL_NOT_EXECUTED_EVENTS",
+    "nodes": [
+      "baoyu_arrives",
+      "baoyu_asks_rewarm",
+      "baoyu_departs",
+      "baoyu_learns_death_time",
+      "baoyu_receives_critical_message",
+      "body_care_started",
+      "critical_message_dispatched",
+      "death_witnessed",
+      "doctor_feedback",
+      "liwan_notified",
+      "liwan_takes_care",
+      "ordinary_care",
+      "rapid_decline_observed",
+      "terminal_cold_unfinished_medicine",
+      "unfinished_revision",
+      "wangfuren_assigns_work",
+      "wangfuren_notified"
+    ],
+    "before": [
+      [
+        "ordinary_care",
+        "doctor_feedback"
+      ],
+      [
+        "doctor_feedback",
+        "unfinished_revision"
+      ],
+      [
+        "unfinished_revision",
+        "rapid_decline_observed"
+      ],
+      [
+        "rapid_decline_observed",
+        "critical_message_dispatched"
+      ],
+      [
+        "critical_message_dispatched",
+        "death_witnessed"
+      ],
+      [
+        "death_witnessed",
+        "body_care_started"
+      ],
+      [
+        "death_witnessed",
+        "liwan_notified"
+      ],
+      [
+        "liwan_notified",
+        "liwan_takes_care"
+      ],
+      [
+        "death_witnessed",
+        "wangfuren_notified"
+      ],
+      [
+        "wangfuren_notified",
+        "wangfuren_assigns_work"
+      ],
+      [
+        "critical_message_dispatched",
+        "baoyu_receives_critical_message"
+      ],
+      [
+        "baoyu_receives_critical_message",
+        "baoyu_departs"
+      ],
+      [
+        "baoyu_departs",
+        "baoyu_arrives"
+      ],
+      [
+        "death_witnessed",
+        "baoyu_arrives"
+      ],
+      [
+        "baoyu_arrives",
+        "baoyu_asks_rewarm"
+      ],
+      [
+        "baoyu_asks_rewarm",
+        "baoyu_learns_death_time"
+      ],
+      [
+        "baoyu_learns_death_time",
+        "terminal_cold_unfinished_medicine"
+      ]
+    ],
+    "unconstrained_pairs": [
+      [
+        "body_care_started",
+        "baoyu_receives_critical_message"
+      ],
+      [
+        "death_witnessed",
+        "baoyu_receives_critical_message"
+      ],
+      [
+        "liwan_takes_care",
+        "baoyu_departs"
+      ]
+    ],
+    "unresolved": [
+      "exact_dates_and_times",
+      "room_and_route_bindings",
+      "old_ch86_last_night_placement",
+      "cold_transition_boundary",
+      "doctor_actual_arrival",
+      "local_body_action_capacity"
+    ]
+  },
+  "original_contract_declarations_preserved": [
+    {
+      "file": "shared-830346724d4a9f2d4e0a543b3e04b76321cea74d7e8c804632a289fbe5ab6b0d.json",
+      "state_declarations": {
+        "entry_state": [
+          {
+            "basis": [
+              {
+                "path": "data/world/m3_core.json",
+                "pointer": "/baseline/characters/daiyu/life_state",
+                "ref": "data/world/m3_core.json#/baseline/characters/daiyu/life_state",
+                "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+                "text_sha256": "77ff42a3ee266d7bdd15afca0b44c7ae71d875464026dcf96b158e450c797a93",
+                "value": "ACTIVE"
+              }
+            ],
+            "equals": "character.daiyu.life_state",
+            "status": "KNOWN",
+            "value": "ACTIVE"
+          },
+          {
+            "basis": [
+              {
+                "path": "data/world/m3_core.json",
+                "pointer": "/events/2/effects/2/value",
+                "ref": "data/world/m3_core.json#/events/2/effects/2/value",
+                "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+                "text_sha256": "574d44bbe043e161a5016bc91549b2c857a6bf5d2ba16edf39da19a7eb516b96",
+                "value": "declining_under_mourning"
+              }
+            ],
+            "equals": "character.daiyu.body_state",
+            "status": "KNOWN",
+            "value": "declining_under_mourning"
+          },
+          {
+            "basis": [
+              {
+                "path": "data/objects/m4.json",
+                "pointer": "/objects/3/baseline/temperature",
+                "ref": "data/objects/m4.json#/objects/3/baseline/temperature",
+                "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+                "text_sha256": "e40310fbec639c561d2d469785addfa0da3897f2a0758b21c9f5d708f6a66563",
+                "value": "warm"
+              }
+            ],
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "status": "KNOWN",
+            "value": "warm"
+          }
+        ],
+        "exit_state": [
+          {
+            "basis": [],
+            "equals": "character.daiyu.body_state",
+            "reason": "普通病晨到下一场的身体变化没有场级事件；W86-DAIYU-DEATH只给全回终态。",
+            "status": "UNKNOWN",
+            "value": null
+          },
+          {
+            "basis": [],
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "reason": "OT86-01在全回末端转冷，不能据此断定明日安排结束时的药温。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "preconditions": [
+          {
+            "basis": [
+              {
+                "path": "data/world/m3_core.json",
+                "pointer": "/baseline/characters/daiyu/life_state",
+                "ref": "data/world/m3_core.json#/baseline/characters/daiyu/life_state",
+                "sha256": "c4bf1c75fda8994fd846e570a64ae69efeb6ca17cd27e78c1bb1af4d7783d733",
+                "text_sha256": "77ff42a3ee266d7bdd15afca0b44c7ae71d875464026dcf96b158e450c797a93",
+                "value": "ACTIVE"
+              }
+            ],
+            "equals": "character.daiyu.life_state",
+            "status": "KNOWN",
+            "value": "ACTIVE"
+          },
+          {
+            "basis": [
+              {
+                "path": "data/objects/m4.json",
+                "pointer": "/objects/3/baseline/status",
+                "ref": "data/objects/m4.json#/objects/3/baseline/status",
+                "sha256": "5c2719605b0d2b78d3c06d6bb7444c5c5058fd3891879f8dcfa480cd1828b4db",
+                "text_sha256": "b77336acf7796734183dc6312a7f43b1a5520048972809c1af17d90857bd225f",
+                "value": "CONTAINS_UNFINISHED_MEDICINE"
+              }
+            ],
+            "equals": "object.OBJ-MEDICINE-BOWL-86.status",
+            "status": "KNOWN",
+            "value": "CONTAINS_UNFINISHED_MEDICINE"
+          }
+        ]
+      },
+      "unresolved": [
+        "participants: 雪雁及厨房小丫头在卡中有角色，但实体库没有对应ID；不能伪造xueyan或厨房人员。",
+        "objects: 米汤器、药吊子、火箸、茶盘、热水器与炉火没有独立对象记录；仅药碗可实名绑定。",
+        "knowledge: daiyu_illness_severe是已注册事实，但ch86_last_night入口不能自动充当86-S1局部认知入口。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "timing: 元春丧后长期病程与本场最后病晨必须区分；T+开放窗不是精确日期，未绑定本场时刻。"
+      ],
+      "knowledge_binding": null,
+      "event_refs": []
+    },
+    {
+      "file": "shared-a422ce53c17491a06039d17559db0642abadb709f8b1c3a4972a5570d441239d.json",
+      "state_declarations": {
+        "entry_state": [
+          {
+            "basis": [],
+            "equals": "character.daiyu.body_state",
+            "reason": "未有86-S1出口到此场的身体检查点；全回病程不能注入局部入口。",
+            "status": "UNKNOWN",
+            "value": null
+          },
+          {
+            "basis": [],
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "reason": "已注册药碗基线与全回转冷事件不足以给出候医时药温。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "exit_state": [
+          {
+            "basis": [],
+            "equals": "character.daiyu.body_state",
+            "reason": "候医延误的具体时长及身体结果没有场级世界事件。",
+            "status": "UNKNOWN",
+            "value": null
+          },
+          {
+            "basis": [],
+            "equals": "character.zijuan.knowledge.daiyu_may_die_tonight",
+            "reason": "K86-ZIJUAN-SEES-RAPID-DECLINE是真实注册事件，但没有证据把它精确放进此候医场。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "preconditions": [
+          {
+            "basis": [],
+            "equals": "character.zijuan.knowledge.daiyu_illness_severe",
+            "reason": "legacy认知场的入口虽列病重，尚无86-S2与该入口的明确对应。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ]
+      },
+      "unresolved": [
+        "participants: 医者、药铺经手人、跑腿及可能报信的雪雁都无实体ID，故演员集合仅部分可绑定。",
+        "timing: 医者在别处何事、往返路径及病危报信先后尚未有独立场级事实，必须留作具体作者选择而非KNOWN。",
+        "knowledge: 病重与今夜可能不起均有事实记录，但怀疑获得的种子场位置未核定。",
+        "entry_checkpoint: 86-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.daiyu.body_state: 未有86-S1出口到此场的身体检查点；全回病程不能注入局部入口。",
+        "entry_state.object.OBJ-MEDICINE-BOWL-86.temperature: 已注册药碗基线与全回转冷事件不足以给出候医时药温。",
+        "preconditions.character.zijuan.knowledge.daiyu_illness_severe: legacy认知场的入口虽列病重，尚无86-S2与该入口的明确对应。",
+        "relay: 请医反馈、报病危与宝玉到达仍缺三种局部时间边界；本次只规定分链，不给出路线或取得事件。"
+      ],
+      "knowledge_binding": null,
+      "event_refs": []
+    },
+    {
+      "file": "shared-387607de593a4e10d8c153995d78d99d0ff21f313a71d54c34eddc7753fb11d5.json",
+      "state_declarations": {
+        "entry_state": [
+          {
+            "basis": [],
+            "equals": "character.daiyu.life_state",
+            "reason": "该种子在局部时序上标为临终前，但顺序仍是来源列表顺序，不能作为实际生命检查点。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "exit_state": [
+          {
+            "basis": [],
+            "equals": "character.daiyu.body_state",
+            "reason": "未成改字不是可执行身体效果；W86仅有长期病程终态。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "preconditions": [
+          {
+            "basis": [],
+            "equals": "character.daiyu.body_state",
+            "reason": "伸手改字所需身体能力没有86-S3的世界记录；不可从宣言推回可行动状态。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ]
+      },
+      "unresolved": [
+        "objects: G01草稿、旧集、稿夹与书写用具没有对象注册ID；G01是卡内诗文接口，不得冒充对象ID。",
+        "timing: 改字未成相对医者迟到和身体不可逆的场级顺序尚待编辑，不能把source-list order当死亡计时。",
+        "entry_checkpoint: 86-S3为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.daiyu.life_state: 该种子在局部时序上标为临终前，但顺序仍是来源列表顺序，不能作为实际生命检查点。",
+        "preconditions.character.daiyu.body_state: 伸手改字所需身体能力没有86-S3的世界记录；不可从宣言推回可行动状态。"
+      ],
+      "knowledge_binding": null,
+      "event_refs": []
+    },
+    {
+      "file": "shared-26d23153e2a902f190534cc27855572cebeacddea76c8f5cbec948b38b8799e4.json",
+      "state_declarations": {
+        "entry_state": [
+          {
+            "basis": [],
+            "equals": "character.daiyu.life_state",
+            "reason": "种子要求死后身体料理，但W86死亡事件是全回粗粒度终点，未给此场入口的检查点。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "exit_state": [
+          {
+            "basis": [],
+            "equals": "character.daiyu.life_state",
+            "reason": "死亡是所需叙事节点，不能因本合同声明就把此场出口当已回放DEAD。",
+            "status": "UNKNOWN",
+            "value": null
+          },
+          {
+            "basis": [],
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "reason": "身体料理阶段药温何时转冷未有种子级对象事件；OT86-01不能整段回灌。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "preconditions": [
+          {
+            "basis": [],
+            "equals": "character.zijuan.knowledge.daiyu_death_exact_moment",
+            "reason": "K86-DEATH-OCCURS只绑定ch86_last_night；本种子的目击时点未独立对应。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ]
+      },
+      "unresolved": [
+        "events: W86-DAIYU-DEATH含全回生命终态及关系变化，不等于86-S4的精确身体入口/出口；暂不绑定事件。",
+        "knowledge: K86-DEATH-OCCURS的目击者更新已注册，但旧场覆盖整个最后一夜，不能默认本种子等同旧场。",
+        "objects: 热水、衣物、炉火与死后身体料理器具未独立注册；药碗不替代这些物。",
+        "entry_checkpoint: 86-S4为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.daiyu.life_state: 种子要求死后身体料理，但W86死亡事件是全回粗粒度终点，未给此场入口的检查点。",
+        "preconditions.character.zijuan.knowledge.daiyu_death_exact_moment: K86-DEATH-OCCURS只绑定ch86_last_night；本种子的目击时点未独立对应。",
+        "obligations: 身体、热水衣物与后事第一轮已有编辑任务分层；具体承接时刻、死讯内容与礼俗操作仍无场级事实，不声明已执行。"
+      ],
+      "knowledge_binding": null,
+      "event_refs": []
+    },
+    {
+      "file": "shared-2217f1683694cec717e7a4e510869b13b0012d30475a736912c8300d3fe184b4.json",
+      "state_declarations": {
+        "entry_state": [
+          {
+            "basis": [],
+            "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+            "reason": "旧场入口记宝玉不知确切死时，但无法证明86-S5起点与该入口相同。",
+            "status": "UNKNOWN",
+            "value": null
+          },
+          {
+            "basis": [],
+            "equals": "character.baoyu.location",
+            "reason": "S02只是粗府域；未有宝玉收到消息时的场级位置与行程。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "exit_state": [
+          {
+            "basis": [],
+            "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+            "reason": "K86-BAOYU-LEARNS-AFTER-ARRIVAL须在到达后；此场信息传递边界未定，不提前给知情终态。",
+            "status": "UNKNOWN",
+            "value": null
+          },
+          {
+            "basis": [],
+            "equals": "character.baoyu.location",
+            "reason": "赶来路径与抵达边界未有场级移动事件；不能由同府位置推断已经入室。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "preconditions": [
+          {
+            "basis": [],
+            "equals": "character.baoyu.knowledge.baoyu_may_still_arrive_in_time",
+            "reason": "注册belief不证明本场收到消息前后仍持同一信念。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ]
+      },
+      "unresolved": [
+        "participants: 报信的雪雁/跑腿没有注册ID，不能把信息链压缩成只有宝玉与紫鹃面对面。",
+        "timing: 报信者路线、宝玉获信地点及到达边界未记录；当前列表顺序也不证明通知发生在全部料理之后。",
+        "knowledge: 三个相关事实/信念均可引用，但旧场K86更新在六个种子之间的分配未独立核定。",
+        "entry_checkpoint: 86-S5为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.character.baoyu.knowledge.daiyu_death_exact_moment: 旧场入口记宝玉不知确切死时，但无法证明86-S5起点与该入口相同。",
+        "entry_state.character.baoyu.location: S02只是粗府域；未有宝玉收到消息时的场级位置与行程。",
+        "preconditions.character.baoyu.knowledge.baoyu_may_still_arrive_in_time: 注册belief不证明本场收到消息前后仍持同一信念。",
+        "arrival_boundary: 已限定到场前不得知确切死时，但报信内容、获信地点与抵达时刻未有本种子知识/移动检查点。"
+      ],
+      "knowledge_binding": null,
+      "event_refs": []
+    },
+    {
+      "file": "shared-a9b5259034c27596caacc415223d7e18b4c33f9ef7739a3470149a9ab0efbc83.json",
+      "state_declarations": {
+        "entry_state": [
+          {
+            "basis": [],
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "reason": "OT86-01支持本回药转冷，但种子抵达时的具体转冷检查点仍未绑定。",
+            "status": "UNKNOWN",
+            "value": null
+          },
+          {
+            "basis": [],
+            "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+            "reason": "到达与获知先后尚未映射到86-S6；不可把K86到达后更新当入口已知。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "exit_state": [
+          {
+            "basis": [],
+            "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+            "reason": "冷药是必须写出的目标；缺少86-S6事件绑定，故不能因写作要求声称已回放cold。",
+            "status": "UNKNOWN",
+            "value": null
+          },
+          {
+            "basis": [],
+            "equals": "character.baoyu.knowledge.daiyu_death_exact_moment",
+            "reason": "K86-BAOYU-LEARNS-AFTER-ARRIVAL是真实旧场事件，其具体种子归属和取证尚待独立编辑。",
+            "status": "UNKNOWN",
+            "value": null
+          },
+          {
+            "basis": [],
+            "equals": "object.OBJ-MEDICINE-BOWL-86.status",
+            "reason": "末端仍为未尽药是新增明确写作义务，但OT86-01未映射此种子，不能把全回to.status自动当本场回放结果。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ],
+        "preconditions": [
+          {
+            "basis": [],
+            "equals": "object.OBJ-MEDICINE-BOWL-86.status",
+            "reason": "全回药碗基线未尽药不能自动成为后场局部入口；需独立确认是否始终同碗未动。",
+            "status": "UNKNOWN",
+            "value": null
+          }
+        ]
+      },
+      "unresolved": [
+        "objects: 只使用OBJ-MEDICINE-BOWL-86；medicine_bowl_86是独立legacy记录，位置包含声明不构成两ID或两地点相等。",
+        "events: OT86-01是全回末端药温转换，未宣称它等于此种子的场级事件。",
+        "knowledge: ch86_last_night不自动等于86-S6；宝玉获知死时的具体局部边界未核定。",
+        "entry_checkpoint: 86-S6为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+        "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+        "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+        "entry_state.object.OBJ-MEDICINE-BOWL-86.temperature: OT86-01支持本回药转冷，但种子抵达时的具体转冷检查点仍未绑定。",
+        "entry_state.character.baoyu.knowledge.daiyu_death_exact_moment: 到达与获知先后尚未映射到86-S6；不可把K86到达后更新当入口已知。",
+        "preconditions.object.OBJ-MEDICINE-BOWL-86.status: 全回药碗基线未尽药不能自动成为后场局部入口；需独立确认是否始终同碗未动。",
+        "terminal_object: 必须同时守住未尽药与冷两种末端义务；冷药请求未执行，但种子级状态/温度转换仍未知。"
+      ],
+      "knowledge_binding": null,
+      "event_refs": []
+    }
+  ],
+  "implementation_required": [
+    "建立版本化局部身份与受检器物记录，不改全局Evidence Truth。",
+    "把所选偏序实现为新局部场和状态/知情检查点，先观察或接信再更新。",
+    "新建下一版合同/包/请求；旧请求、旧20回、所有原始意见不变。",
+    "检查角色器物覆盖、消息内容、药温及未尽状态和全部UNKNOWN处置；无依据项仍未知。",
+    "先做86单回真实试写与审读，再决定扩大；本次不授予production/stable。"
+  ],
+  "authority_effect": "NONE",
+  "evidence_effect": "NONE",
+  "independent_human_review": false,
+  "provider_consumption_proof": false,
+  "production_admission": "NOT_GRANTED"
+}
