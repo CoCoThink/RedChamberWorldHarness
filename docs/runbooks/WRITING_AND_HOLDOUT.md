@@ -24,6 +24,22 @@ rcwh write import-draft artifacts/session-authored/NEW.txt \
 
 字节门计算完整 request 的 UTF-8 字节＋外部指令预留＋输出预留，超限拒绝且不截断；正文导入也检查实际输出字节。额外会话指令必须由操作者纳入明确预留，这不是实际环境用量测量。`token_capacity_status=NOT_MEASURED`，不能把350000字节当作模型token容量。新视图禁止直接走provider执行入口；共享引用的实际理解和文学效果、实体读集范围仍待独立审定，不授予P9、人工或生产资格。详细设计见 [ADR 0014](../decisions/0014_SHARED_PROMPT_VIEW_AND_BYTE_ADMISSION.md)。
 
+## 分段范围复核
+
+```bash
+python tools/prepare_scope_review.py \
+  --prepared artifacts/prompt-view-pilot-20261108/prepared-request.json \
+  --export-receipt artifacts/session-dispatch/4c258e603343ff9ee4126c963f56a362d803e9ccb60ff57d4544327b505d7f8a.json \
+  --output artifacts/scope-preflight-20261110/NEW-review
+python tools/prepare_scope_review.py --check artifacts/scope-preflight-20261110/review-v2
+```
+
+准备命令不调用模型、不启动读者；`status=PASS`表示完整分段生成成功，另看 `scope_status`。当前第86回 `explicit_id_coverage=PASS`、`scope_status=PENDING`：六个种子合同均缺局部可执行场景/知情时点映射；李纨、王夫人有世界记录但没有所选场景的知情入口，合同还声明未注册角色/物件等未决事项。不能用传输PASS替代范围判断。
+
+目录中 `manifest.json` 列出每项任务的完整文件读集与实际字节预留。`contract-*` 阅读对应完整共享合同、完整章节卡和所有绑定导航；`projection` 阅读所选投影的骨架及其全部共享值；其他context任务覆盖剩余任务字面值。每项只读取自己的分段，须汇总全部任务后才能讨论全局结论。片段可逐字节重建完整作者请求，校验同时检查无遗漏、全分派和实际大小。默认单文件65536字节、单任务131072字节（含16384指令预留与8192输出预留），均为字节而非实测token。
+
+任何文件或任务超限立即拒绝生成。无需再给读者整包准备请求；派发任务清单等额外消息须纳入外部指令预留。`--check`只复核原件及冻结读集，不把NOT_STARTED改成已审阅，不创建独立意见或实际理解证据。自由文本里的角色须读者明确处置，程序不按姓名造ID；UNKNOWN、后场状态和分离对象身份必须保留。详见[范围预检计划](../plans/SCOPE_PREFLIGHT_20261110.md)。
+
 ## 按回准入与当前状态
 
 `literary-inputs package ... --production`、生产 competition 和 promotion 使用同一个章回准入服务。来源作用域取写作包声明与场景/历史机制/主张/实现依赖的并集；漏列来源、断开的引用、过期字节会阻塞，不能只列较容易审核的来源。
