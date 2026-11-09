@@ -4,7 +4,11 @@
 
 Never change Evidence Truth merely to make a reconstruction cleaner.
 
-## Pull-request checklist
+## Git workflow
+
+Iterate and commit directly on `main`. Do not create other local or remote branches unless the user explicitly requests a change to this workflow. See `AGENTS.md` for agent instructions.
+
+## Change checklist
 
 - Which truth layer changes?
 - Does any OPEN-LOCK become more specific? If so, what new upstream evidence permits that?
