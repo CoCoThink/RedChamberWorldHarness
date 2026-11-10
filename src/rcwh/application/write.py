@@ -99,9 +99,14 @@ def command(args) -> int:
                 raise ValueError("samples must be between 1 and 10")
             budget = budget_for(args)
             budget.validate(args.samples, fallback=args.fallbacks)
-            rendered = PromptRenderer(root).draft(args.package, args.chapter, route=args.route,
-                                                 characters=args.characters, plan_path=args.plan,
-                                                 previous_path=args.previous)
+            from ..generation.local_scenario import is_local_package, render_draft
+            local = is_local_package(root, args.package)
+            if local and not is_dry(args):
+                raise ValueError('local editorial pilot supports session DRY_RUN/import only')
+            options = dict(route=args.route, characters=args.characters, plan_path=args.plan,
+                           previous_path=args.previous)
+            rendered = (render_draft(root, args.package, args.chapter, **options) if local else
+                        PromptRenderer(root).draft(args.package, args.chapter, **options))
             if is_dry(args):
                 context = selection_context(root, package_path=args.package, chapter=args.chapter,
                                             route=args.route, characters=args.characters,

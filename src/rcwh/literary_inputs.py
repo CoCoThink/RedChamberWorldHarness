@@ -57,6 +57,8 @@ class LiteraryInputs:
         if production:
             from .workflow.admission import ChapterAdmission
             spec = load_data(repository_path(self.root, relative))
+            if any(self.record(ref).get('kind') == 'LOCAL_EDITORIAL_SCENARIO' for ref in spec.get('world', [])):
+                raise AssetError('LOCAL_EDITORIAL_MODEL_NOT_PRODUCTION_INPUT')
             if "research_source_sets" in spec:
                 raise AssetError("RESEARCH_SOURCE_SETS_NOT_PRODUCTION_INPUTS")
             admission = ChapterAdmission(self.catalog).summary(
@@ -81,6 +83,12 @@ class LiteraryInputs:
                 raise AssetError(f"DUPLICATE_WRITING_{domain.upper()}_INPUT")
             for binding in spec[domain]:
                 material = self.record(binding); paths.add(binding["path"])
+                if domain == 'world' and material.get('kind') == 'LOCAL_EDITORIAL_SCENARIO':
+                    from .generation.local_scenario import verify_material
+                    try:
+                        verify_material(self.root, spec)
+                    except (ValueError, KeyError, TypeError) as exc:
+                        raise AssetError(f'INVALID_LOCAL_SCENARIO: {exc}') from exc
                 if domain == "world" and material.get("kind") in {"WORLD_PROJECTION", "SCENE_INPUT_PROJECTION"}:
                     if material['kind'] == 'SCENE_INPUT_PROJECTION':
                         from .generation.scene_projection import verify_projection

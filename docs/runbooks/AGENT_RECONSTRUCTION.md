@@ -1,3 +1,14 @@
+# 当前第86回局部编辑模型（2026-11-10）
+
+当前小规模试写准备入口为 `data/writing/packages/ch86-local-scenario-v1.json`，精确准备请求与导出回执见 `artifacts/local-scenario-ch86-20261110/preparation.json`。8份独立范围意见和协调方案已收齐；基线main `3e4e79f`双版本CI通过。按[实施计划](../plans/LOCAL_SCENARIO_CH86_20261110.md)落实六份v3局部合同、身份、器物和偏序消息模型，原20回/历史请求/原UNKNOWN不改。
+
+```bash
+python tools/verify_local_scenario_ch86.py
+pytest -q tests/test_local_scenario.py
+```
+
+模型回放与准备请求PASS仅是工程保管检查。未排序支线显示UNKNOWN_AT_UNORDERED_CUT；宝玉到场/问药不自动知道死时，再温请求无效果。正文尚未试写、范围语义仍PENDING；下一步先做86单回真实试写与独立正文审读，不扩大批量。详见[ADR0015](../decisions/0015_LOCAL_EDITORIAL_SCENARIOS.md)。下列projection试点保留为机制回归入口，不是当前局部模型试写入口。
+
 # 可执行场景局部依赖试点（2026-11-08）
 
 在a91e999的world试点后继续，见[事前计划](../plans/SCENE_PROJECTION_20261108.md)、[ADR0013](../decisions/0013_SCENE_INPUT_PROJECTIONS.md)。活动包为`data/writing/packages/ch86-scene-projection-pilot-v2.json`，独立材料协议SCENE_INPUT_PROJECTION v1，请求仍用renderer/schema v2。内嵌world v1的算法未改，原87试点继续核验。

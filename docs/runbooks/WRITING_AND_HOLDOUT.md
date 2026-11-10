@@ -51,6 +51,10 @@ COMPLETE仅是读者对已分配文件的声明，分配外未读及NOT_CHECKED�
 
 ## 按回准入与当前状态
 
+第86回新的局部试写准备使用 `data/writing/packages/ch86-local-scenario-v1.json`，不是旧整夜投影包。`python tools/prepare_local_scenario_ch86.py` 只准备新合同/模型/请求并导出计数payload；既有不同字节不覆盖。`python tools/verify_local_scenario_ch86.py` 核对原未知处置、偏序检查点和精确请求/导出保管。实际派发的payload及导入所需回执路径取 `artifacts/local-scenario-ch86-20261110/preparation.json` 的 `export.payload` / `export.receipt`，不要派发整个request.json。显式总字节上限327680，含16384指令和32768输出预留；token容量未实测。
+
+新入口只支持 `prepare_request` 或 `rcwh write draft ... --chapter 86 --shared-view --context-bytes 327680 --context-overhead-bytes 16384 --context-output-bytes 32768 --dry-run` 与session导入，不走provider执行。原required/forbidden全文保留，未知声明与局部编辑值分开；通用feedback对六项返回研究骨架PENDING，不借旧场状态评价正文。单回真实试写/独立正文审读完成前不能铺开或授予production。局部模型完整边界见[ADR0015](../decisions/0015_LOCAL_EDITORIAL_SCENARIOS.md)。
+
 `literary-inputs package ... --production`、生产 competition 和 promotion 使用同一个章回准入服务。来源作用域取写作包声明与场景/历史机制/主张/实现依赖的并集；漏列来源、断开的引用、过期字节会阻塞，不能只列较容易审核的来源。
 
 本回所用来源必须具备可验证定位和独立覆盖；不在当前审核协议中的来源仍待明确审核。实际用到的语料须通过现有数据集审核。本版本不创建逐段子集审核，也不把未审正文授权为正式范例。未审材料可在研究权限下使用，报告保留 PENDING。

@@ -138,6 +138,13 @@ def selection_context(root: Path, *, package_path: str | None = None, chapter: i
 
 def _render_context(root: Path, context: dict, *, version: int | None = None) -> dict:
     if context["operation"] == "draft":
+        from .local_scenario import is_local_package, render_draft
+        if is_local_package(root, context['package_path']):
+            if version not in {None, 2}:
+                raise ValueError('local editorial scenarios require renderer v2')
+            return render_draft(root, context['package_path'], context['chapter'], route=context['route'],
+                                characters=context['characters'], plan_path=context['plan_path'],
+                                previous_path=context['previous_path'])
         return PromptRenderer(root, version=version).draft(context["package_path"], context["chapter"], route=context["route"],
                                           characters=context["characters"], plan_path=context["plan_path"],
                                           previous_path=context["previous_path"])
