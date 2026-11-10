@@ -1,0 +1,184 @@
+{
+  "kind": "LOCAL_TRIAL_NATIVE_REVIEW_EXECUTION",
+  "input_commit": "642540275628ebcccfaab758cf5d9701a7c5ad16",
+  "input_ci": "artifacts/local-trial-review-20261111/input-ci.json",
+  "user_authorization": "2026-11-11 用户在明确4位原生读者启动问题后回复“继续”，据此执行4位；最多3并发。",
+  "selected_plan": "artifacts/local-trial-ch86-20261110/review-v3/manifest.json",
+  "batch_1": [
+    "blind-1",
+    "blind-2",
+    "contract-1"
+  ],
+  "batch_2": [
+    "contract-2"
+  ],
+  "maximum_concurrency": 3,
+  "attempts": [
+    {
+      "job": "blind-1",
+      "attempt": 1,
+      "batch": 1,
+      "agent": "/root/trial86_blind1_20261111",
+      "status": "SUBMITTED",
+      "started_at": "2026-11-10T18:20:50.392847+00:00",
+      "dispatch": {
+        "path": "artifacts/local-trial-review-20261111/dispatch/blind-1.txt",
+        "sha256": "f8caa843b1e27878ab2982c6efe7997dae69a5cd5c584b744ca6b75323dd7ea6",
+        "bytes": 2446
+      },
+      "bootstrap": {
+        "path": "artifacts/local-trial-review-20261111/dispatch/blind-1.bootstrap.txt",
+        "sha256": "ffc68aeca2aa974ffee5de7ff33d654587ebefa05b91f9f2907a4f42f56222c1",
+        "bytes": 374
+      },
+      "repository_instructions": {
+        "path": "AGENTS.md",
+        "sha256": "5eb35cc2993c4a68422029cb84649519b27eb08489a23c9608657282d5c4cafe",
+        "bytes": 608
+      },
+      "known_external_bytes": 3428,
+      "external_context_usage": "UNVERIFIED_RESERVATION",
+      "read_claim_basis": "SELF_REPORTED",
+      "completion_observed_at": "2026-11-10T18:23:48.590398+00:00",
+      "raw_opinion": {
+        "path": "artifacts/local-trial-ch86-20261110/review-v3/opinions/blind-1.json",
+        "sha256": "65be6830118e422b14140b6b99d660b227bd0d4b893ed47313be6ad385b3fa83",
+        "bytes": 9074
+      },
+      "context_fork": "none"
+    },
+    {
+      "job": "blind-2",
+      "attempt": 1,
+      "batch": 1,
+      "agent": "/root/trial86_blind2_20261111",
+      "status": "SUBMITTED",
+      "started_at": "2026-11-10T18:20:50.398917+00:00",
+      "dispatch": {
+        "path": "artifacts/local-trial-review-20261111/dispatch/blind-2.txt",
+        "sha256": "1642217f277a2ce69ae394d43051f27a3c8539dd2d5e41fa665decd190bc86f0",
+        "bytes": 2446
+      },
+      "bootstrap": {
+        "path": "artifacts/local-trial-review-20261111/dispatch/blind-2.bootstrap.txt",
+        "sha256": "c403d2a691ba42e56c34567f020c22e66cc809c3d0b969335e2e9152cb25ded9",
+        "bytes": 374
+      },
+      "repository_instructions": {
+        "path": "AGENTS.md",
+        "sha256": "5eb35cc2993c4a68422029cb84649519b27eb08489a23c9608657282d5c4cafe",
+        "bytes": 608
+      },
+      "known_external_bytes": 3428,
+      "external_context_usage": "UNVERIFIED_RESERVATION",
+      "read_claim_basis": "SELF_REPORTED",
+      "completion_observed_at": "2026-11-10T18:23:48.592849+00:00",
+      "raw_opinion": {
+        "path": "artifacts/local-trial-ch86-20261110/review-v3/opinions/blind-2.json",
+        "sha256": "f966eb650ac4ffe7a9d91c87ae9f4f22a05a064036072f9b102e4e40f194d5e4",
+        "bytes": 8397
+      },
+      "context_fork": "none"
+    },
+    {
+      "job": "contract-1",
+      "attempt": 1,
+      "batch": 1,
+      "agent": "/root/trial86_contract1_20261111",
+      "status": "SUBMITTED",
+      "started_at": "2026-11-10T18:20:50.404535+00:00",
+      "dispatch": {
+        "path": "artifacts/local-trial-review-20261111/dispatch/contract-1.txt",
+        "sha256": "fcf460ad1cabbedbe761b3b28e9a8061747bc8969fcb0cfe2f97d9e3ae480749",
+        "bytes": 3533
+      },
+      "bootstrap": {
+        "path": "artifacts/local-trial-review-20261111/dispatch/contract-1.bootstrap.txt",
+        "sha256": "25d4d30fab9ee417f2630046252b1b9b445b3f82728914c32202ee16f3973162",
+        "bytes": 377
+      },
+      "repository_instructions": {
+        "path": "AGENTS.md",
+        "sha256": "5eb35cc2993c4a68422029cb84649519b27eb08489a23c9608657282d5c4cafe",
+        "bytes": 608
+      },
+      "known_external_bytes": 4518,
+      "external_context_usage": "UNVERIFIED_RESERVATION",
+      "read_claim_basis": "SELF_REPORTED",
+      "completion_observed_at": "2026-11-10T18:23:48.595195+00:00",
+      "raw_opinion": {
+        "path": "artifacts/local-trial-ch86-20261110/review-v3/opinions/contract-1.json",
+        "sha256": "f508d259ddccae78424a3849b8eaf72c6b5a28abd6ae412a5bc12b397ca02b44",
+        "bytes": 13904
+      },
+      "context_fork": "none"
+    },
+    {
+      "job": "contract-2",
+      "attempt": 1,
+      "batch": 2,
+      "agent": "/root/trial86_contract2_20261111",
+      "status": "SUBMITTED",
+      "started_at": "2026-11-10T18:24:12.234711+00:00",
+      "context_fork": "none",
+      "dispatch": {
+        "path": "artifacts/local-trial-review-20261111/dispatch/contract-2.txt",
+        "sha256": "b1dea6be4b9abad2fdb6f57524bd7d8b55d561830668fbce1ab55dbb6ca50af6",
+        "bytes": 3535
+      },
+      "bootstrap": {
+        "path": "artifacts/local-trial-review-20261111/dispatch/contract-2.bootstrap.txt",
+        "sha256": "9f0eac817e400546e0cf15a183f25c061869e650632ce961f7f8fbda50ce2ac8",
+        "bytes": 377
+      },
+      "repository_instructions": {
+        "path": "AGENTS.md",
+        "sha256": "5eb35cc2993c4a68422029cb84649519b27eb08489a23c9608657282d5c4cafe",
+        "bytes": 608
+      },
+      "external_context_usage": "UNVERIFIED_RESERVATION",
+      "read_claim_basis": "SELF_REPORTED",
+      "known_external_bytes": 4739,
+      "additional_instructions": [
+        {
+          "path": "artifacts/local-trial-review-20261111/dispatch/contract-2.clarification.txt",
+          "sha256": "1820cc449a5c3d46e62c200d0342de1c7863e76efb21ea9a2ec2d541f8bd70b3",
+          "bytes": 219
+        }
+      ],
+      "completion_observed_at": "2026-11-10T18:28:33.397755+00:00",
+      "raw_opinion": {
+        "path": "artifacts/local-trial-ch86-20261110/review-v3/opinions/contract-2.json",
+        "sha256": "6e6ff4d77fb628f4271bf5b34703ea9fd94d169b6928d3481b0d0e4c933ad500",
+        "bytes": 14640
+      }
+    }
+  ],
+  "independent_opinions": 4,
+  "qualification": "RESEARCH_ONLY",
+  "formal_eligibility": false,
+  "authority_effect": "NONE",
+  "selected_plan_binding": {
+    "path": "artifacts/local-trial-ch86-20261110/review-v3/manifest.json",
+    "sha256": "cf6ee9e4eca1f2d59f1c15fc4b99db4485403bf2a0bbda92b5d2b42902f441f0",
+    "bytes": 7838
+  },
+  "user_authorization_interpretation": "用户在四位方案的明确提问后回复“继续”；执行该既定方案，不要求用户重复授权。",
+  "status": "COMPLETE",
+  "provider_consumption_proof": false,
+  "human_qualification": false,
+  "read_claim_basis": "SELF_REPORTED",
+  "production_admission": "NOT_GRANTED",
+  "progress_owner": "This execution; original preparation manifest remains immutable.",
+  "input_ci_binding": {
+    "path": "artifacts/local-trial-review-20261111/input-ci.json",
+    "sha256": "bb00b01ff0bba7d273f7432e87beb5f66fe62dc1f8750e2cc23bf617ed0aac12",
+    "bytes": 22730
+  },
+  "completion_time_basis": "Coordinator observation after native completion notification; not provider timing telemetry.",
+  "disposition_binding": {
+    "path": "artifacts/local-trial-review-20261111/disposition.json",
+    "sha256": "b2adb34a0733b9a721f452f075175a7a814cac0967406890e918f63b88625a12",
+    "bytes": 8790
+  }
+}

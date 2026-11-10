@@ -59,6 +59,8 @@ COMPLETE仅是读者对已分配文件的声明，分配外未读及NOT_CHECKED�
 
 修订仍受327680字节上下文上限、16384指令预留约束，输出预留明确改为24576字节；旧32768预留下整份反馈超限的拒绝记录保留，不截断合同或正文。`review-v3/manifest.json`为活动独立读集，最大任务含指令和输出预留低于131072字节，token仍未实测。`prepare_review.py --check`只核读集和预算，`verify_trial.py`另核实际作者链/父稿、历史保管和当前兼容性；都不授予正文语义通过或独立审读完成。源准备模型里的NOT_STARTED是原准备记录，实际试写状态另看本轮执行回执。
 
+该读集现已实际分派完毕：输入 `6425402` 双版本CI成功后，依用户授权由4位新上下文原生模型读者按3+1执行。实际进度另存 `artifacts/local-trial-review-20261111/execution.json`，原准备manifest/scaffold不改；`python artifacts/local-trial-review-20261111/verify.py`核验4份原始意见、完整分配读集声明、字节预算、批次、身份、40项义务及24事件/5消息覆盖。程序PASS只表示保管与覆盖有效；3份PENDING、1份PASS，文学FAIL和全部PENDING原样保留。协调处置要求先修G01证据、重复节奏和名单/器物边界，再绑定新请求/正文与新审读；本轮未改正文、未授予铺开或production资格。详见[处置与下一轮步骤](../../artifacts/local-trial-review-20261111/EXECUTION_REPORT.md)。
+
 `literary-inputs package ... --production`、生产 competition 和 promotion 使用同一个章回准入服务。来源作用域取写作包声明与场景/历史机制/主张/实现依赖的并集；漏列来源、断开的引用、过期字节会阻塞，不能只列较容易审核的来源。
 
 本回所用来源必须具备可验证定位和独立覆盖；不在当前审核协议中的来源仍待明确审核。实际用到的语料须通过现有数据集审核。本版本不创建逐段子集审核，也不把未审正文授权为正式范例。未审材料可在研究权限下使用，报告保留 PENDING。

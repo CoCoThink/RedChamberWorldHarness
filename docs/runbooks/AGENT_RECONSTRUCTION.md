@@ -14,7 +14,14 @@ python artifacts/local-trial-ch86-20261110/verify_trial.py
 python artifacts/local-trial-ch86-20261110/prepare_review.py --check
 ```
 
-活动独立读集为 `artifacts/local-trial-ch86-20261110/review-v3/manifest.json`，两份正文盲读、两份分合同/状态核对，均NOT_STARTED；`review/`属于未派发父稿材料。盲读派发只交该任务的read_inputs，不交协调者manifest、作者自查或其他意见。当前0份独立正文意见，全部语义与文学仍PENDING；旧8份范围意见不计入新正文审读。新输入main准确SHA双版本CI成功、且获得读者启动授权后再按最多3并发启动，不扩大批量。详见[ADR0015](../decisions/0015_LOCAL_EDITORIAL_SCENARIOS.md)。下列projection试点保留为机制回归入口，不是当前局部模型试写入口。
+独立读集固定为 `artifacts/local-trial-ch86-20261110/review-v3/manifest.json`；其中NOT_STARTED和0份意见是不可变的准备快照，`review/`则属于未派发父稿材料。**实际进度以 `artifacts/local-trial-review-20261111/execution.json` 为准：4份原生模型意见已收齐，两份正文盲读、两份分合同/状态核对，3份PENDING、1份PASS。** 输入main `6425402`准确SHA双版本CI成功后，依用户“继续”授权按3+1分批执行。盲读只接收分配文件，未提供作者自查或其他意见；完整阅读与上下文隔离仍是声明。
+
+```bash
+python artifacts/local-trial-review-20261111/verify.py
+python -m unittest discover -s artifacts/local-trial-review-20261111 -p 'test_verify.py'
+```
+
+原始21条发现（13 PASS、1 FAIL、7 PENDING）均保留并逐项处置，40项合同义务中2项仍PENDING；合并覆盖24事件/5消息不等于语义全通过。协调结论为先修稿、不铺开：压缩照护/传话/赶路重复，补G01识别及欲改未成证据，下一版明确参与者名单与器物登记边界。原稿未被此轮意见原位修改，来源/语料NOT_CHECKED，文学与语义仍PENDING；旧8份范围意见不计入新正文审读，模型意见不计真人或production资格。具体处置及后续顺序见[本轮报告](../../artifacts/local-trial-review-20261111/EXECUTION_REPORT.md)。新提交CI另按准确SHA跟踪，不能借用输入CI。详见[ADR0015](../decisions/0015_LOCAL_EDITORIAL_SCENARIOS.md)。下列projection试点保留为机制回归入口，不是当前局部模型试写入口。
 
 # 可执行场景局部依赖试点（2026-11-08）
 

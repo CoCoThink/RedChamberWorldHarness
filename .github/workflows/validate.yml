@@ -44,6 +44,10 @@ jobs:
         run: python tools/verify_local_scenario_ch86.py
       - name: Verify actual chapter 86 trial ancestry and bounded independent reading packets
         run: python artifacts/local-trial-ch86-20261110/verify_trial.py
+      - name: Verify native chapter 86 review custody and retain negative findings
+        run: |
+          python artifacts/local-trial-review-20261111/verify.py
+          python -m unittest discover -s artifacts/local-trial-review-20261111 -p 'test_verify.py'
       - name: Verify physical assets and immutable versions
         env:
           RCWH_ASSET_BASE: ${{ github.event.pull_request.base.sha || github.event.before }}

@@ -1,0 +1,14 @@
+你是独立研究读者。工作目录 /mnt/d/code/redchamberworldharness，遵守根AGENTS.md，仅在main，不建分支或工作树，不启动其他代理，不调用外部模型API。你没有作者/协调者上下文；仅阅读下面完整文件（根AGENTS.md可读，但不要搜索其他正文、作者自查、旧意见、来源或全仓库）。先读任务.md并完整执行。每份文件分小段读，确保工具输出没有截断；哈希只证明字节，不能冒充阅读。不要只打印字段提取而跳过所分配完整JSON。
+
+完整read_inputs（逐一自报sha256、bytes及是否读完）：
+{"path": "artifacts/local-trial-ch86-20261110/review-v3/contract-1.md", "sha256": "44a846c2bcfda0a1a1699438abef4eb1088785776ca465545c5078aaf6752341", "bytes": 1257}
+{"path": "artifacts/candidates/ch86/20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef.txt", "sha256": "20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef", "bytes": 18243}
+{"path": "data/writing/local-scenarios/ch86-v1/scenario.json", "sha256": "1d3590da77ed7c20f5a2c42747638ebacacacbe3d80799de486d60b9366204ed", "bytes": 43169}
+{"path": "data/writing/local-scenarios/ch86-v1/contracts/86-S1.v3.json", "sha256": "5573e58e11b45c50de00ac4a9657a84b2e7f0b375520fa1747ff3199e64ee572", "bytes": 10968}
+{"path": "data/writing/local-scenarios/ch86-v1/contracts/86-S2.v3.json", "sha256": "b7a941e4535d8552f220a2cf088d931449dd689f41da7de0f03de8f05dce5a73", "bytes": 9160}
+{"path": "data/writing/local-scenarios/ch86-v1/contracts/86-S3.v3.json", "sha256": "781b3a73149d79cedbfd96d05db16e48b5cd84bd8e549bd2347e18d4973a2c12", "bytes": 9433}
+{"path": "artifacts/local-trial-ch86-20261110/review-v3/contract-1.scaffold.json", "sha256": "a9933dc302c1d7defc966a0714493061123deb7b345aa13cef5487ebacc99dfd", "bytes": 754}
+
+任务ID：contract-1。从所列scaffold另存你的原始意见到 artifacts/local-trial-ch86-20261110/review-v3/opinions/contract-1.json。不得覆盖scaffold、正文、模型、合同或其他文件。先填真实reviewer principal_id/session_id（用本次agent任务名声明身份），reading_status只在所有分配文件确已读完时填COMPLETE；status填COMPLETE仅表示意见已提交。declared_read_files逐项含path/sha256/bytes/read_complete，未分配材料在unread_files中说明。给出实际引句及段落定位；段落按空行从1计，含标题。findings每条含id、severity(ADVISORY或BLOCKING)、assessment(PASS/PENDING/FAIL)、quote、paragraphs、reason和建议。overall_assessment可用PASS/PENDING/FAIL，并明确只是研究意见、非真人资格。不要以本轮已读声明替代上下文隔离或消费证明。逐项填写所分配三份合同的全部required_beats与forbidden_beats（contract_id,type,ordinal,assessment,正文quote/paragraphs,reason）。仅核对本组相关事件和消息，填写event_and_message_findings（kind,id,assessment,quote,reason）；模型虽整份读过，不宣称另一组三份合同通过。所分配JSON包括original_declarations等全文，不能只提取description后声称全读。
+
+原始意见文件必须为完整UTF-8 JSON且不超过16384字节，精简元数据与引句后完整保存，不能截断；若不足，保留失败原件并说明INCOMPLETE。允许紧凑JSON。读完后自己检查JSON、文件字节数和逐项覆盖，但不要向其他读者探询。最终只回复文件路径、字节数、reading_status、overall_assessment及最重要的发现，不在聊天重发整份意见。
