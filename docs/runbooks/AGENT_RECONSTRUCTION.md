@@ -7,7 +7,14 @@ python tools/verify_local_scenario_ch86.py
 pytest -q tests/test_local_scenario.py
 ```
 
-模型回放与准备请求PASS仅是工程保管检查。未排序支线显示UNKNOWN_AT_UNORDERED_CUT；宝玉到场/问药不自动知道死时，再温请求无效果。正文尚未试写、范围语义仍PENDING；下一步先做86单回真实试写与独立正文审读，不扩大批量。详见[ADR0015](../decisions/0015_LOCAL_EDITORIAL_SCENARIOS.md)。下列projection试点保留为机制回归入口，不是当前局部模型试写入口。
+模型回放与准备请求PASS仅是工程保管检查。未排序支线显示UNKNOWN_AT_UNORDERED_CUT；宝玉到场/问药不自动知道死时，再温请求无效果。当前主会话已另写第86回研究试稿，当前候选及父稿以 `artifacts/local-trial-ch86-20261110/import-v3.json`、`import.json` 明确选择；不替换旧20回研究版。原始短稿、整稿编辑、作者自查、离线反馈、一次真实反馈修订和未通过的字节门证据均保留。见[试写计划](../plans/CH86_LOCAL_TRIAL_20261110.md)及[执行报告](../../artifacts/local-trial-ch86-20261110/EXECUTION_REPORT.md)。
+
+```bash
+python artifacts/local-trial-ch86-20261110/verify_trial.py
+python artifacts/local-trial-ch86-20261110/prepare_review.py --check
+```
+
+活动独立读集为 `artifacts/local-trial-ch86-20261110/review-v3/manifest.json`，两份正文盲读、两份分合同/状态核对，均NOT_STARTED；`review/`属于未派发父稿材料。盲读派发只交该任务的read_inputs，不交协调者manifest、作者自查或其他意见。当前0份独立正文意见，全部语义与文学仍PENDING；旧8份范围意见不计入新正文审读。新输入main准确SHA双版本CI成功、且获得读者启动授权后再按最多3并发启动，不扩大批量。详见[ADR0015](../decisions/0015_LOCAL_EDITORIAL_SCENARIOS.md)。下列projection试点保留为机制回归入口，不是当前局部模型试写入口。
 
 # 可执行场景局部依赖试点（2026-11-08）
 

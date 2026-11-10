@@ -205,6 +205,28 @@ def test_frozen_history_does_not_recompile_and_revisions_keep_full_parent(view_r
     assert load_draft(view_root,second['draft']['path'])[0]['parent']==first['draft']
 
 
+def test_shared_view_current_compatibility_and_template_change(view_root):
+    from rcwh.generation.lineage import current_compatibility
+    from rcwh.generation.session import export_request
+    from rcwh.generation.writing import load_draft
+
+    saved(view_root, 'request.json', prepared(view_root))
+    (view_root / 'authored.txt').write_text('甲说道：“不知。”\n\n乙退了。')
+    exported = export_request(view_root, 'request.json')
+    draft = imported(view_root, payload_export_path=exported['receipt']['path'])['draft']['path']
+    before = load_draft(view_root, draft)
+    report = current_compatibility(view_root, draft)
+    assert report['status'] == 'PASS' and report['compatibility'] == 'CURRENT'
+    assert report['changed_inputs'] == []
+
+    template = view_root / 'data/writing/prompts/shared-values-v1.md'
+    template.write_bytes(template.read_bytes() + b'\nchanged transport instruction\n')
+    report = current_compatibility(view_root, draft)
+    assert report['compatibility'] == 'STALE'
+    assert 'data/writing/prompts/shared-values-v1.md' in report['changed_inputs']
+    assert load_draft(view_root, draft) == before
+
+
 @pytest.mark.parametrize('tamper',[False,True])
 def test_shared_view_preserves_narrow_runtime_observation_normalization(observed_session,monkeypatch,tamper):
     from rcwh.generation.render import PromptRenderer

@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "kind": "LOCAL_TRIAL_REVIEW_PLAN",
+  "candidate": {
+    "path": "artifacts/candidates/ch86/20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef.txt",
+    "sha256": "20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef",
+    "bytes": 18243
+  },
+  "import_receipt": {
+    "path": "artifacts/local-trial-ch86-20261110/import-v3.json",
+    "sha256": "be427274aae4eb40933ec4e492ce0b412e5d386abf85e071b1c6d39cc6aa7161",
+    "bytes": 1455
+  },
+  "tasks": [
+    {
+      "id": "blind-1",
+      "role": "BLIND_LITERARY",
+      "status": "NOT_STARTED",
+      "read_inputs": [
+        {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/blind-1.md",
+          "sha256": "5c8ea6733f03f15adeb6e6d47e3a7d6d7dbeae7a31f1e54a27360b8a3b3f3658",
+          "bytes": 891
+        },
+        {
+          "path": "artifacts/candidates/ch86/20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef.txt",
+          "sha256": "20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef",
+          "bytes": 18243
+        },
+        {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/blind-1.scaffold.json",
+          "sha256": "39f2ce7298c64e6ff56a6878844697410e3282493ea5c789c5023cc77491a15f",
+          "bytes": 710
+        }
+      ],
+      "scaffold": "artifacts/local-trial-ch86-20261110/review-v3/blind-1.scaffold.json",
+      "expected_raw_opinion": "artifacts/local-trial-ch86-20261110/review-v3/opinions/blind-1.json",
+      "budget": {
+        "read_bytes": 19844,
+        "instruction_reserve_bytes": 16384,
+        "output_reserve_bytes": 16384,
+        "reserved_total_bytes": 52612,
+        "maximum_bytes": 131072,
+        "token_capacity": "NOT_MEASURED"
+      }
+    },
+    {
+      "id": "blind-2",
+      "role": "BLIND_LITERARY",
+      "status": "NOT_STARTED",
+      "read_inputs": [
+        {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/blind-2.md",
+          "sha256": "5c8ea6733f03f15adeb6e6d47e3a7d6d7dbeae7a31f1e54a27360b8a3b3f3658",
+          "bytes": 891
+        },
+        {
+          "path": "artifacts/candidates/ch86/20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef.txt",
+          "sha256": "20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef",
+          "bytes": 18243
+        },
+        {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/blind-2.scaffold.json",
+          "sha256": "1a0ef3644013396d505a23d0c9f63c940d98ef6241b07e2461c3c1016f1c25e2",
+          "bytes": 710
+        }
+      ],
+      "scaffold": "artifacts/local-trial-ch86-20261110/review-v3/blind-2.scaffold.json",
+      "expected_raw_opinion": "artifacts/local-trial-ch86-20261110/review-v3/opinions/blind-2.json",
+      "budget": {
+        "read_bytes": 19844,
+        "instruction_reserve_bytes": 16384,
+        "output_reserve_bytes": 16384,
+        "reserved_total_bytes": 52612,
+        "maximum_bytes": 131072,
+        "token_capacity": "NOT_MEASURED"
+      }
+    },
+    {
+      "id": "contract-1",
+      "role": "LOCAL_CONTRACT_AND_STATE",
+      "status": "NOT_STARTED",
+      "read_inputs": [
+        {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/contract-1.md",
+          "sha256": "44a846c2bcfda0a1a1699438abef4eb1088785776ca465545c5078aaf6752341",
+          "bytes": 1257
+        },
+        {
+          "path": "artifacts/candidates/ch86/20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef.txt",
+          "sha256": "20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef",
+          "bytes": 18243
+        },
+        {
+          "path": "data/writing/local-scenarios/ch86-v1/scenario.json",
+          "sha256": "1d3590da77ed7c20f5a2c42747638ebacacacbe3d80799de486d60b9366204ed",
+          "bytes": 43169
+        },
+        {
+          "path": "data/writing/local-scenarios/ch86-v1/contracts/86-S1.v3.json",
+          "sha256": "5573e58e11b45c50de00ac4a9657a84b2e7f0b375520fa1747ff3199e64ee572",
+          "bytes": 10968
+        },
+        {
+          "path": "data/writing/local-scenarios/ch86-v1/contracts/86-S2.v3.json",
+          "sha256": "b7a941e4535d8552f220a2cf088d931449dd689f41da7de0f03de8f05dce5a73",
+          "bytes": 9160
+        },
+        {
+          "path": "data/writing/local-scenarios/ch86-v1/contracts/86-S3.v3.json",
+          "sha256": "781b3a73149d79cedbfd96d05db16e48b5cd84bd8e549bd2347e18d4973a2c12",
+          "bytes": 9433
+        },
+        {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/contract-1.scaffold.json",
+          "sha256": "a9933dc302c1d7defc966a0714493061123deb7b345aa13cef5487ebacc99dfd",
+          "bytes": 754
+        }
+      ],
+      "scaffold": "artifacts/local-trial-ch86-20261110/review-v3/contract-1.scaffold.json",
+      "expected_raw_opinion": "artifacts/local-trial-ch86-20261110/review-v3/opinions/contract-1.json",
+      "budget": {
+        "read_bytes": 92984,
+        "instruction_reserve_bytes": 16384,
+        "output_reserve_bytes": 16384,
+        "reserved_total_bytes": 125752,
+        "maximum_bytes": 131072,
+        "token_capacity": "NOT_MEASURED"
+      }
+    },
+    {
+      "id": "contract-2",
+      "role": "LOCAL_CONTRACT_AND_STATE",
+      "status": "NOT_STARTED",
+      "read_inputs": [
+        {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/contract-2.md",
+          "sha256": "44a846c2bcfda0a1a1699438abef4eb1088785776ca465545c5078aaf6752341",
+          "bytes": 1257
+        },
+        {
+          "path": "artifacts/candidates/ch86/20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef.txt",
+          "sha256": "20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef",
+          "bytes": 18243
+        },
+        {
+          "path": "data/writing/local-scenarios/ch86-v1/scenario.json",
+          "sha256": "1d3590da77ed7c20f5a2c42747638ebacacacbe3d80799de486d60b9366204ed",
+          "bytes": 43169
+        },
+        {
+          "path": "data/writing/local-scenarios/ch86-v1/contracts/86-S4.v3.json",
+          "sha256": "0d5688b0cb3b28952a27962de6421f506b33263135b88b772f44b0d257ebca47",
+          "bytes": 10880
+        },
+        {
+          "path": "data/writing/local-scenarios/ch86-v1/contracts/86-S5.v3.json",
+          "sha256": "47bec2904b39757588a15a3c6249c8be47a5c810c38afca0b1c7330763f145f4",
+          "bytes": 11040
+        },
+        {
+          "path": "data/writing/local-scenarios/ch86-v1/contracts/86-S6.v3.json",
+          "sha256": "75eb2fd3861ed2ed0dbc83db2a303ec64de7b7451e80a12cfccde37314ad3ed6",
+          "bytes": 11170
+        },
+        {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/contract-2.scaffold.json",
+          "sha256": "cc8ff8f24e7a98576ea1eb0cf093472fd750d205d6205456858e612a17ad69f4",
+          "bytes": 754
+        }
+      ],
+      "scaffold": "artifacts/local-trial-ch86-20261110/review-v3/contract-2.scaffold.json",
+      "expected_raw_opinion": "artifacts/local-trial-ch86-20261110/review-v3/opinions/contract-2.json",
+      "budget": {
+        "read_bytes": 96513,
+        "instruction_reserve_bytes": 16384,
+        "output_reserve_bytes": 16384,
+        "reserved_total_bytes": 129281,
+        "maximum_bytes": 131072,
+        "token_capacity": "NOT_MEASURED"
+      }
+    }
+  ],
+  "independent_opinions": 0,
+  "scope_status": "PENDING",
+  "literary_status": "PENDING",
+  "source_and_corpus_review": "NOT_CHECKED",
+  "dispatch": {
+    "mode": "NATIVE_SUBAGENT_ONLY_AFTER_INPUT_CI_AND_AUTHORIZATION",
+    "maximum_concurrency": 3,
+    "attempts": 0,
+    "adapter_command": null,
+    "retry_policy": "Preserve incomplete/failed originals; retry sequentially up to 2 times; no replacement opinion by coordinator"
+  },
+  "qualification": "RESEARCH_ONLY",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "authority_effect": "NONE"
+}

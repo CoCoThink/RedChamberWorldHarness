@@ -167,6 +167,10 @@ def current_compatibility(root: Path, relative: str) -> dict:
             except (OSError, ValueError):
                 result["changed_inputs"].append(ref["path"])
         fresh = _render_context(root, basis["context"], version=2)
+        # Compatibility compares the same transport envelope as preparation;
+        # an opt-in shared view also binds its instruction template as an input.
+        from .prompt_view import render_view
+        fresh = render_view(root, fresh, basis["context"])
         normalized, variations = _runtime_observations(basis["task"], fresh["task"])
         same = (canonical_bytes(normalized) == canonical_bytes(fresh["task"])
                 and basis["inputs"] == fresh["inputs"] and basis["dependency_records"] == fresh["dependency_records"]

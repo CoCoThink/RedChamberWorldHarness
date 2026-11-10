@@ -55,6 +55,10 @@ COMPLETE仅是读者对已分配文件的声明，分配外未读及NOT_CHECKED�
 
 新入口只支持 `prepare_request` 或 `rcwh write draft ... --chapter 86 --shared-view --context-bytes 327680 --context-overhead-bytes 16384 --context-output-bytes 32768 --dry-run` 与session导入，不走provider执行。原required/forbidden全文保留，未知声明与局部编辑值分开；通用feedback对六项返回研究骨架PENDING，不借旧场状态评价正文。单回真实试写/独立正文审读完成前不能铺开或授予production。局部模型完整边界见[ADR0015](../decisions/0015_LOCAL_EDITORIAL_SCENARIOS.md)。
 
+真实单回试稿入口见 `artifacts/local-trial-ch86-20261110/import-v3.json`（父稿见同目录import.json）。同一主会话作者自查不作独立意见；自查保留24个事件、5条消息和40项合同义务的逐段引文映射，以及未确认的语义/文学问题。首次正文漏写药铺接力，后以真实父稿、局部反馈和notes准备新修订请求并导入新正文。完整离线反馈仍保存；修订反馈明确选择六项骨架PENDING、完整性检查及作者发现的问题，未附的风格/声明连续性诊断不被转成PASS。
+
+修订仍受327680字节上下文上限、16384指令预留约束，输出预留明确改为24576字节；旧32768预留下整份反馈超限的拒绝记录保留，不截断合同或正文。`review-v3/manifest.json`为活动独立读集，最大任务含指令和输出预留低于131072字节，token仍未实测。`prepare_review.py --check`只核读集和预算，`verify_trial.py`另核实际作者链/父稿、历史保管和当前兼容性；都不授予正文语义通过或独立审读完成。源准备模型里的NOT_STARTED是原准备记录，实际试写状态另看本轮执行回执。
+
 `literary-inputs package ... --production`、生产 competition 和 promotion 使用同一个章回准入服务。来源作用域取写作包声明与场景/历史机制/主张/实现依赖的并集；漏列来源、断开的引用、过期字节会阻塞，不能只列较容易审核的来源。
 
 本回所用来源必须具备可验证定位和独立覆盖；不在当前审核协议中的来源仍待明确审核。实际用到的语料须通过现有数据集审核。本版本不创建逐段子集审核，也不把未审正文授权为正式范例。未审材料可在研究权限下使用，报告保留 PENDING。
