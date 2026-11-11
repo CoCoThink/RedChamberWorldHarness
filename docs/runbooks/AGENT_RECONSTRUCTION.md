@@ -36,7 +36,7 @@ python -m unittest discover -s artifacts/local-trial-review-20261111 -p 'test_ve
 
 # 可执行场景局部依赖试点（2026-11-08）
 
-在a91e999的world试点后继续，见[事前计划](../plans/SCENE_PROJECTION_20261108.md)、[ADR0013](../decisions/0013_SCENE_INPUT_PROJECTIONS.md)。活动包为`data/writing/packages/ch86-scene-projection-pilot-v2.json`，独立材料协议SCENE_INPUT_PROJECTION v1，请求仍用renderer/schema v2。内嵌world v1的算法未改，原87试点继续核验。
+在a91e999的world试点后继续，见[事前计划](../plans/SCENE_PROJECTION_20261108.md)、[ADR0013](../decisions/0013_SCENE_INPUT_PROJECTIONS.md)。活动包为`data/writing/packages/ch86-scene-projection-pilot-v3.json`，独立材料协议SCENE_INPUT_PROJECTION v1，请求仍用renderer/schema v2。内嵌world v1的算法未改，原87试点继续核验。
 
 ```bash
 python tools/verify_scene_projection_pilot.py
@@ -44,7 +44,7 @@ python tools/verify_scene_projection_pilot.py
 
 显式查询保存于`artifacts/scene-projection-pilot-20261108/query-v1.json`；另建包用`tools/prepare_scene_projection.py --base-package ... --output-package 新路径 --id 新ID --query 查询文件`。物件ENTRY只重放到前回末，命名transition检查点与知识事件检查点各自独立；legacy登记没有章内时序，不能覆盖命名物件检查点。网络和legacy值并列，知识ENTRY与后续检查点并列。当前复算扫描新事件、关系边和同回场景；历史反馈读取冻结知识，不重读当前知识库。
 
-第86回只生成DRY_RUN请求，没有模型调用或正文。开发原型v1包、请求及旧变更报告保留历史，算法加严后当前已失配，不用它起草；活动包明确选v2。人物/物件范围尚未获完整性审阅，world全局上下文、物件关系闭包及规则仍保守。所有语义、文学、人工、P9与stable资格按原门控，不能由本试点推定。
+第86回试点只生成DRY_RUN请求，没有模型调用或正文。开发原型v1和v2包、请求及旧变更报告保留历史；写作规则变化后v2投影已失配，v3重新绑定当前规则。人物/物件范围尚未获完整性审阅，world全局上下文、物件关系闭包及规则仍保守。所有语义、文学、人工、P9与stable资格按原门控，不能由本试点推定。
 
 # World局部依赖试点（2026-11-08）
 

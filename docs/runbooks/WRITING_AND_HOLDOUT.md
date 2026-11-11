@@ -7,7 +7,7 @@
 新增 `PROMPT_SHARED_VIEW v1`，只给 renderer v2 的离线会话准备/导入使用。默认请求保持原样。共享值、路径绑定和说明模板均冻结；展开后必须与完整 task 的规范 JSON 字节相同。默认v1/v2修订继续保留完整嵌套task，不把合同删短。显式 `--revision-template revise-v3` 选择完整基础约束、直接父稿及当前选定反馈/notes，旧修订全文/意见留在绑定父稿历史中而不重复嵌入；history_selection披露此边界，未复评旧意见不算PASS。未知wrapper附加字段即拒绝，不承诺未来请求永不增长。
 
 ```bash
-rcwh write draft data/writing/packages/ch86-scene-projection-pilot-v2.json \
+rcwh write draft data/writing/packages/ch86-scene-projection-pilot-v3.json \
   --chapter 86 --shared-view --context-bytes 350000 \
   --context-overhead-bytes 32768 --context-output-bytes 24000 --dry-run \
   > artifacts/prompt-view-pilot-20261108/NEW-prepared-request.json

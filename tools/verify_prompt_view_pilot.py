@@ -8,7 +8,7 @@ from rcwh.generation.prompt_view import admission, expand
 from rcwh.generation.records import binding
 from rcwh.generation.session import prepare_request, verify_frozen_request, verify_prepared_request
 
-PACKAGE = 'data/writing/packages/ch86-scene-projection-pilot-v2.json'
+PACKAGE = 'data/writing/packages/ch86-scene-projection-pilot-v3.json'
 LIMITS = {'version':1, 'max_context_bytes':350000, 'overhead_reserve_bytes':32768, 'output_reserve_bytes':24000}
 
 

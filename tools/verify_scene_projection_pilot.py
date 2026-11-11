@@ -13,7 +13,7 @@ from rcwh.generation.scene_projection import rule_bindings
 from rcwh.generation.session import prepare_request, verify_prepared_request
 from rcwh.io import load_data
 
-PACKAGE = 'data/writing/packages/ch86-scene-projection-pilot-v2.json'
+PACKAGE = 'data/writing/packages/ch86-scene-projection-pilot-v3.json'
 
 
 def verify(root):
