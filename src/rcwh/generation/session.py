@@ -106,7 +106,7 @@ def selection_context(root: Path, *, package_path: str | None = None, chapter: i
                       feedback_path: str | None = None, notes_path: str | None = None,
                       revision_template: str = "revise-v1", prompt_view_version: int | None = None,
                       context_limits: dict | None = None) -> dict:
-    if revision_template not in {"revise-v1", "revise-v2"}:
+    if revision_template not in {"revise-v1", "revise-v2", "revise-v3"}:
         raise ValueError("unknown revision template")
     if not parent_path and revision_template != "revise-v1":
         raise ValueError("revision template requires a revision parent")
@@ -537,5 +537,7 @@ def _verify_revision_history(root: Path, prepared: dict, read) -> None:
         if len(refs) != 1:
             raise ValueError("historical revision notes binding mismatch")
         notes = read(refs[0]).decode("utf-8")
-    if task != {"writing_task": parent["task"], "original": text, "feedback": feedback, "editorial_notes": notes}:
+    from .writing import revision_task
+    if task != revision_task(parent["task"], text, feedback, notes,
+                             prepared["context"].get("revision_template", "revise-v1")):
         raise ValueError("historical revision differs from frozen parent/context")

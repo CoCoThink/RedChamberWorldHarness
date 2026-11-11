@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "kind": "LOCAL_TRIAL_REVIEW_PLAN",
+  "candidate": {
+    "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+    "sha256": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2",
+    "bytes": 13526
+  },
+  "import_receipt": {
+    "path": "artifacts/local-trial-revision-ch86-20261111/import.json",
+    "sha256": "2a0c32c8f0fd217b4d41ae56ce3dc72019bf4a9c0fd1f4dfdb081a0f8c74a9fa",
+    "bytes": 1455
+  },
+  "tasks": [
+    {
+      "id": "blind-1",
+      "role": "BLIND_LITERARY",
+      "status": "NOT_STARTED",
+      "read_inputs": [
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/review/blind-1.md",
+          "sha256": "5c8ea6733f03f15adeb6e6d47e3a7d6d7dbeae7a31f1e54a27360b8a3b3f3658",
+          "bytes": 891
+        },
+        {
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "sha256": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2",
+          "bytes": 13526
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/review/blind-1.scaffold.json",
+          "sha256": "f394fedd5f4445d6343699bddf76159e5dfff5ba4f3a2757f8ac35e7bedbefeb",
+          "bytes": 710
+        }
+      ],
+      "scaffold": "artifacts/local-trial-revision-ch86-20261111/review/blind-1.scaffold.json",
+      "expected_raw_opinion": "artifacts/local-trial-revision-ch86-20261111/review/opinions/blind-1.json",
+      "budget": {
+        "read_bytes": 15127,
+        "instruction_reserve_bytes": 16384,
+        "output_reserve_bytes": 16384,
+        "reserved_total_bytes": 47895,
+        "maximum_bytes": 131072,
+        "token_capacity": "NOT_MEASURED"
+      }
+    },
+    {
+      "id": "blind-2",
+      "role": "BLIND_LITERARY",
+      "status": "NOT_STARTED",
+      "read_inputs": [
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/review/blind-2.md",
+          "sha256": "5c8ea6733f03f15adeb6e6d47e3a7d6d7dbeae7a31f1e54a27360b8a3b3f3658",
+          "bytes": 891
+        },
+        {
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "sha256": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2",
+          "bytes": 13526
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/review/blind-2.scaffold.json",
+          "sha256": "9ba84d10a7d970efe9c8ae93ddc20a7e0efee8e7c75dc4b9939b10ceebffdbca",
+          "bytes": 710
+        }
+      ],
+      "scaffold": "artifacts/local-trial-revision-ch86-20261111/review/blind-2.scaffold.json",
+      "expected_raw_opinion": "artifacts/local-trial-revision-ch86-20261111/review/opinions/blind-2.json",
+      "budget": {
+        "read_bytes": 15127,
+        "instruction_reserve_bytes": 16384,
+        "output_reserve_bytes": 16384,
+        "reserved_total_bytes": 47895,
+        "maximum_bytes": 131072,
+        "token_capacity": "NOT_MEASURED"
+      }
+    },
+    {
+      "id": "contract-1",
+      "role": "LOCAL_CONTRACT_AND_STATE",
+      "status": "NOT_STARTED",
+      "read_inputs": [
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/review/contract-1.md",
+          "sha256": "44a846c2bcfda0a1a1699438abef4eb1088785776ca465545c5078aaf6752341",
+          "bytes": 1257
+        },
+        {
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "sha256": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2",
+          "bytes": 13526
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/reading-inputs/scenario.json",
+          "sha256": "1f2bd3796a538838e03b3f0f7e36d95eafecd1122d246c419db17c3cbc04fb12",
+          "bytes": 43439
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/reading-inputs/contracts/86-S1.v3.json",
+          "sha256": "00daf7466aa50935942480266720ab353d708b3e214003623a05bc397f74b0b7",
+          "bytes": 11590
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/reading-inputs/contracts/86-S2.v3.json",
+          "sha256": "881b3aaba4b6d33416ce0b40fd1c4344a55f5557ec75d1ba8190aa42e6885745",
+          "bytes": 9810
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/reading-inputs/contracts/86-S3.v3.json",
+          "sha256": "a8065f53a26fda574cb0b1857bb9d000c9353d397de4c6422f5403da06849ec3",
+          "bytes": 10055
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/review/contract-1.scaffold.json",
+          "sha256": "b65380d0073bd26aec5d5b6ab383168bee8346f6d229b140daca24fa22e98a0c",
+          "bytes": 754
+        }
+      ],
+      "scaffold": "artifacts/local-trial-revision-ch86-20261111/review/contract-1.scaffold.json",
+      "expected_raw_opinion": "artifacts/local-trial-revision-ch86-20261111/review/opinions/contract-1.json",
+      "budget": {
+        "read_bytes": 90431,
+        "instruction_reserve_bytes": 16384,
+        "output_reserve_bytes": 16384,
+        "reserved_total_bytes": 123199,
+        "maximum_bytes": 131072,
+        "token_capacity": "NOT_MEASURED"
+      }
+    },
+    {
+      "id": "contract-2",
+      "role": "LOCAL_CONTRACT_AND_STATE",
+      "status": "NOT_STARTED",
+      "read_inputs": [
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/review/contract-2.md",
+          "sha256": "44a846c2bcfda0a1a1699438abef4eb1088785776ca465545c5078aaf6752341",
+          "bytes": 1257
+        },
+        {
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "sha256": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2",
+          "bytes": 13526
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/reading-inputs/scenario.json",
+          "sha256": "1f2bd3796a538838e03b3f0f7e36d95eafecd1122d246c419db17c3cbc04fb12",
+          "bytes": 43439
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/reading-inputs/contracts/86-S4.v3.json",
+          "sha256": "89a83d72bfa4f0ace80fb7845578f95f524afafddc11e540b927689c255450a4",
+          "bytes": 11522
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/reading-inputs/contracts/86-S5.v3.json",
+          "sha256": "56ea94cdfcfbeeeb6c22aed99e5325884ce8ac2f12c066ea9580df37f11524a1",
+          "bytes": 11662
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/reading-inputs/contracts/86-S6.v3.json",
+          "sha256": "0a5e425200ab220d6c582b6c61eccd881fe849d0dd2749e8ca24abfaf2212762",
+          "bytes": 11820
+        },
+        {
+          "path": "artifacts/local-trial-revision-ch86-20261111/review/contract-2.scaffold.json",
+          "sha256": "cb76c705b240154e4ad6ace2f83eb43a792a47e72a1fe0fb1cb72d85a176fcb5",
+          "bytes": 754
+        }
+      ],
+      "scaffold": "artifacts/local-trial-revision-ch86-20261111/review/contract-2.scaffold.json",
+      "expected_raw_opinion": "artifacts/local-trial-revision-ch86-20261111/review/opinions/contract-2.json",
+      "budget": {
+        "read_bytes": 93980,
+        "instruction_reserve_bytes": 16384,
+        "output_reserve_bytes": 16384,
+        "reserved_total_bytes": 126748,
+        "maximum_bytes": 131072,
+        "token_capacity": "NOT_MEASURED"
+      }
+    }
+  ],
+  "independent_opinions": 0,
+  "scope_status": "PENDING",
+  "literary_status": "PENDING",
+  "source_and_corpus_review": "NOT_CHECKED",
+  "dispatch": {
+    "mode": "NATIVE_SUBAGENT_ONLY_AFTER_INPUT_CI_AND_AUTHORIZATION",
+    "maximum_concurrency": 3,
+    "attempts": 0,
+    "adapter_command": null,
+    "retry_policy": "Preserve incomplete/failed originals; retry sequentially up to 2 times; no replacement opinion by coordinator"
+  },
+  "qualification": "RESEARCH_ONLY",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "authority_effect": "NONE"
+}

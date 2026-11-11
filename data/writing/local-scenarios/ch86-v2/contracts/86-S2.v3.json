@@ -1,0 +1,339 @@
+{
+  "authority_effect": "NONE",
+  "chapter": 86,
+  "checkpoints": [
+    "doctor_delay_observed",
+    "doctor_reply_sent",
+    "doctor_feedback"
+  ],
+  "entry_checkpoint": "ordinary_care",
+  "evidence_effect": "NONE",
+  "forbidden_beats": [
+    {
+      "citations": [
+        {
+          "byte_range": [
+            15819,
+            15973
+          ],
+          "lines": [
+            412,
+            414
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e34ce345aab8ce8482fb7b5f85e293931a8b3995005ad570602acbb4a69621e0"
+        },
+        {
+          "byte_range": [
+            17286,
+            17433
+          ],
+          "lines": [
+            442,
+            444
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ce0fb459938c863d8d51711a9daa666372f309271941913db29597c3e6367ae3"
+        }
+      ],
+      "description": "用家庭命令、权谋或骗婚人为扣住医生和宝玉。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT"
+    },
+    {
+      "citations": [
+        {
+          "byte_range": [
+            16752,
+            16859
+          ],
+          "lines": [
+            430,
+            432
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "a8005e17d65f111ad5300ff6f9b3dc230b02dd81f04d471497f79130b4fc9ca5"
+        },
+        {
+          "byte_range": [
+            16859,
+            16984
+          ],
+          "lines": [
+            433,
+            435
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ab0529d9bc6e3b749aaa00e7e393dbbd35f8427810bd84eaf0921f24ffd94bfa"
+        },
+        {
+          "byte_range": [
+            17700,
+            18079
+          ],
+          "lines": [
+            454,
+            457
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ca835b9c0cc0faa57e527da203559a9747367ae96a4fd542615428deec253849"
+        }
+      ],
+      "description": "把现实医疗工序扩写成现代医学讲解，或用神迹补救医者迟到。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT"
+    },
+    {
+      "citations": [
+        {
+          "byte_range": [
+            17632,
+            17660
+          ],
+          "lines": [
+            451,
+            451
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e1c22a397f53f3d123997c31bccf5dc898e2eee9267dc54c723ff51c44ba4ad3"
+        },
+        {
+          "byte_range": [
+            17660,
+            17700
+          ],
+          "lines": [
+            452,
+            453
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "44e50474767c8d9301ed3c5c77ae2942e439a0cef17b919c728501c816f9af53"
+        }
+      ],
+      "description": "不新增回前诗、回末诗或作者总结诗；收束仍由卡规定的生活动作承担。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT"
+    }
+  ],
+  "id": "86-S2",
+  "kind": "LOCAL_SCENE_CONTRACT",
+  "original_declarations": {
+    "entry_state": [
+      {
+        "basis": [],
+        "equals": "character.daiyu.body_state",
+        "reason": "未有86-S1出口到此场的身体检查点；全回病程不能注入局部入口。",
+        "status": "UNKNOWN",
+        "value": null
+      },
+      {
+        "basis": [],
+        "equals": "object.OBJ-MEDICINE-BOWL-86.temperature",
+        "reason": "已注册药碗基线与全回转冷事件不足以给出候医时药温。",
+        "status": "UNKNOWN",
+        "value": null
+      }
+    ],
+    "event_refs": [],
+    "exit_state": [
+      {
+        "basis": [],
+        "equals": "character.daiyu.body_state",
+        "reason": "候医延误的具体时长及身体结果没有场级世界事件。",
+        "status": "UNKNOWN",
+        "value": null
+      },
+      {
+        "basis": [],
+        "equals": "character.zijuan.knowledge.daiyu_may_die_tonight",
+        "reason": "K86-ZIJUAN-SEES-RAPID-DECLINE是真实注册事件，但没有证据把它精确放进此候医场。",
+        "status": "UNKNOWN",
+        "value": null
+      }
+    ],
+    "knowledge_binding": null,
+    "preconditions": [
+      {
+        "basis": [],
+        "equals": "character.zijuan.knowledge.daiyu_illness_severe",
+        "reason": "legacy认知场的入口虽列病重，尚无86-S2与该入口的明确对应。",
+        "status": "UNKNOWN",
+        "value": null
+      }
+    ],
+    "unresolved": [
+      "participants: 医者、药铺经手人、跑腿及可能报信的雪雁都无实体ID，故演员集合仅部分可绑定。",
+      "timing: 医者在别处何事、往返路径及病危报信先后尚未有独立场级事实，必须留作具体作者选择而非KNOWN。",
+      "knowledge: 病重与今夜可能不起均有事实记录，但怀疑获得的种子场位置未核定。",
+      "entry_checkpoint: 86-S2为后续局部场；显式前驱仅依SOURCE_LIST_ORDER_NOT_VERIFIED_CHRONOLOGY声明，不继承上一场状态。",
+      "event_bindings: 现有世界事件是章节粗粒度模型，未证明本种子的场级时点；event_refs保持空，不把声明当状态依据。",
+      "exit_state: 所列本场出口目标均缺少独立场级世界/对象/知识检查点，value保持null、status为UNKNOWN。",
+      "entry_state.character.daiyu.body_state: 未有86-S1出口到此场的身体检查点；全回病程不能注入局部入口。",
+      "entry_state.object.OBJ-MEDICINE-BOWL-86.temperature: 已注册药碗基线与全回转冷事件不足以给出候医时药温。",
+      "preconditions.character.zijuan.knowledge.daiyu_illness_severe: legacy认知场的入口虽列病重，尚无86-S2与该入口的明确对应。",
+      "relay: 请医反馈、报病危与宝玉到达仍缺三种局部时间边界；本次只规定分链，不给出路线或取得事件。"
+    ]
+  },
+  "participants": [
+    "zijuan",
+    "local:ch86:doctor",
+    "local:ch86:doctor-runner",
+    "daiyu",
+    "local:ch86:xueyan"
+  ],
+  "required_beats": [
+    {
+      "citations": [
+        {
+          "byte_range": [
+            15574,
+            15819
+          ],
+          "lines": [
+            409,
+            411
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "6294a4b92d26277a59da7e8bc02363262507446bc5fe5720ddeb32b03006fb46"
+        },
+        {
+          "byte_range": [
+            16859,
+            16984
+          ],
+          "lines": [
+            433,
+            435
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ab0529d9bc6e3b749aaa00e7e393dbbd35f8427810bd84eaf0921f24ffd94bfa"
+        },
+        {
+          "byte_range": [
+            16984,
+            17170
+          ],
+          "lines": [
+            436,
+            438
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "35c6a9a0cdd9c2ba9f86db12541717d70b9d68b1e86bd65d6a9c6e1f024dcd09"
+        }
+      ],
+      "description": "至少让候医者收到医者被别处事务绊住的现实反馈，和跑腿去请、返回/再问的劳务接上；反馈足以说明迟到而不伪造具体病家、诊断、时辰或已解决的行程。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT"
+    },
+    {
+      "citations": [
+        {
+          "byte_range": [
+            16859,
+            16984
+          ],
+          "lines": [
+            433,
+            435
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ab0529d9bc6e3b749aaa00e7e393dbbd35f8427810bd84eaf0921f24ffd94bfa"
+        },
+        {
+          "byte_range": [
+            16984,
+            17170
+          ],
+          "lines": [
+            436,
+            438
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "35c6a9a0cdd9c2ba9f86db12541717d70b9d68b1e86bd65d6a9c6e1f024dcd09"
+        }
+      ],
+      "description": "药铺、跑腿、厨房与热水工作继续接力，紫鹃的照护不因等医者而悬空。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT"
+    },
+    {
+      "citations": [
+        {
+          "byte_range": [
+            15819,
+            15973
+          ],
+          "lines": [
+            412,
+            414
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "e34ce345aab8ce8482fb7b5f85e293931a8b3995005ad570602acbb4a69621e0"
+        },
+        {
+          "byte_range": [
+            16859,
+            16984
+          ],
+          "lines": [
+            433,
+            435
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ab0529d9bc6e3b749aaa00e7e393dbbd35f8427810bd84eaf0921f24ffd94bfa"
+        },
+        {
+          "byte_range": [
+            16984,
+            17170
+          ],
+          "lines": [
+            436,
+            438
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "35c6a9a0cdd9c2ba9f86db12541717d70b9d68b1e86bd65d6a9c6e1f024dcd09"
+        },
+        {
+          "byte_range": [
+            17700,
+            18079
+          ],
+          "lines": [
+            454,
+            457
+          ],
+          "path": "sources/project/cea77d0ec8777a39/81—100_二十回全幅补完卡_v2.6_引用标识修复版.md",
+          "sha256": "cea77d0ec8777a39b5a36f77c1eebf9638c208ba6cb8b71e083908d7f6e3c99c",
+          "text_sha256": "ca835b9c0cc0faa57e527da203559a9747367ae96a4fd542615428deec253849"
+        }
+      ],
+      "description": "医者迟到的反馈与病危消息报宝玉是两条经手链：病势先恶化，报信再外传；不能因为医生未到就令宝玉同步知道死亡，更不能让等医生暂停紫鹃的照护。",
+      "epistemic": "CURRENT_IMPLEMENTATION_REQUIREMENT"
+    }
+  ],
+  "required_objects": [
+    "local:ch86:medicine-pot"
+  ],
+  "revision": "v3",
+  "scope": "EDITORIAL_MODEL_ONLY_NOT_OBSERVED",
+  "status": "UNREVIEWED_EDITORIAL_MODEL",
+  "temporal_rule": "CAUSAL_DAG_NOT_SEED_LIST_ORDER",
+  "version": 1,
+  "participant_scope": {
+    "mode": "CORE_REGISTERED_PARTICIPANTS_NOT_EXHAUSTIVE_OF_ANONYMOUS_LABOR",
+    "anonymous_labor": "Only kitchen, pharmacy, hot-water and clothing service; no checked message, knowledge acquisition, identity, possession or motion without local registration.",
+    "named_actor_rule": "Named actors enacted within this contract must be listed; causal arrival and knowledge obligations still apply.",
+    "prop_check_scope": "Rice-gruel vessels, water/clothing and writing implements are narrative-only: no replay claim for identity, holder, motion or temperature. Checked transitions require explicit registration first."
+  }
+}

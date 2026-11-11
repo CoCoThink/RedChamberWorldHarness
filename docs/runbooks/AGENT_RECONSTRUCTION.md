@@ -1,3 +1,14 @@
+# 当前第86回审读后修订（2026-11-11）
+
+当前候选入口为 `artifacts/local-trial-revision-ch86-20261111/import.json`，新审读包为该目录 `review/manifest.json`，42段/13526字节，4项任务均NOT_STARTED。新模型与六合同另存ch86-v2；当前父稿谱系不改，完整范围增量通过notes绑定。新增显式revise-v3避免递归嵌入旧修订全文，保留完整基础约束、直接父稿、本轮全部21项发现及历史原始记录。文学/语义PENDING、来源/语料NOT_CHECKED，旧四位意见不迁移到新稿。新提交CI按准确SHA核对后再安排新独立复核，不铺开。详见[修订报告](../../artifacts/local-trial-revision-ch86-20261111/EXECUTION_REPORT.md)。
+
+```bash
+python artifacts/local-trial-revision-ch86-20261111/verify.py
+python artifacts/local-trial-revision-ch86-20261111/prepare.py --check
+```
+
+下列v1/v3记录是不可变历史及复验入口。
+
 # 当前第86回局部编辑模型（2026-11-10）
 
 当前小规模试写准备入口为 `data/writing/packages/ch86-local-scenario-v1.json`，精确准备请求与导出回执见 `artifacts/local-scenario-ch86-20261110/preparation.json`。8份独立范围意见和协调方案已收齐；基线main `3e4e79f`双版本CI通过。按[实施计划](../plans/LOCAL_SCENARIO_CH86_20261110.md)落实六份v3局部合同、身份、器物和偏序消息模型，原20回/历史请求/原UNKNOWN不改。

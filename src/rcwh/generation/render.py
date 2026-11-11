@@ -170,7 +170,7 @@ class PromptRenderer:
         return result
 
     def render(self, template_name: str, data: dict, inputs: list[dict]) -> dict:
-        if template_name not in {"author-v1", "revise-v1", "revise-v2", "plan-draft-v1"}:
+        if template_name not in {"author-v1", "revise-v1", "revise-v2", "revise-v3", "plan-draft-v1"}:
             raise ValueError("unknown generation template")
         path = f"data/writing/prompts/{template_name}.md"
         template = binding(self.root, path)

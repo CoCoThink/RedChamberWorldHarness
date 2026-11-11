@@ -1,0 +1,42 @@
+{
+  "kind": "LOCAL_VALIDATION_RESULTS",
+  "checks": [
+    {
+      "command": "pytest -q tests/test_revision_selection_v3.py tests/test_revision_templates.py tests/test_snapshot_revision_import.py tests/test_session_generation.py",
+      "status": "PASS",
+      "tests_passed": 144,
+      "note": "Before two additional v3 cases; included in following group."
+    },
+    {
+      "command": "pytest -q tests/test_revision_selection_v3.py tests/test_local_scenario.py tests/test_prompt_view.py tests/test_writing_lineage.py tests/test_snapshot_revision_preparation.py tests/test_revision_ablation.py",
+      "status": "PASS",
+      "tests_passed": 116,
+      "note": "Groups overlap; do not sum as unique tests."
+    },
+    {
+      "command": "rcwh validate",
+      "status": "PASS"
+    },
+    {
+      "command": "python artifacts/local-trial-revision-ch86-20261111/verify.py",
+      "status": "PASS",
+      "scope": "CUSTODY_SCOPE_DELTA_AND_BUDGET_ONLY"
+    },
+    {
+      "command": "python artifacts/local-trial-ch86-20261110/verify_trial.py",
+      "status": "PASS"
+    },
+    {
+      "command": "python artifacts/local-trial-ch86-20261110/prepare_review.py --check",
+      "status": "PASS"
+    },
+    {
+      "command": "python artifacts/local-trial-review-20261111/verify.py",
+      "status": "PASS"
+    }
+  ],
+  "semantic_status": "PENDING",
+  "literary_status": "PENDING",
+  "production_admission": "NOT_GRANTED",
+  "authority_effect": "NONE"
+}

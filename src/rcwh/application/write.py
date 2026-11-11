@@ -172,7 +172,7 @@ def add_commands(sub) -> None:
     revise.add_argument("candidate", help="Repository-relative immutable draft record")
     revise.add_argument("--feedback", required=True)
     revise.add_argument("--notes", help="Repository-relative editorial notes")
-    revise.add_argument("--revision-template", choices=["revise-v1", "revise-v2"], default="revise-v1",
+    revise.add_argument("--revision-template", choices=["revise-v1", "revise-v2", "revise-v3"], default="revise-v1",
                         help="Explicit revision template; legacy v1 remains the default")
     for p in (draft, revise):
         p.add_argument('--shared-view', action='store_true', help='Lossless shared-value session transport v1')

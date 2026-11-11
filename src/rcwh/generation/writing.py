@@ -195,9 +195,38 @@ def draft_dataset(root: Path, task: dict) -> str:
     return json.loads(bound_bytes(root, ref))["dataset_ref"]
 
 
+def revision_task(parent_task: dict, text: str, feedback: dict, notes: str | None,
+                  template: str) -> dict:
+    """Opt-in v3 selects full base constraints, immediate text and current feedback.
+
+    Earlier prose/notes/feedback stay in the bound parent history. Legacy tasks
+    remain byte-identical; this is a declared selection, not a summary or truncation.
+    """
+    task = parent_task
+    depth = 0
+    if template == "revise-v3":
+        while "writing_task" in task:
+            if set(task) not in ({"writing_task", "original", "feedback", "editorial_notes"},
+                                 {"writing_task", "original", "feedback", "editorial_notes", "history_selection"}):
+                raise ValueError("unsupported revision wrapper; cannot discard unknown constraints")
+            task = task["writing_task"]
+            if not isinstance(task, dict):
+                raise ValueError("invalid base writing task")
+            depth += 1
+    result = {"writing_task": task, "original": text, "feedback": feedback, "editorial_notes": notes}
+    if template == "revise-v3":
+        result["history_selection"] = {
+            "mode": "BASE_CONSTRAINTS_IMMEDIATE_TEXT_CURRENT_FEEDBACK",
+            "removed_wrapper_depth": depth,
+            "historical_prose_notes_feedback": "BOUND_PARENT_HISTORY_NOT_INCLUDED_OR_REASSESSED",
+            "negative_findings": "Current feedback retained in full; historical verdicts remain immutable, not PASS.",
+        }
+    return result
+
+
 def revision_prompt(root: Path, draft_path: str, feedback_path: str, notes_path: str | None = None, *,
                     revision_template: str = "revise-v1", renderer_version: int | None = None) -> dict:
-    if revision_template not in {"revise-v1", "revise-v2"}:
+    if revision_template not in {"revise-v1", "revise-v2", "revise-v3"}:
         raise ValueError("unknown revision template")
     draft, text = load_draft(root, draft_path)
     feedback_binding = binding(root, feedback_path)
@@ -220,7 +249,7 @@ def revision_prompt(root: Path, draft_path: str, feedback_path: str, notes_path:
         ref = binding(root, notes_path)
         notes = bound_bytes(root, ref).decode("utf-8")
         inputs.append(ref)
-    data = {"writing_task": draft["task"], "original": text, "feedback": feedback, "editorial_notes": notes}
+    data = revision_task(draft["task"], text, feedback, notes, revision_template)
     result = PromptRenderer(root, version=version).render(revision_template, data, inputs)
     result.update(revision_parent=binding(root, draft_path), revision_feedback=feedback_binding)
     if version == 2:

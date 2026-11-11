@@ -41,7 +41,7 @@ def write_once(path, raw, *, check):
         target.write_bytes(raw)
 
 
-def prepare(*, check=False, import_receipt=f'{BASE}/import-v3.json', output=f'{BASE}/review-v3'):
+def prepare(*, check=False, import_receipt=f'{BASE}/import-v3.json', output=f'{BASE}/review-v3', scenario=SCENARIO, contracts=CONTRACTS):
     imported = json.loads((ROOT / import_receipt).read_bytes())
     candidate = binding(imported['candidate']['path'])
     if candidate['sha256'] != imported['candidate']['sha256']:
@@ -82,7 +82,7 @@ def prepare(*, check=False, import_receipt=f'{BASE}/import-v3.json', output=f'{B
         write_once(protocol_path, protocol.encode(), check=check)
         paths = [protocol_path, candidate['path']]
         if scenes:
-            paths += [SCENARIO] + [f'{CONTRACTS}/86-S{i}.v3.json' for i in scenes]
+            paths += [scenario] + [f'{contracts}/86-S{i}.v3.json' for i in scenes]
         scaffold_path = f'{output}/{job}.scaffold.json'
         scaffold = {
             'kind': 'LOCAL_TRIAL_REVIEW_SCAFFOLD', 'job_id': job,
@@ -132,6 +132,9 @@ if __name__ == '__main__':
     parser.add_argument('--check', action='store_true')
     parser.add_argument('--import-receipt', default=f'{BASE}/import-v3.json')
     parser.add_argument('--output-directory', default=f'{BASE}/review-v3')
+    parser.add_argument('--scenario', default=SCENARIO)
+    parser.add_argument('--contracts-directory', default=CONTRACTS)
     args = parser.parse_args()
     print(json.dumps(prepare(check=args.check, import_receipt=args.import_receipt,
-                             output=args.output_directory), ensure_ascii=False, indent=2))
+                             output=args.output_directory, scenario=args.scenario,
+                             contracts=args.contracts_directory), ensure_ascii=False, indent=2))

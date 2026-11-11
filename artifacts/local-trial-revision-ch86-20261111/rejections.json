@@ -1,0 +1,23 @@
+{
+  "kind": "COORDINATOR_REJECTED_ATTEMPTS",
+  "selected_import": {
+    "path": "artifacts/local-trial-revision-ch86-20261111/import.json",
+    "sha256": "5e29477069fa0728e9e4fa87f228077051da05d11cd4561fc3206af772895a60"
+  },
+  "rejected": [
+    {
+      "import": {
+        "path": "artifacts/local-trial-revision-ch86-20261111/rejected-import-author-prefix.json",
+        "sha256": "2a0c32c8f0fd217b4d41ae56ce3dc72019bf4a9c0fd1f4dfdb081a0f8c74a9fa"
+      },
+      "preparation_manifest": {
+        "path": "artifacts/local-trial-revision-ch86-20261111/rejected-review-manifest-author-prefix.json",
+        "sha256": "4283b912feab0fa95a8b4c9043d585ac46ab412ee0edde43f81503fd08f77c81"
+      },
+      "decision": "DO_NOT_SELECT_OR_DISPATCH",
+      "reason": "Session ID was given an extra session: prefix; generated principal differs from the actual parent author. Raw run/draft/blobs and preparation snapshot remain unchanged. Snapshot import-path binding is superseded by this explicit rejection record; not a current valid packet."
+    }
+  ],
+  "independent_opinions": 0,
+  "authority_effect": "NONE"
+}

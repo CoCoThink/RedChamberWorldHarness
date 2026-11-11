@@ -71,7 +71,7 @@ def test_v2_not_available_as_draft_selection_or_arbitrary_template(session_root)
     with pytest.raises(ValueError, match='requires a revision parent'):
         prepare_request(root, package_path='package.json', chapter=89, revision_template='revise-v2')
     first, feedback = parent_and_feedback(root)
-    for name in ['author-v1', '../revise-v2', 'revise-v3']:
+    for name in ['author-v1', '../revise-v2', 'revise-v99']:
         with pytest.raises(ValueError, match='unknown revision template'):
             revision_prompt(root, first['draft']['path'], feedback['path'], revision_template=name)
     packet = prepare_request(root, package_path='package.json', chapter=89)

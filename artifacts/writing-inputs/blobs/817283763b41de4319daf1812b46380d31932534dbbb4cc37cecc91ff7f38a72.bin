@@ -1,0 +1,408 @@
+{
+  "schema_version": 1,
+  "kind": "WRITING_FEEDBACK",
+  "qualification": "FEEDBACK_ONLY",
+  "candidate": {
+    "path": "artifacts/candidates/ch86/20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef.txt",
+    "sha256": "20f02d73098a58d532e4727c14611d8880f08a574c65130d2a28e0ccc5fa7bef"
+  },
+  "draft": {
+    "path": "data/writing/drafts/ch86/8a29f5df97aa191a44609649e9d3e6eb23ff364a985d9d5134e078010d93e993.json",
+    "sha256": "8a29f5df97aa191a44609649e9d3e6eb23ff364a985d9d5134e078010d93e993"
+  },
+  "inputs": [
+    {
+      "path": "artifacts/candidates/ch86/fac0aaeebe27553ca6d99ba7497da360bd1613d3eb4d53e794f828c932e0249a.txt",
+      "sha256": "fac0aaeebe27553ca6d99ba7497da360bd1613d3eb4d53e794f828c932e0249a"
+    },
+    {
+      "path": "artifacts/local-trial-ch86-20261110/local-revision-feedback-v3.json",
+      "sha256": "97c45cd0f988143898a9a1be2fa9a3bfea2e7cd3432d384e6592cc6967440ae9"
+    },
+    {
+      "path": "artifacts/local-trial-ch86-20261110/revision-notes-v3.md",
+      "sha256": "b50739fd2ce3ed1ebaa645fe80b304334d3022b747bb2f6198a6a63a7fd343c7"
+    },
+    {
+      "path": "data/writing/drafts/ch86/75a64cb584b9e142f433b8087573115cae15d1183c1b26f815c9ccc1f553c19e.json",
+      "sha256": "75a64cb584b9e142f433b8087573115cae15d1183c1b26f815c9ccc1f553c19e"
+    },
+    {
+      "path": "data/writing/prompts/shared-values-v1.md",
+      "sha256": "dd855a76ce9f437f1dc816237ac6f7fc814eb0794e5c266d4471f7fb378a2e38"
+    }
+  ],
+  "checks": [
+    {
+      "evaluator": "independent_local_research_review",
+      "status": "PENDING",
+      "qualification": "FEEDBACK_ONLY",
+      "details": {
+        "original_opinion": {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/opinions/blind-1.json",
+          "sha256": "65be6830118e422b14140b6b99d660b227bd0d4b893ed47313be6ad385b3fa83"
+        },
+        "job_id": "blind-1",
+        "findings": [
+          {
+            "id": "B1-01",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "topic": "人物声音",
+            "quote": "黛玉：“米汤怎么也算一样？”；雪雁：“昨儿我说稀些，厨房里还说，稀了怕不养人。”；紫鹃：“她也起了几遭。”",
+            "paragraphs": [
+              5,
+              7,
+              11
+            ],
+            "reason": "黛玉尚能抓住措辞轻轻打趣，雪雁急于解释自己的责任，紫鹃即使疲惫仍护着同伴。这些反应让三人有所区别，亲密关系通过口角与照料成立。宝钗在第10—14段的问候和安排也符合本回呈现的务实声音。",
+            "suggestion": "保留这些有关系信息的短对话；压缩周围功能相同的动作时优先留下它们。"
+          },
+          {
+            "id": "B1-02",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "topic": "动作和信息可理解性",
+            "quote": "“究竟动身了没有？”“还没有。我亲见他那里还在看人”；“只说姑娘这会子不好，叫他快来。”；“雪雁出去以后，我还托着姑娘，气就没了。我在这里。”",
+            "paragraphs": [
+              19,
+              30,
+              48
+            ],
+            "reason": "大夫答应来与尚未动身被明确区分；雪雁带走的是病重消息，因此宝玉到来仍不知道死讯，信息差成立。死亡先由呼吸和身体失力呈现，再由紫鹃明说，读者能够定位事件及见证者。",
+            "suggestion": "保留三个信息节点；其间传话过程可缩短，避免重复解释已经清楚的信息。"
+          },
+          {
+            "id": "B1-03",
+            "severity": "ADVISORY",
+            "assessment": "FAIL",
+            "topic": "叙事节奏及重复动作",
+            "quote": "“水取来，仍是擦唇、换帕子，过一会扶着，过一会放平。”；“紫鹃问可要躺低些，仍等她应一声，手停着不动。”；“紫鹃听见‘接着’两个字，抬了抬头，仍把帕子叠好。”",
+            "paragraphs": [
+              22,
+              28,
+              41
+            ],
+            "reason": "照料动作在第2—16、21—23、27—28、33—35、40—42、52段密集复现。部分重复确实表现病中等待和死后惯性，但连续几段仍围绕扶、等、换帕和递水，所带来的病势或关系变化很少。第22段已经概括循环，第23和28段又展开相近过程；死后第41—42段再延长同类节拍，使本回过于平匀。",
+            "suggestion": "合并第14—16与21—23段中的同功能照料，缩去第28段部分动作；死后保留第33或35段中最具失神意味的一组动作，其余收束。让发病、稿夹未竟、死亡、来迟各有可辨的节奏变化。"
+          },
+          {
+            "id": "B1-04",
+            "severity": "ADVISORY",
+            "assessment": "PENDING",
+            "topic": "等待与赶路的篇幅",
+            "quote": "“他又将请人的话说了一遍，大夫点头道知道”；“有话要说，话赶不上气，便仍是那一句‘紫鹃姐姐叫快些’”；“她不能说姑娘现在怎样，自己也还没有回去看过，便只是跟着。”",
+            "paragraphs": [
+              18,
+              44,
+              45
+            ],
+            "reason": "大夫暂不能来及雪雁不知道最新病况，逻辑都清楚；但第18段重申第17段的等待，第44—45段两度说明说不出话和跟行。赶路连用三段而缺少新的阻碍或空间变化，主观紧迫感反而减弱。第37—42段在雪雁离开与宝玉登场之间处理报丧和照护，也使读者等待较长。交叉叙述并不能据此判定时间矛盾。",
+            "suggestion": "将第17—19段压成问诊未毕、回报未动身两个节拍；第43—45段压为一至两段，保留雪雁的知识边界和宝玉只问大夫的反应即可。"
+          },
+          {
+            "id": "B1-05",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "topic": "情感及未竟之事",
+            "quote": "“昨儿那个字……”；“夹内那页留着未填的一字，她的手却没有将夹子揭开。”；“她没有翻开看是哪一页，也没有再问那个字。”",
+            "paragraphs": [
+              24,
+              25,
+              26
+            ],
+            "reason": "稿夹使黛玉具有照护对象之外的个人心事。紫鹃的“等好些再改”与随后未能开启的动作，让希望落空而不靠解释情绪；不揭开稿夹也保持了未竟感。仅据本回无法确认这个字有无前文伏笔，但不影响当前场景的理解。",
+            "suggestion": "保留这一组动作和不解释具体字义的处理；可压缩第27—28段的过渡，使稿夹后的身体衰竭更直接。"
+          },
+          {
+            "id": "B1-06",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "topic": "死亡后的情感",
+            "quote": "“衣袖带住被边，她又将它捻开，怕牵动了枕上的人。”；“旧的却没有交出去，只留在手里。那人等着，她才松开。”；李纨：“我在这里。你告诉我，先拿什么。”",
+            "paragraphs": [
+              32,
+              35,
+              40
+            ],
+            "reason": "紫鹃仍按活人照护、迟迟不能交出旧帕，表现了现实已经改变而身体习惯还没有跟上的哀伤。李纨先接住具体事务，允许紫鹃留在床边，安慰有行为支撑。悲伤由不同人的反应形成，而不是由叙述者宣告，感情成立。",
+            "suggestion": "以这些具有独特心理含义的动作作为死后段落的支点，减少同一阶段的普通整理衣被细节。"
+          },
+          {
+            "id": "B1-07",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "topic": "宝玉反应与结尾效果",
+            "quote": "“药还没吃么？再温一温。”；“退了这一步，他才看清紫鹃一直弯着的背，却仍只站着。”；“碗沿的一点药痕干在外面，里面剩着的药，冷了。”",
+            "paragraphs": [
+              47,
+              51,
+              53
+            ],
+            "reason": "宝玉仍把眼前情形理解为病中照护，得知死讯后让出位置却不能参与，来迟的无力感可见。末段以药碗从尚可温热到彻底冷去收束，与第3段的残药相接，余味明确。其间第4、22、47段反复点药碗，略显预先强调，但没有破坏结尾。",
+            "suggestion": "保留第3、47、53段之间的照应，考虑删除或淡化第4、22段的重复提醒。宝玉的沉默可以保留；若要加深其个人性，可让第49—50段的一次停手更贴近他眼前看见的具体东西，不必增加长篇哭诉。"
+          }
+        ],
+        "nonpass_obligations": []
+      }
+    },
+    {
+      "evaluator": "independent_local_research_review",
+      "status": "PENDING",
+      "qualification": "FEEDBACK_ONLY",
+      "details": {
+        "original_opinion": {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/opinions/blind-2.json",
+          "sha256": "f966eb650ac4ffe7a9d91c87ae9f4f22a05a064036072f9b102e4e40f194d5e4"
+        },
+        "job_id": "blind-2",
+        "findings": [
+          {
+            "id": "B2-01",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "quote": "黛玉道：“米汤怎么也算一样？”……紫鹃道：“说你把米汤也当药了。”雪雁道：“原来不是药，倒好吃了。”",
+            "paragraphs": [
+              5
+            ],
+            "reason": "开场三人的差别可听见：黛玉在病中仍会抓话里的小毛病，雪雁直率而略笨拙，紫鹃熟知黛玉的意思并替她接话。短暂笑意让后来的死亡有日常生活可失去，情感铺垫成立。此为本篇内部声音判断。",
+            "suggestion": "保留这种由具体误会生出的对答，后半回也可给人物各留一处有辨识度的表达。"
+          },
+          {
+            "id": "B2-02",
+            "severity": "ADVISORY",
+            "assessment": "PENDING",
+            "quote": "宝钗道：“且等一等，看她要不要。”……才道：“先歇一歇，别两样一齐劝。”；李纨自己也流泪，只道：“我在这里。你告诉我，先拿什么。”",
+            "paragraphs": [
+              12,
+              40
+            ],
+            "reason": "宝钗体恤照护者、李纨接管家务，角色功能清楚；但两人和紫鹃多用低声询问、先等再做、照应水衣的同一套表达。宝钗第10—14段离场后不再出现，其短场景对关系的贡献偏薄。仅凭本回不能确认这种相近声音是否有前文支持。",
+            "suggestion": "适度压缩宝钗场景，或用她与黛玉之间一处独有的反应区分其关系；让李纨接手时的语气更体现处置事务的习惯。"
+          },
+          {
+            "id": "B2-03",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "quote": "“还没有。我亲见他那里还在看人，话是当面说的，完了就来。”；“雪雁出去以后，我还托着姑娘，气就没了。我在这里。”",
+            "paragraphs": [
+              19,
+              48
+            ],
+            "reason": "请医者准确交代大夫未出发，雪雁只携带出门时的病情，紫鹃再向宝玉说明死亡发生在雪雁离开后。信息随人移动，读者能够辨清谁知道什么；没有靠跑腿提前泄露雪雁不可能知道的死讯。动作上第29—32段由无反应到确认气绝也可理解。",
+            "suggestion": "保留这些关键的信息边界；可压缩围绕同一口信的复述，而不删去死亡时间的说明。"
+          },
+          {
+            "id": "B2-04",
+            "severity": "ADVISORY",
+            "assessment": "PENDING",
+            "quote": "“水取来，仍是擦唇、换帕子，过一会扶着，过一会放平。”；“紫鹃接在手里，搁着没有用，仍用原来的托住。”；“紫鹃把方才取来未用的东西移开……手停着不动。”",
+            "paragraphs": [
+              22,
+              16,
+              28
+            ],
+            "reason": "重复照护有表现病榻时间的作用，但第2—23段已多次出现托扶、候水、搁碗、等回应、收声，第24—28段稿夹场景又以不揭、不取、不问、挪开收束。多个段落缺乏新的病势、关系或选择变化，语调中的“仍”“又”“便”“不再”也积累出模板感。死亡前的等待因而偏长，稿夹这一有区别的意象被相似动作稀释。这是本回最主要的阅读阻力。",
+            "suggestion": "优先合并第14—16及21—23段中的同类照护，稿夹场景压成更集中的转折；每次保留的重复应对应可辨的变化，例如尚能挑米汤、尚想改字、已无回应。无需额外解释病理。"
+          },
+          {
+            "id": "B2-05",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "quote": "“没有了。她的脸停在那儿，眼睛睁着，嘴里还留着刚才没叫出的一声。”；“帕子抽走，她的手还虚虚地合着，随后又落到被边。”",
+            "paragraphs": [
+              32,
+              35
+            ],
+            "reason": "紫鹃先把无回应当作自己没有托好，再继续整理死者衣被，最后连交出旧帕都慢半拍。动作在这里不只是照护的重演，而是失去照护对象后身体仍延续原来的习惯，足以支持哀痛。第33段眼泪落在被面也有明确触发。",
+            "suggestion": "保留这组有前后意义变化的动作；压缩前部相似细节后，它们的情感力度会更明显。"
+          },
+          {
+            "id": "B2-06",
+            "severity": "ADVISORY",
+            "assessment": "PENDING",
+            "quote": "宝玉看着，向紫鹃道：“药还没吃么？再温一温。”；“那只手慢慢垂下来，落在衣襟上，抓住了一点衣料。”；“退了这一步，他才看清紫鹃一直弯着的背，却仍只站着。”",
+            "paragraphs": [
+              47,
+              50,
+              51
+            ],
+            "reason": "宝玉先按探病的旧经验要温药，再听懂死讯，反应有递进，也避免了突兀的长篇哭诉。但从第49段起，移半步、停手、垂手、退一步、仍站着连续表达同一种僵住状态。回目强调“痴公子”“旧梦”，正文所给二人独有的记忆或语言却很少，宝玉的失落相较紫鹃稍显通用。不能从未读前文断言他理应有何反应。",
+            "suggestion": "保留温药这一最有效的错认，精简其后同义的停顿；可让稿夹或一句已有的日常话触发一处属于二人关系的失误或辨认，再落回沉默。"
+          },
+          {
+            "id": "B2-07",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "quote": "“碗里还剩大半，碗沿有一条药痕，顺着外面淌了一点，到了碗足便住了。”；“那只搁下的药碗没有再挪过，碗沿的一点药痕干在外面，里面剩着的药，冷了。”",
+            "paragraphs": [
+              3,
+              53
+            ],
+            "reason": "结尾药冷、火熄承接开篇尚可等候入口的药，时间和死亡后的不可挽回由物件自身呈现。首尾能闭合，末字简洁，不需要另加议论。不过第47段又完整提示药痕，三次出现使结尾更容易预见。",
+            "suggestion": "保留末段；可缩短第47段对药痕形态的复述，让宝玉只看到未尽的药即可。"
+          }
+        ],
+        "nonpass_obligations": []
+      }
+    },
+    {
+      "evaluator": "independent_local_research_review",
+      "status": "PENDING",
+      "qualification": "FEEDBACK_ONLY",
+      "details": {
+        "original_opinion": {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/opinions/contract-1.json",
+          "sha256": "f508d259ddccae78424a3849b8eaf72c6b5a28abd6ae412a5bc12b397ca02b44"
+        },
+        "job_id": "contract-1",
+        "findings": [
+          {
+            "id": "C1-01",
+            "severity": "ADVISORY",
+            "assessment": "PENDING",
+            "quote": "黛玉道：“昨儿那个字……”；夹内那页留着未填的一字，她的手却没有将夹子揭开。",
+            "paragraphs": [
+              24,
+              25,
+              26
+            ],
+            "reason": "欲改未成的最低动作有支持，但正文不标出G01的独有内容，无法独立排除任意旧稿；手停于夹边也可能只是未继续，不能据此核定身体能力或中止机制。86-S3必写1、2保留解释边界。",
+            "suggestion": "用不展开遗稿的极短线索确认这是G01；若需更强动作证据，给一个可观察的未续动作，不补字、不诊断中止原因。"
+          },
+          {
+            "id": "C1-02",
+            "severity": "ADVISORY",
+            "assessment": "PENDING",
+            "quote": "自己接过送来的米汤，近处放好；外头有人问话，紫鹃摇头，叫莫进来。",
+            "paragraphs": [
+              10,
+              26
+            ],
+            "reason": "米汤盛器有明确接取和放置，模型仍将其列为NARRATIVE_CARE_PROP、implementation_status=NOT_IMPLEMENTED；upgrade_rule对受检持有/移动要求先登记。若把此交接计入模型检查，就需要说明登记边界。另S3参与者表只列黛玉、紫鹃，未说明是否穷尽；外头问话者可以只是场外劳务，不宜直接判表错。",
+            "suggestion": "明确参与者表非穷尽及场外角色规则；若校验米汤交接的持有/移动，补局部盛器身份，否则限定只评叙事功能，不声称完成该对象回放。"
+          },
+          {
+            "id": "C1-03",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "quote": "这病拖得久了；“明儿米汤别熬这么厚。”；“还没有。我亲见他那里还在看人”；“纸都在里头，没动过。”",
+            "paragraphs": [
+              6,
+              7,
+              19,
+              24
+            ],
+            "reason": "本组日常安排、长期病程、现实候医反馈和闭夹未改在正文均有根据，未见婚姻/失玉/缺药单因果、神迹、现代诊断或新增诗作。无足够根据提出确定BLOCKING缺陷。",
+            "suggestion": "保留普通病日及两条消息链；处理前两项解释边界后再决定是否授予本组PASS。"
+          }
+        ],
+        "nonpass_obligations": [
+          {
+            "contract_id": "86-S3",
+            "type": "required_beats",
+            "ordinal": 1,
+            "assessment": "PENDING",
+            "quote": "“昨儿那个字……”；夹内那页留着未填的一字，她的手却没有将夹子揭开。",
+            "paragraphs": [
+              24,
+              25
+            ],
+            "reason": "未填与欲改动作支持，但正文不见G01的可辨线索，无法独立确认特指合同中的那联。见C1-01。"
+          },
+          {
+            "contract_id": "86-S3",
+            "type": "required_beats",
+            "ordinal": 2,
+            "assessment": "PENDING",
+            "quote": "伸出手去；指尖挨着，没有向前；她没有翻开看是哪一页，也没有再问那个字。",
+            "paragraphs": [
+              25,
+              26
+            ],
+            "reason": "紫鹃不翻稿、不辨作、不续写明确；未续动作存在，但“不能续做”与未继续的区别不充分，保留身体动作边界，不能据此填UNKNOWN。"
+          }
+        ]
+      }
+    },
+    {
+      "evaluator": "independent_local_research_review",
+      "status": "PASS",
+      "qualification": "FEEDBACK_ONLY",
+      "details": {
+        "original_opinion": {
+          "path": "artifacts/local-trial-ch86-20261110/review-v3/opinions/contract-2.json",
+          "sha256": "6e6ff4d77fb628f4271bf5b34703ea9fd94d169b6928d3481b0d0e4c933ad500"
+        },
+        "job_id": "contract-2",
+        "findings": [
+          {
+            "id": "F1",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "quote": "紫鹃叫他去报大奶奶，又报太太。",
+            "paragraphs": [
+              37
+            ],
+            "reason": "雪雁报病危与请医跑腿报死讯分链；李纨获信后到场，王夫人远端分工，床边劳动连续。",
+            "suggestion": "保留两链及通知/到场边界。"
+          },
+          {
+            "id": "F2",
+            "severity": "ADVISORY",
+            "assessment": "PENDING",
+            "quote": "李纨也在",
+            "paragraphs": [
+              46
+            ],
+            "reason": "合同S6 participants只列宝玉/紫鹃，正文还有李纨、雪雁；S4还有未命名递水者。名单未声明穷尽，不能由漏列直接判越权，也不能宣布参与者覆盖无歧义。",
+            "suggestion": "协调时明确participants为核心参与者还是穷尽集合；如为穷尽，补登记并重审。"
+          },
+          {
+            "id": "F3",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "quote": "雪雁出去以后，我还托着姑娘，气就没了。我在这里。",
+            "paragraphs": [
+              48
+            ],
+            "reason": "支持模型所定义的“目击/获告具体死亡经过”，并非获知钟点。31—32段保留死亡与照护者辨认间的微小模糊，不能升级成可计量生理死时。",
+            "suggestion": "保持相对经过与绝对死时的区别，不回灌旧场或全局知识。"
+          },
+          {
+            "id": "F4",
+            "severity": "ADVISORY",
+            "assessment": "PASS",
+            "quote": "那只搁下的药碗没有再挪过",
+            "paragraphs": [
+              53
+            ],
+            "reason": "早先药痕与末段干痕承接同碗，药吊子另在炉旁；再温仅请求，结尾仍未尽且冷，无人翻稿。",
+            "suggestion": "保留器物区分；不补中途药温或实际冷却时长。"
+          }
+        ],
+        "nonpass_obligations": []
+      }
+    },
+    {
+      "evaluator": "coordinator_revision_scope",
+      "status": "PENDING",
+      "qualification": "FEEDBACK_ONLY",
+      "details": {
+        "disposition": {
+          "path": "artifacts/local-trial-review-20261111/disposition.json",
+          "sha256": "b2adb34a0733b9a721f452f075175a7a814cac0967406890e918f63b88625a12"
+        },
+        "scope_delta": {
+          "path": "artifacts/local-trial-revision-ch86-20261111/scope-delta.json",
+          "sha256": "f5426ef8ac22aba86f78e740e3ae9d5774a73052d3bc6840d17f1839d329d59f"
+        },
+        "limits": "Full 21 original findings retained. Original complete opinions remain linked; PASS obligation rows and file declarations are not duplicated here. Source/corpus/style/formal qualification not granted."
+      }
+    }
+  ],
+  "semantic_requests": [],
+  "semantic_runs": [],
+  "formal_eligibility": false,
+  "authority_effect": "NONE"
+}

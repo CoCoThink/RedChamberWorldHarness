@@ -73,7 +73,7 @@
         "parent_path": {"$ref": "#/$defs/optionalPath"},
         "feedback_path": {"$ref": "#/$defs/optionalPath"},
         "notes_path": {"$ref": "#/$defs/optionalPath"},
-        "revision_template": {"const": "revise-v2"},
+        "revision_template": {"enum": ["revise-v2", "revise-v3"]},
         "prompt_view_version": {"type":"integer","const":1},
         "context_limits": {"$ref":"#/$defs/contextLimits"}
       },

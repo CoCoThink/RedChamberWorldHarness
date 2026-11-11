@@ -4,7 +4,7 @@
 
 ## 可选无损共享视图与明确字节预留
 
-新增 `PROMPT_SHARED_VIEW v1`，只给 renderer v2 的离线会话准备/导入使用。默认请求保持原样。共享值、路径绑定和说明模板均冻结；展开后必须与完整 task 的规范 JSON 字节相同。反馈和修订继续保留完整 task，不把合同删短，也不承诺递归修订永不增长。
+新增 `PROMPT_SHARED_VIEW v1`，只给 renderer v2 的离线会话准备/导入使用。默认请求保持原样。共享值、路径绑定和说明模板均冻结；展开后必须与完整 task 的规范 JSON 字节相同。默认v1/v2修订继续保留完整嵌套task，不把合同删短。显式 `--revision-template revise-v3` 选择完整基础约束、直接父稿及当前选定反馈/notes，旧修订全文/意见留在绑定父稿历史中而不重复嵌入；history_selection披露此边界，未复评旧意见不算PASS。未知wrapper附加字段即拒绝，不承诺未来请求永不增长。
 
 ```bash
 rcwh write draft data/writing/packages/ch86-scene-projection-pilot-v2.json \
@@ -50,6 +50,8 @@ python -m unittest discover -s artifacts/scope-review-20261110 -p 'test_verify.p
 COMPLETE仅是读者对已分配文件的声明，分配外未读及NOT_CHECKED原样保留。格式修复不得由协调者代写，不增加独立人数，超限原稿不删除。协调文件的五压力段、角色器物表示和局部偏序是内部编辑选择，尚待版本化局部记录与合同实现；收齐8份意见不授予production、stable、人类审阅或provider消费证明。此类范围研究意见不能冒充 `agent-panel` 的正式正文发布审阅。详见[本轮执行计划](../plans/SCOPE_REVIEW_EXECUTION_20261110.md)及[执行报告](../../artifacts/scope-review-20261110/EXECUTION_REPORT.md)。
 
 ## 按回准入与当前状态
+
+当前第86回候选改为 `artifacts/local-trial-revision-ch86-20261111/import.json`（v4），当前审读目标为局部v2模型/合同；修订谱系仍继承冻结v1父包，完整范围增量另绑notes，不伪称换包。42段/13526字节；新请求含预留324210<327680。新独立意见0、文学/语义PENDING，不铺开。用 `python artifacts/local-trial-revision-ch86-20261111/prepare.py --check` 与 `python artifacts/local-trial-revision-ch86-20261111/verify.py` 核验新包；完整JSON阅读视图仅移除缩进，最大任务含预留126748<131072。旧四份意见仅适用于v3。详见[当前修订报告](../../artifacts/local-trial-revision-ch86-20261111/EXECUTION_REPORT.md)。下文v1/v3原件保留为历史复验入口。
 
 第86回新的局部试写准备使用 `data/writing/packages/ch86-local-scenario-v1.json`，不是旧整夜投影包。`python tools/prepare_local_scenario_ch86.py` 只准备新合同/模型/请求并导出计数payload；既有不同字节不覆盖。`python tools/verify_local_scenario_ch86.py` 核对原未知处置、偏序检查点和精确请求/导出保管。实际派发的payload及导入所需回执路径取 `artifacts/local-scenario-ch86-20261110/preparation.json` 的 `export.payload` / `export.receipt`，不要派发整个request.json。显式总字节上限327680，含16384指令和32768输出预留；token容量未实测。
 
