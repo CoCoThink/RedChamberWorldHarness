@@ -1,0 +1,178 @@
+{
+  "kind": "NATIVE_REVIEW_EXECUTION",
+  "input_commit": "61f647a60b150a6e9d471467926f107a8b653b81",
+  "input_ci": "artifacts/local-trial-revision-ch86-20261111/review/input-ci.json",
+  "selected_plan": "artifacts/local-trial-revision-ch86-20261111/review/manifest.json",
+  "user_authorization": "用户此前明确授权原生子代理分批独立审读，并于2026-11-12对四份新稿独立审读的下一步回复“继续”。",
+  "maximum_concurrency": 3,
+  "batch_1": [
+    "blind-1",
+    "blind-2",
+    "contract-1"
+  ],
+  "batch_2": [
+    "contract-2"
+  ],
+  "attempts": [
+    {
+      "job": "blind-1",
+      "agent": "/root/ch86_v4_blind_1",
+      "batch": 1,
+      "attempt": 1,
+      "status": "SUBMITTED",
+      "context_fork": "none",
+      "running_observed_at": "2026-11-12T14:12:21.040710+00:00",
+      "timestamp_basis": "First coordinator observation after spawn; not a measured spawn timestamp",
+      "read_claim_basis": "SELF_REPORTED",
+      "completion_observed_at": "2026-11-12T14:15:59.575544+00:00",
+      "raw_opinion": {
+        "path": "artifacts/local-trial-revision-ch86-20261111/review/opinions/blind-1.json",
+        "sha256": "8d5581666ad670f043de186859faf5627ad0d01b20f181d6aced37dabd33af21",
+        "bytes": 14102
+      },
+      "dispatch": {
+        "path": "artifacts/local-trial-revision-ch86-20261111/review/dispatch/blind-1.json",
+        "sha256": "cefbc9f4b55c7b82daa08f6e22dba9fc77232ad2c6e25f7ee97e1434dfef2f3f",
+        "bytes": 1578
+      },
+      "known_instruction_bytes": 2024
+    },
+    {
+      "job": "blind-2",
+      "agent": "/root/ch86_v4_blind_2",
+      "batch": 1,
+      "attempt": 1,
+      "status": "SUBMITTED",
+      "context_fork": "none",
+      "running_observed_at": "2026-11-12T14:12:21.040710+00:00",
+      "timestamp_basis": "First coordinator observation after spawn; not a measured spawn timestamp",
+      "read_claim_basis": "SELF_REPORTED",
+      "completion_observed_at": "2026-11-12T14:15:59.575544+00:00",
+      "raw_opinion": {
+        "path": "artifacts/local-trial-revision-ch86-20261111/review/opinions/blind-2.json",
+        "sha256": "4e8365bf9d09bc201fdb37c810a87b022be1c8b4051fb71dc511c41f0a195361",
+        "bytes": 14128
+      },
+      "dispatch": {
+        "path": "artifacts/local-trial-revision-ch86-20261111/review/dispatch/blind-2.json",
+        "sha256": "798633b3c50cfc497f13b77fbd99dd90f587106ff55e283496f45d5c93b98bf1",
+        "bytes": 1578
+      },
+      "known_instruction_bytes": 2024
+    },
+    {
+      "job": "contract-1",
+      "agent": "/root/ch86_v4_contract_1",
+      "batch": 1,
+      "attempt": 1,
+      "status": "SUBMITTED",
+      "context_fork": "none",
+      "running_observed_at": "2026-11-12T14:12:21.040710+00:00",
+      "timestamp_basis": "First coordinator observation after spawn; not a measured spawn timestamp",
+      "read_claim_basis": "SELF_REPORTED",
+      "completion_observed_at": "2026-11-12T14:15:59.575544+00:00",
+      "raw_opinion": {
+        "path": "artifacts/local-trial-revision-ch86-20261111/review/opinions/contract-1.json",
+        "sha256": "6e8f0f1659fa64a57ceee445d68bf1056e00b87a2a8e7dd0e7f852244de45759",
+        "bytes": 12601
+      },
+      "dispatch": {
+        "path": "artifacts/local-trial-revision-ch86-20261111/review/dispatch/contract-1.json",
+        "sha256": "94543a73cc4601f4a3bc362c77d466e4a467b710cf7db197bc51acdeedd582bd",
+        "bytes": 2074
+      },
+      "known_instruction_bytes": 2520
+    },
+    {
+      "job": "contract-2",
+      "agent": "/root/ch86_v4_contract_2",
+      "batch": 2,
+      "attempt": 1,
+      "status": "SUBMITTED",
+      "context_fork": "none",
+      "running_observed_at": "2026-11-12T14:15:59.575544+00:00",
+      "timestamp_basis": "First coordinator observation after spawn; not a measured spawn timestamp",
+      "read_claim_basis": "SELF_REPORTED",
+      "completion_observed_at": "2026-11-12T14:20:47.636520+00:00",
+      "raw_opinion": {
+        "path": "artifacts/local-trial-revision-ch86-20261111/review/opinions/contract-2.json",
+        "sha256": "75cd2d03f50401a558d1b92ac6c9b090bd2a0dd9fda86667f6f27145111287d5",
+        "bytes": 14878
+      },
+      "dispatch": {
+        "path": "artifacts/local-trial-revision-ch86-20261111/review/dispatch/contract-2.json",
+        "sha256": "f8ee63b836dcdadbc91de3b25d1bae962ff5f743f81b2195b1f5f4f5f8f2640f",
+        "bytes": 1853
+      },
+      "known_instruction_bytes": 2307
+    }
+  ],
+  "status": "COMPLETE",
+  "qualification": "RESEARCH_ONLY",
+  "formal_eligibility": false,
+  "human_qualification": false,
+  "provider_consumption_proof": false,
+  "external_context_usage": "UNVERIFIED_RESERVATION",
+  "system_context_bytes": "NOT_MEASURED",
+  "production_admission": "NOT_GRANTED",
+  "authority_effect": "NONE",
+  "independent_opinions": 4,
+  "plan_binding": {
+    "path": "artifacts/local-trial-revision-ch86-20261111/review/manifest.json",
+    "sha256": "9a75fa9de68dd95cc1624472318e16ac237bcb3fdc83732dd328a61b44bfc79d",
+    "bytes": 8125
+  },
+  "ci_binding": {
+    "path": "artifacts/local-trial-revision-ch86-20261111/review/input-ci.json",
+    "sha256": "e8a6c3578ee28a7edde1229d32cafcb58f23a9281f3fbd00abe6ad8b9e6b135b",
+    "bytes": 23934
+  },
+  "repository_instructions": {
+    "path": "AGENTS.md",
+    "sha256": "5eb35cc2993c4a68422029cb84649519b27eb08489a23c9608657282d5c4cafe",
+    "bytes": 608
+  },
+  "disposition_binding": {
+    "path": "artifacts/local-trial-revision-ch86-20261111/review/disposition.json",
+    "sha256": "ffae6b32e00ccf36de92597f17237f66f302d1111b383f911ea0f92ab1da39fa",
+    "bytes": 9767
+  },
+  "citation_addendum": {
+    "path": "artifacts/local-trial-revision-ch86-20261111/review/opinions/blind-1.citation-addendum.json",
+    "sha256": "8f09aa77b56110ac875433c1ed02ccb92a0ec19b6db1de28c039de179264e89b",
+    "bytes": 4684
+  },
+  "citation_addendum_note": "Same reader citation-only followup; not a fifth independent review; original unchanged",
+  "citation_followup": {
+    "agent": "/root/ch86_v4_blind_1",
+    "context_fork": "REUSED_SAME_READER",
+    "dispatch": {
+      "path": "artifacts/local-trial-revision-ch86-20261111/review/dispatch/blind-1.citation-followup.json",
+      "sha256": "65eb919493f599eb15d416f19b3ea05cd250e9e5992fb8b924720a807b2b7912",
+      "bytes": 634
+    },
+    "read_inputs": [
+      {
+        "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+        "sha256": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2",
+        "bytes": 13526
+      },
+      {
+        "path": "artifacts/local-trial-revision-ch86-20261111/review/opinions/blind-1.json",
+        "sha256": "8d5581666ad670f043de186859faf5627ad0d01b20f181d6aced37dabd33af21",
+        "bytes": 14102
+      }
+    ],
+    "output": {
+      "path": "artifacts/local-trial-revision-ch86-20261111/review/opinions/blind-1.citation-addendum.json",
+      "sha256": "8f09aa77b56110ac875433c1ed02ccb92a0ec19b6db1de28c039de179264e89b",
+      "bytes": 4684
+    },
+    "instruction_reserve_bytes": 16384,
+    "output_reserve_bytes": 16384,
+    "reserved_total_bytes": 60396,
+    "maximum_bytes": 131072,
+    "system_context_usage": "NOT_MEASURED",
+    "independent_opinions_added": 0
+  }
+}

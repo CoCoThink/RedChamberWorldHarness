@@ -34,6 +34,10 @@ jobs:
         run: python tools/verify_scene_projection_pilot.py
       - name: Verify lossless shared prompt view and explicit context byte reservations
         run: python tools/verify_prompt_view_pilot.py
+      - name: Verify chapter 86 v4 independent review custody and declared coverage
+        run: |
+          python artifacts/local-trial-revision-ch86-20261111/review/verify_execution.py
+          python -m unittest discover -s artifacts/local-trial-revision-ch86-20261111/review -p test_execution.py
       - name: Verify bounded scope review partition and preserve unresolved scope
         run: python tools/prepare_scope_review.py --check artifacts/scope-preflight-20261110/review-v2
       - name: Verify original native scope opinions and internal coordinator boundaries

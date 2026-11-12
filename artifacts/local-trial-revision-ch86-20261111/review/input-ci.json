@@ -1,0 +1,670 @@
+{
+  "conclusion": "success",
+  "headSha": "61f647a60b150a6e9d471467926f107a8b653b81",
+  "jobs": [
+    {
+      "completedAt": "2026-11-11T16:25:21Z",
+      "conclusion": "success",
+      "databaseId": 130626442679,
+      "name": "validate (3.12.13)",
+      "startedAt": "2026-11-11T15:40:04Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T15:40:05Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T15:40:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:40:13Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-11T15:40:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:40:21Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "startedAt": "2026-11-11T15:40:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:40:28Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install -e '.[dev]'",
+          "number": 4,
+          "startedAt": "2026-11-11T15:40:21Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:40:45Z",
+          "conclusion": "success",
+          "name": "Run rcwh validate",
+          "number": 5,
+          "startedAt": "2026-11-11T15:40:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:42:02Z",
+          "conclusion": "success",
+          "name": "Verify selected writing histories and current inputs",
+          "number": 6,
+          "startedAt": "2026-11-11T15:40:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:50:31Z",
+          "conclusion": "success",
+          "name": "Verify v5 current inputs and reproduce its original committed edition",
+          "number": 7,
+          "startedAt": "2026-11-11T15:42:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:57Z",
+          "conclusion": "success",
+          "name": "Verify reviewed contract revision and exact continuity reuse",
+          "number": 8,
+          "startedAt": "2026-11-11T15:50:31Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:07:57Z",
+          "conclusion": "success",
+          "name": "Verify opt-in world projection package and real mutation matrix",
+          "number": 9,
+          "startedAt": "2026-11-11T16:05:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:10:24Z",
+          "conclusion": "success",
+          "name": "Verify executable scene projection and real mutation matrix",
+          "number": 10,
+          "startedAt": "2026-11-11T16:07:57Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:11:25Z",
+          "conclusion": "success",
+          "name": "Verify lossless shared prompt view and explicit context byte reservations",
+          "number": 11,
+          "startedAt": "2026-11-11T16:10:24Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:11:25Z",
+          "conclusion": "success",
+          "name": "Verify bounded scope review partition and preserve unresolved scope",
+          "number": 12,
+          "startedAt": "2026-11-11T16:11:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:11:25Z",
+          "conclusion": "success",
+          "name": "Verify original native scope opinions and internal coordinator boundaries",
+          "number": 13,
+          "startedAt": "2026-11-11T16:11:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:11:41Z",
+          "conclusion": "success",
+          "name": "Verify selected local editorial scenario and exact session payload",
+          "number": 14,
+          "startedAt": "2026-11-11T16:11:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:11:58Z",
+          "conclusion": "success",
+          "name": "Verify actual chapter 86 trial ancestry and bounded independent reading packets",
+          "number": 15,
+          "startedAt": "2026-11-11T16:11:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:11:58Z",
+          "conclusion": "success",
+          "name": "Verify native chapter 86 review custody and retain negative findings",
+          "number": 16,
+          "startedAt": "2026-11-11T16:11:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:12:15Z",
+          "conclusion": "success",
+          "name": "Verify chapter 86 revised prose lineage and complete bounded reading views",
+          "number": 17,
+          "startedAt": "2026-11-11T16:11:58Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:12:17Z",
+          "conclusion": "success",
+          "name": "Verify physical assets and immutable versions",
+          "number": 18,
+          "startedAt": "2026-11-11T16:12:15Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:12:33Z",
+          "conclusion": "success",
+          "name": "Smoke native foundation APIs",
+          "number": 19,
+          "startedAt": "2026-11-11T16:12:17Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:12:41Z",
+          "conclusion": "success",
+          "name": "Verify asset discovery and fixed corpus inputs",
+          "number": 20,
+          "startedAt": "2026-11-11T16:12:33Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:13Z",
+          "conclusion": "success",
+          "name": "Verify declared input regressions and corpus rebuilds offline",
+          "number": 21,
+          "startedAt": "2026-11-11T16:12:41Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:25Z",
+          "conclusion": "success",
+          "name": "Smoke domain runtimes",
+          "number": 22,
+          "startedAt": "2026-11-11T16:16:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:26Z",
+          "conclusion": "success",
+          "name": "Verify unreviewed scene remains pending semantic evidence",
+          "number": 23,
+          "startedAt": "2026-11-11T16:16:25Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:26Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_preserved.txt",
+          "number": 24,
+          "startedAt": "2026-11-11T16:16:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:26Z",
+          "conclusion": "success",
+          "name": "Verify replacement-case exit code",
+          "number": 25,
+          "startedAt": "2026-11-11T16:16:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:26Z",
+          "conclusion": "success",
+          "name": "Verify lexical flags retain the separate literal-replacement status",
+          "number": 26,
+          "startedAt": "2026-11-11T16:16:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:27Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_A_stable_full.md",
+          "number": 27,
+          "startedAt": "2026-11-11T16:16:26Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:27Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_B_light_full.md",
+          "number": 28,
+          "startedAt": "2026-11-11T16:16:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:27Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_C_strong_full.md",
+          "number": 29,
+          "startedAt": "2026-11-11T16:16:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:28Z",
+          "conclusion": "success",
+          "name": "Run rcwh competition comp:43-0:ch86:pressure-test",
+          "number": 30,
+          "startedAt": "2026-11-11T16:16:27Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:28Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_A_full.md",
+          "number": 31,
+          "startedAt": "2026-11-11T16:16:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:28Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_B_full.md",
+          "number": 32,
+          "startedAt": "2026-11-11T16:16:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:28Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_C_full.md",
+          "number": 33,
+          "startedAt": "2026-11-11T16:16:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:29Z",
+          "conclusion": "success",
+          "name": "Run rcwh competition comp:43-0:ch89:pressure-test",
+          "number": 34,
+          "startedAt": "2026-11-11T16:16:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:30Z",
+          "conclusion": "success",
+          "name": "Verify historical promotion remains pending independent reviews",
+          "number": 35,
+          "startedAt": "2026-11-11T16:16:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:16:30Z",
+          "conclusion": "success",
+          "name": "Replay archived internal semantic challenges",
+          "number": 36,
+          "startedAt": "2026-11-11T16:16:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:25:18Z",
+          "conclusion": "success",
+          "name": "Run pytest -q",
+          "number": 37,
+          "startedAt": "2026-11-11T16:16:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:25:18Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 73,
+          "startedAt": "2026-11-11T16:25:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:25:19Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 74,
+          "startedAt": "2026-11-11T16:25:18Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:25:19Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 75,
+          "startedAt": "2026-11-11T16:25:19Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/CoCoThink/RedChamberWorldHarness/actions/runs/43050629814/job/130626442679"
+    },
+    {
+      "completedAt": "2026-11-11T16:11:31Z",
+      "conclusion": "success",
+      "databaseId": 130626443087,
+      "name": "validate (3.12.3)",
+      "startedAt": "2026-11-11T15:40:04Z",
+      "status": "completed",
+      "steps": [
+        {
+          "completedAt": "2026-11-11T15:40:05Z",
+          "conclusion": "success",
+          "name": "Set up job",
+          "number": 1,
+          "startedAt": "2026-11-11T15:40:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:40:12Z",
+          "conclusion": "success",
+          "name": "Run actions/checkout@v4",
+          "number": 2,
+          "startedAt": "2026-11-11T15:40:05Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:40:22Z",
+          "conclusion": "success",
+          "name": "Run actions/setup-python@v5",
+          "number": 3,
+          "startedAt": "2026-11-11T15:40:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:40:29Z",
+          "conclusion": "success",
+          "name": "Run python -m pip install -e '.[dev]'",
+          "number": 4,
+          "startedAt": "2026-11-11T15:40:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:40:40Z",
+          "conclusion": "success",
+          "name": "Run rcwh validate",
+          "number": 5,
+          "startedAt": "2026-11-11T15:40:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:41:29Z",
+          "conclusion": "success",
+          "name": "Verify selected writing histories and current inputs",
+          "number": 6,
+          "startedAt": "2026-11-11T15:40:40Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:47:32Z",
+          "conclusion": "success",
+          "name": "Verify v5 current inputs and reproduce its original committed edition",
+          "number": 7,
+          "startedAt": "2026-11-11T15:41:29Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:58:30Z",
+          "conclusion": "success",
+          "name": "Verify reviewed contract revision and exact continuity reuse",
+          "number": 8,
+          "startedAt": "2026-11-11T15:47:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T15:59:47Z",
+          "conclusion": "success",
+          "name": "Verify opt-in world projection package and real mutation matrix",
+          "number": 9,
+          "startedAt": "2026-11-11T15:58:30Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:01:22Z",
+          "conclusion": "success",
+          "name": "Verify executable scene projection and real mutation matrix",
+          "number": 10,
+          "startedAt": "2026-11-11T15:59:47Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:02:01Z",
+          "conclusion": "success",
+          "name": "Verify lossless shared prompt view and explicit context byte reservations",
+          "number": 11,
+          "startedAt": "2026-11-11T16:01:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:02:01Z",
+          "conclusion": "success",
+          "name": "Verify bounded scope review partition and preserve unresolved scope",
+          "number": 12,
+          "startedAt": "2026-11-11T16:02:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:02:01Z",
+          "conclusion": "success",
+          "name": "Verify original native scope opinions and internal coordinator boundaries",
+          "number": 13,
+          "startedAt": "2026-11-11T16:02:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:02:11Z",
+          "conclusion": "success",
+          "name": "Verify selected local editorial scenario and exact session payload",
+          "number": 14,
+          "startedAt": "2026-11-11T16:02:01Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:02:22Z",
+          "conclusion": "success",
+          "name": "Verify actual chapter 86 trial ancestry and bounded independent reading packets",
+          "number": 15,
+          "startedAt": "2026-11-11T16:02:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:02:22Z",
+          "conclusion": "success",
+          "name": "Verify native chapter 86 review custody and retain negative findings",
+          "number": 16,
+          "startedAt": "2026-11-11T16:02:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:02:32Z",
+          "conclusion": "success",
+          "name": "Verify chapter 86 revised prose lineage and complete bounded reading views",
+          "number": 17,
+          "startedAt": "2026-11-11T16:02:22Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:02:34Z",
+          "conclusion": "success",
+          "name": "Verify physical assets and immutable versions",
+          "number": 18,
+          "startedAt": "2026-11-11T16:02:32Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:02:45Z",
+          "conclusion": "success",
+          "name": "Smoke native foundation APIs",
+          "number": 19,
+          "startedAt": "2026-11-11T16:02:34Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:02:50Z",
+          "conclusion": "success",
+          "name": "Verify asset discovery and fixed corpus inputs",
+          "number": 20,
+          "startedAt": "2026-11-11T16:02:45Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:02Z",
+          "conclusion": "success",
+          "name": "Verify declared input regressions and corpus rebuilds offline",
+          "number": 21,
+          "startedAt": "2026-11-11T16:02:50Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:10Z",
+          "conclusion": "success",
+          "name": "Smoke domain runtimes",
+          "number": 22,
+          "startedAt": "2026-11-11T16:05:02Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:10Z",
+          "conclusion": "success",
+          "name": "Verify unreviewed scene remains pending semantic evidence",
+          "number": 23,
+          "startedAt": "2026-11-11T16:05:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:10Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine examples/literary/ch86_preserved.txt",
+          "number": 24,
+          "startedAt": "2026-11-11T16:05:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:11Z",
+          "conclusion": "success",
+          "name": "Verify replacement-case exit code",
+          "number": 25,
+          "startedAt": "2026-11-11T16:05:10Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:11Z",
+          "conclusion": "success",
+          "name": "Verify lexical flags retain the separate literal-replacement status",
+          "number": 26,
+          "startedAt": "2026-11-11T16:05:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:11Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_A_stable_full.md",
+          "number": 27,
+          "startedAt": "2026-11-11T16:05:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:11Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_B_light_full.md",
+          "number": 28,
+          "startedAt": "2026-11-11T16:05:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:11Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch86:cold-medicine artifacts/43-0/ch86/candidates/ch86_C_strong_full.md",
+          "number": 29,
+          "startedAt": "2026-11-11T16:05:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:12Z",
+          "conclusion": "success",
+          "name": "Run rcwh competition comp:43-0:ch86:pressure-test",
+          "number": 30,
+          "startedAt": "2026-11-11T16:05:11Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:12Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_A_full.md",
+          "number": 31,
+          "startedAt": "2026-11-11T16:05:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:12Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_B_full.md",
+          "number": 32,
+          "startedAt": "2026-11-11T16:05:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:12Z",
+          "conclusion": "success",
+          "name": "Run rcwh literary-evaluate plock:ch89:small-life-after-confiscation artifacts/43-0/ch89/candidates/ch89_C_full.md",
+          "number": 33,
+          "startedAt": "2026-11-11T16:05:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:12Z",
+          "conclusion": "success",
+          "name": "Run rcwh competition comp:43-0:ch89:pressure-test",
+          "number": 34,
+          "startedAt": "2026-11-11T16:05:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:13Z",
+          "conclusion": "success",
+          "name": "Verify historical promotion remains pending independent reviews",
+          "number": 35,
+          "startedAt": "2026-11-11T16:05:12Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:05:13Z",
+          "conclusion": "success",
+          "name": "Replay archived internal semantic challenges",
+          "number": 36,
+          "startedAt": "2026-11-11T16:05:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:11:28Z",
+          "conclusion": "success",
+          "name": "Run pytest -q",
+          "number": 37,
+          "startedAt": "2026-11-11T16:05:13Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:11:28Z",
+          "conclusion": "success",
+          "name": "Post Run actions/setup-python@v5",
+          "number": 73,
+          "startedAt": "2026-11-11T16:11:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:11:28Z",
+          "conclusion": "success",
+          "name": "Post Run actions/checkout@v4",
+          "number": 74,
+          "startedAt": "2026-11-11T16:11:28Z",
+          "status": "completed"
+        },
+        {
+          "completedAt": "2026-11-11T16:11:28Z",
+          "conclusion": "success",
+          "name": "Complete job",
+          "number": 75,
+          "startedAt": "2026-11-11T16:11:28Z",
+          "status": "completed"
+        }
+      ],
+      "url": "https://github.com/CoCoThink/RedChamberWorldHarness/actions/runs/43050629814/job/130626443087"
+    }
+  ],
+  "status": "completed",
+  "url": "https://github.com/CoCoThink/RedChamberWorldHarness/actions/runs/43050629814"
+}

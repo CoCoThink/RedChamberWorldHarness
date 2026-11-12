@@ -1,0 +1,261 @@
+{
+  "kind": "LOCAL_TRIAL_REVIEW_OPINION",
+  "job_id": "blind-2",
+  "candidate": {
+    "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+    "sha256": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2"
+  },
+  "reviewer": {
+    "principal_id": "/root/ch86_v4_blind_2",
+    "session_id": "/root/ch86_v4_blind_2",
+    "principal_declaration": "本人是当前受委派的 Codex 审读代理，运行任务身份为 /root/ch86_v4_blind_2；此值为实际可见任务身份，不是人类身份、供应商认证或独立账户证明。",
+    "session_declaration": "以实际可见的受委派运行任务标识 /root/ch86_v4_blind_2 填 principal_id 和 session_id。它表示本次代理任务；未获得可核验的外部会话 UUID，不将任务标识冒充外部会话认证。",
+    "independence_declaration": "只读取本任务指定的任务说明、候选正文和骨架；未读其他正文、合同、作者自查或其他审读意见；未调用外部模型 API。该声明不能证明上下文隔离或外部实际消费。"
+  },
+  "status": "COMPLETE",
+  "reading_status": "COMPLETE",
+  "declared_read_files": [
+    {
+      "path": "artifacts/local-trial-revision-ch86-20261111/review/blind-2.md",
+      "sha256": "5c8ea6733f03f15adeb6e6d47e3a7d6d7dbeae7a31f1e54a27360b8a3b3f3658",
+      "bytes": 891,
+      "read_complete": true
+    },
+    {
+      "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+      "sha256": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2",
+      "bytes": 13526,
+      "read_complete": true
+    },
+    {
+      "path": "artifacts/local-trial-revision-ch86-20261111/review/blind-2.scaffold.json",
+      "sha256": "9ba84d10a7d970efe9c8ae93ddc20a7e0efee8e7c75dc4b9939b10ceebffdbca",
+      "bytes": 710,
+      "read_complete": true
+    }
+  ],
+  "unread_files": [
+    {
+      "scope": "所有未列入 declared_read_files 的材料",
+      "reason": "未分配且按盲读要求不读取；包括其他版本、合同、史料、语料、作者自查、其他读者意见及上下回。"
+    }
+  ],
+  "findings": [
+    {
+      "id": "B2-01",
+      "dimension": "人物声音：黛玉与两个丫鬟",
+      "assessment": "PASS",
+      "limitation": "只能判断本回内的声音差异，不能据此认证与其他回目或原著语料一致。",
+      "quote": "米汤怎么也算一样？",
+      "additional_quotes": [
+        "雪雁还想辩昨儿不是自己熬的",
+        "黛玉的眼光追着她，待她坐定，才不看了。"
+      ],
+      "paragraphs": [
+        4,
+        5,
+        8
+      ],
+      "assessment_detail": "成立",
+      "severity": "ADVISORY",
+      "reason": "黛玉仍有辨字义的机锋，雪雁先照字面答话、又急于说明不是自己的过失，紫鹃则在其中领会并护持。短小对话与依恋紫鹃的目光使病榻上的黛玉还保有性格，情感不完全依赖旁人的哭。",
+      "suggestion": "保留黛玉的机锋、雪雁的自辩及紫鹃领会两人的短对白。"
+    },
+    {
+      "id": "B2-02",
+      "dimension": "人物声音：宝钗与李纨",
+      "assessment": "PASS",
+      "quote": "你坐着，我接。",
+      "additional_quotes": [
+        "我在这里。你告诉我，先拿什么。",
+        "李纨便陪她立着，不再劝。"
+      ],
+      "paragraphs": [
+        10,
+        32,
+        33
+      ],
+      "assessment_detail": "大体成立，区分更多依赖动作",
+      "severity": "ADVISORY",
+      "reason": "宝钗看见紫鹃不能抽身便接米汤，李纨在死亡之后接过外头问话、容许紫鹃继续站着，都通过照顾别人的负担表现体谅。李纨末句不再劝，比泛泛安慰更切合眼前处境。两人的语气都偏温和实用，单靠对白的辨识度稍弱，但出场任务和行动仍能区分。",
+      "suggestion": "保留李纨接应外务与不再劝坐的动作；若需增强声音区分，可微调两人的句法。"
+    },
+    {
+      "id": "B2-03",
+      "dimension": "动作与信息可理解性",
+      "assessment": "PASS",
+      "quote": "究竟动身了没有？",
+      "additional_quotes": [
+        "还没有。我亲见他那里还在看人，话是当面说的，完了就来。",
+        "只说姑娘这会子不好，叫他快来。"
+      ],
+      "paragraphs": [
+        15,
+        22
+      ],
+      "assessment_detail": "清楚",
+      "severity": "ADVISORY",
+      "reason": "大夫只是答应来，尚未出发；紫鹃用追问将这一点问明。雪雁离开时黛玉尚未被确认去世，因此她向宝玉传的是病危消息。宝玉直到进屋后才听到死讯，信息限制连续，没有让传话者凭空知道后事。",
+      "suggestion": "保留大夫未动身和雪雁离开时尚未知死讯的明确交代。"
+    },
+    {
+      "id": "B2-04",
+      "dimension": "黛玉最后的自主意愿与稿夹",
+      "assessment": "PASS",
+      "limitation": "未读上下文，不将未定的稿夹意图解释为确定遗嘱，也不能确认诗句是否承担跨回照应。",
+      "quote": "小院苔痕……花影后头空着的……",
+      "additional_quotes": [
+        "黛玉听见“再改”两个字，伸手抵住夹边。",
+        "紫鹃低声问：“要笔么？”等了一会，没有应答"
+      ],
+      "paragraphs": [
+        18,
+        19
+      ],
+      "assessment_detail": "有余味，也有悬置",
+      "severity": "ADVISORY",
+      "reason": "话说不完、封面挑起又落下，让尚未完成的诗事与身体已经无法支持的意愿相撞；不代她说尽最后意思，具有分寸。但本回没有交代这段诗句的具体来历，读者只能知道她还牵挂稿子，不能断定她想改、删、交付或销毁。",
+      "suggestion": "保留未能翻开稿夹的留白，避免把未说出的意愿写成确定遗嘱。"
+    },
+    {
+      "id": "B2-05",
+      "dimension": "死亡与悲恸的情感成立度",
+      "assessment": "PASS",
+      "quote": "紫鹃先还以为自己托得不好，将胳膊挪了挪，贴近看，隔了片刻，又俯下身去听。没有了。",
+      "additional_quotes": [
+        "手抽出来时，衣袖带住被边，她又将它捻开，怕牵动了枕上的人。",
+        "帕子抽走，她的手还虚虚地合着，随后又落到被边。"
+      ],
+      "paragraphs": [
+        24,
+        27
+      ],
+      "assessment_detail": "强",
+      "severity": "ADVISORY",
+      "reason": "先把异样归因于自己扶得不妥，再试听，最后仍怕牵动已故的人，写出照护习惯先于理智停下的过程。空手仍保持握帕姿势，是具体的身体迟滞；眼泪随后落下，比马上长篇哀告更可信。",
+      "suggestion": "保留死亡确认前的迟疑及抽帕后空握等细节。"
+    },
+    {
+      "id": "B2-06",
+      "dimension": "叙事节奏与重复动作",
+      "assessment": "FAIL",
+      "quote": "黛玉颈下垫得不妥，皱起眉来；紫鹃立刻将枕头略移，叫雪雁从另一边扶着，待她歇稳了才放手。",
+      "additional_quotes": [
+        "被角偏了，她俯身去拉，拉过来，又觉得压着手不好，便把那只手放妥。",
+        "稿夹在旁边，她的袖子挨到，便将袖子提开，依旧先顾着枕上的衣领。"
+      ],
+      "paragraphs": [
+        13,
+        25,
+        26
+      ],
+      "assessment_detail": "局部有拖缓",
+      "severity": "ADVISORY",
+      "reason": "垫枕、扶人、理衣领和换帕在病中、临终、死后承担不同意义，不能一概视为填充。但邻近段落多次落在相似的小幅调整上，死亡已明确后仍连续铺陈衣领、被边、帕子，中段节奏容易趋平。可考虑压缩一两处没有新增认知或关系变化的整理动作，保留抽帕后空握等最具辨识度的细节。",
+      "suggestion": "压缩一两处衣领、被角整理动作，保留在情绪与认知上有转折的动作。"
+    },
+    {
+      "id": "B2-07",
+      "dimension": "传报与宝玉来迟的时间感",
+      "assessment": "PENDING",
+      "limitation": "没有宅院路线和上下回的时间资料，不能证明雪雁实际走得反常慢，也不能确认存在安排来迟的因果。",
+      "quote": "紫鹃叫他去报大奶奶，又报太太。",
+      "additional_quotes": [
+        "李纨进去，见紫鹃弯着腰，便过去扶她。",
+        "雪雁到宝玉跟前时，气还没有喘匀。"
+      ],
+      "paragraphs": [
+        29,
+        32,
+        34
+      ],
+      "assessment_detail": "事件次序清楚，叙述耗时偏长",
+      "severity": "ADVISORY",
+      "reason": "雪雁早已出发，文本随后完整铺开另一跑腿向李纨、王夫人传报及李纨到场，才切回雪雁到达宝玉处。可理解为并行事件的顺次叙述，不能据此判为硬矛盾；但没有空间距离或回溯标记，读感上会觉得临终急召被家务传报隔开较久。王夫人佛珠停住有自身情绪价值，仍可斟酌传话对白的篇幅。",
+      "suggestion": "可压缩传报对白，或用轻微的并行时间提示减少雪雁走得过久的读感；目前不能判为事件硬矛盾。"
+    },
+    {
+      "id": "B2-08",
+      "dimension": "宝玉的震动与迟到感",
+      "assessment": "PASS",
+      "quote": "药还没吃么？再温一温。",
+      "additional_quotes": [
+        "雪雁出去以后，我还托着姑娘，气就没了。我在这里。",
+        "这个也没——",
+        "退了这一步，他才看清紫鹃一直弯着的背，却仍只站着。"
+      ],
+      "paragraphs": [
+        36,
+        37,
+        39,
+        40
+      ],
+      "assessment_detail": "成立",
+      "severity": "ADVISORY",
+      "reason": "宝玉先沿日常探病的逻辑询问药，再被明确告知死亡，又问米汤而不能成句，表现认知逐步受阻。紫鹃说明自己一直托着黛玉，既提供事实，也让宝玉面对他没有参与的最后一刻。最后让路而站住，把他的失措落在他无法接手的照护现场，来迟感不靠作者断语。",
+      "suggestion": "保留问药、问米汤未完及退让一步的认知层次。"
+    },
+    {
+      "id": "B2-09",
+      "dimension": "结尾效果",
+      "assessment": "PASS",
+      "quote": "碗沿有一条药痕，顺着外面淌了一点，到了碗足便住了。",
+      "additional_quotes": [
+        "那只搁下的药碗没有再挪过，碗沿的一点药痕干在外面，里面剩着的药，冷了。"
+      ],
+      "paragraphs": [
+        3,
+        42
+      ],
+      "assessment_detail": "有效，略显收束过齐",
+      "severity": "ADVISORY",
+      "reason": "同一药碗从温药未尽变成药痕干、余药冷，既是经过时间的证据，也把起初仍在进行的救护转成已经无可挽回的遗留物。结尾炉火、药吊子、碗、药痕依次回收，收束完整；若读者偏好留白，可能觉得意象交代稍满，但末句简短的冷意与本回克制语气相合。",
+      "suggestion": "保留药碗首尾呼应；如需更含蓄，可斟酌炉火与药吊子是否都需再点。"
+    },
+    {
+      "id": "B2-10",
+      "dimension": "情绪层次与本回独立信息边界",
+      "assessment": "PASS",
+      "quote": "明儿米汤别熬这么厚。",
+      "additional_quotes": [
+        "明儿看天，暖些就换。",
+        "自宫中有了丧事，黛玉更比先前支撑不得"
+      ],
+      "paragraphs": [
+        6,
+        7,
+        9
+      ],
+      "assessment_detail": "层次基本成立，外部因由不能确认",
+      "severity": "ADVISORY",
+      "reason": "前部围绕明天吃穿的微小商量，让人感到日常仍试图延续；随后生命突然停止，形成有意义的落差。宫中丧事在本回只是背景简述，与黛玉病势的具体关系未展开。作为单回读者可理解其情绪压力，却不能确定是哪场丧事，或据此推导未写出的政治、婚姻及家族因果。",
+      "suggestion": "保留明日吃穿的微小商量；背景因由需依上下文判断，不凭本回补造。"
+    }
+  ],
+  "assigned_contracts": [],
+  "event_and_message_findings": [],
+  "obligation_findings": [],
+  "overall_assessment": "PASS",
+  "qualification": "RESEARCH_ONLY",
+  "formal_eligibility": false,
+  "authority_effect": "NONE",
+  "reading_declaration": {
+    "scope": "完整读取且仅审读上述三份文件。",
+    "candidate_read_ranges": [
+      "1–28",
+      "29–56",
+      "57–83"
+    ],
+    "candidate_line_count": 83,
+    "candidate_sha256_observed": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2",
+    "tool_truncation_observed": false,
+    "completion_basis": "任务说明5行、骨架24行均完整显示；正文83行分三次完整显示，无工具截断。COMPLETE仅指本人阅读及研究意见完成，不是外部认证。"
+  },
+  "scope_limits": [
+    "本任务只作候选正文的文学研究审读；没有分配合同、史料或语料，不作其合规、准确或资格判断。",
+    "未读其他回目及版本，不能确认跨回人物一致性、全书结构、史实、礼制及原作措辞归属。",
+    "不能从本回确定稿夹中的未完意愿，或把大夫迟来解释为死亡的已证原因。",
+    "人物声音、节奏与情感判断为本人阅读判断，不是人类读者共识或生产验收。"
+  ],
+  "overall_assessment_reason": "研究意见：本回能够成立，照护关系和宝玉来迟后的认知受阻尤其有力量。黛玉的短促机锋、未来一日吃穿的商量、稿夹未能翻开的动作，为死亡前的她保留了生活与意愿；紫鹃在死亡之后仍继续照料，悲恸可信。主要可改处是临终前后密集的衣领、枕头、帕子动作，以及传报段落造成的时间感拖缓，宜作局部压缩而不抹去照护习惯的情感功能。结尾药冷呼应开端有效。上述完成状态只覆盖本次指定材料和文学意见。"
+}

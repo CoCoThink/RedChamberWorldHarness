@@ -1,10 +1,11 @@
 # 当前第86回审读后修订（2026-11-11）
 
-当前候选入口为 `artifacts/local-trial-revision-ch86-20261111/import.json`，新审读包为该目录 `review/manifest.json`，42段/13526字节，4项任务均NOT_STARTED。新模型与六合同另存ch86-v2；当前父稿谱系不改，完整范围增量通过notes绑定。新增显式revise-v3避免递归嵌入旧修订全文，保留完整基础约束、直接父稿、本轮全部21项发现及历史原始记录。文学/语义PENDING、来源/语料NOT_CHECKED，旧四位意见不迁移到新稿。新提交CI按准确SHA核对后再安排新独立复核，不铺开。详见[修订报告](../../artifacts/local-trial-revision-ch86-20261111/EXECUTION_REPORT.md)。
+当前候选入口为 `artifacts/local-trial-revision-ch86-20261111/import.json`，42段/13526字节。准备快照 `review/manifest.json` 保留NOT_STARTED；实际进度见 `review/execution.json`：输入main `61f647a`双Python CI成功后，按3+1分批完成四位独立模型读者，总评均PASS，覆盖40项义务、24事件、5消息。29条发现及两处引句勘误均保留；文学研究审读PASS带ADVISORY，语义PENDING：death_exact_moment标签不能推出精确生理瞬间或钟点。来源/语料NOT_CHECKED、production NOT_GRANTED，仍不铺开。下一步先澄清知识命题边界，再审来源/语料；本轮不改正文。详见[审读及处置](../../artifacts/local-trial-revision-ch86-20261111/review/REPORT.md)。新模型与六合同另存ch86-v2；父稿谱系不改，完整范围增量通过notes绑定。旧稿意见不迁移到新稿，准备报告的0份意见是历史快照。
 
 ```bash
 python artifacts/local-trial-revision-ch86-20261111/verify.py
 python artifacts/local-trial-revision-ch86-20261111/prepare.py --check
+python artifacts/local-trial-revision-ch86-20261111/review/verify_execution.py
 ```
 
 下列v1/v3记录是不可变历史及复验入口。

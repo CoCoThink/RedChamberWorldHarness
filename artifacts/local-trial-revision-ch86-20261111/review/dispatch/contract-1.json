@@ -1,0 +1,7 @@
+{
+  "provenance": "Coordinator transcription of visible native tool call message arguments; not a provider context capture",
+  "messages": [
+    "在 /mnt/d/code/redchamberworldharness 做独立研究合同审读，任务 contract-1。只完整读取：artifacts/local-trial-revision-ch86-20261111/review/contract-1.md；artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt；artifacts/local-trial-revision-ch86-20261111/reading-inputs/scenario.json；artifacts/local-trial-revision-ch86-20261111/reading-inputs/contracts/86-S1.v3.json、86-S2.v3.json、86-S3.v3.json；artifacts/local-trial-revision-ch86-20261111/review/contract-1.scaffold.json。遵循任务md，逐项给合同义务及本组事件/消息的正文引句和PASS/FAIL/PENDING判断，不以模型通过代替正文支持。把JSON视图逐份解析美化分块读全，不让单次工具输出截断；若截断补读，否则INCOMPLETE。禁止读作者自查、旧稿及其他读者意见。用骨架另存 artifacts/local-trial-revision-ch86-20261111/review/opinions/contract-1.json，填真实principal/session声明、读集、状态、全部分配义务及事件/消息。不覆盖原件、不改正文、不提交、不建分支/worktree、不调用外部模型API。仅写自己的原始输出。最终报告路径、主要发现及覆盖边界。",
+    "补充输出格式：reviewer 两字段填 /root/ch86_v4_contract_1；declared_read_files 每行含 path、sha256、bytes、read_complete:true；findings 每条含id、severity(ADVISORY/BLOCKING)、assessment(PASS/FAIL/PENDING)、quote、paragraphs(按空行分段从1起)、reason、suggestion；义务每条contract_id、type(required_beats/forbidden_beats)、ordinal(从1起)、assessment、quote、paragraphs、reason；事件消息每条kind(event/message)、id、assessment、quote、paragraphs、reason。overall_assessment用PASS/FAIL/PENDING。unread_files明确未分配范围。JSON不超过16384 UTF-8字节；可紧凑JSON保留全部内容。只统一格式，不预设评价。"
+  ]
+}
