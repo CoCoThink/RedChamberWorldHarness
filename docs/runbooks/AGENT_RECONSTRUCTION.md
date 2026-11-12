@@ -1,6 +1,6 @@
 # 当前第86回审读后修订（2026-11-11）
 
-当前候选入口为 `artifacts/local-trial-revision-ch86-20261111/import.json`，42段/13526字节。准备快照 `review/manifest.json` 保留NOT_STARTED；实际进度见 `review/execution.json`：输入main `61f647a`双Python CI成功后，按3+1分批完成四位独立模型读者，总评均PASS，覆盖40项义务、24事件、5消息。29条发现及两处引句勘误均保留；文学研究审读PASS带ADVISORY，语义PENDING：death_exact_moment标签不能推出精确生理瞬间或钟点。来源/语料NOT_CHECKED、production NOT_GRANTED，仍不铺开。下一步先澄清知识命题边界，再审来源/语料；本轮不改正文。详见[审读及处置](../../artifacts/local-trial-revision-ch86-20261111/review/REPORT.md)。新模型与六合同另存ch86-v2；父稿谱系不改，完整范围增量通过notes绑定。旧稿意见不迁移到新稿，准备报告的0份意见是历史快照。
+当前候选入口为 `artifacts/local-trial-revision-ch86-20261111/import.json`，42段/13526字节。准备快照 `review/manifest.json` 保留NOT_STARTED；实际进度见 `review/execution.json`：输入main `61f647a`双Python CI成功后，按3+1分批完成四位独立模型读者，总评均PASS，覆盖40项义务、24事件、5消息。29条发现及两处引句勘误均保留；文学研究审读PASS带ADVISORY，语义PENDING。`death_exact_moment` 的命题边界已记录：正文支持亲历/获告死亡经过，不能推出钟点或可测量的生理死时；现有标签仍未拆分，故不把C1改为PASS。来源选择及pilot/完整语料选择均无登记意见，production NOT_GRANTED，仍不铺开。下一步提出版本化命题拆分并独立审阅，再完成来源/语料资格审查；本轮不改正文或知识模型。详见[审读及处置](../../artifacts/local-trial-revision-ch86-20261111/review/REPORT.md)及[命题边界记录](../../artifacts/local-trial-revision-ch86-20261111/review/semantic-boundary.md)。新模型与六合同另存ch86-v2；父稿谱系不改，完整范围增量通过notes绑定。旧稿意见不迁移到新稿，准备报告的0份意见是历史快照。
 
 ```bash
 python artifacts/local-trial-revision-ch86-20261111/verify.py
