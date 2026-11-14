@@ -2,7 +2,7 @@
 import hashlib
 from pathlib import Path
 
-from rcwh.knowledge import CharacterKnowledgeRuntime
+from rcwh.knowledge_versions import load_knowledge_version
 from rcwh.world import WorldRuntime
 from rcwh.literary_ecology import LiteraryEcologyRuntime
 from prepare_knowledge_v04 import OUTPUT, SOURCE, SOURCE_SHA256, build
@@ -20,8 +20,8 @@ def verify(root=ROOT):
     if new_path.read_bytes() != expected:
         raise ValueError("v0.4 knowledge carrier does not match pinned migration")
 
-    legacy = CharacterKnowledgeRuntime.from_version(root, "v0.3:slice2")
-    current = CharacterKnowledgeRuntime.from_version(root, "v0.4:ch86")
+    legacy = load_knowledge_version(root, "v0.3:slice2")
+    current = load_knowledge_version(root, "v0.4:ch86")
     if "daiyu_death_exact_moment" not in legacy.facts:
         raise ValueError("legacy fact missing from historical version")
     if "daiyu_death_exact_moment" in current.facts:

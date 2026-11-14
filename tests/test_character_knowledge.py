@@ -3,6 +3,7 @@ from pathlib import Path
 from rcwh.evaluate import evaluate_scene_text, overall_status
 from rcwh.io import load_data
 from rcwh.knowledge import CharacterKnowledgeRuntime
+from rcwh.knowledge_versions import load_knowledge_version
 from rcwh.literary_ecology import LiteraryEcologyRuntime
 from rcwh.world import WorldRuntime
 
@@ -62,8 +63,8 @@ def test_event_driven_knowledge_update_preserves_zijuan_uncertainty_until_event(
 
 
 def test_v04_knowledge_migration_splits_death_claims_without_aliasing_legacy_id():
-    legacy = CharacterKnowledgeRuntime.from_version(ROOT, "v0.3:slice2")
-    current = CharacterKnowledgeRuntime.from_version(ROOT, "v0.4:ch86")
+    legacy = load_knowledge_version(ROOT, "v0.3:slice2")
+    current = load_knowledge_version(ROOT, "v0.4:ch86")
     assert runtime().data["id"] == "character-truth:v0.3:slice2"
     assert "daiyu_death_exact_moment" in legacy.facts
     assert "daiyu_death_exact_moment" not in current.facts
@@ -88,7 +89,7 @@ def test_knowledge_runtime_requires_an_explicit_known_version():
     import pytest
 
     with pytest.raises(ValueError, match="unknown character knowledge version"):
-        CharacterKnowledgeRuntime.from_version(ROOT, "v0.4:latest")
+        load_knowledge_version(ROOT, "v0.4:latest")
 
 
 def test_scene_validator_catches_omniscient_dialogue_and_action():
