@@ -257,3 +257,6 @@ ASSIGNMENT_SHA256 使用 dispatch 返回的 `assignment.sha256`；迟到错误�
 当前上下文补读请求为`data/agent_release/research-81-100-v4-r4/request.json`，campaign同目录`review-campaign-v1.json`，新92补读执行目录`artifacts/agent_research/v4-context-followup-20261026/`。r3执行目录保留实际原读、NOT_CHECKED、BOOK和匿名比较，不能据r4复用统计抹掉这些历史。输入CI通过前不启动新92任务；87核心未决不能以COMPLETE或ADOPT消除。
 
 r4当前76项已实收齐备（70复用、6新读），但第87回同一核心风险缺口仍未解决，协调者保持PENDING。真实评价239门PASS、1门PENDING、无FAIL发现；不加allow-pending的正常build实际拒绝且不生成book。当前交付入口、审阅读本、原始负面、追加更正及后续动作见[v4执行报告](../../artifacts/agent_research/v4-context-followup-20261026/EXECUTION_REPORT.md)。勿将COMPLETE或本地交接PASS解释为正常发布或人工/P9通过。
+# 第 86 回死亡知识拆分（研究用）
+
+研究模型 `data/writing/local-scenarios/ch86-v3/scenario.json` 将死亡发生、相对经过、精确死时和生理细节分开。`artifacts/local-scenario-ch86-knowledge-split/manifest.json` 固定模型与审读材料；`REVIEW.md` 是待独立读者执行的任务，不是意见。旧模型和原合同声明仍有效地保留为历史记录，旧命题无自动等值映射；C1-DEATH-KNOWLEDGE 仍待审，来源、语料资格仍须另审，production 未获准。使用 `PYTHONPATH=src python tools/prepare_ch86_knowledge_split.py` 可重建相同字节，遇已有不同内容会拒绝覆盖。
