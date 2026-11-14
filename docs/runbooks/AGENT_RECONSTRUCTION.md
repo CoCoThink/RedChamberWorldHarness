@@ -286,3 +286,11 @@ r4当前76项已实收齐备（70复用、6新读），但第87回同一核心�
 # 第 86 回死亡知识拆分（研究用）
 
 研究模型 `data/writing/local-scenarios/ch86-v3/scenario.json` 将死亡发生、相对经过、精确死时和生理细节分开。`artifacts/local-scenario-ch86-knowledge-split/manifest.json` 固定模型与审读材料；`REVIEW.md` 是待独立读者执行的任务，不是意见。旧模型和原合同声明仍有效地保留为历史记录，旧命题无自动等值映射；C1-DEATH-KNOWLEDGE 仍待审，来源、语料资格仍须另审，production 未获准。使用 `PYTHONPATH=src python tools/prepare_ch86_knowledge_split.py` 可重建相同字节，遇已有不同内容会拒绝覆盖。
+
+### v6 照护与启程偏序复核
+
+v5 的两位原读者在 `amendment-v2/review/` 中对“李纨接手照护”与“宝玉启程”是否无序有分歧。协调者据正文第31、33段形成 v6，仅增加 `liwan_takes_care < baoyu_departs`，不把照护建模为完成事件、不推断路线或时长，也保留身体料理/死亡与宝玉收到病危消息之间的无序。
+
+v6 双读者复核计划绑定准确提交 `3af0582119545d737054ba46daec4d3db440900f` 和成功 CI [43626321690](https://github.com/CoCoThink/RedChamberWorldHarness/actions/runs/43626321690)。两位原读者分别完整阅读各自的10项绑定材料，新增独立读者数为0；六项局部核查均 PASS，新增偏序边获两人一致支持。`OLD_FINDING` 仍为 PENDING：旧 `daiyu_death_exact_moment` / C1 与本轮拆分命题之间没有可核验的等值映射，本轮不替原 C1 审读改判。两份总体意见因此均为 PENDING；来源、语料及语义回放未核验，生产准入仍为 `NOT_GRANTED`。
+
+本轮原始意见、准确 CI 记录、任务绑定、执行记录及协调处置保存在 [`amendment-v3/review/`](../../artifacts/local-scenario-ch86-knowledge-split/amendment-v3/review/)。在当前工作树运行 `PYTHONPATH=src:tools python tools/verify_ch86_care_order_v6_review.py` 可核对意见输入覆盖、引文/段号、原读者身份、执行记录、协调处置、保留的无序关系及生产边界。下一步应先界定旧 C1 与局部死亡命题是否能建立严格的命题映射；在此之前不得把 PENDING 改为 PASS 或授予 production。

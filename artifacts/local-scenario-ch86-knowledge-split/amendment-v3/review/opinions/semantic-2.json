@@ -1,0 +1,140 @@
+{
+  "authority_effect": "NONE",
+  "candidate": {
+    "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+    "sha256": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2"
+  },
+  "declared_read_files": [
+    {"path":"artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt","sha256":"2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2","bytes":13526,"read_complete":true},
+    {"path":"data/writing/local-scenarios/ch86-v6/scenario.json","sha256":"670b6b13c9db0440a8b46e25cd4445880bb06af32c8a2374e0ee47c291bb75b5","bytes":46863,"read_complete":true},
+    {"path":"data/writing/local-scenarios/ch86-v3/contracts/86-S4.v3.json","sha256":"10c05fbc08e86e03ccf4b93eb102516a07077e89bbab4769122b9e19c6acf776","bytes":11522,"read_complete":true},
+    {"path":"data/writing/local-scenarios/ch86-v3/contracts/86-S5.v3.json","sha256":"e70d9e02209372bfebb74517d2a2acb10059dd27d921fa532693e99c975c605f","bytes":11662,"read_complete":true},
+    {"path":"data/writing/local-scenarios/ch86-v3/contracts/86-S6.v3.json","sha256":"d0344a3ec1805736ddfb14ff428896183c0fce0b620dfec8531b8204ac532361","bytes":11826,"read_complete":true},
+    {"path":"data/knowledge/v03_slice2.json","sha256":"37db9f32aad64636f33eb70a73130160260914e8a4ca987e03f6c45170fa88e7","bytes":18226,"read_complete":true},
+    {"path":"data/scenes/ch86_last_night.yaml","sha256":"30fab56f00c242eeeabccfb0a216864b1eb4d4d5eda9d833d32b114527a780fa","bytes":3118,"read_complete":true},
+    {"path":"artifacts/local-trial-revision-ch86-20261111/review/semantic-boundary.md","sha256":"7d5a3513aead66682c2102a0270346bd1468748aa3ca7fc2dce5afa263082206","bytes":3073,"read_complete":true},
+    {"path":"artifacts/local-scenario-ch86-knowledge-split/amendment-v2/review/opinions/semantic-2.json","sha256":"e508bf0c381f79000bf082cfdcc6b87ed7fd9e562f3ca6432fa5f6febe9205f5","bytes":12933,"read_complete":true},
+    {"path":"artifacts/local-scenario-ch86-knowledge-split/amendment-v3/review/semantic-2.scaffold.json","sha256":"d42eb4c5193b234ef5035923513ddbfa98427e8de692d7320ac74d0782047df8","bytes":1262,"read_complete":true}
+  ],
+  "findings": [
+    {
+      "id": "WITNESS",
+      "assessment": "PASS",
+      "reason": "紫鹃在雪雁离开后仍托着黛玉；先察觉支撑力松脱，再贴近看、俯听，之后放回枕上。她的普通现场观察足以支持知道死亡发生及相对经过。跑腿是进屋后才看见身体并听紫鹃说明；雪雁则在宝玉面前听见紫鹃复述，均不应因此算作死亡瞬间的目击者。此判断只涉及人物在此候选中的命题，不把场景模型当已回放事实。",
+      "material_citations": [
+        {"path":"data/writing/local-scenarios/ch86-v6/scenario.json","locator":"facts[id=death_occurred,death_relative_account].meaning; events[id=death_witnessed,runner_observes_death].observed_facts/effects"},
+        {"path":"data/writing/local-scenarios/ch86-v3/contracts/86-S4.v3.json","locator":"checkpoints; required_beats; original_declarations"}
+      ],
+      "prose_quotes": [
+        {"quote":"她叫了第三声，没有应答。原先靠着她的那点力也松了，头略偏过去，便不动了。","paragraphs":[22]},
+        {"quote":"紫鹃先还以为自己托得不好，将胳膊挪了挪，贴近看，隔了片刻，又俯下身去听。没有了。","paragraphs":[23]},
+        {"quote":"紫鹃低声道：“姑娘去了。”他一惊，隔着些不敢近前，见紫鹃放下黛玉的手，才明白不是又睡过去了。","paragraphs":[27]}
+      ]
+    },
+    {
+      "id": "RECIPIENT",
+      "assessment": "PASS",
+      "reason": "雪雁传给宝玉的是“姑娘这会子不好了”，宝玉到场后先问药，随后从紫鹃听到死亡发生及相对经过。初讯没有被写成死讯或精确死时。雪雁也没有回去查看；她在宝玉听到紫鹃的话后才到场听见复述。scenario 对雪雁没有单独增加死亡知识状态，这属于保留的未建模范围，不能据此断言她不知情。",
+      "material_citations": [
+        {"path":"data/writing/local-scenarios/ch86-v6/scenario.json","locator":"messages[id=critical-message,death-account-notice]; events[id=baoyu_receives_critical_message,baoyu_arrives,baoyu_asks_rewarm,baoyu_learns_death_account]; initial[actor.local:ch86:xueyan.knowledge.death_occurred]; unresolved"},
+        {"path":"data/writing/local-scenarios/ch86-v3/contracts/86-S5.v3.json","locator":"required_beats; arrival_boundary; original_declarations"}
+      ],
+      "prose_quotes": [
+        {"quote":"只说姑娘这会子不好，叫他快来。","paragraphs":[21]},
+        {"quote":"姑娘这会子不好了，紫鹃姐姐叫二爷快去。","paragraphs":[33]},
+        {"quote":"他进来，只见紫鹃在床边，李纨也在，帕子、衣裳放得与平日不同。","paragraphs":[34]},
+        {"quote":"宝玉看着，向紫鹃道：“药还没吃么？再温一温。”","paragraphs":[35]},
+        {"quote":"二爷，姑娘已经去了。","paragraphs":[36]},
+        {"quote":"雪雁这时也到了，听见紫鹃那句话，扶着身旁站住，眼泪落下来，不再上前叫姑娘。","paragraphs":[37]}
+      ]
+    },
+    {
+      "id": "PRECISE_TIME",
+      "assessment": "PASS",
+      "reason": "正文只给相对锚点和普通观察，没有钟点、可测量瞬间或精确死时。跑腿想问“几时”而没有问；宝玉后来听到“雪雁出去以后”的经过，也不等于获知钟点。v6继续把death_precise_time与death_relative_account分开，并将紫鹃、宝玉的精确死时维持UNKNOWN，符合正文证据边界。",
+      "material_citations": [
+        {"path":"data/writing/local-scenarios/ch86-v6/scenario.json","locator":"facts[id=death_precise_time,death_relative_account].meaning; invariants; initial actor.zijuan/actor.baoyu.knowledge.death_precise_time"},
+        {"path":"data/knowledge/v03_slice2.json","locator":"facts[id=daiyu_death_exact_moment]; scenes[id=ch86_last_night].entry/events"},
+        {"path":"artifacts/local-trial-revision-ch86-20261111/review/semantic-boundary.md","locator":"判定"}
+      ],
+      "prose_quotes": [
+        {"quote":"嘴里本要问几时，见紫鹃那样，便没敢问。","paragraphs":[27]},
+        {"quote":"雪雁出去以后，我还托着姑娘，气就没了。","paragraphs":[36]}
+      ]
+    },
+    {
+      "id": "PHYSIOLOGY",
+      "assessment": "PASS",
+      "reason": "无应答、失去支撑及紫鹃所说“气就没了”是照护者的普通观察，可用于死亡发生的相对经过；scenario 对医学测量或专业判定的生理机制、医学死因另作定义，且相关值仍为UNKNOWN。长期病程、候医延误和未尽药没有被直接写成医学死因或生理机制。",
+      "material_citations": [
+        {"path":"data/writing/local-scenarios/ch86-v6/scenario.json","locator":"facts[id=death_relative_account,death_physiological_detail,death_medical_cause].meaning; invariants; initial actor.zijuan/actor.baoyu.knowledge.*"},
+        {"path":"data/scenes/ch86_last_night.yaml","locator":"historical_adapter_requirements.medical"}
+      ],
+      "prose_quotes": [
+        {"quote":"她叫了第三声，没有应答。原先靠着她的那点力也松了，头略偏过去，便不动了。","paragraphs":[22]},
+        {"quote":"雪雁出去以后，我还托着姑娘，气就没了。","paragraphs":[36]},
+        {"quote":"连大夫那边还没有接来，也不知该先回哪一句。","paragraphs":[30]}
+      ]
+    },
+    {
+      "id": "CAUSAL_ORDER",
+      "assessment": "PASS",
+      "reason": "新增边liwan_takes_care < baoyu_departs有合适的事件粒度，但应解作李纨开始接手第一轮身体料理，不是全部料理完成。第31段她进屋后先扶紫鹃、抽平衣领并安排热水衣物；第32段这项照护仍在继续。第33段雪雁才把病危消息送到宝玉处，宝玉收到后即动身。因此李纨接手开始早于宝玉出发，边应从unconstrained_pairs移除；它不推出李纨的劳务已完成，不限定她的路线或宝玉收到消息的精确时长。保留的body_care_started与baoyu_receives_critical_message、death_witnessed与baoyu_receives_critical_message两对无序也可接受：正文的叙述排列展示了死亡和照护场景后才转到宝玉收信，但评估材料明确指出相邻叙述顺序不能单独确定并行照护与报信链的精确先后或耗时；模型又将dispatch与receipt分列，允许消息在途。当前文字支持“李纨照护已开始而宝玉随后出发”，不要求把死讯通知的各个送达时点与身体料理建立额外硬边。新增边只收紧检查点偏序，不改变人物知识、生命状态或药碗状态；没有将第一轮料理误建模为完成事件。",
+      "material_citations": [
+        {"path":"data/writing/local-scenarios/ch86-v6/scenario.json","locator":"before; events[id=liwan_takes_care,baoyu_receives_critical_message,baoyu_departs,death_witnessed,body_care_started]; unconstrained_pairs"},
+        {"path":"data/writing/local-scenarios/ch86-v3/contracts/86-S4.v3.json","locator":"required_beats; temporal_rule; checkpoints"},
+        {"path":"data/writing/local-scenarios/ch86-v3/contracts/86-S5.v3.json","locator":"required_beats; unresolved.timing; temporal_rule"},
+        {"path":"artifacts/local-trial-revision-ch86-20261111/review/semantic-boundary.md","locator":"判定"}
+      ],
+      "prose_quotes": [
+        {"quote":"李纨自己也流泪，将她手旁压着的衣领抽平，向外道：“干净衣裳拿近些，水有人接着，别都挤进来。”","paragraphs":[31]},
+        {"quote":"送来的热水搁下，李纨拿过干净帕子递与紫鹃。","paragraphs":[32]},
+        {"quote":"雪雁到宝玉跟前时，气还没有喘匀。宝玉起身问：“林妹妹怎么了？”她赶着道：“姑娘这会子不好了，紫鹃姐姐叫二爷快去。”宝玉听了便走，雪雁跟上来。","paragraphs":[33]},
+        {"quote":"他进来，只见紫鹃在床边，李纨也在，帕子、衣裳放得与平日不同。","paragraphs":[34]}
+      ]
+    },
+    {
+      "id": "CONTRACT_COMPATIBILITY",
+      "assessment": "PASS",
+      "reason": "候选体现S4的死后身体照护、热水衣物和李纨承接，S5的病危转告与宝玉迟来，S6的到场问药、请求不执行及冷而未尽的药。各合同仍将原有UNKNOWN/null、空event_refs和无knowledge_binding留作边界；scenario是编辑偏序且execution为NOT_OBSERVED。正文相容性不构成回放证明或production准入。",
+      "material_citations": [
+        {"path":"data/writing/local-scenarios/ch86-v6/scenario.json","locator":"events[id=body_care_started,liwan_takes_care,baoyu_asks_rewarm,medicine_cools,terminal_cold_unfinished_medicine]; original_declarations[86-S4,86-S5,86-S6]; scope; semantic_replay"},
+        {"path":"data/writing/local-scenarios/ch86-v3/contracts/86-S4.v3.json","locator":"required_beats; forbidden_beats; original_declarations"},
+        {"path":"data/writing/local-scenarios/ch86-v3/contracts/86-S5.v3.json","locator":"required_beats; forbidden_beats; original_declarations"},
+        {"path":"data/writing/local-scenarios/ch86-v3/contracts/86-S6.v3.json","locator":"required_beats; forbidden_beats; original_declarations"}
+      ],
+      "prose_quotes": [
+        {"quote":"紫鹃没有去端。","paragraphs":[36]},
+        {"quote":"里面剩着的药，冷了。","paragraphs":[41]}
+      ]
+    },
+    {
+      "id": "OLD_FINDING",
+      "assessment": "PENDING",
+      "reason": "旧C1仍无等值映射，本轮不替旧读者改判。共享daiyu_death_exact_moment仍含歧义；v6将死亡发生和相对经过分别作为新的局部命题，但没有声明它们与旧fact等值。故旧的C1-DEATH-KNOWLEDGE不能由本轮局部边界意见改成PASS，上游UNKNOWN也未因此解决。",
+      "material_citations": [
+        {"path":"data/knowledge/v03_slice2.json","locator":"facts[id=daiyu_death_exact_moment]; scenes[id=ch86_last_night].entry/events[id=K86-DEATH-OCCURS,K86-BAOYU-LEARNS-AFTER-ARRIVAL]"},
+        {"path":"artifacts/local-trial-revision-ch86-20261111/review/semantic-boundary.md","locator":"判定; 后续模型修订"}
+      ],
+      "prose_quotes": [
+        {"quote":"嘴里本要问几时，见紫鹃那样，便没敢问。","paragraphs":[27]},
+        {"quote":"雪雁出去以后，我还托着姑娘，气就没了。","paragraphs":[36]}
+      ]
+    }
+  ],
+  "job_id": "semantic-2",
+  "kind": "CH86_KNOWLEDGE_REVIEW_OPINION",
+  "overall_assessment": "PENDING",
+  "production_admission": "NOT_GRANTED",
+  "qualification": "RESEARCH_ONLY",
+  "reading_status": "COMPLETE",
+  "reviewer": {
+    "identity_basis": "NATIVE_TASK_LABEL_NOT_PROVIDER_VERIFIED",
+    "principal_id": "/root/ch86_knowledge_semantic_2",
+    "session_id": "/root/ch86_knowledge_semantic_2",
+    "identity_limit": "按原任务标签填写；底层提供者身份未验证。沿用原读者上下文，不增加独立读者数。"
+  },
+  "unread": [],
+  "context_mode": "REUSED_SAME_ORIGINAL_READER",
+  "coverage_boundary": "完整读取dispatch列出的10项read_inputs，并核对其SHA-256与字节数全部相符；v6场景JSON分段完整阅读。另读仓库AGENTS.md。只读取自己的v5原意见，未读另一位读者的任务或意见、旧处置及协调者材料；未读取未派发的checkpoints/package或manifest。回放与准备说明未作为正文证据；不把本人的自述当provider消费证明。未核验CI，也未调用外部模型API。意见只针对所列候选、v6场景、S4-S6合同与所读边界材料；不构成来源/语料资格意见、回放证明或production准入。仅写本指定原始意见文件。"
+}

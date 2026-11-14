@@ -115,10 +115,47 @@ def verify(root=ROOT):
         assert plan['manifest'] not in task['read_inputs']
         opinion = initial.verify_task(root, task_ref, attempt, plan['candidate'], CONTEXT)
         opinions[task['job_id']] = opinion
+    disposition_ref = binding(root, REVIEW + '/disposition.json')
+    disposition = json.loads(bound_bytes(root, disposition_ref))
+    assert disposition['kind'] == 'CH86_CARE_ORDER_V6_REVIEW_DISPOSITION'
+    assert disposition['plan'] == plan_ref
+    assert disposition['execution'] == binding(root, REVIEW + '/execution.json')
+    assert disposition['candidate'] == plan['candidate']
+    assert disposition['decision'] == 'ACCEPT_V6_EDGE_WITH_SCOPE; HOLD_PRODUCTION'
+    assert disposition['reviewer_verdicts'] == {job: opinion['overall_assessment'] for job, opinion in opinions.items()}
+    assert disposition['reviewer_verdicts'] == {'semantic-1': 'PENDING', 'semantic-2': 'PENDING'}
+    assert disposition['semantic_status'] == 'PENDING'
+    assert disposition['old_C1'] == 'PENDING_NO_EQUIVALENT_LOCAL_MAPPING'
+    assert disposition['source_and_corpus_review'] == 'NOT_CHECKED'
+    assert disposition['qualification'] == plan['qualification'] == 'RESEARCH_ONLY'
+    assert disposition['production_admission'] == plan['production_admission'] == 'NOT_GRANTED'
+    assert disposition['authority_effect'] == plan['authority_effect'] == 'NONE'
+    expected_dispositions = {
+        'WITNESS': 'RETAIN_WITH_SCOPE', 'RECIPIENT': 'RETAIN_WITH_SCOPE',
+        'PRECISE_TIME': 'RETAIN_WITH_SCOPE', 'PHYSIOLOGY': 'RETAIN_WITH_SCOPE',
+        'CAUSAL_ORDER': 'ADOPT_EDGE_WITH_SCOPE',
+        'CONTRACT_COMPATIBILITY': 'RETAIN_WITH_SCOPE', 'OLD_FINDING': 'RETAIN_PENDING',
+    }
+    rows = disposition['findings']
+    assert len(rows) == 14
+    for job, opinion in opinions.items():
+        own = [row for row in rows if row['job_id'] == job]
+        assert {row['finding_id'] for row in own} == set(expected_dispositions)
+        for row in own:
+            finding = next(item for item in opinion['findings'] if item['id'] == row['finding_id'])
+            assert row['opinion'] == attempts[job]['raw_opinion']
+            assert row['original_assessment'] == finding['assessment']
+            assert row['disposition'] == expected_dispositions[row['finding_id']]
+            assert row['reason']
+    manifest = json.loads(bound_bytes(root, plan['manifest']))
+    causal = disposition['causal_order_decision']
+    assert causal['adopted_edge'] == manifest['added_edges'][0] == ['liwan_takes_care', 'baoyu_departs']
+    assert causal['evidence'] == manifest['causal_edge_evidence'][0]
+    assert causal['retained_unconstrained_pairs'] == json.loads(bound_bytes(root, manifest['scenario']))['unconstrained_pairs']
     read = execution['coordinator_read']
     assert read['read_complete'] is True and read['basis'] == 'SELF_REPORTED_AFTER_TOOL_OUTPUT'
     assert read['opinion_bindings'] == [attempt['raw_opinion'] for attempt in execution['attempts']]
-    return {'status': 'PASS', 'scope': 'CUSTODY_AND_SELF_REPORTED_COVERAGE_ONLY',
+    return {'status': 'PASS', 'scope': 'CUSTODY_COVERAGE_AND_COORDINATOR_DISPOSITION',
             'reader_verdicts': {job: opinion['overall_assessment'] for job, opinion in opinions.items()},
             'independent_model_readers': 2, 'independent_opinions_added': 0,
             'production_admission': 'NOT_GRANTED', 'authority_effect': 'NONE'}
