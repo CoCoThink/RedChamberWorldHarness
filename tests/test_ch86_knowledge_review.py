@@ -61,6 +61,7 @@ def mutate_opinion(root, change):
     path.write_bytes(canonical_bytes(opinion))
     # Rebind to test content validation independently of byte integrity.
     attempt['raw_opinion'] = binding(root, attempt['raw_opinion']['path'])
+    execution['coordinator_read']['opinion_bindings'] = [a['raw_opinion'] for a in execution['attempts']]
     execution_path.write_bytes(canonical_bytes(execution))
 
 

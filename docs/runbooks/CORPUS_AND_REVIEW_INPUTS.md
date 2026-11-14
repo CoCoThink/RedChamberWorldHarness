@@ -21,9 +21,11 @@ rcwh reviews register p9 opinion.json --origin '实际接收的配对盲评'
 
 ## 公开来源复核
 
-当前材料为 `artifacts/reviews/source-independent-v2-20261009/`，绑定 `data/provenance/audits/protocol-v2.json` 的12条Source。曹家三段已按故宫005664原件影像完成代理校录；图像识读判断与校录文本重取分开记录，详见[原件核验](../reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)。
+当前选择记录 `data/provenance/audits/selection.json` 绑定 `protocol-v3.json`，覆盖15条Source，reviews仍为空。旧交付材料 `artifacts/reviews/source-independent-v2-20261009/` 绑定v2的12条Source，属于历史版本，不能直接作为当前协议的完整审查输入或用旧模板提交v3认可。v3新增三个带 `:npm005664` 后缀的曹家原件记录，同时三个旧曹家记录和图谱摘要均已变化；下一轮须逐项按当前Source摘要重新准备读集、Claim影响和提交模板。旧交付可用于读取固定原件，但不得沿用其中已过期的Source上下文和协议绑定。`rcwh reviews status` 会列出选定协议、旧模板协议、缺少的Source及 `reading_material_status`；绑定相符只核对协议和模板范围，不证明材料完整或已获审查。
 
-独立复核者填写该目录的 `human-review-template.json`，如实核对原件身份、摘录、见证／tier及Claim影响。原始JSON接收为REVIEW_RECORD；结构化评审增加 `schema_version: 1`、唯一 `id`、`raw_review: {asset_ref, sha256}` 和 `authority_effect: NONE`，按 `schemas/source_audit_review.schema.json` 存入 `data/provenance/audits/reviews/`。在 `data/provenance/audits/selection.json` 的reviews中通过路径和完整摘要选择。原始意见与结构化字段必须一致；未取得真实提交前保持空列表。旧v1材料保留，不回填到v2协议。
+曹家三段已按故宫005664原件影像完成代理校录；这不等于原130页录本的版次获得确认，也不提升原件与旧载体记录的见证资格。图像识读判断与校录文本重取分开记录，详见[原件核验](../reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)。
+
+独立复核者应填写依据当前选定协议另行生成的空白表，如实核对原件身份、摘录、见证／tier及Claim影响；不能只改旧表的协议摘要来冒充新读集的审阅。原始JSON接收为REVIEW_RECORD；结构化评审增加 `schema_version: 1`、唯一 `id`、`raw_review: {asset_ref, sha256}` 和 `authority_effect: NONE`，按 `schemas/source_audit_review.schema.json` 存入 `data/provenance/audits/reviews/`。在 `data/provenance/audits/selection.json` 的reviews中通过路径和完整摘要选择。原始意见与结构化字段必须一致；未取得真实提交前保持空列表。旧v1/v2材料保留，不回填成v3的认可。
 
 ```bash
 python tools/verify_cao_facsimile.py
@@ -94,4 +96,4 @@ rcwh project acceptance --require-tracked --require-complete
 
 选择记录属于可更新的当前 owner。加入真实 review 后，先保存原始资产与结构化 review 的绑定，再更新对应 selection；若该 selection 已列于 `data/project/closure_roots.json` 的 records，也须把其 sha256 更新为 selection 的实际完整字节摘要，否则严格闭包会正确报告旧绑定失效。所有新文件一并纳入 Git，再运行严格验收。协议、语料、Source或候选发生实质变化时，应新建相应版本并重新取得匹配版本的意见，不把旧提交改成新输入的认可。
 
-展开目录的大文件副本已去重。完整来源阅读材料用 `rcwh delivery materialize source-review-v2 /tmp/source-review-v2` 恢复，语料阅读材料用 `rcwh delivery materialize corpus-review /tmp/corpus-review` 恢复；登记 ZIP 和历史原字节未变。另有本次针对声口/层次的261样本研究包，见[连续三回试验](CONSECUTIVE_CHAPTER_TRIAL.md)，不能替代上述全局人工审计。
+展开目录的大文件副本已去重。历史v2来源阅读材料用 `rcwh delivery materialize source-review-v2 /tmp/source-review-v2` 恢复（不覆盖当前v3协议），语料阅读材料用 `rcwh delivery materialize corpus-review /tmp/corpus-review` 恢复；登记 ZIP 和历史原字节未变。另有本次针对声口/层次的261样本研究包，见[连续三回试验](CONSECUTIVE_CHAPTER_TRIAL.md)，不能替代上述全局人工审计。

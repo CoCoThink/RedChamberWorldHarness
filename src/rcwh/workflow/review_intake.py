@@ -472,6 +472,30 @@ def scene_template(request_path: Path, output: Path) -> dict:
             "instruction": "逐项阅读：确认检查过的填 coverage，不确定的填 unresolved；据原文填写 events。完成后改 report_kind 为 REVIEW_OPINION。"}
 
 
+def source_reading_material(root: Path) -> dict:
+    """Describe a legacy handout honestly against the selected audit protocol."""
+    selected = load_data(root / selection_path('source'))
+    protocol = bound_data(root, selected['protocol'])
+    template_path = root / 'artifacts/reviews/source-independent-v2-20261009/human-review-template.json'
+    declared = {row['source_ref'] for row in protocol['sources']}
+    result = {'current_protocol': selected['protocol'], 'required_source_count': len(declared),
+              'legacy_reading_material': 'delivery materialize source-review-v2',
+              'reading_material': 'Prepare a reading set and template bound to the selected source audit protocol',
+              'reading_material_scope': 'PROTOCOL_AND_TEMPLATE_BINDING_ONLY'}
+    if not template_path.is_file():
+        return {**result, 'reading_material_status': 'NOT_PREPARED'}
+    template = load_data(template_path)
+    rows = template['results']
+    covered = {row['source_ref'] for row in rows}
+    matches = template['protocol_sha256'] == selected['protocol']['sha256']
+    complete = covered == declared and len(rows) == len(covered)
+    return {**result, 'reading_material_status': 'BINDING_MATCHES' if matches and complete else
+            'STALE_PROTOCOL' if not matches else 'SCOPE_MISMATCH',
+            'legacy_template_protocol_sha256': template['protocol_sha256'],
+            'legacy_template_missing_sources': sorted(declared - covered),
+            'legacy_template_extra_sources': sorted(covered - declared)}
+
+
 def status(root: Path) -> dict:
     rows = []
     for lane in LANES:
@@ -485,7 +509,16 @@ def status(root: Path) -> dict:
                     "p9": "artifacts/reviews/p9-preparation-20261009/blind-pairs.zip",
                     "pilot": "artifacts/analysis/evaluation-refactor-20261009/pilot-reading/public",
                     "scene-reading": "semantic prepare + reviews scene-template"}[lane]
+        material_detail = {}
+        if lane == 'source':
+            try:
+                material_detail = source_reading_material(root)
+            except (KeyError, OSError, TypeError, ValueError) as exc:
+                material_detail = {'reading_material_status': 'INVALID_BINDING',
+                                   'reading_material': 'Repair the selected source audit protocol binding before preparing a reading set',
+                                   'reading_material_error': str(exc)}
         rows.append({"lane": lane, "selection": selection_path(lane), "reading_material": material,
+                     **material_detail,
                      "guide": "docs/runbooks/REVIEWER_GUIDE_ZH.md",
                      "minimum_reviewers": report.get("minimum_reviewers", 2 if lane == "pilot" else None), **report})
     return {"status": "FAIL" if any(r["status"] == "FAIL" for r in rows) else "PENDING",

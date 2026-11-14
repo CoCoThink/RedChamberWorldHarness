@@ -1,13 +1,21 @@
-# 当前第86回知识模型修订（2026-11-14）
+# 当前第86回知识与照护顺序模型（2026-11-15）
 
-当前正文仍为 `artifacts/local-trial-revision-ch86-20261111/import.json` 绑定的42段候选，未改正文。当前待复核模型为 `data/writing/packages/ch86-local-scenario-v4.json`，复用ch86-v3六合同。输入main `716755d`双Python CI成功后，两位独立原生读者完整审读ch86-v3，原始总评均FAIL：发现两处活动指令仍要求确切死时、医学概念边界不清、缺少两条正文支持的先后关系。原始意见、14条发现及逐项处置见 `artifacts/local-scenario-ch86-knowledge-split/review/`，不得用后续修订覆盖原判。完整阅读为自述，非provider消费证明。
+当前正文仍为 `artifacts/local-trial-revision-ch86-20261111/import.json` 绑定的42段候选，未改正文。当前待复核模型为 `data/writing/packages/ch86-local-scenario-v5.json`，复用ch86-v3六合同。输入main `716755d`双Python CI成功后，两位独立原生读者完整审读ch86-v3，原始总评均FAIL；原意见及14条发现见 `artifacts/local-scenario-ch86-knowledge-split/review/`，后续修订不得覆盖原判。完整阅读为自述，非provider消费证明。
 
-`amendment-v1/manifest.json` 绑定新旧模型及原意见；修订清除两处矛盾指令，区分普通观察、医学判定的生理过程及医学死因，后两者和精确死时保持UNKNOWN。补入“李纨先获告、后报王夫人”“李纨先到、后宝玉到”两条有正文依据的偏序，回放检查保留原先全部已确定状态，其余未排序支线仍保留。工程校验PASS不代替语义复核。下一步在本次提交CI成功后，请同两位读者完整复核修订；复核不增加独立读者数量。旧C1仍PENDING，来源/语料NOT_CHECKED，production NOT_GRANTED，仍不铺开。
+`amendment-v1/manifest.json` 清除两处活动指令冲突，区分普通观察、医学生理过程及医学死因，补入李纨先获告、先到场的两条偏序。输入main `4f4fe5b`准确SHA的双Python CI全成功后，同两位原读者复核，总评为PENDING和FAIL：均认可知识定义及合同相容性，另发现照护开始先于跑腿观察的必要边遗漏。实际执行、14条复核发现及逐项处置见 `amendment-v1/review/`；此轮复用原上下文，不增加独立读者人数，不具真人审计资格。
+
+`amendment-v2/manifest.json` 绑定ch86-v5、旧复核及正文：据第25/26/28段补“初次料理已开始→跑腿因叫水而来”，据第32/35段补“李纨接手第一轮照护→宝玉到场”。只增加这两条有正文依据的偏序，保留其他交错及全部已确定状态；两项照护事件均无状态effects。工程验证PASS仅说明绑定与回放，不表示新模型已获语义认可。雪雁第38段旁听后的知识仍未登记，UNKNOWN不能解释为她未获告；本模型不声称全人物知识或全文事件覆盖。
+
+当前仍不铺开：旧C1无等值映射、保持PENDING；来源/语料NOT_CHECKED，production NOT_GRANTED。另发现来源交付仍为v2/12项，当前选定协议已为v3/15项，`reviews status`现明确报告STALE_PROTOCOL，旧模板不得充作当前审查。
+
+下一步顺序：本次提交后核对准确SHA的双Python CI；再对ch86-v5做有界复核并逐项处置，不能借用v4意见放行；随后按选定v3协议重建来源读集/模板，处理真实来源和语料资格意见；旧C1按版本化命题协议另行处理。上述条件未完成前不批量生成第81—100回，也不提升旧20回研究稿资格。
 
 ```bash
 python tools/verify_ch86_knowledge_review.py
 python tools/prepare_ch86_knowledge_amendment.py --check
-pytest -q tests/test_ch86_knowledge_review.py tests/test_ch86_knowledge_amendment.py
+python tools/verify_ch86_knowledge_followup.py
+python tools/prepare_ch86_care_order.py --check
+pytest -q tests/test_ch86_knowledge_review.py tests/test_ch86_knowledge_amendment.py tests/test_ch86_knowledge_followup.py tests/test_ch86_care_order.py tests/test_source_reading_material.py
 ```
 
 下列记录保留各阶段输入与当时结论，当前入口以上段为准。

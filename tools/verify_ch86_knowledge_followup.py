@@ -87,6 +87,7 @@ def verify(root=ROOT):
     assert execution['context_mode'] == plan['context_mode'] == CONTEXT
     assert execution['maximum_concurrency'] <= plan['maximum_concurrency'] == 2
     assert execution['independent_opinions_added'] == plan['independent_opinions_added'] == 0
+    assert execution['independent_model_readers_total'] == 2
     assert execution['human_qualification'] is False and execution['provider_consumption_proof'] is False
     assert execution['qualification'] == plan['qualification'] == 'RESEARCH_ONLY'
     assert execution['production_admission'] == plan['production_admission'] == 'NOT_GRANTED'
@@ -109,6 +110,22 @@ def verify(root=ROOT):
     read = execution['coordinator_read']
     assert read['read_complete'] is True and read['basis'] == 'SELF_REPORTED_AFTER_TOOL_OUTPUT'
     assert read['opinion_bindings'] == [a['raw_opinion'] for a in execution['attempts']]
+    disposition = json.loads((root / REVIEW / 'disposition.json').read_bytes())
+    assert disposition['execution'] == binding(root, REVIEW + '/execution.json')
+    assert disposition['candidate'] == plan['candidate']
+    expected = {(job, f['id']): (attempts[job]['raw_opinion'], f['assessment'])
+                for job, opinion in opinions.items() for f in opinion['findings']}
+    rows = disposition['findings']
+    assert len(rows) == len(expected)
+    assert {(r['job_id'], r['finding_id']) for r in rows} == set(expected)
+    for row in rows:
+        assert (row['opinion'], row['original_assessment']) == expected[row['job_id'], row['finding_id']]
+        assert row['disposition'] and row['reason']
+    assert disposition['decision'] == 'HOLD_PENDING_CARE_ORDER_FOLLOWUP_AND_QUALIFICATION'
+    assert disposition['reviewed_model_status'] == 'FAIL_UNRESOLVED_CAUSAL_ORDER'
+    assert disposition['amended_model_semantic_status'] == disposition['old_C1_status'] == 'PENDING'
+    assert disposition['production_admission'] == 'NOT_GRANTED' and disposition['authority_effect'] == 'NONE'
+    bound_bytes(root, disposition['amendment'])
     return {'status': 'PASS', 'scope': 'CUSTODY_AND_SELF_REPORTED_COVERAGE_ONLY',
             'original_reader_verdicts': original_result['reader_verdicts'],
             'followup_reader_verdicts': {j: o['overall_assessment'] for j, o in opinions.items()},
