@@ -1,0 +1,20 @@
+{
+  "purpose": "independent semantic review of the versioned chapter 86 character-knowledge model",
+  "chapter": 86,
+  "scope": [
+    "review the v0.4 fact meanings and their evidence boundaries",
+    "replay the listed checkpoints and assess who knows each fact at each point",
+    "identify unsupported precision, accidental inference, and missing state transitions"
+  ],
+  "constraints": [
+    "treat the bound v0.4 projection as the complete knowledge input for this task",
+    "do not alias or reinterpret the legacy v0.3 fact daiyu_death_exact_moment",
+    "do not revise historical reviews or infer production admission from this task"
+  ],
+  "required_output": [
+    "finding identifier and severity",
+    "fact or checkpoint under review",
+    "supporting evidence and reasoning",
+    "recommended correction or explicit no-change rationale"
+  ]
+}
