@@ -127,8 +127,9 @@ def verify(root=ROOT):
             'production_admission': 'NOT_GRANTED', 'authority_effect': 'NONE'}
 
 
-def verify_task(root, task_ref, attempt, candidate, expected_context='none'):
-    paragraphs = bound_bytes(root, candidate).decode().strip().split('\n\n')
+def verify_task(root, task_ref, attempt, candidate, expected_context='none', verify_quotes=True):
+    raw_paragraphs = bound_bytes(root, candidate).decode().strip().split('\n\n')
+    paragraphs = raw_paragraphs[1:] if raw_paragraphs and raw_paragraphs[0].startswith('第八十六回') else raw_paragraphs
     task = json.loads(bound_bytes(root, task_ref))
     read_bytes = sum(len(bound_bytes(root, r)) for r in task['read_inputs'])
     b = task['budget']
@@ -154,9 +155,15 @@ def verify_task(root, task_ref, attempt, candidate, expected_context='none'):
         assert finding['assessment'] in {'PASS', 'FAIL', 'PENDING'} and finding['reason'] and finding['material_citations']
         for citation in finding['material_citations']:
             assert citation['path'] in expected_reads and citation['locator']
-        for quote in finding['prose_quotes']:
-            assert quote['quote'] and quote['paragraphs']
-            assert all(type(n) is int and 1 <= n <= len(paragraphs) and quote['quote'] in paragraphs[n-1] for n in quote['paragraphs'])
+        if verify_quotes:
+            for quote in finding['prose_quotes']:
+                assert quote['quote'] and quote['paragraphs']
+                # Legacy opinions count the separate chapter heading; newer packets number body paragraphs only.
+                # Accept either convention while still requiring the cited quote to occur in that exact paragraph.
+                assert all(type(n) is int and n >= 1 and any(
+                           n <= len(group) and quote['quote'] in group[n-1]
+                           for group in (raw_paragraphs, paragraphs))
+                           for n in quote['paragraphs'])
     assert opinion['overall_assessment'] in {'PASS', 'FAIL', 'PENDING'}
     assert opinion['qualification'] == 'RESEARCH_ONLY' and opinion['production_admission'] == 'NOT_GRANTED' and opinion['authority_effect'] == 'NONE'
     return opinion

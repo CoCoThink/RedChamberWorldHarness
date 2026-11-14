@@ -6,16 +6,20 @@
 
 `amendment-v2/manifest.json` 绑定ch86-v5、旧复核及正文：据第25/26/28段补“初次料理已开始→跑腿因叫水而来”，据第32/35段补“李纨接手第一轮照护→宝玉到场”。只增加这两条有正文依据的偏序，保留其他交错及全部已确定状态；两项照护事件均无状态effects。工程验证PASS仅说明绑定与回放，不表示新模型已获语义认可。雪雁第38段旁听后的知识仍未登记，UNKNOWN不能解释为她未获告；本模型不声称全人物知识或全文事件覆盖。
 
+`amendment-v2/review/` 已完成同两位原读者对v5的有界复核：两份总体PENDING；两位都接受新增的两条边，CAUSAL_ORDER对是否再约束李纨接手照护与宝玉启程有分歧，旧C1仍PENDING。原意见不可变；两位读者各自以独立勘误校正22条引句的段号/逐字引文，并绑定原SHA。语义2一处句号差异已显式记录。协调者处置及14项判定见 `amendment-v2/review/disposition.json`。据正文第31段（不计回目）李纨安排衣物热水、第33段宝玉听到雪雁报信便走，已生成 `data/writing/local-scenarios/ch86-v6/scenario.json`，仅增加 `liwan_takes_care < baoyu_departs` 并从未定关系清单移除这一对；其余模型状态不变。新增模型验证PASS仅表示绑定/回放与偏序工程正确，v6语义复核仍PENDING，资格不变。
+
 当前仍不铺开：旧C1无等值映射、保持PENDING；来源/语料NOT_CHECKED，production NOT_GRANTED。另发现来源交付仍为v2/12项，当前选定协议已为v3/15项，`reviews status`现明确报告STALE_PROTOCOL，旧模板不得充作当前审查。
 
-下一步顺序：本次提交后核对准确SHA的双Python CI；再对ch86-v5做有界复核并逐项处置，不能借用v4意见放行；随后按选定v3协议重建来源读集/模板，处理真实来源和语料资格意见；旧C1按版本化命题协议另行处理。上述条件未完成前不批量生成第81—100回，也不提升旧20回研究稿资格。
+下一步顺序：核对本次提交的准确SHA双Python CI；基于CI准备并复核v6，不迁移v5意见判定；随后按选定v3协议重建来源读集/模板，处理真实来源和语料资格意见；旧C1按版本化命题协议另行处理。上述条件未完成前不批量生成第81—100回，也不提升旧20回研究稿资格。
 
 ```bash
 python tools/verify_ch86_knowledge_review.py
 python tools/prepare_ch86_knowledge_amendment.py --check
 python tools/verify_ch86_knowledge_followup.py
 python tools/prepare_ch86_care_order.py --check
-pytest -q tests/test_ch86_knowledge_review.py tests/test_ch86_knowledge_amendment.py tests/test_ch86_knowledge_followup.py tests/test_ch86_care_order.py tests/test_source_reading_material.py
+python tools/verify_ch86_care_order_review.py
+python tools/prepare_ch86_care_order_v6.py --check
+pytest -q tests/test_ch86_knowledge_review.py tests/test_ch86_knowledge_amendment.py tests/test_ch86_knowledge_followup.py tests/test_ch86_care_order.py tests/test_ch86_care_order_review.py tests/test_ch86_care_order_v6.py tests/test_source_reading_material.py
 ```
 
 下列记录保留各阶段输入与当时结论，当前入口以上段为准。
