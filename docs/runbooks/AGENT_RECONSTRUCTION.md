@@ -1,4 +1,18 @@
-# 当前第86回审读后修订（2026-11-11）
+# 当前第86回知识模型修订（2026-11-14）
+
+当前正文仍为 `artifacts/local-trial-revision-ch86-20261111/import.json` 绑定的42段候选，未改正文。当前待复核模型为 `data/writing/packages/ch86-local-scenario-v4.json`，复用ch86-v3六合同。输入main `716755d`双Python CI成功后，两位独立原生读者完整审读ch86-v3，原始总评均FAIL：发现两处活动指令仍要求确切死时、医学概念边界不清、缺少两条正文支持的先后关系。原始意见、14条发现及逐项处置见 `artifacts/local-scenario-ch86-knowledge-split/review/`，不得用后续修订覆盖原判。完整阅读为自述，非provider消费证明。
+
+`amendment-v1/manifest.json` 绑定新旧模型及原意见；修订清除两处矛盾指令，区分普通观察、医学判定的生理过程及医学死因，后两者和精确死时保持UNKNOWN。补入“李纨先获告、后报王夫人”“李纨先到、后宝玉到”两条有正文依据的偏序，回放检查保留原先全部已确定状态，其余未排序支线仍保留。工程校验PASS不代替语义复核。下一步在本次提交CI成功后，请同两位读者完整复核修订；复核不增加独立读者数量。旧C1仍PENDING，来源/语料NOT_CHECKED，production NOT_GRANTED，仍不铺开。
+
+```bash
+python tools/verify_ch86_knowledge_review.py
+python tools/prepare_ch86_knowledge_amendment.py --check
+pytest -q tests/test_ch86_knowledge_review.py tests/test_ch86_knowledge_amendment.py
+```
+
+下列记录保留各阶段输入与当时结论，当前入口以上段为准。
+
+# 第86回审读后修订（2026-11-11）
 
 当前候选入口为 `artifacts/local-trial-revision-ch86-20261111/import.json`，42段/13526字节。准备快照 `review/manifest.json` 保留NOT_STARTED；实际进度见 `review/execution.json`：输入main `61f647a`双Python CI成功后，按3+1分批完成四位独立模型读者，总评均PASS，覆盖40项义务、24事件、5消息。29条发现及两处引句勘误均保留；文学研究审读PASS带ADVISORY，语义PENDING。`death_exact_moment` 的命题边界已记录：正文支持亲历/获告死亡经过，不能推出钟点或可测量的生理死时；现有标签仍未拆分，故不把C1改为PASS。来源选择及pilot/完整语料选择均无登记意见，production NOT_GRANTED，仍不铺开。下一步提出版本化命题拆分并独立审阅，再完成来源/语料资格审查；本轮不改正文或知识模型。详见[审读及处置](../../artifacts/local-trial-revision-ch86-20261111/review/REPORT.md)及[命题边界记录](../../artifacts/local-trial-revision-ch86-20261111/review/semantic-boundary.md)。新模型与六合同另存ch86-v2；父稿谱系不改，完整范围增量通过notes绑定。旧稿意见不迁移到新稿，准备报告的0份意见是历史快照。
 
