@@ -11,6 +11,10 @@ from .contracts import unique_index
 BUCKETS = ("knows", "believes", "suspects", "does_not_know")
 # Selected knowledge version. slice1 stays untouched for records bound to its bytes.
 KNOWLEDGE_PATH = "data/knowledge/v03_slice2.json"
+KNOWLEDGE_VERSIONS = {
+    "v0.3:slice2": KNOWLEDGE_PATH,
+    "v0.4:ch86": "data/knowledge/v04_ch86.json",
+}
 
 
 @dataclass
@@ -19,8 +23,21 @@ class CharacterKnowledgeRuntime:
     data: dict[str, Any]
 
     @classmethod
-    def from_repo(cls, root: Path) -> "CharacterKnowledgeRuntime":
-        return cls(root, load_data(root / KNOWLEDGE_PATH) or {})
+    def from_repo(cls, root: Path, knowledge_path: str = KNOWLEDGE_PATH) -> "CharacterKnowledgeRuntime":
+        return cls(root, load_data(root / knowledge_path) or {})
+
+    @classmethod
+    def from_version(cls, root: Path, version: str) -> "CharacterKnowledgeRuntime":
+        """Load one explicitly named immutable knowledge carrier; never alias IDs."""
+        try:
+            path = KNOWLEDGE_VERSIONS[version]
+        except KeyError as exc:
+            raise ValueError(f"unknown character knowledge version: {version}") from exc
+        runtime = cls.from_repo(root, path)
+        expected = f"character-truth:{version}"
+        if runtime.data.get("id") != expected:
+            raise ValueError(f"knowledge version identity mismatch: expected {expected}")
+        return runtime
 
     @property
     def facts(self):

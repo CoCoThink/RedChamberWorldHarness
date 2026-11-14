@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "RCWH Character Knowledge Graph v0.3 Slice 1",
+  "title": "RCWH Versioned Character Knowledge Graph",
   "type": "object",
   "required": [
     "id",
@@ -13,7 +13,7 @@
     "policy"
   ],
   "properties": {
-    "id": {"enum": ["character-truth:v0.3:slice1", "character-truth:v0.3:slice2"]},
+    "id": {"enum": ["character-truth:v0.3:slice1", "character-truth:v0.3:slice2", "character-truth:v0.4:ch86"]},
     "epistemic_rule": {
       "type": "string",
       "minLength": 40

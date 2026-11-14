@@ -61,6 +61,36 @@ def test_event_driven_knowledge_update_preserves_zijuan_uncertainty_until_event(
     ) == "knows"
 
 
+def test_v04_knowledge_migration_splits_death_claims_without_aliasing_legacy_id():
+    legacy = CharacterKnowledgeRuntime.from_version(ROOT, "v0.3:slice2")
+    current = CharacterKnowledgeRuntime.from_version(ROOT, "v0.4:ch86")
+    assert runtime().data["id"] == "character-truth:v0.3:slice2"
+    assert "daiyu_death_exact_moment" in legacy.facts
+    assert "daiyu_death_exact_moment" not in current.facts
+
+    scene = "ch86_last_night_v04"
+    for actor in ("daiyu", "zijuan", "baoyu"):
+        assert current.status(scene, actor, "death_occurred", "ENTRY") == "does_not_know"
+        assert current.status(scene, actor, "death_relative_account", "ENTRY") == "does_not_know"
+        for fact in ("death_precise_time", "death_physiological_detail", "death_medical_cause"):
+            assert current.status(scene, actor, fact, "ENTRY") == "does_not_know"
+
+    for fact in ("death_occurred", "death_relative_account"):
+        assert current.status(scene, "zijuan", fact, "K86-V04-DEATH-WITNESSED") == "knows"
+        assert current.status(scene, "baoyu", fact, "K86-V04-BAOYU-LEARNS-DEATH-ACCOUNT") == "knows"
+    for actor in ("zijuan", "baoyu"):
+        for fact in ("death_precise_time", "death_physiological_detail", "death_medical_cause"):
+            assert current.status(scene, actor, fact, None) == "does_not_know"
+    assert current.status(scene, "baoyu", "daiyu_death_exact_moment", None) == "UNSPECIFIED"
+
+
+def test_knowledge_runtime_requires_an_explicit_known_version():
+    import pytest
+
+    with pytest.raises(ValueError, match="unknown character knowledge version"):
+        CharacterKnowledgeRuntime.from_version(ROOT, "v0.4:latest")
+
+
 def test_scene_validator_catches_omniscient_dialogue_and_action():
     rt = runtime()
     contract = load_data(ROOT / "data/scenes/ch92_delivery_gate.yaml")

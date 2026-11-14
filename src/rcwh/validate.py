@@ -43,6 +43,7 @@ REQUIRED_DOCUMENTS = (
     ('data/mechanism_adapters/v04.json', 'historical_mechanism_adapter.schema.json'),
     ('data/knowledge/v03_slice1.json', 'character_knowledge_graph.schema.json'),
     ('data/knowledge/v03_slice2.json', 'character_knowledge_graph.schema.json'),
+    ('data/knowledge/v04_ch86.json', 'character_knowledge_graph.schema.json'),
     ('data/evaluation/pilot85_87/review_selection.json', 'pilot_review_selection.schema.json'),
     ('data/research/fidelity_audit.json', 'fidelity_audit.schema.json'),
     ('data/research/hypothesis_source_backfill.json', 'hypothesis_source_backfill.schema.json'),
