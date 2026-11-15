@@ -62,3 +62,22 @@ def test_review_records_remain_pending_and_validate_real_custody_fields(tmp_path
     save(tmp_path, JOBS[1], second)
     with pytest.raises(ValueError, match='quote absent'):
         verify(tmp_path)
+
+
+def test_candidate_citations_require_verbatim_text(tmp_path):
+    setup_repo(tmp_path)
+    record = opinion(tmp_path, JOBS[0])
+    envelope = json.loads((tmp_path / EVIDENCE).read_bytes())
+    candidate = envelope['materials']['candidate']['path']
+    citation = {'path': candidate, 'locator': 'paragraph'}
+    record['findings'][0]['citations'] = [citation]
+    save(tmp_path, JOBS[0], record)
+    with pytest.raises(ValueError, match='requires a verbatim quote'):
+        verify(tmp_path)
+    citation['quote'] = '不存在的引文'
+    save(tmp_path, JOBS[0], record)
+    with pytest.raises(ValueError, match='quote absent'):
+        verify(tmp_path)
+    citation['quote'] = (tmp_path / candidate).read_text(encoding='utf-8')[:20]
+    save(tmp_path, JOBS[0], record)
+    assert verify(tmp_path)['registered_opinions'] == 1

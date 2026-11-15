@@ -9,6 +9,9 @@ from prepare_v04_knowledge_review import BASE, JOBS, ROOT, TOPICS, run
 def verify(root):
     run(root, True)
     opinions = []
+    envelope = json.loads((root / BASE / 'plan.json').read_bytes())['evidence']
+    evidence = json.loads(bound_bytes(root, envelope))
+    candidate_path = evidence['materials']['candidate']['path']
     for job in JOBS:
         path = root / BASE / 'opinions' / f'{job}.json'
         if not path.exists():
@@ -47,6 +50,8 @@ def verify(root):
             for citation in finding['citations']:
                 if citation.get('path') not in expected or not str(citation.get('locator', '')).strip():
                     raise ValueError(f'{job}: invalid citation')
+                if citation['path'] == candidate_path and not citation.get('quote'):
+                    raise ValueError(f'{job}: candidate citation requires a verbatim quote')
                 if 'quote' in citation and (not citation['quote'] or citation['quote'] not in bound_bytes(root, expected[citation['path']]).decode('utf-8')):
                     raise ValueError(f'{job}: quote absent from cited material')
         opinions.append(opinion)
