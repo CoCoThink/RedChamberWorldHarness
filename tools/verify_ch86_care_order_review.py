@@ -82,6 +82,7 @@ def verify(root=ROOT):
     previous.verify(root)
     plan_ref = binding(root, REVIEW + '/plan.json')
     plan = json.loads(bound_bytes(root, plan_ref))
+    initial.historical_instructions(root, plan['repository_instructions'])
     ci = json.loads(bound_bytes(root, plan['input_ci']))
     assert ci['headSha'] == plan['input_commit'] and ci['status'] == 'completed' and ci['conclusion'] == 'success'
     assert len(ci['jobs']) == 2 and all(j['conclusion'] == 'success' for j in ci['jobs'])
@@ -112,7 +113,7 @@ def verify(root=ROOT):
         # The initial submissions are immutable; their quote strings are checked against
         # reader-authored, separately bound errata below.
         opinion = initial.verify_task(root, task_ref, attempt, plan['candidate'], CONTEXT,
-                                      verify_quotes=False)
+                                      verify_quotes=False, instructions_ref=plan['repository_instructions'])
         opinions[task['job_id']] = opinion
         prior = json.loads(bound_bytes(root, prior_attempts[task['job_id']]['raw_opinion']))
         assert prior['overall_assessment'] in {'FAIL', 'PENDING'}

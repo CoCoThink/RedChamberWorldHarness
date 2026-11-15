@@ -82,6 +82,7 @@ def verify(root=ROOT):
     previous.verify(root)
     plan_ref = binding(root, REVIEW + '/plan.json')
     plan = json.loads(bound_bytes(root, plan_ref))
+    initial.historical_instructions(root, plan['repository_instructions'])
     ci = json.loads(bound_bytes(root, plan['input_ci']))
     assert ci['headSha'] == plan['input_commit'] and ci['status'] == 'completed' and ci['conclusion'] == 'success'
     assert len(ci['jobs']) == 2 and all(job['conclusion'] == 'success' for job in ci['jobs'])
@@ -113,7 +114,8 @@ def verify(root=ROOT):
         assert prior_attempts[peer]['raw_opinion'] not in task['read_inputs']
         assert binding(root, previous.REVIEW + '/disposition.json') not in task['read_inputs']
         assert plan['manifest'] not in task['read_inputs']
-        opinion = initial.verify_task(root, task_ref, attempt, plan['candidate'], CONTEXT)
+        opinion = initial.verify_task(root, task_ref, attempt, plan['candidate'], CONTEXT,
+                                      instructions_ref=plan['repository_instructions'])
         opinions[task['job_id']] = opinion
     disposition_ref = binding(root, REVIEW + '/disposition.json')
     disposition = json.loads(bound_bytes(root, disposition_ref))

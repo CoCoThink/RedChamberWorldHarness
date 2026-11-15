@@ -87,12 +87,21 @@ def prepare(ci_path, root=ROOT):
            'qualification': 'RESEARCH_ONLY', 'production_admission': 'NOT_GRANTED', 'authority_effect': 'NONE'})
 
 
+def historical_instructions(root, ref):
+    """Resolve the original review's instructions without rebinding its receipt."""
+    historical_sha = '5eb35cc2993c4a68422029cb84649519b27eb08489a23c9608657282d5c4cafe'
+    if ref == {'path': 'AGENTS.md', 'sha256': historical_sha}:
+        return bound_bytes(root, {'path': 'artifacts/local-trial-review-20261111/AGENTS.snapshot.md',
+                                  'sha256': historical_sha})
+    return bound_bytes(root, ref)
+
+
 def verify(root=ROOT):
     plan = json.loads((root / REVIEW / 'plan.json').read_bytes())
     ci = json.loads(bound_bytes(root, plan['input_ci']))
     assert ci['headSha'] == plan['input_commit'] and ci['status'] == 'completed' and ci['conclusion'] == 'success'
     assert len(ci['jobs']) == 2 and all(j['conclusion'] == 'success' for j in ci['jobs'])
-    bound_bytes(root, plan['repository_instructions'])
+    historical_instructions(root, plan['repository_instructions'])
     manifest = json.loads(bound_bytes(root, plan['manifest']))
     for value in manifest.values():
         for ref in value if isinstance(value, list) else [value]:
@@ -119,7 +128,7 @@ def verify(root=ROOT):
     for task_ref in plan['tasks']:
         task = json.loads(bound_bytes(root, task_ref))
         attempt = next(a for a in attempts if a['job_id'] == task['job_id'])
-        opinion = verify_task(root, task_ref, attempt, plan['candidate'])
+        opinion = verify_task(root, task_ref, attempt, plan['candidate'], instructions_ref=plan['repository_instructions'])
         verdicts[task['job_id']] = opinion['overall_assessment']
     return {'status': 'PASS', 'scope': 'CUSTODY_AND_SELF_REPORTED_COVERAGE_ONLY',
             'independent_model_opinions': len(verdicts), 'reader_verdicts': verdicts,
@@ -127,14 +136,15 @@ def verify(root=ROOT):
             'production_admission': 'NOT_GRANTED', 'authority_effect': 'NONE'}
 
 
-def verify_task(root, task_ref, attempt, candidate, expected_context='none', verify_quotes=True):
+def verify_task(root, task_ref, attempt, candidate, expected_context='none', verify_quotes=True, instructions_ref=None):
     raw_paragraphs = bound_bytes(root, candidate).decode().strip().split('\n\n')
     paragraphs = raw_paragraphs[1:] if raw_paragraphs and raw_paragraphs[0].startswith('第八十六回') else raw_paragraphs
     task = json.loads(bound_bytes(root, task_ref))
     read_bytes = sum(len(bound_bytes(root, r)) for r in task['read_inputs'])
     b = task['budget']
     assert read_bytes == b['read_bytes'] and read_bytes + b['instruction_reserve_bytes'] + b['output_reserve_bytes'] == b['reserved_total_bytes'] <= b['maximum_bytes']
-    assert len(task['instructions'].encode()) + len((root / 'AGENTS.md').read_bytes()) <= b['instruction_reserve_bytes']
+    instructions = historical_instructions(root, instructions_ref) if instructions_ref else (root / 'AGENTS.md').read_bytes()
+    assert len(task['instructions'].encode()) + len(instructions) <= b['instruction_reserve_bytes']
     assert attempt['dispatch'] == task_ref and attempt['status'] == 'SUBMITTED' and attempt['context_fork'] == expected_context
     assert attempt['raw_opinion']['path'] == task['expected_raw_opinion']
     raw = bound_bytes(root, attempt['raw_opinion'])

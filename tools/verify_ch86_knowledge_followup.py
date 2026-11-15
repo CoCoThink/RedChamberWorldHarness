@@ -76,7 +76,7 @@ def verify(root=ROOT):
     ci = json.loads(bound_bytes(root, plan['input_ci']))
     assert ci['headSha'] == plan['input_commit'] and ci['status'] == 'completed' and ci['conclusion'] == 'success'
     assert len(ci['jobs']) == 2 and all(j['conclusion'] == 'success' for j in ci['jobs'])
-    bound_bytes(root, plan['repository_instructions'])
+    initial.historical_instructions(root, plan['repository_instructions'])
     assert plan['manifest'] == binding(root, amendment.OUTPUT + '/manifest.json')
     manifest = json.loads(bound_bytes(root, plan['manifest']))
     assert plan['candidate'] == manifest['candidate']
@@ -105,7 +105,8 @@ def verify(root=ROOT):
         assert originals[task['job_id']]['raw_opinion'] in task['read_inputs']
         other = next(a['raw_opinion'] for j, a in originals.items() if j != task['job_id'])
         assert other not in task['read_inputs']
-        opinions[task['job_id']] = initial.verify_task(root, task_ref, attempt, plan['candidate'], CONTEXT)
+        opinions[task['job_id']] = initial.verify_task(root, task_ref, attempt, plan['candidate'], CONTEXT,
+                                                       instructions_ref=plan['repository_instructions'])
     assert set(opinions) == set(initial.JOBS)
     read = execution['coordinator_read']
     assert read['read_complete'] is True and read['basis'] == 'SELF_REPORTED_AFTER_TOOL_OUTPUT'

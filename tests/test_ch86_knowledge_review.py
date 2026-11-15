@@ -22,7 +22,8 @@ def copied_review(tmp_path):
     execution = json.loads((ROOT / BASE / 'execution.json').read_bytes())
     manifest = json.loads((ROOT / plan['manifest']['path']).read_bytes())
     package = json.loads((ROOT / manifest['package']['path']).read_bytes())
-    paths = {BASE + '/plan.json', BASE + '/execution.json', BASE + '/checkpoint-view.json'}
+    paths = {BASE + '/plan.json', BASE + '/execution.json', BASE + '/checkpoint-view.json',
+             'artifacts/local-trial-review-20261111/AGENTS.snapshot.md'}
     def select(ref):
         paths.add(ref['path'])
     for field in ('input_ci', 'manifest', 'candidate', 'repository_instructions'):
@@ -71,6 +72,15 @@ def test_real_semantic_review_verifies_custody():
     assert result['independent_model_opinions'] == 2
     assert result['scope'] == 'CUSTODY_AND_SELF_REPORTED_COVERAGE_ONLY'
     assert result['production_admission'] == 'NOT_GRANTED'
+
+
+def test_historical_instructions_independent_of_current_rules(copied_review):
+    (copied_review / 'AGENTS.md').write_text('later rules')
+    assert review.verify(copied_review)['status'] == 'PASS'
+    snapshot = copied_review / 'artifacts/local-trial-review-20261111/AGENTS.snapshot.md'
+    snapshot.write_bytes(snapshot.read_bytes() + b' ')
+    with pytest.raises(ValueError):
+        review.verify(copied_review)
 
 
 @pytest.mark.parametrize('case', ['incomplete', 'missing_read', 'duplicate_read', 'wrong_identity',
