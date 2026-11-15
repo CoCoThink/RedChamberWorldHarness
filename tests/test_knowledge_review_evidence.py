@@ -1,11 +1,13 @@
 import json
 import shutil
+import sys
 from pathlib import Path
 
 import pytest
 
 from rcwh.knowledge_versions import load_knowledge_version
-from tools.knowledge_review_evidence import ROOT, REQUEST, SOURCES, create, verify
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
+from knowledge_review_evidence import ROOT, REQUEST, SOURCES, create, verify
 
 
 def test_evidence_bundle_detects_changed_candidate_and_request(tmp_path):
