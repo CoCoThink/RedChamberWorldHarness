@@ -75,6 +75,11 @@ def verify(root):
             if ref.get('path') != f'{BASE}/opinions/{job}.json':
                 raise ValueError('custody opinion path mismatch')
             bound_bytes(root, ref)
+            if 'dispatch_ticket' in attempt:
+                ticket = attempt['dispatch_ticket']
+                if ticket.get('path') != f".codex-dispatch/rcwh_ticket_v05_semantic_{job[-1]}.md":
+                    raise ValueError('custody ticket path mismatch')
+                bound_bytes(root, ticket)
             if attempt.get('context_fork') not in ('none', 'all'):
                 raise ValueError('invalid custody context')
         expected_context = json.loads((root / BASE / 'plan.json').read_bytes())['context_fork']

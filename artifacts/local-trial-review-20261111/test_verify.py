@@ -20,7 +20,7 @@ class ReviewCustodyTest(unittest.TestCase):
         self.root = Path(self.temp.name)
         self.execution_path = review.BASE / 'execution.json'
         self.execution = json.loads((review.ROOT / self.execution_path).read_bytes())
-        paths = {self.execution_path}
+        paths = {self.execution_path, review.BASE / 'AGENTS.snapshot.md'}
 
         def refs(value):
             if isinstance(value, dict):

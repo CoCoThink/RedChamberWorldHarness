@@ -1,0 +1,232 @@
+{
+  "authority_effect": "NONE",
+  "declared_read_files": [
+    {
+      "bytes": 12207,
+      "path": "data/knowledge/v05_ch86_draft.json",
+      "read_complete": true,
+      "sha256": "1010cd458a6e1070b25b2941e6a78cece0360fc83ec9c2c7c423f2a67523c89b"
+    },
+    {
+      "bytes": 12137,
+      "path": "data/knowledge/v04_ch86.json",
+      "read_complete": true,
+      "sha256": "dab6b92326cc4b006a37eb2d33913a98779fae7cae5c5ae3cac1dfb047fc9013"
+    },
+    {
+      "bytes": 2171,
+      "path": "tools/prepare_ch86_knowledge_v05_draft.py",
+      "read_complete": true,
+      "sha256": "a2133034194e1b83f2c4b146c0ba10b749e79707f25ac83183e48dd736b1d678"
+    },
+    {
+      "bytes": 13526,
+      "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+      "read_complete": true,
+      "sha256": "2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2"
+    },
+    {
+      "bytes": 1455,
+      "path": "artifacts/local-trial-revision-ch86-20261111/import.json",
+      "read_complete": true,
+      "sha256": "5e29477069fa0728e9e4fa87f228077051da05d11cd4561fc3206af772895a60"
+    },
+    {
+      "bytes": 46863,
+      "path": "data/writing/local-scenarios/ch86-v6/scenario.json",
+      "read_complete": true,
+      "sha256": "670b6b13c9db0440a8b46e25cd4445880bb06af32c8a2374e0ee47c291bb75b5"
+    },
+    {
+      "bytes": 3073,
+      "path": "artifacts/local-trial-revision-ch86-20261111/review/semantic-boundary.md",
+      "read_complete": true,
+      "sha256": "7d5a3513aead66682c2102a0270346bd1468748aa3ca7fc2dce5afa263082206"
+    }
+  ],
+  "findings": [
+    {
+      "assessment": "PENDING",
+      "citations": [
+        {
+          "locator": "第11行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "这病拖得久了，时好些，大家便松一口气"
+        },
+        {
+          "locator": "/scenes/0/entry",
+          "path": "data/knowledge/v05_ch86_draft.json"
+        },
+        {
+          "locator": "/original_declarations/86-S1/unresolved",
+          "path": "data/writing/local-scenarios/ch86-v6/scenario.json"
+        }
+      ],
+      "reason": "紫鹃知病重有照护依据；黛玉自知病重未见充分明确表达。宝玉病重知识与宝玉、紫鹃赶到信念均未指定，不能视作明确不知或否定。三人入口均列五项死亡知识不知；不得自动等同局部种子入口。",
+      "topic": "ENTRY"
+    },
+    {
+      "assessment": "PASS",
+      "citations": [
+        {
+          "locator": "第41行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "黛玉这回不像先前那样，垫不妥还要皱眉，只在紫鹃怀里略动了动，便沉下去。"
+        },
+        {
+          "locator": "第43行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "只说姑娘这会子不好，叫他快来。"
+        },
+        {
+          "locator": "/scenes/0/events/0",
+          "path": "data/knowledge/v05_ch86_draft.json"
+        }
+      ],
+      "reason": "序号10仅紫鹃添疑病危，其余状态不变；突变与急召支持较弱推断，不支持限定今夜死亡。",
+      "topic": "RAPID_DECLINE"
+    },
+    {
+      "assessment": "PASS",
+      "citations": [
+        {
+          "locator": "第45行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "原先靠着她的那点力也松了，头略偏过去，便不动了。"
+        },
+        {
+          "locator": "第73行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "雪雁出去以后，我还托着姑娘，气就没了。我在这里。"
+        },
+        {
+          "locator": "/scenes/0/events/1",
+          "path": "data/knowledge/v05_ch86_draft.json"
+        }
+      ],
+      "reason": "序号90紫鹃移除病危疑虑及对死亡发生和相对经过的不知，加入两项知识；黛玉空更新不赋予死后知识。亲历及告知支持有限经过。",
+      "topic": "DEATH_WITNESSED"
+    },
+    {
+      "assessment": "PASS",
+      "citations": [
+        {
+          "locator": "第67行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "姑娘这会子不好了，紫鹃姐姐叫二爷快去。"
+        },
+        {
+          "locator": "第71行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "药还没吃么？再温一温。"
+        },
+        {
+          "locator": "第73行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "二爷，姑娘已经去了。"
+        },
+        {
+          "locator": "第73行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "雪雁出去以后，我还托着姑娘，气就没了。我在这里。"
+        },
+        {
+          "locator": "/scenes/0/events/2",
+          "path": "data/knowledge/v05_ch86_draft.json"
+        }
+      ],
+      "reason": "序号100宝玉到场问药后获告死亡发生及相对经过，移除对应两项不知；听明白有叙事迟疑，但听到亲历陈述，不是预先亲见。黛玉及紫鹃不受此事件改写。",
+      "topic": "BAOYU_LEARNS"
+    },
+    {
+      "assessment": "PASS",
+      "citations": [
+        {
+          "locator": "第55行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "嘴里本要问几时，见紫鹃那样，便没敢问。"
+        },
+        {
+          "locator": "/facts/death_precise_time; /scenes/0",
+          "path": "data/knowledge/v05_ch86_draft.json"
+        },
+        {
+          "locator": "判定",
+          "path": "artifacts/local-trial-revision-ch86-20261111/review/semantic-boundary.md"
+        }
+      ],
+      "reason": "三人入口不知精确钟点或可测量瞬间，事件无更新；相对先后不能推出钟点。",
+      "topic": "PRECISE_TIME"
+    },
+    {
+      "assessment": "FAIL",
+      "citations": [
+        {
+          "locator": "第73行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "雪雁出去以后，我还托着姑娘，气就没了。我在这里。"
+        },
+        {
+          "locator": "/facts/death_physiological_detail; /scenes/0",
+          "path": "data/knowledge/v05_ch86_draft.json"
+        },
+        {
+          "locator": "/facts/death_physiological_detail",
+          "path": "data/writing/local-scenarios/ch86-v6/scenario.json"
+        }
+      ],
+      "reason": "草案定义为“可确定的生理死亡细节”，却对紫鹃和宝玉持续明确 does_not_know；正文中紫鹃观察并告诉宝玉气没了。场景文件排除普通观察，只指医学测量或专业判定，但草案标签未作限定；按宽泛字面与正文冲突，应收窄定义复审。",
+      "topic": "PHYSIOLOGY"
+    },
+    {
+      "assessment": "PASS",
+      "citations": [
+        {
+          "locator": "第11行",
+          "path": "artifacts/candidates/ch86/2319feaac4b3f3824b185520cb0eae9d3968ab24e01e491be17547d3013b67c2.txt",
+          "quote": "这病拖得久了，时好些，大家便松一口气"
+        },
+        {
+          "locator": "/facts/death_medical_cause; /scenes/0",
+          "path": "data/knowledge/v05_ch86_draft.json"
+        },
+        {
+          "locator": "/facts/death_medical_cause",
+          "path": "data/writing/local-scenarios/ch86-v6/scenario.json"
+        }
+      ],
+      "reason": "三人对医学死因列不知，事件不更新；病程、候医与未饮药不能推出医学判定或因果链。",
+      "topic": "MEDICAL_CAUSE"
+    },
+    {
+      "assessment": "PASS",
+      "citations": [
+        {
+          "locator": "判定及与来源、语料门的关系",
+          "path": "artifacts/local-trial-revision-ch86-20261111/review/semantic-boundary.md"
+        },
+        {
+          "locator": "/extra_editorial_choices; /original_declarations",
+          "path": "data/writing/local-scenarios/ch86-v6/scenario.json"
+        },
+        {
+          "locator": "/epistemic_rule",
+          "path": "data/knowledge/v05_ch86_draft.json"
+        }
+      ],
+      "reason": "相对经过不等价旧 death_exact_moment，原合同和上游未知不由此裁决；89、92沿用v04，不借86候选证明。来源、语料及生产准入不由本意见授予。",
+      "topic": "LEGACY_BOUNDARY"
+    }
+  ],
+  "job_id": "semantic-1",
+  "kind": "CH86_V05_DRAFT_SEMANTIC_OPINION",
+  "overall_assessment": "FAIL",
+  "production_admission": "NOT_GRANTED",
+  "reading_status": "COMPLETE",
+  "reviewer": {
+    "identity_basis": "NATIVE_TASK_LABEL_NOT_PROVIDER_VERIFIED",
+    "principal_id": "/root/rcwh_ticket_v05_semantic_1",
+    "session_id": "/root/rcwh_ticket_v05_semantic_1"
+  },
+  "unread": []
+}

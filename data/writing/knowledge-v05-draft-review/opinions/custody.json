@@ -1,0 +1,40 @@
+{
+  "kind": "CH86_V05_DRAFT_REVIEW_CUSTODY",
+  "basis": "ORCHESTRATOR_RECORDED",
+  "production_admission": "NOT_GRANTED",
+  "provider_consumption_proof": false,
+  "attempts": [
+    {
+      "job_id": "semantic-1",
+      "agent": "/root/rcwh_ticket_v05_semantic_1",
+      "model": "gpt-6-astra",
+      "context_fork": "none",
+      "dispatch_ticket": {
+        "path": ".codex-dispatch/rcwh_ticket_v05_semantic_1.md",
+        "sha256": "99d3806b7418d779f2de132dad9f8c81f59b6b18874c044451c3b67ab068b6f3",
+        "bytes": 520
+      },
+      "opinion": {
+        "path": "data/writing/knowledge-v05-draft-review/opinions/semantic-1.json",
+        "sha256": "251cca62b2e157e3c0353bd941eca9cca766d526804cf88e7c0258056e637498",
+        "bytes": 9401
+      }
+    },
+    {
+      "job_id": "semantic-2",
+      "agent": "/root/rcwh_ticket_v05_semantic_2",
+      "model": "gpt-6-astra",
+      "context_fork": "none",
+      "dispatch_ticket": {
+        "path": ".codex-dispatch/rcwh_ticket_v05_semantic_2.md",
+        "sha256": "b5667c0fa37277d992193f71aedd4b9a0df27e7ee3f0e4ae4fc40fa17ab202f1",
+        "bytes": 520
+      },
+      "opinion": {
+        "path": "data/writing/knowledge-v05-draft-review/opinions/semantic-2.json",
+        "sha256": "254b32c3c8bd13310f1d23bbc50b926ccebb8309ec87351666fd34243b74db10",
+        "bytes": 8336
+      }
+    }
+  ]
+}

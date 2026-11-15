@@ -18,7 +18,8 @@ class ReviewCustodyTests(unittest.TestCase):
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
         paths = [BASE, BASE.parent / 'reading-inputs', Path('AGENTS.md'),
-                 Path('artifacts/local-trial-review-20261111/verify.py')]
+                 Path('artifacts/local-trial-review-20261111/verify.py'),
+                 Path('artifacts/local-trial-review-20261111/AGENTS.snapshot.md')]
         plan = json.loads((HERE / 'manifest.json').read_bytes())
         paths.append(Path(plan['candidate']['path']))
         for relative in paths:
@@ -44,6 +45,14 @@ class ReviewCustodyTests(unittest.TestCase):
 
     def test_complete_receipts(self):
         self.assertEqual(self.verify()['events'], 24)
+
+    def test_historical_instructions_are_pinned(self):
+        (self.root / 'AGENTS.md').write_text('new instructions')
+        self.assertEqual(self.verify()['events'], 24)
+        snapshot = self.root / 'artifacts/local-trial-review-20261111/AGENTS.snapshot.md'
+        snapshot.write_bytes(snapshot.read_bytes() + b' ')
+        with self.assertRaises(ValueError):
+            self.verify()
 
     def test_changed_raw_review_is_rejected(self):
         path = self.root / BASE / 'opinions/blind-1.json'

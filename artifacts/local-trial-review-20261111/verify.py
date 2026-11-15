@@ -24,7 +24,11 @@ def require(condition, message):
 
 
 def bound(ref, root=ROOT):
-    path = (root / ref['path']).resolve()
+    # These original receipts refer to the instructions in force at review time.
+    # Preserve their original path and digest while resolving that one historical
+    # version to its immutable snapshot, independent of today's instructions.
+    historical = ref['path'] == 'AGENTS.md' and ref['sha256'] == '5eb35cc2993c4a68422029cb84649519b27eb08489a23c9608657282d5c4cafe'
+    path = (root / (BASE / 'AGENTS.snapshot.md' if historical else ref['path'])).resolve()
     require(path.is_relative_to(root.resolve()), 'reference escapes repository')
     raw = path.read_bytes()
     require(hashlib.sha256(raw).hexdigest() == ref['sha256'], f"changed bytes: {ref['path']}")
