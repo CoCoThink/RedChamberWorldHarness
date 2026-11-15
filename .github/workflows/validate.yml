@@ -56,6 +56,10 @@ jobs:
         run: python tools/verify_knowledge_request.py --request data/writing/knowledge-requests/87f537580cb65cfcb19b7b4d9eb8d84ff89d467e9ed174e6b3bfc2fa7fb1744d.json
       - name: Verify chapter 86 semantic review evidence binding
         run: python tools/knowledge_review_evidence.py --check data/writing/knowledge-review-evidence/95494597384adfed238a0d0684a511011586b46bb0e5f02041b38579b36f4889.json
+      - name: Verify v0.4 knowledge review dispatch and opinion custody
+        run: |
+          python tools/prepare_v04_knowledge_review.py --check
+          python tools/verify_v04_knowledge_opinions.py
       - name: Verify bounded scope review partition and preserve unresolved scope
         run: python tools/prepare_scope_review.py --check artifacts/scope-preflight-20261110/review-v2
       - name: Verify original native scope opinions and internal coordinator boundaries
