@@ -59,8 +59,33 @@ def verify(root):
         for field in ('principal_id', 'session_id'):
             if len({o['reviewer'][field] for o in opinions}) != 2:
                 raise ValueError('reviewers must declare distinct identities')
+    custody_path = root / BASE / 'opinions' / 'custody.json'
+    custody_status = 'UNVERIFIED'
+    if custody_path.exists():
+        custody = json.loads(custody_path.read_bytes())
+        attempts = custody.get('attempts', [])
+        if (custody.get('kind') != 'CH86_V04_REVIEW_CUSTODY'
+                or custody.get('basis') != 'ORCHESTRATOR_RECORDED'
+                or custody.get('production_admission') != 'NOT_GRANTED'
+                or len(attempts) != len(opinions)
+                or {a.get('job_id') for a in attempts} != {o['job_id'] for o in opinions}):
+            raise ValueError('invalid custody record')
+        for attempt in attempts:
+            job = attempt['job_id']
+            ref = attempt['opinion']
+            if ref.get('path') != f'{BASE}/opinions/{job}.json':
+                raise ValueError('custody opinion path mismatch')
+            bound_bytes(root, ref)
+            if attempt.get('context_fork') not in ('none', 'all'):
+                raise ValueError('invalid custody context')
+        expected_context = json.loads((root / BASE / 'plan.json').read_bytes())['context_fork']
+        if any(a['context_fork'] != expected_context for a in attempts):
+            custody_status = 'CONTEXT_DEVIATION'
+        elif len(attempts) == len(JOBS):
+            custody_status = 'CONTEXT_MATCHES_PLAN'
     return {'status': 'RECORDS_VALID' if len(opinions) == 2 else 'PENDING',
             'registered_opinions': len(opinions), 'independence': 'SELF_REPORTED_NOT_VERIFIED',
+            'custody': custody_status,
             'semantic_verdict': 'NOT_AUTOMATED', 'production_admission': 'NOT_GRANTED'}
 
 

@@ -1,4 +1,5 @@
 import json
+import hashlib
 import shutil
 import sys
 from pathlib import Path
@@ -52,6 +53,7 @@ def test_review_records_remain_pending_and_validate_real_custody_fields(tmp_path
     save(tmp_path, JOBS[1], second)
     result = verify(tmp_path)
     assert result['status'] == 'RECORDS_VALID'
+    assert result['custody'] == 'UNVERIFIED'
     assert result['semantic_verdict'] == 'NOT_AUTOMATED'
     second['reviewer']['session_id'] = first['reviewer']['session_id']
     save(tmp_path, JOBS[1], second)
@@ -81,3 +83,22 @@ def test_candidate_citations_require_verbatim_text(tmp_path):
     citation['quote'] = (tmp_path / candidate).read_text(encoding='utf-8')[:20]
     save(tmp_path, JOBS[0], record)
     assert verify(tmp_path)['registered_opinions'] == 1
+
+
+def test_custody_context_deviation_and_tampering(tmp_path):
+    setup_repo(tmp_path)
+    attempts = []
+    for job in JOBS:
+        save(tmp_path, job, opinion(tmp_path, job))
+        relative = f'{BASE}/opinions/{job}.json'
+        attempts.append({'job_id': job, 'opinion': {'path': relative,
+                         'sha256': hashlib.sha256((tmp_path / relative).read_bytes()).hexdigest()},
+                         'context_fork': 'all'})
+    path = tmp_path / BASE / 'opinions' / 'custody.json'
+    path.write_text(json.dumps({'kind': 'CH86_V04_REVIEW_CUSTODY',
+                                'basis': 'ORCHESTRATOR_RECORDED', 'attempts': attempts,
+                                'production_admission': 'NOT_GRANTED'}))
+    assert verify(tmp_path)['custody'] == 'CONTEXT_DEVIATION'
+    (tmp_path / attempts[0]['opinion']['path']).write_text('{}')
+    with pytest.raises(ValueError):
+        verify(tmp_path)
