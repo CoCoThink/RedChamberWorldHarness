@@ -51,7 +51,9 @@ COMPLETE仅是读者对已分配文件的声明，分配外未读及NOT_CHECKED�
 
 ## 按回准入与当前状态
 
-当前第86回候选改为 `artifacts/local-trial-revision-ch86-20261111/import.json`（v4），当前审读目标为局部v2模型/合同；修订谱系仍继承冻结v1父包，完整范围增量另绑notes，不伪称换包。42段/13526字节；新请求含预留324210<327680。新独立意见0、文学/语义PENDING，不铺开。用 `python artifacts/local-trial-revision-ch86-20261111/prepare.py --check` 与 `python artifacts/local-trial-revision-ch86-20261111/verify.py` 核验新包；完整JSON阅读视图仅移除缩进，最大任务含预留126748<131072。旧四份意见仅适用于v3。详见[当前修订报告](../../artifacts/local-trial-revision-ch86-20261111/EXECUTION_REPORT.md)。下文v1/v3原件保留为历史复验入口。
+当前第86回候选仍为 `artifacts/local-trial-revision-ch86-20261111/import.json`（v4，42段／13526字节），继承冻结v1父包，范围增量另绑notes。四份新正文意见已收齐：总评均PASS，40项义务、24事件和5消息覆盖核验完成；原始局部负面和29项发现保留，文学研究PASS带ADVISORY，旧C1语义仍PENDING。用 `python artifacts/local-trial-revision-ch86-20261111/review/verify_execution.py` 查询实际保管，准备manifest里的NOT_STARTED不是当前意见数。
+
+局部场景后继为 `data/writing/local-scenarios/ch86-v6/scenario.json`，已完成照护偏序复核；版本化知识后继为 `data/knowledge/v06_ch86_draft.json`，两份新上下文意见对八项均PASS。`python tools/verify_v06_draft_opinions.py` 分列原评价、保管和有限研究接受；宝玉“收到亲述”不能当作“完整理解”的严格知识证明，默认运行时和既有写作请求未切换。旧C1无等值映射，不能追溯改判。来源／语料资格继续PENDING，仍不铺开，production NOT_GRANTED。当前交接入口见[执行手册](AGENT_RECONSTRUCTION.md)，命题边界见[ADR0016](../decisions/0016_VERSIONED_LEGACY_KNOWLEDGE_FACTS.md)。下文v1／v3及其意见保留为历史复验入口。
 
 第86回新的局部试写准备使用 `data/writing/packages/ch86-local-scenario-v1.json`，不是旧整夜投影包。`python tools/prepare_local_scenario_ch86.py` 只准备新合同/模型/请求并导出计数payload；既有不同字节不覆盖。`python tools/verify_local_scenario_ch86.py` 核对原未知处置、偏序检查点和精确请求/导出保管。实际派发的payload及导入所需回执路径取 `artifacts/local-scenario-ch86-20261110/preparation.json` 的 `export.payload` / `export.receipt`，不要派发整个request.json。显式总字节上限327680，含16384指令和32768输出预留；token容量未实测。
 

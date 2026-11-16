@@ -1,4 +1,26 @@
-# 当前第86回知识与照护顺序模型（2026-11-15）
+# 当前第86回研究试点与准入交接（2026-11-16）
+
+当前候选仍为 `artifacts/local-trial-revision-ch86-20261111/import.json` 所绑42段／13526字节正文；四份独立正文任务意见已收齐，总评均PASS，覆盖40项义务、24事件及5消息。局部负面及ADVISORY保留在原意见和处置里，文学研究PASS不等于生产准入。正文和作者谱系没有因后续模型／治理修订而重绑。旧20回研究版 v6-r2 已完成82项任务、240门PASS并正常构建；它是另一组冻结候选，不能冒充本次局部试稿的审阅。
+
+局部场景已选到 `data/writing/local-scenarios/ch86-v6/scenario.json`；双读认可照护偏序及拆分后的知识边界，旧C1仍PENDING。知识后继 `data/knowledge/v06_ch86_draft.json` 已由两位新上下文原生任务读者各审八项，均PASS；`data/writing/knowledge-v06-draft-review/disposition.json` 绑定两份原意见并作 `ACCEPT_FOR_RESEARCH_WITH_LIMITS`。宝玉收到紫鹃亲述，不证明即时完整理解／心理接受，不能用作严格理解守卫的证明。默认v0.3及精确绑定的v0.4请求未切换，旧ID不作新事实别名。完整阅读、隔离和身份为任务记录／自述，无供应商消费或独立人工资格证明。
+
+本轮已补齐知识草案的有限协调处置、本回实际3条来源及v2语料的资格协议、离线读集、闭包／登记入口及CI重建检查。来源与语料计划只绑定固定审阅材料，不绑定可变意见台账、实时结论和全局资产分片。工程检查包括历史谱系、离线重建和负面登记；直接提交、推送main后须确认准确HEAD双Python CI。输入提交 `9679a1a` 的成功CI不替代本轮提交检查。
+
+实际输入核对发现：v3来源协议15项遗漏 `src:jimao:ch18:daiyu-death`，当前本回范例所用 `corpus:front80:v2-candidate` 也不属于旧 `corpus-full` v1通道。不能仅把旧v1的91项人工审核或旧v3来源模板交付后声称本回已准备齐备。现已新增v4来源协议（16项）和显式 `corpus-full-v2` 通道（146项），原v1／v3和原始负面意见保留。来源计划为 `data/writing/source-review-next/plan.json`，语料计划为 `data/writing/corpus-v2-review/reading-plan.json`；空白表不能登记为意见。语料按十回及附录分段阅读，完成后提交全表。
+
+当前仍不铺开，production NOT_GRANTED。独立人工来源／语料资格须接收真实原件，模型意见不能代签；旧C1按原语义继续PENDING。后续新请求若改用新知识定义，必须显式绑定新模型／合同，审查其守卫和不等值替代关系；不能追溯改变旧意见。上述新请求准入完成后，再进入下一回小试及相邻接缝审读。
+
+```bash
+PYTHONPATH=src python tools/verify_v06_draft_opinions.py
+PYTHONPATH=src python tools/prepare_source_audit_review.py --check
+PYTHONPATH=src python tools/prepare_corpus_v2_review.py --check --live-audit
+PYTHONPATH=src python artifacts/local-trial-revision-ch86-20261111/review/verify_execution.py
+PYTHONPATH=src python tools/verify_knowledge_request.py --request data/writing/knowledge-requests/87f537580cb65cfcb19b7b4d9eb8d84ff89d467e9ed174e6b3bfc2fa7fb1744d.json
+```
+
+以下各阶段的准备状态及“下一步”是当时快照；当前状态以上段和实际核验输出为准。
+
+# 第86回知识与照护顺序模型历史（2026-11-15）
 
 当前正文仍为 `artifacts/local-trial-revision-ch86-20261111/import.json` 绑定的42段候选，未改正文。当前待复核模型为 `data/writing/packages/ch86-local-scenario-v5.json`，复用ch86-v3六合同。输入main `716755d`双Python CI成功后，两位独立原生读者完整审读ch86-v3，原始总评均FAIL；原意见及14条发现见 `artifacts/local-scenario-ch86-knowledge-split/review/`，后续修订不得覆盖原判。完整阅读为自述，非provider消费证明。
 

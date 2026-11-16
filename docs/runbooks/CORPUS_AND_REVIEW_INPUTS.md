@@ -13,7 +13,8 @@ rcwh reviews status
 rcwh reviews register source opinion.json --origin '实际接收的来源复核' --dry-run
 rcwh reviews register source opinion.json --origin '实际接收的来源复核'
 rcwh reviews register corpus-pilot opinion.json --origin '实际接收的 pilot 语料审核'
-rcwh reviews register corpus-full opinion.json --origin '实际接收的完整语料审核'
+rcwh reviews register corpus-full opinion.json --origin '实际接收的 v1 完整语料审核'
+rcwh reviews register corpus-full-v2 opinion.json --origin '实际接收的 v2 完整语料审核'
 rcwh reviews register p9 opinion.json --origin '实际接收的配对盲评'
 ```
 
@@ -21,11 +22,12 @@ rcwh reviews register p9 opinion.json --origin '实际接收的配对盲评'
 
 ## 公开来源复核
 
-当前选择记录 `data/provenance/audits/selection.json` 绑定 `protocol-v3.json`，覆盖15条Source，reviews仍为空。旧交付材料 `artifacts/reviews/source-independent-v2-20261009/` 绑定v2的12条Source，属于历史版本，不能直接作为当前协议的完整审查输入或用旧模板提交v3认可。v3新增三个带 `:npm005664` 后缀的曹家原件记录，同时三个旧曹家记录和图谱摘要均已变化；下一轮须逐项按当前Source摘要重新准备读集、Claim影响和提交模板。旧交付可用于读取固定原件，但不得沿用其中已过期的Source上下文和协议绑定。`rcwh reviews status` 会列出选定协议、旧模板协议、缺少的Source及 `reading_material_status`；绑定相符只核对协议和模板范围，不证明材料完整或已获审查。
+当前选择记录 `data/provenance/audits/selection.json` 绑定 `protocol-v4.json`，覆盖16条Source，reviews仍为空。v4保留v3的15条并加入 `src:jimao:ch18:daiyu-death`，覆盖第86回局部v6包实际使用的全部三条来源。旧交付 `artifacts/reviews/source-independent-v2-20261009/` 绑定v2的12条Source，缺三个 `:npm005664` 记录及己卯本记录，属于历史材料；不能通过替换协议摘要来冒充当前审阅。原v1—v3协议、原始更正及负面意见保留。
 
+当前离线读集位于 `data/writing/source-review-next/plan.json`，含16项 Source／Claim 影响、摘录上下文、原件路径、可用页图及空白 `human-review-template.json`。运行 `PYTHONPATH=src python tools/prepare_source_audit_review.py --check` 重建并逐字节核对36份材料；去掉 `--check` 只补写缺失且一致的材料，拒绝覆盖变化。工具要求输入已跟踪；路径依赖本仓库，不是独立交付 ZIP。冻结计划绑定协议和实际材料，排除可变 selection、审阅数量／结论及全局资产分片；登记意见或接收无关资产不会使读集过期。`rcwh reviews status` 分开列出当前读集与旧模板诊断，`BINDING_MATCHES` 仅检查协议、模板及Source范围，完整材料仍须运行上述重建检查。工具输出的实时 `audit_summary` 不写入冻结计划。工程准备通过不替代真人判断。
 曹家三段已按故宫005664原件影像完成代理校录；这不等于原130页录本的版次获得确认，也不提升原件与旧载体记录的见证资格。图像识读判断与校录文本重取分开记录，详见[原件核验](../reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)。
 
-独立复核者应填写依据当前选定协议另行生成的空白表，如实核对原件身份、摘录、见证／tier及Claim影响；不能只改旧表的协议摘要来冒充新读集的审阅。原始JSON接收为REVIEW_RECORD；结构化评审增加 `schema_version: 1`、唯一 `id`、`raw_review: {asset_ref, sha256}` 和 `authority_effect: NONE`，按 `schemas/source_audit_review.schema.json` 存入 `data/provenance/audits/reviews/`。在 `data/provenance/audits/selection.json` 的reviews中通过路径和完整摘要选择。原始意见与结构化字段必须一致；未取得真实提交前保持空列表。旧v1/v2材料保留，不回填成v3的认可。
+独立复核者应填写依据当前选定协议另行生成的空白表，如实核对原件身份、摘录、见证／tier及Claim影响；不能只改旧表的协议摘要来冒充新读集的审阅。原始JSON接收为REVIEW_RECORD；结构化评审增加 `schema_version: 1`、唯一 `id`、`raw_review: {asset_ref, sha256}` 和 `authority_effect: NONE`，按 `schemas/source_audit_review.schema.json` 存入 `data/provenance/audits/reviews/`。在 `data/provenance/audits/selection.json` 的reviews中通过路径和完整摘要选择。原始意见与结构化字段必须一致；未取得真实提交前保持空列表。旧v1—v3材料保留，不回填成v4的认可。
 
 ```bash
 python tools/verify_cao_facsimile.py
@@ -33,10 +35,11 @@ rcwh sources verify-all
 rcwh sources audit
 ```
 
-参考构建环境使用 CPython 3.12.13 和 `requirements/extraction.lock.json` 指定的依赖；支持范围为 `>=3.12,<3.13`，CI 也验证 3.12.3。当前已经构建两个不可变数据集：
+参考构建环境使用 CPython 3.12.13 和 `requirements/extraction.lock.json` 指定的依赖；支持范围为 `>=3.12,<3.13`，CI 也验证 3.12.3。当前已经构建三个不可变数据集：
 
 - `corpus:front80:pilot:v1`：第 1、5、27、67、80 回及靖藏附录。
 - `corpus:front80:v1-candidate`：前80回及汇校本全部附录；分类仍等待人工验收。
+- `corpus:front80:v2-candidate`：第86回当前局部试点实际使用的后继候选，独立协议和人工审核入口，不继承v1意见。
 
 PDF 是主输入，EPUB 是独立比较载体，二者同版关系未确立。字体、颜色和字号规则来自 PDF 物理页 6、7，配置位于 `data/corpus/builds/`。文字、换行和原件的 Unicode 字符范围逐字保留；批语分开保存，未知见证保持 UNKNOWN。第67回另一录文进入 VARIANT，附录有独立 section。章节文件是 MAIN_TEXT 阅读视图，正文事实源为 segments。
 
@@ -50,7 +53,7 @@ python tools/verify_corpus_candidates.py
 
 `verify` 的 PASS 表示存储和确定性重建通过；`human_acceptance.status` 单独表达人工层次审查。当前为 PENDING。两个新进程独立重建所有规范产物，比较逐文件摘要，并禁止网络／DNS；抽取器和构建器不使用文本缓存。新的规则、文字或切分必须使用新 dataset ID 和新输出目录，现有产物不能覆盖。`corrections.jsonl` 当前只有范围头，表示明确未应用任何文字校订；修改该文件也会导致重建失败。
 
-人工语料审查使用 `data/corpus/audit-protocols/` 中的固定协议和 `data/corpus/audits/` 中的选择记录。pilot 有 13 个样本，完整候选有 91 个样本，覆盖每回正文和所有实际文本层。阅读材料、原件页图及空白回填表位于 `artifacts/reviews/corpus-candidate-20261009/`。审查者必须独立于构建者，逐项核对分类、定位及上下文，并确认正文边界。未知见证和未对齐项必须明确承认，不能填入猜测。
+人工语料审查使用 `data/corpus/audit-protocols/` 中的固定协议和 `data/corpus/audits/` 中的选择记录。pilot有13个样本，v1完整候选有91个样本；旧材料位于 `artifacts/reviews/corpus-candidate-20261009/`。v2协议另有146个样本：80项正文、63项EDITORIAL及APPENDIX／VARIANT／ZHIPI各1项，包含历史负面意见中的31处拆分回目及相邻前缀。当前v2材料、PDF物理页定位、抽取页上下文及空白表见 `data/writing/corpus-v2-review/reading-plan.json`，用 `PYTHONPATH=src python tools/prepare_corpus_v2_review.py --check --live-audit` 离线核对。每10回一组、附录每组至多20样本，供真人分阶段阅读；这不是未经实测token预算的整包模型分派。最终完整提交仍须逐项填写146个检查，不接收分段缺项意见。固定计划排除可变台账和实时结论，新增意见不使它过期。v1／v2须使用各自登记通道，不可互换。审查者必须独立于构建者，逐项核对分类、定位及上下文，并确认正文边界。未知见证和未对齐项必须明确承认，不能填入猜测。
 
 填写 `human-review-template.json`，保留原始 JSON 字节，使用 `assets ingest --kind REVIEW_RECORD` 接收；在结构化 review 中增加 `schema_version: 1`、唯一 `id`、`raw_review: {asset_ref, sha256}` 和 `authority_effect: NONE`，存入 `data/corpus/reviews/`。选择记录通过 `{path, sha256}` 引用它。审查字段必须与原始 JSON 一致。空值、否定项、缺样本、旧版本或无原始提交均不形成通过记录；发现问题先保留原始意见，再修订语料为新版本。独立性依据是评审者的原始声明，程序不证明评审者身份。
 
@@ -96,4 +99,4 @@ rcwh project acceptance --require-tracked --require-complete
 
 选择记录属于可更新的当前 owner。加入真实 review 后，先保存原始资产与结构化 review 的绑定，再更新对应 selection；若该 selection 已列于 `data/project/closure_roots.json` 的 records，也须把其 sha256 更新为 selection 的实际完整字节摘要，否则严格闭包会正确报告旧绑定失效。所有新文件一并纳入 Git，再运行严格验收。协议、语料、Source或候选发生实质变化时，应新建相应版本并重新取得匹配版本的意见，不把旧提交改成新输入的认可。
 
-展开目录的大文件副本已去重。历史v2来源阅读材料用 `rcwh delivery materialize source-review-v2 /tmp/source-review-v2` 恢复（不覆盖当前v3协议），语料阅读材料用 `rcwh delivery materialize corpus-review /tmp/corpus-review` 恢复；登记 ZIP 和历史原字节未变。另有本次针对声口/层次的261样本研究包，见[连续三回试验](CONSECUTIVE_CHAPTER_TRIAL.md)，不能替代上述全局人工审计。
+展开目录的大文件副本已去重。历史v2来源阅读材料用 `rcwh delivery materialize source-review-v2 /tmp/source-review-v2` 恢复（不覆盖当前v4协议），语料阅读材料用 `rcwh delivery materialize corpus-review /tmp/corpus-review` 恢复；登记 ZIP 和历史原字节未变。另有本次针对声口/层次的261样本研究包，见[连续三回试验](CONSECUTIVE_CHAPTER_TRIAL.md)，不能替代上述全局人工审计。

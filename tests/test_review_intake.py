@@ -23,7 +23,7 @@ from test_paired_review import paired_repo  # noqa: F401
 from test_pilot_review_selection import pilot, opinion as pilot_opinion, selection as pilot_selection  # noqa: F401
 
 ROOT = Path(__file__).resolve().parents[1]
-PROTOCOL_LANES = ("source", "corpus-pilot", "corpus-full", "p9")
+PROTOCOL_LANES = ("source", "corpus-pilot", "corpus-full", "corpus-full-v2", "p9")
 ORIGIN = "test:synthetic-intake-only"
 
 
@@ -75,7 +75,7 @@ def intake_lane(request, monkeypatch):
                     "results": [{"source_ref": source["id"], "carrier_edition_confirmed": True,
                                  "excerpt_valid": True, "witness_tier_unchanged": True,
                                  "claim_impact_reviewed": True, "notes": "Synthetic fixture only"}]}
-    elif lane in ("corpus-pilot", "corpus-full"):
+    elif lane in ("corpus-pilot", "corpus-full", "corpus-full-v2"):
         root, protocol, selected, _ = request.getfixturevalue("audit_repo")
         # The shared fixture has two chapters, not the production front-80 corpus.
         monkeypatch.setitem(intake.DATASETS, lane, DATASET)
@@ -123,7 +123,7 @@ def test_register_positive_opinion_binds_raw_and_does_not_grant_authority(intake
     assert_received(lane.root, report, path)
 
 
-@pytest.mark.parametrize("intake_lane", ["source", "corpus-pilot", "corpus-full"], indirect=True)
+@pytest.mark.parametrize("intake_lane", ["source", "corpus-pilot", "corpus-full", "corpus-full-v2"], indirect=True)
 def test_false_checks_are_received_retained_and_reported_fail(intake_lane, tmp_path):
     lane = intake_lane
     if lane.lane == "source":
@@ -166,17 +166,22 @@ def test_invalid_original_does_not_mutate_owner_files(intake_lane, tmp_path, fau
     assert owner_files(lane.root) == before
 
 
-@pytest.mark.parametrize("fault", ["scope", "duplicate-row", "lane-binding"])
+@pytest.mark.parametrize("fault", ["scope", "duplicate-row", "missing-row", "lane-binding", "wrong-dataset"])
 def test_protocol_scope_and_lane_bindings_fail_before_raw_intake(intake_lane, tmp_path, fault):
     lane = intake_lane
     row_key, identity_key = {"source": ("results", "source_ref"),
                              "corpus-pilot": ("checks", "segment_id"),
                              "corpus-full": ("checks", "segment_id"),
+                             "corpus-full-v2": ("checks", "segment_id"),
                              "p9": ("pairs", "pair_id")}[lane.lane]
     if fault == "scope":
         lane.original[row_key][0][identity_key] = "unknown:synthetic-object"
     elif fault == "duplicate-row":
         lane.original[row_key].append(deepcopy(lane.original[row_key][0]))
+    elif fault == "missing-row":
+        lane.original[row_key].pop()
+    elif fault == "wrong-dataset" and lane.lane in intake.DATASETS:
+        lane.original["dataset_ref"] = "corpus:wrong-version"
     elif lane.lane == "p9":
         lane.original["packet_sha256"] = "0" * 64
     elif lane.lane == "source":
@@ -211,7 +216,7 @@ def test_duplicate_opinion_does_not_mutate_owner_files(intake_lane, tmp_path, du
     lane = intake_lane
     submit(lane, tmp_path)
     if duplicate != "original":
-        row_key = {"source": "results", "corpus-pilot": "checks", "corpus-full": "checks", "p9": "pairs"}[lane.lane]
+        row_key = {"source": "results", "corpus-pilot": "checks", "corpus-full": "checks", "corpus-full-v2": "checks", "p9": "pairs"}[lane.lane]
         note_key = "reason" if lane.lane == "p9" else "notes"
         lane.original[row_key][0][note_key] = "A distinct synthetic original"
         if duplicate == "id":

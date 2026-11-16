@@ -17,14 +17,15 @@ from ..io import load_data
 from ..schema import validate_instance
 
 
-LANES = ("source", "corpus-pilot", "corpus-full", "p9", "pilot", "scene-reading")
+LANES = ("source", "corpus-pilot", "corpus-full", "corpus-full-v2", "p9", "pilot", "scene-reading")
 PILOT_SELECTION = "data/evaluation/pilot85_87/review_selection.json"
 CLOSURE = "data/project/closure_roots.json"
-DATASETS = {"corpus-pilot": "corpus:front80:pilot:v1", "corpus-full": "corpus:front80:v1-candidate"}
+DATASETS = {"corpus-pilot": "corpus:front80:pilot:v1", "corpus-full": "corpus:front80:v1-candidate",
+            "corpus-full-v2": "corpus:front80:v2-candidate"}
 SCHEMAS = {"source": "source_audit_review", "corpus-pilot": "corpus_audit_review",
-           "corpus-full": "corpus_audit_review", "p9": "paired_review", "scene-reading": "semantic_reading"}
+           "corpus-full": "corpus_audit_review", "corpus-full-v2": "corpus_audit_review", "p9": "paired_review", "scene-reading": "semantic_reading"}
 DIRECTORIES = {"source": "data/provenance/audits/reviews", "corpus-pilot": "data/corpus/reviews",
-               "corpus-full": "data/corpus/reviews", "p9": "data/evaluation/paired_reviews",
+               "corpus-full": "data/corpus/reviews", "corpus-full-v2": "data/corpus/reviews", "p9": "data/evaluation/paired_reviews",
                "pilot": "data/evaluation/pilot85_87/reviews", "scene-reading": "data/evaluation/scene_readings"}
 
 
@@ -473,7 +474,7 @@ def scene_template(request_path: Path, output: Path) -> dict:
 
 
 def source_reading_material(root: Path) -> dict:
-    """Describe a legacy handout honestly against the selected audit protocol."""
+    """Report current bindings, retaining separate diagnostics for the old handout."""
     selected = load_data(root / selection_path('source'))
     protocol = bound_data(root, selected['protocol'])
     template_path = root / 'artifacts/reviews/source-independent-v2-20261009/human-review-template.json'
@@ -482,18 +483,38 @@ def source_reading_material(root: Path) -> dict:
               'legacy_reading_material': 'delivery materialize source-review-v2',
               'reading_material': 'Prepare a reading set and template bound to the selected source audit protocol',
               'reading_material_scope': 'PROTOCOL_AND_TEMPLATE_BINDING_ONLY'}
-    if not template_path.is_file():
-        return {**result, 'reading_material_status': 'NOT_PREPARED'}
-    template = load_data(template_path)
+    legacy_status = 'NOT_PREPARED'
+    if template_path.is_file():
+        template = load_data(template_path)
+        rows = template['results']
+        covered = {row['source_ref'] for row in rows}
+        matches = template['protocol_sha256'] == selected['protocol']['sha256']
+        complete = covered == declared and len(rows) == len(covered)
+        legacy_status = ('BINDING_MATCHES' if matches and complete else
+                         'STALE_PROTOCOL' if not matches else 'SCOPE_MISMATCH')
+        result.update(legacy_template_protocol_sha256=template['protocol_sha256'],
+                      legacy_template_missing_sources=sorted(declared - covered),
+                      legacy_template_extra_sources=sorted(covered - declared))
+    result.update(reading_material_status=legacy_status, legacy_reading_material_status=legacy_status)
+    plan_path = root / 'data/writing/source-review-next/plan.json'
+    if not plan_path.exists():
+        return result
+    plan = load_data(plan_path)
+    result.update(reading_material='data/writing/source-review-next/plan.json',
+                  reading_material_check='python tools/prepare_source_audit_review.py --check')
+    if plan['protocol'] != selected['protocol']:
+        return {**result, 'reading_material_status': 'STALE_PROTOCOL'}
+    template = bound_data(root, plan['template'])
     rows = template['results']
-    covered = {row['source_ref'] for row in rows}
-    matches = template['protocol_sha256'] == selected['protocol']['sha256']
-    complete = covered == declared and len(rows) == len(covered)
-    return {**result, 'reading_material_status': 'BINDING_MATCHES' if matches and complete else
-            'STALE_PROTOCOL' if not matches else 'SCOPE_MISMATCH',
-            'legacy_template_protocol_sha256': template['protocol_sha256'],
-            'legacy_template_missing_sources': sorted(declared - covered),
-            'legacy_template_extra_sources': sorted(covered - declared)}
+    covered = [row['source_ref'] for row in rows]
+    subjects = [{key: row[key] for key in ('source_ref', 'source_record_sha256')}
+                for row in plan['subjects']]
+    if (sorted(subjects, key=lambda row: row['source_ref']) !=
+            sorted(protocol['sources'], key=lambda row: row['source_ref']) or
+            set(covered) != declared or len(covered) != len(declared)):
+        return {**result, 'reading_material_status': 'SCOPE_MISMATCH'}
+    return {**result, 'reading_material_status': 'BINDING_MATCHES' if
+            template['protocol_sha256'] == selected['protocol']['sha256'] else 'STALE_PROTOCOL'}
 
 
 def status(root: Path) -> dict:
@@ -506,6 +527,7 @@ def status(root: Path) -> dict:
         material = {"source": "delivery materialize source-review-v2",
                     "corpus-pilot": "delivery materialize corpus-review (pilot-audit)",
                     "corpus-full": "delivery materialize corpus-review (full-audit)",
+                    "corpus-full-v2": "data/writing/corpus-v2-review/reading-plan.json; tools/prepare_corpus_v2_review.py --check",
                     "p9": "artifacts/reviews/p9-preparation-20261009/blind-pairs.zip",
                     "pilot": "artifacts/analysis/evaluation-refactor-20261009/pilot-reading/public",
                     "scene-reading": "semantic prepare + reviews scene-template"}[lane]

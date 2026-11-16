@@ -8,8 +8,8 @@
 
 | 类型 | 材料与任务 | 独立性声明 |
 |---|---|---|
-| 来源复核 | 12 条来源对应的原件、摘录、见证层级和 Claim 影响；核对版本与解释边界 | `independent_of_corrections`：未参与受评更正 |
-| 语料审核 | pilot 的 13 个或完整候选的 91 个样本；看原件、分类和前后文 | `independent_of_builder`：未参与该语料构建 |
+| 来源复核 | 当前v4协议16条来源对应的原件、摘录、见证层级和 Claim 影响；核对版本与解释边界 | `independent_of_corrections`：未参与受评更正 |
+| 语料审核 | pilot的13个、v1完整候选的91个或v2的146个样本；看原件、分类和前后文 | `independent_of_builder`：未参与该语料构建 |
 | P9 | 20 对匿名 A/B 小说片段，不能看协调者映射 | `independent_of_authors`、`mapping_unseen_during_review` |
 | 85–87 整段阅读 | 三组匿名连续三回短稿；只读 `public/`，不能读 `coordinator/` | 与作者独立，评审期间未见映射 |
 | 场景判读 | 正文、场景合同和冻结请求；核对实际事件，不以出现关键词代替判断 | `producer.kind` 为 `INDEPENDENT_HUMAN`，身份不能与作者同源 |
@@ -19,7 +19,7 @@
 ### 怎样填写 JSON
 
 - 保留字段名和层级，只改需要填写的值；字符串要放在双引号里。
-- `true` 表示核对成立，`false` 表示核对不成立，`null` 表示尚未填写。未填写记录不能登记为完整意见；完成一项之后再交回。
+- `true` 表示核对成立，`false` 表示核对不成立，`null` 表示尚未填写。未填写记录不能登记为完整意见；完成本轮要求的全部项后再交回；分段阅读不减少最终必填项。
 - `reviewer.id` 是协调者为你约定的稳定身份编号，不一定要填姓名。85–87 使用 `principal_id`（评审者）和 `source_id`（该意见的实际来源）。不要复用另一位读者的编号。
 - `notes` / `reason` 写具体理由，最好指出原文或原件位置。不要只写“好”“已阅”。
 - 来源和语料核对发现问题就填 `false`。**有效否定意见会登记，并阻止对应审查通过；不会被另一份赞成意见抵消。**
@@ -78,7 +78,7 @@
 rcwh reviews status
 ```
 
-来源/语料完整材料仍通过 `delivery materialize` 准备，P9 使用已登记盲包。85–87 默认登记入口选定 `artifacts/analysis/evaluation-refactor-20261009/pilot-reading/`，只交付其中 `public/`。`pilot export` 的每次新导出都有不同 token；使用新包时须显式调整 `data/evaluation/pilot85_87/review_selection.json` 的 export_root 和两个实际摘要，不改 study.json，不混用旧包意见。
+当前来源材料入口为 `data/writing/source-review-next/plan.json`（v4／16项），v2语料入口为 `data/writing/corpus-v2-review/reading-plan.json`（146项）；交付前分别运行 `PYTHONPATH=src python tools/prepare_source_audit_review.py --check` 和 `PYTHONPATH=src python tools/prepare_corpus_v2_review.py --check`。这些计划依赖仓库内固定原件路径，须一并向读者提供；v2按十回及附录分组阅读，最终仍提交146项全表。历史来源v2及pilot／v1语料可通过 `delivery materialize` 恢复，不能充作当前来源v4或语料v2的认可。P9使用已登记盲包。85–87 默认登记入口选定 `artifacts/analysis/evaluation-refactor-20261009/pilot-reading/`，只交付其中 `public/`。`pilot export` 的每次新导出都有不同 token；使用新包时须显式调整 `data/evaluation/pilot85_87/review_selection.json` 的 export_root 和两个实际摘要，不改 study.json，不混用旧包意见。
 
 收到完整原件后可先预检，再登记：
 
@@ -86,7 +86,8 @@ rcwh reviews status
 rcwh reviews register source /path/to/source-opinion.json --origin '独立来源复核，本轮实际接收' --dry-run
 rcwh reviews register source /path/to/source-opinion.json --origin '独立来源复核，本轮实际接收'
 rcwh reviews register corpus-pilot /path/to/pilot-audit.json --origin '独立语料审核'
-rcwh reviews register corpus-full /path/to/full-audit.json --origin '独立语料审核'
+rcwh reviews register corpus-full /path/to/full-v1-audit.json --origin '独立 v1 语料审核'
+rcwh reviews register corpus-full-v2 /path/to/full-v2-audit.json --origin '独立 v2 语料审核'
 rcwh reviews register p9 /path/to/p9-opinion.json --origin '独立配对盲评'
 rcwh reviews register pilot /path/to/sequence-opinion.json --origin '独立整段阅读'
 ```

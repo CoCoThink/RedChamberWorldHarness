@@ -73,6 +73,60 @@ def test_opinion_validation_fails_closed_and_checks_custody(tmp_path):
     result = verify(tmp_path)
     assert result['custody'] == 'CONTEXT_DEVIATION'
     assert result['production_admission'] == 'NOT_GRANTED'
+    assert result['reviewer_assessments']['semantic-1']['overall'] == 'PENDING'
+    assert result['coordinator_decision'] == 'NOT_RECORDED'
     (tmp_path / attempts[0]['opinion']['path']).write_text('{}')
     with pytest.raises(ValueError):
         verify(tmp_path)
+
+
+@pytest.fixture
+def submitted_review(tmp_path):
+    docs = documents(ROOT)
+    paths = {ref['path'] for ref in docs[f'{BASE}/dispatch/semantic-1.json']['read_inputs']}
+    paths.update(docs)
+    paths.update(str(p.relative_to(ROOT)) for p in (ROOT / BASE / 'opinions').glob('*.json'))
+    paths.add(f'{BASE}/disposition.json')
+    paths.update(f'.codex-dispatch/rcwh_ticket_v06_semantic_{i}.md' for i in (1, 2))
+    for path in paths:
+        target = tmp_path / path
+        target.parent.mkdir(parents=True, exist_ok=True)
+        shutil.copyfile(ROOT / path, target)
+    return tmp_path
+
+
+def test_qualified_closeout_does_not_grant_legacy_or_production_admission(submitted_review):
+    result = verify(submitted_review)
+    assert result['custody'] == 'CONTEXT_MATCHES_PLAN'
+    assert result['coordinator_decision'] == 'ACCEPT_FOR_RESEARCH_WITH_LIMITS'
+    assert result['semantic_verdict'] == 'NOT_AUTOMATED'
+    assert result['production_admission'] == 'NOT_GRANTED'
+
+
+@pytest.mark.parametrize('field,value', [
+    ('legacy_c1', 'PASS'), ('production_admission', 'GRANTED'),
+    ('strict_understanding', 'ESTABLISHED'), ('limitations', []),
+    ('recorded_assessments', {'semantic-1': 'FAIL', 'semantic-2': 'PASS'}),
+])
+def test_closeout_rejects_expanded_claims(submitted_review, field, value):
+    path = submitted_review / BASE / 'disposition.json'
+    doc = json.loads(path.read_bytes())
+    doc[field] = value
+    path.write_text(json.dumps(doc))
+    with pytest.raises(ValueError):
+        verify(submitted_review)
+
+
+def test_closeout_preserves_qualified_reason_and_exact_draft(submitted_review):
+    path = submitted_review / BASE / 'disposition.json'
+    raw = path.read_bytes()
+    doc = json.loads(raw)
+    doc['limitations'][0]['reviewer_reason'] = 'An unconditional pass'
+    path.write_text(json.dumps(doc))
+    with pytest.raises(ValueError, match='original reason'):
+        verify(submitted_review)
+    path.write_bytes(raw)
+    draft = submitted_review / doc['draft']['path']
+    draft.write_bytes(draft.read_bytes() + b'\n')
+    with pytest.raises(ValueError, match='draft differs'):
+        verify(submitted_review)
