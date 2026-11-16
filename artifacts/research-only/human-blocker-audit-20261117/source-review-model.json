@@ -1,0 +1,1905 @@
+{
+  "schema_version": 1,
+  "kind": "MODEL_SUBAGENT_SOURCE_RESEARCH",
+  "created_at": "2026-11-17",
+  "reviewer": {
+    "id": "MODEL_SUBAGENT:/root/source_review_research_batch",
+    "kind": "MODEL_SUBAGENT",
+    "identity_claimed": false,
+    "independent_of_corrections": false
+  },
+  "research_only": true,
+  "human_admission_eligible": false,
+  "production_admission": "NOT_GRANTED",
+  "authority_effect": "NONE",
+  "registered": false,
+  "selection_untouched": true,
+  "protected_review_dirs_untouched": true,
+  "protocol": {
+    "path": "data/provenance/audits/protocol-v4.json",
+    "sha256": "efc548ef33581382a389fc656304b48094d84e1ce4a1886715d324f0b07a659b"
+  },
+  "plan": {
+    "path": "data/writing/source-review-next/plan.json",
+    "graph_sha256": "6595b000308d8cbeb017d2ccf60b93a6d5a037cc793387bece1a773ab9ddfd9d",
+    "preparation_status": "PREPARED",
+    "production_admission": "NOT_GRANTED",
+    "subject_count": 16
+  },
+  "verdict_semantics": {
+    "research_verdict": "PASS means the fixed local carrier/locator supports the stated bounded claim at research level. PENDING means a carrier, edition, transcription, scope, or locator limitation remains material.",
+    "human_admission_verdict": "FAIL for every item because this is model-subagent research and is never an independent human review.",
+    "FAIL_is_not_used_as_research_verdict": "No source is marked research FAIL solely because the human gate is closed; the closed gate is recorded separately to avoid conflation."
+  },
+  "disclaimer": "MODEL_SUBAGENT / RESEARCH_ONLY. This original opinion is an evidence-navigation and bounded-scope check. It cannot count as an independent human admission, cannot establish human identity, and must not be registered as a review. Existing production review remains PENDING.",
+  "shared_image_note": "The three NPM-005664 JPEGs are shared across six Cao entries and were visually inspected once; they are not six independent witnesses. They show broad page/column/layout features but do not establish every glyph, edition, or authenticity.",
+  "results": [
+    {
+      "source_ref": "src:history:beijing:1774:rental-contract",
+      "research_verdict": "PASS",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/c43128259790ecb4d92b09a67a1e27c9d9f08698b79b15695e18f605c115094f.json",
+          "sha256": "1a666f3889ec424ca438198de1280291cba7ee41a3854e8fe45daca2ba0869f0"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/3f803ed5d30c6fe02f215b37b4692f02e6e3bd5bcac3af5314c7a8ac7d51e615.json",
+          "sha256": "3f803ed5d30c6fe02f215b37b4692f02e6e3bd5bcac3af5314c7a8ac7d51e615"
+        },
+        "source_record_sha256": "d75e42caf94a7e3018466178aa019c7cd6dfef5d8c7a5b8aaacb7737d5426ec0",
+        "source": {
+          "title": "乾隆三十九年僧宗玉立租房契",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "北京市文物局页面录文；乾隆三十九年六月初六日",
+            "label": "大觉寺藏清代契约文书",
+            "siglum": "BJ-RENT-1774"
+          },
+          "bibliography": {
+            "citation": "北京市文物局《寺院土地田产的经营方式（中）》所录“乾隆三十九年僧宗玉立租房契”",
+            "url": "https://wwj.beijing.gov.cn/bjww/wwjzzcslm/1731063/1731066/djs/1731072/1731538/index.html"
+          },
+          "carrier_capture": {
+            "ref": "asset:sha256:fa65f0a770344fc760af3411b5fa3a4665d83c73496664f980a4f9ee8191da76",
+            "sha256": "fa65f0a770344fc760af3411b5fa3a4665d83c73496664f980a4f9ee8191da76"
+          },
+          "container": {
+            "ref": "asset:sha256:15da766c875fee0cc85ffda56f6b5aca9a70960fed444886a7f781d63e6777cc",
+            "sha256": "15da766c875fee0cc85ffda56f6b5aca9a70960fed444886a7f781d63e6777cc"
+          },
+          "text": "立租契人系瑞应寺下院当家宗玉，今有二拔子庙上铺面房屋一所，共计十六间，今租沙河德春店作理生意，连借缸三口。对众言定每年租价清钱五十千正，只许客辞主，不许主辞客。房屋损坏，房主修理。恐后无凭，立租帖存照。现收租价清钱三十千正。租价不许增长。",
+          "text_sha256": "2d55220e01fcfc97b08f161106190e4fde784050856539382f3b65ab96e6e8b4",
+          "notes": "证明乾隆北京地区存在正式房屋租契与租价约定；该契为铺面房，不能证明贾家具体住宅院落或租价。"
+        },
+        "fixed_carrier": {
+          "path": "sources/primary/received/15da766c875fee0cc85ffda56f6b5aca9a70960fed444886a7f781d63e6777cc/rental.html",
+          "sha256": "15da766c875fee0cc85ffda56f6b5aca9a70960fed444886a7f781d63e6777cc"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:e0953b78c0d81651b56b799c02495d66c4dc5429578cffc85569b259e53e86f4",
+          "joiner": "",
+          "kind": "HTML_TEXT_SPANS",
+          "output_sha256": "44977b3557cf6ec3d400a1311f98bf03ac97b4331cd00f0293511a7c5380110d",
+          "raw_text_sha256": "2d55220e01fcfc97b08f161106190e4fde784050856539382f3b65ab96e6e8b4",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 3879,
+              "start": 3760,
+              "unit_ref": "html:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:0c8ec665775e1c204cc9dea444ffdec534d29cd4e4bb328efed5bf52ffc5f9b6",
+          "report_sha256": "0c8ec665775e1c204cc9dea444ffdec534d29cd4e4bb328efed5bf52ffc5f9b6",
+          "source_record_sha256": "d75e42caf94a7e3018466178aa019c7cd6dfef5d8c7a5b8aaacb7737d5426ec0",
+          "status": "VERIFIED"
+        },
+        "images": []
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h04:rental-mechanism",
+          "claim:history:h05:rental-cost"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h04:rental-mechanism",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "乾隆时期北京地区存在书面房屋租赁契约，并可明确约定房屋、租价等事项。",
+            "status": "SUPPORTED"
+          },
+          {
+            "id": "claim:history:h05:rental-cost",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "清代北京地区房屋租赁可形成持续租金义务。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定 HTML 载体、题名/见证标识和摘录区间相互一致；摘录直接支持乾隆时期铺面租契、租价和持续租金义务的历史可行性。",
+        "claim_scope": "仅限北京昌平地区一件铺面租契的机制/价格示例；不支持贾府住宅形态或贾府租价。",
+        "unverified_scope": [
+          "未检查该契约原始影像或馆藏原件，只检查北京文物局网页录文载体。",
+          "网页发布日期为 2020-01-21；未另行核验刊本/馆藏目录。"
+        ],
+        "carrier_note": "网页录文不是原件影像；本项没有计划内图片。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:cao:1728:family-housing",
+      "research_verdict": "PENDING",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/36515872fa25ebabf84e3622f110b6bc5f049c0f3daf9d3fbe6b32c83df55520.json",
+          "sha256": "3a686d20a37a92ce97e4843ef09dfb2806275bcb5514e49c654e12366b7b7ff9"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/b3c10d678a91d4a13c17b2bd1e61372869d8d7835f20b695940a5909574714f2.json",
+          "sha256": "b3c10d678a91d4a13c17b2bd1e61372869d8d7835f20b695940a5909574714f2"
+        },
+        "source_record_sha256": "f48863daff75023d11f40febddbe97ea5571f5b2d7dfce593edb8197b14498d2",
+        "source": {
+          "title": "雍正六年隋赫德奏折——曹家属少留房产养赡",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "雍正六年三月初二日",
+            "label": "江宁织造隋赫德奏细查曹頫房地产及家人情形摺",
+            "siglum": "CAO-ARCHIVE-286"
+          },
+          "bibliography": {
+            "citation": "《曹家档案史料》二百八十六",
+            "url": "https://ctext.org/wiki.pl?chapter=962820&if=gb&remap=gb"
+          },
+          "carrier_capture": null,
+          "container": {
+            "ref": "asset:sha256:ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a",
+            "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+          },
+          "text": "至曹頫家屬蒙恩諭少留房產以資養贍今其家屬不久回京奴才應將在京房屋人口酌量撥給以彰聖主覆載之恩",
+          "text_sha256": "9ba7cd55b8d09ee9c5507205bd23683145444b01730efb66eeef2e63fee60809",
+          "notes": "证明抄没后仍可能为家属保留/拨给有限居住资源；不是贾府具体住房证据。"
+        },
+        "fixed_carrier": {
+          "path": "corpus/received/ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a/npm005664-excerpts-agent-v2.txt",
+          "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522",
+          "joiner": "",
+          "kind": "TEXT_SPANS",
+          "output_sha256": "999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c",
+          "raw_text_sha256": "9ba7cd55b8d09ee9c5507205bd23683145444b01730efb66eeef2e63fee60809",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 955,
+              "start": 909,
+              "unit_ref": "text:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:1e23af6297beb6888cb01bd275d1907e057a91093774b184960a8cc9f0ca5f4d",
+          "report_sha256": "1e23af6297beb6888cb01bd275d1907e057a91093774b184960a8cc9f0ca5f4d",
+          "source_record_sha256": "f48863daff75023d11f40febddbe97ea5571f5b2d7dfce593edb8197b14498d2",
+          "status": "VERIFIED"
+        },
+        "images": [
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            },
+            "binding": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            },
+            "binding": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            },
+            "binding": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            }
+          }
+        ]
+      },
+      "graph_trace": {
+        "claim_ids": [],
+        "claims": [],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定摘录文本与上下文区间一致，表达抄没后可酌量保留/拨给曹頫家属房产；但 CAO-ARCHIVE-286 的当前载体是代理目读校录，不能把旧档案引文身份视为已独立确证。",
+        "claim_scope": "仅支持抄没后有限居住资源机制的可行性，不是贾府具体住房证据。",
+        "unverified_scope": [
+          "原始档案影像、正式刊本或档案号与当前 text:1 载体的逐字对应未核验。",
+          "代理转录的字形、断句和版本身份未由独立人类复核。",
+          "三张 NPM 图像为共享绑定图，不构成独立见证。"
+        ],
+        "carrier_note": "CAO-ARCHIVE-286 标签对应代理目读文本；现有图片仅支持页面布局/有字迹，不足以确立版本。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:cao:1728:family-housing:npm005664",
+      "research_verdict": "PENDING",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/1884bef390669867682fc95a794137990449d75b64ba1b7b5db53c8cff602334.json",
+          "sha256": "21737a8f3a79a1738c0607c0e5834b50b79b92b9b6a1ce8d965e4d1829f14337"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/e4026315bb76c5e53ea68707939524511e4ca7ea9239f5ecb963884586a925b1.json",
+          "sha256": "e4026315bb76c5e53ea68707939524511e4ca7ea9239f5ecb963884586a925b1"
+        },
+        "source_record_sha256": "df66b12868aba67cb25c3f99a3dd5cb41662713443120c001040c86de5540f0a",
+        "source": {
+          "title": "雍正六年隋赫德奏折——曹家属少留房产养赡",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "雍正六年三月初二日",
+            "label": "江宁织造隋赫德奏细查曹頫房地产及家人情形摺",
+            "siglum": "NPM-005664"
+          },
+          "bibliography": {
+            "citation": "国立故宫博物院藏 故宮005664（江寧織造隋赫德奏折，雍正六年三月初二日）原件影像，影像见《故宫文物月刊》495期（2024年6月）图5、图19；本记录文本为代理目读校录，非馆方录文，未经独立人工复核，未与《曹家档案史料》出版本核对。",
+            "doi": null,
+            "url": "https://www.npm.gov.tw/NewChineseArtDownload.ashx?bid=5142"
+          },
+          "carrier_capture": null,
+          "container": {
+            "ref": "asset:sha256:ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a",
+            "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+          },
+          "text": "至曹頫家屬蒙恩諭少留房產以資養贍今其家屬不久回京奴才應將在京房屋人口酌量撥給以彰聖主覆載之恩",
+          "text_sha256": "9ba7cd55b8d09ee9c5507205bd23683145444b01730efb66eeef2e63fee60809",
+          "notes": "证明抄没后仍可能为家属保留/拨给有限居住资源；不是贾府具体住房证据。载体为代理目读校录，未经人工复核。"
+        },
+        "fixed_carrier": {
+          "path": "corpus/received/ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a/npm005664-excerpts-agent-v2.txt",
+          "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522",
+          "joiner": "",
+          "kind": "TEXT_SPANS",
+          "output_sha256": "999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c",
+          "raw_text_sha256": "9ba7cd55b8d09ee9c5507205bd23683145444b01730efb66eeef2e63fee60809",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 955,
+              "start": 909,
+              "unit_ref": "text:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Exact excerpt recomputed from fixed carrier; new source id relabels carrier as agent transcription of NPM 005664.",
+          "report_ref": "asset:sha256:8e108455ccccb03c0e2f98ec8e382f009c76abd9ab944f1b7b27adb434f65040",
+          "report_sha256": "8e108455ccccb03c0e2f98ec8e382f009c76abd9ab944f1b7b27adb434f65040",
+          "source_record_sha256": "df66b12868aba67cb25c3f99a3dd5cb41662713443120c001040c86de5540f0a",
+          "status": "VERIFIED"
+        },
+        "images": [
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            },
+            "binding": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            },
+            "binding": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            },
+            "binding": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            }
+          }
+        ]
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h04:post-confiscation-housing"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h04:post-confiscation-housing",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "曹家实案显示抄没后仍可能为家属少留或酌拨有限房产以资养赡。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定摘录和 NPM-005664 书目标签一致，且图像可见竖排纸页与相应段落区域；原始图像与代理转录未逐字比对，不能完成载体/版本确认。",
+        "claim_scope": "仅支持抄没后可能为家属保留/拨给有限居住资源的历史机制；不能外推贾府事实。",
+        "unverified_scope": [
+          "代理目读校录明确未经人工复核；未与 NPM 原始图像逐字核对。",
+          "未确认 NPM 图像对应的完整页码、版本和出版/档案编目。",
+          "共享三图在六个曹案条目间重复，不是六个独立见证。"
+        ],
+        "carrier_note": "已目视三张共享 NPM 图：黄色纸页/竖排栏和标题/文字区域可见；分辨率、裁剪和缺页不支持每一字或版本判断。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:cao:1728:inventory-seal",
+      "research_verdict": "PENDING",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/84bb3526ade8b38aa0d5a82d897dc7a37ccab8bacb2790e9c06178224b02df4d.json",
+          "sha256": "10a97fd9f5827bae0a097e197ac65bf624eab7c17de55ddaa93690422d2fc4a9"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/c91254b0ddf1369e1737c20bc42195a87e4c26653bcf52daa2f24d0f825b4718.json",
+          "sha256": "c91254b0ddf1369e1737c20bc42195a87e4c26653bcf52daa2f24d0f825b4718"
+        },
+        "source_record_sha256": "3e3fdd468b6893fc84f944f13549e1b052d594bf49ef52982b3c42950963c7c7",
+        "source": {
+          "title": "雍正六年隋赫德奏折——曹家房产什物造册封固",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "雍正六年三月初二日",
+            "label": "江宁织造隋赫德奏细查曹頫房地产及家人情形摺",
+            "siglum": "CAO-ARCHIVE-286"
+          },
+          "bibliography": {
+            "citation": "《曹家档案史料》二百八十六",
+            "url": "https://ctext.org/wiki.pl?chapter=962820&if=gb&remap=gb"
+          },
+          "carrier_capture": null,
+          "container": {
+            "ref": "asset:sha256:ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a",
+            "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+          },
+          "text": "總督范時繹已將曹頫家管事數人拿去夾訊監禁所有房產什物一併查清造冊封固",
+          "text_sha256": "53e9608a793b9b1be1bf5876a6996f817779cbed964cb477150c13cc20812e87",
+          "notes": "与贾府社会层级/时代接近，但只能证明机制可行，不能把曹案程序逐项移植为贾府事实。"
+        },
+        "fixed_carrier": {
+          "path": "corpus/received/ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a/npm005664-excerpts-agent-v2.txt",
+          "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522",
+          "joiner": "",
+          "kind": "TEXT_SPANS",
+          "output_sha256": "999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c",
+          "raw_text_sha256": "53e9608a793b9b1be1bf5876a6996f817779cbed964cb477150c13cc20812e87",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 844,
+              "start": 810,
+              "unit_ref": "text:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:fbd9e6eaa7dfd0ec77a778c3dd875a7b1cfa0189a591be6e87b6a7ddedda4561",
+          "report_sha256": "fbd9e6eaa7dfd0ec77a778c3dd875a7b1cfa0189a591be6e87b6a7ddedda4561",
+          "source_record_sha256": "3e3fdd468b6893fc84f944f13549e1b052d594bf49ef52982b3c42950963c7c7",
+          "status": "VERIFIED"
+        },
+        "images": [
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            },
+            "binding": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            },
+            "binding": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            },
+            "binding": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            }
+          }
+        ]
+      },
+      "graph_trace": {
+        "claim_ids": [],
+        "claims": [],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定区间直接读到查清房产什物、造册封固，机制语义清楚；但 CAO-ARCHIVE-286 的固定载体仍为未经独立核验的代理转录。",
+        "claim_scope": "只能说明曹案查封造册程序的历史可行性；不能逐项移植为贾府事实。",
+        "unverified_scope": [
+          "原件/正式刊本及代理文字的逐字对应未核验。",
+          "未核验档案版本、页码及是否存在异文。",
+          "图像为共享绑定图，不构成对本条的独立见证。"
+        ],
+        "carrier_note": "同一 NPM 代理转录文件，未由独立人类复核。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:cao:1728:inventory-seal:npm005664",
+      "research_verdict": "PENDING",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/c7881ab42d2b21a4293211eaa00dab4ed50fb0711e62edd6a467d758823e58c1.json",
+          "sha256": "f90d42c8ff94baf4cb26f5525f6a619fe9e5e7dec7554ae588fc4bd3d8ace916"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/2e1f4d64d1d64a35774185d3e65f2f50005ef19fd9d6111bbdb893b47aaec527.json",
+          "sha256": "2e1f4d64d1d64a35774185d3e65f2f50005ef19fd9d6111bbdb893b47aaec527"
+        },
+        "source_record_sha256": "a030f1590935eda5770ccf3cc4c226597c213b282b3a0b7c1e15dd6c448d4418",
+        "source": {
+          "title": "雍正六年隋赫德奏折——曹家房产什物造册封固",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "雍正六年三月初二日",
+            "label": "江宁织造隋赫德奏细查曹頫房地产及家人情形摺",
+            "siglum": "NPM-005664"
+          },
+          "bibliography": {
+            "citation": "国立故宫博物院藏 故宮005664（江寧織造隋赫德奏折，雍正六年三月初二日）原件影像，影像见《故宫文物月刊》495期（2024年6月）图5、图19；本记录文本为代理目读校录，非馆方录文，未经独立人工复核，未与《曹家档案史料》出版本核对。",
+            "doi": null,
+            "url": "https://www.npm.gov.tw/NewChineseArtDownload.ashx?bid=5142"
+          },
+          "carrier_capture": null,
+          "container": {
+            "ref": "asset:sha256:ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a",
+            "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+          },
+          "text": "總督范時繹已將曹頫家管事數人拿去夾訊監禁所有房產什物一併查清造冊封固",
+          "text_sha256": "53e9608a793b9b1be1bf5876a6996f817779cbed964cb477150c13cc20812e87",
+          "notes": "与贾府社会层级/时代接近，但只能证明机制可行，不能把曹案程序逐项移植为贾府事实。载体为代理目读校录，未经人工复核。"
+        },
+        "fixed_carrier": {
+          "path": "corpus/received/ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a/npm005664-excerpts-agent-v2.txt",
+          "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522",
+          "joiner": "",
+          "kind": "TEXT_SPANS",
+          "output_sha256": "999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c",
+          "raw_text_sha256": "53e9608a793b9b1be1bf5876a6996f817779cbed964cb477150c13cc20812e87",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 844,
+              "start": 810,
+              "unit_ref": "text:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Exact excerpt recomputed from fixed carrier; new source id relabels carrier as agent transcription of NPM 005664.",
+          "report_ref": "asset:sha256:3bad4a650d3f183d516b360e37e3d27f82d708f7614aedb33429a940c032fb1c",
+          "report_sha256": "3bad4a650d3f183d516b360e37e3d27f82d708f7614aedb33429a940c032fb1c",
+          "source_record_sha256": "a030f1590935eda5770ccf3cc4c226597c213b282b3a0b7c1e15dd6c448d4418",
+          "status": "VERIFIED"
+        },
+        "images": [
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            },
+            "binding": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            },
+            "binding": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            },
+            "binding": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            }
+          }
+        ]
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h02:inventory-sealing"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h02:inventory-sealing",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "雍正六年曹家实案存在管事被讯、房产什物查清、造册封固的抄没程序。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "NPM-005664 标签、固定区间和代理文本相互一致；图像仅能确认纸页/竖排布局，不能确证每个字和刊本身份。",
+        "claim_scope": "只支持查清、造册、封固这一历史机制；不证明贾府查封过程。",
+        "unverified_scope": [
+          "代理目读校录未经人类复核，未与 NPM 原始图像逐字对读。",
+          "完整图像页码、版本、档案编目未核验。",
+          "三张共享图与其他 NPM 曹案条目相同。"
+        ],
+        "carrier_note": "三图目视结果：黄色纸页、竖排文字列和局部标题可辨；裁剪/清晰度不足以作版本或逐字证据。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:cao:1728:pawn-tickets",
+      "research_verdict": "PENDING",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/abfbcf1aa7f2c36ecdd0947d84674bb1003affd375c725c1293b34c4d7638acb.json",
+          "sha256": "f537dbbb7b0d27037b1fc5a93794553a5844ed7f49941dadba9c90cbd324aa69"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/b60c4c6fa5483d016b132d34ca4ededae91bf1882bbd70e06de7e8922d5f97d7.json",
+          "sha256": "b60c4c6fa5483d016b132d34ca4ededae91bf1882bbd70e06de7e8922d5f97d7"
+        },
+        "source_record_sha256": "3f0fcfed91620d700cb9350fe042b0ed3a161bb68ff46104f72944e57f621f44",
+        "source": {
+          "title": "雍正六年隋赫德奏折——旧衣什物与当票百余张",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "雍正六年三月初二日",
+            "label": "江宁织造隋赫德奏细查曹頫房地产及家人情形摺",
+            "siglum": "CAO-ARCHIVE-286"
+          },
+          "bibliography": {
+            "citation": "《曹家档案史料》二百八十六",
+            "url": "https://ctext.org/wiki.pl?chapter=962820&if=gb&remap=gb"
+          },
+          "carrier_capture": null,
+          "container": {
+            "ref": "asset:sha256:ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a",
+            "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+          },
+          "text": "餘則桌椅床杌舊衣裳零星等件及當票百餘張外並無別項與總督所查冊內彷彿",
+          "text_sha256": "6cf2527f22d7863e69d0d20fea4841da0d165db14d4a9208f82ec230f72148b5",
+          "notes": "支持旧家衰败中长期典当作为现金流机制的历史可行性；不锁具体典当物。"
+        },
+        "fixed_carrier": {
+          "path": "corpus/received/ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a/npm005664-excerpts-agent-v2.txt",
+          "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522",
+          "joiner": "",
+          "kind": "TEXT_SPANS",
+          "output_sha256": "999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c",
+          "raw_text_sha256": "6cf2527f22d7863e69d0d20fea4841da0d165db14d4a9208f82ec230f72148b5",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 892,
+              "start": 859,
+              "unit_ref": "text:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:d21b152d086d91b0b639fc79f9d3c59374a2bf2ddd8a9b1d4ed2a27924bca07d",
+          "report_sha256": "d21b152d086d91b0b639fc79f9d3c59374a2bf2ddd8a9b1d4ed2a27924bca07d",
+          "source_record_sha256": "3f0fcfed91620d700cb9350fe042b0ed3a161bb68ff46104f72944e57f621f44",
+          "status": "VERIFIED"
+        },
+        "images": [
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            },
+            "binding": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            },
+            "binding": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            },
+            "binding": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            }
+          }
+        ]
+      },
+      "graph_trace": {
+        "claim_ids": [],
+        "claims": [],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定区间确实写有旧衣什物及当票百余张；但历史档案身份与代理转录尚未独立核验，持续典当只能作为有界可行性推断。",
+        "claim_scope": "支持清查时存在百余张当票及长期典当作为现金流的可行机制；不锁定具体典当物或持续频率。",
+        "unverified_scope": [
+          "原始档案影像/刊本、字形和档案号对应关系未核验。",
+          "文本没有直接记载“持续典当”或现金流时序；该层为 INFERENCE。",
+          "图像为共享绑定图，不是本条独立见证。"
+        ],
+        "carrier_note": "固定载体为同一代理目读校录文件。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:cao:1728:pawn-tickets:npm005664",
+      "research_verdict": "PENDING",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/5e33517de1a892616487cb46351b383611cba7963abde2b38f677df2dde3cf1f.json",
+          "sha256": "66d4bad87f6cecabff3995b93621ff3a829188866fbcc0b53b18eec9395df7f1"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/0180c068786e25d46bf34310a1312ecafad8116532675d127f4ba063bafb1c58.json",
+          "sha256": "0180c068786e25d46bf34310a1312ecafad8116532675d127f4ba063bafb1c58"
+        },
+        "source_record_sha256": "85bdea01464a94db9a7dd6f7ee9a13da2330b4e1dae65fd4bda35d42d35afef2",
+        "source": {
+          "title": "雍正六年隋赫德奏折——旧衣什物与当票百余张",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "雍正六年三月初二日",
+            "label": "江宁织造隋赫德奏细查曹頫房地产及家人情形摺",
+            "siglum": "NPM-005664"
+          },
+          "bibliography": {
+            "citation": "国立故宫博物院藏 故宮005664（江寧織造隋赫德奏折，雍正六年三月初二日）原件影像，影像见《故宫文物月刊》495期（2024年6月）图5、图19；本记录文本为代理目读校录，非馆方录文，未经独立人工复核，未与《曹家档案史料》出版本核对。",
+            "doi": null,
+            "url": "https://www.npm.gov.tw/NewChineseArtDownload.ashx?bid=5142"
+          },
+          "carrier_capture": null,
+          "container": {
+            "ref": "asset:sha256:ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a",
+            "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+          },
+          "text": "餘則桌椅床杌舊衣裳零星等件及當票百餘張外並無別項與總督所查冊內彷彿",
+          "text_sha256": "6cf2527f22d7863e69d0d20fea4841da0d165db14d4a9208f82ec230f72148b5",
+          "notes": "仅记录清查时家中有当票百余张；从此推及持续典当或现金流只是可行性推断，档案并未直接记载。载体为代理目读校录，未经人工复核。"
+        },
+        "fixed_carrier": {
+          "path": "corpus/received/ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a/npm005664-excerpts-agent-v2.txt",
+          "sha256": "ed674f0c11e4debd80da22f139d8e1c15c902cc59e35c8e6d51e0ff00e94860a"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:db49ea971dd06c998a4e8b108a6dff43cb5a4b3e91384c7654d1363842286522",
+          "joiner": "",
+          "kind": "TEXT_SPANS",
+          "output_sha256": "999effc20a431c68d28b9378eee31ce492e9a57e9b985f25ff2a7388adf9c11c",
+          "raw_text_sha256": "6cf2527f22d7863e69d0d20fea4841da0d165db14d4a9208f82ec230f72148b5",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 892,
+              "start": 859,
+              "unit_ref": "text:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Exact excerpt recomputed from fixed carrier; new source id relabels carrier as agent transcription of NPM 005664.",
+          "report_ref": "asset:sha256:4ec8d0725a92a0f5a63d6f4d8dec904faaaafc0cbe5162eeec34a482a413ef85",
+          "report_sha256": "4ec8d0725a92a0f5a63d6f4d8dec904faaaafc0cbe5162eeec34a482a413ef85",
+          "source_record_sha256": "85bdea01464a94db9a7dd6f7ee9a13da2330b4e1dae65fd4bda35d42d35afef2",
+          "status": "VERIFIED"
+        },
+        "images": [
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            },
+            "binding": {
+              "path": "corpus/received/5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20/npm005664-first-and-middle.jpeg",
+              "sha256": "5e7bda189619a35403a6619f01c14fe6bde67af05c957b169168a811f477ce20"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            },
+            "binding": {
+              "path": "corpus/received/fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7/npm005664-family-and-date.jpeg",
+              "sha256": "fc9f25b3951d3d8322079944a499e1130ba9b94053a4c8f3b46e8f8ee468e3c7"
+            }
+          },
+          {
+            "page": null,
+            "original": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            },
+            "binding": {
+              "path": "corpus/received/92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89/npm005664-opening-and-inventory.jpeg",
+              "sha256": "92112701bcfade4e2cbd51caf69f8b1ca7644c1d3cafb55ffd265fb49f3c0c89"
+            }
+          }
+        ]
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h05:pawn-as-cashflow"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h05:pawn-as-cashflow",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "INFERENCE",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "曹家抄没清查记录载有“当票百余张”；据此推断典当是旧家衰败过程中真实存在的资产周转形态，持续典当作为现金流手段具有可行性，但档案并未直接记载持续典当。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "NPM-005664 标签与固定区间相符，字面支持“当票百余张”；从此推及持续典当/现金流是标明为 INFERENCE 的有限研究推断，且代理转录未经人类复核。",
+        "claim_scope": "仅支持当票数量和现金流机制可行性；不证明贾府具体物件或持续典当时序。",
+        "unverified_scope": [
+          "未与 NPM 原始图像逐字复核，未确认完整页码/版本。",
+          "“持续典当”并非摘录直接断言，不能升级为事实。",
+          "三张共享图在多个条目重复。"
+        ],
+        "carrier_note": "图像目视仅支持纸页/竖排布局和局部文字存在，无法完成版本和逐字核验。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:daqinglu:v10:marriage-authority",
+      "research_verdict": "PASS",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/d088744f7b95a23912b69a9c8ee3c47881e3ea9968e35e41402423a58e1b6157.json",
+          "sha256": "3787e9719ab094edb5eedd77e4f55352e6207d90ee3666c20c80194aad7c9ccb"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/c720ae68de1b3b7453602c3a704d7ad2144995038a7907f99a700fd82fa8deff.json",
+          "sha256": "c720ae68de1b3b7453602c3a704d7ad2144995038a7907f99a700fd82fa8deff"
+        },
+        "source_record_sha256": "12be6469c6959c6d402e50e460d734933e7694a869f42fbf77c39de8a3f6ccc6",
+        "source": {
+          "title": "《大清律例》卷十——尊长主婚体系",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "户律·婚姻·男女婚姻条例",
+            "label": "《大清律例》卷十",
+            "siglum": "DQLL-V10"
+          },
+          "bibliography": {
+            "citation": "《大清律例》（四库全书本）卷十",
+            "url": "https://zh.wikisource.org/wiki/%E5%A4%A7%E6%B8%85%E5%BE%8B%E4%BE%8B_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B710"
+          },
+          "carrier_capture": {
+            "ref": "asset:sha256:ddacd6d2c41f42848594247d289b52bc635e84c3d39176f2ccdad9b9bdb53e26",
+            "sha256": "ddacd6d2c41f42848594247d289b52bc635e84c3d39176f2ccdad9b9bdb53e26"
+          },
+          "container": {
+            "ref": "asset:sha256:94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c",
+            "sha256": "94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c"
+          },
+          "text": "一嫁娶皆由祖父母父母主婚祖父母父母俱無者從餘親主婚",
+          "text_sha256": "d92a70af440769ee86254c79979857f302f781379cf86b2303eafccee8d1185b",
+          "notes": "只支持尊长/亲属主婚框架继续运作；不能决定贾母、王夫人、薛姨妈之间的具体谈判文本。"
+        },
+        "fixed_carrier": {
+          "path": "sources/primary/received/94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c/daqinglu10.html",
+          "sha256": "94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:19b1460e9d09a07eb91135287ca5844dd236b10fc5ed23bd6e94d2859ae859f4",
+          "joiner": "",
+          "kind": "HTML_TEXT_SPANS",
+          "output_sha256": "6f825052070cb8862304edc2f59e275bd524158ecbd97941ea52a1e7e5eb48b4",
+          "raw_text_sha256": "d92a70af440769ee86254c79979857f302f781379cf86b2303eafccee8d1185b",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 2468,
+              "start": 2443,
+              "unit_ref": "html:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:602e585836335e34033bcfd9f7b610a03109592097aac6543ff8635958bf3e79",
+          "report_sha256": "602e585836335e34033bcfd9f7b610a03109592097aac6543ff8635958bf3e79",
+          "source_record_sha256": "12be6469c6959c6d402e50e460d734933e7694a869f42fbf77c39de8a3f6ccc6",
+          "status": "VERIFIED"
+        },
+        "images": []
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h04:senior-kin-marriage"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h04:senior-kin-marriage",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "清代婚姻规范存在由祖父母、父母及余亲主婚的尊长亲属框架。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定 DQLL-V10 HTML 区间逐字包含尊长/亲属主婚条款，与书目标签和 claim:history:h04:senior-kin-marriage 一致。",
+        "claim_scope": "支持尊长/亲属主婚框架；不决定贾母、王夫人、薛姨妈的具体谈判文本。",
+        "unverified_scope": [
+          "未另查四库/雕印本影像或异文；当前结论限于固定 HTML 文本。",
+          "未核验该条在不同刊本中的标点、字形异文。"
+        ],
+        "carrier_note": "无计划内图片；载体为固定本地 HTML。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:daqinglu:v10:mourning-marriage",
+      "research_verdict": "PASS",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/933c1bdd30ad7cbd3227046887edce2eb68c45e078d112e3dc55ad70ed9bb2a7.json",
+          "sha256": "b1bca00fed582e795c2afda5166ae7fe8d4533a0c2c6d193c765880434f88e20"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/50721de034b68046d738ef4102c26a66f2df90b7eb6aa7a6abe63d5177b72c98.json",
+          "sha256": "50721de034b68046d738ef4102c26a66f2df90b7eb6aa7a6abe63d5177b72c98"
+        },
+        "source_record_sha256": "68336627258d6960b043f35e6745e090bf8aa4a93c858623386ad92401979215",
+        "source": {
+          "title": "《大清律例》卷十——居丧嫁娶",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "户律·婚姻·居丧嫁娶",
+            "label": "《大清律例》卷十",
+            "siglum": "DQLL-V10"
+          },
+          "bibliography": {
+            "citation": "《大清律例》（四库全书本）卷十",
+            "url": "https://zh.wikisource.org/wiki/%E5%A4%A7%E6%B8%85%E5%BE%8B%E4%BE%8B_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B710"
+          },
+          "carrier_capture": {
+            "ref": "asset:sha256:ddacd6d2c41f42848594247d289b52bc635e84c3d39176f2ccdad9b9bdb53e26",
+            "sha256": "ddacd6d2c41f42848594247d289b52bc635e84c3d39176f2ccdad9b9bdb53e26"
+          },
+          "container": {
+            "ref": "asset:sha256:94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c",
+            "sha256": "94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c"
+          },
+          "text": "凡〈男女〉居父母及〈妻妾居〉夫喪而身自〈主婚〉嫁娶者杖一百若〈男子〉居〈父母〉喪〈而〉娶妾妻〈居夫喪〉女〈居父母喪而〉嫁人為妾者各減二等若命婦夫亡〈雖滿服〉再嫁者罪亦如之〈亦如凡婦居喪嫁人者懝斷〉追奪〈勅誥〉並離異知〈係居喪及命婦〉而共為婚姻者〈主婚人〉各減五等〈財禮入官〉不知者不坐〈仍離異追財禮〉若居祖父母伯叔父母姑兄姊喪〈除承重孫外〉而嫁娶者杖八十",
+          "text_sha256": "c92cfbfae5aa47f173d7442fe8ea954947f9cc3d11f9eeb32a6932cc504fd1a5",
+          "notes": "支持丧制会实际约束婚嫁；不能直接给元妃之丧计算宝玉宝钗唯一婚期。"
+        },
+        "fixed_carrier": {
+          "path": "sources/primary/received/94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c/daqinglu10.html",
+          "sha256": "94afcbef9f638b17b5a5482d90111d1742baa30c97f6f048cb4c3508af52256c"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:19b1460e9d09a07eb91135287ca5844dd236b10fc5ed23bd6e94d2859ae859f4",
+          "joiner": "",
+          "kind": "HTML_TEXT_SPANS",
+          "output_sha256": "6f825052070cb8862304edc2f59e275bd524158ecbd97941ea52a1e7e5eb48b4",
+          "raw_text_sha256": "c92cfbfae5aa47f173d7442fe8ea954947f9cc3d11f9eeb32a6932cc504fd1a5",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 3275,
+              "start": 3098,
+              "unit_ref": "html:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:e69b867af53d7a811c3365b7954143387fb4f59d0b201b91a4c86a7b5d5d171f",
+          "report_sha256": "e69b867af53d7a811c3365b7954143387fb4f59d0b201b91a4c86a7b5d5d171f",
+          "source_record_sha256": "68336627258d6960b043f35e6745e090bf8aa4a93c858623386ad92401979215",
+          "status": "VERIFIED"
+        },
+        "images": []
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h03:mourning-constrains-marriage"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h03:mourning-constrains-marriage",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "《大清律例》的居丧嫁娶条说明丧制会实际限制婚嫁。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定 DQLL-V10 HTML 区间直接列出居父母、夫、祖父母等丧期嫁娶处罚与例外，和 claim:history:h03:mourning-constrains-marriage 一致。",
+        "claim_scope": "支持丧制会实际约束婚嫁；不能由此计算元妃之丧到宝玉宝钗的唯一婚期。",
+        "unverified_scope": [
+          "未另查印本影像/异文；仅核查固定 HTML 摘录。",
+          "条例适用层级和小说情节映射未在本研究中新增核验。"
+        ],
+        "carrier_note": "无计划内图片；载体为固定本地 HTML。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:daqinglu:v36:outsider-access",
+      "research_verdict": "PASS",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/24e28bc64fcd286699fb2f3577a1d1e874432787d81a9dbfcc5d1e42f7742ff0.json",
+          "sha256": "59d412a99383eda7f94ee18c67a4ced0e0a7321cccb8bde3e4e78fa90cc5a377"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/63af5f352f12b2d25448d600bd99b6e8bfa430cf2c715b2274e8455bc3bc726f.json",
+          "sha256": "63af5f352f12b2d25448d600bd99b6e8bfa430cf2c715b2274e8455bc3bc726f"
+        },
+        "source_record_sha256": "6ef5e822ef9db4b726f394b4f2c0233270e4bd3d69e675219834a2991f9cf942",
+        "source": {
+          "title": "《大清律例》卷三十六——限制外人入狱传话",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "刑律·断狱上·主守教囚反异",
+            "label": "《大清律例》卷三十六",
+            "siglum": "DQLL-V36"
+          },
+          "bibliography": {
+            "citation": "《大清律例》（四库全书本）卷三十六",
+            "url": "https://zh.wikisource.org/wiki/%E5%A4%A7%E6%B8%85%E5%BE%8B%E4%BE%8B_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B736"
+          },
+          "carrier_capture": {
+            "ref": "asset:sha256:6c1152b2d0b2177cc923dc0c1c04e2516dfb11af3521e2d7323862c5705b2c27",
+            "sha256": "6c1152b2d0b2177cc923dc0c1c04e2516dfb11af3521e2d7323862c5705b2c27"
+          },
+          "container": {
+            "ref": "asset:sha256:7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7",
+            "sha256": "7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7"
+          },
+          "text": "若〈獄官典卒〉容縱外人入獄及〈與囚𫝊通言語〉走泄事情於囚罪無增減者笞五十",
+          "text_sha256": "e19b33226f7a25445d77c24ecc29ed7b274ca9b6ae578ba56a5529acb40ead23",
+          "notes": "仅用于监狱出入/传话的历史边界；不能反推曹稿具体探视场景。"
+        },
+        "fixed_carrier": {
+          "path": "sources/primary/received/7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7/daqinglu36.html",
+          "sha256": "7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:c02e057438cd0337735985634743d3a5b8bca824f51563fda444ab3035f5fde2",
+          "joiner": "",
+          "kind": "HTML_TEXT_SPANS",
+          "output_sha256": "360e1997471f23344b6218bfb240d8d622623b4b4a087f541c9dc9db2e4baf98",
+          "raw_text_sha256": "e19b33226f7a25445d77c24ecc29ed7b274ca9b6ae578ba56a5529acb40ead23",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 6407,
+              "start": 6371,
+              "unit_ref": "html:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:043841c3308782cd745d041a1d6e140815c07ff805cdc899c28948dc5c239c80",
+          "report_sha256": "043841c3308782cd745d041a1d6e140815c07ff805cdc899c28948dc5c239c80",
+          "source_record_sha256": "6ef5e822ef9db4b726f394b4f2c0233270e4bd3d69e675219834a2991f9cf942",
+          "status": "VERIFIED"
+        },
+        "images": []
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h01:controlled-access"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h01:controlled-access",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "清代监狱规则限制无关外人自由入狱传话，同时允许特定亲属按限入视，送饮食须由提牢官验明后转送。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定 DQLL-V36 HTML 区间直接规定容纵外人入狱及与囚传话的责任，支持受控出入/传话边界。",
+        "claim_scope": "仅支持监狱出入和传话的历史边界；不反推曹稿的具体探视场景。",
+        "unverified_scope": [
+          "未另查印本图像、版本异文或地方执行差异。",
+          "条文存在不等于任何特定小说场景实际发生。"
+        ],
+        "carrier_note": "无计划内图片；载体为固定本地 HTML。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:daqinglu:v36:relative-visits",
+      "research_verdict": "PASS",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/17bbe103dacfafa72d5674c5727143748dc55c73c54cde15c150e57d1a2c834b.json",
+          "sha256": "4bca9288e0fcd70734c11c841160bf35763746601a708bb62bbb0ed37310b55c"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/a27f4be41fea59a55c36d884592f63006e853c176e45a22119c8bcc53415f8ff.json",
+          "sha256": "a27f4be41fea59a55c36d884592f63006e853c176e45a22119c8bcc53415f8ff"
+        },
+        "source_record_sha256": "36b29f9a95ff51bb29067d96c7de9af607d34ad40baf16dd50c54beada512e7a",
+        "source": {
+          "title": "《大清律例》卷三十六——亲属入视与送饮食",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "刑律·断狱上·狱囚衣粮条例",
+            "label": "《大清律例》卷三十六",
+            "siglum": "DQLL-V36"
+          },
+          "bibliography": {
+            "citation": "《大清律例》（四库全书本）卷三十六",
+            "url": "https://zh.wikisource.org/wiki/%E5%A4%A7%E6%B8%85%E5%BE%8B%E4%BE%8B_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B736"
+          },
+          "carrier_capture": {
+            "ref": "asset:sha256:6c1152b2d0b2177cc923dc0c1c04e2516dfb11af3521e2d7323862c5705b2c27",
+            "sha256": "6c1152b2d0b2177cc923dc0c1c04e2516dfb11af3521e2d7323862c5705b2c27"
+          },
+          "container": {
+            "ref": "asset:sha256:7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7",
+            "sha256": "7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7"
+          },
+          "text": "一在監人犯許令祖父母父母伯叔兄弟妻妾子孫一月兩次入視使役之人不越兩名若有送飲食者提牢官騐明禁子轉送其盜犯妻子家口不許放入監門探視違者妻子家口枷號兩個月責四十板不准收贖提牢司獄官吏叅處",
+          "text_sha256": "6c97c7c336380150d59db6be1439f280f8c059c52af439873cd5d453182e63db",
+          "notes": "说明受控入视和验明转送机制；名单不包含“旧仆当然探监权”。"
+        },
+        "fixed_carrier": {
+          "path": "sources/primary/received/7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7/daqinglu36.html",
+          "sha256": "7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:c02e057438cd0337735985634743d3a5b8bca824f51563fda444ab3035f5fde2",
+          "joiner": "",
+          "kind": "HTML_TEXT_SPANS",
+          "output_sha256": "360e1997471f23344b6218bfb240d8d622623b4b4a087f541c9dc9db2e4baf98",
+          "raw_text_sha256": "6c97c7c336380150d59db6be1439f280f8c059c52af439873cd5d453182e63db",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 7368,
+              "start": 7277,
+              "unit_ref": "html:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:a95702e59a828c985c098079f4174ccd0ef8cccf82dcd4561c163b301d452e4b",
+          "report_sha256": "a95702e59a828c985c098079f4174ccd0ef8cccf82dcd4561c163b301d452e4b",
+          "source_record_sha256": "36b29f9a95ff51bb29067d96c7de9af607d34ad40baf16dd50c54beada512e7a",
+          "status": "VERIFIED"
+        },
+        "images": []
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h01:controlled-access"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h01:controlled-access",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "清代监狱规则限制无关外人自由入狱传话，同时允许特定亲属按限入视，送饮食须由提牢官验明后转送。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定 DQLL-V36 HTML 区间列出可入视亲属、每月次数、使役人数和送饮食验明转送，文本与 claim:history:h01:controlled-access 一致。",
+        "claim_scope": "支持受控亲属探视和送食机制；名单不含“旧仆当然有探监权”。",
+        "unverified_scope": [
+          "未核验印本异文及地方执行资料。",
+          "条文名单不能单独决定某一小说人物是否获准探视。"
+        ],
+        "carrier_note": "无计划内图片；载体为固定本地 HTML。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:daqinglu:v36:waiting-for-questioning",
+      "research_verdict": "PASS",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/02369c4351696f0e011c3486362bbde2ae173902a873b7a6cf39f273b6340aaf.json",
+          "sha256": "58e3523898bd8a579aff6f0394cc3fd416b70b9f085d7a5f2e9c4eaac347a5c1"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/ae64af72924a2f7c2ed5997d85f52def0d02885ffdb554f1abcfda4abe558533.json",
+          "sha256": "ae64af72924a2f7c2ed5997d85f52def0d02885ffdb554f1abcfda4abe558533"
+        },
+        "source_record_sha256": "522e5ffabf5c93b8956e050be60c17c651eaa77d93ae7f15b32c19adf1595c59",
+        "source": {
+          "title": "《大清律例》卷三十六——牵连待质",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "刑律·断狱上·狱囚衣粮条例",
+            "label": "《大清律例》卷三十六",
+            "siglum": "DQLL-V36"
+          },
+          "bibliography": {
+            "citation": "《大清律例》（四库全书本）卷三十六",
+            "url": "https://zh.wikisource.org/wiki/%E5%A4%A7%E6%B8%85%E5%BE%8B%E4%BE%8B_(%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC)/%E5%8D%B736"
+          },
+          "carrier_capture": {
+            "ref": "asset:sha256:6c1152b2d0b2177cc923dc0c1c04e2516dfb11af3521e2d7323862c5705b2c27",
+            "sha256": "6c1152b2d0b2177cc923dc0c1c04e2516dfb11af3521e2d7323862c5705b2c27"
+          },
+          "container": {
+            "ref": "asset:sha256:7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7",
+            "sha256": "7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7"
+          },
+          "text": "一五城司坊羈禁人犯及刑部等衙門發交各司坊枷號及看守牽連待質等犯果係赤貧並無家屬送飯者每人每日給老米一升",
+          "text_sha256": "7bbf44964a934a4a4dd4fc0741899de5e029a042207ac9f38d32d337d0ae8061",
+          "notes": "只支持“待质/候问”作为历史上可运行的羁留机制，不锁宝玉具体拘留日数。"
+        },
+        "fixed_carrier": {
+          "path": "sources/primary/received/7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7/daqinglu36.html",
+          "sha256": "7b043682db995393b3804a123b2bd068fc4aa46d0a50c98b4763fbddc87b59e7"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:c02e057438cd0337735985634743d3a5b8bca824f51563fda444ab3035f5fde2",
+          "joiner": "",
+          "kind": "HTML_TEXT_SPANS",
+          "output_sha256": "360e1997471f23344b6218bfb240d8d622623b4b4a087f541c9dc9db2e4baf98",
+          "raw_text_sha256": "7bbf44964a934a4a4dd4fc0741899de5e029a042207ac9f38d32d337d0ae8061",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 7520,
+              "start": 7469,
+              "unit_ref": "html:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:a18e4f7a9624a7955110e7bc30e866cf27b50e3bb010a5473be2f7f6afefeb2a",
+          "report_sha256": "a18e4f7a9624a7955110e7bc30e866cf27b50e3bb010a5473be2f7f6afefeb2a",
+          "source_record_sha256": "522e5ffabf5c93b8956e050be60c17c651eaa77d93ae7f15b32c19adf1595c59",
+          "status": "VERIFIED"
+        },
+        "images": []
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h01:waiting-for-questioning"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h01:waiting-for-questioning",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "清代制度语境存在羁禁“牵连待质”等候问/待质机制。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定 DQLL-V36 HTML 区间直接出现牵连待质等羁留和贫困囚犯给米机制，支持 waiting-for-questioning 历史机制。",
+        "claim_scope": "只支持“待质/候问”作为可运行羁留机制；不锁宝玉具体拘留日数。",
+        "unverified_scope": [
+          "未另查印本影像、异文及地方实施差异。",
+          "不能从一条例推定具体案件的拘留期限。"
+        ],
+        "carrier_note": "无计划内图片；载体为固定本地 HTML。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:huidian:v89:huangguifei-mourning",
+      "research_verdict": "PASS",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/b90b9a1e45170e80968ac820aefa23be185176d1074f647d69194e734e203fde.json",
+          "sha256": "164c4815feb9ad33937a05715ee6d71b3149904f1c2b3038eaea63d013e903c7"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/5a6dbe8c6b633c270a1189eecb0490e56915c9d23f70bae7e36d49225338a4b5.json",
+          "sha256": "5a6dbe8c6b633c270a1189eecb0490e56915c9d23f70bae7e36d49225338a4b5"
+        },
+        "source_record_sha256": "e63ca8ce3eaed5a729698a4760353c9924672a827f838a470c434e8b6926cd6b",
+        "source": {
+          "title": "《钦定大清会典则例》卷八十九——皇贵妃丧仪",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "礼部·祠祭清吏司·丧礼三·皇贵妃丧仪",
+            "label": "《钦定大清会典则例》卷八十九",
+            "siglum": "HUIDIAN-V89"
+          },
+          "bibliography": {
+            "citation": "《钦定大清会典则例》卷八十九",
+            "url": "https://ctext.org/wiki.pl?chapter=677909&if=gb&remap=gb"
+          },
+          "carrier_capture": {
+            "ref": "asset:sha256:e80fe29a87548bfca3201aa5fcdfbd0dc0f6ffb368a83e36db1c3a913735cfc4",
+            "sha256": "e80fe29a87548bfca3201aa5fcdfbd0dc0f6ffb368a83e36db1c3a913735cfc4"
+          },
+          "container": {
+            "ref": "asset:sha256:f49ee6d885a9c43508544fa7c703a53882314d53897b065a62ba2e31e78b2912",
+            "sha256": "f49ee6d885a9c43508544fa7c703a53882314d53897b065a62ba2e31e78b2912"
+          },
+          "text": "姻戚人等成服，皆大祭日除服，百日剃头。",
+          "text_sha256": "a5990394532d8401421617d2adfbd07c3e9b3fd91c3c912f344f435d38afdb76",
+          "notes": "证明妃嫔丧礼对姻戚另有专门成服规则；“大祭日/百日”等不得被机械等同于小说唯一婚期。"
+        },
+        "fixed_carrier": {
+          "path": "sources/primary/received/f49ee6d885a9c43508544fa7c703a53882314d53897b065a62ba2e31e78b2912/huidian89-alt.html",
+          "sha256": "f49ee6d885a9c43508544fa7c703a53882314d53897b065a62ba2e31e78b2912"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:ff14bdc9868dc6596cc52a9b5ffc3ddd881caabb1702aa7e5ee085c80e22a928",
+          "joiner": "",
+          "kind": "HTML_TEXT_SPANS",
+          "output_sha256": "9ca233aedb48b328af4e072d409b29e9cef70b63cee689ea5cc0c9949e7e8278",
+          "raw_text_sha256": "a5990394532d8401421617d2adfbd07c3e9b3fd91c3c912f344f435d38afdb76",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 1692,
+              "start": 1673,
+              "unit_ref": "html:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:0cd92d0efde33856b2f0065113b164557d716610bcc2d06b817e76ffe56ad516",
+          "report_sha256": "0cd92d0efde33856b2f0065113b164557d716610bcc2d06b817e76ffe56ad516",
+          "source_record_sha256": "e63ca8ce3eaed5a729698a4760353c9924672a827f838a470c434e8b6926cd6b",
+          "status": "VERIFIED"
+        },
+        "images": []
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h03:consort-special-rites"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h03:consort-special-rites",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "清代皇贵妃丧仪对姻戚另有成服、除服等专门礼制安排。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定 HUIDIAN-V89 HTML 区间直接写明姻戚成服、大祭日除服、百日剃头，和 claim:history:h03:consort-special-rites 一致。",
+        "claim_scope": "支持妃嫔丧礼对姻戚另有成服规则；不可机械等同于小说唯一婚期。",
+        "unverified_scope": [
+          "未另查会典刊本影像或异文。",
+          "具体礼仪执行和小说时间线映射未在本研究中新增核验。"
+        ],
+        "carrier_note": "无计划内图片；载体为固定本地 HTML。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:history:shuntianfu:prison-god",
+      "research_verdict": "PASS",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/6e5b80a2dd1c91547da7928053f82a9969a8975bc1b9ae70f999022aa498ac7a.json",
+          "sha256": "38b0c6a7b2b48c8af3c889d8c22f836984e9d1b4aa2ed50ab0aec5f5eab52249"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/b78eb6f07772f3b31e60e4d4d0f78457533e5f8668f129a315413a3bab80c9a1.json",
+          "sha256": "b78eb6f07772f3b31e60e4d4d0f78457533e5f8668f129a315413a3bab80c9a1"
+        },
+        "source_record_sha256": "76f91e8f3baa0706d14125dfdd5fc50434512a6a08217ebcd80edf2dae470f3b",
+        "source": {
+          "title": "《光绪顺天府志》——监狱内狱神庙实例",
+          "type": "HISTORICAL_PRIMARY",
+          "witness": {
+            "annotation": "地理志所载州署监狱实例；现代数字化容器",
+            "label": "《光绪顺天府志》",
+            "siglum": "GXS-TFZ"
+          },
+          "bibliography": {
+            "citation": "《光绪顺天府志》地理志四",
+            "url": "https://www.shidianguji.com/book/NLG312001063940/chapter/1l93wyyn97p5n"
+          },
+          "carrier_capture": {
+            "ref": "asset:sha256:8e10ad92bd8355b816a7ae6d8e6f5ec58a742979c2c8b2bf597f28b0eba44a56",
+            "sha256": "8e10ad92bd8355b816a7ae6d8e6f5ec58a742979c2c8b2bf597f28b0eba44a56"
+          },
+          "container": {
+            "ref": "asset:sha256:846da0b54c0afd523c610d0a59efa10077577b8cea08b72b8d4282a35755fa5b",
+            "sha256": "846da0b54c0afd523c610d0a59efa10077577b8cea08b72b8d4282a35755fa5b"
+          },
+          "text": "监狱在大门内西向。旧分内外二监，乾隆三十年，知州万廷兰将外监归并内监，现在囚房六间，女囚房一间，狱神庙一间，禁卒房一间，更夫房一间。",
+          "text_sha256": "ba9c3ff7a1685fdd4ac64d07992a8904d7f6bf1c303459d00feadd25b8972bb5",
+          "notes": "只证明部分地方监狱可有狱神庙；不得泛化为每所监狱固定布局。"
+        },
+        "fixed_carrier": {
+          "path": "sources/primary/received/846da0b54c0afd523c610d0a59efa10077577b8cea08b72b8d4282a35755fa5b/shuntian.html",
+          "sha256": "846da0b54c0afd523c610d0a59efa10077577b8cea08b72b8d4282a35755fa5b"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:3b6fb85edad0da889c149e5ac2ec6ba2cabd2bb41251adb0dba3b8d1899dfac6",
+          "joiner": "",
+          "kind": "HTML_TEXT_SPANS",
+          "output_sha256": "6ba3bb6650e6ac6cb03130d3c33d9fb12fb1326fed4567b8e0e22204ced2554f",
+          "raw_text_sha256": "ba9c3ff7a1685fdd4ac64d07992a8904d7f6bf1c303459d00feadd25b8972bb5",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 3500,
+              "start": 3434,
+              "unit_ref": "html:1"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:20b0a7619298d769a8626ea24d34effcdc38c3e260d90dc86680e56da7f09d00",
+          "report_sha256": "20b0a7619298d769a8626ea24d34effcdc38c3e260d90dc86680e56da7f09d00",
+          "source_record_sha256": "76f91e8f3baa0706d14125dfdd5fc50434512a6a08217ebcd80edf2dae470f3b",
+          "status": "VERIFIED"
+        },
+        "images": []
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h01:prison-god-space"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h01:prison-god-space",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "清代顺天府地方志实例显示部分监狱空间内可设狱神庙。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "固定《光绪顺天府志》HTML 区间明确列出监狱、囚房、女囚房和狱神庙，直接支持一个地方实例。",
+        "claim_scope": "仅证明部分地方监狱可有狱神庙；不得泛化为每所监狱固定布局。",
+        "unverified_scope": [
+          "这是光绪时期地方志实例，未核验其与乾隆时期北京具体场所的连续性。",
+          "未查原刻本影像或其他地方志对照。"
+        ],
+        "carrier_note": "无计划内图片；载体为固定本地 HTML。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:jimao:ch18:daiyu-death",
+      "research_verdict": "PASS",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/586d8453bf26eeb657cd9171af73b84cb86754c2645481bd0126320d9501d6f1.json",
+          "sha256": "16bb67f9fb25c91a3ab48af754a5a638a98924b500eb002473b7845d0b07ef7a"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/38cba98cd4730355cb9bcf1eb2a2b98371b4d5ae5ccc0a70099039a9515cd1fe.json",
+          "sha256": "38cba98cd4730355cb9bcf1eb2a2b98371b4d5ae5ccc0a70099039a9515cd1fe"
+        },
+        "source_record_sha256": "556f34fd6f768c5869a8567d2b1e7a478135910b8cc6522b76664a1299e57b93",
+        "source": {
+          "title": "己卯本第十八回夹批——《离魂》伏黛玉死",
+          "type": "EARLY_COMMENT",
+          "witness": {
+            "annotation": "己夹",
+            "label": "己卯本",
+            "siglum": "JIMAO"
+          },
+          "bibliography": null,
+          "carrier_capture": null,
+          "container": {
+            "ref": "asset:primary:hlm:zhihui:v3.1416:pdf",
+            "sha256": "37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7"
+          },
+          "text": "第四出《离魂》。己夹《牡丹亭》中。伏黛玉死。◇所点之戏剧伏四事，乃通部书之大过节、大关键。",
+          "text_sha256": "831c17f6dd030e4262b7b05cf5df9c5724f4f1de13a3e3b59b80c661cbe6de6f",
+          "notes": "锁黛玉死亡方向，不锁具体回次、病程日数或临终写法。"
+        },
+        "fixed_carrier": {
+          "path": "sources/primary/hongloumeng/zhihui/v3.1416/original.pdf",
+          "sha256": "37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:e3fae3441a9593750b51ead034891d2295360a046816b6d2b59cd46c07d331f7",
+          "joiner": "",
+          "kind": "PDF_TEXT_SPANS",
+          "output_sha256": "628f2e057a93f48dfdf326e8ba1bfecea1fd2b30f418314046842b8bf46c8920",
+          "raw_text_sha256": "831c17f6dd030e4262b7b05cf5df9c5724f4f1de13a3e3b59b80c661cbe6de6f",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 650,
+              "start": 623,
+              "unit_ref": "pdf:page:265"
+            },
+            {
+              "end": 669,
+              "start": 651,
+              "unit_ref": "pdf:page:265"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Exact excerpt recomputed from fixed carrier; omitted PDF line breaks recorded in migration audit.",
+          "report_ref": "asset:sha256:d0578049372ca24cedb9f3891710b896cee1ffab322f458e7eb8a27ceb710faa",
+          "report_sha256": "d0578049372ca24cedb9f3891710b896cee1ffab322f458e7eb8a27ceb710faa",
+          "source_record_sha256": "556f34fd6f768c5869a8567d2b1e7a478135910b8cc6522b76664a1299e57b93",
+          "status": "VERIFIED"
+        },
+        "images": [
+          {
+            "page": 265,
+            "original": {
+              "path": "sources/primary/hongloumeng/zhihui/v3.1416/original.pdf",
+              "sha256": "37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7"
+            },
+            "binding": {
+              "path": "data/writing/source-review-next/source-pages/0339961669b50bb8d3eb456334617d5662f490add1810b68c6eb0346dac2cac0.jpg",
+              "sha256": "0339961669b50bb8d3eb456334617d5662f490add1810b68c6eb0346dac2cac0"
+            }
+          }
+        ]
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:daiyu:death-direction"
+        ],
+        "claims": [
+          {
+            "id": "claim:daiyu:death-direction",
+            "kind": "EVENT",
+            "modality": "DIRECT_ASSERTION",
+            "authority_scope": "NARRATIVE_EVIDENCE",
+            "statement": "后文黛玉死亡是通部“大过节、大关键”之一。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [
+          "decision:daiyu:death-direction"
+        ],
+        "implementation_ids": [
+          "impl:active:ch86:daiyu-death"
+        ],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "PDF page 265 固定区间和所附页图均可见“第四出《离魂》…伏黛玉死”；支持 death-direction，但证据载体是现代汇校本。",
+        "claim_scope": "锁定黛玉死亡方向；不锁具体回次、病程天数、终局写法。",
+        "unverified_scope": [
+          "所见页图标题为现代《红楼梦脂评汇校本》，未核验己卯原本/底本原件。",
+          "现代汇校编辑层、夹批传承和图像与 PDF 文本逐字关系未作独立版本学核验。"
+        ],
+        "carrier_note": "已目视 source-pages/033996...jpg；可见现代汇校页和“伏黛玉死”字样，但不是原始脂批图。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    },
+    {
+      "source_ref": "src:research:mao-liping:2013:natal-family",
+      "research_verdict": "PENDING",
+      "human_admission_verdict": "FAIL",
+      "human_admission_reason": "本条由 MODEL_SUBAGENT 生成；没有独立人类身份、独立性声明或原始 review JSON，不能计入真人准入。",
+      "evidence": {
+        "subject": {
+          "path": "data/writing/source-review-next/subjects/b3918e50dffd8d1a9c96d712c18a0806d4af555312ef3106551f26b23d7e524d.json",
+          "sha256": "e7b2d75d34ff5e1af97a638e81c8b5d87d887c9acefd5dd68f961f6825aab995"
+        },
+        "reading_evidence": {
+          "path": "data/writing/source-review-next/source-evidence/4661e8d1aa9f210299ef0a4206af7ab2de41aecb3b799f878b7ae503a06cef9b.json",
+          "sha256": "4661e8d1aa9f210299ef0a4206af7ab2de41aecb3b799f878b7ae503a06cef9b"
+        },
+        "source_record_sha256": "791910f282c4f082490e2a3bc217eed839c1b07ed522ffa8debd532614bf8ace",
+        "source": {
+          "title": "毛立平《清代下层妇女与娘家的关系——以南部县档案为中心的研究》",
+          "type": "SECONDARY_RESEARCH",
+          "witness": {
+            "annotation": "基于124件清代四川南部县衙门妇女案件",
+            "label": "毛立平论文",
+            "siglum": "MAO-2013-NANBU"
+          },
+          "bibliography": {
+            "citation": "毛立平，《清代下层妇女与娘家的关系——以南部县档案为中心的研究》，《近代中国妇女史研究》第21期，2013年6月",
+            "url": "https://www.mh.sinica.edu.tw/MHDocument/PublicationDetail/PublicationDetail_1533.pdf"
+          },
+          "carrier_capture": {
+            "ref": "asset:sha256:ab0ec619b8b0ce0169a5e92d379950a93779e3d5db78878afc2f56989c3b381c",
+            "sha256": "ab0ec619b8b0ce0169a5e92d379950a93779e3d5db78878afc2f56989c3b381c"
+          },
+          "container": {
+            "ref": "asset:sha256:6a296fa7157747efa8d4f61dba01279d23daea28d7dd284bc4c5a5993f007826",
+            "sha256": "6a296fa7157747efa8d4f61dba01279d23daea28d7dd284bc4c5a5993f007826"
+          },
+          "text": "親情使得娘家與出嫁女仍保持密切往\n來，稍有餘力的娘家會對生活貧困的女兒女婿予以接濟；反\n之，若娘家貧困，女兒亦千方百計進行救助－以女性為紐\n帶的姻親關係同樣是下層家庭的主要社會關係。另一方面，\n下層社會姻親之間的彼此救助頗具局限性",
+          "text_sha256": "535ae5e87d6f6003eca0f094ec111a7b09bf440b4fc210a2df223d9d9b1dfc63",
+          "notes": "二手研究且样本主要为四川下层妇女、年代多集中嘉道以后；只能软支持“娘家联系/有限援助渠道”，不能外推固定供养义务。"
+        },
+        "fixed_carrier": {
+          "path": "sources/primary/received/6a296fa7157747efa8d4f61dba01279d23daea28d7dd284bc4c5a5993f007826/mao2013.pdf",
+          "sha256": "6a296fa7157747efa8d4f61dba01279d23daea28d7dd284bc4c5a5993f007826"
+        },
+        "locator": {
+          "extraction_ref": "asset:sha256:92f625f02a9597f94a54b8d13d06c26702e1b795d6713f926f77ff27e3ba1716",
+          "joiner": "",
+          "kind": "PDF_TEXT_SPANS",
+          "output_sha256": "d416305d83f99e69362cf4f931a61696d05b2000860c3b56f987dafb932ef10c",
+          "raw_text_sha256": "535ae5e87d6f6003eca0f094ec111a7b09bf440b4fc210a2df223d9d9b1dfc63",
+          "schema_version": 2,
+          "spans": [
+            {
+              "end": 669,
+              "start": 554,
+              "unit_ref": "pdf:page:7"
+            }
+          ]
+        },
+        "locator_verification": {
+          "reason": "Revised raw excerpt verified; correction and claim impact are recorded separately.",
+          "report_ref": "asset:sha256:d403946e42e9da0f4925b505663d4009785902d3f849ae0256cdb8adec623f96",
+          "report_sha256": "d403946e42e9da0f4925b505663d4009785902d3f849ae0256cdb8adec623f96",
+          "source_record_sha256": "791910f282c4f082490e2a3bc217eed839c1b07ed522ffa8debd532614bf8ace",
+          "status": "VERIFIED"
+        },
+        "images": [
+          {
+            "page": 7,
+            "original": {
+              "path": "sources/primary/received/6a296fa7157747efa8d4f61dba01279d23daea28d7dd284bc4c5a5993f007826/mao2013.pdf",
+              "sha256": "6a296fa7157747efa8d4f61dba01279d23daea28d7dd284bc4c5a5993f007826"
+            },
+            "binding": {
+              "path": "data/writing/source-review-next/source-pages/c0ec0b62eeeb65fa67a6497d87cc18792bfc8f03dfea49b8486d4ed87493f2e2.jpg",
+              "sha256": "c0ec0b62eeeb65fa67a6497d87cc18792bfc8f03dfea49b8486d4ed87493f2e2"
+            }
+          }
+        ]
+      },
+      "graph_trace": {
+        "claim_ids": [
+          "claim:history:h06:aid-is-limited",
+          "claim:history:h06:natal-family-ties"
+        ],
+        "claims": [
+          {
+            "id": "claim:history:h06:natal-family-ties",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "INFERENCE",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "基于南部县档案的研究表明，清代部分出嫁女婚后仍与娘家保持往来，危机时娘家可能提供资源或干预。",
+            "status": "SUPPORTED"
+          },
+          {
+            "id": "claim:history:h06:aid-is-limited",
+            "kind": "HISTORICAL_MECHANISM",
+            "modality": "INFERENCE",
+            "authority_scope": "HISTORICAL_FEASIBILITY",
+            "statement": "同一研究同时显示姻亲互助受家庭资源限制，不能推出娘家固定、持续、足额供养的普遍规则。",
+            "status": "SUPPORTED"
+          }
+        ],
+        "decision_ids": [],
+        "implementation_ids": [],
+        "boundary": "Current graph impact and prior corrections are inputs to examine, not independent approval."
+      },
+      "assessment": {
+        "basis": "PDF 固定摘录与附图页可见“娘家…接济”“彼此救助颇具局限性”；作为二手研究软支持成立，但页码索引和样本/年代范围需要谨慎。",
+        "claim_scope": "只软支持娘家联系及有限援助渠道；不能外推固定供养义务或贾府上层家庭行为。",
+        "unverified_scope": [
+          "研究样本主要为四川南部县下层妇女，年代多在嘉庆/道光以后，不能直接代表乾隆时期贾府。",
+          "计划 locator 标为 pdf:page:7，而目视绑定图显示印刷页码 9；PDF 物理页与印刷页映射未进一步核验。",
+          "未检查论文完整参考文献、出版版本或作者校勘。"
+        ],
+        "carrier_note": "已目视 source-pages/c0ec...jpg；标题和段落可见，但该图为二手论文页，不是档案原件。"
+      },
+      "human_gate": {
+        "reviewer_kind": "MODEL_SUBAGENT",
+        "independent_of_corrections": false,
+        "identity_claimed": false,
+        "raw_review_registered": false,
+        "selection_updated": false
+      }
+    }
+  ],
+  "summary": {
+    "source_count": 16,
+    "research_verdict_counts": {
+      "PASS": 9,
+      "PENDING": 7
+    },
+    "human_admission_verdict_counts": {
+      "FAIL": 16
+    },
+    "all_human_admission_ineligible": true,
+    "pending_source_refs": [
+      "src:history:cao:1728:family-housing",
+      "src:history:cao:1728:family-housing:npm005664",
+      "src:history:cao:1728:inventory-seal",
+      "src:history:cao:1728:inventory-seal:npm005664",
+      "src:history:cao:1728:pawn-tickets",
+      "src:history:cao:1728:pawn-tickets:npm005664",
+      "src:research:mao-liping:2013:natal-family"
+    ]
+  },
+  "validation": {
+    "expected_source_count": 16,
+    "unique_source_refs": 16,
+    "protected_paths_written": [],
+    "commits_created": [],
+    "branches_created": []
+  }
+}

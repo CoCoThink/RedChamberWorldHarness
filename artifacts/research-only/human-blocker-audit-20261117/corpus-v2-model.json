@@ -1,0 +1,3781 @@
+{
+  "schema_version": 1,
+  "report_kind": "AGENT_REVIEW_OPINION",
+  "opinion_id": "corpus-v2-model-20261117-front10-appendix",
+  "created_on": "2026-11-17",
+  "dataset_ref": "corpus:front80:v2-candidate",
+  "subject": {
+    "manifest": {
+      "asset_ref": "asset:sha256:eb4aebb9e38712a988bdead263c12c9c3df00a6f936fb17db755c436e4d66886",
+      "path": "corpus/front80/v2-candidate/manifest.json",
+      "sha256": "eb4aebb9e38712a988bdead263c12c9c3df00a6f936fb17db755c436e4d66886"
+    },
+    "protocol": {
+      "path": "data/corpus/audit-protocols/front80-v2-candidate-v1.json",
+      "sha256": "04b8054ed132ac9ef940d70df53dea03f1f26f2a520238195ba097c9ebf9d5f3"
+    },
+    "reading_plan": {
+      "path": "data/writing/corpus-v2-review/reading-plan.json",
+      "sha256": "f6ef17e9ab16c4b58b13b7ba3fa657ca84b61392213a0b7f76a37d80d3634e97"
+    },
+    "source_pdf": {
+      "path": "sources/primary/hongloumeng/zhihui/v3.1416/original.pdf",
+      "sha256": "37441da3cb438d1b3eab2b511aa6f1695f309192fa63bea842413ff91655c1d7"
+    }
+  },
+  "reviewer": {
+    "id": "corpus-v2-model-20261117-front10-appendix",
+    "kind": "MODEL_SUBAGENT",
+    "session_id": "subagent-corpus-review-research-batch-20261117",
+    "model": {
+      "label": "parent-session-model-inherited",
+      "verification": "DECLARED_NOT_VERIFIED"
+    },
+    "context_isolation": {
+      "asserted": false,
+      "verification": "NOT_PROVEN"
+    },
+    "independent_human": false
+  },
+  "qualification": "RESEARCH_ONLY",
+  "usage": "RESEARCH_ONLY",
+  "human_qualification": false,
+  "independent_human_admission": false,
+  "authority_effect": "NONE",
+  "automatic_literary_pass": false,
+  "scope": {
+    "requested_stages": [
+      "stages/chapters-01-10.json",
+      "stages/appendix-01.json",
+      "stages/appendix-02.json",
+      "stages/appendix-03.json"
+    ],
+    "read_sample_count": 65,
+    "total_plan_sample_count": 146,
+    "unread_sample_count": 81,
+    "coverage_statement": "前10回 staged group 的 12 个样本（10 MAIN_TEXT、1 EDITORIAL、1 ZHIPI）及三个附录 staged group 的 53 个样本（1 APPENDIX、52 EDITORIAL）均已核对。",
+    "unread_statement": "未读 chapters-11-20、21-30、31-40、41-50、51-60、61-70、71-80 的全部 staged samples，共 81 项；不把分段阅读当作 146 项完整意见。"
+  },
+  "method": {
+    "material_checks": [
+      "从 issued sample-contexts.json 读取样本与相邻 segment。",
+      "按 locator 从 issued extraction-pages.json 精确切片，并复算 UTF-8 text_sha256。",
+      "核对 page_navigation 的 physical one-based 与 PDF API zero-based 对应。",
+      "用 pdftotext -layout 读取固定原始 PDF 的对应物理页，确认规范化后的样本切片出现在原页。",
+      "检查附录跨页样本及 watermark/running-header/editorial 分段边界。"
+    ],
+    "normalization_for_pdf_presence": "仅为对照 pdftotext 布局输出而移除空白和 ①–⑩ 行内标记；issued extraction 精确切片本身未做规范化。",
+    "not_done": [
+      "未通读未选阶段或完整前80回。",
+      "未作独立真人身份、建构者独立性或上下文隔离认证。",
+      "未把样本核对扩大为全语料文学质量判断、自动文学通过或 Evidence Truth 变更。"
+    ]
+  },
+  "results": [
+    {
+      "sample_id": "hlm80:chapter:1:p00008",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 1,
+      "kind": "MAIN_TEXT",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_MAIN_FONT_SIZE_COLOR"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        14
+      ],
+      "pdf_page_indexes_zero_based": [
+        13
+      ],
+      "text_sha256": "36e468a31f83e15d9a1f9ded5e1f420f7d3de342c28562f9385a4e39408cda58",
+      "observed_text": " \n \n  列位看官，你道此书从何而来？\n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "MAIN_TEXT slice is continuous at the recorded offset; adjacent headers/annotations remain separate segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:14",
+          "physical_page_one_based": 14,
+          "pdf_page_index_zero_based": 13,
+          "start": 528,
+          "end": 549,
+          "extraction_page_sha256": "899c80ba518dcb39e4dc0bedcd02e4c3973385c64a0ec1817275292ec5c4d1e6",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:2:p00009",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 2,
+      "kind": "MAIN_TEXT",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_MAIN_FONT_SIZE_COLOR"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        34
+      ],
+      "pdf_page_indexes_zero_based": [
+        33
+      ],
+      "text_sha256": "030780105db91b8f911b2013dd9765ffc8f45b44c7e1cb46a88c8a0f7e2ccace",
+      "observed_text": "  诗云：",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "MAIN_TEXT slice is continuous at the recorded offset; adjacent headers/annotations remain separate segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:34",
+          "physical_page_one_based": 34,
+          "pdf_page_index_zero_based": 33,
+          "start": 42,
+          "end": 47,
+          "extraction_page_sha256": "4295569dd324d50d8fe8b526a4899a993a6d872b95dc75f8c78cc774560e36df",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:3:p00014",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 3,
+      "kind": "MAIN_TEXT",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_MAIN_FONT_SIZE_COLOR"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        46
+      ],
+      "pdf_page_indexes_zero_based": [
+        45
+      ],
+      "text_sha256": "a86bb50e1ad8798a9fa460a2ac1f5bb224ecff6d9e4d81895e27a3b15878584d",
+      "observed_text": " \n  却说雨村忙回头看时，不是别人，乃是当日同僚一案参革\n的号张如圭",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "MAIN_TEXT slice is continuous at the recorded offset; adjacent headers/annotations remain separate segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:46",
+          "physical_page_one_based": 46,
+          "pdf_page_index_zero_based": 45,
+          "start": 307,
+          "end": 342,
+          "extraction_page_sha256": "259dd7811bbbcbf37cae521e1623671761c9c5b7fa0de49f7fb35c1a6ab7720d",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:4:p00006",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 4,
+      "kind": "MAIN_TEXT",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_MAIN_FONT_SIZE_COLOR"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        66
+      ],
+      "pdf_page_indexes_zero_based": [
+        65
+      ],
+      "text_sha256": "0ab5e8a0377a624608666c96e1a7d84474df99388fe28afeab4dd76d78ec0456",
+      "observed_text": " \n  题曰： \n    捐躯报君恩，未报躯犹在。 \n    眼底物多情，君恩或可待。\n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "MAIN_TEXT slice is continuous at the recorded offset; adjacent headers/annotations remain separate segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:66",
+          "physical_page_one_based": 66,
+          "pdf_page_index_zero_based": 65,
+          "start": 163,
+          "end": 207,
+          "extraction_page_sha256": "30386a59de53fcf8416e103fc7603d5521ee3555fa48210cb1dab494369578ea",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:5:p00004",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 5,
+      "kind": "MAIN_TEXT",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_MAIN_FONT_SIZE_COLOR"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        79
+      ],
+      "pdf_page_indexes_zero_based": [
+        78
+      ],
+      "text_sha256": "3d10a9130a22453201b9f2c5f2e19f0bfc368736b02057a278346cddc926e91f",
+      "observed_text": " \n  题曰： \n    春困葳蕤拥绣衾，恍随仙子别红尘。 \n    问谁幻入华胥境？千古风流造孽人。\n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "MAIN_TEXT slice is continuous at the recorded offset; adjacent headers/annotations remain separate segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:79",
+          "physical_page_one_based": 79,
+          "pdf_page_index_zero_based": 78,
+          "start": 118,
+          "end": 170,
+          "extraction_page_sha256": "d329f189293938920972bf7d9d5d5d3ac172209e5eba1fed811d2b097162f879",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:6:p00007",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 6,
+      "kind": "MAIN_TEXT",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_MAIN_FONT_SIZE_COLOR"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        97
+      ],
+      "pdf_page_indexes_zero_based": [
+        96
+      ],
+      "text_sha256": "7565ca212e520b45796c5b043f0456a5f2db874b0cbac6eb9627a7e9173da7df",
+      "observed_text": " \n  题曰： \n    朝叩富儿门，富儿犹未足。 \n    虽无千金酬，嗟彼胜骨肉。 \n \n  却说秦氏因听见宝玉从梦中唤他的乳名，心中自是纳闷，\n又不好细问。彼时宝玉迷迷惑惑，若有所失。众人忙端上桂圆\n汤来，呷了两口，遂起身整衣。袭人伸手与他系裤带时，不觉\n伸手至大腿处，只觉冰凉一片粘湿。唬的忙退出手来，问是怎\n么了。宝玉红涨了脸，把他手一捻。袭人本是个聪明女子，年\n纪本又比宝玉大两岁，近来也渐通人事，今见宝玉如此光景，\n心中便觉察了一半，不觉也羞的红涨了脸面，",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "MAIN_TEXT slice is continuous at the recorded offset; adjacent headers/annotations remain separate segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:97",
+          "physical_page_one_based": 97,
+          "pdf_page_index_zero_based": 96,
+          "start": 201,
+          "end": 436,
+          "extraction_page_sha256": "527a530db80a6c222919700a8bb7c0015c342fd957856ce4a0fae7dec44563a1",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:7:p00004",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 7,
+      "kind": "MAIN_TEXT",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_MAIN_FONT_SIZE_COLOR"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        112
+      ],
+      "pdf_page_indexes_zero_based": [
+        111
+      ],
+      "text_sha256": "93d9175395a5a0781117e720b453b5cbbc2d171c78ad35e3e16ee4387d882f13",
+      "observed_text": " \n  题曰： \n    十二花容色最新，不知谁是惜花人？ \n    相逢若问名何氏？家住江南姓本秦。 \n \n  话说周瑞家的送了刘姥姥去后，便上来回王夫人话。",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "MAIN_TEXT slice is continuous at the recorded offset; adjacent headers/annotations remain separate segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:112",
+          "physical_page_one_based": 112,
+          "pdf_page_index_zero_based": 111,
+          "start": 123,
+          "end": 203,
+          "extraction_page_sha256": "05f7c5f36a8df1567964852929e97be694b98111f0f45ec3306cc4b1414879b4",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:8:p00004",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 8,
+      "kind": "MAIN_TEXT",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_MAIN_FONT_SIZE_COLOR"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        128
+      ],
+      "pdf_page_indexes_zero_based": [
+        127
+      ],
+      "text_sha256": "a00031edc2519de60f651cd82b5e510f2c72b4478b38f2b23f1659513f333e07",
+      "observed_text": " \n  题曰： \n    古鼎新烹凤髓香，那堪翠斝贮琼浆。 \n    莫言绮縠无风韵，试看金娃对玉郎。 \n \n  话说凤姐和宝玉回家，见过众人。宝玉先便回明贾母，秦\n钟要上家塾之事，自己也有了个伴读的朋友，正好发奋，",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "MAIN_TEXT slice is continuous at the recorded offset; adjacent headers/annotations remain separate segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:128",
+          "physical_page_one_based": 128,
+          "pdf_page_index_zero_based": 127,
+          "start": 96,
+          "end": 204,
+          "extraction_page_sha256": "d4cfda244602ca15c384ea14169766a46e959f2aa8916f86af97803093c4753f",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:9:p00004",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 9,
+      "kind": "MAIN_TEXT",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_MAIN_FONT_SIZE_COLOR"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        145
+      ],
+      "pdf_page_indexes_zero_based": [
+        144
+      ],
+      "text_sha256": "5734c879be76335773934e9e9d56bdd290e83e129954e3afeba91cb6bea6fe5f",
+      "observed_text": " \n  话说秦业父子专候贾家的人来送上学择日之信。原来宝玉\n急于要和秦钟相遇，",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "MAIN_TEXT slice is continuous at the recorded offset; adjacent headers/annotations remain separate segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:145",
+          "physical_page_one_based": 145,
+          "pdf_page_index_zero_based": 144,
+          "start": 107,
+          "end": 146,
+          "extraction_page_sha256": "2a4d6572633d5becb0b527504e35e7707c53f686838ef432b3e7f5afec005494",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:10:p00004",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 10,
+      "kind": "MAIN_TEXT",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_MAIN_FONT_SIZE_COLOR"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        156
+      ],
+      "pdf_page_indexes_zero_based": [
+        155
+      ],
+      "text_sha256": "8e797637069ecfbe1907fff2ade1f754b955b25017bdde52ed7a386d1b0cc5f0",
+      "observed_text": " \n  话说金荣因人多势众，又兼贾瑞勒令，赔了不是，给秦钟\n磕了头，宝玉方才不吵闹了。大家散了学，金荣回到家中，越\n想越气，说：“秦钟不过是贾蓉的小舅子，又不是贾家的子孙，\n附学读书，也不过和我一样。他因仗着宝玉和他好，他就目中\n无人。他既是这样，就该行些正经事，人也没的说。他素日又\n和宝玉鬼鬼祟祟的，只当我们都是瞎子，看不见。今日他又去\n勾搭人，偏偏的撞在我眼里。",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "MAIN_TEXT slice is continuous at the recorded offset; adjacent headers/annotations remain separate segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:156",
+          "physical_page_one_based": 156,
+          "pdf_page_index_zero_based": 155,
+          "start": 94,
+          "end": 278,
+          "extraction_page_sha256": "6af9c3d022fae4ad97a8872bdc37fd8ecb176bacea157dfeeb61552ddb1a732e",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:1:p00001",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 1,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "HEADER_FOOTNOTE_TITLE_OR_COLLATION_MARKER"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 20.77
+          },
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 20.77
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        14
+      ],
+      "pdf_page_indexes_zero_based": [
+        13
+      ],
+      "text_sha256": "019ee86e6bf7f9b34a67881b8525ba6f64fc6bb3e81360a09865acb341e2ddc4",
+      "observed_text": "第 一 回 \n甄士隐梦幻识通灵 贾雨村风尘怀闺秀 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "EDITORIAL page furniture is kept separate from the neighboring source text.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:14",
+          "physical_page_one_based": 14,
+          "pdf_page_index_zero_based": 13,
+          "start": 24,
+          "end": 50,
+          "extraction_page_sha256": "899c80ba518dcb39e4dc0bedcd02e4c3973385c64a0ec1817275292ec5c4d1e6",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:chapter:1:p00003",
+      "stage": "stages/chapters-01-10.json",
+      "chapter": 1,
+      "kind": "ZHIPI",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_ANNOTATION_COLOR",
+          "WITNESS_LABEL_GLYPH"
+        ],
+        "styles": [
+          {
+            "color": 8032840,
+            "font": "00-GBK-EUC-H",
+            "size": 15.61
+          },
+          {
+            "color": 8032840,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 15.58
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        14
+      ],
+      "pdf_page_indexes_zero_based": [
+        13
+      ],
+      "text_sha256": "60ac17550dd4e0ba221dcd8195ee8874046da3985e0e504043bf460545d60113",
+      "observed_text": "庚此开卷第一回也。作者自云：因曾历过一番梦幻之后，\n故将真事隐去，而借通灵之说，撰此《石头记》一书也，故曰\n“甄士隐”云云。但书中所记何事何人？自又云：“今风尘碌\n碌，一事无成，忽念及当日所有之女子，一一细考较去，觉其\n行止见识皆出于我之上。何我堂堂须眉，诚不若此裙钗哉？",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "ZHIPI annotation is kept separate from the adjacent MAIN_TEXT and editorial marker segments.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:14",
+          "physical_page_one_based": 14,
+          "pdf_page_index_zero_based": 13,
+          "start": 56,
+          "end": 192,
+          "extraction_page_sha256": "899c80ba518dcb39e4dc0bedcd02e4c3973385c64a0ec1817275292ec5c4d1e6",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00003",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "APPENDIX",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_APPENDIX_SCOPE"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          },
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 15.58
+          },
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 12.11
+          },
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 15.58
+          },
+          {
+            "color": 2301728,
+            "font": "SimSun-GBK-EUC-H",
+            "size": 20.77
+          },
+          {
+            "color": 2301728,
+            "font": "TimesNewRomanPSMT",
+            "size": 10.38
+          },
+          {
+            "color": 2301728,
+            "font": "TimesNewRomanPSMT",
+            "size": 12.67
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1109,
+        1110
+      ],
+      "pdf_page_indexes_zero_based": [
+        1108,
+        1109
+      ],
+      "text_sha256": "1946c4dbbd9c65157c65a7812865f7abc4e6beb67f320b698f3debf0d9550f23",
+      "observed_text": " \n \n《红楼梦》各抄本收藏者序跋 \n \n \n刘 铨 福 跋 \n \n  李伯盂郎中言：翁叔平殿撰有原本而无脂批，与此文不同。 \n  《红楼梦》纷纷效颦者，无一可取。惟《痴人说梦》一种，\n及二知道人《红楼梦说梦》一种，尚可玩。惜不得与佟四哥三\n弦子一弹唱耳！ \n  此本是《石头记》真本。批者事皆目击，故得其详也。 \n                癸亥春日，白云吟客笔 \n \n  脂砚与雪芹同时人，目击种种事，故批笔不从臆度。原文\n与刊本有不同处，尚留真面。惜止存八卷，海内收藏家处有副\n本，愿抄补全之，则妙矣。 \n                 五月廿七日阅，又记 \n \n  《红楼梦》非但为小说别开生面，直是另一种笔墨。昔人\n文字有翻新法，学梵夹书；今则写西法轮齿，仿《考工记》。\n如《红楼梦》实出四大奇书之外，李贽、金圣叹皆未曾见也。 \n                      戊辰秋记 \n               （原载《脂砚斋甲戌抄阅再评石头记》卷末） \n \n \n \n附录一 《红楼梦》各抄本收藏者序跋 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "APPENDIX sample crosses the page break 1109→1110; the two recorded spans join one continuous appendix segment.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1109",
+          "physical_page_one_based": 1109,
+          "pdf_page_index_zero_based": 1108,
+          "start": 23,
+          "end": 467,
+          "extraction_page_sha256": "df8925dd4e4ea9ac856a52aca3074ed6cc9fa00aab2ffad20f2a9565014f7c6c",
+          "pdf_layout_contains_normalized_slice": true
+        },
+        {
+          "unit_ref": "pdf:page:1110",
+          "physical_page_one_based": 1110,
+          "pdf_page_index_zero_based": 1109,
+          "start": 0,
+          "end": 19,
+          "extraction_page_sha256": "e16518d6ed440923c11a64eb7a3b7d6bda95069fbf159882185bf57f06aeacc9",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00008",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1111
+      ],
+      "pdf_page_indexes_zero_based": [
+        1110
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1111",
+          "physical_page_one_based": 1111,
+          "pdf_page_index_zero_based": 1110,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "7720bba6c2039f8764e770e9d3d1e49ec75d1efb251fcfe5bb653f08e88ebb74",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00007",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1111
+      ],
+      "pdf_page_indexes_zero_based": [
+        1110
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1111",
+          "physical_page_one_based": 1111,
+          "pdf_page_index_zero_based": 1110,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "7720bba6c2039f8764e770e9d3d1e49ec75d1efb251fcfe5bb653f08e88ebb74",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00016",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1113
+      ],
+      "pdf_page_indexes_zero_based": [
+        1112
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1113",
+          "physical_page_one_based": 1113,
+          "pdf_page_index_zero_based": 1112,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "04a37c354a671b2a25206b58e4cc8707dc8394f13000317d7606ce063c932adc",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00015",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1113
+      ],
+      "pdf_page_indexes_zero_based": [
+        1112
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1113",
+          "physical_page_one_based": 1113,
+          "pdf_page_index_zero_based": 1112,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "04a37c354a671b2a25206b58e4cc8707dc8394f13000317d7606ce063c932adc",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00024",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1115
+      ],
+      "pdf_page_indexes_zero_based": [
+        1114
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1115",
+          "physical_page_one_based": 1115,
+          "pdf_page_index_zero_based": 1114,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "084ae828b372cd3a12d30d7b9aa3825aa6a0e9acf8c13172cd20b7faa4fb7aa2",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00023",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1115
+      ],
+      "pdf_page_indexes_zero_based": [
+        1114
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1115",
+          "physical_page_one_based": 1115,
+          "pdf_page_index_zero_based": 1114,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "084ae828b372cd3a12d30d7b9aa3825aa6a0e9acf8c13172cd20b7faa4fb7aa2",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00032",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1117
+      ],
+      "pdf_page_indexes_zero_based": [
+        1116
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1117",
+          "physical_page_one_based": 1117,
+          "pdf_page_index_zero_based": 1116,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "fa2956da80a1e189434d3cb78f862be3a5788a27657b1143694617854bea5e14",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00031",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1117
+      ],
+      "pdf_page_indexes_zero_based": [
+        1116
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1117",
+          "physical_page_one_based": 1117,
+          "pdf_page_index_zero_based": 1116,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "fa2956da80a1e189434d3cb78f862be3a5788a27657b1143694617854bea5e14",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00040",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1119
+      ],
+      "pdf_page_indexes_zero_based": [
+        1118
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1119",
+          "physical_page_one_based": 1119,
+          "pdf_page_index_zero_based": 1118,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "f4671de35a178909f94a8667dda65ed1ddffbe4d91be338aa0ac92882ee83312",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00039",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1119
+      ],
+      "pdf_page_indexes_zero_based": [
+        1118
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1119",
+          "physical_page_one_based": 1119,
+          "pdf_page_index_zero_based": 1118,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "f4671de35a178909f94a8667dda65ed1ddffbe4d91be338aa0ac92882ee83312",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00048",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1121
+      ],
+      "pdf_page_indexes_zero_based": [
+        1120
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1121",
+          "physical_page_one_based": 1121,
+          "pdf_page_index_zero_based": 1120,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "b4523da03e71df61ed8d42f6cbedbad345183ba679d910a66abd30ea406cad63",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00047",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1121
+      ],
+      "pdf_page_indexes_zero_based": [
+        1120
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1121",
+          "physical_page_one_based": 1121,
+          "pdf_page_index_zero_based": 1120,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "b4523da03e71df61ed8d42f6cbedbad345183ba679d910a66abd30ea406cad63",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00056",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1123
+      ],
+      "pdf_page_indexes_zero_based": [
+        1122
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1123",
+          "physical_page_one_based": 1123,
+          "pdf_page_index_zero_based": 1122,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "100f3c394d9be19850a401bee6e6433a1fb00389a6a633346055b832f593a885",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00055",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1123
+      ],
+      "pdf_page_indexes_zero_based": [
+        1122
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1123",
+          "physical_page_one_based": 1123,
+          "pdf_page_index_zero_based": 1122,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "100f3c394d9be19850a401bee6e6433a1fb00389a6a633346055b832f593a885",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00064",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1125
+      ],
+      "pdf_page_indexes_zero_based": [
+        1124
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1125",
+          "physical_page_one_based": 1125,
+          "pdf_page_index_zero_based": 1124,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "3e857eda9c96229cb798dd3e54c877595c7217b512122f3a0ca294373b012663",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00063",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1125
+      ],
+      "pdf_page_indexes_zero_based": [
+        1124
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1125",
+          "physical_page_one_based": 1125,
+          "pdf_page_index_zero_based": 1124,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "3e857eda9c96229cb798dd3e54c877595c7217b512122f3a0ca294373b012663",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00078",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1129
+      ],
+      "pdf_page_indexes_zero_based": [
+        1128
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1129",
+          "physical_page_one_based": 1129,
+          "pdf_page_index_zero_based": 1128,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "340b62481539aae57a77b0d6b38dbe23d39af5aa002d2950e156dbb39801b0c0",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00077",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1129
+      ],
+      "pdf_page_indexes_zero_based": [
+        1128
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1129",
+          "physical_page_one_based": 1129,
+          "pdf_page_index_zero_based": 1128,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "340b62481539aae57a77b0d6b38dbe23d39af5aa002d2950e156dbb39801b0c0",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00086",
+      "stage": "stages/appendix-01.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1131
+      ],
+      "pdf_page_indexes_zero_based": [
+        1130
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1131",
+          "physical_page_one_based": 1131,
+          "pdf_page_index_zero_based": 1130,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "07ee69bb3af10b6a7b44b40a0c0144eca715ff2b4d92ba1541ed24480d4c1d8f",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00085",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1131
+      ],
+      "pdf_page_indexes_zero_based": [
+        1130
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1131",
+          "physical_page_one_based": 1131,
+          "pdf_page_index_zero_based": 1130,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "07ee69bb3af10b6a7b44b40a0c0144eca715ff2b4d92ba1541ed24480d4c1d8f",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00094",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1133
+      ],
+      "pdf_page_indexes_zero_based": [
+        1132
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1133",
+          "physical_page_one_based": 1133,
+          "pdf_page_index_zero_based": 1132,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "a3a53b93088540e54266dbbb397bff85bc05e5108ab03a91b3f0a5c789fe6179",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00093",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1133
+      ],
+      "pdf_page_indexes_zero_based": [
+        1132
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1133",
+          "physical_page_one_based": 1133,
+          "pdf_page_index_zero_based": 1132,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "a3a53b93088540e54266dbbb397bff85bc05e5108ab03a91b3f0a5c789fe6179",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00102",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1135
+      ],
+      "pdf_page_indexes_zero_based": [
+        1134
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1135",
+          "physical_page_one_based": 1135,
+          "pdf_page_index_zero_based": 1134,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "93104f41518da3fd10cca19109339dc853f4add0b5359fcf1b91b54e54afcd76",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00101",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1135
+      ],
+      "pdf_page_indexes_zero_based": [
+        1134
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1135",
+          "physical_page_one_based": 1135,
+          "pdf_page_index_zero_based": 1134,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "93104f41518da3fd10cca19109339dc853f4add0b5359fcf1b91b54e54afcd76",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00110",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1137
+      ],
+      "pdf_page_indexes_zero_based": [
+        1136
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1137",
+          "physical_page_one_based": 1137,
+          "pdf_page_index_zero_based": 1136,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "a034506af7012608346508278f936f3c1923c123fc2af664d5e7dfec3463a75c",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00109",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1137
+      ],
+      "pdf_page_indexes_zero_based": [
+        1136
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1137",
+          "physical_page_one_based": 1137,
+          "pdf_page_index_zero_based": 1136,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "a034506af7012608346508278f936f3c1923c123fc2af664d5e7dfec3463a75c",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00118",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1139
+      ],
+      "pdf_page_indexes_zero_based": [
+        1138
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1139",
+          "physical_page_one_based": 1139,
+          "pdf_page_index_zero_based": 1138,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "0e63db6cc93964afc44083ffd26421a251a3ed555c02fc337fb29bc6b46f7fa3",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00117",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1139
+      ],
+      "pdf_page_indexes_zero_based": [
+        1138
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1139",
+          "physical_page_one_based": 1139,
+          "pdf_page_index_zero_based": 1138,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "0e63db6cc93964afc44083ffd26421a251a3ed555c02fc337fb29bc6b46f7fa3",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00126",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1141
+      ],
+      "pdf_page_indexes_zero_based": [
+        1140
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1141",
+          "physical_page_one_based": 1141,
+          "pdf_page_index_zero_based": 1140,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "441e0c4ff88cc376a957a35dcc199ef5f495e2711ef2b289a40506b36bcb1191",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00125",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1141
+      ],
+      "pdf_page_indexes_zero_based": [
+        1140
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1141",
+          "physical_page_one_based": 1141,
+          "pdf_page_index_zero_based": 1140,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "441e0c4ff88cc376a957a35dcc199ef5f495e2711ef2b289a40506b36bcb1191",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00134",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1143
+      ],
+      "pdf_page_indexes_zero_based": [
+        1142
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1143",
+          "physical_page_one_based": 1143,
+          "pdf_page_index_zero_based": 1142,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "a48d66ea9f50c0fdcffc0270f700a8d79e82e7cbc82055aeab5ce63b2785cd55",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00133",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1143
+      ],
+      "pdf_page_indexes_zero_based": [
+        1142
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1143",
+          "physical_page_one_based": 1143,
+          "pdf_page_index_zero_based": 1142,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "a48d66ea9f50c0fdcffc0270f700a8d79e82e7cbc82055aeab5ce63b2785cd55",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00142",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1145
+      ],
+      "pdf_page_indexes_zero_based": [
+        1144
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1145",
+          "physical_page_one_based": 1145,
+          "pdf_page_index_zero_based": 1144,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "793b18d22a98a1ecdbab26084d32baa398f4e2b7bf517578ae004186e87bef2b",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00141",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1145
+      ],
+      "pdf_page_indexes_zero_based": [
+        1144
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1145",
+          "physical_page_one_based": 1145,
+          "pdf_page_index_zero_based": 1144,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "793b18d22a98a1ecdbab26084d32baa398f4e2b7bf517578ae004186e87bef2b",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00150",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1147
+      ],
+      "pdf_page_indexes_zero_based": [
+        1146
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1147",
+          "physical_page_one_based": 1147,
+          "pdf_page_index_zero_based": 1146,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "0d535740c867a94c911f5e8e757ebfa865755d2219cfaf64fd3c1efe1a469281",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00149",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1147
+      ],
+      "pdf_page_indexes_zero_based": [
+        1146
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1147",
+          "physical_page_one_based": 1147,
+          "pdf_page_index_zero_based": 1146,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "0d535740c867a94c911f5e8e757ebfa865755d2219cfaf64fd3c1efe1a469281",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00158",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1149
+      ],
+      "pdf_page_indexes_zero_based": [
+        1148
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1149",
+          "physical_page_one_based": 1149,
+          "pdf_page_index_zero_based": 1148,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "b1f3b7bce843b4865c71e7eb73c2c8bb376177026f4b9aae2f35acb2a48bb2b9",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00157",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1149
+      ],
+      "pdf_page_indexes_zero_based": [
+        1148
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1149",
+          "physical_page_one_based": 1149,
+          "pdf_page_index_zero_based": 1148,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "b1f3b7bce843b4865c71e7eb73c2c8bb376177026f4b9aae2f35acb2a48bb2b9",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00166",
+      "stage": "stages/appendix-02.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1151
+      ],
+      "pdf_page_indexes_zero_based": [
+        1150
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1151",
+          "physical_page_one_based": 1151,
+          "pdf_page_index_zero_based": 1150,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "f001445635014682788443595325953ab2a0aad0360b5d8ac947016051adfafa",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00165",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1151
+      ],
+      "pdf_page_indexes_zero_based": [
+        1150
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1151",
+          "physical_page_one_based": 1151,
+          "pdf_page_index_zero_based": 1150,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "f001445635014682788443595325953ab2a0aad0360b5d8ac947016051adfafa",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00174",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1153
+      ],
+      "pdf_page_indexes_zero_based": [
+        1152
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1153",
+          "physical_page_one_based": 1153,
+          "pdf_page_index_zero_based": 1152,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "531c7bfc503d97bc9b9b2a3a774756628a9df5c888fb2398fd9c9a2e90cc4d7d",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00173",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1153
+      ],
+      "pdf_page_indexes_zero_based": [
+        1152
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1153",
+          "physical_page_one_based": 1153,
+          "pdf_page_index_zero_based": 1152,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "531c7bfc503d97bc9b9b2a3a774756628a9df5c888fb2398fd9c9a2e90cc4d7d",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00182",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1155
+      ],
+      "pdf_page_indexes_zero_based": [
+        1154
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1155",
+          "physical_page_one_based": 1155,
+          "pdf_page_index_zero_based": 1154,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "077634207445d19daf33bc57b7ce7e461c83200fea1768d872ee4aee3b5960ea",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00181",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1155
+      ],
+      "pdf_page_indexes_zero_based": [
+        1154
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1155",
+          "physical_page_one_based": 1155,
+          "pdf_page_index_zero_based": 1154,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "077634207445d19daf33bc57b7ce7e461c83200fea1768d872ee4aee3b5960ea",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00190",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1157
+      ],
+      "pdf_page_indexes_zero_based": [
+        1156
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1157",
+          "physical_page_one_based": 1157,
+          "pdf_page_index_zero_based": 1156,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "e726d9ac45efe2b292b63802e6f4d72b9c9dc43bfc21e20c96b860f184a05e93",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00189",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1157
+      ],
+      "pdf_page_indexes_zero_based": [
+        1156
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1157",
+          "physical_page_one_based": 1157,
+          "pdf_page_index_zero_based": 1156,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "e726d9ac45efe2b292b63802e6f4d72b9c9dc43bfc21e20c96b860f184a05e93",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00198",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1159
+      ],
+      "pdf_page_indexes_zero_based": [
+        1158
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1159",
+          "physical_page_one_based": 1159,
+          "pdf_page_index_zero_based": 1158,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "160854904231db352e15283227a976aa28f9829f350e83aaab5fb80bee273e07",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00197",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1159
+      ],
+      "pdf_page_indexes_zero_based": [
+        1158
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1159",
+          "physical_page_one_based": 1159,
+          "pdf_page_index_zero_based": 1158,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "160854904231db352e15283227a976aa28f9829f350e83aaab5fb80bee273e07",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00206",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1161
+      ],
+      "pdf_page_indexes_zero_based": [
+        1160
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1161",
+          "physical_page_one_based": 1161,
+          "pdf_page_index_zero_based": 1160,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "82e1c26e5b26bd8f76d46b6dd050c23dc2b333ca44a225e219ed691da2dc1a0c",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00205",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1161
+      ],
+      "pdf_page_indexes_zero_based": [
+        1160
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1161",
+          "physical_page_one_based": 1161,
+          "pdf_page_index_zero_based": 1160,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "82e1c26e5b26bd8f76d46b6dd050c23dc2b333ca44a225e219ed691da2dc1a0c",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00214",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "DECLARED_RUNNING_HEADER_LINE_IN_EDGE_STRIP"
+        ],
+        "styles": [
+          {
+            "color": 2301728,
+            "font": "KaiTi-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1163
+      ],
+      "pdf_page_indexes_zero_based": [
+        1162
+      ],
+      "text_sha256": "afa42fc61e375e938846891f6e111df66d8a307d4c193a55fa84a5020a66fb25",
+      "observed_text": "红楼梦脂评汇校本 \n",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "Running header is a separate EDITORIAL segment from the WATERMARK_FONT and invisible redactor line.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1163",
+          "physical_page_one_based": 1163,
+          "pdf_page_index_zero_based": 1162,
+          "start": 3,
+          "end": 13,
+          "extraction_page_sha256": "b52135e17e20d89025c53f8504c4c941ef3e26df831fd458159a3e18699d1408",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    },
+    {
+      "sample_id": "hlm80:appendix:all:p00213",
+      "stage": "stages/appendix-03.json",
+      "chapter": null,
+      "kind": "EDITORIAL",
+      "classification": {
+        "human_review": "PENDING",
+        "method": "DECLARED_PDF_TYPOGRAPHY_V2",
+        "reasons": [
+          "WATERMARK_FONT"
+        ],
+        "styles": [
+          {
+            "color": 15609134,
+            "font": "FZGLFW--GB1-0-GBK-EUC-H",
+            "size": 10.38
+          }
+        ]
+      },
+      "physical_pages_one_based": [
+        1163
+      ],
+      "pdf_page_indexes_zero_based": [
+        1162
+      ],
+      "text_sha256": "cfe5018e0eb7a23437baf9a20024ad84c6b23f2c9dfda40c1fe56726b2c083c5",
+      "observed_text": "撫琴居",
+      "checks": {
+        "context_entry_matches_stage": true,
+        "context_adjacent_segments_present": true,
+        "layer_matches_declared_classification": true,
+        "locator_spans_exist_in_issued_extraction": true,
+        "locator_slice_exact": true,
+        "text_sha256_matches": true,
+        "navigation_matches_locator_and_page_convention": true,
+        "original_pdf_layout_contains_normalized_slice": true
+      },
+      "boundary_observation": "WATERMARK_FONT line is a separate EDITORIAL segment from the running header on the same page.",
+      "verdict": "PASS",
+      "notes": "研究性核对通过；仅证明本样本的固定材料、层级、定位和局部上下文一致，不外推整回、全语料、文学质量或真人准入。",
+      "page_checks": [
+        {
+          "unit_ref": "pdf:page:1163",
+          "physical_page_one_based": 1163,
+          "pdf_page_index_zero_based": 1162,
+          "start": 0,
+          "end": 3,
+          "extraction_page_sha256": "b52135e17e20d89025c53f8504c4c941ef3e26df831fd458159a3e18699d1408",
+          "pdf_layout_contains_normalized_slice": true
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "F01",
+      "severity": "OBSERVATION",
+      "status": "PASS",
+      "finding": "前10回 staged samples 的 10 个 MAIN_TEXT 定位、层级声明、相邻上下文和原始 PDF 页对照均一致。"
+    },
+    {
+      "id": "F02",
+      "severity": "OBSERVATION",
+      "status": "PASS",
+      "finding": "第1回额外 EDITORIAL 标题与 ZHIPI 批语在同页与 MAIN_TEXT 分段清楚；没有把页眉、批语并入正文。"
+    },
+    {
+      "id": "F03",
+      "severity": "OBSERVATION",
+      "status": "PASS",
+      "finding": "附录首个 APPENDIX 样本跨物理页1109→1110，两段 locator 拼接后与 issued segment 完全一致。"
+    },
+    {
+      "id": "F04",
+      "severity": "OBSERVATION",
+      "status": "PASS",
+      "finding": "附录页的“撫琴居” WATERMARK_FONT 与“红楼梦脂评汇校本” running header 均保持为相邻但独立的 EDITORIAL segments；未把水印误并入页眉。"
+    },
+    {
+      "id": "F05",
+      "severity": "LIMITATION",
+      "status": "PENDING",
+      "finding": "本意见仅覆盖65/146样本；其余81项未读，不能作为 corpus-full-v2 完整审阅或真人准入依据。"
+    },
+    {
+      "id": "F06",
+      "severity": "LIMITATION",
+      "status": "PENDING",
+      "finding": "MODEL_SUBAGENT 与 RESEARCH_ONLY 声明保持不变；independent_human_admission=false，authority_effect=NONE。"
+    }
+  ],
+  "stage_inventory": [
+    {
+      "stage": "stages/appendix-01.json",
+      "sample_count": 20,
+      "sample_ids": [
+        "hlm80:appendix:all:p00003",
+        "hlm80:appendix:all:p00008",
+        "hlm80:appendix:all:p00007",
+        "hlm80:appendix:all:p00016",
+        "hlm80:appendix:all:p00015",
+        "hlm80:appendix:all:p00024",
+        "hlm80:appendix:all:p00023",
+        "hlm80:appendix:all:p00032",
+        "hlm80:appendix:all:p00031",
+        "hlm80:appendix:all:p00040",
+        "hlm80:appendix:all:p00039",
+        "hlm80:appendix:all:p00048",
+        "hlm80:appendix:all:p00047",
+        "hlm80:appendix:all:p00056",
+        "hlm80:appendix:all:p00055",
+        "hlm80:appendix:all:p00064",
+        "hlm80:appendix:all:p00063",
+        "hlm80:appendix:all:p00078",
+        "hlm80:appendix:all:p00077",
+        "hlm80:appendix:all:p00086"
+      ],
+      "read_in_this_opinion": true
+    },
+    {
+      "stage": "stages/appendix-02.json",
+      "sample_count": 20,
+      "sample_ids": [
+        "hlm80:appendix:all:p00085",
+        "hlm80:appendix:all:p00094",
+        "hlm80:appendix:all:p00093",
+        "hlm80:appendix:all:p00102",
+        "hlm80:appendix:all:p00101",
+        "hlm80:appendix:all:p00110",
+        "hlm80:appendix:all:p00109",
+        "hlm80:appendix:all:p00118",
+        "hlm80:appendix:all:p00117",
+        "hlm80:appendix:all:p00126",
+        "hlm80:appendix:all:p00125",
+        "hlm80:appendix:all:p00134",
+        "hlm80:appendix:all:p00133",
+        "hlm80:appendix:all:p00142",
+        "hlm80:appendix:all:p00141",
+        "hlm80:appendix:all:p00150",
+        "hlm80:appendix:all:p00149",
+        "hlm80:appendix:all:p00158",
+        "hlm80:appendix:all:p00157",
+        "hlm80:appendix:all:p00166"
+      ],
+      "read_in_this_opinion": true
+    },
+    {
+      "stage": "stages/appendix-03.json",
+      "sample_count": 13,
+      "sample_ids": [
+        "hlm80:appendix:all:p00165",
+        "hlm80:appendix:all:p00174",
+        "hlm80:appendix:all:p00173",
+        "hlm80:appendix:all:p00182",
+        "hlm80:appendix:all:p00181",
+        "hlm80:appendix:all:p00190",
+        "hlm80:appendix:all:p00189",
+        "hlm80:appendix:all:p00198",
+        "hlm80:appendix:all:p00197",
+        "hlm80:appendix:all:p00206",
+        "hlm80:appendix:all:p00205",
+        "hlm80:appendix:all:p00214",
+        "hlm80:appendix:all:p00213"
+      ],
+      "read_in_this_opinion": true
+    },
+    {
+      "stage": "stages/chapters-01-10.json",
+      "sample_count": 12,
+      "sample_ids": [
+        "hlm80:chapter:1:p00008",
+        "hlm80:chapter:2:p00009",
+        "hlm80:chapter:3:p00014",
+        "hlm80:chapter:4:p00006",
+        "hlm80:chapter:5:p00004",
+        "hlm80:chapter:6:p00007",
+        "hlm80:chapter:7:p00004",
+        "hlm80:chapter:8:p00004",
+        "hlm80:chapter:9:p00004",
+        "hlm80:chapter:10:p00004",
+        "hlm80:chapter:1:p00001",
+        "hlm80:chapter:1:p00003"
+      ],
+      "read_in_this_opinion": true
+    },
+    {
+      "stage": "stages/chapters-11-20.json",
+      "sample_count": 10,
+      "sample_ids": [
+        "hlm80:chapter:11:p00004",
+        "hlm80:chapter:12:p00004",
+        "hlm80:chapter:13:p00013",
+        "hlm80:chapter:14:p00007",
+        "hlm80:chapter:15:p00007",
+        "hlm80:chapter:16:p00009",
+        "hlm80:chapter:17:p00005",
+        "hlm80:chapter:18:p00004",
+        "hlm80:chapter:19:p00007",
+        "hlm80:chapter:20:p00004"
+      ],
+      "read_in_this_opinion": false
+    },
+    {
+      "stage": "stages/chapters-21-30.json",
+      "sample_count": 10,
+      "sample_ids": [
+        "hlm80:chapter:21:p00011",
+        "hlm80:chapter:22:p00004",
+        "hlm80:chapter:23:p00006",
+        "hlm80:chapter:24:p00004",
+        "hlm80:chapter:25:p00004",
+        "hlm80:chapter:26:p00004",
+        "hlm80:chapter:27:p00004",
+        "hlm80:chapter:28:p00004",
+        "hlm80:chapter:29:p00004",
+        "hlm80:chapter:30:p00004"
+      ],
+      "read_in_this_opinion": false
+    },
+    {
+      "stage": "stages/chapters-31-40.json",
+      "sample_count": 10,
+      "sample_ids": [
+        "hlm80:chapter:31:p00004",
+        "hlm80:chapter:32:p00006",
+        "hlm80:chapter:33:p00004",
+        "hlm80:chapter:34:p00004",
+        "hlm80:chapter:35:p00004",
+        "hlm80:chapter:36:p00006",
+        "hlm80:chapter:37:p00007",
+        "hlm80:chapter:38:p00004",
+        "hlm80:chapter:39:p00004",
+        "hlm80:chapter:40:p00004"
+      ],
+      "read_in_this_opinion": false
+    },
+    {
+      "stage": "stages/chapters-41-50.json",
+      "sample_count": 10,
+      "sample_ids": [
+        "hlm80:chapter:41:p00006",
+        "hlm80:chapter:42:p00006",
+        "hlm80:chapter:43:p00004",
+        "hlm80:chapter:44:p00004",
+        "hlm80:chapter:45:p00004",
+        "hlm80:chapter:46:p00006",
+        "hlm80:chapter:47:p00004",
+        "hlm80:chapter:48:p00010",
+        "hlm80:chapter:49:p00006",
+        "hlm80:chapter:50:p00004"
+      ],
+      "read_in_this_opinion": false
+    },
+    {
+      "stage": "stages/chapters-51-60.json",
+      "sample_count": 10,
+      "sample_ids": [
+        "hlm80:chapter:51:p00004",
+        "hlm80:chapter:52:p00004",
+        "hlm80:chapter:53:p00004",
+        "hlm80:chapter:54:p00008",
+        "hlm80:chapter:55:p00004",
+        "hlm80:chapter:56:p00004",
+        "hlm80:chapter:57:p00004",
+        "hlm80:chapter:58:p00004",
+        "hlm80:chapter:59:p00004",
+        "hlm80:chapter:60:p00004"
+      ],
+      "read_in_this_opinion": false
+    },
+    {
+      "stage": "stages/chapters-61-70.json",
+      "sample_count": 21,
+      "sample_ids": [
+        "hlm80:chapter:61:p00004",
+        "hlm80:chapter:62:p00006",
+        "hlm80:chapter:63:p00004",
+        "hlm80:chapter:64:p00004",
+        "hlm80:chapter:65:p00006",
+        "hlm80:chapter:66:p00004",
+        "hlm80:chapter:67:p00002",
+        "hlm80:chapter:68:p00004",
+        "hlm80:chapter:69:p00004",
+        "hlm80:chapter:70:p00004",
+        "hlm80:chapter:67:p00038",
+        "hlm80:chapter:67:p00040",
+        "hlm80:chapter:67:p00039",
+        "hlm80:chapter:67:p00048",
+        "hlm80:chapter:67:p00047",
+        "hlm80:chapter:67:p00056",
+        "hlm80:chapter:67:p00055",
+        "hlm80:chapter:67:p00064",
+        "hlm80:chapter:67:p00063",
+        "hlm80:chapter:67:p00072",
+        "hlm80:chapter:67:p00071"
+      ],
+      "read_in_this_opinion": false
+    },
+    {
+      "stage": "stages/chapters-71-80.json",
+      "sample_count": 10,
+      "sample_ids": [
+        "hlm80:chapter:71:p00004",
+        "hlm80:chapter:72:p00004",
+        "hlm80:chapter:73:p00004",
+        "hlm80:chapter:74:p00004",
+        "hlm80:chapter:75:p00010",
+        "hlm80:chapter:76:p00004",
+        "hlm80:chapter:77:p00004",
+        "hlm80:chapter:78:p00004",
+        "hlm80:chapter:79:p00004",
+        "hlm80:chapter:80:p00004"
+      ],
+      "read_in_this_opinion": false
+    }
+  ],
+  "validation": {
+    "status": "PASS",
+    "checks_run": [
+      "python /tmp/verify_corpus_v2_model_opinion.py"
+    ],
+    "reproduction_commands": [
+      "PYTHONPATH=src /home/guan/rcwh-review-venv/bin/python tools/prepare_corpus_v2_review.py --check",
+      "python /tmp/verify_corpus_v2_model_opinion.py"
+    ]
+  }
+}
