@@ -1,16 +1,14 @@
 """Care-order repairs constrain prose order without inventing knowledge or total order."""
-import importlib
 import json
 from pathlib import Path
 
+import prepare_ch86_care_order as amendment
 from rcwh.generation.local_scenario import compile_scenario
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
-def test_care_precedes_triggered_observation_and_arrival(monkeypatch):
-    monkeypatch.syspath_prepend(str(ROOT / 'tools'))
-    amendment = importlib.import_module('prepare_ch86_care_order')
+def test_care_precedes_triggered_observation_and_arrival():
     assert amendment.verify(ROOT)['semantic_status'] == 'PENDING'
     model = json.loads((ROOT / amendment.SCENARIO).read_bytes())
     checkpoints = compile_scenario(model)['checkpoints']

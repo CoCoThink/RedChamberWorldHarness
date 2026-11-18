@@ -1,5 +1,4 @@
 """Snapshot preparation refuses input drift and only copies declared new outputs."""
-import importlib.util
 import json
 from pathlib import Path
 from types import SimpleNamespace
@@ -8,10 +7,9 @@ import pytest
 
 from rcwh.candidate_reviews import canonical_bytes
 
+import prepare_research_revisions as TOOL
+
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = importlib.util.spec_from_file_location('snapshot_revisions', ROOT / 'tools/prepare_research_revisions.py')
-TOOL = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(TOOL)
 
 
 @pytest.fixture

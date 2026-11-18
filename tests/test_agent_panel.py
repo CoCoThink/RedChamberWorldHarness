@@ -335,22 +335,22 @@ def test_subject_path_safety_rejects_external_or_noncanonical_paths(repo, unsafe
 
 
 @pytest.mark.parametrize("symlink", ["input", "packet", "subject", "store-parent"])
-def test_symlinks_are_rejected_for_input_packet_subject_and_storage(repo, symlink, tmp_path):
+def test_symlinks_are_rejected_for_input_packet_subject_and_storage(repo, symlink, tmp_path, create_symlink):
     binding, packet = make_packet(repo, ("CANDIDATE",))
     value = opinion(binding, packet)
     file = save(repo, "incoming/opinion.json", value)
     if symlink == "input":
         link = repo / "incoming/link.json"
-        link.symlink_to(file)
+        create_symlink(link, file)
         file = link
     elif symlink in ("packet", "subject"):
         target = repo / (binding["path"] if symlink == "packet" else packet["subjects"][0]["binding"]["path"])
         original = tmp_path / "original"
         original.write_bytes(target.read_bytes())
         target.unlink()
-        target.symlink_to(original)
+        create_symlink(target, original)
     else:
-        (repo / "data/agent_panel").symlink_to(tmp_path, target_is_directory=True)
+        create_symlink(repo / "data/agent_panel", tmp_path, target_is_directory=True)
     with pytest.raises(ValueError):
         panel.register(repo, file, origin="test:symlink")
 

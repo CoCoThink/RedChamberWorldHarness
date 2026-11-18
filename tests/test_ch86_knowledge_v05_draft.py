@@ -1,10 +1,8 @@
 import json
-import sys
 from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 from prepare_ch86_knowledge_v05_draft import ROOT, OUTPUT, SOURCE, build
 from rcwh.knowledge import CharacterKnowledgeRuntime
 

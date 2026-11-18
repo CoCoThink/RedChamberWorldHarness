@@ -135,6 +135,8 @@ def test_missing_or_malformed_entry_anchor_reports_failure(isolated, anchor):
 
 def test_anchor_fifo_rejected_without_blocking(isolated):
     import os
+    if not hasattr(os, "mkfifo"):
+        pytest.skip("FIFO creation is not supported on this platform")
     root, request, _, _ = isolated
     os.mkfifo(root / "anchor.json")
     report = check_policy_inventory(root, {"path": "anchor.json", "sha256": "0" * 64}, request)

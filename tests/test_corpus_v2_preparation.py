@@ -1,8 +1,10 @@
 """Corpus v2 handouts do not manufacture independent human evidence."""
-import importlib.util
 import json
+import os
 import socket
 from pathlib import Path
+import subprocess
+import sys
 
 import pytest
 
@@ -12,10 +14,9 @@ from test_source_extraction import extraction_repo  # noqa: F401
 from test_corpus_dataset import corpus_repo, DATASET  # noqa: F401
 from test_corpus_audit import audit_repo  # noqa: F401
 
+import rcwh.workflow.corpus_review_preparation as prep
+
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = importlib.util.spec_from_file_location('prepare_corpus_v2_review',ROOT/'tools/prepare_corpus_v2_review.py')
-prep = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(prep)
 
 
 @pytest.fixture(scope='module')
@@ -102,3 +103,21 @@ def test_cli_accepts_v2_lane_without_changing_v1_mapping():
     assert args.lane=='corpus-full-v2'
     assert intake.DATASETS['corpus-full']=='corpus:front80:v1-candidate'
     assert intake.selection_path('corpus-full')!=intake.selection_path('corpus-full-v2')
+
+
+def test_preparation_cli_checks_issued_materials_and_reports_live_audit(prepared):
+    environment = os.environ.copy()
+    environment['PYTHONPATH'] = str(ROOT / 'src')
+    result = subprocess.run(
+        [sys.executable, '-X', 'utf8', str(ROOT / 'tools/prepare_corpus_v2_review.py'),
+         '--root', str(ROOT), '--output', str(ROOT / prep.OUTPUT), '--check', '--live-audit'],
+        capture_output=True, check=True, env=environment,
+    )
+    report = json.loads(result.stdout)
+    from rcwh.assets import AssetCatalog
+    from rcwh.corpus.audit import CorpusAudit
+
+    assert report.pop('live_audit') == CorpusAudit(AssetCatalog.from_repo(ROOT)).summary(
+        intake.DATASETS[prep.LANE], rebuild=False)
+    assert report == prep.prepare(ROOT, ROOT / prep.OUTPUT, check=True)
+    assert report['file_count'] == len(prepared)

@@ -1,6 +1,5 @@
 """Research-only synthetic releases: no real prose editions are created."""
 from copy import deepcopy
-import importlib.util
 import json
 from pathlib import Path
 from types import SimpleNamespace
@@ -13,11 +12,9 @@ from rcwh.candidate_reviews import canonical_bytes
 from rcwh.workflow.agent_panel import AgentPanel, register
 from rcwh.workflow.agent_release import AgentRelease, _split
 
+import verify_agent_release as SMOKE
 
 ROOT = Path(__file__).resolve().parents[1]
-SMOKE_SPEC = importlib.util.spec_from_file_location('verify_agent_release', ROOT / 'tools/verify_agent_release.py')
-SMOKE = importlib.util.module_from_spec(SMOKE_SPEC)
-SMOKE_SPEC.loader.exec_module(SMOKE)
 
 
 def write(root, path, value):
@@ -461,15 +458,15 @@ def test_candidate_path_safety(edition, monkeypatch, path):
     assert e.runtime.evaluate(e.request)["status"] == "FAIL"
 
 
-def test_symlink_output_and_candidate_are_refused(edition, monkeypatch):
+def test_symlink_output_and_candidate_are_refused(edition, monkeypatch, create_symlink):
     e = edition
     positive_gates(e, monkeypatch)
     symlink = e.root / "artifacts/link.md"
-    symlink.symlink_to(e.root / e.candidate["path"])
+    create_symlink(symlink, e.root / e.candidate["path"])
     e.request["chapters"][0]["candidate"] = {**e.candidate, "path": "artifacts/link.md"}
     assert e.runtime.evaluate(e.request)["status"] == "FAIL"
     e.request["chapters"][0]["candidate"] = e.candidate
-    (e.root / "releases/agent").symlink_to(e.root / "releases/stable", target_is_directory=True)
+    create_symlink(e.root / "releases/agent", e.root / "releases/stable", target_is_directory=True)
     with pytest.raises(AssetError, match="symlink"):
         e.runtime.build(e.request)
 

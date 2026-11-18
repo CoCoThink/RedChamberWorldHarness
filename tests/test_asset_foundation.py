@@ -77,9 +77,9 @@ def test_external_or_noncanonical_paths_fail(asset_repo, path):
     assert any("unsafe repository path" in e for e in AssetCatalog.from_repo(root).validate())
 
 
-def test_symlinked_carrier_is_rejected_even_inside_repo(asset_repo):
+def test_symlinked_carrier_is_rejected_even_inside_repo(asset_repo, create_symlink):
     root, document, origin = asset_repo
-    (root / "sources/link.txt").symlink_to("carrier.txt")
+    create_symlink(root / "sources/link.txt", "carrier.txt")
     document["assets"][0]["path"] = "sources/link.txt"
     write_catalog(root, document, [origin])
     assert any("symlink" in e for e in AssetCatalog.from_repo(root).validate())

@@ -149,7 +149,7 @@ def test_same_policy_bytes_different_path_preserves_negative(isolated):
 
 
 @pytest.mark.parametrize("fault", ["receipt_missing", "receipt_corrupt", "extra_symlink", "schema_changed"])
-def test_bad_member_cannot_hide_readable_raw_negative(isolated, fault):
+def test_bad_member_cannot_hide_readable_raw_negative(isolated, fault, create_symlink):
     root, request, reading, text = isolated
     reading["checks"][0].update(finding="VIOLATED", support=[{
         "file": request["context"]["selected"]["candidate"], "start": 0, "end": 2, "quote": text[:2]}])
@@ -165,7 +165,7 @@ def test_bad_member_cannot_hide_readable_raw_negative(isolated, fault):
         changed["extra"] = "new unsupported field"
         raw.write_bytes(canonical_bytes(changed))
     else:
-        (root / DIRECTORY / "extra-link").symlink_to(root / "candidate.txt")
+        create_symlink(root / DIRECTORY / "extra-link", root / "candidate.txt")
     report = policy_reading_summary(root, request)
     assert report["integrity_status"] == "FAIL"
     negatives = report["active_negative_declarations"] + report["unverified_negative_declarations"]
@@ -228,6 +228,8 @@ def test_nonobject_request_does_not_crash_or_hide_raw_negative(isolated, payload
 
 def test_fifo_receipt_is_rejected_without_reading(isolated):
     import os
+    if not hasattr(os, "mkfifo"):
+        pytest.skip("FIFO creation is not supported on this platform")
     root, request, reading, _ = isolated
     result = register_policy_reading(root, request, save(root, reading), origin="fixture")
     path = root / result["bundle"] / "receipt.json"
@@ -268,9 +270,13 @@ def test_summary_refuses_to_read_mid_publish(isolated):
     from rcwh.evaluation.policy_readings import _registry_lock
     register_policy_reading(root, request, save(root, reading), origin="fixture")
     with _registry_lock(root):
+        with pytest.raises(OSError) as lock_error:
+            with _registry_lock(root, writer=False):
+                pytest.fail("reader acquired the writer's lock")
         report = policy_reading_summary(root, request)
         assert report["integrity_status"] == "FAIL"
-        assert any("temporarily unavailable" in item.lower() or "resource" in item.lower() for item in report["findings"])
+        assert report["findings"] == [str(lock_error.value)]
+        assert not report["records"]
     assert len(policy_reading_summary(root, request)["records"]) == 1
 
 
@@ -284,24 +290,24 @@ def test_same_registry_concurrent_writer_lock_refuses_second_intake(isolated):
     assert not (root / DIRECTORY).exists()
 
 
-def test_intake_rejects_link_and_blank_origin(isolated):
+def test_intake_rejects_link_and_blank_origin(isolated, create_symlink):
     root, request, reading, _ = isolated
     file = save(root, reading)
     with pytest.raises(ValueError):
         register_policy_reading(root, request, file, origin=" ")
     link = root / "link.json"
-    link.symlink_to(file)
+    create_symlink(link, file)
     with pytest.raises(ValueError):
         register_policy_reading(root, request, link, origin="fixture")
 
 
-def test_registry_directory_symlink_reports_integrity_failure(isolated):
+def test_registry_directory_symlink_reports_integrity_failure(isolated, create_symlink):
     root, request, _, _ = isolated
     outside = root / "other"
     outside.mkdir()
     base = root / DIRECTORY
     base.parent.mkdir(parents=True, exist_ok=True)
-    base.symlink_to(outside, target_is_directory=True)
+    create_symlink(base, outside, target_is_directory=True)
     report = policy_reading_summary(root, request)
     assert report["status"] == report["integrity_status"] == "FAIL"
 

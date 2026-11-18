@@ -28,17 +28,17 @@ def test_v3_revision_import_keeps_exact_immediate_parent_and_new_template(sessio
     root = session_root
     first, feedback = parent_and_feedback(root)
     second_request = prepare_request(root, parent_path=first['draft']['path'], feedback_path=feedback['path'], revision_template='revise-v2')
-    saved(root, 'second.json', second_request); (root/'second.txt').write_text('甲把旧信放回抽屉，转身问乙。\n')
+    saved(root, 'second.json', second_request); (root/'second.txt').write_bytes('甲把旧信放回抽屉，转身问乙。\r\n'.encode('utf-8'))
     second = import_draft(root,'second.txt','second.json',session_id='session-test',session_model_label='unverified')
     f = feedback_report(root, second['draft']['path']); f['checks'].append({'status':'FAIL','reason':'keep this negative finding'})
     fref = store(root,'data/writing/feedback',f)
     packet = prepare_request(root,parent_path=second['draft']['path'],feedback_path=fref['path'],revision_template='revise-v3')
     assert packet['parent'] == second['draft']
     assert packet['task']['writing_task'] == second_request['task']['writing_task']
-    assert packet['task']['original'] == (root/'second.txt').read_text()
+    assert packet['task']['original'] == (root/'second.txt').read_bytes().decode('utf-8')
     assert packet['task']['feedback'] == f
     assert verify_prepared_request(root, packet)['template']['path'].endswith('revise-v3.md')
-    saved(root,'third.json',packet);(root/'third.txt').write_text('乙看着抽屉，没有接话。\n')
+    saved(root,'third.json',packet);(root/'third.txt').write_text('乙看着抽屉，没有接话。\n', encoding='utf-8')
     third = import_draft(root,'third.txt','third.json',session_id='session-test',session_model_label='unverified')
     d,_ = load_draft(root,third['draft']['path']);assert d['parent']==second['draft']
     packet['task']['feedback']['checks'][-1]['status']='PASS'

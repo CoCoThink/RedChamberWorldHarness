@@ -1,5 +1,4 @@
 """Import staging preserves exact bytes and refuses original-input drift."""
-import importlib.util
 import json
 from pathlib import Path
 import shutil
@@ -9,10 +8,9 @@ import pytest
 
 from rcwh.candidate_reviews import canonical_bytes, digest
 
+import import_research_revision as TOOL
+
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = importlib.util.spec_from_file_location('snapshot_import', ROOT / 'tools/import_research_revision.py')
-TOOL = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(TOOL)
 
 
 @pytest.fixture

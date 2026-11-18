@@ -1,12 +1,10 @@
 import json
 import hashlib
 import shutil
-import sys
 from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 from prepare_v04_knowledge_review import BASE, EVIDENCE, JOBS, PROJECTION, ROOT, TOPICS, run
 from verify_v04_knowledge_opinions import verify
 

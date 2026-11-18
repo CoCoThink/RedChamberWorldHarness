@@ -265,19 +265,19 @@ def test_current_renderer_changes_do_not_reinterpret_historical_requests(writing
     assert current_compatibility(root, first['draft']['path'])['compatibility'] == 'STALE'
 
 
-def test_current_symlink_cannot_replace_a_frozen_blob_but_can_retire_a_logical_path(writing_root):
+def test_current_symlink_cannot_replace_a_frozen_blob_but_can_retire_a_logical_path(writing_root, create_symlink):
     root = writing_root
     prepare(root)
     first = imported(root)
     original = root / 'data/world/version.json'
     original.unlink()
-    original.symlink_to(root / 'input.json')
+    create_symlink(original, root / 'input.json')
     assert load_draft(root, first['draft']['path'])[1]
     assert current_compatibility(root, first['draft']['path'])['compatibility'] == 'STALE'
     frozen = InputSnapshot(root, first['input_snapshot'])
     blob = root / next(iter(frozen.entries.values()))['path']
     blob.unlink()
-    blob.symlink_to(root / 'input.json')
+    create_symlink(blob, root / 'input.json')
     with pytest.raises(ValueError, match='symlink'):
         load_draft(root, first['draft']['path'])
 

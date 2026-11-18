@@ -9,6 +9,17 @@ from rcwh.workflow import ProjectState
 
 ROOT = Path(__file__).resolve().parents[1]
 
+@pytest.fixture
+def create_symlink():
+    def create(link, target, *, target_is_directory=False):
+        try:
+            link.symlink_to(target, target_is_directory=target_is_directory)
+        except OSError as exc:
+            if getattr(exc, "winerror", None) == 1314:
+                pytest.skip(f"symlink creation requires Windows privileges: {exc}")
+            raise
+    return create
+
 
 @pytest.fixture
 def production_unchanged():

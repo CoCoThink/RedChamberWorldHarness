@@ -1,5 +1,4 @@
 """Review custody fails closed without changing a reader's judgment."""
-import importlib.util
 import json
 from pathlib import Path
 import shutil
@@ -9,11 +8,10 @@ import pytest
 from rcwh.candidate_reviews import canonical_bytes
 from rcwh.generation.records import binding
 
+import verify_ch86_knowledge_review as review
+
 ROOT = Path(__file__).resolve().parents[1]
 BASE = 'artifacts/local-scenario-ch86-knowledge-split/review'
-spec = importlib.util.spec_from_file_location('knowledge_review', ROOT / 'tools/verify_ch86_knowledge_review.py')
-review = importlib.util.module_from_spec(spec)
-spec.loader.exec_module(review)
 
 
 @pytest.fixture

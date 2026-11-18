@@ -1,19 +1,13 @@
 """Adversarial tests of current evidence admission, using only tmp synthetic data."""
-import importlib.util
 import json
 from copy import deepcopy
 from pathlib import Path
-import sys
 
 import pytest
 from rcwh.candidate_reviews import canonical_bytes
 from rcwh.generation.records import binding
 
-TOOLS = Path(__file__).resolve().parents[1] / 'tools'
-sys.path.insert(0, str(TOOLS))
-SPEC = importlib.util.spec_from_file_location('verify_contract_revision', TOOLS / 'verify_contract_revision.py')
-GUARD = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(GUARD)
+import verify_contract_revision as GUARD
 
 
 def write(root, path, data):

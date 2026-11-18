@@ -106,7 +106,7 @@ def test_honest_draft_schema_no_edits_and_new_revision_only(tmp_path):
     assert {ref: (root / ref).read_bytes() for ref in before} == before
 
 
-def test_selection_stays_in_overlay_tree_and_rejects_symlink(tmp_path):
+def test_selection_stays_in_overlay_tree_and_rejects_symlink(tmp_path, create_symlink):
     root = fixture_repo(tmp_path)
     value = draft_contract(root, SEED, PACKET)
     for directory in ("data/scenes", "data/planning/contracts", "data/planning/contracts/../chapters"):
@@ -117,7 +117,7 @@ def test_selection_stays_in_overlay_tree_and_rejects_symlink(tmp_path):
     other = root / "elsewhere"
     other.mkdir()
     target.rmdir()
-    target.symlink_to(other, target_is_directory=True)
+    create_symlink(target, other, target_is_directory=True)
     with pytest.raises(ValueError, match="symlink"):
         AgentContracts(root, SELECTION)
 
@@ -172,14 +172,14 @@ def test_relocated_selection_accepts_only_byte_identical_predecessor(tmp_path):
     assert any(c["code"] == "SCENE_CHAIN_MISMATCH" for c in report["checks"])
 
 
-def test_predecessor_alias_rejects_escape_missing_and_symlink(tmp_path):
+def test_predecessor_alias_rejects_escape_missing_and_symlink(tmp_path, create_symlink):
     from rcwh.planning.checking import _identical_selected_predecessor
     root = fixture_repo(tmp_path)
     store(root, "selected.json", {"id": "s"})
     assert not _identical_selected_predecessor(root, "../selected.json", "selected.json")
     assert not _identical_selected_predecessor(root, "missing.json", "selected.json")
     assert not _identical_selected_predecessor(root, "selected.json", None)
-    (root / "alias.json").symlink_to(root / "selected.json")
+    create_symlink(root / "alias.json", root / "selected.json")
     assert not _identical_selected_predecessor(root, "alias.json", "selected.json")
 
 

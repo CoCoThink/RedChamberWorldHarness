@@ -20,7 +20,7 @@ ROOT = Path(__file__).resolve().parents[1]
 def root(tmp_path, monkeypatch):
     shutil.copytree(ROOT / 'schemas', tmp_path / 'schemas')
     shutil.copytree(ROOT / 'data/writing/prompts', tmp_path / 'data/writing/prompts')
-    (tmp_path / 'input.json').write_text('{}\n')
+    (tmp_path / 'input.json').write_bytes(b'{}\n')
     def forbidden(*args, **kwargs):
         raise AssertionError('network forbidden')
     monkeypatch.setattr(socket, 'socket', forbidden)
@@ -89,13 +89,13 @@ def test_raw_response_and_input_tampering_rejected(root):
         load_draft(root, result['draft']['path'])
 
 
-def test_append_only_safe_paths(root):
+def test_append_only_safe_paths(root, create_symlink):
     ref = append_bytes(root, 'artifacts/test.txt', b'first')
     with pytest.raises(FileExistsError):
         append_bytes(root, ref['path'], b'second')
     with pytest.raises(ValueError):
         append_bytes(root, '../escape', b'bad')
-    (root / 'link').symlink_to(root / 'artifacts', target_is_directory=True)
+    create_symlink(root / 'link', root / 'artifacts', target_is_directory=True)
     with pytest.raises(ValueError):
         append_bytes(root, 'link/new.txt', b'bad')
     assert not list((root / 'artifacts').glob('.generation-*'))

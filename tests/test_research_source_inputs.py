@@ -173,13 +173,13 @@ def test_path_traversal_rejected(research, path, target):
 
 
 @pytest.mark.parametrize("directory_link", [False, True])
-def test_symlink_rejected_even_when_target_is_inside_repository(research, directory_link):
+def test_symlink_rejected_even_when_target_is_inside_repository(research, directory_link, create_symlink):
     research.publish_records()
     if directory_link:
-        (research.root / "linked").symlink_to(research.root / "research", target_is_directory=True)
+        create_symlink(research.root / "linked", research.root / "research", target_is_directory=True)
         path = "linked/sources.json"
     else:
-        (research.root / "research/link.json").symlink_to(research.root / "research/sources.json")
+        create_symlink(research.root / "research/link.json", research.root / "research/sources.json")
         path = "research/link.json"
     research.spec["source_bindings"][0]["path"] = path
     assert_failed(research.load(research.publish_spec()), "symlink is not an asset")

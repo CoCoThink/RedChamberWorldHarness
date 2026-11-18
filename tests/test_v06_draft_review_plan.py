@@ -1,12 +1,10 @@
 import hashlib
 import json
 import shutil
-import sys
 from pathlib import Path
 
 import pytest
 
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / 'tools'))
 from prepare_v06_draft_review import BASE, ROOT, documents, run
 from verify_v06_draft_opinions import verify
 
@@ -66,7 +64,7 @@ def test_opinion_validation_fails_closed_and_checks_custody(tmp_path):
         path.parent.mkdir(parents=True, exist_ok=True)
         path.write_text(json.dumps(record))
         attempts.append({'job_id': job, 'context_fork': 'all', 'opinion': {
-            'path': str(path.relative_to(tmp_path)), 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}})
+            'path': path.relative_to(tmp_path).as_posix(), 'sha256': hashlib.sha256(path.read_bytes()).hexdigest()}})
     custody = tmp_path / BASE / 'opinions' / 'custody.json'
     custody.write_text(json.dumps({'kind': 'CH86_V06_DRAFT_REVIEW_CUSTODY',
         'basis': 'ORCHESTRATOR_RECORDED', 'attempts': attempts, 'production_admission': 'NOT_GRANTED'}))

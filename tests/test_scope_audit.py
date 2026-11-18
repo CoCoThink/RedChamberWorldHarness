@@ -1,6 +1,10 @@
 from copy import deepcopy
 import json
+import os
 from pathlib import Path
+import runpy
+import subprocess
+import sys
 
 import pytest
 
@@ -84,9 +88,7 @@ def test_delivered_partition_cannot_hide_material_or_forge_admission(packet,faul
 
 
 def test_oversize_preparation_publishes_nothing(tmp_path,packet,monkeypatch):
-    import importlib.util
-    spec=importlib.util.spec_from_file_location('scope_review_tool',Path(__file__).resolve().parents[1]/'tools/prepare_scope_review.py')
-    tool=importlib.util.module_from_spec(spec);spec.loader.exec_module(tool)
+    import rcwh.generation.scope_review as tool
     from rcwh.generation.records import binding
     monkeypatch.setattr(tool,'verify_prepared_request',lambda *args:None)
     monkeypatch.setattr(tool,'verify_frozen_request',lambda *args:None)
@@ -110,3 +112,47 @@ def test_oversize_preparation_publishes_nothing(tmp_path,packet,monkeypatch):
     report=tmp_path/'review/scope-report.json'; doc=json.loads(report.read_bytes());doc['status']='PASS'
     report.write_bytes(canonical_bytes(doc))
     with pytest.raises(ValueError,match='scope report differs'): tool.check(tmp_path,'review')
+
+
+def test_scope_review_cli_matches_core_for_archived_partition():
+    from rcwh.generation.scope_review import check
+
+    root = Path(__file__).resolve().parents[1]
+    directory = 'artifacts/scope-preflight-20261110/review-v2'
+    environment = os.environ.copy()
+    environment['PYTHONPATH'] = os.pathsep.join(
+        [str(root / 'src'), environment.get('PYTHONPATH', '')]
+    )
+    result = subprocess.run(
+        [sys.executable, '-X', 'utf8', str(root / 'tools/prepare_scope_review.py'),
+         '--root', str(root), '--check', directory],
+        capture_output=True, check=True, env=environment,
+    )
+    assert json.loads(result.stdout) == check(root, directory)
+
+
+def test_scope_review_cli_forwards_preparation_arguments(tmp_path, monkeypatch, capsys):
+    import rcwh.generation.scope_review as scope_review
+
+    calls = []
+
+    def prepare(root, prepared, receipt, output, **limits):
+        calls.append((root, prepared, receipt, output, limits))
+        return {'status': 'PASS'}
+
+    monkeypatch.setattr(scope_review, 'prepare', prepare)
+    monkeypatch.setattr(sys, 'argv', [
+        'prepare_scope_review.py', '--root', str(tmp_path),
+        '--prepared', 'request.json', '--export-receipt', 'receipt.json',
+        '--output', 'review', '--max-file-bytes', '1000',
+        '--max-task-bytes', '2000', '--overhead-bytes', '100',
+        '--output-bytes', '200',
+    ])
+    runpy.run_path(str(Path(__file__).resolve().parents[1] / 'tools/prepare_scope_review.py'),
+                   run_name='__main__')
+
+    assert calls == [(tmp_path.resolve(), 'request.json', 'receipt.json', 'review', {
+        'max_file_bytes': 1000, 'max_task_bytes': 2000,
+        'overhead_bytes': 100, 'output_bytes': 200,
+    })]
+    assert json.loads(capsys.readouterr().out) == {'status': 'PASS'}

@@ -1,9 +1,10 @@
 """Source handouts bind current evidence without manufacturing review coverage."""
-import importlib.util
 import json
 from pathlib import Path
+import runpy
 import socket
 import subprocess
+import sys
 
 from rcwh.assets import AssetError
 from rcwh.assets.ingest import AssetIntake
@@ -16,10 +17,24 @@ import pytest
 from rcwh.candidate_reviews import digest
 from rcwh.workflow.review_intake import prepare_registration
 
+import rcwh.workflow.source_audit_preparation as prep
+
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = importlib.util.spec_from_file_location('prepare_source_audit_review', ROOT / 'tools/prepare_source_audit_review.py')
-prep = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(prep)
+
+
+def test_cli_forwards_check_to_core(monkeypatch, capsys):
+    calls = []
+
+    def run(root, check=False):
+        calls.append((root, check))
+        return {'status': 'PASS'}
+
+    monkeypatch.setattr(prep, 'run', run)
+    monkeypatch.setattr(sys, 'argv', ['prepare_source_audit_review.py', '--check'])
+    runpy.run_path(str(ROOT / 'tools/prepare_source_audit_review.py'), run_name='__main__')
+
+    assert calls == [(ROOT, True)]
+    assert json.loads(capsys.readouterr().out) == {'status': 'PASS'}
 
 
 @pytest.fixture(scope='module')

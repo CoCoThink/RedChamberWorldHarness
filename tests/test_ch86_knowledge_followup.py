@@ -1,10 +1,10 @@
 """A follow-up must retain its original readers and cannot inflate independence."""
-import importlib
 import json
 from pathlib import Path
 import shutil
 
 import pytest
+import verify_ch86_knowledge_followup as followup_module
 
 from rcwh.candidate_reviews import canonical_bytes
 from test_ch86_knowledge_review import copied_review  # noqa: F401
@@ -14,9 +14,8 @@ BASE = 'artifacts/local-scenario-ch86-knowledge-split/amendment-v1'
 
 
 @pytest.fixture
-def followup(monkeypatch):
-    monkeypatch.syspath_prepend(str(ROOT / 'tools'))
-    return importlib.import_module('verify_ch86_knowledge_followup')
+def followup():
+    return followup_module
 
 
 @pytest.fixture

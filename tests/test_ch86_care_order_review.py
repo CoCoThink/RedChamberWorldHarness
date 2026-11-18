@@ -1,17 +1,16 @@
 """The v5 review uses its exact CI/model inputs and preserves prior negatives."""
-import importlib
 import json
 from pathlib import Path
 
 import pytest
+import verify_ch86_care_order_review as review_module
 
 ROOT = Path(__file__).resolve().parents[1]
 
 
 @pytest.fixture
-def review(monkeypatch):
-    monkeypatch.syspath_prepend(str(ROOT / 'tools'))
-    return importlib.import_module('verify_ch86_care_order_review')
+def review():
+    return review_module
 
 
 def test_prepared_v5_tasks_bind_current_model_and_do_not_expose_peer_opinion(review):

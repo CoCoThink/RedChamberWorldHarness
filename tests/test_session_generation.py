@@ -239,10 +239,11 @@ def test_loaded_session_draft_rejects_stale_source_and_context(session_root, pat
 
 @pytest.mark.parametrize('text_path,request_path', [('../outside.txt', 'request.json'), ('authored.txt', '../outside.json'),
                                                     ('/tmp/prose', 'request.json'), ('linked.txt', 'request.json')])
-def test_import_rejects_external_and_symlink_paths(session_root, text_path, request_path):
+def test_import_rejects_external_and_symlink_paths(session_root, text_path, request_path, create_symlink):
     root = session_root
     prepare(root)
-    (root / 'linked.txt').symlink_to(root / 'authored.txt')
+    if text_path == 'linked.txt':
+        create_symlink(root / 'linked.txt', root / 'authored.txt')
     with pytest.raises(ValueError):
         import_draft(root, text_path, request_path, session_id='session-test', session_model_label='configured')
     assert not (root / 'artifacts').exists()

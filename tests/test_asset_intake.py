@@ -262,7 +262,7 @@ def test_writer_lock_prevents_a_second_process_from_receiving(intake_repo):
     assert len(AssetCatalog.from_repo(root).assets) == 1
 
 
-def test_destination_conflicts_and_symlinks_fail_without_catalog_mutation(intake_repo):
+def test_destination_conflicts_and_symlinks_fail_without_catalog_mutation(intake_repo, create_symlink):
     root, file = intake_repo
     before = (root / "data/catalog/assets.yaml").read_bytes()
     sha = hashlib.sha256(file.read_bytes()).hexdigest()
@@ -273,12 +273,12 @@ def test_destination_conflicts_and_symlinks_fail_without_catalog_mutation(intake
         AssetIntake(root).ingest(file, origin="one")
     assert (root / "data/catalog/assets.yaml").read_bytes() == before
     destination.unlink()
-    destination.symlink_to(file)
+    create_symlink(destination, file)
     with pytest.raises(AssetError, match="symlink"):
         AssetIntake(root).ingest(file, origin="one")
     destination.unlink()
     link = file.parent / "alias.md"
-    link.symlink_to(file)
+    create_symlink(link, file)
     with pytest.raises(AssetError, match="symlink"):
         AssetIntake(root).ingest(link, origin="one")
 

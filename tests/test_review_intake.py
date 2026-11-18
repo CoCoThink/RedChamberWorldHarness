@@ -196,12 +196,12 @@ def test_protocol_scope_and_lane_bindings_fail_before_raw_intake(intake_lane, tm
 
 
 @pytest.mark.parametrize("fault", ["blank-origin", "blank-id", "symlink"])
-def test_intake_rejects_missing_custody_or_symlink_original(intake_lane, tmp_path, fault):
+def test_intake_rejects_missing_custody_or_symlink_original(intake_lane, tmp_path, fault, create_symlink):
     lane = intake_lane
     path = save(tmp_path / "submitted.json", lane.original)
     if fault == "symlink":
         link = tmp_path / "linked.json"
-        link.symlink_to(path)
+        create_symlink(link, path)
         path = link
     before = owner_files(lane.root)
     with pytest.raises(ValueError):

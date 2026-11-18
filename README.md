@@ -18,8 +18,10 @@ rcwh validate
 rcwh project status
 rcwh project acceptance
 rcwh evaluate data/scenes/ch86_last_night.yaml examples/ch86_candidate_stub.txt
-pytest -q
+python -X utf8 -m pytest -q
 ```
+
+The test command enables UTF-8 mode for environments with a different default encoding, including Windows. The `dev` extra installs the supported pytest version.
 
 The example scene has no independent semantic reading, so `evaluate` returns PENDING (exit code 2).
 

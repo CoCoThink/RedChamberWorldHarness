@@ -29,4 +29,6 @@ R0.4 另提供 `corpus inputs CONFIG --require-tracked`：核验固定载体／�
 
 后续领域迁移继续核验 world/planning/writing/evaluation 的实际输入及引用。迁移包数量、P0 数量和远端分支快照测试已删除；世界、文学及规划的历史数量门禁已由显式项目范围、身份唯一、上游覆盖、关系闭合和行为规则替换；具体实施见 [ADR 0003](../decisions/0003_RETIRE_HISTORICAL_RULES.md)。
 
+`data/promotion/policies/` 保存晋升策略，`data/promotions/` 保存晋升候选记录；二者分别由策略加载器和晋升登记表读取。`data/project/current.json` 的 owners 可指向 `data/project_state/` 等目录，变更位置须同时维护选择记录及其依赖。`data/evaluation/pilot85_87/` 的 study 和 selection 仍供 pilot 运行时使用。旧研究记录已按引用闭包归档于 `archive/research/`，见各归档目录的 README 和移动清单。新归档需先核对路径引用和摘要，再验证活数据与历史复现；相同字节出现在多个路径时还需分别检查其引用身份。
+
 最终验收从干净检出执行：来源闭包、声明环境下离线追溯、确定性语料重建、连续章回创作与修订、真实评审和可核验发布。

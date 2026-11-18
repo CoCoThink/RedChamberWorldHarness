@@ -152,7 +152,7 @@ def test_failed_author_program_is_recorded_and_not_adopted(tmp_path):
     payload = PilotStudy(ROOT).run_author("DIRECT_WRITING", "medical", [sys.executable,"-c","print('{}')"], tmp_path/"trace.json")
     assert payload["status"] == "FAIL" and payload["literary_acceptance"] == "PENDING"
     trace = json.loads((tmp_path/"trace.json").read_bytes())
-    assert trace["program_invocations"] == 1 and trace["stdout"] == "{}\n"
+    assert trace["program_invocations"] == 1 and trace["stdout"].replace("\r\n", "\n") == "{}\n"
 
 
 def test_style_tracks_observations_without_word_quotas_or_quality_pass():

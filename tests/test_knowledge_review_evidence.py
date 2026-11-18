@@ -1,12 +1,10 @@
 import json
 import shutil
-import sys
 from pathlib import Path
 
 import pytest
 
 from rcwh.knowledge_versions import load_knowledge_version
-sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "tools"))
 from knowledge_review_evidence import ROOT, REQUEST, SOURCES, create, verify
 
 

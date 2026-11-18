@@ -286,14 +286,14 @@ def test_duplicate_selection_and_missing_book_candidate_rejected(isolated):
         build_policy_evidence_request(root, binding(root, "missing.json"), 86)
 
 
-def test_detached_raw_binding_and_symlink_escape_rejected(isolated):
+def test_detached_raw_binding_and_symlink_escape_rejected(isolated, create_symlink):
     root, request, reading, _ = isolated
     (root / "reading.json").write_bytes(canonical_bytes(reading))
     ref = binding(root, "reading.json")
     (root / "reading.json").write_bytes(canonical_bytes(reading) + b" ")
     with pytest.raises(ValueError, match="stale"):
         check_policy_evidence(root, request, ref)
-    (root / "alias.json").symlink_to(root / "reading.json")
+    create_symlink(root / "alias.json", root / "reading.json")
     with pytest.raises(ValueError, match="symlink"):
         check_policy_evidence(root, request, {"path": "alias.json", "sha256": digest((root / "reading.json").read_bytes())})
 

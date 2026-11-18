@@ -180,7 +180,7 @@ def test_catalog_reload_observes_schema_and_metadata_changes(intake_repo):
 
 
 @pytest.mark.parametrize("replacement", ["shard", "directory", "pending"])
-def test_catalog_reload_rechecks_paths_and_pending_transactions(intake_repo, replacement):
+def test_catalog_reload_rechecks_paths_and_pending_transactions(intake_repo, replacement, create_symlink):
     root, _ = intake_repo
     prepare(root)
     store = CatalogStore(root)
@@ -191,12 +191,12 @@ def test_catalog_reload_rechecks_paths_and_pending_transactions(intake_repo, rep
     if replacement == "shard":
         target = root / "saved-shard.yaml"
         shard.rename(target)
-        shard.symlink_to(target)
+        create_symlink(shard, target)
     elif replacement == "directory":
         directory = shard.parent
         target = root / "saved-assets"
         directory.rename(target)
-        directory.symlink_to(target, target_is_directory=True)
+        create_symlink(directory, target, target_is_directory=True)
     else:
         journal = root / store.transaction_directory / "interrupted/journal.json"
         journal.parent.mkdir(parents=True)

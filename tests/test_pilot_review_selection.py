@@ -205,7 +205,7 @@ def test_invalid_registered_bindings_are_reported_not_ignored(pilot, fault):
 
 
 @pytest.mark.parametrize("relative", ["public/packet.json", "coordinator/mapping.json", "candidate", REVIEW_SELECTION_PATH])
-def test_symlink_packet_mapping_candidate_and_selection_are_rejected(pilot, relative):
+def test_symlink_packet_mapping_candidate_and_selection_are_rejected(pilot, relative, create_symlink):
     selection(pilot)
     if relative == "candidate":
         candidate = load_comparative_packet(pilot.root / "export")[0]["candidates"][0]
@@ -215,7 +215,7 @@ def test_symlink_packet_mapping_candidate_and_selection_are_rejected(pilot, rela
     target = pilot.root / "link-target"
     target.write_bytes(original)
     path.unlink()
-    path.symlink_to(target)
+    create_symlink(path, target)
     report = pilot.summary()
     assert report["status"] == "FAIL"
     assert any("symlink" in finding for finding in report["findings"])

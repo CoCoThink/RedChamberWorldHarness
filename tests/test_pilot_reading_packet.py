@@ -1,6 +1,5 @@
 """Six full byte-identical copies, without fabricated normal-import receipts."""
 from copy import deepcopy
-import importlib.util
 import json
 from pathlib import Path
 import shutil
@@ -10,10 +9,9 @@ import pytest
 from rcwh.candidate_reviews import canonical_bytes, digest
 from rcwh.generation.records import binding
 
+import make_pilot_reading_packet as MODULE
+
 ROOT = Path(__file__).resolve().parents[1]
-SPEC = importlib.util.spec_from_file_location("pilot_packet", ROOT / "tools/make_pilot_reading_packet.py")
-MODULE = importlib.util.module_from_spec(SPEC)
-SPEC.loader.exec_module(MODULE)
 
 
 def store(root, path, value):
