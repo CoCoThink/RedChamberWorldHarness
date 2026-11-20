@@ -1,5 +1,7 @@
 # RedChamberWorldHarness (RCWH)
 
+> **整理中（2026-11）**：本仓库正在从旧的审计、准入框架原地精简为一个续写工具。新规则和整理步骤见 [AGENTS.md](AGENTS.md)。旧实现完整保留在 git tag `pre-cleanup`。以下内容描述的是旧实现，整理完成后重写。
+
 A narrative-world harness for the post-80-chapter reconstruction of *Dream of the Red Chamber* (《红楼梦》).
 
 RCWH loads evidence, world and character state, object ledgers, scene contracts, and literary policies, then validates candidate prose before it can become an accepted reconstruction.

@@ -1,5 +1,0 @@
-# Source review next task
-
-Repository: /mnt/d/code/redchamberworldharness. Work directly on main; do not create branches or worktrees. Do not call external model APIs, use keys, or spend budget.
-
-Inspect the current source audit protocol and preparation tooling for the next production-readiness step. Read CONTRIBUTING.md, AGENTS.md, docs/runbooks/CORPUS_AND_REVIEW_INPUTS.md, current data/provenance/audits/{protocol-v3.json,selection.json}, source schemas and any source review preparation tools/tests. Determine whether the harness can prepare a complete v3 source-review campaign from current tracked bytes, identify exact missing implementation or evidence, and implement only a deterministic offline preparation/verification improvement if clearly needed. Preserve all historical records; never invent a review opinion or PASS. Save a concise report at data/writing/source-review-next/REPORT.md and any deterministic plan/scaffold files under data/writing/source-review-next/. Add tests for any code change. Do not commit. Return the files changed, tests, and the honest resulting status (likely PENDING).

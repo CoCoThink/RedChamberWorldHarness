@@ -1,26 +1,17 @@
-# Contributing
+# 参与方式
 
-## Core rule
+规则以 `AGENTS.md` 为准。这里只说日常怎么改。
 
-Never change Evidence Truth merely to make a reconstruction cleaner.
+## 改正文
 
-## Git workflow
+直接改 `book/` 下对应的回。用 `git diff` 读改动，满意再提交，提交信息写改了什么。不满意就 `git checkout` 放弃重来。
 
-Iterate and commit directly on `main`. Do not create other local or remote branches unless the user explicitly requests a change to this workflow. See `AGENTS.md` for agent instructions.
+## 改设定
 
-## Change checklist
+改 `bible/`。每回的大纲卡在 `bible/outline/`，人物在 `bible/characters/`，事件在 `bible/timeline.md`，线索在 `bible/evidence.md`。
 
-- Which truth layer changes?
-- Does any OPEN-LOCK become more specific? If so, what new upstream evidence permits that?
-- Does a candidate change downstream object, timeline, or character-knowledge state?
-- Are regression tests included?
-- If cultural material is added, what dramatic or character function does it perform?
-- If prose is changed, has blind reading been separated from evidence review?
+底线只有一条：**证据和推演分开。** 线索标 A（硬证）、B（弱证）、C（推演）。A 级情节必须保留，C 级可以改写。不要为了让情节顺而把推演改成更高等级。
 
-## Data edits
+## 改代码
 
-Prefer structured YAML/JSON as canonical state. Markdown is explanatory output.
-
-## Documentation
-
-Update existing architecture contracts and runbooks when behavior changes. Keep current progress in the selected project owners and live acceptance checks. Use Git history for implementation narratives and past test counts; add a separate review document only when it contains original findings needed to interpret sources or decisions. Registered source bytes and original review submissions remain immutable audit records.
+先回答"这让哪一回更好读或更好写"。答不上来就不改。能改数据解决的，不加代码。

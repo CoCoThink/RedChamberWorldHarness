@@ -1,9 +1,38 @@
-# Repository workflow
+# 目标
 
-- Work and commit directly on `main` in `/mnt/d/code/redchamberworldharness`.
-- Do not create local or remote branches, including temporary, backup, research, review, or agent branches, unless the user explicitly changes this instruction.
-- Use the existing `main` working directory for future iterations. Do not create additional worktrees for routine work. Existing detached worktrees retain historical files and are not active development checkouts.
-- Preserve review evidence and historical commits when consolidating work. Follow the evidence and data rules in `CONTRIBUTING.md`.
-- Sub-agents must use the parent session's model; when the launch interface requires a model, specify the same model as the parent session.
+产出可读的《红楼梦》81–100 回续书正文。代码只为写作服务。
 
-- If a delegated task name begins `rcwh_ticket_`, read and execute `.codex-dispatch/<task-name>.md` in the repository root; the name is supplied in the NEW_TASK header. This is a fallback when task message bodies are unavailable. The dispatcher must create the task file before launching the agent, and retain required review evidence and context declarations.
+# 仓库与分支
+
+- 直接在 `main` 上工作和提交。除非用户明确改变这条规定，不建任何本地或远程分支（包括临时、备份、研究、评审、agent 分支），也不为日常工作新建 worktree。
+- 子 agent 使用与父会话相同的模型；启动接口要求指定模型时，填父会话的模型。
+
+# 规则
+
+- 每次改动先回答：这让哪一回更好读或更好写？答不上来就不做。
+- 禁止新增：审批、准入、晋升、发布流程，状态机，PENDING 类状态，SHA 绑定，schema，不可变记录，custody、attribution、lineage。历史与审计靠 git。
+- 检查只输出警告，不阻断写作。最终判断由作者阅读决定。
+- 发现问题，优先改正文（`book/`）或设定（`bible/`），而不是加代码。
+- 不为某一回、某一轮评审写专用脚本、测试或 CI 步骤。
+- 鼓励删除。`rcw/` 总量不超过 1500 行，超过须先删再加。
+- AI 评审意见是给作者看的笔记，写进 `notes/`，不存档、不绑定、不计"资格"。
+- 发给写作模型的上下文不超过 3 万字，不含哈希和文件路径。
+- 证据等级（A 硬证 / B 弱证 / C 推演）只能由作者调整。不得为了让情节顺而把推演写成证据。
+- 任务结束时报告：改了哪些回，代码净增减多少行。
+
+# 过渡期（整理完成后删除本节）
+
+仓库正在从旧的审计、准入框架原地精简为一个续写工具。旧实现完整保留在 git tag `pre-cleanup`。
+
+整理步骤：
+1. 改规则与 CI（已完成）
+2. 选定正文，拆成 `book/ch081.md` … `ch100.md`
+3. 从旧数据生成 `bible/` 初稿，作者通读改定
+4. 在 `rcw/` 写新工具：`context`、`check`，可选 `revise`、`review`
+5. 用第 86 回验收新工具
+6. 一次性删除旧实现
+
+在第 6 步之前：
+- 旧实现已冻结：`src/rcwh/`、`tests/`（`tests/rcw/` 除外）、`tools/`、`schemas/`、`docs/`、`data/`、`artifacts/`、`archive/`、`releases/`、`examples/`、`requirements/`。不修复、不扩展、不为它补测试或兼容层。旧测试失败不用处理。
+- `rcw/` 不得 import `rcwh`。新测试放在 `tests/rcw/`。
+- `sources/`、`corpus/`、`research/` 是参考资料，只读，第 6 步移入 `refs/`。
