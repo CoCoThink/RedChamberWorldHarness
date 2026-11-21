@@ -9,7 +9,7 @@ sys.path.insert(0, str(ROOT))
 
 from rcw import check, context  # noqa: E402
 from rcw.model import ModelError, extract_chapter  # noqa: E402
-from rcw.repo import CHAPTERS, Repo, chapters_in  # noqa: E402
+from rcw.repo import CHAPTERS, Repo, chapters_in, parse_span  # noqa: E402
 
 TITLE = "第八十六回　潇湘馆泪尽芳魂逝　痴公子来迟旧梦空"
 BODY86 = "紫鹃道：“姑娘醒了？”黛玉笑道：“你又来吵。”药吊子在炉上。宝玉道：“药不是还没吃么？再温一温。”\n\n" * 20
@@ -25,8 +25,10 @@ def make_repo(tmp_path: Path) -> Repo:
         (tmp_path / "book" / f"ch{n:03d}.md").write_text(f"# {title}\n\n{body}", encoding="utf-8")
         cast = "[黛玉, 紫鹃, 宝玉]" if n == 86 else "[袭人]"
         keep = '\n  - "再温一温"' if n == 86 else " []"
+        state = "- 谁知道了什么：紫鹃记下了药账" if n == 85 else "- 谁知道了什么："
         (tmp_path / "bible" / "outline" / f"ch{n:03d}.md").write_text(
-            f"---\ntitle: {title}\ncast: {cast}\nparallel: [57]\nkeep:{keep}\n---\n\n# {title}\n\n## 人物\n\n大纲正文{n}\n",
+            f"---\ntitle: {title}\ncast: {cast}\nparallel: [57]\nkeep:{keep}\n---\n\n# {title}\n\n## 人物\n\n大纲正文{n}\n\n"
+            f"## 回末状态\n\n<!-- 说明 -->\n{state}\n- 钱与日子：\n\n## 本回设计\n\n场景{n}\n",
             encoding="utf-8")
     (tmp_path / "bible" / "characters.md").write_text(
         "# 人物\n\n## 黛玉（林黛玉）\n- 去世：第86回\n- 声口：尖。\n\n## 紫鹃\n- 声口：实。\n\n"
@@ -64,6 +66,24 @@ def test_context_selects_relevant_material(tmp_path):
     assert "我是试你的" in t                                       # 范文取对话最密的段落
     assert "必须原样保留的字句\n- 再温一温" in t
     assert ".md" not in t and not re.search(r"[0-9a-f]{40}", t)    # 不把文件名、哈希交给模型
+
+
+def test_end_state_carries_forward_only_when_filled(tmp_path):
+    repo = make_repo(tmp_path)
+    t86 = context.build(repo, 86, "revise").text
+    assert "## 上一回结束时" in t86 and "紫鹃记下了药账" in t86   # 第85回填了，进第86回上下文
+    assert "回末状态" not in t86 and "<!--" not in t86              # 第86回自己没填，整节不出现
+    assert "上一回结束时" not in context.build(repo, 87, "revise").text
+
+
+def test_span_context(tmp_path):
+    assert parse_span("86") == (86, 86) and parse_span("84-88") == (84, 88) and parse_span("84—88") == (84, 88)
+    ctx = context.build_span(make_repo(tmp_path), 84, 88)
+    t = ctx.text
+    assert "## 正文" in t and TITLE in t and "第88回正文" in t and "第89回正文" not in t
+    assert "丧期缓冲" in t and "药盒" in t and "经济降级" not in t   # 跨回线索取各回之并
+    assert "紫鹃记下了药账" in t and "场景86" not in t               # 要点只取时间、人物、回末状态、保护锁
+    assert ".md" not in t
 
 
 def test_context_trims_to_limit(tmp_path):

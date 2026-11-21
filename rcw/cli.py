@@ -1,8 +1,10 @@
 """rcw：红楼梦续书写作工具。
 
   python -m rcw context 86 [--task revise|review|write] [--notes 笔记文件]
+  python -m rcw context 84-88        # 几回连读的上下文
   python -m rcw check [86 87 ...]
   python -m rcw review 86            # 模型读稿，意见追加到 notes/ch086.md
+  python -m rcw review 84-88         # 分段通读，意见追加到 notes/span-084-088.md
   python -m rcw revise 86 笔记文件   # 模型按笔记修订，直接写回 book/ch086.md
 """
 from __future__ import annotations
@@ -14,7 +16,7 @@ import sys
 from pathlib import Path
 
 from . import check, context
-from .repo import CHAPTERS, Repo
+from .repo import CHAPTERS, Repo, parse_span
 
 
 def _save(repo: Repo, name: str, text: str) -> None:
@@ -33,7 +35,11 @@ def _notes(path: str | None) -> str:
 
 
 def cmd_context(repo: Repo, a) -> int:
-    ctx = context.build(repo, a.chapter, a.task, _notes(a.notes), a.limit)
+    first, last = parse_span(a.chapter)
+    if first == last:
+        ctx = context.build(repo, first, a.task, _notes(a.notes), a.limit or context.LIMIT)
+    else:
+        ctx = context.build_span(repo, first, last, a.limit or context.SPAN_LIMIT)
     sys.stdout.write(ctx.text)
     context.report(ctx)
     return 0
@@ -44,9 +50,8 @@ def cmd_check(repo: Repo, a) -> int:
     return 0
 
 
-def _ask(repo: Repo, n: int, task: str, notes: str, effort: str) -> str:
+def _ask(repo: Repo, ctx: context.Context, effort: str) -> str:
     from .model import ModelError, complete
-    ctx = context.build(repo, n, task, notes)
     context.report(ctx)
     _save(repo, "last_prompt.md", ctx.text)
     print("正在调用模型……", file=sys.stderr)
@@ -59,8 +64,13 @@ def _ask(repo: Repo, n: int, task: str, notes: str, effort: str) -> str:
 
 
 def cmd_review(repo: Repo, a) -> int:
-    reply = _ask(repo, a.chapter, "review", "", a.effort)
-    path = repo.root / "notes" / f"ch{a.chapter:03d}.md"
+    first, last = parse_span(a.chapter)
+    if first == last:
+        ctx, name = context.build(repo, first, "review"), f"ch{first:03d}.md"
+    else:
+        ctx, name = context.build_span(repo, first, last), f"span-{first:03d}-{last:03d}.md"
+    reply = _ask(repo, ctx, a.effort)
+    path = repo.root / "notes" / name
     path.parent.mkdir(exist_ok=True)
     stamp = datetime.date.today().isoformat()
     with path.open("a", encoding="utf-8") as f:
@@ -72,7 +82,7 @@ def cmd_review(repo: Repo, a) -> int:
 def cmd_revise(repo: Repo, a) -> int:
     from .model import ModelError, extract_chapter
     original = repo.chapter(a.chapter)
-    reply = _ask(repo, a.chapter, "revise", _notes(a.notes), a.effort)
+    reply = _ask(repo, context.build(repo, a.chapter, "revise", _notes(a.notes)), a.effort)
     try:
         text = extract_chapter(reply, original)
     except ModelError as exc:
@@ -89,21 +99,21 @@ def main(argv: list[str] | None = None) -> int:
     p.add_argument("--root", help="仓库根目录，默认从当前目录向上找")
     sub = p.add_subparsers(dest="cmd", required=True)
 
-    c = sub.add_parser("context", help="输出某回的写作上下文")
-    c.add_argument("chapter", type=int)
+    c = sub.add_parser("context", help="输出某回（或几回连读）的上下文")
+    c.add_argument("chapter", help="86，或 84-88")
     c.add_argument("--task", default="revise", choices=list(context.TASKS))
     c.add_argument("--notes")
-    c.add_argument("--limit", type=int, default=context.LIMIT)
+    c.add_argument("--limit", type=int, help="字数上限，默认单回 3 万、分段 8 万")
     c.set_defaults(func=cmd_context)
 
     k = sub.add_parser("check", help="检查正文，只给提醒")
     k.add_argument("chapters", type=int, nargs="*")
     k.set_defaults(func=cmd_check)
 
-    for name, func, helptext in (("review", cmd_review, "模型读稿，写修订笔记"),
+    for name, func, helptext in (("review", cmd_review, "模型读稿写笔记；84-88 为分段通读"),
                                  ("revise", cmd_revise, "模型按笔记修订正文")):
         s = sub.add_parser(name, help=helptext)
-        s.add_argument("chapter", type=int)
+        s.add_argument("chapter", type=int if name == "revise" else str)
         if name == "revise":
             s.add_argument("notes")
         s.add_argument("--effort", default="high", choices=["low", "medium", "high", "xhigh", "max"])

@@ -32,6 +32,8 @@ keep: ["再温一温"]          # 正文必须原样保留的字句
 avoid: [遗言, 托梦]         # 正文出现就提醒
 ```
 
+每张卡还有一节"回末状态"：三至五行，写本回结束时谁知道了什么、要紧的东西在谁手里、钱与日子到了哪一步。填了之后，下一回的上下文会带上这一节（"上一回结束时"）；没填就不出现。分段通读会给出建议，由你决定填不填。
+
 ## 工具
 
 `python -m pip install -e '.[dev,model]'` 之后可直接用 `rcw`；不安装也可以在仓库根目录用 `python -m rcw`。
@@ -40,6 +42,8 @@ avoid: [遗言, 托梦]         # 正文出现就提醒
 rcw context 86 --task revise --notes notes/ch086.md > /tmp/ctx.md   # 拼上下文，交给 agent 或自己读
 rcw check 86                                                    # 只给提醒
 rcw review 86                                                   # 模型读稿，意见追加到 notes/ch086.md
+rcw review 84-88                                                # 分段通读：节奏、人物、线索、衔接，意见追加到 notes/span-084-088.md
+rcw context 84-88 > /tmp/span.md                                # 同上，交给 agent 读
 rcw revise 86 notes/ch086.md                                    # 模型按笔记修订，写回 book/ch086.md
 ```
 

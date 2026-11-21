@@ -7,7 +7,9 @@ from dataclasses import dataclass
 
 from .repo import CHAPTERS, QUOTE, Repo, chapters_in, han_count, sections
 
-LIMIT = 30000  # 字（不含空白）
+LIMIT = 30000  # 单回写作与修订，字（不含空白）
+SPAN_LIMIT = 80000  # 分段通读
+COMMENT = re.compile(r"<!--.*?-->", re.S)
 
 INTRO = ("你在续写《红楼梦》第八十一至一百回。下面依次是：任务、风格守则、本回大纲、相关证据与跨回线索、"
          "时间线、出场人物、前后回衔接、前八十回范文，以及本回现稿。")
@@ -20,6 +22,12 @@ TASKS = {
     "write": ("依据大纲写出本回整回正文：第一行是回目（以“# ”开头），到回末为止，不加任何说明。"),
 }
 
+SPAN_TASK = ("以编辑身份连读下面几回正文，只看段落与全书层面的问题，不逐句挑错：一、节奏：各回冷热、悲喜、快慢是否单调，"
+             "相邻回是否重复同一种场面；二、人物：谁出场太少、谁消失太久、谁的声口在几回之间走了样；三、线索：跨回物件与伏笔"
+             "是否接上，前一回埋下的后一回是否忘了，时间、称呼、谁知道什么、东西在谁手里有无前后矛盾；四、衔接：回与回之间"
+             "的时间和情绪是否接得上。每条注明回次、引原文短句，并给出改法。最后为每一回写三至五行“回末状态”建议"
+             "（谁知道了什么、要紧的东西在谁手里、钱与日子到了哪一步），供作者填进大纲卡。只写笔记，不重写正文。")
+
 # bible 里提到文件名的地方，换成上下文里的小节名，避免把路径交给模型
 FILE_NAMES = {"`evidence.md`": "“证据”一节", "`timeline.md`": "“时间线”一节", "`style.md`": "“风格守则”",
               "`characters.md`": "“出场人物”一节", "`vocab.md`": "“时代语汇”一节", "`arcs.md`": "“跨回线索”一节"}
@@ -31,6 +39,7 @@ def size(text: str) -> int:
 
 def scrub(text: str) -> str:
     """去掉文件名；各段内部标题统一下降两级，挂在"## 段名"之下。"""
+    text = COMMENT.sub("", text)
     for k, v in FILE_NAMES.items():
         text = text.replace(k, v)
     return re.sub(r"^(#{1,4}) ", lambda m: "#" * (len(m.group(1)) + 2) + " ", text, flags=re.M)
@@ -53,7 +62,23 @@ def evidence_for(repo: Repo, n: int) -> str:
     return "\n\n".join(keep)
 
 
-def arcs_for(repo: Repo, n: int) -> str:
+def end_state(body: str) -> str:
+    """大纲卡"## 回末状态"一节里作者真正填了的行；没填返回空串。"""
+    for head, text in sections(body):
+        if head == "回末状态":
+            lines = [l for l in COMMENT.sub("", text).splitlines() if l.strip()]
+            return "\n".join(l for l in lines if not re.fullmatch(r"-?\s*[^：]{1,12}：\s*", l.strip()))
+    return ""
+
+
+def with_end_state(body: str) -> str:
+    """把卡里的回末状态换成只含已填内容；没填就整节去掉。"""
+    state = end_state(body)
+    return re.sub(r"^## 回末状态\n.*?(?=^## |\Z)", (f"## 回末状态\n\n{state}\n\n" if state else ""),
+                  body, count=1, flags=re.S | re.M)
+
+
+def arc_items(repo: Repo, n: int) -> list[str]:
     keep = []
     for head, body in sections(repo.doc("arcs.md")):
         if head == "跨回接口总锁":  # "1. **84→87丧期缓冲**：……"按标题里的首尾回次取区间
@@ -66,7 +91,11 @@ def arcs_for(repo: Repo, n: int) -> str:
             for sub, text in sections(body, level=3):
                 if n in chapters_in(text):
                     keep.append(f"# {sub}\n{text}")
-    return "\n\n".join(keep)
+    return keep
+
+
+def arcs_for(repo: Repo, n: int) -> str:
+    return "\n\n".join(arc_items(repo, n))
 
 
 def cast_for(repo: Repo, names: list[str]) -> tuple[str, list[str]]:
@@ -155,8 +184,10 @@ def build(repo: Repo, n: int, task: str = "revise", notes: str = "", limit: int 
     cast, missing = cast_for(repo, o.cast)
     warn = [f"大纲 cast 里这些人在 characters.md 中没有条目：{'、'.join(missing)}"] if missing else []
     keep = "\n".join(f"- {k}" for k in o.keep)
-    outline = o.body + (f"\n\n## 必须原样保留的字句\n{keep}" if keep else "")
+    outline = with_end_state(o.body) + (f"\n\n## 必须原样保留的字句\n{keep}" if keep else "")
+    before = end_state(repo.outline(n - 1).body) if n - 1 in CHAPTERS else ""
     fixed = [("任务", TASKS[task]), ("风格守则", repo.doc("style.md")), ("本回大纲", outline),
+             ("上一回结束时", before),
              ("证据", evidence_for(repo, n)), ("跨回线索", arcs_for(repo, n)),
              ("时间线", repo.doc("timeline.md")), ("出场人物", cast)]
     tail = []
@@ -189,6 +220,40 @@ def build(repo: Repo, n: int, task: str = "revise", notes: str = "", limit: int 
     return Context(text, {k: size(v) for k, v in segs}, warn)
 
 
+def build_span(repo: Repo, first: int, last: int, limit: int = SPAN_LIMIT) -> Context:
+    """几回连读：给全书与段落层面的评审用，带全文，不带范文。"""
+    if not (first in CHAPTERS and last in CHAPTERS and first < last):
+        raise SystemExit(f"分段应在 81–100 之间且前小后大，收到 {first}-{last}")
+    ns = range(first, last + 1)
+    outlines = [repo.outline(n) for n in ns]
+    cast, missing = cast_for(repo, list(dict.fromkeys(str(c) for o in outlines for c in o.cast)))
+    warn = [f"大纲 cast 里这些人在 characters.md 中没有条目：{'、'.join(missing)}"] if missing else []
+    arcs = "\n\n".join(dict.fromkeys(x for n in ns for x in arc_items(repo, n)))
+    cards = []
+    for o in outlines:
+        parts = [f"## {h}\n{b}" for h, b in sections(with_end_state(o.body))
+                 if h in ("时间", "人物", "回末状态") or h.startswith("保护锁")]
+        cards.append(f"# {o.title}\n" + "\n\n".join(parts))
+    before = end_state(repo.outline(first - 1).body) if first - 1 in CHAPTERS else ""
+    optional = {"风格守则": repo.doc("style.md"), "出场人物": cast}
+    fixed = [("跨回线索", arcs), ("时间线", repo.doc("timeline.md")), ("各回要点", "\n\n".join(cards)),
+             (f"第{first - 1}回结束时", before), ("正文", "\n\n".join(repo.chapter(n) for n in ns))]
+
+    def assemble():
+        segs = [("任务", SPAN_TASK)] + list(optional.items()) + fixed
+        return [(k, scrub(v).strip()) for k, v in segs if v and v.strip()]
+
+    segs = assemble()
+    while sum(size(v) for _, v in segs) > limit:
+        if not optional:
+            warn.append(f"上下文仍有 {sum(size(v) for _, v in segs)} 字，超过 {limit}；可把分段缩短")
+            break
+        optional.pop(next(iter(optional)))
+        segs = assemble()
+    text = f"# 第{first}至{last}回 通读上下文\n\n" + "\n\n".join(f"## {k}\n\n{v}" for k, v in segs) + "\n"
+    return Context(text, {k: size(v) for k, v in segs}, warn)
+
+
 def report(ctx: Context) -> None:
     total = sum(ctx.sizes.values())
     print(f"上下文共 {total} 字：" + "，".join(f"{k} {v}" for k, v in ctx.sizes.items()), file=sys.stderr)
@@ -196,4 +261,4 @@ def report(ctx: Context) -> None:
         print(f"注意：{w}", file=sys.stderr)
 
 
-__all__ = ["build", "report", "TASKS", "LIMIT", "han_count"]
+__all__ = ["build", "build_span", "report", "TASKS", "LIMIT", "SPAN_LIMIT", "han_count"]

@@ -44,6 +44,15 @@ def chapters_in(spec: str) -> set[int]:
     return {n for n in found if n in CHAPTERS}
 
 
+def parse_span(spec: str) -> tuple[int, int]:
+    """"86" → (86, 86)；"84-88"、"84—88" → (84, 88)。"""
+    m = re.fullmatch(r"\s*(\d{2,3})\s*(?:[-–—~]\s*(\d{2,3}))?\s*", spec)
+    if not m:
+        raise SystemExit(f"回次写作 86 或 84-88，收到 {spec}")
+    first = int(m.group(1))
+    return first, int(m.group(2) or first)
+
+
 @dataclass
 class Outline:
     chapter: int
