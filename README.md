@@ -1,120 +1,43 @@
-# RedChamberWorldHarness (RCWH)
+# 红楼梦八十回后续书
 
-> **整理中（2026-11）**：本仓库正在从旧的审计、准入框架原地精简为一个续写工具。新规则和整理步骤见 [AGENTS.md](AGENTS.md)。旧实现完整保留在 git tag `pre-cleanup`。以下内容描述的是旧实现，整理完成后重写。
+《红楼梦》第八十一至一百回的续书正文，以及写它用的设定和一个小工具。
 
-A narrative-world harness for the post-80-chapter reconstruction of *Dream of the Red Chamber* (《红楼梦》).
+## 目录
 
-RCWH loads evidence, world and character state, object ledgers, scene contracts, and literary policies, then validates candidate prose before it can become an accepted reconstruction.
-
-> Evidence is the floor, not the ceiling.
-
-Generated scenes may develop underdetermined areas through character, historical mechanisms, chapter structure, and literary fitness. A reconstruction choice must never silently become historical evidence. Evidence Truth, Reconstruction Truth, Character Truth, and Text Truth remain separate.
-
-## Quick start
-
-Use CPython 3.12 (`>=3.12,<3.13`). CPython 3.12.13 is the reference build environment; CI also verifies compatibility with 3.12.3. The extraction recipe and reference dependencies are declared in `requirements/extraction.lock.json`. Rebuild checks compare actual output bytes and locator mappings; Python, dependency, and code versions are recorded as execution observations.
-
-```bash
-python -m pip install -e '.[dev]'
-rcwh validate
-rcwh project status
-rcwh project acceptance
-rcwh evaluate data/scenes/ch86_last_night.yaml examples/ch86_candidate_stub.txt
-python -X utf8 -m pytest -q
-```
-
-The test command enables UTF-8 mode for environments with a different default encoding, including Windows. The `dev` extra installs the supported pytest version.
-
-The example scene has no independent semantic reading, so `evaluate` returns PENDING (exit code 2).
-
-`data/project/current.json` selects the current state owners; `data/project/scope.json` declares chapter scope. `project acceptance` computes engineering checks, review status, and production admission from actual inputs. Add `--require-tracked --require-complete` for strict acceptance.
-
-Source carriers, deterministic extraction, corpus candidates, asset navigation, and independent review submission APIs are implemented. Source correction reviews, corpus layer audits, and P9 literary comparisons still need independent submissions. Continuous-chapter production, adoption, and publication require their own gates. See the [review runbook](docs/runbooks/CORPUS_AND_REVIEW_INPUTS.md) for submission and acceptance rules.
-
-Chapter competition now derives qualification from bound opinions and author/reviewer identities, using the same result for promotion. Hand-entered PASS flags remain declarations. The historical Chapter 86 winner remains visible, while its current promotion is PENDING (exit code 2). See the [chapter review runbook](docs/runbooks/CHAPTER_COMPETITION_REVIEWS.md). Scene checks now require attributed, hash-bound semantic readings and replay actual exit/knowledge changes. Lexical checks are lint; missing semantic readings return PENDING. See [semantic operations](docs/runbooks/SEMANTIC_SCENE_REVIEW.md).
-
-## Repository layout
-
-| Directory | Purpose |
+| 目录 | 内容 |
 |---|---|
-| `sources/`, `research/` | Fixed source assets and versioned research |
-| `corpus/` | Reproducible extractions and versioned text layers |
-| `data/catalog/` | Asset identities, origins, and reading collections |
-| `data/provenance/` | Sources, Claims, Decisions, and Implementations |
-| `data/project/` | Selected state owners and input scope |
-| `data/research/`, `data/evaluation/` | Causal alternatives, frozen trials, attributed readings and diagnostics |
-| Other `data/` directories | World, characters, objects and scene contracts |
-| `releases/` | Stable baseline and immutable release manifest |
-| `artifacts/`, `archive/` | Candidates, original reviews, and import audits |
-| `docs/` | Architecture contracts and operational runbooks |
-| `src/rcwh/`, `schemas/`, `tests/` | Runtime, schemas, and regression checks |
+| `book/` | 正文，每回一个文件。这是唯一的产出物 |
+| `bible/` | 设定：每回大纲卡、人物、时间线、跨回线索、证据、风格守则、时代语汇、术语 |
+| `notes/` | 修订笔记，作者的和模型读稿的，用完可删 |
+| `rcw/` | 写作工具，约 600 行 |
+| `refs/` | 参考资料，只读：前八十回正文（`front80/`）、脂批（`zhipi/`）、脂汇本原件（`primary/`）、原工程的工作文档（`cards/`）、另一版续书正文（`alt/v6-r2/`） |
 
-## Find and verify inputs
+## 怎么写
 
-```bash
-rcwh assets list --role CHAPTER_CARD --chapter 92
-rcwh assets collections
-rcwh assets validate --require-tracked
-rcwh sources verify-all --require-tracked
-rcwh sources audit
-rcwh sources trace decision:cliff-release:function
-rcwh corpus verify corpus:front80:v1-candidate --rebuild
-rcwh corpus query corpus:front80:v1-candidate --chapter 27 --keyword 红玉
-rcwh self-contained check --profile declared-inputs --require-tracked
-```
+每一回的流程：
 
-Asset checks verify bytes and identity. Source locator checks verify reproducible excerpts. Independent source review evaluates the evidence interpretation; corpus review evaluates text classification. P9 blind review compares literary originals and revisions. Prepared review packets do not count as submitted opinions.
+1. 读 `book/ch0NN.md`，把想改的写进 `notes/ch0NN.md`。也可以先让模型读一遍：`rcw review NN`。
+2. 修订。两种方式任选：
+   - 交给 agent：`rcw context NN --task revise --notes notes/ch0NN.md`，把输出交给 Claude Code 等 agent，让它直接改 `book/`。
+   - 调用 API：`rcw revise NN notes/ch0NN.md`。
+3. `rcw check NN` 扫一眼提醒。
+4. `git diff` 读改动。满意就提交，不满意就 `git checkout -- book/`。
 
-## Consecutive research trial
+大纲本身有问题，就改 `bible/`，不要加代码。
+
+## 安装
 
 ```bash
-rcwh pilot summary
-rcwh pilot export /tmp/chapter-reading-round-1
-rcwh diagnostics characters --character zijuan
-rcwh diagnostics style data/evaluation/pilot85_87/drafts/medical-86.txt
-rcwh diagnostics style releases/stable/v1.4/readable/baseline.md --reference corpus:front80:v1-candidate
-rcwh reviews status
-rcwh diagnostics corpus-focus
-rcwh delivery materialize source-review-v2 /tmp/source-review-v2
+python -m pip install -e '.[dev,model]'
+python -m pytest -q
 ```
 
-`reviews register` receives original human opinions, creates bound records and updates the corresponding selection and its closure digest; it does not grant adoption. See the [reader guide](docs/runbooks/REVIEWER_GUIDE_ZH.md). Optional `diagnostics style --reference` compares narration/quotation observations against verified MAIN_TEXT corpus bytes, retaining provisional audit status and no literary verdict.
+调用模型需要 API 凭据（`ANTHROPIC_API_KEY`，或 `ant auth login`）。模型默认 `claude-opus-5-5`，可用环境变量 `RCW_MODEL` 改。
 
-The 85–87 trial contains two causal routes and a direct-writing example, nine short drafts in total. The example has prior Harness exposure and is not a valid control. Two independent whole-sequence readings, fresh control runs and revision/review remain pending. See the [trial runbook](docs/runbooks/CONSECUTIVE_CHAPTER_TRIAL.md).
+## 历史
 
-31.04 MiB of duplicate delivery copies were removed after byte comparison. Registered bundles still materialize offline; [attachment preparation](docs/runbooks/DELIVERY_STORAGE.md) creates checked local files without publishing. Git history retains prior copies.
-
-## Planning, API writing and holdout research
-
-Writing v2 preserves historical inputs in content-addressed snapshots and checks current input compatibility separately. Governance edits no longer invalidate writing history. See [the custody design](docs/decisions/0005_WRITING_INPUT_CUSTODY.md) and [migration and verification commands](docs/runbooks/AGENT_RECONSTRUCTION.md#写作输入与历史谱系v2).
+2026 年 11 月以前，这个仓库是一套审计、准入、评审框架（RedChamberWorldHarness）。完整的旧实现、评审记录和原始资料都保留在 git tag `pre-cleanup`：
 
 ```bash
-rcwh plan check --chapters 85-87
-rcwh plan threads
-rcwh plan compare-books
-rcwh write draft data/writing/packages/ch89-research-v4.json --chapter 89
-rcwh backtest check
+git checkout pre-cleanup
 ```
-
-Writing defaults to dry-run, with an optional Anthropic API adapter (`.[generate]`) and offline replay. Real calls require an environment key and explicit execution/network consent. New feedback never qualifies as independent review. Imported chapter cards and scene skeletons remain drafts; book allocations are shadow examples. The 79–80 holdout is a given-plan writing study, not recovery of an unseen original, and its effect remains `NOT_ESTIMABLE` without real controlled runs and readers. Production input admission is chapter-scoped and shared by competition/promotion; actual used materials still require audit, while unrelated global conditions remain publication preconditions. See [operations and limitations](docs/runbooks/WRITING_AND_HOLDOUT.md).
-
-## Session agent research
-
-`write import-draft` records session-authored text against exact offline prepared prompts without pretending that a provider API was executed. `agent-panel` retains model peer opinions separately from independent-human submissions; `session-backtest` runs a separate given-plan session study with anonymous local reading packets. `plan check --contracts-directory` opts into versioned agent contracts. `agent-release` can build only a research edition under `releases/agent/` after its own gates; it never writes stable ACTIVE. Gates follow the evidence floor ([ADR 0004](docs/decisions/0004_EVIDENCE_FLOOR_SEVERITY.md)): only integrity failures and violations of A-W1-backed LOCKED decisions block; P-Lock anchors, plan-card beats and author preferences are replaceable advisories, and unimplemented checks are informational. Phase 5–6 research process records are archived read-only under `archive/research/phase5-6/`. Model/session identity and resource parity remain unverified declarations. See [agent operations and boundaries](docs/runbooks/AGENT_RECONSTRUCTION.md).
-
-## Documentation
-
-- [Architecture](docs/ARCHITECTURE.md) and [complete design](docs/RCWH_红楼梦复原基础设施完整设计_v1.0_20261008.md)
-- [Source and corpus design](docs/RCWH_来源闭包与语料建设后续设计_v1.1_20261008.md)
-- [Foundation operations](docs/runbooks/FOUNDATION.md) and [search and writing](docs/runbooks/SEARCH_AND_WRITING.md)
-- [Asset intake](docs/runbooks/ASSET_INTAKE.md) and [navigation and corpus inputs](docs/runbooks/ASSET_DISCOVERY_AND_CORPUS_INPUTS.md)
-- [Source extraction and locators](docs/runbooks/SOURCE_LOCATORS.md) and [Cao manuscript collation](docs/reviews/CAO_FACSIMILE_VERIFICATION_20261009.md)
-- [Declared input closure](docs/runbooks/DECLARED_INPUT_CLOSURE.md) and [corpus and review inputs](docs/runbooks/CORPUS_AND_REVIEW_INPUTS.md)
-- [Evaluation refactor implementation and remaining reviews](docs/architecture/EVALUATION_REFACTOR_PLAN.md#92-后续实施与真实验收边界2026-10-09)
-- [Actual verification reports and prepared trial packets](artifacts/analysis/evaluation-refactor-20261009/README.md)
-
-Historical migration rules have been retired. The [migration decision](docs/decisions/0002_RETIRE_MIGRATION_RUNTIME.md) and [rule retirement decision](docs/decisions/0003_RETIRE_HISTORICAL_RULES.md) describe the retained boundaries. Current progress comes from selected owners and live checks; Git history holds past implementation narratives.
-
-## License
-
-The owner chose to defer licensing on 2026-10-09. No new license is granted. See the [rights inventory and licensing proposal](docs/architecture/RIGHTS_AND_LICENSING.md).

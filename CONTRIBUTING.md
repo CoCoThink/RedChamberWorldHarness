@@ -34,13 +34,13 @@ avoid: [遗言, 托梦]         # 正文出现就提醒
 
 ## 工具
 
-在仓库根目录运行，需要 Python 3.12 和 `pyyaml`；调用模型还需要 `anthropic` 和 API 凭据。
+`python -m pip install -e '.[dev,model]'` 之后可直接用 `rcw`；不安装也可以在仓库根目录用 `python -m rcw`。
 
 ```bash
-python -m rcw context 86 --task revise --notes notes/ch086.md > /tmp/ctx.md   # 拼上下文，交给 agent 或自己读
-python -m rcw check 86                                                    # 只给提醒
-python -m rcw review 86                                                   # 模型读稿，意见追加到 notes/ch086.md
-python -m rcw revise 86 notes/ch086.md                                    # 模型按笔记修订，写回 book/ch086.md
+rcw context 86 --task revise --notes notes/ch086.md > /tmp/ctx.md   # 拼上下文，交给 agent 或自己读
+rcw check 86                                                    # 只给提醒
+rcw review 86                                                   # 模型读稿，意见追加到 notes/ch086.md
+rcw revise 86 notes/ch086.md                                    # 模型按笔记修订，写回 book/ch086.md
 ```
 
 `revise` 和 `review` 把最近一次的提示词和回复存在 `.rcw/`（不进 git）。模型默认 `claude-opus-5-5`，可用环境变量 `RCW_MODEL` 改。

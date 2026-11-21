@@ -3,29 +3,21 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "red-chamber-world-harness"
-version = "0.3.0a8"
-description = "Executable narrative-world harness for post-80-chapter Dream of the Red Chamber reconstruction"
-requires-python = ">=3.12,<3.13"
-dependencies = [
-  "PyYAML>=6.0,<7",
-  "jsonschema>=4.21,<5",
-  "PyMuPDF==1.27.2.3",
-]
+name = "rcw"
+version = "0.4.0"
+description = "《红楼梦》八十回后续书的写作工具"
+requires-python = ">=3.12"
+dependencies = ["PyYAML>=6.0,<7"]
 
 [project.optional-dependencies]
-dev = ["pytest>=8,<9"]
-generate = ["anthropic==1.8.0"]
+model = ["anthropic>=2.12"]
+dev = ["pytest>=8"]
 
 [project.scripts]
-rcwh = "rcwh.cli:main"
+rcw = "rcw.cli:main"
 
 [tool.setuptools]
-package-dir = {"" = "src"}
-
-[tool.setuptools.packages.find]
-where = ["src"]
+packages = ["rcw"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
-pythonpath = ["src", "tools"]
