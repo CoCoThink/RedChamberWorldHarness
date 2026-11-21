@@ -15,8 +15,8 @@ jobs:
       - name: Run rcw tests
         run: |
           if [ -d tests/rcw ]; then
-            python -m pip install pytest pyyaml
-            python -m pytest -q tests/rcw
+            python -m pip install pytest pyyaml anthropic
+            python -m pytest -q tests/rcw --confcutdir=tests/rcw
           else
             echo "tests/rcw 尚未建立，跳过"
           fi
