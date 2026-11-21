@@ -8,7 +8,18 @@
 
 ## 改设定
 
-改 `bible/`。每回的大纲卡在 `bible/outline/`，人物在 `bible/characters/`，事件在 `bible/timeline.md`，线索在 `bible/evidence.md`。
+改 `bible/`：
+
+| 文件 | 内容 |
+|---|---|
+| `outline/ch081.md` … | 每回大纲卡。frontmatter 里的 `cast`、`parallel`、`keep` 供工具读取 |
+| `characters.md` | 人物声口、主场回次、去世回次 |
+| `timeline.md` | 相对时间轴 |
+| `arcs.md` | 跨回线索与物件母题 |
+| `evidence.md` | 证据节点、先后顺序、脂批直引字面 |
+| `style.md` | 风格守则 |
+| `vocab.md` | 时代语汇与称谓 |
+| `glossary.md` | 卡里的代号是什么意思 |
 
 底线只有一条：**证据和推演分开。** 线索标 A（硬证）、B（弱证）、C（推演）。A 级情节必须保留，C 级可以改写。不要为了让情节顺而把推演改成更高等级。
 
