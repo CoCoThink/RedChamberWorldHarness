@@ -186,7 +186,8 @@ def build(repo: Repo, n: int, task: str = "revise", notes: str = "", limit: int 
     keep = "\n".join(f"- {k}" for k in o.keep)
     outline = with_end_state(o.body) + (f"\n\n## 必须原样保留的字句\n{keep}" if keep else "")
     before = end_state(repo.outline(n - 1).body) if n - 1 in CHAPTERS else ""
-    fixed = [("任务", TASKS[task]), ("风格守则", repo.doc("style.md")), ("本回大纲", outline),
+    fixed = [("任务", TASKS[task]), ("全书骨架", repo.doc("skeleton.md")), ("风格守则", repo.doc("style.md")),
+             ("本回大纲", outline),
              ("上一回结束时", before),
              ("证据", evidence_for(repo, n)), ("跨回线索", arcs_for(repo, n)),
              ("时间线", repo.doc("timeline.md")), ("出场人物", cast)]
@@ -236,7 +237,7 @@ def build_span(repo: Repo, first: int, last: int, limit: int = SPAN_LIMIT) -> Co
         cards.append(f"# {o.title}\n" + "\n\n".join(parts))
     before = end_state(repo.outline(first - 1).body) if first - 1 in CHAPTERS else ""
     optional = {"风格守则": repo.doc("style.md"), "出场人物": cast}
-    fixed = [("跨回线索", arcs), ("时间线", repo.doc("timeline.md")), ("各回要点", "\n\n".join(cards)),
+    fixed = [("全书骨架", repo.doc("skeleton.md")), ("跨回线索", arcs), ("时间线", repo.doc("timeline.md")), ("各回要点", "\n\n".join(cards)),
              (f"第{first - 1}回结束时", before), ("正文", "\n\n".join(repo.chapter(n) for n in ns))]
 
     def assemble():
