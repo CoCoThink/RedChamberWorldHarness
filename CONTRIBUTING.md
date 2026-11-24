@@ -4,7 +4,7 @@
 
 ## 改正文
 
-直接改 `book/` 下对应的回。用 `git diff` 读改动，满意再提交，提交信息写改了什么。不满意就 `git checkout` 放弃重来。
+直接改 `book/` 下对应的回。用 `git diff` 读改动，满意再提交，提交信息写改了什么。不满意就 `git checkout -- book/ch0NN.md` 放弃这一回的改动；不要对整个 `book/` 用，会连别回没提交的改动一起丢掉。
 
 ## 改设定
 
@@ -16,7 +16,8 @@
 | `characters.md` | 人物声口、主场回次、去世回次 |
 | `timeline.md` | 相对时间轴 |
 | `arcs.md` | 跨回线索与物件母题 |
-| `evidence.md` | 证据节点、先后顺序、脂批直引字面 |
+| `evidence.md` | 证据节点、先后顺序、脂批直引字面、靖批 |
+| `history.md` | 史料边界：清代制度上可写、不可写、不锁，附原文 |
 | `style.md` | 风格守则 |
 | `vocab.md` | 时代语汇与称谓 |
 | `glossary.md` | 卡里的代号是什么意思 |
@@ -47,7 +48,7 @@ rcw context 84-88 > /tmp/span.md                                # 同上，交�
 rcw revise 86 notes/ch086.md                                    # 模型按笔记修订，写回 book/ch086.md
 ```
 
-`revise` 和 `review` 把最近一次的提示词和回复存在 `.rcw/`（不进 git）。模型默认 `claude-opus-5-5`，可用环境变量 `RCW_MODEL` 改。
+`revise` 和 `review` 把最近一次的提示词和回复存在 `.rcw/`（不进 git）；`revise` 写回前另把原稿存为 `.rcw/ch0NN.before.md`，连同没提交的改动。模型默认 `claude-opus-5-5`，可用环境变量 `RCW_MODEL` 改。
 
 ## 改代码
 

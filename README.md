@@ -21,7 +21,7 @@
    - 交给 agent：`rcw context NN --task revise --notes notes/ch0NN.md`，把输出交给 Claude Code 等 agent，让它直接改 `book/`。
    - 调用 API：`rcw revise NN notes/ch0NN.md`。
 3. `rcw check NN` 扫一眼提醒。
-4. `git diff` 读改动。满意就提交，不满意就 `git checkout -- book/`。
+4. `git diff` 读改动。满意就提交。不满意：用 `rcw revise` 改的，`cp .rcw/ch0NN.before.md book/ch0NN.md` 回到修订前；agent 或手改的，`git checkout -- book/ch0NN.md` 回到上次提交。
 
 写完一段（比如 84–88 的丧、病、婚），用 `rcw review 84-88` 连读一遍，看节奏、人物、伏笔和衔接，再把各回的"回末状态"填进大纲卡。
 

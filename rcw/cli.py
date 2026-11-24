@@ -87,10 +87,12 @@ def cmd_revise(repo: Repo, a) -> int:
         text = extract_chapter(reply, original)
     except ModelError as exc:
         raise SystemExit(f"{exc}（完整回复在 .rcw/last_response.md）")
+    name = repo.chapter_path(a.chapter).name
+    _save(repo, f"{name[:-3]}.before.md", original)  # 修订前的稿子，含尚未提交的改动
     repo.chapter_path(a.chapter).write_text(text, encoding="utf-8")
     print(check.run(repo, [a.chapter]))
-    subprocess.run(["git", "diff", "--stat", "--", str(repo.chapter_path(a.chapter))], cwd=repo.root)
-    print("用 git diff 读改动；不满意就 git checkout -- book/ 放弃。")
+    subprocess.run(["git", "diff", "--stat", "--", f"book/{name}"], cwd=repo.root)
+    print(f"用 git diff 读改动。不满意，回到修订前：cp .rcw/{name[:-3]}.before.md book/{name}")
     return 0
 
 
