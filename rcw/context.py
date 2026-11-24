@@ -9,7 +9,7 @@ from .repo import CHAPTERS, QUOTE, Repo, chapters_in, han_count, sections
 
 COMMENT = re.compile(r"<!--.*?-->", re.S)
 
-INTRO = ("你在续写《红楼梦》第八十一至一百回。下面依次是：任务、风格守则、本回大纲、相关证据、跨回线索、史料边界与伏笔原文、"
+INTRO = ("你在续写《红楼梦》第八十一至一百回。下面依次是：任务、风格守则、本回大纲、相关证据、跨回线索、史料边界、伏笔原文与礼俗钱物、"
          "时间线、出场人物、前后回衔接、前八十回范文，以及本回现稿。")
 
 TASKS = {
@@ -30,7 +30,8 @@ SPAN_TASK = ("以编辑身份连读下面几回正文，只看段落与全书层
 FILE_NAMES = {"`evidence.md`": "“证据”一节", "`timeline.md`": "“时间线”一节", "`style.md`": "“风格守则”",
               "`characters.md`": "“出场人物”一节", "`vocab.md`": "“时代语汇”一节", "`arcs.md`": "“跨回线索”一节",
               "`history.md`": "“史料边界”一节",
-              "`omens.md`": "“伏笔原文”一节"}
+              "`omens.md`": "“伏笔原文”一节",
+              "`customs.md`": "“礼俗与钱物”一节"}
 
 
 def size(text: str) -> int:
@@ -205,6 +206,7 @@ def build(repo: Repo, n: int, task: str = "revise", notes: str = "", limit: int 
              ("证据", evidence_for(repo, n)), ("跨回线索", arcs_for(repo, n)),
              ("史料边界", by_chapter(repo, "history.md", n)),
              ("伏笔原文", by_chapter(repo, "omens.md", n)),
+             ("礼俗与钱物", by_chapter(repo, "customs.md", n)),
              ("时间线", repo.doc("timeline.md")), ("出场人物", cast)]
     tail = []
     if task in ("revise", "review"):
