@@ -37,9 +37,9 @@ def _notes(path: str | None) -> str:
 def cmd_context(repo: Repo, a) -> int:
     first, last = parse_span(a.chapter)
     if first == last:
-        ctx = context.build(repo, first, a.task, _notes(a.notes), a.limit or context.LIMIT)
+        ctx = context.build(repo, first, a.task, _notes(a.notes), a.limit)
     else:
-        ctx = context.build_span(repo, first, last, a.limit or context.SPAN_LIMIT)
+        ctx = context.build_span(repo, first, last, a.limit)
     sys.stdout.write(ctx.text)
     context.report(ctx)
     return 0
@@ -103,7 +103,7 @@ def main(argv: list[str] | None = None) -> int:
     c.add_argument("chapter", help="86，或 84-88")
     c.add_argument("--task", default="revise", choices=list(context.TASKS))
     c.add_argument("--notes")
-    c.add_argument("--limit", type=int, help="字数上限，默认单回 3 万、分段 8 万")
+    c.add_argument("--limit", type=int, help="字数上限，默认不限；超出时先去掉时代语汇、术语，再缩范文与衔接，并在报告里写明")
     c.set_defaults(func=cmd_context)
 
     k = sub.add_parser("check", help="检查正文，只给提醒")

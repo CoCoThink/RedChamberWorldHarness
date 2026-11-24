@@ -7,8 +7,6 @@ from dataclasses import dataclass
 
 from .repo import CHAPTERS, QUOTE, Repo, chapters_in, han_count, sections
 
-LIMIT = 30000  # 单回写作与修订，字（不含空白）
-SPAN_LIMIT = 80000  # 分段通读
 COMMENT = re.compile(r"<!--.*?-->", re.S)
 
 INTRO = ("你在续写《红楼梦》第八十一至一百回。下面依次是：任务、风格守则、本回大纲、相关证据、跨回线索与史料边界、"
@@ -186,7 +184,7 @@ class Context:
     notes: list[str]
 
 
-def build(repo: Repo, n: int, task: str = "revise", notes: str = "", limit: int = LIMIT) -> Context:
+def build(repo: Repo, n: int, task: str = "revise", notes: str = "", limit: int | None = None) -> Context:
     if n not in CHAPTERS:
         raise SystemExit(f"回次应在 81–100 之间，收到 {n}")
     if task not in TASKS:
@@ -216,10 +214,12 @@ def build(repo: Repo, n: int, task: str = "revise", notes: str = "", limit: int 
         segs += list(optional.items()) + tail
         return [(k, scrub(v).strip()) for k, v in segs if v and v.strip()]
 
-    segs = assemble()
-    while sum(size(v) for _, v in segs) > limit:  # 超额时依次让出：语汇、术语、范文、衔接
+    segs, dropped = assemble(), []
+    while limit and sum(size(v) for _, v in segs) > limit:  # 给了上限才让：语汇、术语、范文、衔接
         if optional:
-            optional.pop(next(reversed(optional)))
+            name = next(reversed(optional))
+            optional.pop(name)
+            dropped.append(name)
         elif pb > 1500:
             pb = int(pb * 0.7)
         elif nb > 1000:
@@ -228,12 +228,16 @@ def build(repo: Repo, n: int, task: str = "revise", notes: str = "", limit: int 
             warn.append(f"上下文仍有 {sum(size(v) for _, v in segs)} 字，超过 {limit}")
             break
         segs = assemble()
-    head = f"# 第{n}回 写作上下文\n\n{INTRO}"
+    if dropped or pb < 6000 or nb < 3000:
+        warn.append(f"为守 {limit} 字上限：" + "，".join(
+            (["去掉了" + "、".join(dropped)] if dropped else []) + (["范文缩短"] if pb < 6000 else []) +
+            (["前后回衔接缩短"] if nb < 3000 else [])))
+    head =f"# 第{n}回 写作上下文\n\n{INTRO}"
     text = head + "\n\n" + "\n\n".join(f"## {k}\n\n{v}" for k, v in segs) + "\n"
     return Context(text, {k: size(v) for k, v in segs}, warn)
 
 
-def build_span(repo: Repo, first: int, last: int, limit: int = SPAN_LIMIT) -> Context:
+def build_span(repo: Repo, first: int, last: int, limit: int | None = None) -> Context:
     """几回连读：给全书与段落层面的评审用，带全文，不带范文。"""
     if not (first in CHAPTERS and last in CHAPTERS and first < last):
         raise SystemExit(f"分段应在 81–100 之间且前小后大，收到 {first}-{last}")
@@ -256,13 +260,16 @@ def build_span(repo: Repo, first: int, last: int, limit: int = SPAN_LIMIT) -> Co
         segs = [("任务", SPAN_TASK)] + list(optional.items()) + fixed
         return [(k, scrub(v).strip()) for k, v in segs if v and v.strip()]
 
-    segs = assemble()
-    while sum(size(v) for _, v in segs) > limit:
+    segs, dropped = assemble(), []
+    while limit and sum(size(v) for _, v in segs) > limit:
         if not optional:
             warn.append(f"上下文仍有 {sum(size(v) for _, v in segs)} 字，超过 {limit}；可把分段缩短")
             break
-        optional.pop(next(iter(optional)))
+        dropped.append(next(iter(optional)))
+        optional.pop(dropped[-1])
         segs = assemble()
+    if dropped:
+        warn.append(f"为守 {limit} 字上限：去掉了" + "、".join(dropped))
     text = f"# 第{first}至{last}回 通读上下文\n\n" + "\n\n".join(f"## {k}\n\n{v}" for k, v in segs) + "\n"
     return Context(text, {k: size(v) for k, v in segs}, warn)
 
@@ -274,4 +281,4 @@ def report(ctx: Context) -> None:
         print(f"注意：{w}", file=sys.stderr)
 
 
-__all__ = ["build", "build_span", "report", "TASKS", "LIMIT", "SPAN_LIMIT", "han_count"]
+__all__ = ["build", "build_span", "report", "TASKS", "han_count"]

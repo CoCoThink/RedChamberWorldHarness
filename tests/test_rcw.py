@@ -92,6 +92,8 @@ def test_context_trims_to_limit(tmp_path):
     limit = sum(full.sizes.values()) - 50
     small = context.build(repo, 86, "revise", limit=limit)
     assert sum(small.sizes.values()) <= limit or small.notes
+    assert any("上限" in w for w in small.notes)
+    assert not any("上限" in w for w in full.notes)
 
 
 def test_check_flags_problems(tmp_path):
@@ -120,6 +122,6 @@ def test_real_repo_builds_every_chapter():
     repo = Repo(ROOT)
     for n in CHAPTERS:
         ctx = context.build(repo, n, "revise")
-        assert sum(ctx.sizes.values()) <= context.LIMIT, n
+        assert not any("上限" in w for w in ctx.notes), n
         assert ".md" not in ctx.text, n
         check.check_chapter(repo, n)
