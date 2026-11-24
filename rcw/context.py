@@ -9,7 +9,7 @@ from .repo import CHAPTERS, QUOTE, Repo, chapters_in, han_count, sections
 
 COMMENT = re.compile(r"<!--.*?-->", re.S)
 
-INTRO = ("你在续写《红楼梦》第八十一至一百回。下面依次是：任务、风格守则、本回大纲、相关证据、跨回线索与史料边界、"
+INTRO = ("你在续写《红楼梦》第八十一至一百回。下面依次是：任务、风格守则、本回大纲、相关证据、跨回线索、史料边界与伏笔原文、"
          "时间线、出场人物、前后回衔接、前八十回范文，以及本回现稿。")
 
 TASKS = {
@@ -29,7 +29,8 @@ SPAN_TASK = ("以编辑身份连读下面几回正文，只看段落与全书层
 # bible 里提到文件名的地方，换成上下文里的小节名，避免把路径交给模型
 FILE_NAMES = {"`evidence.md`": "“证据”一节", "`timeline.md`": "“时间线”一节", "`style.md`": "“风格守则”",
               "`characters.md`": "“出场人物”一节", "`vocab.md`": "“时代语汇”一节", "`arcs.md`": "“跨回线索”一节",
-              "`history.md`": "“史料边界”一节"}
+              "`history.md`": "“史料边界”一节",
+              "`omens.md`": "“伏笔原文”一节"}
 
 
 def size(text: str) -> int:
@@ -100,9 +101,9 @@ def arcs_for(repo: Repo, n: int) -> str:
     return "\n\n".join(arc_items(repo, n))
 
 
-def history_for(repo: Repo, n: int) -> str:
-    """史料边界：开头说明加上标题括号里回次包含本回的条目；一条也不涉及就不放。"""
-    secs = sections(repo.doc("history.md"))
+def by_chapter(repo: Repo, name: str, n: int) -> str:
+    """史料边界、伏笔原文：开头说明加上标题括号里回次包含本回的条目；一条也不涉及就不放。"""
+    secs = sections(repo.doc(name))
     keep = [f"# {h}\n{b}" for h, b in secs if h and n in chapters_in(h)]
     if not keep:
         return ""
@@ -202,7 +203,8 @@ def build(repo: Repo, n: int, task: str = "revise", notes: str = "", limit: int 
              ("本回大纲", outline),
              ("上一回结束时", before),
              ("证据", evidence_for(repo, n)), ("跨回线索", arcs_for(repo, n)),
-             ("史料边界", history_for(repo, n)),
+             ("史料边界", by_chapter(repo, "history.md", n)),
+             ("伏笔原文", by_chapter(repo, "omens.md", n)),
              ("时间线", repo.doc("timeline.md")), ("出场人物", cast)]
     tail = []
     if task in ("revise", "review"):
