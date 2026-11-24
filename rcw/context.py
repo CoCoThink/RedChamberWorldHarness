@@ -50,7 +50,7 @@ def scrub(text: str) -> str:
 def evidence_for(repo: Repo, n: int) -> str:
     keep = []
     for head, body in sections(repo.doc("evidence.md")):
-        if head.startswith(("R01", "P01", "靖批")):  # 带表的几节：只留本稿落点涉及本回的行，表外说明照留
+        if head.startswith(("R01", "P01", "靖批", "不走程高本")):  # 带表的几节：只留本稿落点涉及本回的行，表外说明照留
             lines = body.splitlines()
             table = [i for i, l in enumerate(lines) if l.startswith("|")]
             rows = [l for l in lines[table[0] + 2:] if l.startswith("|")
