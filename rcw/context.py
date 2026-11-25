@@ -255,8 +255,9 @@ def build_span(repo: Repo, first: int, last: int, limit: int | None = None) -> C
     arcs = "\n\n".join(dict.fromkeys(x for n in ns for x in arc_items(repo, n)))
     cards = []
     for o in outlines:
-        parts = [f"## {h}\n{b}" for h, b in sections(with_end_state(o.body))
-                 if h in ("时间", "人物", "回末状态") or h.startswith("保护锁")]
+        parts = [f"## {h}\n{b}" for h, b in sections(with_end_state(o.body)) if h in ("时间", "人物", "回末状态")]
+        keep = dict(sections(o.body, level=3)).get("已写成、要保留的")
+        parts += [f"## 已写成、要保留的\n{keep}"] if keep else []
         cards.append(f"# {o.title}\n" + "\n\n".join(parts))
     before = end_state(repo.outline(first - 1).body) if first - 1 in CHAPTERS else ""
     optional = {"风格守则": repo.doc("style.md"), "出场人物": cast}
